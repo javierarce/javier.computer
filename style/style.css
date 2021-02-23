@@ -125,13 +125,17 @@ p {
 
 @media all and (max-width: 640px) {
   .Inner {
-    padding: 1em;
+    padding: 2em;
+  }
+  .Links ul,
+  .Intro {
+    margin: 0 0 2em;
   }
   .Intro p {
-    font-size: 1.2em;
+    font-size: 1.3em;
   }
   body {
-    font-size: 1.1em;
+    font-size: 1.2em;
   }
 }
 
