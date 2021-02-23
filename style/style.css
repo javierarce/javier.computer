@@ -54,44 +54,8 @@ sub {
   bottom: -0.25em;
 }
 
-.has-border {
-  border: 1px solid #ddd;
-}
-
 .Inner {
   padding: 3em;
-}
-
-.Navigation {
-  display: flex;
-  margin: 0 0 3em;
-}
-
-span.Navigation__item {
-  color: var(--dark);
-}
-
-.Navigation__item {
-  color: var(--light);
-  margin: 0 1em 0 0;
-}
-
-.Navigation.is-footer .Navigation__item.is-main {
-  color: var(--light);
-}
-
-.Navigation__item.is-main {
-  color: var(--dark);
-  font-weight: 700;
-}
-
-.Navigation__item.is-selected {
-  color: var(--dark);
-  font-weight: 400;
-}
-
-.Content {
-  margin: 0 0 4em;
 }
 
 .Intro {
@@ -107,6 +71,15 @@ p {
   font-size: 1em;
   margin: 0 0 1em;
   line-height: 145%;
+}
+
+.Title {
+  font-weight: bold;
+  margin: 0 0 1em;
+}
+
+.Projects li {
+  margin: 0 0 1em;
 }
 
 .Links ul {
@@ -133,131 +106,11 @@ p {
   color: var(--light);
 }
 
-.Section {
-  margin: 0 0 4em;
-}
-
-.Section__title {
-  font-size: 1.2em;
-  font-weight: bold;
-  margin: 0 0 0.8em;
-  color: brown;
-}
-
-.Block {
-  margin: 0 0 4em;
-}
-
-.Footnote,
-.Block p {
-  width: 800px;
-}
-
-.Block:last-child {
-  margin-bottom: 0;
-}
-
-.Block__header {
-  margin: 0 0 2em;
-}
-
-.Block__title {
-  font-weight: bold;
-}
-
-.Block__subtitle {
-  color: var(--light);
-}
-
-.Block__date {
-  margin: 0 0 0.8em;
-  color: var(--light);
-}
-
-.Footnote {
-  font-size: 0.7em;
-  color: var(--light);
-  line-height: 145%;
-  margin: 0 0 2em;
-}
-
-.Block__quote {
-  font-size: 0.8em;
-  color: var(--light);
-}
-
-.Footnote a,
-.Block__quote a {
-  color: var(--light);
-  text-decoration: underline;
-}
-
-.Block__image,
-.Block__video {
-  margin: 3em 0;
-}
-
-.Block__image img {
-  max-width: 1200px;
-  position: relative;
-  margin: 0 0 0.4em;
-  border-radius: 4px;
-  transition: width 250ms ease-in-out;
-}
-
-.Block__image img:last-child {
-  margin: 0;
-}
-
-.Block__image img.loaded {
-  opacity: 1;
-}
-
-.Block__video video:last-child {
-  margin: 0;
-}
-
-.Block__video video {
-  width: 1200px;
-  position: relative;
-  margin: 0 0 0.4em;
-  border-radius: 4px;
-  transition: width 250ms ease-in-out;
-}
-
-.Tweet {
-  margin: 2em 0;
-}
-
-.twitter-tweet {
-  opacity: 0;
-  transition: opacity 250ms ease-in-out;
-}
-.twitter-tweet.twitter-tweet-rendered {
-  opacity: 1;
-}
-
-@media all and (max-width: 1300px) {
-  .Block__video video {
-    width: 100%;
-  }
-  .Block__image img {
-    width: 100%;
-  }
-  .Footnote,
-  .Block p {
-    width: 100%;
-  }
+.Project__title {
+  display: block;
 }
 
 @media all and (max-width: 900px) {
-  .Navigation  {
-    flex-direction: column;
-  }
-  .Navigation__item.is-main {
-    margin: 0 0 1em;
-  }
-
   .Intro {
     width: 100%;
   }
@@ -274,3 +127,4 @@ p {
     font-size: 1.1em;
   }
 }
+
