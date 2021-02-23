@@ -1,0 +1,276 @@
+:root {
+  --dark: #111111;
+  --gray: #EEEEEE;
+  --white: #FFFFFF;
+  --light: rgba(17,17,17,0.4);
+  --active: #001AFF;
+}
+
+body {
+  font-size: 1.4em;
+  line-height: 145%;
+  font-weight: normal;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+  color: var(--dark);
+  background: var(--white);
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--active);
+  text-decoration: none;
+  font-weight: 400;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: 600;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  color: var(--light);
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+.has-border {
+  border: 1px solid #ddd;
+}
+
+.Inner {
+  padding: 3em;
+}
+
+.Navigation {
+  display: flex;
+  margin: 0 0 3em;
+}
+
+span.Navigation__item {
+  color: var(--dark);
+}
+
+.Navigation__item {
+  color: var(--light);
+  margin: 0 1em 0 0;
+}
+
+.Navigation.is-footer .Navigation__item.is-main {
+  color: var(--light);
+}
+
+.Navigation__item.is-main {
+  color: var(--dark);
+  font-weight: 700;
+}
+
+.Navigation__item.is-selected {
+  color: var(--dark);
+  font-weight: 400;
+}
+
+.Content {
+  margin: 0 0 4em;
+}
+
+.Intro {
+  width: 820px;
+}
+
+.Intro p {
+  font-size: 1.7em;
+  font-weight: 300;
+}
+
+p {
+  font-size: 1em;
+  margin: 0 0 1em;
+  line-height: 145%;
+}
+
+.Links ul {
+  margin: 0 0 2em;
+}
+
+.Links p {
+  font-size: 1em;
+  margin: 0 0 .4em;
+  line-height: 145%;
+}
+
+.List {
+  list-style: disc;
+  margin: 0 0 0 1em;
+}
+
+.List li {
+  margin: 0 0 2em;
+}
+
+.List li span {
+  font-size: 0.8em;
+  color: var(--light);
+}
+
+.Section {
+  margin: 0 0 4em;
+}
+
+.Section__title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0 0 0.8em;
+  color: brown;
+}
+
+.Block {
+  margin: 0 0 4em;
+}
+
+.Footnote,
+.Block p {
+  width: 800px;
+}
+
+.Block:last-child {
+  margin-bottom: 0;
+}
+
+.Block__header {
+  margin: 0 0 2em;
+}
+
+.Block__title {
+  font-weight: bold;
+}
+
+.Block__subtitle {
+  color: var(--light);
+}
+
+.Block__date {
+  margin: 0 0 0.8em;
+  color: var(--light);
+}
+
+.Footnote {
+  font-size: 0.7em;
+  color: var(--light);
+  line-height: 145%;
+  margin: 0 0 2em;
+}
+
+.Block__quote {
+  font-size: 0.8em;
+  color: var(--light);
+}
+
+.Footnote a,
+.Block__quote a {
+  color: var(--light);
+  text-decoration: underline;
+}
+
+.Block__image,
+.Block__video {
+  margin: 3em 0;
+}
+
+.Block__image img {
+  max-width: 1200px;
+  position: relative;
+  margin: 0 0 0.4em;
+  border-radius: 4px;
+  transition: width 250ms ease-in-out;
+}
+
+.Block__image img:last-child {
+  margin: 0;
+}
+
+.Block__image img.loaded {
+  opacity: 1;
+}
+
+.Block__video video:last-child {
+  margin: 0;
+}
+
+.Block__video video {
+  width: 1200px;
+  position: relative;
+  margin: 0 0 0.4em;
+  border-radius: 4px;
+  transition: width 250ms ease-in-out;
+}
+
+.Tweet {
+  margin: 2em 0;
+}
+
+.twitter-tweet {
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+}
+.twitter-tweet.twitter-tweet-rendered {
+  opacity: 1;
+}
+
+@media all and (max-width: 1300px) {
+  .Block__video video {
+    width: 100%;
+  }
+  .Block__image img {
+    width: 100%;
+  }
+  .Footnote,
+  .Block p {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 900px) {
+  .Navigation  {
+    flex-direction: column;
+  }
+  .Navigation__item.is-main {
+    margin: 0 0 1em;
+  }
+
+  .Intro {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 640px) {
+  .Inner {
+    padding: 1em;
+  }
+  .Intro p {
+    font-size: 1.2em;
+  }
+  body {
+    font-size: 1.1em;
+  }
+}
