@@ -22,6 +22,8 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  transition: font-size 250ms ease-in-out;
 }
 
 a {
@@ -42,24 +44,9 @@ strong {
   font-weight: 600;
 }
 
-sub, sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-  color: var(--light);
-}
-
-sup {
-  top: -0.5em;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
 .Inner {
   padding: 3em;
+  transition: padding 250ms ease-in-out;
 }
 
 .Intro {
@@ -92,13 +79,12 @@ p {
   margin: 0 0 1em;
 }
 
-.Links ul {
+.Section {
   margin: 0 0 3em;
 }
 
-.Links p {
+.Section p {
   font-size: 1em;
-  margin: 0 0 .4em;
   line-height: 145%;
 }
 
@@ -121,7 +107,7 @@ p {
   .Inner {
     padding: 2em;
   }
-  .Links ul,
+  .Section ul,
   .Intro {
     margin: 0 0 2em;
   }
