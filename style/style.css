@@ -92,11 +92,6 @@ p {
   margin: 0 0 1em;
 }
 
-.Projects__item {
-  margin: 0 0 1em;
-  font-weight: 300;
-}
-
 .Links ul {
   margin: 0 0 3em;
 }
@@ -107,22 +102,13 @@ p {
   line-height: 145%;
 }
 
-.List {
-  list-style: disc;
-  margin: 0 0 0 1em;
-}
-
-.List li {
-  margin: 0 0 2em;
-}
-
-.List li span {
-  font-size: 0.8em;
-  color: var(--light);
+.Projects__item {
+  margin: 0 0 1.2em;
+  font-weight: 300;
 }
 
 .Project__title {
-  display: block;
+  display: inline-block;
 }
 
 @media all and (max-width: 900px) {
