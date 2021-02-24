@@ -2,7 +2,6 @@ const https = require('https')
 const fs = require('fs');
 let feed = require('rss-to-json')
 
-
 let URL = 'https://letterboxd.com/javier/rss'
 
 const downloadImage = (URL, name) => {
