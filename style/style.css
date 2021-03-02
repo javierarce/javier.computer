@@ -6,6 +6,7 @@
   --light: rgba(17,17,17,0.4);
 
   --active: #6d8bf4;
+  --hover: #ea74ac;
   --text: #fff;
   --background: #12121a;
 }
@@ -23,17 +24,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  transition: font-size 250ms ease-in-out;
+  transition: font-size 200ms ease-in-out;
 }
 
 a {
   color: var(--active);
   text-decoration: none;
   font-weight: 500;
+  transition: color 200ms ease-in-out;
 }
 
 a:hover {
   cursor: pointer;
+  color: var(--hover);
 }
 
 em {
@@ -46,7 +49,7 @@ strong {
 
 .Inner {
   padding: 3em;
-  transition: padding 250ms ease-in-out;
+  transition: padding 200ms ease-in-out;
 }
 
 .Intro {
@@ -119,3 +122,47 @@ p {
   }
 }
 
+
+.Tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted var(--active);
+}
+
+.Tooltip__text {
+  width: 200px;
+  background-color: black;
+  color: #fff;
+  font-size: 0.7em;
+  line-height: 1.4;
+  text-align: center;
+  padding: 8px 4px;
+  border-radius: 4px;
+
+  bottom: 100%;
+  left: 50%;
+  margin-left: -100px;
+
+  transition: opacity 200ms ease-in-out;
+
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.Tooltip:hover .Tooltip__text {
+  opacity: 1;
+  visibility: visible;
+}
+
+.Tooltip__text:after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
