@@ -1,31 +1,58 @@
+const fs = require('fs')
 const https = require('https')
-const fs = require('fs');
-let feed = require('rss-to-json')
+const feed = require('rss-to-json')
 
-let URL = 'https://letterboxd.com/javier/rss'
+const URL = 'https://letterboxd.com/javier/rss'
 
-const downloadImage = (URL, name) => {
+const getPathForMoviePermalink = (permalink) => {
+  return `./images/movies/${permalink}.jpg`
+}
+
+const downloadImage = (URL, permalink) => {
   const request = https.get(URL, (response) => {
-    let file = fs.createWriteStream(`./images/movies/${name}.jpg`)
+
+    console.log(`Downloading cover for ${permalink}`)
+
+    const path = getPathForMoviePermalink(permalink)
+    const file = fs.createWriteStream(path)
+
     response.pipe(file)
   })
 }
 
 const getPermalinkFromURL = (URL) => {
-  return /http.*\/(.*?)\//.exec(URL)[1]
+  console.log(URL)
+  return /http.*\/.*?film\/(.*?)\//.exec(URL)[1]
 }
 
 const getSRCFromString = (string) => {
   return /<img.*?src=.(.*?)\?/.exec(string)[1]
 }
 
-feed.load(URL, (error, rss) => {
-  let data = JSON.parse(JSON.stringify(rss, null, 3))
-  let movies = data.items
+const downloadMovie = (movie) => {
+  const permalink = getPermalinkFromURL(movie.link)
+  const src = getSRCFromString(movie.description)
+  const path = getPathForMoviePermalink(permalink)
 
-  movies.forEach((movie) => {
-    let permalink = getPermalinkFromURL(movie.link)
-    let src = getSRCFromString(movie.description)
-    downloadImage(src, permalink)
+  fs.appendFile('movies.txt', permalink + '\n', (err) => {
+    if (err) {
+      throw err
+    }
+    // console.log(`Saved: ${permalink}`)
   })
-})
+
+  if (!fs.existsSync(path)) {
+    downloadImage(src, permalink)
+  }
+}
+
+const onLoadFeed = (error, rss) => {
+  if (!error) {
+    const feed = JSON.parse(JSON.stringify(rss, null, 3))
+    feed.items.forEach(downloadMovie)
+  } else {
+    console.error(error)
+  }
+}
+
+feed.load(URL, onLoadFeed)
