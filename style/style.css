@@ -94,34 +94,12 @@ p {
 .Projects__item {
   margin: 0 0 1.2em;
   font-weight: 300;
+  max-width: 800px;
 }
 
 .Project__title {
   display: inline-block;
 }
-
-@media all and (max-width: 900px) {
-  .Intro {
-    width: 100%;
-  }
-}
-
-@media all and (max-width: 640px) {
-  .Inner {
-    padding: 2em;
-  }
-  .Section ul,
-  .Intro {
-    margin: 0 0 2em;
-  }
-  .Intro p {
-    font-size: 1.3em;
-  }
-  body {
-    font-size: 1.2em;
-  }
-}
-
 
 .Tooltip {
   position: relative;
@@ -166,3 +144,32 @@ p {
   border-style: solid;
   border-color: black transparent transparent transparent;
 }
+
+@media all and (max-width: 900px) {
+  .Intro {
+    width: 100%;
+  }
+
+  .Projects__item {
+    max-width: auto;
+  }
+
+}
+
+@media all and (max-width: 640px) {
+  .Inner {
+    padding: 2em;
+  }
+  .Section ul,
+  .Intro {
+    margin: 0 0 2em;
+  }
+  .Intro p {
+    font-size: 1.3em;
+  }
+  body {
+    font-size: 1.2em;
+  }
+}
+
+
