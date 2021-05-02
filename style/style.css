@@ -91,14 +91,45 @@ p {
   line-height: 145%;
 }
 
+.Projects { 
+  position: relative;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(3, 1fr);
+  width: 80%;
+}
+
 .Projects__item {
-  margin: 0 0 2em;
+  display: flex;
   font-weight: 300;
-  max-width: 800px;
+  padding: 1em;
+  border: 1px solid transparent;
+  transition: border 200ms ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.Projects__item:hover {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.Projects__item:hover .Project__titleLink {
+  cursor: pointer;
+  color: var(--hover);
+}
+
+.Projects__item:hover .Project__titleLink {
+  transition: opacity 200ms ease-in-out;
 }
 
 .Project__title {
-  display: inline-block;
+  display: block;
+  width: 100%;
+}
+
+.Project__description {
+  font-weight: 300;
+  color: #fff;
 }
 
 .Tooltip {
@@ -145,6 +176,13 @@ p {
   border-color: black transparent transparent transparent;
 }
 
+@media all and (max-width: 1024px) {
+  .Projects { 
+    width: auto;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media all and (max-width: 900px) {
   .Intro {
     width: 100%;
@@ -169,6 +207,9 @@ p {
   }
   body {
     font-size: 1.2em;
+  }
+  .Projects { 
+    display: block;
   }
 }
 
