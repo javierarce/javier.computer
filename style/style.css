@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --dark: #111111;
   --gray: #EEEEEE;
@@ -100,26 +104,20 @@ p {
 }
 
 .Projects__item {
-  display: flex;
   font-weight: 300;
-  padding: 1em;
-  border: 1px solid transparent;
-  transition: border 200ms ease-in-out;
+}
+
+.Project__title {
+  display: block;
+  height: 100%;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 4px;
+  transition: all 250ms ease-in-out;
+  padding: 1em;
 }
 
-.Projects__item:hover {
+.Project__title:hover {
   border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.Projects__item:hover .Project__titleLink {
-  cursor: pointer;
-  color: var(--hover);
-}
-
-.Projects__item:hover .Project__titleLink {
-  transition: opacity 200ms ease-in-out;
 }
 
 .Project__title {
@@ -211,6 +209,10 @@ p {
   .Projects { 
     display: block;
   }
+
+.Projects__item {
+  margin: 0 0 1em;
+}
 }
 
 
