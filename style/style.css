@@ -174,14 +174,14 @@ p {
   border-color: black transparent transparent transparent;
 }
 
-@media all and (max-width: 1024px) {
+@media all and (max-width: 1280px) {
   .Projects { 
     width: auto;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media all and (max-width: 900px) {
+@media all and (max-width: 1024px) {
   .Intro {
     width: 100%;
   }
@@ -190,6 +190,10 @@ p {
     max-width: auto;
   }
 
+  .Projects { 
+    width: auto;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media all and (max-width: 640px) {
