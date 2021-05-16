@@ -9,10 +9,10 @@
   --white: #FFFFFF;
   --light: rgba(17,17,17,0.4);
 
-  --active: #6d8bf4;
-  --hover: #ea74ac;
-  --text: #fff;
-  --background: #12121a;
+  --active: hsl(26deg 42% 26%);
+  --hover: hsl(26deg 42% 26%);
+  --text: hsl(26deg 42% 26%);
+  --background: #fef6f0;
 }
 
 body {
@@ -51,22 +51,20 @@ strong {
   font-weight: 600;
 }
 
-.Inner {
+._Inner {
+  padding: 3em;
+  transition: padding 200ms ease-in-out;
+}
+
+.Content {
   padding: 3em;
   transition: padding 200ms ease-in-out;
 }
 
 .Intro {
   width: 820px;
-  margin: 0 0 3em;
-
-  background-image: linear-gradient(45deg, #f0d5e0 2%, #6d8bf4 45%,#7a45eb 60%,#ea74ac 80%,#f495a0 50%);
-  background-color: #fff;
-  background-size: 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  text-fill-color: transparent;
-  -webkit-text-fill-color: transparent;
+  margin: 3em;
+  color: var(--active);
 }
 
 .Intro p {
@@ -84,6 +82,7 @@ p {
   opacity: 0.5;
   font-weight: bold;
   margin: 0 0 1em;
+  user-select: none;
 }
 
 .Section {
@@ -101,6 +100,7 @@ p {
   grid-gap: 1em;
   grid-template-columns: repeat(3, 1fr);
   width: 80%;
+  margin: 0 0 3em;
 }
 
 .Projects__item {
@@ -110,14 +110,14 @@ p {
 .Project__title {
   display: block;
   height: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--active);
   border-radius: 4px;
   transition: all 250ms ease-in-out;
   padding: 1em;
 }
 
 .Project__title:hover {
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .Project__title {
@@ -125,9 +125,15 @@ p {
   width: 100%;
 }
 
+.Project__titleLink {
+  margin: 0 0 0.4em 0;
+}
+
 .Project__description {
   font-weight: 300;
-  color: #fff;
+  font-size: .8em;
+  line-height: 1.4;
+  color: var(--text);
 }
 
 .Tooltip {
@@ -139,7 +145,7 @@ p {
 .Tooltip__text {
   width: 200px;
   background-color: black;
-  color: #fff;
+  color: var(--white);
   font-size: 0.7em;
   line-height: 1.4;
   text-align: center;
@@ -214,9 +220,33 @@ p {
     display: block;
   }
 
-.Projects__item {
-  margin: 0 0 1em;
-}
+  .Projects__item {
+    margin: 0 0 1em;
+  }
 }
 
 
+
+.Photo {
+  width: 100%;
+  background: rgba(255, 255, 255, .5);
+  height: 400px;
+}
+
+.Tags {
+  margin: 0.4em 0 0 0;
+  display: flex;
+}
+
+.Tag {
+  font-size: 0.6em;
+  background: hsl(62deg 79% 50%);
+  color: var(--white);
+  color: var(--active);
+  display: inline-block;
+  border-radius: 40px;
+  font-weight: normal;
+  line-height: 1.4em;
+  padding: 0.2em 0.5em;
+  margin: 0 0.2em 0 0;
+}
