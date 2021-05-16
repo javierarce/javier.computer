@@ -9,7 +9,7 @@
   --white: #FFFFFF;
   --light: rgba(17,17,17,0.4);
 
-  --active: hsl(26deg 42% 26%);
+  --active: #F06E2F; 
   --hover: hsl(26deg 42% 26%);
   --text: hsl(26deg 42% 26%);
   --background: #fef6f0;
@@ -131,7 +131,7 @@ p {
 
 .Project__description {
   font-weight: 300;
-  font-size: .8em;
+  font-size: 0.8em;
   line-height: 1.4;
   color: var(--text);
 }
