@@ -46,6 +46,11 @@ strong {
   font-weight: 600;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+}
+
 .Inner {
   padding: 3em 3em 0 3em;
   transition: padding 200ms ease-in-out;
@@ -162,7 +167,7 @@ p {
 .Tooltip__text:after {
   content: " ";
   position: absolute;
-  top: 100%; 
+  top: 100%; /* At the bottom of the tooltip */
   left: 50%;
   margin-left: -5px;
   border-width: 5px;
