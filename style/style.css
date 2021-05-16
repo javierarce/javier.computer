@@ -3,12 +3,7 @@
 }
 
 :root {
-  --dark: #111111;
-  --gray: #EEEEEE;
-  --yellow: #FFFFE0;
   --white: #FFFFFF;
-  --light: rgba(17,17,17,0.4);
-
   --active: #F06E2F; 
   --hover: hsl(26deg 42% 26%);
   --text: hsl(26deg 42% 26%);
@@ -167,7 +162,7 @@ p {
 .Tooltip__text:after {
   content: " ";
   position: absolute;
-  top: 100%; /* At the bottom of the tooltip */
+  top: 100%; 
   left: 50%;
   margin-left: -5px;
   border-width: 5px;
