@@ -9,10 +9,10 @@
   --white: #FFFFFF;
   --light: rgba(17,17,17,0.4);
 
-  --active: #6d8bf4;
-  --hover: #ea74ac;
-  --text: #fff;
-  --background: #12121a;
+  --active: #F06E2F; 
+  --hover: hsl(26deg 42% 26%);
+  --text: hsl(26deg 42% 26%);
+  --background: #fef6f0;
 }
 
 body {
@@ -52,21 +52,13 @@ strong {
 }
 
 .Inner {
-  padding: 3em;
+  padding: 3em 3em 0 3em;
   transition: padding 200ms ease-in-out;
 }
 
 .Intro {
   width: 820px;
-  margin: 0 0 3em;
-
-  background-image: linear-gradient(45deg, #f0d5e0 2%, #6d8bf4 45%,#7a45eb 60%,#ea74ac 80%,#f495a0 50%);
-  background-color: var(--white);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  text-fill-color: transparent;
-  -webkit-text-fill-color: transparent;
+  color: var(--active);
 }
 
 .Intro p {
@@ -84,6 +76,7 @@ p {
   opacity: 0.5;
   font-weight: bold;
   margin: 0 0 1em;
+  user-select: none;
 }
 
 .Section {
@@ -101,6 +94,7 @@ p {
   grid-gap: 1em;
   grid-template-columns: repeat(3, 1fr);
   width: 80%;
+  margin: 0 0 3em;
 }
 
 .Projects__item {
@@ -110,14 +104,14 @@ p {
 .Project__title {
   display: block;
   height: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--active);
   border-radius: 4px;
   transition: all 250ms ease-in-out;
   padding: 1em;
 }
 
 .Project__title:hover {
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .Project__title {
@@ -125,9 +119,15 @@ p {
   width: 100%;
 }
 
+.Project__titleLink {
+  margin: 0 0 0.4em 0;
+}
+
 .Project__description {
   font-weight: 300;
-  color: var(--white);
+  font-size: 0.8em;
+  line-height: 1.4;
+  color: var(--text);
 }
 
 .Tooltip {
@@ -218,3 +218,5 @@ p {
     margin: 0 0 1em;
   }
 }
+
+
