@@ -5,6 +5,7 @@ const loadLastSong = () => {
   const URL = '//last.javierarce.com/api/song'
 
   fetch(URL).then((response) => {
+    console.log(response)
     response.json((json) => {
       console.log(json)
     })
