@@ -31,7 +31,6 @@ const addSong = (song) => {
 
 const onLoad = () => {
   loadLastSong()
-  addSong({ name: 123, artist: 324324})
 }
 
 
