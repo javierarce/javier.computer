@@ -23,6 +23,10 @@ const addSong = (song) => {
   $song.innerHTML = `I'm listening to <strong>${song.name}</strong> by ${song.artist}.`
   let $intro = document.querySelector('.js-intro')
   $intro.appendChild($song)
+
+  setTimeout(() => {
+    $song.classList.add('is-visible')
+  })
 }
 
 const onLoad = () => {

@@ -230,6 +230,13 @@ p {
 .Song {
   font-size: 0.9em;
   color: var(--active);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+}
+.Song.is-visible {
+  opacity: 1;
+  visibility: visible;
 }
 
 .Song strong {
