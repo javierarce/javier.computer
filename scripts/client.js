@@ -7,14 +7,10 @@ const loadLastSong = () => {
   fetch(URL).then(response => response.json())
     .then((json) => {
       if (json.error) {
-        return console.log(json)
+        return console.error(json)
       }
       addSong(json)
     })
-}
-
-const insertAfter = (newNode, referenceNode) => {
-  referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling)
 }
 
 const addSong = (song) => {
