@@ -88,6 +88,9 @@ p {
   font-size: 1em;
   line-height: 145%;
 }
+.Section:last-child {
+  margin-bottom: 0;
+}
 
 .Projects { 
   position: relative;
@@ -199,12 +202,16 @@ p {
 
 @media all and (max-width: 640px) {
   .Inner {
-    padding: 2em;
+    padding: 1em;
   }
   .Section ul,
   .Intro {
     margin: 0 0 2em;
   }
+  .Section ul:last-child {
+    margin-bottom: 0;
+  }
+
   .Intro p {
     font-size: 1.3em;
   }
@@ -218,6 +225,26 @@ p {
   .Projects__item {
     margin: 0 0 1em;
   }
+  .Inner > .Song {
+    position: relative;
+    right: auto;
+    top: auto;
+    display: inline-block;
+    margin-bottom: 1em;
+  }
 }
 
+.Song {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  border: 1px solid var(--active);
+  border-radius: 40px;
+  padding: .2em 1.4em;
+  color: var(--active);
+  font-size: 0.7em;
+}
 
+.Song strong {
+  font-weight: bold;
+}

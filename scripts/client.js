@@ -9,11 +9,18 @@ const loadLastSong = () => {
       if (json.error) {
         return console.log(json)
       }
-      console.log(json)
-
+      addSong(json)
     })
 }
 
+const addSong = (song) => {
+  let $div = document.createElement('div')
+  $div.classList.add('Song')
+  $div.innerHTML = `<strong>${song.name}</strong> by ${song.artist}`
+  let $inner = document.querySelector('.js-inner')
+  $inner.prepend($div)
+
+}
 const onLoad = () => {
   loadLastSong()
 }
