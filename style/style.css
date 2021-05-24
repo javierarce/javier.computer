@@ -225,24 +225,11 @@ p {
   .Projects__item {
     margin: 0 0 1em;
   }
-  .Inner > .Song {
-    position: relative;
-    right: auto;
-    top: auto;
-    display: inline-block;
-    margin-bottom: 1em;
-  }
 }
 
 .Song {
-  position: absolute;
-  right: 1em;
-  top: 1em;
-  border: 1px solid var(--active);
-  border-radius: 40px;
-  padding: .2em 1.4em;
+  font-size: 0.9em;
   color: var(--active);
-  font-size: 0.7em;
 }
 
 .Song strong {

@@ -13,20 +13,25 @@ const loadLastSong = () => {
     })
 }
 
+const insertAfter = (newNode, referenceNode) => {
+  referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling)
+}
+
 const addSong = (song) => {
   if (song && !song.name) {
     return
   }
 
-  let $div = document.createElement('div')
-  $div.classList.add('Song')
-  $div.innerHTML = `<strong>${song.name}</strong> by ${song.artist}`
-  let $inner = document.querySelector('.js-inner')
-  $inner.prepend($div)
-
+  let $song = document.createElement('div')
+  $song.classList.add('Song')
+  $song.innerHTML = `I'm listening to <strong>${song.name}</strong> by ${song.artist}.`
+  let $intro = document.querySelector('.js-intro')
+  $intro.appendChild($song)
 }
+
 const onLoad = () => {
   loadLastSong()
+  addSong({ name: 123, artist: 324324})
 }
 
 
