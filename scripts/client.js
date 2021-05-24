@@ -6,7 +6,7 @@ const loadLastSong = () => {
 
   fetch(URL).then((response) => {
     console.log(response)
-    response.json((json) => {
+    response.cors((json) => {
       console.log(json)
     })
   })
