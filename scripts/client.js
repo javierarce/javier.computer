@@ -5,12 +5,16 @@ const loadLastSong = () => {
   const URL = '//last.javierarce.com/api/song'
 
   fetch(URL).then((response) => {
-    console.log(response)
-    response.cors((json) => {
-      console.log(json)
-    })
+    .then(response => response.json())
+      .then((json) => {
+        if (json.error) {
+          return console.log(json)
+        }
+        console.log(json)
+      })
   })
 }
+
 const onLoad = () => {
   loadLastSong()
 }
