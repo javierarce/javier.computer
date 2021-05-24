@@ -14,6 +14,10 @@ const loadLastSong = () => {
 }
 
 const addSong = (song) => {
+  if (song && !song.name) {
+    return
+  }
+
   let $div = document.createElement('div')
   $div.classList.add('Song')
   $div.innerHTML = `<strong>${song.name}</strong> by ${song.artist}`
