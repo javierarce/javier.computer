@@ -57,6 +57,7 @@ ul {
 }
 
 .Intro {
+  position: relative;
   width: 820px;
   margin: 0 0 3em;
   color: var(--active);
@@ -178,6 +179,25 @@ p {
   border-color: black transparent transparent transparent;
 }
 
+.Song {
+  position: absolute;
+  bottom: -2em;
+  font-size: 0.9em;
+  color: var(--active);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 350ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+}
+
+.Song.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.Song strong {
+  font-weight: bold;
+}
+
 @media all and (max-width: 1280px) {
   .Projects { 
     width: auto;
@@ -204,16 +224,21 @@ p {
   .Inner {
     padding: 1em;
   }
-  .Section ul,
   .Intro {
+    margin: 0 0 1em;
+  }
+  .Intro p {
+    font-size: 1.3em;
+  }
+  .Section ul {
     margin: 0 0 2em;
   }
   .Section ul:last-child {
     margin-bottom: 0;
   }
-
-  .Intro p {
-    font-size: 1.3em;
+  .Song {
+    position: relative;
+    bottom: auto;
   }
   body {
     font-size: 1.2em;
@@ -227,18 +252,3 @@ p {
   }
 }
 
-.Song {
-  font-size: 0.9em;
-  color: var(--active);
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 250ms ease-in-out;
-}
-.Song.is-visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-.Song strong {
-  font-weight: bold;
-}
