@@ -31,7 +31,7 @@ const SERVICES = {
       emailCount = `${count}+`
     }
 
-    let favicon = `${gmailIcon}${count}.ico`
+    let favicon = `${gmailIcon}${count}.png`
 
     if (emailCount) {
       title = `Inbox (${emailCount})`
