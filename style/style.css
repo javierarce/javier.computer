@@ -107,16 +107,22 @@ p {
 }
 
 .Project__title {
+  transition: none;
   display: block;
   height: 100%;
   border: 1px solid var(--active);
   border-radius: 4px;
-  transition: all 250ms ease-in-out;
   padding: 1em;
 }
 
 .Project__title:hover {
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  background: var(--active);
+  color: #fff;
+  border-color: var(--active);
+}
+
+.Project__title:hover .Project__description {
+  color: var(--white);
 }
 
 .Project__title {
@@ -125,6 +131,7 @@ p {
 }
 
 .Project__titleLink {
+  transition: none;
   margin: 0 0 0.4em 0;
 }
 
