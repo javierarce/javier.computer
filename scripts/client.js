@@ -30,6 +30,7 @@ const addSong = (song) => {
 }
 
 const onLoad = () => {
+  new Chameleon(['twitter', 'gmail', 'tumblr'])
   loadLastSong()
 }
 
