@@ -35,6 +35,7 @@ class Song {
     let $element = document.createElement('div')
     $element.classList.add('Song')
     $element.classList.add('js-song')
+
     return $element
   }
 
