@@ -5,7 +5,9 @@ class Song {
   constructor (parentClassName) {
     this.currentSong = {}
     this.$parent = document.body.querySelector(parentClassName)
-    this.get()
+    if (this.$parent) {
+      this.get()
+    }
   }
 
   show () {
