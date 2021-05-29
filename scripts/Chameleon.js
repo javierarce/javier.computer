@@ -1,7 +1,7 @@
 const SERVICES = { 
   wikipedia: () => {
     let title = 'Wikipedia'
-    let favicon = 'favicons/wikipedia.ico'
+    let favicon = '/favicons/wikipedia.ico'
 
     return {
       title, favicon
@@ -10,7 +10,7 @@ const SERVICES = {
 
   tumblr: () => {
     let title = 'Tumblr'
-    let favicon = 'favicons/tumblr.ico'
+    let favicon = '/favicons/tumblr.ico'
 
     return {
       title, favicon
@@ -19,7 +19,7 @@ const SERVICES = {
 
   twitter: () => {
     let title = 'Twitter'
-    let favicon = 'favicons/twitter.ico'
+    let favicon = '/favicons/twitter.ico'
 
     return {
       title, favicon
@@ -30,7 +30,7 @@ const SERVICES = {
     let title      = 'Inbox'
     let count      = Math.round(Math.random() * 12)
     let emailCount = count
-    let gmailIcon  = 'favicons/gmail_'
+    let gmailIcon  = '/favicons/gmail_'
 
     if (count === 11) {
       count      = 50
