@@ -57,7 +57,7 @@ ul {
 .Intro {
   position: relative;
   width: 820px;
-  margin: auto;
+  margin: 0 auto 3em auto;
   text-align: center;
   color: var(--text);
 }
