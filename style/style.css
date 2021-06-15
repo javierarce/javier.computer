@@ -193,6 +193,7 @@ p {
   visibility: hidden;
   opacity: 0;
   transition: opacity 350ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+  text-align: center;
 }
 
 .Song.is-visible {
