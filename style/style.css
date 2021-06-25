@@ -107,7 +107,6 @@ p {
   position: absolute;
   width: 100%;
   bottom: -2em;
-  font-size: 0.9em;
   color: var(--active);
   visibility: hidden;
   opacity: 0;
