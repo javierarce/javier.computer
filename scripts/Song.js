@@ -1,5 +1,5 @@
 const SONG_URL = '//last.javierarce.com/api/song'
-const TEMPLATE = "I'm listening to <strong>NAME</strong> by ARTIST."
+const TEMPLATE = "I'm listening to <strong>NAME</strong> by ARTIST"
 
 class Song {
   constructor (parentClassName) {
