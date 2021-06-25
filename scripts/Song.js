@@ -53,7 +53,7 @@ class Song {
 
     if (!this.$element) {
       this.$element = this.createElement()
-      this.$parent.appendChild(this.$element)
+      this.$parent.prepend(this.$element)
     } else if (this.currentSong.name && this.currentSong.name !== this.song.name) {
       this.hide()
     }
