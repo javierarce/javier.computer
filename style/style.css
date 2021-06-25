@@ -104,10 +104,7 @@ p {
 }
 
 .Song {
-  position: absolute;
-  width: 100%;
-  bottom: -2em;
-  color: var(--active);
+  color: var(--text);
   visibility: hidden;
   opacity: 0;
   transition: opacity 350ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
@@ -115,6 +112,7 @@ p {
 }
 
 .Song.is-visible {
+  margin: 0 1em 0 0;
   opacity: 1;
   visibility: visible;
 }
@@ -227,6 +225,9 @@ p {
 
 .Navigation {
   position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
   top: 1em;
   right: 2em;
 }
