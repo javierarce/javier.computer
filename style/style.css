@@ -55,7 +55,7 @@ ul {
   position: relative;
   font-size: 2em;
   color: var(--text);
-  margin: 0 0 2em 0;
+  margin: 1em 0 2em 0;
 }
 
 .Intro p {
