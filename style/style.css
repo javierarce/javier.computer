@@ -1,12 +1,19 @@
-* {
-  box-sizing: border-box;
+:root {
+  --background: #FFF;
+  --active: #3858E9;
+  --hover: #2D46BA;
+  --text: #333;
 }
 
-:root {
-  --white: #FFFFFF;
-  --active: #3858E9;
-  --hover: hsl(26deg 42% 26%);
-  --text: #333;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000;
+    --text: #fff;
+  }
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -16,7 +23,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
   color: var(--text);
-  background: var(--white);
+  background: var(--background);
 
   padding: 2em;
   margin: 0;
@@ -84,6 +91,10 @@ p {
   margin: 0 0 3em 0;
 }
 
+.Projects:last-child { 
+  margin: 0;
+}
+
 .Project__title {
   transition: none;
   display: block;
@@ -91,7 +102,13 @@ p {
 }
 
 .Projects__item {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid var(--text);
+  padding: 1.4em 0;
+}
+
+.Projects:last-child {
+  background: red;
+  border-bottom: 1px solid var(--text);
   padding: 1.4em 0;
 }
 
@@ -114,7 +131,7 @@ p {
   opacity: 0;
   transition: opacity 350ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
   text-align: center;
-  margin: 0 0.8em 0 0;
+  margin: 0 0.2em 0 0;
 }
 
 .Song.is-visible {
@@ -183,7 +200,7 @@ p {
 
   .Inner .Columns {
     column-count: 1;
-  margin-bottom: 2em;
+    margin-bottom: 2em;
   }
 
   .Inner .Columns li {
@@ -258,7 +275,7 @@ hr {
 }
 
 .Links {
-  margin: 6em 0 0 0;
+  margin: 6em auto 3em auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -275,6 +292,7 @@ hr {
 .Project__titleLink {
   font-weight: 600;
 }
+
 .Project__titleLink, 
 .Project__description {
   display: inline;
@@ -297,3 +315,4 @@ hr {
 .Section:last-child {
   margin-bottom: 0;
 }
+
