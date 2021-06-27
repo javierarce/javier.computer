@@ -89,7 +89,6 @@ p {
 }
 
 .Project__title {
-  transition: none;
   display: block;
   height: 100%;
 }
@@ -134,80 +133,6 @@ p {
 
 .Song strong {
   font-weight: bold;
-}
-
-@media all and (max-width: 1280px) {
-  .Projects { 
-    width: auto;
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media all and (max-width: 1024px) {
-  .Intro {
-    width: 100%;
-  }
-
-  .Projects__item {
-    max-width: auto;
-  }
-
-  .Projects { 
-    width: auto;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .Inner columns {
-    column-count: 2;
-  }
-
-}
-
-@media all and (max-width: 640px) {
-  .Intro {
-    margin: 0 0 1em 0;
-  }
-  .Intro p {
-    font-size: 1.3em;
-  }
-  .Section ul {
-    margin: 0 0 2em;
-  }
-  .Section ul:last-child {
-    margin-bottom: 0;
-  }
-  .Song {
-    position: relative;
-    bottom: auto;
-  }
-  body {
-    font-size: 1.2em;
-  }
-  .Projects { 
-    display: block;
-  }
-
-  .Projects__item {
-    margin: 0 0 1em;
-  }
-
-  .Inner .Columns {
-    column-count: 1;
-    margin-bottom: 2em;
-  }
-
-  .Inner .Columns li {
-    list-style: none;
-  }
-  .Inner .Navigation  {
-    position: relative;
-    margin: 0 0 1em 0;
-    top: auto;
-    left: 0;
-    right: auto;
-    width: 100%;
-    font-size: 1em;
-  }
 }
 
 
@@ -309,3 +234,99 @@ hr {
   margin-bottom: 0;
 }
 
+@media all and (max-width: 1280px) {
+  .Projects { 
+    width: auto;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .Intro {
+    width: 100%;
+  }
+
+  .Projects__item {
+    max-width: auto;
+  }
+
+  .Projects { 
+    width: auto;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .Inner columns {
+    column-count: 2;
+  }
+
+}
+
+@media all and (max-width: 640px) {
+  .Intro {
+    margin: 0 0 1em 0;
+  }
+  .Intro p {
+    font-size: 1.3em;
+  }
+  .Section ul {
+    margin: 0 0 2em;
+  }
+  .Section ul:last-child {
+    margin-bottom: 0;
+  }
+  .Song {
+    position: relative;
+    bottom: auto;
+  }
+  body {
+    font-size: 1em;
+  }
+
+  .Projects { 
+    display: block;
+  }
+
+  .Projects__item {
+    margin: 0 0 1em;
+    font-size: .7em;
+  }
+
+  .Intro {
+    font-size: 1.3em;
+    margin: 0 0 3em;
+  }
+  .Projects__item {
+    margin: 0 0 1em;
+    font-size: .7em;
+  }
+
+  .Navigation a {
+    font-size: 1.2em;
+  }
+  .Links {
+    margin: 1em 0;
+    flex-direction: column;
+  }
+
+  .Links a {
+    margin: 0 0 0.8em;
+    font-size: 1.2em;
+  }
+
+  .Inner .Columns {
+    column-count: 1;
+    margin-bottom: 2em;
+  }
+  .Inner .Columns li {
+    list-style: none;
+  }
+  .Inner .Navigation  {
+    position: relative;
+    margin: 0 0 1em 0;
+    top: auto;
+    left: 0;
+    right: auto;
+    width: 100%;
+    font-size: 1em;
+  }
+}
