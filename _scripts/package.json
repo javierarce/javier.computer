@@ -2,6 +2,7 @@
   "dependencies": {
     "are.na": "^0.1.5",
     "aws-sdk": "^2.943.0",
+    "axios": "^0.21.1",
     "csv-parser": "^3.0.0",
     "dotenv": "^10.0.0",
     "fs": "^0.0.1-security",
