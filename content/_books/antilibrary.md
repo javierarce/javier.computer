@@ -661,7 +661,6 @@ description: Books I want to read
 |**The Deadly Percheron**|John Franklin Bardin| Millipede Press | 2006|
 |**The Fortress of Solitude**|Jonathan Lethem| Vintage Contemporaries | 2004|
 |**The Crying of Lot 49**|Thomas Pynchon| Harper Perennial | 1999|
-|**The Tartar Steppe**|Dino Buzzati| Verba Mundi | 2005|
 |**Telegraph Avenue**|Michael Chabon| HarperCollins | 2012|
 |**Gamification by Design**|Gabe Zichermann| O'Reilly Media | 2011|
 

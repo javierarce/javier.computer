@@ -21,6 +21,20 @@
   line-height: 1.45;
 }
 
+.Post table {
+  width: 100%;
+  margin: 0 0 2em;
+}
+
+.Post table:last-child {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.Post.is-book table td:first-child {
+  width: 50%;
+}
+
 .Post table td {
   border: 1px solid #000;
   padding: .4em;
