@@ -1,0 +1,32 @@
+---
+layout: blog
+---
+<div class="Content">
+  {% include header.html title="Under construction" %}
+
+  <div class="Posts">
+    {% for post in site.posts %}
+    <div class="Post">
+      <div class="Post__content">
+        {% if post.show_date %}
+        <div class="Post__date">{{ post.date | date: '%B %d, %Y' }}</div>
+        {% endif %}
+        {% if post.show_title %}
+        <div class="Post__title">{{ post.title }}</div>
+        {% endif %}
+        {% if post.content contains "<!-- more -->" %}
+        {{ post.content | split:"<!-- more -->" | first }}
+        <div class="Post__more">
+          <a href="{{ post.url }}#more">Read more</a>
+        </div>
+        {% else %}
+        {{ post.content }}
+        {% endif %}
+      </div>
+
+    </div>
+    {% endfor %}
+  </div>
+
+  {% include footer.html %}
+</div>

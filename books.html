@@ -1,0 +1,15 @@
+---
+layout: blog
+---
+<div class="Content">
+  {% include header.html title="Books" %}
+  <div class="Post is-single">
+    {% for item in site.books %}
+    <p>
+      <a href="{{ item.url}}" class="Post__title">{{ item.title }}</a>
+      {{ item.description }}
+    </p>
+    {% endfor %}
+  </div>
+  {% include footer.html %}
+</div>

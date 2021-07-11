@@ -1,0 +1,121 @@
+{
+  "main": {
+    "id": "a806640acce7f282",
+    "type": "split",
+    "children": [
+      {
+        "id": "4db0004a31659a8c",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "content/_posts/2021-07-10-hongos.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f6ffaf5e60cb7c80",
+    "type": "split",
+    "children": [
+      {
+        "id": "e2b15a00ade06b2b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "76649afa7f1686d6",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "1e33aecb3b87beef",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "908c0fd89958ec44",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "79ae956b93607c9f",
+    "type": "split",
+    "children": [
+      {
+        "id": "c2caf1bfe484a4b8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f1a5c49db80dde62",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "content/_posts/2021-07-10-hongos.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "b7fc99cfd9960346",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "content/_posts/2021-07-10-hongos.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "active": "4db0004a31659a8c",
+  "lastOpenFiles": [
+    "content/_posts/Untitled.md",
+    "assets/img/Hongos Mágicos.png",
+    "_drafts/Untitled.md",
+    "_drafts/Untitled 1.md",
+    "_drafts/2021-07-04-test.md",
+    "content/_posts/2021-07-04-goodreads.md",
+    "content/_posts/2021-06-27-cms.md",
+    "content/_posts/2021-07-03-vaccine.md",
+    "_drafts/2021-07-04-idea.md",
+    "wiki/_posts/2021-06-27-making-vs-consuming.md"
+  ]
+}

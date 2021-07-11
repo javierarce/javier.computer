@@ -1,0 +1,31 @@
+.Header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+  width: 100%;
+  color: #fff;
+  background: #000;
+  margin: 0;
+  overflow: hidden;
+  user-select: none;
+}
+
+.Header__title {
+  font-size: 10vh;
+  line-height: normal;
+  text-align: center;
+}
+
+.Header > .Navigation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.Header > .Navigation__link {
+  color: var(--white);
+}
+

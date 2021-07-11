@@ -1,0 +1,30 @@
+---
+layout: blog
+---
+<div class="Content">
+  {% include header.html title="Projects" %}
+
+  <div class="Posts">
+    {% for post in site.projects %}
+    <div class="Post">
+      <div class="Post__content">
+        <div class="Post__title">{{ post.title }}</div>
+        {% if post.content contains "<!-- more -->" %}
+        {{ post.content | split:"<!-- more -->" | first }}
+        <div class="Post__more">
+          <a href="{{ post.url }}#more">Read more</a>
+        </div>
+        {% else %}
+        {{ post.content }}
+        {% endif %}
+        <div class="Post__more">
+          <a href="{{ post.link }}">Visit project</a>
+        </div>
+      </div>
+
+    </div>
+    {% endfor %}
+  </div>
+
+  {% include footer.html %}
+</div>

@@ -1,0 +1,15 @@
+---
+layout: blog
+---
+<div class="Content">
+  {% include header.html title="Concepts" %}
+  <div class="Posts">
+    {% for item in site.concepts %}
+    <div class="Post">
+      <div class="Post__title">{{ item.title }}</div>
+      {{ item.content }}
+    </div>
+    {% endfor %}
+  </div>
+  {% include footer.html %}
+</div>

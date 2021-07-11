@@ -1,0 +1,18 @@
+---
+layout: blog
+---
+{% include navigation.html %}
+
+<div class="Content is-centered">
+  <div class="Post is-single">
+    <div class="Post__header">
+      <div class="Post__date">{{ page.date | date: '%B %d, %Y' }}</div>
+      <a class="Post__title" href="{{ page.url }}">{{ page.title }}</a>
+    </div>
+    <div class="Post__content">
+      {{ content }}
+    </div>
+  </div>
+</div>
+
+{% include footer.html %}

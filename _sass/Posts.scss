@@ -1,0 +1,84 @@
+.Posts {
+  column-count: 5;
+  column-rule: black;
+  column-rule-width: 1px;
+  column-rule-style: solid;
+  column-gap: 1px;
+}
+
+.Post {
+  padding: 1em;
+  break-inside: avoid;
+  border-bottom: 1px solid black;
+}
+
+.Post.is-book,
+.Post.is-table {
+  width: 100%;
+  margin: 0 auto 2em auto;
+  border: none;
+  font-size: 1em;
+  line-height: 1.45;
+}
+
+.Post table td {
+  border: 1px solid #000;
+  padding: .4em;
+}
+
+.Post table th {
+  background: #000;
+  padding: .4em;
+  color: #fff;
+}
+
+.Post.is-single {
+  width: 800px;
+  margin: auto;
+  border: none;
+  font-size: 1.3em;
+  line-height: 1.45;
+}
+
+.Post blockquote {
+  margin: 0;
+  font-style: italic;
+  margin-bottom: 1em;
+  font-size: .9em;
+}
+
+.Post__title {
+  display: block;
+  font-weight: bold;
+  margin: 0 0 .4em;
+}
+
+.Post__date {
+  opacity: 0.5;
+  font-size: 0.8em;
+  user-select: none;
+  margin: 0 0 .4em;
+}
+
+.Post__more {
+  font-size: 0.8em;
+}
+
+.Post p:last-child{
+  margin: 0;
+}
+
+@media all and (max-width: 1280px) {
+}
+
+@media all and (max-width: 1024px) {
+  .Posts {
+    column-count: 3;
+  }
+}
+
+@media all and (max-width: 640px) {
+  .Posts {
+    column-count: 1;
+  }
+}

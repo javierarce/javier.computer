@@ -1,0 +1,167 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+@import '_reset';
+@import 'Navigation';
+@import 'Song';
+@import 'Header';
+@import 'Posts';
+@import 'Footer';
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #FFF;
+  --active: #000; 
+  --hover: #000;
+  --text: #000;
+  --background: #FFF;
+}
+
+.Inner, html, body {
+  height: 100%;
+}
+
+body {
+  color: var(--text);
+  background: var(--background);
+
+  font-size: 1.4em;
+  line-height: 1.45;
+  font-weight: normal;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--active);
+  font-weight: 600;
+}
+
+a:hover {
+  cursor: pointer;
+  color: var(--hover);
+  text-decoration: underline;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: 500;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.Pagination {
+  margin: auto auto 2em auto;
+  width: 100%;
+  text-align: center;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.45;
+  margin: 0 0 1em 0;
+}
+
+p img {
+  width: 100%;
+}
+
+blockquote { 
+  margin: 0 0 1em 2em;
+} 
+
+blockquote p { 
+  text-align: left;
+} 
+
+.Content.is-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.Error {
+  padding: 1em;
+}
+
+@media all and (max-width: 1280px) {
+}
+
+@media all and (max-width: 1024px) {
+}
+
+@media all and (max-width: 640px) {
+  body {
+    //font-size: 1.2em;
+  }
+}
+
+ul {
+  margin: 0 0 0 1em;
+}
+
+ul li {
+  margin: 0 0 .4em 0;
+  list-style: disc;
+}
+
+.Page {
+  padding: 1em;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid var(--text);
+  margin: 1em 0;
+}
+
+h2,
+h3,
+h4 {
+  font-weight: bold;
+  margin: 0 0 1em;
+}
+
+.About {
+  column-count: 3;
+  padding: 2em;
+  border: none;
+  //background: rgb(238, 254, 207);
+  margin-bottom: 1px;
+}
+
+.About ul {
+  list-style: none;
+  margin: 0;
+}
+.About ul > li {
+  list-style: none;
+}
+.About ul > li {
+  text-indent: -5px;
+}
+.About ul > li:before {
+  content: "- ";
+  text-indent: -5px;
+}
+
+
+
+
+
+

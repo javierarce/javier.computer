@@ -1,0 +1,10 @@
+.Song {
+  width: 100%;
+  font-size: 0.7em;
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+}
+
+.Song.is-visible {
+  opacity: 1;
+}

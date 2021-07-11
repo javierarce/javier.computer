@@ -1,0 +1,17 @@
+---
+layout: blog
+---
+
+<div class="Content">
+  <div class="Page">
+    <div class="Page__header">
+      <div class="Page__date">{{ page.date | date: '%B %d, %Y' }}</div>
+      <a class="Page__title" href="{{ page.url }}">{{ page.title }}</a>
+    </div>
+    <div class="Page__content">
+      {{ content }}
+    </div>
+  </div>
+</div>
+{% include footer.html %}
+</div>

@@ -1,0 +1,9 @@
+{
+  "newFileLocation": "folder",
+  "newFileFolderPath": "_drafts",
+  "newLinkFormat": "shortest",
+  "useMarkdownLinks": true,
+  "attachmentFolderPath": "./assets/img",
+  "showFrontmatter": true,
+  "promptDelete": false
+}

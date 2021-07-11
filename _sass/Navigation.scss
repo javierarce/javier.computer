@@ -1,0 +1,34 @@
+.Navigation {
+  position: relative;
+  width: 100%;
+  padding: 1em;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.Navigation__links {
+  color: var(--black);
+  font-size: 1em;
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.Navigation__link {
+  margin: 0 0 0 1em;
+  color: var(--black);
+  font-size: 1em;
+  text-decoration: none;
+}
+
+.Navigation__link:hover {
+  color: var(--black);
+  text-decoration: underline;
+}
+
+@media all and (max-width: 900px) {
+}

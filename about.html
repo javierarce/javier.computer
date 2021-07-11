@@ -1,0 +1,21 @@
+---
+layout: blog
+title:  About
+permalink: about
+---
+
+<div class="Header">
+  <div class="Navigation js-nav">
+    <div class="Navigation__links">
+      <a class="Navigation__link" href="/">Home</a>
+    </div>
+  </div>
+  <div class="Header__title">About</div>
+</div>
+<div class="About">
+  {% capture myinclude %}{% include about.md %}{% endcapture %}
+  {{ myinclude | markdownify }}
+</div>
+
+{% include footer.html %}
+
