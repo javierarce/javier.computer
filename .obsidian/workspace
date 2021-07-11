@@ -7,8 +7,11 @@
         "id": "4db0004a31659a8c",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "content/_posts/2021-07-11-reading.md",
+            "mode": "source"
+          }
         }
       }
     ],
@@ -73,6 +76,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "content/_posts/2021-07-11-reading.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,6 +93,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "content/_posts/2021-07-11-reading.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -102,15 +107,15 @@
   },
   "active": "4db0004a31659a8c",
   "lastOpenFiles": [
+    "_drafts/Untitled.md",
+    "_drafts/helo.md",
+    "_drafts/2021-07-04-test.md",
+    "_templates/Post.md",
     "content/_posts/2021-07-10-hongos.md",
     "content/_posts/Untitled.md",
     "assets/img/Hongos Mágicos.png",
-    "_drafts/Untitled.md",
     "_drafts/Untitled 1.md",
-    "_drafts/2021-07-04-test.md",
     "content/_posts/2021-07-04-goodreads.md",
-    "content/_posts/2021-06-27-cms.md",
-    "content/_posts/2021-07-03-vaccine.md",
-    "_drafts/2021-07-04-idea.md"
+    "content/_posts/2021-06-27-cms.md"
   ]
 }
