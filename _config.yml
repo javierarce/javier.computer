@@ -45,6 +45,9 @@ collections:
   projects:
     output: true
     permalink: '/projects/:path/'
+  texts:
+    output: true
+    permalink: '/texts/:path/'
   concepts:
     output: true
     permalink: '/concepts/:path/'

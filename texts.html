@@ -1,0 +1,16 @@
+---
+layout: blog
+---
+<div class="Content">
+  {% include header.html title="Texts" %}
+
+  <div class="Posts">
+    {% for post in site.texts %}
+    <div class="Post">
+      <a href={{post.url}} class="Post__title">{{ post.title }}</a>
+    </div>
+    {% endfor %}
+  </div>
+
+  {% include footer.html %}
+</div>
