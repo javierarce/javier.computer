@@ -7,11 +7,8 @@
         "id": "4db0004a31659a8c",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "content/_posts/2021-07-10-hongos.md",
-            "mode": "source"
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -76,7 +73,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/_posts/2021-07-10-hongos.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +89,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/_posts/2021-07-10-hongos.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
