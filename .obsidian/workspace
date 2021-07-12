@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/_posts/2021-07-11-reading.md",
+            "file": "content/_books/antilibrary.md",
             "mode": "source"
           }
         }
@@ -60,7 +60,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 354,
+    "collapsed": true
   },
   "right": {
     "id": "79ae956b93607c9f",
@@ -76,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/_posts/2021-07-11-reading.md",
+                "file": "content/_books/antilibrary.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/_posts/2021-07-11-reading.md",
+                "file": "content/_books/antilibrary.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -103,10 +104,12 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "active": "4db0004a31659a8c",
   "lastOpenFiles": [
+    "content/_books/antilibrary.md",
     "_drafts/Untitled.md",
     "_drafts/helo.md",
     "_drafts/2021-07-04-test.md",
@@ -115,7 +118,6 @@
     "content/_posts/Untitled.md",
     "assets/img/Hongos Mágicos.png",
     "_drafts/Untitled 1.md",
-    "content/_posts/2021-07-04-goodreads.md",
-    "content/_posts/2021-06-27-cms.md"
+    "content/_posts/2021-07-04-goodreads.md"
   ]
 }
