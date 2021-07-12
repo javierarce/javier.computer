@@ -5,7 +5,7 @@ description: Books I want to read
 ---
 | Title | Author | Publisher | Year |
 |:-------|:-------|:---- |:-----|
-|The Player of Games|Iain M. Banks| - | - |
+|**The Player of Games**|Iain M. Banks| - | - |
 |**The Three Electroknights**|Stanisław Lem| Penguin Classics | 2018|
 |**The Cyberiad**|Stanisław Lem| Harcourt | 2002|
 |**This Is Your Mind on Plants**|Michael Pollan| Penguin Press | 2021|
