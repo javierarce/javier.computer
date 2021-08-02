@@ -19,15 +19,15 @@
 # in the templates via {{ site.myvariable }}.
 
 version: 4.0.5
-title: Output
+title: Reading Systems
 author: Javier Arce
 email: javierarce@gmail.com
 generator: Magic
 destination: docs
 timezone: Europe/Madrid # add your own locale timezone
-description: Output
+description: Reading Systems
 baseurl: "" 
-url: "https://reading.systems" 
+url: "https://reading.systems"
 twitter_username: javier
 github_username:  javierarce
 

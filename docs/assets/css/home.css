@@ -53,7 +53,6 @@ ul {
 .Intro {
   width: 70%;
   position: relative;
-  font-size: 2em;
   color: var(--text);
   margin: 1em 0 2em 0;
 }
@@ -61,7 +60,7 @@ ul {
 .Intro p {
   margin: 0;
   line-height: 1.4;
-  font-size: 1.7em;
+  font-size: 3em;
   font-weight: 300;
 }
 
@@ -235,8 +234,14 @@ hr {
 }
 
 @media all and (max-width: 1280px) {
+  body {
+    font-size: 1.1em;
+  }
+  .Intro {
+    width: 75%;
+  }
   .Projects { 
-    width: auto;
+    width: 75%;
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -262,6 +267,10 @@ hr {
 }
 
 @media all and (max-width: 640px) {
+  body {
+    font-size: 1em;
+  }
+
   .Intro {
     margin: 0 0 1em 0;
   }
@@ -278,10 +287,6 @@ hr {
     position: relative;
     bottom: auto;
   }
-  body {
-    font-size: 1em;
-  }
-
   .Projects { 
     display: block;
   }

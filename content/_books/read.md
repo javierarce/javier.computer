@@ -1,6 +1,6 @@
 ---
 title: "Read"
-layout: book
+layout: table
 description: Books I've read
 ---
 

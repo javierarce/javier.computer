@@ -1,6 +1,6 @@
 ---
 title: "Antilibrary"
-layout: book
+layout: table
 description: Books I want to read
 ---
 | Title | Author | Publisher | Year |

@@ -5,10 +5,21 @@ layout: blog
   {% include header.html title="Books" %}
   <div class="Post is-single">
     {% for item in site.books %}
+    {% if item.book <> true %}
     <p>
       <a href="{{ item.url}}" class="Post__title">{{ item.title }}</a>
       {{ item.description }}
     </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+  <div class="Books">
+    {% for item in site.books %}
+    {% if item.book %}
+    <div class="Book">
+    {{ item.content }}
+    </div>
+    {% endif %}
     {% endfor %}
   </div>
   {% include footer.html %}
