@@ -1,15 +1,9 @@
 .Posts {
-  column-count: 5;
-  column-rule: black;
-  column-rule-width: 1px;
-  column-rule-style: solid;
-  column-gap: 1px;
+  width: 800px;
 }
 
 .Post {
-  padding: 1em;
-  break-inside: avoid;
-  border-bottom: 1px solid black;
+  margin: 0 0 3em;
 }
 
 .Post.is-book img {
@@ -70,19 +64,22 @@
   margin: 0 0 .4em;
 }
 
+.Post__content {
+  margin: 0 0 0.4em 0;
+}
+
+.Post__content p:last-child{
+  margin: 0;
+}
+
 .Post__date {
   opacity: 0.5;
   font-size: 0.8em;
   user-select: none;
-  margin: 0 0 .4em;
 }
 
 .Post__more {
   font-size: 0.8em;
-}
-
-.Post p:last-child{
-  margin: 0;
 }
 
 @media all and (max-width: 1280px) {

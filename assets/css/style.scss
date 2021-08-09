@@ -15,11 +15,10 @@
 }
 
 :root {
-  --white: #FFF;
-  --active: #000; 
-  --hover: #000;
-  --text: #000;
-  --background: #FFF;
+  --active: #FFF; 
+  --hover: #FFF;
+  --text: #FFF;
+  --background: #0053DB;
 }
 
 .Inner, html, body {
@@ -88,10 +87,8 @@ blockquote p {
   text-align: left;
 } 
 
-.Content.is-centered {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.Content {
+  padding: 2em;
 }
 
 .Error {
@@ -138,9 +135,9 @@ h4 {
 
 .About {
   column-count: 3;
-  padding: 2em;
   border: none;
-  //background: rgb(238, 254, 207);
+  column-gap: 1em;
+  padding: 2em;
   margin-bottom: 1px;
 }
 
