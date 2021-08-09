@@ -13,6 +13,17 @@
             "mode": "source"
           }
         }
+      },
+      {
+        "id": "f879538b56dbdda4",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "conflict-files-obsidian-git.md",
+            "mode": "source"
+          }
+        }
       }
     ],
     "direction": "vertical"
@@ -76,7 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/_posts/2021-08-09-live.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/_posts/2021-08-09-live.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -106,8 +117,9 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "375e5e6e84434403",
+  "active": "f879538b56dbdda4",
   "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
     "content/_posts/2021-08-09-live.md",
     "content/_posts/2021-08-07-saturday.md",
     "content/_posts/2021-07-11-reading.md",
@@ -116,7 +128,6 @@
     "content/_posts/2021-07-10-rogue.md",
     "content/_posts/2021-07-04-goodreads.md",
     "content/_posts/2021-07-03-vaccine.md",
-    "content/_posts/2021-06-27-cms.md",
-    "content/_posts/2021-06-27-busy.md"
+    "content/_posts/2021-06-27-cms.md"
   ]
 }
