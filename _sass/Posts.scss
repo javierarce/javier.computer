@@ -4,6 +4,7 @@
 
 .Post {
   margin: 0 0 3em;
+  font-size: 1.2em;
 }
 
 .Post.is-book img {
@@ -45,14 +46,6 @@
   color: #fff;
 }
 
-.Post.is-single {
-  width: 800px;
-  margin: auto;
-  border: none;
-  font-size: 1.3em;
-  line-height: 1.45;
-}
-
 .Post blockquote {
   margin: 0 0 1em 0;
   font-style: italic;
@@ -76,6 +69,16 @@
   opacity: 0.5;
   font-size: 0.8em;
   user-select: none;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.Post__date:hover {
+  opacity: 0.5;
+  font-size: 0.8em;
+  user-select: none;
+  text-decoration: none;
+  font-weight: normal;
 }
 
 .Post__more {
@@ -87,12 +90,12 @@
 
 @media all and (max-width: 1024px) {
   .Posts {
-    column-count: 3;
+    width: 100%;
+  }
+  .Post {
+    font-size: 1em;
   }
 }
 
 @media all and (max-width: 640px) {
-  .Posts {
-    column-count: 1;
-  }
 }
