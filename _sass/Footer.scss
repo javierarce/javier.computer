@@ -1,21 +1,20 @@
 .Footer {
   display: flex;
-  display: none;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 1em;
-  text-align: center;
-  font-size: 0.9em;
 }
 
 .Footer__link {
   text-decoration: none;
+  opacity: 0.5;
 }
 
-.Footer__date {
-  font-size: .7em;
+.Footer__link:hover {
+  text-decoration: none;
+  opacity: 1;
 }
+
 
 @media all and (max-width: 1280px) {
 }
