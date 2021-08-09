@@ -19,7 +19,7 @@
 # in the templates via {{ site.myvariable }}.
 
 version: 4.0.5
-title: Reading Systems
+title: Javier Arce
 author: Javier Arce
 email: javierarce@gmail.com
 generator: Magic
@@ -27,7 +27,7 @@ destination: docs
 timezone: Europe/Madrid # add your own locale timezone
 description: Reading Systems
 baseurl: "" 
-url: "https://reading.systems"
+url: "https://javierarce.com
 twitter_username: javier
 github_username:  javierarce
 
