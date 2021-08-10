@@ -64,9 +64,15 @@ ul {
 }
 
 .Pagination {
+  font-size: .9em;
   margin: auto auto 2em auto;
-  width: 100%;
-  text-align: center;
+}
+.Pagination__item {
+  margin: 0 1em 0 0;
+}
+
+.Pagination__item.is-selected {
+  opacity: .5;
 }
 
 p {

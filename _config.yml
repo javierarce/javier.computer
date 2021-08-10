@@ -41,6 +41,9 @@ plugins:
   - jekyll-feed
   - jekyll-wikilinks
 
+paginate: 10
+paginate_path: "/page/:num/"
+
 collections:
   projects:
     output: true

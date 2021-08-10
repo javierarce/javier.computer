@@ -10,7 +10,7 @@ layout: blog
 
 <div class="Content">
   <div class="Posts">
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
     <div class="Post">
       {% if post.show_title %}
       <div class="Post__title">{{ post.title }}</div>
@@ -25,11 +25,24 @@ layout: blog
         {{ post.content }}
         {% endif %}
       </div>
-      {% if post.show_date %}
       <a href="{{ post.url }}" class="Post__date">{{ post.date | date: '%B %d, %Y' }}</a>
-      {% endif %}
     </div>
     {% endfor %}
+
+  {% if paginator.total_pages > 1 %}
+  <div class="Pagination">
+    {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+    <span class="Pagination__item is-selected">{{ page }}</span>
+    {% elsif page == 1 %}
+    <a class="Pagination__item" href="{{ '/' | relative_url }}">{{ page }}</a>
+    {% else %}
+    <a class="Pagination__item" href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+    {% endif %}
+    {% endfor %}
+
+  </div>
+  {% endif %}
   </div>
 
   {% include footer.html %}
