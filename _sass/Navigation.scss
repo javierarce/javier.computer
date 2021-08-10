@@ -25,6 +25,10 @@
   text-decoration: none;
 }
 
+.Navigation__link.is-selected {
+  opacity: 0.5;
+}
+
 .Navigation__link:hover {
   color: var(--black);
   text-decoration: underline;
