@@ -15,9 +15,10 @@
 }
 
 :root {
-  --active: #FFF; 
-  --hover: #FFF;
-  --text: #FFF;
+  --white: #FFF;
+  --active: var(--white);
+  --hover: var(--white);
+  --text: var(--white);
   --background: #0053DB;
 }
 

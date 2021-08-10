@@ -2,12 +2,14 @@
 layout: blog
 ---
 
-{% include header.html title=page.title %}
+{% include navigation.html %}
 
-<div class="Post is-book">
-  <div class="Post__content">
-    {{ content }}
+<div class="Content">
+  <div class="Post is-book">
+    <div class="Post__content">
+      {{ content }}
+    </div>
   </div>
+  {% include footer.html %}
 </div>
 
-{% include footer.html %}

@@ -1,8 +1,9 @@
 ---
 layout: blog
 ---
+{% include navigation.html %}
+
 <div class="Content">
-  {% include header.html title="Books" %}
   <div class="Post is-single">
     {% for item in site.books %}
     {% if item.book <> true %}
@@ -17,10 +18,9 @@ layout: blog
     {% for item in site.books %}
     {% if item.book %}
     <div class="Book">
-    {{ item.content }}
+      {{ item.content }}
     </div>
     {% endif %}
     {% endfor %}
   </div>
-  {% include footer.html %}
 </div>

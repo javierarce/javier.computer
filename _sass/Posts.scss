@@ -18,6 +18,11 @@
   width: 800px;
 }
 
+.Post img {
+  display: block;
+  max-width: 400px;
+}
+
 .Post.is-book img {
   display: block;
   max-width: 400px;
@@ -47,14 +52,19 @@
 }
 
 .Post table td {
-  border: 1px solid #000;
+  border: 1px solid var(--white);
   padding: .4em;
 }
 
+.Post table thead {
+  border: 1px solid var(--white);
+}
+
 .Post table th {
-  background: #000;
-  padding: .4em;
-  color: #fff;
+  background: var(--white);
+  padding: 0.4em;
+  color: var(--background);
+  font-weight: bold;
 }
 
 .Post blockquote {
