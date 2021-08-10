@@ -4,10 +4,18 @@ title:  About
 permalink: about
 ---
 
-<div class="About">
-  {% capture myinclude %}{% include about.md %}{% endcapture %}
-  {{ myinclude | markdownify }}
+<div class="Navigation js-nav">
+  <div class="Navigation__links">
+    <a class="Navigation__link" href="/">Home</a>
+  </div>
 </div>
 
+<div class="Content">
+  <div class="About">
+    {% capture myinclude %}{% include about.md %}{% endcapture %}
+    {{ myinclude | markdownify }}
+  </div>
+
 {% include footer.html %}
+</div>
 

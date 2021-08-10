@@ -134,28 +134,24 @@ h4 {
 }
 
 .About {
-  column-count: 3;
-  border: none;
-  column-gap: 1em;
-  padding: 2em;
-  margin-bottom: 1px;
+  width: 800px;
+  font-size: 1.2em;
+  margin: 0 0 3em;
 }
 
-.About ul {
-  list-style: none;
-  margin: 0;
-}
-.About ul > li {
-  list-style: none;
-}
-.About ul > li {
-  text-indent: -5px;
-}
-.About ul > li:before {
-  content: "- ";
-  text-indent: -5px;
+.About h3:first-child {
+  margin-top: 0;
 }
 
+.About h3 {
+  margin-top: 3em;
+  opacity: 0.5;
+}
+
+.About ul > li {
+  list-style: disc;
+  margin: 0 0 1em 0;
+}
 
 .Books {
   margin: auto;
