@@ -7,6 +7,17 @@
   font-size: 1.2em;
 }
 
+.Posts.is-single {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.Posts.is-single .Post {
+  width: 800px;
+}
+
 .Post.is-book img {
   display: block;
   max-width: 400px;

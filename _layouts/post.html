@@ -2,13 +2,16 @@
 layout: blog
 ---
 
+{% include navigation.html %}
+
 <div class="Content">
-  <div class="Post is-single">
-    <div class="Post__content">
-      {{ content }}
+  <div class="Posts is-single">
+    <div class="Post">
+      <div class="Post__content">
+        {{ content }}
+      </div>
+      <div class="Post__date">{{ page.date | date: '%B %d, %Y' }}</div>
     </div>
-    <div class="Post__date">{{ page.date | date: '%B %d, %Y' }}</div>
   </div>
 </div>
 
-{% include footer.html %}
