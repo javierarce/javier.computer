@@ -1,7 +1,8 @@
 .Navigation {
   position: relative;
   width: 100%;
-  padding: 1em;
+  margin: 1em 0 2em 0;
+  padding: 0 1em 0 0;
 
   display: flex;
   align-items: center;
@@ -19,7 +20,7 @@
 }
 
 .Navigation__link {
-  margin: 0 0 0 1em;
+  margin: 0 0 0 0.8em;
   color: var(--black);
   font-size: 1em;
   text-decoration: none;
@@ -34,5 +35,13 @@
   text-decoration: underline;
 }
 
-@media all and (max-width: 900px) {
+@media all and (max-width: 640px) {
+  .Navigation {
+    justify-content: flex-start;
+  }
+
+  .Navigation__links {
+    font-size: 1.1em;
+    margin: 0 0 0 0.4em;
+  }
 }

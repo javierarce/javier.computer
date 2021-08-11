@@ -24,12 +24,9 @@
 
 @media all and (max-width: 640px) {
   .Footer {
-    flex-direction: column;
+    display: block;
   }
   .Footer__link {
-    margin: 0 0 1em;
-  }
-  .Footer__link:last-child {
-    margin: 0;
+    margin: 0 0.4em 0 0;
   }
 }

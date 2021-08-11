@@ -110,7 +110,10 @@ blockquote p {
 
 @media all and (max-width: 640px) {
   body {
-    //font-size: 1.2em;
+    font-size: 1.1em;
+  }
+  .Content {
+    padding: 1em;
   }
 }
 
@@ -170,6 +173,7 @@ h4 {
 .Book {
   width: 380px;
 }
+
 .Book img {
   display: block;
 }
