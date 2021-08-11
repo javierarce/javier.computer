@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/_posts/2021-08-10-tuesday.md",
+            "file": "_drafts/2021-08-11-2021-08-11.md",
             "mode": "source"
           }
         }
@@ -84,7 +84,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/_posts/2021-08-10-tuesday.md",
+                "file": "_drafts/2021-08-11-2021-08-11.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,7 +101,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/_posts/2021-08-10-tuesday.md",
+                "file": "_drafts/2021-08-11-2021-08-11.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -116,6 +116,7 @@
   },
   "active": "375e5e6e84434403",
   "lastOpenFiles": [
+    "_drafts/Untitled.md",
     "content/_posts/2021-08-10-tuesday.md",
     "content/_posts/2021-08-09-live.md",
     "assets/img/Pasted image 20210810200210.png",
@@ -124,7 +125,6 @@
     "content/_posts/2021-07-10-rogue.md",
     "assets/img/Pasted image 20210810195516.png",
     "content/_posts/assets/img/Pasted image 20210810195516.png",
-    "content/_posts/2021-06-27-busy.md",
-    "content/_posts/2021-07-11-reading.md"
+    "content/_posts/2021-06-27-busy.md"
   ]
 }
