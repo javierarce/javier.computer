@@ -15,7 +15,14 @@ class Weather {
         return console.error(json)
       }
 
-      console.log(json)
+    let description = json.weather[0].description
+    let temperature = json.main.temp
+    let feelsLike = json.main.feels_like
+    let humidity = json.main.humidity
+    let sunset = new Date(json.sys.sunset).toLocaleTimeString()
+
+    let weatherDescription = `${description}. The temperature in Madrid is ${temperature}ºC (feels like ${feelsLike}ºC). Humidity: ${humidity}%. Sunset time is ${sunset}.`
+      console.log(weatherDescription)
 
     }).catch((error) => {
       console.error(error)
