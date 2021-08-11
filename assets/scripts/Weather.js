@@ -15,7 +15,7 @@ class Weather {
         return console.error(json)
       }
 
-      console.log(response)
+      console.log(json)
 
     }).catch((error) => {
       console.error(error)
