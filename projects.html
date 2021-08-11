@@ -6,11 +6,11 @@ layout: blog
 
 <div class="Content">
 
-  <div class="Posts">
+  <div class="Posts is-projects">
     {% for post in site.projects %}
     <div class="Post">
       <div class="Post__content">
-        <div class="Post__title">{{ post.title }}</div>
+        <a class="Post__title" href="{{ post.link }}">{{ post.title }}</a>
         {% if post.content contains "<!-- more -->" %}
         {{ post.content | split:"<!-- more -->" | first }}
         <div class="Post__more">
@@ -19,9 +19,6 @@ layout: blog
         {% else %}
         {{ post.content }}
         {% endif %}
-        <div class="Post__more">
-          <a href="{{ post.link }}">Visit project</a>
-        </div>
       </div>
 
     </div>
