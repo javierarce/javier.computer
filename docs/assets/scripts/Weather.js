@@ -19,14 +19,13 @@ class Weather extends HTMLParagraphElement {
         return console.error(json)
       }
 
-      let description = json.weather[0].description
+      let description = this.capitalizeFirstLetter(json.weather[0].description)
       let temperature = json.main.temp
       let feelsLike = json.main.feels_like
       let humidity = json.main.humidity
       let sunset = new Date(json.sys.sunset).toLocaleTimeString()
 
       this.weatherDescription = `${description}. The temperature in Madrid is ${temperature}ºC (feels like ${feelsLike}ºC). Humidity: ${humidity}%. Sunset time is ${sunset}.`
-
       this.render(this.weatherDescription)
 
     }).catch((error) => {
@@ -39,6 +38,10 @@ class Weather extends HTMLParagraphElement {
     text.textContent = description
     let shadow = this.attachShadow({ mode: 'open' })
     shadow.appendChild(text)
+  }
+
+  capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
   }
 }
 

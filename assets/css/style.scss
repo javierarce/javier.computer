@@ -26,6 +26,10 @@
   height: 100%;
 }
 
+p.is-light {
+  opacity: .5;
+}
+
 body {
   color: var(--text);
   background: var(--background);

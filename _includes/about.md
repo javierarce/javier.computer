@@ -1,4 +1,4 @@
-<p is="weather-description"></p>
+<p class="is-light" is="weather-description"></p>
 
 ### About this website
 
