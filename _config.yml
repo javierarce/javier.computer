@@ -59,7 +59,8 @@ collections:
     permalinks: '/books/:path'
 collections_dir: content
 
-permalink: :title
+permalink: /:year/:month/:day/:title
+
 wikilinks:
   enable: true
   exclude: []

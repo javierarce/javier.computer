@@ -2,7 +2,10 @@
 
 This page contains a wiki, a blog post, a collection of jokes, a hidden passage to another dimension, a list of dog names.
 
+<p is="weather-description"></p>
+
 I'm my worst self when I spend most of my time consuming instead of making.  Specially when the consuming part happens inside of a social network. This website is my attempt to spend less time consuming and more making.
+
 
 ### About me
 

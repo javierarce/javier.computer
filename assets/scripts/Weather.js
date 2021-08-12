@@ -1,7 +1,8 @@
 const WEATHER_ENDPOINT = '//last.javierarce.com/api/weather'
 
-class Weather {
+class Weather extends HTMLParagraphElement {
   constructor () {
+    super()
     this.get()
   }
 
@@ -15,17 +16,24 @@ class Weather {
         return console.error(json)
       }
 
-    let description = json.weather[0].description
-    let temperature = json.main.temp
-    let feelsLike = json.main.feels_like
-    let humidity = json.main.humidity
-    let sunset = new Date(json.sys.sunset).toLocaleTimeString()
+      let description = json.weather[0].description
+      let temperature = json.main.temp
+      let feelsLike = json.main.feels_like
+      let humidity = json.main.humidity
+      let sunset = new Date(json.sys.sunset).toLocaleTimeString()
 
-    let weatherDescription = `${description}. The temperature in Madrid is ${temperature}ºC (feels like ${feelsLike}ºC). Humidity: ${humidity}%. Sunset time is ${sunset}.`
-      console.log(weatherDescription)
-
+      let weatherDescription = `${description}. The temperature in Madrid is ${temperature}ºC (feels like ${feelsLike}ºC). Humidity: ${humidity}%. Sunset time is ${sunset}.`
     }).catch((error) => {
       console.error(error)
     })
   }
+
+  render (description) {
+    const text = document.createElement('span')
+    text.textContent = description
+    let shadow = this.attachShadow({ mode: 'open' })
+    shadow.appendChild(text)
+  }
 }
+
+customElements.define('weather-description', Weather, { extends: 'p' })

@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: about
 title:  About
 permalink: about
 ---
@@ -8,8 +8,8 @@ permalink: about
 
 <div class="Content">
   <div class="About">
-    {% capture myinclude %}{% include about.md %}{% endcapture %}
-    {{ myinclude | markdownify }}
+    {% capture about %}{% include about.md %}{% endcapture %}
+    {{ about | markdownify }}
   </div>
 
 {% include footer.html %}
