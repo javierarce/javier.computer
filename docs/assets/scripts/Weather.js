@@ -3,7 +3,12 @@ const WEATHER_ENDPOINT = '//last.javierarce.com/api/weather'
 class Weather extends HTMLParagraphElement {
   constructor () {
     super()
-    this.get()
+
+    if (this.weatherDescription) {
+      this.render(this.weatherDescription)
+    } else {
+      this.get()
+    }
   }
 
   get () {
@@ -22,7 +27,10 @@ class Weather extends HTMLParagraphElement {
       let humidity = json.main.humidity
       let sunset = new Date(json.sys.sunset).toLocaleTimeString()
 
-      let weatherDescription = `${description}. The temperature in Madrid is ${temperature}ºC (feels like ${feelsLike}ºC). Humidity: ${humidity}%. Sunset time is ${sunset}.`
+      this.weatherDescription = `${description}. The temperature in Madrid is ${temperature}ºC (feels like ${feelsLike}ºC). Humidity: ${humidity}%. Sunset time is ${sunset}.`
+
+      this.render(this.weatherDescription)
+
     }).catch((error) => {
       console.error(error)
     })
