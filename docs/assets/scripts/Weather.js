@@ -3,12 +3,10 @@ const WEATHER_ENDPOINT = '//last.javierarce.com/api/weather'
 class Weather extends HTMLParagraphElement {
   constructor () {
     super()
+  }
 
-    if (this.weatherDescription) {
-      this.render(this.weatherDescription)
-    } else {
-      this.get()
-    }
+  connectedCallback () {
+    this.get()
   }
 
   get () {
