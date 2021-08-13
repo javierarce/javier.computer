@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "_includes/about.md",
+            "file": "_drafts/2021-08-13-too-many-domains.md",
             "mode": "source"
           }
         }
@@ -76,7 +76,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_includes/about.md",
+                "file": "_drafts/2021-08-13-too-many-domains.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +93,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_includes/about.md",
+                "file": "_drafts/2021-08-13-too-many-domains.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -108,6 +108,7 @@
   },
   "active": "375e5e6e84434403",
   "lastOpenFiles": [
+    "_drafts/Untitled.md",
     "_includes/about.md",
     "content/_posts/2021-08-11-tuesday.md",
     "content/_posts/2021-08-07-saturday.md",
@@ -116,7 +117,6 @@
     "content/_posts/2021-08-08-sunday.md",
     "content/_posts/2021-07-11-reading.md",
     "content/_posts/2021-07-10-rogue.md",
-    "content/_posts/2021-07-04-goodreads.md",
-    "content/_posts/2021-07-03-vaccine.md"
+    "content/_posts/2021-07-04-goodreads.md"
   ]
 }
