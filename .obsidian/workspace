@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/_posts/2021-08-13-too-many-domains.md",
+            "file": "_includes/about.md",
             "mode": "source"
           }
         }
@@ -76,7 +76,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/_posts/2021-08-13-too-many-domains.md",
+                "file": "_includes/about.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +93,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/_posts/2021-08-13-too-many-domains.md",
+                "file": "_includes/about.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -108,8 +108,8 @@
   },
   "active": "375e5e6e84434403",
   "lastOpenFiles": [
-    "_drafts/Untitled.md",
     "_includes/about.md",
+    "_drafts/Untitled.md",
     "content/_posts/2021-08-11-tuesday.md",
     "content/_posts/2021-08-07-saturday.md",
     "content/_posts/2021-08-10-tuesday.md",

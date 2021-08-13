@@ -27,4 +27,4 @@ I'm my worst self when I spend my time consuming instead of making.  Specially w
 - I don't feel very comfortable looking at some of those covers.
 - I'm interested in experimental and folk games, <a href="https://www.are.na/javier/i-ve-got-you-covered" target="_blank">book covers</a>, and <a href="https://www.are.na/javier/zine-idmgeajhfcs" title="Zines" target="_blank">zines</a>.
 - For the past three  years I have organized a festival of computational literature called <a href="https://poetryslash.com" target="_blank">Poetry Slash</a>. In 2020, for obvious and pandemic reasons, the event was canceled.
-- If you have any questions or want to contact me, <a href="mailto:hola@javierarce.com">write me here</a>.
+- If you have any questions or want to contact me, <a href="mailto:email@javier.computer">write me here</a>.
