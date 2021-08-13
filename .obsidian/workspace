@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "375e5e6e84434403",
+        "id": "2f3e2af32890f8c2",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "_includes/about.md",
+            "file": "spotify.md",
             "mode": "source"
           }
         }
@@ -76,7 +76,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_includes/about.md",
+                "file": "spotify.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +93,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_includes/about.md",
+                "file": "spotify.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -106,10 +106,10 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "375e5e6e84434403",
+  "active": "2f3e2af32890f8c2",
   "lastOpenFiles": [
-    "_includes/about.md",
     "_drafts/Untitled.md",
+    "_includes/about.md",
     "content/_posts/2021-08-11-tuesday.md",
     "content/_posts/2021-08-07-saturday.md",
     "content/_posts/2021-08-10-tuesday.md",

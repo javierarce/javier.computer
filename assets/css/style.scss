@@ -91,11 +91,21 @@ p img {
 }
 
 blockquote { 
-  margin: 0 0 1em 2em;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  padding: 0.8em;
 } 
 
 blockquote p { 
+  font-style: normal;
+  font-weight: 300;
   text-align: left;
+  font-size: 0.9em;
+  line-height: 145%;
+} 
+
+blockquote strong { 
+  font-weight: 600;
 } 
 
 .Content {
@@ -146,6 +156,20 @@ h4 {
   font-weight: bold;
   margin: 0 0 1em;
 }
+
+h2 {
+  font-size: 1.2em;
+}
+
+
+h3 {
+  font-size: 1.1em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
 
 .About {
   width: 800px;
