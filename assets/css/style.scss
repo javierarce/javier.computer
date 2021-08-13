@@ -26,6 +26,14 @@
   height: 100%;
 }
 
+.is-domain {
+  border-radius: 30px;
+  border: 2px solid rgba(255, 255, 255, 1);
+  padding: 0.4em 0.8em;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
 p.is-light {
   opacity: .5;
 }
