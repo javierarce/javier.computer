@@ -27,7 +27,7 @@ destination: docs
 timezone: Europe/Madrid # add your own locale timezone
 description: Javier Arce
 baseurl: "" 
-url: "https://javierarce.com"
+url: "https://javier.computer"
 twitter_username: javier
 github_username:  javierarce
 
