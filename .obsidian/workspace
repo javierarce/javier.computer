@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/_posts/2021-08-13-too-many-domains.md",
+            "file": "content/_posts/2021-08-14-leon.md",
             "mode": "source"
           }
         }
@@ -76,7 +76,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/_posts/2021-08-13-too-many-domains.md",
+                "file": "content/_posts/2021-08-14-leon.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +93,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/_posts/2021-08-13-too-many-domains.md",
+                "file": "content/_posts/2021-08-14-leon.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -108,10 +108,10 @@
   },
   "active": "2f3e2af32890f8c2",
   "lastOpenFiles": [
+    "_drafts/Untitled.md",
     "content/_posts/2021-08-13-too-many-domains.md",
     "content/_posts/2021-08-12-preparativos.md",
     "_scripts/node_modules/pretty-bytes/readme.md",
-    "_drafts/Untitled.md",
     "_includes/about.md",
     "content/_posts/2021-08-11-tuesday.md",
     "content/_posts/2021-08-07-saturday.md",

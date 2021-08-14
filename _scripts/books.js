@@ -29,8 +29,8 @@ const string_to_slug = (str) => {
 
 const createFile = (title, books) => {
 
-  let content = '| Title | Author | Publisher | Year |\n'
-    content += '|:-------|:-------|:---- |:-----|\n'
+  let content = '| Title | Added | Read |\n'
+    content += '|:-------|:-----|:-----|\n'
 
   books.forEach((book) => {
     let stars = ''
@@ -38,14 +38,15 @@ const createFile = (title, books) => {
     for (let i = 0, len = book['my rating']; i < len; i++) {
       stars += "☆"
     }
+
     let publisher = book['publisher'] ? book['publisher'].trim() : 'Unknown'
 
-    content += `|**${book.title}**|${book.author}| ${publisher} | ${book['year published']}|\n`
+    content += `|**${book.title}**| ${book['date added']} | ${book['date read']}|\n`
 
   })
 
   let fileContent = TEMPLATE.replace('TITLE', title).replace('CONTENT', content)
-  let path = `../content/_books/${string_to_slug(title)}.md`
+  let path = `content/_books/${string_to_slug(title)}.md`
 
   fs.writeFile(path, fileContent, err => {
     if (err) {
@@ -58,7 +59,7 @@ const createFile = (title, books) => {
 let toRead = []
 let books = []
 
-fs.createReadStream('../_data/goodreads_library_export.csv')
+fs.createReadStream('_data/goodreads_library_export.csv')
   .pipe(csv())
   .on('data', (data) => {
     if (data['bookshelves'] === 'to-read') {
@@ -68,6 +69,6 @@ fs.createReadStream('../_data/goodreads_library_export.csv')
     }
   })
   .on('end', () => {
-    createFile('Antilibrary', toRead)
-    createFile('Read', books)
+    //createFile('Antilibrary', toRead)
+    createFile('Read2', books)
   })

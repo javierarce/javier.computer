@@ -41,34 +41,8 @@
   line-height: 1.45;
 }
 
-.Post table {
-  width: 100%;
-  margin: 0 0 2em;
-}
-
-.Post table:last-child {
-  width: 100%;
-  margin-bottom: 0;
-}
-
-.Post.is-book table td:first-child {
-  width: 50%;
-}
-
-.Post table td {
-  border: 1px solid var(--white);
-  padding: .4em;
-}
-
-.Post table thead {
-  border: 1px solid var(--white);
-}
-
-.Post table th {
-  background: var(--white);
-  padding: 0.4em;
-  color: var(--background);
-  font-weight: bold;
+.Post.is-book ul {
+  margin-bottom: 2em;
 }
 
 .Post blockquote {

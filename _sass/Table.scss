@@ -1,0 +1,30 @@
+table {
+  width: 100%;
+  margin: 0 0 2em;
+}
+
+table:last-child {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+table td:first-child {
+  width: 50%;
+}
+
+table td {
+  border: 1px solid var(--white);
+  padding: .4em;
+}
+
+table thead {
+  border: 1px solid var(--white);
+}
+
+table th {
+  background: var(--white);
+  padding: 0.4em;
+  color: var(--background);
+  font-weight: bold;
+}
+
