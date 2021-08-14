@@ -1,4 +1,4 @@
-const CITY = 'Madrid'
+const CITY = 'León'
 const WEATHER_ENDPOINT = `//last.javierarce.com/api/weather?city=${CITY}, Spain`
 
 class Weather extends HTMLParagraphElement {
