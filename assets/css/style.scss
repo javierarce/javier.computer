@@ -214,3 +214,9 @@ h4 {
 .Book img {
   display: block;
 }
+
+@media all and (max-width: 640px) {
+  .About {
+    width: 100%;
+  }
+}

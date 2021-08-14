@@ -1,8 +1,8 @@
 .Navigation {
   position: relative;
   width: 100%;
-  margin: 1em 0 2em 0;
-  padding: 0 1em;
+  margin: 2em 0;
+  padding: 0 2em;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,7 +10,6 @@
 
 .Navigation__links {
   color: var(--black);
-  font-size: 1em;
   text-decoration: none;
   width: 100%;
   display: flex;
@@ -18,8 +17,11 @@
   justify-content: flex-end;
 }
 
-.Navigation__link {
+.Navigation__links .Navigation__link {
   margin: 0 0 0 0.8em;
+}
+
+.Navigation__link {
   color: var(--black);
   font-size: 1em;
   text-decoration: none;
@@ -39,8 +41,7 @@
     justify-content: flex-start;
   }
 
-  .Navigation__links {
+  .Navigation__link {
     font-size: 1.1em;
-    margin: 0 0 0 0.4em;
   }
 }
