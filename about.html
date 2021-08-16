@@ -1,13 +1,14 @@
 ---
-layout: about
+layout: base
 title:  About
 permalink: about
+className: About
 ---
 
 {% include navigation.html selected="About" %}
 
 <div class="Content">
-  <div class="About">
+  <div class="Content__inner">
     {% capture about %}{% include about.md %}{% endcapture %}
     {{ about | markdownify }}
   </div>

@@ -17,7 +17,6 @@ description: Books I've read
 |**Piso compartido**|Ana Flecha Marco| Mrs. Danvers | 2021|
 |**AZCA**|Alba Flores Robla| Colectivo Laika | 2021|
 
-
 ### 2020
 
 | Title | Author | Publisher | Year |
@@ -37,7 +36,6 @@ description: Books I've read
 |**How to Be an Antiracist**|Ibram X. Kendi| One World | 2019|
 |**Dos novelitas nórdicas**|Ana Flecha Marco| Mr Griffin | 2019|
 |**Designing Disorder: Experiments and Disruptions in the City**|Richard Sennett| Verso | 2020|
-
 
 ### 2019
 

@@ -1,0 +1,20 @@
+.About .Content__inner {
+  width: 800px;
+  font-size: 1.2em;
+  margin: 0 0 3em;
+}
+
+.About h3:first-child {
+  margin-top: 0;
+}
+
+.About h3 {
+  margin-top: 3em;
+  opacity: 0.5;
+}
+
+.About ul > li {
+  list-style: disc;
+  margin: 0 0 1em 0;
+}
+
