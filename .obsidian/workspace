@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/_posts/2021-08-16-useful-music.md",
+            "file": "content/_posts/2021-08-16-society.md",
             "mode": "source"
           }
         }
@@ -76,7 +76,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/_posts/2021-08-16-useful-music.md",
+                "file": "content/_posts/2021-08-16-society.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +93,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/_posts/2021-08-16-useful-music.md",
+                "file": "content/_posts/2021-08-16-society.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -103,20 +103,19 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "active": "2f3e2af32890f8c2",
   "lastOpenFiles": [
     "_drafts/Untitled.md",
+    "_templates/Untitled.md",
+    "_templates/Post.md",
+    "_drafts/Plugins.md",
     "content/_posts/2021-08-14-leon.md",
     "content/_posts/2021-08-13-too-many-domains.md",
     "content/_posts/2021-08-12-preparativos.md",
     "_scripts/node_modules/pretty-bytes/readme.md",
     "_includes/about.md",
-    "content/_posts/2021-08-11-tuesday.md",
-    "content/_posts/2021-08-07-saturday.md",
-    "content/_posts/2021-08-10-tuesday.md",
-    "content/_posts/2021-08-09-live.md"
+    "content/_posts/2021-08-11-tuesday.md"
   ]
 }
