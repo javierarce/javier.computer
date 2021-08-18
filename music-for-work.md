@@ -11,4 +11,6 @@ Music for work:
 - [Brainstorm Radio](https://brainstormradio.org)
 - [Useful Music](https://soundcloud.com/cargocollective)
 - [door.link](https://www.door.link)
-- [Illustrated tapes](https://illustratedtapes.com) 
+- [Ok Mondays](https://www.okmondays.com)
+- [Illustrated tapes](https://illustratedtapes.com)
+- [The Mixtape Club](https://themixtapeclub.org)
