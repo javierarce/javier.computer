@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/_posts/2021-08-18-3D.md",
+            "file": "_drafts/music-for-work.md",
             "mode": "source"
           }
         }
@@ -76,7 +76,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/_posts/2021-08-18-3D.md",
+                "file": "_drafts/music-for-work.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +93,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/_posts/2021-08-18-3D.md",
+                "file": "_drafts/music-for-work.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -107,8 +107,8 @@
   },
   "active": "b0ea4fd2e7af0ddc",
   "lastOpenFiles": [
-    "content/_posts/2021-08-18-3D.md",
     "_drafts/Untitled.md",
+    "content/_posts/2021-08-18-3D.md",
     "content/_posts/2021-08-16-useful-music.md",
     "content/_posts/2021-08-16-society.md",
     "_templates/Untitled.md",
