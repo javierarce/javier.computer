@@ -1,0 +1,50 @@
+.Page {
+  margin: 0 0 3em;
+  font-size: 1.2em;
+  width: 800px;
+}
+
+.Page img {
+  display: block;
+  max-width: 400px;
+}
+
+.Page__title {
+  display: block;
+  font-weight: bold;
+  margin: 0 0 .4em;
+}
+
+.Page__content {
+  margin: 0 0 1em 0;
+}
+
+.Page__content p:last-child{
+  margin: 0;
+}
+
+.Page__date {
+  opacity: 0.5;
+  font-size: 0.8em;
+  user-select: none;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.Page__date:hover {
+  opacity: 0.5;
+  font-size: 0.8em;
+  user-select: none;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+@media all and (max-width: 1280px) {
+}
+
+@media all and (max-width: 1024px) {
+  .Page {
+    width: 100%;
+  }
+}
+

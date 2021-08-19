@@ -6,19 +6,17 @@ className: Page
 {% include navigation.html %}
 
 <div class="Content">
-  <div class="Posts is-single">
-    <div class="Post">
-      <div class="Post__content">
-        {% if post.show_title %}
-        <h2 class="Post__title">{{ page.title }}</h2>
-        {% endif %}
-        <p class="is-light">{{ page.description }}</p>
-        {{ content }}
-      </div>
-        {% if post.show_date %}
-      <div class="Post__date">{{ page.date | date: '%B %d, %Y' }}</div>
-        {% endif %}
+  <div class="Page">
+    <div class="Page__content">
+      {% if page.show_title %}
+      <h3 class="Page__title">{{ page.title }}</h3>
+      {% endif %}
+      <p class="is-light">{{ page.description }}</p>
+      {{ content }}
     </div>
+    {% if page.show_date %}
+    <div class="Page__date">{{ page.date | date: '%B %d, %Y' }}</div>
+    {% endif %}
   </div>
 </div>
 

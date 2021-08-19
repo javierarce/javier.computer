@@ -8,6 +8,7 @@
 @import 'Navigation';
 @import 'Footer';
 @import 'Header';
+@import 'Page';
 @import 'Posts';
 @import 'Song';
 @import 'Table';
@@ -148,10 +149,6 @@ ul {
 ul li {
   margin: 0 0 .4em 0;
   list-style: disc;
-}
-
-.Page {
-  padding: 1em;
 }
 
 hr {
