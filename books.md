@@ -1,7 +1,8 @@
 ---
-title: "Read"
 layout: table
 description: Books I've read
+title: Reading
+permalink: reading
 ---
 ### Reading
 
