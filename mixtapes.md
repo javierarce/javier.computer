@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Music for Work
+title: Mixtapes
 date: 2021-08-18
 show_date: false
 show_title: false
 ---
 
-Music for work:
+Mixtapes:
 
 - [Brainstorm Radio](https://brainstormradio.org)
 - [Useful Music](https://soundcloud.com/cargocollective)
