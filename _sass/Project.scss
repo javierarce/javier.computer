@@ -1,0 +1,48 @@
+.Projects {
+  width: 800px;
+}
+
+.Projects__intro {
+  margin: 0 0 2em;
+  font-size: 1.2em;
+}
+
+.Project {
+  margin: 0 0 3em;
+  font-size: 1.2em;
+}
+
+.Project__title {
+  display: block;
+  font-weight: bold;
+  margin: 0 0 .4em;
+}
+
+.Project__content p {
+  opacity: 0.7;
+}
+
+.Project__date {
+  opacity: 0.5;
+  font-size: 0.8em;
+  user-select: none;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.Project__date:hover {
+  opacity: 0.5;
+  font-size: 0.8em;
+  user-select: none;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+@media all and (max-width: 1280px) {
+}
+
+@media all and (max-width: 1024px) {
+}
+
+@media all and (max-width: 640px) {
+}

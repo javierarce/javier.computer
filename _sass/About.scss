@@ -4,13 +4,16 @@
   margin: 0 0 3em;
 }
 
-.About h3:first-child {
-  margin-top: 0;
+.About p {
+  margin: 0 0 1em;
 }
 
 .About h3 {
-  margin-top: 3em;
   opacity: 0.5;
+}
+
+#about-me {
+  margin-top: 2em;
 }
 
 .About ul > li {

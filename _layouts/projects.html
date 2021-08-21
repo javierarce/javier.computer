@@ -1,0 +1,16 @@
+---
+layout: base
+className: Projects
+---
+
+{% include navigation.html selected="Projects" %}
+
+<div class="Content">
+  <div class="Projects">
+    <div class="Projects__intro">
+      {{ content }}
+    </div>
+    {% include projects.html %}
+  </div>
+  {% include footer.html %}
+</div>

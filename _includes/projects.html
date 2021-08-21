@@ -1,0 +1,15 @@
+{% for post in site.projects %}
+<div class="Project">
+  <div class="Project__content">
+    <a class="Project__title" href="{{ post.link }}">{{ post.title }}</a>
+    {% if post.content contains "<!-- more -->" %}
+    {{ post.content | split:"<!-- more -->" | first }}
+    <div class="Project__more">
+      <a href="{{ post.url }}#more">Read more</a>
+    </div>
+    {% else %}
+    {{ post.content }}
+    {% endif %}
+  </div>
+</div>
+{% endfor %}
