@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "mixtapes.md",
+            "file": "content/_posts/2021-08-20-green-knight.md",
             "mode": "source"
           }
         }
@@ -76,7 +76,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "mixtapes.md",
+                "file": "content/_posts/2021-08-20-green-knight.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +93,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "mixtapes.md",
+                "file": "content/_posts/2021-08-20-green-knight.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -108,6 +108,7 @@
   "active": "b0ea4fd2e7af0ddc",
   "lastOpenFiles": [
     "_drafts/Untitled.md",
+    "mixtapes.md",
     "content/_posts/2021-08-18-3D.md",
     "content/_posts/2021-08-16-useful-music.md",
     "content/_posts/2021-08-16-society.md",
@@ -115,7 +116,6 @@
     "_templates/Post.md",
     "_drafts/Plugins.md",
     "content/_posts/2021-08-14-leon.md",
-    "content/_posts/2021-08-13-too-many-domains.md",
-    "content/_posts/2021-08-12-preparativos.md"
+    "content/_posts/2021-08-13-too-many-domains.md"
   ]
 }
