@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2021-08-20-green-knight
+title: The Green Knight
 date: 2021-08-20
 show_date: true
 ---
