@@ -1,6 +1,6 @@
 {% for post in site.projects %}
 <div class="Project">
-  <div class="Project__content">
+  <div class="Project__content is-light">
     <a class="Project__title" href="{{ post.link }}">{{ post.title }}</a>
     {% if post.content contains "<!-- more -->" %}
     {{ post.content | split:"<!-- more -->" | first }}

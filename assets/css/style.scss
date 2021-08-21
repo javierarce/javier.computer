@@ -5,9 +5,10 @@
 
 @import '_reset';
 @import 'About';
-@import 'Navigation';
+@import 'Book';
 @import 'Footer';
 @import 'Header';
+@import 'Navigation';
 @import 'Page';
 @import 'Pagination';
 @import 'Posts';
@@ -73,7 +74,7 @@ em {
 }
 
 strong {
-  font-weight: 500;
+  font-weight: 700;
 }
 
 ul {
@@ -161,26 +162,11 @@ h2 {
 
 h3 {
   font-size: 1.1em;
+  opacity: 0.5;
 }
 
 h4 {
   font-size: 1em;
-}
-
-
-.Books {
-  margin: auto;
-  display: grid;
-  padding: 0 1em;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-}
-
-.Book {
-  width: 380px;
-}
-
-.Book img {
-  display: block;
 }
 
 @media all and (max-width: 640px) {
