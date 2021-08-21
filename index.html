@@ -32,7 +32,7 @@ className: Home
   <div class="Pagination">
     {% for page in (1..paginator.total_pages) %}
     {% if page == paginator.page %}
-    <span class="Pagination__item is-selected">{{ page }}</span>
+    <div class="Pagination__item is-selected">{{ page }}</div>
     {% elsif page == 1 %}
     <a class="Pagination__item" href="{{ '/' | relative_url }}">{{ page }}</a>
     {% else %}

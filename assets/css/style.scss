@@ -9,6 +9,7 @@
 @import 'Footer';
 @import 'Header';
 @import 'Page';
+@import 'Pagination';
 @import 'Posts';
 @import 'Song';
 @import 'Table';
@@ -18,7 +19,7 @@
 }
 
 :root {
-  --white: #FFF;
+  --white: #FFFFFF;
   --active: var(--white);
   --hover: var(--white);
   --text: var(--white);
@@ -79,19 +80,7 @@ ul {
   padding: 0;
 }
 
-.Pagination {
-  font-size: .9em;
-  margin: auto auto 2em auto;
-}
-.Pagination__item {
-  margin: 0 1em 0 0;
-}
-
-.Pagination__item.is-selected {
-  opacity: .5;
-}
-
-p {
+.p {
   font-size: 1em;
   line-height: 1.45;
   margin: 0 0 1em 0;
