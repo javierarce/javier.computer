@@ -16,7 +16,9 @@
 
 .Post img {
   display: block;
-  max-width: 400px;
+  width: 100%;
+  margin: 0 0 1em;
+  border-radius: 2px;
 }
 
 .Post.is-book img {

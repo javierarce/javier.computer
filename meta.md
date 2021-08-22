@@ -16,6 +16,7 @@ className: Meta
 
 | Title | Description|
 |:-------|:-------|
+|[Archive](/archive)|Post archive|
 |[3D](/3D)|A list of my favorite 3D artists|
 |[Mixtapes](/mixtapes)|A list of online mixtapes|
 

@@ -31,4 +31,18 @@
   color: var(--white);
 }
 
+.Pagination__item.is-archive {
+  border: none;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0 0 0 0.4em;
+  text-decoration: underline;
+}
+
+.Pagination__item:hover {
+  color: var(--white);
+  background: var(--background);
+  text-decoration: underline;
+}
 
