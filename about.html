@@ -5,14 +5,14 @@ className: About
 permalink: about
 ---
 
-{% include navigation.html %}
-
 <div class="Content">
+  {% include navigation.html %}
+
   <div class="Content__inner">
     {% capture about %}{% include about.md %}{% endcapture %}
     {{ about | markdownify }}
   </div>
 
-{% include footer.html %}
+  {% include footer.html %}
 </div>
 

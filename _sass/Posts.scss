@@ -7,13 +7,6 @@
   font-size: 1.2em;
 }
 
-.Posts.is-single {
-}
-
-.Posts.is-single .Post {
-  width: 800px;
-}
-
 .Post img {
   display: block;
   width: 100%;
@@ -54,10 +47,6 @@
   margin: 0 0 0.4em 0;
 }
 
-.Post__content p:last-child{
-  margin: 0;
-}
-
 .Post__date {
   opacity: 0.5;
   font-size: 0.8em;
@@ -80,8 +69,6 @@
 @media all and (max-width: 1024px) {
   .Posts {
     width: 100%;
-  }
-  .Post {
   }
 }
 

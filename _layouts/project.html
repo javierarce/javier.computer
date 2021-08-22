@@ -2,12 +2,10 @@
 layout: base
 className: Project
 ---
-
-{% include navigation.html selected="Projects" %}
-
 <div class="Content">
-  <div class="Projects">
+  {% include navigation.html %}
 
+  <div class="Projects">
     <div class="Project">
       <div class="Project__content">
         {{ content }}
