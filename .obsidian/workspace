@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "_drafts/2021-08-24-mail-systems.md",
+            "file": "content/_posts/2021-08-24-mail-systems.md",
             "mode": "source"
           }
         }
@@ -76,7 +76,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_drafts/2021-08-24-mail-systems.md",
+                "file": "content/_posts/2021-08-24-mail-systems.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +93,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_drafts/2021-08-24-mail-systems.md",
+                "file": "content/_posts/2021-08-24-mail-systems.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
