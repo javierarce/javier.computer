@@ -42,11 +42,11 @@
   }
 
   .Navigation__links {
-    justify-content: flex-start;
+    justify-content: space-between;
   }
 
 .Navigation__links .Navigation__link {
-  margin: 0 0.8em 0 0;
+  margin: 0;
 }
   .Navigation__link {
     font-size: 1.1em;
