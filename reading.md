@@ -6,13 +6,14 @@ permalink: reading
 ---
 ### Reading
 
+- **How to Blow Up a Pipeline**, Andreas Malm  
 - **The Long Way**, Bernard Moitessier
-- **Calypso**, David Sedaris
 
 ### 2021
 
 | Title | Author | Publisher | Year |
 |:-------|:-------|:---- |:-----|
+|**Calypso**|David Sedaris|Little Brown|
 |**The Tartar Steppe**|Dino Buzzati| Verba Mundi | 2005|
 |**Busy Doing Nothing**|Rekka Bellum| Hundred Rabbits | 2021|
 |**Piso compartido**|Ana Flecha Marco| Mrs. Danvers | 2021|

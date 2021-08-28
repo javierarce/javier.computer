@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "3D.md",
+            "file": "content/_posts/2021-08-28-calypso.md",
             "mode": "source"
           }
         }
@@ -76,7 +76,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "3D.md",
+                "file": "content/_posts/2021-08-28-calypso.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +93,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "3D.md",
+                "file": "content/_posts/2021-08-28-calypso.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -107,15 +107,15 @@
   },
   "active": "b0ea4fd2e7af0ddc",
   "lastOpenFiles": [
+    "_drafts/Untitled.md",
+    "reading.md",
+    "books/read.md",
     "3D.md",
     "projects.md",
-    "_drafts/Untitled.md",
     "_includes/about.md",
     "about.md",
     "content/_posts/2021-08-21-all-the-presidents-men.md",
     "content/_posts/2021-08-20-green-knight.md",
-    "mixtapes.md",
-    "content/_posts/2021-08-18-3D.md",
-    "content/_posts/2021-08-16-useful-music.md"
+    "mixtapes.md"
   ]
 }
