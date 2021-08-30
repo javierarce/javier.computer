@@ -4,4 +4,4 @@ title: Casa Tatina
 date: 2021-08-30
 show_date: true
 ---
-León/Leóff · Casa Tatina · Primer baño del año.
+León/Leóff · C.Tatina · Primer baño del año.
