@@ -31,9 +31,10 @@
 
 @media all and (max-width: 640px) {
   .Footer {
-    display: block;
+    justify-content: space-between;
   }
   .Footer__link {
-    margin: 0 0.4em 0 0;
+    margin: 0;
   }
 }
+

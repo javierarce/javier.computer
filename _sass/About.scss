@@ -21,3 +21,10 @@
   margin: 0 0 1em 0;
 }
 
+@media all and (max-width: 640px) {
+  .About .Content__inner,
+  .About {
+    width: 100%;
+  margin: 0;
+  }
+}

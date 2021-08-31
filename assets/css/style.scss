@@ -32,18 +32,6 @@
   height: 100%;
 }
 
-.is-domain {
-  border-radius: 30px;
-  border: 2px solid rgba(255, 255, 255, 1);
-  padding: 0.4em 0.8em;
-  font-size: 0.8em;
-  font-weight: bold;
-}
-
-p.is-light {
-  opacity: .5;
-}
-
 body {
   color: var(--text);
   background: var(--background);
@@ -109,6 +97,18 @@ blockquote strong {
   font-weight: 600;
 } 
 
+.is-domain {
+  border-radius: 30px;
+  border: 2px solid rgba(255, 255, 255, 1);
+  padding: 0.4em 0.8em;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+p.is-light {
+  opacity: .5;
+}
+
 .Content {
   padding: 2em 2em 0 2em;
   display: flex;
@@ -118,20 +118,8 @@ blockquote strong {
 .Error {
   padding: 1em;
 }
-
-@media all and (max-width: 1280px) {
-}
-
-@media all and (max-width: 1024px) {
-}
-
-@media all and (max-width: 640px) {
-  body {
-    font-size: 1.1em;
-  }
-  .Content {
-    padding: 1em;
-  }
+.Weather {
+  margin: 0 0 3em 0;
 }
 
 ul {
@@ -160,7 +148,6 @@ h2 {
   font-size: 1.2em;
 }
 
-
 h3 {
   font-size: 1.1em;
   opacity: 0.5;
@@ -170,12 +157,15 @@ h4 {
   font-size: 1em;
 }
 
-@media all and (max-width: 640px) {
-  .About {
-    width: 100%;
-  }
-}
 .Archive {
   margin: 0 0 2em 1em;
 }
 
+@media all and (max-width: 640px) {
+  body {
+    font-size: 1.1em;
+  }
+  .Content {
+    padding: 1em;
+  }
+}
