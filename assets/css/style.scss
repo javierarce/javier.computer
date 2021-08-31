@@ -161,6 +161,24 @@ h4 {
   margin: 0 0 2em 1em;
 }
 
+img.lazy {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 520ms ease-in-out;
+}
+
+img.lazy.loaded {
+  visibility: visible;
+  opacity: 1;
+}
+
+.Figure,
+.Image__image {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
 @media all and (max-width: 640px) {
   body {
     font-size: 1.1em;
@@ -170,10 +188,3 @@ h4 {
   }
 }
 
-.Figure,
-.Image__image {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  box-sizing: border-box;
-}

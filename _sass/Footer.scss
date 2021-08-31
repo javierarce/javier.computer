@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 800px;
+  width: 100%;
   margin-top: auto;
   padding: 1em 0;
 }
@@ -22,12 +22,19 @@
   opacity: 1;
 }
 
+
+@media all and (max-width: 1280px) {
+}
+
+@media all and (max-width: 1024px) {
+}
+
 @media all and (max-width: 640px) {
   .Footer {
-    justify-content: space-between;
+    display: block;
   }
   .Footer__link {
-    margin: 0;
+    margin: 0 0.4em 0 0;
   }
 }
 
