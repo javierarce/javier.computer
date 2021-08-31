@@ -169,3 +169,11 @@ h4 {
     padding: 1em;
   }
 }
+
+.Figure,
+.Image__image {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  box-sizing: border-box;
+}
