@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-version: 4.0.19
+version: 4.0.20
 title: Javier Arce
 author: Javier Arce
 email: email@javier.computer
@@ -45,6 +45,9 @@ paginate: 10
 paginate_path: "/page/:num/"
 
 collections:
+  photos:
+    output: true
+    permalink: '/photos/:path/'
   projects:
     output: true
     permalink: '/projects/:path/'
