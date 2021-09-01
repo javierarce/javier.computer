@@ -162,21 +162,19 @@ h4 {
 }
 
 img.lazy {
-  height: 400px;
   transition: all 520ms ease-in-out;
-  opacity: .1;
+  opacity: 0.1;
   background: var(--white);
 }
 
 img.lazy.loaded {
   background: transparent;
-  height: auto;
   visibility: visible;
   opacity: 1;
 }
 
 .Figure,
-.Image__image {
+.Photo {
   width: 100%;
   height: auto;
   box-sizing: border-box;

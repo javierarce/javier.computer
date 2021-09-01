@@ -6,7 +6,8 @@ permalink: photos
 ---
 <div class="Content">
   {% include navigation.html %}
-  {% for post in site.photos %}
+  {% assign photos = site.photos | reverse %} 
+  {% for post in photos %}
   {{ post}}
   {% endfor %}
 

@@ -38,7 +38,19 @@ const uploadFile = (fileName, ext) => {
   })
 }
 
-async function start (fileName) {
+function start (directory) {
+  fs.readdir(directory, (error, files) => {
+    if (error) {
+      retrurn
+    }
+
+    files.forEach((fileName) => {
+      upload(`${directory}/${fileName}`)
+    })
+  }) 
+}
+
+async function upload (fileName) {
   let ext = path.extname(fileName)
   let name = path.basename(fileName).replace(ext, '')
   const inputBuffer = fs.readFileSync(fileName)
@@ -78,7 +90,7 @@ async function start (fileName) {
 }
 
 if (process.argv.length !== 3) {
-  console.error('usage: bespoke file.jpg')
+  console.error('usage: node upload.js directory')
   process.exit(0)
 }
 
