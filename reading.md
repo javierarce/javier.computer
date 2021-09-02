@@ -6,13 +6,13 @@ permalink: reading
 ---
 ### Reading
 
-- **How to Blow Up a Pipeline**, Andreas Malm  
 - **The Long Way**, Bernard Moitessier
 
 ### 2021
 
 | Title | Author | Publisher | Year |
 |:-------|:-------|:---- |:-----|
+|**How to Blow Up a Pipeline**| Andreas Malm| Verso | 2021|
 |**Calypso**|David Sedaris|Little Brown|
 |**The Tartar Steppe**|Dino Buzzati| Verba Mundi | 2005|
 |**Busy Doing Nothing**|Rekka Bellum| Hundred Rabbits | 2021|
