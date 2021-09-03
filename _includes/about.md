@@ -2,7 +2,7 @@
 
 ### About this website
 
-This page contains a wiki, a blog post, a collection of jokes, a hidden passage to another dimension, a list of dog names, a photo of myself eating ice cream, a coin, a yellow bird.
+This page contains a wiki, a blog post, a collection of jokes, a hidden passage to another dimension, a list of dog names, a photo of myself eating ice cream, a coin, a yellow bird, a photo of your turtle, a turtle.
 
 I'm my worst self when I spend my time consuming instead of making.  Specially when the consuming part happens inside of a social network. This website is my attempt to spend less time consuming and more thinking and making.
 
