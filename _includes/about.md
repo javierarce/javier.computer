@@ -6,6 +6,24 @@ This page contains a wiki, a blog post, a collection of jokes, a hidden passage 
 
 I'm my worst self when I spend my time consuming instead of making.  Specially when the consuming part happens inside of a social network. This website is my attempt to spend less time consuming and more thinking and making.
 
+### Content
+
+| Title | Description|
+|:-------|:-------|
+|[Home](/)|Diary|
+|[Projects](/projects)|List of side projects|
+|[Reading](/reading)|Books I'm reading / I've read / I will read|
+|[About](/about)|A little information about this page & me|
+
+### Pages 
+
+| Title | Description|
+|:-------|:-------|
+|[Archive](/archive)|Post archive|
+|[3D](/3D)|A list of my favorite 3D artists|
+|[Mixtapes](/mixtapes)|A list of online mixtapes|
+
+
 ### About me
 
 - My name is Javier Arce, <em>comme tout le monde</em>.
