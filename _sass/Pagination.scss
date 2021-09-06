@@ -16,9 +16,10 @@
   border-radius: 1px;
   text-decoration: none;
   cursor: pointer;
+  user-select: none;
 }
 
-.Pagination__item:hover {
+.Pagination .Pagination__item:hover {
   background: var(--white);
   color: var(--background);
   text-decoration: none;
@@ -31,6 +32,11 @@
   color: var(--white);
 }
 
+.Pagination__item.is-selected:hover {
+  background: transparent;
+  color: var(--white);
+}
+
 .Pagination__item.is-archive {
   border: none;
   width: auto;
@@ -40,9 +46,14 @@
   text-decoration: underline;
 }
 
+.Pagination__item.is-archive:hover {
+  background: none;
+  color: var(--white);
+  text-decoration: underline;
+}
+
 .Pagination__item:hover {
   color: var(--white);
   background: var(--background);
-  text-decoration: underline;
 }
 
