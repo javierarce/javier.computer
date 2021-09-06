@@ -1,10 +1,12 @@
 ---
-layout: page
+layout: grid
 title: Music
 permalink: music
 description: Music
 ---
 {% assign music = site.data.music | reverse %} 
-{% for post in music %}
-<img src="/assets/img/music/{{ post.cover }}" />
-{% endfor %}
+<div class="Music">
+  {% for post in music %}
+  <img class="Music__cover" src="/assets/img/music/{{ post.cover }}" />
+  {% endfor %}
+</div>

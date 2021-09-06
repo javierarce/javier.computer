@@ -180,6 +180,23 @@ img.lazy.loaded {
   box-sizing: border-box;
 }
 
+.Grid {
+  padding: 2em 2em 0 2em;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.Music {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.Music__cover {
+  width: 100%;
+}
+
 @media all and (max-width: 640px) {
   body {
     font-size: 1.1em;
