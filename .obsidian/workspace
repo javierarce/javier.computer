@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/_posts/2021-09-06-Back.md",
+            "file": "content/_music/snapped-ankles.md",
             "mode": "source"
           }
         }
@@ -76,7 +76,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/_posts/2021-09-06-Back.md",
+                "file": "content/_music/snapped-ankles.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +93,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/_posts/2021-09-06-Back.md",
+                "file": "content/_music/snapped-ankles.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -107,6 +107,7 @@
   },
   "active": "b0ea4fd2e7af0ddc",
   "lastOpenFiles": [
+    "content/_music/snapped-ankles.md",
     "_drafts/Untitled.md",
     "content/_posts/2021-09-02-how-to-blow-up-a-pipeline.md",
     "content/_posts/2021-08-30-Casa-Tatina.md",
@@ -115,7 +116,6 @@
     "books/read.md",
     "3D.md",
     "projects.md",
-    "_includes/about.md",
-    "about.md"
+    "_includes/about.md"
   ]
 }

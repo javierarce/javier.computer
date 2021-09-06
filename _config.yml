@@ -57,6 +57,9 @@ collections:
   concepts:
     output: true
     permalink: '/concepts/:path/'
+  music:
+    output: true
+    permalinks: '/music/:path'
   books:
     output: true
     permalinks: '/books/:path'
