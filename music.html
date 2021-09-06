@@ -4,7 +4,7 @@ title: Music
 permalink: music
 description: Music
 ---
-{% assign music = data.music | reverse %} 
+{% assign music = site.data.music | reverse %} 
 {% for post in music %}
-<img src="{{ post.cover }}" />
+<img src="/assets/img/music/{{ post.cover }}" />
 {% endfor %}

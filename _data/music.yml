@@ -1,8 +1,7 @@
-[
-  {
-    artist: 'Snapped Ankles',
-    album: 'The Utopia Strong',
-    img: ''
-      'the utopia strong remix.png'
-  }
-]
+- artist: 'Snapped Ankles'
+  album: 'The Utopia Strong'
+  cover: 'the%20utopia%20strong%20remix.png'
+
+- artist: 'Genevieve Stokes'
+  album: 'Swimming Lessons'
+  cover: 'Swimming Lessons.jpg'
