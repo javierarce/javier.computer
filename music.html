@@ -6,6 +6,6 @@ description: Music
 ---
 {% assign music = site.music | reverse %} 
 {% for post in music %}
-{{ post}}
+<img src="{{ post.cover }}" />
 {% endfor %}
 
