@@ -195,6 +195,13 @@ img.lazy.loaded {
 
 .Music__cover {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Music__img {
+  width: 100%;
+  margin: 0 0 1em;
 }
 
 @media all and (max-width: 640px) {
