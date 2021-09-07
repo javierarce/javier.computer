@@ -2,7 +2,6 @@
 layout: grid
 title: Music
 permalink: music
-description: Music
 show_title: false
 ---
 {% assign music = site.data.music | reverse %} 
@@ -10,7 +9,7 @@ show_title: false
   {% for post in music %}
   <div class="Music__cover">
     <img class="Music__img" src="/assets/img/music/{{ post.cover }}" />
-    {{ post.album  }}
+    {{ post.album  }} / {{ post.artist  }}
   </div>
   {% endfor %}
 </div>
