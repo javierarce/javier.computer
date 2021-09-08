@@ -4,14 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "b0ea4fd2e7af0ddc",
+        "id": "215f2a502148d07b",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "_includes/about.md",
-            "mode": "source"
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -76,7 +73,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_includes/about.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +89,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_includes/about.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -105,7 +100,7 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "b0ea4fd2e7af0ddc",
+  "active": "215f2a502148d07b",
   "lastOpenFiles": [
     "_includes/about.md",
     "about.md",
