@@ -1,1 +1,1 @@
-Ayer fui hasta imprentas San Delfín, mi nueva imprent
+Ayer cuando bajó el sol fui hasta imprentas San Delfín, mi nueva imprenta de confianza, a recoger unas risos que encargué a Amalia y que, si todo va bien, saldrán en breve a su destino (las personas que se subscribieron al Boletín Botánico y que, supongo, llevan meses preguntándose qué onda con el Boletín Botánico). El caso es que para bajar hasta allí (la imprenta está a 5 kilómetros de mi casa) decidí ir en bici. 
