@@ -1,5 +1,6 @@
 const CITY = 'Madrid'
-const WEATHER_ENDPOINT = `//last.javierarce.com/api/weather?city=${CITY}, Spain`
+const COORDINATES='40.416729,-3.703339'
+const WEATHER_ENDPOINT = `//last.javierarce.com/api/weather?coordinates=${COORDINATES}`
 
 class Weather extends HTMLParagraphElement {
   constructor () {
@@ -20,13 +21,15 @@ class Weather extends HTMLParagraphElement {
         return console.error(json)
       }
 
-      let description = this.capitalizeFirstLetter(json.weather[0].description)
-      let temperature = json.main.temp
-      let feelsLike = json.main.feels_like
-      let humidity = json.main.humidity
-      let sunset = new Date(json.sys.sunset).toLocaleTimeString()
+      let weather = json.weather.current
+      let description = this.capitalizeFirstLetter(weather.description)
+      let uvi = weather.uvi
+      let temperature = weather.temp
+      let feelsLike = weather.feels_like
+      let humidity = weather.humidity
+      let sunset = new Date(weather.sunset).toLocaleTimeString()
 
-      this.weatherDescription = `${description}. The temperature in ${CITY} is ${temperature}ºC (feels like ${feelsLike}ºC). Humidity: ${humidity}%. Sunset time is ${sunset}.`
+      this.weatherDescription = `${description}. The temperature in ${CITY} is ${temperature}ºC (feels like ${feelsLike}ºC). UVI: ${uvi}. Humidity: ${humidity}%. Sunset time is ${sunset}.`
       this.render(this.weatherDescription)
 
     }).catch((error) => {
