@@ -22,7 +22,7 @@ class Weather extends HTMLParagraphElement {
       }
 
       const weather = json.current
-      const description = this.capitalizeFirstLetter(weather.weather.description)
+      const description = this.capitalizeFirstLetter(weather.weather[0].description)
       const uvi = weather.uvi
       const temperature = weather.temp
       const feelsLike = weather.feels_like
