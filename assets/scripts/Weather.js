@@ -21,8 +21,8 @@ class Weather extends HTMLParagraphElement {
         return console.error(json)
       }
 
-      let weather = json.weather.current
-      let description = this.capitalizeFirstLetter(weather.description)
+      let weather = json.current
+      let description = this.capitalizeFirstLetter(weather.weather.description)
       let uvi = weather.uvi
       let temperature = weather.temp
       let feelsLike = weather.feels_like
