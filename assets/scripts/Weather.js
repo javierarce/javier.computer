@@ -21,13 +21,13 @@ class Weather extends HTMLParagraphElement {
         return console.error(json)
       }
 
-      let weather = json.current
-      let description = this.capitalizeFirstLetter(weather.weather.description)
-      let uvi = weather.uvi
-      let temperature = weather.temp
-      let feelsLike = weather.feels_like
-      let humidity = weather.humidity
-      let sunset = new Date(weather.sunset).toLocaleTimeString()
+      const weather = json.current
+      const description = this.capitalizeFirstLetter(weather.weather.description)
+      const uvi = weather.uvi
+      const temperature = weather.temp
+      const feelsLike = weather.feels_like
+      const humidity = weather.humidity
+      const sunset = new Date(weather.sunset).toLocaleTimeString()
 
       this.weatherDescription = `${description}. The temperature in ${CITY} is ${temperature}ºC (feels like ${feelsLike}ºC). UVI: ${uvi}. Humidity: ${humidity}%. Sunset time is ${sunset}.`
       this.render(this.weatherDescription)
