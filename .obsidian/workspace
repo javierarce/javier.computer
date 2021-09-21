@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/_posts/2021-09-20-Vivian-Suter.md",
+            "file": "content/_posts/2021-09-21-sintiendo.md",
             "mode": "source"
           }
         }
@@ -76,7 +76,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/_posts/2021-09-20-Vivian-Suter.md",
+                "file": "content/_posts/2021-09-21-sintiendo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +93,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/_posts/2021-09-20-Vivian-Suter.md",
+                "file": "content/_posts/2021-09-21-sintiendo.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -107,8 +107,8 @@
   },
   "active": "74651044634437b6",
   "lastOpenFiles": [
-    "content/_posts/2021-09-20-Vivian-Suter.md",
     "content/_posts/2021-09-21-sintiendo.md",
+    "content/_posts/2021-09-20-Vivian-Suter.md",
     "_drafts/2021-09-11-dormir.md",
     "_drafts/2021-09-18.md",
     "content/_posts/2021-09-11-dormir.md",
