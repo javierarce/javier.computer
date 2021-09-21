@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "215f2a502148d07b",
+        "id": "74651044634437b6",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/_posts/2021-09-11-dormir.md",
+            "file": "content/_posts/2021-09-21-sintiendo.md",
             "mode": "source"
           }
         }
@@ -76,7 +76,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/_posts/2021-09-11-dormir.md",
+                "file": "content/_posts/2021-09-21-sintiendo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +93,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/_posts/2021-09-11-dormir.md",
+                "file": "content/_posts/2021-09-21-sintiendo.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -105,17 +105,17 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "215f2a502148d07b",
+  "active": "74651044634437b6",
   "lastOpenFiles": [
+    "content/_posts/2021-09-21-sintiendo.md",
+    "_drafts/2021-09-11-dormir.md",
+    "_drafts/2021-09-18.md",
     "content/_posts/2021-09-11-dormir.md",
-    "_drafts/Untitled 1.md",
     "_drafts/Untitled.md",
     "content/_posts/2021-09-09-san-delfin.md",
     "_includes/about.md",
     "about.md",
     "content/_posts/2021-09-06-Back.md",
-    "content/_music/snapped-ankles.md",
-    "content/_posts/2021-09-02-how-to-blow-up-a-pipeline.md",
-    "content/_posts/2021-08-30-Casa-Tatina.md"
+    "content/_music/snapped-ankles.md"
   ]
 }
