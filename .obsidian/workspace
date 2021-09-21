@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/_posts/2021-09-21-sintiendo.md",
+            "file": "content/_posts/2021-09-20-Vivian-Suter.md",
             "mode": "source"
           }
         }
@@ -76,7 +76,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/_posts/2021-09-21-sintiendo.md",
+                "file": "content/_posts/2021-09-20-Vivian-Suter.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +93,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/_posts/2021-09-21-sintiendo.md",
+                "file": "content/_posts/2021-09-20-Vivian-Suter.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -107,6 +107,7 @@
   },
   "active": "74651044634437b6",
   "lastOpenFiles": [
+    "content/_posts/2021-09-20-Vivian-Suter.md",
     "content/_posts/2021-09-21-sintiendo.md",
     "_drafts/2021-09-11-dormir.md",
     "_drafts/2021-09-18.md",
@@ -115,7 +116,6 @@
     "content/_posts/2021-09-09-san-delfin.md",
     "_includes/about.md",
     "about.md",
-    "content/_posts/2021-09-06-Back.md",
-    "content/_music/snapped-ankles.md"
+    "content/_posts/2021-09-06-Back.md"
   ]
 }
