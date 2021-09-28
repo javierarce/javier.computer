@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/_posts/2021-09-28-Boletin-Botanico.md",
+            "file": "content/_posts/2021-09-28-Ethio-Obscure-Labels-Selection.md",
             "mode": "source"
           }
         }
@@ -60,7 +60,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 354
+    "width": 409
   },
   "right": {
     "id": "79ae956b93607c9f",
@@ -76,7 +76,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/_posts/2021-09-28-Boletin-Botanico.md",
+                "file": "content/_posts/2021-09-28-Ethio-Obscure-Labels-Selection.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +93,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/_posts/2021-09-28-Boletin-Botanico.md",
+                "file": "content/_posts/2021-09-28-Ethio-Obscure-Labels-Selection.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -107,7 +107,7 @@
   },
   "active": "74651044634437b6",
   "lastOpenFiles": [
-    "content/_posts/2021-09-28-Boletin-Botanico.md",
+    "content/_posts/2021-09-28-Ethio-Obscure-Labels-Selection.md",
     "_drafts/2021-09-18.md",
     "_drafts/Plugins.md",
     "_drafts/Untitled.md",

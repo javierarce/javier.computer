@@ -1,9 +1,0 @@
----
-layout: post
-title: Boletin Botánico
-date: 2021-09-28
-show_date: true
----
-Esta mañana envié las copias del [Boletín Botánico](https://boletin-botanico.com) a las personas que se animaron a recibirlas.  Mientras lees estas líneas los fanzines se encuentran en manos del Servicio Postal a la espera de ser diseminadas por el mundo cual esporas de una *equisetum arvense*. 
-
-Y hace un rato [analogafrica](https://analogafrica.bandcamp.com/) (una discográfica que sigo en Bandcamp) envió (y pidió que compartiéramos) [esta fantástica recopilación](https://t.co/z9UIGWIaCO) de música de pequeños y desconocidos sellos etíopes.
