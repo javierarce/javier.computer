@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "_drafts/f.md",
+            "file": "content/_posts/2021-09-28-Boletin-Botanico.md",
             "mode": "source"
           }
         }
@@ -56,8 +56,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -77,7 +76,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_drafts/f.md",
+                "file": "content/_posts/2021-09-28-Boletin-Botanico.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +93,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_drafts/f.md",
+                "file": "content/_posts/2021-09-28-Boletin-Botanico.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -108,15 +107,15 @@
   },
   "active": "74651044634437b6",
   "lastOpenFiles": [
+    "content/_posts/2021-09-28-Boletin-Botanico.md",
+    "_drafts/2021-09-18.md",
+    "_drafts/Plugins.md",
+    "_drafts/Untitled.md",
     "_drafts/f.md",
+    "_drafts/2021-09-11-dormir.md",
     "content/_posts/2021-09-21-sintiendo.md",
     "content/_posts/2021-09-20-Vivian-Suter.md",
-    "_drafts/2021-09-11-dormir.md",
-    "_drafts/2021-09-18.md",
     "content/_posts/2021-09-11-dormir.md",
-    "_drafts/Untitled.md",
-    "content/_posts/2021-09-09-san-delfin.md",
-    "_includes/about.md",
-    "about.md"
+    "content/_posts/2021-09-09-san-delfin.md"
   ]
 }

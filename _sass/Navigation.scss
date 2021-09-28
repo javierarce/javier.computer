@@ -40,14 +40,14 @@
     flex-direction: column;
     align-items: flex-start;
   }
-
   .Navigation__links {
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 
-.Navigation__links .Navigation__link {
-  margin: 0;
-}
+  .Navigation__links .Navigation__link {
+  margin: 0 0.8em 0 0;
+  }
+
   .Navigation__link {
     font-size: 1.1em;
   }

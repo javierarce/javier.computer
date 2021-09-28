@@ -1,18 +1,11 @@
 .Footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: auto;
   padding: 1em 0;
 }
 
-.Weather {
-  margin: 0 0 2em;
-  opacity: .5;
-}
-
 .Footer__link {
+  margin: 0 1em 0 0;
   text-decoration: none;
   opacity: 0.5;
 }
@@ -21,7 +14,6 @@
   text-decoration: none;
   opacity: 1;
 }
-
 
 @media all and (max-width: 1280px) {
 }
