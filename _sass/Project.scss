@@ -1,5 +1,5 @@
 .Projects {
-  width: 800px;
+  width: 100%;
 }
 
 .Projects__intro {
@@ -10,6 +10,7 @@
 .Project {
   margin: 0 0 3em;
   font-size: 1.2em;
+  break-inside: avoid;
 }
 
 .Project__title {
@@ -20,21 +21,24 @@
 
 .Tags {
   margin: 0.8em 0 0 0;
-  display: flex;
+  display: none;
 }
 
 .Tag {
-  margin: 0 .4em 0 0;
-  font-size: 0.7em;
-  opacity: .4;
+  margin: 0 0.4em 0 0;
+  font-size: 0.6em;
   color: var(--background);
   padding: 0.2em 0.4em;
   border-radius: 2px;
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .Project__content.is-light p {
   opacity: 0.7;
+}
+
+.Projects__content {
+  column-count: 3;
 }
 
 .Project__content {

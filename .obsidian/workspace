@@ -1,10 +1,10 @@
 {
   "main": {
-    "id": "a806640acce7f282",
+    "id": "785330342b720c85",
     "type": "split",
     "children": [
       {
-        "id": "74651044634437b6",
+        "id": "39e5caacbf032179",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -105,7 +105,7 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "74651044634437b6",
+  "active": "39e5caacbf032179",
   "lastOpenFiles": [
     "content/_posts/2021-09-28-Ethio-Obscure-Labels-Selection.md",
     "_drafts/2021-09-18.md",
