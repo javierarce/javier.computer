@@ -14,16 +14,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
 
-      - name: Install
-        uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: install # will run `yarn install` command
-
-      - name: Build
-        uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: build # will run `yarn build` command
-        
       - name: Copy file via scp
         uses: appleboy/scp-action@master
         env:
