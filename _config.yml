@@ -60,7 +60,7 @@ collections:
   books:
     output: true
     permalinks: '/books/:path'
-#collections_dir: content
+collections_dir: content
 
 permalink: /:year/:month/:day/:title
 
