@@ -6,11 +6,7 @@ className: Photos
   {% include navigation.html %}
 
   <div class="Photos__header">
-    {% if page.show_title %}
-    <h3 class="Page__title">{{ page.title }}</h3>
-    {% endif %}
-    <p class="is-light">{{ page.description }}</p>
-    {{ content }}
+    Archive | <a href="/photos">Feed</a>
   </div>
 
   <div class="Photos__archive">
@@ -19,19 +15,17 @@ className: Photos
     {% for photo in photos %}
     {% if photo.filenames %}
 
-  {% assign filenames = photo.filenames %}
-  {% for filename in filenames %}
+    {% assign filename = photo.filenames | first %}
 
-  <div class="Photo">
-    <div class="Photo__content">
-      <figure class="Figure">
-        <picture>
-          <a href="{{ photo.url }}"><img class="Photo lazy" data-src="https://img.javier.computer/{{ filename }}_640.jpg"></a>
-        </picture>
-      </figure>
+    <div class="Photo">
+      <div class="Photo__content">
+        <figure class="Figure">
+          <picture>
+            <a href="{{ photo.url }}"><img class="Photo lazy" data-src="https://img.javier.computer/{{ filename }}_640.jpg"></a>
+          </picture>
+        </figure>
+      </div>
     </div>
-  </div>
-  {% endfor %}
     {% else %}
     <div class="Photo">
       <div class="Photo__content">
@@ -49,4 +43,3 @@ className: Photos
 
   {% include footer.html %}
 </div>
-
