@@ -1,0 +1,28 @@
+---
+layout: base
+className: Photos
+---
+<div class="Content">
+  {% include navigation.html %}
+
+  <div class="Photos__header">
+    {% if page.show_title %}
+    <h3 class="Page__title">{{ page.title }}</h3>
+    {% endif %}
+    <p class="is-light">{{ page.description }}</p>
+    {{ content }}
+  </div>
+
+  <div class="Photos__content">
+    {% assign photos = site.photos | reverse %} 
+    {% assign category = page.title | downcase %}
+    {% for photo in photos %}
+    {% if category == photo.category %}
+    {{ photo }}
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  {% include footer.html %}
+</div>
+

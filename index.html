@@ -36,15 +36,16 @@ className: Home
     {% elsif page == 1 %}
     <a class="Pagination__item" href="{{ '/' | relative_url }}">{{ page }}</a>
     {% else %}
-    <a class="Pagination__item" href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+    <a class="Pagination__item" href="/page/{{ page }}">{{ page }}</a>
     {% endif %}
     {% endfor %}
+{% endif %}
 
     <a class="Pagination__item is-archive" href="/archive">Archive</a>
 
   </div>
-  {% endif %}
   </div>
+
 
   {% include footer.html %}
 </div>

@@ -7,11 +7,8 @@
         "id": "39e5caacbf032179",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "content/_posts/2021-09-28-Ethio-Obscure-Labels-Selection.md",
-            "mode": "source"
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -76,7 +73,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/_posts/2021-09-28-Ethio-Obscure-Labels-Selection.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +89,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/_posts/2021-09-28-Ethio-Obscure-Labels-Selection.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -107,15 +102,15 @@
   },
   "active": "39e5caacbf032179",
   "lastOpenFiles": [
+    "content/_photos/P1200108.md",
+    "content/_photos/P1200037.md",
+    "content/_posts/2021-12-15-hello.md",
     "content/_posts/2021-09-28-Ethio-Obscure-Labels-Selection.md",
+    "content/_posts/2021-06-27-busy.md",
+    "content/_posts/2021-07-04-goodreads.md",
+    "_drafts/Untitled 2.md",
+    "_drafts/Untitled 1.md",
     "_drafts/2021-09-18.md",
-    "_drafts/Plugins.md",
-    "_drafts/Untitled.md",
-    "_drafts/f.md",
-    "_drafts/2021-09-11-dormir.md",
-    "content/_posts/2021-09-21-sintiendo.md",
-    "content/_posts/2021-09-20-Vivian-Suter.md",
-    "content/_posts/2021-09-11-dormir.md",
-    "content/_posts/2021-09-09-san-delfin.md"
+    "_drafts/Plugins.md"
   ]
 }

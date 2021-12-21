@@ -25,7 +25,7 @@
   --active: var(--white);
   --hover: var(--white);
   --text: var(--white);
-  --background: #0053DB;
+  --background: #000;
 }
 
 .Content, html, body {
@@ -214,4 +214,5 @@ img.lazy.loaded {
     padding: 1em;
   }
 }
+
 

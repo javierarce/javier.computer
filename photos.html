@@ -6,10 +6,14 @@ permalink: photos
 ---
 <div class="Content">
   {% include navigation.html %}
-  {% assign photos = site.photos | reverse %} 
-  {% for post in photos %}
-  {{ post}}
-  {% endfor %}
+  <div class="Photos__content">
+    {% assign photos = site.photos | reverse %} 
+    {% for post in photos limit: 5 %}
+    {{ post}}
+    {% endfor %}
+  </div>
+
+  <a href="/photos/archive">Archives</a>
 
   {% include footer.html %}
 </div>
