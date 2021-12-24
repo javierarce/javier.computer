@@ -1,0 +1,23 @@
+{% if photo.filenames %}
+{% assign filename = photo.filenames | first %}
+
+<div class="Photo">
+  <div class="Photo__content">
+    <figure class="Figure">
+      <picture>
+        <a href="{{include.photo.url}}"><img class="Photo lazy" data-src="https://img.javier.computer/{{ filename }}_640.jpg"></a>
+      </picture>
+    </figure>
+  </div>
+</div>
+{% else %}
+<div class="Photo">
+  <div class="Photo__content">
+    <figure class="Figure">
+      <picture>
+        <a href="{{include.photo.url}}"><img class="Photo lazy" data-src="https://img.javier.computer/{{ include.photo.filename }}_640.jpg"></a>
+      </picture>
+    </figure>
+  </div>
+</div>
+{% endif %}
