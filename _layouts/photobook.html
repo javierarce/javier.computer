@@ -6,11 +6,7 @@ className: Photos
   {% include navigation.html %}
 
   <div class="Photos__header">
-    {% if page.show_title %}
-    <h3 class="Page__title">{{ page.title }}</h3>
-    {% endif %}
-    <p class="is-light">{{ page.description }}</p>
-    {{ content }}
+    <p class="is-light">{{ page.title }} | <a href="/photos">Feed</a> 
   </div>
 
   <div class="Photos__content">
@@ -18,11 +14,10 @@ className: Photos
     {% assign category = page.title | downcase %}
     {% for photo in photos %}
     {% if category == photo.category %}
-    {{ photo }}
+    {% include photo.html photo=photo %}
     {% endif %}
     {% endfor %}
   </div>
 
   {% include footer.html %}
 </div>
-

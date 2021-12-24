@@ -11,32 +11,15 @@ className: Photos
 
   <div class="Photos__archive">
     {% assign photos = site.photos | reverse %} 
-    {% assign category = page.title | downcase %}
+    {% assign category = 'test' %}
     {% for photo in photos %}
-    {% if photo.filenames %}
 
-    {% assign filename = photo.filenames | first %}
-
-    <div class="Photo">
-      <div class="Photo__content">
-        <figure class="Figure">
-          <picture>
-            <a href="{{ photo.url }}"><img class="Photo lazy" data-src="https://img.javier.computer/{{ filename }}_640.jpg"></a>
-          </picture>
-        </figure>
-      </div>
-    </div>
-    {% else %}
-    <div class="Photo">
-      <div class="Photo__content">
-        <figure class="Figure">
-          <picture>
-            <a href="{{photo.url}}"><img class="Photo lazy" data-src="https://img.javier.computer/{{ photo.filename }}_640.jpg"></a>
-          </picture>
-        </figure>
-      </div>
-    </div>
-    {% endif %}
+      {% if category == photo.category %}
+        {% continue %}
+      {% endif %}
+  
+      {% assign category = photo.category %}
+      {% include thumb.html photo=photo %}
 
     {% endfor %}
   </div>
