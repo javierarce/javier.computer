@@ -2,14 +2,30 @@
 layout: base
 className: Book
 ---
+<div class="Content">
+  {% include navigation.html %}
 
-{% include navigation.html selected="Books" %}
+  <div class="Book">
+    <div class="Book__content">
+      <div class="Book__header">
 
-<div class="Post is-book">
-  <div class="Post__content">
-    {{ content }}
+        <div class="Book__title">
+          {{ page.title }}
+        </div>
+        {% if page.author %}
+        <div class="Book__author">
+          {{ page.author }}
+        </div>
+        {% endif %}
+      </div>
+      {% if page.cover %}
+      <div class="Book__cover">
+        Cover
+      </div>
+      {% endif %}
+      {{ content }}
+    </div>
   </div>
+
+  {% include footer.html %}
 </div>
-
-{% include footer.html %}
-

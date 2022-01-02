@@ -1,15 +1,78 @@
-.Books {
-  margin: auto;
-  display: grid;
-  padding: 0 1em;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-}
-
 .Book {
-  width: 380px;
+  margin: 0 auto 3em;
+  font-size: 1.2em;
+  break-inside: avoid;
+  max-width: 900px;
 }
 
-.Book img {
+.Book__header {
+  margin: 0 auto 1em;
+  text-align: center;
+}
+
+.Book__title {
+  display: block;
+  font-weight: bold;
+}
+
+.Book__author {
   display: block;
 }
 
+.Book__content.is-light p {
+  opacity: 0.7;
+}
+
+.Book__content {
+  margin: 0 0 1em;
+}
+
+.Book__cover {
+  background: #fafafa;
+  opacity: .5;
+  max-width: 400px;
+  height: 500px;
+  margin: 0 0 1em;
+  margin: auto auto 1em auto;
+}
+
+.Book blockquote {
+  background: none;
+  padding: 0;
+  border-radious: 0;
+  margin: 0 0 2em;
+}
+
+.Book blockquote p { 
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  font-size: 1em;
+  line-height: 145%;
+} 
+
+
+.Book__date {
+  opacity: 0.5;
+  font-size: 0.8em;
+  user-select: none;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.Book__date:hover {
+  opacity: 0.5;
+  font-size: 0.8em;
+  user-select: none;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+@media all and (max-width: 1280px) {
+}
+
+@media all and (max-width: 1024px) {
+}
+
+@media all and (max-width: 640px) {
+}
