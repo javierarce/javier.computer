@@ -4,6 +4,7 @@
 ---
 
 @import '_reset';
+
 @import 'About';
 @import 'Book';
 @import 'Book';
@@ -12,6 +13,7 @@
 @import 'Navigation';
 @import 'Page';
 @import 'Pagination';
+@import 'Photo';
 @import 'Posts';
 @import 'Project';
 @import 'Song';
@@ -176,6 +178,13 @@ img.lazy.loaded {
   opacity: 1;
 }
 
+img.lazy.error {
+  visibility: visible;
+  border: 1px solid var(--white);
+  background: none;
+  opacity: 1;
+}
+
 .Figure,
 .Photo {
   width: 100%;
@@ -215,5 +224,3 @@ img.lazy.loaded {
     padding: 1em;
   }
 }
-
-
