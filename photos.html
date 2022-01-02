@@ -7,6 +7,10 @@ permalink: photos
 <div class="Content">
   {% include navigation.html %}
 
+  <div class="Photos__intro">
+    This section is not finished yet, but you can have a look at some photos.
+  </div>
+
   <div class="Photos__content">
     {% assign photos = site.photos | reverse %} 
     {% for photo in photos limit: 5 %}
