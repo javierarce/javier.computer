@@ -4,14 +4,19 @@ description: Books I've read
 title: Reading
 permalink: reading
 ---
-### Reading
 
-- **The Long Way**, Bernard Moitessier
+
+### 2022
+
+| Title | Author | Publisher | Year |
+|:-------|:-------|:---- |:-----|
+|[Bird By Bird](/books/bird_by_bird) | Anne Lamott | ??? | ??? |
 
 ### 2021
 
 | Title | Author | Publisher | Year |
 |:-------|:-------|:---- |:-----|
+|**The Long Way** | Bernard Moitessier | ??? | ??? |
 |**How to Blow Up a Pipeline**| Andreas Malm| Verso | 2021|
 |**Calypso**|David Sedaris|Little Brown|
 |**The Tartar Steppe**|Dino Buzzati| Verba Mundi | 2005|
