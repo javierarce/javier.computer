@@ -1,0 +1,10 @@
+---
+layout: post
+title: Memoria Sonora
+date: 2022-01-30
+show_date: true
+---
+Hace unos días me enteré (por LinkedIn, from all the places), que la Biblioteca Nacional de España había creado un podcast oficial llamado "Memoria Sonora". Mi decepción fue enorme cuando descubrí que las dos únicas formas de acceder al contenido era: bien a través de una plataforma propietaria y de ética dudosa como Spotify, bien manualmente desde la anticuada web de la BNE. Para solucionar esta ridiculez decidí liberar el podcast creando y publicando un feed de RSS, y si ahora buscas "Memoria Sonora" en tu [app de podcasts](https://pca.st/y08qei5m) podrás escucharlo donde más te apetezca.
+
+
+

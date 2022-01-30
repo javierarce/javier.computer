@@ -6,5 +6,7 @@
   "useMarkdownLinks": true,
   "attachmentFolderPath": "assets/img",
   "showFrontmatter": true,
-  "promptDelete": false
+  "promptDelete": false,
+  "legacyEditor": false,
+  "livePreview": true
 }
