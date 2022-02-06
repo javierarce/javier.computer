@@ -1,44 +1,41 @@
-.Project {
-  margin: 0 0 3em;
-  font-size: 1.2em;
-  break-inside: avoid;
+.Projects table td:first-child {
+  width: 350px;
 }
 
-.Project__title {
-  display: block;
-  font-weight: bold;
-  margin: 0 0 .4em;
-}
-
-.Project__content.is-light p {
-  opacity: 0.7;
-}
-
-.Project__content {
-  margin: 0 0 1em;
-}
-
-.Project__date {
-  opacity: 0.5;
-  font-size: 0.8em;
-  user-select: none;
-  text-decoration: none;
-  font-weight: 400;
-}
-
-.Project__date:hover {
-  opacity: 0.5;
-  font-size: 0.8em;
-  user-select: none;
-  text-decoration: none;
-  font-weight: normal;
+.Projects table  tr > td:nth-child(3) {
+  width: 200px;
 }
 
 @media all and (max-width: 1280px) {
 }
 
-@media all and (max-width: 1024px) {
+@media all and (max-width: 800px) {
+  .Projects table  tr > td:nth-child(1){
+    width: auto;
+  }
+  .Projects table  tr > td:nth-child(3){
+    width: auto;
+  }
 }
 
 @media all and (max-width: 640px) {
+  .Projects thead {
+    display: none;
+  }
+  
+  .Projects tr {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 2em;
+  }
+  .Projects table td {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 0;
+  }
+
+  .Projects table  tr > td:nth-child(3){
+    font-style: italic;
+  }
 }
