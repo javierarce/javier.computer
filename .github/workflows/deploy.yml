@@ -13,12 +13,16 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-ruby@v1
-      with:
-        ruby-version: '3.0'
-
-
-    - name: Build Site with Jekyll.
-      run: JEKYLL_ENV=production bundle exec jekyll build
+        with:
+          ruby-version: '3.0'
+      - name: Setup Environment.
+        run: |
+          gem install jekyll bundler
+          bundle install
+          sudo apt-get install -y ncftp
+        
+      - name: Build Site with Jekyll.
+        run: JEKYLL_ENV=production bundle exec jekyll build
 
       - name: Copy file via scp
         uses: appleboy/scp-action@master
