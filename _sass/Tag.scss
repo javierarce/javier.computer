@@ -1,0 +1,13 @@
+.Tags {
+  margin: 0.8em 0 0 0;
+  display: none;
+}
+
+.Tag {
+  margin: 0 0.4em 0 0;
+  font-size: 0.6em;
+  color: var(--background);
+  padding: 0.2em 0.4em;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.3);
+}

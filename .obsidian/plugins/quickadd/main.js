@@ -1,27 +1,6 @@
 'use strict';
 
 var obsidian = require('obsidian');
-require('assert');
-
-function _interopNamespace(e) {
-    if (e && e.__esModule) return e;
-    var n = Object.create(null);
-    if (e) {
-        Object.keys(e).forEach(function (k) {
-            if (k !== 'default') {
-                var d = Object.getOwnPropertyDescriptor(e, k);
-                Object.defineProperty(n, k, d.get ? d : {
-                    enumerable: true,
-                    get: function () {
-                        return e[k];
-                    }
-                });
-            }
-        });
-    }
-    n['default'] = e;
-    return Object.freeze(n);
-}
 
 function noop() { }
 function assign(tar, src) {
@@ -77,19 +56,49 @@ function get_slot_changes(definition, $$scope, dirty, fn) {
     }
     return $$scope.dirty;
 }
-function update_slot(slot, slot_definition, ctx, $$scope, dirty, get_slot_changes_fn, get_slot_context_fn) {
-    const slot_changes = get_slot_changes(slot_definition, $$scope, dirty, get_slot_changes_fn);
+function update_slot_base(slot, slot_definition, ctx, $$scope, slot_changes, get_slot_context_fn) {
     if (slot_changes) {
         const slot_context = get_slot_context(slot_definition, ctx, $$scope, get_slot_context_fn);
         slot.p(slot_context, slot_changes);
     }
 }
+function get_all_dirty_from_scope($$scope) {
+    if ($$scope.ctx.length > 32) {
+        const dirty = [];
+        const length = $$scope.ctx.length / 32;
+        for (let i = 0; i < length; i++) {
+            dirty[i] = -1;
+        }
+        return dirty;
+    }
+    return -1;
+}
 function action_destroyer(action_result) {
     return action_result && is_function(action_result.destroy) ? action_result.destroy : noop;
 }
-
 function append(target, node) {
     target.appendChild(node);
+}
+function append_styles(target, style_sheet_id, styles) {
+    const append_styles_to = get_root_for_style(target);
+    if (!append_styles_to.getElementById(style_sheet_id)) {
+        const style = element('style');
+        style.id = style_sheet_id;
+        style.textContent = styles;
+        append_stylesheet(append_styles_to, style);
+    }
+}
+function get_root_for_style(node) {
+    if (!node)
+        return document;
+    const root = node.getRootNode ? node.getRootNode() : node.ownerDocument;
+    if (root && root.host) {
+        return root;
+    }
+    return node.ownerDocument;
+}
+function append_stylesheet(node, style) {
+    append(node.head || node, style);
 }
 function insert(target, node, anchor) {
     target.insertBefore(node, anchor || null);
@@ -147,9 +156,6 @@ function set_data(text, data) {
 function set_input_value(input, value) {
     input.value = value == null ? '' : value;
 }
-function set_style(node, key, value, important) {
-    node.style.setProperty(key, value, important ? 'important' : '');
-}
 function select_option(select, value) {
     for (let i = 0; i < select.options.length; i += 1) {
         const option = select.options[i];
@@ -158,6 +164,7 @@ function select_option(select, value) {
             return;
         }
     }
+    select.selectedIndex = -1; // no option should be selected
 }
 function select_value(select) {
     const selected_option = select.querySelector(':checked') || select.options[0];
@@ -166,9 +173,9 @@ function select_value(select) {
 function toggle_class(element, name, toggle) {
     element.classList[toggle ? 'add' : 'remove'](name);
 }
-function custom_event(type, detail) {
+function custom_event(type, detail, bubbles = false) {
     const e = document.createEvent('CustomEvent');
-    e.initCustomEvent(type, false, false, detail);
+    e.initCustomEvent(type, bubbles, false, detail);
     return e;
 }
 
@@ -204,7 +211,8 @@ function createEventDispatcher() {
 function bubble(component, event) {
     const callbacks = component.$$.callbacks[event.type];
     if (callbacks) {
-        callbacks.slice().forEach(fn => fn(event));
+        // @ts-ignore
+        callbacks.slice().forEach(fn => fn.call(this, event));
     }
 }
 
@@ -226,22 +234,40 @@ function add_render_callback(fn) {
 function add_flush_callback(fn) {
     flush_callbacks.push(fn);
 }
-let flushing = false;
+// flush() calls callbacks in this order:
+// 1. All beforeUpdate callbacks, in order: parents before children
+// 2. All bind:this callbacks, in reverse order: children before parents.
+// 3. All afterUpdate callbacks, in order: parents before children. EXCEPT
+//    for afterUpdates called during the initial onMount, which are called in
+//    reverse order: children before parents.
+// Since callbacks might update component values, which could trigger another
+// call to flush(), the following steps guard against this:
+// 1. During beforeUpdate, any updated components will be added to the
+//    dirty_components array and will cause a reentrant call to flush(). Because
+//    the flush index is kept outside the function, the reentrant call will pick
+//    up where the earlier call left off and go through all dirty components. The
+//    current_component value is saved and restored so that the reentrant call will
+//    not interfere with the "parent" flush() call.
+// 2. bind:this callbacks cannot trigger new flush() calls.
+// 3. During afterUpdate, any updated components will NOT have their afterUpdate
+//    callback called a second time; the seen_callbacks set, outside the flush()
+//    function, guarantees this behavior.
 const seen_callbacks = new Set();
+let flushidx = 0; // Do *not* move this inside the flush() function
 function flush() {
-    if (flushing)
-        return;
-    flushing = true;
+    const saved_component = current_component;
     do {
         // first, call beforeUpdate functions
         // and update components
-        for (let i = 0; i < dirty_components.length; i += 1) {
-            const component = dirty_components[i];
+        while (flushidx < dirty_components.length) {
+            const component = dirty_components[flushidx];
+            flushidx++;
             set_current_component(component);
             update(component.$$);
         }
         set_current_component(null);
         dirty_components.length = 0;
+        flushidx = 0;
         while (binding_callbacks.length)
             binding_callbacks.pop()();
         // then, once components are updated, call
@@ -261,8 +287,8 @@ function flush() {
         flush_callbacks.pop()();
     }
     update_scheduled = false;
-    flushing = false;
     seen_callbacks.clear();
+    set_current_component(saved_component);
 }
 function update($$) {
     if ($$.fragment !== null) {
@@ -475,7 +501,7 @@ function make_dirty(component, i) {
     }
     component.$$.dirty[(i / 31) | 0] |= (1 << (i % 31));
 }
-function init(component, options, instance, create_fragment, not_equal, props, dirty = [-1]) {
+function init(component, options, instance, create_fragment, not_equal, props, append_styles, dirty = [-1]) {
     const parent_component = current_component;
     set_current_component(component);
     const $$ = component.$$ = {
@@ -492,12 +518,14 @@ function init(component, options, instance, create_fragment, not_equal, props, d
         on_disconnect: [],
         before_update: [],
         after_update: [],
-        context: new Map(parent_component ? parent_component.$$.context : options.context || []),
+        context: new Map(options.context || (parent_component ? parent_component.$$.context : [])),
         // everything else
         callbacks: blank_object(),
         dirty,
-        skip_bound: false
+        skip_bound: false,
+        root: options.target || parent_component.$$.root
     };
+    append_styles && append_styles($$.root);
     let ready = false;
     $$.ctx = instance
         ? instance(component, options.props || {}, (i, ret, ...rest) => {
@@ -598,9 +626,9 @@ var faTrash = {
   icon: [448, 512, [], "f1f8", "M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"]
 };
 
-/* node_modules\svelte-awesome\components\svg\Path.svelte generated by Svelte v3.38.2 */
+/* node_modules/svelte-awesome/components/svg/Path.svelte generated by Svelte v3.46.4 */
 
-function create_fragment$i(ctx) {
+function create_fragment$g(ctx) {
 	let path;
 	let path_key_value;
 
@@ -639,13 +667,13 @@ function create_fragment$i(ctx) {
 	};
 }
 
-function instance$i($$self, $$props, $$invalidate) {
-	let { id = "" } = $$props;
+function instance$g($$self, $$props, $$invalidate) {
+	let { id = '' } = $$props;
 	let { data = {} } = $$props;
 
 	$$self.$$set = $$props => {
-		if ("id" in $$props) $$invalidate(0, id = $$props.id);
-		if ("data" in $$props) $$invalidate(1, data = $$props.data);
+		if ('id' in $$props) $$invalidate(0, id = $$props.id);
+		if ('data' in $$props) $$invalidate(1, data = $$props.data);
 	};
 
 	return [id, data];
@@ -654,13 +682,13 @@ function instance$i($$self, $$props, $$invalidate) {
 class Path extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance$i, create_fragment$i, safe_not_equal, { id: 0, data: 1 });
+		init(this, options, instance$g, create_fragment$g, safe_not_equal, { id: 0, data: 1 });
 	}
 }
 
-/* node_modules\svelte-awesome\components\svg\Polygon.svelte generated by Svelte v3.38.2 */
+/* node_modules/svelte-awesome/components/svg/Polygon.svelte generated by Svelte v3.46.4 */
 
-function create_fragment$h(ctx) {
+function create_fragment$f(ctx) {
 	let polygon;
 	let polygon_key_value;
 
@@ -699,13 +727,13 @@ function create_fragment$h(ctx) {
 	};
 }
 
-function instance$h($$self, $$props, $$invalidate) {
-	let { id = "" } = $$props;
+function instance$f($$self, $$props, $$invalidate) {
+	let { id = '' } = $$props;
 	let { data = {} } = $$props;
 
 	$$self.$$set = $$props => {
-		if ("id" in $$props) $$invalidate(0, id = $$props.id);
-		if ("data" in $$props) $$invalidate(1, data = $$props.data);
+		if ('id' in $$props) $$invalidate(0, id = $$props.id);
+		if ('data' in $$props) $$invalidate(1, data = $$props.data);
 	};
 
 	return [id, data];
@@ -714,13 +742,13 @@ function instance$h($$self, $$props, $$invalidate) {
 class Polygon extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance$h, create_fragment$h, safe_not_equal, { id: 0, data: 1 });
+		init(this, options, instance$f, create_fragment$f, safe_not_equal, { id: 0, data: 1 });
 	}
 }
 
-/* node_modules\svelte-awesome\components\svg\Raw.svelte generated by Svelte v3.38.2 */
+/* node_modules/svelte-awesome/components/svg/Raw.svelte generated by Svelte v3.46.4 */
 
-function create_fragment$g(ctx) {
+function create_fragment$e(ctx) {
 	let g;
 
 	return {
@@ -741,8 +769,8 @@ function create_fragment$g(ctx) {
 	};
 }
 
-function instance$g($$self, $$props, $$invalidate) {
-	let cursor = 870711;
+function instance$e($$self, $$props, $$invalidate) {
+	let cursor = 0xd4937;
 
 	function getId() {
 		cursor += 1;
@@ -780,7 +808,7 @@ function instance$g($$self, $$props, $$invalidate) {
 	}
 
 	$$self.$$set = $$props => {
-		if ("data" in $$props) $$invalidate(1, data = $$props.data);
+		if ('data' in $$props) $$invalidate(1, data = $$props.data);
 	};
 
 	$$self.$$.update = () => {
@@ -795,20 +823,17 @@ function instance$g($$self, $$props, $$invalidate) {
 class Raw extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance$g, create_fragment$g, safe_not_equal, { data: 1 });
+		init(this, options, instance$e, create_fragment$e, safe_not_equal, { data: 1 });
 	}
 }
 
-/* node_modules\svelte-awesome\components\svg\Svg.svelte generated by Svelte v3.38.2 */
+/* node_modules/svelte-awesome/components/svg/Svg.svelte generated by Svelte v3.46.4 */
 
-function add_css$a() {
-	var style = element("style");
-	style.id = "svelte-1dof0an-style";
-	style.textContent = ".fa-icon.svelte-1dof0an{display:inline-block;fill:currentColor}.fa-flip-horizontal.svelte-1dof0an{transform:scale(-1, 1)}.fa-flip-vertical.svelte-1dof0an{transform:scale(1, -1)}.fa-spin.svelte-1dof0an{animation:svelte-1dof0an-fa-spin 1s 0s infinite linear}.fa-inverse.svelte-1dof0an{color:#fff}.fa-pulse.svelte-1dof0an{animation:svelte-1dof0an-fa-spin 1s infinite steps(8)}@keyframes svelte-1dof0an-fa-spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}";
-	append(document.head, style);
+function add_css$9(target) {
+	append_styles(target, "svelte-1dof0an", ".fa-icon.svelte-1dof0an{display:inline-block;fill:currentColor}.fa-flip-horizontal.svelte-1dof0an{transform:scale(-1, 1)}.fa-flip-vertical.svelte-1dof0an{transform:scale(1, -1)}.fa-spin.svelte-1dof0an{animation:svelte-1dof0an-fa-spin 1s 0s infinite linear}.fa-inverse.svelte-1dof0an{color:#fff}.fa-pulse.svelte-1dof0an{animation:svelte-1dof0an-fa-spin 1s infinite steps(8)}@keyframes svelte-1dof0an-fa-spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}");
 }
 
-function create_fragment$f(ctx) {
+function create_fragment$d(ctx) {
 	let svg;
 	let svg_class_value;
 	let svg_role_value;
@@ -827,14 +852,14 @@ function create_fragment$f(ctx) {
 			attr(svg, "width", /*width*/ ctx[1]);
 			attr(svg, "height", /*height*/ ctx[2]);
 			attr(svg, "aria-label", /*label*/ ctx[11]);
-			attr(svg, "role", svg_role_value = /*label*/ ctx[11] ? "img" : "presentation");
+			attr(svg, "role", svg_role_value = /*label*/ ctx[11] ? 'img' : 'presentation');
 			attr(svg, "viewBox", /*box*/ ctx[3]);
 			attr(svg, "style", /*style*/ ctx[10]);
 			toggle_class(svg, "fa-spin", /*spin*/ ctx[4]);
 			toggle_class(svg, "fa-pulse", /*pulse*/ ctx[6]);
 			toggle_class(svg, "fa-inverse", /*inverse*/ ctx[5]);
-			toggle_class(svg, "fa-flip-horizontal", /*flip*/ ctx[7] === "horizontal");
-			toggle_class(svg, "fa-flip-vertical", /*flip*/ ctx[7] === "vertical");
+			toggle_class(svg, "fa-flip-horizontal", /*flip*/ ctx[7] === 'horizontal');
+			toggle_class(svg, "fa-flip-vertical", /*flip*/ ctx[7] === 'vertical');
 		},
 		m(target, anchor) {
 			insert(target, svg, anchor);
@@ -848,7 +873,16 @@ function create_fragment$f(ctx) {
 		p(ctx, [dirty]) {
 			if (default_slot) {
 				if (default_slot.p && (!current || dirty & /*$$scope*/ 4096)) {
-					update_slot(default_slot, default_slot_template, ctx, /*$$scope*/ ctx[12], dirty, null, null);
+					update_slot_base(
+						default_slot,
+						default_slot_template,
+						ctx,
+						/*$$scope*/ ctx[12],
+						!current
+						? get_all_dirty_from_scope(/*$$scope*/ ctx[12])
+						: get_slot_changes(default_slot_template, /*$$scope*/ ctx[12], dirty, null),
+						null
+					);
 				}
 			}
 
@@ -876,7 +910,7 @@ function create_fragment$f(ctx) {
 				attr(svg, "aria-label", /*label*/ ctx[11]);
 			}
 
-			if (!current || dirty & /*label*/ 2048 && svg_role_value !== (svg_role_value = /*label*/ ctx[11] ? "img" : "presentation")) {
+			if (!current || dirty & /*label*/ 2048 && svg_role_value !== (svg_role_value = /*label*/ ctx[11] ? 'img' : 'presentation')) {
 				attr(svg, "role", svg_role_value);
 			}
 
@@ -901,11 +935,11 @@ function create_fragment$f(ctx) {
 			}
 
 			if (dirty & /*className, flip*/ 129) {
-				toggle_class(svg, "fa-flip-horizontal", /*flip*/ ctx[7] === "horizontal");
+				toggle_class(svg, "fa-flip-horizontal", /*flip*/ ctx[7] === 'horizontal');
 			}
 
 			if (dirty & /*className, flip*/ 129) {
-				toggle_class(svg, "fa-flip-vertical", /*flip*/ ctx[7] === "vertical");
+				toggle_class(svg, "fa-flip-vertical", /*flip*/ ctx[7] === 'vertical');
 			}
 		},
 		i(local) {
@@ -924,7 +958,7 @@ function create_fragment$f(ctx) {
 	};
 }
 
-function instance$f($$self, $$props, $$invalidate) {
+function instance$d($$self, $$props, $$invalidate) {
 	let { $$slots: slots = {}, $$scope } = $$props;
 	let { class: className } = $$props;
 	let { width } = $$props;
@@ -940,19 +974,19 @@ function instance$f($$self, $$props, $$invalidate) {
 	let { label = undefined } = $$props;
 
 	$$self.$$set = $$props => {
-		if ("class" in $$props) $$invalidate(0, className = $$props.class);
-		if ("width" in $$props) $$invalidate(1, width = $$props.width);
-		if ("height" in $$props) $$invalidate(2, height = $$props.height);
-		if ("box" in $$props) $$invalidate(3, box = $$props.box);
-		if ("spin" in $$props) $$invalidate(4, spin = $$props.spin);
-		if ("inverse" in $$props) $$invalidate(5, inverse = $$props.inverse);
-		if ("pulse" in $$props) $$invalidate(6, pulse = $$props.pulse);
-		if ("flip" in $$props) $$invalidate(7, flip = $$props.flip);
-		if ("x" in $$props) $$invalidate(8, x = $$props.x);
-		if ("y" in $$props) $$invalidate(9, y = $$props.y);
-		if ("style" in $$props) $$invalidate(10, style = $$props.style);
-		if ("label" in $$props) $$invalidate(11, label = $$props.label);
-		if ("$$scope" in $$props) $$invalidate(12, $$scope = $$props.$$scope);
+		if ('class' in $$props) $$invalidate(0, className = $$props.class);
+		if ('width' in $$props) $$invalidate(1, width = $$props.width);
+		if ('height' in $$props) $$invalidate(2, height = $$props.height);
+		if ('box' in $$props) $$invalidate(3, box = $$props.box);
+		if ('spin' in $$props) $$invalidate(4, spin = $$props.spin);
+		if ('inverse' in $$props) $$invalidate(5, inverse = $$props.inverse);
+		if ('pulse' in $$props) $$invalidate(6, pulse = $$props.pulse);
+		if ('flip' in $$props) $$invalidate(7, flip = $$props.flip);
+		if ('x' in $$props) $$invalidate(8, x = $$props.x);
+		if ('y' in $$props) $$invalidate(9, y = $$props.y);
+		if ('style' in $$props) $$invalidate(10, style = $$props.style);
+		if ('label' in $$props) $$invalidate(11, label = $$props.label);
+		if ('$$scope' in $$props) $$invalidate(12, $$scope = $$props.$$scope);
 	};
 
 	return [
@@ -976,26 +1010,33 @@ function instance$f($$self, $$props, $$invalidate) {
 class Svg extends SvelteComponent {
 	constructor(options) {
 		super();
-		if (!document.getElementById("svelte-1dof0an-style")) add_css$a();
 
-		init(this, options, instance$f, create_fragment$f, safe_not_equal, {
-			class: 0,
-			width: 1,
-			height: 2,
-			box: 3,
-			spin: 4,
-			inverse: 5,
-			pulse: 6,
-			flip: 7,
-			x: 8,
-			y: 9,
-			style: 10,
-			label: 11
-		});
+		init(
+			this,
+			options,
+			instance$d,
+			create_fragment$d,
+			safe_not_equal,
+			{
+				class: 0,
+				width: 1,
+				height: 2,
+				box: 3,
+				spin: 4,
+				inverse: 5,
+				pulse: 6,
+				flip: 7,
+				x: 8,
+				y: 9,
+				style: 10,
+				label: 11
+			},
+			add_css$9
+		);
 	}
 }
 
-/* node_modules\svelte-awesome\components\Icon.svelte generated by Svelte v3.38.2 */
+/* node_modules/svelte-awesome/components/Icon.svelte generated by Svelte v3.46.4 */
 
 function get_each_context$3(ctx, list, i) {
 	const child_ctx = ctx.slice();
@@ -1398,7 +1439,7 @@ function create_if_block_1$2(ctx) {
 	}
 
 	raw = new Raw({ props: raw_props });
-	binding_callbacks.push(() => bind(raw, "data", raw_data_binding));
+	binding_callbacks.push(() => bind(raw, 'data', raw_data_binding));
 
 	return {
 		c() {
@@ -1511,11 +1552,20 @@ function create_default_slot(ctx) {
 		p(ctx, dirty) {
 			if (default_slot) {
 				if (default_slot.p && (!current || dirty & /*$$scope*/ 65536)) {
-					update_slot(default_slot, default_slot_template, ctx, /*$$scope*/ ctx[16], dirty, null, null);
+					update_slot_base(
+						default_slot,
+						default_slot_template,
+						ctx,
+						/*$$scope*/ ctx[16],
+						!current
+						? get_all_dirty_from_scope(/*$$scope*/ ctx[16])
+						: get_slot_changes(default_slot_template, /*$$scope*/ ctx[16], dirty, null),
+						null
+					);
 				}
 			} else {
-				if (default_slot_or_fallback && default_slot_or_fallback.p && dirty & /*self*/ 1) {
-					default_slot_or_fallback.p(ctx, dirty);
+				if (default_slot_or_fallback && default_slot_or_fallback.p && (!current || dirty & /*self*/ 1)) {
+					default_slot_or_fallback.p(ctx, !current ? -1 : dirty);
 				}
 			}
 		},
@@ -1534,7 +1584,7 @@ function create_default_slot(ctx) {
 	};
 }
 
-function create_fragment$e(ctx) {
+function create_fragment$c(ctx) {
 	let svg;
 	let current;
 
@@ -1599,7 +1649,7 @@ function create_fragment$e(ctx) {
 let outerScale = 1;
 
 function normaliseData(data) {
-	if ("iconName" in data && "icon" in data) {
+	if ('iconName' in data && 'icon' in data) {
 		let normalisedData = {};
 		let faIcon = data.icon;
 		let name = data.iconName;
@@ -1614,7 +1664,7 @@ function normaliseData(data) {
 	return data;
 }
 
-function instance$e($$self, $$props, $$invalidate) {
+function instance$c($$self, $$props, $$invalidate) {
 	let { $$slots: slots = {}, $$scope } = $$props;
 	let { class: className = "" } = $$props;
 	let { data } = $$props;
@@ -1632,7 +1682,7 @@ function instance$e($$self, $$props, $$invalidate) {
 	let box;
 
 	function init() {
-		if (typeof data === "undefined") {
+		if (typeof data === 'undefined') {
 			return;
 		}
 
@@ -1662,13 +1712,13 @@ function instance$e($$self, $$props, $$invalidate) {
 	function normalisedScale() {
 		let numScale = 1;
 
-		if (typeof scale !== "undefined") {
+		if (typeof scale !== 'undefined') {
 			numScale = Number(scale);
 		}
 
 		if (isNaN(numScale) || numScale <= 0) {
 			// eslint-disable-line no-restricted-globals
-			console.warn("Invalid prop: prop \"scale\" should be a number over 0."); // eslint-disable-line no-console
+			console.warn('Invalid prop: prop "scale" should be a number over 0.'); // eslint-disable-line no-console
 
 			return outerScale;
 		}
@@ -1727,8 +1777,8 @@ function instance$e($$self, $$props, $$invalidate) {
 			return combined;
 		}
 
-		if (combined !== "" && !combined.endsWith(";")) {
-			combined += "; ";
+		if (combined !== "" && !combined.endsWith(';')) {
+			combined += '; ';
 		}
 
 		return `${combined}font-size: ${size}em`;
@@ -1740,17 +1790,17 @@ function instance$e($$self, $$props, $$invalidate) {
 	}
 
 	$$self.$$set = $$props => {
-		if ("class" in $$props) $$invalidate(1, className = $$props.class);
-		if ("data" in $$props) $$invalidate(11, data = $$props.data);
-		if ("scale" in $$props) $$invalidate(12, scale = $$props.scale);
-		if ("spin" in $$props) $$invalidate(2, spin = $$props.spin);
-		if ("inverse" in $$props) $$invalidate(3, inverse = $$props.inverse);
-		if ("pulse" in $$props) $$invalidate(4, pulse = $$props.pulse);
-		if ("flip" in $$props) $$invalidate(5, flip = $$props.flip);
-		if ("label" in $$props) $$invalidate(6, label = $$props.label);
-		if ("self" in $$props) $$invalidate(0, self = $$props.self);
-		if ("style" in $$props) $$invalidate(13, style = $$props.style);
-		if ("$$scope" in $$props) $$invalidate(16, $$scope = $$props.$$scope);
+		if ('class' in $$props) $$invalidate(1, className = $$props.class);
+		if ('data' in $$props) $$invalidate(11, data = $$props.data);
+		if ('scale' in $$props) $$invalidate(12, scale = $$props.scale);
+		if ('spin' in $$props) $$invalidate(2, spin = $$props.spin);
+		if ('inverse' in $$props) $$invalidate(3, inverse = $$props.inverse);
+		if ('pulse' in $$props) $$invalidate(4, pulse = $$props.pulse);
+		if ('flip' in $$props) $$invalidate(5, flip = $$props.flip);
+		if ('label' in $$props) $$invalidate(6, label = $$props.label);
+		if ('self' in $$props) $$invalidate(0, self = $$props.self);
+		if ('style' in $$props) $$invalidate(13, style = $$props.style);
+		if ('$$scope' in $$props) $$invalidate(16, $$scope = $$props.$$scope);
 	};
 
 	$$self.$$.update = () => {
@@ -1790,7 +1840,7 @@ class Icon extends SvelteComponent {
 	constructor(options) {
 		super();
 
-		init(this, options, instance$e, create_fragment$e, safe_not_equal, {
+		init(this, options, instance$c, create_fragment$c, safe_not_equal, {
 			class: 1,
 			data: 11,
 			scale: 12,
@@ -1805,13 +1855,10 @@ class Icon extends SvelteComponent {
 	}
 }
 
-/* src\gui\choiceList\ChoiceItemRightButtons.svelte generated by Svelte v3.38.2 */
+/* src/gui/choiceList/ChoiceItemRightButtons.svelte generated by Svelte v3.46.4 */
 
-function add_css$9() {
-	var style = element("style");
-	style.id = "svelte-a47k80-style";
-	style.textContent = ".rightButtonsContainer.svelte-a47k80{display:flex;align-items:center;gap:8px}.clickable.svelte-a47k80:hover{cursor:pointer}.alignIconInDivInMiddle.svelte-a47k80{display:flex;align-items:center}";
-	append(document.head, style);
+function add_css$8(target) {
+	append_styles(target, "svelte-a47k80", ".rightButtonsContainer.svelte-a47k80{display:flex;align-items:center;gap:8px}.clickable.svelte-a47k80:hover{cursor:pointer}.alignIconInDivInMiddle.svelte-a47k80{display:flex;align-items:center}");
 }
 
 // (24:4) {#if showConfigureButton}
@@ -1864,7 +1911,7 @@ function create_if_block$3(ctx) {
 	};
 }
 
-function create_fragment$d(ctx) {
+function create_fragment$b(ctx) {
 	let div3;
 	let div0;
 	let icon0;
@@ -1914,8 +1961,8 @@ function create_fragment$d(ctx) {
 			attr(div2, "aria-label", "Drag-handle");
 
 			attr(div2, "style", div2_style_value = "" + ((/*dragDisabled*/ ctx[0]
-			? "cursor: grab"
-			: "cursor: grabbing") + ";"));
+			? 'cursor: grab'
+			: 'cursor: grabbing') + ";"));
 
 			attr(div2, "class", "alignIconInDivInMiddle svelte-a47k80");
 			attr(div3, "class", "rightButtonsContainer svelte-a47k80");
@@ -1988,8 +2035,8 @@ function create_fragment$d(ctx) {
 			}
 
 			if (!current || dirty & /*dragDisabled*/ 1 && div2_style_value !== (div2_style_value = "" + ((/*dragDisabled*/ ctx[0]
-			? "cursor: grab"
-			: "cursor: grabbing") + ";"))) {
+			? 'cursor: grab'
+			: 'cursor: grabbing') + ";"))) {
 				attr(div2, "style", div2_style_value);
 			}
 		},
@@ -2020,7 +2067,7 @@ function create_fragment$d(ctx) {
 	};
 }
 
-function instance$d($$self, $$props, $$invalidate) {
+function instance$b($$self, $$props, $$invalidate) {
 	let { dragDisabled } = $$props;
 	let { showConfigureButton = true } = $$props;
 	let { commandEnabled = false } = $$props;
@@ -2028,30 +2075,30 @@ function instance$d($$self, $$props, $$invalidate) {
 	const dispatcher = createEventDispatcher();
 
 	function emitDeleteChoice() {
-		dispatcher("deleteChoice");
+		dispatcher('deleteChoice');
 	}
 
 	function emitConfigureChoice() {
-		dispatcher("configureChoice");
+		dispatcher('configureChoice');
 	}
 
 	function emitToggleCommand() {
-		dispatcher("toggleCommand");
+		dispatcher('toggleCommand');
 	}
 
 	function mousedown_handler(event) {
-		bubble($$self, event);
+		bubble.call(this, $$self, event);
 	}
 
 	function touchstart_handler(event) {
-		bubble($$self, event);
+		bubble.call(this, $$self, event);
 	}
 
 	$$self.$$set = $$props => {
-		if ("dragDisabled" in $$props) $$invalidate(0, dragDisabled = $$props.dragDisabled);
-		if ("showConfigureButton" in $$props) $$invalidate(1, showConfigureButton = $$props.showConfigureButton);
-		if ("commandEnabled" in $$props) $$invalidate(2, commandEnabled = $$props.commandEnabled);
-		if ("choiceName" in $$props) $$invalidate(3, choiceName = $$props.choiceName);
+		if ('dragDisabled' in $$props) $$invalidate(0, dragDisabled = $$props.dragDisabled);
+		if ('showConfigureButton' in $$props) $$invalidate(1, showConfigureButton = $$props.showConfigureButton);
+		if ('commandEnabled' in $$props) $$invalidate(2, commandEnabled = $$props.commandEnabled);
+		if ('choiceName' in $$props) $$invalidate(3, choiceName = $$props.choiceName);
 	};
 
 	return [
@@ -2070,27 +2117,31 @@ function instance$d($$self, $$props, $$invalidate) {
 class ChoiceItemRightButtons extends SvelteComponent {
 	constructor(options) {
 		super();
-		if (!document.getElementById("svelte-a47k80-style")) add_css$9();
 
-		init(this, options, instance$d, create_fragment$d, safe_not_equal, {
-			dragDisabled: 0,
-			showConfigureButton: 1,
-			commandEnabled: 2,
-			choiceName: 3
-		});
+		init(
+			this,
+			options,
+			instance$b,
+			create_fragment$b,
+			safe_not_equal,
+			{
+				dragDisabled: 0,
+				showConfigureButton: 1,
+				commandEnabled: 2,
+				choiceName: 3
+			},
+			add_css$8
+		);
 	}
 }
 
-/* src\gui\choiceList\ChoiceListItem.svelte generated by Svelte v3.38.2 */
+/* src/gui/choiceList/ChoiceListItem.svelte generated by Svelte v3.46.4 */
 
-function add_css$8() {
-	var style = element("style");
-	style.id = "svelte-1vcfikc-style";
-	style.textContent = ".choiceListItem.svelte-1vcfikc{display:flex;font-size:16px;align-items:center;margin:12px 0 0 0;transition:1000ms ease-in-out}.choiceListItemName.svelte-1vcfikc{flex:1 0 0}";
-	append(document.head, style);
+function add_css$7(target) {
+	append_styles(target, "svelte-1vcfikc", ".choiceListItem.svelte-1vcfikc{display:flex;font-size:16px;align-items:center;margin:12px 0 0 0;transition:1000ms ease-in-out}.choiceListItemName.svelte-1vcfikc{flex:1 0 0}");
 }
 
-function create_fragment$c(ctx) {
+function create_fragment$a(ctx) {
 	let div;
 	let span;
 	let t0_value = /*choice*/ ctx[0].name + "";
@@ -2138,10 +2189,10 @@ function create_fragment$c(ctx) {
 	}
 
 	rightbuttons = new ChoiceItemRightButtons({ props: rightbuttons_props });
-	binding_callbacks.push(() => bind(rightbuttons, "choiceName", rightbuttons_choiceName_binding));
-	binding_callbacks.push(() => bind(rightbuttons, "commandEnabled", rightbuttons_commandEnabled_binding));
-	binding_callbacks.push(() => bind(rightbuttons, "showConfigureButton", rightbuttons_showConfigureButton_binding));
-	binding_callbacks.push(() => bind(rightbuttons, "dragDisabled", rightbuttons_dragDisabled_binding));
+	binding_callbacks.push(() => bind(rightbuttons, 'choiceName', rightbuttons_choiceName_binding));
+	binding_callbacks.push(() => bind(rightbuttons, 'commandEnabled', rightbuttons_commandEnabled_binding));
+	binding_callbacks.push(() => bind(rightbuttons, 'showConfigureButton', rightbuttons_showConfigureButton_binding));
+	binding_callbacks.push(() => bind(rightbuttons, 'dragDisabled', rightbuttons_dragDisabled_binding));
 	rightbuttons.$on("mousedown", /*mousedown_handler*/ ctx[10]);
 	rightbuttons.$on("touchstart", /*touchstart_handler*/ ctx[11]);
 	rightbuttons.$on("deleteChoice", /*deleteChoice*/ ctx[3]);
@@ -2212,22 +2263,22 @@ function create_fragment$c(ctx) {
 	};
 }
 
-function instance$c($$self, $$props, $$invalidate) {
+function instance$a($$self, $$props, $$invalidate) {
 	let { choice } = $$props;
 	let { dragDisabled } = $$props;
 	let showConfigureButton = true;
 	const dispatcher = createEventDispatcher();
 
 	function deleteChoice() {
-		dispatcher("deleteChoice", { choice });
+		dispatcher('deleteChoice', { choice });
 	}
 
 	function configureChoice() {
-		dispatcher("configureChoice", { choice });
+		dispatcher('configureChoice', { choice });
 	}
 
 	function toggleCommandForChoice() {
-		dispatcher("toggleCommand", { choice });
+		dispatcher('toggleCommand', { choice });
 	}
 
 	function rightbuttons_choiceName_binding(value) {
@@ -2255,16 +2306,16 @@ function instance$c($$self, $$props, $$invalidate) {
 	}
 
 	function mousedown_handler(event) {
-		bubble($$self, event);
+		bubble.call(this, $$self, event);
 	}
 
 	function touchstart_handler(event) {
-		bubble($$self, event);
+		bubble.call(this, $$self, event);
 	}
 
 	$$self.$$set = $$props => {
-		if ("choice" in $$props) $$invalidate(0, choice = $$props.choice);
-		if ("dragDisabled" in $$props) $$invalidate(1, dragDisabled = $$props.dragDisabled);
+		if ('choice' in $$props) $$invalidate(0, choice = $$props.choice);
+		if ('dragDisabled' in $$props) $$invalidate(1, dragDisabled = $$props.dragDisabled);
 	};
 
 	return [
@@ -2286,18 +2337,14 @@ function instance$c($$self, $$props, $$invalidate) {
 class ChoiceListItem extends SvelteComponent {
 	constructor(options) {
 		super();
-		if (!document.getElementById("svelte-1vcfikc-style")) add_css$8();
-		init(this, options, instance$c, create_fragment$c, safe_not_equal, { choice: 0, dragDisabled: 1 });
+		init(this, options, instance$a, create_fragment$a, safe_not_equal, { choice: 0, dragDisabled: 1 }, add_css$7);
 	}
 }
 
-/* src\gui\choiceList\MultiChoiceListItem.svelte generated by Svelte v3.38.2 */
+/* src/gui/choiceList/MultiChoiceListItem.svelte generated by Svelte v3.46.4 */
 
-function add_css$7() {
-	var style = element("style");
-	style.id = "svelte-na99np-style";
-	style.textContent = ".multiChoiceListItem.svelte-na99np{display:flex;font-size:16px;align-items:center;margin:12px 0 0 0}.clickable.svelte-na99np:hover{cursor:pointer}.multiChoiceListItemName.svelte-na99np{flex:1 0 0;margin-left:5px}.nestedChoiceList.svelte-na99np{padding-left:25px}";
-	append(document.head, style);
+function add_css$6(target) {
+	append_styles(target, "svelte-na99np", ".multiChoiceListItem.svelte-na99np{display:flex;font-size:16px;align-items:center;margin:12px 0 0 0}.clickable.svelte-na99np:hover{cursor:pointer}.multiChoiceListItemName.svelte-na99np{flex:1 0 0;margin-left:5px}.nestedChoiceList.svelte-na99np{padding-left:25px}");
 }
 
 // (43:4) {#if !collapseId || (collapseId && choice.id !== collapseId)}
@@ -2383,8 +2430,8 @@ function create_if_block_1$1(ctx) {
 	}
 
 	choicelist = new ChoiceList({ props: choicelist_props });
-	binding_callbacks.push(() => bind(choicelist, "multiChoice", choicelist_multiChoice_binding));
-	binding_callbacks.push(() => bind(choicelist, "choices", choicelist_choices_binding));
+	binding_callbacks.push(() => bind(choicelist, 'multiChoice', choicelist_multiChoice_binding));
+	binding_callbacks.push(() => bind(choicelist, 'choices', choicelist_choices_binding));
 	choicelist.$on("deleteChoice", /*deleteChoice_handler*/ ctx[16]);
 	choicelist.$on("configureChoice", /*configureChoice_handler*/ ctx[17]);
 	choicelist.$on("toggleCommand", /*toggleCommand_handler*/ ctx[18]);
@@ -2433,7 +2480,7 @@ function create_if_block_1$1(ctx) {
 	};
 }
 
-function create_fragment$b(ctx) {
+function create_fragment$9(ctx) {
 	let div2;
 	let div1;
 	let div0;
@@ -2495,10 +2542,10 @@ function create_fragment$b(ctx) {
 	}
 
 	rightbuttons = new ChoiceItemRightButtons({ props: rightbuttons_props });
-	binding_callbacks.push(() => bind(rightbuttons, "showConfigureButton", rightbuttons_showConfigureButton_binding));
-	binding_callbacks.push(() => bind(rightbuttons, "dragDisabled", rightbuttons_dragDisabled_binding));
-	binding_callbacks.push(() => bind(rightbuttons, "choiceName", rightbuttons_choiceName_binding));
-	binding_callbacks.push(() => bind(rightbuttons, "commandEnabled", rightbuttons_commandEnabled_binding));
+	binding_callbacks.push(() => bind(rightbuttons, 'showConfigureButton', rightbuttons_showConfigureButton_binding));
+	binding_callbacks.push(() => bind(rightbuttons, 'dragDisabled', rightbuttons_dragDisabled_binding));
+	binding_callbacks.push(() => bind(rightbuttons, 'choiceName', rightbuttons_choiceName_binding));
+	binding_callbacks.push(() => bind(rightbuttons, 'commandEnabled', rightbuttons_commandEnabled_binding));
 	rightbuttons.$on("mousedown", /*mousedown_handler*/ ctx[12]);
 	rightbuttons.$on("touchstart", /*touchstart_handler*/ ctx[13]);
 	rightbuttons.$on("deleteChoice", /*deleteChoice*/ ctx[4]);
@@ -2621,7 +2668,7 @@ function create_fragment$b(ctx) {
 	};
 }
 
-function instance$b($$self, $$props, $$invalidate) {
+function instance$9($$self, $$props, $$invalidate) {
 	let { choice } = $$props;
 	let { collapseId } = $$props;
 	let { dragDisabled } = $$props;
@@ -2629,15 +2676,15 @@ function instance$b($$self, $$props, $$invalidate) {
 	const dispatcher = createEventDispatcher();
 
 	function deleteChoice(e) {
-		dispatcher("deleteChoice", { choice });
+		dispatcher('deleteChoice', { choice });
 	}
 
 	function configureChoice() {
-		dispatcher("configureChoice", { choice });
+		dispatcher('configureChoice', { choice });
 	}
 
 	function toggleCommandForChoice() {
-		dispatcher("toggleCommand", { choice });
+		dispatcher('toggleCommand', { choice });
 	}
 
 	const click_handler = () => $$invalidate(0, choice.collapsed = !choice.collapsed, choice);
@@ -2667,11 +2714,11 @@ function instance$b($$self, $$props, $$invalidate) {
 	}
 
 	function mousedown_handler(event) {
-		bubble($$self, event);
+		bubble.call(this, $$self, event);
 	}
 
 	function touchstart_handler(event) {
-		bubble($$self, event);
+		bubble.call(this, $$self, event);
 	}
 
 	function choicelist_multiChoice_binding(value) {
@@ -2687,21 +2734,21 @@ function instance$b($$self, $$props, $$invalidate) {
 	}
 
 	function deleteChoice_handler(event) {
-		bubble($$self, event);
+		bubble.call(this, $$self, event);
 	}
 
 	function configureChoice_handler(event) {
-		bubble($$self, event);
+		bubble.call(this, $$self, event);
 	}
 
 	function toggleCommand_handler(event) {
-		bubble($$self, event);
+		bubble.call(this, $$self, event);
 	}
 
 	$$self.$$set = $$props => {
-		if ("choice" in $$props) $$invalidate(0, choice = $$props.choice);
-		if ("collapseId" in $$props) $$invalidate(2, collapseId = $$props.collapseId);
-		if ("dragDisabled" in $$props) $$invalidate(1, dragDisabled = $$props.dragDisabled);
+		if ('choice' in $$props) $$invalidate(0, choice = $$props.choice);
+		if ('collapseId' in $$props) $$invalidate(2, collapseId = $$props.collapseId);
+		if ('dragDisabled' in $$props) $$invalidate(1, dragDisabled = $$props.dragDisabled);
 	};
 
 	return [
@@ -2730,13 +2777,20 @@ function instance$b($$self, $$props, $$invalidate) {
 class MultiChoiceListItem extends SvelteComponent {
 	constructor(options) {
 		super();
-		if (!document.getElementById("svelte-na99np-style")) add_css$7();
 
-		init(this, options, instance$b, create_fragment$b, safe_not_equal, {
-			choice: 0,
-			collapseId: 2,
-			dragDisabled: 1
-		});
+		init(
+			this,
+			options,
+			instance$9,
+			create_fragment$9,
+			safe_not_equal,
+			{
+				choice: 0,
+				collapseId: 2,
+				dragDisabled: 1
+			},
+			add_css$6
+		);
 	}
 }
 
@@ -5104,13 +5158,10 @@ function validateOptions(options) {
   }
 }
 
-/* src\gui\choiceList\ChoiceList.svelte generated by Svelte v3.38.2 */
+/* src/gui/choiceList/ChoiceList.svelte generated by Svelte v3.46.4 */
 
-function add_css$6() {
-	var style = element("style");
-	style.id = "svelte-jb273g-style";
-	style.textContent = ".choiceList.svelte-jb273g{width:auto;border:0 solid black;overflow-y:auto;height:auto}";
-	append(document.head, style);
+function add_css$5(target) {
+	append_styles(target, "svelte-jb273g", ".choiceList.svelte-jb273g{width:auto;border:0 solid black;overflow-y:auto;height:auto}");
 }
 
 function get_each_context$2(ctx, list, i) {
@@ -5156,9 +5207,9 @@ function create_else_block$1(ctx) {
 	}
 
 	multichoicelistitem = new MultiChoiceListItem({ props: multichoicelistitem_props });
-	binding_callbacks.push(() => bind(multichoicelistitem, "dragDisabled", multichoicelistitem_dragDisabled_binding));
-	binding_callbacks.push(() => bind(multichoicelistitem, "collapseId", multichoicelistitem_collapseId_binding));
-	binding_callbacks.push(() => bind(multichoicelistitem, "choice", multichoicelistitem_choice_binding));
+	binding_callbacks.push(() => bind(multichoicelistitem, 'dragDisabled', multichoicelistitem_dragDisabled_binding));
+	binding_callbacks.push(() => bind(multichoicelistitem, 'collapseId', multichoicelistitem_collapseId_binding));
+	binding_callbacks.push(() => bind(multichoicelistitem, 'choice', multichoicelistitem_choice_binding));
 	multichoicelistitem.$on("mousedown", /*startDrag*/ ctx[6]);
 	multichoicelistitem.$on("touchstart", /*startDrag*/ ctx[6]);
 	multichoicelistitem.$on("deleteChoice", /*deleteChoice_handler_1*/ ctx[16]);
@@ -5238,8 +5289,8 @@ function create_if_block$1(ctx) {
 	}
 
 	choicelistitem = new ChoiceListItem({ props: choicelistitem_props });
-	binding_callbacks.push(() => bind(choicelistitem, "dragDisabled", choicelistitem_dragDisabled_binding));
-	binding_callbacks.push(() => bind(choicelistitem, "choice", choicelistitem_choice_binding));
+	binding_callbacks.push(() => bind(choicelistitem, 'dragDisabled', choicelistitem_dragDisabled_binding));
+	binding_callbacks.push(() => bind(choicelistitem, 'choice', choicelistitem_choice_binding));
 	choicelistitem.$on("mousedown", /*startDrag*/ ctx[6]);
 	choicelistitem.$on("touchstart", /*startDrag*/ ctx[6]);
 	choicelistitem.$on("deleteChoice", /*deleteChoice_handler*/ ctx[10]);
@@ -5365,7 +5416,7 @@ function create_each_block$2(key_1, ctx) {
 	};
 }
 
-function create_fragment$a(ctx) {
+function create_fragment$8(ctx) {
 	let div;
 	let each_blocks = [];
 	let each_1_lookup = new Map();
@@ -5394,8 +5445,8 @@ function create_fragment$a(ctx) {
 			attr(div, "class", "choiceList svelte-jb273g");
 
 			attr(div, "style", div_style_value = /*choices*/ ctx[0].length === 0
-			? "padding-bottom: 0.5rem"
-			: "");
+			? 'padding-bottom: 0.5rem'
+			: '');
 		},
 		m(target, anchor) {
 			insert(target, div, anchor);
@@ -5429,8 +5480,8 @@ function create_fragment$a(ctx) {
 			}
 
 			if (!current || dirty & /*choices*/ 1 && div_style_value !== (div_style_value = /*choices*/ ctx[0].length === 0
-			? "padding-bottom: 0.5rem"
-			: "")) {
+			? 'padding-bottom: 0.5rem'
+			: '')) {
 				attr(div, "style", div_style_value);
 			}
 
@@ -5469,14 +5520,14 @@ function create_fragment$a(ctx) {
 	};
 }
 
-function instance$a($$self, $$props, $$invalidate) {
+function instance$8($$self, $$props, $$invalidate) {
 	let { choices = [] } = $$props;
 	let collapseId;
 	let dragDisabled = true;
 	const dispatcher = createEventDispatcher();
 
 	function emitChoicesReordered() {
-		dispatcher("reorderChoices", { choices });
+		dispatcher('reorderChoices', { choices });
 	}
 
 	function handleConsider(e) {
@@ -5515,15 +5566,15 @@ function instance$a($$self, $$props, $$invalidate) {
 	}
 
 	function deleteChoice_handler(event) {
-		bubble($$self, event);
+		bubble.call(this, $$self, event);
 	}
 
 	function configureChoice_handler(event) {
-		bubble($$self, event);
+		bubble.call(this, $$self, event);
 	}
 
 	function toggleCommand_handler(event) {
-		bubble($$self, event);
+		bubble.call(this, $$self, event);
 	}
 
 	function multichoicelistitem_dragDisabled_binding(value) {
@@ -5542,19 +5593,19 @@ function instance$a($$self, $$props, $$invalidate) {
 	}
 
 	function deleteChoice_handler_1(event) {
-		bubble($$self, event);
+		bubble.call(this, $$self, event);
 	}
 
 	function configureChoice_handler_1(event) {
-		bubble($$self, event);
+		bubble.call(this, $$self, event);
 	}
 
 	function toggleCommand_handler_1(event) {
-		bubble($$self, event);
+		bubble.call(this, $$self, event);
 	}
 
 	$$self.$$set = $$props => {
-		if ("choices" in $$props) $$invalidate(0, choices = $$props.choices);
+		if ('choices' in $$props) $$invalidate(0, choices = $$props.choices);
 	};
 
 	return [
@@ -5583,21 +5634,17 @@ function instance$a($$self, $$props, $$invalidate) {
 class ChoiceList extends SvelteComponent {
 	constructor(options) {
 		super();
-		if (!document.getElementById("svelte-jb273g-style")) add_css$6();
-		init(this, options, instance$a, create_fragment$a, safe_not_equal, { choices: 0 });
+		init(this, options, instance$8, create_fragment$8, safe_not_equal, { choices: 0 }, add_css$5);
 	}
 }
 
-/* src\gui\choiceList\AddChoiceBox.svelte generated by Svelte v3.38.2 */
+/* src/gui/choiceList/AddChoiceBox.svelte generated by Svelte v3.46.4 */
 
-function add_css$5() {
-	var style = element("style");
-	style.id = "svelte-1newuee-style";
-	style.textContent = ".addChoiceBox.svelte-1newuee{margin-top:1em;display:flex;flex-direction:row;align-items:center;gap:10px;justify-content:center}@media(max-width: 800px){.addChoiceBox.svelte-1newuee{flex-direction:column}}#addChoiceTypeSelector.svelte-1newuee{font-size:16px;padding:3px;border-radius:3px}";
-	append(document.head, style);
+function add_css$4(target) {
+	append_styles(target, "svelte-1newuee", ".addChoiceBox.svelte-1newuee{margin-top:1em;display:flex;flex-direction:row;align-items:center;gap:10px;justify-content:center}@media(max-width: 800px){.addChoiceBox.svelte-1newuee{flex-direction:column}}#addChoiceTypeSelector.svelte-1newuee{font-size:16px;padding:3px;border-radius:3px}");
 }
 
-function create_fragment$9(ctx) {
+function create_fragment$7(ctx) {
 	let div;
 	let input;
 	let t0;
@@ -5699,7 +5746,7 @@ function create_fragment$9(ctx) {
 	};
 }
 
-function instance$9($$self, $$props, $$invalidate) {
+function instance$7($$self, $$props, $$invalidate) {
 	let name;
 	let type;
 	const dispatch = createEventDispatcher();
@@ -5710,7 +5757,7 @@ function instance$9($$self, $$props, $$invalidate) {
 			return;
 		}
 
-		dispatch("addChoice", { name, type });
+		dispatch('addChoice', { name, type });
 		$$invalidate(0, name = "");
 	}
 
@@ -5730,8 +5777,7 @@ function instance$9($$self, $$props, $$invalidate) {
 class AddChoiceBox extends SvelteComponent {
 	constructor(options) {
 		super();
-		if (!document.getElementById("svelte-1newuee-style")) add_css$5();
-		init(this, options, instance$9, create_fragment$9, safe_not_equal, {});
+		init(this, options, instance$7, create_fragment$7, safe_not_equal, {}, add_css$4);
 	}
 }
 
@@ -5883,155 +5929,45 @@ class MultiChoice extends Choice {
     }
 }
 
-/* src\gui\GenericYesNoPrompt\GenericYesNoPromptContent.svelte generated by Svelte v3.38.2 */
-
-function add_css$4() {
-	var style = element("style");
-	style.id = "svelte-1qg9c18-style";
-	style.textContent = ".yesNoPromptButtonContainer.svelte-1qg9c18{display:flex;align-items:center;justify-content:space-around;margin-top:2rem}p.svelte-1qg9c18{text-align:center}button.svelte-1qg9c18{font-size:18px}";
-	append(document.head, style);
-}
-
-function create_fragment$8(ctx) {
-	let div1;
-	let h1;
-	let t0;
-	let t1;
-	let p;
-	let t2;
-	let t3;
-	let div0;
-	let button0;
-	let t5;
-	let button1;
-	let mounted;
-	let dispose;
-
-	return {
-		c() {
-			div1 = element("div");
-			h1 = element("h1");
-			t0 = text(/*header*/ ctx[0]);
-			t1 = space();
-			p = element("p");
-			t2 = text(/*text*/ ctx[1]);
-			t3 = space();
-			div0 = element("div");
-			button0 = element("button");
-			button0.textContent = "No";
-			t5 = space();
-			button1 = element("button");
-			button1.textContent = "Yes";
-			set_style(h1, "text-align", "center");
-			attr(p, "class", "svelte-1qg9c18");
-			attr(button0, "class", "mod-warning svelte-1qg9c18");
-			attr(button1, "class", "mod-cta svelte-1qg9c18");
-			attr(div0, "class", "yesNoPromptButtonContainer svelte-1qg9c18");
-			attr(div1, "class", "quickAddYesNoPrompt");
-		},
-		m(target, anchor) {
-			insert(target, div1, anchor);
-			append(div1, h1);
-			append(h1, t0);
-			append(div1, t1);
-			append(div1, p);
-			append(p, t2);
-			append(div1, t3);
-			append(div1, div0);
-			append(div0, button0);
-			append(div0, t5);
-			append(div0, button1);
-
-			if (!mounted) {
-				dispose = [
-					listen(button0, "click", /*click_handler*/ ctx[5]),
-					listen(button1, "click", /*click_handler_1*/ ctx[6])
-				];
-
-				mounted = true;
-			}
-		},
-		p(ctx, [dirty]) {
-			if (dirty & /*header*/ 1) set_data(t0, /*header*/ ctx[0]);
-			if (dirty & /*text*/ 2) set_data(t2, /*text*/ ctx[1]);
-		},
-		i: noop,
-		o: noop,
-		d(detaching) {
-			if (detaching) detach(div1);
-			mounted = false;
-			run_all(dispose);
-		}
-	};
-}
-
-function instance$8($$self, $$props, $$invalidate) {
-	let { header = "" } = $$props;
-	let { value = "" } = $$props;
-	let { text = "" } = $$props;
-	let { onSubmit } = $$props;
-
-	function submit(answer) {
-		onSubmit(answer);
-	}
-
-	const click_handler = () => submit(false);
-	const click_handler_1 = () => submit(true);
-
-	$$self.$$set = $$props => {
-		if ("header" in $$props) $$invalidate(0, header = $$props.header);
-		if ("value" in $$props) $$invalidate(3, value = $$props.value);
-		if ("text" in $$props) $$invalidate(1, text = $$props.text);
-		if ("onSubmit" in $$props) $$invalidate(4, onSubmit = $$props.onSubmit);
-	};
-
-	return [header, text, submit, value, onSubmit, click_handler, click_handler_1];
-}
-
-class GenericYesNoPromptContent extends SvelteComponent {
-	constructor(options) {
-		super();
-		if (!document.getElementById("svelte-1qg9c18-style")) add_css$4();
-
-		init(this, options, instance$8, create_fragment$8, safe_not_equal, {
-			header: 0,
-			value: 3,
-			text: 1,
-			onSubmit: 4
-		});
-	}
-}
-
 class GenericYesNoPrompt extends obsidian.Modal {
     constructor(app, header, text) {
         super(app);
+        this.header = header;
+        this.text = text;
         this.didSubmit = false;
-        this.modalContent = new GenericYesNoPromptContent({
-            target: this.contentEl,
-            props: {
-                app,
-                header,
-                text,
-                onSubmit: (input) => {
-                    this.input = input;
-                    this.didSubmit = true;
-                    this.close();
-                }
-            }
-        });
         this.waitForClose = new Promise((resolve, reject) => {
             this.resolvePromise = resolve;
             this.rejectPromise = reject;
         });
         this.open();
+        this.display();
     }
     static Prompt(app, header, text) {
         const newPromptModal = new GenericYesNoPrompt(app, header, text);
         return newPromptModal.waitForClose;
     }
+    display() {
+        this.containerEl.addClass('quickAddModal', 'qaYesNoPrompt');
+        this.contentEl.empty();
+        this.titleEl.textContent = this.header;
+        this.contentEl.createEl('p', { text: this.text });
+        const buttonsDiv = this.contentEl.createDiv({ cls: 'yesNoPromptButtonContainer' });
+        new obsidian.ButtonComponent(buttonsDiv)
+            .setButtonText('No')
+            .onClick(() => this.submit(false));
+        const yesButton = new obsidian.ButtonComponent(buttonsDiv)
+            .setButtonText('Yes')
+            .onClick(() => this.submit(true))
+            .setWarning();
+        yesButton.buttonEl.focus();
+    }
+    submit(input) {
+        this.input = input;
+        this.didSubmit = true;
+        this.close();
+    }
     onClose() {
         super.onClose();
-        this.modalContent.$destroy();
         if (!this.didSubmit)
             this.rejectPromise("No answer given.");
         else
@@ -6195,17 +6131,42 @@ function getBasePlacement(placement) {
   return placement.split('-')[0];
 }
 
-function getBoundingClientRect(element) {
+var max = Math.max;
+var min = Math.min;
+var round = Math.round;
+
+function getBoundingClientRect(element, includeScale) {
+  if (includeScale === void 0) {
+    includeScale = false;
+  }
+
   var rect = element.getBoundingClientRect();
+  var scaleX = 1;
+  var scaleY = 1;
+
+  if (isHTMLElement(element) && includeScale) {
+    var offsetHeight = element.offsetHeight;
+    var offsetWidth = element.offsetWidth; // Do not attempt to divide by 0, otherwise we get `Infinity` as scale
+    // Fallback to 1 in case both values are `0`
+
+    if (offsetWidth > 0) {
+      scaleX = round(rect.width) / offsetWidth || 1;
+    }
+
+    if (offsetHeight > 0) {
+      scaleY = round(rect.height) / offsetHeight || 1;
+    }
+  }
+
   return {
-    width: rect.width,
-    height: rect.height,
-    top: rect.top,
-    right: rect.right,
-    bottom: rect.bottom,
-    left: rect.left,
-    x: rect.left,
-    y: rect.top
+    width: rect.width / scaleX,
+    height: rect.height / scaleY,
+    top: rect.top / scaleY,
+    right: rect.right / scaleX,
+    bottom: rect.bottom / scaleY,
+    left: rect.left / scaleX,
+    x: rect.left / scaleX,
+    y: rect.top / scaleY
   };
 }
 
@@ -6350,12 +6311,12 @@ function getMainAxisFromPlacement(placement) {
   return ['top', 'bottom'].indexOf(placement) >= 0 ? 'x' : 'y';
 }
 
-var max = Math.max;
-var min = Math.min;
-var round = Math.round;
-
 function within(min$1, value, max$1) {
   return max(min$1, min(value, max$1));
+}
+function withinMaxClamp(min, value, max) {
+  var v = within(min, value, max);
+  return v > max ? max : v;
 }
 
 function getFreshSideObject() {
@@ -6469,6 +6430,10 @@ var arrow$1 = {
   requiresIfExists: ['preventOverflow']
 };
 
+function getVariation(placement) {
+  return placement.split('-')[1];
+}
+
 var unsetSides = {
   top: 'auto',
   right: 'auto',
@@ -6484,8 +6449,8 @@ function roundOffsetsByDPR(_ref) {
   var win = window;
   var dpr = win.devicePixelRatio || 1;
   return {
-    x: round(round(x * dpr) / dpr) || 0,
-    y: round(round(y * dpr) / dpr) || 0
+    x: round(x * dpr) / dpr || 0,
+    y: round(y * dpr) / dpr || 0
   };
 }
 
@@ -6495,18 +6460,28 @@ function mapToStyles(_ref2) {
   var popper = _ref2.popper,
       popperRect = _ref2.popperRect,
       placement = _ref2.placement,
+      variation = _ref2.variation,
       offsets = _ref2.offsets,
       position = _ref2.position,
       gpuAcceleration = _ref2.gpuAcceleration,
       adaptive = _ref2.adaptive,
-      roundOffsets = _ref2.roundOffsets;
+      roundOffsets = _ref2.roundOffsets,
+      isFixed = _ref2.isFixed;
+  var _offsets$x = offsets.x,
+      x = _offsets$x === void 0 ? 0 : _offsets$x,
+      _offsets$y = offsets.y,
+      y = _offsets$y === void 0 ? 0 : _offsets$y;
 
-  var _ref3 = roundOffsets === true ? roundOffsetsByDPR(offsets) : typeof roundOffsets === 'function' ? roundOffsets(offsets) : offsets,
-      _ref3$x = _ref3.x,
-      x = _ref3$x === void 0 ? 0 : _ref3$x,
-      _ref3$y = _ref3.y,
-      y = _ref3$y === void 0 ? 0 : _ref3$y;
+  var _ref3 = typeof roundOffsets === 'function' ? roundOffsets({
+    x: x,
+    y: y
+  }) : {
+    x: x,
+    y: y
+  };
 
+  x = _ref3.x;
+  y = _ref3.y;
   var hasX = offsets.hasOwnProperty('x');
   var hasY = offsets.hasOwnProperty('y');
   var sideX = left;
@@ -6521,7 +6496,7 @@ function mapToStyles(_ref2) {
     if (offsetParent === getWindow(popper)) {
       offsetParent = getDocumentElement(popper);
 
-      if (getComputedStyle$1(offsetParent).position !== 'static') {
+      if (getComputedStyle$1(offsetParent).position !== 'static' && position === 'absolute') {
         heightProp = 'scrollHeight';
         widthProp = 'scrollWidth';
       }
@@ -6530,17 +6505,19 @@ function mapToStyles(_ref2) {
 
     offsetParent = offsetParent;
 
-    if (placement === top) {
-      sideY = bottom; // $FlowFixMe[prop-missing]
-
-      y -= offsetParent[heightProp] - popperRect.height;
+    if (placement === top || (placement === left || placement === right) && variation === end) {
+      sideY = bottom;
+      var offsetY = isFixed && win.visualViewport ? win.visualViewport.height : // $FlowFixMe[prop-missing]
+      offsetParent[heightProp];
+      y -= offsetY - popperRect.height;
       y *= gpuAcceleration ? 1 : -1;
     }
 
-    if (placement === left) {
-      sideX = right; // $FlowFixMe[prop-missing]
-
-      x -= offsetParent[widthProp] - popperRect.width;
+    if (placement === left || (placement === top || placement === bottom) && variation === end) {
+      sideX = right;
+      var offsetX = isFixed && win.visualViewport ? win.visualViewport.width : // $FlowFixMe[prop-missing]
+      offsetParent[widthProp];
+      x -= offsetX - popperRect.width;
       x *= gpuAcceleration ? 1 : -1;
     }
   }
@@ -6549,18 +6526,29 @@ function mapToStyles(_ref2) {
     position: position
   }, adaptive && unsetSides);
 
+  var _ref4 = roundOffsets === true ? roundOffsetsByDPR({
+    x: x,
+    y: y
+  }) : {
+    x: x,
+    y: y
+  };
+
+  x = _ref4.x;
+  y = _ref4.y;
+
   if (gpuAcceleration) {
     var _Object$assign;
 
-    return Object.assign({}, commonStyles, (_Object$assign = {}, _Object$assign[sideY] = hasY ? '0' : '', _Object$assign[sideX] = hasX ? '0' : '', _Object$assign.transform = (win.devicePixelRatio || 1) < 2 ? "translate(" + x + "px, " + y + "px)" : "translate3d(" + x + "px, " + y + "px, 0)", _Object$assign));
+    return Object.assign({}, commonStyles, (_Object$assign = {}, _Object$assign[sideY] = hasY ? '0' : '', _Object$assign[sideX] = hasX ? '0' : '', _Object$assign.transform = (win.devicePixelRatio || 1) <= 1 ? "translate(" + x + "px, " + y + "px)" : "translate3d(" + x + "px, " + y + "px, 0)", _Object$assign));
   }
 
   return Object.assign({}, commonStyles, (_Object$assign2 = {}, _Object$assign2[sideY] = hasY ? y + "px" : '', _Object$assign2[sideX] = hasX ? x + "px" : '', _Object$assign2.transform = '', _Object$assign2));
 }
 
-function computeStyles(_ref4) {
-  var state = _ref4.state,
-      options = _ref4.options;
+function computeStyles(_ref5) {
+  var state = _ref5.state,
+      options = _ref5.options;
   var _options$gpuAccelerat = options.gpuAcceleration,
       gpuAcceleration = _options$gpuAccelerat === void 0 ? true : _options$gpuAccelerat,
       _options$adaptive = options.adaptive,
@@ -6580,9 +6568,11 @@ function computeStyles(_ref4) {
 
   var commonStyles = {
     placement: getBasePlacement(state.placement),
+    variation: getVariation(state.placement),
     popper: state.elements.popper,
     popperRect: state.rects.popper,
-    gpuAcceleration: gpuAcceleration
+    gpuAcceleration: gpuAcceleration,
+    isFixed: state.options.strategy === 'fixed'
   };
 
   if (state.modifiersData.popperOffsets != null) {
@@ -6840,7 +6830,7 @@ function getInnerBoundingClientRect(element) {
 }
 
 function getClientRectFromMixedType(element, clippingParent) {
-  return clippingParent === viewport ? rectToClientRect(getViewportRect(element)) : isHTMLElement(clippingParent) ? getInnerBoundingClientRect(clippingParent) : rectToClientRect(getDocumentRect(getDocumentElement(element)));
+  return clippingParent === viewport ? rectToClientRect(getViewportRect(element)) : isElement(clippingParent) ? getInnerBoundingClientRect(clippingParent) : rectToClientRect(getDocumentRect(getDocumentElement(element)));
 } // A "clipping parent" is an overflowable container with the characteristic of
 // clipping (or hiding) overflowing elements with a position different from
 // `initial`
@@ -6880,10 +6870,6 @@ function getClippingRect(element, boundary, rootBoundary) {
   clippingRect.x = clippingRect.left;
   clippingRect.y = clippingRect.top;
   return clippingRect;
-}
-
-function getVariation(placement) {
-  return placement.split('-')[1];
 }
 
 function computeOffsets(_ref) {
@@ -6971,11 +6957,10 @@ function detectOverflow(state, options) {
       padding = _options$padding === void 0 ? 0 : _options$padding;
   var paddingObject = mergePaddingObject(typeof padding !== 'number' ? padding : expandToHashMap(padding, basePlacements));
   var altContext = elementContext === popper ? reference : popper;
-  var referenceElement = state.elements.reference;
   var popperRect = state.rects.popper;
   var element = state.elements[altBoundary ? altContext : elementContext];
   var clippingClientRect = getClippingRect(isElement(element) ? element : element.contextElement || getDocumentElement(state.elements.popper), boundary, rootBoundary);
-  var referenceClientRect = getBoundingClientRect(referenceElement);
+  var referenceClientRect = getBoundingClientRect(state.elements.reference);
   var popperOffsets = computeOffsets({
     reference: referenceClientRect,
     element: popperRect,
@@ -7362,6 +7347,14 @@ function preventOverflow(_ref) {
   var tetherOffsetValue = typeof tetherOffset === 'function' ? tetherOffset(Object.assign({}, state.rects, {
     placement: state.placement
   })) : tetherOffset;
+  var normalizedTetherOffsetValue = typeof tetherOffsetValue === 'number' ? {
+    mainAxis: tetherOffsetValue,
+    altAxis: tetherOffsetValue
+  } : Object.assign({
+    mainAxis: 0,
+    altAxis: 0
+  }, tetherOffsetValue);
+  var offsetModifierState = state.modifiersData.offset ? state.modifiersData.offset[state.placement] : null;
   var data = {
     x: 0,
     y: 0
@@ -7371,13 +7364,15 @@ function preventOverflow(_ref) {
     return;
   }
 
-  if (checkMainAxis || checkAltAxis) {
+  if (checkMainAxis) {
+    var _offsetModifierState$;
+
     var mainSide = mainAxis === 'y' ? top : left;
     var altSide = mainAxis === 'y' ? bottom : right;
     var len = mainAxis === 'y' ? 'height' : 'width';
     var offset = popperOffsets[mainAxis];
-    var min$1 = popperOffsets[mainAxis] + overflow[mainSide];
-    var max$1 = popperOffsets[mainAxis] - overflow[altSide];
+    var min$1 = offset + overflow[mainSide];
+    var max$1 = offset - overflow[altSide];
     var additive = tether ? -popperRect[len] / 2 : 0;
     var minLen = variation === start ? referenceRect[len] : popperRect[len];
     var maxLen = variation === start ? -popperRect[len] : -referenceRect[len]; // We need to include the arrow in the calculation so the arrow doesn't go
@@ -7397,36 +7392,45 @@ function preventOverflow(_ref) {
     // width or height)
 
     var arrowLen = within(0, referenceRect[len], arrowRect[len]);
-    var minOffset = isBasePlacement ? referenceRect[len] / 2 - additive - arrowLen - arrowPaddingMin - tetherOffsetValue : minLen - arrowLen - arrowPaddingMin - tetherOffsetValue;
-    var maxOffset = isBasePlacement ? -referenceRect[len] / 2 + additive + arrowLen + arrowPaddingMax + tetherOffsetValue : maxLen + arrowLen + arrowPaddingMax + tetherOffsetValue;
+    var minOffset = isBasePlacement ? referenceRect[len] / 2 - additive - arrowLen - arrowPaddingMin - normalizedTetherOffsetValue.mainAxis : minLen - arrowLen - arrowPaddingMin - normalizedTetherOffsetValue.mainAxis;
+    var maxOffset = isBasePlacement ? -referenceRect[len] / 2 + additive + arrowLen + arrowPaddingMax + normalizedTetherOffsetValue.mainAxis : maxLen + arrowLen + arrowPaddingMax + normalizedTetherOffsetValue.mainAxis;
     var arrowOffsetParent = state.elements.arrow && getOffsetParent(state.elements.arrow);
     var clientOffset = arrowOffsetParent ? mainAxis === 'y' ? arrowOffsetParent.clientTop || 0 : arrowOffsetParent.clientLeft || 0 : 0;
-    var offsetModifierValue = state.modifiersData.offset ? state.modifiersData.offset[state.placement][mainAxis] : 0;
-    var tetherMin = popperOffsets[mainAxis] + minOffset - offsetModifierValue - clientOffset;
-    var tetherMax = popperOffsets[mainAxis] + maxOffset - offsetModifierValue;
+    var offsetModifierValue = (_offsetModifierState$ = offsetModifierState == null ? void 0 : offsetModifierState[mainAxis]) != null ? _offsetModifierState$ : 0;
+    var tetherMin = offset + minOffset - offsetModifierValue - clientOffset;
+    var tetherMax = offset + maxOffset - offsetModifierValue;
+    var preventedOffset = within(tether ? min(min$1, tetherMin) : min$1, offset, tether ? max(max$1, tetherMax) : max$1);
+    popperOffsets[mainAxis] = preventedOffset;
+    data[mainAxis] = preventedOffset - offset;
+  }
 
-    if (checkMainAxis) {
-      var preventedOffset = within(tether ? min(min$1, tetherMin) : min$1, offset, tether ? max(max$1, tetherMax) : max$1);
-      popperOffsets[mainAxis] = preventedOffset;
-      data[mainAxis] = preventedOffset - offset;
-    }
+  if (checkAltAxis) {
+    var _offsetModifierState$2;
 
-    if (checkAltAxis) {
-      var _mainSide = mainAxis === 'x' ? top : left;
+    var _mainSide = mainAxis === 'x' ? top : left;
 
-      var _altSide = mainAxis === 'x' ? bottom : right;
+    var _altSide = mainAxis === 'x' ? bottom : right;
 
-      var _offset = popperOffsets[altAxis];
+    var _offset = popperOffsets[altAxis];
 
-      var _min = _offset + overflow[_mainSide];
+    var _len = altAxis === 'y' ? 'height' : 'width';
 
-      var _max = _offset - overflow[_altSide];
+    var _min = _offset + overflow[_mainSide];
 
-      var _preventedOffset = within(tether ? min(_min, tetherMin) : _min, _offset, tether ? max(_max, tetherMax) : _max);
+    var _max = _offset - overflow[_altSide];
 
-      popperOffsets[altAxis] = _preventedOffset;
-      data[altAxis] = _preventedOffset - _offset;
-    }
+    var isOriginSide = [top, left].indexOf(basePlacement) !== -1;
+
+    var _offsetModifierValue = (_offsetModifierState$2 = offsetModifierState == null ? void 0 : offsetModifierState[altAxis]) != null ? _offsetModifierState$2 : 0;
+
+    var _tetherMin = isOriginSide ? _min : _offset - referenceRect[_len] - popperRect[_len] - _offsetModifierValue + normalizedTetherOffsetValue.altAxis;
+
+    var _tetherMax = isOriginSide ? _offset + referenceRect[_len] + popperRect[_len] - _offsetModifierValue - normalizedTetherOffsetValue.altAxis : _max;
+
+    var _preventedOffset = tether && isOriginSide ? withinMaxClamp(_tetherMin, _offset, _tetherMax) : within(tether ? _tetherMin : _min, _offset, tether ? _tetherMax : _max);
+
+    popperOffsets[altAxis] = _preventedOffset;
+    data[altAxis] = _preventedOffset - _offset;
   }
 
   state.modifiersData[name] = data;
@@ -7456,16 +7460,24 @@ function getNodeScroll(node) {
   }
 }
 
+function isElementScaled(element) {
+  var rect = element.getBoundingClientRect();
+  var scaleX = round(rect.width) / element.offsetWidth || 1;
+  var scaleY = round(rect.height) / element.offsetHeight || 1;
+  return scaleX !== 1 || scaleY !== 1;
+} // Returns the composite rect of an element relative to its offsetParent.
 // Composite means it takes into account transforms as well as layout.
+
 
 function getCompositeRect(elementOrVirtualElement, offsetParent, isFixed) {
   if (isFixed === void 0) {
     isFixed = false;
   }
 
-  var documentElement = getDocumentElement(offsetParent);
-  var rect = getBoundingClientRect(elementOrVirtualElement);
   var isOffsetParentAnElement = isHTMLElement(offsetParent);
+  var offsetParentIsScaled = isHTMLElement(offsetParent) && isElementScaled(offsetParent);
+  var documentElement = getDocumentElement(offsetParent);
+  var rect = getBoundingClientRect(elementOrVirtualElement, offsetParentIsScaled);
   var scroll = {
     scrollLeft: 0,
     scrollTop: 0
@@ -7482,7 +7494,7 @@ function getCompositeRect(elementOrVirtualElement, offsetParent, isFixed) {
     }
 
     if (isHTMLElement(offsetParent)) {
-      offsets = getBoundingClientRect(offsetParent);
+      offsets = getBoundingClientRect(offsetParent, true);
       offsets.x += offsetParent.clientLeft;
       offsets.y += offsetParent.clientTop;
     } else if (documentElement) {
@@ -7572,7 +7584,10 @@ var MISSING_DEPENDENCY_ERROR = 'Popper: modifier "%s" requires "%s", but "%s" mo
 var VALID_PROPERTIES = ['name', 'enabled', 'phase', 'fn', 'effect', 'requires', 'options'];
 function validateModifiers(modifiers) {
   modifiers.forEach(function (modifier) {
-    Object.keys(modifier).forEach(function (key) {
+    [].concat(Object.keys(modifier), VALID_PROPERTIES) // IE11-compatible replacement for `new Set(iterable)`
+    .filter(function (value, index, self) {
+      return self.indexOf(value) === index;
+    }).forEach(function (key) {
       switch (key) {
         case 'name':
           if (typeof modifier.name !== 'string') {
@@ -7585,6 +7600,8 @@ function validateModifiers(modifiers) {
           if (typeof modifier.enabled !== 'boolean') {
             console.error(format$1(INVALID_MODIFIER_ERROR, modifier.name, '"enabled"', '"boolean"', "\"" + String(modifier.enabled) + "\""));
           }
+
+          break;
 
         case 'phase':
           if (modifierPhases.indexOf(modifier.phase) < 0) {
@@ -7601,14 +7618,14 @@ function validateModifiers(modifiers) {
           break;
 
         case 'effect':
-          if (typeof modifier.effect !== 'function') {
+          if (modifier.effect != null && typeof modifier.effect !== 'function') {
             console.error(format$1(INVALID_MODIFIER_ERROR, modifier.name, '"effect"', '"function"', "\"" + String(modifier.fn) + "\""));
           }
 
           break;
 
         case 'requires':
-          if (!Array.isArray(modifier.requires)) {
+          if (modifier.requires != null && !Array.isArray(modifier.requires)) {
             console.error(format$1(INVALID_MODIFIER_ERROR, modifier.name, '"requires"', '"array"', "\"" + String(modifier.requires) + "\""));
           }
 
@@ -7718,7 +7735,8 @@ function popperGenerator(generatorOptions) {
     var isDestroyed = false;
     var instance = {
       state: state,
-      setOptions: function setOptions(options) {
+      setOptions: function setOptions(setOptionsAction) {
+        var options = typeof setOptionsAction === 'function' ? setOptionsAction(state.options) : setOptionsAction;
         cleanupModifierEffects();
         state.options = Object.assign({}, defaultOptions, state.options, options);
         state.scrollParents = {
@@ -8088,6 +8106,7 @@ const VALUE_SYNTAX = "{{VALUE}}";
 const DATE_SYNTAX = "{{DATE}}";
 const NAME_SYNTAX = "{{NAME}}";
 const VARIABLE_SYNTAX = "{{VALUE:<VARIABLE NAME>}}";
+const MATH_VALUE_SYNTAX = "{{MVALUE}}";
 const LINKCURRENT_SYNTAX = "{{LINKCURRENT}}";
 const FILE_NAME_FORMAT_SYNTAX = [
     DATE_SYNTAX, "{{DATE:<DATEFORMAT>}}", "{{VDATE:<VARIABLE NAME>, <DATE FORMAT>}}",
@@ -8110,6 +8129,7 @@ const MACRO_REGEX = new RegExp(/{{MACRO:([^\n\r}]*)}}/);
 const TEMPLATE_REGEX = new RegExp(/{{TEMPLATE:([^\n\r}]*.md)}}/);
 const LINEBREAK_REGEX = new RegExp(/\\n/);
 const INLINE_JAVASCRIPT_REGEX = new RegExp(/`{3,}js quickadd([\s\S]*?)`{3,}/);
+const MATH_VALUE_REGEX = new RegExp(/{{MVALUE}}/);
 // This is not an accurate wikilink regex - but works for its intended purpose.
 const FILE_LINK_REGEX = new RegExp(/\[\[([^\]]*)$/);
 const TAG_REGEX = new RegExp(/#([^ ]*)$/);
@@ -8123,6 +8143,7 @@ const VARIABLE_DATE_SYNTAX_SUGGEST_REGEX = new RegExp(/{{[V]?[D]?[A]?[T]?[E]?[:]
 const LINKCURRENT_SYNTAX_SUGGEST_REGEX = new RegExp(/{{[L]?[I]?[N]?[K]?[C]?[U]?[R]?[R]?[E]?[N]?[T]?[}]?[}]?$/i);
 const TEMPLATE_SYNTAX_SUGGEST_REGEX = new RegExp(/{{[T]?[E]?[M]?[P]?[L]?[A]?[T]?[E]?[:]?$|{{TEMPLATE:[^\n\r}]*[}]?[}]?$/i);
 const MACRO_SYNTAX_SUGGEST_REGEX = new RegExp(/{{[M]?[A]?[C]?[R]?[O]?[:]?$|{{MACRO:[^\n\r}]*}}$/i);
+const MATH_VALUE_SYNTAX_SUGGEST_REGEX = new RegExp(/{{[M]?[V]?[A]?[L]?[U]?[E]?[}]?[}]?/i);
 // == File Exists (Template Choice) == //
 const fileExistsAppendToBottom = "Append to the bottom of the file";
 const fileExistsAppendToTop = "Append to the top of the file";
@@ -9946,7 +9967,7 @@ class SilentFileAndTagSuggester extends TextInputSuggest {
             this.lastInput = fileNameInput;
             this.lastInputType = TagOrFile.File;
             suggestions = this.files
-                .filter(file => file.path.toLowerCase().contains(fileNameInput.toLowerCase()))
+                .filter(file => file.basename.toLowerCase().contains(fileNameInput.toLowerCase()))
                 .map(file => file.path);
             suggestions.push(...this.unresolvedLinkNames.filter(name => name.toLowerCase().contains(fileNameInput.toLowerCase())));
         }
@@ -10009,179 +10030,91 @@ class SilentFileAndTagSuggester extends TextInputSuggest {
     }
 }
 
-/* src\gui\GenericInputPrompt\GenericInputPromptContent.svelte generated by Svelte v3.38.2 */
-
-function create_fragment$7(ctx) {
-	let div;
-	let h1;
-	let t0;
-	let t1;
-	let input;
-	let mounted;
-	let dispose;
-
-	return {
-		c() {
-			div = element("div");
-			h1 = element("h1");
-			t0 = text(/*header*/ ctx[1]);
-			t1 = space();
-			input = element("input");
-			set_style(h1, "text-align", "center");
-			attr(input, "class", "quickAddPromptInput");
-			attr(input, "placeholder", /*placeholder*/ ctx[2]);
-			set_style(input, "width", "100%");
-			attr(input, "type", "text");
-			attr(div, "class", "quickAddPrompt");
-		},
-		m(target, anchor) {
-			insert(target, div, anchor);
-			append(div, h1);
-			append(h1, t0);
-			append(div, t1);
-			append(div, input);
-			/*input_binding*/ ctx[7](input);
-			set_input_value(input, /*value*/ ctx[0]);
-
-			if (!mounted) {
-				dispose = [
-					listen(input, "input", /*input_input_handler*/ ctx[8]),
-					listen(input, "keydown", /*submit*/ ctx[4])
-				];
-
-				mounted = true;
-			}
-		},
-		p(ctx, [dirty]) {
-			if (dirty & /*header*/ 2) set_data(t0, /*header*/ ctx[1]);
-
-			if (dirty & /*placeholder*/ 4) {
-				attr(input, "placeholder", /*placeholder*/ ctx[2]);
-			}
-
-			if (dirty & /*value*/ 1 && input.value !== /*value*/ ctx[0]) {
-				set_input_value(input, /*value*/ ctx[0]);
-			}
-		},
-		i: noop,
-		o: noop,
-		d(detaching) {
-			if (detaching) detach(div);
-			/*input_binding*/ ctx[7](null);
-			mounted = false;
-			run_all(dispose);
-		}
-	};
-}
-
-function instance$7($$self, $$props, $$invalidate) {
-	let { header = "" } = $$props;
-	let { placeholder = "" } = $$props;
-	let { value = "" } = $$props;
-	let { onSubmit } = $$props;
-	let { app } = $$props;
-	let inputEl;
-
-	onMount(() => {
-		new SilentFileAndTagSuggester(app, inputEl);
-	});
-
-	function submit(evt) {
-		if (evt.key === "Enter") {
-			evt.preventDefault();
-			onSubmit(value);
-		}
-	}
-
-	function input_binding($$value) {
-		binding_callbacks[$$value ? "unshift" : "push"](() => {
-			inputEl = $$value;
-			$$invalidate(3, inputEl);
-		});
-	}
-
-	function input_input_handler() {
-		value = this.value;
-		$$invalidate(0, value);
-	}
-
-	$$self.$$set = $$props => {
-		if ("header" in $$props) $$invalidate(1, header = $$props.header);
-		if ("placeholder" in $$props) $$invalidate(2, placeholder = $$props.placeholder);
-		if ("value" in $$props) $$invalidate(0, value = $$props.value);
-		if ("onSubmit" in $$props) $$invalidate(5, onSubmit = $$props.onSubmit);
-		if ("app" in $$props) $$invalidate(6, app = $$props.app);
-	};
-
-	return [
-		value,
-		header,
-		placeholder,
-		inputEl,
-		submit,
-		onSubmit,
-		app,
-		input_binding,
-		input_input_handler
-	];
-}
-
-class GenericInputPromptContent extends SvelteComponent {
-	constructor(options) {
-		super();
-
-		init(this, options, instance$7, create_fragment$7, safe_not_equal, {
-			header: 1,
-			placeholder: 2,
-			value: 0,
-			onSubmit: 5,
-			app: 6
-		});
-	}
-}
-
 class GenericInputPrompt extends obsidian.Modal {
     constructor(app, header, placeholder, value) {
         super(app);
+        this.header = header;
         this.didSubmit = false;
-        this.modalContent = new GenericInputPromptContent({
-            target: this.contentEl,
-            props: {
-                header,
-                placeholder,
-                value,
-                app,
-                onSubmit: (input) => {
-                    this.input = input;
-                    this.didSubmit = true;
-                    this.close();
-                }
+        this.submitClickCallback = (evt) => this.submit();
+        this.cancelClickCallback = (evt) => this.cancel();
+        this.submitEnterCallback = (evt) => {
+            if (evt.key === "Enter") {
+                evt.preventDefault();
+                this.submit();
             }
-        });
+        };
+        this.placeholder = placeholder;
+        this.input = value;
         this.waitForClose = new Promise((resolve, reject) => {
             this.resolvePromise = resolve;
             this.rejectPromise = reject;
         });
+        this.display();
         this.open();
+        this.suggester = new SilentFileAndTagSuggester(app, this.inputComponent.inputEl);
     }
     static Prompt(app, header, placeholder, value) {
         const newPromptModal = new GenericInputPrompt(app, header, placeholder, value);
         return newPromptModal.waitForClose;
     }
-    onOpen() {
-        super.onOpen();
-        const modalPrompt = document.querySelector('.quickAddPrompt');
-        const modalInput = modalPrompt.querySelector('.quickAddPromptInput');
-        modalInput.focus();
-        modalInput.select();
+    display() {
+        this.containerEl.addClass('quickAddModal', 'qaInputPrompt');
+        this.contentEl.empty();
+        this.titleEl.textContent = this.header;
+        const mainContentContainer = this.contentEl.createDiv();
+        this.inputComponent = this.createInputField(mainContentContainer, this.placeholder, this.input);
+        this.createButtonBar(mainContentContainer);
     }
-    onClose() {
-        super.onClose();
-        this.modalContent.$destroy();
+    createInputField(container, placeholder, value) {
+        const textComponent = new obsidian.TextComponent(container);
+        textComponent.inputEl.style.width = "100%";
+        textComponent.setPlaceholder(placeholder !== null && placeholder !== void 0 ? placeholder : "")
+            .setValue(value !== null && value !== void 0 ? value : "")
+            .onChange(value => this.input = value)
+            .inputEl.addEventListener('keydown', this.submitEnterCallback);
+        return textComponent;
+    }
+    createButton(container, text, callback) {
+        const btn = new obsidian.ButtonComponent(container);
+        btn.setButtonText(text)
+            .onClick(callback);
+        return btn;
+    }
+    createButtonBar(mainContentContainer) {
+        const buttonBarContainer = mainContentContainer.createDiv();
+        this.createButton(buttonBarContainer, "Ok", this.submitClickCallback)
+            .setCta().buttonEl.style.marginRight = '0';
+        this.createButton(buttonBarContainer, "Cancel", this.cancelClickCallback);
+        buttonBarContainer.style.display = 'flex';
+        buttonBarContainer.style.flexDirection = 'row-reverse';
+        buttonBarContainer.style.justifyContent = 'flex-start';
+        buttonBarContainer.style.marginTop = '1rem';
+    }
+    submit() {
+        this.didSubmit = true;
+        this.close();
+    }
+    cancel() {
+        this.close();
+    }
+    resolveInput() {
         if (!this.didSubmit)
             this.rejectPromise("No input given.");
         else
             this.resolvePromise(this.input);
+    }
+    removeInputListener() {
+        this.inputComponent.inputEl.removeEventListener('keydown', this.submitEnterCallback);
+    }
+    onOpen() {
+        super.onOpen();
+        this.inputComponent.inputEl.focus();
+        this.inputComponent.inputEl.select();
+    }
+    onClose() {
+        super.onClose();
+        this.resolveInput();
+        this.removeInputListener();
     }
 }
 
@@ -10269,7 +10202,8 @@ function getTemplater(app) {
 async function replaceTemplaterTemplatesInCreatedFile(app, file, force = false) {
     const templater = getTemplater(app);
     if (templater && (force || !(templater === null || templater === void 0 ? void 0 : templater.settings["trigger_on_file_creation"]))) {
-        await templater.templater.overwrite_file_templates(file);
+        app.workspace.getActiveFile();
+        await templater.templater.overwrite_file_commands(file);
     }
 }
 async function templaterParseTemplate(app, templateContent, targetFile) {
@@ -10389,24 +10323,27 @@ async function openFile(app, file, optional) {
         await leaf.setViewState(Object.assign(Object.assign({}, leaf.getViewState()), { state: optional.mode && optional.mode !== 'default' ? Object.assign(Object.assign({}, leaf.view.getState()), { mode: optional.mode }) : leaf.view.getState(), popstate: true }), { focus: optional === null || optional === void 0 ? void 0 : optional.focus });
     }
 }
+// Slightly modified version of Templater's user script import implementation
+// Source: https://github.com/SilentVoid13/Templater
 async function getUserScript(command, app) {
     // @ts-ignore
-    const vaultPath = app.vault.adapter.getBasePath();
     const file = app.vault.getAbstractFileByPath(command.path);
     if (!file) {
         log.logError(`failed to load file ${command.path}.`);
         return;
     }
     if (file instanceof obsidian.TFile) {
-        const filePath = `${vaultPath}/${file.path}`;
-        if (window.require.cache[window.require.resolve(filePath)]) {
-            delete window.require.cache[window.require.resolve(filePath)];
-        }
+        let req = (s) => window.require && window.require(s);
+        let exp = {};
+        let mod = { exports: exp };
+        const fileContent = await app.vault.read(file);
+        const fn = window.eval(`(function(require, module, exports) { ${fileContent} \n})`);
+        fn(req, mod, exp);
         // @ts-ignore
-        const userScript = await Promise.resolve().then(function () { return /*#__PURE__*/_interopNamespace(require(filePath)); });
-        if (!userScript || !userScript.default)
+        const userScript = exp['default'] || mod.exports;
+        if (!userScript)
             return;
-        let script = userScript.default;
+        let script = userScript;
         const { memberAccess } = getUserScriptMemberAccess(command.name);
         if (memberAccess && memberAccess.length > 0) {
             let member;
@@ -10429,6 +10366,7 @@ var FormatSyntaxToken;
     FormatSyntaxToken[FormatSyntaxToken["LinkCurrent"] = 6] = "LinkCurrent";
     FormatSyntaxToken[FormatSyntaxToken["Macro"] = 7] = "Macro";
     FormatSyntaxToken[FormatSyntaxToken["Template"] = 8] = "Template";
+    FormatSyntaxToken[FormatSyntaxToken["MathValue"] = 9] = "MathValue";
 })(FormatSyntaxToken || (FormatSyntaxToken = {}));
 class FormatSyntaxSuggester extends TextInputSuggest {
     constructor(app, inputEl, plugin, suggestForFileNames = false) {
@@ -10500,6 +10438,9 @@ class FormatSyntaxSuggester extends TextInputSuggest {
         const valueMatch = VALUE_SYNTAX_SUGGEST_REGEX.exec(input);
         if (valueMatch)
             callback(valueMatch, FormatSyntaxToken.Value, VALUE_SYNTAX);
+        const mathValueMatch = MATH_VALUE_SYNTAX_SUGGEST_REGEX.exec(input);
+        if (mathValueMatch)
+            callback(mathValueMatch, FormatSyntaxToken.MathValue, MATH_VALUE_SYNTAX);
         const variableMatch = VARIABLE_SYNTAX_SUGGEST_REGEX.exec(input);
         if (variableMatch)
             callback(variableMatch, FormatSyntaxToken.Variable, "{{VALUE:}}");
@@ -10520,13 +10461,10 @@ class FormatSyntaxSuggester extends TextInputSuggest {
     }
 }
 
-/* src\gui\ChoiceBuilder\FolderList.svelte generated by Svelte v3.38.2 */
+/* src/gui/ChoiceBuilder/FolderList.svelte generated by Svelte v3.46.4 */
 
-function add_css$3() {
-	var style = element("style");
-	style.id = "svelte-tuapcq-style";
-	style.textContent = ".quickAddCommandListItem.svelte-tuapcq{display:flex;align-items:center;justify-content:space-between}@media(min-width: 768px){.quickAddFolderListGrid.svelte-tuapcq{display:grid;grid-template-columns:repeat(2, 1fr);column-gap:20px}}.quickAddCommandList.svelte-tuapcq{max-width:50%;margin:12px auto}.clickable.svelte-tuapcq{cursor:pointer}";
-	append(document.head, style);
+function add_css$3(target) {
+	append_styles(target, "svelte-tuapcq", ".quickAddCommandListItem.svelte-tuapcq{display:flex;align-items:center;justify-content:space-between}@media(min-width: 768px){.quickAddFolderListGrid.svelte-tuapcq{display:grid;grid-template-columns:repeat(2, 1fr);column-gap:20px}}.quickAddCommandList.svelte-tuapcq{max-width:50%;margin:12px auto}.clickable.svelte-tuapcq{cursor:pointer}");
 }
 
 function get_each_context$1(ctx, list, i) {
@@ -10701,8 +10639,8 @@ function instance$6($$self, $$props, $$invalidate) {
 	const click_handler = folder => deleteFolder(folder);
 
 	$$self.$$set = $$props => {
-		if ("folders" in $$props) $$invalidate(0, folders = $$props.folders);
-		if ("deleteFolder" in $$props) $$invalidate(1, deleteFolder = $$props.deleteFolder);
+		if ('folders' in $$props) $$invalidate(0, folders = $$props.folders);
+		if ('deleteFolder' in $$props) $$invalidate(1, deleteFolder = $$props.deleteFolder);
 	};
 
 	return [folders, deleteFolder, updateFolders, click_handler];
@@ -10711,13 +10649,20 @@ function instance$6($$self, $$props, $$invalidate) {
 class FolderList extends SvelteComponent {
 	constructor(options) {
 		super();
-		if (!document.getElementById("svelte-tuapcq-style")) add_css$3();
 
-		init(this, options, instance$6, create_fragment$6, safe_not_equal, {
-			folders: 0,
-			deleteFolder: 1,
-			updateFolders: 2
-		});
+		init(
+			this,
+			options,
+			instance$6,
+			create_fragment$6,
+			safe_not_equal,
+			{
+				folders: 0,
+				deleteFolder: 1,
+				updateFolders: 2
+			},
+			add_css$3
+		);
 	}
 
 	get updateFolders() {
@@ -10796,6 +10741,14 @@ class Formatter {
         }
         return output;
     }
+    async replaceMathValueInString(input) {
+        let output = input;
+        while (MATH_VALUE_REGEX.test(output)) {
+            const mathstr = await this.promptForMathValue();
+            output = this.replacer(output, MATH_VALUE_REGEX, mathstr);
+        }
+        return output;
+    }
     async replaceMacrosInString(input) {
         let output = input;
         while (MACRO_REGEX.test(output)) {
@@ -10839,8 +10792,14 @@ class Formatter {
     }
     replaceLinebreakInString(input) {
         let output = input;
-        while (LINEBREAK_REGEX.test(output)) {
+        let match = LINEBREAK_REGEX.exec(output);
+        while (match && input[match.index - 1] !== "\\") {
             output = this.replacer(output, LINEBREAK_REGEX, `\n`);
+            match = LINEBREAK_REGEX.exec(output);
+        }
+        const EscapedLinebreakRegex = /\\\\n/;
+        while (EscapedLinebreakRegex.test(output)) {
+            output = this.replacer(output, EscapedLinebreakRegex, `\\n`);
         }
         return output;
     }
@@ -10875,6 +10834,9 @@ class FileNameDisplayFormatter extends Formatter {
     }
     suggestForValue(suggestedValues) {
         return "_suggest_";
+    }
+    promptForMathValue() {
+        return Promise.resolve("_math_");
     }
     getMacroValue(macroName) {
         return `_macro: ${macroName}`;
@@ -10923,6 +10885,7 @@ class TemplateChoiceBuilder extends ChoiceBuilder {
         this.display();
     }
     display() {
+        this.containerEl.addClass("templateChoiceBuilder");
         this.addCenteredChoiceNameHeader(this.choice);
         this.addTemplatePathSetting();
         this.addFileNameFormatSetting();
@@ -11231,7 +11194,7 @@ class GenericCheckboxPrompt extends obsidian.Modal {
     }
     display() {
         this.contentEl.empty();
-        this.containerEl.addClass('quickAddModal');
+        this.containerEl.addClass('quickAddModal', 'checkboxPrompt');
         this.addCheckboxRows();
         this.addSubmitButton();
     }
@@ -11271,10 +11234,99 @@ class GenericCheckboxPrompt extends obsidian.Modal {
     }
 }
 
+class GenericWideInputPrompt extends obsidian.Modal {
+    constructor(app, header, placeholder, value) {
+        super(app);
+        this.header = header;
+        this.didSubmit = false;
+        this.submitClickCallback = (evt) => this.submit();
+        this.cancelClickCallback = (evt) => this.cancel();
+        this.submitEnterCallback = (evt) => {
+            if ((evt.ctrlKey || evt.metaKey) && evt.key === "Enter") {
+                evt.preventDefault();
+                this.submit();
+            }
+        };
+        this.placeholder = placeholder;
+        this.input = value;
+        this.waitForClose = new Promise((resolve, reject) => {
+            this.resolvePromise = resolve;
+            this.rejectPromise = reject;
+        });
+        this.display();
+        this.open();
+        this.suggester = new SilentFileAndTagSuggester(app, this.inputComponent.inputEl);
+    }
+    static Prompt(app, header, placeholder, value) {
+        const newPromptModal = new GenericWideInputPrompt(app, header, placeholder, value);
+        return newPromptModal.waitForClose;
+    }
+    display() {
+        this.containerEl.addClass('quickAddModal', 'qaWideInputPrompt');
+        this.contentEl.empty();
+        this.titleEl.textContent = this.header;
+        const mainContentContainer = this.contentEl.createDiv();
+        this.inputComponent = this.createInputField(mainContentContainer, this.placeholder, this.input);
+        this.createButtonBar(mainContentContainer);
+    }
+    createInputField(container, placeholder, value) {
+        const textComponent = new obsidian.TextAreaComponent(container);
+        textComponent.inputEl.classList.add('wideInputPromptInputEl');
+        textComponent.setPlaceholder(placeholder !== null && placeholder !== void 0 ? placeholder : "")
+            .setValue(value !== null && value !== void 0 ? value : "")
+            .onChange(value => this.input = value)
+            .inputEl.addEventListener('keydown', this.submitEnterCallback);
+        return textComponent;
+    }
+    createButton(container, text, callback) {
+        const btn = new obsidian.ButtonComponent(container);
+        btn.setButtonText(text)
+            .onClick(callback);
+        return btn;
+    }
+    createButtonBar(mainContentContainer) {
+        const buttonBarContainer = mainContentContainer.createDiv();
+        this.createButton(buttonBarContainer, "Ok", this.submitClickCallback)
+            .setCta().buttonEl.style.marginRight = '0';
+        this.createButton(buttonBarContainer, "Cancel", this.cancelClickCallback);
+        buttonBarContainer.style.display = 'flex';
+        buttonBarContainer.style.flexDirection = 'row-reverse';
+        buttonBarContainer.style.justifyContent = 'flex-start';
+        buttonBarContainer.style.marginTop = '1rem';
+    }
+    submit() {
+        this.didSubmit = true;
+        this.close();
+    }
+    cancel() {
+        this.close();
+    }
+    resolveInput() {
+        if (!this.didSubmit)
+            this.rejectPromise("No input given.");
+        else
+            this.resolvePromise(this.input);
+    }
+    removeInputListener() {
+        this.inputComponent.inputEl.removeEventListener('keydown', this.submitEnterCallback);
+    }
+    onOpen() {
+        super.onOpen();
+        this.inputComponent.inputEl.focus();
+        this.inputComponent.inputEl.select();
+    }
+    onClose() {
+        super.onClose();
+        this.resolveInput();
+        this.removeInputListener();
+    }
+}
+
 class QuickAddApi {
     static GetApi(app, plugin, choiceExecutor) {
         return {
             inputPrompt: (header, placeholder, value) => { return this.inputPrompt(app, header, placeholder, value); },
+            wideInputPrompt: (header, placeholder, value) => { return this.wideInputPrompt(app, header, placeholder, value); },
             yesNoPrompt: (header, text) => { return this.yesNoPrompt(app, header, text); },
             suggester: (displayItems, actualItems) => { return this.suggester(app, displayItems, actualItems); },
             checkboxPrompt: (items, selectedItems) => { return this.checkboxPrompt(app, items, selectedItems); },
@@ -11295,7 +11347,19 @@ class QuickAddApi {
             },
             utility: {
                 getClipboard: async () => { return await navigator.clipboard.readText(); },
-                setClipboard: async (text) => { return await navigator.clipboard.writeText(text); }
+                setClipboard: async (text) => { return await navigator.clipboard.writeText(text); },
+                getSelectedText: () => {
+                    const activeView = app.workspace.getActiveViewOfType(obsidian.MarkdownView);
+                    if (!activeView) {
+                        log.logError("no active view - could not get selected text.");
+                        return;
+                    }
+                    if (!activeView.editor.somethingSelected()) {
+                        log.logError("no text selected.");
+                        return;
+                    }
+                    return activeView.editor.getSelection();
+                }
             },
             date: {
                 now: (format, offset) => {
@@ -11313,6 +11377,14 @@ class QuickAddApi {
     static async inputPrompt(app, header, placeholder, value) {
         try {
             return await GenericInputPrompt.Prompt(app, header, placeholder, value);
+        }
+        catch (_a) {
+            return undefined;
+        }
+    }
+    static async wideInputPrompt(app, header, placeholder, value) {
+        try {
+            return await GenericWideInputPrompt.Prompt(app, header, placeholder, value);
         }
         catch (_a) {
             return undefined;
@@ -11514,6 +11586,7 @@ class MacroChoiceEngine extends QuickAddChoiceEngine {
             log.logError(`failed to load user script ${command.path}.`);
             return;
         }
+        // @ts-ignore
         if (userScript.settings) {
             this.userScriptCommand = command;
         }
@@ -11532,10 +11605,12 @@ class MacroChoiceEngine extends QuickAddChoiceEngine {
     async userScriptDelegator(userScript) {
         switch (typeof userScript) {
             case "function":
-                if (this.userScriptCommand)
+                if (this.userScriptCommand) {
                     await this.runScriptWithSettings(userScript, this.userScriptCommand);
-                else
+                }
+                else {
                     await this.onExportIsFunction(userScript);
+                }
                 break;
             case "object":
                 await this.onExportIsObject(userScript);
@@ -11554,8 +11629,10 @@ class MacroChoiceEngine extends QuickAddChoiceEngine {
         this.output = await userScript(this.params, settings);
     }
     async onExportIsObject(obj) {
-        if (this.userScriptCommand && obj.entry !== null)
+        if (this.userScriptCommand && obj.entry !== null) {
             await this.runScriptWithSettings(obj, this.userScriptCommand);
+            return;
+        }
         try {
             const keys = Object.keys(obj);
             const selected = await GenericSuggester.Suggest(this.app, keys, keys);
@@ -11645,6 +11722,933 @@ class SingleInlineScriptEngine extends MacroChoiceEngine {
     }
 }
 
+const LATEX_CURSOR_MOVE_HERE = "\u261A";
+// Modified from https://github.com/echaos/BetterLatexForObsidian (MIT License).
+const commands = [
+    "\\!",
+    "\\,",
+    "\\:",
+    "\\>",
+    "\\;",
+    "\\#",
+    "\\$",
+    "\\%",
+    "\\&",
+    "\\",
+    "\_",
+    "\{ \}",
+    "\|",
+    `\^{${LATEX_CURSOR_MOVE_HERE}}${LATEX_CURSOR_MOVE_HERE}`,
+    `\[${LATEX_CURSOR_MOVE_HERE}]${LATEX_CURSOR_MOVE_HERE}`,
+    "\\above",
+    "\\abovewithdelims",
+    "\\acute",
+    "\\aleph",
+    "\\alpha",
+    "\\amalg",
+    "\\And",
+    "\\angle",
+    "\\approx",
+    "\\approxeq",
+    "\\arccos",
+    "\\arcsin",
+    "\\arctan",
+    "\\arg",
+    "\\array",
+    "\\arrowvert",
+    "\\Arrowvert",
+    "\\ast",
+    "\\asymp",
+    "\\atop",
+    "\\atopwithdelims",
+    "\\backepsilon",
+    "\\backprime",
+    "\\backsim",
+    "\\backsimeq",
+    "\\backslash",
+    "\\bar",
+    "\\barwedge",
+    "\\Bbb",
+    "\\Bbbk",
+    "\\because",
+    "\\begin",
+    "\\beta",
+    "\\beth",
+    "\\between",
+    "\\bf",
+    "\\Bigg",
+    "\\bigg",
+    "\\Big",
+    "\\big",
+    "\\Biggl", "\\Biggm", "\\Biggr",
+    "\\biggl", "\\biggm", "\\biggr",
+    "\\Bigl", "\\Bigm", "\\Bigl",
+    "\\bigl", "\\bigm", "\\bigr",
+    "\\bigcap",
+    "\\bigcirc",
+    "\\bigcup",
+    "\\bigodot",
+    "\\bigoplus",
+    "\\bigotimes",
+    "\\bigsqcup",
+    "\\bigstar",
+    "\\bigtriangledown",
+    "\\bigtriangleup",
+    "\\biguplus",
+    "\\bigvee",
+    "\\bigwedge",
+    "\\binom",
+    "\\blacklozenge",
+    "\\blacksquare",
+    "\\blacktriangle",
+    "\\blacktriangledown",
+    "\\blacktriangleleft",
+    "\\blacktriangleright",
+    "\\bmod",
+    "\\boldsymbol",
+    "\\bot",
+    "\\bowtie",
+    "\\Box",
+    "\\boxdot",
+    "\\boxed",
+    "\\boxminus",
+    "\\boxplus",
+    "\\boxtimes",
+    "\\brace",
+    "\\bracevert",
+    "\\brack",
+    "\\breve",
+    "\\bullet",
+    "\\Bumpeq",
+    "\\bumpeq",
+    "\\cal",
+    "\\cancel",
+    "\\Cap",
+    "\\cap",
+    "\\cases",
+    "\\cdot",
+    "\\cdotp",
+    "\\cdots",
+    "\\centerdot",
+    `\\cfrac{${LATEX_CURSOR_MOVE_HERE}}{${LATEX_CURSOR_MOVE_HERE}}${LATEX_CURSOR_MOVE_HERE}`,
+    "\\check",
+    "\\checkmark",
+    "\\chi",
+    "\\choose",
+    "\\circ",
+    "\\circeq",
+    "\\circlearrowleft",
+    "\\circlearrowright",
+    "\\circledast",
+    "\\circledcirc",
+    "\\circleddash",
+    "\\circledR",
+    "\\circledS",
+    "\\class",
+    "\\clubsuit",
+    "\\colon",
+    "\\color",
+    "\\complement",
+    "\\cong",
+    "\\coprod",
+    "\\cos",
+    "\\cosh",
+    "\\cot",
+    "\\coth",
+    "\\cr",
+    "\\csc",
+    "\\cssId",
+    "\\Cup",
+    "\\cup",
+    "\\curlyeqprec",
+    "\\curlyeqsucc",
+    "\\curlyvee",
+    "\\curlywedge",
+    "\\curvearrowleft",
+    "\\curvearrowright",
+    "\\dagger",
+    "\\ddagger",
+    "\\daleth",
+    "\\dashleftarrow",
+    "\\dashrightarrow",
+    "\\dashv",
+    "\\dbinom",
+    "\\dot",
+    "\\ddot",
+    "\\dddot",
+    "\\ddddot",
+    "\\ddots",
+    "\\DeclareMathOperator",
+    "\\def",
+    "\\deg",
+    "\\Delta",
+    "\\delta",
+    "\\det",
+    `\\dfrac{${LATEX_CURSOR_MOVE_HERE}}{${LATEX_CURSOR_MOVE_HERE}}${LATEX_CURSOR_MOVE_HERE}`,
+    "\\diagdown",
+    "\\diagup",
+    "\\Diamond",
+    "\\diamond",
+    "\\diamondsuit",
+    "\\digamma",
+    "\\dim",
+    "\\displaylines",
+    "\\displaystyle",
+    "\\div",
+    "\\divideontimes",
+    "\\Doteq",
+    "\\doteq",
+    "\\dotplus",
+    "\\dots",
+    "\\dotsb",
+    "\\dotsc",
+    "\\dotsi",
+    "\\dotsm",
+    "\\dotso",
+    "\\doublebarwedge",
+    "\\doublecap",
+    "\\doublecup",
+    "\\downarrow",
+    "\\Downarrow",
+    "\\downdownarrows",
+    "\\downharpoonleft",
+    "\\downharpoonright",
+    "\\ell",
+    "\\emptyset",
+    "\\end",
+    "\\enspace",
+    "\\epsilon",
+    "\\eqalign",
+    "\\eqalignno",
+    "\\eqcirc",
+    "\\eqsim",
+    "\\eqslantgtr",
+    "\\eqslantless",
+    "\\equiv",
+    "\\eta",
+    "\\eth",
+    "\\exists",
+    "\\exp",
+    "\\fallingdotseq",
+    "\\fbox",
+    "\\Finv",
+    "\\flat",
+    "\\forall",
+    `\\frac{${LATEX_CURSOR_MOVE_HERE}}{${LATEX_CURSOR_MOVE_HERE}}${LATEX_CURSOR_MOVE_HERE}`,
+    "\\frak",
+    "\\frown",
+    "\\Game",
+    "\\Gamma",
+    "\\gamma",
+    "\\gcd",
+    "\\ge",
+    "\\geq",
+    "\\geqq",
+    "\\geqslant",
+    "\\genfrac",
+    "\\gets",
+    "\\gg",
+    "\\ggg",
+    "\\gggtr",
+    "\\gimel",
+    "\\gtrapprox",
+    "\\gnapprox",
+    "\\gneq",
+    "\\gneqq",
+    "\\gvertneqq",
+    "\\gtrsim",
+    "\\gnsim",
+    "\\grave",
+    "\\gt",
+    "\\gtrdot",
+    "\\gtreqless",
+    "\\gtreqqless",
+    "\\gtrless",
+    "\\hat",
+    "\\hbar",
+    "\\hbox",
+    "\\hdashline",
+    "\\hline",
+    "\\heartsuit",
+    "\\hfil",
+    "\\hfill",
+    "\\hom",
+    "\\hookleftarrow",
+    "\\hookrightarrow",
+    "\\hphantom",
+    "\\href",
+    "\\hskip",
+    "\\hslash",
+    "\\hspace",
+    "\\Huge",
+    "\\huge",
+    "\\iddots",
+    "\\idotsint",
+    "\\iff",
+    "\\iiiint",
+    "\\iiint",
+    "\\iint",
+    "\\int",
+    "\\intop",
+    "\\Im",
+    "\\imath",
+    "\\impliedby",
+    "\\implies",
+    "\\in",
+    "\\inf",
+    "\\infty",
+    "\\injlim",
+    "\\intercal",
+    "\\iota",
+    "\\it",
+    "\\jmath",
+    "\\Join",
+    "\\kappa",
+    "\\ker",
+    "\\kern",
+    "\\Lambda",
+    "\\lambda",
+    "\\land",
+    "\\langle",
+    "\\LARGE",
+    "\\Large",
+    "\\large",
+    "\\LaTeX",
+    "\\lbrace",
+    "\\lbrack",
+    "\\lceil",
+    "\\ldotp",
+    "\\ldots",
+    "\\le",
+    "\\leq",
+    "\\leqq",
+    "\\leqslant",
+    "\\leadsto",
+    "\\left",
+    "\\leftarrow",
+    "\\Leftarrow",
+    "\\leftarrowtail",
+    "\\leftharpoondown",
+    "\\leftharpoonup",
+    "\\leftleftarrows",
+    "\\leftrightarrow",
+    "\\Leftrightarrow",
+    "\\leftrightarrows",
+    "\\leftrightharpoons",
+    "\\leftrightsquigarrow",
+    "\\leftroot",
+    "\\leftthreetimes",
+    "\\leqalignno",
+    "\\lessapprox",
+    "\\lessdot",
+    "\\lesseqgtr",
+    "\\lesseqqgtr",
+    "\\lessgtr",
+    "\\lesssim",
+    "\\lfloor",
+    "\\lg",
+    "\\lgroup",
+    "\\lhd",
+    "\\lim",
+    "\\liminf",
+    "\\limits",
+    "\\limsup",
+    "\\ll",
+    "\\llap",
+    "\\llcorner",
+    "\\lrcorner",
+    "\\Lleftarrow",
+    "\\lll",
+    "\\llless",
+    "\\lmoustache",
+    "\\ln",
+    "\\lnapprox",
+    "\\lneq",
+    "\\lneqq",
+    "\\lnot",
+    "\\lnsim",
+    "\\log",
+    "\\longleftarrow",
+    "\\Longleftarrow",
+    "\\longrightarrow",
+    "\\Longrightarrow",
+    "\\longleftrightarrow",
+    "\\Longleftrightarrow",
+    "\\longmapsto",
+    "\\looparrowleft",
+    "\\looparrowright",
+    "\\lor",
+    "\\lower",
+    "\\lozenge",
+    "\\Lsh",
+    "\\lt",
+    "\\ltimes",
+    "\\lvert",
+    "\\lVert",
+    "\\lvertneqq",
+    "\\maltese",
+    "\\mapsto",
+    "\\mathbb",
+    "\\mathbf",
+    "\\mathbin",
+    "\\mathcal",
+    "\\mathchoice",
+    "\\mathclose",
+    "\\mathfrak",
+    "\\mathinner",
+    "\\mathit",
+    "\\mathop",
+    "\\mathopen",
+    "\\mathord",
+    "\\mathpunct",
+    "\\mathrel",
+    "\\mathring",
+    "\\mathrm",
+    "\\mathscr",
+    "\\mathsf",
+    "\\mathstrut",
+    "\\mathtt",
+    "\\matrix",
+    "\\max",
+    "\\mbox",
+    "\\measuredangle",
+    "\\mho",
+    "\\mid",
+    "\\min",
+    "\\mit",
+    "\\mod",
+    "\\models",
+    "\\moveleft",
+    "\\moveright",
+    "\\mp",
+    "\\mskip",
+    "\\mspace",
+    "\\mu",
+    "\\multimap",
+    "\\nabla",
+    "\\natural",
+    "\\ncong",
+    "\\ne",
+    "\\nearrow",
+    "\\neg",
+    "\\negthinspace",
+    "\\negmedspace",
+    "\\negthickspace",
+    "\\neq",
+    "\\newcommand",
+    "\\newenvironment",
+    "\\newline",
+    "\\nexists",
+    "\\ngeq",
+    "\\ngeqq",
+    "\\ngeqslant",
+    "\\ngtr",
+    "\\ni",
+    "\\nleftarrow",
+    "\\nLeftarrow",
+    "\\nleftrightarrow",
+    "\\nLeftrightarrow",
+    "\\nleq",
+    "\\nleqq",
+    "\\nleqslant",
+    "\\nless",
+    "\\nmid",
+    "\\nobreakspace",
+    "\\nolimits",
+    "\\normalsize",
+    "\\not",
+    "\\notag",
+    "\\notin",
+    "\\nparallel",
+    "\\nprec",
+    "\\npreceq",
+    "\\nrightarrow",
+    "\\nRightarrow",
+    "\\nshortmid",
+    "\\nshortparallel",
+    "\\nsim",
+    "\\nsubseteq",
+    "\\nsubseteqq",
+    "\\nsucc",
+    "\\nsucceq",
+    "\\nsupseteq",
+    "\\nsupseteqq",
+    "\\ntriangleleft",
+    "\\ntrianglelefteq",
+    "\\ntriangleright",
+    "\\ntrianglerighteq",
+    "\\nu",
+    "\\nVDash",
+    "\\nVdash",
+    "\\nvDash",
+    "\\nvdash",
+    "\\nwarrow",
+    "\\odot",
+    "\\ominus",
+    "\\oplus",
+    "\\oslash",
+    "\\otimes",
+    "\\oint",
+    "\\oldstyle",
+    "\\omega",
+    "\\Omega",
+    "\\omicron",
+    "\\operatorname",
+    "\\over",
+    "\\overbrace",
+    "\\overleftarrow",
+    "\\overrightarrow",
+    "\\overleftrightarrow",
+    "\\overline",
+    "\\overparen",
+    "\\overset",
+    "\\overwithdelims",
+    "\\owns",
+    "\\parallel",
+    "\\partial",
+    "\\perp",
+    "\\phantom",
+    "\\phi",
+    "\\Phi",
+    "\\pi",
+    "\\Pi",
+    "\\pitchfork",
+    "\\pm",
+    "\\pmatrix",
+    "\\pmb",
+    "\\pmod",
+    "\\pod",
+    "\\Pr",
+    "\\prec",
+    "\\precapprox",
+    "\\precnapprox",
+    "\\preccurlyeq",
+    "\\preceq",
+    "\\precneqq",
+    "\\precsim",
+    "\\precnsim",
+    "\\prime",
+    "\\prod",
+    "\\projlim",
+    "\\propto",
+    "\\psi",
+    "\\Psi",
+    "\\quad",
+    "\\qquad",
+    "\\raise",
+    "\\rangle",
+    "\\rbrace",
+    "\\rbrack",
+    "\\rceil",
+    "\\Re",
+    "\\renewcommand",
+    "\\require (non-standard)",
+    "\\restriction",
+    "\\rfloor",
+    "\\rgroup",
+    "\\rhd",
+    "\\rho",
+    "\\right",
+    "\\rightarrow",
+    "\\Rightarrow",
+    "\\rightarrowtail",
+    "\\rightharpoondown",
+    "\\rightharpoonup",
+    "\\rightleftarrows",
+    "\\rightleftharpoons",
+    "\\rightrightarrows",
+    "\\rightsquigarrow",
+    "\\rightthreetimes",
+    "\\risingdotseq",
+    "\\rlap",
+    "\\rm",
+    "\\rmoustache",
+    "\\Rrightarrow",
+    "\\Rsh",
+    "\\rtimes",
+    "\\Rule (non-standard)",
+    "\\rvert",
+    "\\rVert",
+    "\\S",
+    "\\scr",
+    "\\scriptscriptstyle",
+    "\\scriptsize",
+    "\\scriptstyle",
+    "\\searrow",
+    "\\sec",
+    "\\setminus",
+    "\\sf",
+    "\\sharp",
+    "\\shortmid",
+    "\\shortparallel",
+    "\\shoveleft",
+    "\\shoveright",
+    "\\sideset",
+    "\\sigma",
+    "\\Sigma",
+    "\\sim",
+    "\\simeq",
+    "\\sin",
+    "\\sinh",
+    "\\skew",
+    "\\small",
+    "\\smallfrown",
+    "\\smallint",
+    "\\smallsetminus",
+    "\\smallsmile",
+    "\\smash",
+    "\\smile",
+    "\\space",
+    "\\Space (non-standard)",
+    "\\spadesuit",
+    "\\sphericalangle",
+    "\\sqcap",
+    "\\sqcup",
+    "\\sqrt",
+    "\\sqsubset",
+    "\\sqsupset",
+    "\\sqsubseteq",
+    "\\sqsupseteq",
+    "\\square",
+    "\\stackrel",
+    "\\star",
+    "\\strut",
+    "\\style",
+    "\\subset",
+    "\\Subset",
+    "\\subseteq",
+    "\\subsetneq",
+    "\\subseteqq",
+    "\\subsetneqq",
+    "\\substack",
+    "\\succ",
+    "\\succapprox",
+    "\\succnapprox",
+    "\\succcurlyeq",
+    "\\succeq",
+    "\\succneqq",
+    "\\succsim",
+    "\\succnsim",
+    "\\sum",
+    "\\sup",
+    "\\supset",
+    "\\Supset",
+    "\\supseteq",
+    "\\supsetneq",
+    "\\supseteqq",
+    "\\supsetneqq",
+    "\\surd",
+    "\\swarrow",
+    "\\tag",
+    "\\tan",
+    "\\tanh",
+    "\\tau",
+    "\\tbinom",
+    "\\TeX",
+    `\\text{${LATEX_CURSOR_MOVE_HERE}}${LATEX_CURSOR_MOVE_HERE}`,
+    `\\textbf{${LATEX_CURSOR_MOVE_HERE}}${LATEX_CURSOR_MOVE_HERE}`,
+    `\\textit{${LATEX_CURSOR_MOVE_HERE}}${LATEX_CURSOR_MOVE_HERE}`,
+    `\\textrm{${LATEX_CURSOR_MOVE_HERE}}${LATEX_CURSOR_MOVE_HERE}`,
+    `\\textsf{${LATEX_CURSOR_MOVE_HERE}}${LATEX_CURSOR_MOVE_HERE}`,
+    `\\texttt{${LATEX_CURSOR_MOVE_HERE}}${LATEX_CURSOR_MOVE_HERE}`,
+    "\\textstyle",
+    `\\tfrac{${LATEX_CURSOR_MOVE_HERE}}{${LATEX_CURSOR_MOVE_HERE}}${LATEX_CURSOR_MOVE_HERE}`,
+    "\\therefore",
+    "\\theta",
+    "\\Theta",
+    "\\thickapprox",
+    "\\thicksim",
+    "\\thinspace",
+    "\\tilde",
+    "\\times",
+    "\\tiny",
+    "\\Tiny",
+    "\\to",
+    "\\top",
+    "\\triangle",
+    "\\triangledown",
+    "\\triangleleft",
+    "\\triangleright",
+    "\\trianglelefteq",
+    "\\trianglerighteq",
+    "\\triangleq",
+    "\\tt",
+    "\\twoheadleftarrow",
+    "\\twoheadrightarrow",
+    "\\ulcorner",
+    "\\urcorner",
+    "\\underbrace",
+    "\\underleftarrow",
+    "\\underrightarrow",
+    "\\underleftrightarrow",
+    "\\underline",
+    "\\underparen",
+    "\\underset",
+    "\\unicode",
+    "\\unlhd",
+    "\\unrhd",
+    "\\uparrow",
+    "\\Uparrow",
+    "\\updownarrow",
+    "\\Updownarrow",
+    "\\upharpoonleft",
+    "\\upharpoonright",
+    "\\uplus",
+    "\\uproot",
+    "\\upsilon",
+    "\\Upsilon",
+    "\\upuparrows",
+    "\\varDelta",
+    "\\varepsilon",
+    "\\varGamma",
+    "\\varinjlim",
+    "\\varkappa",
+    "\\varLambda",
+    "\\varlimsup",
+    "\\varliminf",
+    "\\varnothing",
+    "\\varOmega",
+    "\\varphi",
+    "\\varPhi",
+    "\\varpi",
+    "\\varPi",
+    "\\varprojlim",
+    "\\varpropto",
+    "\\varPsi",
+    "\\varrho",
+    "\\varsigma",
+    "\\varSigma",
+    "\\varsubsetneq",
+    "\\varsubsetneqq",
+    "\\varsupsetneq",
+    "\\varsupsetneqq",
+    "\\vartheta",
+    "\\varTheta",
+    "\\vartriangle",
+    "\\vartriangleleft",
+    "\\vartriangleright",
+    "\\varUpsilon",
+    "\\varXi",
+    "\\vcenter",
+    "\\vdash",
+    "\\Vdash",
+    "\\vDash",
+    "\\vdots",
+    "\\vec",
+    "\\vee",
+    "\\veebar",
+    "\\verb",
+    "\\vert",
+    "\\Vert",
+    "\\vphantom",
+    "\\Vvdash",
+    "\\wedge",
+    "\\widehat",
+    "\\widetilde",
+    "\\wp",
+    "\\wr",
+    "\\Xi",
+    "\\xi",
+    "\\xleftarrow",
+    "\\xrightarrow",
+    "\\yen",
+    "\\zeta",
+    "\\{%C\\}%C",
+    "\\langle %C \\rangle%C"
+];
+const environments = [
+    "align",
+    "align*",
+    "alignat",
+    "alignat*",
+    "array",
+    "Bmatrix",
+    "bmatrix",
+    "cases",
+    "eqnarray",
+    "eqnarray*",
+    "equation",
+    "equation*",
+    "gather",
+    "gather*",
+    "matrix",
+    "pmatrix",
+    "smallmatrix",
+    "subarray",
+    "Vmatrix",
+    "vmatrix",
+];
+function beginEndGen(symbol) {
+    return `\\begin{${symbol}}\n${LATEX_CURSOR_MOVE_HERE}\n\\end{${symbol}}${LATEX_CURSOR_MOVE_HERE}`;
+}
+const LaTeXSymbols = [...commands, ...environments.map(beginEndGen)];
+
+const LATEX_REGEX = new RegExp(/\\([a-z{}A-Z0-9]*)$/);
+class LaTeXSuggester extends TextInputSuggest {
+    constructor(inputEl) {
+        super(QuickAdd.instance.app, inputEl);
+        this.inputEl = inputEl;
+        this.lastInput = "";
+        this.symbols = Object.assign([], LaTeXSymbols);
+        this.elementsRendered = this.symbols.reduce((elements, symbol) => {
+            try {
+                elements[symbol.toString()] = obsidian.renderMath(symbol, true);
+            }
+            catch (_a) { } // Ignoring symbols that we can't use
+            return elements;
+        }, {});
+    }
+    getSuggestions(inputStr) {
+        const cursorPosition = this.inputEl.selectionStart;
+        const inputBeforeCursor = inputStr.substr(0, cursorPosition);
+        const lastBackslashPos = inputBeforeCursor.lastIndexOf("\\");
+        const commandText = inputBeforeCursor.substr(lastBackslashPos);
+        const match = LATEX_REGEX.exec(commandText);
+        let suggestions = [];
+        if (match) {
+            this.lastInput = match[1];
+            suggestions = this.symbols.filter(val => val.toLowerCase().contains(this.lastInput));
+        }
+        const fuse = new Fuse(suggestions, { findAllMatches: true, threshold: 0.8 });
+        const searchResults = fuse.search(this.lastInput);
+        return searchResults.map(value => value.item);
+    }
+    renderSuggestion(item, el) {
+        if (item) {
+            el.setText(item);
+            el.append(this.elementsRendered[item]);
+        }
+    }
+    selectSuggestion(item) {
+        const cursorPosition = this.inputEl.selectionStart;
+        const lastInputLength = this.lastInput.length;
+        const currentInputValue = this.inputEl.value;
+        let insertedEndPosition = 0;
+        const textToInsert = item.replace(/\\\\/g, "\\");
+        this.inputEl.value = `${currentInputValue.substr(0, cursorPosition - lastInputLength - 1)}${textToInsert}${currentInputValue.substr(cursorPosition)}`;
+        insertedEndPosition = cursorPosition - lastInputLength + item.length - 1;
+        this.inputEl.trigger("input");
+        this.close();
+        if (item.contains(LATEX_CURSOR_MOVE_HERE)) {
+            const cursorPos = this.inputEl.value.indexOf(LATEX_CURSOR_MOVE_HERE);
+            this.inputEl.value = this.inputEl.value.replace(LATEX_CURSOR_MOVE_HERE, "");
+            this.inputEl.setSelectionRange(cursorPos, cursorPos);
+        }
+        else {
+            this.inputEl.setSelectionRange(insertedEndPosition, insertedEndPosition);
+        }
+    }
+}
+
+class MathModal extends obsidian.Modal {
+    constructor() {
+        super(QuickAdd.instance.app);
+        this.didSubmit = false;
+        this.keybindListener = (evt) => {
+            if (evt.ctrlKey && evt.key === "Enter") {
+                this.submit();
+            }
+            if (evt.key === "Tab") {
+                evt.preventDefault();
+                this.cursorToGoTo();
+            }
+        };
+        this.submitClickCallback = (evt) => this.submit();
+        this.cancelClickCallback = (evt) => this.cancel();
+        this.open();
+        this.display();
+        this.waitForClose = new Promise((resolve, reject) => {
+            this.resolvePromise = resolve;
+            this.rejectPromise = reject;
+        });
+        new LaTeXSuggester(this.inputEl);
+        this.inputEl.focus();
+        this.inputEl.select();
+    }
+    static Prompt() {
+        return new MathModal().waitForClose;
+    }
+    display() {
+        this.containerEl.addClass('quickAddModal', 'qaMathModal');
+        this.contentEl.empty();
+        const mathDiv = this.contentEl.createDiv();
+        mathDiv.className = "math math-block is-loaded";
+        const tc = new obsidian.TextAreaComponent(this.contentEl);
+        tc.inputEl.style.width = "100%";
+        tc.inputEl.style.height = "10rem";
+        this.inputEl = tc.inputEl;
+        tc.onChange(obsidian.debounce(async (value) => await this.mathjaxLoop(mathDiv, value), 50));
+        tc.inputEl.addEventListener('keydown', this.keybindListener);
+        this.createButtonBar(this.contentEl.createDiv());
+    }
+    async onOpen() {
+        super.onOpen();
+        await obsidian.loadMathJax();
+    }
+    async mathjaxLoop(container, value) {
+        const html = obsidian.renderMath(value, true);
+        await obsidian.finishRenderMath();
+        container.empty();
+        container.append(html);
+    }
+    cursorToGoTo() {
+        if (this.inputEl.value.contains(LATEX_CURSOR_MOVE_HERE)) {
+            const cursorPos = this.inputEl.value.indexOf(LATEX_CURSOR_MOVE_HERE);
+            this.inputEl.value = this.inputEl.value.replace(LATEX_CURSOR_MOVE_HERE, "");
+            this.inputEl.setSelectionRange(cursorPos, cursorPos);
+        }
+    }
+    createButton(container, text, callback) {
+        const btn = new obsidian.ButtonComponent(container);
+        btn.setButtonText(text)
+            .onClick(callback);
+        return btn;
+    }
+    createButtonBar(mainContentContainer) {
+        const buttonBarContainer = mainContentContainer.createDiv();
+        this.createButton(buttonBarContainer, "Ok", this.submitClickCallback)
+            .setCta().buttonEl.style.marginRight = '0';
+        this.createButton(buttonBarContainer, "Cancel", this.cancelClickCallback);
+        buttonBarContainer.style.display = 'flex';
+        buttonBarContainer.style.flexDirection = 'row-reverse';
+        buttonBarContainer.style.justifyContent = 'flex-start';
+        buttonBarContainer.style.marginTop = '1rem';
+    }
+    removeInputListeners() {
+        this.inputEl.removeEventListener('keydown', this.keybindListener);
+    }
+    resolveInput() {
+        const output = this.inputEl.value.replace("\\n", `\\\\n`).replace(new RegExp(LATEX_CURSOR_MOVE_HERE, "g"), '');
+        if (!this.didSubmit)
+            this.rejectPromise("No input given.");
+        else
+            this.resolvePromise(output);
+    }
+    submit() {
+        this.didSubmit = true;
+        this.close();
+    }
+    cancel() {
+        this.close();
+    }
+    onClose() {
+        super.onClose();
+        this.resolveInput();
+        this.removeInputListeners();
+    }
+}
+
+class InputPrompt {
+    factory() {
+        if (QuickAdd.instance.settings.inputPrompt === "multi-line") {
+            return GenericWideInputPrompt;
+        }
+        else {
+            return GenericInputPrompt;
+        }
+    }
+}
+
 class CompleteFormatter extends Formatter {
     constructor(app, plugin, choiceExecutor) {
         super();
@@ -11662,6 +12666,7 @@ class CompleteFormatter extends Formatter {
         output = await this.replaceValueInString(output);
         output = await this.replaceDateVariableInString(output);
         output = await this.replaceVariableInString(output);
+        output = await this.replaceMathValueInString(output);
         return output;
     }
     async formatFileName(input, valueHeader) {
@@ -11673,6 +12678,9 @@ class CompleteFormatter extends Formatter {
         output = await this.format(output);
         output = await this.replaceLinkToCurrentFileInString(output);
         return output;
+    }
+    async formatFolderPath(folderName) {
+        return await this.format(folderName);
     }
     getCurrentFileLink() {
         const currentFile = this.app.workspace.getActiveFile();
@@ -11691,12 +12699,15 @@ class CompleteFormatter extends Formatter {
         if (!this.value) {
             const selectedText = await this.getSelectedText();
             this.value = selectedText ? selectedText :
-                await GenericInputPrompt.Prompt(this.app, (_a = this.valueHeader) !== null && _a !== void 0 ? _a : `Enter value`);
+                await new InputPrompt().factory().Prompt(this.app, (_a = this.valueHeader) !== null && _a !== void 0 ? _a : `Enter value`);
         }
         return this.value;
     }
     async promptForVariable(header) {
-        return await GenericInputPrompt.Prompt(this.app, header);
+        return await new InputPrompt().factory().Prompt(this.app, header);
+    }
+    async promptForMathValue() {
+        return await MathModal.Prompt();
     }
     async suggestForValue(suggestedValues) {
         return await GenericSuggester.Suggest(this.app, suggestedValues, suggestedValues);
@@ -11789,7 +12800,7 @@ class TemplateEngine extends QuickAddEngine {
         try {
             const templateContent = await this.getTemplateContent(templatePath);
             const formattedTemplateContent = await this.formatter.formatFileContent(templateContent);
-            const createdFile = await this.app.vault.create(filePath, formattedTemplateContent);
+            const createdFile = await this.createFileWithInput(filePath, formattedTemplateContent);
             await replaceTemplaterTemplatesInCreatedFile(this.app, createdFile);
             return createdFile;
         }
@@ -11891,6 +12902,9 @@ class FormatDisplayFormatter extends Formatter {
     getMacroValue(macroName) {
         return `_macro: ${macroName}_`;
     }
+    promptForMathValue() {
+        return Promise.resolve("_math_");
+    }
     promptForVariable(variableName) {
         return Promise.resolve(`${variableName}_`);
     }
@@ -11916,6 +12930,7 @@ class CaptureChoiceBuilder extends ChoiceBuilder {
     }
     display() {
         var _a, _b, _c;
+        this.containerEl.addClass("captureChoiceBuilder");
         this.contentEl.empty();
         this.addCenteredChoiceNameHeader(this.choice);
         this.addCapturedToSetting();
@@ -12191,6 +13206,7 @@ class MacroChoiceBuilder extends ChoiceBuilder {
         this.display();
     }
     display() {
+        this.containerEl.addClass("macroChoiceBuilder");
         this.addCenteredChoiceNameHeader(this.choice);
         this.addSelectMacroSearch();
     }
@@ -12240,7 +13256,7 @@ class ObsidianCommand extends Command {
     }
 }
 
-/* src\gui\MacroGUIs\Components\StandardCommand.svelte generated by Svelte v3.38.2 */
+/* src/gui/MacroGUIs/Components/StandardCommand.svelte generated by Svelte v3.46.4 */
 
 function create_fragment$5(ctx) {
 	let div1;
@@ -12278,8 +13294,8 @@ function create_fragment$5(ctx) {
 			attr(span1, "aria-label", "Drag-handle");
 
 			attr(span1, "style", span1_style_value = "" + ((/*dragDisabled*/ ctx[2]
-			? "cursor: grab"
-			: "cursor: grabbing") + ";"));
+			? 'cursor: grab'
+			: 'cursor: grabbing') + ";"));
 
 			attr(span1, "tabindex", span1_tabindex_value = /*dragDisabled*/ ctx[2] ? 0 : -1);
 			attr(div1, "class", "quickAddCommandListItem");
@@ -12316,8 +13332,8 @@ function create_fragment$5(ctx) {
 			if ((!current || dirty & /*command*/ 1) && t0_value !== (t0_value = /*command*/ ctx[0].name + "")) set_data(t0, t0_value);
 
 			if (!current || dirty & /*dragDisabled*/ 4 && span1_style_value !== (span1_style_value = "" + ((/*dragDisabled*/ ctx[2]
-			? "cursor: grab"
-			: "cursor: grabbing") + ";"))) {
+			? 'cursor: grab'
+			: 'cursor: grabbing') + ";"))) {
 				attr(span1, "style", span1_style_value);
 			}
 
@@ -12353,15 +13369,15 @@ function instance$5($$self, $$props, $$invalidate) {
 	const dispatch = createEventDispatcher();
 
 	function deleteCommand(commandId) {
-		dispatch("deleteCommand", commandId);
+		dispatch('deleteCommand', commandId);
 	}
 
 	const click_handler = () => deleteCommand(command.id);
 
 	$$self.$$set = $$props => {
-		if ("command" in $$props) $$invalidate(0, command = $$props.command);
-		if ("startDrag" in $$props) $$invalidate(1, startDrag = $$props.startDrag);
-		if ("dragDisabled" in $$props) $$invalidate(2, dragDisabled = $$props.dragDisabled);
+		if ('command' in $$props) $$invalidate(0, command = $$props.command);
+		if ('startDrag' in $$props) $$invalidate(1, startDrag = $$props.startDrag);
+		if ('dragDisabled' in $$props) $$invalidate(2, dragDisabled = $$props.dragDisabled);
 	};
 
 	return [command, startDrag, dragDisabled, deleteCommand, click_handler];
@@ -12379,13 +13395,10 @@ class StandardCommand extends SvelteComponent {
 	}
 }
 
-/* src\gui\MacroGUIs\Components\WaitCommand.svelte generated by Svelte v3.38.2 */
+/* src/gui/MacroGUIs/Components/WaitCommand.svelte generated by Svelte v3.46.4 */
 
-function add_css$2() {
-	var style = element("style");
-	style.id = "svelte-1196d9p-style";
-	style.textContent = ".dotInput.svelte-1196d9p{border:none;display:inline;font-family:inherit;font-size:inherit;padding:0;width:0;text-decoration:underline dotted;background-color:transparent}.dotInput.svelte-1196d9p:hover{background-color:transparent}";
-	append(document.head, style);
+function add_css$2(target) {
+	append_styles(target, "svelte-1196d9p", ".dotInput.svelte-1196d9p{border:none;display:inline;font-family:inherit;font-size:inherit;padding:0;width:0;text-decoration:underline dotted;background-color:transparent}.dotInput.svelte-1196d9p:hover{background-color:transparent}");
 }
 
 function create_fragment$4(ctx) {
@@ -12433,8 +13446,8 @@ function create_fragment$4(ctx) {
 			attr(span1, "aria-label", "Drag-handle");
 
 			attr(span1, "style", span1_style_value = "" + ((/*dragDisabled*/ ctx[2]
-			? "cursor: grab"
-			: "cursor: grabbing") + ";"));
+			? 'cursor: grab'
+			: 'cursor: grabbing') + ";"));
 
 			attr(span1, "tabindex", span1_tabindex_value = /*dragDisabled*/ ctx[2] ? 0 : -1);
 			attr(div1, "class", "quickAddCommandListItem");
@@ -12482,8 +13495,8 @@ function create_fragment$4(ctx) {
 			}
 
 			if (!current || dirty & /*dragDisabled*/ 4 && span1_style_value !== (span1_style_value = "" + ((/*dragDisabled*/ ctx[2]
-			? "cursor: grab"
-			: "cursor: grabbing") + ";"))) {
+			? 'cursor: grab'
+			: 'cursor: grabbing') + ";"))) {
 				attr(span1, "style", span1_style_value);
 			}
 
@@ -12521,18 +13534,18 @@ function instance$4($$self, $$props, $$invalidate) {
 	let inputEl;
 
 	function deleteCommand(commandId) {
-		dispatch("deleteCommand", commandId);
+		dispatch('deleteCommand', commandId);
 	}
 
 	function resizeInput() {
 		const length = inputEl.value.length;
-		$$invalidate(3, inputEl.style.width = (length === 0 ? 2 : length) + "ch", inputEl);
+		$$invalidate(3, inputEl.style.width = (length === 0 ? 2 : length) + 'ch', inputEl);
 	}
 
 	onMount(resizeInput);
 
 	function input_binding($$value) {
-		binding_callbacks[$$value ? "unshift" : "push"](() => {
+		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
 			inputEl = $$value;
 			$$invalidate(3, inputEl);
 		});
@@ -12546,9 +13559,9 @@ function instance$4($$self, $$props, $$invalidate) {
 	const click_handler = () => deleteCommand(command.id);
 
 	$$self.$$set = $$props => {
-		if ("command" in $$props) $$invalidate(0, command = $$props.command);
-		if ("startDrag" in $$props) $$invalidate(1, startDrag = $$props.startDrag);
-		if ("dragDisabled" in $$props) $$invalidate(2, dragDisabled = $$props.dragDisabled);
+		if ('command' in $$props) $$invalidate(0, command = $$props.command);
+		if ('startDrag' in $$props) $$invalidate(1, startDrag = $$props.startDrag);
+		if ('dragDisabled' in $$props) $$invalidate(2, dragDisabled = $$props.dragDisabled);
 	};
 
 	return [
@@ -12567,17 +13580,24 @@ function instance$4($$self, $$props, $$invalidate) {
 class WaitCommand$1 extends SvelteComponent {
 	constructor(options) {
 		super();
-		if (!document.getElementById("svelte-1196d9p-style")) add_css$2();
 
-		init(this, options, instance$4, create_fragment$4, safe_not_equal, {
-			command: 0,
-			startDrag: 1,
-			dragDisabled: 2
-		});
+		init(
+			this,
+			options,
+			instance$4,
+			create_fragment$4,
+			safe_not_equal,
+			{
+				command: 0,
+				startDrag: 1,
+				dragDisabled: 2
+			},
+			add_css$2
+		);
 	}
 }
 
-/* src\gui\MacroGUIs\Components\NestedChoiceCommand.svelte generated by Svelte v3.38.2 */
+/* src/gui/MacroGUIs/Components/NestedChoiceCommand.svelte generated by Svelte v3.46.4 */
 
 function create_fragment$3(ctx) {
 	let div1;
@@ -12623,8 +13643,8 @@ function create_fragment$3(ctx) {
 			attr(span2, "aria-label", "Drag-handle");
 
 			attr(span2, "style", span2_style_value = "" + ((/*dragDisabled*/ ctx[2]
-			? "cursor: grab"
-			: "cursor: grabbing") + ";"));
+			? 'cursor: grab'
+			: 'cursor: grabbing') + ";"));
 
 			attr(span2, "tabindex", span2_tabindex_value = /*dragDisabled*/ ctx[2] ? 0 : -1);
 			attr(div1, "class", "quickAddCommandListItem");
@@ -12665,8 +13685,8 @@ function create_fragment$3(ctx) {
 			if ((!current || dirty & /*command*/ 1) && t0_value !== (t0_value = /*command*/ ctx[0].name + "")) set_data(t0, t0_value);
 
 			if (!current || dirty & /*dragDisabled*/ 4 && span2_style_value !== (span2_style_value = "" + ((/*dragDisabled*/ ctx[2]
-			? "cursor: grab"
-			: "cursor: grabbing") + ";"))) {
+			? 'cursor: grab'
+			: 'cursor: grabbing') + ";"))) {
 				attr(span2, "style", span2_style_value);
 			}
 
@@ -12705,20 +13725,20 @@ function instance$3($$self, $$props, $$invalidate) {
 	const dispatch = createEventDispatcher();
 
 	function deleteCommand() {
-		dispatch("deleteCommand", command.id);
+		dispatch('deleteCommand', command.id);
 	}
 
 	function configureChoice() {
-		dispatch("configureChoice", command);
+		dispatch('configureChoice', command);
 	}
 
 	const click_handler = () => configureChoice();
 	const click_handler_1 = () => deleteCommand();
 
 	$$self.$$set = $$props => {
-		if ("command" in $$props) $$invalidate(0, command = $$props.command);
-		if ("startDrag" in $$props) $$invalidate(1, startDrag = $$props.startDrag);
-		if ("dragDisabled" in $$props) $$invalidate(2, dragDisabled = $$props.dragDisabled);
+		if ('command' in $$props) $$invalidate(0, command = $$props.command);
+		if ('startDrag' in $$props) $$invalidate(1, startDrag = $$props.startDrag);
+		if ('dragDisabled' in $$props) $$invalidate(2, dragDisabled = $$props.dragDisabled);
 	};
 
 	return [
@@ -12744,7 +13764,7 @@ class NestedChoiceCommand$1 extends SvelteComponent {
 	}
 }
 
-/* src\gui\MacroGUIs\Components\UserScriptCommand.svelte generated by Svelte v3.38.2 */
+/* src/gui/MacroGUIs/Components/UserScriptCommand.svelte generated by Svelte v3.46.4 */
 
 function create_fragment$2(ctx) {
 	let div1;
@@ -12790,8 +13810,8 @@ function create_fragment$2(ctx) {
 			attr(span2, "aria-label", "Drag-handle");
 
 			attr(span2, "style", span2_style_value = "" + ((/*dragDisabled*/ ctx[2]
-			? "cursor: grab"
-			: "cursor: grabbing") + ";"));
+			? 'cursor: grab'
+			: 'cursor: grabbing') + ";"));
 
 			attr(span2, "tabindex", span2_tabindex_value = /*dragDisabled*/ ctx[2] ? 0 : -1);
 			attr(div1, "class", "quickAddCommandListItem");
@@ -12832,8 +13852,8 @@ function create_fragment$2(ctx) {
 			if ((!current || dirty & /*command*/ 1) && t0_value !== (t0_value = /*command*/ ctx[0].name + "")) set_data(t0, t0_value);
 
 			if (!current || dirty & /*dragDisabled*/ 4 && span2_style_value !== (span2_style_value = "" + ((/*dragDisabled*/ ctx[2]
-			? "cursor: grab"
-			: "cursor: grabbing") + ";"))) {
+			? 'cursor: grab'
+			: 'cursor: grabbing') + ";"))) {
 				attr(span2, "style", span2_style_value);
 			}
 
@@ -12872,20 +13892,20 @@ function instance$2($$self, $$props, $$invalidate) {
 	const dispatch = createEventDispatcher();
 
 	function deleteCommand() {
-		dispatch("deleteCommand", command.id);
+		dispatch('deleteCommand', command.id);
 	}
 
 	function configureChoice() {
-		dispatch("configureScript", command);
+		dispatch('configureScript', command);
 	}
 
 	const click_handler = () => configureChoice();
 	const click_handler_1 = () => deleteCommand();
 
 	$$self.$$set = $$props => {
-		if ("command" in $$props) $$invalidate(0, command = $$props.command);
-		if ("startDrag" in $$props) $$invalidate(1, startDrag = $$props.startDrag);
-		if ("dragDisabled" in $$props) $$invalidate(2, dragDisabled = $$props.dragDisabled);
+		if ('command' in $$props) $$invalidate(0, command = $$props.command);
+		if ('startDrag' in $$props) $$invalidate(1, startDrag = $$props.startDrag);
+		if ('dragDisabled' in $$props) $$invalidate(2, dragDisabled = $$props.dragDisabled);
 	};
 
 	return [
@@ -12928,6 +13948,7 @@ class UserScriptSettingsModal extends obsidian.Modal {
     }
     display() {
         var _a, _b, _c;
+        this.containerEl.addClass('quickAddModal', 'userScriptSettingsModal');
         this.contentEl.empty();
         this.titleEl.innerText = `${(_a = this.settings) === null || _a === void 0 ? void 0 : _a.name}${((_b = this.settings) === null || _b === void 0 ? void 0 : _b.author) ? " by " + ((_c = this.settings) === null || _c === void 0 ? void 0 : _c.author) : ""}`;
         const options = this.settings.options;
@@ -13011,24 +14032,21 @@ class UserScriptSettingsModal extends obsidian.Modal {
     }
 }
 
-/* src\gui\MacroGUIs\CommandList.svelte generated by Svelte v3.38.2 */
+/* src/gui/MacroGUIs/CommandList.svelte generated by Svelte v3.46.4 */
 
-function add_css$1() {
-	var style = element("style");
-	style.id = "svelte-1ukgrgp-style";
-	style.textContent = ".quickAddCommandList.svelte-1ukgrgp{display:grid;grid-template-columns:auto;width:auto;border:0 solid black;overflow-y:auto;height:auto;margin-bottom:8px;padding:20px}";
-	append(document.head, style);
+function add_css$1(target) {
+	append_styles(target, "svelte-1ukgrgp", ".quickAddCommandList.svelte-1ukgrgp{display:grid;grid-template-columns:auto;width:auto;border:0 solid black;overflow-y:auto;height:auto;margin-bottom:8px;padding:20px}");
 }
 
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[34] = list[i];
-	child_ctx[35] = list;
-	child_ctx[36] = i;
+	child_ctx[33] = list[i];
+	child_ctx[34] = list;
+	child_ctx[35] = i;
 	return child_ctx;
 }
 
-// (111:8) {:else}
+// (93:8) {:else}
 function create_else_block(ctx) {
 	let standardcommand;
 	let updating_command;
@@ -13037,7 +14055,7 @@ function create_else_block(ctx) {
 	let current;
 
 	function standardcommand_command_binding(value) {
-		/*standardcommand_command_binding*/ ctx[27](value, /*command*/ ctx[34], /*each_value*/ ctx[35], /*command_index*/ ctx[36]);
+		/*standardcommand_command_binding*/ ctx[27](value, /*command*/ ctx[33], /*each_value*/ ctx[34], /*command_index*/ ctx[35]);
 	}
 
 	function standardcommand_dragDisabled_binding(value) {
@@ -13050,8 +14068,8 @@ function create_else_block(ctx) {
 
 	let standardcommand_props = {};
 
-	if (/*command*/ ctx[34] !== void 0) {
-		standardcommand_props.command = /*command*/ ctx[34];
+	if (/*command*/ ctx[33] !== void 0) {
+		standardcommand_props.command = /*command*/ ctx[33];
 	}
 
 	if (/*dragDisabled*/ ctx[3] !== void 0) {
@@ -13063,9 +14081,9 @@ function create_else_block(ctx) {
 	}
 
 	standardcommand = new StandardCommand({ props: standardcommand_props });
-	binding_callbacks.push(() => bind(standardcommand, "command", standardcommand_command_binding));
-	binding_callbacks.push(() => bind(standardcommand, "dragDisabled", standardcommand_dragDisabled_binding));
-	binding_callbacks.push(() => bind(standardcommand, "startDrag", standardcommand_startDrag_binding));
+	binding_callbacks.push(() => bind(standardcommand, 'command', standardcommand_command_binding));
+	binding_callbacks.push(() => bind(standardcommand, 'dragDisabled', standardcommand_dragDisabled_binding));
+	binding_callbacks.push(() => bind(standardcommand, 'startDrag', standardcommand_startDrag_binding));
 	standardcommand.$on("deleteCommand", /*deleteCommand_handler_3*/ ctx[30]);
 	standardcommand.$on("updateCommand", /*updateCommandFromEvent*/ ctx[7]);
 
@@ -13083,7 +14101,7 @@ function create_else_block(ctx) {
 
 			if (!updating_command && dirty[0] & /*commands, SHADOW_PLACEHOLDER_ITEM_ID*/ 5) {
 				updating_command = true;
-				standardcommand_changes.command = /*command*/ ctx[34];
+				standardcommand_changes.command = /*command*/ ctx[33];
 				add_flush_callback(() => updating_command = false);
 			}
 
@@ -13116,7 +14134,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (109:58) 
+// (91:58) 
 function create_if_block_2(ctx) {
 	let userscriptcommand;
 	let updating_command;
@@ -13125,7 +14143,7 @@ function create_if_block_2(ctx) {
 	let current;
 
 	function userscriptcommand_command_binding(value) {
-		/*userscriptcommand_command_binding*/ ctx[23](value, /*command*/ ctx[34], /*each_value*/ ctx[35], /*command_index*/ ctx[36]);
+		/*userscriptcommand_command_binding*/ ctx[23](value, /*command*/ ctx[33], /*each_value*/ ctx[34], /*command_index*/ ctx[35]);
 	}
 
 	function userscriptcommand_dragDisabled_binding(value) {
@@ -13138,8 +14156,8 @@ function create_if_block_2(ctx) {
 
 	let userscriptcommand_props = {};
 
-	if (/*command*/ ctx[34] !== void 0) {
-		userscriptcommand_props.command = /*command*/ ctx[34];
+	if (/*command*/ ctx[33] !== void 0) {
+		userscriptcommand_props.command = /*command*/ ctx[33];
 	}
 
 	if (/*dragDisabled*/ ctx[3] !== void 0) {
@@ -13151,9 +14169,9 @@ function create_if_block_2(ctx) {
 	}
 
 	userscriptcommand = new UserScriptCommand({ props: userscriptcommand_props });
-	binding_callbacks.push(() => bind(userscriptcommand, "command", userscriptcommand_command_binding));
-	binding_callbacks.push(() => bind(userscriptcommand, "dragDisabled", userscriptcommand_dragDisabled_binding));
-	binding_callbacks.push(() => bind(userscriptcommand, "startDrag", userscriptcommand_startDrag_binding));
+	binding_callbacks.push(() => bind(userscriptcommand, 'command', userscriptcommand_command_binding));
+	binding_callbacks.push(() => bind(userscriptcommand, 'dragDisabled', userscriptcommand_dragDisabled_binding));
+	binding_callbacks.push(() => bind(userscriptcommand, 'startDrag', userscriptcommand_startDrag_binding));
 	userscriptcommand.$on("deleteCommand", /*deleteCommand_handler_2*/ ctx[26]);
 	userscriptcommand.$on("updateCommand", /*updateCommandFromEvent*/ ctx[7]);
 	userscriptcommand.$on("configureScript", /*configureScript*/ ctx[9]);
@@ -13172,7 +14190,7 @@ function create_if_block_2(ctx) {
 
 			if (!updating_command && dirty[0] & /*commands, SHADOW_PLACEHOLDER_ITEM_ID*/ 5) {
 				updating_command = true;
-				userscriptcommand_changes.command = /*command*/ ctx[34];
+				userscriptcommand_changes.command = /*command*/ ctx[33];
 				add_flush_callback(() => updating_command = false);
 			}
 
@@ -13205,7 +14223,7 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (107:60) 
+// (89:60) 
 function create_if_block_1(ctx) {
 	let nestedchoicecommand;
 	let updating_command;
@@ -13214,7 +14232,7 @@ function create_if_block_1(ctx) {
 	let current;
 
 	function nestedchoicecommand_command_binding(value) {
-		/*nestedchoicecommand_command_binding*/ ctx[19](value, /*command*/ ctx[34], /*each_value*/ ctx[35], /*command_index*/ ctx[36]);
+		/*nestedchoicecommand_command_binding*/ ctx[19](value, /*command*/ ctx[33], /*each_value*/ ctx[34], /*command_index*/ ctx[35]);
 	}
 
 	function nestedchoicecommand_dragDisabled_binding(value) {
@@ -13227,8 +14245,8 @@ function create_if_block_1(ctx) {
 
 	let nestedchoicecommand_props = {};
 
-	if (/*command*/ ctx[34] !== void 0) {
-		nestedchoicecommand_props.command = /*command*/ ctx[34];
+	if (/*command*/ ctx[33] !== void 0) {
+		nestedchoicecommand_props.command = /*command*/ ctx[33];
 	}
 
 	if (/*dragDisabled*/ ctx[3] !== void 0) {
@@ -13240,9 +14258,9 @@ function create_if_block_1(ctx) {
 	}
 
 	nestedchoicecommand = new NestedChoiceCommand$1({ props: nestedchoicecommand_props });
-	binding_callbacks.push(() => bind(nestedchoicecommand, "command", nestedchoicecommand_command_binding));
-	binding_callbacks.push(() => bind(nestedchoicecommand, "dragDisabled", nestedchoicecommand_dragDisabled_binding));
-	binding_callbacks.push(() => bind(nestedchoicecommand, "startDrag", nestedchoicecommand_startDrag_binding));
+	binding_callbacks.push(() => bind(nestedchoicecommand, 'command', nestedchoicecommand_command_binding));
+	binding_callbacks.push(() => bind(nestedchoicecommand, 'dragDisabled', nestedchoicecommand_dragDisabled_binding));
+	binding_callbacks.push(() => bind(nestedchoicecommand, 'startDrag', nestedchoicecommand_startDrag_binding));
 	nestedchoicecommand.$on("deleteCommand", /*deleteCommand_handler_1*/ ctx[22]);
 	nestedchoicecommand.$on("updateCommand", /*updateCommandFromEvent*/ ctx[7]);
 	nestedchoicecommand.$on("configureChoice", /*configureChoice*/ ctx[8]);
@@ -13261,7 +14279,7 @@ function create_if_block_1(ctx) {
 
 			if (!updating_command && dirty[0] & /*commands, SHADOW_PLACEHOLDER_ITEM_ID*/ 5) {
 				updating_command = true;
-				nestedchoicecommand_changes.command = /*command*/ ctx[34];
+				nestedchoicecommand_changes.command = /*command*/ ctx[33];
 				add_flush_callback(() => updating_command = false);
 			}
 
@@ -13294,7 +14312,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (105:8) {#if command.type === CommandType.Wait}
+// (87:8) {#if command.type === CommandType.Wait}
 function create_if_block(ctx) {
 	let waitcommand;
 	let updating_command;
@@ -13303,7 +14321,7 @@ function create_if_block(ctx) {
 	let current;
 
 	function waitcommand_command_binding(value) {
-		/*waitcommand_command_binding*/ ctx[15](value, /*command*/ ctx[34], /*each_value*/ ctx[35], /*command_index*/ ctx[36]);
+		/*waitcommand_command_binding*/ ctx[15](value, /*command*/ ctx[33], /*each_value*/ ctx[34], /*command_index*/ ctx[35]);
 	}
 
 	function waitcommand_dragDisabled_binding(value) {
@@ -13316,8 +14334,8 @@ function create_if_block(ctx) {
 
 	let waitcommand_props = {};
 
-	if (/*command*/ ctx[34] !== void 0) {
-		waitcommand_props.command = /*command*/ ctx[34];
+	if (/*command*/ ctx[33] !== void 0) {
+		waitcommand_props.command = /*command*/ ctx[33];
 	}
 
 	if (/*dragDisabled*/ ctx[3] !== void 0) {
@@ -13329,9 +14347,9 @@ function create_if_block(ctx) {
 	}
 
 	waitcommand = new WaitCommand$1({ props: waitcommand_props });
-	binding_callbacks.push(() => bind(waitcommand, "command", waitcommand_command_binding));
-	binding_callbacks.push(() => bind(waitcommand, "dragDisabled", waitcommand_dragDisabled_binding));
-	binding_callbacks.push(() => bind(waitcommand, "startDrag", waitcommand_startDrag_binding));
+	binding_callbacks.push(() => bind(waitcommand, 'command', waitcommand_command_binding));
+	binding_callbacks.push(() => bind(waitcommand, 'dragDisabled', waitcommand_dragDisabled_binding));
+	binding_callbacks.push(() => bind(waitcommand, 'startDrag', waitcommand_startDrag_binding));
 	waitcommand.$on("deleteCommand", /*deleteCommand_handler*/ ctx[18]);
 	waitcommand.$on("updateCommand", /*updateCommandFromEvent*/ ctx[7]);
 
@@ -13349,7 +14367,7 @@ function create_if_block(ctx) {
 
 			if (!updating_command && dirty[0] & /*commands, SHADOW_PLACEHOLDER_ITEM_ID*/ 5) {
 				updating_command = true;
-				waitcommand_changes.command = /*command*/ ctx[34];
+				waitcommand_changes.command = /*command*/ ctx[33];
 				add_flush_callback(() => updating_command = false);
 			}
 
@@ -13382,7 +14400,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (104:4) {#each commands.filter(c => c.id !== SHADOW_PLACEHOLDER_ITEM_ID) as command(command.id)}
+// (86:4) {#each commands.filter(c => c.id !== SHADOW_PLACEHOLDER_ITEM_ID) as command(command.id)}
 function create_each_block(key_1, ctx) {
 	let first;
 	let current_block_type_index;
@@ -13393,9 +14411,9 @@ function create_each_block(key_1, ctx) {
 	const if_blocks = [];
 
 	function select_block_type(ctx, dirty) {
-		if (/*command*/ ctx[34].type === CommandType.Wait) return 0;
-		if (/*command*/ ctx[34].type === CommandType.NestedChoice) return 1;
-		if (/*command*/ ctx[34].type === CommandType.UserScript) return 2;
+		if (/*command*/ ctx[33].type === CommandType.Wait) return 0;
+		if (/*command*/ ctx[33].type === CommandType.NestedChoice) return 1;
+		if (/*command*/ ctx[33].type === CommandType.UserScript) return 2;
 		return 3;
 	}
 
@@ -13471,7 +14489,7 @@ function create_fragment$1(ctx) {
 	let mounted;
 	let dispose;
 	let each_value = /*commands*/ ctx[0].filter(/*func*/ ctx[14]);
-	const get_key = ctx => /*command*/ ctx[34].id;
+	const get_key = ctx => /*command*/ ctx[33].id;
 
 	for (let i = 0; i < each_value.length; i += 1) {
 		let child_ctx = get_each_context(ctx, each_value, i);
@@ -13558,47 +14576,6 @@ function create_fragment$1(ctx) {
 }
 
 function instance$1($$self, $$props, $$invalidate) {
-	var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, generator) {
-		function adopt(value) {
-			return value instanceof P
-			? value
-			: new P(function (resolve) {
-						resolve(value);
-					});
-		}
-
-		return new (P || (P = Promise))(function (resolve, reject) {
-				function fulfilled(value) {
-					try {
-						step(generator.next(value));
-					} catch(e) {
-						reject(e);
-					}
-				}
-
-				function rejected(value) {
-					try {
-						step(generator["throw"](value));
-					} catch(e) {
-						reject(e);
-					}
-				}
-
-				function step(result) {
-					result.done
-					? resolve(result.value)
-					: adopt(result.value).then(fulfilled, rejected);
-				}
-
-				step((generator = generator.apply(thisArg, _arguments || [])).next());
-			});
-	};
-
-	
-	
-	
-	
-	
 	let { commands } = $$props;
 	let { deleteCommand } = $$props;
 	let { saveCommands } = $$props;
@@ -13642,15 +14619,13 @@ function instance$1($$self, $$props, $$invalidate) {
 		saveCommands(commands);
 	}
 
-	function configureChoice(e) {
-		return __awaiter(this, void 0, void 0, function* () {
-			const command = e.detail;
-			const newChoice = yield getChoiceBuilder(command.choice).waitForClose;
-			if (!newChoice) return;
-			command.choice = newChoice;
-			command.name = newChoice.name;
-			updateCommand(command);
-		});
+	async function configureChoice(e) {
+		const command = e.detail;
+		const newChoice = await getChoiceBuilder(command.choice).waitForClose;
+		if (!newChoice) return;
+		command.choice = newChoice;
+		command.name = newChoice.name;
+		updateCommand(command);
 	}
 
 	function getChoiceBuilder(choice) {
@@ -13664,18 +14639,16 @@ function instance$1($$self, $$props, $$invalidate) {
 		}
 	}
 
-	function configureScript(e) {
-		return __awaiter(this, void 0, void 0, function* () {
-			const command = e.detail;
-			const userScript = yield getUserScript(command, app);
+	async function configureScript(e) {
+		const command = e.detail;
+		const userScript = await getUserScript(command, app);
 
-			if (!userScript.settings) {
-				log.logWarning(`${command.name} has no settings.`);
-				return;
-			}
+		if (!userScript.settings) {
+			log.logWarning(`${command.name} has no settings.`);
+			return;
+		}
 
-			new UserScriptSettingsModal(app, command, userScript.settings).open();
-		});
+		new UserScriptSettingsModal(app, command, userScript.settings).open();
 	}
 
 	const func = c => c.id !== SHADOW_PLACEHOLDER_ITEM_ID;
@@ -13749,11 +14722,11 @@ function instance$1($$self, $$props, $$invalidate) {
 	const deleteCommand_handler_3 = async e => await deleteCommand(e.detail);
 
 	$$self.$$set = $$props => {
-		if ("commands" in $$props) $$invalidate(0, commands = $$props.commands);
-		if ("deleteCommand" in $$props) $$invalidate(1, deleteCommand = $$props.deleteCommand);
-		if ("saveCommands" in $$props) $$invalidate(10, saveCommands = $$props.saveCommands);
-		if ("app" in $$props) $$invalidate(11, app = $$props.app);
-		if ("plugin" in $$props) $$invalidate(12, plugin = $$props.plugin);
+		if ('commands' in $$props) $$invalidate(0, commands = $$props.commands);
+		if ('deleteCommand' in $$props) $$invalidate(1, deleteCommand = $$props.deleteCommand);
+		if ('saveCommands' in $$props) $$invalidate(10, saveCommands = $$props.saveCommands);
+		if ('app' in $$props) $$invalidate(11, app = $$props.app);
+		if ('plugin' in $$props) $$invalidate(12, plugin = $$props.plugin);
 	};
 
 	return [
@@ -13794,7 +14767,6 @@ function instance$1($$self, $$props, $$invalidate) {
 class CommandList extends SvelteComponent {
 	constructor(options) {
 		super();
-		if (!document.getElementById("svelte-1ukgrgp-style")) add_css$1();
 
 		init(
 			this,
@@ -13810,6 +14782,7 @@ class CommandList extends SvelteComponent {
 				plugin: 12,
 				updateCommandList: 13
 			},
+			add_css$1,
 			[-1, -1]
 		);
 	}
@@ -13865,6 +14838,7 @@ class MacroBuilder extends obsidian.Modal {
         });
     }
     display() {
+        this.containerEl.addClass('quickAddModal', 'macroBuilder');
         this.contentEl.empty();
         this.addCenteredHeader(this.macro.name);
         this.addCommandList();
@@ -14212,13 +15186,10 @@ class MacrosManager extends obsidian.Modal {
     }
 }
 
-/* src\gui\choiceList\ChoiceView.svelte generated by Svelte v3.38.2 */
+/* src/gui/choiceList/ChoiceView.svelte generated by Svelte v3.46.4 */
 
-function add_css() {
-	var style = element("style");
-	style.id = "svelte-wcmtyt-style";
-	style.textContent = ".choiceViewBottomBar.svelte-wcmtyt{display:flex;flex-direction:row;align-items:center;justify-content:space-between;margin-top:1rem}@media(max-width: 800px){.choiceViewBottomBar.svelte-wcmtyt{flex-direction:column}}";
-	append(document.head, style);
+function add_css(target) {
+	append_styles(target, "svelte-wcmtyt", ".choiceViewBottomBar.svelte-wcmtyt{display:flex;flex-direction:row;align-items:center;justify-content:space-between;margin-top:1rem}@media(max-width: 800px){.choiceViewBottomBar.svelte-wcmtyt{flex-direction:column}}");
 }
 
 function create_fragment(ctx) {
@@ -14245,7 +15216,7 @@ function create_fragment(ctx) {
 	}
 
 	choicelist = new ChoiceList({ props: choicelist_props });
-	binding_callbacks.push(() => bind(choicelist, "choices", choicelist_choices_binding));
+	binding_callbacks.push(() => bind(choicelist, 'choices', choicelist_choices_binding));
 	choicelist.$on("deleteChoice", /*deleteChoice*/ ctx[3]);
 	choicelist.$on("configureChoice", /*configureChoice*/ ctx[4]);
 	choicelist.$on("toggleCommand", /*toggleCommandForChoice*/ ctx[5]);
@@ -14314,46 +15285,6 @@ function create_fragment(ctx) {
 }
 
 function instance($$self, $$props, $$invalidate) {
-	var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, generator) {
-		function adopt(value) {
-			return value instanceof P
-			? value
-			: new P(function (resolve) {
-						resolve(value);
-					});
-		}
-
-		return new (P || (P = Promise))(function (resolve, reject) {
-				function fulfilled(value) {
-					try {
-						step(generator.next(value));
-					} catch(e) {
-						reject(e);
-					}
-				}
-
-				function rejected(value) {
-					try {
-						step(generator["throw"](value));
-					} catch(e) {
-						reject(e);
-					}
-				}
-
-				function step(result) {
-					result.done
-					? resolve(result.value)
-					: adopt(result.value).then(fulfilled, rejected);
-				}
-
-				step((generator = generator.apply(thisArg, _arguments || [])).next());
-			});
-	};
-
-	
-	
-	
-	
 	let { choices = [] } = $$props;
 	let { macros = [] } = $$props;
 	let { saveChoices } = $$props;
@@ -14386,22 +15317,20 @@ function instance($$self, $$props, $$invalidate) {
 		saveChoices(choices);
 	}
 
-	function deleteChoice(e) {
-		return __awaiter(this, void 0, void 0, function* () {
-			const choice = e.detail.choice;
+	async function deleteChoice(e) {
+		const choice = e.detail.choice;
 
-			const userConfirmed = yield GenericYesNoPrompt.Prompt(app, `Confirm deletion of choice`, `Please confirm that you wish to delete '${choice.name}'.
+		const userConfirmed = await GenericYesNoPrompt.Prompt(app, `Confirm deletion of choice`, `Please confirm that you wish to delete '${choice.name}'.
             ${choice.type === ChoiceType.Multi
-			? "Deleting this choice will delete all (" + choice.choices.length + ") choices inside it!"
-			: ""}
+		? "Deleting this choice will delete all (" + choice.choices.length + ") choices inside it!"
+		: ""}
             `);
 
-			if (userConfirmed) {
-				$$invalidate(0, choices = choices.filter(value => deleteChoiceHelper(choice.id, value)));
-				plugin.removeCommandForChoice(choice);
-				saveChoices(choices);
-			}
-		});
+		if (userConfirmed) {
+			$$invalidate(0, choices = choices.filter(value => deleteChoiceHelper(choice.id, value)));
+			plugin.removeCommandForChoice(choice);
+			saveChoices(choices);
+		}
 	}
 
 	function deleteChoiceHelper(id, value) {
@@ -14412,38 +15341,34 @@ function instance($$self, $$props, $$invalidate) {
 		return value.id !== id;
 	}
 
-	function configureChoice(e) {
-		return __awaiter(this, void 0, void 0, function* () {
-			const { choice: oldChoice } = e.detail;
-			let updatedChoice;
+	async function configureChoice(e) {
+		const { choice: oldChoice } = e.detail;
+		let updatedChoice;
 
-			if (oldChoice.type === ChoiceType.Multi) {
-				updatedChoice = oldChoice;
-				const name = yield GenericInputPrompt.Prompt(app, `Rename ${oldChoice.name}`, "", oldChoice.name);
-				if (!name) return;
-				updatedChoice.name = name;
-			} else {
-				updatedChoice = yield getChoiceBuilder(oldChoice).waitForClose;
-			}
+		if (oldChoice.type === ChoiceType.Multi) {
+			updatedChoice = oldChoice;
+			const name = await GenericInputPrompt.Prompt(app, `Rename ${oldChoice.name}`, '', oldChoice.name);
+			if (!name) return;
+			updatedChoice.name = name;
+		} else {
+			updatedChoice = await getChoiceBuilder(oldChoice).waitForClose;
+		}
 
-			if (!updatedChoice) return;
-			$$invalidate(0, choices = choices.map(choice => updateChoiceHelper(choice, updatedChoice)));
-			saveChoices(choices);
-		});
+		if (!updatedChoice) return;
+		$$invalidate(0, choices = choices.map(choice => updateChoiceHelper(choice, updatedChoice)));
+		saveChoices(choices);
 	}
 
-	function toggleCommandForChoice(e) {
-		return __awaiter(this, void 0, void 0, function* () {
-			const { choice: oldChoice } = e.detail;
-			const updatedChoice = Object.assign(Object.assign({}, oldChoice), { command: !oldChoice.command });
+	async function toggleCommandForChoice(e) {
+		const { choice: oldChoice } = e.detail;
+		const updatedChoice = Object.assign(Object.assign({}, oldChoice), { command: !oldChoice.command });
 
-			updatedChoice.command
-			? plugin.addCommandForChoice(updatedChoice)
-			: plugin.removeCommandForChoice(updatedChoice);
+		updatedChoice.command
+		? plugin.addCommandForChoice(updatedChoice)
+		: plugin.removeCommandForChoice(updatedChoice);
 
-			$$invalidate(0, choices = choices.map(choice => updateChoiceHelper(choice, updatedChoice)));
-			saveChoices(choices);
-		});
+		$$invalidate(0, choices = choices.map(choice => updateChoiceHelper(choice, updatedChoice)));
+		saveChoices(choices);
 	}
 
 	function updateChoiceHelper(oldChoice, newChoice) {
@@ -14473,15 +15398,13 @@ function instance($$self, $$props, $$invalidate) {
 		}
 	}
 
-	function openMacroManager() {
-		return __awaiter(this, void 0, void 0, function* () {
-			const newMacros = yield new MacrosManager(app, plugin, macros, choices).waitForClose;
+	async function openMacroManager() {
+		const newMacros = await new MacrosManager(app, plugin, macros, choices).waitForClose;
 
-			if (newMacros) {
-				saveMacros(newMacros);
-				$$invalidate(7, macros = newMacros);
-			}
-		});
+		if (newMacros) {
+			saveMacros(newMacros);
+			$$invalidate(7, macros = newMacros);
+		}
 	}
 
 	function choicelist_choices_binding(value) {
@@ -14492,12 +15415,12 @@ function instance($$self, $$props, $$invalidate) {
 	const reorderChoices_handler = e => saveChoices(e.detail.choices);
 
 	$$self.$$set = $$props => {
-		if ("choices" in $$props) $$invalidate(0, choices = $$props.choices);
-		if ("macros" in $$props) $$invalidate(7, macros = $$props.macros);
-		if ("saveChoices" in $$props) $$invalidate(1, saveChoices = $$props.saveChoices);
-		if ("saveMacros" in $$props) $$invalidate(8, saveMacros = $$props.saveMacros);
-		if ("app" in $$props) $$invalidate(9, app = $$props.app);
-		if ("plugin" in $$props) $$invalidate(10, plugin = $$props.plugin);
+		if ('choices' in $$props) $$invalidate(0, choices = $$props.choices);
+		if ('macros' in $$props) $$invalidate(7, macros = $$props.macros);
+		if ('saveChoices' in $$props) $$invalidate(1, saveChoices = $$props.saveChoices);
+		if ('saveMacros' in $$props) $$invalidate(8, saveMacros = $$props.saveMacros);
+		if ('app' in $$props) $$invalidate(9, app = $$props.app);
+		if ('plugin' in $$props) $$invalidate(10, plugin = $$props.plugin);
 	};
 
 	return [
@@ -14520,22 +15443,30 @@ function instance($$self, $$props, $$invalidate) {
 class ChoiceView extends SvelteComponent {
 	constructor(options) {
 		super();
-		if (!document.getElementById("svelte-wcmtyt-style")) add_css();
 
-		init(this, options, instance, create_fragment, safe_not_equal, {
-			choices: 0,
-			macros: 7,
-			saveChoices: 1,
-			saveMacros: 8,
-			app: 9,
-			plugin: 10
-		});
+		init(
+			this,
+			options,
+			instance,
+			create_fragment,
+			safe_not_equal,
+			{
+				choices: 0,
+				macros: 7,
+				saveChoices: 1,
+				saveMacros: 8,
+				app: 9,
+				plugin: 10
+			},
+			add_css
+		);
 	}
 }
 
 const DEFAULT_SETTINGS = {
     choices: [],
-    macros: []
+    macros: [],
+    inputPrompt: "single-line"
 };
 class QuickAddSettingsTab extends obsidian.PluginSettingTab {
     constructor(app, plugin) {
@@ -14547,6 +15478,21 @@ class QuickAddSettingsTab extends obsidian.PluginSettingTab {
         containerEl.empty();
         containerEl.createEl('h2', { text: 'QuickAdd Settings' });
         this.addChoicesSetting();
+        new obsidian.Setting(this.containerEl)
+            .setName('Use Multi-line Input Prompt')
+            .setDesc('Use multi-line input prompt instead of single-line input prompt')
+            .addToggle(toggle => toggle
+            .setValue(this.plugin.settings.inputPrompt === "multi-line")
+            .setTooltip("Use multi-line input prompt")
+            .onChange(value => {
+            if (value) {
+                this.plugin.settings.inputPrompt = "multi-line";
+            }
+            else {
+                this.plugin.settings.inputPrompt = "single-line";
+            }
+            this.plugin.saveSettings();
+        }));
     }
     hide() {
         if (this.choiceView)
@@ -14639,9 +15585,15 @@ class TemplateChoiceEngine extends TemplateEngine {
             });
         }
     }
+    async formatFolderPaths(folders) {
+        const folderPaths = await Promise.all(folders.map(async (folder) => {
+            return await this.formatter.formatFolderPath(folder);
+        }));
+        return folderPaths;
+    }
     async getFolderPath() {
         var _a, _b;
-        let folders = [...this.choice.folder.folders];
+        let folders = await this.formatFolderPaths([...this.choice.folder.folders]);
         if ((_a = this.choice.folder) === null || _a === void 0 ? void 0 : _a.chooseWhenCreatingNote) {
             const allFoldersInVault = getAllFolderPathsInVault(this.app);
             return await this.getOrCreateFolder(allFoldersInVault);
@@ -15033,7 +15985,6 @@ class QuickAdd extends obsidian.Plugin {
                 ChoiceSuggester.Open(this, this.settings.choices);
             }
         });
-
         log.register(new ConsoleErrorLogger())
             .register(new GuiLogger(this));
         this.addSettingTab(new QuickAddSettingsTab(this.app, this));

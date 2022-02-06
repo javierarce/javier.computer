@@ -39,5 +39,6 @@
       ],
       "runOnStartup": false
     }
-  ]
+  ],
+  "inputPrompt": "single-line"
 }

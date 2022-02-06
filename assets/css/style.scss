@@ -18,6 +18,7 @@
 @import 'Project';
 @import 'Song';
 @import 'Table';
+@import 'Tag';
 
 * {
   box-sizing: border-box;
@@ -223,4 +224,17 @@ img.lazy.error {
   .Content {
     padding: 1em;
   }
+}
+
+.Article {
+  width: 100%;
+}
+
+.Article__intro {
+  margin: 0 0 3em;
+  font-size: 1.2em;
+}
+
+.Article__content {
+  margin: 0 0 0.4em 0;
 }
