@@ -34,7 +34,8 @@ I'm my worst self when I spend my time consuming instead of making.  Specially w
 - I have not eaten meat since the beginning of 2017.
 - I still eat fish from time to time.
 - I lived in Amsterdam for two rainy years and another four in Barcelona.
-- I have been living in Madrid for 10 years. 
+- <s>I have been living in Madrid for 10 years.</s>
+- I now live (again) in Barcelona.
 - I would like to live in Berlin.
 - My favorite author is <strong>Georges Perec</strong>.
 - The movie I have seen the most times is <strong>Children of Men</strong>.
