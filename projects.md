@@ -6,6 +6,12 @@ className: Projects
 ---
 A selection of some of my favorite projects.
 
+### 2022
+
+| Title | Description | Tags |
+|:-------|:-------|:---- |
+|[Dear Reader](https://reader.javierarce.com)| Dear Reader sends you articles an directly to your Kindle | kindle, rss, newsletters |
+
 ### 2021
 
 | Title | Description | Tags |

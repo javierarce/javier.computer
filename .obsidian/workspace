@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "39e5caacbf032179",
+        "id": "65cf72967a9c8305",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "content/_posts/2022-01-30-memoria-sonora.md",
+            "file": "projects.md",
             "mode": "source",
             "source": false
           }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "ghosting",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -57,11 +57,13 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 409
+    "width": 409,
+    "collapsed": true
   },
   "right": {
     "id": "79ae956b93607c9f",
@@ -77,7 +79,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/_posts/2022-01-30-memoria-sonora.md",
+                "file": "projects.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +96,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/_posts/2022-01-30-memoria-sonora.md",
+                "file": "projects.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -107,8 +109,9 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "39e5caacbf032179",
+  "active": "65cf72967a9c8305",
   "lastOpenFiles": [
+    "projects.md",
     "content/_posts/2022-01-30-memoria-sonora.md",
     "content/_posts/2021-09-28-Ethio-Obscure-Labels-Selection.md",
     "_drafts/2022-01-30-memoria-sonora.md",
@@ -117,7 +120,6 @@
     "content/_photos/P1200037.md",
     "content/_posts/2021-12-15-hello.md",
     "content/_posts/2021-06-27-busy.md",
-    "content/_posts/2021-07-04-goodreads.md",
-    "_drafts/Untitled 2.md"
+    "content/_posts/2021-07-04-goodreads.md"
   ]
 }
