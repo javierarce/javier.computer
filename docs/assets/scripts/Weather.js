@@ -1,5 +1,5 @@
-const CITY = 'Madrid'
-const COORDINATES='40.416729,-3.703339'
+const CITY = 'Barcelona'
+const COORDINATES='41.390205,2.154007'
 const WEATHER_ENDPOINT = `//last.javierarce.com/api/weather?coordinates=${COORDINATES}`
 
 class Weather extends HTMLParagraphElement {
