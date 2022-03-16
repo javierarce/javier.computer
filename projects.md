@@ -10,7 +10,7 @@ A selection of some of my favorite projects.
 
 | Title | Description | Tags |
 |:-------|:-------|:---- |
-|[Dear Reader](https://reader.javierarce.com)| Dear Reader sends you articles an directly to your Kindle | kindle, rss, newsletters |
+|[Dear Reader](https://reader.javierarce.com)| Dear Reader sends you articles and posts from your favorite newsletters and RSS feeds directly to your Kindle | kindle, rss |
 
 ### 2021
 
