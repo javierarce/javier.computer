@@ -32,7 +32,7 @@ layout: base
       </li>
       {% endif %}
       <li>
-        {{ post.date | date: '%d' }} – {% endif %}
+        <span class="Archive__day">{{ post.date | date: '%d' }}</span> – {% endif %}
 
 
         <a href="{{ post.url }}">{{ post.title }}</a>
