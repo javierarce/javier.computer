@@ -27,7 +27,7 @@ class Weather extends HTMLParagraphElement {
       const temperature = weather.temp
       const feelsLike = weather.feels_like
       const humidity = weather.humidity
-      const sunset = new Date(weather.sunset).toLocaleTimeString()
+      const sunset = new Date(weather.sunset * 1000).toLocaleTimeString()
 
       this.weatherDescription = `${description}. The temperature in ${CITY} is ${temperature}ºC (feels like ${feelsLike}ºC). UVI: ${uvi}. Humidity: ${humidity}%. Sunset time is ${sunset}.`
       this.render(this.weatherDescription)
