@@ -1,3 +1,21 @@
+.Projects {
+  margin: 0 0 3em;
+  font-size: 1.2em;
+}
+
+.Projects__content {
+  margin: 0 0 0.4em 0;
+}
+
+
+.Projects__content p {
+  margin: 0 0 1em;
+}
+.Post p:last-child {
+  margin: 0;
+}
+
+
 .Projects table td:first-child {
   width: 350px;
 }

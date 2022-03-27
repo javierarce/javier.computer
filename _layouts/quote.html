@@ -1,0 +1,17 @@
+---
+layout: base
+className: Quote
+---
+<div class="Content">
+  {% include navigation.html %}
+
+  <div class="Quote">
+    <div class="Quote__content">
+      {{ content }}
+    </div>
+    <div class="Quote__metadata">{{ page.book }}, {{ page.author }}</div>
+
+    <a href="{{ page.url }}" class="Quote__date">{{ page.date | date: '%B %d, %Y' }}</a>
+  </div>
+  {% include footer.html %}
+</div>

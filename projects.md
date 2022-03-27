@@ -2,7 +2,7 @@
 title: Projects
 permalink: projects
 layout: table
-className: Projects
+className: Table
 ---
 A selection of some of my favorite projects.
 

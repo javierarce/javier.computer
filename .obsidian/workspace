@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "65cf72967a9c8305",
+        "id": "a8fd7dc610466d13",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "projects.md",
+            "file": "_drafts/Stargate.md",
             "mode": "source",
             "source": false
           }
@@ -62,8 +62,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 409,
-    "collapsed": true
+    "width": 409
   },
   "right": {
     "id": "79ae956b93607c9f",
@@ -79,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "projects.md",
+                "file": "_drafts/Stargate.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,7 +95,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "projects.md",
+                "file": "_drafts/Stargate.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -109,17 +108,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "65cf72967a9c8305",
+  "active": "a8fd7dc610466d13",
   "lastOpenFiles": [
+    "_drafts/Stargate.md",
+    "_drafts/2022-03-20-(44).md",
+    "_drafts/Untitled 3.md",
     "projects.md",
     "content/_posts/2022-01-30-memoria-sonora.md",
     "content/_posts/2021-09-28-Ethio-Obscure-Labels-Selection.md",
     "_drafts/2022-01-30-memoria-sonora.md",
     "_drafts/Untitled 1.md",
     "content/_photos/P1200108.md",
-    "content/_photos/P1200037.md",
-    "content/_posts/2021-12-15-hello.md",
-    "content/_posts/2021-06-27-busy.md",
-    "content/_posts/2021-07-04-goodreads.md"
+    "content/_photos/P1200037.md"
   ]
 }

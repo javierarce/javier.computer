@@ -8,25 +8,10 @@ className: Home
 <div class="Content">
 {% include navigation.html %}
 
-  <div class="Posts">
-    {% for post in paginator.posts %}
-    <div class="Post">
-      {% if post.show_title %}
-      <div class="Post__title">{{ post.title }}</div>
-      {% endif %}
-      <div class="Post__content">
-        {% if post.content contains "<!-- more -->" %}
-        {{ post.content | split:"<!-- more -->" | first }}
-        <div class="Post__more">
-          <a href="{{ post.url }}#more">Read more</a>
-        </div>
-        {% else %}
-        {{ post.content }}
-        {% endif %}
-      </div>
-      <a href="{{ post.url }}" class="Post__date">{{ post.date | date: '%B %d, %Y' }}</a>
-    </div>
-    {% endfor %}
+<div class="Posts">
+  {% for post in paginator.posts %}
+  {% include types/{{post.layout}}.html %}
+  {% endfor %}
 
   {% if paginator.total_pages > 1 %}
   <div class="Pagination">
@@ -39,13 +24,12 @@ className: Home
     <a class="Pagination__item" href="/page/{{ page }}">{{ page }}</a>
     {% endif %}
     {% endfor %}
-{% endif %}
+    {% endif %}
 
     <a class="Pagination__item is-archive" href="/archive">Archive</a>
 
   </div>
-  </div>
+</div>
 
-
-  {% include footer.html %}
+{% include footer.html %}
 </div>

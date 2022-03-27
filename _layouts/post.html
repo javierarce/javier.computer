@@ -5,13 +5,11 @@ className: Post
 <div class="Content">
   {% include navigation.html %}
 
-  <div class="Posts">
-    <div class="Post">
-      <div class="Post__content">
-        {{ content }}
-      </div>
-      <a href="{{ page.url }}" class="Post__date">{{ page.date | date: '%B %d, %Y' }}</a>
+  <div class="Post">
+    <div class="Post__content">
+      {{ content }}
     </div>
+    <a href="{{ page.url }}" class="Post__date">{{ page.date | date: '%B %d, %Y' }}</a>
   </div>
   {% include footer.html %}
 </div>

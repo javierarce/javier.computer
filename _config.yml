@@ -45,6 +45,7 @@ paginate: 10
 paginate_path: "/page/:num/"
 
 collections:
+  output: false
   photos:
     output: true
     permalink: '/photos/:path/'

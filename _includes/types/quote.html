@@ -1,0 +1,8 @@
+<div class="Quote">
+  <div class="Quote__content">
+    {{ post.content }}
+  </div>
+  <div class="Quote__metadata">{{ post.book }}, {{ post.author }}</div>
+
+  <a href="{{ post.url }}" class="Post__date">{{ post.date | date: '%B %d, %Y' }}</a>
+</div>
