@@ -2,18 +2,23 @@
 
 ### About this website
 
-This page contains a wiki, several blog posts, a collection of silly jokes, a hidden passage to another dimension, a list of dog names, a photo of myself eating ice cream, a coin, a yellow bird, a photo of your turtle, a turtle.
 
-I'm my worst self when I spend my time consuming instead of making.  Specially when the consuming part happens inside of a social network. This website is my attempt to spend less time consuming and more thinking and making.
+Hi, stranger, welcome to my computer on the net.
+
+This website contains a wiki, several blog posts, a collection of silly jokes, a hidden passage to another dimension, a list of dog names, a list of names that are not dog names, several photos of myself eating ice cream, a coin, a yellow bird, a photo of your turtle, a turtle.
+
+I'm my worst self when I spend my time consuming instead of making. This website is my attempt to spend less time consuming and more time thinking and making.
+
+If you like what you see here, why don't you [let me know](https://mail.javier.computer/)?
 
 ### Content
 
 | Title | Description|
 |:-------|:-------|
 |[Home](/)|Diary|
-|[Projects](/projects)|List of side projects|
-|[Reading](/reading)|Books I'm reading / I've read / I will read|
-|[About](/about)|A little information about this page & me|
+|[Projects](/projects)|List of projects I've done|
+|[Reading](/reading)|Books I'm reading / I've read / I will read / I won't read|
+|[About](/about) | You are here |
 
 ### Pages 
 

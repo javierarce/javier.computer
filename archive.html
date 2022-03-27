@@ -5,21 +5,41 @@ layout: base
   {% include navigation.html %}
 
   <div class="Content__inner">
+    {% assign thedate = nil %}
+
     {% for post in site.posts %}
+    {% assign format_date = post.date | date: "%m-%d-%Y" %}
     {% unless post.next %}
     <h3>{{ post.date | date: '%B %Y' }}</h3>
     <ul class="Archive">
       {% else %}
       {% capture year %}{{ post.date | date: '%Y %b' }}{% endcapture %}
       {% capture nyear %}{{ post.next.date | date: '%Y %b' }}{% endcapture %}
+
+
       {% if year != nyear %}
+      </li>
     </ul>
+    {% assign thedate = nil %}
     <h3>{{ post.date | date: '%B %Y' }}</h3>
     <ul class="Archive">
       {% endif %}
+
       {% endunless %}
-      <li>{{ post.date | date: '%d' }} – <a href="{{ post.url }}">{{ post.title }}</a></li>
+
+      {% if thedate != format_date %}
+      {% if thedate != nil %}
+      </li>
+      {% endif %}
+      <li>
+        {{ post.date | date: '%d' }} – {% endif %}
+
+
+        <a href="{{ post.url }}">{{ post.title }}</a>
+
+        {% assign thedate = post.date | date: "%m-%d-%Y" %}
       {% endfor %}
+      </li>
     </ul>
   </div>
 
