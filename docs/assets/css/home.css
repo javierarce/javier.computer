@@ -135,6 +135,10 @@ p {
 }
 
 
+.is-light {
+  opacity: 0.5;
+}
+
 .is-highlighted {
   color: var(--text);
   font-weight: 600;
