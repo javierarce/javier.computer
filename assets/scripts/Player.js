@@ -3,9 +3,8 @@ function onYouTubeIframeAPIReady() {
   let  $el = document.createElement("div")
   $el.innerHTML = 'play'
 
-  $el.setAttribute("id", "youtube-icon")
-  $el.style.cssText = "cursor:pointer;cursor:hand"
   audio.appendChild($el)
+  $el.classList.add('Player')
 
   let $div = document.createElement("div")
 
@@ -13,9 +12,9 @@ function onYouTubeIframeAPIReady() {
 
   let o = function (e) {
     if (e) {
-      $el.innerHTML = 'play'
+      $el.innerHTML = 'Stop'
     } else {
-      $el.innerHTML = 'stop'
+      $el.innerHTML = 'Play'
     }
   };
 
