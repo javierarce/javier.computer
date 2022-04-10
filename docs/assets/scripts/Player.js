@@ -1,7 +1,7 @@
 function onYouTubeIframeAPIReady() {
   let audio = document.getElementById("youtube-audio")
   let  $el = document.createElement("div")
-  $el.innerHTML = 'play'
+  $el.innerHTML = '...'
 
   audio.appendChild($el)
   $el.classList.add('Player')
