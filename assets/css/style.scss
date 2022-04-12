@@ -269,3 +269,84 @@ img.lazy.error {
 .Article__content {
   margin: 0 0 0.4em 0;
 }
+
+.Player {
+  width: auto;
+  color: var(--black);
+  font-size: 1em;
+  text-decoration: none;
+  padding: 0.6em;
+  display: flex;
+  border: 1px solid #fff;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Player__info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+}
+
+.Player__play {
+  margin: 0 0.4em 0 0;
+  cursor: pointer;
+}
+
+.Player__progress {
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.Player__separator {
+  margin: 0 0.4em;
+}
+
+.Player__time {
+  user-select: none;
+  font-size: 0.8em;
+  opacity: 0.5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Player__time {
+  font-size: 0.8em;
+  opacity: 0.5;
+}
+
+.Player.is-playing .Player__cover {
+  animation: rotating 5s linear infinite;
+}
+
+.Post .Player__cover {
+  display: none;
+  margin: 0;
+  max-width: 80px;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin: 0 0.4em 0 0;
+}
+
+#youtube-player {
+  display: none;
+}
+
+@keyframes rotating {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
