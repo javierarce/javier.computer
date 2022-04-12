@@ -1,5 +1,3 @@
-let trackId = undefined
-
 function secondsToHms(d) {
   d = Number(d)
 
@@ -10,144 +8,180 @@ function secondsToHms(d) {
   let time = []
 
   if (h > 0) {
-    time.push(h)
+    time.push(h.toString().padStart(2, '0'))
   }
-
-  if (!h && m > 0) {
-    time.push(m)
-  }
-
+  time.push(m.toString().padStart(2, '0'))
   time.push(s.toString().padStart(2, '0'))
 
   return time.join(':')
 }
 
-function onYouTubeIframeAPIReady() {
-  let $audio = document.getElementById('youtube-audio')
-  let dataset = $audio.dataset
-  let videoId = dataset.video
+function createElement (kind, className, value = undefined) {
+  let $element = document.createElement(kind)
+  $element.classList.add(className)
 
-  let $player = document.createElement('div')
-  $player.classList.add('Player')
-
-  let $progressBar = document.createElement('div')
-  $progressBar.classList.add('Player__progress')
-  $progressBar.style.width = '0%'
-
-  let  $play = document.createElement('div')
-  $play.classList.add('Player__play')
-  $play.innerHTML = '▶'
-
-  let $time = document.createElement('div')
-  $time.classList.add('Player__time')
-
-  let $played = document.createElement('div')
-  $played.classList.add('Player__played')
-  $played.innerHTML = '00:00'
-
-  let $separator = document.createElement('div')
-  $separator.classList.add('Player__separator')
-  $separator.innerHTML = '/'
-
-  let $duration = document.createElement('div')
-  $duration.classList.add('Player__duration')
-  $duration.innerHTML = '00:00'
-
-  let  $title = document.createElement('div')
-  $title.classList.add('Player__title')
-  $title.innerHTML = '...'
-
-  let $div = document.createElement('div')
-  $div.setAttribute('id', 'youtube-player')
-
-  $audio.appendChild($div)
-  $audio.appendChild($player)
-
-
-  let $left = document.createElement('div')
-  $left.classList.add('Player__info')
-  $player.appendChild($left)
-
-  $left.appendChild($play)
-  $left.appendChild($title)
-  $left.appendChild($progressBar)
-
-  $time.appendChild($played)
-  $time.appendChild($separator)
-  $time.appendChild($duration)
-  $player.appendChild($time)
-
-  let o = function (e) {
-    if (e) {
-      $player.classList.add('is-playing')
-    } else {
-      $player.classList.remove('is-playing')
-    }
-  };
-
-  let player = new YT.Player("youtube-player", {
-    height: "0",
-    width: "0",
-    videoId,
-    events: {
-      onReady: function(e) {
-        if (player) {
-          let videoData  = player.getVideoData()
-          $title.innerHTML = videoData.title
-          $duration.innerHTML = secondsToHms(player.getDuration())
-        }
-        //player.setPlaybackQuality("small"), o(player.getPlayerState() !== YT.PlayerState.CUED)
-      },
-      onStateChange: function(event) {
-        if (player.getPlayerState() == YT.PlayerState.PLAYING)  {
-          if (trackId) {
-            clearInterval(trackId)
-          }
-          trackId = setInterval(updateBar, 500)
-        } else {
-          if (trackId) {
-            clearInterval(trackId)
-          }
-        }
-
-        $audio.data === YT.PlayerState.ENDED && o(!1)
-      }
-    }
-  })
-  window.player = player
-
-  $player.onclick = function(e) {
-    e.stopPropagation()
-    e.preventDefault()
-
-    let x = e.offsetX
-    let w = $player.offsetWidth
-    let p = Math.round((x / w) * 100)
-    let duration = player.getDuration()
-    let seek = Math.round((duration * p) / 100)
-    console.log(seek)
-    //player.seekTo(seek, true)
+  if (value) {
+    $element.innerHTML = value
   }
 
-  $play.onclick = function(e) {
-    e.stopPropagation()
-    e.preventDefault()
+  return $element
+}
 
-    if (player.getPlayerState() === YT.PlayerState.PLAYING || player.getPlayerState() === YT.PlayerState.BUFFERING) {
-      o(0)
-      $play.innerHTML = '▶'
-      player.pauseVideo()
-    } else { 
+function onYouTubeIframeAPIReady() {
+  let audios = document.querySelectorAll('[data-video]');
+
+  audios.forEach(($audio) => {
+    let trackId = undefined
+    let scratching = false
+    let savedTime = 0
+
+    let dataset = $audio.dataset
+    let videoId = dataset.video
+    $audio.classList.add('Player__frame')
+
+    let $player = createElement('div', 'Player')
+    let $play = createElement('div', 'Player__play', '▶')
+    let $time = createElement('div', 'Player__time')
+    let $progress = createElement('div', 'Player__progress')
+    let $progressBar = createElement('div', 'Player__progressBar')
+
+    let $played = createElement('div', 'Player__played', '00:00')
+    let $separator = createElement('div', 'Player__separator', '/')
+    let $duration = createElement('div', 'Player__duration', '00:00')
+    let $title = createElement('a', 'Player__title', '...')
+    let $left = createElement('div', 'Player__info')
+
+    $title.href = `https://www.youtube.com/watch?v=${videoId}`
+    $title.target = '_blank'
+
+    $progress.style.width = '0%'
+    $progressBar.appendChild($progress)
+
+    let $div = document.createElement('div')
+    $div.setAttribute('id', videoId)
+
+    $audio.appendChild($div)
+    $audio.appendChild($player)
+
+    $player.appendChild($left)
+
+    $left.appendChild($play)
+    $left.appendChild($title)
+    $left.appendChild($progressBar)
+
+    $time.appendChild($played)
+    $time.appendChild($separator)
+    $time.appendChild($duration)
+
+    $time.onclick = (e) => {
+      e.stopPropagation()
+      e.preventDefault()
+    }
+
+    $player.appendChild($time)
+
+    let o = function (e) {
+      if (e) {
+        $player.classList.add('is-playing')
+      } else {
+        $player.classList.remove('is-playing')
+      }
+    };
+
+
+    let player = new YT.Player(videoId, {
+      height: "0",
+      width: "0",
+      videoId,
+      events: {
+        onReady: function(e) {
+          if (player) {
+            let videoData  = player.getVideoData()
+            $title.innerHTML = videoData.title
+            $duration.innerHTML = secondsToHms(player.getDuration())
+          }
+          //player.setPlaybackQuality("small"), o(player.getPlayerState() !== YT.PlayerState.CUED)
+        },
+        onStateChange: function(event) {
+          if (player.getPlayerState() == YT.PlayerState.PLAYING)  {
+            if (trackId) {
+              clearInterval(trackId)
+            }
+            trackId = setInterval(updateBar, 500)
+          } else {
+            if (trackId) {
+              clearInterval(trackId)
+            }
+          }
+
+          $audio.data === YT.PlayerState.ENDED && o(!1)
+        }
+      }
+    })
+
+    $progressBar.onmouseout = function(e) {
+      scratching = false
+      $played.innerHTML = savedTime
+    }
+
+    $progressBar.onmouseenter = function(e) {
+      savedTime = $played.innerHTML
+    }
+
+    $progressBar.onmousemove = function(e) {
+      scratching = true
+      let x = e.offsetX
+      let w = $player.offsetWidth
+      let p = Math.round((x / w) * 100)
+      let duration = player.getDuration()
+      let seek = Math.round((duration * p) / 100)
+      $played.innerHTML = secondsToHms(seek)
+    }
+
+    $progressBar.onclick = function(e) {
+      e.stopPropagation()
+      e.preventDefault()
+
+      let x = e.offsetX
+      let w = $player.offsetWidth
+      let p = Math.round((x / w) * 100)
+      let duration = player.getDuration()
+      let seek = Math.round((duration * p) / 100)
+      player.seekTo(seek, true)
+      let i = Math.ceil((player.getCurrentTime() / player.getDuration()) * 100)
+      $progress.style.width = `${i}%`
+      play()
+    }
+
+    $play.onclick = function(e) {
+      e.stopPropagation()
+      e.preventDefault()
+
+      if (player.getPlayerState() === YT.PlayerState.PLAYING || player.getPlayerState() === YT.PlayerState.BUFFERING) {
+        stop()
+      } else { 
+        play()
+      }
+    }
+
+    const stop = () => {
+        o(0)
+        $play.innerHTML = '▶'
+        player.pauseVideo()
+    }
+
+    const play = () => {
       $play.innerHTML = '■'
       o(1)
       player.playVideo()
     }
-  }
 
-  const updateBar = () => {
-    let p = Math.ceil((player.getCurrentTime() / player.getDuration()) * 100)
-    $progressBar.style.width = `${p}%`
-    $played.innerHTML = secondsToHms(player.getCurrentTime())
-  }
-
+    const updateBar = () => {
+      let p = Math.ceil((player.getCurrentTime() / player.getDuration()) * 100)
+      $progress.style.width = `${p}%`
+      if (!scratching) {
+        $played.innerHTML = secondsToHms(player.getCurrentTime())
+      }
+    }
+  })
 }

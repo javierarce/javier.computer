@@ -292,9 +292,27 @@ img.lazy.error {
   justify-content: start;
 }
 
+.Player__title {
+  font-weight: normal;
+}
+
 .Player__play {
   margin: 0 0.4em 0 0;
   cursor: pointer;
+  user-select: none;
+}
+
+.Player__progressBar:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.Player__progressBar {
+  height: 10px;
+  background: transparent;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: background 250ms ease-in-out;
 }
 
 .Player__progress {
@@ -303,6 +321,11 @@ img.lazy.error {
   position: absolute;
   bottom: 0;
   left: 0;
+  transition: all 250ms ease-in-out;
+}
+
+.Player__progressBar:hover .Player__progress {
+  height: 100%;
 }
 
 .Player__separator {
@@ -328,17 +351,7 @@ img.lazy.error {
   animation: rotating 5s linear infinite;
 }
 
-.Post .Player__cover {
-  display: none;
-  margin: 0;
-  max-width: 80px;
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  margin: 0 0.4em 0 0;
-}
-
-#youtube-player {
+.Player__frame iframe {
   display: none;
 }
 
