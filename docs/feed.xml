@@ -10,15 +10,34 @@
 
     <generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator>
     <link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" />
-    <updated>2022-04-14T12:58:31+02:00</updated>
+    <updated>2022-04-14T14:19:28+02:00</updated>
     <id>http://localhost:4000/feed.xml</id>
 
 		<sy:updatePeriod>daily</sy:updatePeriod>
 		<sy:updateFrequency>1</sy:updateFrequency>
 		<link>http://localhost:4000</link>
 		<atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-		<lastBuildDate>Tue, 12 Apr 2022 23:42:41 +0200</lastBuildDate>
+		<lastBuildDate>Thu, 14 Apr 2022 14:05:42 +0200</lastBuildDate>
 		
+		
+			<item>
+				<title>Revolta de les Quintes</title>
+				
+            
+          <description>
+            <![CDATA[
+            <img src="https://img.javier.computer/_1280.jpg"  />
+              <p>Revolta de les Quintes</p>
+
+   
+            <p>Barcelona</p>
+              ]]>
+          </description>
+            
+				<pubDate>Thu, 14 Apr 2022 14:05:42 +0200</pubDate>
+				<link>http://localhost:4000/2022/04/14/revolta-de-les-quintes</link>
+				<guid isPermaLink="true">http://localhost:4000/2022/04/14/revolta-de-les-quintes</guid>
+			</item>
 		
 			<item>
 				<title>Player</title>
@@ -149,20 +168,6 @@ finished yet, but it seems to work fine for a debut. Here’s an example:&lt;/p&
 				<pubDate>Mon, 28 Mar 2022 09:19:41 +0200</pubDate>
 				<link>http://localhost:4000/2022/03/28/monday</link>
 				<guid isPermaLink="true">http://localhost:4000/2022/03/28/monday</guid>
-			</item>
-		
-			<item>
-				<title>Sunday</title>
-				
-            
-				
-					<description>&lt;p&gt;Cosmo solo · Our Flag Means Death · &lt;a href=&quot;https://www.youtube.com/watch?v=cuTnbZcq7pg&quot;&gt;Glide&lt;/a&gt;&lt;/p&gt;
-</description>
-				
-            
-				<pubDate>Sun, 27 Mar 2022 15:35:43 +0200</pubDate>
-				<link>http://localhost:4000/2022/03/27/sunday</link>
-				<guid isPermaLink="true">http://localhost:4000/2022/03/27/sunday</guid>
 			</item>
 		
 	</channel>

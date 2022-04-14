@@ -1,5 +1,27 @@
 <div class="Photo">
   <div class="Photo__content">
+
+{% if post.filenames %}
+<div class="Photo__collection">
+  {% for filename in post.filenames %}
+  <div class="Photo">
+    <div class="Photo__content">
+      <figure class="Figure">
+        <picture>
+          <source data-srcset="https://img.javier.computer/{{ filename }}_640.webp 640w, https://img.javier.computer/{{ filename }}_1280.webp 1280w, https://img.javier.computer/{{ filename }}_2880.webp 2880w" type=image/webp>
+            <source data-srcset="https://img.javier.computer/{{ filename }}_640.jpg 640w, https://img.javier.computer/{{ filename }}_1280.jpg 1280w, https://img.javier.computer/{{ filename }}_2880.jpg 2880w">
+              <img class="Photo lazy" data-src="https://img.javier.computer/{{ filename }}_1280.jpg">
+        </picture>
+      </figure>
+    </div>
+  </div>
+  {% endfor %}
+  <figcaption class="Figure__caption is-dark">{{ post.content }}</figcaption>
+  <div class="Photo__date">{{ post.date | date: '%B %d, %Y' }} - {{ post.where }}</div>
+</div>
+{% else %}
+
+
     <figure class="Figure">
       <picture>
         <source data-srcset="https://img.javier.computer/{{ post.filename }}_640.webp 640w, https://img.javier.computer/{{ post.filename }}_1280.webp 1280w, https://img.javier.computer/{{ post.filename }}_2880.webp 2880w" type=image/webp>
@@ -9,5 +31,9 @@
       <figcaption class="Figure__caption is-dark">{{ post.content }}</figcaption>
       <div class="Photo__date">{{ post.date | date: '%B %d, %Y' }} - {{ post.where }}</div>
     </figure>
+
+
+    {% endif %}
+
   </div>
 </div>

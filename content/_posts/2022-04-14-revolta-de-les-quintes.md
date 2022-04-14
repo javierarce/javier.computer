@@ -1,0 +1,20 @@
+---
+layout: photo
+title: "Revolta de les Quintes"
+date: "2022-04-14 14:05:42 +0200"
+category: photo
+where: Barcelona
+filenames: 
+- 2022_04_14_DSCF0680_Revolta_de_les_Quintes_262cc7ed2630a0be72a4842db0b39f1c
+- 2022_04_14_DSCF0661_Revolta_de_les_Quintes_f45345e0f78c191979620c0f989b881d
+- 2022_04_14_DSCF0699_Revolta_de_les_Quintes_26479255ca6e398133fa39599bb77efd
+- 2022_04_14_DSCF0719_Revolta_de_les_Quintes_53ff64f4a8882dba9db66d9291099923
+- 2022_04_14_DSCF0733_Revolta_de_les_Quintes_f9d1b43eff62605cafcb68c2880328ce
+- 2022_04_14_DSCF0797_Revolta_de_les_Quintes_8b8701a65066918ab24d3453adfd13ec
+- 2022_04_14_DSCF0820_Revolta_de_les_Quintes_63b645aa10a6105cc683f29364c41110
+- 2022_04_14_DSCF0822_Revolta_de_les_Quintes_be994152eed87dd3cf8664fb89f86897
+- 2022_04_14_DSCF0875_Revolta_de_les_Quintes_22391c88ccbb885916b0f24abc750eb5
+- 2022_04_14_DSCF0969_Revolta_de_les_Quintes_840c8c00e859c7099605036576b6d149
+---
+Revolta de les Quintes
+
