@@ -10,7 +10,7 @@
 
     <generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator>
     <link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" />
-    <updated>2022-04-14T14:19:28+02:00</updated>
+    <updated>2022-04-14T14:21:40+02:00</updated>
     <id>http://localhost:4000/feed.xml</id>
 
 		<sy:updatePeriod>daily</sy:updatePeriod>
@@ -26,7 +26,31 @@
             
           <description>
             <![CDATA[
-            <img src="https://img.javier.computer/_1280.jpg"  />
+
+              
+              
+            <img src="https://img.javier.computer/2022_04_14_DSCF0680_Revolta_de_les_Quintes_262cc7ed2630a0be72a4842db0b39f1c_1280.jpg" alt="Revolta de les Quintes"/>  
+              
+            <img src="https://img.javier.computer/2022_04_14_DSCF0661_Revolta_de_les_Quintes_f45345e0f78c191979620c0f989b881d_1280.jpg" alt="Revolta de les Quintes"/>  
+              
+            <img src="https://img.javier.computer/2022_04_14_DSCF0699_Revolta_de_les_Quintes_26479255ca6e398133fa39599bb77efd_1280.jpg" alt="Revolta de les Quintes"/>  
+              
+            <img src="https://img.javier.computer/2022_04_14_DSCF0719_Revolta_de_les_Quintes_53ff64f4a8882dba9db66d9291099923_1280.jpg" alt="Revolta de les Quintes"/>  
+              
+            <img src="https://img.javier.computer/2022_04_14_DSCF0733_Revolta_de_les_Quintes_f9d1b43eff62605cafcb68c2880328ce_1280.jpg" alt="Revolta de les Quintes"/>  
+              
+            <img src="https://img.javier.computer/2022_04_14_DSCF0797_Revolta_de_les_Quintes_8b8701a65066918ab24d3453adfd13ec_1280.jpg" alt="Revolta de les Quintes"/>  
+              
+            <img src="https://img.javier.computer/2022_04_14_DSCF0820_Revolta_de_les_Quintes_63b645aa10a6105cc683f29364c41110_1280.jpg" alt="Revolta de les Quintes"/>  
+              
+            <img src="https://img.javier.computer/2022_04_14_DSCF0822_Revolta_de_les_Quintes_be994152eed87dd3cf8664fb89f86897_1280.jpg" alt="Revolta de les Quintes"/>  
+              
+            <img src="https://img.javier.computer/2022_04_14_DSCF0875_Revolta_de_les_Quintes_22391c88ccbb885916b0f24abc750eb5_1280.jpg" alt="Revolta de les Quintes"/>  
+              
+            <img src="https://img.javier.computer/2022_04_14_DSCF0969_Revolta_de_les_Quintes_840c8c00e859c7099605036576b6d149_1280.jpg" alt="Revolta de les Quintes"/>  
+              
+              
+
               <p>Revolta de les Quintes</p>
 
    
@@ -102,7 +126,11 @@ finished yet, but it seems to work fine for a debut. Here’s an example:&lt;/p&
             
           <description>
             <![CDATA[
-            <img src="https://img.javier.computer/2022_04_14_DSCF0646_29d9b13e019ad1c92fa3a42c3720a18b_1280.jpg"  />
+
+              
+            <img src="https://img.javier.computer/2022_04_14_DSCF0646_29d9b13e019ad1c92fa3a42c3720a18b_1280.jpg" alt=":O" />  
+              
+
               <p>:O</p>
    
             <p>Barcelona</p>
