@@ -8,8 +8,9 @@
 <meta property="og:description" content="{{ page.description }}" />
 <meta property="twitter:description" content="{{ page.description }}" />
 
-<meta name=twitter:image content="{{ base.url | prepend: site.url }}/assets/img/avatar.png?version={{site.version}}">
-<meta property='og:image' content="{{ base.url | prepend: site.url }}/assets/img/avatar.png?version={{site.version}}"/>
+<meta name=twitter:image content="{{ base.url | prepend: site.url }}/assets/img/card.png?version={{site.version}}">
+<meta property='og:image' content="{{ base.url | prepend: site.url }}/assets/img/card.png?version={{site.version}}"/>
+<meta name="twitter:card" content="summary_large_image">
 
 <link rel="canonical" href="{{ site.url }}" />
 <meta property="og:url" content="{{ site.url }}" />
@@ -21,3 +22,4 @@
 <meta property=og:type content=blog>
 
 <meta name="publish_date" property="og:publish_date" content="{{ page.last_modified_at }}">
+
