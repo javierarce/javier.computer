@@ -8,16 +8,9 @@ permalink: photos
   {% include navigation.html %}
 
   <div class="Photos__content">
-
-
-    {% for photo in site.data.photos %}
-    {% include photo.html photo=photo.photo %}
-    {% endfor %}
-
-    <!--{% assign photos = site.photos | reverse %} -->
-    <!--{% for photo in photos limit: 5 %}-->
-    <!--{% include photo.html photo=photo %}-->
-    <!--{% endfor %}-->
+  {% for post in site.categories.photo %}
+  {% include singlephoto.html photo=photo %}
+  {% endfor %}
   </div>
 
   <div class="Photos__archive"><a href="/photos/archive">Archives</a></div>

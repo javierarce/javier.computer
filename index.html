@@ -10,7 +10,9 @@ className: Home
 
 <div class="Posts">
   {% for post in paginator.posts %}
+  {% if post.category != 'photo' %}
   {% include types/{{post.layout}}.html %}
+  {% endif %}
   {% endfor %}
 
   {% if paginator.total_pages > 1 %}

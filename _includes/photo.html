@@ -18,7 +18,7 @@
   </div>
   {% endfor %}
   <figcaption class="Figure__caption is-dark">{{ photo.content }}</figcaption>
-  <div class="Photo__date">{{ photo.date | date: '%B %d, %Y' }}</div>
+  <div class="Photo__date">{{ photo.date | date: '%B %d, %Y' }} - {{ photo.where }}</div>
 </div>
 {% else %}
 <div class="Photo">
@@ -30,7 +30,7 @@
             <img class="Photo lazy" data-src="https://img.javier.computer/{{ photo.filename }}_1280.jpg">
       </picture>
       <figcaption class="Figure__caption is-dark">{{ photo.content }}</figcaption>
-      <div class="Photo__date">{{ photo.date | date: '%B %d, %Y' }}</div>
+      <div class="Photo__date">{{ photo.date | date: '%B %d, %Y' }} - {{ photo.where }}</div>
     </figure>
   </div>
 </div>

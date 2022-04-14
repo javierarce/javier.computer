@@ -48,17 +48,14 @@
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
   grid-gap: 4px;
+  text-align: center;
+  margin: 0 0 2em;
 }
 
 .Photos__archive >div {
   display: flex;
   align-items: center;
   line-height: 0;
-}
-
-.Photos__archive {
-  text-align: center;
-  margin: 0 0 2em;
 }
 
 .Photos__archive .Photo__content,
