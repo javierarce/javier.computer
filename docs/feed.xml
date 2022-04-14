@@ -10,15 +10,29 @@
 
     <generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator>
     <link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" />
-    <updated>2022-04-14T15:26:54+02:00</updated>
+    <updated>2022-04-14T18:40:57+02:00</updated>
     <id>http://localhost:4000/feed.xml</id>
 
 		<sy:updatePeriod>daily</sy:updatePeriod>
 		<sy:updateFrequency>1</sy:updateFrequency>
 		<link>http://localhost:4000</link>
 		<atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-		<lastBuildDate>Thu, 14 Apr 2022 14:05:42 +0200</lastBuildDate>
+		<lastBuildDate>Thu, 14 Apr 2022 18:37:30 +0200</lastBuildDate>
 		
+		
+			<item>
+				<title>Thursday</title>
+				
+            
+				
+					<description>&lt;p&gt;Días de cianocobalamina · Back to coffee · &lt;a href=&quot;https://twitter.com/camuflaje/status/1514590462065135617&quot;&gt;Primer aviso&lt;/a&gt; · &lt;a href=&quot;/2022/04/14/revolta-de-les-quintes&quot;&gt;Revolta de les Quintes&lt;/a&gt;&lt;/p&gt;
+</description>
+				
+            
+				<pubDate>Thu, 14 Apr 2022 18:37:30 +0200</pubDate>
+				<link>http://localhost:4000/2022/04/14/thursday</link>
+				<guid isPermaLink="true">http://localhost:4000/2022/04/14/thursday</guid>
+			</item>
 		
 			<item>
 				<title>Revolta de les Quintes</title>
@@ -182,20 +196,6 @@ finished yet, but it seems to work fine for a debut. Here’s an example:&lt;/p&
 				<pubDate>Tue, 29 Mar 2022 09:51:25 +0200</pubDate>
 				<link>http://localhost:4000/2022/03/29/tuesday</link>
 				<guid isPermaLink="true">http://localhost:4000/2022/03/29/tuesday</guid>
-			</item>
-		
-			<item>
-				<title>Monday</title>
-				
-            
-				
-					<description>&lt;p&gt;&lt;a href=&quot;https://hand-object.laurelschwulst.com&quot;&gt;Hand object&lt;/a&gt;&lt;/p&gt;
-</description>
-				
-            
-				<pubDate>Mon, 28 Mar 2022 09:19:41 +0200</pubDate>
-				<link>http://localhost:4000/2022/03/28/monday</link>
-				<guid isPermaLink="true">http://localhost:4000/2022/03/28/monday</guid>
 			</item>
 		
 	</channel>
