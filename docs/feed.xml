@@ -5,12 +5,12 @@
 	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
 >
 	<channel>
-		<title></title>
+		<title>Javier Arce</title>
 		<description>Javier Arce</description>		
 
     <generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator>
     <link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" />
-    <updated>2022-04-14T12:48:48+02:00</updated>
+    <updated>2022-04-14T12:55:08+02:00</updated>
     <id>http://localhost:4000/feed.xml</id>
 
 		<sy:updatePeriod>daily</sy:updatePeriod>
@@ -25,7 +25,7 @@
 				
             
            <![CDATA[
-        <img src="https://img.javier.computer/2022_04_14_DSCF0646_29d9b13e019ad1c92fa3a42c3720a18b_1280.jpg" alt="" />
+        <img src="https://img.javier.computer/2022_04_14_DSCF0646_29d9b13e019ad1c92fa3a42c3720a18b_1280.jpg"  />
           <p>:O</p>
    
         <p>Barcelona</p>

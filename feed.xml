@@ -7,7 +7,7 @@
 	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
 >
 	<channel>
-		<title>{{ site.name | xml_escape }}</title>
+		<title>{{ site.title | xml_escape }}</title>
 		<description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>		
 
     <generator uri="https://jekyllrb.com/" version="{{ jekyll.version }}">Jekyll</generator>
@@ -28,11 +28,13 @@
 					<dc:creator>{{ post.author.name | xml_escape }}</dc:creator>
 				{% endif %}
             {% if post.category == 'photo' %}
-           <![CDATA[
-        <img src="https://img.javier.computer/{{ post.filename }}_1280.jpg" alt="" />
-          {{ post.content }}   
-        <p>{{ post.where }}</p>
-    ]]>
+          <description>
+            <![CDATA[
+            <img src="https://img.javier.computer/{{ post.filename }}_1280.jpg"  />
+              {{ post.content }}   
+            <p>{{ post.where }}</p>
+              ]]>
+          </description>
             {% else %}
 				{% if post.excerpt %}
 					<description>{{ post.excerpt | xml_escape }}</description>
