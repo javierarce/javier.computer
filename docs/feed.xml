@@ -10,7 +10,7 @@
 
     <generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator>
     <link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" />
-    <updated>2022-04-14T18:48:12+02:00</updated>
+    <updated>2022-04-15T00:51:54+02:00</updated>
     <id>http://localhost:4000/feed.xml</id>
 
 		<sy:updatePeriod>daily</sy:updatePeriod>
@@ -75,6 +75,20 @@
 				<pubDate>Thu, 14 Apr 2022 14:05:42 +0200</pubDate>
 				<link>http://localhost:4000/2022/04/14/revolta-de-les-quintes</link>
 				<guid isPermaLink="true">http://localhost:4000/2022/04/14/revolta-de-les-quintes</guid>
+			</item>
+		
+			<item>
+				<title>Wednesday</title>
+				
+            
+				
+					<description>&lt;p&gt;Supersaurio · Good news [for people who love bad news]&lt;/p&gt;
+</description>
+				
+            
+				<pubDate>Wed, 13 Apr 2022 23:00:00 +0200</pubDate>
+				<link>http://localhost:4000/2022/04/13/wednesday</link>
+				<guid isPermaLink="true">http://localhost:4000/2022/04/13/wednesday</guid>
 			</item>
 		
 			<item>
@@ -182,20 +196,6 @@ finished yet, but it seems to work fine for a debut. Here’s an example:&lt;/p&
 				<pubDate>Sat, 02 Apr 2022 22:05:04 +0200</pubDate>
 				<link>http://localhost:4000/2022/04/02/saturday</link>
 				<guid isPermaLink="true">http://localhost:4000/2022/04/02/saturday</guid>
-			</item>
-		
-			<item>
-				<title>Tuesday</title>
-				
-            
-				
-					<description>&lt;p&gt;“thank you for making the internet just even a bit more fun and interesting :’)”&lt;/p&gt;
-</description>
-				
-            
-				<pubDate>Tue, 29 Mar 2022 09:51:25 +0200</pubDate>
-				<link>http://localhost:4000/2022/03/29/tuesday</link>
-				<guid isPermaLink="true">http://localhost:4000/2022/03/29/tuesday</guid>
 			</item>
 		
 	</channel>

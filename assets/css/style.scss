@@ -245,15 +245,6 @@ img.lazy.error {
   margin: 0 0 1em;
 }
 
-@media all and (max-width: 640px) {
-  body {
-    font-size: 1.1em;
-  }
-  .Content {
-    padding: 1em;
-  }
-}
-
 .Article {
   width: 100%;
 }
@@ -360,3 +351,18 @@ img.lazy.error {
     transform: rotate(360deg);
   }
 }
+
+@media all and (max-width: 640px) {
+  body {
+    font-size: 1.1em;
+  }
+  .Content {
+    padding: 1em;
+  }
+
+  .Player, .Player__info {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+

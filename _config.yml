@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-version: 5.0.0
+version: 5.0.1
 title: Javier Arce
 author: Javier Arce
 email: email@javier.computer
