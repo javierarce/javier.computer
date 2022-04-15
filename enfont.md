@@ -23,11 +23,11 @@ design, code, typography… and silly puns. <a href="https://enfont.javierarce.c
 
 To use this website, users can drag and drop a font file in Open Type format. The website reads the file and then allows them to interact with a sample word using three controllers that affect the text in different ways. Once the users are (extremely) happy with the deformations applied, they can download the font and install it like a regular one.
 
-<div class="Figure__video">
+<div class="Figure">
 <video class="Figure__videoFile has-border" autoplay muted preload loop>
 <source src="https://javier.work/videos/enfont.mp4" type="video/mp4">
 </video>
-<div class="Block__quote">
+<div class="Figure__caption">
 Because the deformations are applied to every symbol, instead of showing
 a charset map I decided to show random words and allow users to change them.
 </div>

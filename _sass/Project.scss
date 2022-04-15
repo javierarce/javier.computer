@@ -1,7 +1,17 @@
 .Projects {
-  margin: 0 auto 1em auto;
-  max-width: 1024px;
   font-size: 1.2em;
+}
+
+.Project {
+  margin: 0 auto 2em auto;
+}
+
+.Project__content {
+  margin: 0 0 4em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: var(--defaultWidth);
 }
 
 .Project h2 {
@@ -18,36 +28,41 @@
   margin-bottom: 2em;
 }
 
+.Project h3 {
+  width: 925px;
+}
+
+.Project p {
+  width: 925px;
+  margin: 0 0 1em;
+}
+
 .Project .Figure {
-  margin: 2em 0;
+  width: 1200px;
+  margin: 2em auto;
 }
 
 .Project__intro {
-  width: 90%;
+  width: 925px;
   margin: auto;
   text-align: center;
 }
 
-.Project .Figure__video video {
+.Project .Figure video {
   display: block;
   width: 100%;
-  max-width: 1024px;
   border-radius: 2px;
-  margin: 2em 0;
 }
 
 .Project .Figure img {
   display: block;
   width: 100%;
-  max-width: 1024px;
   border-radius: 2px;
 }
 
 .Project .Figure .Figure__caption {
   display: block;
   width: 100%;
-  max-width: 1024px;
-  border-radius: 2px;
 }
 
 
@@ -55,12 +70,16 @@
   margin: 0 0 0.4em 0;
 }
 
-.Project__content p {
+.Projects__content p {
   margin: 0 0 1em;
 }
 
+.Project__content p {
+  //margin: 0 0 1em;
+}
+
 .Project__content p:last-child {
-  margin: 0;
+  margin: 0 auto 0 auto;
 }
 
 .Projects table td:first-child {

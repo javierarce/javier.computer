@@ -8,6 +8,7 @@
 @import 'About';
 @import 'Book';
 @import 'Book';
+@import 'Figure';
 @import 'Footer';
 @import 'Header';
 @import 'Navigation';
@@ -227,7 +228,6 @@ img.lazy.error {
   opacity: 1;
 }
 
-.Figure,
 .Photo {
   width: 100%;
   height: auto;
