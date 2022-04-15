@@ -20,17 +20,18 @@
   margin: 0 0 0.2em;
 }
 
+.Project__content  h3 {
+  margin-top: 1em;
+  width: 925px;
+}
+
 .Project__content h2+h3 {
   font-size: 0.9em;
   font-weight: normal;
   opacity: 0.5;
   text-align: center;
+  margin-top: 0;
   margin-bottom: 2em;
-}
-
-.Project h3 {
-  margin-top: 1em;
-  width: 925px;
 }
 
 .Project p {

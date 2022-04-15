@@ -4,7 +4,12 @@ permalink: projects
 layout: table
 className: Table
 ---
-A selection of some of my favorite projects.
+
+Highlighted projects:  
+
+* [Enfont Terrible](/enfont)
+* [Kindle to Are.na](/kindle)
+* [Map with Me](/mapwithme)
 
 ### 2022
 
