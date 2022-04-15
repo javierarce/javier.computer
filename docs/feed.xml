@@ -10,15 +10,55 @@
 
     <generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator>
     <link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" />
-    <updated>2022-04-15T00:51:54+02:00</updated>
+    <updated>2022-04-15T13:06:22+02:00</updated>
     <id>http://localhost:4000/feed.xml</id>
 
 		<sy:updatePeriod>daily</sy:updatePeriod>
 		<sy:updateFrequency>1</sy:updateFrequency>
 		<link>http://localhost:4000</link>
 		<atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-		<lastBuildDate>Thu, 14 Apr 2022 18:37:30 +0200</lastBuildDate>
+		<lastBuildDate>Fri, 15 Apr 2022 13:02:02 +0200</lastBuildDate>
 		
+		
+			<item>
+				<title>Amistat</title>
+				
+            
+				
+					<description>&lt;p&gt;&lt;a href=&quot;2022/04/15/lamistat&quot;&gt;L’Amistat&lt;/a&gt;&lt;/p&gt;
+</description>
+				
+            
+				<pubDate>Fri, 15 Apr 2022 13:02:02 +0200</pubDate>
+				<link>http://localhost:4000/2022/04/15/amistat</link>
+				<guid isPermaLink="true">http://localhost:4000/2022/04/15/amistat</guid>
+			</item>
+		
+			<item>
+				<title>L&apos;Amistat</title>
+				
+            
+          <description>
+            <![CDATA[
+
+              
+              
+            <img src="https://img.javier.computer/2022_04_15_DSCF1045_amistad_cd24ef556e641c78a8084cc649dbc1c7_1280.jpg" alt="L'Amistat"/>  
+              
+            <img src="https://img.javier.computer/2022_04_15_DSCF1043_amistad_31872ea279db6711f1b1bce2b0f526a2_1280.jpg" alt="L'Amistat"/>  
+              
+              
+
+              <p>L’Amistat</p>
+   
+            <p>Barcelona</p>
+              ]]>
+          </description>
+            
+				<pubDate>Fri, 15 Apr 2022 12:55:56 +0200</pubDate>
+				<link>http://localhost:4000/2022/04/15/lamistat</link>
+				<guid isPermaLink="true">http://localhost:4000/2022/04/15/lamistat</guid>
+			</item>
 		
 			<item>
 				<title>Thursday</title>
@@ -168,34 +208,6 @@ finished yet, but it seems to work fine for a debut. Here’s an example:&lt;/p&
 				<pubDate>Sun, 03 Apr 2022 15:16:19 +0200</pubDate>
 				<link>http://localhost:4000/2022/04/03/o</link>
 				<guid isPermaLink="true">http://localhost:4000/2022/04/03/o</guid>
-			</item>
-		
-			<item>
-				<title>Sunday</title>
-				
-            
-				
-					<description>&lt;p&gt;&lt;a href=&quot;/photos&quot;&gt;Photo Diary&lt;/a&gt; · 💩 · Revolta de les Quintes · &lt;a href=&quot;https://letterboxd.com/javier/film/the-bubble-2022&quot;&gt;The Bubble&lt;/a&gt; · “And in a funny way, the shaving of my, uh, head has been a liberation from, uh, a lot of, uh, stupid vanities, really. Uh, it has simplified everything for me. It has opened a lot of doors maybe.”&lt;/p&gt;
-</description>
-				
-            
-				<pubDate>Sun, 03 Apr 2022 10:30:24 +0200</pubDate>
-				<link>http://localhost:4000/2022/04/03/sunday</link>
-				<guid isPermaLink="true">http://localhost:4000/2022/04/03/sunday</guid>
-			</item>
-		
-			<item>
-				<title>Saturday</title>
-				
-            
-				
-					<description>&lt;p&gt;Federal Café Gòtic · All those [friends] · No 💩 · «¿Haces pelis con esa Krasnogorsk?» · &lt;a href=&quot;https://letterboxd.com/film/meet-the-filmmakers-josh-and-benny-safdie&quot;&gt;Meet the Filmmakers: Josh and Benny Safdie&lt;/a&gt;&lt;/p&gt;
-</description>
-				
-            
-				<pubDate>Sat, 02 Apr 2022 22:05:04 +0200</pubDate>
-				<link>http://localhost:4000/2022/04/02/saturday</link>
-				<guid isPermaLink="true">http://localhost:4000/2022/04/02/saturday</guid>
 			</item>
 		
 	</channel>
