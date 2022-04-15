@@ -1,20 +1,67 @@
 .Projects {
-  margin: 0 0 3em;
+  margin: 0 auto 1em auto;
+  max-width: 1024px;
   font-size: 1.2em;
 }
+
+.Project h2 {
+  font-size: 2em;
+  text-align: center;
+  margin: 0 0 0.2em;
+}
+
+.Project__content h2+h3 {
+  font-size: 0.9em;
+  font-weight: normal;
+  opacity: 0.5;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.Project .Figure {
+  margin: 2em 0;
+}
+
+.Project__intro {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
+.Project .Figure__video video {
+  display: block;
+  width: 100%;
+  max-width: 1024px;
+  border-radius: 2px;
+  margin: 2em 0;
+}
+
+.Project .Figure img {
+  display: block;
+  width: 100%;
+  max-width: 1024px;
+  border-radius: 2px;
+}
+
+.Project .Figure .Figure__caption {
+  display: block;
+  width: 100%;
+  max-width: 1024px;
+  border-radius: 2px;
+}
+
 
 .Projects__content {
   margin: 0 0 0.4em 0;
 }
 
-
-.Projects__content p {
+.Project__content p {
   margin: 0 0 1em;
 }
-.Post p:last-child {
+
+.Project__content p:last-child {
   margin: 0;
 }
-
 
 .Projects table td:first-child {
   width: 350px;
