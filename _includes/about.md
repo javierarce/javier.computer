@@ -25,6 +25,7 @@ If you like what you see here, why don't you [let me know](https://mail.javier.c
 
 | Title | Description|
 |:-------|:-------|
+|[Me](/me)|Some facts about myself|
 |[3D](/3D)|A list of my favorite 3D artists|
 |[Mixtapes](/mixtapes)|A list of online mixtapes|
 
