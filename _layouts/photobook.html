@@ -6,8 +6,8 @@ className: Photos
   {% include navigation.html %}
 
   <div class="Photos__header">
-    <p class="is-light">{{ page.title }} | <a href="/photos">Feed</a> 
-  </div>
+    <h3 class="Page__title">{{ page.title }}</h3>
+</div>
 
   <div class="Photos__content">
     {% assign photos = site.photos | reverse %} 

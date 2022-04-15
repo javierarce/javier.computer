@@ -8,6 +8,7 @@
         <a href="{{ include.photo.category }}"><img class="Photo lazy" data-src="https://img.javier.computer/{{ filename }}_640.jpg"></a>
       </picture>
     </figure>
+      <div class="Figure__title">{{ photo.category}}</div>
   </div>
 </div>
 {% else %}
@@ -18,6 +19,7 @@
         <a href="{{ include.photo.category }}"><img class="Photo lazy" data-src="https://img.javier.computer/{{ include.photo.filename }}_640.jpg"></a>
       </picture>
     </figure>
+      <div class="Figure__title">{{ photo.category}}</div>
   </div>
 </div>
 {% endif %}
