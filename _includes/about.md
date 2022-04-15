@@ -15,6 +15,8 @@ If you like what you see here, why don't you [let me know](https://mail.javier.c
 | Title | Description|
 |:-------|:-------|
 |[Home](/)|Diary|
+|[Archive](/archive)|Archive of posts|
+|[Photos](/photos)|Photo diary and its archive|
 |[Projects](/projects)|List of projects I've done|
 |[Reading](/reading)|Books I'm reading / I've read / I will read / I won't read|
 |[About](/about) | You are here |
@@ -23,7 +25,6 @@ If you like what you see here, why don't you [let me know](https://mail.javier.c
 
 | Title | Description|
 |:-------|:-------|
-|[Archive](/archive)|Post archive|
 |[3D](/3D)|A list of my favorite 3D artists|
 |[Mixtapes](/mixtapes)|A list of online mixtapes|
 
