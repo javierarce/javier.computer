@@ -19,6 +19,7 @@ If you like what you see here, why don't you [let me know](https://mail.javier.c
 |[Photos](/photos)|Photo diary and its archive|
 |[Projects](/projects)|List of projects I've done|
 |[Reading](/reading)|Books I'm reading / I've read / I will read / I won't read|
+|[Contact](/contact) | Contact form & email |
 |[About](/about) | You are here |
 
 ### Pages 
