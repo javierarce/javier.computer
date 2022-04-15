@@ -37,10 +37,6 @@
   opacity: 0.5;
 }
 
-.Content, html, body {
-  height: 100%;
-}
-
 body {
   color: var(--text);
   background: var(--background);
@@ -116,7 +112,7 @@ p.is-light {
 }
 
 .Content {
-  padding: 2em 2em 0 2em;
+  padding: 2em 2em 1em 2em;
   display: flex;
   flex-direction: column;
 }
