@@ -1,6 +1,6 @@
 ---
 layout: post
-title: poetry-slash
+title: Poetry Slash
 date: 2020-03-05 19:17 +0100
 ---
 

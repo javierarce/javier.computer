@@ -12,19 +12,23 @@
   opacity: 0.5;
 }
 
-#about-me {
-  margin-top: 2em;
-}
-
 .About ul > li {
   list-style: disc;
   margin: 0 0 1em 0;
+}
+
+@media all and (max-width: 1024px) {
+  .About .Content__inner,
+  .About {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 @media all and (max-width: 640px) {
   .About .Content__inner,
   .About {
     width: 100%;
-  margin: 0;
+    margin: 0;
   }
 }
