@@ -21,10 +21,9 @@ className: Photo
   </div>
   {% endfor %}
   <figcaption class="Figure__caption is-dark">{{ page.content }}</figcaption>
-  <div class="Photo__date">{{ page.date | date: '%B %d, %Y' }} - {{ page.where }}</div>
-</div>
 {% else %}
 
+<div class="Photo">
 
     <figure class="Figure">
       <picture>
@@ -33,10 +32,21 @@ className: Photo
             <img class="Photo lazy" data-src="https://img.javier.computer/{{ page.filename }}_1280.jpg">
       </picture>
       <figcaption class="Figure__caption is-dark">{{ page.content }}</figcaption>
-      <div class="Photo__date">{{ page.date | date: '%B %d, %Y' }} - {{ page.where }}</div>
     </figure>
 
-
     {% endif %}
-  {% include footer.html %}
+
+    <div class="Photo__navigation">
+      {% if page.previous.url %}
+      <a class="Post__navigationLink" href="{{page.previous.url}}">←</a>
+      {% endif %}
+      <a href="{{ page.url }}" class="Post__date">{{ page.date | date: '%B %d, %Y' }} - {{ page.where }}</a>
+      {% if page.next.url %}
+      <a class="Post__navigationLink" href="{{page.next.url}}">→</a>
+      {% endif %}
+    </div>
+
+
+</div>
+    {% include footer.html %}
 </div>

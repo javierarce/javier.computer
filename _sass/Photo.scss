@@ -1,3 +1,6 @@
+.Photo__collection {
+  margin: 0 0 4em 0;
+}
 .Photos__intro {
   margin: 0 auto 2em auto;
   text-align: center;
@@ -20,10 +23,6 @@
   margin: 0 0 1em;
 }
 
-.Photo__collection {
-  margin: 0 0 4em 0;
-}
-
 .Photo__collection .Photo__content {
   margin: 0 0 1em 0;
 }
@@ -37,11 +36,6 @@
   width: 100%;
   max-width: 1024px;
   border-radius: 2px;
-}
-
-.Figure__caption {
-  margin: 0 0 1em;
-  font-size: 1em;
 }
 
 .Photos__archive {
@@ -71,11 +65,7 @@
   font-weight: 400;
 }
 
-@media all and (max-width: 1280px) {
+.Photo__navigation {
+  font-size: 1.2em;
 }
 
-@media all and (max-width: 1024px) {
-}
-
-@media all and (max-width: 640px) {
-}
