@@ -1,14 +1,19 @@
 <p class="Weather is-light" is="weather-description"></p>
 
-### About this website
+### About this and that
 
-Hi, stranger, welcome to [my](/me) little computer on the net.
+Hi, stranger! Welcome to [my](/me) little computer on the net!
 
-This website contains a wiki, several blog posts, a collection of silly jokes, a hidden passage to another dimension, a list of dog names, a list of names that are not dog names, several photos of myself eating ice cream, a coin, a yellow bird, a photo of your turtle, a turtle.
+This website contains a wiki, several blog posts, a collection of silly songs,
+a pun, a hidden passage to another dimension, a list of dog names, a list of names
+that are not dog names, references to my early memories, several photos of
+myself eating ice cream, a coin, a yellow bird, a photo of your turtle, a
+turtle.
 
-I'm my worst self when I spend my time consuming instead of making. This website is my attempt to spend less time consuming and more time thinking and making.
+I get sad when I spend my time consuming instead of making things. This website
+is my attempt to spend more time thinking, documenting, and making.
 
-If you like what you see here, why don't you [let me know](https://mail.javier.computer/)?
+If you like what you see here, why don't you [let me know](https://mail.javier.computer)?
 
 ### Content
 
