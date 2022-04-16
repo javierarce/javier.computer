@@ -4,4 +4,4 @@ title: "Tyrannosaur"
 date: "2022-04-16 15:41:41 +0200"
 ---
 
-[Tyrannosaur](https://letterboxd.com/javier/film/tyrannosaur/)
+Sesión doble: [Tyrannosaur](https://letterboxd.com/javier/film/tyrannosaur) · [X](https://letterboxd.com/javier/film/x-2022)
