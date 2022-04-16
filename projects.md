@@ -5,11 +5,11 @@ layout: table
 className: Table
 ---
 
-Highlighted projects:  
+<!--Highlighted projects:  
 
 * [Enfont Terrible](/enfont)
 * [Kindle to Are.na](/kindle)
-* [Map with Me](/mapwithme)
+* [Map with Me](/mapwithme)-->
 
 ### 2022
 
