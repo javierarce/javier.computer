@@ -15,8 +15,8 @@ organizando (si no recordáis de qué va esto, aquí tenéis toda la informació
 
 Es muy importante que (en caso de que queráis presentar una obra) os apuntéis
 cuanto antes. Si no logramos confirmar un número mínimo de participantes
-tendremos que pedirle a Maeda que borre este tweet (y ya sabéis cómo se pone el
-pobre con estas cosas).  Poetry Slash Y si necesitáis inspiración o
+tendremos que pedirle a Maeda que borre [este tweet](https://twitter.com/johnmaeda/status/974264890088198144) (y ya sabéis cómo se pone el
+pobre con estas cosas). Y si necesitáis inspiración o
 herramientas para crear vuestra pieza, quizá mi repositorio de recursos para
 proyectos de programación creativa os pueda resultar de utilidad.
 
