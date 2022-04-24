@@ -11,6 +11,7 @@ permalink: reading
 | Title | Author | Publisher | Year |
 |:-------|:-------|:---- |:-----|
 |[Bird By Bird](/books/bird_by_bird) | Anne Lamott | ??? | ??? |
+|Supersaurio | Meryem El Mehdati| Blackie Books | 2022 |
 
 ### 2021
 
