@@ -102,9 +102,9 @@ p img {
 }
 
 blockquote { 
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 2px;
-  padding: 0.8em;
+  padding: 0 0 0 0.8em;
+  border-left: 4px solid rgba(255,255,255, .2);
+  margin: 0 0 1em 0;
 } 
 
 blockquote p { 
