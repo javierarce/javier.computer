@@ -28,7 +28,7 @@ function createElement (kind, className, value = undefined) {
 }
 
 function onYouTubeIframeAPIReady() {
-  let audios = document.querySelectorAll('[data-video]');
+  let audios = document.querySelectorAll('[data-video]')
 
   audios.forEach(($audio) => {
     let trackId = undefined
@@ -74,11 +74,15 @@ function onYouTubeIframeAPIReady() {
     $time.appendChild($duration)
 
     $time.onclick = (e) => {
-      e.stopPropagation()
-      e.preventDefault()
+      killEvent(e)
     }
 
     $player.appendChild($time)
+
+    const killEvent = (e) => {
+      e.stopPropagation()
+      e.preventDefault()
+    }
 
     let o = function (e) {
       if (e) {
@@ -86,21 +90,22 @@ function onYouTubeIframeAPIReady() {
       } else {
         $player.classList.remove('is-playing')
       }
-    };
-
+    }
 
     let player = new YT.Player(videoId, {
       height: "0",
       width: "0",
       videoId,
       events: {
-        onReady: function(e) {
+        onReady: function(event) {
           if (player) {
+            player.unMute()
+            player.setVolume(100)
+
             let videoData  = player.getVideoData()
             $title.innerHTML = videoData.title
             $duration.innerHTML = secondsToHms(player.getDuration())
           }
-          //player.setPlaybackQuality("small"), o(player.getPlayerState() !== YT.PlayerState.CUED)
         },
         onStateChange: function(event) {
           if (player.getPlayerState() == YT.PlayerState.PLAYING)  {
@@ -139,8 +144,7 @@ function onYouTubeIframeAPIReady() {
     }
 
     $progressBar.onclick = function(e) {
-      e.stopPropagation()
-      e.preventDefault()
+      killEvent(e)
 
       let x = e.offsetX
       let w = $player.offsetWidth
@@ -154,8 +158,7 @@ function onYouTubeIframeAPIReady() {
     }
 
     $play.onclick = function(e) {
-      e.stopPropagation()
-      e.preventDefault()
+      killEvent(e)
 
       if (player.getPlayerState() === YT.PlayerState.PLAYING || player.getPlayerState() === YT.PlayerState.BUFFERING) {
         stop()
