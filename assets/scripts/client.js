@@ -5,7 +5,6 @@ const onLoad = () => {
     elements_selector: '.lazy'
   })
 
-  new Song('.js-nav')
   new Weather()
 }
 
