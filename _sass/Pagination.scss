@@ -57,3 +57,37 @@
   background: var(--background);
 }
 
+.Pagination__item.is-mobile-archive {
+  display: none;
+}
+
+@media all and (max-width: 640px) {
+  .Pagination__item {
+    margin: 0;
+  }
+  .Pagination {
+    display: grid;
+        justify-content: space-between;
+
+    grid-template-columns: repeat(8, 1fr);
+    grid-row-gap: 1em;
+  }
+  .Pagination__item.is-archive {
+    display: none;
+  }
+  .Pagination__item.is-mobile-archive {
+    margin: 0 .4em 0 0;
+    border: 1px solid var(--white);
+    padding: .8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 1px;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+  }
+}
