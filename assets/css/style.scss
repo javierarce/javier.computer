@@ -278,21 +278,20 @@ img.lazy.error {
 }
 
 .Announcement {
-  display: flex;
+  opacity: 0.5;
+  font-size: 1.1em;
   margin: 0 0 3em;
-  font-size: 1.2em;
-  align-items: center;
 }
 
-.Announcement__date {
-  opacity: 0.5;
-  font-size: 0.8em;
+.Announcement__title {
+  display: flex;
+  align-items: center;
   text-decoration: none;
   font-weight: 400;
 }
 
 .Announcement__date:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .Photo__icon {
