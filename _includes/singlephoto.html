@@ -16,7 +16,7 @@
     </div>
   </div>
   {% endfor %}
-  <figcaption class="Figure__caption is-dark">{{ post.content }}</figcaption>
+  <figcaption class="Figure__caption">{{ post.content }}</figcaption>
   <a href="{{ post.url }}" class="Photo__date">{{ post.date | date: '%B %d, %Y' }} - {{ post.where }}</a>
 </div>
 {% else %}
@@ -28,7 +28,7 @@
           <source data-srcset="https://img.javier.computer/{{ post.filename }}_640.jpg 640w, https://img.javier.computer/{{ post.filename }}_1280.jpg 1280w, https://img.javier.computer/{{ post.filename }}_2880.jpg 2880w">
             <img class="Photo lazy" data-src="https://img.javier.computer/{{ post.filename }}_1280.jpg">
       </picture>
-      <figcaption class="Figure__caption is-dark">{{ post.content }}</figcaption>
+      <figcaption class="Figure__caption">{{ post.content }}</figcaption>
       <a href="{{ post.url }}" class="Photo__date">{{ post.date | date: '%B %d, %Y' }} - {{ post.where }}</a>
     </figure>
 

@@ -15,7 +15,9 @@
 @import 'Page';
 @import 'Player';
 @import 'Pagination';
+@import 'Music';
 @import 'Photo';
+@import 'PhotoCollection';
 @import 'Post';
 @import 'Quote';
 @import 'Project';
@@ -228,34 +230,11 @@ img.lazy.error {
   opacity: 1;
 }
 
-.Photo {
-  width: 100%;
-  height: auto;
-  box-sizing: border-box;
-}
-
 .Grid {
   padding: 2em 2em 0 2em;
   display: flex;
   flex-direction: column;
   width: 100%;
-}
-
-.Music {
-  display: grid;
-  grid-gap: 16px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.Music__cover {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.Music__img {
-  width: 100%;
-  margin: 0 0 1em;
 }
 
 .Article {
@@ -297,3 +276,32 @@ img.lazy.error {
     align-items: start;
   }
 }
+
+.Announcement {
+  display: flex;
+  margin: 0 0 3em;
+  font-size: 1.2em;
+  align-items: center;
+}
+
+.Announcement__date {
+  opacity: 0.5;
+  font-size: 0.8em;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.Announcement__date:hover {
+  text-decoration: underline;
+}
+
+.Photo__icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin: 0 0.2em 0 0;
+  background-image: url(/assets/img/picture.svg);
+  color: #fff;
+  background-size: cover;
+}
+

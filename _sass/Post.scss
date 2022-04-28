@@ -12,13 +12,6 @@
   margin: 0;
 }
 
-.Post img {
-  display: block;
-  max-width: 1024px;
-  margin: 0 auto 1em;
-  border-radius: 2px;
-}
-
 .Post__title {
   display: block;
   font-weight: bold;
@@ -51,6 +44,12 @@
   font-weight: 400;
 }
 
+.Post img {
+  display: block;
+  max-width: 1024px;
+  margin: 0 auto 1em;
+  border-radius: 2px;
+}
 
 @media all and (max-width: 1024px) {
   .Diary .Post,

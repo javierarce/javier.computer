@@ -3,7 +3,7 @@ layout: base
 className: Post
 ---
 <div class="Content">
-  {% include navigation.html %}
+  {% include navigation.html -%}
 
   <div class="Post">
     <div class="Post__content">
@@ -11,15 +11,15 @@ className: Post
     </div>
 
     <div class="Post__navigation">
-      {% if page.previous.url %}
+      {% if page.previous.url -%}
       <a class="Post__navigationLink" href="{{page.previous.url}}">←</a>
-      {% endif %}
+      {% endif -%}
       <a href="{{ page.url }}" class="Post__date">{{ page.date | date: '%B %d, %Y' }}</a>
-      {% if page.next.url %}
+      {% if page.next.url -%}
       <a class="Post__navigationLink" href="{{page.next.url}}">→</a>
-      {% endif %}
+      {% endif -%}
     </div>
 
   </div>
-  {% include footer.html %}
+  {% include footer.html -%}
 </div>

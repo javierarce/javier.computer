@@ -7,33 +7,29 @@ home: true
 ---
 
 <div class="Content">
-{% include navigation.html %}
+  {% include navigation.html -%}
 
-<div class="Posts">
-  {% for post in paginator.posts %}
-  {% if post.category != 'photo' %}
-  {% include types/{{post.layout}}.html %}
-  {% endif %}
-  {% endfor %}
+  <div class="Posts">
+    {% for post in paginator.posts -%}
+    {% include types/{{post.layout}}.html -%}
+    {% endfor -%}
 
-  {% if paginator.total_pages > 1 %}
-  <div class="Pagination">
-    {% for page in (1..paginator.total_pages) %}
-    {% if page == paginator.page %}
-    <div class="Pagination__item is-selected">{{ page }}</div>
-    {% elsif page == 1 %}
-    <a class="Pagination__item" href="{{ '/' | relative_url }}">{{ page }}</a>
-    {% else %}
-    <a class="Pagination__item" href="/page/{{ page }}">{{ page }}</a>
-    {% endif %}
-    {% endfor %}
-    {% endif %}
+    {% if paginator.total_pages > 1 -%}
+    <div class="Pagination">
+      {% for page in (1..paginator.total_pages) -%}
+      {% if page == paginator.page -%}
+      <div class="Pagination__item is-selected">{{ page }}</div>
+      {% elsif page == 1 -%}
+      <a class="Pagination__item" href="{{ '/' | relative_url }}">{{ page }}</a>
+      {% else -%}
+      <a class="Pagination__item" href="/page/{{ page }}">{{ page }}</a>
+      {% endif -%}
+      {% endfor -%}
+      {% endif -%}
 
-    <a class="Pagination__item is-archive" href="/archive">Archive</a>
-    <a class="Pagination__item is-mobile-archive" href="/archive">A</a>
-
+      <a class="Pagination__item is-archive" href="/archive">Archive</a>
+      <a class="Pagination__item is-mobile-archive" href="/archive">A</a>
+    </div>
   </div>
-</div>
-
-{% include footer.html %}
+  {% include footer.html -%}
 </div>

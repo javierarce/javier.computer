@@ -17,7 +17,7 @@
     </div>
   </div>
   {% endfor %}
-  <figcaption class="Figure__caption is-dark">{{ photo.content }}</figcaption>
+  <figcaption class="Figure__caption has-margin-bottom">{{ photo.content }}</figcaption>
   <div class="Photo__date">{{ photo.date | date: '%B %d, %Y' }}{% if photo.where %} - {{ photo.where }}{% endif -%}</div>
 </div>
 {% else %}
@@ -29,7 +29,7 @@
           <source data-srcset="https://img.javier.computer/{{ photo.filename }}_640.jpg 640w, https://img.javier.computer/{{ photo.filename }}_1280.jpg 1280w, https://img.javier.computer/{{ photo.filename }}_2880.jpg 2880w">
             <img class="Photo lazy" data-src="https://img.javier.computer/{{ photo.filename }}_1280.jpg">
       </picture>
-      <figcaption class="Figure__caption is-dark">{{ photo.content }}</figcaption>
+      <figcaption class="Figure__caption has-margin-bottom">{{ photo.content }}</figcaption>
       <div class="Photo__date">{{ photo.date | date: '%B %d, %Y' }}{% if photo.where %} - {{ photo.where }}{% endif -%}</div>
     </figure>
   </div>

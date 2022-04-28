@@ -1,33 +1,26 @@
 <div class="Navigation js-nav">
-
-  {% assign permalink = page.permalink | strip_newlines %}
-
-  {% if page.home  %}
+  {% assign permalink = page.permalink | strip_newlines -%}
+  {% if page.home -%}
   <a class="Navigation__link is-selected" href="/">Home</a>
-  {% else %}
+  {% else -%}
   <a class="Navigation__link" href="/">Home</a>
   {% endif %}
-
   <div class="Navigation__links">
-
     <a class="Navigation__link" href="https://gif.javier.computer">Gifs</a>
-
-    {% if permalink != 'photos' and permalink != "photos/archive" %}
+    {% if permalink != 'photos' and permalink != "photos/archive" -%}
     <a class="Navigation__link" href="/photos">Photos</a>
-    {% else %}
+    {% else -%}
     <a class="Navigation__link is-selected" href="/photos">Photos</a>
-    {% endif %}
-
-    {% if permalink != 'projects' %}
+    {% endif -%}
+    {% if permalink != 'projects' -%}
     <a class="Navigation__link" href="/projects">Projects</a>
-    {% else %}
+    {% else -%}
     <a class="Navigation__link is-selected" href="/projects">Projects</a>
-    {% endif %}
-
-    {% if permalink != 'about' %}
+    {% endif -%}
+    {% if permalink != 'about' -%}
     <a class="Navigation__link" href="/about">About</a>
-    {% else %}
+    {% else -%}
     <a class="Navigation__link is-selected" href="/about">About</a>
-    {% endif %}
+    {% endif -%}
   </div>
 </div>
