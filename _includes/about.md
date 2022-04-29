@@ -27,6 +27,8 @@ If you like what you see here, why don't you [let me know](https://mail.javier.c
 |[Contact](/contact) | Contact form & email |
 |[About](/about) | You are here |
 
+Add this [RSS](/feed.xml) feed to your favorite feed reader to get the updates.
+
 ### Pages 
 
 | Title | Description|
@@ -35,5 +37,11 @@ If you like what you see here, why don't you [let me know](https://mail.javier.c
 |[3D](/3D)|A list of my favorite 3D artists|
 |[Mixtapes](/mixtapes)|A list of online mixtapes|
 
+### Me elsewhere
 
-
+* [Github](https://github.com/javierarce)  
+* [Arena](https://are.na/javier)
+* [Tumblr ](https://tumblr.com/javier)
+* [Twitter](https://twitter.com/javier)
+* [Instagram](https://instagram.com/javier)
+* [Letterboxd](https://letterboxd.com/javier)
