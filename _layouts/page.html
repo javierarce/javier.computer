@@ -10,10 +10,12 @@ className: Page
       {% if page.show_title %}
       <h3 class="Page__title">{{ page.title }}</h3>
       {% endif %}
+      {% if page.description %}
       <p class="is-light">{{ page.description }}</p>
+      {% endif %}
       {{ content }}
     </div>
-    {% if page.show_date %}
+    {% if page.date %}
     <div class="Page__date">{{ page.date | date: '%B %d, %Y' }}</div>
     {% endif %}
   </div>
