@@ -5,4 +5,4 @@ date: "2022-04-29 10:55:15 +0200"
 ---
 
 I'm giving away some of my Yee-haw! stickers to friends and readers
-of this blog. Find [how to get one here](/sticker).
+of this blog (is that a thing?). Find how to get one [here](/sticker).
