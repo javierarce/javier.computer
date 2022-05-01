@@ -3,26 +3,26 @@ layout: base
 className: Photos
 ---
 <div class="Content">
-  {% include navigation.html %}
+  {% include navigation.html -%}
 
   <div class="Photos__header">
     <a href="/photos">Photo diary</a> | Archive
   </div>
 
   <div class="Photos__archive">
-    {% assign photos = site.photos | reverse %} 
-    {% assign category = 'test' %}
-    {% for photo in photos %}
+    {% assign photos = site.photos | reverse -%} 
+    {% assign category = 'test' -%}
+    {% for photo in photos -%}
 
-      {% if category == photo.category %}
-        {% continue %}
-      {% endif %}
+      {% if category == photo.category -%}
+        {% continue -%}
+      {% endif -%}
   
-      {% assign category = photo.category %}
-      {% include thumb.html photo=photo %}
+      {% assign category = photo.category -%}
+      {% include thumb.html photo=photo -%}
 
-    {% endfor %}
+    {% endfor -%}
   </div>
 
-  {% include footer.html %}
+  {% include footer.html -%}
 </div>
