@@ -92,6 +92,19 @@
 }
 
 @media all and (max-width: 1280px) {
+  .Layout__project .Project p, .Layout__project .Project__content h3 {
+    width: 100%;
+  }
+
+  .Layout__project .Project .Project__intro {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .Layout__project .Project .Figure {
+    width: 100%;
+  }
 }
 
 @media all and (max-width: 800px) {
@@ -107,7 +120,7 @@
   .Projects thead {
     display: none;
   }
-  
+
   .Projects tr {
     display: flex;
     flex-direction: column;

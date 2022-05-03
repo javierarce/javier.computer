@@ -2,12 +2,13 @@
 layout: project
 title: Kindle to Arena
 date: 2021-08-18
+permalink: projects/arena
 show_date: true
 show_title: true
 ---
 
 ## Kindle to Are.na 
-### My little gift to the geeks
+### A little gift for the geeks
 
 <div class="Project__intro">
 <p>This project was a gift to one of my favorite communities
@@ -34,7 +35,7 @@ send highlights and notes from their <strong>Kindle</strong> reader into <strong
 
 Users connect their Kindle devices with their computers, pick a file called My Clippings.txt, and then drop it into the website. A server running Node.js parses the file, extracts the clippings, and displays the information. From there users can select their highlights and notes, and send them to their Are.na channels.
 
-Like with my [enFont Terrible project](/enfont), I took a respectful approach to privacy: which means that I never store user data on my server. But to avoid having to upload the clippings file every time the user wants to interact with the site, he information is stored locally in the Local Storage of their browsers. This way, if they reload the page or close the browser, they won’t have to re-upload the file again.
+Like with my [enFont Terrible project](/projects/enfont), I took a respectful approach to privacy: which means that I never store user data on my server. But to avoid having to upload the clippings file every time the user wants to interact with the site, he information is stored locally in the Local Storage of their browsers. This way, if they reload the page or close the browser, they won’t have to re-upload the file again.
 
 The user can modify the highlights and notes before sending the data to Are.na, and since Are.na uses Markdown in the description of the content, users can apply their own formatting.
 
@@ -44,5 +45,5 @@ The user can modify the highlights and notes before sending the data to Are.na, 
 
 Future updates include adding a mechanism to create simple templates so users can customize the way they publish the highlights, and an option to share the clippings into a common Are.na channel.
 
-The code of this project is public and available in this GitHub repo.
+The code of this project is public and available in [this GitHub repo](https://github.com/javierarce/kindle-to-arena).
 

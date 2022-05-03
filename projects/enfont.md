@@ -2,6 +2,7 @@
 layout: project
 title: Enfont Terrible
 date: 2021-08-18
+permalink: projects/enfont
 show_date: true
 show_title: true
 ---
@@ -49,4 +50,11 @@ The project runs on Node.js, and it's hosted on <a href="http://glitch.com/" tar
 ### Privacy
 
 The font is generated in the browser. The original file that users drop in the website never touches the server, so they can rest assured that their original font files won't be shared.
+
+
+<div class="Figure">
+<video class="Figure__videoFile has-border" autoplay muted preload loop>
+<source src="https://javier.work/videos/thanks.mp4" type="video/mp4">
+</video>
+</div>
 

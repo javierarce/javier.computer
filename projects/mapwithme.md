@@ -2,6 +2,7 @@
 layout: project
 title: Map with Me
 date: 2021-08-18
+permalink: projects/mapwithme
 show_date: true
 show_title: true
 ---
@@ -10,14 +11,14 @@ show_title: true
 ### Make maps with your homies… or enemies
 
 <div class="Project__intro">
-<p>Working at CARTO, the Location Intelligence platform, taught me a lot about digital cartography and web mapping, something I’ve continued applying in several personal projects1.</p>
+<p>Working at <a href="https://carto.com">CARTO</a>, the Location Intelligence platform, taught me a lot about digital cartography and web mapping, something I’ve continued applying in several personal projects.<sup>1</sup></p>
 </div>
 
 <figure class="Figure"> 
 <img class="Figure__image is-bn lazy" data-src="https://javier.work/images/mapwithme/home.jpg">
 </figure>
 
-In this project, <a href="https://mapwithme.world" target="_blank">Map with Me</a>, it all started because I wanted to create a simple solution to get travel tips from my friends. In the past, I had made a couple of interactive maps to get recommendations for my trips to Japan and New York and it had worked pretty well.
+This project started because I wanted to create a simple solution to get travel tips from my friends. In the past, I had made a couple of interactive maps to get recommendations for my trips to Japan and New York and it had worked pretty well.
 
 Setting up new maps was manual process, though. I wanted to set up new maps faster, just by clicking a button (not that I travel that often, especially since, well… you know)
 
@@ -57,3 +58,10 @@ Since **OpenStreetMap** is a public project and has limited resources, if they d
 ### Setting up your own map
 
 Thanks to **Glitch's** remix functionality people can clone my example and create their own customizable map quickly. For more advanced usages, the whole project is open-source in <a href="https://github.com/javierarce/map-with-me" target="_blank">this GitHub repo</a>.
+
+---
+
+
+<div class="Footnotes">
+<p><sub>1</sub> Like this one I launched back in 2015 called Spotimap, which was a catalog of 7,681 songs that were related to 212 cities across the globe. The project was covered in Boing Boing, The Washington Post, Bloomberg, and Die Welt).</p>
+</div>  

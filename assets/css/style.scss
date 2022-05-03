@@ -81,10 +81,6 @@ sup {
   top: -0.5em;
 }
 
-sub {
-  opacity: 0.5;
-}
-
 strong {
   font-weight: 700;
 }
@@ -251,6 +247,7 @@ img.lazy.error {
 }
 
 .Footnotes {
+  opacity: 0.5;
   font-size: 0.9em;
 }
 
@@ -304,3 +301,8 @@ img.lazy.error {
   background-size: cover;
 }
 
+
+.Layout__project hr {
+  width: 100%;
+  max-width: 800px;
+}

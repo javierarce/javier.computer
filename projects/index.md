@@ -5,12 +5,6 @@ layout: table
 className: Table
 ---
 
-<!--Highlighted projects:  
-
-* [Enfont Terrible](/enfont)
-* [Kindle to Are.na](/kindle)
-* [Map with Me](/mapwithme)-->
-
 ### 2022
 
 | Title | Description | Tags |

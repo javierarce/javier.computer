@@ -12,8 +12,12 @@
 
 .Figure__caption {
   text-align: center;
-  margin: 1em 0;
-  max-width: 1024px;
+  margin: 1.4em auto;
+  max-width: 900px;
+  font-size: 0.9em;
+  color: var(--light);
+  line-height: 1.5;
+  opacity: 0.5;
 }
 
 .Layout__photo .Figure__caption {
