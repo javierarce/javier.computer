@@ -1,12 +1,7 @@
 const submitPoll = (event) => {
   let name = event.target.elements.Name.value
   const URL = 'https://api.javier.computer/api/poll/poll/save'
-  const headers = {
-    "Access-Control-Allow-Headers": "*", // this will allow all CORS requests
-    "Access-Control-Allow-Methods": 'OPTIONS,POST,GET', // this states the allowed methods
-    "Content-Type": "application/json" // this shows the expected content type
-  }
-  const method = 'POST'
+  const headers = { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF' }
   const body = JSON.stringify({ name: name })
   const options = { method, headers, body }
   fetch(URL, options)
