@@ -6,8 +6,6 @@ const onLoad = () => {
   })
 
   new Weather()
-
-
 }
 
 window.onload = onLoad

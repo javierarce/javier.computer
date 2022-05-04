@@ -16,7 +16,10 @@ const submitPoll = (event) => {
     event.target.classList.add('is-error')
     event.target.classList.remove('is-loading')
     $error.innerHTML = error
-    console.error(error)
+
+    setTimeout(() => {
+      event.target.classList.remove('is-error')
+    }, 3000)
   }
 
   event.target.classList.add('is-loading')
