@@ -46,6 +46,10 @@
   opacity: 0.5;
 }
 
+.is-hidden {
+  display: none;
+}
+
 body {
   color: var(--text);
   background: var(--background);
@@ -305,7 +309,6 @@ img.lazy.error {
   color: #fff;
   background-size: cover;
 }
-
 
 .Layout__project hr {
   width: 100%;
