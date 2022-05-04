@@ -12,6 +12,7 @@ const submitPoll = (event) => {
   const error = (error) => {
     event.target.classList.add('is-error')
     event.target.classList.remove('is-loading')
+    console.error(error)
 
     spinner.hide()
     spinner.$element.remove()
@@ -42,6 +43,8 @@ const submitPoll = (event) => {
 
     if (response.status === 200) {
       event.target.classList.add('is-success')
+    } else if (response.error) {
+      error('Error')
     }
   }).catch((e) => {
     error(e)
