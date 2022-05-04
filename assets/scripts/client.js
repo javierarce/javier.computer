@@ -1,7 +1,8 @@
 const submitPoll = (event) => {
   let name = event.target.elements.Name.value
   const URL = 'https://api.javier.computer/api/poll/poll/save'
-  const headers = { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF' }
+  const headers = { 'Content-Type': 'application/json' }
+  const method = 'POST'
   const body = JSON.stringify({ name: name })
   const options = { method, headers, body }
   fetch(URL, options)
