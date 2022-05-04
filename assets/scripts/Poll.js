@@ -31,7 +31,9 @@ const submitPoll = (event) => {
     return
   }
 
-  const URL = 'https://api.javier.computer/api/poll/poll/save'
+  let poll = event.target.querySelector('.js-poll').value
+
+  const URL = `https://api.javier.computer/api/poll/${poll}/save`
   const headers = { 'Content-Type': 'application/json' }
   const method = 'POST'
   const body = JSON.stringify(fields)
@@ -41,10 +43,10 @@ const submitPoll = (event) => {
     event.target.classList.remove('is-loading')
     spinner.hide()
 
-    if (response.status === 200) {
-      event.target.classList.add('is-success')
-    } else if (response.error) {
+    if (response.error) {
       error('Error')
+    } else {
+      event.target.classList.add('is-success')
     }
   }).catch((e) => {
     error(e)
