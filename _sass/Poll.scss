@@ -16,7 +16,9 @@
   width: 240px;
   font-size: .8em;
   top: 7px;
+  opacity: 0.5;
 }
+
 .Poll.is-error .Poll__error {
   display: block;
 }
