@@ -13,9 +13,6 @@ const submitPoll = (event) => {
     event.target.classList.add('is-error')
     event.target.classList.remove('is-loading')
     console.error(error)
-
-    spinner.hide()
-    spinner.$element.remove()
   }
 
   event.target.classList.add('is-loading')
@@ -42,6 +39,7 @@ const submitPoll = (event) => {
   fetch(URL, options).then((response) => {
     event.target.classList.remove('is-loading')
     spinner.hide()
+    spinner.$element.remove()
 
     if (response.error) {
       error('Error')
@@ -49,6 +47,9 @@ const submitPoll = (event) => {
       event.target.classList.add('is-success')
     }
   }).catch((e) => {
+    spinner.hide()
+    spinner.$element.remove()
+
     error(e)
   })
 }

@@ -328,6 +328,9 @@ img.lazy.error {
 .Poll.is-success .Poll__success {
   display: block;
 }
+.Poll.is-success .Spinner {
+  display: none;
+}
 .Poll.is-success .Poll__fields {
   display: none;
 }
@@ -422,6 +425,7 @@ textarea, input {
 .Spinner.is-inside-button {
   position: absolute;
   right: -30px;
+  top: 12px;
   width: 20px;
   height: 20px;
 }
