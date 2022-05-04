@@ -3,10 +3,19 @@ const submitPoll = (event) => {
   function isEmpty(obj) {
     return Object.keys(obj).length === 0;
   }
-  
+
   const error = (error) => {
     event.target.classList.add('is-error')
   }
+
+  event.target.classList.add('is-loading')
+
+  let spinner = new Spinner('is-inside-button')
+  let $button = event.target.querySelector('.js-button')
+  $button.appendChild(spinner.$element)
+  spinner.show()
+
+
 
   let values = [... event.target.elements].forEach((field) => {
     if (field.type === 'text' && field.value) {
@@ -19,14 +28,17 @@ const submitPoll = (event) => {
     return
   }
 
-  const URL = 'https://api.javier.computer/api/poll/poll/save'
-  //const URL = 'http://localhost:3001/api/poll/poll/save'
+  //const URL = 'https://api.javier.computer/api/poll/poll/save'
+  const URL = 'http://localhost:3001/api/poll/poll/save'
   const headers = { 'Content-Type': 'application/json' }
   const method = 'POST'
   const body = JSON.stringify(fields)
   const options = { method, headers, body }
 
   fetch(URL, options).then((response) => {
+    event.target.classList.remove('is-loading')
+    spinner.hide()
+
     if (response.status === 200) {
       event.target.classList.add('is-success')
     }
