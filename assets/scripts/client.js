@@ -28,8 +28,8 @@ const submitPoll = (event) => {
     return
   }
 
-  //const URL = 'https://api.javier.computer/api/poll/poll/save'
-  const URL = 'http://localhost:3001/api/poll/poll/save'
+  const URL = 'https://api.javier.computer/api/poll/poll/save'
+  //const URL = 'http://localhost:3001/api/poll/poll/save'
   const headers = { 'Content-Type': 'application/json' }
   const method = 'POST'
   const body = JSON.stringify(fields)
