@@ -1,21 +1,23 @@
 const submitPoll = (event) => {
   let fields = {}
+
+  let spinner = new Spinner('is-inside-button')
+  event.target.appendChild(spinner.$element)
+  spinner.show()
+
   function isEmpty(obj) {
     return Object.keys(obj).length === 0;
   }
 
   const error = (error) => {
     event.target.classList.add('is-error')
+    event.target.classList.remove('is-loading')
+
+    spinner.hide()
+    spinner.$element.remove()
   }
 
   event.target.classList.add('is-loading')
-
-  let spinner = new Spinner('is-inside-button')
-  let $button = event.target.querySelector('.js-button')
-  $button.appendChild(spinner.$element)
-  spinner.show()
-
-
 
   let values = [... event.target.elements].forEach((field) => {
     if (field.type === 'text' && field.value) {

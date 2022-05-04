@@ -23,7 +23,6 @@ class Spinner {
     }
 
     this.$element.classList.toggle('is-visible', this.visible)
-    console.log(this.$element)
 
     return this.$element
   }

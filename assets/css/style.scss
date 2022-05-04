@@ -307,10 +307,23 @@ img.lazy.error {
   max-width: 800px;
 }
 
+.Poll__success {
+  display: none;
+}
+
+.Poll.is-success .Poll__success {
+  display: block;
+}
+.Poll.is-success .Poll__fields {
+  display: none;
+}
+
 .Poll {
   width: 400px;
   color: var(--black);
   text-decoration: none;
+}
+.Poll__fields {
   display: flex;
   position: relative;
   display: flex;
@@ -383,8 +396,16 @@ textarea, input {
   color: var(--background);
 }
 
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .Spinner {
-  display: none;
   border-top: 3px solid var(--white);
   border-right: 3px solid var(--white);
   border-bottom: 3px solid var(--white);
@@ -392,10 +413,9 @@ textarea, input {
   animation: spinner 0.8s infinite linear;
 }
 
-
 .Spinner.is-inside-button {
   position: absolute;
-  right: 20px;
+  right: -30px;
   width: 20px;
   height: 20px;
 }
@@ -408,32 +428,5 @@ textarea, input {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-}
-
-@keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-
-@-webkit-keyframes load8 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes load8 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
