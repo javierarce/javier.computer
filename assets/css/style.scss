@@ -322,13 +322,26 @@ img.lazy.error {
   text-decoration: none;
 }
 
-.Poll__success {
+.Poll__success,
+.Poll__error {
   display: none;
+}
+
+.Poll__error {
+  position: absolute;
+  right: -250px;
+  width: 240px;
+  font-size: .8em;
+  top: 7px;
+}
+.Poll.is-error .Poll__error {
+  display: block;
 }
 .Poll.is-success .Poll__success {
   display: block;
 }
-.Poll.is-success .Spinner {
+.Poll.is-success .Spinner,
+.Poll.is-error .Spinner {
   display: none;
 }
 .Poll.is-success .Poll__fields {

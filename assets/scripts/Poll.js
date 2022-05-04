@@ -1,6 +1,8 @@
 const submitPoll = (event) => {
   let fields = {}
 
+  let $error = event.target.querySelector('.js-error')
+
   let spinner = new Spinner('is-inside-button')
   event.target.appendChild(spinner.$element)
   spinner.show()
@@ -12,6 +14,7 @@ const submitPoll = (event) => {
   const error = (error) => {
     event.target.classList.add('is-error')
     event.target.classList.remove('is-loading')
+    $error.innerHTML = error
     console.error(error)
   }
 
@@ -24,6 +27,9 @@ const submitPoll = (event) => {
   })
 
   if (isEmpty(fields)) {
+    spinner.hide()
+    spinner.$element.remove()
+
     error('Fields are empty.')
     return
   }
@@ -36,21 +42,20 @@ const submitPoll = (event) => {
   const body = JSON.stringify(fields)
   const options = { method, headers, body }
 
-  fetch(URL, options).then((response) => {
+  const onResponse = (response) => {
     event.target.classList.remove('is-loading')
-    spinner.hide()
-    spinner.$element.remove()
 
     if (response.error) {
       error('Error')
     } else {
+
+      spinner.hide()
+      spinner.$element.remove()
+
       event.target.classList.add('is-success')
     }
-  }).catch((e) => {
-    spinner.hide()
-    spinner.$element.remove()
+  }
 
-    error(e)
-  })
+  fetch(URL, options).then(onResponse).catch(error)
 }
 
