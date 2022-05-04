@@ -27,7 +27,7 @@ const submitPoll = (event) => {
   })
 
   if (isEmpty(fields)) {
-    error(0)
+    error('Fields are empty.')
     return
   }
 
