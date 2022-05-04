@@ -27,6 +27,7 @@
 				{% if post.author.name %}
 					<dc:creator>{{ post.author.name | xml_escape }}</dc:creator>
 				{% endif %}
+
             {% if post.category == 'photo' %}
           <description>
             <![CDATA[
@@ -44,10 +45,23 @@
               ]]>
           </description>
             {% else %}
+
 				{% if post.excerpt %}
-					<description>{{ post.excerpt | xml_escape }}</description>
+          <description>
+              {{ post.excerpt | xml_escape }}
+
+              {% if post.disclaimer -%}
+              <p>{{ post.disclaimer }}</p>
+              {% endif -%}
+        </description>
 				{% else %}
-					<description>{{ post.content | xml_escape }}</description>
+          <description>
+              {{ post.content | xml_escape }}
+
+              {% if post.disclaimer -%}
+              <p>{{ post.disclaimer }}</p>
+              {% endif -%}
+          </description>
 				{% endif %}
             {% endif %}
 				<pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
