@@ -1,0 +1,46 @@
+.Poll {
+  position: relative;
+  width: 500px;
+  color: var(--black);
+  text-decoration: none;
+}
+
+.Poll__success,
+.Poll__error {
+  display: none;
+}
+
+.Poll__error {
+  position: absolute;
+  right: -250px;
+  width: 240px;
+  font-size: .8em;
+  top: 7px;
+}
+.Poll.is-error .Poll__error {
+  display: block;
+}
+.Poll.is-success .Poll__success {
+  display: block;
+}
+.Poll.is-success .Spinner,
+.Poll.is-error .Spinner {
+  display: none;
+}
+.Poll.is-success .Poll__fields {
+  display: none;
+}
+.Poll__fields {
+  display: flex;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media all and (max-width: 640px) {
+  .Poll {
+    width: 90%;
+  }
+}

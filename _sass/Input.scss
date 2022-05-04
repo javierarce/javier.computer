@@ -1,0 +1,62 @@
+.Input__field {
+  width: 100%;
+  transition: border 150ms ease-in-out;
+  margin: 0 0.4em 0 0;
+}
+
+.Input {
+  padding: 0.4em 0.6em;
+}
+
+.Input {
+  resize: none;
+  border: 1px solid #fff;
+  font-size: 0.8em;
+  outline: none;
+  border-radius: 2px;
+  width: 100%;
+}
+
+textarea, input {
+  background: none;
+  color: #fff;
+}
+
+.Input:focus {
+  border: 1px solid #fff;
+}
+
+.Button {
+  position: relative;
+  padding: 0.4em 0.6em;
+  border: 1px solid #fff;
+  outline: none;
+  cursor: pointer;
+  margin: 0;
+  -webkit-appearance: none;
+  font-size: 0.8em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  user-select: none;
+  color: #fff;
+  background: transparent;
+  transition: background 100ms ease-in-out, opacity 100ms ease-in-out, color 100ms ease-in-out;
+}
+
+.Button.is-disabled {
+  opacity: .5;
+  pointer-events: none;
+  cursor: default;
+}
+
+.Button.is-disabled:hover {
+  background: transparent;
+}
+
+.Button:hover {
+  background: #fff;
+  color: var(--background);
+}

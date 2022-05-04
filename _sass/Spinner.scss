@@ -1,0 +1,35 @@
+.Spinner {
+  border-top: 3px solid var(--white);
+  border-right: 3px solid var(--white);
+  border-bottom: 3px solid var(--white);
+  border-left: 3px solid var(--background);
+  animation: spinner 0.8s infinite linear;
+}
+
+.Spinner.is-inside-button {
+  position: absolute;
+  right: -30px;
+  top: 12px;
+  width: 20px;
+  height: 20px;
+}
+
+.Spinner.is-visible {
+  display: block;
+}
+
+.Spinner, .Spinner:after {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
