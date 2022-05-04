@@ -2,6 +2,7 @@ const submitPoll = (event) => {
   let fields = {}
 
   let $error = event.target.querySelector('.js-error')
+  event.target.classList.remove('is-error')
 
   let spinner = new Spinner('is-inside-button')
   event.target.appendChild(spinner.$element)
