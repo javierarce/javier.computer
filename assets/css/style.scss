@@ -37,6 +37,11 @@
   --background: #0053DB;
 }
 
+::placeholder {
+  color: white;
+  opacity: 0.5;
+}
+
 .is-light {
   opacity: 0.5;
 }
@@ -307,21 +312,20 @@ img.lazy.error {
   max-width: 800px;
 }
 
+.Poll {
+  width: 500px;
+  color: var(--black);
+  text-decoration: none;
+}
+
 .Poll__success {
   display: none;
 }
-
 .Poll.is-success .Poll__success {
   display: block;
 }
 .Poll.is-success .Poll__fields {
   display: none;
-}
-
-.Poll {
-  width: 400px;
-  color: var(--black);
-  text-decoration: none;
 }
 .Poll__fields {
   display: flex;
@@ -331,8 +335,6 @@ img.lazy.error {
   align-items: center;
   justify-content: space-between;
 }
-
-
 .Input__field {
   width: 100%;
   transition: border 150ms ease-in-out;
@@ -430,3 +432,8 @@ textarea, input {
   border-radius: 50%;
 }
 
+@media all and (max-width: 640px) {
+  .Poll {
+    width: 90%;
+  }
+}
