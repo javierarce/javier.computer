@@ -25,10 +25,12 @@
 .Poll.is-success .Poll__success {
   display: block;
 }
+
 .Poll.is-success .Spinner,
 .Poll.is-error .Spinner {
   display: none;
 }
+
 .Poll.is-success .Poll__fields {
   display: none;
 }

@@ -3,6 +3,7 @@ const submitPoll = (event) => {
 
   let $error = event.target.querySelector('.js-error')
   event.target.classList.remove('is-error')
+  event.target.classList.add('is-loading')
 
   let spinner = new Spinner('is-inside-button')
   event.target.appendChild(spinner.$element)
@@ -13,6 +14,9 @@ const submitPoll = (event) => {
   }
 
   const error = (error) => {
+    spinner.hide()
+    spinner.$element.remove()
+
     event.target.classList.add('is-error')
     event.target.classList.remove('is-loading')
     $error.innerHTML = error
@@ -22,7 +26,6 @@ const submitPoll = (event) => {
     }, 3000)
   }
 
-  event.target.classList.add('is-loading')
 
   let values = [... event.target.elements].forEach((field) => {
     if (field.type === 'text' && field.value) {
