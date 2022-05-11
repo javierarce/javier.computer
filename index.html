@@ -11,7 +11,10 @@ home: true
 
   <div class="Posts">
     {% for post in paginator.posts -%}
+    {% assign hide = post.hide %}
+    {% if hide != true  %}
     {% include types/{{post.layout}}.html -%}
+    {% endif %}
     {% endfor -%}
 
     {% if paginator.total_pages > 1 -%}
