@@ -13,7 +13,7 @@ calma». Nos tomamos un café, nos reímos un poco (sin abusar), y ya · Me comp
 una nueva cámara de fotos.  Estoy bastante contento con la perspectiva de
 llevarla siempre encima y documentar mis aventuras · Me hizo mucha ilusión ver
 a M (otra M) · Lo de los Sunday Sites fue una decepción · Vi al [Akita
-vigilante](/2022/05/10/akita) del barrio que me descubrió S hace unos días ·
+vigilante](2022/05/11/akita) del barrio que me descubrió S hace unos días ·
 Volví a estudiar alemán, porque nunca se sabe · Estoy muy contento con un
 proyecto que voy a hacer con Y, y con que se me llenen de iniciales estas notas. 
 Mejor que de bichitos.
