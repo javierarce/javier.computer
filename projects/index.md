@@ -17,6 +17,7 @@ className: Table
 
 | Title | Description | Tags |
 |:-------|:-------|:---- |
+|[Dale](https://dale.javier.computer) | Generate DALL·E 2-like images without an invite. Without AI. Without writing a prompt. Without waiting for the process to finish. Without wasting electricity or emitting CO2. Just drag and drop an image and let the most advanced technology (well, JavaScript) do the rest. | web, javascript |
 |[Dear Reader](https://reader.javierarce.com)| Dear Reader sends you articles and posts from your favorite newsletters and RSS feeds directly to your Kindle | kindle, rss |
 
 ### 2021
