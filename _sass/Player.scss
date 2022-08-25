@@ -1,5 +1,6 @@
 .Player {
   width: auto;
+  margin: 1em 0 0 0;
   color: var(--black);
   font-size: 1em;
   text-decoration: none;
@@ -22,6 +23,19 @@
 
 .Player__title {
   font-weight: normal;
+  text-decoration: none;
+  display: block;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.Player__link {
+  margin: 0 0 0 4px;
+  font-weight: normal;
+  text-decoration: none;
 }
 
 .Player__play {
