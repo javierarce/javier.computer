@@ -1,11 +1,23 @@
-{% if photo.filenames %}
 {% assign filename = photo.filenames | first %}
+{% assign id = photo.ids | first %}
 
+{% if filename %}
 <div class="Photo">
   <div class="Photo__content">
     <figure class="Figure">
       <picture>
         <a href="{{ include.photo.category }}"><img class="Photo lazy" data-src="https://img.javier.computer/{{ filename }}_640.jpg"></a>
+      </picture>
+    </figure>
+      <div class="Figure__title">{{ photo.category}}</div>
+  </div>
+</div>
+{% elsif id %}
+<div class="Photo">
+  <div class="Photo__content">
+    <figure class="Figure">
+      <picture>
+        <a href="{{ include.photo.category }}"><img class="Photo lazy" data-src="https://t.javier.computer/{{ id }}/medium"></a>
       </picture>
     </figure>
       <div class="Figure__title">{{ photo.category}}</div>

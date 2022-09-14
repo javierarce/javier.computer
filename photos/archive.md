@@ -1,5 +1,5 @@
 ---
-layout: photoarchive
+layout: photos/archive
 title: Archive
 permalink: photos/archive
 ---

@@ -1,5 +1,5 @@
 ---
-layout: photobook
+layout: photos/single
 title: Copenhaguen
 permalink: photos/copenhaguen
 date: 2021-09-01

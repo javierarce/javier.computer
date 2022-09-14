@@ -1,7 +1,6 @@
 ---
 layout: photos/single
-title: Berlin
-permalink: photos/berlin
+title: Lisboa
+permalink: photos/lisboa
 date: 2021-09-01
 ---
-

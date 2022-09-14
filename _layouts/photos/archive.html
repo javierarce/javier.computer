@@ -19,7 +19,7 @@ className: Photos
       {% endif -%}
   
       {% assign category = photo.category -%}
-      {% include thumb.html photo=photo -%}
+      {% include photos/thumb.html photo=photo -%}
 
     {% endfor -%}
   </div>

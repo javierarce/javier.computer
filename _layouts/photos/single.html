@@ -16,7 +16,7 @@ className: Photos
     {% assign category = page.title | downcase -%}
     {% for photo in photos -%}
     {% if category == photo.category -%}
-    {% include photo.html photo=photo -%}
+    {% include photos/photo.html photo=photo -%}
     {% endif -%}
     {% endfor -%}
   </div>
