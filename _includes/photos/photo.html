@@ -10,49 +10,30 @@
     <div class="Photo__content">
       <figure class="Figure">
         <picture>
-          <source data-srcset="https://img.javier.computer/{{ filename }}_640.webp 640w, https://img.javier.computer/{{ filename }}_1280.webp 1280w, https://img.javier.computer/{{ filename }}_2880.webp 2880w" type=image/webp>
-            <source data-srcset="https://img.javier.computer/{{ filename }}_640.jpg 640w, https://img.javier.computer/{{ filename }}_1280.jpg 1280w, https://img.javier.computer/{{ filename }}_2880.jpg 2880w">
-              <img class="Photo lazy" data-src="https://img.javier.computer/{{ filename }}_1280.jpg">
+          <source data-srcset="https://img.javier.computer/{{ photo.location }}/{{ filename }}_640.webp 640w, https://img.javier.computer/{{ photo.location }}/{{ filename }}_1280.webp 1280w, https://img.javier.computer/{{ photo.location }}/{{ filename }}_2880.webp 2880w" type=image/webp>
+            <source data-srcset="https://img.javier.computer/{{ photo.location }}/{{ filename }}_640.jpg 640w, https://img.javier.computer/{{ photo.location }}/{{ filename }}_1280.jpg 1280w, https://img.javier.computer/{{ photo.location }}/{{ filename }}_2880.jpg 2880w">
+              <img class="Photo lazy" data-src="https://img.javier.computer/{{ photo.location }}/{{ filename }}_1280.jpg">
         </picture>
       </figure>
     </div>
   </div>
   {% endfor %}
   <figcaption class="Figure__caption has-margin-bottom">{{ photo.content }}</figcaption>
-  <div class="Photo__date">{{ photo.date | date: '%B %d, %Y' }}{% if photo.where %} - {{ photo.where }}{% endif -%}</div>
+  <div class="Photo__date">{{ photo.date | date: '%B %d, %Y' }}{% if photo.location %} - {{ photo.location }}{% endif -%}</div>
 </div>
 {% elsif photo.filename %}
 <div class="Photo">
   <div class="Photo__content">
     <figure class="Figure">
       <picture>
-        <source data-srcset="https://img.javier.computer/{{ photo.filename }}_640.webp 640w, https://img.javier.computer/{{ photo.filename }}_1280.webp 1280w, https://img.javier.computer/{{ photo.filename }}_2880.webp 2880w" type=image/webp>
-          <source data-srcset="https://img.javier.computer/{{ photo.filename }}_640.jpg 640w, https://img.javier.computer/{{ photo.filename }}_1280.jpg 1280w, https://img.javier.computer/{{ photo.filename }}_2880.jpg 2880w">
-            <img class="Photo lazy" data-src="https://img.javier.computer/{{ photo.filename }}_1280.jpg">
+        <source data-srcset="https://img.javier.computer/{{ photo.location }}/{{ photo.filename }}_640.webp 640w, https://img.javier.computer/{{ photo.location }}/{{ photo.filename }}_1280.webp 1280w, https://img.javier.computer/{{ photo.location }}/{{ photo.filename }}_2880.webp 2880w" type=image/webp>
+          <source data-srcset="https://img.javier.computer/{{ photo.location }}/{{ photo.filename }}_640.jpg 640w, https://img.javier.computer/{{ photo.location }}/{{ photo.filename }}_1280.jpg 1280w, https://img.javier.computer/{{ photo.location }}/{{ photo.filename }}_2880.jpg 2880w">
+            <img class="Photo lazy" data-src="https://img.javier.computer/{{ photo.location }}/{{ photo.filename }}_1280.jpg">
       </picture>
       <figcaption class="Figure__caption has-margin-bottom">{{ photo.content }}</figcaption>
-      <div class="Photo__date">{{ photo.date | date: '%B %d, %Y' }}{% if photo.where %} - {{ photo.where }}{% endif -%}</div>
+      <div class="Photo__date">{{ photo.date | date: '%B %d, %Y' }}{% if photo.location %} - {{ photo.location }}{% endif -%}</div>
     </figure>
   </div>
 </div>
 {% endif %}
 
-{% if ids | size %}
-<div class="Photo__collection">
-
-  {% for id in ids %}
-  <div class="Photo">
-    <div class="Photo__content">
-      <figure class="Figure">
-        <picture>
-          <source data-srcset="https://t.javier.computer/{{ id }}/original 640w, https://t.javier.computer/{{ id }}/original 1280w, https://t.javier.computer/{{ id }}/original 2880w" type=image/webp>
-              <img class="Photo lazy" data-src="https://t.javier.computer/{{ id }}/original">
-        </picture>
-      </figure>
-    </div>
-  </div>
-  {% endfor %}
-  <figcaption class="Figure__caption has-margin-bottom">{{ photo.content }}</figcaption>
-  <div class="Photo__date">{{ photo.date | date: '%B %d, %Y' }}{% if photo.where %} - {{ photo.where }}{% endif -%}</div>
-</div>
-{% endif %}

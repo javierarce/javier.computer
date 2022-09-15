@@ -41,7 +41,7 @@
               {% endif %}
 
               {{ post.content }}   
-            <p>{{ post.where }}</p>
+            <p>{{ post.location }}</p>
               ]]>
           </description>
             {% else %}

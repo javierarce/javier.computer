@@ -1,5 +1,5 @@
 ---
-layout: photos/single
+layout: photos/album
 title: Asturias
 permalink: photos/asturias
 date: 2021-09-01

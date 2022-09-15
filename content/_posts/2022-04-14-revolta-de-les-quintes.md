@@ -1,9 +1,9 @@
 ---
-layout: photo
+layout: photos/photo
 title: "Revolta de les Quintes"
 date: "2022-04-14 14:05:42 +0200"
 category: photo
-where: Barcelona
+location: barcelona
 filenames: 
 - 2022_04_14_DSCF0680_Revolta_de_les_Quintes_262cc7ed2630a0be72a4842db0b39f1c
 - 2022_04_14_DSCF0661_Revolta_de_les_Quintes_f45345e0f78c191979620c0f989b881d
