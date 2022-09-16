@@ -4,6 +4,8 @@ className: Photos
 ---
 <!--- photos/album -->
 
+{%- assign photos = site.photos | concat: site.posts | sort: 'date' | reverse -%}
+
 <div class="Content">
   {% include navigation.html -%}
 
@@ -14,10 +16,9 @@ className: Photos
   <div class="Photos__content">
     {{ content }}
 
-    {% assign photos = site.photos | reverse -%} 
-    {% assign category = page.title | downcase -%}
+    {% assign location = page.location | downcase -%}
     {% for photo in photos -%}
-    {% if category == photo.category -%}
+    {% if location == photo.location -%}
     {% include photos/photo.html photo=photo -%}
     {% endif -%}
     {% endfor -%}

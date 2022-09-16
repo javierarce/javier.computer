@@ -46,17 +46,22 @@
   object-fit: cover;
 }
 
-.Photo__date {
+.Photo__footer {
+  display: inline;
   opacity: 0.5;
   font-size: 0.8em;
-  user-select: none;
-  text-decoration: none;
-  font-weight: 400;
 }
 
-.Photo__date:hover {
+.Photo__footer a {
+  font-weight: 400;
   text-decoration: none;
 }
+
+.Photo__footer a:hover {
+  font-weight: 400;
+  text-decoration: underline;
+}
+
 
 .Photo__navigation {
   font-size: 1.2em;
