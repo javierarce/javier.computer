@@ -31,17 +31,17 @@
             {% if post.category == 'photo' %}
           <description>
             <![CDATA[
-
               {% if post.filenames %}
               {% for filename in post.filenames %}
-            <img src="https://img.javier.computer/{{ filename }}_1280.jpg" alt="{{post.title}}"/>  
+            <img src="https://img.javier.computer/{{ post.location }}/{{ filename }}_1280.jpg" alt="{{post.title}}"/>  
               {% endfor %}
               {% else %}
-            <img src="https://img.javier.computer/{{ post.filename }}_1280.jpg" alt="{{post.title}}" />  
+            <img src="https://img.javier.computer/{{ post.location }}/{{ post.filename }}_1280.jpg" alt="{{post.title}}" />  
               {% endif %}
 
               {{ post.content }}   
-            <p>{{ post.location }}</p>
+
+            <p>{{ post.location | capitalize }}</p>
               ]]>
           </description>
             {% else %}
