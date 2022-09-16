@@ -12,12 +12,15 @@ permalink: photos
   </div>
 
   <div class="Photos__content">
-  {% for post in site.categories.photo %}
-  {% include photos/photoset.html photo=photo %}
-  {% endfor %}
+    {% for post in site.categories.photo | limit: 10 %}
+    {% include photos/photoset.html photo=photo %}
+    {% endfor %}
+
+    <div class="Photos__contentMore">
+      <a href="/photos/archive">Archive</a>
+    </div>
   </div>
 
-  <div class="Photos__archive"><a href="/photos/archive">Archives</a></div>
 
   {% include footer.html %}
 </div>
