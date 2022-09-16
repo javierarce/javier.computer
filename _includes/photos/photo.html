@@ -19,7 +19,7 @@
   </div>
   {% endfor %}
   <figcaption class="Figure__caption has-margin-bottom">{{ photo.content }}</figcaption>
-  <div class="Photo__date">{{ photo.date | date: '%B %d, %Y' }}{% if photo.location %} - {{ photo.location }}{% endif -%}</div>
+  <div class="Photo__date">{{ photo.date | date: '%B %d, %Y' }}{% if photo.location %} - {{ photo.location | capitalize }}{% endif -%}</div>
 </div>
 {% elsif photo.filename %}
 <div class="Photo">
@@ -31,7 +31,7 @@
             <img class="Photo lazy" data-src="https://img.javier.computer/{{ photo.location }}/{{ photo.filename }}_1280.jpg">
       </picture>
       <figcaption class="Figure__caption has-margin-bottom">{{ photo.content }}</figcaption>
-      <div class="Photo__date">{{ photo.date | date: '%B %d, %Y' }}{% if photo.location %} - {{ photo.location }}{% endif -%}</div>
+      <div class="Photo__date">{{ photo.date | date: '%B %d, %Y' }}{% if photo.location %} - {{ photo.location | capitalize }}{% endif -%}</div>
     </figure>
   </div>
 </div>

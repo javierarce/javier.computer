@@ -18,7 +18,7 @@
   </div>
   {% endfor %}
   <figcaption class="Figure__caption">{{ post.content }}</figcaption>
-  <a href="{{ post.url }}" class="Photo__date">{{ post.date | date: '%B %d, %Y' }} - {{ post.location }}</a>
+  <a href="{{ post.url }}" class="Photo__date">{{ post.date | date: '%B %d, %Y' }} - {{ post.location | capitalize }}</a>
 </div>
 {% else %}
 
@@ -30,7 +30,7 @@
             <img class="Photo lazy" data-src="https://img.javier.computer/{{ post.location }}/{{ post.filename }}_1280.jpg">
       </picture>
       <figcaption class="Figure__caption">{{ post.content }}</figcaption>
-      <a href="{{ post.url }}" class="Photo__date">{{ post.date | date: '%B %d, %Y' }} - {{ post.location }}</a>
+      <a href="{{ post.url }}" class="Photo__date">{{ post.date | date: '%B %d, %Y' }} - {{ post.location | capitalize }}</a>
     </figure>
 
 
