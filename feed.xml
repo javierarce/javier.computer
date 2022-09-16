@@ -33,10 +33,10 @@
             <![CDATA[
               {% if post.filenames %}
               {% for filename in post.filenames %}
-            <img src="https://img.javier.computer/{{ post.location }}/{{ filename }}_1280.jpg" alt="{{post.title}}"/>  
+            <img src="https://img.javier.computer/{{ post.location }}/{{ filename }}_2880.jpg" alt="{{post.title}}"/>  
               {% endfor %}
               {% else %}
-            <img src="https://img.javier.computer/{{ post.location }}/{{ post.filename }}_1280.jpg" alt="{{post.title}}" />  
+            <img src="https://img.javier.computer/{{ post.location }}/{{ post.filename }}_2880.jpg" alt="{{post.title}}" />  
               {% endif %}
 
               {{ post.content }}   
