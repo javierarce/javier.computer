@@ -68,9 +68,6 @@ permalink: /:year/:month/:day/:title
 wikilinks:
   enable: true
   exclude: []
-d3_graph_data:
-  enabled: false
-  exclude: []
 
 # Exclude from processing.
 # The following items will not be processed, by default.
