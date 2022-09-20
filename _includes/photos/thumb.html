@@ -7,10 +7,10 @@
   <div class="Photo__content">
     <figure class="Figure">
       <picture>
-        <a href="{{ include.photo.category }}"><img class="Photo lazy" data-src="https://img.javier.computer/{{ photo.location }}/{{ filename }}_640.jpg"></a>
+        <a href="{{ include.photo.location }}"><img class="Photo lazy" data-src="https://img.javier.computer/{{ photo.location }}/{{ filename }}_640.jpg"></a>
       </picture>
     </figure>
-      <div class="Figure__title">{{ photo.category}}</div>
+      <div class="Figure__title">{{ photo.location}}</div>
   </div>
 </div>
 {% else %}
@@ -18,10 +18,10 @@
   <div class="Photo__content">
     <figure class="Figure">
       <picture>
-        <a href="{{ include.photo.category }}"><img class="Photo lazy" data-src="https://img.javier.computer/{{ photo.location }}/{{ include.photo.filename }}_640.jpg"></a>
+        <a href="{{ include.photo.location }}"><img class="Photo lazy" data-src="https://img.javier.computer/{{ photo.location }}/{{ include.photo.filename }}_640.jpg"></a>
       </picture>
     </figure>
-      <div class="Figure__title">{{ photo.category}}</div>
+      <div class="Figure__title">{{ photo.location}}</div>
   </div>
 </div>
 {% endif %}

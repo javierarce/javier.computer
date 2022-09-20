@@ -1,7 +1,7 @@
 ---
 layout: photos/album
 title: Barcelona
-permalink: photos/barcelona
 location: barcelona
+permalink: photos/barcelona
 date: 2021-09-01
 ---
