@@ -5,15 +5,18 @@
 Hi, stranger! Welcome to [my](/me) little computer on the net!
 
 This website contains a wiki, several blog posts, a collection of silly songs,
-a pun, a hidden passage to another dimension, a list of dog names, a list of names
+a pun, a hidden passage to another dimension, a ghost story, a list of dog names, a list of names
 that are not dog names, references to my early memories, several photos of
-myself eating ice cream, a coin, a yellow bird, a photo of your turtle, a
+myself eating ice cream, a mirror, a coin, a yellow bird, a photo of your turtle, a
 turtle.
 
-I get sad when I spend my time consuming instead of making things. This website
+I get sad when I only spend my time consuming instead of making things. This website
 is my attempt to spend more time thinking, documenting, and making.
 
-If you like what you see here, why don't you [let me know](https://mail.javier.computer)?
+If you like what you are reading, add this [RSS](/feed.xml) feed to your
+favorite feed reader to get the updates.
+
+And if you need to contact me and tell me something incredible, [use this link](https://mail.javier.computer).
 
 ### Content
 
@@ -26,8 +29,6 @@ If you like what you see here, why don't you [let me know](https://mail.javier.c
 |[Reading](/reading)|Books I'm reading / I've read / I will read / I won't read|
 |[Contact](/contact) | Contact form & email |
 |[About](/about) | You are here |
-
-Add this [RSS](/feed.xml) feed to your favorite feed reader to get the updates.
 
 ### Pages 
 
