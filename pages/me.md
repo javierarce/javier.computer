@@ -10,7 +10,7 @@ permalink: me
   {% include navigation.html %}
 
   <div class="Content__inner">
-    {% capture about %}{% include me.md %}{% endcapture %}
+    {% capture about %}{% include content/me.md %}{% endcapture %}
     {{ about | markdownify }}
   </div>
 
