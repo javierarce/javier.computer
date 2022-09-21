@@ -1,9 +1,10 @@
-docs
-node_modules
 .DS_Store
-_site
-.sass-cache
+.env
 .jekyll-cache
 .jekyll-metadata
+.ruby-version
+.sass-cache
+_drafts
+docs
+node_modules
 vendor
-.env
