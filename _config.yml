@@ -18,13 +18,13 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-version: 5.0.4
+version: 5.0.5
 title: Javier Arce
 author: Javier Arce
 email: email@javier.computer
 generator: Magic
 destination: docs
-timezone: Europe/Madrid # add your own locale timezone
+timezone: Europe/Madrid
 description: Javier Arce
 baseurl: "" 
 url: "https://javier.computer"
@@ -52,12 +52,6 @@ collections:
   projects:
     output: true
     permalink: '/projects/:path/'
-  texts:
-    output: true
-    permalink: '/texts/:path/'
-  concepts:
-    output: true
-    permalink: '/concepts/:path/'
   books:
     output: true
     permalinks: '/books/:path'
