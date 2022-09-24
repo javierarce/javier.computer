@@ -1,0 +1,160 @@
+.Bots {
+  font-size: 1.2em;
+}
+
+.Bot {
+  margin: 0 auto 2em auto;
+}
+
+.Bot__content {
+  margin: 0 0 4em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: var(--defaultWidth);
+}
+
+.Bot h2 {
+  font-size: 2em;
+  text-align: center;
+  margin: 0 0 0.2em;
+}
+
+.Bot__content  h3 {
+  margin-top: 1em;
+  width: 925px;
+}
+
+.Bot__content h2+h3 {
+  font-size: 0.9em;
+  font-weight: normal;
+  opacity: 0.5;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 2em;
+}
+
+.Bot p,
+.Bot__items {
+  width: 925px;
+  margin: 0;
+}
+
+.Bot .Figure {
+  width: 1200px;
+  margin: 2em auto;
+}
+
+.Bot__intro {
+  width: 925px;
+  margin: 0 auto 1em auto;
+  text-align: center;
+}
+
+.Bot .Figure video {
+  display: block;
+  width: 100%;
+  border-radius: 2px;
+}
+
+.Bot .Figure img {
+  display: block;
+  width: 100%;
+  border-radius: 2px;
+}
+
+.Bot .Figure .Figure__caption {
+  display: block;
+  width: 100%;
+}
+
+.Bots__content {
+  margin: 0 0 0.4em 0;
+}
+
+.Bots__content p {
+  margin: 0 0 1em;
+}
+
+.Bot__content p {
+  //margin: 0 0 1em;
+}
+
+.Bot__content p:last-child {
+  margin: 0 auto 0 auto;
+}
+
+.Bots table td:first-child {
+  width: 350px;
+}
+
+.Bots table  tr > td:nth-child(3) {
+  width: 200px;
+}
+
+@media all and (max-width: 1280px) {
+  .Layout__project .Bot p, .Layout__project .Bot__content h3 {
+    width: 100%;
+  }
+
+  .Layout__project .Bot .Bot__intro {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .Layout__project .Bot .Figure {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 800px) {
+  .Bots table  tr > td:nth-child(1){
+    width: auto;
+  }
+  .Bots table  tr > td:nth-child(3){
+    width: auto;
+  }
+}
+
+@media all and (max-width: 640px) {
+  .Bots thead {
+    display: none;
+  }
+
+  .Bots tr {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 2em;
+  }
+  .Bots table td {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 0;
+  }
+
+  .Bots table  tr > td:nth-child(3){
+    font-style: italic;
+  }
+}
+
+.Bot__stuff {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 250ms ease-in-out;
+}
+
+.Bot__stuff.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.Bot__updatedAt,
+.Bot__item {
+  margin: 0 0 1em;
+}
+
+p+h3 {
+  margin-top: 1em;
+}
