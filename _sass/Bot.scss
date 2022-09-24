@@ -36,8 +36,32 @@
 
 .Bot p,
 .Bot__items {
-  width: 925px;
   margin: 0;
+}
+.Bot__description {
+  width: 925px;
+  margin: 0 0 2em;
+}
+
+.Bot__archive {
+  background: #fff;
+  color: #000;
+  font-family: Times New Roman;
+  margin: auto;
+  padding: 3em;
+}
+.Bot__archive h3 {
+  width: 100%;
+  font-weight: 300;
+  margin: 0 0 2em;
+  padding-bottom: 0.4em;
+  border-bottom: 1px solid rgba(0, 0, 0, .5);
+}
+
+.Bot__archiveContent {
+  column-count: 2;
+  column-gap: 2em;
+  font-size: 0.8em;
 }
 
 .Bot .Figure {
