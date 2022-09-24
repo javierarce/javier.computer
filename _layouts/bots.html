@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.show_title and page.title -%}{{ page.title }} - {% endif -%}{{ site.description }}</title>
+
+    <link rel="shortcut icon" href="{{ base.url | prepend: site.url }}/favicon.ico">
+
+    {% include meta.html -%}
+    {% include scripts.html -%}
+    <script src="{{ 'assets/scripts/bots.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
+    {% feed_meta %}
+<body class="Layout__{{ page.className | default: page.category | downcase  }}">
+<div class="Content">
+  {% include navigation.html %}
+  <div class="Page Bot__content js-content">
+    {{ content }}
+  </div>
+  {% include footer.html %}
+</div>
+
+  <script src="{{ 'assets/scripts/lazyload.min.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
+</body>
+</html>

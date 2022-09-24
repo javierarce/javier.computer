@@ -10,9 +10,8 @@
     {% include meta.html -%}
     {% include scripts.html -%}
     {% feed_meta %}
-<body class="Layout__{{ page.className | default: page.category | downcase  }}">
-  {{ content }}
-
-  <script src="{{ 'assets/scripts/lazyload.min.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
-</body>
+    <body class="Layout__{{ page.className | default: page.category | downcase  }}">
+      {{ content }}
+      <script src="{{ 'assets/scripts/lazyload.min.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
+    </body>
 </html>
