@@ -38,11 +38,11 @@
   --active: var(--white);
   --hover: var(--white);
   --text: var(--white);
-  --background: #0053DB;
+  --background: #020b19;
 }
 
 ::placeholder {
-  color: white;
+  color: var(--white);
   opacity: 0.5;
 }
 
@@ -58,7 +58,7 @@ body {
   color: var(--text);
   background: var(--background);
 
-  font-size: 1.4em;
+  font-size: 1.3em;
   line-height: 1.45;
   font-weight: normal;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -310,7 +310,7 @@ img.lazy.error {
   height: 24px;
   margin: 0 0.2em 0 0;
   background-image: url(/assets/img/picture.svg);
-  color: #fff;
+  color: var(--white);
   background-size: cover;
 }
 
