@@ -321,6 +321,14 @@ img.lazy.error {
 .Bot__content {
   width: 800px;
   margin-bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 250ms ease-in-out;
+}
+
+.Bot__content.is-visible {
+  opacity: 1;
+  visibility: visible;
 }
 
 .Bot__item {
