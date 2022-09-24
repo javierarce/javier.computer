@@ -12,6 +12,7 @@ className: Table
 | [Kindle to Are.na](/projects/arena) | Send your Kindle's highlights and notes to Are.na.| 2020 |
 | [Enfont Terrible](/projects/enfont) | A terrible, terrible type foundry | 2019 |
 | [Map with Me](/projects/mapwithme)  | Create collaborative maps with your friends (and enemies) | 2019 |
+| [I remember bot](/bots/iremember)  | A tribute to Georges Perec and his book Je me souviens. | 2015 |
 
 ### 2022
 
