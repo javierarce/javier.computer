@@ -45,17 +45,13 @@
 }
 
 .Bot__archive {
-  background: #fff;
-  color: #000;
-  font-family: Times New Roman;
-  margin: auto;
+  background: var(--white);
+  color: var(--background);
   padding: 3em;
-}
-
-.Bot__archive {
+  margin: auto 2em;
+  transition: opacity 250ms ease-in-out;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 250ms ease-in-out;
 }
 
 .Bot__archive.is-visible {
@@ -75,34 +71,13 @@
   column-count: 2;
   column-gap: 2em;
   font-size: 0.8em;
-}
-
-.Bot .Figure {
-  width: 1200px;
-  margin: 2em auto;
+  font-family: Times New Roman;
 }
 
 .Bot__intro {
   width: 925px;
   margin: 0 auto 1em auto;
   text-align: center;
-}
-
-.Bot .Figure video {
-  display: block;
-  width: 100%;
-  border-radius: 2px;
-}
-
-.Bot .Figure img {
-  display: block;
-  width: 100%;
-  border-radius: 2px;
-}
-
-.Bot .Figure .Figure__caption {
-  display: block;
-  width: 100%;
 }
 
 .Bots__content {
@@ -113,20 +88,17 @@
   margin: 0 0 1em;
 }
 
-.Bot__content p {
-  //margin: 0 0 1em;
-}
-
 .Bot__content p:last-child {
   margin: 0 auto 0 auto;
 }
 
-.Bots table td:first-child {
-  width: 350px;
+.Bot__item {
+  -webkit-column-break-inside: avoid;
 }
 
-.Bots table  tr > td:nth-child(3) {
-  width: 200px;
+.Bot__updatedAt,
+.Bot__item {
+  margin: 0 0 1em;
 }
 
 @media all and (max-width: 1280px) {
@@ -145,7 +117,6 @@
     width: 100%;
   }
 
-
   .Bot__archiveContent {
     column-count: 1;
     font-size: 0.9em;
@@ -153,6 +124,7 @@
 
   .Bot__archive {
     padding: 2em;
+    margin: 0;
   }
 
   .Layout__project .Bot .Bot__intro {
@@ -166,11 +138,3 @@
   }
 }
 
-.Bot__updatedAt,
-.Bot__item {
-  margin: 0 0 1em;
-}
-
-p+h3 {
-  margin-top: 1em;
-}
