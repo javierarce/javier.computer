@@ -14,8 +14,9 @@
 <body class="Layout__{{ page.className | default: page.category | downcase  }}">
 <div class="Content">
   {% include navigation.html %}
-  <div class="Page Bot__content js-content">
+  <div class="Page">
     {{ content }}
+    <div class="Bot__content js-content"></div>
   </div>
   {% include footer.html %}
 </div>
