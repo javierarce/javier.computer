@@ -8,17 +8,26 @@ fetch(URL).then(response => response.json()).then((data) => {
   let $content = document.querySelector('.js-stream')
 
   data.reverse().forEach((filename) => {
+    const $photo = document.createElement('div')
+    $photo.classList.add('Photo')
+
+    const $photoContent = document.createElement('div')
+    $photoContent.classList.add('Photo__content')
+
     const $figure = document.createElement('figure')
     $figure.classList.add('Figure')
 
     const $picture = document.createElement('picture')
+
     const $img = document.createElement('img')
     $img.classList.add('Photo', 'lazy')
     $img.dataset.src = `https://img.javier.computer/stream/${filename}`
 
     $picture.appendChild($img)
     $figure.appendChild($picture)
-    $content.appendChild($figure)
+    $photoContent.appendChild($figure)
+    $photo.appendChild($photoContent)
+    $content.appendChild($photo)
   })
 
   if (lazyLoadInstance) {
