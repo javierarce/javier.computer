@@ -1,29 +1,23 @@
 table {
   width: 100%;
-  margin: 0 0 2em;
-}
-
-table:last-child {
-  width: 100%;
-  margin-bottom: 0;
-}
-
-table td:first-child {
-}
-
-table td {
-  border: 1px solid var(--white);
-  padding: .4em;
-}
-
-table thead {
-  border: 1px solid var(--white);
+  margin: 0 0 4em;
 }
 
 table th {
-  background: var(--white);
-  padding: 0.4em;
-  color: var(--background);
-  font-weight: bold;
+  padding: 0.8em 0;
+  text-transform: uppercase;
 }
 
+table thead,
+table td {
+  border-bottom: 1px solid var(--gray);
+  padding: 0.8em 0;
+}
+
+table td:nth-child(2) {
+  padding-right: 1em;
+}
+
+table tr:last-child td {
+  border: none;
+}
