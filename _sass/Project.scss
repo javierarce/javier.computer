@@ -2,6 +2,14 @@
   font-size: 1.2em;
 }
 
+.Projects table {
+  margin: 0 0 3em 0;
+}
+
+.Projects table:last-child {
+  margin-bottom: 1em;
+}
+
 .Project {
   margin: 0 auto 2em auto;
 }
@@ -117,6 +125,10 @@
 }
 
 @media all and (max-width: 640px) {
+  .Projects__content table {
+    margin: 0 0 2em;
+  }
+
   .Projects thead {
     display: none;
   }
@@ -124,16 +136,21 @@
   .Projects tr {
     display: flex;
     flex-direction: column;
-    margin: 0 0 2em;
+    margin: 0 0 1em;
   }
   .Projects table td {
     display: block;
     width: 100%;
     border: none;
     padding: 0;
+    margin: 0 0 0.4em;
   }
-
-  .Projects table  tr > td:nth-child(3){
-    font-style: italic;
+  .Projects tr {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 2em;
+  }
+  .Projects table td:last-child {
+    margin: 0;
   }
 }

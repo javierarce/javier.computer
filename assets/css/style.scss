@@ -321,3 +321,13 @@ a.is-photo::before {
   opacity: 0.4;
 }
 
+.tag {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.4em 0.8em;
+  border-radius: 20px;
+  font-size: 0.7em;
+}
+
+#index {
+  margin-top: 2em;
+}
