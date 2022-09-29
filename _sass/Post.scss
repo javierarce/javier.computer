@@ -22,9 +22,13 @@
   margin: 0 0 0.4em 0;
 }
 
+.Post__content ul {
+  margin: 0 0 1em 1em;
+}
+
 .Post__date {
   opacity: 0.5;
-  font-size: 0.8em;
+  font-size: 0.9em;
   user-select: none;
   text-decoration: none;
   font-weight: 400;
@@ -34,11 +38,15 @@
   text-decoration: none;
 }
 
+.Post__navigation {
+  margin: 2em 0 0 0;
+}
+
 .Post__navigationLink {
   font-weight: 400;
   text-decoration: none;
   opacity: 0.5;
-  font-size: 0.8em;
+  font-size: 0.9em;
   user-select: none;
   text-decoration: none;
   font-weight: 400;
