@@ -6,12 +6,13 @@ className: Archive
 <div class="Content">
   {% include navigation.html %}
 
-  <div class="Content__inner">
+  <div class="Archive Content__inner">
     {% assign thedate = nil %}
 
     {% for post in site.posts %}
     {% assign format_date = post.date | date: "%m-%d-%Y" %}
     {% unless post.next %}
+    <div class="Archive__month">
     <h3>{{ post.date | date: '%B %Y' }}</h3>
     <ul class="Archive__list">
       {% else %}
@@ -21,7 +22,9 @@ className: Archive
       {% if year != nyear %}
       </li>
     </ul>
+</div>
     {% assign thedate = nil %}
+    <div class="Archive__month">
     <h3>{{ post.date | date: '%B %Y' }}</h3>
     <ul class="Archive__list">
       {% endif %}
@@ -29,11 +32,7 @@ className: Archive
       {% endunless %}
 
       {% if thedate != format_date %}
-      {% if thedate != nil %}
-      </li>
-      {% endif %}
-      <li>
-        <span class="Archive__day">{{ post.date | date: '%d' }}</span>{% endif %}
+      {% if thedate != nil %}</div></li>{% endif %}<li><span class="Archive__day">{{ post.date | date: '%d' }}</span><div class="Links">{% endif %}
 
 
         <a href="{{ post.url }}">{{ post.title }}</a>
@@ -42,6 +41,7 @@ className: Archive
       {% endfor %}
       </li>
     </ul>
+</div>
   </div>
 
   {% include footer.html %}

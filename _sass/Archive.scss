@@ -1,9 +1,26 @@
+.Archive {
+  column-count: 3;
+  column-gap: 4em;
+  margin: 0 0 2em;
+}
+
+.Archive h3 {
+  padding: 0 0 0.4em;
+  border-bottom: 1px solid var(--gray);
+}
+
+.Archive__month {
+  break-inside: avoid;
+  margin: 0 0 2em;
+}
+
 .Archive__list {
-  margin: 0 0 2em 0;
   font-size: 1.1em;
+  margin: 0;
 }
 
 .Archive__list li {
+  display: flex;
   list-style: none;
   padding: 0;
 }
@@ -32,5 +49,18 @@
 .Archive__day {
  font-family: 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace;
   opacity: 0.4;
-  margin: 0 0.2em 0 0;
+  margin: 0 0.4em 0 0;
 }
+
+@media all and (max-width: 1024px) {
+  .Archive {
+    column-count: 2;
+  }
+}
+
+@media all and (max-width: 640px) {
+  .Archive {
+    column-count: 1;
+  }
+}
+
