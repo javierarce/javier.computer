@@ -1,6 +1,6 @@
 const CITY = 'Barcelona'
 const COORDINATES='41.390205,2.154007'
-const WEATHER_ENDPOINT = `//last.javierarce.com/api/weather?coordinates=${COORDINATES}`
+const WEATHER_ENDPOINT = `https://last.javierarce.com/api/weather?coordinates=${COORDINATES}`
 
 class Weather extends HTMLParagraphElement {
   constructor () {
@@ -40,8 +40,11 @@ class Weather extends HTMLParagraphElement {
   render (description) {
     const text = document.createElement('span')
     text.textContent = description
+
     let shadow = this.attachShadow({ mode: 'open' })
     shadow.appendChild(text)
+
+    this.classList.add('is-visible')
   }
 
   capitalizeFirstLetter(string) {

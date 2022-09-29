@@ -151,8 +151,21 @@ p.is-light {
 }
 
 .Weather {
-  margin: 0 0 3em 0;
-  opacity: .5;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: all 800ms ease-in-out;
+}
+
+.Weather.is-visible {
+  max-height:100px;
+  opacity: 0.5;
+  visibility: visible;
+}
+
+.Weather.is-single {
+  width: auto;
 }
 
 ul {
@@ -318,7 +331,6 @@ img.lazy.error {
   width: 100%;
   max-width: 800px;
 }
-
 
 .Post__content p a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after {
   content: '↗';
