@@ -7,12 +7,31 @@ className: Table
 
 ### Documented projects 
 
-| Title | Description | Year |
-|:------|:------------|:-----|
-| [Kindle to Are.na](/projects/arena) | Send your Kindle's highlights and notes to Are.na.| 2020 |
-| [Enfont Terrible](/projects/enfont) | A terrible, terrible type foundry | 2019 |
-| [Map with Me](/projects/mapwithme)  | Create collaborative maps with your friends (and enemies) | 2019 |
-| [I remember bot](/bots/iremember)  | A tribute to Georges Perec and his book Je me souviens. | 2015 |
+<div class="Project__cards">
+    <a href="/projects/arena" class="Project__card">
+    <div class="Project__cardTitle">Kindle to Are.na</div>
+    <div class="Project__cardDescription">Send your Kindle's highlights and notes to Are.na</div>
+    <div class="Project__cardDate">2020</div>
+    </a>
+    
+    <a href="/projects/enfont" class="Project__card">
+    <div class="Project__cardTitle">Enfont Terrible</div>
+    <div class="Project__cardDescription">A terrible, terrible type foundry</div>
+    <div class="Project__cardDate">2019</div>
+    </a>
+    
+    <a href="/projects/mapwithme" class="Project__card">
+    <div class="Project__cardTitle">Map with Me</div>
+    <div class="Project__cardDescription">Create collaborative maps with your friends (and enemies)</div>
+    <div class="Project__cardDate">2019</div>
+    </a>
+    
+    <a href="/bots/iremember" class="Project__card">
+    <div class="Project__cardTitle">I remember bot</div>
+    <div class="Project__cardDescription">A tribute to Georges Perec and his book Je me souviens</div>
+    <div class="Project__cardDate">2015</div>
+    </a>
+</div>
 
 ### 2022
 
