@@ -318,3 +318,12 @@ img.lazy.error {
   width: 100%;
   max-width: 800px;
 }
+
+
+.Post__content p a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after {
+  content: '↗';
+  display: inline-block;
+  font-weight: 400;
+  padding-left: 4px;
+}
+
