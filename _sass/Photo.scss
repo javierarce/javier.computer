@@ -86,6 +86,10 @@
   margin: 0;
 }
 
+.Photos__content h2 {
+  margin: 0 0 2em;
+}
+
 .Photos__content,
 .Photos__header {
   text-align: center;
@@ -95,4 +99,17 @@
 
 .Photos__header {
   margin: 0 auto 4em auto;
+}
+
+.Photos__header > * {
+  opacity: 0.5;
+}
+
+.Photos__header a {
+  text-decoration: none;
+}
+
+.Photos__header a:hover {
+  text-decoration: none;
+  opacity: 1;
 }
