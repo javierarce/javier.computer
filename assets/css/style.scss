@@ -6,6 +6,7 @@
 @import '_reset';
 
 @import 'About';
+@import 'Archive';
 @import 'Book';
 @import 'Book';
 @import 'Bot';
@@ -202,36 +203,6 @@ h3 {
 
 h4 {
   font-size: 1em;
-}
-
-.Archive {
-  margin: 0 0 2em 1em;
-}
-
-.Archive li a {
-  position: relative;
-  margin: 0 1em 0 0;
-}
-
-.Archive li a:last-child {
-  margin: 0;
-}
-
-.Archive li a:after {
-  content: '–';
-  font-weight: 400;
-  opacity: 0.4;
-  right:-.8em;
-  position: absolute;
-}
-
-.Archive li a:last-child:after {
-  content: '';
-}
-
-.Archive__day {
-  font-family: monospace;
-  font-size: 1.3em;
 }
 
 img.lazy {
