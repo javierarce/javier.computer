@@ -52,18 +52,23 @@
 
 .Photo__footer {
   display: inline;
-  opacity: 0.5;
   font-size: 0.9em;
+}
+
+.Photo__footer span {
+  opacity: 0.5;
 }
 
 .Photo__footer a {
   font-weight: 400;
+  opacity: 0.5;
   text-decoration: none;
 }
 
 .Photo__footer a:hover {
   font-weight: 400;
-  text-decoration: underline;
+  text-decoration: none;
+  opacity: 1;
 }
 
 

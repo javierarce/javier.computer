@@ -40,7 +40,7 @@ className: Photo
         {% if page.previous.url -%}
         <a class="Post__navigationLink" href="{{page.previous.url}}">←</a>
         {% endif -%}
-        <div class="Photo__footer"><a href="{{ page.url }}" class="Photo__date">{{ page.date | date: '%B %d, %Y' }}</a> - <a href="/photos/{{ page.location -}}" class="Photo__date">{{ page.location | capitalize }}</a></div>
+        <div class="Photo__footer"><a href="{{ page.url }}" class="Photo__date">{{ page.date | date: '%B %d, %Y' }}</a> <span>-</span> <a href="/photos/{{ page.location -}}" class="Photo__date">{{ page.location | capitalize }}</a></div>
         {% if page.next.url -%}
         <a class="Post__navigationLink" href="{{page.next.url}}">→</a>
         {% endif -%}

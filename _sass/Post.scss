@@ -52,6 +52,11 @@
   font-weight: 400;
 }
 
+.Post__navigationLink:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
 .Post img {
   display: block;
   max-width: 1024px;
