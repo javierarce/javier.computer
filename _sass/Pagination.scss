@@ -5,36 +5,37 @@
 }
 
 .Pagination__item {
-  margin: 0 .4em 0 0;
+  margin: 0 0.4em 0 0;
   border: 1px solid var(--white);
-  padding: .8em;
+  padding: 0.8em;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 40px;
   height: 40px;
-  border-radius: 1px;
   text-decoration: none;
   cursor: pointer;
   user-select: none;
+  opacity: 0.4;
 }
 
 .Pagination .Pagination__item:hover {
-  background: var(--white);
-  color: var(--background);
+  color: var(--white);
   text-decoration: none;
+  opacity: 1;
 }
 
 .Pagination__item.is-selected {
-  opacity: 0.5;
   cursor: default;
   background: var(--background);
   color: var(--white);
+  opacity: 1;
 }
 
 .Pagination__item.is-selected:hover {
   background: transparent;
   color: var(--white);
+  opacity: 1;
 }
 
 .Pagination__item.is-archive {
@@ -70,7 +71,7 @@
     justify-content: space-between;
 
     grid-template-columns: repeat(8, 1fr);
-    grid-row-gap: 1em;
+    grid-row-gap: 0.4em;
   }
   .Pagination__item.is-archive {
     display: none;
@@ -84,7 +85,6 @@
     justify-content: center;
     width: 40px;
     height: 40px;
-    border-radius: 1px;
     text-decoration: none;
     cursor: pointer;
     user-select: none;
