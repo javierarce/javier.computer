@@ -11,7 +11,7 @@
 
 .Archive__month {
   break-inside: avoid;
-  margin: 0 0 2em;
+  margin: 0 0 3em;
 }
 
 .Archive__list {
@@ -62,5 +62,18 @@
   .Archive {
     column-count: 1;
   }
+}
+
+
+a.is-photo::before {
+  content: '';
+  display: inline-block;
+  vertical-align: sub;
+  width: 24px;
+  height: 24px;
+  margin: 0 0.2em 0 0;
+  background-image: url(/assets/img/picture.svg);
+  background-size: cover;
+  opacity: 0.4;
 }
 

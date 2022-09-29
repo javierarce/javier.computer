@@ -35,7 +35,7 @@ className: Archive
       {% if thedate != nil %}</div></li>{% endif %}<li><span class="Archive__day">{{ post.date | date: '%d' }}</span><div class="Links">{% endif %}
 
 
-        <a href="{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ post.url }}" class="is-{{ post.category }}">{{ post.title }}</a>
 
         {% assign thedate = post.date | date: "%m-%d-%Y" %}
       {% endfor %}
