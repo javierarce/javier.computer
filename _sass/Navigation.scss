@@ -8,11 +8,7 @@
 }
 
 .Navigation__links {
-  color: var(--black);
-  text-decoration: none;
-  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: flex-end;
 }
 
@@ -21,18 +17,17 @@
 }
 
 .Navigation__link {
-  color: var(--black);
   text-decoration: none;
-  font-weight: 600;
-}
-
-.Navigation__link.is-selected {
   opacity: 0.5;
 }
 
+.Navigation__link.is-selected {
+  opacity: 1;
+}
+
 .Navigation__link:hover {
-  color: var(--black);
-  text-decoration: underline;
+  text-decoration: none;
+  opacity: 1;
 }
 
 @media all and (max-width: 640px) {
