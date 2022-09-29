@@ -24,10 +24,50 @@
   }
 }
 
+.Layout__about table td {
+  opacity: 0.4;
+}
+
+.Layout__about table td:first-child {
+  opacity: 1;
+}
+
 @media all and (max-width: 640px) {
   .Layout__about .Content__inner,
   .Layout__about {
     width: 100%;
+    margin: 0;
+  }
+
+  .Layout__about table {
+    margin: 0;
+  }
+
+  .Layout__about thead {
+    display: none;
+  }
+
+  .Layout__about tr {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 1em;
+  }
+
+  .Layout__about table td {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 0;
+    margin: 0 0 0.4em;
+  }
+
+  .Layout__about tr {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 1em;
+  }
+
+  .Layout__about table td:last-child {
     margin: 0;
   }
 }
