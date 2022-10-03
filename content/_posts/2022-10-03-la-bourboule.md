@@ -2,7 +2,7 @@
 layout: photos/photo
 category: photo
 title: "La Bourboule"
-date: "2022-10-03 09:40:16 +0200"
+date: "2022-10-02 09:40:16 +0200"
 location: france
 filenames: 
 - 2022_10_02_DSCF1409
