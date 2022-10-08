@@ -53,6 +53,10 @@
               {% if post.disclaimer -%}
               <p>{{ post.disclaimer }}</p>
               {% endif -%}
+
+                {% if post.location -%}
+              <p><small>{{ post.location | capitalize }}</small></p>
+                {% endif -%}
         </description>
 				{% else %}
           <description>
@@ -61,6 +65,10 @@
               {% if post.disclaimer -%}
               <p>{{ post.disclaimer }}</p>
               {% endif -%}
+
+                {% if post.location -%}
+              <p><small>{{ post.location | capitalize }}</small></p>
+                {% endif -%}
           </description>
 				{% endif %}
             {% endif %}
