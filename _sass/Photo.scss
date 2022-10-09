@@ -118,3 +118,13 @@
   text-decoration: none;
   opacity: 1;
 }
+
+@media all and (max-width: 640px) {
+  .Photos__archive img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+}
+

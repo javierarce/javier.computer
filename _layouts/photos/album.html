@@ -19,7 +19,7 @@ className: Photos
 
     {% assign location = page.location | downcase -%}
     {% for photo in photos -%}
-    {% if photo.category == 'photo' and location == photo.location -%}
+    {% if photo.category and location == photo.location -%}
     {% include photos/photo.html photo=photo -%}
     {% endif -%}
     {% endfor -%}
