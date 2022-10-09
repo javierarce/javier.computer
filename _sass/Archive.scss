@@ -25,29 +25,8 @@
   padding: 0;
 }
 
-.Archive__list li a {
-  position: relative;
-  margin: 0 1em 0 0;
-}
-
-.Archive__list li a:last-child {
-  margin: 0;
-}
-
-.Archive__list li a:after {
-  content: '–';
-  font-weight: 400;
-  opacity: 0.4;
-  right:-.8em;
-  position: absolute;
-}
-
-.Archive__list li a:last-child:after {
-  content: '';
-}
-
 .Archive__day {
- font-family: 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace;
+  font-family: 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace;
   opacity: 0.4;
   margin: 0 0.4em 0 0;
 }

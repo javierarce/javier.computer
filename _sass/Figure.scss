@@ -10,20 +10,17 @@
   text-transform: capitalize;
 }
 
-.Figure__caption {
+.Photo__caption {
   text-align: center;
   margin: 1.4em auto;
   max-width: 900px;
-  font-size: 0.9em;
   color: var(--light);
   line-height: 1.5;
-  opacity: 0.5;
 }
 
-.Layout__photo .Figure__caption {
+.Layout__photo .Photo__caption {
   text-align: left;
   margin: 1.4em 0;
-  font-size: 1em;
 }
 
 .Project .Figure.Figure__screen {

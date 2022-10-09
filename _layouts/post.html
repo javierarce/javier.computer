@@ -10,15 +10,8 @@ className: Post
       {{ content }}
     </div>
 
-    <div class="Post__navigation">
-      {% if page.previous.url -%}
-      <a class="Post__navigationLink" href="{{page.previous.url}}">←</a>
-      {% endif -%}
-      <a href="{{ page.url }}" class="Post__date">{{ page.date | date: '%B %d, %Y' }}</a>
-      {% if page.next.url -%}
-      <a class="Post__navigationLink" href="{{page.next.url}}">→</a>
-      {% endif -%}
-    </div>
+    {% include post/footer.html %}
+    
   </div>
   {% include footer.html -%}
 </div>

@@ -6,7 +6,7 @@ className: Archive
 <div class="Content">
   {% include navigation.html %}
 
-  <div class="Archive Content__inner">
+  <div class="Archive">
     {% assign thedate = nil %}
 
     {% for post in site.posts %}
@@ -32,8 +32,7 @@ className: Archive
       {% endunless %}
 
       {% if thedate != format_date %}
-      {% if thedate != nil %}</div></li>{% endif %}<li><span class="Archive__day">{{ post.date | date: '%d' }}</span><div class="Links">{% endif %}
-
+      {% if thedate != nil %}</div></li>{% endif %}<li><span class="Archive__day">{{ post.date | date: '%d' }}</span><div class="Archive__links">{% endif %}
 
       <a href="{{ post.url }}" class="is-{{ post.category }}">{{ post.title }}</a>
 

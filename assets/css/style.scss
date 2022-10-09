@@ -307,15 +307,16 @@ img.lazy.error {
   display: inline-block;
   font-weight: 400;
   padding-left: 4px;
+  opacity: 0.4;
 }
 
-a.is-photo::before {
+a.is-photo::after {
   content: '';
   display: inline-block;
   vertical-align: sub;
   width: 24px;
   height: 24px;
-  margin: 0 0.2em 0 0;
+  margin: 0 0 0 0.2em;
   background-image: url(/assets/img/picture.svg);
   background-size: cover;
   opacity: 0.4;

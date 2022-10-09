@@ -1,7 +1,6 @@
 .Post {
   width: 800px;
   margin: 0 0 3em;
-  font-size: 1.2em;
 }
 
 .Post p {
@@ -20,39 +19,54 @@
 
 .Post__content {
   margin: 0 0 0.4em 0;
+  font-size: 1.2em;
 }
 
 .Post__content ul {
   margin: 0 0 1em 1em;
 }
 
-.Post__date {
+.Post__footer {
   opacity: 0.5;
-  font-size: 0.9em;
   user-select: none;
-  text-decoration: none;
   font-weight: 400;
 }
 
-.Post__date:hover {
-  text-decoration: none;
-}
-
-.Post__navigation {
+.Post__pagination {
   margin: 2em 0 0 0;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  font-weight: 400;
 }
 
-.Post__navigationLink {
+.Post__pagination > * {
+  margin: 0 0.4em 0 0;
+}
+
+.Post__location {
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.Post__date {
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.Post__footer a:hover {
+  text-decoration: none;
+}
+
+.Post__paginationLink {
   font-weight: 400;
   text-decoration: none;
-  opacity: 0.5;
-  font-size: 0.9em;
   user-select: none;
   text-decoration: none;
   font-weight: 400;
 }
 
-.Post__navigationLink:hover {
+.Post__paginationLink:hover {
   opacity: 1;
   text-decoration: none;
 }

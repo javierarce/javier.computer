@@ -39,7 +39,9 @@ home: true
 
       <a class="Pagination__item is-archive" href="/archive">Archive</a>
       <a class="Pagination__item is-mobile-archive" href="/archive">A</a>
+    {% if paginator.total_pages > 1 -%}
     </div>
+      {% endif -%}
   </div>
   {% include footer.html -%}
 </div>

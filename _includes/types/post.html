@@ -12,5 +12,7 @@
     {{ post.content }}
     {% endif %}
   </div>
-  <a href="{{ post.url }}" class="Post__date">{{ post.date | date: '%B %d, %Y' }}</a>
+  <div class="Post__footer">
+    <a href="{{ post.url }}" class="Post__date">{{ post.date | date: '%B %d, %Y' -}}</a> 
+  </div>
 </div>
