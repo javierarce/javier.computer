@@ -8,14 +8,14 @@ className: Photo
   <div class="Photo__collection">
     {% if page.filenames -%}
     {% for filename in page.filenames -%}
-    {% include photos/single.html photo=page filename = filename %}
+    {% include photos/single.html photo=page filename = filename -%}
     {% endfor -%}
 
     {% else -%}
-    {% include photos/single.html filename = page.filename %}
+    {% include photos/single.html filename = page.filename -%}
     {% endif -%}
 
-    {% include photos/footer.html photo=page pagination=true %}
+    {% include photos/footer.html photo=page pagination=true -%}
   </div>
     {% include footer.html -%}
 </div>

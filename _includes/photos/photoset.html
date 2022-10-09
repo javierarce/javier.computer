@@ -1,14 +1,13 @@
 <!-- photos / photoset  -->
 <div class="Photo">
   <div class="Photo__collection">
-    {% if post.filenames %}
-    {% for filename in post.filenames %}
-    {% include photos/single.html photo=post filename=filename %}
+    {% if post.filenames -%}
+    {% for filename in post.filenames -%}
+    {% include photos/single.html photo=post filename=filename -%}
     {% endfor %}
     {% else %}
-    {% include photos/single.html photo=post filename=post.filename %}
+    {% include photos/single.html photo=post filename=post.filename -%}
     {% endif %}
-
-    {% include photos/footer.html photo=post pagination=false %}
+    {% include photos/footer.html photo=post pagination=false -%}
   </div>
 </div>

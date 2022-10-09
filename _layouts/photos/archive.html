@@ -16,7 +16,7 @@ className: Photos
     {% for location in locations %}
     {% assign tags =  site.posts | concat: site.photos | where: 'location', location | sort | reverse %}
     {% assign photo = tags[0] %}
-    {% if photo %}
+    {% if photo.category and photo %}
     {% include photos/thumb.html photo=photo -%}
     {% endif %}
     {% endfor %}

@@ -1,15 +1,15 @@
-{% assign post = include.photo %}
-{% assign filenames = post.filenames %}
-{% assign ids = post.ids %}
+{% assign post = include.photo -%}
+{% assign filenames = post.filenames -%}
+{% assign ids = post.ids -%}
 
 <div class="Photo__collection">
-  {% if filenames | size %}
-  {% for filename in filenames %}
-  {% include photos/single.html photo=post filename = filename %}
-  {% endfor %}
-  {% elsif post.filename %}
-  {% include photos/single.html photo=post filename = post.filename %}
-  {% endif %}
+  {% if filenames | size -%}
+  {% for filename in filenames -%}
+  {% include photos/single.html photo=post filename = filename -%}
+  {% endfor -%}
+  {% elsif post.filename -%}
+  {% include photos/single.html photo=post filename = post.filename -%}
+  {% endif -%}
 
-  {% include photos/footer.html photo=post %}
+  {% include photos/footer.html photo=post -%}
 </div>
