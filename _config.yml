@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-version: 5.0.16
+version: 5.0.17
 title: Javier Arce
 author: Javier Arce
 email: email@javier.computer
@@ -30,6 +30,7 @@ baseurl: ""
 url: "https://javier.computer"
 twitter_username: javier
 github_username:  javierarce
+show_drafts: true
 
 sass:
   load_paths:
