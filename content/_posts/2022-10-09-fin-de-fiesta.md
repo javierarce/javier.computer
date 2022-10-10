@@ -2,6 +2,7 @@
 layout: post
 title: "Fin de fiesta"
 date: "2022-10-09 23:30:00 +0200"
+location: barcelona
 ---
 
 De vuelta en Barcelona después de una semana en Francia entrando y saliendo (y

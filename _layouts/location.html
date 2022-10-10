@@ -2,49 +2,33 @@
 layout: base
 className: Location
 ---
-<div class="Content">
-  {% include navigation.html -%}
-  <h2>{{ page.location | capitalize }}</h2>
 
-  <div class="Posts">
-    {% assign posts = site.posts | where: "location", page.location %}
+{% assign posts = site.posts | where: "location", page.location %}
+
+<div class="Content">
+    {% include navigation.html %}
 
     <div class="Archive">
-      {% assign thedate = nil %}
 
-      {% for post in posts %}
-      {% assign format_date = post.date | date: "%m-%d-%Y" %}
-      {% unless post.next %}
-      <div class="Archive__month">
-        <h3>{{ post.date | date: '%B %Y' }}</h3>
-        <ul class="Archive__list">
-          {% else %}
-          {% capture year %}{{ post.date | date: '%Y %b' }}{% endcapture %}
-          {% capture nyear %}{{ post.next.date | date: '%Y %b' }}{% endcapture %}
+        {% assign prev_date = nil %}
+        {% for post in posts -%}
+        {% assign current_date = post.date | date: '%B %Y' -%}
 
-          {% if year != nyear %}
-          </li>
+        {% if prev_date != current_date -%}
+        {% if prev_date != nil -%}
         </ul>
-      </div>
-      {% assign thedate = nil %}
-      <div class="Archive__month">
-        <h3>{{ post.date | date: '%B %Y' }}</h3>
-        <ul class="Archive__list">
-          {% endif %}
-
-          {% endunless %}
-
-          {% if thedate != format_date %}
-          {% if thedate != nil %}</div></li>{% endif %}<li><span class="Archive__day">{{ post.date | date: '%d' }}</span><div class="Archive__links">{% endif %}
-
-          <a href="{{ post.url }}" class="is-{{ post.category }}">{{ post.title }}</a>
-
-          {% assign thedate = post.date | date: "%m-%d-%Y" %}
-          {% endfor %}
-      </li>
-        </ul>
-        </div>
     </div>
-  </div>
-  {% include footer.html -%}
+    {% endif %}
+    <div class="Archive__month">
+        <h3>{{ post.date | date: '%B %Y' }}</h3>
+        <ul>
+            {% assign prev_date = current_date -%}
+            {% endif -%}
+            <li><span class="Archive__day">{{ post.date | date: '%d' }}</span><a href="{{ post.url }}" class="is-{{ post.category }}">{{ post.title }}</a></li>
+            {% endfor -%}
+        </ul>
+    </div>
+</div>
+
+{% include footer.html %}
 </div>
