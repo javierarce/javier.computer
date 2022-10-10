@@ -3,6 +3,7 @@ layout: page
 title: Sticker
 permalink: sticker
 date: 2022-04-29
+description: Do you want a sticker?
 ---
 
 Oh, hi! If you want to get my Yee-haw! sticker, send me an email with your postal

@@ -12,8 +12,20 @@ permalink: about
   <div class="Content__inner">
     {% capture about %}{% include content/about.md %}{% endcapture %}
     {{ about | markdownify }}
+
+    <h3>Pages</h3>
+
+    <table>
+      {% for page in site.pages -%}
+      {% if page.layout == 'page' and page.permalink -%}
+      <tr>
+        <td><a href="{{ page.url }}">{{ page.title }}</a></td>
+        <td>{{ page.description }}</td>
+      </tr>
+      {% endif -%}
+      {% endfor -%}
+    </table>
   </div>
 
   {% include footer.html %}
 </div>
-

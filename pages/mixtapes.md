@@ -5,6 +5,7 @@ permalink: mixtapes
 date: 2021-08-18
 show_date: true
 show_title: true
+description: Pages with music
 ---
 
 - [Useful Music](https://soundcloud.com/cargocollective)

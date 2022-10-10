@@ -1,7 +1,6 @@
 .Layout__about .Content__inner {
   width: 800px;
   font-size: 1.2em;
-  margin: 0 0 3em;
 }
 
 .Layout__about p {
@@ -16,20 +15,20 @@
   list-style: disc;
 }
 
-@media all and (max-width: 1024px) {
-  .Layout__about .Content__inner,
-  .Layout__about {
-    width: 100%;
-    margin: 0;
-  }
-}
-
 .Layout__about table td {
   opacity: 0.4;
 }
 
 .Layout__about table td:first-child {
   opacity: 1;
+}
+
+@media all and (max-width: 1024px) {
+  .Layout__about .Content__inner,
+  .Layout__about {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 @media all and (max-width: 640px) {

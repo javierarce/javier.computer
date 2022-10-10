@@ -103,6 +103,15 @@ ul {
   padding: 0;
 }
 
+table+h3,
+table+h4 {
+  margin-top: 2em;
+}
+
+ul+h4 {
+  margin-top: 2em;
+}
+
 p {
   font-size: 1em;
   line-height: 1.45;
@@ -201,6 +210,8 @@ h3 {
 
 h4 {
   font-size: 1em;
+  font-weight: normal;
+  opacity: 0.5;
 }
 
 img.lazy {
