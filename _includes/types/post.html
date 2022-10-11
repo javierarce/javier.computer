@@ -1,18 +1,18 @@
 <div class="Post">
-  {% if post.show_title %}
+  {% if post.show_title -%}
   <div class="Post__title">{{ post.title }}</div>
-  {% endif %}
+  {% endif -%}
   <div class="Post__content">
-    {% if post.content contains "<!-- more -->" %}
+    {% if post.content contains "<!-- more -->" -%}
     {{ post.content | split:"<!-- more -->" | first }}
     <div class="Post__more">
       <a href="{{ post.url }}#more">Read more</a>
     </div>
-    {% else %}
+    {% else -%}
     {{ post.content }}
-    {% endif %}
+    {% endif -%}
   </div>
   <div class="Post__footer">
-    <a href="{{ post.url }}" class="Post__date">{{ post.date | date: '%B %d, %Y' -}}</a> 
+    <a href="{{ post.url }}" class="Post__date">{{ post.date | date: '%B %d, %Y' }}</a> 
   </div>
 </div>

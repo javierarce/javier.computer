@@ -5,16 +5,16 @@ className: Photos
 permalink: photos
 ---
 <div class="Content">
-  {% include navigation.html %}
+  {% include navigation.html -%}
 
   <div class="Photos__header">
     Photo diary · <a href="/photos/archive">Archive</a>
   </div>
 
   <div class="Photos__content">
-    {% for post in site.categories.photo limit: 10 %}
-    {% include photos/photoset.html photo=photo %}
-    {% endfor %}
+    {% for post in site.categories.photo limit: 10 -%}
+    {% include photos/photoset.html photo=photo -%}
+    {% endfor -%}
 
     <a href="/photos/archive">Archive</a>
   </div>

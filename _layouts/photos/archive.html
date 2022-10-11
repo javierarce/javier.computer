@@ -11,15 +11,18 @@ className: Photos
   </div>
 
   <div class="Photos__archive">
-    {% assign locations =  site.posts | concat: site.photos | map: 'location' | join: ','  | split: ',' | uniq | compact | sort  %}
+    {% assign content = site.posts | concat: site.photos -%}
+    {% assign locations =  content | map: 'location' | join: ','  | split: ',' | uniq | compact | sort  %}
 
     {% for location in locations %}
-    {% assign tags =  site.posts | concat: site.photos | where: 'location', location | sort | reverse %}
+    {% assign tags =  content | where: 'location', location | reverse %}
     {% assign photo = tags[0] %}
     {% if photo.category and photo %}
     {% include photos/thumb.html photo=photo -%}
     {% endif %}
     {% endfor %}
+
+
   </div>
 
   {% include footer.html -%}

@@ -1,12 +1,12 @@
 <div class="Post__content">{{ include.photo.content }}</div>
 
 <div class="Post__footer">
-  <a href="{{ include.photo.url }}" class="Post__date">{{ include.photo.date | date: '%B %d, %Y' -}}</a> 
-  {% if include.photo.location -%}&nbsp;·&nbsp;
-  <a href="/photos/{{ include.photo.location -}}" class="Post__location">{{ include.photo.location | capitalize }}</a>
-  {% endif -%}
-</div>
+    <a href="{{ include.photo.url }}" class="Post__date">{{ include.photo.date | date: '%B %d, %Y' -}}</a> 
+    {% if include.photo.location -%}&nbsp;·&nbsp;
+    <a href="/photos/{{ include.photo.location -}}" class="Post__location">{{ include.photo.location | capitalize }}</a>
+    {% endif -%}
 
-{% if include.pagination -%}
-{% include pagination.html post=include.photo -%}
-{% endif -%}
+    {% if include.pagination -%}
+    {% include pagination.html post=include.photo -%}
+    {% endif -%}
+</div>

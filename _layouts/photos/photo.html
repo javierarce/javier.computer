@@ -12,7 +12,7 @@ className: Photo
     {% endfor -%}
 
     {% else -%}
-    {% include photos/single.html filename = page.filename -%}
+    {% include photos/single.html photo=page filename = page.filename -%}
     {% endif -%}
 
     {% include photos/footer.html photo=page pagination=true -%}
