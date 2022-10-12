@@ -2,6 +2,7 @@
 layout: project
 title: Enfont Terrible
 date: 2021-08-18
+category: project
 permalink: projects/enfont
 show_date: true
 show_title: true

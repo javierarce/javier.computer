@@ -135,6 +135,10 @@
 }
 
 @media all and (max-width: 1280px) {
+.Project__intro {
+  width: 100%;
+}
+
   .Layout__project .Project p, .Layout__project .Project__content h3 {
     width: 100%;
   }
@@ -155,6 +159,7 @@
 }
 
 @media all and (max-width: 800px) {
+
   .Projects table  tr > td:nth-child(1){
     width: auto;
   }

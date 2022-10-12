@@ -2,6 +2,7 @@
 layout: project
 title: Kindle to Arena
 date: 2021-08-18
+category: project
 permalink: projects/arena
 show_date: true
 show_title: true

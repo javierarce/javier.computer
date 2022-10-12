@@ -2,6 +2,7 @@
 layout: project
 title: Boletín botánico
 date: 2021-08-18
+category: project
 permalink: projects/boletin-botanico
 show_date: true
 show_title: true

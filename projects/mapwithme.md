@@ -2,6 +2,7 @@
 layout: project
 title: Map with Me
 date: 2021-08-18
+category: project
 permalink: projects/mapwithme
 show_date: true
 show_title: true
