@@ -19,7 +19,7 @@ show_title: true
 <img class="Figure__image is-bn lazy" data-src="https://javier.work/images/mapwithme/home.jpg">
 </figure>
 
-This project started because I wanted to create a simple solution to get travel tips from my friends. In the past, I had made a couple of interactive maps to get recommendations for my trips to Japan and New York and it had worked pretty well.
+This project started because I wanted to create a simple solution to get travel tips from my friends. In the past, I had made a couple of interactive maps to get recommendations for my trips to Japan and [New York](https://twitter.com/javier/status/771076164517523456) and it had worked pretty well.
 
 Setting up new maps was manual process, though. I wanted to set up new maps faster, just by clicking a button (not that I travel that often, especially since, well… you know)
 
