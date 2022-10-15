@@ -69,7 +69,7 @@ className: Table
 |[Enfont Terrible](https://enfont.javierarce.com)| A terrible, terrible type foundry.| <span class="tag">web</span> <span class="tag">typography</span> | 
 |[Favicon Chameleon](https://github.com/javierarce/favicon-chameleon)| Makes your tab disappear when nobody is paying attention.| <span class="tag">web</span> <span class="tag">javascript</span> | 
 |[I Remember Bot](https://twitter.com/irememberbot)| A tribute to Georges Perec's "Je me souviens" in the form of a bot.| <span class="tag">twitter</span> <span class="tag">bot</span> | 
-|[Map with Me](https://mapwithme.world)| A tool for creating collaborative maps with your friends (and enemies.)| <span class="tag">web</span> <span class="tag">maps</span> | 
+|[Map with Me](https://map.javierarce.com)| A tool for creating collaborative maps with your friends (and enemies.)| <span class="tag">web</span> <span class="tag">maps</span> | 
 |[OMG Movies!](https://twitter.com/omg_movies)| A bot that loves films but doesn't have a very good memory.| <span class="tag">twitter</span> <span class="tag">bot</span> | 
 
 ### Past

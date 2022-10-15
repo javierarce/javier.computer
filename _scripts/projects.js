@@ -60,7 +60,7 @@ const projects = [
   description: 'Node package to get information about Madrid\'s air quality. It\'s probably bad (the air quality, I mean.)'
 }, {
   title: 'Map with Me' ,
-  url: 'https://mapwithme.world',
+  url: 'https://map.javierarce.com',
   description: 'A tool for creating collaborative maps with your friends (and enemies.)'
 }, {
   title: 'Enfont Terrible' ,
