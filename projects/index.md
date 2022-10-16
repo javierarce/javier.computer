@@ -47,7 +47,7 @@ className: Table
 |[aire-madrid](https://github.com/javierarce/aire-madrid)| Node package to get information about Madrid's air quality. It's probably bad (the air quality, I mean.)| <span class="tag">node</span> |
 |[Avisos Madrid](https://github.com/javierarce/avisos-madrid)| This repository contains notices and incidents reported by Madrid's citizens regarding street furniture, lighting, urban and waste cleaning, green areas, sidewalks, etc. Automatically updated every 10 minutes.| <span class="tag">data</span> <span class="tag">maps</span> |
 |[Binocular Shot](https://binocularshot.tumblr.com)| A tribute to movies with innacurate binocular shots.| <span class="tag">blog</span> |
-|[Boletín Botánico](https://boletin-botanico.com)| Mysterious little zine of whimsical periodicity, dubious content, dangerous editing, and suspicious ambition.| <span class="tag">zine</span> |
+|[Boletín Botánico](/projects/boletin-botanico)| Mysterious little zine of whimsical periodicity, dubious content, dangerous editing, and suspicious ambition.| <span class="tag">zine</span> |
 |[Figma Avatar](https://github.com/javierarce/figma-avatar)| Update your Twitter avatar and banner from the comfort of Figma.| <span class="tag">figma</span> <span class="tag">twitter</span> |
 |[Go With The Flow](https://twitter.com/javier/status/1383022713179152385)| A text threading plugin for Figma | <span class="tag">figma</span> <span class="tag">plugin</span> |
 |[Paul Virilio Bot](https://twitter.com/viriliobot)| A bot that tweets variations of a famous Paul Virilio quote.| <span class="tag">twitter</span> <span class="tag">bot</span> |
