@@ -4,4 +4,3 @@ title: Barcelona
 location: barcelona
 permalink: in/barcelona
 ---
-

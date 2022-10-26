@@ -4,4 +4,3 @@ title: Marseille
 location: marseille
 permalink: in/marseille
 ---
-
