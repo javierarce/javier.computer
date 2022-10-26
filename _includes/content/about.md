@@ -26,4 +26,4 @@ And if you need to contact me and tell me something incredible, [use this link](
 |[Photos](/photos)|Photo diary and its archive|
 |[Projects](/projects)|List of projects I've done|
 |[About me](/me)|Some facts about myself|
-|[Contact](/contact) | Contact form & email |
+|[Contact](https://mail.javier.computer) | Contact form & email |
