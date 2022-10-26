@@ -1,0 +1,43 @@
+---
+layout: base
+className: Tags
+---
+
+{% assign posts = "" | split: ',' %}
+
+{% for post in site.posts %}
+{% for tag in post.tags %}
+{% if tag == page.tag %}
+{% assign posts = posts | push: post %}
+{% endif %}
+{% endfor %}
+{% endfor %}
+
+
+<div class="Content">
+    {% include navigation.html %}
+
+    <div class="Archive">
+
+        {% assign prev_date = nil %}
+        {% for post in posts -%}
+        {% assign current_date = post.date | date: '%B %Y' -%}
+
+        {% if prev_date != current_date -%}
+        {% if prev_date != nil -%}
+        </ul>
+    </div>
+    {% endif %}
+    <div class="Archive__month">
+        <h3>{{ post.date | date: '%B %Y' }}</h3>
+        <ul>
+            {% assign prev_date = current_date -%}
+            {% endif -%}
+            <li><span class="Archive__day">{{ post.date | date: '%d' }}</span><a href="{{ post.url }}" class="is-{{ post.category }}">{{ post.title }}</a></li>
+            {% endfor -%}
+        </ul>
+    </div>
+</div>
+
+{% include footer.html %}
+</div>
