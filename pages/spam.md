@@ -6,8 +6,6 @@ permalink: spam
 show_title: true
 ---
 
-### Unsolicited Emails
-
 | When | What | Who | Where | 
 |:-----|:-----|:--- |:------|
 | 2022-10-27 | A debit order of $700.00 pesos | Javier Ignacio Arce | Argentina |

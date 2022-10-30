@@ -10,7 +10,7 @@ className: Page
       {% if page.show_title %}
       <h3 class="Page__title">{{ page.title }}</h3>
       {% endif %}
-      {% if page.description %}
+      {% if page.description and page.show_description  %}
       <p class="is-light">{{ page.description }}</p>
       {% endif %}
       {{ content }}
