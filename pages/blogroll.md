@@ -17,3 +17,4 @@ description: A list of blogs and newsletters that I like reading
 - [Robin Sloan](https://www.robinsloan.com/notes)
 - [Roman Muradov](https://bluebed.substack.com)
 - [Tom MacWright](https://macwright.com)
+- [v buckenham](https://v21.io/blog)
