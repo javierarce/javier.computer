@@ -17,7 +17,7 @@ permalink: about
 
     <table>
       {% for page in site.pages -%}
-      {% if (page.layout == 'page' or page.category == 'page') and page.permalink -%}
+      {% if page.layout == 'page' or page.category == 'page' and page.permalink -%}
       <tr>
         <td><a href="{{ page.url }}">{{ page.title }}</a></td>
         <td>{{ page.description }}</td>
