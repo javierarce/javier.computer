@@ -44,6 +44,16 @@
             <p>{{ post.location | capitalize }}</p>
                 ]]>
         </description>
+            {% elsif post.category == 'music' %}
+        <description>
+            <![CDATA[
+          <img src="https://javier.computer{{ post.img }}" alt="{{post.title}} by {{ post.band }}"/>  
+
+                {{ post.content }}   
+
+            <a href="{{ page.link }}" target="_blank">{{ post.title }} by {{ post.band }}</a>
+                ]]>
+        </description>
             {% else %}
 
         <description>

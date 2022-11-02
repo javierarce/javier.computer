@@ -17,13 +17,6 @@ description: Music I like
       {{ post.title }} by {{ post.band }}
       </div>
 
-      <div class="Music__album">
-      <img class="Photo lazy" data-src="{{ post.img }}" />
-      {{ post.title }} by {{ post.band }}
-      </div>
-
-
-
     {% endfor -%}
   </div>
 
