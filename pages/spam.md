@@ -1,7 +1,8 @@
 ---
 layout: table
-description: Spam
-title: Unsolicited Emails
+category: page
+title: Spam
+description: Unsolicited Emails
 permalink: spam
 show_title: true
 ---

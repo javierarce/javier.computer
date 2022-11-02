@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Sticker
+category: page
 permalink: sticker
 date: 2022-04-29
 description: Do you want a sticker?

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Blogroll
+category: page
 permalink: blogroll
 date: 2022-10-10
 show_date: false

@@ -241,6 +241,25 @@ img.lazy.error {
   width: 100%;
 }
 
+.Music__grid {
+  display: grid;
+  width: 100%;
+  margin: auto;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 0.4em;
+  text-align: center;
+}
+
+.Music__album {
+  max-width: 500px;
+  width: 100%;
+}
+
+.Music__album img {
+  border-radius: 2px;
+}
+
+
 .Article {
   width: 100%;
 }
@@ -292,20 +311,27 @@ img.lazy.error {
   align-items: center;
   text-decoration: none;
   font-weight: 400;
+  flex-direction: row;
 }
 
 .Announcement__date:hover {
   text-decoration: none;
 }
 
-.Photo__icon {
+.icon {
   display: inline-block;
   width: 24px;
   height: 24px;
   margin: 0 0.2em 0 0;
-  background-image: url(/assets/img/picture.svg);
   color: var(--white);
   background-size: cover;
+}
+
+.icon-photo {
+  background-image: url(/assets/img/icons/picture.svg);
+}
+.icon-album {
+  background-image: url(/assets/img/icons/headphones.svg);
 }
 
 .Layout__project hr {
@@ -339,3 +365,17 @@ a.is-photo::after {
   border-radius: 20px;
   font-size: 0.7em;
 }
+
+
+@media all and (max-width: 640px) {
+  .Announcement__icon {
+    margin-top: 4px;
+  }
+
+  .Announcement__title {
+    align-items: start;
+  }
+  .Announcement__text {
+  }
+}
+

@@ -1,0 +1,24 @@
+---
+layout: base
+className: Post
+---
+<div class="Content">
+  {% include navigation.html -%}
+
+  <div class="Post">
+    <div class="Post__content">
+
+      <img class="Photo lazy" data-src="{{ page.img }}" />
+      {{ content }} 
+
+      <a href="{{ page.link }}" target="_blank">{{ page.title }}</a><br />
+      {{ page.band }}
+    </div>
+
+    <div class="Post__footer">
+      {% include pagination.html post=page -%}
+    </div>
+
+  </div>
+  {% include footer.html -%}
+</div>

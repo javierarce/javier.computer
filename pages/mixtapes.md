@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Mixtapes
+category: page
 permalink: mixtapes
 date: 2021-08-18
 show_date: true
