@@ -18,19 +18,21 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-version: 5.0.18
+version: 5.0.19
 title: Javier Arce
+description: "Javier's computer"
 author: Javier Arce
 email: email@javier.computer
 generator: Magic
 destination: docs
 timezone: Europe/Madrid
-description: Javier Arce
 baseurl: "" 
 url: "https://javier.computer"
 twitter_username: javier
 github_username:  javierarce
 show_drafts: true
+
+exclude:             ['_includes/notes_graph.json']
 
 sass:
   load_paths:
