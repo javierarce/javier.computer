@@ -302,19 +302,17 @@ img.lazy.error {
 }
 
 .Announcement {
-  opacity: 0.5;
-  margin: 0 0 3em;
-}
-
-.Announcement__title {
   display: flex;
   align-items: center;
   text-decoration: none;
   font-weight: 400;
   flex-direction: row;
+  opacity: 0.5;
+  margin: 0 0 3em;
 }
 
-.Announcement__date:hover {
+.Announcement:hover {
+  opacity: 1;
   text-decoration: none;
 }
 
@@ -372,10 +370,8 @@ a.is-photo::after {
     margin-top: 4px;
   }
 
-  .Announcement__title {
+  .Announcement {
     align-items: start;
-  }
-  .Announcement__text {
   }
 }
 

@@ -1,8 +1,8 @@
 <div class="Post__pagination">
   {% if include.post.previous.url -%}
-  <div>← <a class="Post__paginationLink is-{{ include.post.previous.category}}" href="{{include.post.previous.url}}">{{ include.post.previous.title }}</a></div>
+  <div class="Post__paginationPrev"><span class="Post__paginationArrow">←</span> <a class="Post__paginationLink is-{{ include.post.previous.category}}" href="{{include.post.previous.url}}">{{ include.post.previous.title }}</a></div>
   {% endif -%}
   {% if include.post.next.url -%}
-  <div>→ <a class="Post__paginationLink is-{{ include.post.next.category}}" href="{{include.post.next.url}}">{{ include.post.next.title }}</a></div>
+  <div class="Post__paginationNext"><span class="Post__paginationArrow">→</span> <a class="Post__paginationLink is-{{ include.post.next.category}}" href="{{include.post.next.url}}">{{ include.post.next.title }}</a></div>
   {% endif -%}
 </div>

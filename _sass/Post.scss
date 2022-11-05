@@ -27,9 +27,18 @@
 }
 
 .Post__footer {
-  opacity: 0.5;
   user-select: none;
   font-weight: 400;
+}
+
+.Post__footer a {
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+.Post__footer > a:hover {
+  opacity: 1;
+  text-decoration: none;
 }
 
 .Post__pagination {
@@ -38,6 +47,12 @@
   flex-direction: column;
   user-select: none;
   font-weight: 400;
+}
+.Post__paginationArrow {
+  opacity: 0.4;
+}
+.Post__footerSeparator {
+  opacity: 0.4;
 }
 
 .Post__pagination > * {
@@ -52,10 +67,6 @@
 .Post__date {
   text-decoration: none;
   font-weight: 400;
-}
-
-.Post__footer a:hover {
-  text-decoration: none;
 }
 
 .Post__paginationLink {
