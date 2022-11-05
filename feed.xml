@@ -46,7 +46,7 @@
       <![CDATA[
       <img src="https://javier.computer{{ post.img }}" alt="{{post.title}} by {{ post.band }}"/>  
       {{ post.content }}   
-      <a href="{{ page.link }}" target="_blank">{{ post.title }} by {{ post.band }}</a>
+      <a href="{{ post.link }}" target="_blank">{{ post.title }} by {{ post.band }}</a>
         ]]>
       {% else %}
         {{ post.content | xml_escape }}
