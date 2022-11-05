@@ -13,8 +13,8 @@ description: Music I like
     {% for post in site.categories.music -%}
 
       <div class="Music__album">
-      <img class="Photo lazy" data-src="{{ post.img }}" />
-      {{ post.title }} by {{ post.band }}
+      <a href="{{ post.url }}" target="_blank"><img class="Photo lazy" data-src="{{ post.img }}" /></a>
+{{ post.title }} by {{ post.band }}
       </div>
 
     {% endfor -%}
