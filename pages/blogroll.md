@@ -17,5 +17,6 @@ description: A list of blogs and newsletters that I like reading
 - [Mu-An Chiou](https://muan.co)
 - [Robin Sloan](https://www.robinsloan.com/notes)
 - [Roman Muradov](https://bluebed.substack.com)
+- [Sam Lavigne](https://lav.io/notes)
 - [Tom MacWright](https://macwright.com)
 - [v buckenham](https://v21.io/blog)
