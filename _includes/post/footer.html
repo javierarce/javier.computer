@@ -1,7 +1,7 @@
 <div class="Post__footer">
   <a href="{{ post.url }}" class="Post__date">{{ page.date | date: '%B %d, %Y' -}}</a>
   {% if page.location -%}
-<span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
+
   <a href="/in/{{ page.location }}" class="Post__location">{{ page.location | capitalize -}}</a>
   {% endif -%}
 

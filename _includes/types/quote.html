@@ -1,8 +1,9 @@
-<div class="Quote">
-  <div class="Quote__content">
-    {{ post.content }}
+<div class="Post is-quote">
+  <div class="Post__content">
+    <blockquote>{{ post.content }}</blockquote>
+    {{ post.author }} ({{post.year}}). {{ post.title }}. {{ post.editorial}}
   </div>
-  <div class="Quote__metadata">{{ post.book }}, {{ post.author }}</div>
-
-  <a href="{{ post.url }}" class="Post__date">{{ post.date | date: '%B %d, %Y' }}</a>
+  <div class="Post__footer">
+    <a href="{{ post.url }}" class="Post__date">{{ post.date | date: '%B %d, %Y' }}</a> 
+  </div>
 </div>

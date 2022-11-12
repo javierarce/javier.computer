@@ -5,13 +5,13 @@ className: Quote
 <div class="Content">
   {% include navigation.html %}
 
-  <div class="Quote">
-    <div class="Quote__content">
-      {{ content }}
-    </div>
-    <div class="Quote__metadata">{{ page.book }}, {{ page.author }}</div>
-
-    <a href="{{ page.url }}" class="Quote__date">{{ page.date | date: '%B %d, %Y' }}</a>
+<div class="Post is-quote">
+  <div class="Post__content">
+    <blockquote>{{ content }}</blockquote>
+    {{ page.author }} ({{page.year}}). {{ page.title }}. {{ page.editorial}}
   </div>
-  {% include footer.html %}
+    {% include post/footer.html %}
+    
+  </div>
+  {% include footer.html -%}
 </div>
