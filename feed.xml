@@ -42,6 +42,11 @@
         {{ post.content }}   
         <p>{{ post.location | capitalize }}</p>
         ]]>
+      {% elsif post.category == 'quote' %}
+      <![CDATA[
+        <p><blockquote>{{ post.content | xml_escape }}</blockquote></p>
+        <p>{{ post.author }} ({{post.year}}). {{ post.title }}. {{ post.editorial}}</p>
+        ]]>
       {% elsif post.category == 'music' %}
       <![CDATA[
       <img src="https://javier.computer{{ post.img }}" alt="{{post.title}} by {{ post.band }}"/>  
