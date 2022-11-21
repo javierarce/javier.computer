@@ -11,16 +11,14 @@ grabación canadiense nos persigue cámara al hombro y ya cuando el
 tomando unas cerves en un párking perdido por ahí<!-- break --> se acerca B
 donde estoy sentado y me dice hola yo a ti te conozco, ¿verdad? Y un poco
 sorprendido porque nos habremos visto como dos veces en, no sé, ¿cinco años? le
-digo que sí, que efectivamente nos conocemos y le pongo al corriente de la
-última vez que coincidimos en algo (una cosa que organizó en Colectania, me
-quiere sonar). Y en un momento de inspiración le suelto que quiero hacer cosas
-con ordenadores e Internet en Barcelona pero que no encuentro a nadie. Y M, que
-ha pegado la oreja, y él se ríen un poco de mí por la forma de expresarlo pero
-bueno a mí me da igual porque es lo que estoy buscando. El caso es que aunque
-les parece gracioso me preguntan que si conozco a R y yo les digo que no sé
-quién es R y me dicen tienes que conocer a R porque ella hace cosas con
-ordenadores e Internet en Barcelona y entonces M me agarra y me lleva a un lado
-y me presenta a R. Y R es maja y hablamos un poco y nos intercambiamos los
+digo que sí, que efectivamente nos conocemos, y tras ponerle al corriente de la
+última vez que coincidimos en algo me llega la inspiración y le suelto que
+quiero hacer cosas con ordenadores e Internet en Barcelona pero que
+no encuentro a nadie. Y M, que ha pegado la oreja, y él se ríen un poco de mí
+por la forma de expresarlo pero me preguntan que si conozco a R y yo les digo
+que no sé quién es R y me dicen tienes que conocer a R porque ella hace cosas
+con ordenadores e Internet en Barcelona y entonces M me agarra y me lleva a un
+lado y me presenta a R. Y R es maja y hablamos un poco y nos intercambiamos los
 instagrams y decimos de hablar en algún momento y me voy a casa súper contento
 por cómo ha salido la mañana. Después de llegar a casa tras cuarenta horribles
 horas en el metro le pregunto a J que si va a la inauguración de una expo de
