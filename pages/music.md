@@ -11,12 +11,10 @@ description: Music I like
 
   <div class="Music__grid">
     {% for post in site.categories.music -%}
-
-      <div class="Music__album">
-      <a href="{{ post.url }}" target="_blank"><img class="Photo lazy" data-src="{{ post.img }}" /></a>
-{{ post.title }} by {{ post.band }}
-      </div>
-
+      <a href="{{ post.url }}" class="Music__album">
+      <img class="Photo lazy" data-src="{{ post.img }}" />
+      <div class="Music__albumTitle">{{ post.title }} by {{ post.band }}</div>
+      </a>
     {% endfor -%}
   </div>
 

@@ -5,20 +5,17 @@ className: Post
 <div class="Content">
   {% include navigation.html -%}
 
-  <div class="Post">
-    <div class="Post__content">
+  <div class="Music__header">
+    <a href="/music">Music</a>
+  </div>
 
-      <img class="Photo lazy" data-src="{{ page.img }}" />
+  <div class="Music">
+    <div class="Music__content">
+      <img class="Music__photo Photo lazy" data-src="{{ page.img }}" />
       {{ content }} 
-
-      <a href="{{ page.link }}" target="_blank">{{ page.title }}</a><br />
-      {{ page.band }}
+      <a href="{{ page.link }}" target="_blank">{{ page.title }}</a> by {{ page.band }}
     </div>
-
-    <div class="Post__footer">
-      <a href="/music">Music</a>
-    </div>
-
   </div>
   {% include footer.html -%}
 </div>
+

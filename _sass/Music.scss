@@ -1,0 +1,67 @@
+.Music__grid {
+  display: grid;
+  width: 100%;
+  margin: auto;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 4em 1em;
+  text-align: center;
+}
+
+.Music__album {
+  max-width: 500px;
+  width: 100%;
+}
+
+.Music__album .Music__albumTitle {
+  text-decoration: none;
+}
+
+.Music__album img {
+  border-radius: 2px;
+  margin: 0 0 1em;
+}
+
+
+.Music {
+  margin: 0 0 3em;
+  font-size: 1.2em;
+  width: 800px;
+  margin: auto;
+}
+
+.Music__content {
+  text-align: center;
+}
+
+.Music__content p {
+  margin: 0 0 1em 0;
+}
+
+.Music__photo {
+  margin: 0 0 1em 0;
+  border-radius: 2px;
+}
+
+.Music__content,
+.Music__header {
+  text-align: center;
+  max-width: 1024px;
+  margin: auto;
+}
+
+.Music__header {
+  margin: 0 auto 4em auto;
+}
+
+.Music__header > * {
+  opacity: 0.5;
+}
+
+.Music__header a {
+  text-decoration: none;
+}
+
+.Music__header a:hover {
+  text-decoration: none;
+  opacity: 1;
+}

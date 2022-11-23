@@ -251,25 +251,6 @@ img.lazy.error {
   width: 100%;
 }
 
-.Music__grid {
-  display: grid;
-  width: 100%;
-  margin: auto;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  grid-gap: 0.4em;
-  text-align: center;
-}
-
-.Music__album {
-  max-width: 500px;
-  width: 100%;
-}
-
-.Music__album img {
-  border-radius: 2px;
-}
-
-
 .Article {
   width: 100%;
 }
