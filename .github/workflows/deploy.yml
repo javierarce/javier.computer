@@ -17,7 +17,6 @@ jobs:
           restore-keys: |
            ${{ runner.os }}-gems-
       - run: |
-          mkdir .well-known
           echo '{"hello": "world"}' > .well-known/webfinger
       - uses: helaili/jekyll-action@v2
         with:
