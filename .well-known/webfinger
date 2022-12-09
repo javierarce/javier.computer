@@ -2,7 +2,6 @@
 subject: "acct:javier@javier.computer",
            aliases: [
              "https://javier.computer/@javier",
-             "https://net.javier.computer/@javier",
            "https://network.javier.computer/@javier",
            "https://javier.computer/users/javier"
              "https://network.javier.computer/users/javier"
