@@ -22,6 +22,7 @@ jobs:
       - run: |
           pwd
           echo '{"hello": "world"}' > test.json
+          ls
 
 
 
