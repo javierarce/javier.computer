@@ -1,0 +1,26 @@
+{
+subject: "acct:javier@javier.computer",
+           aliases: [
+             "https://javier.computer/@javier",
+             "https://net.javier.computer/@javier",
+           "https://network.javier.computer/@javier",
+           "https://javier.computer/users/javier"
+             "https://network.javier.computer/users/javier"
+           ],
+           links: [
+           {
+rel: "http://webfinger.net/rel/profile-page",
+     type: "text/html",
+     href: "https://network.javier.computer/@javier"
+           },
+           {
+rel: "self",
+     type: "application/activity+json",
+     href: "https://network.javier.computer/users/javier"
+           },
+           {
+rel: "http://ostatus.org/schema/1.0/subscribe",
+     template: "https://network.javier.computer/authorize_interaction?uri={uri}"
+           }
+           ]
+}
