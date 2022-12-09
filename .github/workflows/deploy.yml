@@ -19,4 +19,9 @@ jobs:
       - uses: helaili/jekyll-action@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
+          echo '{"hello": "world"}' > test.json
+
+
+
 
