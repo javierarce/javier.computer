@@ -16,8 +16,6 @@ jobs:
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
           restore-keys: |
            ${{ runner.os }}-gems-
-      - run: |
-          echo '{"hello": "world"}' > .well-known/webfinger
       - uses: helaili/jekyll-action@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
