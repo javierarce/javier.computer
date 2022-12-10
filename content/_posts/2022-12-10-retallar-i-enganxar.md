@@ -5,7 +5,7 @@ title: "Retallar i enganxar"
 date: "2022-12-10 22:30:27 +0100"
 location: barcelona
 camera: Ricoh GR IIIx
-hide: true
+hide: false
 filenames: 
 - R0002177
 - R0002189
