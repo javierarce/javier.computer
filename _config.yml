@@ -32,6 +32,7 @@ twitter_username: javier
 github_username:  javierarce
 show_drafts: true
 
+include: [".well-known"]
 exclude:             ['_includes/notes_graph.json']
 
 sass:

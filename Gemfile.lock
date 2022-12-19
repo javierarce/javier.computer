@@ -52,6 +52,8 @@ GEM
     mercenary (0.4.0)
     nokogiri (1.13.6-arm64-darwin)
       racc (~> 1.4)
+    nokogiri (1.13.6-x86_64-darwin)
+      racc (~> 1.4)
     nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
     pathutil (0.16.2)
@@ -76,6 +78,7 @@ GEM
 PLATFORMS
   arm64-darwin-20
   arm64-darwin-21
+  universal-darwin-22
   x86_64-linux
 
 DEPENDENCIES
