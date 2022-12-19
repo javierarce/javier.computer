@@ -1,23 +1,24 @@
 {
   "subject": "acct:javier@javier.computer",
-  "aliases": [
+    "aliases": [
       "https://javier.computer/@javier",
-      "https://network.javier.computer/@javier",
       "https://javier.computer/users/javier",
-      "https://network.javier.computer/users/javier"
+      "javier@javier.computer"
     ],
     "links": [
       {
         "rel": "http://webfinger.net/rel/profile-page",
         "type": "text/html",
-        "href": "https://network.javier.computer/@javier"
-      }, {
+        "href": "https://javier.computer/@javier"
+      },
+      {
         "rel": "self",
         "type": "application/activity+json",
-        "href": "https://network.javier.computer/users/javier"
-      }, {
+        "href": "https://javier.computer/users/javier"
+      },
+      {
         "rel": "http://ostatus.org/schema/1.0/subscribe",
-        "template": "https://network.javier.computer/authorize_interaction?uri={uri}"
+        "template": "https://javier.computer/authorize_interaction?uri={uri}"
       }
     ]
 }
