@@ -1,11 +1,12 @@
-.Archive {
+.Layout__archive .Content__inner {
+  font-size: 1.2em;
   column-count: 3;
   column-gap: 4em;
   margin: 0 0 2em;
 }
 
-.Archive h3 {
-  padding: 0 0 0.4em;
+.Layout__archive h3 {
+  padding: 0 0 var(--space);
   border-bottom: 1px solid var(--gray);
 }
 
@@ -15,7 +16,6 @@
 }
 
 .Archive__list {
-  font-size: 1.1em;
   margin: 0;
 }
 

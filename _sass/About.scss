@@ -1,26 +1,10 @@
 .Layout__about .Content__inner {
-  width: 800px;
+  width: var(--width);
   font-size: 1.2em;
 }
 
-.Layout__about p {
-  margin: 0 0 1em;
-}
-
-.Layout__about h3 {
-  opacity: 0.5;
-}
-
-.Layout__about ul > li {
-  list-style: disc;
-}
-
-.Layout__about table td {
-  opacity: 0.4;
-}
-
-.Layout__about table td:first-child {
-  opacity: 1;
+.Layout__about table td:not(:first-child) {
+  opacity: 0.5
 }
 
 @media all and (max-width: 1024px) {
@@ -57,7 +41,7 @@
     width: 100%;
     border: none;
     padding: 0;
-    margin: 0 0 0.4em;
+    margin: 0 0 var(--space);
   }
 
   .Layout__about tr {
