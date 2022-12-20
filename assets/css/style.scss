@@ -4,6 +4,7 @@
 ---
 
 @import '_reset';
+@import '_transitions';
 
 @import 'About';
 @import 'Archive';
@@ -13,18 +14,19 @@
 @import 'Figure';
 @import 'Footer';
 @import 'Header';
+@import 'Input';
+@import 'Mail';
+@import 'Music';
 @import 'Navigation';
 @import 'Page';
-@import 'Player';
 @import 'Pagination';
-@import 'Music';
 @import 'Photo';
-@import 'Post';
+@import 'Player';
 @import 'Poll';
-@import 'Spinner';
+@import 'Post';
 @import 'Project';
-@import 'Input';
 @import 'Song';
+@import 'Spinner';
 @import 'Table';
 @import 'Tag';
 
@@ -39,6 +41,9 @@
   --text: var(--white);
   --background: #020b19;
   --gray: rgba(255, 255, 255, 0.3);
+  --space: 0.4em;
+  --doubleSpace: 0.8em;
+  --width: 800px;
 }
 
 ::placeholder {
@@ -114,6 +119,11 @@ ul+h4 {
 p {
   font-size: 1em;
   line-height: 1.45;
+  margin: 0 0 1em 0;
+}
+
+p:last-child {
+  margin: 0;
 }
 
 p img {
@@ -251,45 +261,9 @@ img.lazy.error {
   width: 100%;
 }
 
-.Article {
-  width: 100%;
-}
-
-.Article__intro {
-  margin: 0 0 3em;
-  font-size: 1.2em;
-}
-
-.Article__content {
-  margin: 0 0 0.4em 0;
-}
-
 .Footnotes {
   opacity: 0.5;
   font-size: 0.9em;
-}
-
-@keyframes rotating {
-  from{
-    transform: rotate(0deg);
-  }
-  to{
-    transform: rotate(360deg);
-  }
-}
-
-@media all and (max-width: 640px) {
-  body {
-    font-size: 1.3em;
-  }
-  .Content {
-    padding: 1em;
-  }
-
-  .Player, .Player__info {
-    flex-direction: column;
-    align-items: start;
-  }
 }
 
 .Announcement {
@@ -357,6 +331,17 @@ a.is-photo::after {
 
 
 @media all and (max-width: 640px) {
+  body {
+    font-size: 1.3em;
+  }
+  .Content {
+    padding: 1em;
+  }
+
+  .Player, .Player__info {
+    flex-direction: column;
+    align-items: start;
+  }
   .Announcement__icon {
     margin-top: 4px;
   }
