@@ -51,10 +51,9 @@ const addClass = (elementClass, className) => {
 }
 
 const post = (URL, content) => {
-  const headers = { 'Content-Type': 'application/json' }
   const method = 'POST'
   const body = JSON.stringify(content)
-  const options = { method, headers, body }
+  const options = { method, body }
 
   return fetch(URL, options)
 }
