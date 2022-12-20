@@ -9,7 +9,7 @@
 @import 'About';
 @import 'Archive';
 @import 'Book';
-@import 'Book';
+@import 'Button';
 @import 'Bot';
 @import 'Figure';
 @import 'Footer';
@@ -332,8 +332,9 @@ a.is-photo::after {
 
 @media all and (max-width: 640px) {
   body {
-    font-size: 1.3em;
+    font-size: 1.2em;
   }
+
   .Content {
     padding: 1em;
   }

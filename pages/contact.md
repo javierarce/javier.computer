@@ -1,7 +1,7 @@
 ---
 title: Contact
 layout: contact
-className: About
+className: contact
 permalink: contact
 ---
 

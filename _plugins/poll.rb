@@ -13,7 +13,7 @@ class Poll < Liquid::Tag
       <div class='Poll__error js-error'></div>
       <div class='Poll__fields'>
         <div class='Input__field'><input type='text' class='Input' name='#{@fieldname}' value='' placeholder='Título'></div>
-        <input type='submit' name='' class='Button Poll__submit js-button' value='Enviar'>
+        <button class='Button Poll__submit js-button'>Enviar</button>
       </div>
     </form>"
   end

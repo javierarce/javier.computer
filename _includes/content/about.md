@@ -16,9 +16,7 @@ is my attempt to spend more time thinking, documenting, and making.
 If you like what you are reading, add this [RSS](/feed.xml) feed to your
 favorite feed reader to get the updates.
 
-And if you need to contact me and tell me something incredible, [use this link](https://mail.javier.computer).
-
-### Index
+And if you need to contact me and tell me something incredible, [use this link](https://javier.computer/contact).
 
 |:-------|:-------|
 |[Home](/)|Diary|
@@ -26,4 +24,4 @@ And if you need to contact me and tell me something incredible, [use this link](
 |[Photos](/photos)|Photo diary and its archive|
 |[Projects](/projects)|List of projects I've done|
 |[About me](/me)|Some facts about myself|
-|[Contact](https://mail.javier.computer) | Contact form & email |
+|[Contact](https://javier.computer/contact) | Contact form & email |

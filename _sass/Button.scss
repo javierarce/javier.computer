@@ -1,0 +1,51 @@
+
+.Button {
+  -webkit-appearance: none;
+  align-items: center;
+  background: transparent;
+  border-radius: 2px;
+  border: 1px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-size: 0.8em;
+  justify-content: center;
+  margin: 0;
+  outline: none;
+  padding: 0.8em;
+  position: relative;
+  transition: background 100ms ease-in-out, opacity 100ms ease-in-out, color 100ms ease-in-out;
+  user-select: none;
+  width: 250px;
+}
+
+.Button.is-disabled {
+  opacity: .5;
+  pointer-events: none;
+  cursor: default;
+}
+
+.Button.is-disabled:hover {
+  background: transparent;
+}
+
+.Button:hover {
+  background: #fff;
+  color: var(--background);
+}
+
+.Button.is-disabled {
+  opacity: .5;
+  pointer-events: none;
+  cursor: default;
+}
+
+.Button.is-disabled:hover {
+  background: transparent;
+}
+
+.Button:hover {
+  background: #fff;
+  color: var(--background);
+}
+

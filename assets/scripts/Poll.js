@@ -6,7 +6,7 @@ const submitPoll = (event) => {
   event.target.classList.add('is-loading')
 
   let spinner = new Spinner('is-inside-button')
-  event.target.appendChild(spinner.$element)
+  event.target.querySelector('.js-button').appendChild(spinner.$element)
   spinner.show()
 
   function isEmpty(obj) {
