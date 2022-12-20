@@ -1,6 +1,6 @@
 const SUCCESS_MESSAGE = 'Message delivered. Thanks!'
 
-const MAIL_URL = 'https://mail.javier.computer'
+const MAIL_URL = 'https://api.javier.computer'
 
 const ENDPOINTS = {
   send: '/api/send',
