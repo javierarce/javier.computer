@@ -20,7 +20,7 @@ jobs:
           ---
           layout: post
           title: "${{ github.event.issue.title }}"
-          date: "2022-12-29"
+          date: "${{  github.event.issue.created_at }}"
           ---
           ${{ github.event.issue.body }}
           EOF
@@ -44,36 +44,11 @@ jobs:
         if: success()
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }} 
           branch: main
-          
-  publish:
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v2
+      - name: Build site
+        run: bundle exec jekyll build
+      - name: Deploy site
+        uses: helaili/jekyll-action@v2
         with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
-          restore-keys: |
-           ${{ runner.os }}-gems-
-      - uses: helaili/jekyll-action@v2
-        with:
-          token: ${{ secrets.GH_TOKEN }}
-          
-  label_issues:
-    needs: [build, publish]
-    runs-on: ubuntu-latest
-    permissions:
-      issues: write
-    steps:
-      - uses: actions/github-script@v6
-        with:
-          script: |
-            github.rest.issues.addLabels({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              labels: ["published"]
-            })
+          github_token: ${{ secrets.GITHUB_TOKEN }} 
