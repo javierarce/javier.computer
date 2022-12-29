@@ -1,4 +1,4 @@
-name: A workflow to create a jekyll post from github issue
+name: Create post from an issue
 on:
   issue_comment:
     types: [created]
@@ -45,9 +45,27 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }} 
-          branch: main
+          branch: main                
+      - name: Cache      
+        uses: actions/cache@v2        
       - name: Deploy site
         uses: helaili/jekyll-action@v2
         with:
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.GH_TOKEN }}  
+  label:
+    needs: [build]
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ["published"]
+            })
+
 
