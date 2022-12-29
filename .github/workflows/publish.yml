@@ -14,26 +14,26 @@ jobs:
       - name: Create jekyll post file
         if: success() && github.event.issue.user.login == env.GITHUB_ACCOUNT_JEKYLL_OWNER
         run: |
-          DATE="$(date --rfc-3339=date)"
+          DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
           POST_TITLE=$(sed -E 's/[[:space:]|[:punct:]]/_/g' <<<'${{ github.event.issue.title }}')
           cat <<'EOF' > $POST_DIRECTORY/"${DATE:0:10}-${POST_TITLE}".md
           ---
           layout: post
           title: "${{ github.event.issue.title }}"
-          date: "${{ github.event.issue.created_at }}"
+          date: "${{ PUBLISHED_AT }}"
           ---
           ${{ github.event.issue.body }}
           EOF
         env:
           GITHUB_ACCOUNT_JEKYLL_OWNER: 'javierarce'
           POST_DIRECTORY: 'content/_posts'
+          PUBLISHED_AT=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
       - name: Commit files
         if: success()
         run: |
           git config --local user.name "$GIT_USER_NAME"
           git config --local user.email "$GIT_USER_EMAIL"
           git add --all
-          # commit only if there are changes
           if [[ `git status --porcelain` ]]; then
             git commit -m "$DEFAULT_COMMIT_MESSAGE" -a
           fi
