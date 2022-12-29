@@ -36,7 +36,7 @@ jobs:
           GIT_USER_NAME: 'Javier Arce'
           GIT_USER_EMAIL: 'javierarce@gmail.com'
           DEFAULT_COMMIT_MESSAGE: 'New post created from a GitHub issue'
-          GITHUB_KEY_ID: ${{ secrets.GITHUB_KEY_ID }}
+          GITHUB_KEY_ID: ${{ secrets.KEY }}
       - name: Push changes
         if: success()
         uses: ad-m/github-push-action@master
