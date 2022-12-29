@@ -1,0 +1,43 @@
+name: A workflow to create a jekyll post from github issue
+on:
+  issue_comment:
+    types: [created]
+jobs:
+  build:
+    name: A job to create a jekyll post from github issue
+    runs-on: ubuntu-latest
+    if: github.event.comment.body == 'publish'
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@master
+
+      - name: Create jekyll post file
+        if: success() && github.event.issue.user.login == env.GITHUB_ACCOUNT_JEKYLL_OWNER
+        run: |
+          cat << 'EOF' > $POST_DIRECTORY/$
+          $
+          EOF
+        env:
+          GITHUB_ACCOUNT_JEKYLL_OWNER: 'javierarce'
+          POST_DIRECTORY: 'content/_posts'
+
+      - name: Commit files
+        if: success()
+        run: |
+          git config --local user.name "$GIT_USER_NAME"
+          git config --local user.email "$GIT_USER_EMAIL"
+          git add --all
+          # commit only if there are changes
+          if [[ `git status --porcelain` ]]; then
+            git commit -m "$DEFAULT_COMMIT_MESSAGE" -a
+          fi
+        env:
+          GIT_USER_NAME: 'Javier Arce'
+          GIT_USER_EMAIL: 'javierarce@gmail.com'
+          DEFAULT_COMMIT_MESSAGE: 'New post created from a GitHub issue'
+
+      - name: Push changes
+        if: success()
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ github.token }}
