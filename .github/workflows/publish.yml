@@ -20,7 +20,7 @@ jobs:
           ---
           layout: post
           title: "${{ github.event.issue.title }}"
-          date: $(date --rfc-3339=date)
+          date: "${{date --rfc-3339=date}}"
           ---
           ${{ github.event.issue.body }}
           EOF
