@@ -46,13 +46,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }} 
           branch: main                
-      - name: Cache      
-        uses: actions/cache@v2        
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
-          restore-keys: |
-           ${{ runner.os }}-gems-
       - name: Deploy site
         uses: helaili/jekyll-action@v2
         with:
@@ -72,5 +65,3 @@ jobs:
               repo: context.repo.repo,
               labels: ["published"]
             })
-
-
