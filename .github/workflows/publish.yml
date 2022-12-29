@@ -29,13 +29,12 @@ jobs:
           git add --all
           # commit only if there are changes
           if [[ `git status --porcelain` ]]; then
-            git commit -m "$DEFAULT_COMMIT_MESSAGE" -a
+            git commit -S -m "$DEFAULT_COMMIT_MESSAGE" -a
           fi
         env:
           GIT_USER_NAME: 'Javier Arce'
           GIT_USER_EMAIL: 'javierarce@gmail.com'
           DEFAULT_COMMIT_MESSAGE: 'New post created from a GitHub issue'
-
       - name: Push changes
         if: success()
         uses: ad-m/github-push-action@master
