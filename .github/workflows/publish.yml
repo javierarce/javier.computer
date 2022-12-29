@@ -20,14 +20,13 @@ jobs:
           ---
           layout: post
           title: "${{ github.event.issue.title }}"
-          date: $PUBLISHED_AT
+          date: "2022-12-29"
           ---
           ${{ github.event.issue.body }}
           EOF
         env:
           GITHUB_ACCOUNT_JEKYLL_OWNER: 'javierarce'
           POST_DIRECTORY: 'content/_posts'
-          PUBLISHED_AT: $(date -u +'%Y-%m-%dT%H:%M:%SZ')
       - name: Commit files
         if: success()
         run: |
