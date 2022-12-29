@@ -33,7 +33,7 @@ jobs:
             git commit -S -m "$DEFAULT_COMMIT_MESSAGE" -a
           fi
         env:
-          GIT_USER_NAME: 'Javier Arce'
+          GIT_USER_NAME: 'javierarce'
           GIT_USER_EMAIL: 'javierarce@gmail.com'
           DEFAULT_COMMIT_MESSAGE: 'New post created from a GitHub issue'
           GITHUB_KEY_ID: ${{ secrets.KEY }}
