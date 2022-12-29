@@ -27,7 +27,7 @@ jobs:
         env:
           GITHUB_ACCOUNT_JEKYLL_OWNER: 'javierarce'
           POST_DIRECTORY: 'content/_posts'
-          PUBLISHED_AT=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
+          PUBLISHED_AT: $(date -u +'%Y-%m-%dT%H:%M:%SZ')
       - name: Commit files
         if: success()
         run: |
