@@ -46,9 +46,8 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }} 
           branch: main
-      - name: Build site
-        run: bundle exec jekyll build
       - name: Deploy site
         uses: helaili/jekyll-action@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} 
+          token: ${{ secrets.GH_TOKEN }}
+
