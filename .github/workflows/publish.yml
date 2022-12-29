@@ -14,13 +14,13 @@ jobs:
       - name: Create jekyll post file
         if: success() && github.event.issue.user.login == env.GITHUB_ACCOUNT_JEKYLL_OWNER
         run: |
-          DATE="${{ inputs.created_at }}"
-          POST_TITLE=$(sed -E 's/[[:space:]|[:punct:]]/_/g' <<<'${{ inputs.title }}')
+          DATE="${{ github.event.issue.created_at }}"
+          POST_TITLE=$(sed -E 's/[[:space:]|[:punct:]]/_/g' <<<'${{ github.event.issue.title }}')
           cat <<'EOF' > $POST_DIRECTORY/"${DATE:0:10}-${POST_TITLE}".md
           ---
           layout: post
           title: "${{ github.event.issue.title }}"
-          date: ${{ inputs.created_at }}
+          date: ${{ build.created_at }}
           ---
           ${{ github.event.issue.body }}
           EOF
