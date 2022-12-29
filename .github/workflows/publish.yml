@@ -14,8 +14,8 @@ jobs:
       - name: Create jekyll post file
         if: success() && github.event.issue.user.login == env.GITHUB_ACCOUNT_JEKYLL_OWNER
         run: |
-          cat << 'EOF' > $POST_DIRECTORY/$
-          $
+          cat << 'EOF' > $POST_DIRECTORY/${{ github.event.issue.title }}
+          ${{ github.event.issue.body }}
           EOF
         env:
           GITHUB_ACCOUNT_JEKYLL_OWNER: 'javierarce'
@@ -32,11 +32,13 @@ jobs:
             git commit -m "$DEFAULT_COMMIT_MESSAGE" -a
           fi
         env:
-          GIT_USER_NAME: 'javierarce'
+          GIT_USER_NAME: 'Javier Arce'
           GIT_USER_EMAIL: 'javierarce@gmail.com'
-          DEFAULT_COMMIT_MESSAGE: 'New post created from a GitHub issue'
+          DEFAULT_COMMIT_MESSAGE: 'New jekyll post create from github issue'
+
       - name: Push changes
         if: success()
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ github.token }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
