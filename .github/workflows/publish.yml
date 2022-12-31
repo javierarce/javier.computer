@@ -6,13 +6,15 @@ jobs:
   build:
     name: A job to create a jekyll post from github issue
     runs-on: ubuntu-latest
-    if: github.event.comment.body == 'publish'
+    if: github.event.comment.body == 'publish' 
+      && contains(github.event.labels.*.name, 'post') 
+      && github.event.issue.user.login == env.GITHUB_ACCOUNT_JEKYLL_OWNER 
     steps:
       - name: Checkout main branch
         uses: actions/checkout@master
 
       - name: Create jekyll post file
-        if: success() && github.event.issue.user.login == env.GITHUB_ACCOUNT_JEKYLL_OWNER && contains(github.event.labels.*.name, 'post')
+        if: success() 
         run: |
           DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
           POST_TITLE=$(sed -E 's/[[:space:]|[:punct:]]/_/g' <<<'${{ github.event.issue.title }}')
