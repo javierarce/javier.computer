@@ -1,7 +1,7 @@
 name: Create post from an issue
 on:
   issue_comment:
-    types: [created]
+    types: [created, labeled]
 jobs:
   build:
     name: A job to create a jekyll post from github issue
@@ -12,13 +12,13 @@ jobs:
         uses: actions/checkout@master
 
       - name: Create jekyll post file
-        if: success() && github.event.issue.user.login == env.GITHUB_ACCOUNT_JEKYLL_OWNER
+        if: success() && github.event.issue.user.login == env.GITHUB_ACCOUNT_JEKYLL_OWNER && contains(github.event.labels.*.name, 'post')
         run: |
           DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
           POST_TITLE=$(sed -E 's/[[:space:]|[:punct:]]/_/g' <<<'${{ github.event.issue.title }}')
           cat <<'EOF' > $POST_DIRECTORY/"${DATE:0:10}-${POST_TITLE}".md
           ---
-          layout: post
+          layout: "post"
           title: "${{ github.event.issue.title }}"
           date: "${{  github.event.issue.created_at }}"
           ---
