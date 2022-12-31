@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.comment.body == 'publish' 
       && contains(github.event.labels.*.name, 'post') 
-      && github.event.issue.user.login == env.GITHUB_ACCOUNT_JEKYLL_OWNER 
+      && github.event.issue.user.login == 'javierarce'
     steps:
       - name: Checkout main branch
         uses: actions/checkout@master
@@ -27,7 +27,6 @@ jobs:
           ${{ github.event.issue.body }}
           EOF
         env:
-          GITHUB_ACCOUNT_JEKYLL_OWNER: 'javierarce'
           POST_DIRECTORY: 'content/_posts'
       - name: Commit files
         if: success()
