@@ -7,7 +7,7 @@ jobs:
     name: A job to create a jekyll post from github issue
     runs-on: ubuntu-latest
     if: github.event.comment.body == 'publish' 
-      && contains(github.event.labels.*.name, 'post') 
+      && contains(github.event.issue.labels.*.name, 'post') 
       && github.event.issue.user.login == 'javierarce'
     steps:
       - name: Checkout main branch
