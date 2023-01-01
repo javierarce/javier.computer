@@ -13,17 +13,46 @@ permalink: about
     {% capture about %}{% include content/about.md %}{% endcapture %}
     {{ about | markdownify }}
 
-    <h3>Pages</h3>
-
+    <h3 class="has-margin-top">Index</h3>
     <table>
-      {% for page in site.pages -%}
-      {% if page.layout == 'page' or page.category == 'page' and page.permalink -%}
-      <tr>
-        <td><a href="{{ page.url }}">{{ page.title }}</a></td>
-        <td>{{ page.description }}</td>
-      </tr>
-      {% endif -%}
-      {% endfor -%}
+        <tbody>
+            <tr>
+                <td><a href="/">Home</a></td>
+                <td>Diary</td>
+            </tr>
+            <tr>
+                <td><a href="/archive">Archive</a></td>
+                <td>Archive of posts</td>
+            </tr>
+            <tr>
+                <td><a href="/photos">Photos</a></td>
+                <td>Photo diary and its archive</td>
+            </tr>
+            <tr>
+                <td><a href="/projects">Projects</a></td>
+                <td>List of projects I’ve done</td>
+            </tr>
+            <tr>
+                <td><a href="/pages">Pages</a></td>
+                <td>
+                    <ul>
+                        {% for page in site.pages -%}
+                        {% if page.layout == 'page' or page.category == 'page' and page.permalink -%}
+                        <li><a href="{{ page.url }}">{{ page.title }}</a>: {{ page.description }}</li>
+                        {% endif -%}
+                        {% endfor -%}
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><a href="/me">About me</a></td>
+                <td>Some facts about myself</td>
+            </tr>
+            <tr>
+                <td><a href="https://javier.computer/contact">Contact</a></td>
+                <td>Contact form &amp; email</td>
+            </tr>
+        </tbody>
     </table>
   </div>
 

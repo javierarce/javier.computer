@@ -13,15 +13,12 @@ turtle.
 I get sad when I only spend my time consuming instead of making things. This website
 is my attempt to spend more time thinking, documenting, and making.
 
+### Get updates
+
 If you like what you are reading, add this [RSS](/feed.xml) feed to your
 favorite feed reader to get the updates.
 
-And if you need to contact me and tell me something incredible, [use this link](https://javier.computer/contact).
+### Get in touch
 
-|:-------|:-------|
-|[Home](/)|Diary|
-|[Archive](/archive)|Archive of posts|
-|[Photos](/photos)|Photo diary and its archive|
-|[Projects](/projects)|List of projects I've done|
-|[About me](/me)|Some facts about myself|
-|[Contact](https://javier.computer/contact) | Contact form & email |
+If you need to contact me and tell me something incredible, [use this link](https://javier.computer/contact).
+
