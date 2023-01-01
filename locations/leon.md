@@ -1,6 +1,6 @@
 ---
 layout: location
-title: Leon
+title: León
 location: leon
 permalink: in/leon
 ---
