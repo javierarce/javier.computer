@@ -1,7 +1,3 @@
-const CITY = 'Barcelona'
-const COORDINATES='41.390205,2.154007'
-const WEATHER_ENDPOINT = `https://last.javierarce.com/api/weather?coordinates=${COORDINATES}`
-
 class Weather extends HTMLParagraphElement {
   constructor () {
     super()
@@ -12,9 +8,13 @@ class Weather extends HTMLParagraphElement {
   }
 
   get () {
-    const headers = { 'Content-Type': 'application/json' }
-    const method = 'GET'
-    const options = { method, headers }
+    fetch('/location.json').then(response => response.json()).then((json) => {
+      this.getWeatherFor(json.city, json.coordinates)
+    })
+  }
+
+  getWeatherFor (city, coordinates) {
+    const WEATHER_ENDPOINT = `https://last.javierarce.com/api/weather?coordinates=${coordinates}`
 
     fetch(WEATHER_ENDPOINT).then(response => response.json()).then((json) => {
       if (json.error) {
@@ -29,9 +29,8 @@ class Weather extends HTMLParagraphElement {
       const humidity = weather.humidity
       const sunset = new Date(weather.sunset * 1000).toLocaleTimeString()
 
-      this.weatherDescription = `${description}. The temperature in ${CITY} is ${temperature}ºC (feels like ${feelsLike}ºC). UVI: ${uvi}. Humidity: ${humidity}%. Sunset time is ${sunset}.`
+      this.weatherDescription = `${description}. The temperature in ${city} is ${temperature}ºC (feels like ${feelsLike}ºC). UVI: ${uvi}. Humidity: ${humidity}%. Sunset time is ${sunset}.`
       this.render(this.weatherDescription)
-
     }).catch((error) => {
       console.error(error)
     })
