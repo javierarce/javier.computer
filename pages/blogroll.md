@@ -22,6 +22,6 @@ description: A list of blogs and newsletters that I enjoy reading
 
 #### Favorite newsletters
 
-- [Design Harder](https://designharder.substack.com) by Erik Carter
 - [DADA issues](https://bluebed.substack.com) by Roman Muradov
+- [Design Harder](https://designharder.substack.com) by Erik Carter
 - [Nonintrusive Monthly Email](https://us9.campaign-archive.com/home/?u=a4c8b2c7fbc757f10dbda8808&id=dfc484dd24) by Joana Estrela
