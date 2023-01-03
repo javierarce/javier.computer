@@ -166,10 +166,9 @@ class Mail {
 
     const $help = createElement({ 
       elementType: 'div',
-      html: 'Don\'t forget to add a method of contact if you need me to repond',
+      html: 'Don\'t forget to add a contact method if you need me to repond',
       className: 'Label__help'
     })
-
 
     this.$content = createElement({ 
       elementType: 'textarea',
