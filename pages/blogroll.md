@@ -13,6 +13,7 @@ description: A list of blogs and newsletters that I enjoy reading
 
 - [Ariana is typing...](https://blog.arianaescobar.com) by Ariana Escobar
 - [Erica Fustero's blog](https://www.ericafustero.com/blog) by Erica Fustero
+- [Interconnected](https://interconnected.org/home) by Matt Webb
 - [Mu-An Chiou's blog](https://muan.co) by Mu-An Chiou
 - [Notes, blog posts, etc.](https://www.robinsloan.com/notes) by Robin Sloan
 - [Notes](https://lav.io/notes) by Sam Lavigne
