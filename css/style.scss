@@ -293,10 +293,10 @@ img.lazy.error {
 }
 
 .icon-photo {
-  background-image: url(/assets/img/icons/picture.svg);
+  background-image: url(/img/icons/picture.svg);
 }
 .icon-album {
-  background-image: url(/assets/img/icons/headphones.svg);
+  background-image: url(/img/icons/headphones.svg);
 }
 
 .Layout__project hr {
@@ -320,7 +320,7 @@ a.is-photo::after {
   width: 24px;
   height: 24px;
   margin: 0 0 0 0.2em;
-  background-image: url(/assets/img/picture.svg);
+  background-image: url(/img/picture.svg);
   background-size: cover;
   opacity: 0.4;
 }

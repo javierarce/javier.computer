@@ -6,6 +6,6 @@ band: Cindy Lee
 hide: false
 hide_date: true
 link: https://cindylee.bandcamp.com/album/whats-tonight-to-eternity
-img: /assets/img/albums/cindy-lee-whats-tonight-to-eternity.jpg
+img: /img/albums/cindy-lee-whats-tonight-to-eternity.jpg
 ---
 

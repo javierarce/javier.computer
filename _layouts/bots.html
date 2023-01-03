@@ -9,7 +9,7 @@
 
     {% include meta.html -%}
     {% include scripts.html -%}
-    <script src="{{ 'assets/scripts/bots.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
+    <script src="{{ 'scripts/bots.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
     {% feed_meta %}
 <body class="Layout__{{ page.className | default: page.category | downcase  }}">
 
@@ -30,6 +30,6 @@
   {% include footer.html %}
 </div>
 
-  <script src="{{ 'assets/scripts/lazyload.min.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
+  <script src="{{ 'scripts/lazyload.min.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
 </body>
 </html>
