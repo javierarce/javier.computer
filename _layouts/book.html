@@ -8,22 +8,12 @@ className: Book
   <div class="Book">
     <div class="Book__content">
       <div class="Book__header">
-
-        <div class="Book__title">
-          {{ page.title }}
-        </div>
-        {% if page.author %}
-        <div class="Book__author">
-          {{ page.author }}
-        </div>
-        {% endif %}
+        <div class="Book__title">{{ page.title }}</div>
+        <div class="Book__author">{{ page.author }}</div>
       </div>
-      {% if page.cover %}
-      <div class="Book__cover">
-        Cover
+      <div class="Book__page">
+        {{ content }}
       </div>
-      {% endif %}
-      {{ content }}
     </div>
   </div>
 
