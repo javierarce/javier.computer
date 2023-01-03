@@ -9,17 +9,19 @@ show_description: false
 description: A list of blogs and newsletters that I enjoy reading
 ---
 
-A list of blogs and newsletters that I enjoy reading:
+#### Favorite blogs
 
-- [Alejandra Striuk](https://striuk.tumblr.com)
-- [Ariana Escobar](https://blog.arianaescobar.com)
-- [Erica Fustero](https://www.ericafustero.com/blog)
-- [Erik Carter](https://designharder.substack.com)
-- [James Bridle](https://stml.tumblr.com)
-- [Joana Estrela](https://us9.campaign-archive.com/home/?&id=dfc484dd24)
-- [Mu-An Chiou](https://muan.co)
-- [Robin Sloan](https://www.robinsloan.com/notes)
-- [Roman Muradov](https://bluebed.substack.com)
-- [Sam Lavigne](https://lav.io/notes)
-- [Tom MacWright](https://macwright.com)
-- [v buckenham](https://v21.io/blog)
+- [Ariana is typing...](https://blog.arianaescobar.com) by Ariana Escobar
+- [Erica Fustero's blog](https://www.ericafustero.com/blog) by Erica Fustero
+- [Mu-An Chiou's blog](https://muan.co) by Mu-An Chiou
+- [Notes, blog posts, etc.](https://www.robinsloan.com/notes) by Robin Sloan
+- [Notes](https://lav.io/notes) by Sam Lavigne
+- [Tom MacWright's blog](https://macwright.com) by Tom MacWright
+- [alien observer](https://striuk.tumblr.com) by Alejandra Striuk
+- [v buckenham's blog](https://v21.io/blog) by v buckenham
+
+#### Favorite newsletters
+
+- [Design Harder](https://designharder.substack.com) by Erik Carter
+- [DADA issues](https://bluebed.substack.com) by Roman Muradov
+- [Nonintrusive Monthly Email](https://us9.campaign-archive.com/home/?u=a4c8b2c7fbc757f10dbda8808&id=dfc484dd24) by Joana Estrela

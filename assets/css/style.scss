@@ -108,6 +108,7 @@ ul {
 }
 
 h3.has-margin-top,
+ul+h3,
 table+h3,
 table+h4 {
   margin-top: 2em;
@@ -303,6 +304,7 @@ img.lazy.error {
   max-width: 800px;
 }
 
+.Page__content a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after,
 .Post__content p a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after {
   content: '↗';
   display: inline-block;
@@ -329,7 +331,6 @@ a.is-photo::after {
   border-radius: 20px;
   font-size: 0.7em;
 }
-
 
 @media all and (max-width: 640px) {
   body {
