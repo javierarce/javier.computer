@@ -11,15 +11,16 @@ description: A list of blogs and newsletters that I enjoy reading
 
 #### Favorite blogs
 
+- [Ana Bulnes](https://www.anabulnes.com/blog) by Ana Bulnes
 - [Ariana is typing...](https://blog.arianaescobar.com) by Ariana Escobar
-- [Erica Fustero's blog](https://www.ericafustero.com/blog) by Erica Fustero
+- [Erica Fustero](https://www.ericafustero.com/blog) by Erica Fustero
 - [Interconnected](https://interconnected.org/home) by Matt Webb
-- [Mu-An Chiou's blog](https://muan.co) by Mu-An Chiou
+- [Mu-An Chiou](https://muan.co) by Mu-An Chiou
 - [Notes, blog posts, etc.](https://www.robinsloan.com/notes) by Robin Sloan
 - [Notes](https://lav.io/notes) by Sam Lavigne
-- [Tom MacWright's blog](https://macwright.com) by Tom MacWright
+- [Tom MacWright](https://macwright.com) by Tom MacWright
 - [alien observer](https://striuk.tumblr.com) by Alejandra Striuk
-- [v buckenham's blog](https://v21.io/blog) by v buckenham
+- [v buckenham](https://v21.io/blog) by v buckenham
 
 #### Favorite newsletters
 
