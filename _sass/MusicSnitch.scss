@@ -2,15 +2,16 @@ music-snitch {
   opacity: 0;
   visibility: hidden;
   position: fixed;
-  bottom: 16px;
+  bottom: 2em;
+  right: 2em;
   border-radius: 4px;
-  right: 16px;
-  z-index: 100;
   font-size: 0.8em;
   padding: 0.8em 1em;
   transition: bottom 250ms ease-in-out, opacity 250ms ease-in-out, border-color 150ms ease-in-out;
   border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 0px 0px 2px var(--background);
   background: var(--background);
+  z-index: 100;
 }
 
 music-snitch.is-visible {
@@ -19,7 +20,6 @@ music-snitch.is-visible {
 }
 
 music-snitch:hover::part(a) {
-  opacity: 1;
 }
 
 music-snitch::part(close) {
@@ -60,11 +60,6 @@ music-snitch::part(title):before {
 music-snitch::part(a)  {
   color: #ffffff;
   text-decoration: none;
-  opacity: .4;
-}
-
-music-snitch::part(a):hover {
-  opacity: 1;
 }
 
 @media all and (max-width: 640px) {

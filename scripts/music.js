@@ -57,9 +57,7 @@ class Snitch extends HTMLElement {
       this.shadow.appendChild(close)
       this.shadow.appendChild(text)
 
-        setTimeout(() => {
-          this.classList.add('is-visible')
-        }, 1500)
+      this.classList.add('is-visible')
     } else {
       const text = this.shadow.querySelector('a')
 
