@@ -64,3 +64,14 @@ music-snitch::part(a)  {
 music-snitch::part(a):hover {
   text-decoration: underline;
 }
+
+
+@media all and (max-width: 640px) {
+  music-snitch {
+    font-size: 1em;
+    width: calc(100% - 40px);
+    left: 20px;
+    right: 20px;
+  }
+}
+
