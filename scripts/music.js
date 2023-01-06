@@ -3,12 +3,10 @@ class Snitch extends HTMLElement {
     super()
   }
 
-  connectedCallback() {
-    const options = {
-      username: 'javierarce',
-      api_key: '78b4ae34c84de1d5fc6510338300bd78'
-    }
-    const URL  = `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${options.username }&api_key=${options.api_key }&limit=1&format=json`
+  connectedCallback(e) {
+    const username = this.getAttribute("data-username")
+    const key = this.getAttribute("data-key")
+    const URL  = `//ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username }&api_key=${key }&limit=1&format=json`
 
     fetch(URL).then(response => response.json()).then((data) => {
       const tracks = data.recenttracks.track
