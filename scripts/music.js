@@ -20,12 +20,20 @@ class Snitch extends HTMLElement {
       const track = data.recenttracks.track[0]
 
       if (track) {
-        this.render(track.name, track.artist, track.url)
+        const isPlaying = track['@attr'] && track['@attr'].nowplaying ? true : false
+        this.render(track.name, track.artist, track.url, isPlaying)
       }
     })
   }
 
-  render (name, artist, URL) {
+  render (name, artist, URL, isPlaying) {
+    if (!isPlaying) {
+      if (this.shadow) {
+        this.classList.remove('is-visible')
+      }
+      return
+    }
+
     if (!this.shadow) {
       const text = document.createElement('a')
       text.href = URL
@@ -49,7 +57,9 @@ class Snitch extends HTMLElement {
       this.shadow.appendChild(close)
       this.shadow.appendChild(text)
 
-      this.classList.add('is-visible')
+        setTimeout(() => {
+          this.classList.add('is-visible')
+        }, 1500)
     } else {
       const text = this.shadow.querySelector('a')
 
