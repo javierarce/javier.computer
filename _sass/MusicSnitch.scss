@@ -2,7 +2,7 @@ music-snitch {
   opacity: 0;
   visibility: hidden;
   position: fixed;
-  bottom: -16px;
+  bottom: 16px;
   border-radius: 4px;
   right: 16px;
   z-index: 100;
@@ -16,7 +16,6 @@ music-snitch {
 music-snitch.is-visible {
   opacity: 1;
   visibility: visible;
-  bottom: 16px;
 }
 
 music-snitch:hover::part(a) {
