@@ -1,0 +1,66 @@
+.MusicSnitch {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  bottom: -16px;
+  border-radius: 4px;
+  right: 16px;
+  z-index: 100;
+  font-size: 0.8em;
+  padding: 0.8em 1em;
+  transition: bottom 250ms ease-in-out, opacity 250ms ease-in-out, border-color 150ms ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: var(--background);
+}
+
+.MusicSnitch.is-visible {
+  opacity: 1;
+  visibility: visible;
+  bottom: 16px;
+}
+
+.MusicSnitch:hover {
+  border-color: #fff;
+}
+
+.MusicSnitch::part(close) {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  -webkit-appearance: none;
+  align-items: center;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.2em;
+  justify-content: center;
+  outline: none;
+  border: none;
+}
+
+.MusicSnitch::part(title) {
+  display: block;
+  text-transform: uppercase;
+  opacity: 0.4;
+  padding-left: 28px;
+}
+
+.MusicSnitch::part(title):before {
+  content: '';
+  background-image: url(/img/eq.gif);
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  position: absolute;
+  left: 1em;
+}
+
+.MusicSnitch::part(a)  {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.MusicSnitch::part(a):hover {
+  text-decoration: underline;
+}

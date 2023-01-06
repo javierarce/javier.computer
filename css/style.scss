@@ -9,14 +9,15 @@
 @import 'About';
 @import 'Archive';
 @import 'Book';
-@import 'Button';
 @import 'Bot';
+@import 'Button';
 @import 'Figure';
 @import 'Footer';
 @import 'Header';
 @import 'Input';
 @import 'Mail';
 @import 'Music';
+@import 'MusicSnitch';
 @import 'Navigation';
 @import 'Page';
 @import 'Pagination';
@@ -353,3 +354,4 @@ a.is-photo::after {
     align-items: start;
   }
 }
+
