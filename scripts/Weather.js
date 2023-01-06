@@ -1,13 +1,9 @@
-class Weather extends HTMLParagraphElement {
+class Weather extends HTMLElement {
   constructor () {
     super()
   }
 
   connectedCallback () {
-    this.get()
-  }
-
-  get () {
     fetch('/location.json').then(response => response.json()).then((json) => {
       this.getWeatherFor(json.city, json.coordinates)
     })
@@ -51,4 +47,4 @@ class Weather extends HTMLParagraphElement {
   }
 }
 
-customElements.define('weather-description', Weather, { extends: 'p' })
+customElements.define('weather-snitch', Weather)

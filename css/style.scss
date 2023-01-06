@@ -182,7 +182,8 @@ p.is-light {
   padding: 1em;
 }
 
-.Weather {
+weather-snitch {
+  display: block;
   max-height: 0;
   opacity: 0;
   visibility: hidden;
@@ -190,13 +191,14 @@ p.is-light {
   transition: all 800ms ease-in-out;
 }
 
-.Weather.is-visible {
+weather-snitch.is-visible {
   max-height:100px;
   opacity: 0.5;
+  margin: 0 0 1em;
   visibility: visible;
 }
 
-.Weather.is-single {
+weather-snitch.is-single {
   width: auto;
 }
 

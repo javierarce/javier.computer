@@ -19,7 +19,7 @@
 
     <body class="Layout__{{ className | default: page.category | downcase  }}">
 
-      <div class="MusicSnitch" is="music-snitch"></div>
+      <music-snitch></music-snitch>
 
       {{ content }}
       <script src="{{ 'scripts/lazyload.min.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>

@@ -1,14 +1,9 @@
-class Snitch extends HTMLDivElement {
+class Snitch extends HTMLElement {
   constructor () {
     super()
   }
 
-  connectedCallback () {
-    this.get()
-  }
-
-  get () {
-    console.log('test')
+  connectedCallback() {
     const options = {
       username: 'javierarce',
       api_key: '78b4ae34c84de1d5fc6510338300bd78'
@@ -49,4 +44,4 @@ class Snitch extends HTMLDivElement {
   }
 }
 
-customElements.define('music-snitch', Snitch, { extends: 'div' })
+customElements.define('music-snitch', Snitch)

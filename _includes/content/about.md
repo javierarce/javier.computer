@@ -1,4 +1,4 @@
-<p class="Weather is-light" is="weather-description"></p>
+<weather-snitch></weather-snitch>
 
 ### About this and that
 
