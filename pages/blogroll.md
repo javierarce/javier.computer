@@ -11,6 +11,8 @@ description: A list of blogs and newsletters that I enjoy reading
 
 #### Favorite blogs
 
+<rss-reader data-feed="https://blog.arianaescobar.com/feed.rss"></rss-reader>
+
 - [Ana Bulnes](https://www.anabulnes.com/blog) by Ana Bulnes
 - [Ariana is typing...](https://blog.arianaescobar.com) by Ariana Escobar
 - [Erica Fustero](https://www.ericafustero.com/blog) by Erica Fustero
