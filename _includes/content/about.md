@@ -13,12 +13,5 @@ turtle.
 I get sad when I only spend my time consuming instead of making things. This website
 is my attempt to spend more time thinking, documenting, and making.
 
-### Get updates
-
-If you like what you are reading, add this [RSS](/feed.xml) feed to your
-favorite feed reader to get the updates.
-
-### Get in touch
-
-If you need to contact me and tell me something incredible, [use this link](https://javier.computer/contact).
+If you like what you are reading, add this [RSS](/feed.xml) feed to your favorite feed reader to get the updates. And if you need to contact me and tell me something incredible, [use this link](https://javier.computer/contact).
 
