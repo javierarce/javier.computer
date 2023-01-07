@@ -1,14 +1,12 @@
 weather-snitch {
   display: block;
-  max-height: 0;
   opacity: 0;
   visibility: hidden;
   overflow: hidden;
-  transition: all 800ms ease-in-out;
+  transition: all 900ms ease-in-out;
 }
 
 weather-snitch.is-visible {
-  max-height: 120px;
   opacity: 0.5;
   margin: 0 0 1em;
   visibility: visible;

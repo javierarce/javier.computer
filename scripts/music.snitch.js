@@ -17,7 +17,7 @@ class Snitch extends HTMLElement {
 
     setInterval(() => {
       this.fetchScrobbler()
-    }, 20 * 1000)
+    }, 15 * 1000)
   }
 
   fetchScrobbler () {
