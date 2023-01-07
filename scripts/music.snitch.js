@@ -4,11 +4,20 @@ class Snitch extends HTMLElement {
   }
 
   connectedCallback() {
+    this.styles = new CSSStyleSheet()
+    this.styles.replaceSync(`
+      :host { 
+        padding: 0 0 0 0.4em; opacity: 0; visibility: hidden; transition: opacity 350ms ease-in-out;
+      }
+      :host(.is-visible) { opacity: 1; visibility: visible; }
+      a { color: #fff; }
+    `)
+
     this.fetchScrobbler()
 
     setInterval(() => {
       this.fetchScrobbler()
-    }, 30 * 1000)
+    }, 20 * 1000)
   }
 
   fetchScrobbler () {
@@ -34,39 +43,25 @@ class Snitch extends HTMLElement {
       return
     }
 
+    const label = `I'm listening to "${name}" by ${artist['#text']}.`
+
     if (!this.shadow) {
-      const text = document.createElement('a')
-      text.href = URL
-      text.textContent = `${name} by ${artist['#text']}`
-      text.target = '_blank'
-      text.part = 'a'
-
-      const title = document.createElement('strong')
-      title.textContent = 'Listening'
-      title.part = 'title'
-
-      const close = document.createElement('button')
-      close.textContent = '×'
-      close.part = 'close'
-      close.onclick = () => {
-        this.classList.remove('is-visible')
-      }
+      const text = document.createElement('span')
+      text.textContent = label
 
       this.shadow = this.attachShadow({ mode: 'open' })
-      this.shadow.appendChild(title)
-      this.shadow.appendChild(close)
+      this.shadow.adoptedStyleSheets = [this.styles]
       this.shadow.appendChild(text)
 
-      this.classList.add('is-visible')
+      setTimeout(() => {
+        this.classList.add('is-visible')
+      }, 500)
     } else {
-      const text = this.shadow.querySelector('a')
+      const text = this.shadow.querySelector('span')
 
-      const oldURL = text.href
-      text.textContent = `${name} by ${artist['#text']}`
-      text.href = URL
-
-      if (URL !== oldURL) {
+      if (text.textContent !== label) {
         this.classList.remove('is-visible')
+        text.textContent = label
         setTimeout(() => {
           this.classList.add('is-visible')
         }, 500)

@@ -17,7 +17,7 @@
 @import 'Input';
 @import 'Mail';
 @import 'Music';
-@import 'MusicSnitch';
+@import 'Weather';
 @import 'Navigation';
 @import 'Page';
 @import 'Pagination';
@@ -180,26 +180,6 @@ p.is-light {
 
 .Error {
   padding: 1em;
-}
-
-weather-snitch {
-  display: block;
-  max-height: 0;
-  opacity: 0;
-  visibility: hidden;
-  overflow: hidden;
-  transition: all 800ms ease-in-out;
-}
-
-weather-snitch.is-visible {
-  max-height:100px;
-  opacity: 0.5;
-  margin: 0 0 1em;
-  visibility: visible;
-}
-
-weather-snitch.is-single {
-  width: auto;
 }
 
 ul {
