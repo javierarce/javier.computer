@@ -2,7 +2,7 @@
 
 ### About this and that
 
-Hi, stranger! Welcome to [my](/me) little computer on the net!
+Hi, stranger! Welcome to my little computer on the net!
 
 This website contains a wiki, several blog posts, a collection of silly songs,
 a pun, a hidden passage to another dimension, a ghost story, a list of dog names, a list of names
