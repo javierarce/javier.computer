@@ -4,19 +4,19 @@ class RSS extends HTMLElement {
   }
 
   connectedCallback() {
-    this.styles = new CSSStyleSheet()
-    this.styles.replaceSync(`
-      :host { display: block; margin: 0 0 1em 0; }
-      a { text-decoration: none; color: #fff }
-      .is-url { font-weight: bold; } 
-      .is-post { opacity: 0; visibility: hidden; transition: opacity 250ms ease-in-out; }
-      .is-post a { text-decoration: underline; }
-      .is-date { font-size: 0.8em; }
-      :host(.is-loaded) .is-post { opacity: 0.4; visibility: visible; }
-    `)
+    this.styles = document.createElement('style')
+    this.styles.innerHTML = `
+      rss-reader { display: block; margin: 0 0 1em 0; }
+      ::part(blog), ::part(entry) { text-decoration: none; color: #fff }
+      ::part(post) { opacity: 0; visibility: hidden; transition: opacity 250ms ease-in-out; }
+      ::part(entry) { text-decoration: underline; }
+      ::part(date) { font-size: 0.8em; }
+      rss-reader.is-loaded::part(post) { opacity: 0.4; visibility: visible; }
+      `
+
+    document.head.appendChild(this.styles)
 
     this.shadow = this.attachShadow({ mode: 'open' })
-    this.shadow.adoptedStyleSheets = [this.styles]
 
     const blogURL = this.getAttribute("data-url")
     const URL = `${blogURL}/${this.getAttribute("data-feed")}`
@@ -30,6 +30,7 @@ class RSS extends HTMLElement {
     blog.textContent = this.title
     blog.classList.add('is-url')
     blog.href = blogURL
+    blog.part = 'blog'
 
     const author = document.createElement('span')
     author.textContent = ` by ${this.author}`
@@ -57,16 +58,17 @@ class RSS extends HTMLElement {
     const lastEntry = data.entries[0]
 
     const entry = document.createElement('div')
-    entry.classList.add('is-post')
+    entry.part = 'post'
 
     const entryLink = document.createElement('a')
     entryLink.textContent = lastEntry.title
     entryLink.href = lastEntry.link
+    entryLink.part = 'entry'
 
     const entryDate = document.createElement('span')
     const ago = this.distance(Date.parse(lastEntry.published))
     entryDate.textContent = ago ? ` ${ago} ago` : ''
-    entryDate.classList.add('is-date')
+    entryDate.part = 'date'
 
     entry.appendChild(entryLink)
     entry.appendChild(entryDate)
