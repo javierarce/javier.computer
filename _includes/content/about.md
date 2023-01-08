@@ -1,4 +1,4 @@
-<weather-snitch>test</weather-snitch>
+<weather-snitch></weather-snitch>
 
 ### About this and that
 
