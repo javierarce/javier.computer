@@ -27,6 +27,8 @@
 .Pagination__item.is-ellipsis {
   cursor: default;
   border: none;
+  width:: auto;
+  padding: 0;
 }
 
 .Pagination__item.is-ellipsis:hover {
