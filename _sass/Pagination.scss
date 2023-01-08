@@ -24,6 +24,15 @@
   opacity: 1;
 }
 
+.Pagination__item.is-ellipsis {
+  cursor: default;
+  border: none;
+}
+
+.Pagination__item.is-ellipsis:hover {
+  opacity: 0.4;
+}
+
 .Pagination__item.is-selected {
   cursor: default;
   background: var(--background);
