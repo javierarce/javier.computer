@@ -32,15 +32,14 @@
 }
 
 @media all and (max-width: 1024px) {
-  .Archive {
+  .Layout__archive .Content__inner {
     column-count: 2;
   }
 }
 
 @media all and (max-width: 640px) {
-  .Archive {
+  .Layout__archive .Content__inner {
     column-count: 1;
   }
 }
-
 
