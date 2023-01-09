@@ -33,6 +33,12 @@ className: Table
     </a>
 </div>
 
+### 2023
+
+| Title | Description | Tags |
+|:-------|:-------|:---- |
+|[Music Snitch](https://github.com/javierarce/music-snitch) | Show the music you are currently scrobbling. | <span class="tag">web</span> <span class="tag">javascript</span> |
+
 ### 2022
 
 | Title | Description | Tags |
