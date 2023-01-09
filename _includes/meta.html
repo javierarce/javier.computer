@@ -12,16 +12,16 @@
 
 {% if page.description -%}
 <meta name="description" content="{{ page.description }}" />
-<meta property="og:description" content="{{ page.description }}" />
+<meta name="description" property="og:description" content="{{ page.description }}" />
 <meta property="twitter:description" content="{{ page.description }}" />
 {% else -%}
 <meta name="description" content="{{ site.description }}" />
-<meta property="og:description" content="{{ site.description }}" />
+<meta name="description" property="og:description" content="{{ site.description }}" />
 <meta property="twitter:description" content="{{ site.description }}" />
 {% endif -%}
 
-<meta name=twitter:image content="{{ base.url | prepend: site.url }}/img/card.png?version={{site.version}}">
 <meta property='og:image' content="{{ base.url | prepend: site.url }}/img/card.png?version={{site.version}}"/>
+<meta name=twitter:image content="{{ base.url | prepend: site.url }}/img/card.png?version={{site.version}}">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="canonical" href="{{ site.url }}" />
@@ -31,6 +31,8 @@
 <meta name="author" content="{{ site.author }}">
 <meta name="theme-color" content="#000">
 <meta property=twitter:account_id content="39083">
+<meta name="twitter:site" content="@javier">
+<meta name="twitter:creator" content="@javier">
 
 <meta property=og:type content="blog">
 
