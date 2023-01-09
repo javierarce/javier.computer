@@ -4,9 +4,11 @@
 <meta property="og:site_name" content="{{ page.title }}" />
 <meta name="twitter:title" content="{{ page.title }}">
 
+{% if page.description %}
 <meta name="description" content="{{ page.description }}" />
 <meta property="og:description" content="{{ page.description }}" />
 <meta property="twitter:description" content="{{ page.description }}" />
+{% endif %}
 
 <meta name=twitter:image content="{{ base.url | prepend: site.url }}/img/card.png?version={{site.version}}">
 <meta property='og:image' content="{{ base.url | prepend: site.url }}/img/card.png?version={{site.version}}"/>
