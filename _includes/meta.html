@@ -1,14 +1,24 @@
 <meta property="og:locale" content="en_ES" />
 
+{% if page.title -%}
 <meta property="og:title" content="{{ page.title }}" />
 <meta property="og:site_name" content="{{ page.title }}" />
 <meta name="twitter:title" content="{{ page.title }}">
+{% else -%}
+<meta property="og:title" content="{{ site.title }}" />
+<meta property="og:site_name" content="{{ site.title }}" />
+<meta name="twitter:title" content="{{ site.title }}">
+{% endif -%}
 
-{% if page.description %}
+{% if page.description -%}
 <meta name="description" content="{{ page.description }}" />
 <meta property="og:description" content="{{ page.description }}" />
 <meta property="twitter:description" content="{{ page.description }}" />
-{% endif %}
+{% else -%}
+<meta name="description" content="{{ site.description }}" />
+<meta property="og:description" content="{{ site.description }}" />
+<meta property="twitter:description" content="{{ site.description }}" />
+{% endif -%}
 
 <meta name=twitter:image content="{{ base.url | prepend: site.url }}/img/card.png?version={{site.version}}">
 <meta property='og:image' content="{{ base.url | prepend: site.url }}/img/card.png?version={{site.version}}"/>
