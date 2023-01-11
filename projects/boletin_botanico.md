@@ -19,6 +19,9 @@ show_title: true
 <figure class="Figure"> 
 <img class="Figure__image is-bn lazy" data-src="/img/boletin-botanico/01/02.png"> </figure>
 
+### Promoción
+
+<p>Vídeos que utilicé para dar la lata/engatusar a la gente y que pidieran el fanzine (era gratuito, casi me arruino con el rodaje).</p>
 
 <div class="Figure Figure__screen">
 <video preload loop controls>
