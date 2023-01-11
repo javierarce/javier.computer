@@ -29,7 +29,7 @@ To use this website, users can drag and drop a font file in Open Type format. Th
 <video class="Figure__videoFile has-border" autoplay muted preload loop>
 <source src="https://javier.work/videos/enfont.mp4" type="video/mp4">
 </video>
-<div class="">
+<div class="Photo__caption">
 Because the deformations are applied to every symbol, instead of showing
 a charset map I decided to show random words and allow users to change them.
 </div>
