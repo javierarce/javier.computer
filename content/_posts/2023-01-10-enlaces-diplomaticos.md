@@ -4,7 +4,8 @@ title: "Enlaces Diplomáticos"
 date: "2023-01-10 22:43:44 +0100"
 ---
 
-Algunos enlaces que se han posado breve y delicadamente en mis pestañas (las del navegador, pero de alguna forma también las otras):
+Algunos enlaces que se han posado breve y delicadamente en mis pestañas (las
+del navegador, pero de alguna forma también las de mi cara bonita):
 
 - [Simple Type Co](https://simpletype.co): una pequeña fundición tipográfica
   digital con precios modestos y fuentes de calidad, cortesía del cofundador de Dribbble.
