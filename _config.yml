@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-version: 5.0.42
+version: 5.0.43
 title: "Javier's computer"
 description: "My computer on the net"
 baseurl: "" 
@@ -26,6 +26,7 @@ url: "https://javier.computer"
 author: Javier Arce
 email: email@javier.computer
 generator: Magic
+highlighter: rouge
 destination: docs
 timezone: Europe/Madrid
 twitter_username: javier

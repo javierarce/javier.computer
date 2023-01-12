@@ -14,11 +14,11 @@
 @import 'Figure';
 @import 'Footer';
 @import 'Header';
+@import 'Highlight';
 @import 'Input';
 @import 'Mail';
 @import 'Music';
 @import 'MusicSnitch';
-@import 'Weather';
 @import 'Navigation';
 @import 'Page';
 @import 'Pagination';
@@ -31,6 +31,7 @@
 @import 'Spinner';
 @import 'Table';
 @import 'Tag';
+@import 'Weather';
 
 * {
   box-sizing: border-box;
@@ -151,15 +152,6 @@ blockquote strong {
   font-weight: 600;
 } 
 
-
-code {
-  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
-  padding: 0.2em 0.3em;
-  margin: 0;
-  font-size: 0.8em;
-  background-color: #333;
-  border-radius: 4px;
-}
 
 .is-domain {
   border-radius: 30px;
