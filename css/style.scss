@@ -95,6 +95,8 @@ sub, sup {
   line-height: 0;
   position: relative;
   vertical-align: baseline;
+  opacity: 0.5;
+  margin-left: 2px;
 }
 
 sup {
@@ -242,6 +244,11 @@ img.lazy.error {
 .Footnotes {
   opacity: 0.5;
   font-size: 0.9em;
+  margin: 0 0 2em;
+}
+
+.Footnotes p {
+  margin: 0 0 0.2em;
 }
 
 .Announcement {
