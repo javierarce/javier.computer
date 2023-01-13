@@ -20,9 +20,15 @@
 <meta property="twitter:description" content="{{ site.description }}" />
 {% endif -%}
 
+{% if page.layout == "post" -%}
+<meta property='og:image' content="https://api.javier.computer/api/svg/{{ page.title }}" />
+<meta name=twitter:image content="https://api.javier.computer/api/svg/{{ page.title }}">
+<meta name="twitter:card" content="summary_large_image">
+{% else %}
 <meta property='og:image' content="{{ base.url | prepend: site.url }}/img/card.png?version={{site.version}}"/>
 <meta name=twitter:image content="{{ base.url | prepend: site.url }}/img/card.png?version={{site.version}}">
 <meta name="twitter:card" content="summary_large_image">
+{% endif %}
 
 <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
