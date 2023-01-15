@@ -8,8 +8,6 @@
     <div class="Post__more">
       <a href="{{ post.url }}#more">Leer más</a>
     </div>
-    {% elsif post.content contains "<!-- break -->" -%}
-    {{ post.content | split:"<!-- break -->" | first }}… <a href="{{ post.url }}#more">+</a>
     {% else -%}
     {{ post.content }}
     {% endif -%}

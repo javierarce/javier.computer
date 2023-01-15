@@ -21,3 +21,8 @@ table td:nth-child(2) {
 table tr:last-child td {
   border: none;
 }
+
+table a,
+table a:hover {
+  color: var(--link); 
+}

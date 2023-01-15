@@ -40,6 +40,7 @@
 :root {
   --white: #FFFFFF;
   --active: var(--white);
+  --link: #ffc107;
   --hover: var(--white);
   --text: var(--white);
   --background: #020b19;
@@ -295,6 +296,7 @@ img.lazy.error {
   font-weight: 400;
   padding-left: 4px;
   opacity: 0.4;
+  color: var(--white);
 }
 
 a.is-photo::after {
