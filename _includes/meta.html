@@ -20,9 +20,18 @@
 <meta property="twitter:description" content="{{ site.description }}" />
 {% endif -%}
 
-{% if page.layout == "post" or page.layout == "photos/photo" -%}
+{% if page.layout == "post" -%}
 <meta property='og:image' content="https://api.javier.computer/api/svg?title={{ page.title }}" />
 <meta name=twitter:image content="https://api.javier.computer/api/svg?title={{ page.title }}">
+<meta name="twitter:card" content="summary_large_image">
+{% elsif page.filename -%}
+<meta property='og:image' content="https://api.javier.computer/api/svg?URL=https://img.javier.computer/{{ page.location }}/{{ page.filename }}_1280.jpg" />
+<meta name=twitter:image content="https://api.javier.computer/api/svg?URL=https://img.javier.computer/{{ page.location }}/{{ page.filename }}_1280.jpg">
+<meta name="twitter:card" content="summary_large_image">
+{% elsif page.filenames -%}
+{% assign filename = page.filenames | first %}
+<meta property='og:image' content="https://api.javier.computer/api/svg?URL=https://img.javier.computer/{{ page.location }}/{{ filename }}_1280.jpg" />
+<meta name=twitter:image content="https://api.javier.computer/api/svg?URL=https://img.javier.computer/{{ page.location }}/{{ filename }}_1280.jpg">
 <meta name="twitter:card" content="summary_large_image">
 {% else %}
 <meta property='og:image' content="{{ base.url | prepend: site.url }}/img/card.png?version={{site.version}}"/>
