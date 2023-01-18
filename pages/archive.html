@@ -10,59 +10,7 @@ className: Archive
 
   <div class="Content__inner">
 
-
-
-    {% assign month_starts = 'now' | date: '%Y-%m-01' %}
-    {% assign month_starts_ts = month_starts | date: "%s" %}
-    {% assign month = 'now' | date: "%m" %}
-    {% assign today = 'now' | date: "%d" %}
-    {% assign fd = false %}
-    <div class="Calendar">
-      <span class="Calendar__day is-title">L</span>
-      <span class="Calendar__day is-title">M</span>
-      <span class="Calendar__day is-title">M</span>
-      <span class="Calendar__day is-title">J</span>
-      <span class="Calendar__day is-title">V</span>
-      <span class="Calendar__day is-title">S</span>
-      <span class="Calendar__day is-title">D</span>
-      {%- for i in (-7..30) %}
-      {%- assign day = 86400 | times: i | plus: month_starts_ts %}
-      {%- assign dow = day | date: '%u' %}
-      {%- assign m = day | date: '%m' %}
-      {%- assign dayf = day | date: "%Y-%m-%d" %}
-      {%- unless fd %}
-      {%- if dow == '7' %}{% assign fd = true %}{% endif %}
-      {%- continue %}
-      {%- endunless %}
-
-      {%- if month == m %}
-      {%- assign is_today = '' %}
-      {%- assign has_posts = '' %}
-      {%- assign is_today = '' %}
-      {%- assign url = '' %}
-      {%- for post in site.posts %}
-      {%- assign d = post.date | date: "%Y-%m-%d" %}
-      {%- assign dtoday = day | date: '%e' %}
-
-      {%- if today == dtoday %}
-        {% assign is_today = 'is-today'  %}
-      {% endif %}
-
-      {%- if d == dayf %}
-        {% assign url = post.url  %}
-        {% assign has_posts = 'has-posts' %}{% break %}
-      {% endif %}
-
-      {%- endfor %}
-      {% if url <> "" %}
-      <a href="{{ url}}" class="Calendar__day {{ is_today }} {{ has_posts }}">{{ day | date: '%e' }}</a>
-        {% else %}
-        <span class="Calendar__day {{is_today}} {{ has_posts }}">{{ day | date: '%e' }}</span>
-        {% endif %}
-      {%- else %}<span class="Calendar__day"></span>{% endif %}
-      {%- endfor %}
-    </div>
-
+    {% include calendar.html %}
 
     {% assign thedate = nil %}
 
