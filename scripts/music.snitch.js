@@ -29,14 +29,12 @@ class Snitch extends HTMLElement {
 
   show (callback) {
     setTimeout(() => {
-      console.log('show')
       this.shadow.host.classList.add('is-visible')
       callback && callback()
     }, 500)
   }
 
   hide (callback) {
-    console.log('hide')
     this.shadow.host.classList.remove('is-visible')
     setTimeout(() => {
       callback && callback()
@@ -44,7 +42,6 @@ class Snitch extends HTMLElement {
   }
 
   create (label) {
-    console.log('creating', label)
     const text = document.createElement('span')
     text.textContent = label
 
@@ -59,7 +56,6 @@ class Snitch extends HTMLElement {
   update (label) {
     const text = this.shadow.querySelector('span')
 
-    console.log('update', text.textContent, label)
 
     if (text.textContent !== label) {
       this.hide(() => {
@@ -71,12 +67,10 @@ class Snitch extends HTMLElement {
 
   render (name, artist, URL, isPlaying) {
     if (!isPlaying) {
-      console.log('not playing')
 
       this.dispatchEvent(new CustomEvent("loaded"))
 
       if (this.shadow) {
-        console.log('not created')
         this.hide()
       }
       return
