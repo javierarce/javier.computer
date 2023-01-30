@@ -1,12 +1,11 @@
 <meta property="og:locale" content="en_ES" />
+<meta property="og:site_name" content="{{ site.title }}" />
 
 {% if page.title -%}
 <meta name="title" property="og:title" content="{{ page.title }}">
-<meta property="og:site_name" content="{{ page.title }}" />
 <meta name="twitter:title" content="{{ page.title }}">
 {% else -%}
 <meta name="title" property="og:title" content="{{ site.title }}">
-<meta property="og:site_name" content="{{ site.title }}" />
 <meta name="twitter:title" content="{{ site.title }}">
 {% endif -%}
 
