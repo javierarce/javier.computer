@@ -31,28 +31,27 @@
 <meta property='og:image' content="https://img.javier.computer/{{ page.location }}/{{ page.filename }}_1280.jpg" />
 <meta name=twitter:image content="https://img.javier.computer/{{ page.location }}/{{ page.filename }}_1280.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="article">
 {% elsif page.filenames -%}
 {% assign filename = page.filenames | first %}
 <meta property='og:image' content="https://img.javier.computer/{{ page.location }}/{{ filename }}_1280.jpg" />
 <meta name=twitter:image content="https://img.javier.computer/{{ page.location }}/{{ filename }}_1280.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="article">
 {% else %}
 <meta property='og:image' content="{{ base.url | prepend: site.url }}/img/card.png?version={{site.version}}"/>
 <meta name=twitter:image content="{{ base.url | prepend: site.url }}/img/card.png?version={{site.version}}">
 <meta name="twitter:card" content="summary_large_image">
+<meta property=og:type content="website">
 {% endif %}
-
 <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-
 <meta property="article:author" content="{{ site.url }}/about">
 <meta name="author" content="{{ site.author }}">
 <meta name="theme-color" content="#000">
 <meta property=twitter:account_id content="39083">
 <meta name="twitter:site" content="@javier">
 <meta name="twitter:creator" content="@javier">
-
-<meta property=og:type content="blog">
 
 {% if page.date -%}
 <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
