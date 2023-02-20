@@ -1,0 +1,49 @@
+---
+layout: map
+className: Trip
+---
+{% assign posts = site.posts | where: "location", page.location %}
+
+<div class="Content">
+  {% include navigation.html %}
+
+  <div class="Trips">
+    <div class="Trip">
+      <div class="Trip__content">
+
+        <h2>{{ page.title }}</h2>
+        <h5>{{ page.description }}</h5>
+
+        <div class="App js-map" data-locations="{{ page.location }}" data-lng="{{ page.lng }}" data-lat="{{ page.lat }}" data-zoom="{{ page.zoom }}">
+          <div id="map" class="Map"></div>
+        </div>
+
+
+        {{ content }}
+
+        <div class="Trip__archive">
+          {% assign prev_date = nil %}
+          {% for post in posts -%}
+          {% assign current_date = post.date | date: '%B %Y' -%}
+
+          {% if prev_date != current_date -%}{% if prev_date != nil -%}</ul></div>{% endif %}
+      <div class="Trip__archiveMonth Archive__month">
+        <h3>{{ post.date | date: '%B %Y' }}</h3>
+        <ul>
+          {% assign prev_date = current_date -%}
+          {% endif -%}
+          <li><span class="Trip__archiveDay Archive__day">{{ post.date | date: '%d' }}</span><a href="{{ post.url }}" class="is-{{ post.category }}">{{ post.title }}</a></li>
+          {% endfor -%}
+        </ul>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include footer.html %}
+</div>
+
+
+
+

@@ -1,0 +1,402 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+}
+.Map {
+  width: 100%;
+  height: 600px;
+  margin: 0 auto 2em auto;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.Map:focus-visible {
+  outline: none;
+}
+
+.Marker, .Cluster {
+  width: 32px;
+  height: 32px;
+  background: var(--blue);
+  background-size: 400% 400%;
+  border: 5px solid #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 100%;
+  transition: border 150ms ease-in-out, background 150ms ease-in-out;
+}
+.Marker.leaflet-zoom-animated.leaflet-interactive:hover {
+  border: 8px solid #fff;
+}
+.Marker.leaflet-zoom-animated.leaflet-interactive.has-title {
+  display: flex;
+  color: #000;
+  line-height: 1.2;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  height: auto !important;
+  padding: 0.4em;
+  font-weight: bold;
+  border: none;
+  background: #fff;
+  border-radius: 2px;
+}
+.Marker.leaflet-zoom-animated.leaflet-interactive:focus {
+  background: #000;
+  color: #fff;
+  outline: none !important;
+  z-index: 100 !important;
+}
+.Marker.leaflet-zoom-animated.leaflet-interactive.has-emoji {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.4em;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+.Cluster {
+  background-color: var(--green);
+  color: #fff;
+  line-height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.ZoomOutControl:hover {
+  background-color: #f4f4f4;
+}
+.ZoomOutControl {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+  background: #fff;
+  width: 26px;
+  height: 26px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.ZoomOutControl:before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #2477BE;
+  border-radius: 100%;
+}
+.ZoomOutControl:hover {
+  background-color: #f4f4f4;
+}
+.ZoomOutControl {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+  background: #fff;
+  width: 26px;
+  height: 26px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.ZoomOutControl:before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #2477BE;
+  border-radius: 100%;
+}
+.leaflet-touch .ZoomOutControl, .leaflet-touch .ToggleControl {
+  width: 30px;
+  height: 30px;
+}
+.leaflet-touch .ZoomOutControl:before {
+  top: 8px;
+  left: 8px;
+}
+.Popup__content {
+  width: 300px;
+}
+.Popup__title {
+  display: block;
+  font-weight: bold;
+  margin: 0 0 0.2em;
+}
+.Popup__description {
+  margin: 0 0 0.2em;
+}
+.Popup__address {
+  font-size: 0.9em;
+  opacity: 0.5;
+}
+
+
+/* Sets default popup styles */
+.leaflet-container a.leaflet-popup-close-button {
+  display: none;
+}
+.leaflet-popup-content {
+  margin: 0;
+}
+.leaflet-popup-content-wrapper {
+  min-width: 200px;
+  border-radius: 0;
+  padding: 1em;
+  border: none;
+  background: var(--white);
+  color: var(--black);
+  font-size: 14px;
+  line-height: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.leaflet-popup-tip {
+  border-radius: 0;
+  width: 12px;
+  height: 12px;
+  margin: -10px auto 0;
+  padding: 1px;
+  border: 1px solid transparent;
+  background: var(--white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.Trips {
+  font-size: 1.2em;
+}
+
+.Trip a,
+.Trip a:hover {
+  color: var(--link);
+}
+
+
+.Trips table {
+  margin: 0 0 3em 0;
+}
+
+.Trips table:last-child {
+  margin-bottom: 1em;
+}
+
+.Trip {
+  margin: 0 auto 2em auto;
+}
+
+.Trip__content {
+  margin: 0 0 4em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: var(--defaultWidth);
+}
+
+.Trip h2 {
+  font-size: 2em;
+  text-align: center;
+  margin: 0 0 0.2em;
+}
+
+.Trip__content  h3 {
+  margin-top: 1em;
+  width: 925px;
+}
+
+.Trip__content h2+h3 {
+  font-size: 0.9em;
+  font-weight: normal;
+  opacity: 0.5;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 2em;
+}
+
+.Trip h5 {
+  width: 925px;
+  margin: auto;
+  margin-bottom: 2em;
+  text-align: center;
+  opacity: 0.4;
+}
+
+.Trip p {
+  width: 925px;
+  margin: 0 0 1em;
+}
+
+.Trip .Figure {
+  width: 1200px;
+  margin: 2em auto;
+}
+
+.Trip .Figure video {
+  display: block;
+  width: 100%;
+  border-radius: 2px;
+}
+
+.Trip .Figure img {
+  display: block;
+  width: 100%;
+  border-radius: 2px;
+}
+
+.Trip .Figure .Photo__caption {
+  display: block;
+  width: 100%;
+}
+
+.Trips__content {
+  margin: 0 0 0.4em 0;
+}
+
+.Trips__content p {
+  margin: 0 0 1em;
+}
+
+.Trip__content p:last-child {
+  margin: 0 auto 0 auto;
+}
+
+.Trips table td:first-child {
+  width: 350px;
+}
+
+.Trips table  tr > td:nth-child(3) {
+  width: 200px;
+}
+
+.Trip__card {
+  position: relative;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--gray);
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+.Trip__card:hover {
+  border: 1px solid var(--white);
+  text-decoration: none;
+}
+
+.Trip__cardDate {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  font-size: 0.8em;
+  opacity: 0.5;
+}
+
+.Trip__cardTitle {
+  text-decoration: none;
+}
+
+.Trip__cardDescription {
+  opacity: 0.5;
+}
+
+@media all and (max-width: 1280px) {
+.Trip__intro {
+  width: 100%;
+}
+
+  .Layout__project .Trip p, .Layout__project .Trip__content h3 {
+    width: 100%;
+  }
+
+  .Layout__project .Trip .Trip__intro {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .Layout__project .Trip .Figure {
+    width: 100%;
+  }
+
+  .Trip p,
+  .Trip h5 {
+    width: 100%;
+  }
+
+}
+
+@media all and (max-width: 800px) {
+
+  .Trips table  tr > td:nth-child(1){
+    width: auto;
+  }
+  .Trips table  tr > td:nth-child(3){
+    width: auto;
+  }
+}
+
+@media all and (max-width: 640px) {
+  .Trips__content table {
+    margin: 0 0 2em;
+  }
+
+  .Trips thead {
+    display: none;
+  }
+
+  .Trips tr {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 1em;
+  }
+  .Trips table td {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 0;
+    margin: 0 0 0.4em;
+  }
+  .Trips tr {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 2em;
+  }
+  .Trips table td:last-child {
+    margin: 0;
+  }
+
+  .Trip .Figure.Figure__screen video {
+    width: 100%;
+  }
+
+}
+
+
+.Trip__archive {
+    margin: 1em 0 0 0;
+}
+
+.Trip__archiveMonth {
+    margin: 0 0 2em 0;
+}
+
+.Trip__archiveMonth h3 {
+    margin: 0 0 1em 0;
+    font-size: 1em;
+    padding: 0 0 var(--space);
+    border-bottom: 1px solid var(--gray);
+}
+
+.Trip__archiveMonth ul {
+    list-style: none;
+    margin-left: 0;
+    padding: 0;
+}
+
+.Trip__archiveMonth li {
+    list-style: none;
+}
