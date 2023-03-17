@@ -15,23 +15,6 @@ class Base {
     return Object.keys(obj).length === 0;
   }
 
-  get (URL, content) {
-    const headers = { 'Content-Type': 'application/json' }
-    const method = 'GET'
-    const options = { method, headers }
-
-    return fetch(URL, options)
-  }
-
-  post (URL, content) {
-    const headers = { 'Content-Type': 'application/json' }
-    const method = 'POST'
-    const body = JSON.stringify(content)
-    const options = { method, headers, body }
-
-    return fetch(URL, options)
-  }
-
   createElement ({ className, html, text, elementType = 'div', type,  ...options }) {
     let $el = document.createElement(elementType)
 
@@ -99,31 +82,6 @@ class Base {
   }
 }
 
-class Locations extends Base {
-  constructor (filename) {
-    super()
-    this.filename = filename
-    this.locations = []
-    this.getLocations()
-  }
-
-  onGetLocations (response) {
-    return response.json().then((locations) => {
-      this.locations = locations
-      this.emit('data', this.locations)
-    })
-  }
-
-  getLocations () {
-    return this.get(`/locations/${this.filename}.json`)
-      .then(this.onGetLocations.bind(this))
-      .catch((error) => {
-        console.error(error)
-          this.emit('error', true)
-      })
-  }
-}
-
 class Popup extends Base {
   constructor (coordinates, options) {
     super()
@@ -139,6 +97,7 @@ class Popup extends Base {
   template () {
     return `
       <div class="Popup__content">
+        <% if (title) { %><div class="Popup__title"><%= title %></div> <% } %>
         <% if (description) { %><div class="Popup__description"><%= description %></div> <% } %>
         <% if (address) { %><div class="Popup__address"><%= address %></div><% } %>
       </div>
@@ -163,7 +122,6 @@ class Popup extends Base {
 class Map extends Base {
   constructor (coordinates) {
     super()
-    this.selectedMarkerId = null
     this.selectedMarkerOrderId = -1
 
     this.coordinates = coordinates
@@ -178,18 +136,29 @@ class Map extends Base {
     }
   }
 
-    hide () {
-        this.map.getContainer().remove()
-    }
+  show () {
+    this.map.getContainer().classList.add('is-visible')
+    this.fitBoundsToMarkers()
+    this.map.invalidateSize()
+
+  }
+
+  hide () {
+    this.map.getContainer().remove()
+  }
+
+  fitBoundsToMarkers () {
+    const latlngs = this.getMarkers().map(marker => marker.getLatLng())
+    this.map.fitBounds(L.latLngBounds(latlngs))
+  }
 
   selectMarkerById (id) {
     const marker = this.getMarkers().find(marker => marker.options.location.id === id)
-
-    this.selectMarker(marker)
+    this.selectMarker(marker, 18)
   }
 
   getMarkers () {
-    return this.cluster.getLayers().sort((a, b) => b._leaflet_id - a._leaflet_id)
+    return this.markers.getLayers().sort((a, b) => b._leaflet_id - a._leaflet_id)
   }
 
   getSelectedMarker () {
@@ -198,15 +167,12 @@ class Map extends Base {
 
   goToMarker(direction) {
     const markers = this.getMarkers()
-    
-    if (this.selectedMarkerId) {
-      this.selectedMarkerOrderId = markers.findIndex(marker => marker.options.location.id === this.selectedMarkerId)
-    }
+    console.log(direction, this.selectedMarkerId)
 
     this.selectedMarkerOrderId = direction === 'next' ? this.getNextMarker(markers, this.selectedMarkerOrderId) : this.getPrevMarker(markers, this.selectedMarkerOrderId)
 
     const marker = markers[this.selectedMarkerOrderId % markers.length]
-    this.selectMarker(marker)
+    this.selectMarker(marker, 18)
   }
 
   getPrevMarker (markers, id) {
@@ -224,12 +190,20 @@ class Map extends Base {
   }
 
   renderLocations (locations) {
-    locations.reverse().forEach(this.addMarker.bind(this)) 
+    let markers = []
+
+    locations.reverse().forEach((location, index) => {
+      const marker = this.createMarker(location)
+      markers.push(marker)
+    }) 
+
+    this.markers = L.layerGroup(markers)
+    this.markers.addTo(this.map)
 
     const queryString = window.location.search
     const urlParams = new URLSearchParams(queryString)
     const markerId = +urlParams.get('marker')
-    
+
     if (markerId) {
       this.selectMarkerById(markerId)
       document.body.getElementsByClassName('App')[0].scrollIntoView({ 
@@ -247,7 +221,7 @@ class Map extends Base {
     this.map.closePopup()
   }
 
-  addMarker (location) {
+  createMarker (location) {
     const latlng = location.latlng
     const name = location.name
     const description = location.description
@@ -255,70 +229,80 @@ class Map extends Base {
     const address = location.address
     const zoom = this.map.getZoom()
 
-    const icon = this.getIcon({ location })
+    const icon = this.getIcon({ location, className: 'Marker' })
 
     const popup = new Popup(latlng, location)
-    const marker = L.marker(latlng, { icon, location }).bindPopup(popup.render(), { maxWidth: 'auto'})
-
-    this.cluster.addLayer(marker)
-
-    this.map.addLayer(this.cluster)
+    const marker = L.marker(latlng, { icon, location })
+    marker.bindPopup(popup.render(), { maxWidth: 'auto'})
+    marker.on('click', () => {
+      this.selectedMarkerOrderId = location.id - 1
+    })
+    return marker
   }
 
-  selectMarker (marker) {
+  selectMarker (marker, zoom = 18) {
     if (!marker) {
       return
     }
+
+    const location = marker.options.location
+    
+    const zoomLevel = this.map.getZoom() < zoom ? zoom : this.map.getZoom()
 
     this.map.once("zoomend, moveend", () => {
       if (marker && marker.getElement()) {
         marker.openPopup()
         marker.getElement().focus()
+
+        setTimeout(() => {
+          this.map.setView(location.latlng, zoomLevel)
+        }, 100)
       }
     })
 
-    const location = marker.options.location
-    const latlng = location.latlng
-    const zoom = this.map.getZoom() < 18 ? 18 : this.map.getZoom()
-
-    this.map.setView(latlng, zoom)
+    this.map.setView(location.latlng, zoomLevel)
   }
 
   getIcon ({ location, className }) {
-    let html = location.title
-    let classNames = ['Marker', 'has-title']
+    return new L.divIcon({
+      className,
+      html: location.id,
+      iconSize: [16, 16],
+      iconAnchor: new L.Point(16, 0)
+    })
+  }
 
-    if (location.emoji) {
-      html = location.emoji
-      classNames.push('has-emoji')
+  onMapClick (e) {
+    const latlng = this.map.layerPointToLatLng(e.layerPoint);
+    let clickedMarker = null;
+
+    const markers = this.getMarkers()
+
+    for (let i = 0; i < markers.length; i++) {
+      const layerPoint = this.map.latLngToLayerPoint(markers[i].getLatLng());
+      const distance = Math.sqrt(Math.pow(layerPoint.x - e.layerPoint.x, 2) + Math.pow(layerPoint.y - e.layerPoint.y, 2));
+      console.log('distance', distance)
+      if (distance < 40) { 
+        clickedMarker = markers[i];
+        break;
+      }
     }
 
-    return new L.divIcon({
-      className: classNames.join(' '),
-      html,
-      iconSize: [100, 200],
-      iconAnchor: new L.Point(50, 0)
-    })
+    if (clickedMarker) {
+      console.log('clicked on marker', clickedMarker);
+      this.map.flyTo(clickedMarker.getLatLng(), 18)
+      clickedMarker.openPopup()
+    }
   }
 
   render () {
     const coordinates = this.flattenCoordinates(this.coordinates)
     this.map = L.map('map', this.options).setView(coordinates, this.coordinates.zoom)
 
-    this.cluster = L.markerClusterGroup({
-      spiderfyOnMaxZoom: false,
-      showCoverageOnHover: false,
-      iconCreateFunction: (cluster) => {
-        return L.divIcon({
-          className: "Cluster",
-          html: '<div>' + cluster.getChildCount() + '</div>',
-          iconSize: [32, 32],
-          iconAnchor: new L.Point(16, 0)
-        })
-      }
-    })
+    this.map.on('click', this.onMapClick.bind(this))
 
     this.map.zoomControl.setPosition('topright')
+    this.map.zoomControl.getContainer().classList.add('ZoomControl')
     this.addAttribution()
   }
 
@@ -328,7 +312,7 @@ class Map extends Base {
     L.tileLayer(this.tileLayer+ (L.Browser.retina ? '@2x.png' : '.png'), {
       attribution,
       subdomains: 'abcd',
-      maxZoom: 20,
+      maxZoom: 22,
       minZoom: 0
     }).addTo(this.map)
   }
@@ -343,8 +327,13 @@ class App {
     const zoom = this.$el.attributes['data-zoom'].value
     const locationsFilename  = this.$el.attributes['data-locations'].value
 
-    this.locations = new Locations(locationsFilename)
     this.map = new Map({ lng, lat, zoom })
+
+    this.locations = locations
+
+    this.locations.forEach((location, index) => {
+      location.id = index + 1
+    })
 
     this.render()
     this.bindEvents()
@@ -356,7 +345,15 @@ class App {
       if (event.key === 'Escape') {
         event.preventDefault()
         this.map.closePopup()
-      }  else if (event.key === 'Tab') {
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault()
+        event.stopPropagation()
+        this.map.goToMarker('next')
+      } else if (event.key === 'ArrowLeft') {
+        event.stopPropagation()
+        event.preventDefault()
+        this.map.goToMarker('prev')
+      } else if (event.key === 'Tab') {
         event.preventDefault()
 
         if (event.shiftKey) {
@@ -370,17 +367,12 @@ class App {
 
   bindEvents () {
     this.bindKeyEvents()
-    this.locations.on('data', (locations) => {
-      this.map.renderLocations(locations)
-    })
-
-    this.locations.on('error', () => {
-        this.map.hide()
-    })
   }
 
   render () {
     this.map.render()
+    this.map.renderLocations(this.locations)
+    this.map.show()
   }
 }
 

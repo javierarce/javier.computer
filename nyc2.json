@@ -56,26 +56,12 @@
     "address": "22 E 60th St #1077",
     "latlng": [40.76410226616245, -73.97028078739557]
   }, {
-    "id": 8,
-    "title": "Mast Books",
-    "emoji": "📚",
-    "description": "Mast Books is a bookstore in New York City. It is located at 63 East 4th Street in the East Village neighborhood of Manhattan. The store specializes in rare and out-of-print books, and is known for its collection of books on art, photography, and architecture.",
-    "address": "72 Avenue A, New York",
-    "latlng": [40.72515257580894, -73.98442797315501]
-  }, {
     "id": 9,
     "title": "IFC Center",
     "emoji": "🎥",
     "description": "IFC Center is a movie theater located in the Greenwich Village neighborhood of Manhattan, New York City. It is owned by the Independent Film Channel, and is operated by the IFC Center, Inc., a non-profit organization.",
     "address": "323 Avenue of the Americas",
     "latlng": [40.73191981042581,  -74.00197291112843]
-  }, {
-    "id": 10,
-    "title": "Desert Island",
-    "emoji": "📚",
-    "description": "Desert Island is a record store located in the East Village neighborhood of Manhattan, New York City. It is located at 540 East 5th Street, between Avenues A and B.",
-    "address": "540 E 5th St",
-    "latlng": [40.713979006545344, -73.95083660504864]
   }, {
     "id": 11,
     "title": "Fotografiska Museum",
@@ -104,20 +90,6 @@
     "description": "Printed Matter is a bookstore in New York City. It is located at 195 Tenth Avenue in the Chelsea neighborhood of Manhattan. The store specializes in rare and out-of-print books, and is known for its collection of books on art, photography, and architecture.",
     "address": "231 11th Ave",
     "latlng": [40.75310105726885,-74.00541191612035]
-  }, {
-    "id": 15,
-    "title": "Goods for the Study Mulberry",
-    "emoji": "📚",
-    "description": "Goods for the Study is a bookstore in New York City. It is located at 195 Tenth Avenue in the Chelsea neighborhood of Manhattan. The store specializes in rare and out-of-print books, and is known for its collection of books on art, photography, and architecture.",
-    "address": "234 Mulberry St, New York",
-    "latlng": [40.72273113413452, -73.99588703974875]
-  }, {
-    "id": 16,
-    "title": "Prospect Park",
-    "emoji": "🌳",
-    "description": "Prospect Park is a public park in the New York City borough of Brooklyn. It is located between the neighborhoods of Park Slope, Prospect Heights, Windsor Terrace, and Flatlng. The park is bounded by Prospect Park West, 9th Street, Prospect Park Southwest, and 15th Street.",
-    "address": "Brooklyn, NY",
-    "latlng": [40.66079205923622, -73.96930685789933]
   }, {
     "id": 17,
     "title": "Trailer Park Lounge",

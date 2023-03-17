@@ -21,6 +21,18 @@ className: Trip
 
         {{ content }}
 
+        <div class="Locations">
+          {% assign i = 0 %}
+          {% for product in site.data[page.location] %}
+          {% assign i = i | plus: 1 %}
+          <div class="Location">
+            <a href="?marker={{ i}}" class="Location__title"> <span class="Location__id">{{ i }}</span> {{ product.title }}</a>
+            <div class="Location__description">{{ product.description }}</div>
+            <div class="Location__address">{{ product.address }}</div>
+          </div>
+          {% endfor %}
+        </div>
+
         <div class="Trip__archive">
           {% assign prev_date = nil %}
           {% for post in posts -%}
@@ -39,7 +51,6 @@ className: Trip
       </div>
     </div>
   </div>
-</div>
 
 {% include footer.html %}
 </div>

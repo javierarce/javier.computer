@@ -1,0 +1,54 @@
+- title: "Goods for the Study"
+  description: Ahora que cerró CW Pencil Enterprise este es un buen sitio donde comprar material de oficina.
+  address: "234 Mulberry St, New York"
+  latlng: [40.72273113413452, -73.99588703974875]
+
+- title: "Prospect Park"
+  description: "Un parque bien majo"
+  address: "Brooklyn, NY"
+  latlng: [40.66079205923622, -73.96930685789933]
+
+- title: "Desert Island"
+  description: "Desert Island is a record store located in the East Village neighborhood of Manhattan, New York City. It is located at 540 East 5th Street, between Avenues A and B."
+  address: "540 E 5th St"
+  latlng: [40.713979006545344, -73.95083660504864]
+
+- title: "Quimby's Bookstore NYC"
+  description: "Sales de Desert Island y te metes aquí."
+  address: "536 Metropolitan Ave"
+  latlng: [40.7139612724994, -73.95093182857953]
+
+- title: "Mast Books"
+  description: "Tienen una colección exquisita de primeras ediciones, libros raros y descatalogados, pero son un poco bordes."
+  address: "72 Avenue A, New York"
+  latlng: [40.72515257580894, -73.98442797315501]
+
+- title: "Sit & Wonder"
+  description: "Cuando fui a esta cafetería me tocó el barista aprendiz"
+  address: "688 Washington Ave, Brooklyn"
+  latlng: [40.67739967774963, -73.9638492637935]
+
+- title: "Nûrish"
+  description: "Café con platos vegetarianos y veganos (pero también con opciones para carnívoros)"
+  address: "637 Washington Ave, Brooklyn"
+  latlng: [40.67840685350245, -73.96369051873681]
+
+- title: "Banh Mi Place"
+  description: ""
+  address: "824b Washington Ave, Brooklyn"
+  latlng: [40.67329930729744, -73.96314417387886]
+
+- title: "Most High"
+  description: ""
+  address: "820 Washington Ave, Brooklyn"
+  latlng: [40.67349277538117, -73.96322140362759]
+
+- title: "Hungry Ghost"
+  description: ""
+  address: "183 Sterling Pl, Brooklyn"
+  latlng: [40.67691397746196, -73.97148321854978]
+
+- title: "Blue Bottle Coffee"
+  description: "Para disfrutar de un buen latte por $6"
+  address: "203 7th Ave, Brooklyn"
+  latlng: [40.67111496700548, -73.97825295003133]
