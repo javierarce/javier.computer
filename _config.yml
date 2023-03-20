@@ -50,16 +50,18 @@ paginate: 10
 paginate_path: "/page/:num/"
 
 collections:
-  output: false
   photos:
     output: true
     permalink: '/photos/:path/'
+  locations:
+    output: true
+    permalink: '/locations/:path/'
   projects:
     output: true
     permalink: '/projects/:path/'
   books:
     output: true
-    permalinks: '/books/:path'
+    permalink: '/books/:path/'
 collections_dir: content
 
 permalink: /:year/:month/:day/:title

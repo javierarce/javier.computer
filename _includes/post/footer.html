@@ -1,8 +1,10 @@
+{% assign matching_location = site.locations | where: "location", page.location | first %}
+
 <div class="Post__footer">
   <a href="{{ post.url }}" class="Post__date">{{ page.date | date: '%B %d, %Y' -}}</a>
   {% if page.location -%}
   &middot;
-  <a href="/in/{{ page.location }}" class="Post__location">{{ page.location | capitalize -}}</a>
+  <a href="/in/{{ page.location }}" class="Post__location">{{ matching_location.title -}}</a>
   {% endif -%}
 
   {% include pagination.html post=page -%}

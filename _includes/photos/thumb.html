@@ -1,6 +1,6 @@
-<!-- thumb -->
 {% assign filename = photo.filenames | first %}
 {% assign id = photo.ids | first %}
+{% assign matching_location = site.locations | where: "location", photo.location | first %}
 
 {% if filename %}
 <div class="Photo">
@@ -10,7 +10,7 @@
         <a href="{{ include.photo.location }}"><img class="Photo lazy" data-src="https://img.javier.computer/{{ photo.location }}/{{ filename }}_640.jpg"></a>
       </picture>
     </figure>
-      <div class="Figure__title">{{ photo.location}}</div>
+      <div class="Figure__title">{{ matching_location.title }}</div>
   </div>
 </div>
 {% else %}
@@ -21,7 +21,7 @@
         <a href="{{ include.photo.location }}"><img class="Photo lazy" data-src="https://img.javier.computer/{{ photo.location }}/{{ include.photo.filename }}_640.jpg"></a>
       </picture>
     </figure>
-      <div class="Figure__title">{{ photo.location}}</div>
+      <div class="Figure__title">{{ matching_location.title }}</div>
   </div>
 </div>
 {% endif %}
