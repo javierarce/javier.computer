@@ -2,6 +2,7 @@
 layout: post
 title: "Poetry Slash"
 date: "2023-03-21 08:52:22 -0400"
+location: newyork
 ---
 
 Mi piel sigue haciendo el tonto, así que pido una cita en mi centro de salud
