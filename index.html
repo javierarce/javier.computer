@@ -23,16 +23,17 @@ home: true
     {% endif %}
     {% endfor -%}
 
-      {% if paginator.total_pages > 1 %}
+    {% if paginator.total_pages > 1 %}
     <div class="Pagination">
       {% for page in (1..paginator.total_pages) %}
-        {% assign page_count = 5 %}
-        {% assign last_five = forloop.length | minus: 4 %}
-        {% assign last_page = forloop.length %}
+      {% assign page_count = 5 %}
+      {% assign last_five = forloop.length | minus: 4 %}
+      {% assign last_page = forloop.length %}
 
-        {% if forloop.length > page_count %}
+      {% if forloop.length > page_count %}
 
       {% if paginator.page <= page_count  %}
+
 
          {% if forloop.index <= page_count %}
          {% if forloop.first and page == paginator.page %}
@@ -57,22 +58,22 @@ home: true
 
          {% if forloop.index >= last_five %}
          {% if forloop.index == last_five %}
-         <a class="Pagination__item"class="Pagination__item" class="Pagination__item"class="Pagination__item" href="{{ page_root }}">1</a>
+         <a class="Pagination__item" href="{{ page_root }}">1</a>
          <div class="Pagination__item is-ellipsis">…</div>
          {% if page == last_five %}
-         <a class="Pagination__item"class="Pagination__item" href="/page/{{ page | minus: 1 }}">{{ page | minus: 1 }}</a>
+         <a class="Pagination__item" href="/page/{{ page | minus: 1 }}">{{ page | minus: 1 }}</a>
          {% endif %}
          {% if page == paginator.page %}
          <div class="Pagination__item is-selected">{{ page }}</div>
          {% else %}
-         <a class="Pagination__item"class="Pagination__item" href="/page/{{ page }}">{{ page }}</a>
+         <a class="Pagination__item" href="/page/{{ page }}">{{ page }}</a>
          {% endif %}
          {% elsif forloop.last and page == paginator.page %}
          <div class="Pagination__item is-selected">{{ page }}</div>
          {% elsif page == paginator.page %}
          <div class="Pagination__item is-selected">{{ page }}</div>
          {% else %}
-         <a class="Pagination__item"class="Pagination__item" href="/page/{{ page }}">{{ page }}</a>
+         <a class="Pagination__item" href="/page/{{ page }}">{{ page }}</a>
          {% endif %}
          {% endif %}
 
@@ -80,45 +81,52 @@ home: true
          {% else %}
 
          {% if forloop.first %}
-         <a class="Pagination__item"class="Pagination__item" href="/">1</a>
+         <a class="Pagination__item" href="/">1</a>
          {% endif %}
-         {% if forloop.index == paginator.page | minus: 2 %}
+
+
+         {% assign minus_2 = paginator.page | minus: 2 %}
+         {% if forloop.index == minus_2 %}
          <div class="Pagination__item is-ellipsis">…</div>
-         <a class="Pagination__item"class="Pagination__item" href="/page/{{ page | minus: 2 }}">{{ page | minus: 2 }}</a>
+         <a class="Pagination__item" href="/page/{{ page | minus: 2 }}">{{ page | minus: 2 }}</a>
          {% endif %}
-         {% if forloop.index == paginator.page | minus: 1 %}
-         <a class="Pagination__item"class="Pagination__item" href="/page/{{ page | minus: 1 }}">{{ page | minus: 1 }}</a>
+
+         {% assign minus_1 = paginator.page | minus: 1 %}
+         {% if forloop.index == minus_1 %}
+         <a class="Pagination__item" href="/page/{{ page | minus: 1 }}">{{ page | minus: 1 }}</a>
          {% endif %}
          {% if page == paginator.page %}
          <div class="Pagination__item is-selected">{{ page }}</div>
          {% endif %}
-         {% if forloop.index == paginator.page | plus: 1 %}
-         <a class="Pagination__item"class="Pagination__item" href="/page/{{ page | plus: 1 }}">{{ page | plus: 1 }}</a>
+         {% assign plus_1 = paginator.page | plus: 1 %}
+         {% if forloop.index == plus_1 %}
+         <a class="Pagination__item" href="/page/{{ page | plus: 1 }}">{{ page | plus: 1 }}</a>
          {% endif %}
-         {% if forloop.index == paginator.page | plus: 2 %}
-         <a class="Pagination__item"class="Pagination__item" href="/page/{{ page | plus: 2 }}">{{ page | plus: 2 }}</a>
+         {% assign plus_2 = paginator.page | plus: 2 %}
+         {% if forloop.index == plus_2 %}
+         <a class="Pagination__item" href="/page/{{ page | plus: 2 }}">{{ page | plus: 2 }}</a>
          <div class="Pagination__item is-ellipsis">…</div>
          {% endif %}
          {% if forloop.last %}
-         <a class="Pagination__item"class="Pagination__item" href="/page/{{ page }}">{{ page }}</a>
+         <a class="Pagination__item" href="/page/{{ page }}">{{ page }}</a>
          {% endif %}
 
          {% endif %}
 
          {% else %}
-           {% if page == paginator.page %}
-            <div class="Pagination__item is-selected">{{ page }}</div>
-          {% elsif page == 1 %}
-            <a href="{{ page_root }}">{{ page }}</a>
-          {% else %}
-            <a href="/page/{{ page }}">{{ page }}</a>
-          {% endif %}
-          {% endif %}
-         {% endfor %}
-      <a class="Pagination__item is-archive" href="/archive">Archive</a>
-      <a class="Pagination__item is-mobile-archive" href="/archive">A</a>
-    </div>
+         {% if page == paginator.page %}
+         <div class="Pagination__item is-selected">{{ page }}</div>
+         {% elsif page == 1 %}
+         <a href="{{ page_root }}">{{ page }}</a>
+         {% else %}
+         <a href="/page/{{ page }}">{{ page }}</a>
          {% endif %}
+         {% endif %}
+         {% endfor %}
+         <a class="Pagination__item is-archive" href="/archive">Archive</a>
+         <a class="Pagination__item is-mobile-archive" href="/archive">A</a>
+    </div>
+    {% endif %}
 
   </div>
 
