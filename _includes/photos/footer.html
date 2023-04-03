@@ -1,9 +1,11 @@
+{% assign matching_location = site.locations | where: "location", include.photo.location | first %}
+
 <div class="Post__content">{{ include.photo.content }}</div>
 
 <div class="Post__footer">
     <a href="{{ include.photo.url }}" class="Post__date">{{ include.photo.date | date: '%B %d, %Y' -}}</a> 
-    {% if include.photo.location -%}<span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
-    <a href="/photos/{{ include.photo.location -}}" class="Post__location">{{ include.photo.location | capitalize }}</a>
+    {% if matching_location -%}<span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
+    <a href="/photos/{{ include.photo.location -}}" class="Post__location">{{ matching_location.title }}</a>
     {% endif -%}
 
     {% if include.pagination -%}
