@@ -18,10 +18,10 @@ nombre, operarme la cara y mudarme a un país exótico con símbolos raros sobre
 las vocales! En la parte positiva, al menos me darán cita rápida con el dermatólogo.
 
 Dramas aparte, si eres una persona creativa interesada en la experimentación
-con el lenguaje, o si tienes proyectos interesantes donde la tecnología y el lenguaje
-interseccionan, te animo a que entres en la web y te apuntes como
+con el lenguaje, o si tienes proyectos donde la tecnología y el lenguaje
+interseccionan y se dan besitos, te animo a que entres en la web y te apuntes como
 participante. 
 
-Y si intuyes que es algo que te podría interesar, pero no
+Y si intuyes que es algo que te podría molar, pero no
 entiendes del todo bien de qué va todo esto, estaré encantado de contarte más
 cosas por vía telemática, telepática o telefónica.
