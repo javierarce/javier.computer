@@ -11,7 +11,6 @@ filenames:
 - R0002856
 - R0002851
 - R0002810
-- R0002810
 ---
 
 Sant Pol de Mar
