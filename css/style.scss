@@ -6,6 +6,7 @@
 @import '_reset';
 @import '_transitions';
 
+@import 'Heart';
 @import 'About';
 @import 'Archive';
 @import 'Book';
@@ -341,4 +342,3 @@ a.is-photo::after {
     align-items: start;
   }
 }
-

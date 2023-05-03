@@ -8,7 +8,15 @@
     <a href="/photos/{{ include.photo.location -}}" class="Post__location">{{ matching_location.title }}</a>
     {% endif -%}
 
+    <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
+
+    <open-heart class="text-open-heart" href="https://api.javier.computer/heart?id={{include.photo.url}}" emoji="❤️" aria-labelledby="like-prompt">
+      <span class="on">❤️ ¡Gracias!</span>
+      <span class="off">Me gusta</span>
+    </open-heart>
+
     {% if include.pagination -%}
     {% include pagination.html post=include.photo -%}
     {% endif -%}
+
 </div>

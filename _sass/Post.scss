@@ -36,9 +36,13 @@
   font-weight: 400;
 }
 
-.Post__footer a {
+.Post__footer a,
+.Post__footer open-heart .off {
   opacity: 0.5;
   text-decoration: none;
+}
+
+.Post__footer open-heart .on {
 }
 
 .Post__footer > a:hover {

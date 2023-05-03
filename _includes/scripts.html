@@ -1,6 +1,9 @@
 <script type="application/ld+json">
   {"description":"{{ site.description }}","@type":"WebSite","url":"{{ site.url }}","name":"{{ site.title }}","headline":"{{ site.title }}","@context":"https://schema.org"}</script>
 
+
+<script defer type="module" src="{{ 'scripts/hearts.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
+
 <script src="{{ 'scripts/Spinner.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
 <script src="{{ 'scripts/Poll.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
 <script src="{{ 'scripts/Player.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>

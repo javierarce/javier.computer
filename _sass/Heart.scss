@@ -1,0 +1,32 @@
+open-heart.text-open-heart {
+  display: inline;
+  transition: color .4s, border-color .4s
+}
+
+open-heart.text-open-heart:not([disabled]):hover {
+  cursor: pointer;
+  color: var(--active);
+}
+
+open-heart.text-open-heart .on {
+  display: none
+}
+
+open-heart.text-open-heart[aria-pressed="true"] .on {
+  opacity: 1;
+  display: initial
+}
+
+open-heart.text-open-heart[aria-pressed="true"] .off {
+  opacity: 0.5;
+  display: none
+}
+
+open-heart.text-open-heart .off:hover {
+  opacity: 1;
+}
+
+
+open-heart.text-open-heart[count]::after {
+  content: "(" attr(count) ")"
+}
