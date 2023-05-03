@@ -16,8 +16,17 @@ open-heart.text-open-heart[aria-pressed="true"] .on {
   display: initial
 }
 
+open-heart.text-open-heart .off {
+  filter: grayscale(100%);
+  transition: filter 0.2s ease-in-out;
+}
+
+open-heart.text-open-heart:hover .off {
+  filter: grayscale(0%);
+}
+
+
 open-heart.text-open-heart[aria-pressed="true"] .off {
-  opacity: 0.5;
   display: none
 }
 
@@ -31,5 +40,4 @@ open-heart.text-open-heart:hover[count]::after {
 
 open-heart.text-open-heart[count]::after {
   content: "× " attr(count);
-  opacity: 0.5;
 }
