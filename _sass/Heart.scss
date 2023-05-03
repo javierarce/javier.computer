@@ -26,5 +26,5 @@ open-heart.text-open-heart .off:hover {
 }
 
 open-heart.text-open-heart[count]::after {
-  content: "(" attr(count) ")"
+  content: "× " attr(count);
 }
