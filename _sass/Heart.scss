@@ -1,6 +1,5 @@
 open-heart.text-open-heart {
   display: inline;
-  transition: color .4s, border-color .4s
 }
 
 open-heart.text-open-heart:not([disabled]):hover {
@@ -25,7 +24,6 @@ open-heart.text-open-heart[aria-pressed="true"] .off {
 open-heart.text-open-heart .off:hover {
   opacity: 1;
 }
-
 
 open-heart.text-open-heart[count]::after {
   content: "(" attr(count) ")"
