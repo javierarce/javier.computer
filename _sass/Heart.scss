@@ -25,6 +25,11 @@ open-heart.text-open-heart .off:hover {
   opacity: 1;
 }
 
+open-heart.text-open-heart:hover[count]::after {
+  opacity: 1;
+}
+
 open-heart.text-open-heart[count]::after {
   content: "× " attr(count);
+  opacity: 0.5;
 }
