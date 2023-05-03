@@ -102,6 +102,9 @@
 }
 
 @media all and (max-width: 640px) {
+  .Posts {
+    width: 100%;
+  }
   .Diary .Post,
   .Post {
     margin: 0 0 3em;
