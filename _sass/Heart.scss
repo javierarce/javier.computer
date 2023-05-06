@@ -2,42 +2,54 @@ open-heart.text-open-heart {
   display: inline;
 }
 
-open-heart.text-open-heart:not([disabled]):hover {
+open-heart.text-open-heart:not([disabled]):hover span {
+  opacity: 1;
   cursor: pointer;
-  color: var(--active);
+}
+
+open-heart.text-open-heart:not([disabled]):hover::after {
+  opacity: 1;
 }
 
 open-heart.text-open-heart .on {
   display: none
 }
 
+open-heart.text-open-heart span {
+  position: relative;
+  display: inline-block;
+  background-image: url(/img/icons/heart.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  top: 4px;
+  width: 1.2em;
+  height: 1.2em;
+}
+
+open-heart.text-open-heart .on {
+  background-image: url(/img/icons/heart_fill.svg);
+}
+
+
 open-heart.text-open-heart[aria-pressed="true"] .on {
   opacity: 1;
-  display: initial
+  display: inline-block;
 }
 
 open-heart.text-open-heart .off {
-  filter: grayscale(100%);
   transition: filter 0.2s ease-in-out;
 }
-
-open-heart.text-open-heart:hover .off {
-  filter: grayscale(0%);
-}
-
 
 open-heart.text-open-heart[aria-pressed="true"] .off {
   display: none
 }
 
-open-heart.text-open-heart .off:hover {
-  opacity: 1;
-}
-
 open-heart.text-open-heart:hover[count]::after {
-  opacity: 1;
+  //opacity: 1;
 }
 
 open-heart.text-open-heart[count]::after {
+  opacity: 0.5;
   content: "× " attr(count);
 }

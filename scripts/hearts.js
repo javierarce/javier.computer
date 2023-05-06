@@ -1,1 +1,116 @@
-class OpenHeartElement extends HTMLElement{constructor(){super(),this.KEY="_open_heart",this._send=this.send.bind(this)}connectedCallback(){if(this.tabIndex=0,this.setAttribute("role","button"),this.setAttribute("aria-busy","false"),!this.emoji||!this.href)return console.error(this,"missing required attributes"),void this.toggleAttribute("disabled",!0);this.validateEmoji()?this.hasReacted()?this.setReacted():(this.addEventListener("click",this._send),this.addEventListener("keydown",this._send)):console.error(this,"emoji attribute incorrect"),this.getCount()}validateEmoji(){if("Segmenter"in Intl){let t=Array.from(new Intl.Segmenter(navigator.language||"en",{granularity:"grapheme"}).segment(this.emoji)),e=t.length>0&&t[0].segment;return this.emoji==e&&/\p{Emoji}/u.test(e)}{let i=this.emoji.match(/\p{Emoji}/u);return!(!i||!i[0])}}get href(){return this.getAttribute("href")}get emoji(){return this.getAttribute("emoji")}get key(){return`${this.emoji}@${encodeURIComponent(this.href)}`}get disabled(){return this.hasAttribute("disabled")}hasReacted(){return(localStorage.getItem(this.KEY)||"").split(",").includes(this.key)}setReacted(){this.setAttribute("aria-pressed","true"),this.toggleAttribute("disabled",!0),this.removeEventListener("click",this._send)}saveReaction(){let t=(localStorage.getItem(this.KEY)||"").split(",").filter(t=>t);t.push(this.key),localStorage.setItem(this.KEY,t.join(","))}async getCount(){let t=await fetch(this.href,{headers:{Accept:"application/json"}});if(!t.ok)return;let e={};try{e=await t.json()}catch{}e[this.emoji]>0&&this.setAttribute("count",Number(e[this.emoji]||0).toString())}async send(t){if((!(t instanceof KeyboardEvent)||["Enter"," "].includes(t.key))&&!this.disabled&&"true"!==this.getAttribute("aria-busy")){if(this.hasReacted())return this.setReacted();this.setAttribute("aria-busy","true"),await fetch(this.href,{method:"post",body:this.emoji,mode:"no-cors"}),this.setAttribute("aria-busy","false"),this.saveReaction(),this.setReacted(),this.getCount(),this.dispatchEvent(new CustomEvent("open-heart",{bubbles:!0}))}}}window.customElements.get("open-heart")||(window.OpenHeartElement=OpenHeartElement,window.customElements.define("open-heart",OpenHeartElement));export default OpenHeartElement;
+class OpenHeartElement extends HTMLElement {
+  constructor() {
+    super()
+    this.KEY = '_open_heart'
+    this._send = this.send.bind(this)
+  }
+
+  connectedCallback() {
+    this.tabIndex = 0
+    this.setAttribute('role', 'button')
+    this.setAttribute('aria-busy', 'false')
+
+    if (!this.emoji || !this.href) {
+      console.error(this, 'missing required attributes')
+      this.toggleAttribute('disabled', true)
+      return
+    }
+
+    if (!this.validateEmoji()) {
+      console.error(this, 'emoji attribute incorrect')
+      return
+    }
+
+    if (this.hasReacted()) {
+      this.setReacted()
+    } else {
+      this.addEventListener('click', this._send)
+      this.addEventListener('keydown', this._send)
+    }
+
+    this.getCount()
+  }
+
+  validateEmoji() {
+    if ('Segmenter' in Intl) {
+      const segments = Array.from(new Intl.Segmenter(navigator.language || 'en', { granularity: 'grapheme' }).segment(this.emoji))
+      const emoji = segments.length > 0 ? segments[0].segment : false
+      if (this.emoji != emoji)
+        return false
+      return /\p{Emoji}/u.test(emoji)
+    } else {
+      const match = this.emoji.match(/\p{Emoji}/u)
+      return !!(match && match[0])
+    }
+  }
+
+  get href() {
+    return this.getAttribute('href')
+  }
+
+  get emoji() {
+    return this.getAttribute('emoji')
+  }
+
+  get key() {
+    return `${this.emoji}@${encodeURIComponent(this.href)}`
+  }
+
+  get disabled() {
+    return this.hasAttribute('disabled')
+  }
+
+  hasReacted() {
+    const hearts = (localStorage.getItem(this.KEY) || '').split(',')
+    return hearts.includes(this.key)
+  }
+
+  setReacted() {
+    this.setAttribute('aria-pressed', 'true')
+    this.toggleAttribute('disabled', true)
+    this.removeEventListener('click', this._send)
+  }
+
+  saveReaction() {
+    const hearts = (localStorage.getItem(this.KEY) || '').split(',').filter(s => s)
+    hearts.push(this.key)
+    localStorage.setItem(this.KEY, hearts.join(','))
+  }
+
+  async getCount() {
+    const response = await fetch(this.href, { headers: { 'Accept': 'application/json' } })
+    if (!response.ok)
+      return
+    let json = {}
+    try {
+      json = await response.json()
+    }
+    catch { /* do nothing */ }
+    this.setAttribute('count', Number(json[this.emoji] || 0).toString())
+  }
+
+  async send(event) {
+    if (event instanceof KeyboardEvent && !['Enter', ' '].includes(event.key))
+      return
+    if (this.disabled)
+      return
+    if (this.getAttribute('aria-busy') === 'true')
+      return
+    if (this.hasReacted())
+      return this.setReacted()
+    this.setAttribute('aria-busy', 'true')
+    await fetch(this.href, { method: 'post', body: this.emoji, mode: 'no-cors' })
+    this.setAttribute('aria-busy', 'false')
+    this.saveReaction()
+    this.setReacted()
+    this.getCount()
+    this.dispatchEvent(new CustomEvent('open-heart', { bubbles: true }))
+  }
+}
+
+if (!window.customElements.get('open-heart')) {
+  window.OpenHeartElement = OpenHeartElement
+  window.customElements.define('open-heart', OpenHeartElement)
+}
+
+export default OpenHeartElement
