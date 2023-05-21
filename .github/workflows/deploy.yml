@@ -20,6 +20,7 @@ jobs:
         with:
           token: ${{ secrets.GH_TOKEN }}
           target_branch: 'gh-pages'
+          jekyll_src: 'docs'
 
 
 
