@@ -15,13 +15,7 @@ jobs:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
           restore-keys: |
-           ${{ runner.os }}-gems-
-      - uses: helaili/jekyll-action@v2
-        with:
-          token: ${{ secrets.GH_TOKEN }}
-          target_branch: 'gh-pages'
-          jekyll_src: 'docs'
-
-
-
-
+            ${{ runner.os }}-gems-
+      - uses: helaili/jekyll-action@2.5.0   
+        with:                             
+          token: ${{ secrets.GITHUB_TOKEN }}
