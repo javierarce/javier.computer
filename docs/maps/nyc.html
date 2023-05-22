@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nueva York</title>
+
+    <link rel="shortcut icon" href="http://localhost:4001/favicon.ico">
+
+
+    <meta name="generator" content="Javier's computer">
+<meta property="og:locale" content="en_ES" />
+<meta property="og:site_name" content="Javier's computer" />
+
+<link rel="schema.dcterms" href="https://dublincore.org/specifications/dublin-core/dcmi-terms/">
+<meta name="dcterms.dateCopyrighted" content="2023">
+<meta name="dcterms.rightsHolder" content="Javier Arce">
+
+<meta property="og:title" content="Nueva York">
+<meta name="twitter:title" content="Nueva York">
+<meta property="og:description" content="Pequeña guía de bolsillo" />
+<meta property="twitter:description" content="Pequeña guía de bolsillo" />
+
+<meta property='og:image' content="http://localhost:4001/img/card.png?version=5.0.52"/>
+<meta name=twitter:image content="http://localhost:4001/img/card.png?version=5.0.52">
+<meta name="twitter:card" content="summary_large_image">
+<meta property=og:type content="website">
+
+<meta property="og:url" content="http://localhost:4001/maps/nyc" />
+<link rel="canonical" href="http://localhost:4001/maps/nyc">
+<meta property="article:author" content="http://localhost:4001/about">
+<meta name="author" content="Javier Arce">
+<meta name="theme-color" content="#000">
+<meta property=twitter:account_id content="39083">
+<meta name="twitter:site" content="@javier">
+<meta name="twitter:creator" content="@javier">
+
+<script type="application/ld+json">
+  {"description":"My computer on the net","@type":"WebSite","url":"http://localhost:4001","name":"Javier's computer","headline":"Javier's computer","@context":"https://schema.org"}</script>
+
+
+<script defer type="module" src="/scripts/hearts.js?version=5.0.52" charset="utf-8"></script>
+
+<script src="/scripts/Spinner.js?version=5.0.52" charset="utf-8"></script>
+<script src="/scripts/Poll.js?version=5.0.52" charset="utf-8"></script>
+<script src="/scripts/Player.js?version=5.0.52" charset="utf-8"></script>
+<script src="/scripts/Weather.js?version=5.0.52" charset="utf-8"></script>
+<script src="/scripts/rss.reader.js?version=5.0.52" charset="utf-8"></script>
+<script src="/scripts/music.snitch.js?version=5.0.52" charset="utf-8"></script>
+<script src="/scripts/Chameleon.js?version=5.0.52" charset="utf-8"></script>
+<script src="/scripts/client.js?version=5.0.52" charset="utf-8"></script>
+<link rel="stylesheet" href="/css/style.css?version=5.0.52" />
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4001/feed.xml" title="Javier's computer" />
+
+    
+    
+
+    <script>
+    const locations = [{"title":"Goods for the Study","description":"Ahora que cerró CW Pencil Enterprise este es un buen sitio donde comprar material de oficina.","address":"234 Mulberry St, New York","latlng":[40.72273113413452,-73.99588703974875]},{"title":"Prospect Park","description":"Un parque bien majo","address":"Brooklyn, NY","latlng":[40.66079205923622,-73.96930685789933]},{"title":"Desert Island","description":"Desert Island is a record store located in the East Village neighborhood of Manhattan, New York City. It is located at 540 East 5th Street, between Avenues A and B.","address":"540 E 5th St","latlng":[40.713979006545344,-73.95083660504864]},{"title":"Quimby's Bookstore NYC","description":"Sales de Desert Island y te metes aquí.","address":"536 Metropolitan Ave","latlng":[40.7139612724994,-73.95093182857953]},{"title":"Mast Books","description":"Tienen una colección exquisita de primeras ediciones, libros raros y descatalogados, pero son un poco bordes.","address":"72 Avenue A, New York","latlng":[40.72515257580894,-73.98442797315501]},{"title":"Sit & Wonder","description":"Cuando fui a esta cafetería me tocó el barista aprendiz","address":"688 Washington Ave, Brooklyn","latlng":[40.67739967774963,-73.9638492637935]},{"title":"Nûrish","description":"Café con platos vegetarianos y veganos (pero también con opciones para carnívoros)","address":"637 Washington Ave, Brooklyn","latlng":[40.67840685350245,-73.96369051873681]},{"title":"Banh Mi Place","description":"","address":"824b Washington Ave, Brooklyn","latlng":[40.67329930729744,-73.96314417387886]},{"title":"Most High","description":"","address":"820 Washington Ave, Brooklyn","latlng":[40.67349277538117,-73.96322140362759]},{"title":"Hungry Ghost","description":"","address":"183 Sterling Pl, Brooklyn","latlng":[40.67691397746196,-73.97148321854978]},{"title":"Blue Bottle Coffee","description":"Para disfrutar de un buen latte por $6","address":"203 7th Ave, Brooklyn","latlng":[40.67111496700548,-73.97825295003133]}]
+    </script>
+
+    <script src="/scripts/lazyload.min.js?version=5.0.52" charset="utf-8"></script>
+    <script src="/scripts/map.js?version=5.0.52" charset="utf-8"></script>
+    <script src="/scripts/map/ejs.min.js?version=5.0.52" charset="utf-8"></script>
+    <script src="/scripts/map/leaflet.js?version=5.0.52" charset="utf-8"></script>
+    <script src="/scripts/map/leaflet.markercluster.js?version=5.0.52" charset="utf-8"></script>
+
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <link rel="stylesheet" href="/css/map.css" />
+
+    <body class="Layout__map">
+      
+
+<div class="Content">
+  <div class="Navigation js-nav">
+  <a class="Navigation__link" href="/">Home</a>
+  
+  <div class="Navigation__links">
+    <a class="Navigation__link" href="/photos">Photos</a>
+    <a class="Navigation__link" href="/projects">Projects</a>
+    <a class="Navigation__link" href="/about">About</a>
+    <a class="Navigation__link" href="/feed.xml" title="Suscríbete al RSS">RSS</a>
+  </div>
+</div>
+
+
+  <div class="Trips">
+    <div class="Trip">
+      <div class="Trip__content">
+
+        <h2>Nueva York</h2>
+        <h5>Pequeña guía de bolsillo</h5>
+
+        <div class="App js-map" data-locations="nyc" data-lng="-73.9857" data-lat="40.72" data-zoom="10">
+          <div id="map" class="Map"></div>
+        </div>
+
+
+        
+
+
+        <div class="Locations">
+          
+          
+          
+          <div class="Location">
+            <a href="?marker=1" class="Location__title"> <span class="Location__id">1</span> Goods for the Study</a>
+            <div class="Location__description">Ahora que cerró CW Pencil Enterprise este es un buen sitio donde comprar material de oficina.</div>
+            <div class="Location__address">234 Mulberry St, New York</div>
+          </div>
+          
+          
+          <div class="Location">
+            <a href="?marker=2" class="Location__title"> <span class="Location__id">2</span> Prospect Park</a>
+            <div class="Location__description">Un parque bien majo</div>
+            <div class="Location__address">Brooklyn, NY</div>
+          </div>
+          
+          
+          <div class="Location">
+            <a href="?marker=3" class="Location__title"> <span class="Location__id">3</span> Desert Island</a>
+            <div class="Location__description">Desert Island is a record store located in the East Village neighborhood of Manhattan, New York City. It is located at 540 East 5th Street, between Avenues A and B.</div>
+            <div class="Location__address">540 E 5th St</div>
+          </div>
+          
+          
+          <div class="Location">
+            <a href="?marker=4" class="Location__title"> <span class="Location__id">4</span> Quimby's Bookstore NYC</a>
+            <div class="Location__description">Sales de Desert Island y te metes aquí.</div>
+            <div class="Location__address">536 Metropolitan Ave</div>
+          </div>
+          
+          
+          <div class="Location">
+            <a href="?marker=5" class="Location__title"> <span class="Location__id">5</span> Mast Books</a>
+            <div class="Location__description">Tienen una colección exquisita de primeras ediciones, libros raros y descatalogados, pero son un poco bordes.</div>
+            <div class="Location__address">72 Avenue A, New York</div>
+          </div>
+          
+          
+          <div class="Location">
+            <a href="?marker=6" class="Location__title"> <span class="Location__id">6</span> Sit & Wonder</a>
+            <div class="Location__description">Cuando fui a esta cafetería me tocó el barista aprendiz</div>
+            <div class="Location__address">688 Washington Ave, Brooklyn</div>
+          </div>
+          
+          
+          <div class="Location">
+            <a href="?marker=7" class="Location__title"> <span class="Location__id">7</span> Nûrish</a>
+            <div class="Location__description">Café con platos vegetarianos y veganos (pero también con opciones para carnívoros)</div>
+            <div class="Location__address">637 Washington Ave, Brooklyn</div>
+          </div>
+          
+          
+          <div class="Location">
+            <a href="?marker=8" class="Location__title"> <span class="Location__id">8</span> Banh Mi Place</a>
+            <div class="Location__description"></div>
+            <div class="Location__address">824b Washington Ave, Brooklyn</div>
+          </div>
+          
+          
+          <div class="Location">
+            <a href="?marker=9" class="Location__title"> <span class="Location__id">9</span> Most High</a>
+            <div class="Location__description"></div>
+            <div class="Location__address">820 Washington Ave, Brooklyn</div>
+          </div>
+          
+          
+          <div class="Location">
+            <a href="?marker=10" class="Location__title"> <span class="Location__id">10</span> Hungry Ghost</a>
+            <div class="Location__description"></div>
+            <div class="Location__address">183 Sterling Pl, Brooklyn</div>
+          </div>
+          
+          
+          <div class="Location">
+            <a href="?marker=11" class="Location__title"> <span class="Location__id">11</span> Blue Bottle Coffee</a>
+            <div class="Location__description">Para disfrutar de un buen latte por $6</div>
+            <div class="Location__address">203 7th Ave, Brooklyn</div>
+          </div>
+          
+        </div>
+
+        <div class="Trip__archive">
+          
+          </ul>
+      </div>
+      </div>
+    </div>
+  </div>
+
+<div class="Footer">  
+  <a class="Footer__link" href="https://github.com/javierarce" title="My GitHub repos" target="_blank">Github</a>
+  <a class="Footer__link" href="https://are.na/javier" title="My Are.na blocks" target="_blank">Arena</a>
+  <a class="Footer__link" href="https://tumblr.com/javier" title="Tumblr" target="_blank">Tumblr</a> 
+  <a class="Footer__link" rel="me" href="https://network.javier.computer/@javier" title="My silly toots" target="_blank">Mastodon</a> 
+  <a class="Footer__link" href="https://twitter.com/javier" title="My silly tweets" target="_blank">Twitter</a> 
+  <a class="Footer__link" href="https://instagram.com/javier" title="My instagram photos & drawings" target="_blank">Instagram</a> 
+  <a class="Footer__link" href="https://letterboxd.com/javier" title="The films I watch" target="_blank">Letterboxd</a> 
+</div>
+<script src="https://www.youtube.com/iframe_api" charset="utf-8"></script>
+
+</div>
+
+
+
+
+
+    </body>
+</html>
