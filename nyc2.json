@@ -1,0 +1,143 @@
+[
+  { 
+    "id": 0,
+    "emoji": "🍴",
+    "title": "Russ & Daughters Cafe",
+    "address": "127 Orchard St",
+    "description": "Russ & Daughters Cafe is a New York City restaurant located in the Lower East Side of Manhattan. It is owned and operated by the Russ & Daughters family, who have been in the business of selling smoked fish and other delicacies since 1914.",
+    "latlng": [40.72023485802006, -73.98966403445948]
+  }, { 
+    "id": 1,
+    "emoji": "🎨",
+    "title": "bitforms gallery",
+    "description": "bitforms gallery is a contemporary art gallery in New York City that specializes in digital art and media. The gallery was founded in 2001 by artist and curator, Michael Connor, and is located in the Lower East Side of Manhattan.",
+    "address": "131 Allen St",
+    "latlng": [40.72069021640289, -73.9902648492765]
+  }, {
+    "id": 2,
+    "emoji": "🎨",
+    "title": "The New Museum",
+    "description": "The New Museum is an art museum in New York City. It was founded in 1977 as a new museum for new art. The museum is located in the Lower East Side of Manhattan, on Bowery between Prince and Houston Streets.",
+    "address": "235 Bowery",
+    "latlng": [40.722637685360816, -73.99274527076528]
+  }, {
+    "id": 3,
+    "emoji": "🎨",
+    "title": "The Whitney Museum of American Art",
+    "description": "The Whitney Museum of American Art is an art museum in New York City. It is located in the Meatpacking District of Manhattan, on the west side of Gansevoort Street between Washington Street and Little West 12th Street.",
+    "address": "99 Gansevoort St",
+    "latlng": [40.73976651847324, -74.0088843595925]
+  }, {
+    "id": 4,
+    "emoji": "🎨",
+    "title": "The Metropolitan Museum of Art",
+    "description": "The Metropolitan Museum of Art, colloquially 'the Met', is the largest art museum in the United States. Located in New York City's Upper East Side, the museum houses an extensive collection of art, including antiquities, musical instruments, armor, and paintings.",
+    "address": "1000 5th Ave",
+    "latlng": [40.77963155963259, -73.96321181623105]
+  }, {
+    "id": 5,
+    "emoji": "🎨",
+    "title": "The Museum of Modern Art",
+    "description": "The Museum of Modern Art is an art museum located in Midtown Manhattan in New York City, on 53rd Street between Fifth and Sixth Avenues. MoMA has been important in developing and collecting modernist art, and is often identified as one of the largest and most influential museums of modern art in the world.",
+    "address": "11 W 53rd St",
+    "latlng": [40.76296044428221, -73.97753576943644]
+  }, {
+    "id": 6,
+    "emoji": "🎨",
+    "title": "The Solomon R. Guggenheim Museum",
+    "description": "The Solomon R. Guggenheim Museum, often referred to as the Guggenheim, is an art museum located at 1071 Fifth Avenue on the corner of East 89th Street in the Upper East Side neighborhood of Manhattan in New York City.",
+    "address": "1071 5th Ave",
+    "latlng": [ 40.78316642549754, -73.95897060273896]
+  }, {
+    "id": 7,
+    "emoji": "🎨",
+    "title": "FIAF Gallery",
+    "description": "The French Institute Alliance Française (FIAF) is a non-profit organization dedicated to promoting French language and culture in the United States. FIAF is the largest French cultural center in the United States, with branches in New York City, Los Angeles, San Francisco, and Washington, D.C.",
+    "address": "22 E 60th St #1077",
+    "latlng": [40.76410226616245, -73.97028078739557]
+  }, {
+    "id": 9,
+    "title": "IFC Center",
+    "emoji": "🎥",
+    "description": "IFC Center is a movie theater located in the Greenwich Village neighborhood of Manhattan, New York City. It is owned by the Independent Film Channel, and is operated by the IFC Center, Inc., a non-profit organization.",
+    "address": "323 Avenue of the Americas",
+    "latlng": [40.73191981042581,  -74.00197291112843]
+  }, {
+    "id": 11,
+    "title": "Fotografiska Museum",
+    "emoji": "📷",
+    "description": "Fotografiska is a photography museum in New York City. It is located at 542 West 27th Street in the Chelsea neighborhood of Manhattan. The museum is dedicated to the preservation and exhibition of photography.",
+    "address": "281 Park Ave S",
+    "latlng": [40.73944036488169, -73.98685064877274]
+  }, {
+    "id": 12,
+    "title": "The New York Public Library",
+    "emoji": "📚",
+    "description": "The New York Public Library is a public library system in New York City. It is one of the largest public library systems in the world, with 92 locations throughout the boroughs of Manhattan, the Bronx, and Staten Island.",
+    "address": "476 5th Ave",
+    "latlng": [40.77378133320717, -73.98475280992184]
+  }, {
+    "id": 13,
+    "emoji": "🎨",
+    "title": "Cooper Hewitt, Smithsonian Design Museum",
+    "description": "Cooper Hewitt, Smithsonian Design Museum is a museum in New York City. It is located at 2 East 91st Street in the Upper East Side neighborhood of Manhattan. The museum is dedicated to the preservation and exhibition of design.",
+    "address": "2 E 91st St",
+    "latlng": [40.78456637438759, -73.95785174506685]
+  }, {
+    "id": 14,
+    "title": "Printed Matter",
+    "emoji": "📚",
+    "description": "Printed Matter is a bookstore in New York City. It is located at 195 Tenth Avenue in the Chelsea neighborhood of Manhattan. The store specializes in rare and out-of-print books, and is known for its collection of books on art, photography, and architecture.",
+    "address": "231 11th Ave",
+    "latlng": [40.75310105726885,-74.00541191612035]
+  }, {
+    "id": 17,
+    "title": "Trailer Park Lounge",
+    "emoji": "🍻",
+    "description": "Trailer Park Lounge is a bar in New York City. It is located at 54 North 11th Street in the Williamsburg neighborhood of Brooklyn. The bar is known for its collection of vintage trailers.",
+    "address": "271 W 23rd St, New York",
+    "latlng": [40.74821198655939, -73.99713528730385]
+  }, {
+    "id": 18,
+    "title": "Economy Candy",
+    "emoji": "🍬",
+    "description": "Economy Candy is a candy store in New York City. It is located at 108 Rivington Street in the Lower East Side neighborhood of Manhattan. The store specializes in bulk candy, and is known for its collection of retro candy.",
+    "address": "108 Rivington St",
+    "latlng": [40.72137480090504, -73.98769527547817]
+  }, {
+    "id": 19,
+    "title": "Yonah Schimmel's Knish Bakery",
+    "emoji": "🥟",
+    "description": "Yonah Schimmel's Knish Bakery is a bakery in New York City. It is located at 127 Orchard Street in the Lower East Side neighborhood of Manhattan. The bakery specializes in knishes, and is known for its collection of retro candy.",
+    "address": "137 E Houston St",
+    "latlng": [40.72448729923251, -73.99072561101372]
+  }, {
+    "id": 20,
+    "title": "Caffe Reggio",
+    "emoji": "☕️",
+    "description": "Caffe Reggio is a coffee shop in New York City. The coffee shop specializes in espresso, and is known for its collection of vintage espresso machines.",
+    "address": "119 MacDougal St",
+    "latlng": [40.73046235289145, -74.00041351726522]
+  }, {
+    "id": 21,
+    "title": "Faicco’s Italian Specialties",
+    "emoji": "🍕",
+    "description": "Faicco's Italian Specialties is a deli in New York City. It is located at 123 MacDougal Street in the Greenwich Village neighborhood of Manhattan. The deli specializes in Italian sandwiches, and is known for its collection of vintage espresso machines.",
+    "address": "260 Bleecker St",
+    "latlng": [40.73166661750185, -74.00302721842925]
+  }, {
+    "id": 22,
+    "title": "Tacombi",
+    "emoji": "🌮",
+    "description": "Tacombi is a taco shop in New York City. The taco shop specializes in tacos, and is known for its collection of vintage espresso machines.",
+    "address": "255 Bleecker St",
+    "latlng": [40.73111348513119, -74.00273800568222]
+  }, {
+    "id": 23,
+    "title": "239 Play",
+    "emoji": "🎮",
+    "description": "239 Play is a video game arcade in New York City. It is located at 239 East 5th Street in the East Village neighborhood of Manhattan. The arcade specializes in vintage video games, and is known for its collection of vintage arcade machines.",
+    "address": "239 City Island Ave, The Bronx",
+    "latlng": [41.96559769082737, -74.13745770782558]
+  }
+]

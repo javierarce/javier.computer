@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+  >
+<channel>
+  <title>Javier's computer</title>
+  <description>My computer on the net</description>		
+
+  <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
+  <link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" />
+  <updated>2023-05-22T10:28:40+02:00</updated>
+  <id>http://localhost:4001/feed.xml</id>
+
+  <sy:updatePeriod>daily</sy:updatePeriod>
+  <sy:updateFrequency>1</sy:updateFrequency>
+  <link>http://localhost:4001</link>
+  <atom:link href="http://localhost:4001/feed.xml" rel="self" type="application/rss+xml" />
+  <lastBuildDate>Sun, 21 May 2023 22:50:34 +0200</lastBuildDate>
+    
+    
+  <item>
+    <title>Nudos</title>
+    <pubDate>Sun, 21 May 2023 22:50:34 +0200</pubDate>
+    <link>http://localhost:4001/2023/05/21/nudos</link>
+    <guid isPermaLink="true">http://localhost:4001/2023/05/21/nudos</guid>
+    
+
+    <description>
+      
+        &lt;p&gt;Sin ninguna intención más que la de aprender algo práctico, este fin de semana pasé unas pocas horas haciendo nudos (al parecer, en castellano a este arte se le denomina «cabuyería»). Dejo por aquí varios de los recursos que utilicé:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://julianoliver.com/knotworks&quot; class=&quot;web-link&quot;&gt;Esta guía&lt;/a&gt; amable y tranquila de &lt;a href=&quot;https://mastodon.social/@JulianOliver&quot; class=&quot;web-link&quot;&gt;Julian
+Oliver&lt;/a&gt; está muy bien porque además de
+enseñarte algunos cuantos nudos útiles dedica cuatro breves vídeos a explicar la terminología básica y otros conceptos importantes.&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://www.youtube.com/watch?v=tK-UebImvwA&quot; class=&quot;web-link&quot;&gt;Este vídeo&lt;/a&gt; ofrece una buena progresión a partir de un nudo sencillo y fácil de recordar.&lt;/li&gt;
+  &lt;li&gt;Este otro vídeo reúne &lt;a href=&quot;https://www.youtube.com/watch?v=Q9ruvjEDvTg&quot; class=&quot;web-link&quot;&gt;ocho nudos&lt;/a&gt; que toda persona hecha y derecha debería conocer.&lt;/li&gt;
+  &lt;li&gt;¿Mi nudo favorito? Por supuesto que el &lt;a href=&quot;https://www.youtube.com/watch?v=mxR5HBEa76w&quot; class=&quot;web-link&quot;&gt;highwayman’s hitch&lt;/a&gt;. La historia es probablemente apócrifa, pero se dice que era usado por los bandidos y ladrones de bancos del periodo colonial estadounidense por su extrema facilidad para deshacer el bucle tirando de uno de los extremos.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+        
+    </description>
+  </item>
+    
+  <item>
+    <title>Modernismo modernista</title>
+    <pubDate>Sun, 07 May 2023 08:39:15 +0200</pubDate>
+    <link>http://localhost:4001/2023/05/07/modernista</link>
+    <guid isPermaLink="true">http://localhost:4001/2023/05/07/modernista</guid>
+    
+
+    <description>
+      
+        &lt;p&gt;Crusanes secos · Pizza Modernista de Terrassa · Ginger beer &amp;amp; horchatas.&lt;/p&gt;
+
+        
+    </description>
+  </item>
+    
+  <item>
+    <title>Celebración Post-conciliación</title>
+    <pubDate>Sat, 06 May 2023 08:41:29 +0200</pubDate>
+    <link>http://localhost:4001/2023/05/06/celebracion-postconciliacion</link>
+    <guid isPermaLink="true">http://localhost:4001/2023/05/06/celebracion-postconciliacion</guid>
+    
+
+    <description>
+      
+        &lt;p&gt;Celebración post-conciliación · Cocktails &amp;amp; cocktails &amp;amp; dreams con &lt;a href=&quot;https://www.ericafustero.com&quot; class=&quot;web-link&quot;&gt;Erica&lt;/a&gt; · Cyclic Beer Farm + 035 BAR + Jazzman.&lt;/p&gt;
+
+
+        
+    </description>
+  </item>
+    
+  <item>
+    <title>Open Heart Protocol</title>
+    <pubDate>Thu, 04 May 2023 22:57:54 +0200</pubDate>
+    <link>http://localhost:4001/2023/05/04/open-heart-protocol</link>
+    <guid isPermaLink="true">http://localhost:4001/2023/05/04/open-heart-protocol</guid>
+    
+
+    <description>
+      
+        &lt;p&gt;Sigo despistado a niveles nunca vistos · Executive dinner con Laszlito en Vereda · Reviví el proyecto de &lt;a href=&quot;https://madrid.javier.computer&quot; class=&quot;web-link&quot;&gt;Avisos Madrid&lt;/a&gt; que utilicé en una de mis piezas de Poetry Slash · Gracias a la maravillosa &lt;a href=&quot;https://muan.co&quot; class=&quot;web-link&quot;&gt;Mu-An &lt;/a&gt;, y cortesía de su &lt;a href=&quot;https://github.com/dddddddddzzzz/OpenHeart&quot; class=&quot;web-link&quot;&gt;Open Heart Protocol&lt;/a&gt;, añadí un sistema para darle like a &lt;a href=&quot;/photos&quot; class=&quot;web-link&quot;&gt;mis fotos&lt;/a&gt; · ¿Qué estaba diciendo?&lt;/p&gt;
+
+        
+    </description>
+  </item>
+    
+  <item>
+    <title>Good Living Is Coming For You</title>
+    <pubDate>Tue, 02 May 2023 22:02:24 +0200</pubDate>
+    <link>http://localhost:4001/2023/05/02/good-living-is-coming-for-you</link>
+    <guid isPermaLink="true">http://localhost:4001/2023/05/02/good-living-is-coming-for-you</guid>
+    
+
+    <description>
+      
+        &lt;p&gt;Me sacan sangre por la mañana, se quedan con mi pis · Fatal falta de foco · &lt;a href=&quot;https://sweepingpromises.bandcamp.com/album/good-living-is-coming-for-you-2&quot; class=&quot;web-link&quot;&gt;Eraser&lt;/a&gt; · Un poco de orden &lt;a href=&quot;/photos&quot; class=&quot;web-link&quot;&gt;aquí&lt;/a&gt; · Poeta chileno.&lt;/p&gt;
+
+
+        
+    </description>
+  </item>
+    
+  <item>
+    <title>Libros Mutantes</title>
+    <pubDate>Fri, 28 Apr 2023 00:35:31 +0200</pubDate>
+    <link>http://localhost:4001/2023/04/28/libros-mutantes</link>
+    <guid isPermaLink="true">http://localhost:4001/2023/04/28/libros-mutantes</guid>
+    
+
+    <description>
+      
+      <![CDATA[
+        
+          
+            <img src="https://img.javier.computer/madrid/R0002926_1280.jpg" alt="Libros Mutantes"/>  
+          
+            <img src="https://img.javier.computer/madrid/R0002937_1280.jpg" alt="Libros Mutantes"/>  
+          
+            <img src="https://img.javier.computer/madrid/R0002946_1280.jpg" alt="Libros Mutantes"/>  
+          
+            <img src="https://img.javier.computer/madrid/R0002935_1280.jpg" alt="Libros Mutantes"/>  
+          
+            <img src="https://img.javier.computer/madrid/R0002941_1280.jpg" alt="Libros Mutantes"/>  
+          
+            <img src="https://img.javier.computer/madrid/R0002958_1280.jpg" alt="Libros Mutantes"/>  
+          
+        
+        <p>Libros Mutantes</p>
+   
+        <p>Madrid</p>
+        ]]>
+      
+    </description>
+  </item>
+    
+  <item>
+    <title>Sant Pol de Mar</title>
+    <pubDate>Mon, 10 Apr 2023 00:00:00 +0200</pubDate>
+    <link>http://localhost:4001/2023/04/10/sant-pol-de-mar</link>
+    <guid isPermaLink="true">http://localhost:4001/2023/04/10/sant-pol-de-mar</guid>
+    
+
+    <description>
+      
+      <![CDATA[
+        
+          
+            <img src="https://img.javier.computer/barcelona/R0002858_1280.jpg" alt="Sant Pol de Mar"/>  
+          
+            <img src="https://img.javier.computer/barcelona/R0002856_1280.jpg" alt="Sant Pol de Mar"/>  
+          
+            <img src="https://img.javier.computer/barcelona/R0002851_1280.jpg" alt="Sant Pol de Mar"/>  
+          
+            <img src="https://img.javier.computer/barcelona/R0002825_1280.jpg" alt="Sant Pol de Mar"/>  
+          
+            <img src="https://img.javier.computer/barcelona/R0002810_1280.jpg" alt="Sant Pol de Mar"/>  
+          
+        
+        <p>Sant Pol de Mar</p>
+   
+        <p>Barcelona</p>
+        ]]>
+      
+    </description>
+  </item>
+    
+  <item>
+    <title>All The Beauty And The Bloodshed</title>
+    <pubDate>Fri, 07 Apr 2023 00:35:31 +0200</pubDate>
+    <link>http://localhost:4001/2023/04/07/all-the-beauty-and-the-bloodshed</link>
+    <guid isPermaLink="true">http://localhost:4001/2023/04/07/all-the-beauty-and-the-bloodshed</guid>
+    
+
+    <description>
+      
+        &lt;p&gt;ACT · «Uno de tus walking poems me lanzó un piropo» · &lt;a href=&quot;https://www.mistergriffin.es/product-page/atractiva-jugada-perdedora&quot; class=&quot;web-link&quot;&gt;Atractiva jugada perdedora&lt;/a&gt; · Zumzeig · &lt;a href=&quot;https://letterboxd.com/javier/film/all-the-beauty-and-the-bloodshed&quot; class=&quot;web-link&quot;&gt;All The Beauty And The Bloodshed&lt;/a&gt; ★★★★½ · “Unfortunately, we are unable to include your session at Config”.&lt;/p&gt;
+
+
+        
+    </description>
+  </item>
+    
+  <item>
+    <title>Wall</title>
+    <pubDate>Tue, 04 Apr 2023 00:00:00 +0200</pubDate>
+    <link>http://localhost:4001/2023/04/04/Wall</link>
+    <guid isPermaLink="true">http://localhost:4001/2023/04/04/Wall</guid>
+    
+
+    <description>
+      
+      <![CDATA[
+        
+          
+            <img src="https://img.javier.computer/barcelona/R0002737_1280.jpg" alt="Wall"/>  
+          
+        
+        
+   
+        <p>Barcelona</p>
+        ]]>
+      
+    </description>
+  </item>
+    
+  <item>
+    <title>La Necora D'Or</title>
+    <pubDate>Tue, 04 Apr 2023 00:00:00 +0200</pubDate>
+    <link>http://localhost:4001/2023/04/04/Necora-Dor</link>
+    <guid isPermaLink="true">http://localhost:4001/2023/04/04/Necora-Dor</guid>
+    
+
+    <description>
+      
+      <![CDATA[
+        
+          
+            <img src="https://img.javier.computer/barcelona/R0002734_1280.jpg" alt="La Necora D'Or"/>  
+          
+        
+        <p>La Necora D’Or</p>
+   
+        <p>Barcelona</p>
+        ]]>
+      
+    </description>
+  </item>
+    
+</channel>
+</rss>
