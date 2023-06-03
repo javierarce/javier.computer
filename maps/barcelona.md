@@ -1,6 +1,7 @@
 ---
 layout: trip
 title:  Barcelona
+description: Guía de bolsillo
 className: Map
 permalink: maps/barcelona
 location: barcelona

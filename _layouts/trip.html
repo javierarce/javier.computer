@@ -11,43 +11,40 @@ className: Trip
     <div class="Trip">
       <div class="Trip__content">
 
-        <h2>{{ page.title }}</h2>
-        <h5>{{ page.description }}</h5>
-
+        <div class="BigMap">
         <div class="App js-map" data-locations="{{ page.location }}" data-lng="{{ page.lng }}" data-lat="{{ page.lat }}" data-zoom="{{ page.zoom }}">
           <div id="map" class="Map"></div>
         </div>
 
-
         {{ content }}
 
-        <div class="Locations">
+        <div class="Sidebar">
+        <div class="Sidebar__title">{{ page.title }}</div>
           {% assign i = 0 %}
+          <div class="Locations">
           {% for product in site.data[page.location] %}
           {% assign i = i | plus: 1 %}
           <div class="Location">
-            <a href="?marker={{ i}}" class="Location__title"> <span class="Location__id">{{ i }}</span> {{ product.title }}</a>
+            <a href="?marker={{ i}}" class="Location__title"><span class="Location__name">{{ product.title }}</span></a>
             <div class="Location__description">{{ product.description }}</div>
+ {% if product.post_references.size > 0 %}
+    <div class="Location__posts">
+      {% assign j = 0 %}
+
+      {% for post_ref in product.post_references %}
+      {% assign j = j | plus: 1 %}
+
+      <a href="{{ post_ref.url }}" class="Location__post">{{ j}}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
             <div class="Location__address">{{ product.address }}</div>
           </div>
           {% endfor %}
         </div>
+        </div>
+        </div>
 
-        <div class="Trip__archive">
-          {% assign prev_date = nil %}
-          {% for post in posts -%}
-          {% assign current_date = post.date | date: '%B %Y' -%}
-
-          {% if prev_date != current_date -%}{% if prev_date != nil -%}</ul></div>{% endif %}
-      <div class="Trip__archiveMonth Archive__month">
-        <h3>{{ post.date | date: '%B %Y' }}</h3>
-        <ul>
-          {% assign prev_date = current_date -%}
-          {% endif -%}
-          <li><span class="Trip__archiveDay Archive__day">{{ post.date | date: '%d' }}</span><a href="{{ post.url }}" class="is-{{ post.category }}">{{ post.title }}</a></li>
-          {% endfor -%}
-        </ul>
-      </div>
       </div>
     </div>
   </div>

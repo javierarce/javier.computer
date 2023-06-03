@@ -1,5 +1,60 @@
-- title: Cafetería
-  description: Ahora que cerró CW Pencil Enterprise este es un buen sitio donde comprar material de oficina.
-  address: "234 Mulberry St, New York"
-  latlng: [41.387, 2.167]
-
+---
+- title: Centre de Cultura Contemporània de Barcelona
+  description: Centro cultural y centro de artes creativas con teatro, galerías de
+    exposiciones y salas de conferencias
+  address: Carrer de Montalegre, 5
+  latlng:
+  - 41.38438058272032
+  - 2.1666050079501575
+  location: barcelona
+  post_references:
+  - url: "/2022/12/04/constelacion-grafica"
+    title: Constelación Gráfica
+- title: Santa Mònica
+  description: Centro interdisciplinario de artes dedicado a impulsar la creación
+    contemporánea
+  address: La Rambla, 7
+  latlng:
+  - 41.377393737045395
+  - 2.1756821241850046
+  location: barcelona
+  post_references:
+  - url: "/2022/12/10/retallar-i-enganxar"
+    title: Retallar i enganxar
+- title: Zumzeig Cinema
+  description: Cine indie barra cooperativa
+  address: Carrer de Béjar, 53
+  latlng:
+  - 41.378023248824405
+  - 2.1448554232917982
+  location: barcelona
+  post_references:
+  - url: "/2023/04/07/all-the-beauty-and-the-bloodshed"
+    title: All The Beauty And The Bloodshed
+- title: Vereda Bar
+  address: Carrer de la Diputació, 155
+  latlng:
+  - 41.38460297818277
+  - 2.1578119926085177
+  location: barcelona
+  post_references:
+  - url: "/2023/05/04/open-heart-protocol"
+    title: Open Heart Protocol
+- title: Cyclic Beer Farm
+  address: Carrer de Coll, 37
+  latlng:
+  - 41.42455743298923
+  - 2.1899451907195195
+  location: barcelona
+  post_references:
+  - url: "/2023/05/06/celebracion-postconciliacion"
+    title: Celebración Post-conciliación
+- title: 035//BAR
+  address: Carrer de Monlau, 35
+  latlng:
+  - 41.424967802049494
+  - 2.1904708306832803
+  location: barcelona
+  post_references:
+  - url: "/2023/05/06/celebracion-postconciliacion"
+    title: Celebración Post-conciliación

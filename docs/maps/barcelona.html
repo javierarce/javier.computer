@@ -18,8 +18,8 @@
 
 <meta property="og:title" content="Barcelona">
 <meta name="twitter:title" content="Barcelona">
-<meta property="og:description" content="My computer on the net" />
-<meta property="twitter:description" content="My computer on the net" />
+<meta property="og:description" content="Guía de bolsillo" />
+<meta property="twitter:description" content="Guía de bolsillo" />
 
 <meta property='og:image' content="http://localhost:4001/img/card.png?version=5.0.52"/>
 <meta name=twitter:image content="http://localhost:4001/img/card.png?version=5.0.52">
@@ -56,7 +56,7 @@
     
 
     <script>
-    const locations = [{"title":"Cafetería","description":"Ahora que cerró CW Pencil Enterprise este es un buen sitio donde comprar material de oficina.","address":"234 Mulberry St, New York","latlng":[41.387,2.167]}]
+    const locations = [{"title":"Centre de Cultura Contemporània de Barcelona","description":"Centro cultural y centro de artes creativas con teatro, galerías de exposiciones y salas de conferencias","address":"Carrer de Montalegre, 5","latlng":[41.38438058272032,2.1666050079501575],"location":"barcelona","post_references":[{"url":"/2022/12/04/constelacion-grafica","title":"Constelación Gráfica"}]},{"title":"Santa Mònica","description":"Centro interdisciplinario de artes dedicado a impulsar la creación contemporánea","address":"La Rambla, 7","latlng":[41.377393737045395,2.1756821241850046],"location":"barcelona","post_references":[{"url":"/2022/12/10/retallar-i-enganxar","title":"Retallar i enganxar"}]},{"title":"Zumzeig Cinema","description":"Cine indie barra cooperativa","address":"Carrer de Béjar, 53","latlng":[41.378023248824405,2.1448554232917982],"location":"barcelona","post_references":[{"url":"/2023/04/07/all-the-beauty-and-the-bloodshed","title":"All The Beauty And The Bloodshed"}]},{"title":"Vereda Bar","address":"Carrer de la Diputació, 155","latlng":[41.38460297818277,2.1578119926085177],"location":"barcelona","post_references":[{"url":"/2023/05/04/open-heart-protocol","title":"Open Heart Protocol"}]},{"title":"Cyclic Beer Farm","address":"Carrer de Coll, 37","latlng":[41.42455743298923,2.1899451907195195],"location":"barcelona","post_references":[{"url":"/2023/05/06/celebracion-postconciliacion","title":"Celebración Post-conciliación"}]},{"title":"035//BAR","address":"Carrer de Monlau, 35","latlng":[41.424967802049494,2.1904708306832803],"location":"barcelona","post_references":[{"url":"/2023/05/06/celebracion-postconciliacion","title":"Celebración Post-conciliación"}]}]
     </script>
 
     <script src="/scripts/lazyload.min.js?version=5.0.52" charset="utf-8"></script>
@@ -67,7 +67,6 @@
 
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-    <link rel="stylesheet" href="/css/map.css" />
 
     <body class="Layout__map">
       
@@ -89,78 +88,131 @@
     <div class="Trip">
       <div class="Trip__content">
 
-        <h2>Barcelona</h2>
-        <h5></h5>
-
+        <div class="BigMap">
         <div class="App js-map" data-locations="barcelona" data-lng="-73.9857" data-lat="40.7356" data-zoom="14">
           <div id="map" class="Map"></div>
         </div>
 
-
         
 
 
-        <div class="Locations">
+        <div class="Sidebar">
+        <div class="Sidebar__title">Barcelona</div>
           
+          <div class="Locations">
           
           
           <div class="Location">
-            <a href="?marker=1" class="Location__title"> <span class="Location__id">1</span> Cafetería</a>
-            <div class="Location__description">Ahora que cerró CW Pencil Enterprise este es un buen sitio donde comprar material de oficina.</div>
-            <div class="Location__address">234 Mulberry St, New York</div>
+            <a href="?marker=1" class="Location__title"><span class="Location__name">Centre de Cultura Contemporània de Barcelona</span></a>
+            <div class="Location__description">Centro cultural y centro de artes creativas con teatro, galerías de exposiciones y salas de conferencias</div>
+ 
+    <div class="Location__posts">
+      
+
+      
+      
+
+      <a href="/2022/12/04/constelacion-grafica" class="Location__post">1</a>
+      
+    </div>
+    
+            <div class="Location__address">Carrer de Montalegre, 5</div>
+          </div>
+          
+          
+          <div class="Location">
+            <a href="?marker=2" class="Location__title"><span class="Location__name">Santa Mònica</span></a>
+            <div class="Location__description">Centro interdisciplinario de artes dedicado a impulsar la creación contemporánea</div>
+ 
+    <div class="Location__posts">
+      
+
+      
+      
+
+      <a href="/2022/12/10/retallar-i-enganxar" class="Location__post">1</a>
+      
+    </div>
+    
+            <div class="Location__address">La Rambla, 7</div>
+          </div>
+          
+          
+          <div class="Location">
+            <a href="?marker=3" class="Location__title"><span class="Location__name">Zumzeig Cinema</span></a>
+            <div class="Location__description">Cine indie barra cooperativa</div>
+ 
+    <div class="Location__posts">
+      
+
+      
+      
+
+      <a href="/2023/04/07/all-the-beauty-and-the-bloodshed" class="Location__post">1</a>
+      
+    </div>
+    
+            <div class="Location__address">Carrer de Béjar, 53</div>
+          </div>
+          
+          
+          <div class="Location">
+            <a href="?marker=4" class="Location__title"><span class="Location__name">Vereda Bar</span></a>
+            <div class="Location__description"></div>
+ 
+    <div class="Location__posts">
+      
+
+      
+      
+
+      <a href="/2023/05/04/open-heart-protocol" class="Location__post">1</a>
+      
+    </div>
+    
+            <div class="Location__address">Carrer de la Diputació, 155</div>
+          </div>
+          
+          
+          <div class="Location">
+            <a href="?marker=5" class="Location__title"><span class="Location__name">Cyclic Beer Farm</span></a>
+            <div class="Location__description"></div>
+ 
+    <div class="Location__posts">
+      
+
+      
+      
+
+      <a href="/2023/05/06/celebracion-postconciliacion" class="Location__post">1</a>
+      
+    </div>
+    
+            <div class="Location__address">Carrer de Coll, 37</div>
+          </div>
+          
+          
+          <div class="Location">
+            <a href="?marker=6" class="Location__title"><span class="Location__name">035//BAR</span></a>
+            <div class="Location__description"></div>
+ 
+    <div class="Location__posts">
+      
+
+      
+      
+
+      <a href="/2023/05/06/celebracion-postconciliacion" class="Location__post">1</a>
+      
+    </div>
+    
+            <div class="Location__address">Carrer de Monlau, 35</div>
           </div>
           
         </div>
+        </div>
+        </div>
 
-        <div class="Trip__archive">
-          
-          
-      <div class="Trip__archiveMonth Archive__month">
-        <h3>April 2023</h3>
-        <ul>
-          <li><span class="Trip__archiveDay Archive__day">10</span><a href="/2023/04/10/sant-pol-de-mar" class="is-photo">Sant Pol de Mar</a></li>
-          <li><span class="Trip__archiveDay Archive__day">04</span><a href="/2023/04/04/Wall" class="is-photo">Wall</a></li>
-          <li><span class="Trip__archiveDay Archive__day">04</span><a href="/2023/04/04/Necora-Dor" class="is-photo">La Necora D'Or</a></li>
-          </ul></div>
-      <div class="Trip__archiveMonth Archive__month">
-        <h3>December 2022</h3>
-        <ul>
-          <li><span class="Trip__archiveDay Archive__day">10</span><a href="/2022/12/10/retallar-i-enganxar" class="is-photo">Retallar i enganxar</a></li>
-          </ul></div>
-      <div class="Trip__archiveMonth Archive__month">
-        <h3>November 2022</h3>
-        <ul>
-          <li><span class="Trip__archiveDay Archive__day">20</span><a href="/2022/11/20/internet-tour" class="is-photo">Internet Tour</a></li>
-          <li><span class="Trip__archiveDay Archive__day">05</span><a href="/2022/11/05/rejas" class="is-photo">Rejas</a></li>
-          </ul></div>
-      <div class="Trip__archiveMonth Archive__month">
-        <h3>October 2022</h3>
-        <ul>
-          <li><span class="Trip__archiveDay Archive__day">09</span><a href="/2022/10/09/fin-de-fiesta" class="is-">Fin de fiesta</a></li>
-          </ul></div>
-      <div class="Trip__archiveMonth Archive__month">
-        <h3>September 2022</h3>
-        <ul>
-          <li><span class="Trip__archiveDay Archive__day">26</span><a href="/2022/09/26/perrillo" class="is-photo">Perrillo</a></li>
-          <li><span class="Trip__archiveDay Archive__day">20</span><a href="/2022/09/20/peace-on-my-heels" class="is-photo">Peace on my heels</a></li>
-          <li><span class="Trip__archiveDay Archive__day">11</span><a href="/2022/09/11/flowers" class="is-photo">flowers</a></li>
-          </ul></div>
-      <div class="Trip__archiveMonth Archive__month">
-        <h3>May 2022</h3>
-        <ul>
-          <li><span class="Trip__archiveDay Archive__day">13</span><a href="/2022/05/13/defender-el-blog" class="is-photo">Defender el blog</a></li>
-          <li><span class="Trip__archiveDay Archive__day">11</span><a href="/2022/05/11/akita" class="is-photo">Akita</a></li>
-          <li><span class="Trip__archiveDay Archive__day">07</span><a href="/2022/05/07/internet" class="is-photo">Internet</a></li>
-          </ul></div>
-      <div class="Trip__archiveMonth Archive__month">
-        <h3>April 2022</h3>
-        <ul>
-          <li><span class="Trip__archiveDay Archive__day">28</span><a href="/2022/04/28/yee-haw" class="is-photo">Yee-haw!</a></li>
-          <li><span class="Trip__archiveDay Archive__day">15</span><a href="/2022/04/15/lamistat" class="is-photo">L'Amistat</a></li>
-          <li><span class="Trip__archiveDay Archive__day">14</span><a href="/2022/04/14/revolta-de-les-quintes" class="is-photo">Revolta de les Quintes</a></li>
-          <li><span class="Trip__archiveDay Archive__day">03</span><a href="/2022/04/03/o" class="is-photo">:O</a></li>
-          </ul>
-      </div>
       </div>
     </div>
   </div>

@@ -2,10 +2,11 @@
 
 <div class="Post__footer">
   <a href="{{ post.url }}" class="Post__date">{{ page.date | date: '%B %d, %Y' -}}</a>
-  {% if page.location -%}
-  &middot;
-  <a href="/in/{{ page.location }}" class="Post__location">{{ matching_location.title -}}</a>
-  {% endif -%}
+
+    {% if page.locations %}
+    &middot; 
+    <a href="/maps/{{ page.locations[0].location }}" class="Post__location-link">{{ matching_location.title }}</a>
+    {% endif %}
 
   {% include pagination.html post=page -%}
 </div>
