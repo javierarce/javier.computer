@@ -10,15 +10,30 @@
 
   <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
   <link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" />
-  <updated>2023-06-03T12:46:43+02:00</updated>
+  <updated>2023-06-03T12:49:42+02:00</updated>
   <id>http://localhost:4001/feed.xml</id>
 
   <sy:updatePeriod>daily</sy:updatePeriod>
   <sy:updateFrequency>1</sy:updateFrequency>
   <link>http://localhost:4001</link>
   <atom:link href="http://localhost:4001/feed.xml" rel="self" type="application/rss+xml" />
-  <lastBuildDate>Sat, 03 Jun 2023 09:39:50 +0200</lastBuildDate>
+  <lastBuildDate>Sat, 03 Jun 2023 12:47:44 +0200</lastBuildDate>
     
+    
+  <item>
+    <title>Energía HTML</title>
+    <pubDate>Sat, 03 Jun 2023 12:47:44 +0200</pubDate>
+    <link>http://localhost:4001/2023/06/03/energ-a-html</link>
+    <guid isPermaLink="true">http://localhost:4001/2023/06/03/energ-a-html</guid>
+    
+
+    <description>
+      
+        &lt;p&gt;¿Cómo diablos organiza uno &lt;a href=&quot;https://twitter.com/roombaghost/status/1664639832633614337&quot; class=&quot;web-link&quot;&gt;algo así&lt;/a&gt; en esta ridícula ciudad?&lt;/p&gt;
+
+        
+    </description>
+  </item>
     
   <item>
     <title>Berlín</title>
@@ -203,29 +218,6 @@ enseñarte algunos cuantos nudos útiles dedica cuatro breves vídeos a explicar
 
 
         
-    </description>
-  </item>
-    
-  <item>
-    <title>Wall</title>
-    <pubDate>Tue, 04 Apr 2023 00:00:00 +0200</pubDate>
-    <link>http://localhost:4001/2023/04/04/Wall</link>
-    <guid isPermaLink="true">http://localhost:4001/2023/04/04/Wall</guid>
-    
-
-    <description>
-      
-      <![CDATA[
-        
-          
-            <img src="https://img.javier.computer/barcelona/R0002737_1280.jpg" alt="Wall"/>  
-          
-        
-        
-   
-        <p>Barcelona</p>
-        ]]>
-      
     </description>
   </item>
     
