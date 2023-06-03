@@ -10,31 +10,15 @@
 
   <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
   <link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" />
-  <updated>2023-06-03T19:08:34+02:00</updated>
+  <updated>2023-06-03T19:14:59+02:00</updated>
   <id>http://localhost:4001/feed.xml</id>
 
   <sy:updatePeriod>daily</sy:updatePeriod>
   <sy:updateFrequency>1</sy:updateFrequency>
   <link>http://localhost:4001</link>
   <atom:link href="http://localhost:4001/feed.xml" rel="self" type="application/rss+xml" />
-  <lastBuildDate>Sat, 03 Jun 2023 17:07:15 +0200</lastBuildDate>
+  <lastBuildDate>Sat, 03 Jun 2023 12:47:44 +0200</lastBuildDate>
     
-    
-  <item>
-    <title>La Cosa</title>
-    <pubDate>Sat, 03 Jun 2023 17:07:15 +0200</pubDate>
-    <link>http://localhost:4001/2023/06/03/la-cosa</link>
-    <guid isPermaLink="true">http://localhost:4001/2023/06/03/la-cosa</guid>
-    
-
-    <description>
-      
-        &lt;p&gt;«¡No te relajas nunca!» · The Thing con Orlando y Álvaro.&lt;/p&gt;
-
-
-        <p><small>Barcelona</small></p>
-    </description>
-  </item>
     
   <item>
     <title>Energía HTML</title>
@@ -207,6 +191,39 @@ enseñarte algunos cuantos nudos útiles dedica cuatro breves vídeos a explicar
 
 
         
+    </description>
+  </item>
+    
+  <item>
+    <title>Libros Mutantes</title>
+    <pubDate>Fri, 28 Apr 2023 00:35:31 +0200</pubDate>
+    <link>http://localhost:4001/2023/04/28/libros-mutantes</link>
+    <guid isPermaLink="true">http://localhost:4001/2023/04/28/libros-mutantes</guid>
+    
+
+    <description>
+      
+      <![CDATA[
+        
+          
+            <img src="https://img.javier.computer/madrid/R0002926_1280.jpg" alt="Libros Mutantes"/>  
+          
+            <img src="https://img.javier.computer/madrid/R0002937_1280.jpg" alt="Libros Mutantes"/>  
+          
+            <img src="https://img.javier.computer/madrid/R0002946_1280.jpg" alt="Libros Mutantes"/>  
+          
+            <img src="https://img.javier.computer/madrid/R0002935_1280.jpg" alt="Libros Mutantes"/>  
+          
+            <img src="https://img.javier.computer/madrid/R0002941_1280.jpg" alt="Libros Mutantes"/>  
+          
+            <img src="https://img.javier.computer/madrid/R0002958_1280.jpg" alt="Libros Mutantes"/>  
+          
+        
+        <p>Libros Mutantes</p>
+   
+        <p>Madrid</p>
+        ]]>
+      
     </description>
   </item>
     
