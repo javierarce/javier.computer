@@ -10,7 +10,7 @@
 
   <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
   <link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" />
-  <updated>2023-06-03T12:49:49+02:00</updated>
+  <updated>2023-06-03T13:04:10+02:00</updated>
   <id>http://localhost:4001/feed.xml</id>
 
   <sy:updatePeriod>daily</sy:updatePeriod>
@@ -23,8 +23,8 @@
   <item>
     <title>Energía HTML</title>
     <pubDate>Sat, 03 Jun 2023 12:47:44 +0200</pubDate>
-    <link>http://localhost:4001/2023/06/03/energ-a-html</link>
-    <guid isPermaLink="true">http://localhost:4001/2023/06/03/energ-a-html</guid>
+    <link>http://localhost:4001/2023/06/03/energia-html</link>
+    <guid isPermaLink="true">http://localhost:4001/2023/06/03/energia-html</guid>
     
 
     <description>
@@ -49,6 +49,59 @@ en Berlín para varias semanas entre julio y agosto, así que si estás leyendo 
 den linden&lt;/em&gt; y te apetece que nos veamos, &lt;a href=&quot;/contact&quot; class=&quot;web-link&quot;&gt;envíame un mensaje&lt;/a&gt;.&lt;/p&gt;
 
         
+    </description>
+  </item>
+    
+  <item>
+    <title>Gail</title>
+    <pubDate>Wed, 31 May 2023 17:30:00 +0200</pubDate>
+    <link>http://localhost:4001/2023/05/31/gail</link>
+    <guid isPermaLink="true">http://localhost:4001/2023/05/31/gail</guid>
+    
+
+    <description>
+      
+      <![CDATA[
+        
+          
+            <img src="https://img.javier.computer/barcelona/R0003112_1280.jpg" alt="Gail"/>  
+          
+        
+        <p>Gail Bichler</p>
+
+   
+        <p>Barcelona</p>
+        ]]>
+      
+    </description>
+  </item>
+    
+  <item>
+    <title>Gili</title>
+    <pubDate>Sat, 27 May 2023 12:51:37 +0200</pubDate>
+    <link>http://localhost:4001/2023/05/27/gili</link>
+    <guid isPermaLink="true">http://localhost:4001/2023/05/27/gili</guid>
+    
+
+    <description>
+      
+      <![CDATA[
+        
+          
+            <img src="https://img.javier.computer/barcelona/R0003074_1280.jpg" alt="Gili"/>  
+          
+            <img src="https://img.javier.computer/barcelona/R0003072_1280.jpg" alt="Gili"/>  
+          
+            <img src="https://img.javier.computer/barcelona/R0003051_1280.jpg" alt="Gili"/>  
+          
+            <img src="https://img.javier.computer/barcelona/R0003040_1280.jpg" alt="Gili"/>  
+          
+        
+        
+   
+        <p>Barcelona</p>
+        ]]>
+      
     </description>
   </item>
     
@@ -171,53 +224,6 @@ enseñarte algunos cuantos nudos útiles dedica cuatro breves vídeos a explicar
         <p>Madrid</p>
         ]]>
       
-    </description>
-  </item>
-    
-  <item>
-    <title>Sant Pol de Mar</title>
-    <pubDate>Mon, 10 Apr 2023 00:00:00 +0200</pubDate>
-    <link>http://localhost:4001/2023/04/10/sant-pol-de-mar</link>
-    <guid isPermaLink="true">http://localhost:4001/2023/04/10/sant-pol-de-mar</guid>
-    
-
-    <description>
-      
-      <![CDATA[
-        
-          
-            <img src="https://img.javier.computer/barcelona/R0002858_1280.jpg" alt="Sant Pol de Mar"/>  
-          
-            <img src="https://img.javier.computer/barcelona/R0002856_1280.jpg" alt="Sant Pol de Mar"/>  
-          
-            <img src="https://img.javier.computer/barcelona/R0002851_1280.jpg" alt="Sant Pol de Mar"/>  
-          
-            <img src="https://img.javier.computer/barcelona/R0002825_1280.jpg" alt="Sant Pol de Mar"/>  
-          
-            <img src="https://img.javier.computer/barcelona/R0002810_1280.jpg" alt="Sant Pol de Mar"/>  
-          
-        
-        <p>Sant Pol de Mar</p>
-   
-        <p>Barcelona</p>
-        ]]>
-      
-    </description>
-  </item>
-    
-  <item>
-    <title>All The Beauty And The Bloodshed</title>
-    <pubDate>Fri, 07 Apr 2023 00:35:31 +0200</pubDate>
-    <link>http://localhost:4001/2023/04/07/all-the-beauty-and-the-bloodshed</link>
-    <guid isPermaLink="true">http://localhost:4001/2023/04/07/all-the-beauty-and-the-bloodshed</guid>
-    
-
-    <description>
-      
-        &lt;p&gt;ACT · «Uno de tus walking poems me lanzó un piropo» · &lt;a href=&quot;https://www.mistergriffin.es/product-page/atractiva-jugada-perdedora&quot; class=&quot;web-link&quot;&gt;Atractiva jugada perdedora&lt;/a&gt; · Zumzeig · &lt;a href=&quot;https://letterboxd.com/javier/film/all-the-beauty-and-the-bloodshed&quot; class=&quot;web-link&quot;&gt;All The Beauty And The Bloodshed&lt;/a&gt; ★★★★½ · “Unfortunately, we are unable to include your session at Config”.&lt;/p&gt;
-
-
-        
     </description>
   </item>
     

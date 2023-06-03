@@ -58,3 +58,22 @@
   post_references:
   - url: "/2023/05/06/celebracion-postconciliacion"
     title: Celebración Post-conciliación
+- title: Sede de la Editorial Gustavo Gili
+  address: Carrer del Rosselló, 87-89
+  latlng:
+  - 41.38692384689809
+  - 2.1479082227331228
+  location: barcelona
+  post_references:
+  - url: "/2023/05/27/gili"
+    title: Gili
+- title: COAC
+  description: Col·legi d'Arquitectes de Catalunya
+  address: Plaça Nova, 5
+  latlng:
+  - 41.38503647891218
+  - 2.175380638074763
+  location: barcelona
+  post_references:
+  - url: "/2023/05/31/gail"
+    title: Gail
