@@ -25,7 +25,7 @@ className: Trip
           {% for product in site.data[page.location] %}
           {% assign i = i | plus: 1 %}
           <div class="Location">
-            <a href="?marker={{ i}}" class="Location__title"><span class="Location__name">{{ product.title }}</span></a>
+            <div class="Location__title">{{ product.title }}</div>
             <div class="Location__description">{{ product.description }}</div>
  {% if product.post_references.size > 0 %}
     <div class="Location__posts">
@@ -38,7 +38,7 @@ className: Trip
       {% endfor %}
     </div>
     {% endif %}
-            <div class="Location__address">{{ product.address }}</div>
+            <a href="?marker={{ i}}" class="Location__address">{{ product.address }}</a>
           </div>
           {% endfor %}
         </div>

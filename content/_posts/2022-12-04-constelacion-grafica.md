@@ -8,7 +8,11 @@ locations:
   address: "Carrer de Montalegre, 5"
   latlng: [41.38438058272032, 2.1666050079501575]
   location: barcelona
-
+- title: Orval
+  description: Cafetería favorita en la zona. Alerta de kimcheese.
+  address: "Carrer de Buenaventura Muñoz, 31"
+  latlng: [41.392732992085215, 2.1858767125397236]
+  location: barcelona
 ---
 
 Orzuelo ladronzuelo · [EHQCD](https://network.javier.computer/@javier/109443536080412876) · Constelación/Consternación Gráfica con B · «A ver ese manuscrito, que rule a mi

@@ -49,10 +49,9 @@
 .Map {
   width: 100%;
   height: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+
 .Map:focus-visible {
   outline: none;
 }
@@ -162,11 +161,14 @@ transition: transform 0.3s ease-out, opacity 0.3s ease-in;
 }
 
 .Location {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
   font-size: .8em;
   break-inside: avoid;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 0.8em;
 }
 
 .Location__id {
@@ -236,11 +238,8 @@ transition: transform 0.3s ease-out, opacity 0.3s ease-in;
 }
 
 
-.Location__description {
-  //padding-left: 1.6em;
-}
 .Location__address {
-  //padding-left: 2em;
+  text-decoration: none;
   opacity: 0.5;
   font-size: 0.8em;
 }
