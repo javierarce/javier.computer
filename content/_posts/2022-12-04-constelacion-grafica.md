@@ -2,6 +2,7 @@
 layout: post
 title: "Constelación Gráfica"
 date: "2022-12-04 22:59:43 +0100"
+location: barcelona
 locations:
 - title: Centre de Cultura Contemporània de Barcelona
   description: Centro cultural y centro de artes creativas con teatro, galerías de exposiciones y salas de conferencias
