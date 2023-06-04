@@ -10,15 +10,48 @@
 
   <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
   <link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" />
-  <updated>2023-06-04T19:13:41+02:00</updated>
+  <updated>2023-06-04T19:52:40+02:00</updated>
   <id>http://localhost:4001/feed.xml</id>
 
   <sy:updatePeriod>daily</sy:updatePeriod>
   <sy:updateFrequency>1</sy:updateFrequency>
   <link>http://localhost:4001</link>
   <atom:link href="http://localhost:4001/feed.xml" rel="self" type="application/rss+xml" />
-  <lastBuildDate>Sat, 03 Jun 2023 17:07:15 +0200</lastBuildDate>
+  <lastBuildDate>Sun, 04 Jun 2023 19:18:49 +0200</lastBuildDate>
     
+    
+  <item>
+    <title>Mapas</title>
+    <pubDate>Sun, 04 Jun 2023 19:18:49 +0200</pubDate>
+    <link>http://localhost:4001/2023/06/04/mapas</link>
+    <guid isPermaLink="true">http://localhost:4001/2023/06/04/mapas</guid>
+    
+
+    <description>
+      
+        &lt;p&gt;No es ningún secreto que me gustan los mapas. Mucho. ¿Los mapas y yo? Los mejores
+amigos. Pregúntalo por ahí si quieres. Los mapas me han salvado el culo en
+innumerables ocasiones. Me han indicado sitios a los que ir, sitios que
+evitar, me han permitido ir de aquí para allá y me han posibilitado volver de
+allá para acá. ¡Y sin pedir nada a cambio! Incluso en una época anterior de mi
+vida los mapas me dieron de comer gracias a mi trabajo como desarrollador en una startup cartográfica.
+Y, no te creas, que yo también les he dado cosas. Muchos de mis proyectos personales (&lt;a href=&quot;https://bicimap.javierarce.com&quot; class=&quot;web-link&quot;&gt;BiciMap&lt;/a&gt;, &lt;a href=&quot;projects/mapwithme&quot; class=&quot;web-link&quot;&gt;Map with Me&lt;/a&gt;, &lt;a href=&quot;https://madrid.javier.computer&quot; class=&quot;web-link&quot;&gt;Avisos Madrid&lt;/a&gt;, o &lt;a href=&quot;https://www.bloomberg.com/news/articles/2015-05-07/find-songs-about-your-city-with-this-spotify-based-map-tool&quot; class=&quot;web-link&quot;&gt;Spotimap&lt;/a&gt;) han girado en torno a los mapas.&lt;/p&gt;
+
+&lt;p&gt;Bueno, que me enrollo, todo esto era para decir que he añadido barra estoy añadiendo una cosa
+nueva a mi blog, y esa cosa nueva son mapas, claro (si no fuese eso el
+párrafo anterior habría sido muy raro y no vendría a cuento). Pero sí, estaba hablando de mapas. 
+A partir de ahora publicaré mapas que incluirán los lugares que menciono en el blog pero también mis lugares
+favoritos que no menciono en el blog, pero que perfectamente podría mencionar
+en el blog y que incluso en algún momento mencione en el blog (ya veremos). Por el momento puedes bichear el mapa de &lt;a href=&quot;/maps/barcelona&quot; class=&quot;web-link&quot;&gt;Barcelona&lt;/a&gt;, que poco a poco
+iré completando.&lt;/p&gt;
+
+&lt;p&gt;Los enlaces a los mapas aparecerán en el pie de cada post que contenga referencias a lugares y también tendrán su feed RSS propio. En el caso del mapa
+de Barcelona, por ejemplo, el RSS es &lt;a href=&quot;/feeds/barcelona.rss&quot; class=&quot;web-link&quot;&gt;este&lt;/a&gt;. Y cuando añada más mapas crearé una página que los liste todos. ¿O quizá… un mapa de
+mapas? Vale, vale, ya paro.&lt;/p&gt;
+
+        
+    </description>
+  </item>
     
   <item>
     <title>La Cosa</title>
@@ -190,22 +223,6 @@ enseñarte algunos cuantos nudos útiles dedica cuatro breves vídeos a explicar
         &lt;p&gt;Sigo despistado a niveles nunca vistos · Executive dinner con Laszlito en Vereda · Reviví el proyecto de &lt;a href=&quot;https://madrid.javier.computer&quot; class=&quot;web-link&quot;&gt;Avisos Madrid&lt;/a&gt; que utilicé en una de mis piezas de Poetry Slash · Gracias a la maravillosa &lt;a href=&quot;https://muan.co&quot; class=&quot;web-link&quot;&gt;Mu-An &lt;/a&gt;, y cortesía de su &lt;a href=&quot;https://github.com/dddddddddzzzz/OpenHeart&quot; class=&quot;web-link&quot;&gt;Open Heart Protocol&lt;/a&gt;, añadí un sistema para darle like a &lt;a href=&quot;/photos&quot; class=&quot;web-link&quot;&gt;mis fotos&lt;/a&gt; · ¿Qué estaba diciendo?&lt;/p&gt;
 
         <p><small>Barcelona</small></p>
-    </description>
-  </item>
-    
-  <item>
-    <title>Good Living Is Coming For You</title>
-    <pubDate>Tue, 02 May 2023 22:02:24 +0200</pubDate>
-    <link>http://localhost:4001/2023/05/02/good-living-is-coming-for-you</link>
-    <guid isPermaLink="true">http://localhost:4001/2023/05/02/good-living-is-coming-for-you</guid>
-    
-
-    <description>
-      
-        &lt;p&gt;Me sacan sangre por la mañana, se quedan con mi pis · Fatal falta de foco · &lt;a href=&quot;https://sweepingpromises.bandcamp.com/album/good-living-is-coming-for-you-2&quot; class=&quot;web-link&quot;&gt;Eraser&lt;/a&gt; · Un poco de orden &lt;a href=&quot;/photos&quot; class=&quot;web-link&quot;&gt;aquí&lt;/a&gt; · Poeta chileno.&lt;/p&gt;
-
-
-        
     </description>
   </item>
     
