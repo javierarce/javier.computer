@@ -2,7 +2,6 @@
 layout: map
 className: Trip
 ---
-{% assign posts = site.posts | where: "location", page.location %}
 
 <div class="Content">
   {% include navigation.html %}
@@ -22,23 +21,23 @@ className: Trip
         <div class="Sidebar__title"> {{ page.title }}</div>
           {% assign i = 0 %}
           <div class="Locations js-locations">
-          {% for product in site.data[page.location] %}
+          {% for location in site.data.locations[page.location] %}
           {% assign i = i | plus: 1 %}
           <div class="Location js-location" data-id="{{ i }}">
-            <div class="Location__title"><span class="Location__id">{{ i }}</span> {{ product.title }}</div>
-            <div class="Location__description">{{ product.description }}</div>
- {% if product.post_references.size > 0 %}
+            <div class="Location__title"><span class="Location__id">{{ i }}</span> {{ location.title }}</div>
+            <div class="Location__description">{{ location.description }}</div>
+ {% if location.post_references.size > 0 %}
     <div class="Location__posts">
       {% assign j = 0 %}
 
-      {% for post_ref in product.post_references %}
+      {% for post_ref in location.post_references %}
       {% assign j = j | plus: 1 %}
 
       <a href="{{ post_ref.url }}" class="Location__post">{{ j}}</a>
       {% endfor %}
     </div>
     {% endif %}
-            <span class="Location__address">{{ product.address }}</span>
+            <span class="Location__address">{{ location.address }}</span>
           </div>
           {% endfor %}
         </div>
