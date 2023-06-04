@@ -10,6 +10,7 @@ locations:
   latlng: [41.42455743298923, 2.1899451907195195]
   location: barcelona
 - title: 035//BAR
+  description: Maravilloso bar que acoge cenas popup igualmente maravillosas.
   address: "Carrer de Monlau, 35"
   latlng: [41.424967802049494, 2.1904708306832803]
   location: barcelona

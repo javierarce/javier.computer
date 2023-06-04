@@ -77,7 +77,8 @@
   - url: "/2023/06/03/la-cosa"
     title: La Cosa
 - title: Zumzeig Cinema
-  description: Cine indie barra cooperativa
+  description: Sala de cine cooperativa y sin ánimo de lucro, con una programación
+    principalmente indie en VO.
   address: Carrer de Béjar, 53
   latlng:
   - 41.378023248824405
@@ -87,6 +88,7 @@
   - url: "/2023/04/07/all-the-beauty-and-the-bloodshed"
     title: All The Beauty And The Bloodshed
 - title: Vereda Bar
+  description: Platos de proximidad y temporada y vinos naturales.
   address: Carrer de la Diputació, 155
   latlng:
   - 41.38460297818277
@@ -106,6 +108,7 @@
   - url: "/2023/05/06/celebracion-postconciliacion"
     title: Celebración Post-conciliación
 - title: 035//BAR
+  description: Maravilloso bar que acoge cenas popup igualmente maravillosas.
   address: Carrer de Monlau, 35
   latlng:
   - 41.424967802049494
@@ -136,7 +139,7 @@
   - url: "/2023/05/27/gili"
     title: Gili
 - title: COAC
-  description: Col·legi d'Arquitectes de Catalunya
+  description: Col·legi d'Arquitectes de Catalunya.
   address: Plaça Nova, 5
   latlng:
   - 41.38503647891218
