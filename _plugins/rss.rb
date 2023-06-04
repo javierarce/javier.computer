@@ -33,18 +33,19 @@ module Jekyll
               most_recent_post_date = site.time
               
               if point['post_references']
+                references << "<ul>"
                 references = point['post_references'].map { |post_ref| 
-                  "<a href='#{site.config['url']}#{post_ref['url']}'>#{post_ref['title']}</a>"
+                  "<li><a href='#{site.config['url']}#{post_ref['url']}'>#{post_ref['title']}</a></li>"
                 }
+                references << "</ul>"
 
-                # Use the date of the most recent related post as the update time for this location
                 most_recent_post = point['post_references'].max_by { |post_ref| 
                   site.posts.docs.find { |p| p.url == post_ref['url'] }.date 
                 }
                 most_recent_post_date = site.posts.docs.find { |p| p.url == most_recent_post['url'] }.date
               end
 
-              item.description = "#{point['description']} - #{point['address']}\n\n" + references.join("\n")
+              item.description = "#{point['description']}\n\n#{point['address']}\n\n" + references.join("\n")
               item.updated = most_recent_post_date.iso8601
               item.dc_subject = location
             end

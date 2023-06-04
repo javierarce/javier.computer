@@ -8,13 +8,16 @@
     <title>RSS feed de barcelona</title>
     <link>http://localhost:4001/feeds/barcelona.rss</link>
     <description>Sitios en barcelona</description>
-    <pubDate>Sun, 04 Jun 2023 18:21:56 +0200</pubDate>
+    <pubDate>Sun, 04 Jun 2023 18:34:57 +0200</pubDate>
     <item>
       <title>El Noa Noa</title>
       <link>http://localhost:4001/locations/barcelona</link>
-      <description>Una cafetería librería con cafés y libros. - Carrer de Torrijos, 22
+      <description>Una cafetería librería con cafés y libros.
 
-&lt;a href='http://localhost:4001/2022/04/28/pegatinas'&gt;Pegatinas&lt;/a&gt;</description>
+Carrer de Torrijos, 22
+
+&lt;li&gt;&lt;a href='http://localhost:4001/2022/04/28/pegatinas'&gt;Pegatinas&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
       <pubDate>Thu, 28 Apr 2022 21:58:21 +0200</pubDate>
       <dc:subject>barcelona</dc:subject>
       <dc:date>2022-04-28T21:58:21+02:00</dc:date>
@@ -22,9 +25,12 @@
     <item>
       <title>SlowMov</title>
       <link>http://localhost:4001/locations/barcelona</link>
-      <description>Mi cafetería de cabecera en el barrio. - Carrer de Luis Antúnez, 18
+      <description>Mi cafetería de cabecera en el barrio.
 
-&lt;a href='http://localhost:4001/2022/04/28/pegatinas'&gt;Pegatinas&lt;/a&gt;</description>
+Carrer de Luis Antúnez, 18
+
+&lt;li&gt;&lt;a href='http://localhost:4001/2022/04/28/pegatinas'&gt;Pegatinas&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
       <pubDate>Thu, 28 Apr 2022 21:58:21 +0200</pubDate>
       <dc:subject>barcelona</dc:subject>
       <dc:date>2022-04-28T21:58:21+02:00</dc:date>
@@ -32,9 +38,12 @@
     <item>
       <title>Funky Bakers</title>
       <link>http://localhost:4001/locations/barcelona</link>
-      <description>No tan funkies como dicen ser pero tienen cosas ricas - Pg. del Born, 10
+      <description>No tan funkies como dicen ser pero tienen cosas ricas
 
-&lt;a href='http://localhost:4001/2022/09/17/funky-bakers'&gt;Funky Bakers&lt;/a&gt;</description>
+Pg. del Born, 10
+
+&lt;li&gt;&lt;a href='http://localhost:4001/2022/09/17/funky-bakers'&gt;Funky Bakers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
       <pubDate>Sat, 17 Sep 2022 09:16:14 +0200</pubDate>
       <dc:subject>barcelona</dc:subject>
       <dc:date>2022-09-17T09:16:14+02:00</dc:date>
@@ -42,10 +51,13 @@
     <item>
       <title>Orval</title>
       <link>http://localhost:4001/locations/barcelona</link>
-      <description>Cafetería favorita en la zona. Alerta de kimcheese. - Carrer de Buenaventura Muñoz, 31
+      <description>Cafetería favorita en la zona. Alerta de kimcheese.
 
-&lt;a href='http://localhost:4001/2022/09/26/atrapado-en-un-grupo-de-telegram'&gt;Atrapado en Telegram&lt;/a&gt;
-&lt;a href='http://localhost:4001/2022/12/04/constelacion-grafica'&gt;Constelación Gráfica&lt;/a&gt;</description>
+Carrer de Buenaventura Muñoz, 31
+
+&lt;li&gt;&lt;a href='http://localhost:4001/2022/09/26/atrapado-en-un-grupo-de-telegram'&gt;Atrapado en Telegram&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='http://localhost:4001/2022/12/04/constelacion-grafica'&gt;Constelación Gráfica&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
       <pubDate>Sun, 04 Dec 2022 22:59:43 +0100</pubDate>
       <dc:subject>barcelona</dc:subject>
       <dc:date>2022-12-04T22:59:43+01:00</dc:date>
@@ -53,9 +65,12 @@
     <item>
       <title>Centre de Cultura Contemporània de Barcelona</title>
       <link>http://localhost:4001/locations/barcelona</link>
-      <description>Centro cultural y centro de artes creativas con teatro, galerías de exposiciones y salas de conferencias - Carrer de Montalegre, 5
+      <description>Centro cultural y centro de artes creativas con teatro, galerías de exposiciones y salas de conferencias
 
-&lt;a href='http://localhost:4001/2022/12/04/constelacion-grafica'&gt;Constelación Gráfica&lt;/a&gt;</description>
+Carrer de Montalegre, 5
+
+&lt;li&gt;&lt;a href='http://localhost:4001/2022/12/04/constelacion-grafica'&gt;Constelación Gráfica&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
       <pubDate>Sun, 04 Dec 2022 22:59:43 +0100</pubDate>
       <dc:subject>barcelona</dc:subject>
       <dc:date>2022-12-04T22:59:43+01:00</dc:date>
@@ -63,9 +78,12 @@
     <item>
       <title>Santa Mònica</title>
       <link>http://localhost:4001/locations/barcelona</link>
-      <description>Centro interdisciplinario de artes dedicado a impulsar la creación contemporánea - La Rambla, 7
+      <description>Centro interdisciplinario de artes dedicado a impulsar la creación contemporánea
 
-&lt;a href='http://localhost:4001/2022/12/10/retallar-i-enganxar'&gt;Retallar i enganxar&lt;/a&gt;</description>
+La Rambla, 7
+
+&lt;li&gt;&lt;a href='http://localhost:4001/2022/12/10/retallar-i-enganxar'&gt;Retallar i enganxar&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
       <pubDate>Sat, 10 Dec 2022 22:30:27 +0100</pubDate>
       <dc:subject>barcelona</dc:subject>
       <dc:date>2022-12-10T22:30:27+01:00</dc:date>
@@ -73,10 +91,13 @@
     <item>
       <title>Phenomena Experience</title>
       <link>http://localhost:4001/locations/barcelona</link>
-      <description>Pelis clásicas palomiteras en una buena sala. Por razones inexplicables las entradas no están numeradas y solo puedes pagar en metálico en el bar. - Carrer de St. Antoni Maria Claret, 168
+      <description>Pelis clásicas palomiteras en una buena sala. Por razones inexplicables las entradas no están numeradas y solo puedes pagar en metálico en el bar.
 
-&lt;a href='http://localhost:4001/2023/01/22/S23W03'&gt;S23W03&lt;/a&gt;
-&lt;a href='http://localhost:4001/2023/06/03/la-cosa'&gt;La Cosa&lt;/a&gt;</description>
+Carrer de St. Antoni Maria Claret, 168
+
+&lt;li&gt;&lt;a href='http://localhost:4001/2023/01/22/S23W03'&gt;S23W03&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='http://localhost:4001/2023/06/03/la-cosa'&gt;La Cosa&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
       <pubDate>Sat, 03 Jun 2023 17:07:15 +0200</pubDate>
       <dc:subject>barcelona</dc:subject>
       <dc:date>2023-06-03T17:07:15+02:00</dc:date>
@@ -84,9 +105,12 @@
     <item>
       <title>Zumzeig Cinema</title>
       <link>http://localhost:4001/locations/barcelona</link>
-      <description>Cine indie barra cooperativa - Carrer de Béjar, 53
+      <description>Cine indie barra cooperativa
 
-&lt;a href='http://localhost:4001/2023/04/07/all-the-beauty-and-the-bloodshed'&gt;All The Beauty And The Bloodshed&lt;/a&gt;</description>
+Carrer de Béjar, 53
+
+&lt;li&gt;&lt;a href='http://localhost:4001/2023/04/07/all-the-beauty-and-the-bloodshed'&gt;All The Beauty And The Bloodshed&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
       <pubDate>Fri, 07 Apr 2023 00:35:31 +0200</pubDate>
       <dc:subject>barcelona</dc:subject>
       <dc:date>2023-04-07T00:35:31+02:00</dc:date>
@@ -94,9 +118,12 @@
     <item>
       <title>Vereda Bar</title>
       <link>http://localhost:4001/locations/barcelona</link>
-      <description> - Carrer de la Diputació, 155
+      <description>
 
-&lt;a href='http://localhost:4001/2023/05/04/open-heart-protocol'&gt;Open Heart Protocol&lt;/a&gt;</description>
+Carrer de la Diputació, 155
+
+&lt;li&gt;&lt;a href='http://localhost:4001/2023/05/04/open-heart-protocol'&gt;Open Heart Protocol&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
       <pubDate>Thu, 04 May 2023 22:57:54 +0200</pubDate>
       <dc:subject>barcelona</dc:subject>
       <dc:date>2023-05-04T22:57:54+02:00</dc:date>
@@ -104,9 +131,12 @@
     <item>
       <title>Cyclic Beer Farm</title>
       <link>http://localhost:4001/locations/barcelona</link>
-      <description> - Carrer de Coll, 37
+      <description>
 
-&lt;a href='http://localhost:4001/2023/05/06/celebracion-postconciliacion'&gt;Celebración Post-conciliación&lt;/a&gt;</description>
+Carrer de Coll, 37
+
+&lt;li&gt;&lt;a href='http://localhost:4001/2023/05/06/celebracion-postconciliacion'&gt;Celebración Post-conciliación&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
       <pubDate>Sat, 06 May 2023 08:41:29 +0200</pubDate>
       <dc:subject>barcelona</dc:subject>
       <dc:date>2023-05-06T08:41:29+02:00</dc:date>
@@ -114,9 +144,12 @@
     <item>
       <title>035//BAR</title>
       <link>http://localhost:4001/locations/barcelona</link>
-      <description> - Carrer de Monlau, 35
+      <description>
 
-&lt;a href='http://localhost:4001/2023/05/06/celebracion-postconciliacion'&gt;Celebración Post-conciliación&lt;/a&gt;</description>
+Carrer de Monlau, 35
+
+&lt;li&gt;&lt;a href='http://localhost:4001/2023/05/06/celebracion-postconciliacion'&gt;Celebración Post-conciliación&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
       <pubDate>Sat, 06 May 2023 08:41:29 +0200</pubDate>
       <dc:subject>barcelona</dc:subject>
       <dc:date>2023-05-06T08:41:29+02:00</dc:date>
@@ -124,10 +157,13 @@
     <item>
       <title>JazzMan</title>
       <link>http://localhost:4001/locations/barcelona</link>
-      <description> - Carrer de Roger de Flor, 238
+      <description>
 
-&lt;a href='http://localhost:4001/2023/05/06/celebracion-postconciliacion'&gt;Celebración Post-conciliación&lt;/a&gt;
-&lt;a href='http://localhost:4001/2023/06/03/la-cosa'&gt;La Cosa&lt;/a&gt;</description>
+Carrer de Roger de Flor, 238
+
+&lt;li&gt;&lt;a href='http://localhost:4001/2023/05/06/celebracion-postconciliacion'&gt;Celebración Post-conciliación&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='http://localhost:4001/2023/06/03/la-cosa'&gt;La Cosa&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
       <pubDate>Sat, 03 Jun 2023 17:07:15 +0200</pubDate>
       <dc:subject>barcelona</dc:subject>
       <dc:date>2023-06-03T17:07:15+02:00</dc:date>
@@ -135,9 +171,12 @@
     <item>
       <title>Sede de la Editorial Gustavo Gili</title>
       <link>http://localhost:4001/locations/barcelona</link>
-      <description> - Carrer del Rosselló, 87-89
+      <description>
 
-&lt;a href='http://localhost:4001/2023/05/27/gili'&gt;Gili&lt;/a&gt;</description>
+Carrer del Rosselló, 87-89
+
+&lt;li&gt;&lt;a href='http://localhost:4001/2023/05/27/gili'&gt;Gili&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
       <pubDate>Sat, 27 May 2023 12:51:37 +0200</pubDate>
       <dc:subject>barcelona</dc:subject>
       <dc:date>2023-05-27T12:51:37+02:00</dc:date>
@@ -145,13 +184,16 @@
     <item>
       <title>COAC</title>
       <link>http://localhost:4001/locations/barcelona</link>
-      <description>Col·legi d'Arquitectes de Catalunya - Plaça Nova, 5
+      <description>Col·legi d'Arquitectes de Catalunya
 
-&lt;a href='http://localhost:4001/2023/05/31/gail'&gt;Gail&lt;/a&gt;</description>
+Plaça Nova, 5
+
+&lt;li&gt;&lt;a href='http://localhost:4001/2023/05/31/gail'&gt;Gail&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
       <pubDate>Wed, 31 May 2023 17:30:00 +0200</pubDate>
       <dc:subject>barcelona</dc:subject>
       <dc:date>2023-05-31T17:30:00+02:00</dc:date>
     </item>
-    <dc:date>2023-06-04T18:21:56+02:00</dc:date>
+    <dc:date>2023-06-04T18:34:57+02:00</dc:date>
   </channel>
 </rss>
