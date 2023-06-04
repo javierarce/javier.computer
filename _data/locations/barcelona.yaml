@@ -1,6 +1,6 @@
 ---
 - title: El Noa Noa
-  description: Una cafetería librería con cafés y libros.
+  description: Una cafetería-librería con cafés y libros.
   address: Carrer de Torrijos, 22
   latlng:
   - 41.40407370542504
@@ -20,7 +20,7 @@
   - url: "/2022/04/28/pegatinas"
     title: Pegatinas
 - title: Funky Bakers
-  description: No tan funkies como dicen ser pero tienen cosas ricas
+  description: No tan funkies como dicen ser pero tienen cosas ricas.
   address: Pg. del Born, 10
   latlng:
   - 41.38458415660393
@@ -96,6 +96,7 @@
   - url: "/2023/05/04/open-heart-protocol"
     title: Open Heart Protocol
 - title: Cyclic Beer Farm
+  description: Taproom especializada en fermentaciones mixtas.
   address: Carrer de Coll, 37
   latlng:
   - 41.42455743298923
@@ -114,6 +115,7 @@
   - url: "/2023/05/06/celebracion-postconciliacion"
     title: Celebración Post-conciliación
 - title: JazzMan
+  description: Un pequeño bar con buen ambiente y buenos cocktails.
   address: Carrer de Roger de Flor, 238
   latlng:
   - 41.40213522647976
@@ -145,7 +147,7 @@
     title: Gail
 - title: Cafetería Japonesa Kasa Hanaka
   description: Una cafetería y sitio de almuerzos (y solo almuerzos) japo-catalán
-    escondida y muy recomendable.
+    escondido y muy recomendable.
   address: Carrer de Saragossa, 29
   latlng:
   - 41.401696340168684
