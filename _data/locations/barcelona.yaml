@@ -143,3 +143,13 @@
   post_references:
   - url: "/2023/05/31/gail"
     title: Gail
+- title: Cafetería Japonesa Kasa Hanaka
+  description: Cafetería y sitio de almuerzos (y solo almuerzos) japon-catalán semiescondido.
+  address: Carrer de Saragossa, 29
+  latlng:
+  - 41.401696340168684
+  - 2.149860615288348
+  location: barcelona
+  post_references:
+  - url: "/2023/06/04/kasa-hanaka"
+    title: Kasa Hanaka

@@ -197,7 +197,7 @@ class Map extends Base {
   renderLocations (locations) {
     let markers = []
 
-    locations.reverse().forEach((location, index) => {
+    locations.forEach((location, index) => {
       const marker = this.createMarker(location)
       markers.push(marker)
     }) 
@@ -336,7 +336,7 @@ class App {
 
     this.map = new Map({ lng, lat, zoom })
 
-    this.locations = locations
+    this.locations = locations.reverse()
 
     this.locations.forEach((location, index) => {
       location.id = index + 1

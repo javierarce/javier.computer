@@ -10,15 +10,30 @@
 
   <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
   <link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" />
-  <updated>2023-06-04T19:52:40+02:00</updated>
+  <updated>2023-06-04T20:19:22+02:00</updated>
   <id>http://localhost:4001/feed.xml</id>
 
   <sy:updatePeriod>daily</sy:updatePeriod>
   <sy:updateFrequency>1</sy:updateFrequency>
   <link>http://localhost:4001</link>
   <atom:link href="http://localhost:4001/feed.xml" rel="self" type="application/rss+xml" />
-  <lastBuildDate>Sun, 04 Jun 2023 19:18:49 +0200</lastBuildDate>
+  <lastBuildDate>Sun, 04 Jun 2023 19:58:59 +0200</lastBuildDate>
     
+    
+  <item>
+    <title>Kasa Hanaka</title>
+    <pubDate>Sun, 04 Jun 2023 19:58:59 +0200</pubDate>
+    <link>http://localhost:4001/2023/06/04/kasa-hanaka</link>
+    <guid isPermaLink="true">http://localhost:4001/2023/06/04/kasa-hanaka</guid>
+    
+
+    <description>
+      
+        &lt;p&gt;Kasa Hanaka con Orlando y Álvaro · &lt;a href=&quot;https://letterboxd.com/javier/film/wargames&quot; class=&quot;web-link&quot;&gt;WarGames&lt;/a&gt;&lt;/p&gt;
+
+        <p><small>Barcelona</small></p>
+    </description>
+  </item>
     
   <item>
     <title>Mapas</title>
@@ -206,21 +221,6 @@ enseñarte algunos cuantos nudos útiles dedica cuatro breves vídeos a explicar
       
         &lt;p&gt;Celebración post-conciliación · Cocktails &amp;amp; cocktails &amp;amp; dreams con &lt;a href=&quot;https://www.ericafustero.com&quot; class=&quot;web-link&quot;&gt;Erica&lt;/a&gt; · Cyclic Beer Farm + 035//BAR + Jazzman.&lt;/p&gt;
 
-
-        <p><small>Barcelona</small></p>
-    </description>
-  </item>
-    
-  <item>
-    <title>Open Heart Protocol</title>
-    <pubDate>Thu, 04 May 2023 22:57:54 +0200</pubDate>
-    <link>http://localhost:4001/2023/05/04/open-heart-protocol</link>
-    <guid isPermaLink="true">http://localhost:4001/2023/05/04/open-heart-protocol</guid>
-    
-
-    <description>
-      
-        &lt;p&gt;Sigo despistado a niveles nunca vistos · Executive dinner con Laszlito en Vereda · Reviví el proyecto de &lt;a href=&quot;https://madrid.javier.computer&quot; class=&quot;web-link&quot;&gt;Avisos Madrid&lt;/a&gt; que utilicé en una de mis piezas de Poetry Slash · Gracias a la maravillosa &lt;a href=&quot;https://muan.co&quot; class=&quot;web-link&quot;&gt;Mu-An &lt;/a&gt;, y cortesía de su &lt;a href=&quot;https://github.com/dddddddddzzzz/OpenHeart&quot; class=&quot;web-link&quot;&gt;Open Heart Protocol&lt;/a&gt;, añadí un sistema para darle like a &lt;a href=&quot;/photos&quot; class=&quot;web-link&quot;&gt;mis fotos&lt;/a&gt; · ¿Qué estaba diciendo?&lt;/p&gt;
 
         <p><small>Barcelona</small></p>
     </description>
