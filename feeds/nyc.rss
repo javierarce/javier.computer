@@ -8,7 +8,7 @@
     <title>RSS feed de nyc</title>
     <link>http://localhost:4001/feeds/nyc.rss</link>
     <description>Sitios en nyc</description>
-    <pubDate>Sun, 04 Jun 2023 18:34:57 +0200</pubDate>
+    <pubDate>Sun, 04 Jun 2023 18:35:10 +0200</pubDate>
     <item>
       <title>Goods for the Study</title>
       <link>http://localhost:4001/locations/nyc</link>
@@ -17,9 +17,9 @@
 234 Mulberry St, New York
 
 </description>
-      <pubDate>Sun, 04 Jun 2023 18:34:57 +0200</pubDate>
+      <pubDate>Sun, 04 Jun 2023 18:35:10 +0200</pubDate>
       <dc:subject>nyc</dc:subject>
-      <dc:date>2023-06-04T18:34:57+02:00</dc:date>
+      <dc:date>2023-06-04T18:35:10+02:00</dc:date>
     </item>
     <item>
       <title>Prospect Park</title>
@@ -29,9 +29,9 @@
 Brooklyn, NY
 
 </description>
-      <pubDate>Sun, 04 Jun 2023 18:34:57 +0200</pubDate>
+      <pubDate>Sun, 04 Jun 2023 18:35:10 +0200</pubDate>
       <dc:subject>nyc</dc:subject>
-      <dc:date>2023-06-04T18:34:57+02:00</dc:date>
+      <dc:date>2023-06-04T18:35:10+02:00</dc:date>
     </item>
     <item>
       <title>Desert Island</title>
@@ -41,9 +41,9 @@ Brooklyn, NY
 540 E 5th St
 
 </description>
-      <pubDate>Sun, 04 Jun 2023 18:34:57 +0200</pubDate>
+      <pubDate>Sun, 04 Jun 2023 18:35:10 +0200</pubDate>
       <dc:subject>nyc</dc:subject>
-      <dc:date>2023-06-04T18:34:57+02:00</dc:date>
+      <dc:date>2023-06-04T18:35:10+02:00</dc:date>
     </item>
     <item>
       <title>Quimby's Bookstore NYC</title>
@@ -53,9 +53,9 @@ Brooklyn, NY
 536 Metropolitan Ave
 
 </description>
-      <pubDate>Sun, 04 Jun 2023 18:34:57 +0200</pubDate>
+      <pubDate>Sun, 04 Jun 2023 18:35:10 +0200</pubDate>
       <dc:subject>nyc</dc:subject>
-      <dc:date>2023-06-04T18:34:57+02:00</dc:date>
+      <dc:date>2023-06-04T18:35:10+02:00</dc:date>
     </item>
     <item>
       <title>Mast Books</title>
@@ -65,9 +65,9 @@ Brooklyn, NY
 72 Avenue A, New York
 
 </description>
-      <pubDate>Sun, 04 Jun 2023 18:34:57 +0200</pubDate>
+      <pubDate>Sun, 04 Jun 2023 18:35:10 +0200</pubDate>
       <dc:subject>nyc</dc:subject>
-      <dc:date>2023-06-04T18:34:57+02:00</dc:date>
+      <dc:date>2023-06-04T18:35:10+02:00</dc:date>
     </item>
     <item>
       <title>Sit &amp; Wonder</title>
@@ -77,9 +77,9 @@ Brooklyn, NY
 688 Washington Ave, Brooklyn
 
 </description>
-      <pubDate>Sun, 04 Jun 2023 18:34:57 +0200</pubDate>
+      <pubDate>Sun, 04 Jun 2023 18:35:10 +0200</pubDate>
       <dc:subject>nyc</dc:subject>
-      <dc:date>2023-06-04T18:34:57+02:00</dc:date>
+      <dc:date>2023-06-04T18:35:10+02:00</dc:date>
     </item>
     <item>
       <title>Nûrish</title>
@@ -89,9 +89,9 @@ Brooklyn, NY
 637 Washington Ave, Brooklyn
 
 </description>
-      <pubDate>Sun, 04 Jun 2023 18:34:57 +0200</pubDate>
+      <pubDate>Sun, 04 Jun 2023 18:35:10 +0200</pubDate>
       <dc:subject>nyc</dc:subject>
-      <dc:date>2023-06-04T18:34:57+02:00</dc:date>
+      <dc:date>2023-06-04T18:35:10+02:00</dc:date>
     </item>
     <item>
       <title>Banh Mi Place</title>
@@ -101,9 +101,9 @@ Brooklyn, NY
 824b Washington Ave, Brooklyn
 
 </description>
-      <pubDate>Sun, 04 Jun 2023 18:34:57 +0200</pubDate>
+      <pubDate>Sun, 04 Jun 2023 18:35:10 +0200</pubDate>
       <dc:subject>nyc</dc:subject>
-      <dc:date>2023-06-04T18:34:57+02:00</dc:date>
+      <dc:date>2023-06-04T18:35:10+02:00</dc:date>
     </item>
     <item>
       <title>Most High</title>
@@ -113,9 +113,9 @@ Brooklyn, NY
 820 Washington Ave, Brooklyn
 
 </description>
-      <pubDate>Sun, 04 Jun 2023 18:34:57 +0200</pubDate>
+      <pubDate>Sun, 04 Jun 2023 18:35:10 +0200</pubDate>
       <dc:subject>nyc</dc:subject>
-      <dc:date>2023-06-04T18:34:57+02:00</dc:date>
+      <dc:date>2023-06-04T18:35:10+02:00</dc:date>
     </item>
     <item>
       <title>Hungry Ghost</title>
@@ -125,9 +125,9 @@ Brooklyn, NY
 183 Sterling Pl, Brooklyn
 
 </description>
-      <pubDate>Sun, 04 Jun 2023 18:34:57 +0200</pubDate>
+      <pubDate>Sun, 04 Jun 2023 18:35:10 +0200</pubDate>
       <dc:subject>nyc</dc:subject>
-      <dc:date>2023-06-04T18:34:57+02:00</dc:date>
+      <dc:date>2023-06-04T18:35:10+02:00</dc:date>
     </item>
     <item>
       <title>Blue Bottle Coffee</title>
@@ -137,10 +137,10 @@ Brooklyn, NY
 203 7th Ave, Brooklyn
 
 </description>
-      <pubDate>Sun, 04 Jun 2023 18:34:57 +0200</pubDate>
+      <pubDate>Sun, 04 Jun 2023 18:35:10 +0200</pubDate>
       <dc:subject>nyc</dc:subject>
-      <dc:date>2023-06-04T18:34:57+02:00</dc:date>
+      <dc:date>2023-06-04T18:35:10+02:00</dc:date>
     </item>
-    <dc:date>2023-06-04T18:34:57+02:00</dc:date>
+    <dc:date>2023-06-04T18:35:10+02:00</dc:date>
   </channel>
 </rss>

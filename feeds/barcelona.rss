@@ -8,7 +8,7 @@
     <title>RSS feed de barcelona</title>
     <link>http://localhost:4001/feeds/barcelona.rss</link>
     <description>Sitios en barcelona</description>
-    <pubDate>Sun, 04 Jun 2023 18:34:57 +0200</pubDate>
+    <pubDate>Sun, 04 Jun 2023 18:35:10 +0200</pubDate>
     <item>
       <title>El Noa Noa</title>
       <link>http://localhost:4001/locations/barcelona</link>
@@ -194,6 +194,6 @@ Plaça Nova, 5
       <dc:subject>barcelona</dc:subject>
       <dc:date>2023-05-31T17:30:00+02:00</dc:date>
     </item>
-    <dc:date>2023-06-04T18:34:57+02:00</dc:date>
+    <dc:date>2023-06-04T18:35:10+02:00</dc:date>
   </channel>
 </rss>
