@@ -85,6 +85,9 @@
 }
 .Popup__content {
   width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
 }
 
 .Popup__title {
@@ -93,11 +96,37 @@
   margin: 0 0 0.2em;
 }
 .Popup__description {
-  margin: 0 0 0.2em;
+  margin: 0 0 0.4em;
 }
+
 .Popup__address {
   font-size: 0.9em;
   opacity: 0.5;
+}
+
+.Popup__posts {
+  margin: 0 0 .4em;
+  display: flex;
+  gap: 0.1em;
+}
+
+.Popup__posts .Popup__post {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4em;
+  height: 1.4em;
+  padding: 0.2em;
+  background: var(--gray2);
+  color: var(--black);
+  font-size: 0.8em;
+  border-radius: 100%;
+  transition: background 140ms ease-in-out;
+}
+
+.Popup__posts .Popup__post:hover {
+  background: #ccc;
 }
 
 /* Sets default popup styles */
@@ -169,21 +198,27 @@ transition: transform 0.3s ease-out, opacity 0.3s ease-in;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 4px;
   padding: 0.8em;
+  cursor: pointer;
+}
+
+.Location.is-active {
+  border-color: var(--link);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .Location__id {
   position: relative;
-  top: -1px;
+  top: -2px;
   display: inline-flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
   width: 1.5em;
   height: 1.5em;
   border-radius: 50%;
   color: var(--black);
   background: var(--link);
-  font-size: 0.8em;
-  margin: 0 0.3em 0 0;
+  font-size: 0.7em;
+  margin: 0 0.1em 0 0;
 }
 
 .Location__post:hover {
@@ -191,9 +226,14 @@ transition: transform 0.3s ease-out, opacity 0.3s ease-in;
   background: var(--white);
   color: var(--black);
 }
+
+.Location__posts {
+  display: flex;
+  gap: 0.1em;
+}
+
 .Location__post {
   text-decoration: none;
-  flex: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -203,7 +243,6 @@ transition: transform 0.3s ease-out, opacity 0.3s ease-in;
   color: var(--white);
   background: #333;
   font-size: 0.8em;
-  margin: 0 0.2em 0 0;
   border-radius: 100%;
 }
 
@@ -214,7 +253,6 @@ transition: transform 0.3s ease-out, opacity 0.3s ease-in;
 .Location__title {
   color: var(--link);
   margin: 0 0 0.2em;
-  display: flex;
   align-items: baseline;
   font-weight: bold;
   text-decoration: none;
@@ -223,20 +261,6 @@ transition: transform 0.3s ease-out, opacity 0.3s ease-in;
 .Location__title:hover {
   text-decoration: none;
 }
-
-.Location__posts ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-
-.Location__posts ul li {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
 
 .Location__address {
   text-decoration: none;

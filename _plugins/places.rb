@@ -10,7 +10,7 @@ module Jekyll
       address_hash = {}
 
       # Load base location data
-      Dir.glob('_data/*_base.yaml').each do |base_file|
+      Dir.glob('_data/locations/u*_base.yaml').each do |base_file|
         location_name = File.basename(base_file, '_base.yaml').sub('_base', '')
         base_locations = YAML.load_file(base_file) || []
         
@@ -44,12 +44,19 @@ module Jekyll
         end
       end
 
-      # Write to file
       locations_hash.each do |location, data|
-        File.open("_data/#{location}.yaml", 'w') do |file|
+        yaml_file_path = "_data/locations/#{location}.yaml"
+
+        if File.exists?(yaml_file_path)
+          current_data = YAML.load_file(yaml_file_path)
+          next if current_data == data
+        end
+
+        File.open(yaml_file_path, 'w') do |file|
           file.write(data.to_yaml)
         end
       end
     end
   end
 end
+

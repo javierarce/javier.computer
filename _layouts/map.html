@@ -19,7 +19,7 @@
     {% endif %}
 
     <script>
-    const locations = {{ site.data[page.location] | jsonify }}
+    const locations = {{ site.data.locations[page.location] | jsonify }}
     </script>
 
     <script src="{{ '/scripts/lazyload.min.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>

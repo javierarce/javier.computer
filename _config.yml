@@ -34,7 +34,7 @@ github_username:  javierarce
 show_drafts: false
 
 include: [".well-known"]
-exclude: ['_includes/notes_graph.json', '_data']
+exclude: ['_includes/notes_graph.json', '_data/locations', 'feeds']
 
 sass:
   load_paths:

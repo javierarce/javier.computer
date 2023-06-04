@@ -63,6 +63,19 @@
   post_references:
   - url: "/2022/12/10/retallar-i-enganxar"
     title: Retallar i enganxar
+- title: Phenomena Experience
+  description: Pelis clásicas palomiteras en una buena sala. Por razones inexplicables
+    las entradas no están numeradas y solo puedes pagar en metálico en el bar.
+  address: Carrer de St. Antoni Maria Claret, 168
+  latlng:
+  - 41.40923361160873
+  - 2.1718218260341406
+  location: barcelona
+  post_references:
+  - url: "/2023/01/22/S23W03"
+    title: S23W03
+  - url: "/2023/06/03/la-cosa"
+    title: La Cosa
 - title: Zumzeig Cinema
   description: Cine indie barra cooperativa
   address: Carrer de Béjar, 53
@@ -100,6 +113,17 @@
   post_references:
   - url: "/2023/05/06/celebracion-postconciliacion"
     title: Celebración Post-conciliación
+- title: JazzMan
+  address: Carrer de Roger de Flor, 238
+  latlng:
+  - 41.40213522647976
+  - 2.169469046024921
+  location: barcelona
+  post_references:
+  - url: "/2023/05/06/celebracion-postconciliacion"
+    title: Celebración Post-conciliación
+  - url: "/2023/06/03/la-cosa"
+    title: La Cosa
 - title: Sede de la Editorial Gustavo Gili
   address: Carrer del Rosselló, 87-89
   latlng:

@@ -99,6 +99,11 @@ class Popup extends Base {
       <div class="Popup__content">
         <% if (title) { %><div class="Popup__title"><%= title %></div> <% } %>
         <% if (description) { %><div class="Popup__description"><%= description %></div> <% } %>
+        <% if (post_references) { %><div class="Popup__posts">
+        <% for (let i = 0; i < post_references.length; i++) { %>
+            <a class="Popup__post" href="<%= post_references[i].url -%>"><%= i + 1 -%></a>
+        <% } %>
+        </div> <% } %>
         <% if (address) { %><div class="Popup__address"><%= address %></div><% } %>
       </div>
       `
@@ -119,6 +124,7 @@ class Popup extends Base {
     return this.el
   }
 }
+
 class Map extends Base {
   constructor (coordinates) {
     super()
@@ -136,12 +142,12 @@ class Map extends Base {
     }
   }
 
-  show () {
-    this.map.getContainer().classList.add('is-visible')
-    this.fitBoundsToMarkers()
-    this.map.invalidateSize()
-
-  }
+    show () {
+        this.map.getContainer().classList.add('is-visible')
+        this.fitBoundsToMarkers()
+        this.map.setZoom(this.map.getZoom() + 1)
+        this.map.invalidateSize()
+    }
 
   hide () {
     this.map.getContainer().remove()
@@ -154,6 +160,7 @@ class Map extends Base {
 
   selectMarkerById (id) {
     const marker = this.getMarkers().find(marker => marker.options.location.id === id)
+    this.selectedMarkerOrderId = marker.options.location.id -1
     this.selectMarker(marker, 18)
   }
 
@@ -167,8 +174,6 @@ class Map extends Base {
 
   goToMarker(direction) {
     const markers = this.getMarkers()
-    console.log(direction, this.selectedMarkerId)
-
     this.selectedMarkerOrderId = direction === 'next' ? this.getNextMarker(markers, this.selectedMarkerOrderId) : this.getPrevMarker(markers, this.selectedMarkerOrderId)
 
     const marker = markers[this.selectedMarkerOrderId % markers.length]
@@ -234,11 +239,14 @@ class Map extends Base {
     const popup = new Popup(latlng, location)
     const marker = L.marker(latlng, { icon, location })
     marker.bindPopup(popup.render(), { maxWidth: 'auto'})
-    marker.on('click', () => {
-      this.selectedMarkerOrderId = location.id - 1
-    })
+    marker.on('click', this.onMarkerClick.bind(this, location))
     return marker
   }
+
+   onMarkerClick (location) {
+    this.selectedMarkerOrderId = location.id - 1
+    this.emit('marker:click', location.id)
+   }
 
   selectMarker (marker, zoom = 18) {
     if (!marker) {
@@ -248,6 +256,8 @@ class Map extends Base {
     const location = marker.options.location
     
     const zoomLevel = this.map.getZoom() < zoom ? zoom : this.map.getZoom()
+
+      this.emit('marker:select', location.id)
 
     this.map.once("zoomend, moveend", () => {
       if (marker && marker.getElement()) {
@@ -281,7 +291,6 @@ class Map extends Base {
     for (let i = 0; i < markers.length; i++) {
       const layerPoint = this.map.latLngToLayerPoint(markers[i].getLatLng());
       const distance = Math.sqrt(Math.pow(layerPoint.x - e.layerPoint.x, 2) + Math.pow(layerPoint.y - e.layerPoint.y, 2));
-      console.log('distance', distance)
       if (distance < 40) { 
         clickedMarker = markers[i];
         break;
@@ -289,7 +298,6 @@ class Map extends Base {
     }
 
     if (clickedMarker) {
-      console.log('clicked on marker', clickedMarker);
       this.map.flyTo(clickedMarker.getLatLng(), 18)
       clickedMarker.openPopup()
     }
@@ -325,7 +333,6 @@ class App {
     const lng = this.$el.attributes['data-lng'].value
     const lat = this.$el.attributes['data-lat'].value
     const zoom = this.$el.attributes['data-zoom'].value
-    const locationsFilename  = this.$el.attributes['data-locations'].value
 
     this.map = new Map({ lng, lat, zoom })
 
@@ -334,6 +341,8 @@ class App {
     this.locations.forEach((location, index) => {
       location.id = index + 1
     })
+
+    this.$locations = document.querySelector('.js-locations')
 
     this.render()
     this.bindEvents()
@@ -344,12 +353,12 @@ class App {
 
       if (event.key === 'Escape') {
         event.preventDefault()
-        this.map.closePopup()
-      } else if (event.key === 'ArrowRight') {
+          this.unselectLocation()
+      } else if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
         event.preventDefault()
         event.stopPropagation()
         this.map.goToMarker('next')
-      } else if (event.key === 'ArrowLeft') {
+      } else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
         event.stopPropagation()
         event.preventDefault()
         this.map.goToMarker('prev')
@@ -365,9 +374,64 @@ class App {
     })
   }
 
-  bindEvents () {
+    unselectLocation () {
+        this.$locations.querySelector(`[data-id="${this.previousLocationID}"]`).classList.remove('is-active')
+        this.previousLocationID = null
+        this.map.closePopup()
+        this.map.show()
+    }
+
+    bindEvents () {
+
+        this.map.on('marker:select', (id) => {
+            const $element = this.$locations.querySelector(`[data-id="${id}"]`)
+            $element.classList.add('is-active')
+            setTimeout(() => {
+                $element.scrollIntoView({behavior: "smooth", block: "nearest", inline: "start"})
+            }, 300)
+
+            if (this.previousLocationID) {
+                this.$locations.querySelector(`[data-id="${this.previousLocationID}"]`).classList.remove('is-active')
+            }
+
+            this.previousLocationID = id
+        })
+
+
+        this.map.on('marker:click', (id) => {
+            this.$locations.querySelectorAll('.js-location').forEach((element) => {
+                if (element.dataset.id == id) {
+                    element.classList.add('is-active')
+                    if (this.previousLocationID) {
+                        this.$locations.querySelector(`[data-id="${this.previousLocationID}"]`).classList.remove('is-active')
+                    }
+                    this.previousLocationID = id
+                    element.scrollIntoView({behavior: "smooth", block: "nearest", inline: "start"})
+                }
+            })
+
+      })
+
+        this.$locations.querySelectorAll('.js-location').forEach((element) => {
+            element.addEventListener('click', (event) => {
+                this.showLocation(+element.dataset.id)
+            })
+        })
+
     this.bindKeyEvents()
   }
+
+    showLocation (id) {
+        if (this.previousLocationID) {
+            if (this.previousLocationID === id) {
+                this.unselectLocation()
+                return
+            }
+            this.$locations.querySelector(`[data-id="${this.previousLocationID}"]`).classList.remove('is-active')
+        }
+
+        this.map.selectMarkerById(id)
+    }
 
   render () {
     this.map.render()
