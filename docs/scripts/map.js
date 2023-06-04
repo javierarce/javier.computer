@@ -90,6 +90,7 @@ class Popup extends Base {
     options.title = options.title || false
     options.address = options.address || ''
     options.description = options.description || ''
+    options.post_references = options.post_references || []
 
     this.templateData = options
   }
@@ -99,7 +100,7 @@ class Popup extends Base {
       <div class="Popup__content">
         <% if (title) { %><div class="Popup__title"><%= title %></div> <% } %>
         <% if (description) { %><div class="Popup__description"><%= description %></div> <% } %>
-        <% if (post_references) { %><div class="Popup__posts">
+        <% if (post_references && post_references.length > 0) { %><div class="Popup__posts">
         <% for (let i = 0; i < post_references.length; i++) { %>
             <a class="Popup__post" href="<%= post_references[i].url -%>"><%= i + 1 -%></a>
         <% } %>
@@ -145,7 +146,6 @@ class Map extends Base {
     show () {
         this.map.getContainer().classList.add('is-visible')
         this.fitBoundsToMarkers()
-        this.map.setZoom(this.map.getZoom() + 1)
         this.map.invalidateSize()
     }
 

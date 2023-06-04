@@ -15,10 +15,7 @@ className: Trip
           <div id="map" class="Map"></div>
         </div>
 
-        {{ content }}
-
         <div class="Sidebar">
-        <div class="Sidebar__title"> {{ page.title }}</div>
           {% assign i = 0 %}
           <div class="Locations js-locations">
           {% for location in site.data.locations[page.location] %}

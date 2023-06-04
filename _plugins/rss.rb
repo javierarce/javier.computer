@@ -41,7 +41,7 @@ module Jekyll
               end
 
               description = "#{point['description']}<br><br>#{point['address']}<br><br>#{references.join}"
-              item.description = description.gsub(/\n/, '<br>')
+              item.description = description
               item.updated = most_recent_post_date.iso8601
               item.dc_subject = location
             end
