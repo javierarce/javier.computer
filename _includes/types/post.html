@@ -1,6 +1,6 @@
 {% assign matching_location = site.locations | where: "location", post.location | first %}
 
-<div class="Post">
+<div class="Post {% if post.highlighted -%} is-highlighted{% endif -%}">
   {% if post.show_title -%}
   <div class="Post__title">{{ post.title }}</div>
   {% endif -%}

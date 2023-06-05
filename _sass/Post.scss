@@ -6,6 +6,11 @@
   width: 800px;
   margin: 0 0 3em;
 }
+.Post.is-highlighted .Post__content {
+  border: 1px solid #ae81ff;
+  border-radius: 4px;
+  padding: 0.8em;
+}
 
 .Post__content a,
 .Post__content a:hover {
