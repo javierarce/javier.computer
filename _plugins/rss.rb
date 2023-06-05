@@ -26,7 +26,7 @@ module Jekyll
 
           points_of_interest.each do |point|
             maker.items.new_item do |item|
-              item.link = "#{site.config['url']}/locations/#{location}"
+              item.link = "#{site.config['url']}/maps/#{location}"
               item.title = "#{point['title']}"
 
               references = []

@@ -303,6 +303,19 @@ img.lazy.error {
   color: var(--white);
 }
 
+.Post__content a[href^="/maps"]:after {
+  content: '◌';
+  display: inline-block;
+  font-weight: 400;
+  padding-left: 4px;
+  font-size: 1.3em;
+  vertical-align: baseline;
+  top: 2px;
+  position: relative;
+  opacity: 0.4;
+  color: var(--white);
+}
+
 a.is-photo::after {
   content: '';
   display: inline-block;

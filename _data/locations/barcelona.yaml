@@ -88,6 +88,7 @@
   - url: "/2023/04/07/all-the-beauty-and-the-bloodshed"
     title: All The Beauty And The Bloodshed
 - title: Vereda Bar
+  permalink: vereda
   description: Platos de proximidad y temporada y vinos naturales.
   address: Carrer de la Diputació, 155
   latlng:
@@ -118,6 +119,7 @@
   - url: "/2023/05/06/celebracion-postconciliacion"
     title: Celebración Post-conciliación
 - title: JazzMan
+  permalink: jazzman
   description: Un pequeño bar con buen ambiente y buenos cocktails.
   address: Carrer de Roger de Flor, 238
   latlng:

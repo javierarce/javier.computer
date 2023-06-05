@@ -143,11 +143,11 @@ class Map extends Base {
     }
   }
 
-    show () {
-        this.map.getContainer().classList.add('is-visible')
-        this.fitBoundsToMarkers()
-        this.map.invalidateSize()
-    }
+  show () {
+    this.map.getContainer().classList.add('is-visible')
+    this.fitBoundsToMarkers()
+    this.map.invalidateSize()
+  }
 
   hide () {
     this.map.getContainer().remove()
@@ -156,6 +156,14 @@ class Map extends Base {
   fitBoundsToMarkers () {
     const latlngs = this.getMarkers().map(marker => marker.getLatLng())
     this.map.fitBounds(L.latLngBounds(latlngs))
+  }
+
+  selectMarkerByPermalink (permalink) {
+    const marker = this.getMarkers().find(marker => marker.options.location.permalink === permalink)
+    if (marker) {
+      this.selectedMarkerOrderId = marker.options.location.id -1
+      this.selectMarker(marker, 18)
+    }
   }
 
   selectMarkerById (id) {
@@ -204,6 +212,7 @@ class Map extends Base {
 
     this.markers = L.layerGroup(markers)
     this.markers.addTo(this.map)
+
   }
 
   flattenCoordinates (coordinates) {
@@ -231,10 +240,10 @@ class Map extends Base {
     return marker
   }
 
-   onMarkerClick (location) {
+  onMarkerClick (location) {
     this.selectedMarkerOrderId = location.id - 1
     this.emit('marker:click', location.id)
-   }
+  }
 
   selectMarker (marker, zoom = 18) {
     if (!marker) {
@@ -242,7 +251,7 @@ class Map extends Base {
     }
 
     const location = marker.options.location
-    
+
     const zoomLevel = this.map.getZoom() < zoom ? zoom : this.map.getZoom()
 
     this.emit('marker:select', location.id)
@@ -335,6 +344,15 @@ class App {
 
     this.render()
     this.bindEvents()
+
+    const queryString = window.location.search
+    const urlParams = new URLSearchParams(queryString)
+    const permalink = urlParams.get('p')
+
+    if (permalink) {
+      this.map.selectMarkerByPermalink(permalink)
+    }
+
   }
 
   bindKeyEvents () {
@@ -342,7 +360,7 @@ class App {
 
       if (event.key === 'Escape') {
         event.preventDefault()
-          this.unselectLocation()
+        this.unselectLocation()
       } else if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
         event.preventDefault()
         event.stopPropagation()
@@ -363,12 +381,12 @@ class App {
     })
   }
 
-    unselectLocation () {
-        this.$locations.querySelector(`[data-id="${this.previousLocationID}"]`).classList.remove('is-active')
-        this.previousLocationID = null
-        this.map.closePopup()
-        this.map.show()
-    }
+  unselectLocation () {
+    this.$locations.querySelector(`[data-id="${this.previousLocationID}"]`).classList.remove('is-active')
+    this.previousLocationID = null
+    this.map.closePopup()
+    this.map.show()
+  }
 
   scrollIntoView ($element) {
     if (!$element) {
@@ -380,60 +398,62 @@ class App {
     }
   }
 
-    bindEvents () {
-      window.addEventListener('resize', () => {
-        this.flexDirection = window.getComputedStyle(document.querySelector('.BigMap')).getPropertyValue('flex-direction')
+  pinMarker (id) {
+    const $element = this.$locations.querySelector(`[data-id="${id}"]`)
+    $element.classList.add('is-active')
+    setTimeout(() => {
+      this.scrollIntoView($element)
+    }, 300)
+
+    if (this.previousLocationID) {
+      this.$locations.querySelector(`[data-id="${this.previousLocationID}"]`).classList.remove('is-active')
+    }
+
+    this.previousLocationID = id
+  }
+
+  bindEvents () {
+    window.addEventListener('resize', () => {
+      this.flexDirection = window.getComputedStyle(document.querySelector('.BigMap')).getPropertyValue('flex-direction')
+    })
+
+    this.map.on('marker:select', this.pinMarker.bind(this));
+
+
+    this.map.on('marker:click', (id) => {
+      this.$locations.querySelectorAll('.js-location').forEach(($element) => {
+        if ($element.dataset.id == id) {
+          $element.classList.add('is-active')
+          if (this.previousLocationID) {
+            this.$locations.querySelector(`[data-id="${this.previousLocationID}"]`).classList.remove('is-active')
+          }
+          this.scrollIntoView($element)
+          this.previousLocationID = id
+        }
       })
 
-        this.map.on('marker:select', (id) => {
-            const $element = this.$locations.querySelector(`[data-id="${id}"]`)
-            $element.classList.add('is-active')
-            setTimeout(() => {
-              this.scrollIntoView($element)
-            }, 300)
+    })
 
-            if (this.previousLocationID) {
-                this.$locations.querySelector(`[data-id="${this.previousLocationID}"]`).classList.remove('is-active')
-            }
-
-            this.previousLocationID = id
-        })
-
-
-        this.map.on('marker:click', (id) => {
-            this.$locations.querySelectorAll('.js-location').forEach(($element) => {
-                if ($element.dataset.id == id) {
-                    $element.classList.add('is-active')
-                    if (this.previousLocationID) {
-                        this.$locations.querySelector(`[data-id="${this.previousLocationID}"]`).classList.remove('is-active')
-                    }
-                  this.scrollIntoView($element)
-                    this.previousLocationID = id
-                }
-            })
-
+    this.$locations.querySelectorAll('.js-location').forEach(($element) => {
+      $element.addEventListener('click', (event) => {
+        this.showLocation(+$element.dataset.id)
       })
-
-        this.$locations.querySelectorAll('.js-location').forEach(($element) => {
-            $element.addEventListener('click', (event) => {
-                this.showLocation(+$element.dataset.id)
-            })
-        })
+    })
 
     this.bindKeyEvents()
   }
 
-    showLocation (id) {
-        if (this.previousLocationID) {
-            if (this.previousLocationID === id) {
-                this.unselectLocation()
-                return
-            }
-            this.$locations.querySelector(`[data-id="${this.previousLocationID}"]`).classList.remove('is-active')
-        }
-
-        this.map.selectMarkerById(id)
+  showLocation (id) {
+    if (this.previousLocationID) {
+      if (this.previousLocationID === id) {
+        this.unselectLocation()
+        return
+      }
+      this.$locations.querySelector(`[data-id="${this.previousLocationID}"]`).classList.remove('is-active')
     }
+
+    this.map.selectMarkerById(id)
+  }
 
   render () {
     this.map.render()

@@ -15,10 +15,11 @@ locations:
   latlng: [41.424967802049494, 2.1904708306832803]
   location: barcelona
 - title: JazzMan
+  permalink: jazzman
   description: Un pequeño bar con buen ambiente y buenos cocktails.
   address: "Carrer de Roger de Flor, 238"
   latlng: [41.40213522647976, 2.169469046024921]
   location: barcelona
 ---
-Celebración post-conciliación · Cocktails & cocktails & dreams con [Erica](https://www.ericafustero.com) · Cyclic Beer Farm + 035//BAR + Jazzman.
+Celebración post-conciliación · Cocktails & cocktails & dreams con [Erica](https://www.ericafustero.com) · Cyclic Beer Farm + 035//BAR + [JazzMan](/maps/barcelona?p=jazzman).
 
