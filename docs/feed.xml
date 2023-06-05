@@ -10,15 +10,30 @@
 
   <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
   <link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" />
-  <updated>2023-06-04T22:23:32+02:00</updated>
+  <updated>2023-06-05T21:58:16+02:00</updated>
   <id>http://localhost:4001/feed.xml</id>
 
   <sy:updatePeriod>daily</sy:updatePeriod>
   <sy:updateFrequency>1</sy:updateFrequency>
   <link>http://localhost:4001</link>
   <atom:link href="http://localhost:4001/feed.xml" rel="self" type="application/rss+xml" />
-  <lastBuildDate>Sun, 04 Jun 2023 19:58:59 +0200</lastBuildDate>
+  <lastBuildDate>Mon, 05 Jun 2023 21:54:22 +0200</lastBuildDate>
     
+    
+  <item>
+    <title>Youth of the Beast</title>
+    <pubDate>Mon, 05 Jun 2023 21:54:22 +0200</pubDate>
+    <link>http://localhost:4001/2023/06/05/youth-of-the-beast</link>
+    <guid isPermaLink="true">http://localhost:4001/2023/06/05/youth-of-the-beast</guid>
+    
+
+    <description>
+      
+        &lt;p&gt;&lt;a href=&quot;https://letterboxd.com/javier/film/youth-of-the-beast&quot; class=&quot;web-link&quot;&gt;Youth of the Beast&lt;/a&gt; · “&lt;a href=&quot;https://tinyawards.net&quot; class=&quot;web-link&quot;&gt;Tiny Awards&lt;/a&gt; is a small prize awarded by an equally-small selection committee of online makers to the website which we feel best embodies the idea of a small, playful and heartfelt web.” · &lt;a href=&quot;https://blackiebooks.org/catalogo/marron&quot; class=&quot;web-link&quot;&gt;«Marrón»&lt;/a&gt; out, &lt;a href=&quot;https://www.fulgenciopimentel.com/libros/las-tempestalidas/&quot; class=&quot;web-link&quot;&gt;«Las tempestálidas»&lt;/a&gt; in.&lt;/p&gt;
+
+        
+    </description>
+  </item>
     
   <item>
     <title>Kasa Hanaka</title>
@@ -207,22 +222,6 @@ enseñarte algunos cuantos nudos útiles dedica cuatro breves vídeos a explicar
         &lt;p&gt;Crusanes secos · Pizza Modernista de Terrassa · Ginger beer &amp;amp; horchatas.&lt;/p&gt;
 
         
-    </description>
-  </item>
-    
-  <item>
-    <title>Celebración Post-conciliación</title>
-    <pubDate>Sat, 06 May 2023 08:41:29 +0200</pubDate>
-    <link>http://localhost:4001/2023/05/06/celebracion-postconciliacion</link>
-    <guid isPermaLink="true">http://localhost:4001/2023/05/06/celebracion-postconciliacion</guid>
-    
-
-    <description>
-      
-        &lt;p&gt;Celebración post-conciliación · Cocktails &amp;amp; cocktails &amp;amp; dreams con &lt;a href=&quot;https://www.ericafustero.com&quot; class=&quot;web-link&quot;&gt;Erica&lt;/a&gt; · Cyclic Beer Farm + 035//BAR + Jazzman.&lt;/p&gt;
-
-
-        <p><small>Barcelona</small></p>
     </description>
   </item>
     
