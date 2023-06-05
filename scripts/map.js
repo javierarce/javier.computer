@@ -204,18 +204,6 @@ class Map extends Base {
 
     this.markers = L.layerGroup(markers)
     this.markers.addTo(this.map)
-
-    const queryString = window.location.search
-    const urlParams = new URLSearchParams(queryString)
-    const markerId = +urlParams.get('marker')
-
-    if (markerId) {
-      this.selectMarkerById(markerId)
-      document.body.getElementsByClassName('App')[0].scrollIntoView({ 
-        block: 'center',
-        inline: 'center'
-      })
-    }
   }
 
   flattenCoordinates (coordinates) {
@@ -257,12 +245,11 @@ class Map extends Base {
     
     const zoomLevel = this.map.getZoom() < zoom ? zoom : this.map.getZoom()
 
-      this.emit('marker:select', location.id)
+    this.emit('marker:select', location.id)
 
     this.map.once("zoomend, moveend", () => {
       if (marker && marker.getElement()) {
         marker.openPopup()
-        marker.getElement().focus()
 
         setTimeout(() => {
           this.map.setView(location.latlng, zoomLevel)
@@ -330,6 +317,8 @@ class App {
   constructor () {
     this.$el = document.querySelector('.js-map')
 
+    this.flexDirection = window.getComputedStyle(document.querySelector('.BigMap')).getPropertyValue('flex-direction')
+
     const lng = this.$el.attributes['data-lng'].value
     const lat = this.$el.attributes['data-lat'].value
     const zoom = this.$el.attributes['data-zoom'].value
@@ -381,13 +370,26 @@ class App {
         this.map.show()
     }
 
+  scrollIntoView ($element) {
+    if (!$element) {
+      return
+    }
+
+    if (this.flexDirection !== 'column') {
+      $element.scrollIntoView({behavior: "smooth", block: "nearest", inline: "start"})
+    }
+  }
+
     bindEvents () {
+      window.addEventListener('resize', () => {
+        this.flexDirection = window.getComputedStyle(document.querySelector('.BigMap')).getPropertyValue('flex-direction')
+      })
 
         this.map.on('marker:select', (id) => {
             const $element = this.$locations.querySelector(`[data-id="${id}"]`)
             $element.classList.add('is-active')
             setTimeout(() => {
-                $element.scrollIntoView({behavior: "smooth", block: "nearest", inline: "start"})
+              this.scrollIntoView($element)
             }, 300)
 
             if (this.previousLocationID) {
@@ -399,22 +401,22 @@ class App {
 
 
         this.map.on('marker:click', (id) => {
-            this.$locations.querySelectorAll('.js-location').forEach((element) => {
-                if (element.dataset.id == id) {
-                    element.classList.add('is-active')
+            this.$locations.querySelectorAll('.js-location').forEach(($element) => {
+                if ($element.dataset.id == id) {
+                    $element.classList.add('is-active')
                     if (this.previousLocationID) {
                         this.$locations.querySelector(`[data-id="${this.previousLocationID}"]`).classList.remove('is-active')
                     }
+                  this.scrollIntoView($element)
                     this.previousLocationID = id
-                    element.scrollIntoView({behavior: "smooth", block: "nearest", inline: "start"})
                 }
             })
 
       })
 
-        this.$locations.querySelectorAll('.js-location').forEach((element) => {
-            element.addEventListener('click', (event) => {
-                this.showLocation(+element.dataset.id)
+        this.$locations.querySelectorAll('.js-location').forEach(($element) => {
+            $element.addEventListener('click', (event) => {
+                this.showLocation(+$element.dataset.id)
             })
         })
 
