@@ -10,5 +10,4 @@ locations:
   latlng: [41.38458415660393, 2.182553957368447]
   location: barcelona
 ---
-
 Funky Bakers · Three Thousand Years of Longing · Culinarium · Game theory · Préparatifs.
