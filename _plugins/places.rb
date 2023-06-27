@@ -10,7 +10,7 @@ module Jekyll
       address_hash = {}
 
       # Load base location data
-      Dir.glob('_data/locations/u*_base.yaml').each do |base_file|
+      Dir.glob('_data/locations/*_base.yaml').each do |base_file|
         location_name = File.basename(base_file, '_base.yaml').sub('_base', '')
         base_locations = YAML.load_file(base_file) || []
         

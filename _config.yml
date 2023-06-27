@@ -50,6 +50,9 @@ paginate: 10
 paginate_path: "/page/:num/"
 
 collections:
+  maps:
+    output: true
+    permalink: '/map/:path/'
   photos:
     output: true
     permalink: '/photos/:path/'

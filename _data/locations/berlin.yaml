@@ -1,0 +1,17 @@
+---
+- title: Bartleby & Co
+  description: 
+  address: Boppstraße 2
+  latlng:
+  - 52.493500792859805
+  - 13.435139298296505
+  location: berlin
+  post_references: []
+- title: do you read me?!
+  description: 
+  address: Auguststraße 28
+  latlng:
+  - 52.52726714641086
+  - 13.397690437523185
+  location: berlin
+  post_references: []
