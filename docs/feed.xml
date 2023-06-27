@@ -10,15 +10,34 @@
 
   <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
   <link href="https://javier.computer/feed.xml" rel="self" type="application/atom+xml" />
-  <updated>2023-06-27T15:35:22+02:00</updated>
+  <updated>2023-06-27T22:02:21+02:00</updated>
   <id>https://javier.computer/feed.xml</id>
 
   <sy:updatePeriod>daily</sy:updatePeriod>
   <sy:updateFrequency>1</sy:updateFrequency>
   <link>https://javier.computer</link>
   <atom:link href="https://javier.computer/feed.xml" rel="self" type="application/rss+xml" />
-  <lastBuildDate>Sun, 18 Jun 2023 23:20:54 +0200</lastBuildDate>
+  <lastBuildDate>Tue, 27 Jun 2023 22:00:28 +0200</lastBuildDate>
     
+    
+  <item>
+    <title>Kieslowski</title>
+    <pubDate>Tue, 27 Jun 2023 22:00:28 +0200</pubDate>
+    <link>https://javier.computer/2023/06/27/kieslowski</link>
+    <guid isPermaLink="true">https://javier.computer/2023/06/27/kieslowski</guid>
+    
+
+    <description>
+      
+        &lt;blockquote&gt;
+  &lt;p&gt;I don’t like myself very much, so I try not to observe myself too often. I made a documentary once entitled Talking Heads. I asked people two questions: “Who are you?” and “What do you want?” Afterwards, I asked myself those questions. I realized that I didn’t have any answers. I don’t know who I am and I don’t know what I want. If anything, I’d like some peace and quiet, but I’ve never achieved it, and I probably never will. So I will never have what I really want.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;HBD, Kieślowski&lt;/p&gt;
+
+        
+    </description>
+  </item>
     
   <item>
     <title>42</title>
@@ -185,35 +204,6 @@ den linden&lt;/em&gt; y te apetece que nos veamos, &lt;a href=&quot;/contact&quo
         
         <p>Gail Bichler</p>
 
-   
-        <p>Barcelona</p>
-        ]]>
-      
-    </description>
-  </item>
-    
-  <item>
-    <title>Gili</title>
-    <pubDate>Sat, 27 May 2023 12:51:37 +0200</pubDate>
-    <link>https://javier.computer/2023/05/27/gili</link>
-    <guid isPermaLink="true">https://javier.computer/2023/05/27/gili</guid>
-    
-
-    <description>
-      
-      <![CDATA[
-        
-          
-            <img src="https://img.javier.computer/barcelona/R0003074_1280.jpg" alt="Gili"/>  
-          
-            <img src="https://img.javier.computer/barcelona/R0003072_1280.jpg" alt="Gili"/>  
-          
-            <img src="https://img.javier.computer/barcelona/R0003051_1280.jpg" alt="Gili"/>  
-          
-            <img src="https://img.javier.computer/barcelona/R0003040_1280.jpg" alt="Gili"/>  
-          
-        
-        
    
         <p>Barcelona</p>
         ]]>
