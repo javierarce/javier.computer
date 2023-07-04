@@ -189,3 +189,26 @@
   - url: "/2023/06/18/42"
     title: '42'
     date: 2023-06-18 23:20:54.000000000 +02:00
+- title: Sato ト Tanaka
+  description: Barra japonesa atendida por dos sushimanes y sendos menús degustación.
+    Tengo ganas de volver pronto..
+  address: Carrer del Bruc, 79
+  latlng:
+  - 41.394977701949294
+  - 2.168945380457328
+  location: barcelona
+  post_references:
+  - url: "/2023/07/04/sato-tanaka"
+    title: Sato Tanaka
+    date: &5 2023-07-04 22:21:20.000000000 +02:00
+- title: Onis Coffee
+  description: Diminuta cafetería estratégicamente situada en Dreta de l'Eixample.
+  address: Carrer de Roger de Llúria, 87
+  latlng:
+  - 41.39524373651066
+  - 2.1660161807639344
+  location: barcelona
+  post_references:
+  - url: "/2023/07/04/sato-tanaka"
+    title: Sato Tanaka
+    date: *5

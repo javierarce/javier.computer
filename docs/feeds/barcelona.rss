@@ -8,7 +8,7 @@
     <title>RSS feed de barcelona</title>
     <link>https://javier.computer/feeds/barcelona.rss</link>
     <description>Sitios en barcelona</description>
-    <pubDate>Sun, 18 Jun 2023 23:20:54 +0200</pubDate>
+    <pubDate>Tue, 04 Jul 2023 22:21:20 +0200</pubDate>
     <item>
       <title>El Noa Noa</title>
       <link>https://javier.computer/maps/barcelona</link>
@@ -137,6 +137,22 @@
       <dc:subject>barcelona</dc:subject>
       <dc:date>2023-06-18T23:20:54+02:00</dc:date>
     </item>
-    <dc:date>2023-06-18T23:20:54+02:00</dc:date>
+    <item>
+      <title>Sato ト Tanaka</title>
+      <link>https://javier.computer/maps/barcelona</link>
+      <description>Barra japonesa atendida por dos sushimanes y sendos menús degustación.&lt;br&gt;&lt;br&gt;Carrer del Bruc, 79&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2023/07/04/sato-tanaka'&gt;Sato Tanaka&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Tue, 04 Jul 2023 22:21:20 +0200</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2023-07-04T22:21:20+02:00</dc:date>
+    </item>
+    <item>
+      <title>Onis Coffee</title>
+      <link>https://javier.computer/maps/barcelona</link>
+      <description>Diminuta cafetería estratégicamente situada en Dreta de l'Eixample.&lt;br&gt;&lt;br&gt;Carrer de Roger de Llúria, 87&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2023/07/04/sato-tanaka'&gt;Sato Tanaka&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Tue, 04 Jul 2023 22:21:20 +0200</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2023-07-04T22:21:20+02:00</dc:date>
+    </item>
+    <dc:date>2023-07-04T22:21:20+02:00</dc:date>
   </channel>
 </rss>
