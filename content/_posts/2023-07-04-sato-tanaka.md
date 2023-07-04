@@ -18,5 +18,5 @@ locations:
   location: barcelona
 ---
 
-[Sato i Tanaka](/maps/barcelona?p=sato) y Erica · Checklist berlinés · [Onis Coffee](/maps/barcelona?p=onis).
+[Sato i Tanaka](/maps/barcelona?p=sato) y Erica · Checklist berlinés · [Onis Coffee](/maps/barcelona?p=onis) · [Heaven is a Junkyard](https://youthlagoon.bandcamp.com/album/heaven-is-a-junkyard).
 
