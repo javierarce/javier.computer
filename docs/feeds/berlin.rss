@@ -8,23 +8,23 @@
     <title>RSS feed de berlin</title>
     <link>https://javier.computer/feeds/berlin.rss</link>
     <description>Sitios en berlin</description>
-    <pubDate>Tue, 04 Jul 2023 22:39:31 +0200</pubDate>
+    <pubDate>Tue, 04 Jul 2023 22:45:15 +0200</pubDate>
     <item>
       <title>Bartleby &amp; Co</title>
       <link>https://javier.computer/maps/berlin</link>
       <description>&lt;br&gt;&lt;br&gt;Boppstraße 2&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Tue, 04 Jul 2023 22:39:31 +0200</pubDate>
+      <pubDate>Tue, 04 Jul 2023 22:45:15 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2023-07-04T22:39:31+02:00</dc:date>
+      <dc:date>2023-07-04T22:45:15+02:00</dc:date>
     </item>
     <item>
       <title>do you read me?!</title>
       <link>https://javier.computer/maps/berlin</link>
       <description>&lt;br&gt;&lt;br&gt;Auguststraße 28&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Tue, 04 Jul 2023 22:39:31 +0200</pubDate>
+      <pubDate>Tue, 04 Jul 2023 22:45:15 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2023-07-04T22:39:31+02:00</dc:date>
+      <dc:date>2023-07-04T22:45:15+02:00</dc:date>
     </item>
-    <dc:date>2023-07-04T22:39:31+02:00</dc:date>
+    <dc:date>2023-07-04T22:45:15+02:00</dc:date>
   </channel>
 </rss>
