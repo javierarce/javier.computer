@@ -54,6 +54,10 @@
   --width: 800px;
 }
 
+::selection {
+  background: rgba(142, 142, 142, 0.2);
+}
+
 ::placeholder {
   color: var(--white);
   opacity: 0.5;
