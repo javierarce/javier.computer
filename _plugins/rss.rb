@@ -1,3 +1,5 @@
+require 'rss'
+
 module Jekyll
   class GenerateRSS < Generator
     safe true
@@ -31,12 +33,12 @@ module Jekyll
               if point['post_references']
                 references << "<ul>"
                 references.concat(point['post_references'].map { |post_ref|
-                  #post_date = post_ref['date']
+                  post_date = post_ref['date']
 
-                  #if post_date
-                    #post_date = DateTime.parse(post_date) if post_date.is_a?(String)
-                    #most_recent_post_date = post_date 
-                  #end
+                  if post_date
+                    post_date = DateTime.parse(post_date) if post_date.is_a?(String)
+                    most_recent_post_date = post_date 
+                  end
                   
                   "<li><a href='#{site.config['url']}#{post_ref['url']}'>#{post_ref['title']}</a></li>"
                 })
