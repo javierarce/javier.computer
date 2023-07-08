@@ -1,4 +1,5 @@
 require 'yaml'
+require 'symbol'
 
 module Jekyll
   class LocationFileGenerator < Generator
@@ -12,7 +13,7 @@ module Jekyll
       # Load base location data
       Dir.glob('_data/locations/*_base.yaml').each do |base_file|
         location_name = File.basename(base_file, '_base.yaml').sub('_base', '')
-        base_locations = YAML.load_file(base_file, permitted_classes: [Matrix, OpenStruct, Symbol]) || []
+        base_locations = YAML.load_file(base_file, permitted_classes: [Symbol]) || []
         
         if base_locations.is_a? Array
           base_locations.each do |base_location|
@@ -48,7 +49,7 @@ module Jekyll
         yaml_file_path = "_data/locations/#{location}.yaml"
 
         if File.exists?(yaml_file_path)
-          current_data = YAML.load_file(yaml_file_path, permitted_classes: [Matrix, OpenStruct, Symbol])
+          current_data = YAML.load_file(yaml_file_path, permitted_classes: [Symbol])
           next if current_data == data
         end
 
