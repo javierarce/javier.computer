@@ -1,5 +1,18 @@
 require 'yaml'
 
+class CustomClassLoader < Psych::ClassLoader
+  def find(name)
+    if name == 'Date'
+      Date
+    else
+      super
+    end
+  end
+end
+
+loader = Psych::Visitors::ToRuby.new(CustomClassLoader.new)
+Psych::Visitors::Visitor.new(loader).accept(Psych.parse(yaml_data))
+
 module Jekyll
   class LocationFileGenerator < Generator
     safe true
