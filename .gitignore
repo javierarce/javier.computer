@@ -6,5 +6,6 @@
 .sass-cache
 _drafts
 docs
+_site
 node_modules
 vendor
