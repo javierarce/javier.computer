@@ -1,5 +1,3 @@
-require 'rss'
-
 module Jekyll
   class GenerateRSS < Generator
     safe true
