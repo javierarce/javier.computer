@@ -1,5 +1,3 @@
-require 'yaml'
-
 module Jekyll
   class LocationFileGenerator < Generator
     safe true
@@ -10,7 +8,7 @@ module Jekyll
       address_hash = {}
 
       # Load base location data
-      Dir.glob('_data/locations/*_base.yaml').each do |base_file|
+      Dir.glob('_data/locations/u*_base.yaml').each do |base_file|
         location_name = File.basename(base_file, '_base.yaml').sub('_base', '')
         base_locations = YAML.load_file(base_file) || []
         
@@ -31,7 +29,7 @@ module Jekyll
         if post.data['locations']
           post.data['locations'].each do |location|
             location['post_references'] ||= []
-            post_ref = { 'url' => post.url, 'title' => post.data['title']}
+            post_ref = { 'url' => post.url, 'title' => post.data['title'], 'date' => post.data['date'] }
             location['post_references'] << post_ref
 
             if address_hash[location['address']].nil?
