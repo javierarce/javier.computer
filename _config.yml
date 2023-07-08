@@ -27,7 +27,7 @@ author: Javier Arce
 email: email@javier.computer
 generator: Magic
 highlighter: rouge
-destination: docs
+destination: _site
 timezone: Europe/Madrid
 twitter_username: javier
 github_username:  javierarce
