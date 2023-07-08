@@ -9,7 +9,7 @@
   post_references:
   - url: "/2022/04/28/pegatinas"
     title: Pegatinas
-    date: &1 2022-04-28 21:58:21.000000000 +02:00
+    date: '2022-04-28 21:58:21 +0200'
 - title: SlowMov
   description: Mi cafetería de cabecera en el barrio.
   address: Carrer de Luis Antúnez, 18
@@ -20,7 +20,7 @@
   post_references:
   - url: "/2022/04/28/pegatinas"
     title: Pegatinas
-    date: *1
+    date: '2022-04-28 21:58:21 +0200'
 - title: Funky Bakers
   description: No tan funkies como dicen ser pero tienen cosas ricas.
   address: Pg. del Born, 10
@@ -31,7 +31,7 @@
   post_references:
   - url: "/2022/09/17/funky-bakers"
     title: Funky Bakers
-    date: 2022-09-17 09:16:14.000000000 +02:00
+    date: '2022-09-17 09:16:14 +0200'
 - title: Orval
   description: Cafetería favorita en la zona. Alerta de kimcheese.
   address: Carrer de Buenaventura Muñoz, 31
@@ -42,10 +42,10 @@
   post_references:
   - url: "/2022/09/26/atrapado-en-un-grupo-de-telegram"
     title: Atrapado en Telegram
-    date: 2022-09-26 23:32:23.000000000 +02:00
+    date: '2022-09-26 23:32:23 +0200'
   - url: "/2022/12/04/constelacion-grafica"
     title: Constelación Gráfica
-    date: &2 2022-12-04 22:59:43.000000000 +01:00
+    date: '2022-12-04 22:59:43 +0100'
 - title: Centre de Cultura Contemporània de Barcelona
   description: Centro cultural y centro de artes creativas con teatro, galerías de
     exposiciones y salas de conferencias
@@ -57,7 +57,7 @@
   post_references:
   - url: "/2022/12/04/constelacion-grafica"
     title: Constelación Gráfica
-    date: *2
+    date: '2022-12-04 22:59:43 +0100'
 - title: Santa Mònica
   description: Centro interdisciplinario de artes dedicado a impulsar la creación
     contemporánea
@@ -69,7 +69,7 @@
   post_references:
   - url: "/2022/12/10/retallar-i-enganxar"
     title: Retallar i enganxar
-    date: 2022-12-10 22:30:27.000000000 +01:00
+    date: '2022-12-10 22:30:27 +0100'
 - title: Phenomena Experience
   description: Pelis clásicas palomiteras en una buena sala. Por razones inexplicables
     las entradas no están numeradas y solo puedes pagar en metálico en el bar.
@@ -81,10 +81,10 @@
   post_references:
   - url: "/2023/01/22/S23W03"
     title: S23W03
-    date: 2023-01-22 16:10:16.000000000 +01:00
+    date: '2023-01-22 16:10:16 +0100'
   - url: "/2023/06/03/la-cosa"
     title: La Cosa
-    date: &4 2023-06-03 17:07:15.000000000 +02:00
+    date: '2023-06-03 17:07:15 +0200'
 - title: Zumzeig Cinema
   description: Sala de cine cooperativa y sin ánimo de lucro, con una programación
     principalmente indie en VO.
@@ -96,7 +96,7 @@
   post_references:
   - url: "/2023/04/07/all-the-beauty-and-the-bloodshed"
     title: All The Beauty And The Bloodshed
-    date: 2023-04-07 00:35:31.000000000 +02:00
+    date: '2023-04-07 00:35:31 +0200'
 - title: Vereda Bar
   permalink: vereda
   description: Platos de proximidad y temporada y vinos naturales.
@@ -108,7 +108,7 @@
   post_references:
   - url: "/2023/05/04/open-heart-protocol"
     title: Open Heart Protocol
-    date: 2023-05-04 22:57:54.000000000 +02:00
+    date: '2023-05-04 22:57:54 +0200'
 - title: Cyclic Beer Farm
   description: Taproom especializada en fermentaciones mixtas.
   address: Carrer de Coll, 37
@@ -119,7 +119,7 @@
   post_references:
   - url: "/2023/05/06/celebracion-postconciliacion"
     title: Celebración Post-conciliación
-    date: &3 2023-05-06 08:41:29.000000000 +02:00
+    date: '2023-05-06 08:41:29 +0200'
 - title: 035//BAR
   description: Maravilloso bar que acoge cenas popup igualmente maravillosas.
   address: Carrer de Monlau, 35
@@ -130,7 +130,7 @@
   post_references:
   - url: "/2023/05/06/celebracion-postconciliacion"
     title: Celebración Post-conciliación
-    date: *3
+    date: '2023-05-06 08:41:29 +0200'
 - title: JazzMan
   permalink: jazzman
   description: Un pequeño bar con buen ambiente y buenos cocktails.
@@ -142,10 +142,10 @@
   post_references:
   - url: "/2023/05/06/celebracion-postconciliacion"
     title: Celebración Post-conciliación
-    date: *3
+    date: '2023-05-06 08:41:29 +0200'
   - url: "/2023/06/03/la-cosa"
     title: La Cosa
-    date: *4
+    date: '2023-06-03 17:07:15 +0200'
 - title: Sede de la Editorial Gustavo Gili
   address: Carrer del Rosselló, 87-89
   latlng:
@@ -155,7 +155,7 @@
   post_references:
   - url: "/2023/05/27/gili"
     title: Gili
-    date: 2023-05-27 12:51:37.000000000 +02:00
+    date: '2023-05-27 12:51:37 +0200'
 - title: COAC
   description: Col·legi d'Arquitectes de Catalunya.
   address: Plaça Nova, 5
@@ -166,7 +166,7 @@
   post_references:
   - url: "/2023/05/31/gail"
     title: Gail
-    date: 2023-05-31 17:30:00.000000000 +02:00
+    date: '2023-05-31 17:30:00 +0200'
 - title: Cafetería Japonesa Kasa Hanaka
   description: Una cafetería y sitio de almuerzos (y solo almuerzos) japo-catalán
     escondido y muy recomendable.
@@ -178,7 +178,7 @@
   post_references:
   - url: "/2023/06/04/kasa-hanaka"
     title: Kasa Hanaka
-    date: 2023-06-04 19:58:59.000000000 +02:00
+    date: '2023-06-04 19:58:59 +0200'
 - title: Fábrica Garage
   address: Sant Adrià, 66
   latlng:
@@ -188,7 +188,7 @@
   post_references:
   - url: "/2023/06/18/42"
     title: '42'
-    date: 2023-06-18 23:20:54.000000000 +02:00
+    date: '2023-06-18 23:20:54 +0200'
 - title: Sato ト Tanaka
   permalink: sato
   description: Barra japonesa atendida por dos sushimanes que ofrece dos menús degustación.
@@ -201,7 +201,7 @@
   post_references:
   - url: "/2023/07/04/sato-tanaka"
     title: Sato Tanaka
-    date: &5 2023-07-04 22:21:20.000000000 +02:00
+    date: '2023-07-04 22:21:20 +0200'
 - title: Onis Coffee
   permalink: onis
   description: Diminuta cafetería estratégicamente situada en Dreta de l'Eixample
@@ -214,4 +214,4 @@
   post_references:
   - url: "/2023/07/04/sato-tanaka"
     title: Sato Tanaka
-    date: *5
+    date: '2023-07-04 22:21:20 +0200'

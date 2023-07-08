@@ -29,7 +29,7 @@ module Jekyll
         if post.data['locations']
           post.data['locations'].each do |location|
             location['post_references'] ||= []
-            post_ref = { 'url' => post.url, 'title' => post.data['title'], 'date' => post.data['date'] }
+            post_ref = { 'url' => post.url, 'title' => post.data['title'], 'date' => post.data['date'].to_s }
             location['post_references'] << post_ref
 
             if address_hash[location['address']].nil?
