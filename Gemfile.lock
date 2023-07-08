@@ -31,7 +31,6 @@ GEM
       terminal-table (~> 2.0)
     jekyll-compose (0.12.0)
       jekyll (>= 3.7, < 5.0)
-    jekyll-datapage-generator (1.4.0)
     jekyll-feed (0.16.0)
       jekyll (>= 3.7, < 5.0)
     jekyll-paginate (1.1.0)
@@ -83,7 +82,6 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 4.2.1)
   jekyll-compose (~> 0.11)
-  jekyll-datapage-generator
   jekyll-feed (~> 0.12)
   jekyll-paginate
   jekyll-wikilinks
