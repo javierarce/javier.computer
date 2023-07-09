@@ -8,95 +8,95 @@
     <title>RSS feed de nyc</title>
     <link>http://localhost:4001/feeds/nyc.rss</link>
     <description>Sitios en nyc</description>
-    <pubDate>Sun, 09 Jul 2023 11:16:11 +0200</pubDate>
+    <pubDate>Sun, 09 Jul 2023 11:18:15 +0200</pubDate>
     <item>
       <title>Goods for the Study</title>
       <link>http://localhost:4001/maps/nyc</link>
       <description>Ahora que cerró CW Pencil Enterprise este es un buen sitio donde comprar material de oficina.&lt;br&gt;&lt;br&gt;234 Mulberry St, New York&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Sun, 09 Jul 2023 11:16:11 +0200</pubDate>
+      <pubDate>Sun, 09 Jul 2023 11:18:15 +0200</pubDate>
       <dc:subject>nyc</dc:subject>
-      <dc:date>2023-07-09T11:16:11+02:00</dc:date>
+      <dc:date>2023-07-09T11:18:15+02:00</dc:date>
     </item>
     <item>
       <title>Prospect Park</title>
       <link>http://localhost:4001/maps/nyc</link>
       <description>Un parque bien majo&lt;br&gt;&lt;br&gt;Brooklyn, NY&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Sun, 09 Jul 2023 11:16:11 +0200</pubDate>
+      <pubDate>Sun, 09 Jul 2023 11:18:15 +0200</pubDate>
       <dc:subject>nyc</dc:subject>
-      <dc:date>2023-07-09T11:16:11+02:00</dc:date>
+      <dc:date>2023-07-09T11:18:15+02:00</dc:date>
     </item>
     <item>
       <title>Desert Island</title>
       <link>http://localhost:4001/maps/nyc</link>
       <description>Desert Island is a record store located in the East Village neighborhood of Manhattan, New York City. It is located at 540 East 5th Street, between Avenues A and B.&lt;br&gt;&lt;br&gt;540 E 5th St&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Sun, 09 Jul 2023 11:16:11 +0200</pubDate>
+      <pubDate>Sun, 09 Jul 2023 11:18:15 +0200</pubDate>
       <dc:subject>nyc</dc:subject>
-      <dc:date>2023-07-09T11:16:11+02:00</dc:date>
+      <dc:date>2023-07-09T11:18:15+02:00</dc:date>
     </item>
     <item>
       <title>Quimby's Bookstore NYC</title>
       <link>http://localhost:4001/maps/nyc</link>
       <description>Sales de Desert Island y te metes aquí.&lt;br&gt;&lt;br&gt;536 Metropolitan Ave&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Sun, 09 Jul 2023 11:16:11 +0200</pubDate>
+      <pubDate>Sun, 09 Jul 2023 11:18:15 +0200</pubDate>
       <dc:subject>nyc</dc:subject>
-      <dc:date>2023-07-09T11:16:11+02:00</dc:date>
+      <dc:date>2023-07-09T11:18:15+02:00</dc:date>
     </item>
     <item>
       <title>Mast Books</title>
       <link>http://localhost:4001/maps/nyc</link>
       <description>Tienen una colección exquisita de primeras ediciones, libros raros y descatalogados, pero son un poco bordes.&lt;br&gt;&lt;br&gt;72 Avenue A, New York&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Sun, 09 Jul 2023 11:16:11 +0200</pubDate>
+      <pubDate>Sun, 09 Jul 2023 11:18:15 +0200</pubDate>
       <dc:subject>nyc</dc:subject>
-      <dc:date>2023-07-09T11:16:11+02:00</dc:date>
+      <dc:date>2023-07-09T11:18:15+02:00</dc:date>
     </item>
     <item>
       <title>Sit &amp; Wonder</title>
       <link>http://localhost:4001/maps/nyc</link>
       <description>Cuando fui a esta cafetería me tocó el barista aprendiz&lt;br&gt;&lt;br&gt;688 Washington Ave, Brooklyn&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Sun, 09 Jul 2023 11:16:11 +0200</pubDate>
+      <pubDate>Sun, 09 Jul 2023 11:18:15 +0200</pubDate>
       <dc:subject>nyc</dc:subject>
-      <dc:date>2023-07-09T11:16:11+02:00</dc:date>
+      <dc:date>2023-07-09T11:18:15+02:00</dc:date>
     </item>
     <item>
       <title>Nûrish</title>
       <link>http://localhost:4001/maps/nyc</link>
       <description>Café con platos vegetarianos y veganos (pero también con opciones para carnívoros)&lt;br&gt;&lt;br&gt;637 Washington Ave, Brooklyn&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Sun, 09 Jul 2023 11:16:11 +0200</pubDate>
+      <pubDate>Sun, 09 Jul 2023 11:18:15 +0200</pubDate>
       <dc:subject>nyc</dc:subject>
-      <dc:date>2023-07-09T11:16:11+02:00</dc:date>
+      <dc:date>2023-07-09T11:18:15+02:00</dc:date>
     </item>
     <item>
       <title>Banh Mi Place</title>
       <link>http://localhost:4001/maps/nyc</link>
       <description>&lt;br&gt;&lt;br&gt;824b Washington Ave, Brooklyn&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Sun, 09 Jul 2023 11:16:11 +0200</pubDate>
+      <pubDate>Sun, 09 Jul 2023 11:18:15 +0200</pubDate>
       <dc:subject>nyc</dc:subject>
-      <dc:date>2023-07-09T11:16:11+02:00</dc:date>
+      <dc:date>2023-07-09T11:18:15+02:00</dc:date>
     </item>
     <item>
       <title>Most High</title>
       <link>http://localhost:4001/maps/nyc</link>
       <description>&lt;br&gt;&lt;br&gt;820 Washington Ave, Brooklyn&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Sun, 09 Jul 2023 11:16:11 +0200</pubDate>
+      <pubDate>Sun, 09 Jul 2023 11:18:15 +0200</pubDate>
       <dc:subject>nyc</dc:subject>
-      <dc:date>2023-07-09T11:16:11+02:00</dc:date>
+      <dc:date>2023-07-09T11:18:15+02:00</dc:date>
     </item>
     <item>
       <title>Hungry Ghost</title>
       <link>http://localhost:4001/maps/nyc</link>
       <description>&lt;br&gt;&lt;br&gt;183 Sterling Pl, Brooklyn&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Sun, 09 Jul 2023 11:16:11 +0200</pubDate>
+      <pubDate>Sun, 09 Jul 2023 11:18:15 +0200</pubDate>
       <dc:subject>nyc</dc:subject>
-      <dc:date>2023-07-09T11:16:11+02:00</dc:date>
+      <dc:date>2023-07-09T11:18:15+02:00</dc:date>
     </item>
     <item>
       <title>Blue Bottle Coffee</title>
       <link>http://localhost:4001/maps/nyc</link>
       <description>Para disfrutar de un buen latte por $6&lt;br&gt;&lt;br&gt;203 7th Ave, Brooklyn&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Sun, 09 Jul 2023 11:16:11 +0200</pubDate>
+      <pubDate>Sun, 09 Jul 2023 11:18:15 +0200</pubDate>
       <dc:subject>nyc</dc:subject>
-      <dc:date>2023-07-09T11:16:11+02:00</dc:date>
+      <dc:date>2023-07-09T11:18:15+02:00</dc:date>
     </item>
-    <dc:date>2023-07-09T11:16:11+02:00</dc:date>
+    <dc:date>2023-07-09T11:18:15+02:00</dc:date>
   </channel>
 </rss>

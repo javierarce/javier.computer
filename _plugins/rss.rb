@@ -1,4 +1,5 @@
 require 'rss'
+require 'json'
 
 module Jekyll
   class GenerateRSS < Generator
@@ -10,11 +11,11 @@ module Jekyll
       site_dir = site.config['source']
       feeds_dir = File.join(site_dir, 'feeds')
       FileUtils.mkdir_p(feeds_dir)
-      Dir.glob(File.join(site_dir, data_dir, "locations/*.yaml")).each do |location_file|
-        next if File.basename(location_file) =~ /_base\.yaml\z/
+      Dir.glob(File.join(site_dir, data_dir, "locations/*.json")).each do |location_file|
+        next if File.basename(location_file) =~ /_base\.json\z/
 
-        location = File.basename(location_file, '.yaml')
-        points_of_interest = YAML.load_file(location_file)
+        location = File.basename(location_file, '.json')
+        points_of_interest = JSON.parse(File.read(location_file))
 
         most_recent_post_date = site.time
 
