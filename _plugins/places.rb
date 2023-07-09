@@ -1,3 +1,6 @@
+require 'json'
+require 'yaml'
+
 module Jekyll
   class LocationFileGenerator < Generator
     safe true
@@ -43,15 +46,15 @@ module Jekyll
       end
 
       locations_hash.each do |location, data|
-        yaml_file_path = "_data/locations/#{location}.yaml"
+        json_file_path = "_data/locations/#{location}.json"
 
-        if File.exists?(yaml_file_path)
-          current_data = YAML.load_file(yaml_file_path)
+        if File.exists?(json_file_path)
+          current_data = JSON.parse(File.read(json_file_path))
           next if current_data == data
         end
 
-        File.open(yaml_file_path, 'w') do |file|
-          file.write(data.to_yaml)
+        File.open(json_file_path, 'w') do |file|
+          file.write(JSON.pretty_generate(data))
         end
       end
     end
