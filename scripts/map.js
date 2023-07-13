@@ -270,9 +270,19 @@ class Map extends Base {
   }
 
   getIcon ({ location, className }) {
+    let html = location.id
+    let classNames = ['Marker', 'has-title']
+
+    if (location.emoji) {
+      html = location.emoji
+      classNames.push('has-emoji')
+    }
+
+    console.log(classNames)
+
     return new L.divIcon({
-      className,
-      html: location.id,
+      className: classNames.join(' '),
+      html,
       iconSize: [16, 16],
       iconAnchor: new L.Point(16, 0)
     })

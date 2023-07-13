@@ -22,7 +22,14 @@ className: Trip
           {% for location in posts %}
           {% assign i = i | minus: 1 %}
           <div class="Location js-location" data-id="{{ i }}">
+
+ {% if location.emoji %}
+            <div class="Location__title has-emoji"><span class="Location__id">{{ location.emoji  }}</span> {{ location.title }}</div>
+
+            {% else %}
             <div class="Location__title"><span class="Location__id">{{ i }}</span> {{ location.title }}</div>
+            {% endif %}
+
             <div class="Location__description">{{ location.description }}</div>
  {% if location.post_references.size > 0 %}
     <div class="Location__posts">

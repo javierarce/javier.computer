@@ -10,15 +10,43 @@
 
   <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
   <link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" />
-  <updated>2023-07-09T11:18:12+02:00</updated>
+  <updated>2023-07-13T10:49:52+02:00</updated>
   <id>http://localhost:4001/feed.xml</id>
 
   <sy:updatePeriod>daily</sy:updatePeriod>
   <sy:updateFrequency>1</sy:updateFrequency>
   <link>http://localhost:4001</link>
   <atom:link href="http://localhost:4001/feed.xml" rel="self" type="application/rss+xml" />
-  <lastBuildDate>Tue, 04 Jul 2023 22:21:20 +0200</lastBuildDate>
+  <lastBuildDate>Fri, 07 Jul 2023 10:17:53 +0200</lastBuildDate>
     
+    
+  <item>
+    <title>Calendario</title>
+    <pubDate>Fri, 07 Jul 2023 10:17:53 +0200</pubDate>
+    <link>http://localhost:4001/2023/07/07/calendario</link>
+    <guid isPermaLink="true">http://localhost:4001/2023/07/07/calendario</guid>
+    
+
+    <description>
+      
+      <![CDATA[
+        
+          
+            <img src="https://img.javier.computer/barcelona/R0003632_1280.jpg" alt="Calendario"/>  
+          
+            <img src="https://img.javier.computer/barcelona/R0003623_1280.jpg" alt="Calendario"/>  
+          
+            <img src="https://img.javier.computer/barcelona/R0003618_1280.jpg" alt="Calendario"/>  
+          
+        
+        <p>Arte callejero + señor interesado en las palmeras en la presentación de Calendario.</p>
+
+   
+        <p>Barcelona</p>
+        ]]>
+      
+    </description>
+  </item>
     
   <item>
     <title>Sato Tanaka</title>
@@ -263,21 +291,6 @@ Good Living Is Coming For You&lt;/a&gt; · &lt;a href=&quot;https://www.youtube.
         <p>Bilbao</p>
         ]]>
       
-    </description>
-  </item>
-    
-  <item>
-    <title>42</title>
-    <pubDate>Sun, 18 Jun 2023 23:20:54 +0200</pubDate>
-    <link>http://localhost:4001/2023/06/18/42</link>
-    <guid isPermaLink="true">http://localhost:4001/2023/06/18/42</guid>
-    
-
-    <description>
-      
-        &lt;p&gt;42 con Erica · Atrapados en la R1 · Fábrica Garage y Dirty Vegans con Erica, Abel, y Carla · The New York Subway Map Debate At Cooper Union April 20, 7:30 pm · Planes playeros · Boletín Botánico · &lt;a href=&quot;https://letterboxd.com/javier/film/the-innocent-2023&quot; class=&quot;web-link&quot;&gt;L’Innocent ★★½&lt;/a&gt; · &lt;a href=&quot;https://craigmod.com/ridgeline/165&quot; class=&quot;web-link&quot;&gt;BASIE!BOP!JAMAICA&lt;/a&gt;.&lt;/p&gt;
-
-        <p><small>Barcelona</small></p>
     </description>
   </item>
     

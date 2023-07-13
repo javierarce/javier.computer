@@ -1,0 +1,113 @@
+[
+  {
+    "title": "Bartleby & Co",
+    "description": null,
+    "address": "Boppstraße 2",
+    "latlng": [
+      52.493500792859805,
+      13.435139298296505
+    ],
+    "location": "berlin",
+    "post_references": [
+
+    ]
+  },
+  {
+    "title": "do you read me?!",
+    "description": null,
+    "address": "Auguststraße 28",
+    "latlng": [
+      52.52726714641086,
+      13.397690437523185
+    ],
+    "location": "berlin",
+    "post_references": [
+
+    ]
+  },
+  {
+    "title": "Café Strauss",
+    "permalink": "cafe-strauss",
+    "description": "Un café muy tranquilo frente a un cementerio (muy tranquilo, espero).",
+    "address": "Bergmannstraße, 42",
+    "latlng": [
+      52.4886291,
+      13.4011481
+    ],
+    "location": "berlin",
+    "post_references": [
+
+    ]
+  },
+  {
+    "title": "Father Carpenter Coffee Brewers",
+    "permalink": "father-carpenter-coffee-brewers",
+    "address": "Münzstraße, 21, Scheunenviertel",
+    "latlng": [
+      52.5244438,
+      13.4065961
+    ],
+    "location": "berlin",
+    "post_references": [
+
+    ]
+  },
+  {
+    "title": "Motto Berlin",
+    "permalink": "motto-berlin",
+    "address": "Skalitzer Straße, 68, Luisenstadt",
+    "latlng": [
+      52.5000847,
+      13.439883
+    ],
+    "location": "berlin",
+    "post_references": [
+
+    ]
+  },
+  {
+    "title": "Arminius Markthalle",
+    "permalink": "arminius-markthalle",
+    "description": "Photoautomat",
+    "emoji": "📷",
+    "address": "Arminiusstraße 2-4",
+    "latlng": [
+      52.5278395,
+      13.33862204999512
+    ],
+    "location": "berlin",
+    "post_references": [
+
+    ]
+  },
+  {
+    "title": "Photoautomat: Mauerpark 1 und 2",
+    "permalink": "mauerpark",
+    "description": "Photoautomat",
+    "emoji": "📷",
+    "address": "Eberswalder Straße 2, Gleimviertel",
+    "latlng": [
+      52.5406651,
+      13.4054709
+    ],
+    "location": "berlin",
+    "post_references": [
+
+    ]
+  },
+  {
+    "title": "Schönhauser Allee 63",
+    "permalink": "schönhauser-allee",
+    "description": "Photoautomat",
+    "emoji": "📷",
+    "address": "Schönhauser Allee 63",
+    "latlng": [
+      52.5458476,
+      13.413382921542743
+    ],
+    "location": "berlin",
+    "post_references": [
+
+    ]
+  }
+]

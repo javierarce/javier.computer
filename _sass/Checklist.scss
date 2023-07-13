@@ -1,0 +1,103 @@
+.Layout__checklist {
+  margin: auto;
+  background: #394ec1;
+
+  .Footer {
+    margin: 4em auto;
+  }
+  
+  .Inner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: var(--width);
+  }
+
+  .task-list {
+    padding: 0;
+    margin: 2em 0 0 0;
+    column-count: 3;
+  }
+
+  .task-list li:nth-child(even)  {
+    transform: rotate(2.4deg);
+  }
+  .task-list li {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    gap: 0.4em;
+    list-style: none;
+    transform: rotate(-2.4deg);
+    border-radius: 2px;
+    border-bottom: 1px solid #fff;
+    border-radius: 0;
+    padding: 0.4em 0.4em 0.4em 0.4em;
+    padding: 0;
+    padding-bottom: 0.8em;
+    margin: 0px 0px 2em;
+    font-size: 0.9em;
+    break-inside: avoid;
+  }
+
+  .task-list input {
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  li {
+    margin: 0 0 0.4em;
+  }
+
+  h2 {
+    margin: 0 0 0.4em;
+  }
+}
+
+
+:root {
+  --form-control-color: rebeccapurple;
+  --form-control-disabled: #959495;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--form-background);
+  margin: 0;
+
+  font: inherit;
+  color: white;
+  width: 1em;
+  height: 1em;
+  border: 1px solid white;
+  border-radius: 2px;
+
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--link);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="checkbox"]:focus {
+  outline: max(1px, 2px) solid white;
+  outline-offset: max(1px, 2px);
+}
+
+input[type="checkbox"]:disabled {
+  --form-control-color: var(--form-control-disabled);
+  color: var(--form-control-disabled);
+}
