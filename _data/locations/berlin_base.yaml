@@ -64,3 +64,11 @@
     - 52.535379464403334
     - 13.423648746035223
   location: "berlin"
+- title: "Dotori Korean Anju Bar"
+  date: 2023-07-13
+  permalink: "dotori"
+  address: "Gustav-Adolf-Straße 159"
+  latlng:
+    - 52.553966826503334
+    - 13.433880192070449
+  location: "berlin"
