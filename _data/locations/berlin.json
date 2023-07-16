@@ -27,6 +27,7 @@
   },
   {
     "title": "Café Strauss",
+    "emoji": "☕️",
     "permalink": "cafe-strauss",
     "description": "Un café muy tranquilo frente a un cementerio (muy tranquilo, espero).",
     "address": "Bergmannstraße, 42",
@@ -41,6 +42,7 @@
   },
   {
     "title": "Father Carpenter Coffee Brewers",
+    "emoji": "☕️",
     "permalink": "father-carpenter-coffee-brewers",
     "address": "Münzstraße, 21, Scheunenviertel",
     "latlng": [
@@ -66,37 +68,7 @@
     ]
   },
   {
-    "title": "Arminius Markthalle",
-    "permalink": "arminius-markthalle",
-    "description": "Photoautomat",
-    "emoji": "📷",
-    "address": "Arminiusstraße 2-4",
-    "latlng": [
-      52.5278395,
-      13.33862204999512
-    ],
-    "location": "berlin",
-    "post_references": [
-
-    ]
-  },
-  {
-    "title": "Photoautomat: Mauerpark 1 und 2",
-    "permalink": "mauerpark",
-    "description": "Photoautomat",
-    "emoji": "📷",
-    "address": "Eberswalder Straße 2, Gleimviertel",
-    "latlng": [
-      52.5406651,
-      13.4054709
-    ],
-    "location": "berlin",
-    "post_references": [
-
-    ]
-  },
-  {
-    "title": "Schönhauser Allee 63",
+    "title": "Photoautomat: Kulturbrauerei",
     "permalink": "schönhauser-allee",
     "description": "Photoautomat",
     "emoji": "📷",
@@ -104,6 +76,36 @@
     "latlng": [
       52.5458476,
       13.413382921542743
+    ],
+    "location": "berlin",
+    "post_references": [
+
+    ]
+  },
+  {
+    "title": "Cafelix Coffee Roasters",
+    "date": "2023-07-13",
+    "permalink": "cafelix",
+    "emoji": "☕️",
+    "address": "Winsstraße, 47",
+    "latlng": [
+      52.5355282,
+      13.4266165
+    ],
+    "location": "berlin",
+    "post_references": [
+
+    ]
+  },
+  {
+    "title": "Town Mouse Coffee",
+    "emoji": "☕️",
+    "date": "2023-07-14",
+    "permalink": "town-mouse-coffee",
+    "address": "Marienburger Str. 5",
+    "latlng": [
+      52.535379464403334,
+      13.423648746035223
     ],
     "location": "berlin",
     "post_references": [
