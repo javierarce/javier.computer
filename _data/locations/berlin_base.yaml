@@ -47,7 +47,6 @@
     - 13.413382921542743
   location: "berlin"
 - title: "Cafelix Coffee Roasters"
-  date: 2023-07-13
   permalink: "cafelix"
   emoji: ☕️
   address: "Winsstraße, 47"
@@ -57,7 +56,6 @@
   location: "berlin"
 - title: "Town Mouse Coffee"
   emoji: ☕️
-  date: 2023-07-14
   permalink: "town-mouse-coffee"
   address: "Marienburger Str. 5"
   latlng:
@@ -65,7 +63,6 @@
     - 13.423648746035223
   location: "berlin"
 - title: "Dotori Korean Anju Bar"
-  date: 2023-07-13
   permalink: "dotori"
   address: "Gustav-Adolf-Straße 159"
   latlng:

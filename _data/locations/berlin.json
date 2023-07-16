@@ -84,7 +84,6 @@
   },
   {
     "title": "Cafelix Coffee Roasters",
-    "date": "2023-07-13",
     "permalink": "cafelix",
     "emoji": "☕️",
     "address": "Winsstraße, 47",
@@ -100,7 +99,6 @@
   {
     "title": "Town Mouse Coffee",
     "emoji": "☕️",
-    "date": "2023-07-14",
     "permalink": "town-mouse-coffee",
     "address": "Marienburger Str. 5",
     "latlng": [
@@ -114,7 +112,6 @@
   },
   {
     "title": "Dotori Korean Anju Bar",
-    "date": "2023-07-13",
     "permalink": "dotori",
     "address": "Gustav-Adolf-Straße 159",
     "latlng": [
