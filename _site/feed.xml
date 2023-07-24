@@ -10,15 +10,54 @@
 
   <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
   <link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" />
-  <updated>2023-07-22T18:36:24+02:00</updated>
+  <updated>2023-07-24T17:13:31+02:00</updated>
   <id>http://localhost:4001/feed.xml</id>
 
   <sy:updatePeriod>daily</sy:updatePeriod>
   <sy:updateFrequency>1</sy:updateFrequency>
   <link>http://localhost:4001</link>
   <atom:link href="http://localhost:4001/feed.xml" rel="self" type="application/rss+xml" />
-  <lastBuildDate>Sat, 22 Jul 2023 18:27:05 +0200</lastBuildDate>
+  <lastBuildDate>Mon, 24 Jul 2023 17:10:44 +0200</lastBuildDate>
     
+    
+  <item>
+    <title>Boxi</title>
+    <pubDate>Mon, 24 Jul 2023 17:10:44 +0200</pubDate>
+    <link>http://localhost:4001/2023/07/24/boxi</link>
+    <guid isPermaLink="true">http://localhost:4001/2023/07/24/boxi</guid>
+    
+
+    <description>
+      
+      <![CDATA[
+        
+          
+            <img src="https://img.javier.computer/berlin/R0004007_1280.jpg" alt="Boxi"/>  
+          
+            <img src="https://img.javier.computer/berlin/R0004011_1280.jpg" alt="Boxi"/>  
+          
+            <img src="https://img.javier.computer/berlin/R0004017_1280.jpg" alt="Boxi"/>  
+          
+            <img src="https://img.javier.computer/berlin/R0004052_1280.jpg" alt="Boxi"/>  
+          
+            <img src="https://img.javier.computer/berlin/R0004026_1280.jpg" alt="Boxi"/>  
+          
+            <img src="https://img.javier.computer/berlin/R0004035_1280.jpg" alt="Boxi"/>  
+          
+            <img src="https://img.javier.computer/berlin/R0004014_1280.jpg" alt="Boxi"/>  
+          
+            <img src="https://img.javier.computer/berlin/R0004015_1280.jpg" alt="Boxi"/>  
+          
+            <img src="https://img.javier.computer/berlin/R0004062_1280.jpg" alt="Boxi"/>  
+          
+        
+        <p>Un día en Boxhagener Plat</p>
+   
+        <p>Berlin</p>
+        ]]>
+      
+    </description>
+  </item>
     
   <item>
     <title>Modulor Material Total</title>
@@ -286,33 +325,6 @@ Good Living Is Coming For You&lt;/a&gt; · &lt;a href=&quot;https://www.youtube.
 &lt;p&gt;HBD, Kieślowski&lt;/p&gt;
 
         
-    </description>
-  </item>
-    
-  <item>
-    <title>Bilbao</title>
-    <pubDate>Sat, 24 Jun 2023 00:00:00 +0200</pubDate>
-    <link>http://localhost:4001/2023/06/24/bilbao</link>
-    <guid isPermaLink="true">http://localhost:4001/2023/06/24/bilbao</guid>
-    
-
-    <description>
-      
-      <![CDATA[
-        
-          
-            <img src="https://img.javier.computer/bilbao/R0003315_1280.jpg" alt="Bilbao"/>  
-          
-            <img src="https://img.javier.computer/bilbao/R0003318_1280.jpg" alt="Bilbao"/>  
-          
-            <img src="https://img.javier.computer/bilbao/R0003328_1280.jpg" alt="Bilbao"/>  
-          
-        
-        
-   
-        <p>Bilbao</p>
-        ]]>
-      
     </description>
   </item>
     
