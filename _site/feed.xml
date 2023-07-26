@@ -10,15 +10,44 @@
 
   <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
   <link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" />
-  <updated>2023-07-24T17:13:31+02:00</updated>
+  <updated>2023-07-25T22:04:40+02:00</updated>
   <id>http://localhost:4001/feed.xml</id>
 
   <sy:updatePeriod>daily</sy:updatePeriod>
   <sy:updateFrequency>1</sy:updateFrequency>
   <link>http://localhost:4001</link>
   <atom:link href="http://localhost:4001/feed.xml" rel="self" type="application/rss+xml" />
-  <lastBuildDate>Mon, 24 Jul 2023 17:10:44 +0200</lastBuildDate>
+  <lastBuildDate>Tue, 25 Jul 2023 21:10:50 +0200</lastBuildDate>
     
+    
+  <item>
+    <title>Prezi</title>
+    <pubDate>Tue, 25 Jul 2023 21:10:50 +0200</pubDate>
+    <link>http://localhost:4001/2023/07/25/prezi</link>
+    <guid isPermaLink="true">http://localhost:4001/2023/07/25/prezi</guid>
+    
+
+    <description>
+      
+      <![CDATA[
+        
+          
+            <img src="https://img.javier.computer/berlin/R0004064_1280.jpg" alt="Prezi"/>  
+          
+            <img src="https://img.javier.computer/berlin/R0004080_1280.jpg" alt="Prezi"/>  
+          
+            <img src="https://img.javier.computer/berlin/R0004067_1280.jpg" alt="Prezi"/>  
+          
+            <img src="https://img.javier.computer/berlin/R0004093_1280.jpg" alt="Prezi"/>  
+          
+        
+        
+   
+        <p>Berlin</p>
+        ]]>
+      
+    </description>
+  </item>
     
   <item>
     <title>Boxi</title>
@@ -306,25 +335,6 @@ Good Living Is Coming For You&lt;/a&gt; · &lt;a href=&quot;https://www.youtube.
         <p>Tarragona</p>
         ]]>
       
-    </description>
-  </item>
-    
-  <item>
-    <title>Kieslowski</title>
-    <pubDate>Tue, 27 Jun 2023 22:00:28 +0200</pubDate>
-    <link>http://localhost:4001/2023/06/27/kieslowski</link>
-    <guid isPermaLink="true">http://localhost:4001/2023/06/27/kieslowski</guid>
-    
-
-    <description>
-      
-        &lt;blockquote&gt;
-  &lt;p&gt;I don’t like myself very much, so I try not to observe myself too often. I made a documentary once entitled Talking Heads. I asked people two questions: “Who are you?” and “What do you want?” Afterwards, I asked myself those questions. I realized that I didn’t have any answers. I don’t know who I am and I don’t know what I want. If anything, I’d like some peace and quiet, but I’ve never achieved it, and I probably never will. So I will never have what I really want.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;HBD, Kieślowski&lt;/p&gt;
-
-        
     </description>
   </item>
     
