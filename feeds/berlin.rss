@@ -8,79 +8,119 @@
     <title>RSS feed de berlin</title>
     <link>http://localhost:4001/feeds/berlin.rss</link>
     <description>Sitios en berlin</description>
-    <pubDate>Sat, 29 Jul 2023 17:09:58 +0200</pubDate>
+    <pubDate>Sun, 30 Jul 2023 11:29:57 +0200</pubDate>
     <item>
       <title>Bartleby &amp; Co</title>
       <link>http://localhost:4001/maps/berlin</link>
       <description>&lt;br&gt;&lt;br&gt;Boppstraße 2&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Sat, 29 Jul 2023 17:09:58 +0200</pubDate>
+      <pubDate>Sun, 30 Jul 2023 11:29:57 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2023-07-29T17:09:58+02:00</dc:date>
+      <dc:date>2023-07-30T11:29:57+02:00</dc:date>
     </item>
     <item>
       <title>do you read me?!</title>
       <link>http://localhost:4001/maps/berlin</link>
       <description>&lt;br&gt;&lt;br&gt;Auguststraße 28&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Sat, 29 Jul 2023 17:09:58 +0200</pubDate>
+      <pubDate>Sun, 30 Jul 2023 11:29:57 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2023-07-29T17:09:58+02:00</dc:date>
+      <dc:date>2023-07-30T11:29:57+02:00</dc:date>
     </item>
     <item>
       <title>Café Strauss</title>
       <link>http://localhost:4001/maps/berlin</link>
       <description>Un café muy tranquilo frente a un cementerio (muy tranquilo, espero).&lt;br&gt;&lt;br&gt;Bergmannstraße, 42&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Sat, 29 Jul 2023 17:09:58 +0200</pubDate>
+      <pubDate>Sun, 30 Jul 2023 11:29:57 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2023-07-29T17:09:58+02:00</dc:date>
+      <dc:date>2023-07-30T11:29:57+02:00</dc:date>
     </item>
     <item>
       <title>Father Carpenter Coffee Brewers</title>
       <link>http://localhost:4001/maps/berlin</link>
       <description>&lt;br&gt;&lt;br&gt;Münzstraße, 21, Scheunenviertel&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Sat, 29 Jul 2023 17:09:58 +0200</pubDate>
+      <pubDate>Sun, 30 Jul 2023 11:29:57 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2023-07-29T17:09:58+02:00</dc:date>
+      <dc:date>2023-07-30T11:29:57+02:00</dc:date>
     </item>
     <item>
       <title>Motto Berlin</title>
       <link>http://localhost:4001/maps/berlin</link>
       <description>&lt;br&gt;&lt;br&gt;Skalitzer Straße, 68, Luisenstadt&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Sat, 29 Jul 2023 17:09:58 +0200</pubDate>
+      <pubDate>Sun, 30 Jul 2023 11:29:57 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2023-07-29T17:09:58+02:00</dc:date>
+      <dc:date>2023-07-30T11:29:57+02:00</dc:date>
     </item>
     <item>
       <title>Photoautomat: Kulturbrauerei</title>
       <link>http://localhost:4001/maps/berlin</link>
       <description>Photoautomat&lt;br&gt;&lt;br&gt;Schönhauser Allee 63&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Sat, 29 Jul 2023 17:09:58 +0200</pubDate>
+      <pubDate>Sun, 30 Jul 2023 11:29:57 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2023-07-29T17:09:58+02:00</dc:date>
+      <dc:date>2023-07-30T11:29:57+02:00</dc:date>
     </item>
     <item>
       <title>Cafelix Coffee Roasters</title>
       <link>http://localhost:4001/maps/berlin</link>
       <description>&lt;br&gt;&lt;br&gt;Winsstraße, 47&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Sat, 29 Jul 2023 17:09:58 +0200</pubDate>
+      <pubDate>Sun, 30 Jul 2023 11:29:57 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2023-07-29T17:09:58+02:00</dc:date>
+      <dc:date>2023-07-30T11:29:57+02:00</dc:date>
     </item>
     <item>
       <title>Town Mouse Coffee</title>
       <link>http://localhost:4001/maps/berlin</link>
       <description>&lt;br&gt;&lt;br&gt;Marienburger Str. 5&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Sat, 29 Jul 2023 17:09:58 +0200</pubDate>
+      <pubDate>Sun, 30 Jul 2023 11:29:57 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2023-07-29T17:09:58+02:00</dc:date>
+      <dc:date>2023-07-30T11:29:57+02:00</dc:date>
     </item>
     <item>
       <title>Dotori Korean Anju Bar</title>
       <link>http://localhost:4001/maps/berlin</link>
       <description>&lt;br&gt;&lt;br&gt;Gustav-Adolf-Straße 159&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Sat, 29 Jul 2023 17:09:58 +0200</pubDate>
+      <pubDate>Sun, 30 Jul 2023 11:29:57 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2023-07-29T17:09:58+02:00</dc:date>
+      <dc:date>2023-07-30T11:29:57+02:00</dc:date>
     </item>
-    <dc:date>2023-07-29T17:09:58+02:00</dc:date>
+    <item>
+      <title>tenzan lab.</title>
+      <link>http://localhost:4001/maps/berlin</link>
+      <description>Kakigōris y taiyakis&lt;br&gt;&lt;br&gt;Wörther Straße, 22&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
+      <pubDate>Sun, 30 Jul 2023 11:29:57 +0200</pubDate>
+      <dc:subject>berlin</dc:subject>
+      <dc:date>2023-07-30T11:29:57+02:00</dc:date>
+    </item>
+    <item>
+      <title>Modulor</title>
+      <link>http://localhost:4001/maps/berlin</link>
+      <description>&lt;br&gt;&lt;br&gt;Prinzenstraße, 85&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
+      <pubDate>Sun, 30 Jul 2023 11:29:57 +0200</pubDate>
+      <dc:subject>berlin</dc:subject>
+      <dc:date>2023-07-30T11:29:57+02:00</dc:date>
+    </item>
+    <item>
+      <title>Ma-Makan</title>
+      <link>http://localhost:4001/maps/berlin</link>
+      <description>Malaysian &amp; Singaporean Kopitiam&lt;br&gt;&lt;br&gt;Lausitzer Pl. 12&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
+      <pubDate>Sun, 30 Jul 2023 11:29:57 +0200</pubDate>
+      <dc:subject>berlin</dc:subject>
+      <dc:date>2023-07-30T11:29:57+02:00</dc:date>
+    </item>
+    <item>
+      <title>Bonanza</title>
+      <link>http://localhost:4001/maps/berlin</link>
+      <description>&lt;br&gt;&lt;br&gt;Adalbertstraße, 70&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
+      <pubDate>Sun, 30 Jul 2023 11:29:57 +0200</pubDate>
+      <dc:subject>berlin</dc:subject>
+      <dc:date>2023-07-30T11:29:57+02:00</dc:date>
+    </item>
+    <item>
+      <title>Zola</title>
+      <link>http://localhost:4001/maps/berlin</link>
+      <description>Pizzas&lt;br&gt;&lt;br&gt;Paul-Lincke-Ufer, 39-40&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
+      <pubDate>Sun, 30 Jul 2023 11:29:57 +0200</pubDate>
+      <dc:subject>berlin</dc:subject>
+      <dc:date>2023-07-30T11:29:57+02:00</dc:date>
+    </item>
+    <dc:date>2023-07-30T11:29:57+02:00</dc:date>
   </channel>
 </rss>

@@ -56,13 +56,15 @@ class GeoCoder {
         const amenity = result.address.amenity
         const permalink = amenity ? amenity.toLowerCase().replace(/ /g, '-'): this.location.toLowerCase().replace(/ /g, '-')
 
+        const city = address.city ? address.city.toLowerCase() : ''
+
         const formattedResult = {
           title: amenity,
           permalink,
           description: amenity,
           address,
           latlng: [result.lat, result.lon],
-          location: result.address.city.toLowerCase()
+          location: city
         }
 
         console.log(this.formatYAML(formattedResult))
