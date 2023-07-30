@@ -10,15 +10,58 @@
 
   <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
   <link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" />
-  <updated>2023-07-30T12:26:20+02:00</updated>
+  <updated>2023-07-30T20:04:06+02:00</updated>
   <id>http://localhost:4001/feed.xml</id>
 
   <sy:updatePeriod>daily</sy:updatePeriod>
   <sy:updateFrequency>1</sy:updateFrequency>
   <link>http://localhost:4001</link>
   <atom:link href="http://localhost:4001/feed.xml" rel="self" type="application/rss+xml" />
-  <lastBuildDate>Sat, 29 Jul 2023 17:05:32 +0200</lastBuildDate>
+  <lastBuildDate>Sun, 30 Jul 2023 19:52:00 +0200</lastBuildDate>
     
+    
+  <item>
+    <title>Mercadillo Photo Walk</title>
+    <pubDate>Sun, 30 Jul 2023 19:52:00 +0200</pubDate>
+    <link>http://localhost:4001/2023/07/30/mercadillo-photo-walk</link>
+    <guid isPermaLink="true">http://localhost:4001/2023/07/30/mercadillo-photo-walk</guid>
+    
+
+    <description>
+      
+      <![CDATA[
+        
+          
+            <img src="https://img.javier.computer/berlin/R0004177_1280.jpg" alt="Mercadillo Photo Walk"/>  
+          
+            <img src="https://img.javier.computer/berlin/R0004171_1280.jpg" alt="Mercadillo Photo Walk"/>  
+          
+            <img src="https://img.javier.computer/berlin/R0004219_1280.jpg" alt="Mercadillo Photo Walk"/>  
+          
+            <img src="https://img.javier.computer/berlin/R0004211_1280.jpg" alt="Mercadillo Photo Walk"/>  
+          
+            <img src="https://img.javier.computer/berlin/R0004185_1280.jpg" alt="Mercadillo Photo Walk"/>  
+          
+            <img src="https://img.javier.computer/berlin/R0004192_1280.jpg" alt="Mercadillo Photo Walk"/>  
+          
+            <img src="https://img.javier.computer/berlin/R0004269_1280.jpg" alt="Mercadillo Photo Walk"/>  
+          
+            <img src="https://img.javier.computer/berlin/R0004240_1280.jpg" alt="Mercadillo Photo Walk"/>  
+          
+            <img src="https://img.javier.computer/berlin/R0004230_1280.jpg" alt="Mercadillo Photo Walk"/>  
+          
+            <img src="https://img.javier.computer/berlin/R0004224_1280.jpg" alt="Mercadillo Photo Walk"/>  
+          
+            <img src="https://img.javier.computer/berlin/R0004270_1280.jpg" alt="Mercadillo Photo Walk"/>  
+          
+        
+        
+   
+        <p>Berlin</p>
+        ]]>
+      
+    </description>
+  </item>
     
   <item>
     <title>Collapsology</title>
@@ -281,23 +324,6 @@
         <p>Barcelona</p>
         ]]>
       
-    </description>
-  </item>
-    
-  <item>
-    <title>Walkie Talkie</title>
-    <pubDate>Sun, 02 Jul 2023 12:29:03 +0200</pubDate>
-    <link>http://localhost:4001/2023/07/02/walkie-talkie</link>
-    <guid isPermaLink="true">http://localhost:4001/2023/07/02/walkie-talkie</guid>
-    
-
-    <description>
-      
-        &lt;p&gt;&lt;a href=&quot;https://letterboxd.com/javier/film/railway-station/&quot; class=&quot;web-link&quot;&gt;Railway Station (★★★★)&lt;/a&gt; · &lt;a href=&quot;https://sweepingpromises.bandcamp.com/album/good-living-is-coming-for-you-2&quot; class=&quot;web-link&quot;&gt;
-Good Living Is Coming For You&lt;/a&gt; · &lt;a href=&quot;https://www.youtube.com/watch?v=HjuP527Xt2Q&quot; class=&quot;web-link&quot;&gt;A day with NYC Street Photographer Trevor Wisecup&lt;/a&gt;&lt;/p&gt;
-
-
-        
     </description>
   </item>
     
