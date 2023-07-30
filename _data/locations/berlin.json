@@ -14,7 +14,7 @@
   },
   {
     "title": "do you read me?!",
-    "description": null,
+    "description": "El sitio de revistas",
     "address": "Auguststraße 28",
     "latlng": [
       52.52726714641086,
@@ -29,7 +29,7 @@
     "title": "Café Strauss",
     "emoji": "☕️",
     "permalink": "cafe-strauss",
-    "description": "Un café muy tranquilo frente a un cementerio (muy tranquilo, espero).",
+    "description": "Un café muy tranquilo frente a un cementerio muy tranquilo (espero).",
     "address": "Bergmannstraße, 42",
     "latlng": [
       52.4886291,
@@ -43,6 +43,7 @@
   {
     "title": "Father Carpenter Coffee Brewers",
     "emoji": "☕️",
+    "description": "Mucha cola durante el fin de semana, mejor ir muy pronto o evitar directamente.",
     "permalink": "father-carpenter-coffee-brewers",
     "address": "Münzstraße, 21, Scheunenviertel",
     "latlng": [
@@ -83,20 +84,6 @@
     ]
   },
   {
-    "title": "Cafelix Coffee Roasters",
-    "permalink": "cafelix",
-    "emoji": "☕️",
-    "address": "Winsstraße, 47",
-    "latlng": [
-      52.5355282,
-      13.4266165
-    ],
-    "location": "berlin",
-    "post_references": [
-
-    ]
-  },
-  {
     "title": "Town Mouse Coffee",
     "emoji": "☕️",
     "permalink": "town-mouse-coffee",
@@ -113,6 +100,7 @@
   {
     "title": "Dotori Korean Anju Bar",
     "permalink": "dotori",
+    "description": "Bonitísimo y compactísimo y riquísimo bar de tapas coreanas.",
     "address": "Gustav-Adolf-Straße 159",
     "latlng": [
       52.553966826503334,
@@ -140,6 +128,7 @@
   {
     "title": "Modulor",
     "permalink": "modulor",
+    "description": "Modulor Material Total",
     "address": "Prinzenstraße, 85",
     "latlng": [
       52.5033859,
@@ -152,7 +141,7 @@
   },
   {
     "title": "Ma-Makan",
-    "description": "Malaysian & Singaporean Kopitiam",
+    "description": "Delicias malayas y singapurenses. Ojito al «Kaya croissant».",
     "permalink": "mamakan",
     "address": "Lausitzer Pl. 12",
     "latlng": [
@@ -181,11 +170,25 @@
   {
     "title": "Zola",
     "permalink": "zola",
-    "description": "Pizzas",
+    "description": "La «Zola Neapolitan mit Fior di Latte, Birne, Walnüssen und Gorgonzola» estaba muy rica.",
     "address": "Paul-Lincke-Ufer, 39-40",
     "latlng": [
       52.49674658332709,
       13.42246464603288
+    ],
+    "location": "berlin",
+    "post_references": [
+
+    ]
+  },
+  {
+    "title": "Trauma Bar und Kino",
+    "permalink": "trauma-bar-und-kino",
+    "description": "Club, bar, cine, sala de conciertos y arte. Aquí se celebró el quinto aniversario de New Models. Está cerca de Berlin Hauptbahnhof, y no hay mucho más alrededor.",
+    "address": "Heidestraße, 50",
+    "latlng": [
+      52.5306327,
+      13.3667562
     ],
     "location": "berlin",
     "post_references": [
