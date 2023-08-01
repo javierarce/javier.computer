@@ -10,15 +10,58 @@
 
   <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
   <link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" />
-  <updated>2023-07-30T20:04:06+02:00</updated>
+  <updated>2023-08-01T10:57:23+02:00</updated>
   <id>http://localhost:4001/feed.xml</id>
 
   <sy:updatePeriod>daily</sy:updatePeriod>
   <sy:updateFrequency>1</sy:updateFrequency>
   <link>http://localhost:4001</link>
   <atom:link href="http://localhost:4001/feed.xml" rel="self" type="application/rss+xml" />
-  <lastBuildDate>Sun, 30 Jul 2023 19:52:00 +0200</lastBuildDate>
+  <lastBuildDate>Mon, 31 Jul 2023 16:24:37 +0200</lastBuildDate>
     
+    
+  <item>
+    <title>Barbie</title>
+    <pubDate>Mon, 31 Jul 2023 16:24:37 +0200</pubDate>
+    <link>http://localhost:4001/2023/07/31/barbie</link>
+    <guid isPermaLink="true">http://localhost:4001/2023/07/31/barbie</guid>
+    
+
+    <description>
+      
+        &lt;p&gt;«Acabo de recordar que hoy he soñado contigo. Tenías un puesto de cosas guays en el aeropuerto.»&lt;/p&gt;
+
+
+        
+    </description>
+  </item>
+    
+  <item>
+    <title>Exprimiendo la felicidad</title>
+    <pubDate>Mon, 31 Jul 2023 10:56:49 +0200</pubDate>
+    <link>http://localhost:4001/2023/07/31/exprimiendo-la-felicidad</link>
+    <guid isPermaLink="true">http://localhost:4001/2023/07/31/exprimiendo-la-felicidad</guid>
+    
+
+    <description>
+      
+      <![CDATA[
+        
+          
+            <img src="https://img.javier.computer/berlin/R0004286_1280.jpg" alt="Exprimiendo la felicidad"/>  
+          
+            <img src="https://img.javier.computer/berlin/R0004300_1280.jpg" alt="Exprimiendo la felicidad"/>  
+          
+            <img src="https://img.javier.computer/berlin/R0004305_1280.jpg" alt="Exprimiendo la felicidad"/>  
+          
+        
+        
+   
+        <p>Berlin</p>
+        ]]>
+      
+    </description>
+  </item>
     
   <item>
     <title>Mercadillo Photo Walk</title>
@@ -281,45 +324,6 @@
         
         <p>Arte callejero + señor interesado en las palmeras en la presentación de Calendario.</p>
 
-   
-        <p>Barcelona</p>
-        ]]>
-      
-    </description>
-  </item>
-    
-  <item>
-    <title>Sato Tanaka</title>
-    <pubDate>Tue, 04 Jul 2023 22:21:20 +0200</pubDate>
-    <link>http://localhost:4001/2023/07/04/sato-tanaka</link>
-    <guid isPermaLink="true">http://localhost:4001/2023/07/04/sato-tanaka</guid>
-    
-
-    <description>
-      
-        &lt;p&gt;&lt;a href=&quot;/maps/barcelona?p=sato&quot; class=&quot;web-link&quot;&gt;Sato i Tanaka&lt;/a&gt; y Erica · Checklist berlinés · &lt;a href=&quot;/maps/barcelona?p=onis&quot; class=&quot;web-link&quot;&gt;Onis Coffee&lt;/a&gt; · &lt;a href=&quot;https://youthlagoon.bandcamp.com/album/heaven-is-a-junkyard&quot; class=&quot;web-link&quot;&gt;Heaven is a Junkyard&lt;/a&gt;.&lt;/p&gt;
-
-
-        <p><small>Barcelona</small></p>
-    </description>
-  </item>
-    
-  <item>
-    <title>Muticlub</title>
-    <pubDate>Tue, 04 Jul 2023 21:42:03 +0200</pubDate>
-    <link>http://localhost:4001/2023/07/04/muticlub</link>
-    <guid isPermaLink="true">http://localhost:4001/2023/07/04/muticlub</guid>
-    
-
-    <description>
-      
-      <![CDATA[
-        
-          
-            <img src="https://img.javier.computer/barcelona/R0003584_1280.jpg" alt="Muticlub"/>  
-          
-        
-        
    
         <p>Barcelona</p>
         ]]>
