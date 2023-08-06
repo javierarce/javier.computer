@@ -10,15 +10,50 @@
 
   <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
   <link href="http://localhost:4001/feed.xml" rel="self" type="application/atom+xml" />
-  <updated>2023-08-01T10:57:23+02:00</updated>
+  <updated>2023-08-06T17:28:17+02:00</updated>
   <id>http://localhost:4001/feed.xml</id>
 
   <sy:updatePeriod>daily</sy:updatePeriod>
   <sy:updateFrequency>1</sy:updateFrequency>
   <link>http://localhost:4001</link>
   <atom:link href="http://localhost:4001/feed.xml" rel="self" type="application/rss+xml" />
-  <lastBuildDate>Mon, 31 Jul 2023 16:24:37 +0200</lastBuildDate>
+  <lastBuildDate>Sun, 06 Aug 2023 16:59:22 +0200</lastBuildDate>
     
+    
+  <item>
+    <title>Leipzig</title>
+    <pubDate>Sun, 06 Aug 2023 16:59:22 +0200</pubDate>
+    <link>http://localhost:4001/2023/08/06/leipzig</link>
+    <guid isPermaLink="true">http://localhost:4001/2023/08/06/leipzig</guid>
+    
+
+    <description>
+      
+      <![CDATA[
+        
+          
+            <img src="https://img.javier.computer/leipzig/R0004364_1280.jpg" alt="Leipzig"/>  
+          
+            <img src="https://img.javier.computer/leipzig/R0004373_1280.jpg" alt="Leipzig"/>  
+          
+            <img src="https://img.javier.computer/leipzig/R0004368_1280.jpg" alt="Leipzig"/>  
+          
+            <img src="https://img.javier.computer/leipzig/R0004399_1280.jpg" alt="Leipzig"/>  
+          
+            <img src="https://img.javier.computer/leipzig/R0004396_1280.jpg" alt="Leipzig"/>  
+          
+            <img src="https://img.javier.computer/leipzig/R0004433_1280.jpg" alt="Leipzig"/>  
+          
+            <img src="https://img.javier.computer/leipzig/R0004349_1280.jpg" alt="Leipzig"/>  
+          
+        
+        
+   
+        <p>Leipzig</p>
+        ]]>
+      
+    </description>
+  </item>
     
   <item>
     <title>Barbie</title>
@@ -29,7 +64,7 @@
 
     <description>
       
-        &lt;p&gt;«Acabo de recordar que hoy he soñado contigo. Tenías un puesto de cosas guays en el aeropuerto.»&lt;/p&gt;
+        &lt;p&gt;«Acabo de recordar que hoy he soñado contigo. Tenías un puesto de cosas guays en el aeropuerto.» · &lt;a href=&quot;/2023/07/31/exprimiendo-la-felicidad&quot; class=&quot;web-link&quot;&gt;Exprimiendo la felicidad&lt;/a&gt; · &lt;a href=&quot;https://letterboxd.com/javier/film/barbie&quot; class=&quot;web-link&quot;&gt;Barbie&lt;/a&gt; am Friedrichshain.&lt;/p&gt;
 
 
         
@@ -298,34 +333,6 @@
         <p>Dos mercados · Coral demostrando el funcionamiento del «Telehang it all» · This could be you · Erica having a nice day.</p>
    
         <p>Berlin</p>
-        ]]>
-      
-    </description>
-  </item>
-    
-  <item>
-    <title>Calendario</title>
-    <pubDate>Fri, 07 Jul 2023 10:17:53 +0200</pubDate>
-    <link>http://localhost:4001/2023/07/07/calendario</link>
-    <guid isPermaLink="true">http://localhost:4001/2023/07/07/calendario</guid>
-    
-
-    <description>
-      
-      <![CDATA[
-        
-          
-            <img src="https://img.javier.computer/barcelona/R0003632_1280.jpg" alt="Calendario"/>  
-          
-            <img src="https://img.javier.computer/barcelona/R0003623_1280.jpg" alt="Calendario"/>  
-          
-            <img src="https://img.javier.computer/barcelona/R0003618_1280.jpg" alt="Calendario"/>  
-          
-        
-        <p>Arte callejero + señor interesado en las palmeras en la presentación de Calendario.</p>
-
-   
-        <p>Barcelona</p>
         ]]>
       
     </description>
