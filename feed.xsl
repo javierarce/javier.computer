@@ -14,13 +14,9 @@
         <header>
           <h1><xsl:value-of select="/rss/channel/title"/></h1>
           <div class="aboutfeeds">
-            <p>This is a web feed that can be viewed in the browser. <strong>Subscribe</strong> by copying the URL into your RSS reader. If you need to know more, read <a href="https://www.thisdaysportion.com/about/what-is-rss/">the guide by Leon Paternoster</a>.</p>
-          </div>
-          <div class="head">
-            <div class="description">
-              <p><xsl:value-of select="/rss/channel/description"/></p>
-              <p><a hreflang="en"><xsl:attribute name="href"><xsl:value-of select="/rss/channel/link"/></xsl:attribute><strong>Visit the website</strong></a></p>
-            </div>
+            <p>This is a web feed that can be viewed in the browser. Subscribe to the blog by copying 
+<a hreflang="en"><xsl:attribute name="href"><xsl:value-of select="/rss/channel/link"/></xsl:attribute>the URL</a>
+            into your RSS reader. If you need to know more, read <a href="https://www.thisdaysportion.com/about/what-is-rss/">the guide by Leon Paternoster</a>.</p>
           </div>
         </header>
         <main>
