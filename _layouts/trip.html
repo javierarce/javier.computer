@@ -17,31 +17,32 @@ className: Trip
 
         <div class="Sidebar">
           {% assign posts= site.data.locations[page.location] | reverse %}
-          {% assign i = posts.size | plus: 1 %}
+          {% assign i = posts.size | plus: 1 -%}
           <div class="Locations js-locations">
-          {% for location in posts %}
-          {% assign i = i | minus: 1 %}
+          {% for location in posts -%}
+          {% assign i = i | minus: 1 -%}
           <div class="Location js-location" data-id="{{ i }}">
+            {% if location.emoji -%}
+              <div class="Location__title has-emoji"><span class="Location__id">{{ location.emoji  }}</span> {{ location.title }}</div>
+            {% else -%}
+              <div class="Location__title"><span class="Location__id">{{ i }}</span> {{ location.title }}</div>
+            {% endif -%}
 
- {% if location.emoji %}
-            <div class="Location__title has-emoji"><span class="Location__id">{{ location.emoji  }}</span> {{ location.title }}</div>
+            {% if location.description -%}
+              <div class="Location__description">{{ location.description }}</div>
+            {% endif -%}
 
-            {% else %}
-            <div class="Location__title"><span class="Location__id">{{ i }}</span> {{ location.title }}</div>
-            {% endif %}
-
-            <div class="Location__description">{{ location.description }}</div>
- {% if location.post_references.size > 0 %}
+   {% if location.post_references.size > 0 -%}
     <div class="Location__posts">
-      {% assign j = 0 %}
+      {% assign j = 0 -%}
 
-      {% for post_ref in location.post_references %}
+      {% for post_ref in location.post_references -%}
       {% assign j = j | plus: 1 %}
 
       <a href="{{ post_ref.url }}" class="Location__post">{{ j}}</a>
-      {% endfor %}
+      {% endfor -%}
     </div>
-    {% endif %}
+    {% endif -%}
             <span class="Location__address">{{ location.address }}</span>
           </div>
           {% endfor %}
