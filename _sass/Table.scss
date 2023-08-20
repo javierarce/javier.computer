@@ -1,5 +1,23 @@
+.Layout__movies td a,
+.Layout__books td a,
+.Layout__movies td a:hover,
+.Layout__books td a:hover {
+  color: var(--link); 
+}
+
+
+.Layout__books h2,
+.Layout__movies h2 {
+  margin-bottom: 0;
+}
+
+table + h2 {
+  margin: 2em 0 0 0;
+}
+
 table {
   width: 100%;
+  font-size: 1.2em;
 }
 
 table th {
@@ -14,15 +32,58 @@ table td {
   padding: 0.8em 0;
 }
 
-table td:nth-child(2) {
-  padding-right: 1em;
+.Layout__books table th {
+  text-align: left;
+}
+
+
+.Layout__books table th:nth-child(1),
+.Layout__books table td:nth-child(1) {
+  width: 60%;
+}
+
+.Layout__books table th:nth-child(2),
+.Layout__books table td:nth-child(2) {
+  width: 20%;
+}
+
+.Layout__books table th:nth-child(3),
+.Layout__books table td:nth-child(3) {
+  width: 160px;
+}
+
+.Layout__books table th:last-child,
+.Layout__books table td:last-child {
+  width: 60px;
+}
+
+
+.Layout__movies table th:nth-child(1),
+.Layout__movies table td:nth-child(1) {
+  width: 60px;
+  text-align: left;
+}
+
+.Layout__movies table td:nth-child(1) {
+  opacity: 0.4;
+}
+
+.Layout__movies table th:nth-child(3),
+.Layout__movies table td:nth-child(3) {
+  width: 80px;
+  text-align: left;
+}
+
+.Layout__movies table th:nth-child(2),
+.Layout__movies table td:nth-child(2) {
+  text-align: left;
 }
 
 table tr:last-child td {
   border: none;
 }
 
-table a,
-table a:hover {
-  color: var(--link); 
-}
+//table a,
+//table a:hover {
+  //color: var(--link); 
+//}

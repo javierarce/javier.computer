@@ -3,7 +3,7 @@ layout: book
 author: Thomas Mann
 title: La Montaña Mágica
 permalink: books/la-montana-magica
-started_at: 2023-08-20
+show_date: false
 ---
 
 ### La «Sociedad Medio Pulmón»

@@ -37,7 +37,9 @@ async function scrapeMovies() {
 
     filmEntries.forEach(entry => {
       const metadataElem = entry.querySelector('.edit-review-button')
+      const td = entry.querySelector('.film-actions')
 
+      const permalink = td.getAttribute('data-film-slug')
       const watchedOn = metadataElem.getAttribute('data-viewing-date')
       const filmTitle = metadataElem.getAttribute('data-film-name')
       const rewatched = metadataElem.getAttribute('data-rewatch') === 'true'
@@ -48,8 +50,7 @@ async function scrapeMovies() {
       const halfStar = (rating - Math.floor(rating) >= 0.5) ? '½' : ''
 
       const stars = fullStars + halfStar
-      console.log(`${title} - ${stars} stars`)
-      movies.push({ watched_on: watchedOn, title, rating, stars, rewatched })
+      movies.push({ watched_on: watchedOn, title, rating, stars, rewatched, permalink })
     })
   }
 

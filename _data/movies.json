@@ -1,3296 +1,3790 @@
 {
-  "updated_at": "2023-08-14",
-  "count": 470,
+  "updated_at": "2023-08-20",
+  "count": 473,
   "movies": [
+    {
+      "watched_on": "2023-08-19",
+      "title": "This Man Must Die (1969)",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "this-man-must-die"
+    },
+    {
+      "watched_on": "2023-08-17",
+      "title": "La Cérémonie (1995)",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "la-ceremonie"
+    },
+    {
+      "watched_on": "2023-08-15",
+      "title": "Infinity Pool (2023)",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "infinity-pool"
+    },
     {
       "watched_on": "2023-08-11",
       "title": "The Architect (2023)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-architect-2023-1"
     },
     {
       "watched_on": "2023-08-07",
       "title": "The Getaway (1972)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-getaway"
     },
     {
       "watched_on": "2023-08-06",
       "title": "Cape Fear (1991)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "cape-fear-1991"
     },
     {
       "watched_on": "2023-08-06",
       "title": "The Hit (1984)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-hit-1984"
     },
     {
       "watched_on": "2023-08-05",
       "title": "The Lives of Others (2006)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": true
+      "rewatched": true,
+      "permalink": "the-lives-of-others"
     },
     {
       "watched_on": "2023-07-31",
       "title": "Barbie (2023)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "barbie"
     },
     {
       "watched_on": "2023-07-30",
       "title": "A Foreign Affair (1948)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": true
+      "rewatched": true,
+      "permalink": "a-foreign-affair"
     },
     {
       "watched_on": "2023-07-29",
       "title": "Decalogue III (1989)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "decalogue-iii"
     },
     {
       "watched_on": "2023-07-26",
       "title": "Smooth Talk (1985)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "smooth-talk"
     },
     {
       "watched_on": "2023-07-25",
       "title": "Decalogue II (1989)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "decalogue-ii"
     },
     {
       "watched_on": "2023-07-25",
       "title": "Decalogue II (1989)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "decalogue-ii"
     },
     {
       "watched_on": "2023-07-23",
       "title": "Sick of Myself (2022)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "sick-of-myself"
     },
     {
       "watched_on": "2023-07-16",
       "title": "Take Aim at the Police Van (1960)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "take-aim-at-the-police-van"
     },
     {
       "watched_on": "2023-07-15",
       "title": "Mission: Impossible – Dead Reckoning Part One (2023)",
       "rating": 1.5,
       "stars": "★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "mission-impossible-dead-reckoning-part-one"
     },
     {
       "watched_on": "2023-07-15",
       "title": "In the White City (1983)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "in-the-white-city"
     },
     {
       "watched_on": "2023-07-15",
       "title": "Decalogue I (1989)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "decalogue-i"
     },
     {
       "watched_on": "2023-07-11",
       "title": "Messidor (1979)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "messidor"
     },
     {
       "watched_on": "2023-07-10",
       "title": "Sleep, My Love (1948)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "sleep-my-love"
     },
     {
       "watched_on": "2023-07-09",
       "title": "Seconds (1966)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "seconds"
     },
     {
       "watched_on": "2023-07-09",
       "title": "Seven Days in May (1964)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "seven-days-in-may"
     },
     {
       "watched_on": "2023-07-08",
       "title": "Cluny Brown (1946)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "cluny-brown"
     },
     {
       "watched_on": "2023-07-08",
       "title": "The Swimming Pool (1969)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-swimming-pool"
     },
     {
       "watched_on": "2023-07-04",
       "title": "Grain: Analog Renaissance (2021)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "grain-analog-renaissance"
     },
     {
       "watched_on": "2023-07-03",
       "title": "Moby Dick (1956)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "moby-dick"
     },
     {
       "watched_on": "2023-07-03",
       "title": "The Fire Within (1963)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-fire-within"
     },
     {
       "watched_on": "2023-07-02",
       "title": "Robbery (1967)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "robbery"
     },
     {
       "watched_on": "2023-07-02",
       "title": "Railway Station (1980)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "railway-station"
     },
     {
       "watched_on": "2023-06-30",
       "title": "Walkabout (1971)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "walkabout"
     },
     {
       "watched_on": "2023-06-29",
       "title": "The Swimmer (1968)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-swimmer"
     },
     {
       "watched_on": "2023-06-28",
       "title": "I Like Movies (2022)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "i-like-movies"
     },
     {
       "watched_on": "2023-06-27",
       "title": "Talking Heads (1980)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "talking-heads"
     },
     {
       "watched_on": "2023-06-27",
       "title": "A Taxi Driver (2017)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "a-taxi-driver"
     },
     {
       "watched_on": "2023-06-25",
       "title": "Camera Buff (1979)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "camera-buff"
     },
     {
       "watched_on": "2023-06-23",
       "title": "The Hunt (1966)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-hunt-1966"
     },
     {
       "watched_on": "2023-06-22",
       "title": "Asteroid City (2023)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "asteroid-city"
     },
     {
       "watched_on": "2023-06-20",
       "title": "Army of Shadows (1969)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "army-of-shadows"
     },
     {
       "watched_on": "2023-06-20",
       "title": "Panic in the Streets (1950)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "panic-in-the-streets"
     },
     {
       "watched_on": "2023-06-18",
       "title": "The Innocent (2022)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-innocent-2022"
     },
     {
       "watched_on": "2023-06-11",
       "title": "Death of a Cyclist (1955)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "death-of-a-cyclist"
     },
     {
       "watched_on": "2023-06-10",
       "title": "On the Waterfront (1954)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "on-the-waterfront"
     },
     {
       "watched_on": "2023-06-07",
       "title": "John Wick: Chapter 4 (2023)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "john-wick-chapter-4"
     },
     {
       "watched_on": "2023-06-05",
       "title": "Youth of the Beast (1963)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "youth-of-the-beast"
     },
     {
       "watched_on": "2023-06-04",
       "title": "WarGames (1983)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": true
+      "rewatched": true,
+      "permalink": "wargames"
     },
     {
       "watched_on": "2023-06-03",
       "title": "The Thing (1982)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": true
+      "rewatched": true,
+      "permalink": "the-thing"
     },
     {
       "watched_on": "2023-05-27",
       "title": "The Umbrellas of Cherbourg (1964)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-umbrellas-of-cherbourg"
     },
     {
       "watched_on": "2023-05-21",
       "title": "Victoria (2015)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "victoria-2015"
     },
     {
       "watched_on": "2023-04-30",
       "title": "Party Girl (1995)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "party-girl-1995"
     },
     {
       "watched_on": "2023-04-30",
       "title": "Islands (1987)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "islands-1987"
     },
     {
       "watched_on": "2023-04-29",
       "title": "Lawrence of Arabia (1962)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "lawrence-of-arabia"
     },
     {
       "watched_on": "2023-04-16",
       "title": "Night of the Demon (1957)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "night-of-the-demon"
     },
     {
       "watched_on": "2023-04-09",
       "title": "Maison du Bonheur (2017)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "maison-du-bonheur"
     },
     {
       "watched_on": "2023-04-07",
       "title": "All the Beauty and the Bloodshed (2022)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "all-the-beauty-and-the-bloodshed"
     },
     {
       "watched_on": "2023-03-31",
       "title": "Man Hunt (1941)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "man-hunt"
     },
     {
       "watched_on": "2023-03-29",
       "title": "John Wick: Chapter 2 (2017)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": true
+      "rewatched": true,
+      "permalink": "john-wick-chapter-2"
     },
     {
       "watched_on": "2023-03-25",
       "title": "The Card (1952)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-card"
     },
     {
       "watched_on": "2023-03-22",
       "title": "La Dolce Vita (1960)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "la-dolce-vita"
     },
     {
       "watched_on": "2023-03-19",
       "title": "The Black Tower (1987)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-black-tower"
     },
     {
       "watched_on": "2023-03-05",
       "title": "Fire of Love (2022)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "fire-of-love-2022"
     },
     {
       "watched_on": "2023-03-04",
       "title": "Godland (2022)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "godland"
     },
     {
       "watched_on": "2023-02-25",
       "title": "Don't Worry Darling (2022)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "dont-worry-darling"
     },
     {
       "watched_on": "2023-02-25",
       "title": "Do the Right Thing (1989)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "do-the-right-thing"
     },
     {
       "watched_on": "2023-02-12",
       "title": "L'Argent (1983)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "largent-1983"
     },
     {
       "watched_on": "2023-01-21",
       "title": "Undine (2020)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "undine-2020"
     },
     {
       "watched_on": "2023-01-20",
       "title": "Touchez Pas au Grisbi (1954)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "touchez-pas-au-grisbi"
     },
     {
       "watched_on": "2023-01-19",
       "title": "The Whale (2022)",
       "rating": 1.5,
       "stars": "★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-whale-2022"
     },
     {
       "watched_on": "2023-01-15",
       "title": "The Bad Sleep Well (1960)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-bad-sleep-well"
     },
     {
       "watched_on": "2023-01-14",
       "title": "Elevator to the Gallows (1958)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "elevator-to-the-gallows"
     },
     {
       "watched_on": "2023-01-14",
       "title": "Suspicion (1941)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "suspicion"
     },
     {
       "watched_on": "2023-01-08",
       "title": "City on Fire (1987)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "city-on-fire"
     },
     {
       "watched_on": "2023-01-07",
       "title": "Run Silent, Run Deep (1958)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "run-silent-run-deep"
     },
     {
       "watched_on": "2023-01-05",
       "title": "The Menu (2022)",
       "rating": 1.5,
       "stars": "★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-menu-2022"
     },
     {
       "watched_on": "2023-01-04",
       "title": "Prison on Fire (1987)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "prison-on-fire"
     },
     {
       "watched_on": "2023-01-03",
       "title": "Au Hasard Balthazar (1966)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "au-hasard-balthazar"
     },
     {
       "watched_on": "2023-01-02",
       "title": "White Noise (2022)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "white-noise-2022"
     },
     {
       "watched_on": "2023-01-01",
       "title": "Ikarie XB 1 (1963)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "ikarie-xb-1"
     },
     {
       "watched_on": "2022-12-29",
       "title": "Emily the Criminal (2022)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "emily-the-criminal"
     },
     {
       "watched_on": "2022-12-26",
       "title": "The League of Gentlemen (1960)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-league-of-gentlemen"
     },
     {
       "watched_on": "2022-12-26",
       "title": "Santoalla (2016)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "santoalla"
     },
     {
       "watched_on": "2022-12-26",
       "title": "The Beasts (2022)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-beasts-2022"
     },
     {
       "watched_on": "2022-12-26",
       "title": "La Vie de Bohème (1992)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "la-vie-de-boheme"
     },
     {
       "watched_on": "2022-12-25",
       "title": "Exotica (1994)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "exotica"
     },
     {
       "watched_on": "2022-12-24",
       "title": "Glass Onion (2022)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "glass-onion"
     },
     {
       "watched_on": "2022-12-24",
       "title": "The Fabelmans (2022)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-fabelmans"
     },
     {
       "watched_on": "2022-12-23",
       "title": "Keiko (1979)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "keiko"
     },
     {
       "watched_on": "2022-12-23",
       "title": "Triangle of Sadness (2022)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "triangle-of-sadness"
     },
     {
       "watched_on": "2022-12-21",
       "title": "The Banshees of Inisherin (2022)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-banshees-of-inisherin"
     },
     {
       "watched_on": "2022-12-04",
       "title": "Schoolgirls (2020)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "schoolgirls"
     },
     {
       "watched_on": "2022-11-01",
       "title": "See How They Run (2022)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "see-how-they-run-2022"
     },
     {
       "watched_on": "2022-10-30",
       "title": "The Autopsy (2022)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-autopsy-2022"
     },
     {
       "watched_on": "2022-10-29",
       "title": "Barbarian (2022)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "barbarian-2022"
     },
     {
       "watched_on": "2022-10-25",
       "title": "Confess, Fletch (2022)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "confess-fletch"
     },
     {
       "watched_on": "2022-10-24",
       "title": "Aftersun (2022)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "aftersun"
     },
     {
       "watched_on": "2022-10-23",
       "title": "The Stranger (2022)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-stranger-2022"
     },
     {
       "watched_on": "2022-10-15",
       "title": "The Outfit (2022)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-outfit-2022"
     },
     {
       "watched_on": "2022-10-14",
       "title": "Werewolf by Night (2022)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "werewolf-by-night"
     },
     {
       "watched_on": "2022-10-09",
       "title": "Bullet Train (2022)",
       "rating": 1.5,
       "stars": "★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "bullet-train"
     },
     {
       "watched_on": "2022-10-05",
       "title": "Athena (2022)",
       "rating": 1.5,
       "stars": "★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "athena-2022-1"
     },
     {
       "watched_on": "2022-09-24",
       "title": "You Have to Come and See It (2022)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "you-have-to-come-and-see-it"
     },
     {
       "watched_on": "2022-09-18",
       "title": "Michael Clayton (2007)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": true
+      "rewatched": true,
+      "permalink": "michael-clayton"
     },
     {
       "watched_on": "2022-09-18",
       "title": "The Devil, Probably (1977)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-devil-probably"
     },
     {
       "watched_on": "2022-09-17",
       "title": "Three Thousand Years of Longing (2022)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "three-thousand-years-of-longing"
     },
     {
       "watched_on": "2022-09-11",
       "title": "The Humans (2021)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-humans"
     },
     {
       "watched_on": "2022-09-10",
       "title": "El Camino: A Breaking Bad Movie (2019)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "el-camino-a-breaking-bad-movie"
     },
     {
       "watched_on": "2022-09-10",
       "title": "Purple Noon (1960)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "purple-noon"
     },
     {
       "watched_on": "2022-09-03",
       "title": "Predator (1987)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "predator"
     },
     {
       "watched_on": "2022-09-03",
       "title": "Hot Summer Nights (2017)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "hot-summer-nights"
     },
     {
       "watched_on": "2022-09-02",
       "title": "The Girl (1968)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-girl-1968"
     },
     {
       "watched_on": "2022-08-31",
       "title": "Mr. Blandings Builds His Dream House (1948)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "mr-blandings-builds-his-dream-house"
     },
     {
       "watched_on": "2022-08-29",
       "title": "Nope (2022)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "nope"
     },
     {
       "watched_on": "2022-08-28",
       "title": "Rome, Open City (1945)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "rome-open-city"
     },
     {
       "watched_on": "2022-08-21",
       "title": "On the Count of Three (2021)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "on-the-count-of-three"
     },
     {
       "watched_on": "2022-08-20",
       "title": "Out of Order (1984)",
       "rating": 1.5,
       "stars": "★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "out-of-order-1984"
     },
     {
       "watched_on": "2022-08-09",
       "title": "Prey (2022)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "prey-2022"
     },
     {
       "watched_on": "2022-08-06",
       "title": "A Taxing Woman (1987)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "a-taxing-woman"
     },
     {
       "watched_on": "2022-07-31",
       "title": "Journey to Italy (1954)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "journey-to-italy"
     },
     {
       "watched_on": "2022-07-29",
       "title": "Supermarket Woman (1996)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "supermarket-woman"
     },
     {
       "watched_on": "2022-07-26",
       "title": "Birdman of Alcatraz (1962)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "birdman-of-alcatraz"
     },
     {
       "watched_on": "2022-07-24",
       "title": "Bergman Island (2021)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "bergman-island-2021"
     },
     {
       "watched_on": "2022-07-23",
       "title": "The Gray Man (2022)",
       "rating": 1,
       "stars": "★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-gray-man-2022"
     },
     {
       "watched_on": "2022-07-14",
       "title": "While the City Sleeps (1956)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "while-the-city-sleeps"
     },
     {
       "watched_on": "2022-07-10",
       "title": "The Hidden (1987)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-hidden"
     },
     {
       "watched_on": "2022-07-10",
       "title": "The Thin Man (1934)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-thin-man"
     },
     {
       "watched_on": "2022-07-09",
       "title": "Mission: Impossible – Ghost Protocol (2011)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": true
+      "rewatched": true,
+      "permalink": "mission-impossible-ghost-protocol"
     },
     {
       "watched_on": "2022-07-09",
       "title": "Mission: Impossible – Rogue Nation (2015)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": true
+      "rewatched": true,
+      "permalink": "mission-impossible-rogue-nation"
     },
     {
       "watched_on": "2022-07-08",
       "title": "Chan Is Missing (1982)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "chan-is-missing"
     },
     {
       "watched_on": "2022-07-06",
       "title": "The Paper (1994)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-paper"
     },
     {
       "watched_on": "2022-07-03",
       "title": "Personal Shopper (2016)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "personal-shopper"
     },
     {
       "watched_on": "2022-07-02",
       "title": "The Killer (1989)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-killer"
     },
     {
       "watched_on": "2022-06-30",
       "title": "Quatermass and the Pit (1967)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "quatermass-and-the-pit"
     },
     {
       "watched_on": "2022-06-28",
       "title": "Manhunter (1986)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "manhunter"
     },
     {
       "watched_on": "2022-06-26",
       "title": "Doctor Strange in the Multiverse of Madness (2022)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "doctor-strange-in-the-multiverse-of-madness"
     },
     {
       "watched_on": "2022-06-25",
       "title": "A History of Violence (2005)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "a-history-of-violence"
     },
     {
       "watched_on": "2022-06-21",
       "title": "Laura (1944)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "laura"
     },
     {
       "watched_on": "2022-06-20",
       "title": "Anatomy of a Murder (1959)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "anatomy-of-a-murder"
     },
     {
       "watched_on": "2022-06-18",
       "title": "The Northman (2022)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-northman"
     },
     {
       "watched_on": "2022-06-18",
       "title": "The Unbearable Weight of Massive Talent (2022)",
       "rating": 1.5,
       "stars": "★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-unbearable-weight-of-massive-talent"
     },
     {
       "watched_on": "2022-05-22",
       "title": "Everything Everywhere All at Once (2022)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "everything-everywhere-all-at-once"
     },
     {
       "watched_on": "2022-04-24",
       "title": "Incident by a Bank (2010)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "incident-by-a-bank"
     },
     {
       "watched_on": "2022-04-24",
       "title": "Ambulance (2022)",
       "rating": 0.5,
       "stars": "½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "ambulance-2022"
     },
     {
       "watched_on": "2022-04-23",
       "title": "Spider-Man: Homecoming (2017)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "spider-man-homecoming"
     },
     {
       "watched_on": "2022-04-16",
       "title": "X (2022)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "x-2022"
     },
     {
       "watched_on": "2022-04-16",
       "title": "Tyrannosaur (2011)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "tyrannosaur"
     },
     {
       "watched_on": "2022-04-11",
       "title": "West Side Story (2021)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "west-side-story-2021"
     },
     {
       "watched_on": "2022-04-05",
       "title": "The Worst Person in the World (2021)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-worst-person-in-the-world"
     },
     {
       "watched_on": "2022-04-03",
       "title": "The Bubble (2022)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-bubble-2022"
     },
     {
       "watched_on": "2022-04-02",
-      "title": "Meet the Filmmakers: Josh and Benny Safdie (2017)",
+      "title": "The Universe Is Out There: Josh and Benny Safdie (2017)",
       "rating": 0,
       "stars": "",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-universe-is-out-there-josh-and-benny-safdie"
     },
     {
       "watched_on": "2022-04-01",
       "title": "Moonfall (2022)",
       "rating": 1,
       "stars": "★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "moonfall"
     },
     {
       "watched_on": "2022-03-27",
       "title": "After Yang (2021)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "after-yang"
     },
     {
       "watched_on": "2022-03-25",
       "title": "Windfall (2022)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "windfall"
     },
     {
       "watched_on": "2022-03-12",
       "title": "Turning Red (2022)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "turning-red"
     },
     {
       "watched_on": "2022-03-07",
       "title": "The Batman (2022)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-batman"
     },
     {
       "watched_on": "2022-02-22",
       "title": "Scream (2022)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "scream-2022"
     },
     {
       "watched_on": "2022-02-20",
       "title": "Licorice Pizza (2021)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "licorice-pizza"
     },
     {
       "watched_on": "2022-02-20",
       "title": "The Good Boss (2021)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-good-boss"
     },
     {
       "watched_on": "2022-02-13",
       "title": "Frantic (1988)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": true
+      "rewatched": true,
+      "permalink": "frantic"
     },
     {
       "watched_on": "2022-01-26",
       "title": "Line Goes Up - The Problem With NFTs (2022)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "line-goes-up-the-problem-with-nfts"
     },
     {
       "watched_on": "2022-01-16",
       "title": "Le Doulos (1962)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "le-doulos"
     },
     {
       "watched_on": "2022-01-01",
       "title": "Boiling Point (2021)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "boiling-point-2021"
     },
     {
       "watched_on": "2021-12-31",
       "title": "Bob le Flambeur (1956)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "bob-le-flambeur"
     },
     {
       "watched_on": "2021-12-28",
       "title": "The Warriors (1979)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-warriors"
     },
     {
       "watched_on": "2021-12-28",
       "title": "Scream (1996)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": true
+      "rewatched": true,
+      "permalink": "scream"
     },
     {
       "watched_on": "2021-12-28",
       "title": "The Driver (1978)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-driver"
     },
     {
       "watched_on": "2021-12-28",
       "title": "Black Christmas (1974)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "black-christmas"
     },
     {
       "watched_on": "2021-12-26",
       "title": "Le Cercle Rouge (1970)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "le-cercle-rouge"
     },
     {
       "watched_on": "2021-12-26",
       "title": "C'mon C'mon (2021)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "cmon-cmon"
     },
     {
       "watched_on": "2021-12-25",
       "title": "Dead of Night (1945)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "dead-of-night"
     },
     {
       "watched_on": "2021-12-25",
       "title": "Don't Look Up (2021)",
       "rating": 1,
       "stars": "★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "dont-look-up-2021"
     },
     {
       "watched_on": "2021-12-25",
       "title": "Out of Sight (1998)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "out-of-sight"
     },
     {
       "watched_on": "2021-12-24",
       "title": "Garry Winogrand: All Things Are Photographable (2018)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "garry-winogrand-all-things-are-photographable"
     },
     {
       "watched_on": "2021-12-23",
       "title": "The Matrix Resurrections (2021)",
       "rating": 1,
       "stars": "★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-matrix-resurrections"
     },
     {
       "watched_on": "2021-12-11",
       "title": "Turkish Delight (1973)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "turkish-delight"
     },
     {
       "watched_on": "2021-12-10",
       "title": "The Thing (1982)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-thing"
     },
     {
       "watched_on": "2021-12-04",
       "title": "Benedetta (2021)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "benedetta"
     },
     {
       "watched_on": "2021-12-01",
       "title": "Robin Robin (2021)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "robin-robin"
     },
     {
       "watched_on": "2021-11-21",
       "title": "Raw (2016)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "raw-2016"
     },
     {
       "watched_on": "2021-11-19",
       "title": "Last Night in Soho (2021)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "last-night-in-soho"
     },
     {
       "watched_on": "2021-11-14",
       "title": "The Insider (1999)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": true
+      "rewatched": true,
+      "permalink": "the-insider"
     },
     {
       "watched_on": "2021-11-13",
       "title": "No Time to Die (2021)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "no-time-to-die-2021"
     },
     {
       "watched_on": "2021-11-06",
       "title": "Finch (2021)",
       "rating": 1.5,
       "stars": "★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "finch"
     },
     {
       "watched_on": "2021-11-05",
       "title": "Beyond the Infinite Two Minutes (2020)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "beyond-the-infinite-two-minutes"
     },
     {
       "watched_on": "2021-10-30",
       "title": "The Boom (1963)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-boom"
     },
     {
       "watched_on": "2021-10-30",
       "title": "Dune (2021)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "dune-2021"
     },
     {
       "watched_on": "2021-10-26",
       "title": "The Card Counter (2021)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-card-counter"
     },
     {
       "watched_on": "2021-10-23",
       "title": "An Inspector Calls (2015)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "an-inspector-calls-2015-1"
     },
     {
       "watched_on": "2021-10-22",
       "title": "The Producers (1967)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-producers"
     },
     {
       "watched_on": "2021-10-09",
       "title": "Shin Godzilla (2016)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "shin-godzilla"
     },
     {
       "watched_on": "2021-10-04",
       "title": "This Magnificent Cake! (2018)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "this-magnificent-cake"
     },
     {
       "watched_on": "2021-10-02",
       "title": "The Guilty (2021)",
       "rating": 1.5,
       "stars": "★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-guilty-2021"
     },
     {
       "watched_on": "2021-08-28",
       "title": "Ashes and Diamonds (1958)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "ashes-and-diamonds"
     },
     {
       "watched_on": "2021-08-21",
       "title": "All the President's Men (1976)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "all-the-presidents-men"
     },
     {
       "watched_on": "2021-08-21",
       "title": "The Green Knight (2021)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-green-knight"
     },
     {
       "watched_on": "2021-08-16",
       "title": "Society (1989)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "society"
     },
     {
       "watched_on": "2021-08-10",
       "title": "Blood Red Sky (2021)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "blood-red-sky"
     },
     {
       "watched_on": "2021-08-08",
       "title": "Zola (2020)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "zola"
     },
     {
       "watched_on": "2021-08-08",
       "title": "An Autumn Afternoon (1962)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "an-autumn-afternoon"
     },
     {
       "watched_on": "2021-08-07",
       "title": "The Money Pit (1986)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": true
+      "rewatched": true,
+      "permalink": "the-money-pit"
     },
     {
       "watched_on": "2021-08-07",
       "title": "Light Sleeper (1992)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "light-sleeper"
     },
     {
       "watched_on": "2021-08-06",
       "title": "The Suicide Squad (2021)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-suicide-squad"
     },
     {
       "watched_on": "2021-08-01",
       "title": "Silkwood (1983)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "silkwood"
     },
     {
       "watched_on": "2021-07-31",
       "title": "The Snipist (2012)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-snipist"
     },
     {
       "watched_on": "2021-07-26",
       "title": "Pig (2021)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "pig-2021"
     },
     {
       "watched_on": "2021-07-17",
       "title": "Sneakers (1992)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": true
+      "rewatched": true,
+      "permalink": "sneakers"
     },
     {
       "watched_on": "2021-07-16",
       "title": "Thoroughbreds (2017)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "thoroughbreds-2017"
     },
     {
       "watched_on": "2021-07-14",
       "title": "Werewolves Within (2021)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "werewolves-within"
     },
     {
       "watched_on": "2021-07-13",
       "title": "Travelling with Tove (1993)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "travelling-with-tove"
     },
     {
       "watched_on": "2021-07-10",
       "title": "Black Widow (2021)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "black-widow-2021"
     },
     {
       "watched_on": "2021-07-03",
       "title": "A Quiet Place Part II (2020)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "a-quiet-place-part-ii"
     },
     {
       "watched_on": "2021-07-02",
       "title": "No Sudden Move (2021)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "no-sudden-move"
     },
     {
       "watched_on": "2021-06-26",
       "title": "Gone Girl (2014)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": true
+      "rewatched": true,
+      "permalink": "gone-girl"
     },
     {
       "watched_on": "2021-06-26",
       "title": "Heroic Losers (2019)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "heroic-losers"
     },
     {
       "watched_on": "2021-06-19",
       "title": "King of New York (1990)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "king-of-new-york"
     },
     {
       "watched_on": "2021-06-18",
       "title": "Luca (2021)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "luca-2021"
     },
     {
       "watched_on": "2021-06-13",
       "title": "Matinee (1993)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "matinee"
     },
     {
       "watched_on": "2021-06-12",
       "title": "Judas and the Black Messiah (2021)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "judas-and-the-black-messiah"
     },
     {
       "watched_on": "2021-06-11",
       "title": "Plan B (2021)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "plan-b-2021"
     },
     {
       "watched_on": "2021-06-10",
       "title": "Wrath of Man (2021)",
       "rating": 1.5,
       "stars": "★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "wrath-of-man"
     },
     {
       "watched_on": "2021-06-06",
       "title": "The Woman in the Window (2021)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-woman-in-the-window-2021"
     },
     {
       "watched_on": "2021-06-06",
       "title": "Before the Devil Knows You're Dead (2007)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": true
+      "rewatched": true,
+      "permalink": "before-the-devil-knows-youre-dead"
     },
     {
       "watched_on": "2021-06-05",
       "title": "The Big Short (2015)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-big-short"
     },
     {
       "watched_on": "2021-05-30",
       "title": "F/X (1986)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "f-x"
     },
     {
       "watched_on": "2021-05-30",
       "title": "An Optical Illusion (2020)",
       "rating": 1,
       "stars": "★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "an-optical-illusion"
     },
     {
       "watched_on": "2021-05-30",
       "title": "Cruella (2021)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "cruella"
     },
     {
       "watched_on": "2021-05-28",
       "title": "Dawn of the Dead (2004)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "dawn-of-the-dead-2004"
     },
     {
       "watched_on": "2021-05-23",
       "title": "Predestination (2014)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "predestination"
     },
     {
       "watched_on": "2021-05-21",
       "title": "Army of the Dead (2021)",
       "rating": 1.5,
       "stars": "★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "army-of-the-dead-2021"
     },
     {
       "watched_on": "2021-05-16",
       "title": "The Verdict (1982)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-verdict-1982"
     },
     {
       "watched_on": "2021-05-14",
       "title": "Riders of Justice (2020)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "riders-of-justice"
     },
     {
       "watched_on": "2021-05-13",
       "title": "The Kid Detective (2020)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-kid-detective"
     },
     {
       "watched_on": "2021-05-09",
       "title": "First Reformed (2017)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "first-reformed"
     },
     {
       "watched_on": "2021-05-08",
       "title": "Runaway Train (1985)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "runaway-train"
     },
     {
       "watched_on": "2021-05-08",
       "title": "Dressed to Kill (1980)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "dressed-to-kill-1980"
     },
     {
       "watched_on": "2021-05-07",
       "title": "Blow Out (1981)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "blow-out"
     },
     {
       "watched_on": "2021-05-02",
       "title": "Silence (2016)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "silence"
     },
     {
       "watched_on": "2021-04-29",
       "title": "Marathon Man (1976)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "marathon-man"
     },
     {
       "watched_on": "2021-04-25",
       "title": "Next Stop, Greenwich Village (1976)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "next-stop-greenwich-village"
     },
     {
       "watched_on": "2021-04-24",
       "title": "The Courier (2020)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-courier-2020"
     },
     {
       "watched_on": "2021-04-20",
       "title": "Das Boot (1985)",
       "rating": 5,
       "stars": "★★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "das-boot-1985"
     },
     {
       "watched_on": "2021-04-18",
       "title": "Where Eagles Dare (1968)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "where-eagles-dare"
     },
     {
       "watched_on": "2021-04-17",
       "title": "Burning (2018)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "burning-2018"
     },
     {
       "watched_on": "2021-04-16",
       "title": "Love and Monsters (2020)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "love-and-monsters"
     },
     {
       "watched_on": "2021-04-15",
       "title": "Nobody (2021)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "nobody-2021"
     },
     {
       "watched_on": "2021-04-13",
       "title": "Eye for an Eye (2019)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "eye-for-an-eye-2019"
     },
     {
       "watched_on": "2021-04-11",
       "title": "I Care a Lot (2020)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "i-care-a-lot"
     },
     {
       "watched_on": "2021-04-11",
       "title": "Shiva Baby (2020)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "shiva-baby-2020"
     },
     {
       "watched_on": "2021-04-11",
       "title": "Perfect Strangers (2017)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "perfect-strangers-2017"
     },
     {
       "watched_on": "2021-04-09",
       "title": "First Blood (1982)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "first-blood"
     },
     {
       "watched_on": "2021-04-07",
       "title": "A Pain in the Ass (1973)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "a-pain-in-the-ass-1973"
     },
     {
       "watched_on": "2021-04-06",
       "title": "Smoke & Mirrors (2016)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "smoke-mirrors"
     },
     {
       "watched_on": "2021-04-03",
       "title": "Nomadland (2020)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "nomadland"
     },
     {
       "watched_on": "2021-03-28",
       "title": "Ronin (1998)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "ronin"
     },
     {
       "watched_on": "2021-03-20",
       "title": "Le Trou (1960)",
       "rating": 5,
       "stars": "★★★★★",
-      "rewatched": true
+      "rewatched": true,
+      "permalink": "le-trou"
     },
     {
       "watched_on": "2021-03-20",
       "title": "The Mauritanian (2021)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-mauritanian"
     },
     {
       "watched_on": "2021-03-12",
       "title": "Le Trou (1960)",
       "rating": 5,
       "stars": "★★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "le-trou"
     },
     {
       "watched_on": "2021-03-07",
       "title": "Moonstruck (1987)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "moonstruck"
     },
     {
       "watched_on": "2021-03-06",
       "title": "The List of Adrian Messenger (1963)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-list-of-adrian-messenger"
     },
     {
       "watched_on": "2021-02-28",
       "title": "The Assistant (2019)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-assistant-2019"
     },
     {
       "watched_on": "2021-02-27",
       "title": "The Wailing (2016)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-wailing"
     },
     {
       "watched_on": "2021-02-27",
       "title": "Booksmart (2019)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": true
+      "rewatched": true,
+      "permalink": "booksmart"
     },
     {
       "watched_on": "2021-02-21",
       "title": "Grand Illusion (1937)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "grand-illusion"
     },
     {
       "watched_on": "2021-02-21",
       "title": "Swingers (1996)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "swingers"
     },
     {
       "watched_on": "2021-02-20",
       "title": "Assault on Precinct 13 (1976)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "assault-on-precinct-13"
     },
     {
       "watched_on": "2021-02-20",
       "title": "The Innocents (1961)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-innocents"
     },
     {
       "watched_on": "2021-02-19",
       "title": "Station Six-Sahara (1963)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "station-six-sahara"
     },
     {
       "watched_on": "2021-02-18",
       "title": "Yojimbo (1961)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "yojimbo"
     },
     {
       "watched_on": "2021-02-17",
       "title": "High and Low (1963)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "high-and-low"
     },
     {
       "watched_on": "2021-02-15",
       "title": "The Spy Who Came in from the Cold (1965)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-spy-who-came-in-from-the-cold"
     },
     {
       "watched_on": "2021-02-14",
       "title": "Eye of the Needle (1981)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "eye-of-the-needle"
     },
     {
       "watched_on": "2021-02-12",
       "title": "1985 (2018)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "1985-2018"
     },
     {
       "watched_on": "2021-02-12",
       "title": "The National Shotgun (1978)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-national-shotgun"
     },
     {
       "watched_on": "2021-02-10",
       "title": "News of the World (2020)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "news-of-the-world"
     },
     {
       "watched_on": "2021-02-10",
       "title": "Fedora (1978)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "fedora"
     },
     {
       "watched_on": "2021-02-07",
       "title": "Bacurau (2019)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "bacurau"
     },
     {
       "watched_on": "2021-02-05",
       "title": "The MacKintosh Man (1973)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-mackintosh-man"
     },
     {
       "watched_on": "2021-02-01",
       "title": "Promising Young Woman (2020)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "promising-young-woman"
     },
     {
       "watched_on": "2021-01-31",
       "title": "Below Zero (2021)",
       "rating": 0.5,
       "stars": "½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "below-zero-2021"
     },
     {
       "watched_on": "2021-01-31",
       "title": "How to Steal a Million (1966)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": true
+      "rewatched": true,
+      "permalink": "how-to-steal-a-million"
     },
     {
       "watched_on": "2021-01-30",
       "title": "The Taking of Pelham One Two Three (1974)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-taking-of-pelham-one-two-three"
     },
     {
       "watched_on": "2021-01-22",
       "title": "Lots of Kids, a Monkey and a Castle (2017)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "lots-of-kids-a-monkey-and-a-castle"
     },
     {
       "watched_on": "2021-01-20",
       "title": "Minari (2020)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "minari"
     },
     {
       "watched_on": "2021-01-17",
       "title": "The Heist of the Century (2020)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-heist-of-the-century"
     },
     {
       "watched_on": "2021-01-11",
       "title": "Small Axe (2020)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "small-axe"
     },
     {
       "watched_on": "2021-01-11",
       "title": "Education (2020)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "education-2020"
     },
     {
       "watched_on": "2021-01-10",
       "title": "Alex Wheatle (2020)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "alex-wheatle"
     },
     {
       "watched_on": "2021-01-10",
       "title": "Red, White and Blue (2020)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "red-white-and-blue-2020"
     },
     {
       "watched_on": "2021-01-09",
       "title": "Pretend It's a City (2021)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "pretend-its-a-city"
     },
     {
       "watched_on": "2021-01-09",
       "title": "Lovers Rock (2020)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "lovers-rock-2020"
     },
     {
       "watched_on": "2021-01-09",
       "title": "Mangrove (2020)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "mangrove-2020"
     },
     {
       "watched_on": "2021-01-05",
       "title": "Upgrade (2018)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "upgrade"
     },
     {
       "watched_on": "2021-01-03",
       "title": "Let Them All Talk (2020)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "let-them-all-talk"
     },
     {
       "watched_on": "2021-01-03",
       "title": "The Man Who Sleeps (1974)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-man-who-sleeps"
     },
     {
       "watched_on": "2021-01-02",
       "title": "The Invisible Man (2020)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-invisible-man-2020"
     },
     {
       "watched_on": "2021-01-01",
       "title": "Metropolitan (1990)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "metropolitan"
     },
     {
       "watched_on": "2021-01-01",
       "title": "Arsenic and Old Lace (1944)",
       "rating": 1.5,
       "stars": "★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "arsenic-and-old-lace"
     },
     {
       "watched_on": "2020-12-31",
       "title": "Defending Your Life (1991)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "defending-your-life"
     },
     {
       "watched_on": "2020-12-30",
       "title": "Border (2018)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "border-2018"
     },
     {
       "watched_on": "2020-12-28",
       "title": "Another Round (2020)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "another-round"
     },
     {
       "watched_on": "2020-12-26",
       "title": "Wonder Woman 1984 (2020)",
       "rating": 1.5,
       "stars": "★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "wonder-woman-1984"
     },
     {
       "watched_on": "2020-12-25",
       "title": "Soul (2020)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "soul-2020"
     },
     {
       "watched_on": "2020-12-24",
       "title": "The Midnight Sky (2020)",
       "rating": 1.5,
       "stars": "★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-midnight-sky"
     },
     {
       "watched_on": "2020-12-23",
       "title": "Harold and Maude (1971)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "harold-and-maude"
     },
     {
       "watched_on": "2020-12-23",
       "title": "The Booksellers (2019)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-booksellers"
     },
     {
       "watched_on": "2020-12-19",
       "title": "The Big Clock (1948)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-big-clock"
     },
     {
       "watched_on": "2020-12-19",
       "title": "Jamaica Inn (1939)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "jamaica-inn"
     },
     {
       "watched_on": "2020-11-30",
       "title": "Tenet (2020)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "tenet"
     },
     {
       "watched_on": "2020-11-29",
       "title": "Nimic (2019)",
       "rating": 0,
       "stars": "",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "nimic"
     },
     {
       "watched_on": "2020-11-17",
       "title": "House of Games (1987)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": true
+      "rewatched": true,
+      "permalink": "house-of-games"
     },
     {
       "watched_on": "2020-11-08",
       "title": "Casino Royale (2006)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "casino-royale-2006"
     },
     {
       "watched_on": "2020-10-11",
       "title": "Beastie Boys Story (2020)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "beastie-boys-story"
     },
     {
       "watched_on": "2020-09-25",
       "title": "Mad Max 2 (1981)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "mad-max-2"
     },
     {
       "watched_on": "2020-09-24",
       "title": "Feels Good Man (2020)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "feels-good-man"
     },
     {
       "watched_on": "2020-09-23",
       "title": "A Man Escaped (1956)",
       "rating": 5,
       "stars": "★★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "a-man-escaped"
     },
     {
       "watched_on": "2020-09-22",
       "title": "Never Rarely Sometimes Always (2020)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "never-rarely-sometimes-always"
     },
     {
       "watched_on": "2020-09-21",
       "title": "A Foreign Affair (1948)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "a-foreign-affair"
     },
     {
       "watched_on": "2020-09-19",
       "title": "The Half of It (2020)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-half-of-it"
     },
     {
       "watched_on": "2020-09-14",
       "title": "Branded to Kill (1967)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "branded-to-kill"
     },
     {
       "watched_on": "2020-09-13",
       "title": "Tampopo (1985)",
       "rating": 5,
       "stars": "★★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "tampopo"
     },
     {
       "watched_on": "2020-09-12",
       "title": "Sleepless in Seattle (1993)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "sleepless-in-seattle"
     },
     {
       "watched_on": "2020-09-12",
       "title": "Sorry to Bother You (2018)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "sorry-to-bother-you"
     },
     {
       "watched_on": "2020-09-11",
       "title": "The Nice Guys (2016)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-nice-guys"
     },
     {
       "watched_on": "2020-09-11",
       "title": "Letter Never Sent (1960)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "letter-never-sent"
     },
     {
       "watched_on": "2020-09-10",
       "title": "The Parallax View (1974)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-parallax-view"
     },
     {
       "watched_on": "2020-09-09",
       "title": "The Social Dilemma (2020)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-social-dilemma"
     },
     {
       "watched_on": "2020-09-08",
       "title": "All About Eve (1950)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "all-about-eve"
     },
     {
       "watched_on": "2020-09-08",
       "title": "Green Book (2018)",
       "rating": 1.5,
       "stars": "★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "green-book"
     },
     {
       "watched_on": "2020-09-07",
       "title": "The Servant (1963)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-servant"
     },
     {
       "watched_on": "2020-09-06",
       "title": "Tunes of Glory (1960)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "tunes-of-glory"
     },
     {
       "watched_on": "2020-09-05",
       "title": "Closely Watched Trains (1966)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "closely-watched-trains"
     },
     {
       "watched_on": "2020-09-05",
       "title": "His Girl Friday (1940)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "his-girl-friday"
     },
     {
       "watched_on": "2020-09-04",
       "title": "I'm Thinking of Ending Things (2020)",
       "rating": 0,
       "stars": "",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "im-thinking-of-ending-things"
     },
     {
       "watched_on": "2020-09-01",
       "title": "Good Morning (1959)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "good-morning"
     },
     {
       "watched_on": "2020-08-31",
       "title": "Babette's Feast (1987)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "babettes-feast"
     },
     {
       "watched_on": "2020-08-30",
       "title": "Game Night (2018)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "game-night"
     },
     {
       "watched_on": "2020-08-29",
       "title": "American Psycho (2000)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": true
+      "rewatched": true,
+      "permalink": "american-psycho"
     },
     {
       "watched_on": "2020-08-29",
       "title": "Three Days of the Condor (1975)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "three-days-of-the-condor"
     },
     {
       "watched_on": "2020-08-28",
       "title": "An American Werewolf in London (1981)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "an-american-werewolf-in-london"
     },
     {
       "watched_on": "2020-08-27",
       "title": "Paths of Glory (1957)",
       "rating": 5,
       "stars": "★★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "paths-of-glory"
     },
     {
       "watched_on": "2020-08-27",
       "title": "It Happened One Night (1934)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "it-happened-one-night"
     },
     {
       "watched_on": "2020-08-25",
       "title": "Sabrina (1954)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "sabrina"
     },
     {
       "watched_on": "2020-08-24",
       "title": "Stalag 17 (1953)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "stalag-17"
     },
     {
       "watched_on": "2020-08-23",
       "title": "Bad Education (2019)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "bad-education-2019"
     },
     {
       "watched_on": "2020-08-23",
       "title": "Green for Danger (1946)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "green-for-danger"
     },
     {
       "watched_on": "2020-08-23",
       "title": "John Was Trying to Contact Aliens (2020)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "john-was-trying-to-contact-aliens"
     },
     {
       "watched_on": "2020-08-22",
       "title": "Kind Hearts and Coronets (1949)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "kind-hearts-and-coronets"
     },
     {
       "watched_on": "2020-08-22",
       "title": "Rosemary's Baby (1968)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "rosemarys-baby"
     },
     {
       "watched_on": "2020-08-14",
       "title": "Project Power (2020)",
       "rating": 1,
       "stars": "★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "project-power-2020"
     },
     {
       "watched_on": "2020-08-14",
       "title": "Angel (1937)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "angel"
     },
     {
       "watched_on": "2020-08-13",
       "title": "You Were Never Really Here (2017)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "you-were-never-really-here"
     },
     {
       "watched_on": "2020-08-12",
       "title": "The Big Heat (1953)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-big-heat"
     },
     {
       "watched_on": "2020-08-12",
       "title": "Le Samouraï (1967)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": true
+      "rewatched": true,
+      "permalink": "le-samourai"
     },
     {
       "watched_on": "2020-08-12",
       "title": "Mr. Klein (1976)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "mr-klein"
     },
     {
       "watched_on": "2020-08-11",
       "title": "Certified Copy (2010)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "certified-copy"
     },
     {
       "watched_on": "2020-08-10",
       "title": "The Duke of Burgundy (2014)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-duke-of-burgundy"
     },
     {
       "watched_on": "2020-08-10",
       "title": "Ministry of Fear (1944)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "ministry-of-fear"
     },
     {
       "watched_on": "2020-08-09",
       "title": "The Wages of Fear (1953)",
       "rating": 5,
       "stars": "★★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-wages-of-fear"
     },
     {
       "watched_on": "2020-08-08",
       "title": "Road to Perdition (2002)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "road-to-perdition"
     },
     {
       "watched_on": "2020-08-08",
       "title": "Kiss Me, Stupid (1964)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "kiss-me-stupid"
     },
     {
       "watched_on": "2020-08-07",
       "title": "Basic Instinct (1992)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "basic-instinct"
     },
     {
       "watched_on": "2020-08-07",
       "title": "Ball of Fire (1941)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "ball-of-fire"
     },
     {
       "watched_on": "2020-08-06",
       "title": "Our Man in Havana (1959)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "our-man-in-havana"
     },
     {
       "watched_on": "2020-08-06",
       "title": "Chained for Life (2018)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "chained-for-life-2018"
     },
     {
       "watched_on": "2020-08-06",
       "title": "Bluebeard's Eighth Wife (1938)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "bluebeards-eighth-wife"
     },
     {
       "watched_on": "2020-08-05",
       "title": "Design for Living (1933)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "design-for-living"
     },
     {
       "watched_on": "2020-08-05",
       "title": "Double Indemnity (1944)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "double-indemnity"
     },
     {
       "watched_on": "2020-08-04",
       "title": "Wendy and Lucy (2008)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "wendy-and-lucy"
     },
     {
       "watched_on": "2020-08-04",
       "title": "The Long Goodbye (1973)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-long-goodbye"
     },
     {
       "watched_on": "2020-08-03",
       "title": "System Crasher (2019)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "system-crasher"
     },
     {
       "watched_on": "2020-08-03",
       "title": "The 'Burbs (1989)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": true
+      "rewatched": true,
+      "permalink": "the-burbs"
     },
     {
       "watched_on": "2020-08-02",
       "title": "The Lavender Hill Mob (1951)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-lavender-hill-mob"
     },
     {
       "watched_on": "2020-08-01",
       "title": "The Most Dangerous Game (1932)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-most-dangerous-game"
     },
     {
       "watched_on": "2020-08-01",
       "title": "The Hunt (2020)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-hunt-2020"
     },
     {
       "watched_on": "2020-07-30",
       "title": "Notorious (1946)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "notorious"
     },
     {
       "watched_on": "2020-07-29",
       "title": "Brubaker (1980)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "brubaker"
     },
     {
       "watched_on": "2020-07-27",
       "title": "In a Lonely Place (1950)",
       "rating": 0,
       "stars": "",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "in-a-lonely-place"
     },
     {
       "watched_on": "2020-07-25",
       "title": "Good Bye Lenin! (2003)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "good-bye-lenin"
     },
     {
       "watched_on": "2020-07-24",
       "title": "The Farewell (2019)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-farewell-2019"
     },
     {
       "watched_on": "2020-07-23",
       "title": "Foreign Correspondent (1940)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "foreign-correspondent"
     },
     {
       "watched_on": "2020-07-22",
       "title": "Diabolique (1955)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "diabolique-1955"
     },
     {
       "watched_on": "2020-07-21",
       "title": "The Bridge on the River Kwai (1957)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-bridge-on-the-river-kwai"
     },
     {
       "watched_on": "2020-07-20",
       "title": "Brief Encounter (1945)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "brief-encounter"
     },
     {
       "watched_on": "2020-07-19",
       "title": "Hobson's Choice (1954)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "hobsons-choice"
     },
     {
       "watched_on": "2020-07-18",
       "title": "First Cow (2019)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "first-cow"
     },
     {
       "watched_on": "2020-07-17",
       "title": "Trouble in Paradise (1932)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "trouble-in-paradise"
     },
     {
       "watched_on": "2020-07-16",
       "title": "Palm Springs (2020)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "palm-springs-2020"
     },
     {
       "watched_on": "2020-07-15",
       "title": "Scarlet Street (1945)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "scarlet-street"
     },
     {
       "watched_on": "2020-07-15",
       "title": "Soldier of Orange (1977)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "soldier-of-orange"
     },
     {
       "watched_on": "2020-07-14",
       "title": "Total Recall (1990)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": true
+      "rewatched": true,
+      "permalink": "total-recall"
     },
     {
       "watched_on": "2020-07-12",
       "title": "May God Save Us (2016)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "may-god-save-us"
     },
     {
       "watched_on": "2020-07-12",
       "title": "Koudelka Shooting Holy Land (2015)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "koudelka-shooting-holy-land"
     },
     {
       "watched_on": "2020-07-11",
       "title": "The Wolf of Wall Street (2013)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": true
+      "rewatched": true,
+      "permalink": "the-wolf-of-wall-street"
     },
     {
       "watched_on": "2020-07-10",
       "title": "The Night of the Hunter (1955)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-night-of-the-hunter"
     },
     {
       "watched_on": "2020-07-10",
       "title": "The Old Guard (2020)",
       "rating": 1,
       "stars": "★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-old-guard-2020"
     },
     {
       "watched_on": "2020-07-09",
       "title": "The Age of Innocence (1993)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-age-of-innocence"
     },
     {
       "watched_on": "2020-07-08",
       "title": "Dirty Rotten Scoundrels (1988)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "dirty-rotten-scoundrels"
     },
     {
       "watched_on": "2020-07-06",
       "title": "Apocalypto (2006)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "apocalypto"
     },
     {
       "watched_on": "2020-07-03",
       "title": "The Ipcress File (1965)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-ipcress-file"
     },
     {
       "watched_on": "2020-07-01",
       "title": "The Girl with the Dragon Tattoo (2011)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-girl-with-the-dragon-tattoo-2011"
     },
     {
       "watched_on": "2020-06-28",
       "title": "Green Room (2015)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "green-room"
     },
     {
       "watched_on": "2020-06-27",
       "title": "Rififi (1955)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "rififi"
     },
     {
       "watched_on": "2020-06-21",
       "title": "Disclosure (2020)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "disclosure-2020-1"
     },
     {
       "watched_on": "2020-06-14",
       "title": "The Wrong Man (1956)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-wrong-man"
     },
     {
       "watched_on": "2020-06-14",
       "title": "13th (2016)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "13th"
     },
     {
       "watched_on": "2020-06-13",
       "title": "Some Like It Hot (1959)",
       "rating": 5,
       "stars": "★★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "some-like-it-hot"
     },
     {
       "watched_on": "2020-06-12",
       "title": "The Vast of Night (2019)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-vast-of-night"
     },
     {
       "watched_on": "2020-06-07",
       "title": "Death by Hanging (1968)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "death-by-hanging"
     },
     {
       "watched_on": "2020-05-30",
       "title": "The Conversation (1974)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-conversation"
     },
     {
       "watched_on": "2020-05-25",
       "title": "The Fog (1980)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-fog"
     },
     {
       "watched_on": "2020-05-23",
       "title": "Sweet Smell of Success (1957)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "sweet-smell-of-success"
     },
     {
       "watched_on": "2020-05-23",
       "title": "The Train (1964)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-train"
     },
     {
       "watched_on": "2020-05-17",
       "title": "Spaceship Earth (2020)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "spaceship-earth-2020"
     },
     {
       "watched_on": "2020-04-18",
       "title": "La Haine (1995)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "la-haine"
     },
     {
       "watched_on": "2020-04-12",
       "title": "Rear Window (1954)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "rear-window"
     },
     {
       "watched_on": "2020-04-11",
       "title": "Thief (1981)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "thief"
     },
     {
       "watched_on": "2020-04-11",
       "title": "Cool Hand Luke (1967)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "cool-hand-luke"
     },
     {
       "watched_on": "2020-04-09",
       "title": "A Girl Walks Home Alone at Night (2014)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "a-girl-walks-home-alone-at-night"
     },
     {
       "watched_on": "2020-04-09",
       "title": "To Live and Die in L.A. (1985)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "to-live-and-die-in-la"
     },
     {
       "watched_on": "2020-04-04",
       "title": "Train to Busan (2016)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "train-to-busan"
     },
     {
       "watched_on": "2020-04-04",
       "title": "Onward (2020)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "onward-2020"
     },
     {
       "watched_on": "2020-04-03",
       "title": "Portrait of a Lady on Fire (2019)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "portrait-of-a-lady-on-fire"
     },
     {
       "watched_on": "2020-03-28",
       "title": "The Gentlemen (2019)",
       "rating": 0,
       "stars": "",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-gentlemen"
     },
     {
       "watched_on": "2020-03-14",
       "title": "Only Lovers Left Alive (2013)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "only-lovers-left-alive"
     },
     {
       "watched_on": "2020-03-13",
       "title": "Zombieland: Double Tap (2019)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "zombieland-double-tap"
     },
     {
       "watched_on": "2020-03-12",
       "title": "1917 (2019)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "1917"
     },
     {
       "watched_on": "2020-03-07",
       "title": "American Factory (2019)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "american-factory"
     },
     {
       "watched_on": "2020-03-06",
       "title": "Memories of Murder (2003)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "memories-of-murder"
     },
     {
       "watched_on": "2020-02-16",
       "title": "General Magic (2018)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "general-magic"
     },
     {
       "watched_on": "2020-02-15",
       "title": "Good Time (2017)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "good-time"
     },
     {
       "watched_on": "2020-02-08",
       "title": "Porco Rosso (1992)",
       "rating": 0,
       "stars": "",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "porco-rosso"
     },
     {
       "watched_on": "2020-02-08",
       "title": "Jojo Rabbit (2019)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "jojo-rabbit"
     },
     {
       "watched_on": "2020-02-05",
       "title": "Uncut Gems (2019)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "uncut-gems"
     },
     {
       "watched_on": "2020-01-05",
       "title": "The Lighthouse (2019)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-lighthouse-2019"
     },
     {
       "watched_on": "2019-12-05",
       "title": "Knives Out (2019)",
       "rating": 5,
       "stars": "★★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "knives-out-2019"
     },
     {
       "watched_on": "2019-11-30",
       "title": "The Irishman (2019)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-irishman-2019"
     },
     {
       "watched_on": "2019-11-24",
       "title": "Extra Ordinary (2019)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "extra-ordinary"
     },
     {
       "watched_on": "2019-10-05",
       "title": "The Art of Self-Defense (2019)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-art-of-self-defense-2019"
     },
     {
       "watched_on": "2019-09-21",
       "title": "Knife in the Head (1978)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "knife-in-the-head"
     },
     {
       "watched_on": "2019-09-20",
       "title": "Superbad (2007)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "superbad"
     },
     {
       "watched_on": "2019-09-14",
       "title": "The Man from Nowhere (2010)",
       "rating": 3.5,
       "stars": "★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-man-from-nowhere"
     },
     {
       "watched_on": "2019-09-08",
       "title": "Mother (2009)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "mother-2009"
     },
     {
       "watched_on": "2019-09-06",
       "title": "Parasite (2019)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "parasite-2019"
     },
     {
       "watched_on": "2019-08-26",
       "title": "John Wick: Chapter 3 – Parabellum (2019)",
       "rating": 0,
       "stars": "",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "john-wick-chapter-3-parabellum"
     },
     {
       "watched_on": "2019-08-24",
       "title": "Kin-dza-dza! (1986)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "kin-dza-dza"
     },
     {
       "watched_on": "2019-08-16",
       "title": "Once Upon a Time… in Hollywood (2019)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "once-upon-a-time-in-hollywood"
     },
     {
       "watched_on": "2019-08-07",
       "title": "Midsommar (2019)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "midsommar"
     },
     {
       "watched_on": "2019-07-10",
       "title": "Varda by Agnès (2019)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "varda-by-agnes"
     },
     {
       "watched_on": "2019-07-01",
       "title": "Apollo 11 (2019)",
       "rating": 5,
       "stars": "★★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "apollo-11-2019"
     },
     {
       "watched_on": "2018-12-12",
       "title": "Roma (2018)",
       "rating": 5,
       "stars": "★★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "roma-2018"
     },
     {
       "watched_on": "2018-03-29",
       "title": "Phantom Thread (2017)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "phantom-thread"
     },
     {
       "watched_on": "2018-03-17",
       "title": "Annihilation (2018)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "annihilation"
     },
     {
       "watched_on": "2018-03-03",
       "title": "Coco (2017)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "coco-2017"
     },
     {
       "watched_on": "2018-02-12",
       "title": "The Square (2017)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-square-2017"
     },
     {
       "watched_on": "2018-02-02",
       "title": "Thor: Ragnarok (2017)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "thor-ragnarok"
     },
     {
       "watched_on": "2018-01-28",
       "title": "Murder on the Orient Express (2017)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "murder-on-the-orient-express-2017"
     },
     {
       "watched_on": "2018-01-19",
       "title": "Citizen Jane: Battle for the City (2016)",
       "rating": 4.5,
       "stars": "★★★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "citizen-jane-battle-for-the-city"
     },
     {
       "watched_on": "2018-01-08",
       "title": "The Disaster Artist (2017)",
       "rating": 0,
       "stars": "",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-disaster-artist"
     },
     {
       "watched_on": "2018-01-04",
       "title": "Blurred Lines: Inside the Art World (2017)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "blurred-lines-inside-the-art-world"
     },
     {
       "watched_on": "2018-01-03",
       "title": "The Mountain Between Us (2017)",
       "rating": 1.5,
       "stars": "★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-mountain-between-us"
     },
     {
       "watched_on": "2018-01-01",
       "title": "Valerian and the City of a Thousand Planets (2017)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "valerian-and-the-city-of-a-thousand-planets"
     },
     {
       "watched_on": "2016-05-22",
       "title": "Sweet Bean (2015)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "sweet-bean"
     },
     {
       "watched_on": "2016-05-21",
       "title": "The Thomas Crown Affair (1999)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-thomas-crown-affair-1999"
     },
     {
       "watched_on": "2016-05-21",
       "title": "Zootopia (2016)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "zootopia"
     },
     {
       "watched_on": "2016-05-20",
       "title": "Hail, Caesar! (2016)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "hail-caesar-2016"
     },
     {
       "watched_on": "2016-05-18",
       "title": "Virgin Mountain (2015)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "virgin-mountain"
     },
     {
       "watched_on": "2016-05-14",
       "title": "The Killing (1956)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "the-killing"
     },
     {
       "watched_on": "2016-05-14",
       "title": "London Has Fallen (2016)",
       "rating": 0.5,
       "stars": "½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "london-has-fallen"
     },
     {
       "watched_on": "2016-05-07",
       "title": "10 Cloverfield Lane (2016)",
       "rating": 4,
       "stars": "★★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "10-cloverfield-lane"
     },
     {
       "watched_on": "2011-12-04",
       "title": "A Dangerous Method (2011)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "a-dangerous-method"
     },
     {
       "watched_on": "2011-11-13",
       "title": "30 Minutes or Less (2011)",
       "rating": 2.5,
       "stars": "★★½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "30-minutes-or-less"
     },
     {
       "watched_on": "2011-11-12",
       "title": "Friends with Benefits (2011)",
       "rating": 2,
       "stars": "★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "friends-with-benefits"
     },
     {
       "watched_on": "2011-11-12",
       "title": "Larry Crowne (2011)",
       "rating": 0.5,
       "stars": "½",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "larry-crowne"
     },
     {
       "watched_on": "2011-10-29",
       "title": "Contagion (2011)",
       "rating": 3,
       "stars": "★★★",
-      "rewatched": false
+      "rewatched": false,
+      "permalink": "contagion"
     }
   ]
 }

@@ -297,6 +297,7 @@ img.lazy.error {
   max-width: 800px;
 }
 
+.About__content a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after,
 .Page__content a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after,
 .Post__content ul li a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after,
 .Post__content p a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after {

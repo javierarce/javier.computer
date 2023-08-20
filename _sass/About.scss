@@ -1,10 +1,11 @@
 
+.Layout__about ul li a,
 .Layout__about p a,
 .Layout__about p a:hover {
   color: var(--link); 
 }
 
-.Layout__about .Content__inner {
+.Layout__about .About__content {
     width: var(--width);
     font-size: 1.2em;
 }

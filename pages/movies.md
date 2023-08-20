@@ -1,26 +1,22 @@
 ---
-layout: movies
-className: Movies
 title: Movies
+layout: tables_two
+className: Movies
 category: page
 permalink: movies
 description: Movies I've watched
 ---
 
+{% assign sorted_movies = site.data.movies.movies | sort: 'watched_on' | reverse %}
+{% assign grouped_movies = sorted_movies | group_by_exp: "movie", "movie.watched_on | date: '%B %Y'" %}
 
-<table class="Movies">
-<thead>
-    <tr>
-      <th style="text-align: left">Movie</th>
-      <th style="text-align: left">Watched on</th>
-      <th style="text-align: left">Rating</th>
-    </tr>
-  </thead>
-  {% for movie in site.data.movies.movies -%}
-  <tr>
-  <td>{{ movie.title }}</td>
-  <td>{{ movie.watched_on }}</td>
-  <td>{{ movie.stars }}</td>
-  </tr>
-  {% endfor -%}
-</table>
+{% for group in grouped_movies %}
+
+## {{ group.name }} ({{ group.items.size }})
+
+| Day     | Title   |  Rating    |
+|:--------|:--------|:-----------|
+{% for movie in group.items -%}
+| {{ movie.watched_on | date: "%d" }} | [{{ movie.title }}](https://letterboxd.com/javier/film/{{ movie.permalink }}) | {{ movie.stars }} |
+{% endfor %}
+{% endfor -%}

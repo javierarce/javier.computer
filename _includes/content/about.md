@@ -1,18 +1,22 @@
 <weather-snitch></weather-snitch>
 
-### About this and that
+My name is Javier Arce, <em>comme tout le monde</em>. I love [making things
+online](/projects), [taking pictures](/photos), [reading](/books),
+[drawing](https://drawings.javierarce.com), and [watching movies](/movies).
 
-Hi, stranger, welcome to my little computer on the net!
+Currently, I work at [Automattic](https://automattic.com) as Senior Product Designer.
 
-This website contains a wiki, several blog posts, a collection of silly songs,
-a pun, a hidden passage to another dimension, a ghost story, a list of dog names, a list of names
-that are not dog names, references to my early memories, several photos of
-myself eating ice cream, a mirror, a coin, a yellow bird, a photo of your turtle, a
-turtle.
+You can also find me at:
 
-I get sad when I only spend my time consuming instead of making things. This
-website is my attempt to spend more time thinking, documenting, and making.
+- [Letterboxd](https://letterboxd.com/javier)
+- [GitHub](https://github.com/javierarce)
+- [Mastodon](https://network.javier.computer/@javier)
+- [Instagram](https://instagram/@javier)
 
-If you like what you are reading, add this [RSS](/feed.xml) feed to your
-favorite feed reader to get the updates. And if you need to contact me and tell
-me something incredible, [use this link](https://javier.computer/contact).
+### Updates and contact
+
+Add this [RSS](/feed.xml) feed to your favorite feed reader to receive updates.
+
+If you need to tell me something incredible that happened to you
+recently, [use this link](https://javier.computer/contact).
+
