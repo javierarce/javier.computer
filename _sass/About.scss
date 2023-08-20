@@ -1,8 +1,7 @@
-
 .Layout__about ul li a,
 .Layout__about p a,
 .Layout__about p a:hover {
-  color: var(--link); 
+    color: var(--link); 
 }
 
 .Layout__about .About__content {
@@ -10,7 +9,8 @@
     font-size: 1.2em;
 }
 
-.Layout__about table td:not(:first-child) {
+.Layout__about p + ul {
+    margin-bottom: 1em;
 }
 
 .Layout__about table ul {
