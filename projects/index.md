@@ -37,6 +37,7 @@ className: Table
 
 | Title | Description | Tags |
 |:-------|:-------|:---- |
+|[Walking Poem](https://walk.javier.computer) | A website that writes psychogeographical poems using real Google Maps directions from your current location to a random place around you. | <span class="tag">web</span> <span class="tag">javascript</span> |
 |[Music Snitch](https://github.com/javierarce/music-snitch) | Show the music you are currently scrobbling. | <span class="tag">web</span> <span class="tag">javascript</span> |
 
 ### 2022
