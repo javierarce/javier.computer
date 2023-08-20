@@ -83,7 +83,37 @@ table tr:last-child td {
   border: none;
 }
 
-//table a,
-//table a:hover {
-  //color: var(--link); 
-//}
+@media all and (max-width: 640px) {
+  .Layout__movies table,
+  .Layout__books table {
+    width: 100%;
+  }
+
+.Layout__books h2,
+.Layout__movies h2 {
+  margin-bottom: 2em;
+}
+
+.Layout__movies table tr:last-child,
+.Layout__books table tr:last-child {
+  border: none;
+}
+
+  .Layout__movies table tr ,
+  .Layout__books table tr {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--gray);
+    padding: 0.4em 0;
+  }
+  .Layout__movies table thead ,
+  .Layout__books table thead {
+    display: none;
+  }
+  .Layout__movies table td ,
+  .Layout__books table td {
+    width: 100% !important;
+    padding: 0.2em 0;
+    border: none;
+  }
+}
