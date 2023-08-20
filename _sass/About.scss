@@ -24,7 +24,7 @@
 }
 
 @media all and (max-width: 1024px) {
-    .Layout__about .Content__inner,
+    .Layout__about .About__content,
     .Layout__about {
         width: 100%;
         margin: 0;
@@ -32,7 +32,7 @@
 }
 
 @media all and (max-width: 640px) {
-    .Layout__about .Content__inner,
+    .Layout__about .About__content,
     .Layout__about {
         width: 100%;
         margin: 0;
