@@ -12,7 +12,7 @@ description: Movies I've watched
 
 {% for group in grouped_movies %}
 
-## {{ group.name }} ({{ group.items.size }})
+### {{ group.name }} ({{ group.items.size }})
 
 | Day     | Title   |  Rating    |
 |:--------|:--------|:-----------|

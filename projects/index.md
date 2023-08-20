@@ -2,7 +2,7 @@
 title: Projects
 permalink: projects
 layout: table
-className: Table
+className: Projects
 ---
 
 ### Documented projects 

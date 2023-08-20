@@ -15,7 +15,7 @@ permalink: books
 
 {% if sorted_books_reading.size > 0 -%}
 
-## Reading
+### Reading
 
 | Title   | Author  | Read       | Rating |
 |:--------|:--------|:-----------|:-------|
@@ -32,7 +32,7 @@ permalink: books
 
 {% for group in grouped_books -%}
 
-## {{ group.name }}
+### {{ group.name }}
 
 | Title   | Author  | Read       | Rating |
 |:--------|:--------|:-----------|:-------|
