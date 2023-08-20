@@ -1,4 +1,4 @@
-/*.Book {
+.Book {
   margin: 0 auto 3em;
   font-size: 1.2em;
   break-inside: avoid;
@@ -37,6 +37,19 @@
   opacity: 0.7;
 }
 
+.Book__cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 0 2em;
+}
+
+.Book__cover img  {
+  width: 500px;
+}
+
+/*
 .Book__content {
   margin: 0 0 1em;
 }
