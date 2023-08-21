@@ -6,5 +6,5 @@ author: Bernie De Koven
 started: 2023-08-20
 read:
 status: reading
-cover: 
+cover: the-well-played-game.jpg
 ---

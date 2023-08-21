@@ -1,0 +1,16 @@
+---
+layout: base
+className: About
+---
+<div class="Content">
+    {% include navigation.html %}
+
+    <div class="About__content">
+        {% if page.weather -%}
+        <weather-snitch></weather-snitch>
+        {% endif -%}
+        {{ content }}
+    </div>
+
+    {% include footer.html %}
+</div>

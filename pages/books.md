@@ -3,6 +3,8 @@ title: "Books"
 layout: table
 className: Books
 description: Books
+category: page
+description: Books I'm reading, I've read, I want to read
 permalink: books
 ---
 

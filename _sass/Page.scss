@@ -4,6 +4,10 @@
   width: 800px;
 }
 
+.Page a {
+    color: var(--link);
+}
+
 .Page img {
   display: block;
   max-width: 400px;
@@ -35,9 +39,6 @@
   user-select: none;
   text-decoration: none;
   font-weight: normal;
-}
-
-@media all and (max-width: 1280px) {
 }
 
 @media all and (max-width: 1024px) {

@@ -7,7 +7,7 @@ class RSS extends HTMLElement {
     this.styles = document.createElement('style')
     this.styles.innerHTML = `
       rss-reader { display: block; margin: 0 0 1em 0; }
-      ::part(blog), ::part(entry) { text-decoration: none; color: #fff }
+      ::part(blog), ::part(entry) { text-decoration: none; color: #ffc107; text-decoration: underline; }
       ::part(post) { opacity: 0; visibility: hidden; transition: opacity 250ms ease-in-out; }
       ::part(entry) { text-decoration: underline; }
       ::part(date) { font-size: 0.8em; }

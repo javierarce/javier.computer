@@ -1,6 +1,6 @@
 ---
 title: Movies
-layout: tables_two
+layout: tables
 className: Movies
 category: page
 permalink: movies

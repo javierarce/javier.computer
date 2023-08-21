@@ -2,7 +2,9 @@
 title: Projects
 permalink: projects
 layout: table
+category: page
 className: Projects
+description: List of personal projects
 ---
 
 ### Documented projects 
