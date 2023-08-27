@@ -11,9 +11,6 @@ My name is [Javier Arce](/me), <em>comme tout le monde</em>. I'm very into: [mak
 
 {% include now.md %}
 
-I get sad when I only spend my time consuming instead of making things. This
-online place is my attempt to spend more time thinking, documenting, and making.
-
 This website contains a wiki, several blog posts, a collection of silly songs,
 a pun, a hidden passage to another dimension, a ghost story, a list of dog names,
 a list of names that are not dog names, references to my early memories, several photos of
