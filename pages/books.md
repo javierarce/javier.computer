@@ -19,14 +19,14 @@ permalink: books
 
 ### Reading
 
-| Title   | Author  | Read       | Rating |
+| Title   | Author  | Started       | Rating |
 |:--------|:--------|:-----------|:-------|
 {% for book in sorted_books_reading -%}
 {% assign content = book.content | strip_newlines -%}
 {% if content != "" -%}
-| [{{ book.title }}]({{ book.url }}) | {{ book.author }} | - | - |
+| [{{ book.title }}]({{ book.url }}) | {{ book.author }} | {{ book.started }} | - |
 {% else -%}
-| {{ book.title }} | {{ book.author }} | - | - |
+| {{ book.title }} | {{ book.author }} | {{ book.started }} | - |
 {% endif -%}
 {% endfor -%}
 

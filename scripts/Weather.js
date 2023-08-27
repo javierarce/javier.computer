@@ -3,11 +3,9 @@ class Weather extends HTMLElement {
     super()
   }
 
-  connectedCallback () {
-    fetch('/location.json').then(response => response.json()).then((json) => {
-      this.getWeatherFor(json.city, json.coordinates)
-    })
-  }
+    connectedCallback () {
+        this.getWeatherFor(USER_LOCATION.city, USER_LOCATION.coordinates)
+    }
 
   getWeatherFor (city, coordinates) {
     const WEATHER_ENDPOINT = `https://api.javier.computer/api/weather?coordinates=${coordinates}`
