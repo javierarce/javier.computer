@@ -1,0 +1,108 @@
+.Drawings.is-v3 {
+  .Drawings__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .Drawing {
+  }
+
+  .Drawing img {
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    background-size: cover;
+  }
+
+  .Drawing__title {
+    display: block;
+  }
+
+
+  @media (max-width: 1023px) {
+    .Drawings__content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .Drawings__content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .Drawing img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+}
+
+/* -------------------------------------------- */
+
+.Drawings.is-v2 {
+  .Drawings__content {
+    column-count: 1;
+    column-gap: 1.4em;
+  }
+  .Drawing img {
+    width: 100%;
+  }
+}
+
+/* -------------------------------------------- */
+
+.Drawing__image {
+  max-width: 1024px;
+  margin: auto;
+}
+
+.Drawings.is-v1 {
+  max-width: 1440px;
+  margin: auto;
+}
+
+.Drawings__content {
+  column-count: 2;
+  column-gap: 3em;
+}
+
+.Drawing {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin: 0 0 3em;
+  break-inside: avoid;
+  gap: 0.4em;
+}
+
+.Drawing img {
+  width: 100%;
+}
+
+.Drawing__link {
+  display: flex;
+}
+
+.Drawing__image {
+  width: 100%;
+}
+
+.Drawing__image img {
+  width: 100%;
+}
+
+@media (max-width: 1023px) {
+  .Drawings__content {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 767px) {
+  .Drawings__content {
+    column-count: 1;
+  }
+}
