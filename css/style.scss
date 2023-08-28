@@ -13,6 +13,7 @@
 @import 'Button';
 @import 'Calendar';
 @import 'Checklist';
+@import 'Drawing';
 @import 'Figure';
 @import 'Footer';
 @import 'Header';
@@ -71,6 +72,14 @@
 .is-hidden {
   display: none;
 }
+
+.is-now {
+  border: 1px solid #ae81ff;
+  border-radius: 4px;
+  padding: 0.8em;
+  margin: 0 0 1em;
+}
+
 
 body {
   color: var(--text);

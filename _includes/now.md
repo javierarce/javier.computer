@@ -12,4 +12,6 @@
   {% endif %}
 {% endfor %}
 
-Right now I'm in {{ site.data.location.city }}, {{ site.data.location.country }}. Currently reading: {{ book_titles }}. <music-snitch data-username='javierarce' data-key ='78b4ae34c84de1d5fc6510338300bd78'></music-snitch>
+<div class="is-now">
+    Right now I'm in {{ site.data.location.city }}, {{ site.data.location.country }}. Currently reading: {{ book_titles }}. <music-snitch data-username='javierarce' data-key ='78b4ae34c84de1d5fc6510338300bd78'></music-snitch>
+</div>
