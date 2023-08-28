@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-version: 6.0.0
+version: 6.0.1
 title: "Javier's computer"
 description: "My computer on the net"
 baseurl: "" 
@@ -56,6 +56,9 @@ collections:
   maps:
     output: true
     permalink: '/map/:path/'
+  drawings:
+    output: true
+    permalink: 'drawings/:path/'
   photos:
     output: true
     permalink: '/photos/:path/'
