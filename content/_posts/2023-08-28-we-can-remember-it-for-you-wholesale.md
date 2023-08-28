@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "we-can-remember-it-for-you-wholesale"
+title: "We Can Remember It for You Wholesale"
 date: "2023-08-28 08:56:17 +0200"
 ---
 
