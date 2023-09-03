@@ -15,5 +15,5 @@
 
 
 <div class="is-now">
-    Right now I'm in {{ site.data.location.city }}, {{ site.data.location.country }}. Currently reading: {{ book_titles }}. The last movie I watched was {{ last_movie.title }}. <music-snitch data-username='javierarce' data-key ='78b4ae34c84de1d5fc6510338300bd78'></music-snitch>
+    Right now I'm in {{ site.data.location.city }}, {{ site.data.location.country }}. Currently reading: {{ book_titles }}. The last movie I watched was "{{ last_movie.title }}". <music-snitch data-username='javierarce' data-key ='78b4ae34c84de1d5fc6510338300bd78'></music-snitch>
 </div>
