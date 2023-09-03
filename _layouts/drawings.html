@@ -1,0 +1,21 @@
+---
+layout: base
+className: Drawings
+---
+<div class="Content">
+  {% include navigation.html -%}
+
+  <div class="Drawings is-v1">
+    <div class="Drawings__content">
+      {% for drawing in site.drawings %}
+      {% assign thumb = drawing.thumb %}
+      <div class="Drawing">
+        <a href="{{ drawing.url }}" class="Drawing__link"><img src="/img/drawings/{{ drawing.dir }}/{{ thumb }}" alt="{{ drawing.title }}" /></a>
+        <div class="Drawing__title">{{ drawing.title }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  {% include footer.html -%}
+</div>

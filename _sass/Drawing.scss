@@ -54,9 +54,44 @@
 
 /* -------------------------------------------- */
 
-.Drawing__image {
+.Drawing__content {
+  margin: 0 0 4em 0;
+  font-size: 1.2em;
+  max-width: 800px;
+}
+
+.Drawing__header {
+  text-align: center;
+  max-width: 1024px;
+  margin: 0 auto 2em auto;
+  font-size: 1.2em;
+}
+
+.Drawing__header > * {
+  opacity: 0.5;
+}
+
+.Drawing__header a {
+  text-decoration: none;
+}
+
+
+.Drawing:hover .Drawing__title {
+  opacity: 0.8;
+}
+
+.Drawing__title {
+  text-align: center;
   max-width: 1024px;
   margin: auto;
+  margin: 0 auto 2em auto;
+  font-size: 1.2em;
+  opacity: 0.5;
+}
+
+.Drawing__image {
+  margin: auto;
+  max-width: 90vw;
 }
 
 .Drawings.is-v1 {
@@ -65,8 +100,9 @@
 }
 
 .Drawings__content {
-  column-count: 2;
-  column-gap: 3em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 0.4em;
 }
 
 .Drawing {
@@ -74,7 +110,7 @@
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  margin: 0 0 3em;
+  margin: 0 0 2em;
   break-inside: avoid;
   gap: 0.4em;
 }
@@ -97,12 +133,12 @@
 
 @media (max-width: 1023px) {
   .Drawings__content {
-    column-count: 2;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 767px) {
   .Drawings__content {
-    column-count: 1;
+    grid-template-columns: repeat(1, 1fr);
   }
 }

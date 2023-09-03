@@ -16,6 +16,13 @@
   margin: 0 0 0 0.8em;
 }
 
+.Navigation__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
 .Navigation__link {
   text-decoration: none;
   opacity: 0.5;
