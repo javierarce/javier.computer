@@ -1,7 +1,23 @@
 {
-  "updated_at": "2023-08-28",
-  "count": 479,
+  "updated_at": "2023-09-03",
+  "count": 481,
   "movies": [
+    {
+      "watched_on": "2023-09-03",
+      "title": "Wake in Fright (1971)",
+      "rating": 4.5,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "wake-in-fright"
+    },
+    {
+      "watched_on": "2023-08-29",
+      "title": "Revanche (2008)",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "revanche"
+    },
     {
       "watched_on": "2023-08-27",
       "title": "Paper Moon (1973)",
