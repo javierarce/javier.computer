@@ -1,6 +1,6 @@
 {
   "updated_at": "2023-09-03",
-  "count": 481,
+  "count": 480,
   "movies": [
     {
       "watched_on": "2023-09-03",
@@ -161,14 +161,6 @@
       "stars": "★★★★",
       "rewatched": false,
       "permalink": "smooth-talk"
-    },
-    {
-      "watched_on": "2023-07-25",
-      "title": "Decalogue II (1989)",
-      "rating": 3.5,
-      "stars": "★★★½",
-      "rewatched": false,
-      "permalink": "decalogue-ii"
     },
     {
       "watched_on": "2023-07-25",
