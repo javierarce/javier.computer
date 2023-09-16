@@ -1,10 +1,10 @@
 ---
 title: "The Shards"
 layout: book
-rating: ""
+rating: "★★★½"
 author: "Bret Easton Ellis"
 started: 2023-08-26
-read: 
-status: reading
+read: 2023-09-15
+status: read
 cover:
 ---

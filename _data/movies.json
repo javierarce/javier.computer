@@ -1,7 +1,55 @@
 {
-  "updated_at": "2023-09-03",
-  "count": 480,
+  "updated_at": "2023-09-16",
+  "count": 486,
   "movies": [
+    {
+      "watched_on": "2023-09-16",
+      "title": "Gaslight (1944)",
+      "rating": 4.5,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "gaslight-1944"
+    },
+    {
+      "watched_on": "2023-09-16",
+      "title": "The French Connection (1971)",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "the-french-connection"
+    },
+    {
+      "watched_on": "2023-09-11",
+      "title": "Stroszek (1977)",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "stroszek"
+    },
+    {
+      "watched_on": "2023-09-10",
+      "title": "Chinatown (1974)",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": true,
+      "permalink": "chinatown"
+    },
+    {
+      "watched_on": "2023-09-10",
+      "title": "Prime Cut (1972)",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "prime-cut"
+    },
+    {
+      "watched_on": "2023-09-03",
+      "title": "Telemarketers (2023)",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "telemarketers-2023"
+    },
     {
       "watched_on": "2023-09-03",
       "title": "Wake in Fright (1971)",

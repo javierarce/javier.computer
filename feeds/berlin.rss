@@ -8,119 +8,119 @@
     <title>RSS feed de berlin</title>
     <link>http://localhost:4001/feeds/berlin.rss</link>
     <description>Sitios en berlin</description>
-    <pubDate>Mon, 21 Aug 2023 09:38:22 +0200</pubDate>
+    <pubDate>Sat, 16 Sep 2023 23:49:08 +0200</pubDate>
     <item>
       <title>Bartleby &amp; Co</title>
       <link>http://localhost:4001/maps/berlin</link>
       <description>&lt;br&gt;&lt;br&gt;Boppstraße 2&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Mon, 21 Aug 2023 09:38:22 +0200</pubDate>
+      <pubDate>Sat, 16 Sep 2023 23:49:08 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2023-08-21T09:38:22+02:00</dc:date>
+      <dc:date>2023-09-16T23:49:08+02:00</dc:date>
     </item>
     <item>
       <title>do you read me?!</title>
       <link>http://localhost:4001/maps/berlin</link>
       <description>El sitio de revistas&lt;br&gt;&lt;br&gt;Auguststraße 28&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Mon, 21 Aug 2023 09:38:22 +0200</pubDate>
+      <pubDate>Sat, 16 Sep 2023 23:49:08 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2023-08-21T09:38:22+02:00</dc:date>
+      <dc:date>2023-09-16T23:49:08+02:00</dc:date>
     </item>
     <item>
       <title>Café Strauss</title>
       <link>http://localhost:4001/maps/berlin</link>
       <description>Un café muy tranquilo frente a un cementerio muy tranquilo (espero).&lt;br&gt;&lt;br&gt;Bergmannstraße, 42&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Mon, 21 Aug 2023 09:38:22 +0200</pubDate>
+      <pubDate>Sat, 16 Sep 2023 23:49:08 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2023-08-21T09:38:22+02:00</dc:date>
+      <dc:date>2023-09-16T23:49:08+02:00</dc:date>
     </item>
     <item>
       <title>Father Carpenter Coffee Brewers</title>
       <link>http://localhost:4001/maps/berlin</link>
       <description>Mucha cola durante el fin de semana, mejor ir muy pronto o evitar directamente.&lt;br&gt;&lt;br&gt;Münzstraße, 21, Scheunenviertel&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Mon, 21 Aug 2023 09:38:22 +0200</pubDate>
+      <pubDate>Sat, 16 Sep 2023 23:49:08 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2023-08-21T09:38:22+02:00</dc:date>
+      <dc:date>2023-09-16T23:49:08+02:00</dc:date>
     </item>
     <item>
       <title>Motto Berlin</title>
       <link>http://localhost:4001/maps/berlin</link>
       <description>Libros, revistas, publicaciones y ediciones de artistas&lt;br&gt;&lt;br&gt;Skalitzer Straße, 68, Luisenstadt&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Mon, 21 Aug 2023 09:38:22 +0200</pubDate>
+      <pubDate>Sat, 16 Sep 2023 23:49:08 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2023-08-21T09:38:22+02:00</dc:date>
+      <dc:date>2023-09-16T23:49:08+02:00</dc:date>
     </item>
     <item>
       <title>Photoautomat: Kulturbrauerei</title>
       <link>http://localhost:4001/maps/berlin</link>
       <description>Photoautomat&lt;br&gt;&lt;br&gt;Schönhauser Allee 63&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Mon, 21 Aug 2023 09:38:22 +0200</pubDate>
+      <pubDate>Sat, 16 Sep 2023 23:49:08 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2023-08-21T09:38:22+02:00</dc:date>
+      <dc:date>2023-09-16T23:49:08+02:00</dc:date>
     </item>
     <item>
       <title>Town Mouse Coffee</title>
       <link>http://localhost:4001/maps/berlin</link>
       <description>&lt;br&gt;&lt;br&gt;Marienburger Str. 5&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Mon, 21 Aug 2023 09:38:22 +0200</pubDate>
+      <pubDate>Sat, 16 Sep 2023 23:49:08 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2023-08-21T09:38:22+02:00</dc:date>
+      <dc:date>2023-09-16T23:49:08+02:00</dc:date>
     </item>
     <item>
       <title>Dotori Korean Anju Bar</title>
       <link>http://localhost:4001/maps/berlin</link>
       <description>Bonitísimo y compactísimo y riquísimo bar de tapas coreanas.&lt;br&gt;&lt;br&gt;Gustav-Adolf-Straße 159&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Mon, 21 Aug 2023 09:38:22 +0200</pubDate>
+      <pubDate>Sat, 16 Sep 2023 23:49:08 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2023-08-21T09:38:22+02:00</dc:date>
+      <dc:date>2023-09-16T23:49:08+02:00</dc:date>
     </item>
     <item>
       <title>tenzan lab.</title>
       <link>http://localhost:4001/maps/berlin</link>
       <description>Kakigōris y taiyakis&lt;br&gt;&lt;br&gt;Wörther Straße, 22&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Mon, 21 Aug 2023 09:38:22 +0200</pubDate>
+      <pubDate>Sat, 16 Sep 2023 23:49:08 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2023-08-21T09:38:22+02:00</dc:date>
+      <dc:date>2023-09-16T23:49:08+02:00</dc:date>
     </item>
     <item>
       <title>Modulor</title>
       <link>http://localhost:4001/maps/berlin</link>
       <description>Modulor Material Total&lt;br&gt;&lt;br&gt;Prinzenstraße, 85&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Mon, 21 Aug 2023 09:38:22 +0200</pubDate>
+      <pubDate>Sat, 16 Sep 2023 23:49:08 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2023-08-21T09:38:22+02:00</dc:date>
+      <dc:date>2023-09-16T23:49:08+02:00</dc:date>
     </item>
     <item>
       <title>Ma-Makan</title>
       <link>http://localhost:4001/maps/berlin</link>
       <description>Delicias malayas y singapurenses. Ojito al «Kaya croissant».&lt;br&gt;&lt;br&gt;Lausitzer Pl. 12&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Mon, 21 Aug 2023 09:38:22 +0200</pubDate>
+      <pubDate>Sat, 16 Sep 2023 23:49:08 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2023-08-21T09:38:22+02:00</dc:date>
+      <dc:date>2023-09-16T23:49:08+02:00</dc:date>
     </item>
     <item>
       <title>Bonanza</title>
       <link>http://localhost:4001/maps/berlin</link>
       <description>&lt;br&gt;&lt;br&gt;Adalbertstraße, 70&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Mon, 21 Aug 2023 09:38:22 +0200</pubDate>
+      <pubDate>Sat, 16 Sep 2023 23:49:08 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2023-08-21T09:38:22+02:00</dc:date>
+      <dc:date>2023-09-16T23:49:08+02:00</dc:date>
     </item>
     <item>
       <title>Zola</title>
       <link>http://localhost:4001/maps/berlin</link>
       <description>La «Zola Neapolitan mit Fior di Latte, Birne, Walnüssen und Gorgonzola» estaba muy rica.&lt;br&gt;&lt;br&gt;Paul-Lincke-Ufer, 39-40&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Mon, 21 Aug 2023 09:38:22 +0200</pubDate>
+      <pubDate>Sat, 16 Sep 2023 23:49:08 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2023-08-21T09:38:22+02:00</dc:date>
+      <dc:date>2023-09-16T23:49:08+02:00</dc:date>
     </item>
     <item>
       <title>Trauma Bar und Kino</title>
       <link>http://localhost:4001/maps/berlin</link>
       <description>Club, bar, cine, sala de conciertos y arte. Aquí se celebró el quinto aniversario de New Models. Está cerca de Berlin Hauptbahnhof. No hay mucho más alrededor.&lt;br&gt;&lt;br&gt;Heidestraße, 50&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
-      <pubDate>Mon, 21 Aug 2023 09:38:22 +0200</pubDate>
+      <pubDate>Sat, 16 Sep 2023 23:49:08 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2023-08-21T09:38:22+02:00</dc:date>
+      <dc:date>2023-09-16T23:49:08+02:00</dc:date>
     </item>
-    <dc:date>2023-08-21T09:38:22+02:00</dc:date>
+    <dc:date>2023-09-16T23:49:08+02:00</dc:date>
   </channel>
 </rss>
