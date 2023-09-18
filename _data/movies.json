@@ -1,7 +1,31 @@
 {
-  "updated_at": "2023-09-16",
-  "count": 486,
+  "updated_at": "2023-09-18",
+  "count": 489,
   "movies": [
+    {
+      "watched_on": "2023-09-17",
+      "title": "Talk to Me (2022)",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "talk-to-me-2022"
+    },
+    {
+      "watched_on": "2023-09-17",
+      "title": "The Red Shoes (1948)",
+      "rating": 5,
+      "stars": "★★★★★",
+      "rewatched": false,
+      "permalink": "the-red-shoes"
+    },
+    {
+      "watched_on": "2023-09-17",
+      "title": "Retribution (2015)",
+      "rating": 1,
+      "stars": "★",
+      "rewatched": false,
+      "permalink": "retribution-2015"
+    },
     {
       "watched_on": "2023-09-16",
       "title": "Gaslight (1944)",
