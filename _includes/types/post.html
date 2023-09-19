@@ -4,7 +4,7 @@
   {% if post.show_title -%}
   <div class="Post__title">{{ post.title }}</div>
   {% endif -%}
-  <div class="Post__content">
+<div class="Post__content{% if post.extraClassName %} {{ post.extraClassName }}{% endif %}">
     {% if post.content contains "<!-- more -->" -%}
     {{ post.content | split:"<!-- more -->" | first }}
     <div class="Post__more">
@@ -17,12 +17,10 @@
   <div class="Post__footer">
     <a href="{{ post.url }}" class="Post__date">{{ post.date | date: '%B %d, %Y' }}</a> 
     
-    <!-- Check if post contains locations -->
     {% if post.locations %}
     &middot; 
     <a href="/maps/{{ post.locations[0].location }}" class="Post__location-link">{{ matching_location.title }}</a>
     {% endif %}
-    <!-- End check -->
 
   </div>
 </div>

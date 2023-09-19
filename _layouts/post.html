@@ -6,7 +6,7 @@ className: Post
   {% include navigation.html -%}
 
   <div class="Post">
-    <div class="Post__content">
+    <div class="Post__content{% if page.extraClassName %} {{ page.extraClassName }}{% endif %}">
       {{ content }}
     </div>
 

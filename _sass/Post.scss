@@ -104,6 +104,11 @@
   border-radius: 2px;
 }
 
+.Post .Post__content.invites p img {
+  max-width: 400px;
+  margin: 0;
+}
+
 @media all and (max-width: 1024px) {
   .Diary .Post,
   .Post {
