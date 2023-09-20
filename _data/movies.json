@@ -1,7 +1,15 @@
 {
-  "updated_at": "2023-09-18",
-  "count": 489,
+  "updated_at": "2023-09-20",
+  "count": 490,
   "movies": [
+    {
+      "watched_on": "2023-09-20",
+      "title": "The Snake Pit (1948)",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "the-snake-pit"
+    },
     {
       "watched_on": "2023-09-17",
       "title": "Talk to Me (2022)",
