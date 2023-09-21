@@ -1,12 +1,17 @@
 ---
 layout: drawing
-title: "Taller Botánico"
+title: "Hands"
 date: "2023-08-22 09:52:00 +0200"
 show_title: true
-dir: one
+dir: hands
 thumb: thumb.png
 filenames: 
-- 01.png
-- 02.png
-- 03.png
+- 1.png
+- 2.png
+- 3.png
+- 4.png
+- 5.png
+- 6.png
+- 7.png
+- 8.png
 ---

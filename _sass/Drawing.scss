@@ -121,14 +121,30 @@
 
 .Drawing__link {
   display: flex;
+  transition: all 140ms ease-in-out;
 }
 
-.Drawing__image {
-  width: 100%;
+.Drawing__title {
+  display: none;
+}
+
+.Drawing__link:hover {
+  transform: rotate(-5deg);
+}
+
+.Drawing__link:odd:hover {
+  transform: rotate(5deg);
 }
 
 .Drawing__image img {
   width: 100%;
+}
+
+@media (max-width: 1294px) {
+  .Drawing__image img {
+    height: auto;
+    width: 100%;
+  }
 }
 
 @media (max-width: 1023px) {

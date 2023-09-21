@@ -6,12 +6,11 @@ show_title: true
 dir: city
 thumb: thumb.png
 filenames: 
-- 01.png
-- 02.png
-- 03.png
+- 1.png
+- 2.png
+- 3.png
+- 4.png
+- 5.png
 - 6.png
 - 7.png
-- 8.png
-- 9.png
-- 10.png
 ---
