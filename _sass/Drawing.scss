@@ -75,6 +75,20 @@
   text-decoration: none;
 }
 
+.Drawing__pagination {
+  text-align: center;
+  max-width: 1024px;
+  margin: 0 auto 2em auto;
+  font-size: 1.2em;
+}
+
+.Drawing__pagination > * {
+  opacity: 0.5;
+}
+
+.Drawing__pagination a {
+  text-decoration: none;
+}
 
 .Drawing:hover .Drawing__title {
   opacity: 0.8;
@@ -92,6 +106,7 @@
 .Drawing__image {
   margin: auto;
   max-width: 90vw;
+  margin: 0 auto 2em auto;
 }
 
 .Drawings.is-v1 {
