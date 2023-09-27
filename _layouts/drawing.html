@@ -12,7 +12,7 @@ className: Drawing
     {{ page.title }} 
   </div>
 
-  <div class="Drawing__image">
+  <div class="Drawing__image {% if page.fullheight == true -%}is-fullheight{% endif -%}">
     {% if page.content %}
     <div class="Drawing__content">
       {{ page.content }}
