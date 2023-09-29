@@ -1,7 +1,23 @@
 {
-  "updated_at": "2023-09-20",
-  "count": 490,
+  "updated_at": "2023-09-29",
+  "count": 492,
   "movies": [
+    {
+      "watched_on": "2023-09-25",
+      "title": "Barry Lyndon (1975)",
+      "rating": 4.5,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "barry-lyndon"
+    },
+    {
+      "watched_on": "2023-09-23",
+      "title": "Bottoms (2023)",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "bottoms"
+    },
     {
       "watched_on": "2023-09-20",
       "title": "The Snake Pit (1948)",

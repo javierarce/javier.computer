@@ -1,6 +1,6 @@
 ---
 layout: photos/photo
-title: "Carrer de Plato"
+title: "Carrer de Plató"
 date: "2023-09-28 21:47:03 +0200"
 category: photo
 location: barcelona
