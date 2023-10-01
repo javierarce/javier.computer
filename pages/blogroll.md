@@ -11,7 +11,7 @@ description: A list of blogs and newsletters that I enjoy reading
 className: Blogroll
 ---
 
-### Favorite blogs
+### Blogs favoritos
 
 - <rss-reader data-title="Alejandra's blog" data-author="Alejandra Striuk" data-url="https://striuk.tumblr.com" data-feed="rss"></rss-reader>
 - <rss-reader data-title="Ariana's blog"  data-author="Ariana Escobar" data-url="https://blog.arianaescobar.com" data-feed="feed.rss"></rss-reader>
@@ -25,8 +25,9 @@ className: Blogroll
 - <rss-reader data-title="v's blog" data-author="v buckenham" data-url="https://v21.io/blog" data-feed="feed.xml"></rss-reader>
 - <rss-reader data-title="Ideas, essays, and projects" data-author="Steph Ango" data-url="https://stephanango.com" data-feed="feed.xml"></rss-reader>
 
-### Favorite newsletters
+### Newsletters favoritas
 
-- [DADA issues](https://bluebed.substack.com) by Roman Muradov
-- [Design Harder](https://designharder.substack.com) by Erik Carter
-- [Nonintrusive Monthly Email](https://us9.campaign-archive.com/home/?u=a4c8b2c7fbc757f10dbda8808&id=dfc484dd24) by Joana Estrela
+- [DADA issues](https://bluebed.substack.com) de Roman Muradov
+- [Design Harder](https://designharder.substack.com) de Erik Carter
+- [Gárgola Digital](https://gargoladigital.substack.com) de Ainhoa Marzol.
+- [Nonintrusive Monthly Email](https://us9.campaign-archive.com/home/?u=a4c8b2c7fbc757f10dbda8808&id=dfc484dd24) de Joana Estrela

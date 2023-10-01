@@ -31,7 +31,7 @@ class RSS extends HTMLElement {
     blog.part = 'blog'
 
     const author = document.createElement('span')
-    author.textContent = ` by ${this.author}`
+    author.textContent = ` de ${this.author}`
 
     title.appendChild(blog)
     title.appendChild(author)
@@ -57,7 +57,7 @@ class RSS extends HTMLElement {
 
     const entryDate = document.createElement('span')
     const ago = this.distance(Date.parse(lastEntry.published))
-    entryDate.textContent = ago ? ` ${ago} ago` : ''
+    entryDate.textContent = ago ? `hace ${ago}` : ''
     entryDate.part = 'date'
 
     const titleElement = this.shadow.querySelector('span');
@@ -80,25 +80,25 @@ class RSS extends HTMLElement {
 
       if (time > (1000 * 60 * 60 * 24 * 365)) {
         humanTime = parseInt(time / (1000 * 60 * 60 * 24 * 365), 10)
-        units = humanTime == 1 ? 'year' : 'years'
+        units = humanTime == 1 ? 'año' : 'años'
       } else if (time > (1000 * 60 * 60 * 24 * 30)) {
         humanTime = parseInt(time / (1000 * 60 * 60 * 24 * 30), 10)
-        units = humanTime == 1 ? 'month' : 'months'
+        units = humanTime == 1 ? 'mes' : 'meses'
       } else if (time > (1000 * 60 * 60 * 24 * 7)) {
         humanTime = parseInt(time / (1000 * 60 * 60 * 24 * 7), 10)
-        units = humanTime == 1 ? 'week' : 'weeks'
+        units = humanTime == 1 ? 'semana' : 'semanas'
       } else if (time > (1000 * 60 * 60 * 24)) {
         humanTime = parseInt(time / (1000 * 60 * 60 * 24), 10)
-        units = humanTime == 1 ? 'day' : 'days'
+        units = humanTime == 1 ? 'día' : 'días'
       } else if (time > (1000 * 60 * 60)) {
         humanTime = parseInt(time / (1000 * 60 * 60), 10)
-        units = humanTime == 1 ? 'hour' : 'hours'
+        units = humanTime == 1 ? 'hora' : 'horas'
       } else if (time > (1000 * 60)) {
         humanTime = parseInt(time / (1000 * 60), 10)
-        units = humanTime == 1 ? 'minute' : 'minutes'
+        units = humanTime == 1 ? 'minuto' : 'minutos'
       } else {
         humanTime = parseInt(time / (1000), 10)
-        units = humanTime == 1 ? 'second' : 'seconds'
+        units = humanTime == 1 ? 'segundo' : 'segundos'
       }
 
       const timeUnits = humanTime + ' ' + units
