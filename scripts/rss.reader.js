@@ -56,13 +56,14 @@ class RSS extends HTMLElement {
   render (data) {
     const lastEntry = data.entries[0]
 
+  console.log('test')
     const entryDate = document.createElement('span')
     const ago = this.distance(Date.parse(lastEntry.published))
     entryDate.textContent = ago ? ` ${ago} ago` : ''
     entryDate.part = 'date'
 
-    const titleElement = this.shadow.querySelector('span');
-    titleElement.appendChild(entryDate)
+    const titleElement = this.shadow.querySelector('.is-url');
+    titleElement.parentNode.insertBefore(entryDate, titleElement.nextSibling)
     this.classList.add('is-loaded')
   }
 
