@@ -14,7 +14,7 @@ My name is [Javier Arce](/me), <em>comme tout le monde</em>. I'm very into: [mak
 ### About this site
 
 This website contains a wiki, several blog posts, a collection of silly songs,
-a pun, a hidden passage to another dimension, a ghost story, a list of dog names,
+a pun, a [blogroll](/blogroll), a hidden passage to another dimension, a ghost story, a list of dog names,
 a list of names that are not dog names, references to my early memories, several photos of
 myself eating ice cream, a mirror, a coin, a yellow bird, a photo of your turtle, a
 turtle.
