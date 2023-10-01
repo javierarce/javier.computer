@@ -57,7 +57,7 @@ class RSS extends HTMLElement {
 
     const entryDate = document.createElement('span')
     const ago = this.distance(Date.parse(lastEntry.published))
-    entryDate.textContent = ago ? `hace ${ago}` : ''
+    entryDate.textContent = ago ? ` hace ${ago}` : ''
     entryDate.part = 'date'
 
     const titleElement = this.shadow.querySelector('span');
