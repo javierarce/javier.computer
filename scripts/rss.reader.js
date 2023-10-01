@@ -11,8 +11,7 @@ class RSS extends HTMLElement {
       ::part(post) { opacity: 0; visibility: hidden; transition: opacity 250ms ease-in-out; }
       ::part(entry) { text-decoration: underline; }
       ::part(date) { font-size: 0.8em; }
-      rss-reader.is-loaded::part(post) { opacity: 1; visibility: visible; }
-      rss-reader.is-loaded::part(entry) { opacity: 1; color: #ffff; visibility: visible; }
+      rss-reader.is-loaded::part(post) { opacity: 0.4; visibility: visible; }
       `
 
     document.head.appendChild(this.styles)
@@ -58,20 +57,14 @@ class RSS extends HTMLElement {
   render (data) {
     const lastEntry = data.entries[0]
 
-    const entry = document.createElement('div')
+    const entry = document.createElement('span')
     entry.part = 'post'
-
-    const entryLink = document.createElement('a')
-    entryLink.textContent = lastEntry.title
-    entryLink.href = lastEntry.link
-    entryLink.part = 'entry'
 
     const entryDate = document.createElement('span')
     const ago = this.distance(Date.parse(lastEntry.published))
     entryDate.textContent = ago ? ` ${ago} ago` : ''
     entryDate.part = 'date'
 
-    //entry.appendChild(entryLink)
     entry.appendChild(entryDate)
     this.shadow.appendChild(entry)
     this.classList.add('is-loaded')
