@@ -11,7 +11,7 @@ class RSS extends HTMLElement {
       ::part(post) { opacity: 0; visibility: hidden; transition: opacity 250ms ease-in-out; }
       ::part(entry) { text-decoration: underline; }
       ::part(date) { font-size: 0.8em; }
-      rss-reader.is-loaded::part(post) { opacity: 0.4; visibility: visible; }
+      rss-reader.is-loaded::part(post) { opacity: 1; color: #ffff; visibility: visible; }
       `
 
     document.head.appendChild(this.styles)
