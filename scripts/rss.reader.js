@@ -23,7 +23,7 @@ class RSS extends HTMLElement {
     this.title = this.getAttribute("data-title")
     this.author = this.getAttribute("data-author")
 
-    const title = document.createElement('span')
+    const title = document.createElement('div')
     const blog = document.createElement('a')
 
     blog.textContent = this.title
@@ -56,9 +56,6 @@ class RSS extends HTMLElement {
   render (data) {
     const lastEntry = data.entries[0]
 
-    const entry = document.createElement('span')
-    entry.part = 'post'
-
     const entryDate = document.createElement('span')
     const ago = this.distance(Date.parse(lastEntry.published))
     entryDate.textContent = ago ? ` ${ago} ago` : ''
@@ -66,9 +63,6 @@ class RSS extends HTMLElement {
 
     const titleElement = this.shadow.querySelector('span');
     titleElement.appendChild(entryDate)
-
-    //entry.appendChild(entryDate)
-    //this.shadow.appendChild(entry)
     this.classList.add('is-loaded')
   }
 
