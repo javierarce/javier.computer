@@ -16,6 +16,7 @@ description: A list of blogs and newsletters that I enjoy reading
 - <rss-reader data-title="Ariana's blog"  data-author="Ariana Escobar" data-url="https://blog.arianaescobar.com" data-feed="feed.rss"></rss-reader>
 - <rss-reader data-title="Erica's blog" data-author="Erica Fustero" data-url="https://www.ericafustero.com" data-feed="feed"></rss-reader>
 - <rss-reader data-title="Feed" data-author="Mu-An Chiou" data-url="https://muan.co" data-feed="feed.xml"></rss-reader>
+- <rss-reader data-title="Notes" data-author="Mu-An Chiou" data-url="https://muan.co" data-feed="notes.xml"></rss-reader>
 - <rss-reader data-title="Interconnected" data-author="Matt Webb" data-url="https://interconnected.org/home" data-feed="feed"></rss-reader>
 - <rss-reader data-title="Notes" data-author="Sam Lavigne" data-url="https://lav.io/notes" data-feed="index.xml"></rss-reader>
 - <rss-reader data-title="Notes, blog posts, etc." data-author="Robin Sloan" data-url="https://www.robinsloan.com" data-feed="feed.xml"></rss-reader>
