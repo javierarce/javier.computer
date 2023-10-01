@@ -8,6 +8,7 @@ show_title: false
 show_date: false
 show_description: false
 description: A list of blogs and newsletters that I enjoy reading
+className: Blogroll
 ---
 
 ### Favorite blogs

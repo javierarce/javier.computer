@@ -6,12 +6,13 @@ class RSS extends HTMLElement {
   connectedCallback() {
     this.styles = document.createElement('style')
     this.styles.innerHTML = `
-      rss-reader { display: block; margin: 0 0 1em 0; }
+      rss-reader { display: block; margin: 0 0 0 0; }
       ::part(blog), ::part(entry) { text-decoration: none; color: #ffc107; text-decoration: underline; }
       ::part(post) { opacity: 0; visibility: hidden; transition: opacity 250ms ease-in-out; }
       ::part(entry) { text-decoration: underline; }
       ::part(date) { font-size: 0.8em; }
-      rss-reader.is-loaded::part(post) { opacity: 1; color: #ffff; visibility: visible; }
+      rss-reader.is-loaded::part(post) { opacity: 1; visibility: visible; }
+      rss-reader.is-loaded::part(entry) { opacity: 1; color: #ffff; visibility: visible; }
       `
 
     document.head.appendChild(this.styles)
@@ -42,7 +43,7 @@ class RSS extends HTMLElement {
     try {
       this.fetch(`//api.javier.computer/api/feed/${URL}`)
     } catch (e) {
-      console.log('meeeh')
+      console.error(e)
     }
   }
 
@@ -70,7 +71,7 @@ class RSS extends HTMLElement {
     entryDate.textContent = ago ? ` ${ago} ago` : ''
     entryDate.part = 'date'
 
-    entry.appendChild(entryLink)
+    //entry.appendChild(entryLink)
     entry.appendChild(entryDate)
     this.shadow.appendChild(entry)
     this.classList.add('is-loaded')
