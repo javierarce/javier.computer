@@ -6,11 +6,10 @@ class RSS extends HTMLElement {
   connectedCallback() {
     this.styles = document.createElement('style')
     this.styles.innerHTML = `
-      rss-reader { display: block; margin: 0 0 1em 0; }
+      rss-reader { display: block; margin: 0 0 0 0; }
       ::part(blog) { text-decoration: none; color: #ffc107; text-decoration: underline; }
-      ::part(post) { opacity: 0; visibility: hidden; transition: opacity 250ms ease-in-out; }
-      ::part(date) { font-size: 0.8em; }
-      rss-reader.is-loaded::part(post) { opacity: 0.4; visibility: visible; }
+      ::part(date) { opacity: 0; visibility: hidden; transition: opacity 250ms ease-in-out; font-size: 0.8em; }
+      rss-reader.is-loaded::part(date) { opacity: 0.4; visibility: visible; }
       `
 
     document.head.appendChild(this.styles)
@@ -23,7 +22,7 @@ class RSS extends HTMLElement {
     this.title = this.getAttribute("data-title")
     this.author = this.getAttribute("data-author")
 
-    const title = document.createElement('div')
+    const title = document.createElement('span')
     const blog = document.createElement('a')
 
     blog.textContent = this.title
@@ -56,14 +55,13 @@ class RSS extends HTMLElement {
   render (data) {
     const lastEntry = data.entries[0]
 
-  console.log('test')
     const entryDate = document.createElement('span')
     const ago = this.distance(Date.parse(lastEntry.published))
     entryDate.textContent = ago ? ` ${ago} ago` : ''
     entryDate.part = 'date'
 
-    const titleElement = this.shadow.querySelector('.is-url');
-    titleElement.parentNode.insertBefore(entryDate, titleElement.nextSibling)
+    const titleElement = this.shadow.querySelector('span');
+    titleElement.appendChild(entryDate)
     this.classList.add('is-loaded')
   }
 
