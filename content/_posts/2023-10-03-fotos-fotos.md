@@ -9,6 +9,7 @@ filenames:
 - DSCF0407
 - DSCF0434
 camera: Fujifilm X-T5
+hidden: true
 ---
 
 
