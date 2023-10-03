@@ -12,9 +12,11 @@ className: Book
         <div class="Book__author">{{ page.author }}</div>
       </div>
       <div class="Book__page">
+          {% if page.cover -%}
         <div class="Book__cover">
           <img src="/img/covers/{{page.cover}}" alt="Cover for {{page.title}}">
         </div>
+          {% endif -%}
         {{ content }}
       </div>
     </div>
