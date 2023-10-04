@@ -41,9 +41,9 @@ permalink: books
 {% for book in group.items -%}
 {% assign content = book.content | strip_newlines -%}
 {% if content != "" -%}
-| [{{ book.title }}]({{ book.url }}) | {{ book.author }} | {{ book.read }} | {{ book.rating }} |
+| [{{ book.title }}{% if book.subtitle -%}: {{ book.subtitle }}{% endif -%}]({{ book.url }}) | {{ book.author }} | {{ book.read }} | {{ book.rating }} |
 {% else -%}
-| {{ book.title }} | {{ book.author }} | {{ book.read }} | {{ book.rating }} |
+| {{ book.title }}{% if book.subtitle -%}: {{ book.subtitle }}{% endif -%} | {{ book.author }} | {{ book.read }} | {{ book.rating }} |
 {% endif -%}
 {% endfor %}
 {% endfor -%}
