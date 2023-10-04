@@ -14,8 +14,8 @@ permalink: about
   {% assign photos = photos | plus: current_count %}
 {% endfor %}
 
-My name is [Javier Arce](/me), <em>comme tout le monde</em>. I'm very into: [making things online](/projects)
-[photographing](/photos), [reading](/books), [drawing](https://drawings.javierarce.com), and [watching movies](/movies).
+My name is [Javier Arce](/me), <em>comme tout le monde</em>. I'm very into: [making things online](/projects),
+[taking pictures](/photos), [reading](/books), [drawing](https://drawings.javierarce.com), and [watching movies](/movies).
 
 {% include now.md %}
 
