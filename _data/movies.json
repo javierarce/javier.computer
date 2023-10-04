@@ -1,7 +1,23 @@
 {
-  "updated_at": "2023-09-29",
-  "count": 492,
+  "updated_at": "2023-10-04",
+  "count": 494,
   "movies": [
+    {
+      "watched_on": "2023-10-03",
+      "title": "Welcome Back, Mr. McDonald (1997)",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "welcome-back-mr-mcdonald"
+    },
+    {
+      "watched_on": "2023-10-01",
+      "title": "Deathtrap (1982)",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "deathtrap"
+    },
     {
       "watched_on": "2023-09-25",
       "title": "Barry Lyndon (1975)",
