@@ -1,7 +1,119 @@
 {
-  "updated_at": "2023-10-04",
-  "count": 494,
+  "updated_at": "2023-10-16",
+  "count": 508,
   "movies": [
+    {
+      "watched_on": "2023-10-15",
+      "title": "The Equalizer 3 (2023)",
+      "rating": 1.5,
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "the-equalizer-3"
+    },
+    {
+      "watched_on": "2023-10-15",
+      "title": "Broadcast News (1987)",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "broadcast-news"
+    },
+    {
+      "watched_on": "2023-10-14",
+      "title": "Brute Force (1947)",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "brute-force"
+    },
+    {
+      "watched_on": "2023-10-13",
+      "title": "Red Rooms (2023)",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "red-rooms"
+    },
+    {
+      "watched_on": "2023-10-13",
+      "title": "Superposition (2023)",
+      "rating": 1.5,
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "superposition-2023"
+    },
+    {
+      "watched_on": "2023-10-12",
+      "title": "Don't Look Now (1973)",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "dont-look-now"
+    },
+    {
+      "watched_on": "2023-10-11",
+      "title": "The Chapel (2023)",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "the-chapel-2023-1"
+    },
+    {
+      "watched_on": "2023-10-10",
+      "title": "The Appointment (1981)",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "the-appointment-1981"
+    },
+    {
+      "watched_on": "2023-10-10",
+      "title": "The Uncle (2022)",
+      "rating": 1.5,
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "the-uncle-2022"
+    },
+    {
+      "watched_on": "2023-10-09",
+      "title": "You'll Never Find Me (2023)",
+      "rating": 1.5,
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "youll-never-find-me"
+    },
+    {
+      "watched_on": "2023-10-08",
+      "title": "The Boy and the Heron (2023)",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "the-boy-and-the-heron"
+    },
+    {
+      "watched_on": "2023-10-07",
+      "title": "Late Night with the Devil (2023)",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "late-night-with-the-devil"
+    },
+    {
+      "watched_on": "2023-10-06",
+      "title": "Sister Death (2023)",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "sister-death"
+    },
+    {
+      "watched_on": "2023-10-06",
+      "title": "Sleep (2023)",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "sleep-2023"
+    },
     {
       "watched_on": "2023-10-03",
       "title": "Welcome Back, Mr. McDonald (1997)",
