@@ -1,7 +1,63 @@
 {
-  "updated_at": "2023-10-16",
-  "count": 508,
+  "updated_at": "2023-10-29",
+  "count": 515,
   "movies": [
+    {
+      "watched_on": "2023-10-29",
+      "title": "The Naked City (1948)",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "the-naked-city"
+    },
+    {
+      "watched_on": "2023-10-29",
+      "title": "Mandibles (2020)",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "mandibles"
+    },
+    {
+      "watched_on": "2023-10-27",
+      "title": "Peeping Tom (1960)",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "peeping-tom"
+    },
+    {
+      "watched_on": "2023-10-26",
+      "title": "Thieves' Highway (1949)",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "thieves-highway"
+    },
+    {
+      "watched_on": "2023-10-25",
+      "title": "The People Under the Stairs (1991)",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "the-people-under-the-stairs"
+    },
+    {
+      "watched_on": "2023-10-23",
+      "title": "The Purge (2013)",
+      "rating": 1.5,
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "the-purge"
+    },
+    {
+      "watched_on": "2023-10-17",
+      "title": "Topkapi (1964)",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "topkapi"
+    },
     {
       "watched_on": "2023-10-15",
       "title": "The Equalizer 3 (2023)",
