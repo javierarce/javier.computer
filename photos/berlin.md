@@ -1,6 +1,6 @@
 ---
 layout: photos/album
-title: Berlin
+title: Berlín
 location: berlin
 permalink: photos/berlin
 ---
