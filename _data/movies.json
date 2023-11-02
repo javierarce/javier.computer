@@ -1,7 +1,23 @@
 {
-  "updated_at": "2023-10-29",
-  "count": 515,
+  "updated_at": "2023-11-02",
+  "count": 517,
   "movies": [
+    {
+      "watched_on": "2023-11-01",
+      "title": "Killers of the Flower Moon (2023)",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "killers-of-the-flower-moon"
+    },
+    {
+      "watched_on": "2023-10-30",
+      "title": "Retribution (2023)",
+      "rating": 0.5,
+      "stars": "½",
+      "rewatched": false,
+      "permalink": "retribution-2023"
+    },
     {
       "watched_on": "2023-10-29",
       "title": "The Naked City (1948)",
