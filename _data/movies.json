@@ -1,7 +1,31 @@
 {
-  "updated_at": "2023-11-02",
-  "count": 517,
+  "updated_at": "2023-11-07",
+  "count": 520,
   "movies": [
+    {
+      "watched_on": "2023-11-04",
+      "title": "The Lady Eve (1941)",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "the-lady-eve"
+    },
+    {
+      "watched_on": "2023-11-03",
+      "title": "The Grifters (1990)",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": true,
+      "permalink": "the-grifters"
+    },
+    {
+      "watched_on": "2023-11-03",
+      "title": "Videodrome (1983)",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "videodrome"
+    },
     {
       "watched_on": "2023-11-01",
       "title": "Killers of the Flower Moon (2023)",
