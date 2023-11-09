@@ -5,6 +5,7 @@ date: "2023-08-22 09:52:00 +0200"
 show_title: true
 dir: stories
 thumb: thumb.png
+gap: true
 filenames: 
 - 1.png
 - 2.png
@@ -15,3 +16,5 @@ filenames:
 - 7.png
 - 8.png
 ---
+
+A small collection of stories I publish randomly [on my Instagram account](https://instagram.com/javier).

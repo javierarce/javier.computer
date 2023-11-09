@@ -2,6 +2,8 @@
 layout: base
 className: Drawing
 ---
+{% assign content = page.content | strip -%}
+
 <div class="Content">
   {% include navigation.html -%}
 
@@ -12,12 +14,9 @@ className: Drawing
     {{ page.title }} 
   </div>
 
-  <div class="Drawing__image {% if page.fullheight == true -%}is-fullheight{% endif -%}">
-    {% if page.content %}
-    <div class="Drawing__content">
-      {{ page.content }}
-    </div>
-    {% endif %}
+{% if content != nil and content != "" -%}<div class="Drawing__content">{{ content }}</div>{% endif -%}
+
+  <div class="Drawings {% if page.gap == true -%}is-gap{% endif -%} {% if page.fullheight == true -%}is-fullheight{% endif -%}">
 
     {% for filename in page.filenames %}
     <div class="Drawing">
@@ -28,7 +27,7 @@ className: Drawing
 
   <div class="Drawing__pagination">
     {% if page.previous -%}
-    <a href="{{ page.previous.url }}" title="{{ page.previous.title }}">← {{ page.previous.title }}</a>
+    <a href="{{ page.previous.url }}" title="{{ page.previous.title }}">←</a>
     &nbsp;
     &nbsp;
     {% endif -%}
@@ -37,7 +36,7 @@ className: Drawing
     &nbsp;
     &nbsp;
     <a href="{{ page.next.url }}" title="{{ page.next.title }}">
-      {{ page.next.title }} →
+      →
     </a>
     {% endif -%}
   </div>

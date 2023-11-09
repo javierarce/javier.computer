@@ -1,12 +1,12 @@
 ---
 layout: drawing
-title: "Guy"
+title: "SuperHi"
 date: "2023-08-22 09:52:00 +0200"
 show_title: true
-dir: guy
+dir: superhi
 thumb: thumb.png
 filenames: 
 - 1.png
-- 2.png
-- 3.png
 ---
+
+For a project I did for [SuperHi](https://www.superhi.com).

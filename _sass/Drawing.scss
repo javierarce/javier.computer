@@ -1,12 +1,13 @@
-.Drawings.is-v1 {
+.Drawings__thumbs {
   max-width: 1440px;
   margin: auto;
 }
 
 .Drawing__content {
-  margin: 0 0 4em 0;
   font-size: 1.2em;
-  max-width: 800px;
+  max-width: 1024px;
+  margin: 0 auto 2em;
+  text-align: center;
 }
 
 .Drawing__header {
@@ -26,13 +27,25 @@
 
 .Drawing__pagination {
   text-align: center;
+  width: 100%;
   max-width: 1024px;
   margin: 0 auto 2em auto;
   font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .Drawing__pagination > * {
   opacity: 0.5;
+}
+
+.Drawing__content a {
+  color: var(--link);
+}
+
+.Drawing__content a:hover {
+  color: var(--link); 
 }
 
 .Drawing__pagination a {
@@ -52,10 +65,17 @@
   opacity: 0.5;
 }
 
-.Drawing__image {
+.Drawings {
   margin: auto;
   max-width: 90vw;
   margin: 0 auto 2em auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.Drawings.is-gap {
+    gap: 4em;
 }
 
 .Drawings__content {
@@ -69,7 +89,6 @@
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  margin: 0 0 1em;
   break-inside: avoid;
   gap: 0.4em;
 }
@@ -95,18 +114,18 @@
   transform: rotate(5deg);
 }
 
-.Drawing__image.is-fullheight img {
+.Drawings.is-fullheight img {
   height: auto;
   width: 100%;
 }
 
-.Drawing__image img {
+.Drawings img {
   height: 100vh;
   width: auto;
 }
 
 @media (max-width: 1294px) {
-  .Drawing__image img {
+  .Drawings img {
     height: auto;
     width: 100%;
   }
