@@ -14,4 +14,5 @@ filenames:
 - 6.png
 - 7.png
 ---
-This is an assorted collection of drawings.
+
+Some assorted drawings from [my portfolio](https://drawings.javierarce.com).

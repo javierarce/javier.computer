@@ -1,9 +1,9 @@
 ---
 layout: drawing
-title: "City"
+title: "Houses"
 date: "2023-08-22 09:52:00 +0200"
 show_title: true
-dir: city
+dir: houses
 thumb: thumb.png
 filenames: 
 - 1.png
