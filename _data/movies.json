@@ -1,7 +1,15 @@
 {
-  "updated_at": "2023-11-07",
-  "count": 520,
+  "updated_at": "2023-11-10",
+  "count": 521,
   "movies": [
+    {
+      "watched_on": "2023-11-09",
+      "title": "The Killer (2023)",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "the-killer-2023"
+    },
     {
       "watched_on": "2023-11-04",
       "title": "The Lady Eve (1941)",

@@ -13,6 +13,6 @@ filenames:
 - 5.png
 - 6.png
 - 7.png
+- 8.png
 ---
-
 Some assorted drawings from [my portfolio](https://drawings.javierarce.com).
