@@ -18,11 +18,19 @@
     {% else -%}
     <a class="Navigation__link is-selected" href="/photos">Photos</a>
     {% endif -%}
+
+    {% if permalink != 'drawings' -%}
+    <a class="Navigation__link" href="/drawings">Drawings</a>
+    {% else -%}
+    <a class="Navigation__link is-selected" href="/drawings">Drawings</a>
+    {% endif -%}
+
     {% if permalink != 'projects' -%}
     <a class="Navigation__link" href="/projects">Projects</a>
     {% else -%}
     <a class="Navigation__link is-selected" href="/projects">Projects</a>
     {% endif -%}
+
     {% if permalink != 'about' -%}
     <a class="Navigation__link" href="/about">About</a>
     {% else -%}
