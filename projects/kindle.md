@@ -13,7 +13,7 @@ show_title: true
 
 <div class="Project__intro">
 <p>This project was a gift to one of my favorite communities
-, <a href="https://are.na">Are.na</a>. With <a href="https://arena.javierarce.com">Kindle to Arena</a> people can easily send highlights and notes from their Kindle reader into <strong>Are.na</strong>.</div>
+, <a href="https://are.na">Are.na</a>. With <a href="https://arena.javierarce.com">Kindle to Arena</a> people can easily send highlights and notes from their Kindle reader into <strong>Are.na</strong>.</p></div>
 
 <figure class="Figure"> 
 <img class="Figure__image is-bn lazy" data-src="https://javier.work/images/arena/home.jpg">
