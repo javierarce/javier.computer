@@ -43,7 +43,8 @@ layout: none
           <img src="https://img.javier.computer/{{ post.location }}/{{ post.filename }}_1280.jpg" alt="{{post.title}}" />  
         {% endif %}
         {{ post.content }}   
-        <p>{{ post.location | capitalize }}</p>
+          <p>{% if post.location -%} {{ post.location | capitalize }}. {% endif -%}
+             {% if post.camera -%}{{ post.camera }}.{% endif -%}</p>
         ]]>
       {% elsif post.category == 'quote' %}
         <p><blockquote>{{ post.content | xml_escape }}</blockquote></p>
