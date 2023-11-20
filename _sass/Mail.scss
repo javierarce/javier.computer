@@ -29,6 +29,11 @@
   margin: 0 0 1em;
 }
 
+.Label .is-optional {
+  opacity: 0.5;
+  font-size: 0.8em;
+}
+
 .Label__help {
   opacity: 0.5;
   font-size: 0.8em;
