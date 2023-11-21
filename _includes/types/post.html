@@ -4,7 +4,7 @@
   {% if post.show_title -%}
   <div class="Post__title p-name">{{ post.title }}</div>
   {% else -%}
-  <span class="p-name" style="display:none">{{ post.title }}</span>
+  <a href="https://javier.computer" class="p-name" style="display:none">{{ post.title }}</a>
   {% endif -%}
   <span class="p-author h-card" style="display:none;">{{ site.author }}</span>
   <div class="Post__content{% if post.extraClassName %} {{ post.extraClassName }}{% endif %} e-content">
