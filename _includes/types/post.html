@@ -3,9 +3,11 @@
 <div class="Post {% if post.highlighted -%} is-highlighted{% endif -%} h-entry">
   {% if post.show_title -%}
   <div class="Post__title p-name">{{ post.title }}</div>
-  <div class="Post__author p-author" style="display:none;">{{ site.author }}</div>
+  {% else -%}
+  <span class="p-name" style="display:none">{{ post.title }}</span>
   {% endif -%}
-<div class="Post__content{% if post.extraClassName %} {{ post.extraClassName }}{% endif %} e-content">
+  <span class="p-author" style="display:none;">{{ site.author }}</span>
+  <div class="Post__content{% if post.extraClassName %} {{ post.extraClassName }}{% endif %} e-content">
     {% if post.content contains "<!-- more -->" -%}
     {{ post.content | split:"<!-- more -->" | first }}
     <div class="Post__more">
@@ -17,7 +19,7 @@
   </div>
   <div class="Post__footer">
     <a href="{{ post.url }}" class="Post__date dt-published u-url">{{ post.date | date: '%B %d, %Y' }}</a> 
-    
+
     {% if post.locations %}
     &middot; 
     <a href="/maps/{{ post.locations[0].location }}" class="Post__location-link">{{ matching_location.title }}</a>
