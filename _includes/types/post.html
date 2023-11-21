@@ -1,10 +1,10 @@
 {% assign matching_location = site.locations | where: "location", post.location | first %}
 
-<div class="Post {% if post.highlighted -%} is-highlighted{% endif -%}">
+<div class="Post {% if post.highlighted -%} is-highlighted{% endif -%} h-entry">
   {% if post.show_title -%}
   <div class="Post__title">{{ post.title }}</div>
   {% endif -%}
-<div class="Post__content{% if post.extraClassName %} {{ post.extraClassName }}{% endif %}">
+<div class="Post__content{% if post.extraClassName %} {{ post.extraClassName }}{% endif %} e-content">
     {% if post.content contains "<!-- more -->" -%}
     {{ post.content | split:"<!-- more -->" | first }}
     <div class="Post__more">
@@ -15,7 +15,7 @@
     {% endif -%}
   </div>
   <div class="Post__footer">
-    <a href="{{ post.url }}" class="Post__date">{{ post.date | date: '%B %d, %Y' }}</a> 
+    <a href="{{ post.url }}" class="Post__date dt-published u-url">{{ post.date | date: '%B %d, %Y' }}</a> 
     
     {% if post.locations %}
     &middot; 
