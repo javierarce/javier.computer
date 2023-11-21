@@ -6,7 +6,7 @@
   {% else -%}
   <span class="p-name" style="display:none">{{ post.title }}</span>
   {% endif -%}
-  <span class="p-author" style="display:none;">{{ site.author }}</span>
+  <span class="p-author h-card" style="display:none;">{{ site.author }}</span>
   <div class="Post__content{% if post.extraClassName %} {{ post.extraClassName }}{% endif %} e-content">
     {% if post.content contains "<!-- more -->" -%}
     {{ post.content | split:"<!-- more -->" | first }}
