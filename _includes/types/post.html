@@ -2,7 +2,8 @@
 
 <div class="Post {% if post.highlighted -%} is-highlighted{% endif -%} h-entry">
   {% if post.show_title -%}
-  <div class="Post__title">{{ post.title }}</div>
+  <div class="Post__title p-name">{{ post.title }}</div>
+  <div class="Post__author p-author" style="display:none;">{{ site.author }}</div>
   {% endif -%}
 <div class="Post__content{% if post.extraClassName %} {{ post.extraClassName }}{% endif %} e-content">
     {% if post.content contains "<!-- more -->" -%}
