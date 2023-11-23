@@ -12,7 +12,7 @@ Suscríbete a mi newsletter para recibir avisos cuando publique un nuevo proyect
 <div class="Contact">
 <form class="Form" method="post" action="https://mailer.javier.computer/subscription/form">
 <input type="hidden" name="nonce" />
-<input type="hidden" name="l" value="0b657bbf-0d5c-4d1d-8e57-91c3d439be8b"/>
+<input type="hidden" name="l" value="badb923e-7363-43d0-9c15-3fc1c78c32c8"/>
 <label class="Label" for="email">Email</label>
 <div class="Input__field">
 <input class="Input" type="email" name="email" required placeholder="" />
