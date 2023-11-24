@@ -38,8 +38,3 @@ This site doesn't track you, your friends, or your enemies.
 
 If you like what you are reading (and why wouldn't you), add this [RSS](/feed.xml) feed to your favorite feed reader to get the updates. And if you need to tell me something incredible that happened to you recently, [use this
 link](https://javier.computer/contact).
-
-
-### hCard
-
-<a href="https://javier.computer/" class="h-card" rel="me">Javier Arce</a>
