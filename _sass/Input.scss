@@ -7,7 +7,6 @@ textarea, input {
 .Input__field {
   width: 100%;
   transition: border 150ms ease-in-out;
-  margin: 0 0.4em 0 0;
 }
 
 .Input,
@@ -18,7 +17,6 @@ textarea, input {
   outline: none;
   border-radius: 2px;
   width: 100%;
-  padding: 0.8em;
 }
 
 
@@ -35,10 +33,6 @@ textarea, input {
 
 .Textarea:focus,
 .Input:focus {
-  border: 1px solid #fff;
-}
-
-.Input:focus {
-  border: 1px solid #fff;
+  border: 1px solid var(--white);
 }
 

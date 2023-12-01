@@ -1,0 +1,35 @@
+.Form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.Form .Input {
+  margin: 0 0 2em;
+}
+
+.Form.is-error .Message,
+.Form.was-sent .Message {
+  opacity: 1;
+}
+
+.Form.is-error .Message {
+  color: yellow;
+}
+
+.Label {
+  font-weight: 500;
+  margin: 0 0 0.8em;
+}
+
+.Label .is-optional {
+  opacity: 0.5;
+  font-size: 0.8em;
+}
+
+.Label__help {
+  opacity: 0.5;
+  font-size: 0.8em;
+  margin: 0 0 1em;
+}

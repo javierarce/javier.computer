@@ -1,8 +1,7 @@
 ---
 layout: about
-title:  About
-description: "Javier's computer"
-title: subscribe
+title:  Subscribe
+description: Newsletter
 permalink: subscribe
 className: About
 ---

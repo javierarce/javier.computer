@@ -19,45 +19,10 @@
   .Layout__contact .Textarea {
     width: 100%;
   }
+
   .Layout__contact .Button {
     width: 100%;
   }
-}
-
-.Label {
-  font-weight: 500;
-  margin: 0 0 1em;
-}
-
-.Label .is-optional {
-  opacity: 0.5;
-  font-size: 0.8em;
-}
-
-.Label__help {
-  opacity: 0.5;
-  font-size: 0.8em;
-  margin: 0 0 2em;
-}
-
-.Form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-.Form .Input {
-  margin: 0 0 1em;
-}
-
-.Form.is-error .Message,
-.Form.was-sent .Message {
-  opacity: 1;
-}
-
-.Form.is-error .Message {
-  color: yellow;
 }
 
 .Message {
@@ -74,4 +39,3 @@
 .Actions .Button {
   margin: 0 1em 0 0;
 }
-
