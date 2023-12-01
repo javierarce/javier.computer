@@ -1,7 +1,47 @@
 {
-  "updated_at": "2023-11-21",
-  "count": 525,
+  "updated_at": "2023-12-01",
+  "count": 530,
   "movies": [
+    {
+      "watched_on": "2023-12-01",
+      "title": "Mississippi Burning (1988)",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": true,
+      "permalink": "mississippi-burning"
+    },
+    {
+      "watched_on": "2023-11-28",
+      "title": "Night Moves (1975)",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "night-moves"
+    },
+    {
+      "watched_on": "2023-11-26",
+      "title": "Knock at the Cabin (2023)",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "knock-at-the-cabin"
+    },
+    {
+      "watched_on": "2023-11-26",
+      "title": "Force of Evil (1948)",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "force-of-evil"
+    },
+    {
+      "watched_on": "2023-11-25",
+      "title": "Pickpocket (1959)",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": true,
+      "permalink": "pickpocket"
+    },
     {
       "watched_on": "2023-11-21",
       "title": "Charulata (1964)",

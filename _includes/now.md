@@ -32,7 +32,7 @@
   {% when 3 %}
     {% assign rating_phrase = "and it was good." %}
   {% when 3.5 %}
-    {% assign rating_phrase = "and it was very good." %}
+    {% assign rating_phrase = "and it was quite good." %}
   {% when 4 %}
     {% assign rating_phrase = "and it was great." %}
   {% when 4.5 %}
