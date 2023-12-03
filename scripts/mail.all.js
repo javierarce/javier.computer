@@ -176,9 +176,9 @@ class Mail {
     })
 
     $input.appendChild(this.$content)
+    $input.appendChild($help)
     this.$form.appendChild($label)
     this.$form.appendChild($input)
-    this.$form.appendChild($help)
   }
 
   renderSendButton () {
