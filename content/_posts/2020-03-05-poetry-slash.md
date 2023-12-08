@@ -2,6 +2,7 @@
 layout: post
 title: Poetry Slash
 date: 2020-03-05 19:17 +0100
+tags: [newsletter]
 ---
 
 <h3>Poetry Slash <sup>1</sup></h3>
@@ -27,5 +28,5 @@ más lo peta ahora mismo.
 ---
 
 <div class="Footnotes">
-<sub>1</sub> Actualización 8 de abbil de 2020: obviamente el recital ha sido cancelado por… la Situación.
+<sub>1</sub> Actualización 8 de abril de 2020: obviamente el recital ha sido cancelado por… la Situación.
 </div>

@@ -1,5 +1,5 @@
 Jekyll::Hooks.register :posts, :post_write do |post|
-  all_existing_tags = Dir.entries("tag")
+  all_existing_tags = Dir.entries("tags")
     .map { |t| t.match(/(.*).md/) }
     .compact.map { |m| m[1] }
 

@@ -3,10 +3,18 @@
 <div class="Post__footer">
   <a href="{{ post.url }}" class="Post__date">{{ page.date | date: '%B %d, %Y' -}}</a>
 
-    {% if page.locations %}
-    &middot; 
-    <a href="/maps/{{ page.locations[0].location }}" class="Post__location-link">{{ matching_location.title }}</a>
-    {% endif %}
+  {% if page.locations %}
+  &middot; 
+  <a href="/maps/{{ page.locations[0].location }}" class="Post__location-link">{{ matching_location.title }}</a>
+  {% endif %}
+
+  {% if page.tags.size > 0 %}
+  &middot; 
+
+  {% for tag in page.tags %}
+  <a href="/tags/{{ tag | slugify }}" class="Post__tag-link">#{{ tag }}</a>
+  {% endfor %}
+  {% endif %}
 
   {% include pagination.html post=page -%}
 </div>

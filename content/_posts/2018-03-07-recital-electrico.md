@@ -3,6 +3,7 @@ layout: post
 title: "Recital Eléctrico"
 date: "2018-03-07 11:32:00 +0200"
 show_title: true
+tags: [newsletter]
 ---
 
 ¡Hola!

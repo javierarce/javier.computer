@@ -1,7 +1,23 @@
 {
-  "updated_at": "2023-12-01",
-  "count": 530,
+  "updated_at": "2023-12-04",
+  "count": 532,
   "movies": [
+    {
+      "watched_on": "2023-12-03",
+      "title": "Fail Safe (1964)",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "fail-safe"
+    },
+    {
+      "watched_on": "2023-12-02",
+      "title": "Cobweb (2023)",
+      "rating": 0.5,
+      "stars": "½",
+      "rewatched": false,
+      "permalink": "cobweb-2023"
+    },
     {
       "watched_on": "2023-12-01",
       "title": "Mississippi Burning (1988)",

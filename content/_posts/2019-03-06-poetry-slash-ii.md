@@ -3,6 +3,7 @@ layout: post
 title: "Poetry Slash II"
 date: "2019-03-06 15:12:21 +0200"
 show_title: true
+tags: [newsletter]
 ---
 
 Querido/a amigo/a,

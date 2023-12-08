@@ -3,6 +3,7 @@ layout: post
 title: "Taller Botánico"
 date: "2018-02-16 09:52:00 +0200"
 show_title: true
+tags: [newsletter]
 ---
 
 Estás recibiendo este mensaje porque en algún momento del pasado te
