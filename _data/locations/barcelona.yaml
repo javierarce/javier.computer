@@ -215,3 +215,11 @@
   - url: "/2023/07/04/sato-tanaka"
     title: Sato Tanaka
     date: '2023-07-04 22:21:20 +0200'
+- title: "Aiueno"
+  permalink: "aiueno"
+  description: "El menú degustación es muy rico y barato"
+  address: "C/ del Rosselló, 296"
+  latlng:
+    - 41.40015960859618
+    -  2.1666981984329343
+  location: "barcelona"
