@@ -159,7 +159,7 @@ class Map extends Base {
   }
 
   selectMarkerByPermalink (permalink) {
-    const marker = this.getMarkers().find(marker => marker.options.location.permalink === permalink)
+    const marker = this.getMarkers().find(marker => marker.options.location.pid === permalink)
     if (marker) {
       this.selectedMarkerOrderId = marker.options.location.id -1
       this.selectMarker(marker, 18)
@@ -186,6 +186,11 @@ class Map extends Base {
 
     const marker = markers[this.selectedMarkerOrderId % markers.length]
     this.selectMarker(marker, 18)
+    const location = marker.options.location
+    const permalink = location.pid
+
+    window.history.pushState({}, '', '/maps/' + location.location + '/' + permalink)
+    window.history.pushState({}, '', )
   }
 
   getPrevMarker (markers, id) {
@@ -278,8 +283,6 @@ class Map extends Base {
       classNames.push('has-emoji')
     }
 
-    console.log(classNames)
-
     return new L.divIcon({
       className: classNames.join(' '),
       html,
@@ -355,14 +358,12 @@ class App {
     this.render()
     this.bindEvents()
 
-    const queryString = window.location.search
-    const urlParams = new URLSearchParams(queryString)
-    const permalink = urlParams.get('p')
+    const queryString = window.location.href
+    const permalink = queryString.split('/').pop()
 
     if (permalink) {
       this.map.selectMarkerByPermalink(permalink)
     }
-
   }
 
   bindKeyEvents () {
@@ -439,6 +440,9 @@ class App {
           }
           this.scrollIntoView($element)
           this.previousLocationID = id
+          const location = this.locations[id - 1]
+          const permalink = location.pid
+          window.history.pushState({}, '', '/maps/' + location.location + '/' + permalink)
         }
       })
 
@@ -446,7 +450,11 @@ class App {
 
     this.$locations.querySelectorAll('.js-location').forEach(($element) => {
       $element.addEventListener('click', (event) => {
-        this.showLocation(+$element.dataset.id)
+        const id = +$element.dataset.id
+        this.showLocation(id)
+        const location = this.locations[id - 1]
+        const permalink = location.pid
+        window.history.pushState({}, '', '/maps/' + location.location + '/' + permalink)
       })
     })
 

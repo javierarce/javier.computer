@@ -3,12 +3,8 @@ layout: post
 title: "Kasa Hanaka"
 date: "2023-06-04 19:58:59 +0200"
 location: barcelona
-locations:
-- title: Cafetería Japonesa Kasa Hanaka
-  description: Una cafetería y sitio de almuerzos (y solo almuerzos) japo-catalán escondido y muy recomendable.
-  address: "Carrer de Saragossa, 29"
-  latlng: [41.401696340168684, 2.149860615288348]
-  location: barcelona
+places:
+- hanaka
 ---
 
 Kasa Hanaka con Orlando y Álvaro · [WarGames](https://letterboxd.com/javier/film/wargames)

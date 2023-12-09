@@ -14,12 +14,8 @@ filenames:
 - R0002200
 - R0002207
 - R0002214
-locations: 
-- title: Santa Mònica
-  description: Centro interdisciplinario de artes dedicado a impulsar la creación contemporánea
-  address: "La Rambla, 7"
-  latlng: [41.377393737045395, 2.1756821241850046]
-  location: barcelona
+places: 
+- santa-monica
 ---
 
 [Retallar i enganxar: un taller d' "enganxines"](https://artssantamonica.gencat.cat/ca/detall/Tallers-menors)
