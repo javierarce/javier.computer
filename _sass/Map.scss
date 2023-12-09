@@ -5,6 +5,21 @@
   --white: #FFFFFF;
   --black: #000000;
 }
+.Layout__map .Navigation {
+  margin: 0 0 3em;
+}
+
+.Trip__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.Trip__title {
+  margin: 0 0 1em;
+}
+
 .BigMap {
   display: flex;
   flex-direction: row;

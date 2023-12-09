@@ -1,20 +1,10 @@
 [
   {
-    "title": "Bartleby & Co",
-    "description": null,
-    "address": "Boppstraße 2",
-    "latlng": [
-      52.493500792859805,
-      13.435139298296505
-    ],
-    "location": "berlin",
-    "post_references": [
-
-    ]
-  },
-  {
+    "layout": "place",
+    "pid": "doyoureadme",
+    "date": "2023-03-31 20:34:33 +0200",
     "title": "do you read me?!",
-    "description": "El sitio de revistas",
+    "description": null,
     "address": "Auguststraße 28",
     "latlng": [
       52.52726714641086,
@@ -26,14 +16,14 @@
     ]
   },
   {
-    "title": "Café Strauss",
-    "emoji": "☕️",
-    "permalink": "cafe-strauss",
-    "description": "Un café muy tranquilo frente a un cementerio muy tranquilo (espero).",
-    "address": "Bergmannstraße, 42",
+    "layout": "place",
+    "pid": "trauma",
+    "title": "Trauma Bar und Kino",
+    "description": "Club, bar, cine, sala de conciertos y arte. Aquí se celebró el quinto aniversario de New Models. Está cerca de Berlin Hauptbahnhof. No hay mucho más alrededor.",
+    "address": "Heidestraße, 50",
     "latlng": [
-      52.4886291,
-      13.4011481
+      52.5306327,
+      13.3667562
     ],
     "location": "berlin",
     "post_references": [
@@ -41,136 +31,9 @@
     ]
   },
   {
-    "title": "Father Carpenter Coffee Brewers",
-    "emoji": "☕️",
-    "description": "Mucha cola durante el fin de semana, mejor ir muy pronto o evitar directamente.",
-    "permalink": "father-carpenter-coffee-brewers",
-    "address": "Münzstraße, 21, Scheunenviertel",
-    "latlng": [
-      52.5244438,
-      13.4065961
-    ],
-    "location": "berlin",
-    "post_references": [
-
-    ]
-  },
-  {
-    "title": "Motto Berlin",
-    "description": "Libros, revistas, publicaciones y ediciones de artistas",
-    "permalink": "motto-berlin",
-    "address": "Skalitzer Straße, 68, Luisenstadt",
-    "latlng": [
-      52.5000847,
-      13.439883
-    ],
-    "location": "berlin",
-    "post_references": [
-
-    ]
-  },
-  {
-    "title": "Photoautomat: Kulturbrauerei",
-    "permalink": "schönhauser-allee",
-    "description": "Photoautomat",
-    "emoji": "📷",
-    "address": "Schönhauser Allee 63",
-    "latlng": [
-      52.5458476,
-      13.413382921542743
-    ],
-    "location": "berlin",
-    "post_references": [
-
-    ]
-  },
-  {
-    "title": "Town Mouse Coffee",
-    "emoji": "☕️",
-    "permalink": "town-mouse-coffee",
-    "address": "Marienburger Str. 5",
-    "latlng": [
-      52.535379464403334,
-      13.423648746035223
-    ],
-    "location": "berlin",
-    "post_references": [
-
-    ]
-  },
-  {
-    "title": "Dotori Korean Anju Bar",
-    "permalink": "dotori",
-    "description": "Bonitísimo y compactísimo y riquísimo bar de tapas coreanas.",
-    "address": "Gustav-Adolf-Straße 159",
-    "latlng": [
-      52.553966826503334,
-      13.433880192070449
-    ],
-    "location": "berlin",
-    "post_references": [
-
-    ]
-  },
-  {
-    "title": "tenzan lab.",
-    "permalink": "tenzan-lab.",
-    "description": "Kakigōris y taiyakis",
-    "address": "Wörther Straße, 22",
-    "latlng": [
-      52.5357069,
-      13.4210922
-    ],
-    "location": "berlin",
-    "post_references": [
-
-    ]
-  },
-  {
-    "title": "Modulor",
-    "permalink": "modulor",
-    "description": "Modulor Material Total",
-    "address": "Prinzenstraße, 85",
-    "latlng": [
-      52.5033859,
-      13.4100566
-    ],
-    "location": "berlin",
-    "post_references": [
-
-    ]
-  },
-  {
-    "title": "Ma-Makan",
-    "description": "Delicias malayas y singapurenses. Ojito al «Kaya croissant».",
-    "permalink": "mamakan",
-    "address": "Lausitzer Pl. 12",
-    "latlng": [
-      52.501010546828965,
-      13.431502823278532
-    ],
-    "location": "berlin",
-    "post_references": [
-
-    ]
-  },
-  {
-    "title": "Bonanza",
-    "permalink": "bonanza",
-    "emoji": "☕️",
-    "address": "Adalbertstraße, 70",
-    "latlng": [
-      52.504183,
-      13.420258
-    ],
-    "location": "berlin",
-    "post_references": [
-
-    ]
-  },
-  {
+    "layout": "place",
+    "pid": "zola",
     "title": "Zola",
-    "permalink": "zola",
     "description": "La «Zola Neapolitan mit Fior di Latte, Birne, Walnüssen und Gorgonzola» estaba muy rica.",
     "address": "Paul-Lincke-Ufer, 39-40",
     "latlng": [
@@ -183,13 +46,156 @@
     ]
   },
   {
-    "title": "Trauma Bar und Kino",
-    "permalink": "trauma-bar-und-kino",
-    "description": "Club, bar, cine, sala de conciertos y arte. Aquí se celebró el quinto aniversario de New Models. Está cerca de Berlin Hauptbahnhof. No hay mucho más alrededor.",
-    "address": "Heidestraße, 50",
+    "layout": "place",
+    "pid": "bonanza",
+    "title": "Bonanza",
+    "emoji": "☕️",
+    "address": "Adalbertstraße, 70",
     "latlng": [
-      52.5306327,
-      13.3667562
+      52.504183,
+      13.420258
+    ],
+    "location": "berlin",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "mamakan",
+    "title": "Ma-Makan",
+    "description": "Delicias malayas y singapurenses. Ojito al «Kaya croissant».",
+    "address": "Lausitzer Pl. 12",
+    "latlng": [
+      52.501010546828965,
+      13.431502823278532
+    ],
+    "location": "berlin",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "carpenter",
+    "title": "Father Carpenter Coffee Brewers",
+    "emoji": "☕️",
+    "description": "Mucha cola durante el fin de semana, mejor ir muy pronto o evitar directamente.",
+    "address": "Münzstraße, 21, Scheunenviertel",
+    "latlng": [
+      52.5244438,
+      13.4065961
+    ],
+    "location": "berlin",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "cafe-strauss",
+    "title": "Café Strauss",
+    "emoji": "☕️",
+    "description": "Un café muy tranquilo frente a un cementerio muy tranquilo (espero).",
+    "address": "Bergmannstraße, 42",
+    "latlng": [
+      52.4886291,
+      13.4011481
+    ],
+    "location": "berlin",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "dotori",
+    "title": "Dotori Korean Anju Bar",
+    "description": "Bonitísimo y compactísimo y riquísimo bar de tapas coreanas.",
+    "address": "Gustav-Adolf-Straße 159",
+    "latlng": [
+      52.553966826503334,
+      13.433880192070449
+    ],
+    "location": "berlin",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "tenzan",
+    "title": "tenzan lab.",
+    "description": "Kakigōris y taiyakis",
+    "address": "Wörther Straße, 22",
+    "latlng": [
+      52.5357069,
+      13.4210922
+    ],
+    "location": "berlin",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "page",
+    "pid": "motto",
+    "title": "Motto Berlin",
+    "description": "Librería a la que ya no voy desde que descubrí que no paga a sus proveedores.",
+    "address": "Skalitzer Straße, 68, Luisenstadt",
+    "latlng": [
+      52.5000847,
+      13.439883
+    ],
+    "location": "berlin",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "modulor",
+    "title": "Modulor",
+    "description": "Modulor Material Total",
+    "address": "Prinzenstraße, 85",
+    "latlng": [
+      52.5033859,
+      13.4100566
+    ],
+    "location": "berlin",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "bartleby",
+    "title": "Bartleby & Co",
+    "date": "2023-03-31 20:34:33 +0200",
+    "description": "Librería española capitaneada por Ana Pareja.",
+    "address": "Boppstraße 2",
+    "latlng": [
+      52.493500792859805,
+      13.435139298296505
+    ],
+    "location": "berlin",
+    "post_references": [
+      {
+        "url": "/2023/12/09/test",
+        "title": "test",
+        "date": "2023-12-09 09:58:14 +0100"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "town-mouse-coffee",
+    "title": "Town Mouse Coffee",
+    "emoji": "☕️",
+    "address": "Marienburger Str. 5",
+    "latlng": [
+      52.535379464403334,
+      13.423648746035223
     ],
     "location": "berlin",
     "post_references": [

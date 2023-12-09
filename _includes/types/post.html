@@ -1,5 +1,3 @@
-{% assign matching_location = site.locations | where: "location", post.location | first %}
-
 <div class="Post {% if post.highlighted -%} is-highlighted{% endif -%} h-entry">
   {% if post.show_title -%}
   <div class="Post__title p-name">{{ post.title }}</div>
@@ -20,10 +18,7 @@
   <div class="Post__footer">
     <a href="{{ post.url }}" class="Post__date dt-published u-url">{{ post.date | date: '%B %d, %Y' }}</a> 
 
-    {% if post.locations %}
-    &middot; 
-    <a href="/maps/{{ post.locations[0].location }}" class="Post__location-link">{{ matching_location.title }}</a>
-    {% endif %}
+  {% include post/locations.html page=post %}
 
   </div>
 </div>

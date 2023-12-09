@@ -34,10 +34,7 @@ github_username:  javierarce
 show_drafts: false
 
 include: [".well-known"]
-exclude: ['_includes/notes_graph.json', '_data/locations', 'feeds', 'docs/feeds']
-
-keep_files:
-  - docs/feeds/
+exclude: ['_includes/notes_graph.json', '_data/locations/*']
 
 sass:
   load_paths:
@@ -59,6 +56,9 @@ collections:
   drawings:
     output: true
     permalink: '/drawings/:path/'
+  places:
+    output: true
+    permalink: '/places/:path/'
   photos:
     output: true
     permalink: '/photos/:path/'

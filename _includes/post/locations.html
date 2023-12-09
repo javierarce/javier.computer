@@ -1,0 +1,37 @@
+{% assign page = include.page %} 
+
+{% if page.location %}
+  {% assign page_location = page.location %}
+{% else %}
+  {% assign page_location = nil %}
+{% endif %}
+
+{% assign unique_locations = "" | split: "" %}
+
+{% if page_location %}
+  {% assign map_exists = site.maps | where: "location", page_location | first %}
+  {% if map_exists %}
+    {% assign unique_locations = unique_locations | push: page_location %}
+  {% endif %}
+{% endif %}
+
+{% if page.places %}
+  {% for place_pid in page.places %}
+    {% assign place = site.places | where: "pid", place_pid | first %}
+    {% if place %}
+      {% assign map_exists = site.maps | where: "location", place.location | first %}
+      {% unless unique_locations contains place.location %}
+        {% if map_exists %}
+          {% assign unique_locations = unique_locations | push: place.location %}
+        {% endif %}
+      {% endunless %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% if unique_locations.size > 0 %}
+  &middot;
+  {% for location in unique_locations %}
+    <a href="/maps/{{ location }}" class="Post__location-link">{{ location | capitalize }}</a>{% unless forloop.last %} &middot; {% endunless %}
+  {% endfor %}
+{% endif %}

@@ -9,7 +9,11 @@ className: Trip
   <div class="Trips">
     <div class="Trip">
       <div class="Trip__content">
-
+        <div class="Trip__header">
+          <div class="Trip__title">{{ page.title }}</div>
+          <div class="Trip__options"><a href="/feeds/{{ page.location }}.rss">RSS</a></div>
+        </div>
+        
         <div class="BigMap">
         <div class="App js-map" data-lng="{{ page.lng }}" data-lat="{{ page.lat }}" data-zoom="{{ page.zoom }}">
           <div id="map" class="Map"></div>

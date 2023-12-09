@@ -1,7 +1,47 @@
 {
-  "updated_at": "2023-12-04",
-  "count": 532,
+  "updated_at": "2023-12-08",
+  "count": 537,
   "movies": [
+    {
+      "watched_on": "2023-12-08",
+      "title": "Pájaros de ciudad (1981)",
+      "rating": 1.5,
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "pajaros-de-ciudad"
+    },
+    {
+      "watched_on": "2023-12-06",
+      "title": "Q (1982)",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "q-1982"
+    },
+    {
+      "watched_on": "2023-12-06",
+      "title": "Woman of Tokyo (1933)",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "woman-of-tokyo"
+    },
+    {
+      "watched_on": "2023-12-05",
+      "title": "May December (2023)",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "may-december"
+    },
+    {
+      "watched_on": "2023-12-04",
+      "title": "When the Cat Comes (1963)",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "when-the-cat-comes"
+    },
     {
       "watched_on": "2023-12-03",
       "title": "Fail Safe (1964)",
