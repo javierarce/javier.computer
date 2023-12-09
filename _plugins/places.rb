@@ -19,6 +19,7 @@ module Jekyll
         next if location_data.nil? || location_data['pid'].nil?
 
         location_data['post_references'] ||= []
+        location_data['frontmatter_date'] = location_data['date'] if location_data['date']
         pid_hash[location_data['pid']] = location_data
       end
 
@@ -50,7 +51,7 @@ module Jekyll
       end
 
       generate_json(locations_hash)
-      generate_rss(site)
+      generate_rss(site, locations_hash)
     end
 
     private
@@ -70,20 +71,14 @@ module Jekyll
       end
     end
 
-    def generate_rss(site)
+    def generate_rss(site, locations_hash)
       data_dir = site.config['data_dir'] || '_data'
       site_dir = site.config['source']
       feeds_dir = File.join(site_dir, 'feeds')
       FileUtils.mkdir_p(feeds_dir)
 
-      Dir.glob(File.join(site_dir, data_dir, "locations/*.json")).each do |location_file|
-        next if File.basename(location_file) =~ /_base\.json\z/
-
-        location = File.basename(location_file, '.json')
-        points_of_interest = JSON.parse(File.read(location_file))
-
-        most_recent_post_date = site.time
-        puts "Generating RSS feed for #{location} #{most_recent_post_date}"
+      locations_hash.each do |location, points_of_interest|
+        most_recent_date = site.time.to_datetime # Convert to DateTime for comparison
 
         rss = RSS::Maker.make("2.0") do |maker|
           maker.channel.title = "RSS feed de #{location}"
@@ -91,22 +86,24 @@ module Jekyll
           maker.channel.description = "Sitios en #{location}"
 
           points_of_interest.each do |point|
+            post_dates = point['post_references'].map do |post_ref|
+              DateTime.parse(post_ref['date']) if post_ref['date']
+            end.compact
+
+            most_recent_post_date = post_dates.max
+            frontmatter_date = DateTime.parse(point['date']) if point['date']
+            puts "Frontmatter date: #{frontmatter_date} from #{point['title']}"
+            point_date = [most_recent_post_date, frontmatter_date].compact.max
+            most_recent_date = [most_recent_date, point_date].compact.max
+
             maker.items.new_item do |item|
-              item.link = "#{site.config['url']}/maps/#{location}"
+              item.link = "#{site.config['url']}/maps/#{location}/#{point['pid']}"
               item.title = "#{point['title']}"
 
               references = []
-
               if point['post_references']
                 references << "<ul>"
                 references.concat(point['post_references'].map { |post_ref|
-                  post_date = post_ref['date']
-
-                  if post_date
-                    post_date = DateTime.parse(post_date) if post_date.is_a?(String)
-                    most_recent_post_date = post_date 
-                  end
-
                   "<li><a href='#{site.config['url']}#{post_ref['url']}'>#{post_ref['title']}</a></li>"
                 })
                 references << "</ul>"
@@ -114,12 +111,12 @@ module Jekyll
 
               description = "#{point['description']}<br><br>#{point['address']}<br><br>#{references.join}"
               item.description = description
-              item.updated = most_recent_post_date.iso8601
+              item.updated = point_date.iso8601 if point_date
               item.dc_subject = location
             end
           end
 
-          maker.channel.updated = most_recent_post_date.iso8601
+          maker.channel.updated = most_recent_date.iso8601
         end
 
         rss_file_path = File.join(feeds_dir, "#{location}.rss")
