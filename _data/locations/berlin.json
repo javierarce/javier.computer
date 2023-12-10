@@ -13,7 +13,8 @@
     "location": "berlin",
     "post_references": [
 
-    ]
+    ],
+    "frontmatter_date": "2023-03-31 20:34:33 +0200"
   },
   {
     "layout": "place",
@@ -171,7 +172,6 @@
     "layout": "place",
     "pid": "bartleby",
     "title": "Bartleby & Co",
-    "date": "2023-03-31 20:34:33 +0200",
     "description": "Librería española capitaneada por Ana Pareja.",
     "address": "Boppstraße 2",
     "latlng": [
@@ -180,11 +180,7 @@
     ],
     "location": "berlin",
     "post_references": [
-      {
-        "url": "/2023/12/09/test",
-        "title": "test",
-        "date": "2023-12-09 09:58:14 +0100"
-      }
+
     ]
   },
   {

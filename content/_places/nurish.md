@@ -7,5 +7,5 @@ address: "637 Washington Ave, Brooklyn"
 latlng:
 - 40.67840685350245
 - -73.96369051873681
-location: nyc
+location: newyork
 ---

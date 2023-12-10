@@ -7,5 +7,5 @@ address: "72 Avenue A, New York"
 latlng:
 - 40.72515257580894
 - -73.98442797315501
-location: nyc
+location: newyork
 ---

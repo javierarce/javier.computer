@@ -189,8 +189,7 @@ class Map extends Base {
     const location = marker.options.location
     const permalink = location.pid
 
-    window.history.pushState({}, '', '/maps/' + location.location + '/' + permalink)
-    window.history.pushState({}, '', )
+    window.history.replaceState({}, '', '/maps/' + location.location + '/' + permalink)
   }
 
   getPrevMarker (markers, id) {
@@ -442,7 +441,7 @@ class App {
           this.previousLocationID = id
           const location = this.locations[id - 1]
           const permalink = location.pid
-          window.history.pushState({}, '', '/maps/' + location.location + '/' + permalink)
+          window.history.replaceState({}, '', '/maps/' + location.location + '/' + permalink)
         }
       })
 
@@ -454,7 +453,7 @@ class App {
         this.showLocation(id)
         const location = this.locations[id - 1]
         const permalink = location.pid
-        window.history.pushState({}, '', '/maps/' + location.location + '/' + permalink)
+        window.history.replaceState({}, '', '/maps/' + location.location + '/' + permalink)
       })
     })
 

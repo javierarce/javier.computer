@@ -77,23 +77,36 @@ module Jekyll
       feeds_dir = File.join(site_dir, 'feeds')
       FileUtils.mkdir_p(feeds_dir)
 
+      default_date = DateTime.new(2023, 1, 1) # Default date set to January 1st, 2023
+
       locations_hash.each do |location, points_of_interest|
-        most_recent_date = site.time.to_datetime # Convert to DateTime for comparison
+        most_recent_date = site.time.to_datetime 
+
+        modified_dates = points_of_interest.map do |point|
+          file_path = "content/_places/#{point['pid']}.md"
+          if File.exist?(file_path)
+            File.mtime(file_path).to_datetime
+          else
+            default_date
+          end
+        end
+
+        last_modified_date = modified_dates.max
 
         rss = RSS::Maker.make("2.0") do |maker|
           maker.channel.title = "RSS feed de #{location}"
           maker.channel.link = "#{site.config['url']}/feeds/#{location}.rss"
           maker.channel.description = "Sitios en #{location}"
+          maker.channel.updated = last_modified_date.iso8601
 
           points_of_interest.each do |point|
             post_dates = point['post_references'].map do |post_ref|
-              DateTime.parse(post_ref['date']) if post_ref['date']
+              post_ref['date'] ? DateTime.parse(post_ref['date']) : nil
             end.compact
 
-            most_recent_post_date = post_dates.max
-            frontmatter_date = DateTime.parse(point['date']) if point['date']
-            puts "Frontmatter date: #{frontmatter_date} from #{point['title']}"
-            point_date = [most_recent_post_date, frontmatter_date].compact.max
+            frontmatter_date = point['date'] ? DateTime.parse(point['date']) : nil
+            point_date = [post_dates, frontmatter_date].flatten.compact.max
+            point_date = default_date unless point_date # Use default_date only if no date is available
             most_recent_date = [most_recent_date, point_date].compact.max
 
             maker.items.new_item do |item|
@@ -116,14 +129,13 @@ module Jekyll
             end
           end
 
-          maker.channel.updated = most_recent_date.iso8601
         end
 
         rss_file_path = File.join(feeds_dir, "#{location}.rss")
 
         if File.exists?(rss_file_path)
           current_data = File.read(rss_file_path)
-          next if current_data == rss.to_s
+          next if current_data.strip == rss.to_s.strip
         end
 
         File.write(rss_file_path, rss.to_s)

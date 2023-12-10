@@ -7,5 +7,5 @@ address: "688 Washington Ave, Brooklyn"
 latlng:
 - 40.67739967774963
 - -73.9638492637935
-location: nyc
+location: newyork
 ---

@@ -7,5 +7,5 @@ address: "234 Mulberry St, New York"
 latlng:
 - 40.72273113413452
 - -73.99588703974875
-location: nyc
+location: newyork
 ---

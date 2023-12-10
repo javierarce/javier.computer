@@ -2,8 +2,8 @@
 layout: trip
 title: Nueva York
 className: Map
-permalink: maps/nyc
-location: nyc
+permalink: maps/newyork
+location: newyork
 lat: 40.7200
 lng: -73.9857
 zoom: 10

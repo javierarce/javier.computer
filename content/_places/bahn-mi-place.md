@@ -7,5 +7,5 @@ address: "824b Washington Ave, Brooklyn"
 latlng:
 - 40.67329930729744
 - -73.96314417387886
-location: nyc
+location: newyork
 ---
