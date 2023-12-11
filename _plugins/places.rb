@@ -60,7 +60,7 @@ module Jekyll
       locations_hash.each do |location, data|
         json_file_path = "_data/locations/#{location}.json"
 
-        if File.exists?(json_file_path)
+        if File.exist?(json_file_path)
           current_data = JSON.parse(File.read(json_file_path))
           next if current_data == data
         end
@@ -96,6 +96,7 @@ module Jekyll
         rss = RSS::Maker.make("2.0") do |maker|
           maker.channel.title = "RSS feed de #{location}"
           maker.channel.link = "#{site.config['url']}/feeds/#{location}.rss"
+          maker.channel.language = "es"
           maker.channel.description = "Sitios en #{location}"
           maker.channel.updated = last_modified_date.iso8601
 
@@ -133,7 +134,7 @@ module Jekyll
 
         rss_file_path = File.join(feeds_dir, "#{location}.rss")
 
-        if File.exists?(rss_file_path)
+        if File.exist?(rss_file_path)
           current_data = File.read(rss_file_path)
           next if current_data.strip == rss.to_s.strip
         end

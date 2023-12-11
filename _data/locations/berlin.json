@@ -1,45 +1,13 @@
 [
   {
     "layout": "place",
-    "pid": "doyoureadme",
-    "date": "2023-03-31 20:34:33 +0200",
-    "title": "do you read me?!",
-    "description": null,
-    "address": "Auguststraße 28",
+    "pid": "bartleby",
+    "title": "Bartleby & Co",
+    "description": "Librería española capitaneada por Ana Pareja.",
+    "address": "Boppstraße 2",
     "latlng": [
-      52.52726714641086,
-      13.397690437523185
-    ],
-    "location": "berlin",
-    "post_references": [
-
-    ],
-    "frontmatter_date": "2023-03-31 20:34:33 +0200"
-  },
-  {
-    "layout": "place",
-    "pid": "trauma",
-    "title": "Trauma Bar und Kino",
-    "description": "Club, bar, cine, sala de conciertos y arte. Aquí se celebró el quinto aniversario de New Models. Está cerca de Berlin Hauptbahnhof. No hay mucho más alrededor.",
-    "address": "Heidestraße, 50",
-    "latlng": [
-      52.5306327,
-      13.3667562
-    ],
-    "location": "berlin",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "zola",
-    "title": "Zola",
-    "description": "La «Zola Neapolitan mit Fior di Latte, Birne, Walnüssen und Gorgonzola» estaba muy rica.",
-    "address": "Paul-Lincke-Ufer, 39-40",
-    "latlng": [
-      52.49674658332709,
-      13.42246464603288
+      52.493500792859805,
+      13.435139298296505
     ],
     "location": "berlin",
     "post_references": [
@@ -55,37 +23,6 @@
     "latlng": [
       52.504183,
       13.420258
-    ],
-    "location": "berlin",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "mamakan",
-    "title": "Ma-Makan",
-    "description": "Delicias malayas y singapurenses. Ojito al «Kaya croissant».",
-    "address": "Lausitzer Pl. 12",
-    "latlng": [
-      52.501010546828965,
-      13.431502823278532
-    ],
-    "location": "berlin",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "carpenter",
-    "title": "Father Carpenter Coffee Brewers",
-    "emoji": "☕️",
-    "description": "Mucha cola durante el fin de semana, mejor ir muy pronto o evitar directamente.",
-    "address": "Münzstraße, 21, Scheunenviertel",
-    "latlng": [
-      52.5244438,
-      13.4065961
     ],
     "location": "berlin",
     "post_references": [
@@ -125,13 +62,61 @@
   },
   {
     "layout": "place",
-    "pid": "tenzan",
-    "title": "tenzan lab.",
-    "description": "Kakigōris y taiyakis",
-    "address": "Wörther Straße, 22",
+    "pid": "doyoureadme",
+    "date": "2023-03-31 20:34:33 +0200",
+    "title": "do you read me?!",
+    "description": null,
+    "address": "Auguststraße 28",
     "latlng": [
-      52.5357069,
-      13.4210922
+      52.52726714641086,
+      13.397690437523185
+    ],
+    "location": "berlin",
+    "post_references": [
+
+    ],
+    "frontmatter_date": "2023-03-31 20:34:33 +0200"
+  },
+  {
+    "layout": "place",
+    "pid": "carpenter",
+    "title": "Father Carpenter Coffee Brewers",
+    "emoji": "☕️",
+    "description": "Mucha cola durante el fin de semana, mejor ir muy pronto o evitar directamente.",
+    "address": "Münzstraße, 21, Scheunenviertel",
+    "latlng": [
+      52.5244438,
+      13.4065961
+    ],
+    "location": "berlin",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "mamakan",
+    "title": "Ma-Makan",
+    "description": "Delicias malayas y singapurenses. Ojito al «Kaya croissant».",
+    "address": "Lausitzer Pl. 12",
+    "latlng": [
+      52.501010546828965,
+      13.431502823278532
+    ],
+    "location": "berlin",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "modulor",
+    "title": "Modulor",
+    "description": "Modulor Material Total",
+    "address": "Prinzenstraße, 85",
+    "latlng": [
+      52.5033859,
+      13.4100566
     ],
     "location": "berlin",
     "post_references": [
@@ -155,28 +140,13 @@
   },
   {
     "layout": "place",
-    "pid": "modulor",
-    "title": "Modulor",
-    "description": "Modulor Material Total",
-    "address": "Prinzenstraße, 85",
+    "pid": "tenzan",
+    "title": "tenzan lab.",
+    "description": "Kakigōris y taiyakis",
+    "address": "Wörther Straße, 22",
     "latlng": [
-      52.5033859,
-      13.4100566
-    ],
-    "location": "berlin",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "bartleby",
-    "title": "Bartleby & Co",
-    "description": "Librería española capitaneada por Ana Pareja.",
-    "address": "Boppstraße 2",
-    "latlng": [
-      52.493500792859805,
-      13.435139298296505
+      52.5357069,
+      13.4210922
     ],
     "location": "berlin",
     "post_references": [
@@ -192,6 +162,36 @@
     "latlng": [
       52.535379464403334,
       13.423648746035223
+    ],
+    "location": "berlin",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "trauma",
+    "title": "Trauma Bar und Kino",
+    "description": "Club, bar, cine, sala de conciertos y arte. Aquí se celebró el quinto aniversario de New Models. Está cerca de Berlin Hauptbahnhof. No hay mucho más alrededor.",
+    "address": "Heidestraße, 50",
+    "latlng": [
+      52.5306327,
+      13.3667562
+    ],
+    "location": "berlin",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "zola",
+    "title": "Zola",
+    "description": "La «Zola Neapolitan mit Fior di Latte, Birne, Walnüssen und Gorgonzola» estaba muy rica.",
+    "address": "Paul-Lincke-Ufer, 39-40",
+    "latlng": [
+      52.49674658332709,
+      13.42246464603288
     ],
     "location": "berlin",
     "post_references": [

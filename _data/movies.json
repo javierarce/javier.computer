@@ -1,7 +1,31 @@
 {
-  "updated_at": "2023-12-08",
-  "count": 537,
+  "updated_at": "2023-12-10",
+  "count": 540,
   "movies": [
+    {
+      "watched_on": "2023-12-10",
+      "title": "Next of Kin (1982)",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "next-of-kin-1982"
+    },
+    {
+      "watched_on": "2023-12-09",
+      "title": "Raging Bull (1980)",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "raging-bull"
+    },
+    {
+      "watched_on": "2023-12-09",
+      "title": "The Player (1992)",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "the-player"
+    },
     {
       "watched_on": "2023-12-08",
       "title": "Pájaros de ciudad (1981)",
