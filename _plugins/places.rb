@@ -8,6 +8,12 @@ module Jekyll
     priority :lowest
 
     def generate(site)
+      if ENV["JEKYLL_ENV"] == "production"
+        generate_places(site)
+      end
+    end
+
+    def generate_places(site)
       pid_hash = {}
 
       # Load location data from individual files in _content/_places/
