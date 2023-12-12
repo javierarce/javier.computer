@@ -1,0 +1,45 @@
+---
+layout: none
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+  >
+
+<channel>
+  <title>{{ site.title | xml_escape }} – Fotos</title>
+  <description>{{ site.description | xml_escape }} - Fotos</description> <link href="{{ site.url }}/feeds/photos.xml" rel="self" type="application/rss+xml" />
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>{{ site.url }}/feeds/photos.xml</id>
+
+  <sy:updatePeriod>{{ site.feed_update_period | default: "daily" | xml_escape }}</sy:updatePeriod>
+  <sy:updateFrequency>{{ site.feed_update_frequency | default: 1 | xml_escape }}</sy:updateFrequency>
+  <link>{{ site.url }}</link>
+  <atom:link href="{{ site.url }}/feeds/photos.xml" rel="self" type="application/rss+xml" />
+  <lastBuildDate>{{ site.posts | where: "category", "photo" | map: "date" | sort | last | date_to_rfc822 }}</lastBuildDate>
+  
+  {% for post in site.posts %}
+    {% assign matching_location = site.locations | where: "location", post.location | first %}
+    {% if post.category == 'photo' %}
+      <item>
+        <title>{{ post.title | xml_escape }}</title>
+        <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+        <link>{{ site.url }}{{ post.url }}</link>
+        <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+        {% if post.author.name %}<dc:creator>{{ post.author.name | xml_escape }}</dc:creator>{% endif %}
+        <description><![CDATA[{% if post.filenames -%}
+            {% for filename in post.filenames %}<img src="https://img.javier.computer/{{ post.location }}/{{ filename }}_1280.jpg" alt="{{ post.title }}" />{% endfor -%}
+          {% else -%}
+            <img src="https://img.javier.computer/{{ post.location }}/{{ post.filename }}_1280.jpg" alt="{{ post.title }}" />
+          {% endif -%}
+          {{ post.content }}
+            <p>{% if matching_location -%}{{ matching_location.title }}. {% endif -%} {% if post.camera %}{{ post.camera }}.{% endif %}</p>
+        ]]></description>
+      </item>
+    {% endif %}
+  {% endfor %}
+</channel>
+</rss>

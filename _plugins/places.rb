@@ -16,6 +16,8 @@ module Jekyll
     def generate_places(site)
       pid_hash = {}
 
+      puts "Generating places..."
+
       # Load location data from individual files in _content/_places/
       Dir.glob('content/_places/*.md').each do |file|
         content = File.read(file)

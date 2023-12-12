@@ -1,7 +1,15 @@
 {
-  "updated_at": "2023-12-10",
-  "count": 540,
+  "updated_at": "2023-12-11",
+  "count": 541,
   "movies": [
+    {
+      "watched_on": "2023-12-11",
+      "title": "The Holdovers (2023)",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "the-holdovers"
+    },
     {
       "watched_on": "2023-12-10",
       "title": "Next of Kin (1982)",

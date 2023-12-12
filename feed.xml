@@ -25,6 +25,9 @@ layout: none
   <lastBuildDate>{% for post in site.posts limit:1 %}{{ post.date | date_to_rfc822 }}{% endfor %}</lastBuildDate>
     {% assign feed_items = site.feed_items | default: 10 %}
     {% for post in site.posts limit:feed_items %}
+
+    {% assign matching_location = site.locations | where: "location", post.location | first %}
+
   <item>
     <title>{{ post.title | xml_escape }}</title>
     <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
@@ -43,8 +46,8 @@ layout: none
           <img src="https://img.javier.computer/{{ post.location }}/{{ post.filename }}_1280.jpg" alt="{{post.title}}" />  
         {% endif %}
         {{ post.content }}   
-          <p>{% if post.location -%} {{ post.location | capitalize }}. {% endif -%}
-             {% if post.camera -%}{{ post.camera }}.{% endif -%}</p>
+          <p>{% if matching_location -%} {{ matching_location.title }}. {% endif -%}
+          {% if post.camera -%}{{ post.camera }}.{% endif -%}</p>
         ]]>
       {% elsif post.category == 'quote' %}
         <p><blockquote>{{ post.content | xml_escape }}</blockquote></p>
@@ -58,7 +61,7 @@ layout: none
       {% else %}
         {{ post.content | xml_escape }}
         {% if post.disclaimer -%}<p>{{ post.disclaimer }}</p>{% endif -%}
-        {% if post.location -%}<p><small>{{ post.location | capitalize }}</small></p>{% endif -%}
+          {% if matching_location -%}<p><small>{{ matching_location.title }}</small></p>{% endif -%}
       {% endif %}
     </description>
   </item>
