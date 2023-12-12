@@ -1,6 +1,6 @@
 ---
 layout: photos/album
-title: Masnou
+title: El Masnou
 location: masnou
 permalink: photos/masnou
 ---

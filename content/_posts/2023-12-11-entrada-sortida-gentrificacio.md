@@ -13,5 +13,3 @@ filenames:
 camera: Fuji X-T5
 hidden: true
 ---
-
-

@@ -1,6 +1,6 @@
 ---
 layout: location
-title: Masnou
+title: El Masnou
 location: masnou
 permalink: in/masnou
 ---
