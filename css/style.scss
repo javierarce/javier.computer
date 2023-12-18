@@ -384,3 +384,46 @@ span.Date {
   opacity: 0.5;
 }
 
+.Movie__poster {
+  width: 100%;
+  background-size: cover;
+  border-radius: 2px;
+}
+
+.Movies {
+  display: grid;
+  width: 100%;
+  margin: auto;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-gap: 1em;
+  grid-row-gap: 2em;
+  text-align: center;
+  margin-bottom: 4em;
+}
+
+.Movie__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.Movie__title {
+  font-size: 0.9em;
+  text-decoration: none;
+}
+.Movie {
+  width: 100%;
+  max-width: 300px;
+}
+
+@media all and (max-width: 640px) {
+  .Movies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .Movie {
+    width: 100%;
+    max-width: 500px;
+  }
+}

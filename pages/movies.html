@@ -1,0 +1,31 @@
+---
+title: Movies
+layout: table
+className: Movies
+category: page
+permalink: movies
+description: Movies I've watched this year
+---
+{% assign sorted_movies = site.data.movies3.movies | sort: 'watched_on' | reverse %}
+{% assign grouped_movies = sorted_movies | group_by_exp: "movie", "movie.watched_on | date: '%B %Y'" %}
+
+{% for group in grouped_movies %}
+
+
+<h3>{{ group.name }} ({{ group.items.size }})</h3>
+
+<div class="Movies">
+  {% for movie in group.items -%}
+
+  <div class="Movie">
+    <img class="Movie__poster" src="{{movie.posterFilePath}}">
+
+    <div class="Movie__content">
+      <a class="Movie__title" href="{{ movie.permalink }}">{{ movie.title }}</a> 
+      {{ movie.stars }} 
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+{% endfor -%}
