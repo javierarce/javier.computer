@@ -7,6 +7,7 @@ weather: true
 permalink: about
 ---
 {% assign post_count = site.posts | size %}
+{% assign subscribers_count = site.data.subscribers %}
 {% assign photos = 0 %}
 
 {% for post in site.categories['photo'] %}
@@ -27,8 +28,7 @@ My name is [Javier Arce](/me), <em>comme tout le monde</em>. I'm very into: [mak
 
 ### About this site
 
-This site contains a wiki, [{{ post_count }} blog posts](/archive), a collection of silly songs, [{{ photos }} photos](/photos), at least one pun, [{{ drawings }} drawings](/drawings), a modest [blogroll](/blogroll), a hidden passage to another dimension, a ghost story, a list of dog names,
-a list of names that are not dog names, references to my early memories, several photos of
+This site contains a wiki, [{{ post_count }} blog posts](/archive), a collection of silly songs, [{{ photos }} photos](/photos), at least one pun, [{{ drawings }} drawings](/drawings), a modest [blogroll](/blogroll), a hidden passage to another dimension, a ghost story, [a newsletter](/newsletter) with {{ subscribers_count}} subscribers, a list of dog names, a list of names that are not dog names, references to my early memories, several photos of
 myself eating ice cream, a mirror, a coin, a yellow bird, a photo of your turtle, a
 turtle.
 
