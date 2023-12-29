@@ -46,6 +46,7 @@
 }
 
 :root {
+  --orange: #FF4500;
   --white: #FFFFFF;
   --active: var(--white);
   --link: #ffc107;
@@ -77,12 +78,8 @@
 }
 
 .is-now {
-  //border: 1px solid #ae81ff;
-  //border-radius: 4px;
-  //padding: 0.8em;
   margin: 0 0 1em;
 }
-
 
 body {
   color: var(--text);
@@ -159,11 +156,12 @@ p img {
 }
 
 blockquote { 
-  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
-  font-size: .85em;
-  padding: 0 0 0 0.8em;
   border-left: 1px solid rgba(255,255,255, 0.2);
+  color: var(--orange);
+  font-size: 0.9em;
+  font-size: 1.1em;
   margin: 0 0 1em 0;
+  padding: 0 0 0 0.8em;
 } 
 
 blockquote p { 
