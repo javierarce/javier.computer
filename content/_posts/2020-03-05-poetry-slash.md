@@ -2,7 +2,6 @@
 layout: post
 title: Poetry Slash
 date: 2020-03-05 19:17 +0100
-tags: [newsletter]
 ---
 
 <h3>Poetry Slash <sup>1</sup></h3>
