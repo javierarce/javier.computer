@@ -159,10 +159,14 @@ blockquote {
   border-left: 1px solid rgba(255,255,255, 0.2);
   color: var(--orange);
   font-size: 0.9em;
-  font-size: 1.1em;
   margin: 0 0 1em 0;
   padding: 0 0 0 0.8em;
 } 
+
+.Post__content blockquote p a,
+blockquote p a {
+  color: var(--orange);
+}
 
 blockquote p { 
   font-style: normal;
