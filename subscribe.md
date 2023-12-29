@@ -6,10 +6,10 @@ permalink: subscribe
 className: About
 ---
 
-Suscríbete a mi newsletter para recibir avisos cuando publique un nuevo
+Suscríbete a mi lista de correo para recibir avisos cuando publique un nuevo
 proyecto o haga algo extremadamente gracioso. 
 
-Puedes consultar lo que envié en el pasado en el [archivo](/tags/newsletter).
+Lee lo que envié en el pasado en el [archivo](/tags/newsletter).
 
 <div class="Contact">
 <form class="Form" method="post" action="https://mailer.javier.computer/subscription/form">
