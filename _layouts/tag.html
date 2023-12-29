@@ -14,13 +14,15 @@ className: Tags
 {% endfor %}
 
 <div class="Archive">
-  <h2>{{ page.tag | capitalize }}</h2>
-  <ul>
+  <h2>{{ page.tag | capitalize }} ({{ posts | size }})</h2>
+  <ul class="Archive__entryList">
     {% for post in posts %}
-    <li>
+    <li class="Archive__entryListItem">
       <a href="{{ post.url }}" class="is-{{ post.category }}">{{ post.title }}</a>
-      <span class="Date">{{ post.date | date: '%B %d, %Y' }}</span>
-
+      <div class="Archive__entryListItemContent">
+        <p>{{ post.content | strip_html | truncatewords: 20 }}</p>
+        <span class="Archive__entryListItemDate">{{ post.date | date: '%B %d, %Y' }}</span>
+      </div>
     </li>
     {% endfor %}
   </ul>

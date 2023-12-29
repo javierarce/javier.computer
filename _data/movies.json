@@ -1,7 +1,119 @@
 {
-  "updated_at": "2023-12-11",
-  "count": 541,
+  "updated_at": "2023-12-29",
+  "count": 555,
   "movies": [
+    {
+      "watched_on": "2023-12-27",
+      "title": "Auto Focus (2002)",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "auto-focus"
+    },
+    {
+      "watched_on": "2023-12-27",
+      "title": "Ikiru (1952)",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "ikiru"
+    },
+    {
+      "watched_on": "2023-12-27",
+      "title": "Investigation of a Citizen Above Suspicion (1970)",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "investigation-of-a-citizen-above-suspicion"
+    },
+    {
+      "watched_on": "2023-12-26",
+      "title": "La Strada (1954)",
+      "rating": 4.5,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "la-strada"
+    },
+    {
+      "watched_on": "2023-12-25",
+      "title": "Eer (2021)",
+      "rating": 2,
+      "stars": "★★",
+      "rewatched": false,
+      "permalink": "eer"
+    },
+    {
+      "watched_on": "2023-12-25",
+      "title": "Dream Scenario (2023)",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "dream-scenario"
+    },
+    {
+      "watched_on": "2023-12-21",
+      "title": "Pearl (2022)",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "pearl-2022"
+    },
+    {
+      "watched_on": "2023-12-20",
+      "title": "Big Deal on Madonna Street (1958)",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "big-deal-on-madonna-street"
+    },
+    {
+      "watched_on": "2023-12-18",
+      "title": "In Search of Ozu (2018)",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "in-search-of-ozu"
+    },
+    {
+      "watched_on": "2023-12-17",
+      "title": "Bicycle Thieves (1948)",
+      "rating": 5,
+      "stars": "★★★★★",
+      "rewatched": false,
+      "permalink": "bicycle-thieves"
+    },
+    {
+      "watched_on": "2023-12-17",
+      "title": "Pool of London (1951)",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "pool-of-london"
+    },
+    {
+      "watched_on": "2023-12-16",
+      "title": "Leave the World Behind (2023)",
+      "rating": 1.5,
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "leave-the-world-behind-2023"
+    },
+    {
+      "watched_on": "2023-12-15",
+      "title": "Anatomy of a Fall (2023)",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "anatomy-of-a-fall"
+    },
+    {
+      "watched_on": "2023-12-13",
+      "title": "Wild Strawberries (1957)",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "wild-strawberries"
+    },
     {
       "watched_on": "2023-12-11",
       "title": "The Holdovers (2023)",
@@ -812,7 +924,7 @@
     },
     {
       "watched_on": "2023-06-27",
-      "title": "Talking Heads (1980)",
+      "title": "Talking Heads (1981)",
       "rating": 4,
       "stars": "★★★★",
       "rewatched": false,

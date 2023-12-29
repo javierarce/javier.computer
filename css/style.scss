@@ -384,3 +384,18 @@ span.Date {
   opacity: 0.5;
 }
 
+.Archive__entryList {
+  list-style: none;
+  margin: 0;
+}
+.Archive__entryListItem {
+  list-style: none;
+  margin: 0 0 2em;
+}
+.Archive__entryListItemContent p {
+  margin: 0 0 0.8em;
+}
+.Archive__entryListItemDate {
+  opacity: 0.5;
+  font-size: 0.9em;
+}
