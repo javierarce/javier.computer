@@ -19,5 +19,4 @@ filenames:
 - R0005338
 - R0005385
 camera: Ricoh GR IIIx
-hidden: true
 ---

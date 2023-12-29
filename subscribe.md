@@ -2,7 +2,7 @@
 layout: about
 title:  Subscribe
 description: Newsletter
-permalink: subscribe
+permalink: newsletter
 className: About
 ---
 
@@ -26,6 +26,6 @@ Lee lo que envié en el pasado en el [archivo](/tags/newsletter).
 <input class="Input" type="email" name="email" required placeholder="" />
 </div>
 
-<div class="Actions"><input class="Button" type="submit" value="Subscríbete" /></div>
+<div class="Actions"><input class="Button" type="submit" value="Suscríbeme" /></div>
 </form>
 </div>
