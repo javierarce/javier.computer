@@ -9,7 +9,7 @@ className: About
 Suscríbete a mi newsletter para recibir avisos cuando publique un nuevo
 proyecto o haga algo extremadamente gracioso. 
 
-[Archivo](/tags/newsletter)
+Puedes consultar lo que envié en el pasado en el [archivo](/tags/newsletter).
 
 <div class="Contact">
 <form class="Form" method="post" action="https://mailer.javier.computer/subscription/form">
