@@ -8,5 +8,5 @@ places:
 - cero-tres-cinco
 - jazzman
 ---
-Celebración post-conciliación · Cocktails & cocktails & dreams con [Erica](https://www.ericafustero.com) · Cyclic Beer Farm + 035//BAR + [JazzMan](/maps/barcelona?p=jazzman).
+Celebración post-conciliación · Cocktails & cocktails & dreams con [Erica](https://www.ericafustero.com) · Cyclic Beer Farm + 035//BAR + [JazzMan](/maps/barcelona/jazzman).
 
