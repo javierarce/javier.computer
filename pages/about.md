@@ -6,20 +6,20 @@ className: About
 weather: true
 permalink: about
 ---
-{% assign post_count = site.posts | size %}
-{% assign subscribers_count = site.data.subscribers %}
-{% assign photos = 0 %}
+{% assign post_count = site.posts | size -%}
+{% assign subscribers_count = site.data.subscribers -%}
+{% assign photos = 0 -%}
 
-{% for post in site.categories['photo'] %}
-  {% assign current_count = post.filenames | size %}
-  {% assign photos = photos | plus: current_count %}
-{% endfor %}
+{% for post in site.categories['photo'] -%}
+  {% assign current_count = post.filenames | size -%}
+  {% assign photos = photos | plus: current_count -%}
+{% endfor -%}
 
-{% assign drawings = 0 %}
-{% for post in site.drawings %}
-  {% assign current_count = post.filenames | size %}
-  {% assign drawings = drawings | plus: current_count %}
-{% endfor %}
+{% assign drawings = 0 -%}
+{% for post in site.drawings -%}
+  {% assign current_count = post.filenames | size -%}
+  {% assign drawings = drawings | plus: current_count -%}
+{% endfor -%}
 
 My name is [Javier Arce](/me), <em>comme tout le monde</em>. I'm very into: [making things online](/projects),
 [taking pictures](/photos), [reading](/books), [drawing](/drawings), and [watching movies](/movies).
