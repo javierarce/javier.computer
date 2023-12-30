@@ -115,7 +115,7 @@ module Jekyll
         last_modified_date = modified_dates.max
 
         rss = RSS::Maker.make("2.0") do |maker|
-          maker.channel.title = "RSS feed de #{location}"
+          maker.channel.title = "Feed de lugares de #{location.capitalize}"
           maker.channel.link = "#{site.config['url']}/feeds/#{location}.rss"
           maker.channel.language = "es"
           maker.channel.description = "Sitios en #{location}"

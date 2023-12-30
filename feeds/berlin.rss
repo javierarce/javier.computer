@@ -5,7 +5,7 @@
   xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
   xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
   <channel>
-    <title>RSS feed de berlin</title>
+    <title>Feed de lugares de Berlin</title>
     <link>https://javier.computer/feeds/berlin.rss</link>
     <description>Sitios en berlin</description>
     <language>es</language>

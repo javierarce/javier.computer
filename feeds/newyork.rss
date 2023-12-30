@@ -5,7 +5,7 @@
   xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
   xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
   <channel>
-    <title>RSS feed de newyork</title>
+    <title>Feed de lugares de Newyork</title>
     <link>https://javier.computer/feeds/newyork.rss</link>
     <description>Sitios en newyork</description>
     <language>es</language>
