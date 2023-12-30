@@ -18,7 +18,6 @@ module Jekyll
 
       puts "Generating places..."
 
-      # Load location data from individual files in _content/_places/
       Dir.glob('content/_places/*.md').each do |file|
         content = File.read(file)
         front_matter = content.match(/---(.*)---/m)[1]
@@ -26,6 +25,8 @@ module Jekyll
 
         next if location_data.nil? || location_data['pid'].nil?
 
+        last_modified_date = File.ctime(file).to_datetime
+        location_data['last_modified_date'] = last_modified_date
         location_data['post_references'] ||= []
         location_data['frontmatter_date'] = location_data['date'] if location_data['date']
         pid_hash[location_data['pid']] = location_data
@@ -107,15 +108,8 @@ module Jekyll
       default_date = DateTime.new(2023, 1, 1) # Default date set to January 1st, 2023
 
       locations_hash.each do |location, points_of_interest|
-        most_recent_date = site.time.to_datetime 
-
         modified_dates = points_of_interest.map do |point|
-          file_path = "content/_places/#{point['pid']}.md"
-          if File.exist?(file_path)
-            File.mtime(file_path).to_datetime
-          else
-            default_date
-          end
+          point['last_modified_date'] || default_date
         end
 
         last_modified_date = modified_dates.max
@@ -132,10 +126,11 @@ module Jekyll
               post_ref['date'] ? DateTime.parse(post_ref['date']) : nil
             end.compact
 
+            last_modified_date = point['last_modified_date'] 
+
             frontmatter_date = point['date'] ? DateTime.parse(point['date']) : nil
-            point_date = [post_dates, frontmatter_date].flatten.compact.max
-            point_date = default_date unless point_date # Use default_date only if no date is available
-            most_recent_date = [most_recent_date, point_date].compact.max
+            point_date = [post_dates, frontmatter_date, last_modified_date].flatten.compact.max
+            point_date = default_date unless point_date
 
             maker.items.new_item do |item|
               item.link = "#{site.config['url']}/maps/#{location}/#{point['pid']}"
