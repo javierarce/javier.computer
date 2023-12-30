@@ -25,7 +25,7 @@ module Jekyll
 
         next if location_data.nil? || location_data['pid'].nil?
 
-        last_modified_date = File.ctime(file).to_datetime
+        last_modified_date = File.birthtime(file).to_datetime
         location_data['last_modified_date'] = last_modified_date
         location_data['post_references'] ||= []
         location_data['frontmatter_date'] = location_data['date'] if location_data['date']
