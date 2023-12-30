@@ -60,6 +60,25 @@ module Jekyll
 
       generate_json(locations_hash)
       generate_rss(site, locations_hash)
+      generate_csv(locations_hash)
+    end
+
+    def generate_csv(locations_hash)
+      locations_hash.each do |location, places|
+        CSV.open("assets/maps/#{location}.csv", "w") do |csv|
+          csv << ["name", "description", "address", "latitude", "longitude"]
+
+          places.each do |place|
+            name = place["title"]
+            description = place["description"]
+            address = place["address"]
+            lat = place["latlng"]&.first
+            lng = place["latlng"]&.last
+
+            csv << [name, description, address, lat, lng]
+          end
+        end
+      end
     end
 
     private

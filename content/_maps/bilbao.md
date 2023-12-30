@@ -3,6 +3,7 @@ layout: trip
 title:  Bilbao
 description: Guía de bolsillo
 className: Map
+category: map
 permalink: maps/bilbao
 location: bilbao
 lng: -2.9345075655705792

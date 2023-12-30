@@ -58,8 +58,8 @@
   width: 100%;
   margin: auto;
   grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-  grid-column-gap: 0.4em;
-  grid-row-gap: 1.4em;
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
   text-align: center;
 }
 
@@ -70,19 +70,20 @@
 }
 
 .Maps__itemDescription {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
-.Maps__itemThumbnail:hover {
+.Maps__item:hover {
   text-decoration: none;
 }
 
-.Maps__itemThumbnail {
-  width: 380px;
+.Maps__item {
+  width: 100%;
   height: 240px;
   border: 1px solid var(--white);
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
   text-decoration: none;
   margin: 0 0 0.4em;
