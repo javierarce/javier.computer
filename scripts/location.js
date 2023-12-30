@@ -3,20 +3,23 @@ const https = require('https')
 class GeoCoder {
   constructor(location) {
     this.location = location
-    this.apiUrlSearch = `https://geocode.maps.co/search?q=${encodeURIComponent(this.location)}`
+    this.apiUrlSearch = `https://geocode.maps.co/search?q=${encodeURIComponent(this.location)}&api_key=${process.env.GEOCODE_API_KEY}`
   }
 
   formatYAML(result) {
     return `
-- title: "${result.title || this.location}"
-  permalink: "${result.permalink}"
-  description: "${result.description || this.location}"
-  address: "${result.address}"
-  latlng: 
-    - ${result.latlng[0]}
-    - ${result.latlng[1]}
-  location: "${result.location}"`
-  }
+---
+layout: place
+pid: "${result.permalink}"
+title: "${result.title || this.location}"
+description: "${result.description || this.location}"
+address: "${result.address}"
+latlng: 
+  - ${result.latlng[0]}
+  - ${result.latlng[1]}
+location: "${result.location}"
+---`
+}
 
   getGeoCode() {
     https.get(this.apiUrlSearch, (res) => {
@@ -30,7 +33,9 @@ class GeoCoder {
         const jsonData = JSON.parse(data)
 
         jsonData.forEach((result) => {
-          this.getReverseGeoCode(result)
+          setTimeout(() => {
+            this.getReverseGeoCode(result)
+          }, 4000)
         })
       })
 
@@ -40,7 +45,8 @@ class GeoCoder {
   }
 
   getReverseGeoCode(location) {
-    const apiUrlReverse = `https://geocode.maps.co/reverse?lat=${location.lat}&lon=${location.lon}`
+    console.log('GeoCoding: ', location)
+    const apiUrlReverse = `https://geocode.maps.co/reverse?lat=${location.lat}&lon=${location.lon}&api_key=${process.env.GEOCODE_API_KEY}`
 
     https.get(apiUrlReverse, (res) => {
       let data = ''

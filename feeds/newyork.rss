@@ -6,13 +6,13 @@
   xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
   <channel>
     <title>RSS feed de newyork</title>
-    <link>http://localhost:4001/feeds/newyork.rss</link>
+    <link>https://javier.computer/feeds/newyork.rss</link>
     <description>Sitios en newyork</description>
     <language>es</language>
     <pubDate>Sun, 10 Dec 2023 10:14:33 +0100</pubDate>
     <item>
       <title>Banh Mi Place</title>
-      <link>http://localhost:4001/maps/newyork/banh-mi-place</link>
+      <link>https://javier.computer/maps/newyork/banh-mi-place</link>
       <description>&lt;br&gt;&lt;br&gt;824b Washington Ave, Brooklyn&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       <dc:subject>newyork</dc:subject>
@@ -20,7 +20,7 @@
     </item>
     <item>
       <title>Blue Bottle Coffee</title>
-      <link>http://localhost:4001/maps/newyork/blue-bottle-7-ave</link>
+      <link>https://javier.computer/maps/newyork/blue-bottle-7-ave</link>
       <description>Para disfrutar de un buen latte por $6&lt;br&gt;&lt;br&gt;203 7th Ave, Brooklyn&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       <dc:subject>newyork</dc:subject>
@@ -28,7 +28,7 @@
     </item>
     <item>
       <title>Desert Island</title>
-      <link>http://localhost:4001/maps/newyork/desert-island</link>
+      <link>https://javier.computer/maps/newyork/desert-island</link>
       <description>Desert Island is a record store located in the East Village neighborhood of Manhattan, New York City. It is located at 540 East 5th Street, between Avenues A and B.&lt;br&gt;&lt;br&gt;540 E 5th St&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       <dc:subject>newyork</dc:subject>
@@ -36,7 +36,7 @@
     </item>
     <item>
       <title>Goods for the Study</title>
-      <link>http://localhost:4001/maps/newyork/goods-for-the-study</link>
+      <link>https://javier.computer/maps/newyork/goods-for-the-study</link>
       <description>Ahora que cerró CW Pencil Enterprise este es un buen sitio donde comprar material de oficina.&lt;br&gt;&lt;br&gt;234 Mulberry St, New York&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       <dc:subject>newyork</dc:subject>
@@ -44,7 +44,7 @@
     </item>
     <item>
       <title>Hungry Ghost</title>
-      <link>http://localhost:4001/maps/newyork/hungry-ghost</link>
+      <link>https://javier.computer/maps/newyork/hungry-ghost</link>
       <description>&lt;br&gt;&lt;br&gt;183 Sterling Pl, Brooklyn&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       <dc:subject>newyork</dc:subject>
@@ -52,7 +52,7 @@
     </item>
     <item>
       <title>Mast Books</title>
-      <link>http://localhost:4001/maps/newyork/mast-books</link>
+      <link>https://javier.computer/maps/newyork/mast-books</link>
       <description>Tienen una colección exquisita de primeras ediciones, libros raros y descatalogados, pero son un poco bordes.&lt;br&gt;&lt;br&gt;72 Avenue A, New York&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       <dc:subject>newyork</dc:subject>
@@ -60,7 +60,7 @@
     </item>
     <item>
       <title>Most High</title>
-      <link>http://localhost:4001/maps/newyork/most-high</link>
+      <link>https://javier.computer/maps/newyork/most-high</link>
       <description>&lt;br&gt;&lt;br&gt;820 Washington Ave, Brooklyn&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       <dc:subject>newyork</dc:subject>
@@ -68,7 +68,7 @@
     </item>
     <item>
       <title>Nûrish</title>
-      <link>http://localhost:4001/maps/newyork/nurish</link>
+      <link>https://javier.computer/maps/newyork/nurish</link>
       <description>Café con platos vegetarianos y veganos (pero también con opciones para carnívoros)&lt;br&gt;&lt;br&gt;637 Washington Ave, Brooklyn&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       <dc:subject>newyork</dc:subject>
@@ -76,7 +76,7 @@
     </item>
     <item>
       <title>Prospect Park</title>
-      <link>http://localhost:4001/maps/newyork/prospect-park</link>
+      <link>https://javier.computer/maps/newyork/prospect-park</link>
       <description>Un parque bien majo&lt;br&gt;&lt;br&gt;Brooklyn, NY&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       <dc:subject>newyork</dc:subject>
@@ -84,7 +84,7 @@
     </item>
     <item>
       <title>Quimby's Bookstore NYC</title>
-      <link>http://localhost:4001/maps/newyork/quimby</link>
+      <link>https://javier.computer/maps/newyork/quimby</link>
       <description>Sales de Desert Island y te metes aquí.&lt;br&gt;&lt;br&gt;536 Metropolitan Ave&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       <dc:subject>newyork</dc:subject>
@@ -92,7 +92,7 @@
     </item>
     <item>
       <title>Sit &amp; Wonder</title>
-      <link>http://localhost:4001/maps/newyork/sit-wonder</link>
+      <link>https://javier.computer/maps/newyork/sit-wonder</link>
       <description>Cuando fui a esta cafetería me tocó el barista aprendiz&lt;br&gt;&lt;br&gt;688 Washington Ave, Brooklyn&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       <dc:subject>newyork</dc:subject>

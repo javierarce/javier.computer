@@ -5,7 +5,7 @@ pid: noanoa
 description: Una cafetería-librería con cafés y libros.
 address: Carrer de Torrijos, 22
 latlng:
-- 41.40407370542504
-- 2.1590587232917984
+- 41.403156276444605
+- 2.159198194771789
 location: barcelona
 ---
