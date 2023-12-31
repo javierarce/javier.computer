@@ -40,6 +40,13 @@ module Jekyll
         locations_hash[location_name] << place_details unless locations_hash[location_name].any? { |ld| ld['pid'] == place_details['pid'] }
       end
 
+      locations_hash.each do |location_name, places|
+        locations_hash[location_name] = places.sort_by do |place|
+          date = place['frontmatter_date'] ? DateTime.parse(place['frontmatter_date']) : place['last_modified_date']
+          date.to_time.to_i
+        end
+      end
+
       # Process post locations
       site.posts.docs.each do |post|
         if post.data['places']
@@ -65,7 +72,7 @@ module Jekyll
     end
 
     def generate_csv(locations_hash)
-      locations_hash.each do |location, places|
+      locations_hash.reverse_each do |location, places|
         CSV.open("assets/maps/#{location}.csv", "w") do |csv|
           csv << ["name", "description", "address", "latitude", "longitude"]
 
@@ -85,7 +92,7 @@ module Jekyll
     private
 
     def generate_json(locations_hash)
-      locations_hash.each do |location, data|
+      locations_hash.reverse_each do |location, data|
         json_file_path = "_data/locations/#{location}.json"
 
         if File.exist?(json_file_path)
@@ -108,6 +115,17 @@ module Jekyll
       default_date = DateTime.new(2023, 1, 1) # Default date set to January 1st, 2023
 
       locations_hash.each do |location, points_of_interest|
+
+        points_of_interest.sort_by! do |point|
+          post_dates = point['post_references'].map do |post_ref|
+            post_ref['date'] ? DateTime.parse(post_ref['date']) : nil
+          end.compact
+
+          last_modified_date = point['last_modified_date']
+          frontmatter_date = point['date'] ? DateTime.parse(point['date']) : nil
+          [post_dates, frontmatter_date, last_modified_date].flatten.compact.max || default_date
+        end.reverse!
+
         modified_dates = points_of_interest.map do |point|
           point['last_modified_date'] || default_date
         end
