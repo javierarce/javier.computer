@@ -9,7 +9,7 @@
     <link>https://javier.computer/feeds/barcelona.rss</link>
     <description>Sitios en barcelona</description>
     <language>es</language>
-    <pubDate>Sat, 30 Dec 2023 17:01:37 +0100</pubDate>
+    <pubDate>Sun, 31 Dec 2023 19:01:32 +0100</pubDate>
     <item>
       <title>035//BAR</title>
       <link>https://javier.computer/maps/barcelona/cero-tres-cinco</link>
@@ -147,6 +147,14 @@
       <dc:date>2023-12-08T17:14:31+01:00</dc:date>
     </item>
     <item>
+      <title>The Green Spot</title>
+      <link>https://javier.computer/maps/barcelona/the-green-spot</link>
+      <description>Vegetariano bonito y rico en la Barceloneta. ¿Qué me gustó de aquí? La colifor empanada, el plato de tempeh y el risotto de 7 verdes.&lt;br&gt;&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/the-green-spot'&gt;Carrer de la Reina Cristina, 12&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;Este sitio aparece en los siguientes posts:&lt;/p&gt;&lt;ul&gt;&lt;/ul&gt;</description>
+      <pubDate>Sun, 31 Dec 2023 19:01:32 +0100</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2023-12-31T19:01:32+01:00</dc:date>
+    </item>
+    <item>
       <title>Vereda Bar</title>
       <link>https://javier.computer/maps/barcelona/vereda</link>
       <description>Platos de proximidad y temporada y vinos naturales.&lt;br&gt;&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/vereda'&gt;Carrer de la Diputació, 155&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;p&gt;Este sitio aparece en los siguientes posts:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2023/05/04/open-heart-protocol'&gt;Open Heart Protocol&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
@@ -162,6 +170,6 @@
       <dc:subject>barcelona</dc:subject>
       <dc:date>2023-12-08T19:48:57+01:00</dc:date>
     </item>
-    <dc:date>2023-12-30T17:01:37+01:00</dc:date>
+    <dc:date>2023-12-31T19:01:32+01:00</dc:date>
   </channel>
 </rss>
