@@ -7,22 +7,22 @@
 @import '_transitions';
 
 @import 'About';
+@import 'Announcement';
 @import 'Archive';
-@import 'Binoculars';
-@import 'Label';
 @import 'Book';
 @import 'Bot';
 @import 'Button';
 @import 'Calendar';
-@import 'Checklist';
 @import 'Drawing';
 @import 'Figure';
 @import 'Footer';
+@import 'Footnotes';
 @import 'Form';
 @import 'Header';
 @import 'Heart';
 @import 'Highlight';
 @import 'Input';
+@import 'Label';
 @import 'Mail';
 @import 'Map';
 @import 'Music';
@@ -263,31 +263,6 @@ img.lazy.error {
   width: 100%;
 }
 
-.Footnotes {
-  opacity: 0.5;
-  font-size: 0.9em;
-  margin: 0 0 2em;
-}
-
-.Footnotes p {
-  margin: 0 0 0.2em;
-}
-
-.Announcement {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  font-weight: 400;
-  flex-direction: row;
-  opacity: 0.5;
-  margin: 0 0 3em;
-}
-
-.Announcement:hover {
-  opacity: 1;
-  text-decoration: none;
-}
-
 .icon {
   display: inline-block;
   width: 24px;
@@ -302,11 +277,6 @@ img.lazy.error {
 }
 .icon-album {
   background-image: url(/img/icons/headphones.svg);
-}
-
-.Layout__project hr {
-  width: 100%;
-  max-width: 800px;
 }
 
 .About__content a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after,
@@ -354,28 +324,6 @@ a.is-photo::after {
   font-size: 0.7em;
 }
 
-@media all and (max-width: 640px) {
-  body {
-    font-size: 1.2em;
-  }
-
-  .Content {
-    padding: 1em;
-  }
-
-  .Player, .Player__info {
-    flex-direction: column;
-    align-items: start;
-  }
-  .Announcement__icon {
-    margin-top: 4px;
-  }
-
-  .Announcement {
-    align-items: start;
-  }
-}
-
 .Layout__blogroll ul li {
   padding: 0;
   margin: 0;
@@ -385,18 +333,13 @@ span.Date {
   opacity: 0.5;
 }
 
-.Archive__entryList {
-  list-style: none;
-  margin: 0;
+@media all and (max-width: 640px) {
+  body {
+    font-size: 1.2em;
+  }
+
+  .Content {
+    padding: 1em;
+  }
 }
-.Archive__entryListItem {
-  list-style: none;
-  margin: 0 0 2em;
-}
-.Archive__entryListItemContent p {
-  margin: 0 0 0.8em;
-}
-.Archive__entryListItemDate {
-  opacity: 0.5;
-  font-size: 0.9em;
-}
+

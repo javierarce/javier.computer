@@ -96,3 +96,10 @@
 .Player__frame iframe {
   display: none;
 }
+
+@media all and (max-width: 640px) {
+  .Player, .Player__info {
+    flex-direction: column;
+    align-items: start;
+  }
+}

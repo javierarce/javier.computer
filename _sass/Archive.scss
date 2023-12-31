@@ -36,6 +36,22 @@
   margin: 0 0.4em 0 0;
 }
 
+.Archive__entryList {
+  list-style: none;
+  margin: 0;
+}
+.Archive__entryListItem {
+  list-style: none;
+  margin: 0 0 2em;
+}
+.Archive__entryListItemContent p {
+  margin: 0 0 0.8em;
+}
+.Archive__entryListItemDate {
+  opacity: 0.5;
+  font-size: 0.9em;
+}
+
 @media all and (max-width: 1024px) {
   .Layout__archive .Content__inner {
     column-count: 2;

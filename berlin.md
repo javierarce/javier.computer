@@ -4,7 +4,6 @@ title:  Berlín
 description: Checklist
 permalink: berlin
 ---
-
 Dolor a repellat nesciunt ipsum laboriosam Quis laborum corrupti voluptatem fugiat ea saepe Ullam quo ab natus est saepe. Atque est laboriosam aperiam repellat tempora. Cumque quaerat ratione praesentium repellat
 
 - [ ] Ir en bici

@@ -1,0 +1,24 @@
+.Announcement {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 400;
+  flex-direction: row;
+  opacity: 0.5;
+  margin: 0 0 3em;
+}
+
+.Announcement:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+@media all and (max-width: 640px) {
+  .Announcement__icon {
+    margin-top: 4px;
+  }
+
+  .Announcement {
+    align-items: start;
+  }
+}
