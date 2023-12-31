@@ -48,8 +48,7 @@ layout: none
         {{ post.content }}   
           <p>{% if matching_location -%} {{ matching_location.title }}. {% endif -%}
           {% if post.camera -%}{{ post.camera }}.{% endif -%}</p>
-
-        <p><a href="{{ site.url}}/heart?id={{post.url}}">Like</a></p>
+          <p><a href="{{ site.url}}/heart?id={{post.url}}">Like</a></p>
         ]]>
       {% elsif post.category == 'quote' %}
         <p><blockquote>{{ post.content | xml_escape }}</blockquote></p>
