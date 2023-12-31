@@ -1,7 +1,6 @@
 <script type="application/ld+json">
   {"description":"{{ site.description }}","@type":"WebSite","url":"{{ site.url }}","name":"{{ site.title }}","headline":"{{ site.title }}","@context":"https://schema.org"}</script>
 
-
 <script defer type="module" src="{{ 'scripts/hearts.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
 
 <script src="{{ 'scripts/Spinner.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
@@ -13,6 +12,9 @@
 <script src="{{ 'scripts/Chameleon.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
 {% if page.library -%}
 <script src="{{ 'scripts/' | append: page.library | append: '.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
+{% endif -%}
+{% if page.permalink == 'heart' -%}
+<script src="{{ 'scripts/like.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
 {% endif -%}
 <script src="{{ 'scripts/client.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
 <link rel="stylesheet" href="{{ 'css/style.css' | relative_url }}?version={{site.version}}" />

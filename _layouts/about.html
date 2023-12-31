@@ -18,22 +18,22 @@
     {% endif %}
 
     <script>
-    const USER_LOCATION = {{ site.data.location | jsonify }};
+      const USER_LOCATION = {{ site.data.location | jsonify }};
     </script>
 
     <body class="Layout__{{ className | default: page.category | downcase  }}">
-<div class="Content">
-    {% include navigation.html %}
+      <div class="Content">
+        {% include navigation.html %}
 
-    <div class="About__content">
-        {% if page.weather -%}
-        <weather-snitch></weather-snitch>
-        {% endif -%}
-        {{ content }}
-    </div>
+        <div class="About__content">
+          {% if page.weather -%}
+          <weather-snitch></weather-snitch>
+          {% endif -%}
+          {{ content }}
+        </div>
 
-    {% include footer.html %}
-</div>
+        {% include footer.html %}
+      </div>
       <script src="{{ 'scripts/lazyload.min.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
     </body>
 </html>

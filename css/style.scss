@@ -73,8 +73,22 @@
   opacity: 0.5;
 }
 
+
+.is-light a,
+.is-light a:hover,
+p.is-light a,
+p.is-light a:hover,
+p.is-light p a,
+p.is-light p a:hover {
+  color: var(--white);
+}
+
 .is-hidden {
   display: none;
+}
+
+.is-small {
+  font-size: 0.8em;
 }
 
 .is-now {
