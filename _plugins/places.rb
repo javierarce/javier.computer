@@ -138,6 +138,7 @@ module Jekyll
 
               references = []
               if point['post_references']
+                references << "<p>Este sitio aparece en los siguientes posts:</p>"
                 references << "<ul>"
                 references.concat(point['post_references'].map { |post_ref|
                   "<li><a href='#{site.config['url']}#{post_ref['url']}'>#{post_ref['title']}</a></li>"
