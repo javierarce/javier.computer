@@ -1,6 +1,6 @@
 ---
 layout: trip
-title:  Berlin
+title:  Berlín
 description: Guía de bolsillo
 className: Map
 permalink: maps/berlin

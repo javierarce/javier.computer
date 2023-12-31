@@ -1,6 +1,6 @@
 ---
 layout: location
-title: Berlin
+title: Berlín
 location: berlin
 permalink: in/berlin
 ---
