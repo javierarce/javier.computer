@@ -145,7 +145,7 @@ module Jekyll
                 references << "</ul>"
               end
 
-              description = "#{point['description']}<br><br>#{point['address']}<br><br>#{references.join}"
+              description = "#{point['description']}<br><br><a href='#{site.config['url']}/maps/#{location}/#{point['pid']}'>#{point['address']}</a><br><br>#{references.join}"
               item.description = description
               item.updated = point_date.iso8601 if point_date
               item.dc_subject = location
