@@ -155,7 +155,8 @@ module Jekyll
               item.title = "#{point['title']}"
 
               references = []
-              if point['post_references']
+
+              if point['post_references'] && !point['post_references'].empty?
                 references << "<p>Este sitio aparece en los siguientes posts:</p>"
                 references << "<ul>"
                 references.concat(point['post_references'].map { |post_ref|
