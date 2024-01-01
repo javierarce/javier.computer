@@ -1,7 +1,47 @@
 {
   "updated_at": "2024-01-01",
-  "count": 557,
+  "count": 562,
   "movies": [
+    {
+      "watched_on": "2024-01-01",
+      "title": "The Big Shave (1967)",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "the-big-shave"
+    },
+    {
+      "watched_on": "2024-01-01",
+      "title": "What's a Nice Girl Like You Doing in a Place Like This? (1963)",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "whats-a-nice-girl-like-you-doing-in-a-place-like-this"
+    },
+    {
+      "watched_on": "2024-01-01",
+      "title": "It's Not Just You, Murray! (1964)",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "its-not-just-you-murray"
+    },
+    {
+      "watched_on": "2024-01-01",
+      "title": "Point Blank (1967)",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "point-blank"
+    },
+    {
+      "watched_on": "2024-01-01",
+      "title": "Stop Making Sense (1984)",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "stop-making-sense"
+    },
     {
       "watched_on": "2023-12-31",
       "title": "The Beast Shall Die (1959)",
