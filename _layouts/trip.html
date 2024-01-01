@@ -39,7 +39,7 @@ className: Trip
       {% for post_ref in location.post_references -%}
       {% assign j = j | plus: 1 %}
 
-      <a href="{{ post_ref.url }}" class="Location__post">{{ j}}</a>
+      <a href="{{ post_ref.url }}" class="Location__post">{{ j }}</a>
       {% endfor -%}
     </div>
     {% endif -%}

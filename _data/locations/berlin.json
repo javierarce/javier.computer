@@ -4,7 +4,7 @@
     "pid": "doyoureadme",
     "date": "2023-03-31 20:34:33 +0200",
     "title": "do you read me?!",
-    "description": null,
+    "description": "",
     "address": "Auguststraße 28",
     "latlng": [
       52.52726714641086,
@@ -21,7 +21,7 @@
     "layout": "place",
     "pid": "bartleby",
     "title": "Bartleby & Co",
-    "description": "Librería española capitaneada por Ana Pareja.",
+    "description": "<p>Librería española capitaneada por Ana Pareja.</p>\n",
     "address": "Boppstraße 2",
     "latlng": [
       52.493500792859805,
@@ -37,7 +37,7 @@
     "layout": "place",
     "pid": "zola",
     "title": "Zola",
-    "description": "La «Zola Neapolitan mit Fior di Latte, Birne, Walnüssen und Gorgonzola» estaba muy rica.",
+    "description": "<p>La «Zola Neapolitan mit Fior di Latte, Birne, Walnüssen und Gorgonzola» estaba muy rica.</p>\n",
     "address": "Paul-Lincke-Ufer, 39-40",
     "latlng": [
       52.49674658332709,
@@ -61,6 +61,7 @@
     ],
     "location": "berlin",
     "last_modified_date": "2023-12-09T21:47:40+01:00",
+    "description": "",
     "post_references": [
 
     ]
@@ -70,7 +71,7 @@
     "pid": "cafe-strauss",
     "title": "Café Strauss",
     "emoji": "☕️",
-    "description": "Un café muy tranquilo frente a un cementerio muy tranquilo (espero).",
+    "description": "<p>Un café muy tranquilo frente a un cementerio muy tranquilo (espero).</p>\n",
     "address": "Bergmannstraße, 42",
     "latlng": [
       52.4886291,
@@ -87,7 +88,7 @@
     "pid": "carpenter",
     "title": "Father Carpenter Coffee Brewers",
     "emoji": "☕️",
-    "description": "Mucha cola durante el fin de semana, mejor ir muy pronto o evitar directamente.",
+    "description": "<p>Mucha cola durante el fin de semana, mejor ir muy pronto o evitar directamente.</p>\n",
     "address": "Münzstraße, 21, Scheunenviertel",
     "latlng": [
       52.5244438,
@@ -103,7 +104,7 @@
     "layout": "place",
     "pid": "mamakan",
     "title": "Ma-Makan",
-    "description": "Delicias malayas y singapurenses. Ojito al «Kaya croissant».",
+    "description": "<p>Delicias malayas y singapurenses. Ojito al «Kaya croissant».</p>\n",
     "address": "Lausitzer Pl. 12",
     "latlng": [
       52.501010546828965,
@@ -119,7 +120,7 @@
     "layout": "place",
     "pid": "modulor",
     "title": "Modulor",
-    "description": "Modulor Material Total",
+    "description": "<p>Modulor Material Total</p>\n",
     "address": "Prinzenstraße, 85",
     "latlng": [
       52.5033859,
@@ -135,7 +136,7 @@
     "layout": "page",
     "pid": "motto",
     "title": "Motto Berlin",
-    "description": "Librería a la que ya no voy desde que descubrí que no paga a sus proveedores.",
+    "description": "<p>Librería a la que ya no voy desde que descubrí que no paga a sus proveedores.</p>\n",
     "address": "Skalitzer Straße, 68, Luisenstadt",
     "latlng": [
       52.5000847,
@@ -151,7 +152,7 @@
     "layout": "place",
     "pid": "tenzan",
     "title": "tenzan lab.",
-    "description": "Kakigōris y taiyakis",
+    "description": "<p>Kakigōris y taiyakis</p>\n",
     "address": "Wörther Straße, 22",
     "latlng": [
       52.5357069,
@@ -175,6 +176,7 @@
     ],
     "location": "berlin",
     "last_modified_date": "2023-12-09T21:47:40+01:00",
+    "description": "",
     "post_references": [
 
     ]
@@ -183,7 +185,7 @@
     "layout": "place",
     "pid": "trauma",
     "title": "Trauma Bar und Kino",
-    "description": "Club, bar, cine, sala de conciertos y arte. Aquí se celebró el quinto aniversario de New Models. Está cerca de Berlin Hauptbahnhof. No hay mucho más alrededor.",
+    "description": "<p>Club, bar, cine, sala de conciertos y arte. Aquí se celebró el quinto aniversario de New Models. Está cerca de Berlin Hauptbahnhof. No hay mucho más alrededor.</p>\n",
     "address": "Heidestraße, 50",
     "latlng": [
       52.5306327,
@@ -199,7 +201,7 @@
     "layout": "place",
     "pid": "dotori",
     "title": "Dotori Korean Anju Bar",
-    "description": "Bonitísimo y compactísimo y riquísimo bar de tapas coreanas.",
+    "description": "<p>Bonitísimo y compactísimo y riquísimo bar de tapas coreanas.</p>\n",
     "address": "Gustav-Adolf-Straße 159",
     "latlng": [
       52.553966826503334,

@@ -13,6 +13,15 @@ module Jekyll
       end
     end
 
+    def strip_html_tags(text)
+      text.gsub(/<\/?[^>]*>/, "")
+    end
+
+    def render_markdown(text)
+      return '' if text.nil?
+      Kramdown::Document.new(text).to_html
+    end
+
     def generate_places(site)
       pid_hash = {}
 
@@ -27,6 +36,7 @@ module Jekyll
 
         last_modified_date = File.birthtime(file).to_datetime
         location_data['last_modified_date'] = last_modified_date
+        location_data['description'] = render_markdown(location_data['description'])
         location_data['post_references'] ||= []
         location_data['frontmatter_date'] = location_data['date'] if location_data['date']
         pid_hash[location_data['pid']] = location_data
@@ -78,7 +88,7 @@ module Jekyll
 
           places.each do |place|
             name = place["title"]
-            description = place["description"]
+            description = strip_html_tags(render_markdown(place["description"]))
             address = place["address"]
             lat = place["latlng"]&.first
             lng = place["latlng"]&.last
@@ -165,8 +175,8 @@ module Jekyll
                 references << "</ul>"
               end
 
-              description = "#{point['description']}<br><br><a href='#{site.config['url']}/maps/#{location}/#{point['pid']}'>#{point['address']}</a><br><br>#{references.join}"
-              item.description = description
+              description = render_markdown(point['description'])
+              item.description = "#{description}<br><br><a href='#{site.config['url']}/maps/#{location}/#{point['pid']}'>#{point['address']}</a><br><br>#{references.join}"
               item.updated = point_date.iso8601 if point_date
               item.dc_subject = location
             end

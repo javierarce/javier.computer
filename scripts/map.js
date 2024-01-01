@@ -99,7 +99,7 @@ class Popup extends Base {
     return `
       <div class="Popup__content">
         <% if (title) { %><div class="Popup__title"><%= title %></div> <% } %>
-        <% if (description) { %><div class="Popup__description"><%= description %></div> <% } %>
+        <% if (description) { %><div class="Popup__description"><%- description %></div> <% } %>
         <% if (post_references && post_references.length > 0) { %><div class="Popup__posts">
         <% for (let i = 0; i < post_references.length; i++) { %>
             <a class="Popup__post" href="<%= post_references[i].url -%>"><%= i + 1 -%></a>
