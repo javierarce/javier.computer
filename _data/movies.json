@@ -1,7 +1,23 @@
 {
-  "updated_at": "2023-12-29",
-  "count": 555,
+  "updated_at": "2024-01-01",
+  "count": 557,
   "movies": [
+    {
+      "watched_on": "2023-12-31",
+      "title": "The Beast Shall Die (1959)",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "the-beast-shall-die-1959"
+    },
+    {
+      "watched_on": "2023-12-30",
+      "title": "Hi, Mom! (1970)",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "hi-mom"
+    },
     {
       "watched_on": "2023-12-27",
       "title": "Auto Focus (2002)",
