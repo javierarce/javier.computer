@@ -52,6 +52,9 @@ collections:
   maps:
     output: true
     permalink: '/map/:path/'
+  movies:
+    output: true
+    permalink: '/movies/:path/'
   drawings:
     output: true
     permalink: '/drawings/:path/'

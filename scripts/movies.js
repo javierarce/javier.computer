@@ -26,6 +26,30 @@ async function getTotalPages(root) {
   return lastPageLink ? parseInt(lastPageLink.innerText.trim(), 10) : 1
 }
 
+function createMarkdownFile(movie) {
+  const { title, year, rating, stars, rewatched, permalink, watched_on } = movie;
+  const mdContent = `---
+title: "${title}"
+year: ${year}
+rating: ${rating}
+stars: "${stars}"
+rewatched: ${rewatched}
+permalink: "${permalink}"
+watched_on: ${watched_on}
+---`;
+
+  const safePermalink = isNaN(permalink) ? permalink : `${permalink}-movie`
+  const fileName = `${safePermalink}.md`
+  
+  const dir = 'content/_movies/'
+
+  if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir, { recursive: true });
+  }
+
+  fs.writeFileSync(dir + fileName, mdContent);
+}
+
 async function scrapeMovies() {
   const root = await fetchPage(1)
   const totalPages = await getTotalPages(root)
@@ -44,13 +68,13 @@ async function scrapeMovies() {
       const filmTitle = metadataElem.getAttribute('data-film-name')
       const rewatched = metadataElem.getAttribute('data-rewatch') === 'true'
       const year = metadataElem.getAttribute('data-film-year')
-      const title = `${filmTitle} (${year})`
+      const title = `${filmTitle}`
       const rating = parseInt(metadataElem.getAttribute('data-rating'), 10) / 2
       const fullStars = '★'.repeat(Math.floor(rating))
       const halfStar = (rating - Math.floor(rating) >= 0.5) ? '½' : ''
 
       const stars = fullStars + halfStar
-      movies.push({ watched_on: watchedOn, title, rating, stars, rewatched, permalink })
+      movies.push({ watched_on: watchedOn, title, year, rating, stars, rewatched, permalink })
     })
   }
 
@@ -65,6 +89,7 @@ scrapeMovies().then(movies => {
     movies
   }
 
+  movies.forEach(movie => createMarkdownFile(movie))
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(outputData, null, 2))
 
   console.log(`Total movies: ${movies.length}`)

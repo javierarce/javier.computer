@@ -1,0 +1,9 @@
+---
+title: "Dream Scenario"
+year: 2023
+rating: 3.5
+stars: "★★★½"
+rewatched: false
+permalink: "dream-scenario"
+watched_on: 2023-12-25
+---
