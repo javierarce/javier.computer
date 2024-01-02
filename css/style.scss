@@ -302,7 +302,7 @@ img.lazy.error {
   display: inline-block;
   font-weight: 400;
   padding-left: 4px;
-  opacity: 0.4;
+  opacity: 0.5;
   color: var(--white);
 }
 
@@ -315,7 +315,7 @@ img.lazy.error {
   vertical-align: baseline;
   top: 2px;
   position: relative;
-  opacity: 0.4;
+  opacity: 0.5;
   color: var(--white);
 }
 
@@ -328,7 +328,7 @@ a.is-photo::after {
   margin: 0 0 0 0.2em;
   background-image: url(/img/icons/picture.svg);
   background-size: cover;
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 .tag {

@@ -9,7 +9,7 @@ class RSS extends HTMLElement {
       rss-reader { display: block; margin: 0 0 0 0; }
       ::part(blog) { text-decoration: none; color: #ffc107; text-decoration: underline; }
       ::part(date) { opacity: 0; visibility: hidden; transition: opacity 250ms ease-in-out; font-size: 0.8em; }
-      rss-reader.is-loaded::part(date) { opacity: 0.4; visibility: visible; }
+      rss-reader.is-loaded::part(date) { opacity: 0.5; visibility: visible; }
       `
 
     document.head.appendChild(this.styles)

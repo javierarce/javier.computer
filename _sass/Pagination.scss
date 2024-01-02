@@ -11,7 +11,7 @@
   height: 40px;
   margin: 0 0.4em 0 0;
   border: 1px solid var(--white);
-  opacity: 0.4;
+  opacity: 0.5;
   text-decoration: none;
   cursor: pointer;
   user-select: none;
@@ -32,7 +32,7 @@
 }
 
 .Pagination__item.is-ellipsis:hover {
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 .Pagination__item.is-selected {

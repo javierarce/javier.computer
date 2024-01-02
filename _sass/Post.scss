@@ -63,11 +63,9 @@
   user-select: none;
   font-weight: 400;
 }
-.Post__paginationArrow {
-  opacity: 0.4;
-}
+.Post__paginationArrow,
 .Post__footerSeparator {
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 .Post__pagination > * {
