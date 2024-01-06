@@ -2,6 +2,7 @@
 layout: place
 title: SlowMov
 pid: slowmov
+emoji: ☕️
 description: Mi cafetería de cabecera en el barrio.
 address: "Carrer de Luis Antúnez, 18"
 latlng:

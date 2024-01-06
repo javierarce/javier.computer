@@ -1,6 +1,7 @@
 ---
 layout: place
 title: Fábrica Garage
+emoji: 🍺
 pid: fabrica-garage
 address: "Sant Adrià, 66"
 latlng: 

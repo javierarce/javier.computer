@@ -176,7 +176,7 @@ module Jekyll
               end
 
               description = render_markdown(point['description'])
-              item.description = "#{description}<br><br><a href='#{site.config['url']}/maps/#{location}/#{point['pid']}'>#{point['address']}</a><br><br>#{references.join}"
+              item.description = "#{description}<br><a href='#{site.config['url']}/maps/#{location}/#{point['pid']}'>#{point['address']}</a><br>#{references.join}"
               item.updated = point_date.iso8601 if point_date
               item.dc_subject = location
             end

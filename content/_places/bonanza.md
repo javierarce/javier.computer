@@ -2,6 +2,7 @@
 layout: place
 pid: bonanza
 title: "Bonanza"
+
 emoji: ☕️
 address: "Adalbertstraße, 70"
 latlng:

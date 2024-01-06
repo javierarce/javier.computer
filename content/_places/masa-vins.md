@@ -2,6 +2,7 @@
 layout: place
 title: Masa Vins
 pid: masa-vins
+emoji: 🍷
 address: "Carrer de Pallars, 154"
 description: Bar *trendy* de vinos naturales y también *trendies* en Poblenou.
 latlng: 
