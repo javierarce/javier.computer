@@ -316,6 +316,26 @@
   },
   {
     "layout": "place",
+    "title": "Centre de Cultura Contemporània de Barcelona",
+    "pid": "cccb",
+    "description": "<p>Centro cultural y centro de artes creativas con teatro, galerías de exposiciones y salas de conferencias</p>\n",
+    "address": "Carrer de Montalegre, 5",
+    "latlng": [
+      41.38438058272032,
+      2.1666050079501575
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2023-12-09T21:47:40+01:00",
+    "post_references": [
+      {
+        "url": "/2022/12/04/constelacion-grafica",
+        "title": "Constelación Gráfica",
+        "date": "2022-12-04 22:59:43 +0100"
+      }
+    ]
+  },
+  {
+    "layout": "place",
     "pid": "funky-bakers",
     "title": "Funky Bakers",
     "description": "<p>No tan <em>funkies</em> como dicen ser pero tienen cosas ricas.</p>\n",
@@ -351,26 +371,6 @@
         "url": "/2023/05/04/open-heart-protocol",
         "title": "Open Heart Protocol",
         "date": "2023-05-04 22:57:54 +0200"
-      }
-    ]
-  },
-  {
-    "layout": "place",
-    "title": "Centre de Cultura Contemporània de Barcelona",
-    "pid": "cccb",
-    "description": "<p>Centro cultural y centro de artes creativas con teatro, galerías de exposiciones y salas de conferencias</p>\n",
-    "address": "Carrer de Montalegre, 5",
-    "latlng": [
-      41.38438058272032,
-      2.1666050079501575
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2023-12-09T21:47:40+01:00",
-    "post_references": [
-      {
-        "url": "/2022/12/04/constelacion-grafica",
-        "title": "Constelación Gráfica",
-        "date": "2022-12-04 22:59:43 +0100"
       }
     ]
   },
@@ -418,6 +418,70 @@
     ],
     "location": "barcelona",
     "last_modified_date": "2024-01-01T12:21:50+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "right-side-coffee-bar",
+    "title": "Right Side Coffee Bar",
+    "description": "<p>Erigido sobre las cenizas (je) de Satan’s Coffee Corner, esta es mi cafetería favorita de Barcelona y donde preparan el mejor latte con avena de la ciudad.</p>\n",
+    "address": "Carrer de l'Arc de Sant Ramon del Call, 11",
+    "latlng": [
+      41.38264207117917,
+      2.1752526677825426
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-01-02T23:18:02+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "cuina-panda",
+    "title": "Cuina Panda",
+    "description": "<p>Pequeño restaurante con comida casera típica de Sichuan. El menú cuando fui era muy carnívoro, pero lo adaptan sin problemas para vegetarianos o veganos.</p>\n",
+    "address": "Carrer de Viladomat, 101",
+    "latlng": [
+      41.38012362269991,
+      2.1572740000000006
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-01-02T23:18:18+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "tofu-catalan",
+    "title": "Tofu Catalán",
+    "description": "<p>Pequeño deli donde comprar tofu fresco, bentos y otros productos japoneses.</p>\n",
+    "address": "Carrer d'Aribau, 119",
+    "latlng": [
+      41.391171858311,
+      2.1556111101123
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-01-02T23:18:57+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "tokyo-ya",
+    "title": "Tokyo-Ya",
+    "description": "<p>¿Fantástico y bien surtido súper japonés? Sí.</p>\n",
+    "address": "Carrer de Balmes, 197",
+    "latlng": [
+      41.40031912503507,
+      2.1523378229426
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-01-02T23:19:00+01:00",
     "post_references": [
 
     ]
