@@ -1,7 +1,43 @@
 {
-  "updated_at": "2024-01-02",
-  "count": 563,
+  "updated_at": "2024-01-06",
+  "count": 567,
   "movies": [
+    {
+      "watched_on": "2024-01-06",
+      "title": "The Company of Strangers",
+      "year": "1990",
+      "rating": 4.5,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "the-company-of-strangers"
+    },
+    {
+      "watched_on": "2024-01-05",
+      "title": "Yannick",
+      "year": "2023",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "yannick-2023"
+    },
+    {
+      "watched_on": "2024-01-04",
+      "title": "The Dirty Dozen",
+      "year": "1967",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "the-dirty-dozen"
+    },
+    {
+      "watched_on": "2024-01-03",
+      "title": "The Killers",
+      "year": "1964",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "the-killers-1964"
+    },
     {
       "watched_on": "2024-01-02",
       "title": "Strange Voyage",
