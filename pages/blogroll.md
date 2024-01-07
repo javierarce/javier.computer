@@ -31,3 +31,4 @@ className: Blogroll
 - [Design Harder](https://designharder.substack.com) de Erik Carter
 - [Gárgola Digital](https://gargoladigital.substack.com) de Ainhoa Marzol
 - [Nonintrusive Monthly Email](https://us9.campaign-archive.com/home/?u=a4c8b2c7fbc757f10dbda8808&id=dfc484dd24) de Joana Estrela
+- [Naive Weekly](https://www.naiveweekly.com) de Kristoffer Tjalve
