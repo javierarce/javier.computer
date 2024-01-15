@@ -9,7 +9,25 @@
     <link>https://javier.computer/feeds/barcelona.rss</link>
     <description>Sitios en barcelona</description>
     <language>es</language>
-    <pubDate>Sat, 06 Jan 2024 20:10:23 +0100</pubDate>
+    <pubDate>Mon, 15 Jan 2024 14:17:06 +0100</pubDate>
+    <item>
+      <title>Restaurant Santa Magdalena</title>
+      <link>https://javier.computer/maps/barcelona/santa-magdalena</link>
+      <description>&lt;p&gt;Cuina de barri. El entrepà de berenjena, tomate y mozzarella estaba muy rico.&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/santa-magdalena'&gt;Carrer de Sta. Magdalena, 6&lt;/a&gt;&lt;br&gt;</description>
+      <pubDate>Mon, 15 Jan 2024 14:17:06 +0100</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2024-01-15T14:17:06+01:00</dc:date>
+    </item>
+    <item>
+      <title>Fino Bar</title>
+      <link>https://javier.computer/maps/barcelona/fino-bar</link>
+      <description>&lt;p&gt;Queviures, salaons, xarcuteria al tall i molt de vi.&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/fino-bar'&gt;Carrer del Torrent de les Flors, 113, Gràcia&lt;/a&gt;&lt;br&gt;</description>
+      <pubDate>Mon, 15 Jan 2024 14:10:42 +0100</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2024-01-15T14:10:42+01:00</dc:date>
+    </item>
     <item>
       <title>Tokyo-Ya</title>
       <link>https://javier.computer/maps/barcelona/tokyo-ya</link>
@@ -235,6 +253,6 @@
       <dc:subject>barcelona</dc:subject>
       <dc:date>2023-12-08T17:14:31+01:00</dc:date>
     </item>
-    <dc:date>2024-01-06T20:10:23+01:00</dc:date>
+    <dc:date>2024-01-15T14:17:06+01:00</dc:date>
   </channel>
 </rss>

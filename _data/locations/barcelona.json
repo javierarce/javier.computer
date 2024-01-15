@@ -322,23 +322,6 @@
   },
   {
     "layout": "place",
-    "pid": "right-side-coffee-bar",
-    "title": "Right Side Coffee Bar",
-    "emoji": "☕️",
-    "description": "<p>Erigido sobre las cenizas (je) de Satan’s Coffee Corner, esta es mi cafetería favorita de Barcelona y donde preparan el mejor latte con avena de la ciudad.</p>\n",
-    "address": "Carrer de l'Arc de Sant Ramon del Call, 11",
-    "latlng": [
-      41.38264207117917,
-      2.1752526677825426
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-01-06T20:10:23+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
     "pid": "funky-bakers",
     "title": "Funky Bakers",
     "description": "<p>No tan <em>funkies</em> como dicen ser pero tienen cosas ricas.</p>\n",
@@ -359,22 +342,35 @@
   },
   {
     "layout": "place",
-    "title": "El Noa Noa",
-    "pid": "noanoa",
-    "description": "<p>Una cafetería-librería con cafés y libros.</p>\n",
-    "address": "Carrer de Torrijos, 22",
+    "pid": "right-side-coffee-bar",
+    "title": "Right Side Coffee Bar",
+    "emoji": "☕️",
+    "description": "<p>Erigido sobre las cenizas (je) de Satan’s Coffee Corner, esta es mi cafetería favorita de Barcelona y donde preparan el mejor latte con avena de la ciudad.</p>\n",
+    "address": "Carrer de l'Arc de Sant Ramon del Call, 11",
     "latlng": [
-      41.403156276444605,
-      2.159198194771789
+      41.38264207117917,
+      2.1752526677825426
     ],
     "location": "barcelona",
     "last_modified_date": "2024-01-06T20:10:23+01:00",
     "post_references": [
-      {
-        "url": "/2022/04/28/pegatinas",
-        "title": "Pegatinas",
-        "date": "2022-04-28 21:58:21 +0200"
-      }
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "cuina-panda",
+    "title": "Cuina Panda",
+    "description": "<p>Pequeño restaurante con comida casera típica de Sichuan. El menú cuando fui era muy carnívoro, pero lo adaptan sin problemas para vegetarianos o veganos.</p>\n",
+    "address": "Carrer de Viladomat, 101",
+    "latlng": [
+      41.38012362269991,
+      2.1572740000000006
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-01-06T20:10:23+01:00",
+    "post_references": [
+
     ]
   },
   {
@@ -443,22 +439,6 @@
   },
   {
     "layout": "place",
-    "pid": "cuina-panda",
-    "title": "Cuina Panda",
-    "description": "<p>Pequeño restaurante con comida casera típica de Sichuan. El menú cuando fui era muy carnívoro, pero lo adaptan sin problemas para vegetarianos o veganos.</p>\n",
-    "address": "Carrer de Viladomat, 101",
-    "latlng": [
-      41.38012362269991,
-      2.1572740000000006
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-01-06T20:10:23+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
     "title": "Masa Vins",
     "pid": "masa-vins",
     "emoji": "🍷",
@@ -472,6 +452,26 @@
     "last_modified_date": "2024-01-06T20:10:23+01:00",
     "post_references": [
 
+    ]
+  },
+  {
+    "layout": "place",
+    "title": "El Noa Noa",
+    "pid": "noanoa",
+    "description": "<p>Una cafetería-librería con cafés y libros.</p>\n",
+    "address": "Carrer de Torrijos, 22",
+    "latlng": [
+      41.403156276444605,
+      2.159198194771789
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-01-06T20:10:23+01:00",
+    "post_references": [
+      {
+        "url": "/2022/04/28/pegatinas",
+        "title": "Pegatinas",
+        "date": "2022-04-28 21:58:21 +0200"
+      }
     ]
   },
   {
@@ -492,6 +492,38 @@
         "title": "Gili",
         "date": "2023-05-27 12:51:37 +0200"
       }
+    ]
+  },
+  {
+    "layout": "place",
+    "title": "Fino Bar",
+    "pid": "fino-bar",
+    "description": "<p>Queviures, salaons, xarcuteria al tall i molt de vi.</p>\n",
+    "address": "Carrer del Torrent de les Flors, 113, Gràcia",
+    "latlng": [
+      41.40912805117236,
+      2.157757869315849
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-01-15T14:10:42+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "title": "Restaurant Santa Magdalena",
+    "pid": "santa-magdalena",
+    "description": "<p>Cuina de barri. El entrepà de berenjena, tomate y mozzarella estaba muy rico.</p>\n",
+    "address": "Carrer de Sta. Magdalena, 6",
+    "latlng": [
+      41.404370532712676,
+      2.152588853967282
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-01-15T14:17:06+01:00",
+    "post_references": [
+
     ]
   }
 ]
