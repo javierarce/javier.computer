@@ -2,6 +2,7 @@
 layout: place
 title: Zumzeig Cinema
 pid: zumzeig
+emoji: 🍿
 description: Sala de cine cooperativa y sin ánimo de lucro, con una programación principalmente indie en VO.
 address: "Carrer de Béjar, 53"
 latlng: 

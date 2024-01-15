@@ -106,6 +106,7 @@
     "layout": "place",
     "pid": "phenomena",
     "title": "Phenomena Experience",
+    "emoji": "🍿",
     "description": "<p>Pelis clásicas palomiteras en una buena sala. Por razones inexplicables las entradas no están numeradas y solo puedes pagar en metálico en el bar.</p>\n",
     "address": "Carrer de St. Antoni Maria Claret, 168",
     "latlng": [
@@ -243,6 +244,7 @@
     "layout": "place",
     "title": "Zumzeig Cinema",
     "pid": "zumzeig",
+    "emoji": "🍿",
     "description": "<p>Sala de cine cooperativa y sin ánimo de lucro, con una programación principalmente indie en VO.</p>\n",
     "address": "Carrer de Béjar, 53",
     "latlng": [
