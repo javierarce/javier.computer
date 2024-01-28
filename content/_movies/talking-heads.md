@@ -1,6 +1,6 @@
 ---
 title: "Talking Heads"
-year: 1981
+year: 1980
 rating: 4
 stars: "★★★★"
 rewatched: false

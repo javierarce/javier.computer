@@ -1,7 +1,115 @@
 {
-  "updated_at": "2024-01-06",
-  "count": 567,
+  "updated_at": "2024-01-28",
+  "count": 579,
   "movies": [
+    {
+      "watched_on": "2024-01-28",
+      "title": "Saltburn",
+      "year": "2023",
+      "rating": 2,
+      "stars": "★★",
+      "rewatched": false,
+      "permalink": "saltburn"
+    },
+    {
+      "watched_on": "2024-01-27",
+      "title": "The Zone of Interest",
+      "year": "2023",
+      "rating": 4.5,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "the-zone-of-interest"
+    },
+    {
+      "watched_on": "2024-01-26",
+      "title": "Tokyo-Ga",
+      "year": "1985",
+      "rating": 4.5,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "tokyo-ga"
+    },
+    {
+      "watched_on": "2024-01-23",
+      "title": "The Eternal Daughter",
+      "year": "2022",
+      "rating": 2,
+      "stars": "★★",
+      "rewatched": false,
+      "permalink": "the-eternal-daughter"
+    },
+    {
+      "watched_on": "2024-01-21",
+      "title": "Hush... Hush, Sweet Charlotte",
+      "year": "1964",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "hush-hush-sweet-charlotte"
+    },
+    {
+      "watched_on": "2024-01-20",
+      "title": "Perfect Days",
+      "year": "2023",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "perfect-days-2023"
+    },
+    {
+      "watched_on": "2024-01-19",
+      "title": "What Ever Happened to Baby Jane?",
+      "year": "1962",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "what-ever-happened-to-baby-jane"
+    },
+    {
+      "watched_on": "2024-01-17",
+      "title": "Europe '51",
+      "year": "1952",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "europe-51"
+    },
+    {
+      "watched_on": "2024-01-14",
+      "title": "Stray Dog",
+      "year": "1949",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "stray-dog"
+    },
+    {
+      "watched_on": "2024-01-09",
+      "title": "Sudden Fear",
+      "year": "1952",
+      "rating": 4.5,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "sudden-fear"
+    },
+    {
+      "watched_on": "2024-01-07",
+      "title": "Experiment in Terror",
+      "year": "1962",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "experiment-in-terror"
+    },
+    {
+      "watched_on": "2024-01-06",
+      "title": "The Coward",
+      "year": "1965",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "the-coward-1965"
+    },
     {
       "watched_on": "2024-01-06",
       "title": "The Company of Strangers",
@@ -1148,7 +1256,7 @@
     {
       "watched_on": "2023-06-27",
       "title": "Talking Heads",
-      "year": "1981",
+      "year": "1980",
       "rating": 4,
       "stars": "★★★★",
       "rewatched": false,
