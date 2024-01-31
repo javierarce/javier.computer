@@ -24,9 +24,9 @@ permalink: books
 {% for book in sorted_books_reading -%}
 {% assign content = book.content | strip_newlines -%}
 {% if content != "" -%}
-| [{{ book.title }}{% if book.subtitle -%}: {{ book.subtitle }}{% endif -%}]({{ book.url }}) | {{ book.author }} | {{ book.started }} | - |
+| [{{ book.title }}{% if book.subtitle -%}<br />{{ book.subtitle }}{% endif -%}]({{ book.url }}) | {{ book.author }} | {{ book.started }} | - |
 {% else -%}
-| {{ book.title }}{% if book.subtitle -%}: {{ book.subtitle }}{% endif -%} | {{ book.author }} | {{ book.started }} | - |
+| {{ book.title }}{% if book.subtitle -%}<br />{{ book.subtitle }}{% endif -%} | {{ book.author }} | {{ book.started }} | - |
 {% endif -%}
 {% endfor -%}
 
@@ -41,9 +41,9 @@ permalink: books
 {% for book in group.items -%}
 {% assign content = book.content | strip_newlines -%}
 {% if content != "" -%}
-| [{{ book.title }}{% if book.subtitle -%}: {{ book.subtitle }}{% endif -%}]({{ book.url }}) | {{ book.author }} | {{ book.read }} | {{ book.rating }} |
+| [{{ book.title }}{% if book.subtitle -%}<br />{{ book.subtitle }}{% endif -%}]({{ book.url }}) | {{ book.author }} | {{ book.read }} | {{ book.rating }} |
 {% else -%}
-| {{ book.title }}{% if book.subtitle -%}: {{ book.subtitle }}{% endif -%} | {{ book.author }} | {{ book.read }} | {{ book.rating }} |
+| {{ book.title }}{% if book.subtitle -%}<br />{{ book.subtitle }}{% endif -%} | {{ book.author }} | {{ book.read }} | {{ book.rating }} |
 {% endif -%}
 {% endfor %}
 {% endfor -%}
