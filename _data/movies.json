@@ -1,7 +1,52 @@
 {
-  "updated_at": "2024-01-31",
-  "count": 580,
+  "updated_at": "2024-02-09",
+  "count": 585,
   "movies": [
+    {
+      "watched_on": "2024-02-09",
+      "title": "Meantime",
+      "year": "1983",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "meantime"
+    },
+    {
+      "watched_on": "2024-02-06",
+      "title": "Panic in Year Zero!",
+      "year": "1962",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "panic-in-year-zero"
+    },
+    {
+      "watched_on": "2024-02-04",
+      "title": "The Delinquents",
+      "year": "2023",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "the-delinquents-2023"
+    },
+    {
+      "watched_on": "2024-02-04",
+      "title": "The Firemen's Ball",
+      "year": "1967",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "the-firemens-ball"
+    },
+    {
+      "watched_on": "2024-02-02",
+      "title": "The Curse",
+      "year": "2023",
+      "rating": 4.5,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "the-curse-2023"
+    },
     {
       "watched_on": "2024-01-30",
       "title": "The Mirror",
