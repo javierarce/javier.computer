@@ -1,32 +1,34 @@
 class Like {
-  constructor() {
-    this.KEY = '_open_heart'
+  constructor(postId) {
+    this.postId = postId
+    this.KEY_PREFIX = '_open_heart_'
+  }
+
+  get storageKey() {
+    return `${this.KEY_PREFIX}${this.postId}`
   }
 
   saveReaction() {
-    const hearts = (localStorage.getItem(this.KEY) || '').split(',').filter(s => s)
-    console.log(this.KEY)
-    hearts.push(this.KEY)
-    localStorage.setItem(this.KEY, hearts.join(','))
+    const hearts = (localStorage.getItem(this.storageKey) || '').split(',').filter(s => s)
+    hearts.push(this.postId)
+    localStorage.setItem(this.storageKey, hearts.join(','))
   }
 
   hasReacted() {
-    const hearts = (localStorage.getItem(this.KEY) || '').split(',')
-    return hearts.includes(this.KEY)
+    const hearts = (localStorage.getItem(this.storageKey) || '').split(',')
+    return hearts.includes(this.postId)
   }
 
-  send (id) {
-    this.id = id
-
-    if (!id) {
-      this.error(`falta el id del post`)
+  send() {
+    if (!this.postId) {
+      this.error('Missing post ID')
       return
     } else if (this.hasReacted()) {
       this.thanks()
       return
-    } 
+    }
 
-    const URL = `https://api.javier.computer/heart?id=${id}`
+    const URL = `https://api.javier.computer/heart?id=${this.postId}`
 
     fetch(URL, {
       method: 'POST',
@@ -34,27 +36,26 @@ class Like {
         'Content-Type': 'text/plain'
       },
       body: '❤️' 
-    }).then((response) => {
-      return response.json()
-    }).then((data) => {
-      this.thanks()
-      this.saveReaction()
-    }).catch((error) => {
-      this.error(error)
-    })
+    }).then(response => response.json())
+      .then(data => {
+        this.thanks()
+        this.saveReaction()
+      }).catch(error => {
+        this.error(error.toString())
+      })
   }
 
-  error (msg) {
+  error(msg) {
     const $error = document.querySelector('.js-error')
     const $msg = document.querySelector('.js-error-message')
-    $msg.innerHTML = msg
+    $msg.textContent = msg
     $error.classList.remove('is-hidden')
   }
 
-  thanks () {
+  thanks() {
     const $thanks = document.querySelector('.js-thanks')
     const $url = document.querySelector('.js-url')
-    $url.href = this.id
+    $url.href = `post.html?id=${this.postId}`
     $thanks.classList.remove('is-hidden')
   }
 }
@@ -62,6 +63,10 @@ class Like {
 window.addEventListener('load', () => {
   const url = new URL(window.location.href)
   const id = url.searchParams.get('id')
-  const like = new Like()
-  like.send(id)
+  if (id) { 
+    const like = new Like(id)
+    like.send()
+  } else {
+    console.error("Post ID is missing from the URL.")
+  }
 })
