@@ -4,18 +4,18 @@ class Like {
     this.KEY = '_open_heart'
   }
 
-  get storageKey() {
+  get key() {
     return `${this.KEY}@${encodeURIComponent(this.postId)}`
   }
 
   saveReaction() {
-    const hearts = (localStorage.getItem(this.storageKey) || '').split(',').filter(s => s)
+    const hearts = (localStorage.getItem(this.key) || '').split(',').filter(s => s)
     hearts.push(this.postId)
-    localStorage.setItem(this.storageKey, hearts.join(','))
+    localStorage.setItem(this.key, hearts.join(','))
   }
 
   hasReacted() {
-    const hearts = (localStorage.getItem(this.storageKey) || '').split(',')
+    const hearts = (localStorage.getItem(this.key) || '').split(',')
     return hearts.includes(this.postId)
   }
 

@@ -53,7 +53,9 @@ class OpenHeartElement extends HTMLElement {
   }
 
   get key() {
-    return `${this.emoji}@${encodeURIComponent(this.href)}`
+    const url = new URL(this.href, window.location.origin)
+    const id = url.searchParams.get('id')
+    return `${this.emoji}@${encodeURIComponent(id)}`
   }
 
   get disabled() {
