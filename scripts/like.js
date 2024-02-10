@@ -1,11 +1,11 @@
 class Like {
   constructor(postId) {
     this.postId = postId
-    this.KEY_PREFIX = '_open_heart_'
+    this.KEY = '_open_heart'
   }
 
   get storageKey() {
-    return `${this.KEY_PREFIX}${this.postId}`
+    return `${this.KEY}@${encodeURIComponent(this.postId)}`
   }
 
   saveReaction() {
@@ -21,7 +21,7 @@ class Like {
 
   send() {
     if (!this.postId) {
-      this.error('Missing post ID')
+      console.error('Missing post ID')
       return
     } else if (this.hasReacted()) {
       this.thanks()
@@ -35,13 +35,13 @@ class Like {
       headers: {
         'Content-Type': 'text/plain'
       },
-      body: '❤️' 
+      body: '❤️'
     }).then(response => response.json())
       .then(data => {
         this.thanks()
         this.saveReaction()
       }).catch(error => {
-        this.error(error.toString())
+        console.error(error)
       })
   }
 
@@ -60,13 +60,11 @@ class Like {
   }
 }
 
-window.addEventListener('load', () => {
-  const url = new URL(window.location.href)
-  const id = url.searchParams.get('id')
-  if (id) { 
-    const like = new Like(id)
+document.addEventListener('DOMContentLoaded', () => {
+  const urlParams = new URLSearchParams(window.location.search)
+  const postId = urlParams.get('id')
+  if (postId) {
+    const like = new Like(postId)
     like.send()
-  } else {
-    console.error("Post ID is missing from the URL.")
   }
 })
