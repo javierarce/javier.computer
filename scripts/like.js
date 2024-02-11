@@ -55,7 +55,7 @@ class Like {
   thanks() {
     const $thanks = document.querySelector('.js-thanks')
     const $url = document.querySelector('.js-url')
-    $url.href = `post.html?id=${this.postId}`
+    $url.href = `/${this.postId}`
     $thanks.classList.remove('is-hidden')
   }
 }

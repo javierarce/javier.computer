@@ -63,7 +63,11 @@ class OpenHeartElement extends HTMLElement {
   }
 
   hasReacted() {
-    return localStorage.getItem(this.KEY).includes(this.key)
+    const hearts = localStorage.getItem(this.KEY)
+    if (hearts) {
+      return hearts.includes(this.key)
+    }
+    return false
   }
 
   setReacted() {
