@@ -4,20 +4,30 @@ class Like {
     this.KEY = '_open_heart'
   }
 
+  get emoji() {
+    return '❤️'
+  }
+
   get key() {
-    return `${this.KEY}@${encodeURIComponent(this.postId)}`
+    const url = new URL(this.href, window.location.origin)
+    const id = this.postId
+    return `${this.emoji}@${encodeURIComponent(id)}`
   }
 
   saveReaction() {
-    const hearts = (localStorage.getItem(this.key) || '').split(',').filter(s => s)
-    hearts.push(this.postId)
-    localStorage.setItem(this.key, hearts.join(','))
+    const hearts = (localStorage.getItem(this.KEY) || '').split(',').filter(s => s)
+    hearts.push(this.key)
+    localStorage.setItem(this.KEY, hearts.join(','))
   }
 
   hasReacted() {
-    const hearts = (localStorage.getItem(this.key) || '').split(',')
-    return hearts.includes(this.postId)
+    const hearts = localStorage.getItem(this.KEY)
+    if (hearts) {
+      return hearts.includes(this.key)
+    }
+    return false
   }
+
 
   send() {
     if (!this.postId) {
@@ -55,7 +65,7 @@ class Like {
   thanks() {
     const $thanks = document.querySelector('.js-thanks')
     const $url = document.querySelector('.js-url')
-    $url.href = `/${this.postId}`
+    $url.href = this.id
     $thanks.classList.remove('is-hidden')
   }
 }
