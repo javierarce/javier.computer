@@ -1,7 +1,34 @@
 {
-  "updated_at": "2024-02-09",
-  "count": 585,
+  "updated_at": "2024-02-11",
+  "count": 588,
   "movies": [
+    {
+      "watched_on": "2024-02-11",
+      "title": "Starman",
+      "year": "1984",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "starman"
+    },
+    {
+      "watched_on": "2024-02-11",
+      "title": "Dear Diary",
+      "year": "1993",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "dear-diary-1993"
+    },
+    {
+      "watched_on": "2024-02-10",
+      "title": "Pitfall",
+      "year": "1962",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "pitfall-1962"
+    },
     {
       "watched_on": "2024-02-09",
       "title": "Meantime",
