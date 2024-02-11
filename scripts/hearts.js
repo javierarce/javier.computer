@@ -63,7 +63,7 @@ class OpenHeartElement extends HTMLElement {
   }
 
   hasReacted() {
-    return localStorage.getItem(this.key()) !== null
+    return localStorage.getItem(this.key) !== null
   }
 
   setReacted() {
@@ -74,7 +74,7 @@ class OpenHeartElement extends HTMLElement {
 
   saveReaction() {
     const hearts = (localStorage.getItem(this.KEY) || '').split(',').filter(s => s)
-    hearts.push(this.KEY)
+    hearts.push(this.key)
     localStorage.setItem(this.KEY, hearts.join(','))
   }
 
