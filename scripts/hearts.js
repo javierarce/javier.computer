@@ -63,7 +63,7 @@ class OpenHeartElement extends HTMLElement {
   }
 
   hasReacted() {
-    return localStorage.getItem(this.key) !== null
+    return localStorage.getItem(this.KEY).includes(this.key)
   }
 
   setReacted() {
