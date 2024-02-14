@@ -8,9 +8,7 @@
   <div class="Post__content{% if post.extraClassName %} {{ post.extraClassName }}{% endif %} e-content">
     {% if post.content contains "<!-- more -->" -%}
     {{ post.content | split:"<!-- more -->" | first }}
-    <div class="Post__more">
-      <a href="{{ post.url }}#more">Leer más</a>
-    </div>
+    <a href="{{ post.url }}#more">Leer más</a>
     {% else -%}
     {{ post.content }}
     {% endif -%}
