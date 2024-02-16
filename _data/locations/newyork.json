@@ -50,6 +50,22 @@
   },
   {
     "layout": "place",
+    "pid": "banh-mi-place",
+    "title": "Banh Mi Place",
+    "description": "\n",
+    "address": "824b Washington Ave, Brooklyn",
+    "latlng": [
+      40.67329930729744,
+      -73.96314417387886
+    ],
+    "location": "newyork",
+    "last_modified_date": "2023-12-09T21:47:40+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
     "pid": "goods-for-the-study",
     "title": "Goods for the Study",
     "description": "<p>Ahora que cerró CW Pencil Enterprise este es un buen sitio donde comprar material de oficina.</p>\n",
@@ -82,38 +98,6 @@
   },
   {
     "layout": "place",
-    "pid": "mast-books",
-    "title": "Mast Books",
-    "description": "<p>Tienen una colección exquisita de primeras ediciones, libros raros y descatalogados, pero son un poco bordes.</p>\n",
-    "address": "72 Avenue A, New York",
-    "latlng": [
-      40.72515257580894,
-      -73.98442797315501
-    ],
-    "location": "newyork",
-    "last_modified_date": "2023-12-09T21:47:40+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "nurish",
-    "title": "Nûrish",
-    "description": "<p>Café con platos vegetarianos y veganos (pero también con opciones para carnívoros)</p>\n",
-    "address": "637 Washington Ave, Brooklyn",
-    "latlng": [
-      40.67840685350245,
-      -73.96369051873681
-    ],
-    "location": "newyork",
-    "last_modified_date": "2023-12-09T21:47:40+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
     "pid": "prospect-park",
     "title": "Prospect Park",
     "description": "<p>Un parque bien majo</p>\n",
@@ -121,6 +105,22 @@
     "latlng": [
       40.66079205923622,
       -73.96930685789933
+    ],
+    "location": "newyork",
+    "last_modified_date": "2023-12-09T21:47:40+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "sit-wonder",
+    "title": "Sit & Wonder",
+    "description": "<p>Cuando fui a esta cafetería me tocó el barista aprendiz</p>\n",
+    "address": "688 Washington Ave, Brooklyn",
+    "latlng": [
+      40.67739967774963,
+      -73.9638492637935
     ],
     "location": "newyork",
     "last_modified_date": "2023-12-09T21:47:40+01:00",
@@ -146,13 +146,13 @@
   },
   {
     "layout": "place",
-    "pid": "banh-mi-place",
-    "title": "Banh Mi Place",
-    "description": "\n",
-    "address": "824b Washington Ave, Brooklyn",
+    "pid": "nurish",
+    "title": "Nûrish",
+    "description": "<p>Café con platos vegetarianos y veganos (pero también con opciones para carnívoros)</p>\n",
+    "address": "637 Washington Ave, Brooklyn",
     "latlng": [
-      40.67329930729744,
-      -73.96314417387886
+      40.67840685350245,
+      -73.96369051873681
     ],
     "location": "newyork",
     "last_modified_date": "2023-12-09T21:47:40+01:00",
@@ -162,16 +162,160 @@
   },
   {
     "layout": "place",
-    "pid": "sit-wonder",
-    "title": "Sit & Wonder",
-    "description": "<p>Cuando fui a esta cafetería me tocó el barista aprendiz</p>\n",
-    "address": "688 Washington Ave, Brooklyn",
+    "pid": "mast-books",
+    "title": "Mast Books",
+    "description": "<p>Tienen una colección exquisita de primeras ediciones, libros raros y descatalogados, pero son un poco bordes.</p>\n",
+    "address": "72 Avenue A, New York",
     "latlng": [
-      40.67739967774963,
-      -73.9638492637935
+      40.72515257580894,
+      -73.98442797315501
     ],
     "location": "newyork",
     "last_modified_date": "2023-12-09T21:47:40+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "dashwood-books",
+    "title": "Dashwood Books",
+    "description": "<p>La única tienda independiente de libros de fotografía de Nueva York. La manager de la tienda, Miwa Susuda, te hará una foto y la subirá a instagram si le compras algún libro.</p>\n",
+    "address": "33 Bond St",
+    "latlng": [
+      40.7262745160936,
+      -73.99343164307919
+    ],
+    "location": "newyork",
+    "last_modified_date": "2024-02-16T11:40:56+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "sweet-pickle-books",
+    "title": "Sweet Pickle Books",
+    "description": "<p>Si tus gustos se encuentran en la intersección de los pepinillos y los libros estás de enhorabuena.</p>\n",
+    "address": "47 Orchard St",
+    "latlng": [
+      40.71666757262507,
+      -73.99126414493215
+    ],
+    "location": "newyork",
+    "last_modified_date": "2024-02-16T11:42:44+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "left-bank-books",
+    "title": "Left Bank Books",
+    "description": "<p>Libros de segunda mano bonitos de ver y caros de comprar.</p>\n",
+    "address": "41 Perry St",
+    "latlng": [
+      40.73599295020406,
+      -74.00280521609535
+    ],
+    "location": "newyork",
+    "last_modified_date": "2024-02-16T11:47:53+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "unnameable-books",
+    "title": "Unnameable Books",
+    "description": "<p>Bien bonita y bien surtida librería de segunda mano de nombre difícil de pronunciar.</p>\n",
+    "address": "615 Vanderbilt Ave, Brooklyn",
+    "latlng": [
+      40.679060919567554,
+      -73.96841803514663
+    ],
+    "location": "newyork",
+    "last_modified_date": "2024-02-16T11:48:54+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "metrograph",
+    "title": "Metrograph",
+    "description": "<p>Cine indie chiquito y bonito al que iría todas las semanas si viviera en la ciudad.</p>\n",
+    "address": "7 Ludlow St",
+    "latlng": [
+      40.715305538423884,
+      -73.99098578508807
+    ],
+    "location": "newyork",
+    "last_modified_date": "2024-02-16T11:49:51+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "ifc-center",
+    "title": "IFC Center",
+    "description": "<p>Para ver pelis independientes. Hay dos mirillas en el muro exterior que permiten ver las películas que proyectan.</p>\n",
+    "address": "323 6th Ave",
+    "latlng": [
+      40.73139256313356,
+      -74.00171511794787
+    ],
+    "location": "newyork",
+    "last_modified_date": "2024-02-16T11:50:44+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "economy-candy",
+    "title": "Economy Candy",
+    "description": "<p>La tienda de dulces más antigua de Nueva York</p>\n",
+    "address": "323 6th Ave",
+    "latlng": [
+      40.73138443306871,
+      -74.00165074493151
+    ],
+    "location": "newyork",
+    "last_modified_date": "2024-02-16T11:51:35+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "printed-matter",
+    "title": "Printed Matter, Inc.",
+    "description": "<p>Institución fanzinera.</p>\n",
+    "address": "231 11th Ave",
+    "latlng": [
+      40.75092284674894,
+      -74.00595908911104
+    ],
+    "location": "newyork",
+    "last_modified_date": "2024-02-16T11:52:10+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "museum-of-the-moving-image",
+    "title": "Museum of the Moving Image",
+    "description": "\n",
+    "address": "36-01 35th Ave, Queens",
+    "latlng": [
+      40.75642664148452,
+      -73.92402470445512
+    ],
+    "location": "newyork",
+    "last_modified_date": "2024-02-16T11:53:28+01:00",
     "post_references": [
 
     ]
