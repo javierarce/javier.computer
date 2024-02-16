@@ -9,75 +9,93 @@
     <link>https://javier.computer/feeds/barcelona.rss</link>
     <description>Sitios en barcelona</description>
     <language>es</language>
-    <pubDate>Mon, 15 Jan 2024 14:17:06 +0100</pubDate>
-    <item>
-      <title>Restaurant Santa Magdalena</title>
-      <link>https://javier.computer/maps/barcelona/santa-magdalena</link>
-      <description>&lt;p&gt;Cuina de barri. El entrepà de berenjena, tomate y mozzarella estaba muy rico.&lt;/p&gt;
-&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/santa-magdalena'&gt;Carrer de Sta. Magdalena, 6&lt;/a&gt;&lt;br&gt;</description>
-      <pubDate>Mon, 15 Jan 2024 14:17:06 +0100</pubDate>
-      <dc:subject>barcelona</dc:subject>
-      <dc:date>2024-01-15T14:17:06+01:00</dc:date>
-    </item>
-    <item>
-      <title>Fino Bar</title>
-      <link>https://javier.computer/maps/barcelona/fino-bar</link>
-      <description>&lt;p&gt;Queviures, salaons, xarcuteria al tall i molt de vi.&lt;/p&gt;
-&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/fino-bar'&gt;Carrer del Torrent de les Flors, 113, Gràcia&lt;/a&gt;&lt;br&gt;</description>
-      <pubDate>Mon, 15 Jan 2024 14:10:42 +0100</pubDate>
-      <dc:subject>barcelona</dc:subject>
-      <dc:date>2024-01-15T14:10:42+01:00</dc:date>
-    </item>
+    <pubDate>Sun, 28 Jan 2024 19:07:10 +0100</pubDate>
     <item>
       <title>Tokyo-Ya</title>
       <link>https://javier.computer/maps/barcelona/tokyo-ya</link>
       <description>&lt;p&gt;¿Fantástico y bien surtido súper japonés? Sí.&lt;/p&gt;
 &lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/tokyo-ya'&gt;Carrer de Balmes, 197&lt;/a&gt;&lt;br&gt;</description>
-      <pubDate>Sat, 06 Jan 2024 20:10:23 +0100</pubDate>
+      <pubDate>Sun, 28 Jan 2024 19:07:10 +0100</pubDate>
       <dc:subject>barcelona</dc:subject>
-      <dc:date>2024-01-06T20:10:23+01:00</dc:date>
+      <dc:date>2024-01-28T19:07:10+01:00</dc:date>
     </item>
     <item>
       <title>Tofu Catalán</title>
       <link>https://javier.computer/maps/barcelona/tofu-catalan</link>
       <description>&lt;p&gt;Pequeño deli donde comprar tofu fresco, bentos y otros productos japoneses.&lt;/p&gt;
 &lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/tofu-catalan'&gt;Carrer d'Aribau, 119&lt;/a&gt;&lt;br&gt;</description>
-      <pubDate>Sat, 06 Jan 2024 20:10:23 +0100</pubDate>
+      <pubDate>Sun, 28 Jan 2024 19:07:10 +0100</pubDate>
       <dc:subject>barcelona</dc:subject>
-      <dc:date>2024-01-06T20:10:23+01:00</dc:date>
+      <dc:date>2024-01-28T19:07:10+01:00</dc:date>
     </item>
     <item>
       <title>The Green Spot</title>
       <link>https://javier.computer/maps/barcelona/the-green-spot</link>
       <description>&lt;p&gt;Vegetariano bonito y rico en la Barceloneta. ¿Qué me gustó de aquí? La colifor empanada, el plato de tempeh y el risotto de 7 verdes.&lt;/p&gt;
 &lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/the-green-spot'&gt;Carrer de la Reina Cristina, 12&lt;/a&gt;&lt;br&gt;</description>
-      <pubDate>Sat, 06 Jan 2024 20:10:23 +0100</pubDate>
+      <pubDate>Sun, 28 Jan 2024 19:07:10 +0100</pubDate>
       <dc:subject>barcelona</dc:subject>
-      <dc:date>2024-01-06T20:10:23+01:00</dc:date>
+      <dc:date>2024-01-28T19:07:10+01:00</dc:date>
+    </item>
+    <item>
+      <title>Restaurant Santa Magdalena</title>
+      <link>https://javier.computer/maps/barcelona/santa-magdalena</link>
+      <description>&lt;p&gt;Cuina de barri. El entrepà de berenjena, tomate y mozzarella estaba muy rico.&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/santa-magdalena'&gt;Carrer de Sta. Magdalena, 6&lt;/a&gt;&lt;br&gt;</description>
+      <pubDate>Sun, 28 Jan 2024 19:07:10 +0100</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2024-01-28T19:07:10+01:00</dc:date>
     </item>
     <item>
       <title>Right Side Coffee Bar</title>
       <link>https://javier.computer/maps/barcelona/right-side-coffee-bar</link>
       <description>&lt;p&gt;Erigido sobre las cenizas (je) de Satan’s Coffee Corner, esta es mi cafetería favorita de Barcelona y donde preparan el mejor latte con avena de la ciudad.&lt;/p&gt;
 &lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/right-side-coffee-bar'&gt;Carrer de l'Arc de Sant Ramon del Call, 11&lt;/a&gt;&lt;br&gt;</description>
-      <pubDate>Sat, 06 Jan 2024 20:10:23 +0100</pubDate>
+      <pubDate>Sun, 28 Jan 2024 19:07:10 +0100</pubDate>
       <dc:subject>barcelona</dc:subject>
-      <dc:date>2024-01-06T20:10:23+01:00</dc:date>
-    </item>
-    <item>
-      <title>El Noa Noa</title>
-      <link>https://javier.computer/maps/barcelona/noanoa</link>
-      <description>&lt;p&gt;Una cafetería-librería con cafés y libros.&lt;/p&gt;
-&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/noanoa'&gt;Carrer de Torrijos, 22&lt;/a&gt;&lt;br&gt;&lt;p&gt;Este sitio aparece en los siguientes posts:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2022/04/28/pegatinas'&gt;Pegatinas&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
-      <pubDate>Sat, 06 Jan 2024 20:10:23 +0100</pubDate>
-      <dc:subject>barcelona</dc:subject>
-      <dc:date>2024-01-06T20:10:23+01:00</dc:date>
+      <dc:date>2024-01-28T19:07:10+01:00</dc:date>
     </item>
     <item>
       <title>Masa Vins</title>
       <link>https://javier.computer/maps/barcelona/masa-vins</link>
       <description>&lt;p&gt;Bar &lt;em&gt;trendy&lt;/em&gt; de vinos naturales y también &lt;em&gt;trendies&lt;/em&gt; en Poblenou.&lt;/p&gt;
 &lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/masa-vins'&gt;Carrer de Pallars, 154&lt;/a&gt;&lt;br&gt;</description>
+      <pubDate>Sun, 28 Jan 2024 19:07:10 +0100</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2024-01-28T19:07:10+01:00</dc:date>
+    </item>
+    <item>
+      <title>Fino Bar</title>
+      <link>https://javier.computer/maps/barcelona/fino-bar</link>
+      <description>&lt;p&gt;Queviures, salaons, xarcuteria al tall i molt de vi.&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/fino-bar'&gt;Carrer del Torrent de les Flors, 113, Gràcia&lt;/a&gt;&lt;br&gt;</description>
+      <pubDate>Sun, 28 Jan 2024 19:07:10 +0100</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2024-01-28T19:07:10+01:00</dc:date>
+    </item>
+    <item>
+      <title>Cuina Panda</title>
+      <link>https://javier.computer/maps/barcelona/cuina-panda</link>
+      <description>&lt;p&gt;Pequeño restaurante con comida casera típica de Sichuan. El menú cuando fui era muy carnívoro, pero lo adaptan sin problemas para vegetarianos o veganos.&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/cuina-panda'&gt;Carrer de Viladomat, 101&lt;/a&gt;&lt;br&gt;</description>
+      <pubDate>Sun, 28 Jan 2024 19:07:10 +0100</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2024-01-28T19:07:10+01:00</dc:date>
+    </item>
+    <item>
+      <title>Chido One</title>
+      <link>https://javier.computer/maps/barcelona/chido-one</link>
+      <description>&lt;p&gt;Un mexicano bien chido.&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/chido-one'&gt;Carrer de Torrijos, 30, la Vila de Gràcia, Gràcia&lt;/a&gt;&lt;br&gt;</description>
+      <pubDate>Sun, 28 Jan 2024 19:07:10 +0100</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2024-01-28T19:07:10+01:00</dc:date>
+    </item>
+    <item>
+      <title>El Noa Noa</title>
+      <link>https://javier.computer/maps/barcelona/noanoa</link>
+      <description>&lt;p&gt;Una cafetería-librería con cafés y libros.&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/noanoa'&gt;Carrer de Torrijos, 22&lt;/a&gt;&lt;br&gt;&lt;p&gt;Este sitio aparece en los siguientes posts:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2022/04/28/pegatinas'&gt;Pegatinas&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
       <pubDate>Sat, 06 Jan 2024 20:10:23 +0100</pubDate>
       <dc:subject>barcelona</dc:subject>
       <dc:date>2024-01-06T20:10:23+01:00</dc:date>
@@ -96,24 +114,6 @@
       <link>https://javier.computer/maps/barcelona/funky-bakers</link>
       <description>&lt;p&gt;No tan &lt;em&gt;funkies&lt;/em&gt; como dicen ser pero tienen cosas ricas.&lt;/p&gt;
 &lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/funky-bakers'&gt;Pg. del Born, 10&lt;/a&gt;&lt;br&gt;&lt;p&gt;Este sitio aparece en los siguientes posts:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2022/09/17/funky-bakers'&gt;Funky Bakers&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
-      <pubDate>Sat, 06 Jan 2024 20:10:23 +0100</pubDate>
-      <dc:subject>barcelona</dc:subject>
-      <dc:date>2024-01-06T20:10:23+01:00</dc:date>
-    </item>
-    <item>
-      <title>Cuina Panda</title>
-      <link>https://javier.computer/maps/barcelona/cuina-panda</link>
-      <description>&lt;p&gt;Pequeño restaurante con comida casera típica de Sichuan. El menú cuando fui era muy carnívoro, pero lo adaptan sin problemas para vegetarianos o veganos.&lt;/p&gt;
-&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/cuina-panda'&gt;Carrer de Viladomat, 101&lt;/a&gt;&lt;br&gt;</description>
-      <pubDate>Sat, 06 Jan 2024 20:10:23 +0100</pubDate>
-      <dc:subject>barcelona</dc:subject>
-      <dc:date>2024-01-06T20:10:23+01:00</dc:date>
-    </item>
-    <item>
-      <title>Chido One</title>
-      <link>https://javier.computer/maps/barcelona/chido-one</link>
-      <description>&lt;p&gt;Un mexicano bien chido.&lt;/p&gt;
-&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/chido-one'&gt;Carrer de Torrijos, 30, la Vila de Gràcia, Gràcia&lt;/a&gt;&lt;br&gt;</description>
       <pubDate>Sat, 06 Jan 2024 20:10:23 +0100</pubDate>
       <dc:subject>barcelona</dc:subject>
       <dc:date>2024-01-06T20:10:23+01:00</dc:date>
@@ -253,6 +253,6 @@
       <dc:subject>barcelona</dc:subject>
       <dc:date>2023-12-08T17:14:31+01:00</dc:date>
     </item>
-    <dc:date>2024-01-15T14:17:06+01:00</dc:date>
+    <dc:date>2024-01-28T19:07:10+01:00</dc:date>
   </channel>
 </rss>
