@@ -3,7 +3,7 @@
     "layout": "place",
     "pid": "most-high",
     "title": "Most High",
-    "description": "\n",
+    "description": "<p>Una cafetería de emergencia donde pillar un latte y continuar dando un paseo.</p>\n",
     "address": "820 Washington Ave, Brooklyn",
     "latlng": [
       40.67349277538117,
@@ -36,7 +36,7 @@
     "layout": "place",
     "pid": "desert-island",
     "title": "Desert Island",
-    "description": "<p>Desert Island is a record store located in the East Village neighborhood of Manhattan, New York City. It is located at 540 East 5th Street, between Avenues A and B.</p>\n",
+    "description": "<p>¿Qué te llevarías a Desert Island?</p>\n",
     "address": "540 E 5th St",
     "latlng": [
       40.713979006545344,
@@ -52,7 +52,7 @@
     "layout": "place",
     "pid": "banh-mi-place",
     "title": "Banh Mi Place",
-    "description": "\n",
+    "description": "<p>No es el mejor Banh Mi que he comido, pero tampoco el peor Bahn Mi que he comido.</p>\n",
     "address": "824b Washington Ave, Brooklyn",
     "latlng": [
       40.67329930729744,
@@ -84,7 +84,7 @@
     "layout": "place",
     "pid": "hungry-ghost",
     "title": "Hungry Ghost",
-    "description": "\n",
+    "description": "<p>Existen varios de estos fantasmas hambrientos en la ciudad, pero este es mi favorito.</p>\n",
     "address": "183 Sterling Pl, Brooklyn",
     "latlng": [
       40.67691397746196,
@@ -212,7 +212,7 @@
     "layout": "place",
     "pid": "left-bank-books",
     "title": "Left Bank Books",
-    "description": "<p>Libros de segunda mano bonitos de ver y caros de comprar.</p>\n",
+    "description": "<p>Libros de segunda mano bonitos de ver y caritos de comprar.</p>\n",
     "address": "41 Perry St",
     "latlng": [
       40.73599295020406,
@@ -244,7 +244,7 @@
     "layout": "place",
     "pid": "metrograph",
     "title": "Metrograph",
-    "description": "<p>Cine indie chiquito y bonito al que iría todas las semanas si viviera en la ciudad.</p>\n",
+    "description": "<p>Cine indie chiquito al que iría todas las semanas si viviera en la ciudad.</p>\n",
     "address": "7 Ludlow St",
     "latlng": [
       40.715305538423884,
@@ -260,7 +260,7 @@
     "layout": "place",
     "pid": "ifc-center",
     "title": "IFC Center",
-    "description": "<p>Para ver pelis independientes. Hay dos mirillas en el muro exterior que permiten ver las películas que proyectan.</p>\n",
+    "description": "<p>El cine indie de confianza. Dos mirillas en el muro exterior del cine permiten ver las películas que proyectan.</p>\n",
     "address": "323 6th Ave",
     "latlng": [
       40.73139256313356,
@@ -276,7 +276,7 @@
     "layout": "place",
     "pid": "economy-candy",
     "title": "Economy Candy",
-    "description": "<p>La tienda de dulces más antigua de Nueva York</p>\n",
+    "description": "<p>La tienda de dulces más antigua de Nueva York.</p>\n",
     "address": "323 6th Ave",
     "latlng": [
       40.73138443306871,
@@ -308,7 +308,7 @@
     "layout": "place",
     "pid": "museum-of-the-moving-image",
     "title": "Museum of the Moving Image",
-    "description": "\n",
+    "description": "<p>Lugar de peregrinación si eres fan de Jim Henson.</p>\n",
     "address": "36-01 35th Ave, Queens",
     "latlng": [
       40.75642664148452,
