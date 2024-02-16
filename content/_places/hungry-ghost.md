@@ -2,7 +2,7 @@
 layout: place
 pid: hungry-ghost
 title: "Hungry Ghost"
-description: ""
+description: "Existen varios de estos fantasmas hambrientos en la ciudad, pero este es mi favorito."
 address: "183 Sterling Pl, Brooklyn"
 latlng:
 - 40.67691397746196
