@@ -4,7 +4,13 @@
 {% if page.category == 'map' -%}
 <div class="Navigation__header">
   <a class="Navigation__link" href="/">Home</a>
+
+  {% if page.permalink == 'maps' -%}
+  <a class="Navigation__link is-selected" href="/maps">Maps</a>
+  {% else -%}
   <a class="Navigation__link" href="/maps">Maps</a>
+  {% endif -%}
+
   <a class="Navigation__link is-selected" href="/">{{ page.title }}</a>
 </div>
 
@@ -12,6 +18,7 @@
     <a class="Navigation__link" href="/assets/maps/{{ page.location }}.csv">CSV</a>
     <a class="Navigation__link" href="/feeds/{{ page.location }}.rss">RSS</a>
   </div>
+
 {% else %}
 
   {% assign permalink = page.permalink | strip_newlines -%}
@@ -28,7 +35,7 @@
     <a class="Navigation__link is-selected" href="/photos">Photos</a>
     {% endif -%}
 
-    {% if permalink != 'drawings' -%}
+    {% if page.category != 'drawing' -%}
     <a class="Navigation__link" href="/drawings">Drawings</a>
     {% else -%}
     <a class="Navigation__link is-selected" href="/drawings">Drawings</a>

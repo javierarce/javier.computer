@@ -1,0 +1,14 @@
+    {% for post in paginator.posts -%}
+    {% assign hide = post.hide %}
+
+    {% if post.category %}
+    {% assign type = post.category %}
+    {% else %}
+    {% assign type = "post" %}
+    {% endif %}
+
+    {% if hide != true  %}
+    {% include types/{{ type }}.html -%}
+    {% endif %}
+    {% endfor -%}
+
