@@ -7,7 +7,7 @@ Desde hace 72 horas recibo misteriosas llamadas
 telefónicas. Primero fue una en Los Banos, California. Al poco llegan otras
 desde Tahoe City, Woodland y North San Juan. No descuelgo el teléfono ni
 bloqueo los números, simplemente anoto la ciudad que me llama insistentemente
-cada día y luego las miro todas juntas en Google Maps.<!-- more -->Me imagino que si esto
+cada día y luego las miro todas juntas en Google Maps. <!-- more -->Me imagino que si esto
 continua un tiempo uniré los puntos y se me revelará un mensaje: una calavera,
 la fecha exacta de mi muerte, las coordenadas de un tesoro, tonto el que lo
 lea, algo así.
