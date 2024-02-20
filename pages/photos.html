@@ -2,14 +2,11 @@
 layout: base
 title:  Photos
 className: Photos
+category: photos
 permalink: photos
 ---
 <div class="Content">
   {% include navigation.html -%}
-
-  <div class="Photos__header">
-    Photo diary · <a href="/photos/archive">Archive</a> · <a href="/feeds/photos.xml">RSS</a>
-  </div>
 
   <div class="Photos__content">
     {% for post in site.categories.photo limit: 10 -%}

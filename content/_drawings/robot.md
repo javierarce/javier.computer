@@ -6,6 +6,7 @@ show_title: true
 dir: robot
 thumb: thumb.png
 fullheight: true
+category: drawings
 filenames: 
 - 1.png
 ---

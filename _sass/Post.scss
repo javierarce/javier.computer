@@ -148,4 +148,10 @@
     margin: 0 0 3em;
     width: 100%;
   }
+  .Post.is-title a {
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }

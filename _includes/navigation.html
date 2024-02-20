@@ -1,57 +1,39 @@
+{% assign permalink = page.permalink | strip_newlines -%}
 
 <div class="Navigation js-nav">
-
-{% if page.category == 'map' -%}
-<div class="Navigation__header">
-  <a class="Navigation__link" href="/">Home</a>
-
-  {% if page.permalink == 'maps' -%}
-  <a class="Navigation__link is-selected" href="/maps">Maps</a>
-  {% else -%}
-  <a class="Navigation__link" href="/maps">Maps</a>
-  {% endif -%}
-
-  <a class="Navigation__link is-selected" href="/">{{ page.title }}</a>
-</div>
+  <div class="Navigation__header">
+    <a class="Navigation__link {% if page.home %}is-selected{% endif %}" href="/">Home</a>
+  </div>
 
   <div class="Navigation__links">
+    {% if page.category == 'map' -%}
+    <a class="Navigation__link is-selected" href="/">{{ page.title }}</a>
+    <a class="Navigation__link {% if permalink == 'maps' %}is-selected{% endif %}" href="/maps">Maps</a>
     <a class="Navigation__link" href="/assets/maps/{{ page.location }}.csv">CSV</a>
     <a class="Navigation__link" href="/feeds/{{ page.location }}.rss">RSS</a>
   </div>
+  {% elsif page.category == 'photos' -%}
+  {% if page.location %}
+      <a class="Navigation__link is-selected" href="{{ permalink }}">{{ page.location | capitalize }}
+    {% endif %}
+    <a class="Navigation__link {% if permalink == 'photos' %}is-selected{% endif %}" href="/photos">Photos</a>
+    <a class="Navigation__link {% if permalink == 'photos/archive' %}is-selected{% endif %}" href="/photos/archive">Archive</a>
+    <a class="Navigation__link" href="/feeds/photos.xml">RSS</a>
+</div>
 
-{% else %}
-
-  {% assign permalink = page.permalink | strip_newlines -%}
-  {% if page.home -%}
-  <a class="Navigation__link is-selected" href="/">Home</a>
-  {% else -%}
-  <a class="Navigation__link" href="/">Home</a>
+{% elsif page.category == 'drawings' -%}
+{% if permalink != 'drawings' %}
+<a class="Navigation__link is-selected" href="{{ page.title }}">{{ page.title }}
   {% endif %}
-  <div class="Navigation__links">
 
-    {% if permalink != 'photos' and permalink != "photos/archive" -%}
-    <a class="Navigation__link" href="/photos">Photos</a>
-    {% else -%}
-    <a class="Navigation__link is-selected" href="/photos">Photos</a>
-    {% endif -%}
+  <a class="Navigation__link {% if permalink == 'drawings' %}is-selected{% endif %}" href="/drawings">Drawings</a>
+  </div>
 
-    {% if page.category != 'drawing' -%}
-    <a class="Navigation__link" href="/drawings">Drawings</a>
-    {% else -%}
-    <a class="Navigation__link is-selected" href="/drawings">Drawings</a>
-    {% endif -%}
-
-    {% if permalink != 'projects' -%}
-    <a class="Navigation__link" href="/projects">Projects</a>
-    {% else -%}
-    <a class="Navigation__link is-selected" href="/projects">Projects</a>
-    {% endif -%}
-
-    {% if permalink != 'about' -%}
-    <a class="Navigation__link" href="/about">About</a>
-    {% else -%}
-    <a class="Navigation__link is-selected" href="/about">About</a>
-    {% endif -%}
+  {% else %}
+  <a class="Navigation__link {% if permalink == 'photos' %}is-selected{% endif %}" href="/photos">Photos</a>
+  <a class="Navigation__link {% if permalink == 'drawings' %}is-selected{% endif %}" href="/drawings">Drawings</a>
+  <a class="Navigation__link {% if permalink == 'projects' %}is-selected{% endif %}" href="/projects">Projects</a>
+  <a class="Navigation__link {% if permalink == 'about' %}is-selected{% endif %}" href="/about">About</a>
   </div>
   {% endif -%}
-</div>
+  </div>

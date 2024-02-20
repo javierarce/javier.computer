@@ -6,6 +6,7 @@ show_title: true
 dir: stories
 thumb: thumb.png
 gap: true
+category: drawings
 filenames: 
 - 1.png
 - 2.png

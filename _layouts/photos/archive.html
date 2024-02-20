@@ -1,14 +1,11 @@
 ---
 layout: base
 className: Photos
+category: photos
 ---
 <!--- photos/archive -->
 <div class="Content">
   {% include navigation.html -%}
-
-  <div class="Photos__header">
-    <a href="/photos">Photo diary</a> · Archive · <a href="/feeds/photos.xml">RSS</a>
-  </div>
 
   <div class="Photos__archive">
     {% assign content = site.posts | concat: site.photos -%}

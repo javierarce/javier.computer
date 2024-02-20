@@ -9,12 +9,7 @@ className: Photos
 <div class="Content">
   {% include navigation.html -%}
 
-  <div class="Photos__header">
-    <a href="/photos">Photo diary</a> · <a href="/photos/archive">Archive</a> · <a href="/feeds/photos.xml">RSS</a>
-  </div>
-
   <div class="Photos__content">
-    <h2>{{ page.title }}</h2>
     {{ content }}
 
     {% assign location = page.location | downcase -%}
