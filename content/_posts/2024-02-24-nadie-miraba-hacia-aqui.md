@@ -10,7 +10,6 @@ filenames:
 - 2024-02-23-Barcelona-R0005731
 - 2024-02-23-Barcelona-R0005732
 - 2024-02-23-Barcelona-R0005734
-- 2024-02-23-Barcelona-R0005727
 - 2024-02-23-Barcelona-R0005729
 - 2024-02-23-Barcelona-R0005745
 - 2024-02-23-Barcelona-R0005761
