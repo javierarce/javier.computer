@@ -15,7 +15,7 @@
 {% assign total_posts = paginator.posts | size %}
 <h3>Archivo</h3>
 <div class="Posts is-more">
-  {% for post in paginator.posts %}
+  {% for post in site.posts | limit: 7 %}
   {% assign hide = post.hide %}
   {% assign post_index = forloop.index %}
   {% if post.category %}
@@ -24,12 +24,16 @@
   {% assign type = "post" %}
   {% endif %}
 
-  {% if hide != true and post_index > 1 %}
+  {% if (post_index == 1 and hide == true) %}
   <div class="Post is-{{ type }}  is-title">
     <a href="{{ post.url }}" class="is-{{ type }}">{{ post.title }}</a>
     <div class="Post__date">{{ post.date | date: "%d" }}</div>
   </div>
-
+  {% elsif post.id != first_post.id %}
+  <div class="Post is-{{ type }}  is-title">
+    <a href="{{ post.url }}" class="is-{{ type }}">{{ post.title }}</a>
+    <div class="Post__date">{{ post.date | date: "%d" }}</div>
+  </div>
   {% endif %}
   {% endfor %}
 
