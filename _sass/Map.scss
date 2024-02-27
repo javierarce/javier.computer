@@ -331,5 +331,10 @@
     width: 100%;
     font-size: 1.2em;
   }
+
+  .Maps__archive {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
