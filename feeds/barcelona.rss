@@ -9,7 +9,16 @@
     <link>https://javier.computer/feeds/barcelona.rss</link>
     <description>Sitios en barcelona</description>
     <language>es</language>
-    <pubDate>Sun, 28 Jan 2024 19:07:10 +0100</pubDate>
+    <pubDate>Tue, 27 Feb 2024 12:01:07 +0100</pubDate>
+    <item>
+      <title>Tramendu</title>
+      <link>https://javier.computer/maps/barcelona/tramendu</link>
+      <description>&lt;p&gt;El nombre completo del sitio es “Tramendu Ens agrada el vermuting” (no confundir con “Tramendu Encenem els fogons” que está en la misma calle y no he probado). Si miras las reviews en Google Maps verás que la mayoría hablan de lo rica que está la comida, lo encantador que es el personal, y lo económico que es el precio. Pues eso.&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/tramendu'&gt;Passatge d'Andalusia, 8&lt;/a&gt;&lt;br&gt;</description>
+      <pubDate>Tue, 27 Feb 2024 12:01:07 +0100</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2024-02-27T12:01:07+01:00</dc:date>
+    </item>
     <item>
       <title>Tokyo-Ya</title>
       <link>https://javier.computer/maps/barcelona/tokyo-ya</link>
@@ -253,6 +262,6 @@
       <dc:subject>barcelona</dc:subject>
       <dc:date>2023-12-08T17:14:31+01:00</dc:date>
     </item>
-    <dc:date>2024-01-28T19:07:10+01:00</dc:date>
+    <dc:date>2024-02-27T12:01:07+01:00</dc:date>
   </channel>
 </rss>
