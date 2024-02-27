@@ -1,10 +1,9 @@
 ---
-title: "No leer"
+title: "Mis documentos"
 layout: book
 author:  Alejandro Zambra
-started: 2023-10-02
+started: 2024-02-19
 status: reading
-read: 2024-02-09
 rating: 
 cover: 
 ---

@@ -5,6 +5,6 @@ rating: ""
 author: Bernie De Koven
 started: 2023-08-20
 read:
-status: reading
+status: abandoned
 cover: the-well-played-game.jpg
 ---
