@@ -1,6 +1,6 @@
 ---
 layout: photos/photo
-title: "Lago Como"
+title: "Loca Misión en Lago Como"
 date: "2024-02-25 22:12:18 +0100"
 category: photo
 location: como
