@@ -17,4 +17,7 @@ esto desde dicha ciudad y te apetece que nos veamos no tienes más que ponerte
 en contacto conmigo a través de los canales habituales · Por si tienes
 curiosidad, estos días estoy leyendo «El Hielo» de Vladimir Sorokin y le tengo
 el ojo puesto a «Blue Lard» (con «Their Four Hearts» no me atrevo porque al
-parecer es increiblemente desagradable).
+parecer es increiblemente desagradable) · Si seguías alguno de mis tumblrs, la
+semana pasada los borré o vacié todos excepto
+[binocularshot](https://binocularshot.tumblr.com), que también desaparecerá en
+cuanto encuentre un sitio donde mover el contenido.
