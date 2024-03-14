@@ -32,6 +32,12 @@
   gap: 0.4em;
 }
 
+.Posts.is-more a, 
+.Posts.is-more a:hover {
+  color: var(--link);
+}
+
+
 .Post.is-highlighted .Post__content {
   border: 1px solid #ae81ff;
   border-radius: 4px;

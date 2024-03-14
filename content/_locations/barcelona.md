@@ -1,6 +1,6 @@
 ---
 layout: location
 title: Barcelona
-location: Barcelona
+location: barcelona
 permalink: in/Barcelona
 ---

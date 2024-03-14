@@ -3,7 +3,6 @@ layout: photos/photo
 title: "Nadie miraba hacia aquí"
 date: "2024-02-24 11:02:59 +0100"
 category: photo
-location: barcelona
 filenames: 
 - 2024-02-23-Barcelona-R0005741
 - 2024-02-23-Barcelona-R0005743
@@ -14,6 +13,7 @@ filenames:
 - 2024-02-23-Barcelona-R0005745
 - 2024-02-23-Barcelona-R0005761
 camera: Ricoh GR IIIx
+location: barcelona
 hidden: true
 ---
 [Andrea Galaxina](https://www.instagram.com/andreagalaxina) (y Bob Pop) en la presentación de su libro 

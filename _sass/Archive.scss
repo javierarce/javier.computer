@@ -15,6 +15,11 @@
   margin: 0 0 3em;
 }
 
+.Archive__links a, 
+.Archive__links a:hover {
+  color: var(--link);
+}
+
 .Archive__list {
   margin: 0;
 }
