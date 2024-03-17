@@ -44,6 +44,23 @@
   padding: 0.8em;
 }
 
+.Post__content a[href^="/maps"] {
+  position: relative;
+  padding-right: 1em;
+}
+
+.Post__content a[href^="/maps"]:after {
+  content: '◌';
+  display: inline-block;
+  font-weight: 400;
+  padding-left: 4px;
+  font-size: 1.3em;
+  position: absolute;
+  opacity: 0.5;
+  color: var(--text);
+  line-height: 115%;
+}
+
 .Post__content a,
 .Post__content a:hover {
   color: var(--link); 

@@ -6,11 +6,13 @@
 .Footer__link {
   margin: 0 0.8em 0 0;
   text-decoration: none;
+  color: var(--text);
   opacity: 0.5;
 }
 
 .Footer__link:hover {
   text-decoration: none;
+  color: var(--textHover);
   opacity: 1;
 }
 
@@ -22,4 +24,3 @@
     margin: 0 0.4em 0 0;
   }
 }
-

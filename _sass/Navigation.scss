@@ -25,6 +25,7 @@
 
 .Navigation__link {
   text-decoration: none;
+  color: var(--text);
   opacity: 0.5;
 }
 
@@ -34,6 +35,7 @@
 
 .Navigation__link:hover {
   text-decoration: none;
+  color: var(--textHover);
   opacity: 1;
 }
 
