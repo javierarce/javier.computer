@@ -1,7 +1,124 @@
 {
-  "updated_at": "2024-02-11",
-  "count": 588,
+  "updated_at": "2024-03-17",
+  "count": 601,
   "movies": [
+    {
+      "watched_on": "2024-03-17",
+      "title": "Aniki-Bóbó",
+      "year": "1942",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "aniki-bobo"
+    },
+    {
+      "watched_on": "2024-03-16",
+      "title": "Baby Assassins",
+      "year": "2021",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "baby-assassins"
+    },
+    {
+      "watched_on": "2024-03-12",
+      "title": "Pool",
+      "year": "1994",
+      "rating": 0,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "pool-1994"
+    },
+    {
+      "watched_on": "2024-03-12",
+      "title": "Sweet Smell of Success",
+      "year": "1957",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": true,
+      "permalink": "sweet-smell-of-success"
+    },
+    {
+      "watched_on": "2024-03-10",
+      "title": "Ali: Fear Eats the Soul",
+      "year": "1974",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "ali-fear-eats-the-soul"
+    },
+    {
+      "watched_on": "2024-03-09",
+      "title": "Dune: Part Two",
+      "year": "2024",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "dune-part-two"
+    },
+    {
+      "watched_on": "2024-03-09",
+      "title": "Local Hero",
+      "year": "1983",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "local-hero"
+    },
+    {
+      "watched_on": "2024-03-09",
+      "title": "The Mechanics of Fluids",
+      "year": "2022",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "the-mechanics-of-fluids"
+    },
+    {
+      "watched_on": "2024-03-02",
+      "title": "Poor Things",
+      "year": "2023",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "poor-things-2023"
+    },
+    {
+      "watched_on": "2024-02-21",
+      "title": "La Vérité",
+      "year": "1960",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "la-verite-1960"
+    },
+    {
+      "watched_on": "2024-02-18",
+      "title": "The Teachers’ Lounge",
+      "year": "2023",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "the-teachers-lounge-2023"
+    },
+    {
+      "watched_on": "2024-02-17",
+      "title": "Coma",
+      "year": "1978",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "coma"
+    },
+    {
+      "watched_on": "2024-02-13",
+      "title": "Man on the Roof",
+      "year": "1976",
+      "rating": 4.5,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "man-on-the-roof"
+    },
     {
       "watched_on": "2024-02-11",
       "title": "Starman",
