@@ -4,14 +4,16 @@ PRODID:-//sebbo.net//ical-generator//EN
 NAME:My Test Calendar
 X-WR-CALNAME:My Test Calendar
 BEGIN:VEVENT
-UID:0c00758c-9c01-4275-a569-82ba6c4e3d32
+UID:bf3c37c7-4cf7-412b-9fa6-90f75c3dcd0e
 SEQUENCE:0
-DTSTAMP:20240319T200346Z
-DTSTART:20240319T200346Z
-DTEND:20240319T220346Z
-SUMMARY:Test Event 2
-LOCATION:My Location
-DESCRIPTION:This is a test description
-URL;VALUE=URI:http://example.com
+DTSTAMP:20240319T200832Z
+DTSTART:20240319T200832Z
+DTEND:20240319T210832Z
+SUMMARY:Example Event
+LOCATION:my room
+DESCRIPTION:Elit cum amet nisi minima unde\, cupiditate Nesciunt maxime ma
+ gnam eius quo corporis earum Asperiores iusto nemo voluptatem iure velit a
+ liquid Impedit ea eaque rem deleniti quia. Mollitia consequatur iure
+URL;VALUE=URI:https://javier.computer
 END:VEVENT
 END:VCALENDAR
