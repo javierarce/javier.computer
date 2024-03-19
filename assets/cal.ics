@@ -4,16 +4,27 @@ PRODID:-//sebbo.net//ical-generator//EN
 NAME:My Test Calendar
 X-WR-CALNAME:My Test Calendar
 BEGIN:VEVENT
-UID:bf3c37c7-4cf7-412b-9fa6-90f75c3dcd0e
+UID:2c074a8b-8e66-4394-b605-d497d6cdde0d
 SEQUENCE:0
-DTSTAMP:20240319T200832Z
-DTSTART:20240319T200832Z
-DTEND:20240319T210832Z
+DTSTAMP:20240319T202133Z
+DTSTART:20240319T202133Z
+DTEND:20240319T212133Z
 SUMMARY:Example Event
 LOCATION:my room
 DESCRIPTION:Elit cum amet nisi minima unde\, cupiditate Nesciunt maxime ma
  gnam eius quo corporis earum Asperiores iusto nemo voluptatem iure velit a
  liquid Impedit ea eaque rem deleniti quia. Mollitia consequatur iure
+URL;VALUE=URI:https://javier.computer
+END:VEVENT
+BEGIN:VEVENT
+UID:7164558f-b759-41bc-acc1-476a49641dab
+SEQUENCE:0
+DTSTAMP:20240319T202133Z
+DTSTART:20240319T222133Z
+DTEND:20240319T232133Z
+SUMMARY:I don't know what I do here but I'm doing it :)
+LOCATION:Can this be a location? Can this be something else?
+DESCRIPTION:This is a test
 URL;VALUE=URI:https://javier.computer
 END:VEVENT
 END:VCALENDAR
