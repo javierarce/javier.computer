@@ -1,3 +1,8 @@
+.Layout__project .Content {
+  width: var(--bigWidth);
+}
+
+
 .Layout__project hr {
   width: 100%;
   max-width: 800px;
@@ -5,6 +10,25 @@
 
 .Projects {
   font-size: 1.2em;
+}
+
+.Project__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.Project__list li {
+  list-style: none;
+  margin: 0 0 2em;
+}
+
+.Project__list li a {
+  text-decoration: none;
+}
+
+.Project__list p {
+  opacity: 0.5;
 }
 
 .Project a,
@@ -41,7 +65,7 @@
 
 .Project__content  h3 {
   margin-top: 1em;
-  width: 925px;
+  width: var(--width);
 }
 
 .Project__content h2+h3 {
@@ -54,30 +78,30 @@
 }
 
 .Project p {
-  width: 925px;
+  width: var(--width);
   margin: 0 0 1em;
 }
 
 .Project .Figure {
-  width: 1200px;
+  width: var(--bigWidth);
   margin: 2em auto;
 }
 
 .Project__intro {
-  width: 925px;
+  width: var(--width);
   margin: auto;
   text-align: center;
 }
 
 .Project .Figure video {
   display: block;
-  width: 100%;
+  width: var(--bigWidth);
   border-radius: 2px;
 }
 
 .Project .Figure img {
   display: block;
-  width: 100%;
+  width: var(--bigWidth);
   border-radius: 2px;
 }
 
@@ -110,7 +134,7 @@
   display: grid;
   grid-template-columns: repeat(2, 2fr);
   grid-gap: 0.8em;
-  width: 1024px;
+  width: 100%;
   margin: 0 0 4em;
 }
 

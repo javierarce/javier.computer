@@ -8,8 +8,7 @@ category: drawings
 <div class="Content">
   {% include navigation.html -%}
 
-{% if content != nil and content != "" -%}<div class="Drawing__content">{{ content }}</div>{% endif -%}
-
+  <h2>{{ page.title }}</h2>
   <div class="Drawings {% if page.gap == true -%}is-gap{% endif -%} {% if page.fullheight == true -%}is-fullheight{% endif -%}">
 
     {% for filename in page.filenames %}
@@ -18,6 +17,8 @@ category: drawings
     </div>
     {% endfor %}
   </div>
+
+{% if content != nil and content != "" -%}<div class="Drawing__content">{{ content }}</div>{% endif -%}
 
   <div class="Drawing__pagination">
     {% if page.previous -%}

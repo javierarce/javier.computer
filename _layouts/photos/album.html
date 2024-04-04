@@ -4,21 +4,21 @@ className: Photos
 ---
 <!--- photos/album -->
 
-{%- assign photos = site.photos | concat: site.posts | sort: 'date' | reverse -%}
+{% assign photos = site.photos | concat: site.posts | sort: 'date' | reverse -%}
+{% assign location = page.location | downcase -%}
 
 <div class="Content">
   {% include navigation.html -%}
 
-  <div class="Photos__content">
-    {{ content }}
+  <h2>{{ location | capitalize }}</h2>
 
-    {% assign location = page.location | downcase -%}
-    {% for photo in photos -%}
-    {% if photo.category and location == photo.location -%}
-    {% include photos/photo.html photo=photo -%}
-    {% endif -%}
-    {% endfor -%}
-  </div>
+  {{ content }}
+
+  {% for photo in photos -%}
+  {% if photo.category and location == photo.location -%}
+  {% include photos/photo.html photo=photo -%}
+  {% endif -%}
+  {% endfor -%}
 
   {% include footer.html -%}
 </div>

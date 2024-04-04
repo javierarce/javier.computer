@@ -57,6 +57,7 @@
   --space: 0.4em;
   --doubleSpace: 0.8em;
   --width: 800px;
+  --bigWidth: 1024px;
 }
 
 ::selection {
@@ -80,6 +81,10 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
 }
 
 .is-light {
@@ -207,7 +212,7 @@ p.is-light {
 .Content {
   display: flex;
   flex-direction: column;
-  padding: 2em;
+  width: var(--width);
 }
 
 .Error {
@@ -297,6 +302,7 @@ img.lazy.error {
 .About__content a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after,
 .Page__content a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after,
 .Drawing__content a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after,
+.Project__list li a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after,
 .Post__content ul li a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after,
 .Post__content p a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after {
   content: '↗';
@@ -344,4 +350,3 @@ span.Date {
     padding: 1em;
   }
 }
-

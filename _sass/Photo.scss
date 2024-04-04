@@ -1,3 +1,24 @@
+.Layout__photo .Content,
+.Layout__photos .Content {
+  width: var(--bigWidth);
+}
+
+.Layout__photo .Content h2,
+.Layout__photos .Content h2,
+.Layout__photo .Photo__collection h2,
+.Layout__photos .Photo__collection h2 {
+  margin: 0 auto 2em;
+  text-align: center;
+}
+
+.Photo .Post__content,
+.Photo .Post__footer,
+.Photo__collection .Post__content,
+.Photo__collection .Post__footer {
+  width: var(--width);
+  margin: 0 auto;
+}
+
 .Photo {
   width: 100%;
   height: auto;
@@ -53,20 +74,8 @@
   opacity: 1;
 }
 
-.Photos__content p {
-  margin: 0 0 1em;
-}
-
-.Photos__content p:last-child {
-  margin: 0;
-}
-
-.Photos__content h2 {
-  margin: 0 0 2em;
-}
-
-.Photos__content,
 .Photos__header {
+  background: red;
   text-align: center;
   max-width: 1024px;
   margin: auto;

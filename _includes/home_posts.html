@@ -1,40 +1,14 @@
-{% assign first_post = paginator.posts.first %}
-{% assign hide = first_post.hide %}
-{% assign post = first_post %}
+    {% for post in paginator.posts -%}
+    {% assign hide = post.hide %}
 
-{% if post.category %}
-{% assign type = post.category %}
-{% else %}
-{% assign type = "post" %}
-{% endif %}
+    {% if post.category %}
+    {% assign type = post.category %}
+    {% else %}
+    {% assign type = "post" %}
+    {% endif %}
 
-{% if hide != true  %}
-{% include types/{{ type }}.html -%}
-{% endif %}
+    {% if hide != true  %}
+    {% include types/{{ type }}.html -%}
+    {% endif %}
+    {% endfor -%}
 
-{% assign total_posts = paginator.posts | size %}
-<h3>Archivo</h3>
-<div class="Posts is-more">
-  {% for post in paginator.posts %}
-  {% assign hide = post.hide %}
-  {% assign post_index = forloop.index %}
-  {% if post.category %}
-  {% assign type = post.category %}
-  {% else %}
-  {% assign type = "post" %}
-  {% endif %}
-
-  {% if post_index > 1 %}
-  <div class="Post is-{{ type }}  is-title">
-    <a href="{{ post.url }}" class="is-{{ type }}">{{ post.title }}</a>
-    <div class="Post__date">{{ post.date | date: "%d" }}</div>
-  </div>
-
-  {% endif %}
-  {% endfor %}
-
-  <div class="Post is-archive">
-    <a href="/archive">Ver más</a>
-  </div>
-
-</div>

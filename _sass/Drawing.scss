@@ -1,3 +1,18 @@
+.Layout__drawing .Content,
+.Layout__drawing .Content,
+.Layout__drawings .Content,
+.Layout__drawings .Content {
+  width: var(--bigWidth);
+}
+
+.Layout__drawing .Content h2,
+.Layout__drawing .Content h2,
+.Layout__drawings .Content h2,
+.Layout__drawings .Content h2 {
+  margin: 0 auto 2em;
+  text-align: center;
+}
+
 .Drawings__thumbs {
   max-width: 1440px;
   margin: auto;
@@ -95,6 +110,7 @@
 
 .Drawing img {
   width: 100%;
+  border-radius: 2px;
 }
 
 .Drawing__link {

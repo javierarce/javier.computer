@@ -1,10 +1,26 @@
 .Navigation {
   position: relative;
-  margin: 0 0 4em;
+  margin: 0 auto 4em auto;
+  width: var(--width);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 0.4em;
+}
+
+.Navigation__main {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.Navigation__secondary {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .Navigation__links {

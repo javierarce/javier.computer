@@ -8,13 +8,11 @@ permalink: photos
 <div class="Content">
   {% include navigation.html -%}
 
-  <div class="Photos__content">
-    {% for post in site.categories.photo limit: 10 -%}
-    {% include photos/photoset.html photo=photo -%}
-    {% endfor -%}
+  {% for post in site.categories.photo limit: 10 -%}
+  {% include photos/feed.html photo=photo -%}
+  {% endfor -%}
 
-    <a href="/photos/archive">Archive</a>
-  </div>
+  <a href="/photos/archive">Archive</a>
 
 
   {% include footer.html %}
