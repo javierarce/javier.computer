@@ -14,9 +14,13 @@ description: Movies I've watched
 
 ### {{ group.name }} ({{ group.items.size }})
 
-| Day     | Title   |  Rating    |
-|:--------|:--------|:-----------|
+<ul class="Movie__list">
 {% for movie in group.items -%}
-| {{ movie.watched_on | date: "%d" }} | [{{ movie.title }} ({{ movie.year}})](https://letterboxd.com/javier/film/{{ movie.permalink }}) | {{ movie.stars }} |
+<li>
+<span class="Movie__listDate">{{ movie.watched_on | date: "%d" }}</span>
+<a href="https://letterboxd.com/javier/film/{{ movie.permalink }}">{{ movie.title }} ({{ movie.year }})</a>
+<span>{{ movie.stars }}</span> 
+</li>
 {% endfor %}
+</ul>
 {% endfor -%}

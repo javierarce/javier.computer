@@ -1,37 +1,60 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% if page.title -%}{{ page.title }}{% else -%}{{ site.title }}{% endif -%}</title>
+---
+layout: maps
+className: Trip
+---
 
-    <link rel="shortcut icon" href="{{ base.url | prepend: site.url }}/favicon.ico">
+<div class="Content">
+  {% include navigation.html %}
+
+  <div class="Trips">
+    <div class="Trip">
+      <div class="Trip__content">
+        
+        <div class="BigMap">
+        <div class="App js-map" data-lng="{{ page.lng }}" data-lat="{{ page.lat }}" data-zoom="{{ page.zoom }}">
+          <div id="map" class="Map"></div>
+        </div>
+
+        <div class="Sidebar">
+          {% assign posts= site.data.locations[page.location] | reverse %}
+          {% assign i = posts.size | plus: 1 -%}
+          <div class="Locations js-locations">
+          {% for location in posts -%}
+          {% assign i = i | minus: 1 -%}
+          <div class="Location js-location" data-id="{{ i }}">
+            {% if location.emoji -%}
+              <div class="Location__title has-emoji"><span class="Location__id">{{ location.emoji  }}</span> {{ location.title }}</div>
+            {% else -%}
+              <div class="Location__title"><span class="Location__id">{{ i }}</span> {{ location.title }}</div>
+            {% endif -%}
+
+            {% if location.description -%}
+              <div class="Location__description">{{ location.description }}</div>
+            {% endif -%}
+
+   {% if location.post_references.size > 0 -%}
+    <div class="Location__posts">
+      {% assign j = 0 -%}
+
+      {% for post_ref in location.post_references -%}
+      {% assign j = j | plus: 1 %}
+
+      <a href="{{ post_ref.url }}" class="Location__post">{{ j }}</a>
+      {% endfor -%}
+    </div>
+    {% endif -%}
+            <span class="Location__address">{{ location.address }}</span>
+          </div>
+          {% endfor %}
+        </div>
+        </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
 
 
-    {% include meta.html -%}
-    {% include scripts.html -%}
-
-    {% feed_meta %}
-
-    {% assign className = layout.className %}
-    {% if page.className != nil %}
-    {% assign className = page.className %}
-    {% endif %}
-
-    <script>
-    const locations = {{ site.data.locations[page.location] | reverse | jsonify }}
-    </script>
-
-    <script src="{{ '/scripts/lazyload.min.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
-    <script src="{{ '/scripts/map.js' }}?version={{site.version}}" charset="utf-8"></script>
-    <script src="{{ '/scripts/map/ejs.min.js' }}?version={{site.version}}" charset="utf-8"></script>
-    <script src="{{ '/scripts/map/leaflet.js' }}?version={{site.version}}" charset="utf-8"></script>
-    <script src="{{ '/scripts/map/leaflet.markercluster.js' }}?version={{site.version}}" charset="utf-8"></script>
 
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-
-    <body class="Layout__{{ className | default: page.category | downcase  }}">
-      {{ content }}
-    </body>
-</html>

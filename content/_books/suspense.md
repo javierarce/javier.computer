@@ -6,4 +6,5 @@ status: read
 started: 2024-01-08
 read: 2024-01-30
 rating: "★★★"
+pages: 142
 ---

@@ -1,3 +1,82 @@
+.Book__stack {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 1px;
+  flex-direction: row;
+  margin: 0 0 8em;
+  border-bottom: 1px solid #fff;
+  height: 600px;
+}
+
+.Book__spine {
+  background: #ddd;
+  min-width: 100px;
+  min-height: 400px;
+  height: 100%;
+  color: #000;
+  padding: 1.2em;
+  writing-mode: vertical-rl;
+  transform: scale(-1, -1);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.Book__spine.is-00 {
+  background: #fff;
+}
+
+.Book__spine.h0 {
+  height: 89%;
+}
+
+.Book__spine.h1 {
+  height: 99%;
+}
+
+.Book__spine.h2 {
+  height: 97%;
+}
+
+.Book__spine.h3 {
+  height: 93%;
+}
+
+.Book__spine.is-01 {
+  background: #f0f0f0;
+}
+
+.Book__spine.is-02 {
+  background: #ddd;
+}
+
+.Book__spine.is-03 {
+  background: #fafafa;
+}
+
+.Book__spine.is-04 {
+  background: #f2f2f2;
+}
+
+.Book__spine.is-05 {
+  background: #eee;
+}
+.Book__spine.is-06 {
+  background: #ccc;
+}
+
+.Book__spineTitle {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  font-size: 0.8em;
+  line-height: 1.2;
+}
+
+.Book__spineTitle strong {
+}
+
+
 .Book {
   margin: 0 auto 3em;
   font-size: 1.2em;
@@ -49,66 +128,3 @@
   width: 500px;
 }
 
-/*
-.Book__content {
-  margin: 0 0 1em;
-}
-
-.Book__page {
-  background: #fff;
-  color: #000;
-  padding: 2em;
-  font-size: 1em;
-  font-family: "Times New Roman", Times, Baskerville, Georgia, serif;
-}
-
-
-.Book__cover {
-  background: #fafafa;
-  opacity: .5;
-  max-width: 400px;
-  height: 500px;
-  margin: 0 0 1em;
-  margin: auto auto 1em auto;
-}
-
-.Book blockquote {
-  background: none;
-  padding: 0;
-  border-radious: 0;
-  margin: 0 0 2em;
-}
-
-.Book blockquote p { 
-  font-style: normal;
-  font-weight: 400;
-  text-align: left;
-  font-size: 1em;
-  line-height: 145%;
-} 
-
-
-.Book__date {
-  opacity: 0.5;
-  font-size: 0.8em;
-  user-select: none;
-  text-decoration: none;
-  font-weight: 400;
-}
-
-.Book__date:hover {
-  opacity: 0.5;
-  font-size: 0.8em;
-  user-select: none;
-  text-decoration: none;
-  font-weight: normal;
-}
-
-@media all and (max-width: 1280px) {
-}
-
-@media all and (max-width: 1024px) {
-}
-
-@media all and (max-width: 640px) {
-}*/

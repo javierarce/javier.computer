@@ -20,14 +20,14 @@
 
 .Drawing__content {
   font-size: 1.2em;
-  max-width: 1024px;
+  max-width: var(--bigWidth);
   margin: 0 auto 2em;
   text-align: center;
 }
 
 .Drawing__header {
   text-align: center;
-  max-width: 1024px;
+  max-width: var(--bigWidth);
   margin: 0 auto 2em auto;
   font-size: 1.2em;
 }
@@ -43,7 +43,7 @@
 .Drawing__pagination {
   text-align: center;
   width: 100%;
-  max-width: 1024px;
+  max-width: var(--bigWidth);
   margin: 0 auto 2em auto;
   font-size: 1.2em;
   display: flex;
@@ -73,7 +73,7 @@
 
 .Drawing__title {
   text-align: center;
-  max-width: 1024px;
+  max-width: var(--bigWidth);
   margin: auto;
   margin: 0 auto 2em auto;
   font-size: 1.2em;

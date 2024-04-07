@@ -28,7 +28,7 @@
 .Photo__content img {
   display: block;
   width: 100%;
-  max-width: 1024px;
+  max-width: var(--bigWidth);
   border-radius: 2px;
 }
 
@@ -75,9 +75,8 @@
 }
 
 .Photos__header {
-  background: red;
   text-align: center;
-  max-width: 1024px;
+  max-width: var(--bigWidth);
   margin: auto;
 }
 

@@ -2,7 +2,6 @@
   width: var(--bigWidth);
 }
 
-
 .Layout__project hr {
   width: 100%;
   max-width: 800px;
@@ -19,8 +18,8 @@
 }
 
 .Project__list li {
-  list-style: none;
   margin: 0 0 2em;
+  list-style: none;
 }
 
 .Project__list li a {

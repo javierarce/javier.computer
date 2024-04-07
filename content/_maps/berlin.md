@@ -1,10 +1,10 @@
 ---
-layout: trip
+layout: map
 title:  Berlín
 description: Guía de bolsillo
 className: Map
 permalink: maps/berlin
-category: map
+category: maps
 location: berlin
 lng: 13.404132386012641
 lat: 52.541101674668894

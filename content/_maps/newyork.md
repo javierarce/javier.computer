@@ -1,9 +1,9 @@
 ---
-layout: trip
+layout: map
 title: Nueva York
 className: Map
 permalink: maps/newyork
-category: map
+category: maps
 location: newyork
 lat: 40.7200
 lng: -73.9857

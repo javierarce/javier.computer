@@ -8,4 +8,5 @@ status: read
 read: 2023-10-04
 rating: "★★★★"
 cover: quack-this-way.jpg
+pages: 146
 ---

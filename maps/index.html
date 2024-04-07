@@ -1,15 +1,16 @@
 ---
-layout: about
-category: map
-className: Photos
+layout: table
+className: Maps
 permalink: maps
 ---
-<div class="Maps__archive">
+<ul class="Maps__list">
   {% for map in site.maps -%}
-    {% assign locations_count = site.data.locations[map.location].size %}
-    {% if locations_count > 0 %}
-    <a class="Maps__item" href="/{{ map.permalink }}">{{ map.title}}
-       <div class="Maps__itemDescription">{{ locations_count }} {% if locations_count == 1 %}lugar{% else %}lugares{% endif %} </div>
-    </a>
+  {% assign locations_count = site.data.locations[map.location].size %}
+  {% if locations_count > 0 %}
+  <li>
+    <a href="/{{ map.permalink }}">{{ map.title}}</a>
+    <p>{{ locations_count }} {% if locations_count == 1 %}lugar{% else %}lugares{% endif %}</p>
+  </li>
   {% endif -%}
   {% endfor -%}
+</ul>

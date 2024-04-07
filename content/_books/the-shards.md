@@ -7,4 +7,5 @@ started: 2023-08-26
 read: 2023-09-15
 status: read
 cover:
+pages: 680
 ---

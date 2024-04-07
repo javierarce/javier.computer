@@ -1,9 +1,9 @@
 ---
-layout: trip
+layout: map
 title:  Barcelona
 description: Guía de bolsillo
 className: Map
-category: map
+category: maps
 permalink: maps/barcelona
 location: barcelona
 lng: -73.9857

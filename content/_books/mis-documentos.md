@@ -7,4 +7,5 @@ read: 2024-02-26
 status: read
 rating: "★★★★"
 cover: 
+pages: 208
 ---

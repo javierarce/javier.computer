@@ -1,12 +1,11 @@
-:root {
-  --blue: #2477BE;
-  --green: #23D5AB;
-  --sidebarWidth: 300px;
-  --white: #FFFFFF;
-  --black: #000000;
+.Layout__map .Content,
+.Layout__map .Content {
+  width: var(--fullWidth);
 }
-.Layout__map .Navigation {
-  margin: 0 0 3em;
+
+.Layout__map .Content h2 {
+  margin: 0 auto 2em;
+  text-align: center;
 }
 
 .Trip__header {
@@ -53,40 +52,22 @@
   width: 100%;
 }
 
-.Maps__archive {
-  display: grid;
-  width: 100%;
-  margin: auto;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-  grid-column-gap: 1em;
-  grid-row-gap: 1em;
-  text-align: center;
+.Maps__list {
+  padding: 0;
+  margin: 0;
 }
 
-.Maps__archive > div {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+.Maps__list li {
+  margin: 0 0 2em;
+  list-style: none;
 }
 
-.Maps__itemDescription {
+.Maps__list li a {
+  text-decoration: none;
+}
+
+.Maps__list p {
   opacity: 0.5;
-}
-
-.Maps__item:hover {
-  text-decoration: none;
-}
-
-.Maps__item {
-  width: 100%;
-  height: 240px;
-  border: 1px solid var(--white);
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  text-decoration: none;
-  margin: 0 0 0.4em;
 }
 
 .Map.is-visible {
@@ -122,7 +103,7 @@
   padding: 1em;
   font-size: 1em;
   font-weight: bold;
-  background: var(--black);
+  background: var(--pureBlack);
   background-size: 400% 400%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 100%;
@@ -132,7 +113,7 @@
   border: 4px solid var(--white);
 }
 .Marker.leaflet-zoom-animated.leaflet-interactive:focus {
-  background: var(--black);
+  background: var(--pureBlack);
   color: var(--white);
   outline: none !important;
   z-index: 100 !important;
@@ -173,7 +154,7 @@
   height: 1.4em;
   padding: 0.2em;
   background: var(--gray2);
-  color: var(--black);
+  color: var(--pureBlack);
   font-size: 0.8em;
   border-radius: 100%;
   transition: background 140ms ease-in-out;
@@ -193,7 +174,7 @@
   padding: 1em;
   border: none;
   background: var(--white);
-  color: var(--black);
+  color: var(--pureBlack);
   font-size: 14px;
   line-height: 24px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -225,7 +206,7 @@
   cursor: pointer;
 }
 .ZoomControl.leaflet-control-zoom.leaflet-bar.leaflet-control a:hover {
-  color: var(--black);
+  color: var(--pureBlack);
 }
 .leaflet-cluster-anim .leaflet-marker-icon, .leaflet-cluster-anim .leaflet-marker-shadow {
   -webkit-transition: -webkit-transform 0.3s ease-out, opacity 0.3s ease-in;
@@ -272,7 +253,7 @@
   width: 1.7em;
   height: 1.7em;
   border-radius: 50%;
-  color: var(--black);
+  color: var(--pureBlack);
   background: var(--link);
   font-size: 0.7em;
   margin: 0 0.1em 0 0;
@@ -280,7 +261,7 @@
 .Location__post:hover {
   text-decoration: none;
   background: var(--white);
-  color: var(--black);
+  color: var(--pureBlack);
 }
 .Location__posts {
   display: flex;
@@ -330,11 +311,6 @@
   .Sidebar {
     width: 100%;
     font-size: 1.2em;
-  }
-
-  .Maps__archive {
-    display: flex;
-    flex-direction: column;
   }
 }
 

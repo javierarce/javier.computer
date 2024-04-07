@@ -58,6 +58,12 @@
   --doubleSpace: 0.8em;
   --width: 800px;
   --bigWidth: 1024px;
+  --fullWidth: 100%;
+
+  --pureBlack: #000000;
+  --blue: #2477BE;
+  --green: #23D5AB;
+  --sidebarWidth: 300px;
 }
 
 ::selection {
@@ -302,6 +308,7 @@ img.lazy.error {
 .About__content a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after,
 .Page__content a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after,
 .Drawing__content a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after,
+.Movie__list li a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after,
 .Project__list li a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after,
 .Post__content ul li a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after,
 .Post__content p a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after {
@@ -349,4 +356,30 @@ span.Date {
   .Content {
     padding: 1em;
   }
+}
+
+.Movie__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.Movie__list li {
+  list-style: none;
+  margin: 0 0 0.2em;
+}
+
+.Movie__list li a {
+  text-decoration: none;
+}
+
+.Movie__list .Movie__listDate {
+  display: inline-block;
+  margin: 0 0.2em 0 0;
+ font-family: 'SF Mono', SFMono-Regular, ui-monospace,
+    'DejaVu Sans Mono', Menlo, Consolas, monospace;
+}
+
+.Movie__list span {
+  opacity: 0.5;
 }

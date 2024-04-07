@@ -1,0 +1,34 @@
+---
+title: "Books"
+layout: table
+className: Books
+description: Books I'm reading, I've read, I want to read
+category: page
+permalink: books
+---
+
+{% assign all_books_with_read = site.books | where: "status", "read" %}
+{% assign sorted_books = all_books_with_read | sort: 'read' | reverse %}
+{% assign grouped_books = sorted_books | group_by_exp: "book", "book.read | date: '%Y'" %}
+
+{% assign books_with_status_reading = site.books | where: "status", "reading" %}
+{% assign sorted_books_reading = books_with_status_reading | sort: 'started' %}
+
+{% for group in grouped_books %}
+
+{{ group.name }}
+<div class="Book__stack">
+{% for book in group.items %}
+{% assign content = book.content | strip_newlines %}
+{% assign classIndex = 5 | random_number %} 
+{% assign height = 5 | random_number %} 
+{% assign width = book.pages | map_range: 0, 1000, 0, 300 %}
+<div class="Book__spine is-0{{ classIndex }} h{{ classIndex }}" style="width: {{width}}px">
+  <div class="Book__spineTitle">
+    <strong>{{ book.title }}</strong>
+    {{ book.author }}
+  </div>
+</div>
+{% endfor %}
+</div>
+{% endfor %}

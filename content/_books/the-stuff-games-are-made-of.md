@@ -7,6 +7,7 @@ started: 2023-08-20
 read: 2023-08-20
 status: read
 cover: the-stuff-games-are-made-of.jpg
+pages: 184
 ---
 
 In MDM, we do this through a familiar software engineering practice called

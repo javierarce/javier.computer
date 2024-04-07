@@ -1,7 +1,61 @@
 {
-  "updated_at": "2024-03-17",
-  "count": 601,
+  "updated_at": "2024-04-06",
+  "count": 607,
   "movies": [
+    {
+      "watched_on": "2024-04-06",
+      "title": "Goodbye First Love",
+      "year": "2011",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "goodbye-first-love"
+    },
+    {
+      "watched_on": "2024-04-05",
+      "title": "Irma Vep",
+      "year": "1996",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "irma-vep"
+    },
+    {
+      "watched_on": "2024-04-03",
+      "title": "Full Moon in New York",
+      "year": "1989",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "full-moon-in-new-york"
+    },
+    {
+      "watched_on": "2024-03-31",
+      "title": "Hard Boiled",
+      "year": "1992",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "hard-boiled"
+    },
+    {
+      "watched_on": "2024-03-25",
+      "title": "Vanishing Point",
+      "year": "1971",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "vanishing-point"
+    },
+    {
+      "watched_on": "2024-03-24",
+      "title": "Sometimes I Think About Dying",
+      "year": "2023",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "sometimes-i-think-about-dying-2023"
+    },
     {
       "watched_on": "2024-03-17",
       "title": "Aniki-Bóbó",
@@ -85,12 +139,12 @@
     },
     {
       "watched_on": "2024-02-21",
-      "title": "La Vérité",
+      "title": "The Truth",
       "year": "1960",
       "rating": 3.5,
       "stars": "★★★½",
       "rewatched": false,
-      "permalink": "la-verite-1960"
+      "permalink": "the-truth-1960"
     },
     {
       "watched_on": "2024-02-18",
