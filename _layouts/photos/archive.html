@@ -12,14 +12,12 @@ category: photos
     {% assign locations =  content | map: 'location' | join: ','  | split: ',' | uniq | compact | sort  %}
 
     {% for location in locations %}
-    {% assign tags =  content | where: 'location', location | reverse %}
+    {% assign tags =  content | where: 'location', location %}
     {% assign photo = tags[0] %}
     {% if photo.category and photo %}
     {% include photos/thumb.html photo=photo -%}
     {% endif %}
     {% endfor %}
-
-
   </div>
 
   {% include footer.html -%}

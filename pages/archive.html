@@ -4,13 +4,10 @@ permalink: archive
 className: Archive
 ---
 
-
 <div class="Content">
   {% include navigation.html %}
 
   <div class="Content__inner">
-
-    {% include calendar.html %}
 
     {% assign thedate = nil %}
 
@@ -18,7 +15,7 @@ className: Archive
     {% assign format_date = post.date | date: "%m-%d-%Y" %}
     {% unless post.next %}
     <div class="Archive__month">
-    <h3>{{ post.date | date: '%B %Y' }}</h3>
+      <h3>{% include date.html date=post.date day="false" -%}</h3>
     <ul class="Archive__list">
       {% else %}
       {% capture year %}{{ post.date | date: '%Y %b' }}{% endcapture %}
@@ -30,7 +27,7 @@ className: Archive
 </div>
     {% assign thedate = nil %}
     <div class="Archive__month">
-    <h3>{{ post.date | date: '%B %Y' }}</h3>
+      <h3>{% include date.html date=post.date day="false" -%}</h3>
     <ul class="Archive__list">
       {% endif %}
 

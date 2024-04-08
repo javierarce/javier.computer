@@ -1,6 +1,7 @@
 .Footer {
   display: flex;
-  margin: 4em 0 0 0;
+  margin: 0 auto;
+  width: var(--width);
 }
 
 .Footer__link {
@@ -16,11 +17,23 @@
   opacity: 1;
 }
 
-@media all and (max-width: 640px) {
+@media all and (max-width: 1024px) {
   .Footer {
     display: block;
+    width: 100%;
   }
   .Footer__link {
     margin: 0 0.4em 0 0;
   }
 }
+
+@media all and (max-width: 640px) {
+  .Footer {
+    display: block;
+    width: 100%;
+  }
+  .Footer__link {
+    margin: 0 0.4em 0 0;
+  }
+}
+

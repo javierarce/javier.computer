@@ -55,18 +55,44 @@
   opacity: 1;
 }
 
+@media all and (max-width: 1024px) {
+  .Navigation {
+    width: 100%;
+  }
+  .Navigation__secondary {
+    width: 100%;
+  }
+}
+
 @media all and (max-width: 640px) {
   .Navigation {
     flex-direction: column;
     align-items: flex-start;
+    width: 100%;
+    margin-bottom: 2em;
   }
+
+  .Navigation__main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 0 1em;
+  }
+
+  .Navigation__secondary {
+    width: auto;
+  }
+
   .Navigation__links {
-    margin: 0.4em 0 0 0;
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
   }
+
   .Navigation__links .Navigation__link {
     margin: 0 0.8em 0 0;
   }
+
   .Navigation__link {
     font-size: 1.1em;
   }

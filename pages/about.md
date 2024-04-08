@@ -10,11 +10,11 @@ permalink: about
 {% assign subscribers_count = site.data.subscribers -%}
 {% assign map_count = site.maps | size -%}
 {% assign places_count = site.places | size -%}
-{% assign photos = 0 -%}
+{% assign photo_count = 0 -%}
 
 {% for post in site.categories['photo'] -%}
   {% assign current_count = post.filenames | size -%}
-  {% assign photos = photos | plus: current_count -%}
+  {% assign photo_count = photo_count | plus: current_count -%}
 {% endfor -%}
 
 {% assign drawings = 0 -%}
@@ -30,7 +30,7 @@ My name is [Javier Arce](/me), <em>comme tout le monde</em>. I'm very into: [mak
 
 ### About this site
 
-This site contains a wiki, [{{ post_count }} blog posts](/archive), a collection of silly songs, [{{ photos }} photos](/photos), at least one pun, [{{ drawings }} drawings](/drawings), a modest [blogroll](/blogroll), a hidden passage to another dimension, a ghost story, [a newsletter](/newsletter) with {{ subscribers_count}} subscribers, a list of dog names, a list of names that are not dog names, references to my early memories, [{{ map_count}} maps](/maps) listing {{ places_count }} of my favorite places, several photos of myself eating ice cream, a mirror, a coin, a yellow bird, a photo of your turtle, a turtle.
+This site contains a wiki, [{{ post_count }} blog posts](/archive), a collection of silly songs, [{{ photo_count }} photos](/photos), at least one pun, [{{ drawings }} drawings](/drawings), a modest [blogroll](/blogroll), a hidden passage to another dimension, a ghost story, [a newsletter](/newsletter) with {{ subscribers_count}} subscribers, a list of dog names, a list of names that are not dog names, references to my early memories, [{{ map_count}} maps](/maps) listing {{ places_count }} of my favorite places, several photos of myself eating ice cream, a mirror, a coin, a yellow bird, a photo of your turtle, a turtle.
 
 This site doesn't track you, your friends, or your enemies.
 

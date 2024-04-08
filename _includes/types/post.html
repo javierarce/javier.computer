@@ -8,17 +8,19 @@
   <div class="Post__content{% if post.extraClassName %} {{ post.extraClassName }}{% endif %} e-content">
     {% if post.content contains "<!-- more -->" -%}
     {{ post.content | split:"<!-- more -->" | first }}
-    <div class="Post__more">
-      <a href="{{ post.url }}#more">Leer más</a>
-    </div>
     {% else -%}
     {{ post.content }}
     {% endif -%}
   </div>
   <div class="Post__footer">
-    <a href="{{ post.url }}" class="Post__date dt-published u-url">{{ post.date | date: '%B %d, %Y' }}</a> 
+    <a href="{{ post.url }}" class="Post__date dt-published u-url">{% include date.html date=post.date %}</a> 
 
-  {% include post/locations.html page=post %}
+    {% include post/locations.html page=post %}
+
+    {% if post.content contains "<!-- more -->" -%}
+    <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
+    <a href="{{ post.url }}#more">Leer más</a>
+    {% endif -%}
 
   </div>
 </div>

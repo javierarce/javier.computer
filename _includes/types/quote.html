@@ -4,6 +4,6 @@
     {{ post.author }} ({{post.year}}). {{ post.title }}. {{ post.editorial}}
   </div>
   <div class="Post__footer">
-    <a href="{{ post.url }}" class="Post__date">{{ post.date | date: '%B %d, %Y' }}</a> 
+    <a href="{{ post.url }}" class="Post__date">{% include date.html date=post.date %}</a> 
   </div>
 </div>

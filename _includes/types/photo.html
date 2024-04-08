@@ -1,4 +1,26 @@
-<a href="{{ post.url }}" class="Announcement">
-  <span class="Announcement__icon icon icon-photo"></span> <div class="Announcement__text">{{ post.title }} - {{ post.date | date: '%B %d, %Y' }}</div>
+<div class="Post {% if post.highlighted -%} is-highlighted{% endif -%} h-entry">
+  {% if post.show_title -%}
+  <div class="Post__title p-name">{{ post.title }}</div>
+  {% else -%}
+  <a href="https://javier.computer" class="p-name" style="display:none">{{ post.title }}</a>
+  {% endif -%}
+  <span class="p-author h-card" style="display:none;">{{ site.author }}</span>
+  <div class="Post__content{% if post.extraClassName %} {{ post.extraClassName }}{% endif %} e-content">
+<a href="{{ post.url }}">
+{% if post.filenames -%}
+{% include photos/single.html photo=post filename=post.filenames.first -%}
+{% elsif post.filename %}
+{% include photos/single.html photo=post filename=post.filename -%}
+{% endif %}
 </a>
+  </div>
+  <div class="Post__footer">
+    <a href="{{ post.url }}" class="Post__date dt-published u-url">
+      {% include date.html date=post.date %}
+    </a> 
+    {% include post/locations.html page=post %}
+    <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
 
+    <a href="{{ post.url }}#more">Ver {{ post.filenames.size }} foto{% if post.filenames.size > 1 %}s{% endif %}</a>
+  </div>
+</div>

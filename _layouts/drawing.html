@@ -20,21 +20,5 @@ category: drawings
 
 {% if content != nil and content != "" -%}<div class="Drawing__content">{{ content }}</div>{% endif -%}
 
-  <div class="Drawing__pagination">
-    {% if page.previous -%}
-    <a href="{{ page.previous.url }}" title="{{ page.previous.title }}">←</a>
-    &nbsp;
-    &nbsp;
-    {% endif -%}
-    <a href="/drawings">Drawings</a>
-    {% if page.next -%}
-    &nbsp;
-    &nbsp;
-    <a href="{{ page.next.url }}" title="{{ page.next.title }}">
-      →
-    </a>
-    {% endif -%}
-  </div>
-
   {% include footer.html -%}
 </div>

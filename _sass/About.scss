@@ -7,66 +7,69 @@
 .Layout__about .About__content {
     width: var(--width);
     font-size: 1.2em;
+    margin: 0 auto 2em auto;
+}
+
+.Layout__about p + h3 {
+  margin-top: 2em;
 }
 
 .Layout__about p + ul {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 .Layout__about table ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .Layout__about table ul li {
-    list-style: none;
+  list-style: none;
 }
 
 @media all and (max-width: 1024px) {
-    .Layout__about .About__content,
-    .Layout__about {
-        width: 100%;
-        margin: 0;
-    }
+  .Layout__about .About__content,
+  .Layout__about {
+    width: 100%;
+  }
 }
 
 @media all and (max-width: 640px) {
-    .Layout__about .About__content,
-    .Layout__about {
-        width: 100%;
-        margin: 0;
-    }
+  .Layout__about .About__content,
+  .Layout__about {
+    width: 100%;
+  }
 
-    .Layout__about table {
-        margin: 0;
-    }
+  .Layout__about table {
+    margin: 0;
+  }
 
-    .Layout__about thead {
-        display: none;
-    }
+  .Layout__about thead {
+    display: none;
+  }
 
-    .Layout__about tr {
-        display: flex;
-        flex-direction: column;
-        margin: 0 0 1em;
-    }
+  .Layout__about tr {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 1em;
+  }
 
-    .Layout__about table td {
-        display: block;
-        width: 100%;
-        border: none;
-        padding: 0;
-        margin: 0 0 var(--space);
-    }
+  .Layout__about table td {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 0;
+    margin: 0 0 var(--space);
+  }
 
-    .Layout__about tr {
-        display: flex;
-        flex-direction: column;
-        margin: 0 0 1em;
-    }
+  .Layout__about tr {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 1em;
+  }
 
-    .Layout__about table td:last-child {
-        margin: 0;
-    }
+  .Layout__about table td:last-child {
+    margin: 0;
+  }
 }

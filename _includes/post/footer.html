@@ -1,5 +1,5 @@
 <div class="Post__footer">
-  <a href="{{ page.url }}" class="Post__date">{{ page.date | date: '%B %d, %Y' }}</a>
+  <a href="{{ page.url }}" class="Post__date">{% include date.html date=page.date %}</a>
   {% include post/locations.html page=page %}
 
 
@@ -9,6 +9,14 @@
       <a href="/tags/{{ tag | slugify }}" class="Post__tag-link">#{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
     {% endfor %}
   {% endif %}
+
+  <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
+
+  <open-heart class="text-open-heart" href="https://api.javier.computer/heart?id={{ page.url }}" emoji="❤️" aria-labelledby="like-prompt">
+    <span class="on"></span>
+    <span class="off"></span>
+  </open-heart>
+
 
   {% include pagination.html post=page %}
 </div>

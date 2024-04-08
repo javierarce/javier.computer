@@ -24,6 +24,7 @@
 @import 'Label';
 @import 'Mail';
 @import 'Map';
+@import 'Movies';
 @import 'Music';
 @import 'MusicSnitch';
 @import 'Navigation';
@@ -118,7 +119,7 @@ p.is-light p a {
 }
 
 .is-now {
-  margin: 0 0 1em;
+  margin: 0 0 2em;
 }
 
 a {
@@ -253,7 +254,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.1em;
+  font-size: 1em;
   opacity: 0.5;
 }
 
@@ -353,33 +354,13 @@ span.Date {
     font-size: 1.2em;
   }
 
+  body {
+    padding: 0;
+  }
+
   .Content {
     padding: 1em;
+    width: 100%;
   }
 }
 
-.Movie__list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.Movie__list li {
-  list-style: none;
-  margin: 0 0 0.2em;
-}
-
-.Movie__list li a {
-  text-decoration: none;
-}
-
-.Movie__list .Movie__listDate {
-  display: inline-block;
-  margin: 0 0.2em 0 0;
- font-family: 'SF Mono', SFMono-Regular, ui-monospace,
-    'DejaVu Sans Mono', Menlo, Consolas, monospace;
-}
-
-.Movie__list span {
-  opacity: 0.5;
-}

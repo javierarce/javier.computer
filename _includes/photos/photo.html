@@ -10,5 +10,11 @@
   {% elsif post.filename -%}
   {% include photos/single.html photo=post filename = post.filename -%}
   {% endif -%}
+
+  {% assign content = post.content | strip %}
+  {% if content.size > 0 %}
+  <div class="Post__content">{{ content }}</div>
+  {% endif %}
+
   {% include photos/footer.html photo=post -%}
 </div>

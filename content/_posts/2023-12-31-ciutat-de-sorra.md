@@ -8,5 +8,4 @@ filenames:
 - R0005542
 camera: Ricoh GR IIIx
 ---
-
 [Hidrogenesse](https://hidrogenesse.bandcamp.com) al Heliogabal.

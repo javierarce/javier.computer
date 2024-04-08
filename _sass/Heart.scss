@@ -1,5 +1,6 @@
 open-heart.text-open-heart {
   display: inline;
+  font-size: 0.85em;
 }
 
 open-heart.text-open-heart:not([disabled]):hover span {
@@ -43,10 +44,6 @@ open-heart.text-open-heart .off {
 
 open-heart.text-open-heart[aria-pressed="true"] .off {
   display: none
-}
-
-open-heart.text-open-heart:hover[count]::after {
-  //opacity: 1;
 }
 
 open-heart.text-open-heart[count]::after {

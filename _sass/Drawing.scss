@@ -14,8 +14,8 @@
 }
 
 .Drawings__thumbs {
-  max-width: 1440px;
-  margin: auto;
+  max-width: var(--bigWidth);
+  margin: 0 auto 2em auto;
 }
 
 .Drawing__content {

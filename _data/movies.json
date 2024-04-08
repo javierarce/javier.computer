@@ -1,7 +1,16 @@
 {
-  "updated_at": "2024-04-06",
-  "count": 607,
+  "updated_at": "2024-04-08",
+  "count": 608,
   "movies": [
+    {
+      "watched_on": "2024-04-07",
+      "title": "Missing",
+      "year": "1982",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "missing"
+    },
     {
       "watched_on": "2024-04-06",
       "title": "Goodbye First Love",

@@ -156,17 +156,18 @@
 }
 
 @media all and (max-width: 1024px) {
-  .Diary .Post,
+  .Posts,
   .Post {
+    width: 100%;
+  }
+
+  .Post__footer {
     width: 100%;
   }
 }
 
 @media all and (max-width: 640px) {
-  .Posts {
-    width: 100%;
-  }
-  .Diary .Post,
+  .Posts,
   .Post {
     margin: 0 0 3em;
     width: 100%;
@@ -176,5 +177,15 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  .Post__footerSeparator {
+    display: none;
+  }
+
+  .Post__footer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
   }
 }
