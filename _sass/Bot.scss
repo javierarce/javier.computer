@@ -40,14 +40,15 @@
 }
 
 .Bot__description {
-  width: 925px;
+  width: var(--width);
   margin: 0 0 2em;
 }
 
 .Bot__archive {
+  width: var(--bigWidth);
   background: var(--white);
   color: var(--background);
-  padding: 3em;
+  padding: 2em;
   margin: auto 2em;
   transition: opacity 250ms ease-in-out;
   opacity: 0;

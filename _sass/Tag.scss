@@ -1,13 +1,40 @@
-.Tags {
-  margin: 0.8em 0 0 0;
-  display: none;
+.Tags__list {
+  padding: 0;
+  margin: 0 0 2em 0;
+  font-size: 1em;
+  list-style: none;
 }
 
-.Tag {
-  margin: 0 0.4em 0 0;
-  font-size: 0.6em;
-  color: var(--background);
-  padding: 0.2em 0.4em;
-  border-radius: 2px;
-  background: rgba(255, 255, 255, 0.3);
+.Tags__list li {
+  margin: 0 0 0.4em 0;
+  list-style: none;
+}
+
+.Tags__list li a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.Tags__list .Tag {
+  margin: 0 0 2em;
+  list-style: none;
+  font-size: 1em;
+}
+
+.Tags__list .Tag a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.Tags__list .Tag .Tag__date {
+  opacity: 0.5;
+  font-size: 0.9em;
+}
+
+.Tags__list p a {
+  text-decoration: underline;
+}
+
+.Tags__listItemDate {
+
 }

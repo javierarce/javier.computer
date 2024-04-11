@@ -1,3 +1,8 @@
+.Layout__project .Content h2 {
+  margin: 0 auto 0;
+  text-align: center;
+}
+
 .Layout__project .Content {
   width: var(--bigWidth);
 }
@@ -57,9 +62,8 @@
 }
 
 .Project h2 {
-  font-size: 2em;
+  font-size: 1.8em;
   text-align: center;
-  margin: 0 0 0.2em;
 }
 
 .Project__content  h3 {

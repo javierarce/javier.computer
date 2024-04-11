@@ -9,42 +9,42 @@
     <link>https://javier.computer/feeds/barcelona.rss</link>
     <description>Sitios en barcelona</description>
     <language>es</language>
-    <pubDate>Sun, 17 Mar 2024 21:14:45 +0100</pubDate>
+    <pubDate>Sun, 07 Apr 2024 10:17:38 +0200</pubDate>
     <item>
-      <title>MIKAN</title>
-      <link>https://javier.computer/maps/barcelona/mikan</link>
-      <description>&lt;p&gt;Vinos naturales y gastronomía del noroeste asiático (China, Japón, Corea) con opciones vegetarianas y veganas. Menú del día a mediodía y bar de vinos y platos para compartir por la noche.&lt;/p&gt;
-&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/mikan'&gt;Carrer d'Aribau, 158&lt;/a&gt;&lt;br&gt;</description>
-      <pubDate>Sun, 17 Mar 2024 21:14:45 +0100</pubDate>
+      <title>Taulat 44</title>
+      <link>https://javier.computer/maps/barcelona/taulat-44</link>
+      <description>&lt;p&gt;Deli trendy en Poblenou, con todo lo que eso significa (lo que significa es que va gente trendy… con todo lo que eso significa, etcétera).&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/taulat-44'&gt;Carrer del Taulat, 44&lt;/a&gt;&lt;br&gt;</description>
+      <pubDate>Sun, 07 Apr 2024 10:17:38 +0200</pubDate>
       <dc:subject>barcelona</dc:subject>
-      <dc:date>2024-03-17T21:14:45+01:00</dc:date>
-    </item>
-    <item>
-      <title>Nomad Frutas Selectas</title>
-      <link>https://javier.computer/maps/barcelona/frutas-selectas</link>
-      <description>&lt;p&gt;Cafetería de Nomad con café de Nomad (claro), y pan y dulces de Pa de Kilo.&lt;/p&gt;
-&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/frutas-selectas'&gt;Carrer de Pujades, 95&lt;/a&gt;&lt;br&gt;</description>
-      <pubDate>Sun, 17 Mar 2024 21:04:19 +0100</pubDate>
-      <dc:subject>barcelona</dc:subject>
-      <dc:date>2024-03-17T21:04:19+01:00</dc:date>
+      <dc:date>2024-04-07T10:17:38+02:00</dc:date>
     </item>
     <item>
       <title>Pècora</title>
       <link>https://javier.computer/maps/barcelona/pecora</link>
       <description>&lt;p&gt;Buena y bonita cafetería de especialidad a un tiro de manzana de Frutas Selectas. También tienen cosas dulces para comer.&lt;/p&gt;
 &lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/pecora'&gt;Carrer de Pujades, 113&lt;/a&gt;&lt;br&gt;</description>
-      <pubDate>Sun, 17 Mar 2024 21:01:52 +0100</pubDate>
+      <pubDate>Sun, 07 Apr 2024 10:17:38 +0200</pubDate>
       <dc:subject>barcelona</dc:subject>
-      <dc:date>2024-03-17T21:01:52+01:00</dc:date>
+      <dc:date>2024-04-07T10:17:38+02:00</dc:date>
     </item>
     <item>
-      <title>Taulat 44</title>
-      <link>https://javier.computer/maps/barcelona/taulat-44</link>
-      <description>&lt;p&gt;Deli trendy en Poblenou, con todo lo que eso significa (lo que significa es que va gente trendy… con todo lo que eso significa, etcétera).&lt;/p&gt;
-&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/taulat-44'&gt;Carrer del Taulat, 44&lt;/a&gt;&lt;br&gt;</description>
-      <pubDate>Sun, 17 Mar 2024 20:52:35 +0100</pubDate>
+      <title>MIKAN</title>
+      <link>https://javier.computer/maps/barcelona/mikan</link>
+      <description>&lt;p&gt;Vinos naturales y gastronomía del noroeste asiático (China, Japón, Corea) con opciones vegetarianas y veganas. Menú del día a mediodía y bar de vinos y platos para compartir por la noche.&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/mikan'&gt;Carrer d'Aribau, 158&lt;/a&gt;&lt;br&gt;</description>
+      <pubDate>Sun, 07 Apr 2024 10:17:38 +0200</pubDate>
       <dc:subject>barcelona</dc:subject>
-      <dc:date>2024-03-17T20:52:35+01:00</dc:date>
+      <dc:date>2024-04-07T10:17:38+02:00</dc:date>
+    </item>
+    <item>
+      <title>Nomad Frutas Selectas</title>
+      <link>https://javier.computer/maps/barcelona/frutas-selectas</link>
+      <description>&lt;p&gt;Cafetería de Nomad con café de Nomad (claro), y pan y dulces de Pa de Kilo.&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/frutas-selectas'&gt;Carrer de Pujades, 95&lt;/a&gt;&lt;br&gt;</description>
+      <pubDate>Sun, 07 Apr 2024 10:17:38 +0200</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2024-04-07T10:17:38+02:00</dc:date>
     </item>
     <item>
       <title>Tramendu</title>
@@ -298,6 +298,6 @@
       <dc:subject>barcelona</dc:subject>
       <dc:date>2023-12-08T17:14:31+01:00</dc:date>
     </item>
-    <dc:date>2024-03-17T21:14:45+01:00</dc:date>
+    <dc:date>2024-04-07T10:17:38+02:00</dc:date>
   </channel>
 </rss>

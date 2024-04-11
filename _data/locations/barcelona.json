@@ -384,6 +384,22 @@
   },
   {
     "layout": "place",
+    "pid": "tofu-catalan",
+    "title": "Tofu Catalán",
+    "description": "<p>Pequeño deli donde comprar tofu fresco, bentos y otros productos japoneses.</p>\n",
+    "address": "Carrer d'Aribau, 119",
+    "latlng": [
+      41.391171858311,
+      2.1556111101123
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-01-28T19:07:10+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
     "pid": "tokyo-ya",
     "title": "Tokyo-Ya",
     "description": "<p>¿Fantástico y bien surtido súper japonés? Sí.</p>\n",
@@ -400,30 +416,14 @@
   },
   {
     "layout": "place",
-    "pid": "cuina-panda",
-    "title": "Cuina Panda",
-    "description": "<p>Pequeño restaurante con comida casera típica de Sichuan. El menú cuando fui era muy carnívoro, pero lo adaptan sin problemas para vegetarianos o veganos.</p>\n",
-    "address": "Carrer de Viladomat, 101",
+    "title": "Masa Vins",
+    "pid": "masa-vins",
+    "emoji": "🍷",
+    "address": "Carrer de Pallars, 154",
+    "description": "<p>Bar <em>trendy</em> de vinos naturales y también <em>trendies</em> en Poblenou.</p>\n",
     "latlng": [
-      41.38012362269991,
-      2.1572740000000006
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-01-28T19:07:10+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "right-side-coffee-bar",
-    "title": "Right Side Coffee Bar",
-    "emoji": "☕️",
-    "description": "<p>Erigido sobre las cenizas (je) de Satan’s Coffee Corner, esta es mi cafetería favorita de Barcelona y donde preparan el mejor latte con avena de la ciudad.</p>\n",
-    "address": "Carrer de l'Arc de Sant Ramon del Call, 11",
-    "latlng": [
-      41.38264207117917,
-      2.1752526677825426
+      41.39905461518514,
+      2.1954502849044113
     ],
     "location": "barcelona",
     "last_modified_date": "2024-01-28T19:07:10+01:00",
@@ -481,14 +481,30 @@
   },
   {
     "layout": "place",
-    "title": "Masa Vins",
-    "pid": "masa-vins",
-    "emoji": "🍷",
-    "address": "Carrer de Pallars, 154",
-    "description": "<p>Bar <em>trendy</em> de vinos naturales y también <em>trendies</em> en Poblenou.</p>\n",
+    "pid": "cuina-panda",
+    "title": "Cuina Panda",
+    "description": "<p>Pequeño restaurante con comida casera típica de Sichuan. El menú cuando fui era muy carnívoro, pero lo adaptan sin problemas para vegetarianos o veganos.</p>\n",
+    "address": "Carrer de Viladomat, 101",
     "latlng": [
-      41.39905461518514,
-      2.1954502849044113
+      41.38012362269991,
+      2.1572740000000006
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-01-28T19:07:10+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "right-side-coffee-bar",
+    "title": "Right Side Coffee Bar",
+    "emoji": "☕️",
+    "description": "<p>Erigido sobre las cenizas (je) de Satan’s Coffee Corner, esta es mi cafetería favorita de Barcelona y donde preparan el mejor latte con avena de la ciudad.</p>\n",
+    "address": "Carrer de l'Arc de Sant Ramon del Call, 11",
+    "latlng": [
+      41.38264207117917,
+      2.1752526677825426
     ],
     "location": "barcelona",
     "last_modified_date": "2024-01-28T19:07:10+01:00",
@@ -514,22 +530,6 @@
   },
   {
     "layout": "place",
-    "pid": "tofu-catalan",
-    "title": "Tofu Catalán",
-    "description": "<p>Pequeño deli donde comprar tofu fresco, bentos y otros productos japoneses.</p>\n",
-    "address": "Carrer d'Aribau, 119",
-    "latlng": [
-      41.391171858311,
-      2.1556111101123
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-01-28T19:07:10+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
     "pid": "tramendu",
     "title": "Tramendu",
     "description": "<p>El nombre completo del sitio es “Tramendu. Ens agrada el vermuting” (no confundir con “Tramendu. Encenem els fogons” que está en la misma calle y no he probado). Si lees las críticas en Google Maps verás que la mayoría comentan lo rica que está la comida, lo encantador que es el personal, y lo económico que es el precio. Pues eso.</p>\n",
@@ -546,6 +546,39 @@
   },
   {
     "layout": "place",
+    "pid": "frutas-selectas",
+    "title": "Nomad Frutas Selectas",
+    "emoji": "☕️",
+    "description": "<p>Cafetería de Nomad con café de Nomad (claro), y pan y dulces de Pa de Kilo.</p>\n",
+    "address": "Carrer de Pujades, 95",
+    "latlng": [
+      41.398138533227154,
+      2.1959991095361917
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-04-07T10:17:38+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "mikan",
+    "title": "MIKAN",
+    "description": "<p>Vinos naturales y gastronomía del noroeste asiático (China, Japón, Corea) con opciones vegetarianas y veganas. Menú del día a mediodía y bar de vinos y platos para compartir por la noche.</p>\n",
+    "address": "Carrer d'Aribau, 158",
+    "latlng": [
+      41.392483495253394,
+      2.1543505254535993
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-04-07T10:17:38+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
     "pid": "taulat-44",
     "title": "Taulat 44",
     "description": "<p>Deli trendy en Poblenou, con todo lo que eso significa (lo que significa es que va gente trendy… con todo lo que eso significa, etcétera).</p>\n",
@@ -555,7 +588,7 @@
       2.205068600770623
     ],
     "location": "barcelona",
-    "last_modified_date": "2024-03-17T20:52:35+01:00",
+    "last_modified_date": "2024-04-07T10:17:38+02:00",
     "post_references": [
 
     ]
@@ -572,40 +605,7 @@
       2.1968050417827083
     ],
     "location": "barcelona",
-    "last_modified_date": "2024-03-17T21:01:52+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "frutas-selectas",
-    "title": "Nomad Frutas Selectas",
-    "emoji": "☕️",
-    "description": "<p>Cafetería de Nomad con café de Nomad (claro), y pan y dulces de Pa de Kilo.</p>\n",
-    "address": "Carrer de Pujades, 95",
-    "latlng": [
-      41.398138533227154,
-      2.1959991095361917
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-03-17T21:04:19+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "mikan",
-    "title": "MIKAN",
-    "description": "<p>Vinos naturales y gastronomía del noroeste asiático (China, Japón, Corea) con opciones vegetarianas y veganas. Menú del día a mediodía y bar de vinos y platos para compartir por la noche.</p>\n",
-    "address": "Carrer d'Aribau, 158",
-    "latlng": [
-      41.392483495253394,
-      2.1543505254535993
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-03-17T21:14:45+01:00",
+    "last_modified_date": "2024-04-07T10:17:38+02:00",
     "post_references": [
 
     ]

@@ -2,13 +2,7 @@
   <a href="{{ page.url }}" class="Post__date">{% include date.html date=page.date %}</a>
   {% include post/locations.html page=page %}
 
-
-  {% if page.tags.size > 0 %}
-  &middot;
-    {% for tag in page.tags %}
-      <a href="/tags/{{ tag | slugify }}" class="Post__tag-link">#{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
-    {% endfor %}
-  {% endif %}
+  {% include post/tags.html page=page %}
 
   <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
 

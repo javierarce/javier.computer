@@ -189,3 +189,10 @@
     flex-direction: column;
   }
 }
+.Post__tags {
+  margin: 2em 0 0 0;
+}
+
+.Post__tags span {
+  opacity: 0.5;
+}

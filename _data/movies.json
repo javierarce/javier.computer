@@ -1,7 +1,34 @@
 {
-  "updated_at": "2024-04-08",
-  "count": 608,
+  "updated_at": "2024-04-11",
+  "count": 611,
   "movies": [
+    {
+      "watched_on": "2024-04-10",
+      "title": "A Question of Silence",
+      "year": "1982",
+      "rating": 4.5,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "a-question-of-silence"
+    },
+    {
+      "watched_on": "2024-04-09",
+      "title": "Collateral",
+      "year": "2004",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "collateral"
+    },
+    {
+      "watched_on": "2024-04-08",
+      "title": "Ratcatcher",
+      "year": "1999",
+      "rating": 4.5,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "ratcatcher"
+    },
     {
       "watched_on": "2024-04-07",
       "title": "Missing",
