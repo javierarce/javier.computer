@@ -15,16 +15,14 @@ permalink: books
 {% assign sorted_books_reading = books_with_status_reading | sort: 'started' %}
 
 {% for group in grouped_books %}
-
-<div class="Stack__date">{{ group.name }}</div>
+<div id="year-{{group.name}}" class="Stack__date">{{ group.name }}</div>
 
 <div class="Book__stack">
 {% for book in group.items %}
 {% assign content = book.content | strip_newlines %}
 {% assign classIndex = 5 | random_number %} 
-{% assign height = 5 | random_number %} 
-{% assign width = book.pages | map_range: 0, 1000, 0, 300 %}
-<div class="Book__spine is-0{{ classIndex }} h{{ classIndex }}" style="width: {{width}}px">
+{% assign height = book.pages | map_range: 0, 1000, 80, 300 %}
+<div class="Book__spine is-0{{ classIndex }} h{{ classIndex }}" style="height: {{height}}px">
   <div class="Book__spineContent">
     <div class="Book__title">{{ book.title }}</div>
     <div class="Book__author">{{ book.author }}</div>

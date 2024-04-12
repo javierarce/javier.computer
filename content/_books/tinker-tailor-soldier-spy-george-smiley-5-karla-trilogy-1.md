@@ -1,0 +1,11 @@
+---
+title: "Tinker, Tailor, Soldier, Spy (George Smiley, #5; Karla Trilogy #1)"
+layout: book
+author: John le Carré
+started: 2018/03/19
+read: 2018/03/20
+status: read
+rating: "★★★★☆"
+cover: 
+pages: 381
+---
