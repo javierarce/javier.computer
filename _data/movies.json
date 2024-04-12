@@ -1,7 +1,16 @@
 {
-  "updated_at": "2024-04-11",
-  "count": 611,
+  "updated_at": "2024-04-12",
+  "count": 612,
   "movies": [
+    {
+      "watched_on": "2024-04-12",
+      "title": "The Queen of Spades",
+      "year": "1949",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "the-queen-of-spades"
+    },
     {
       "watched_on": "2024-04-10",
       "title": "A Question of Silence",

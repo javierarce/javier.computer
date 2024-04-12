@@ -205,7 +205,7 @@
   }
 
   .Book__spine {
-    color: var(--white);
+    color: var(--white) !Important;
     background: transparent!Important;
     min-width: inherit;
     min-height: inherit;
