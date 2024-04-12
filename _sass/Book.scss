@@ -1,27 +1,25 @@
 .Stack__date {
   margin: 0 0 1em;
+  font-weight: 600;
 }
 
 .Book__stack {
   display: flex;
-  align-items: end;
-  justify-content: center;
+  align-items: start;
+  justify-content: flex-start;
   gap: 1px;
-  flex-direction: row;
+  flex-direction: column;
   margin: 0 0 8em;
-  border-bottom: 1px solid #fff;
-  height: 600px;
 }
 
 .Book__spine {
   background: #ddd;
-  min-width: 100px;
-  min-height: 400px;
-  height: 100%;
+  //min-height: 100px;
+  //min-width: 400px;
+  width: 100%;
   color: #000;
   padding: 1.4em;
-  writing-mode: vertical-rl;
-  transform: scale(-1, -1);
+  writing-mode: horizontal-tb;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -41,19 +39,19 @@
 }
 
 .Book__spine.h0 {
-  height: 89%;
+  width: 89%;
 }
 
 .Book__spine.h1 {
-  height: 99%;
+  width: 99%;
 }
 
 .Book__spine.h2 {
-  height: 97%;
+  width: 97%;
 }
 
 .Book__spine.h3 {
-  height: 93%;
+  width: 93%;
 }
 
 .Book__spine.is-01 {
