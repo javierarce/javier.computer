@@ -16,7 +16,8 @@ permalink: books
 
 {% for group in grouped_books %}
 
-{{ group.name }}
+<div class="Stack__date">{{ group.name }}</div>
+
 <div class="Book__stack">
 {% for book in group.items %}
 {% assign content = book.content | strip_newlines %}
@@ -24,9 +25,9 @@ permalink: books
 {% assign height = 5 | random_number %} 
 {% assign width = book.pages | map_range: 0, 1000, 0, 300 %}
 <div class="Book__spine is-0{{ classIndex }} h{{ classIndex }}" style="width: {{width}}px">
-  <div class="Book__spineTitle">
-    <strong>{{ book.title }}</strong>
-    {{ book.author }}
+  <div class="Book__spineContent">
+    <div class="Book__title">{{ book.title }}</div>
+    <div class="Book__author">{{ book.author }}</div>
   </div>
 </div>
 {% endfor %}

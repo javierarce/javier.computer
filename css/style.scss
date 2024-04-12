@@ -94,6 +94,10 @@ body {
   padding: 2em;
 }
 
+a.is-underlined {
+  border-bottom: 1px solid var(--text);
+}
+
 .is-light {
   opacity: 0.5;
 }
