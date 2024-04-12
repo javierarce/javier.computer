@@ -13,9 +13,8 @@
 }
 
 .Book__spine {
-  background: #ddd;
-  //min-height: 100px;
-  //min-width: 400px;
+  background: var(--white);
+  color: var(--black);
   width: 100%;
   color: #000;
   padding: 1.4em;
@@ -34,10 +33,6 @@
   opacity: 0.5;
 }
 
-.Book__spine.is-00 {
-  background: #fff;
-}
-
 .Book__spine.h0 {
   width: 89%;
 }
@@ -54,27 +49,84 @@
   width: 93%;
 }
 
-.Book__spine.is-01 {
-  background: #f0f0f0;
+.Book__spine.*(.*?)*/ {
+  background: #6A1B9A;  
+  color: #FFFFFF;      
 }
 
-.Book__spine.is-02 {
-  background: #ddd;
+.Book__spine.is-1 {
+  background: #009688;  
+  color: #FFFFFF;      
 }
 
-.Book__spine.is-03 {
-  background: #fafafa;
+.Book__spine.is-2 {
+  background: #FFB300;  
+  color: #000000;      
 }
 
-.Book__spine.is-04 {
-  background: #f2f2f2;
+.Book__spine.is-3 {
+  background: #C62828;  
+  color: #FFFFFF;      
 }
 
-.Book__spine.is-05 {
-  background: #eee;
+.Book__spine.is-4 {
+  background: #2E7D32;  
+  color: #FFFFFF;      
 }
-.Book__spine.is-06 {
-  background: #ccc;
+
+.Book__spine.is-5 {
+  background: #1976D2;  
+  color: #FFFFFF;      
+}
+
+.Book__spine.is-6 {
+  background: #F9A825;  
+  color: #000000;      
+}
+
+.Book__spine.is-7 {
+  background: #8D6E63;  
+  color: #FFFFFF;      
+}
+
+.Book__spine.is-8 {
+  background: #AD1457;  
+  color: #FFFFFF;      
+}
+
+.Book__spine.is-9 {
+  background: #00695C;  
+  color: #FFFFFF;      
+}
+
+.Book__spine.is-10 {
+  background: #D84315;  
+  color: #FFFFFF;      
+}
+
+.Book__spine.is-11 {
+  background: #558B2F;  
+  color: #FFFFFF;      
+}
+
+.Book__spine.is-12 {
+  background: #283593;  
+  color: #FFFFFF;      
+}
+
+.Book__spine.is-13 {
+  background: #6D4C41;  
+  color: #FFFFFF;      
+}
+
+.Book__spine.is-14 {
+  background: #1565C0;  
+  color: #FFFFFF;      
+}
+
+.Book__spine.is-15 {
+  background: #EC407A;  
+  color: #FFFFFF;      
 }
 
 .Book__spineTitle {
