@@ -1,3 +1,7 @@
+.Stack__date {
+  margin: 0 0 1em;
+}
+
 .Book__stack {
   display: flex;
   align-items: end;
@@ -15,13 +19,23 @@
   min-height: 400px;
   height: 100%;
   color: #000;
-  padding: 1.2em;
+  padding: 1.4em;
   writing-mode: vertical-rl;
   transform: scale(-1, -1);
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  font-size: 0.9em;
 }
+
+.Book__title {
+  font-weight: 400;
+}
+
+.Book__author {
+  opacity: 0.5;
+}
+
 .Book__spine.is-00 {
   background: #fff;
 }
@@ -69,17 +83,11 @@
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  font-size: 0.8em;
   line-height: 1.2;
 }
 
-.Book__spineTitle strong {
-}
-
-
 .Book {
   margin: 0 auto 3em;
-  font-size: 1.2em;
   break-inside: avoid;
   max-width: 900px;
 }
@@ -89,42 +97,30 @@
   text-align: center;
 }
 
-.Book__title {
-  display: block;
-  font-weight: bold;
-  font-size: 1.4em;
-  margin: 0;
-}
+@media all and (max-width: 640px) {
+  .Book__stack {
+    display: block;
+    border-bottom: none;
+    width: 100%!Important;
+    margin: 0 0 1em;
+    height: auto;
+  }
 
-.Book__content h3 {
-  font-size: 1em;
-  opacity: 1;
-  text-align: center;
-  margin: 0 0 1.4em;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
+  .Book__spine {
+    color: var(--white);
+    background: transparent!Important;
+    min-width: inherit;
+    min-height: inherit;
+    height: auto!Important;
+    padding: 0;
+    writing-mode: horizontal-tb;
+    transform: initial;
+    width: 100%!Important;
+    margin: 0 0 1em;
+    font-size: 1em;
+  }
 
-.Book__author {
-  display: block;
-  opacity: 0.5;
-  font-size: 0.9em;
-  font-style: italic;
-  font-family: Georgia, serif;
+  .Book__spineContent {
+    line-height: 1.2;
+  }
 }
-
-.Book__content.is-light p {
-  opacity: 0.7;
-}
-
-.Book__cover {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin: 0 0 2em;
-}
-
-.Book__cover img  {
-  width: 500px;
-}
-
