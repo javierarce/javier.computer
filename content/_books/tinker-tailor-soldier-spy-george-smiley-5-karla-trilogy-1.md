@@ -1,5 +1,5 @@
 ---
-title: "Tinker, Tailor, Soldier, Spy (George Smiley, #5; Karla Trilogy #1)"
+title: "Tinker, Tailor, Soldier, Spy"
 layout: book
 author: John le Carré
 started: 2018/03/19
