@@ -1,7 +1,6 @@
 {% assign books_with_status_reading = site.books | where: "status", "reading" %}
 {% assign sorted_books_reading = books_with_status_reading | sort: 'read' %}
 
-
 {% assign book_titles = "" %}
 {% for book in sorted_books_reading %}
   {% if forloop.first %}

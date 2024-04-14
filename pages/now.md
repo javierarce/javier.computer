@@ -6,5 +6,4 @@ className: About
 weather: false
 permalink: now
 ---
-
-{% include now.md %}
+{% include now.md -%}

@@ -23,10 +23,13 @@ permalink: about
   {% assign drawings = drawings | plus: current_count -%}
 {% endfor -%}
 
-My name is [Javier Arce](/me), <em>comme tout le monde</em>. I'm very into: [making things online](/projects),
-[taking pictures](/photos), [reading](/books), [drawing](/drawings), and [watching movies](/movies).
-
-{% include now.md %}
+My name is [Javier Arce](/me), <em>comme tout le monde</em>. {% include now.md %}
+I'm very into: 
+- [Making things online](/projects)
+- [Taking pictures](/photos)
+- [Reading](/books)
+- [Drawing](/drawings)
+- [Watching movies](/movies)
 
 ### About this site
 

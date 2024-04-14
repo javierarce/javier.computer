@@ -9,7 +9,52 @@
     <link>https://javier.computer/feeds/berlin.rss</link>
     <description>Sitios en berlin</description>
     <language>es</language>
-    <pubDate>Sat, 09 Dec 2023 21:47:40 +0100</pubDate>
+    <pubDate>Sat, 13 Apr 2024 09:38:16 +0200</pubDate>
+    <item>
+      <title>Smartdeli Sushi and More</title>
+      <link>https://javier.computer/maps/berlin/smart-deli</link>
+      <description>&lt;p&gt;Restaurante japonés que también vende snacks y otros productos de Japón.&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/berlin/smart-deli'&gt;Novalisstraße 2&lt;/a&gt;&lt;br&gt;</description>
+      <pubDate>Sat, 13 Apr 2024 09:38:16 +0200</pubDate>
+      <dc:subject>berlin</dc:subject>
+      <dc:date>2024-04-13T09:38:16+02:00</dc:date>
+    </item>
+    <item>
+      <title>3 Schwestern</title>
+      <link>https://javier.computer/maps/berlin/three-schwestern</link>
+      <description>&lt;p&gt;Un restaurante que ofrece comida típica alemana situado en el interior de  un antiguo hospital construido en 1846.&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/berlin/three-schwestern'&gt;Mariannenpl. 2&lt;/a&gt;&lt;br&gt;</description>
+      <pubDate>Sat, 13 Apr 2024 00:04:33 +0200</pubDate>
+      <dc:subject>berlin</dc:subject>
+      <dc:date>2024-04-13T00:04:33+02:00</dc:date>
+    </item>
+    <item>
+      <title>Das neue Café Leo</title>
+      <link>https://javier.computer/maps/berlin/cafe-leo</link>
+      <description>&lt;p&gt;Una caftería situada en un kiosko en medio de una plaza del barrio de Wedding, que además de ofrecer café de especialidad a precios populares, ofrece asesoramiento social y actividades vecinales.&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/berlin/cafe-leo'&gt;Auf dem Leopoldplatz&lt;/a&gt;&lt;br&gt;</description>
+      <pubDate>Fri, 12 Apr 2024 23:55:48 +0200</pubDate>
+      <dc:subject>berlin</dc:subject>
+      <dc:date>2024-04-12T23:55:48+02:00</dc:date>
+    </item>
+    <item>
+      <title>MIBAP</title>
+      <link>https://javier.computer/maps/berlin/mibap</link>
+      <description>&lt;p&gt;Cocina fusión taiwanesa con opciones veganas.&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/berlin/mibap'&gt;Torstraße 22&lt;/a&gt;&lt;br&gt;</description>
+      <pubDate>Fri, 12 Apr 2024 23:51:58 +0200</pubDate>
+      <dc:subject>berlin</dc:subject>
+      <dc:date>2024-04-12T23:51:58+02:00</dc:date>
+    </item>
+    <item>
+      <title>DASHI</title>
+      <link>https://javier.computer/maps/berlin/dashi</link>
+      <description>&lt;p&gt;Diner asiático. Favoritos: Tempeh Sando (V) y Korokke Curry (V)&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/berlin/dashi'&gt;Invalidenstraße 112&lt;/a&gt;&lt;br&gt;</description>
+      <pubDate>Fri, 12 Apr 2024 23:46:37 +0200</pubDate>
+      <dc:subject>berlin</dc:subject>
+      <dc:date>2024-04-12T23:46:37+02:00</dc:date>
+    </item>
     <item>
       <title>Trauma Bar und Kino</title>
       <link>https://javier.computer/maps/berlin/trauma</link>
@@ -127,6 +172,6 @@
       <dc:subject>berlin</dc:subject>
       <dc:date>2023-12-09T08:31:33+01:00</dc:date>
     </item>
-    <dc:date>2023-12-09T21:47:40+01:00</dc:date>
+    <dc:date>2024-04-13T09:38:16+02:00</dc:date>
   </channel>
 </rss>
