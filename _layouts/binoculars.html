@@ -13,7 +13,7 @@ className: Binoculars
     <div class="Binocular">
       <div class="Binocular__content">
         {% for video in post.videos %}
-        <video class="Binocular__video" onclick="this.paused ? this.play() : this.pause();" playsinline preload="auto">
+        <video class="Binocular__video" onclick="this.paused ? this.play() : this.pause();" playsinline preload="true">
           <source src="{{ video }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
