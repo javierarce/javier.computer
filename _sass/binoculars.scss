@@ -61,8 +61,18 @@
     width: 100%;
   }
 
-.Layout__binoculars .Content  h3 {
-  width: 100%;
-}
+  .Layout__binoculars .Content  h3 {
+    width: 100%;
+  }
+
+  .Layout__binoculars .Pagination {
+    width: 100%;
+    margin: 0;
+  }
+
+  .Layout__binoculars .Content h2 {
+    font-size: 1.4em;
+    margin: 0 0 2em;
+  }
 
 }

@@ -155,6 +155,14 @@
   margin: 0;
 }
 
+.Post__tags {
+  margin: 2em 0 0 0;
+}
+
+.Post__tags span {
+  opacity: 0.5;
+}
+
 @media all and (max-width: 1024px) {
   .Posts,
   .Post {
@@ -186,13 +194,8 @@
   .Post__footer {
     display: flex;
     width: 100%;
+    align-items: flex-start;
     flex-direction: column;
   }
 }
-.Post__tags {
-  margin: 2em 0 0 0;
-}
 
-.Post__tags span {
-  opacity: 0.5;
-}

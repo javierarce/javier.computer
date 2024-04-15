@@ -27,102 +27,98 @@ className: Binoculars
 
   {% if paginator.total_pages > 1 %}
   <div class="Pagination">
-    {% if paginator.previous_page %}
-    {% else %}
-    <span class="active"></span>
-    {% endif %}
     {% for page in (1..paginator.total_pages) %}
-    {% assign last_five = forloop.length | minus: 4 %}
+    {% assign last_five = forloop.length | minus: paginator.trail.after %}
     {% assign last_page = forloop.length %}
-    {% if forloop.length > 5 %}
-    {% if paginator.page <= 5 %}
-          {% if forloop.index <= 5 %}
-          {% if forloop.first and page == paginator.page %}
-          <div class="Pagination__item is-selected">{{ page }}</div>
-          {% elsif forloop.first %}
-          <a href="/binoculars" class="Pagination__item">1</a>
-          {% elsif page == paginator.page %}
-          <div class="Pagination__item is-selected">{{ page }}</div>
-          {% else %}
-          <a href="/binoculars/page/{{page}}" class="Pagination__item">{{ page }}</a>
-          {% endif %}
-          {% else %}
-          {% if paginator.page == 5 %}
-          <a href="/{{ paginator.next_page_path }}" class="Pagination__item">{{ page }}</a>
-          {% endif %}
-          <div class="Pagination__item is-ellipsis">…</div>
-          <a href="/binoculars/page/{{ last_page }}" class="Pagination__item">{{ last_page }}</a>
-          {% break %}
-          {% endif %}
-          {% elsif paginator.page >= last_five %}
-          {% if forloop.index >= last_five %}
-          {% if forloop.index == last_five %}
-          <a href="/binoculars" class="Pagination__item">1</a>
-          <div class="Pagination__item is-ellipsis">…</div>
+    {% if forloop.length > paginator.trail.after %}
+    {% if paginator.page <= paginator.trail.after  %}
+       {% if forloop.index <= paginator.trail.after %}
+       {% if forloop.first and page == paginator.page %}
+       <div class="Pagination__item is-selected">{{ page }}</div>
+       {% elsif forloop.first %}
+       <a href="/binoculars" class="Pagination__item">1</a>
+       {% elsif page == paginator.page %}
+       <div class="Pagination__item is-selected">{{ page }}</div>
+       {% else %}
+       <a href="/binoculars/page/{{page}}" class="Pagination__item">{{ page }}</a>
+       {% endif %}
+       {% else %}
+       {% if paginator.page == paginator.total_pages %}
+       <a href="/{{ paginator.next_page_path }}" class="Pagination__item">{{ page }}</a>
+       {% endif %}
+       <div class="Pagination__item is-ellipsis">…</div>
+       <a href="/binoculars/page/{{ last_page }}" class="Pagination__item">{{ last_page }}</a>
+       {% break %}
+       {% endif %}
+       {% elsif paginator.page >= last_five %}
+       {% if forloop.index >= last_five %}
+       {% if forloop.index == last_five %}
+       <a href="/binoculars" class="Pagination__item">1</a>
+       <div class="Pagination__item is-ellipsis">…</div>
 
-          {% assign minus_1 = paginator.page | minus: 1 %}
-          {% if page == last_five %}
-          <a href="/binoculars/page/{{ minus_1 }}" class="Pagination__item">{{ minus_1 }}</a>
-          {% endif %}
+       {% assign minus_1 = paginator.page | minus: 1 %}
+       {% if page == last_five %}
+       <a href="/binoculars/page/{{ minus_1 }}" class="Pagination__item">{{ minus_1 }}</a>
+       {% endif %}
 
-          {% if page == paginator.page %}
-          <div class="Pagination__item is-selected">{{ page }}</div>
-          {% else %}
-          <a href="/binoculars/page/{{ page }}" class="Pagination__item">{{ page }}</a>
-          {% endif %}
-          {% elsif forloop.last and page == paginator.page %}
-          <div class="Pagination__item is-selected">{{ page }}</div>
-          {% elsif page == paginator.page %}
-          <div class="Pagination__item is-selected">{{ page }}</div>
-          {% else %}
-          <a href="/binoculars/page/{{ page }}" class="Pagination__item">{{ page }}</a>
-          {% endif %}
-          {% endif %}
-          {% else %}
+       {% if page == paginator.page %}
+       <div class="Pagination__item is-selected">{{ page }}</div>
+       {% else %}
+       <a href="/binoculars/page/{{ page }}" class="Pagination__item">{{ page }}</a>
+       {% endif %}
+       {% elsif forloop.last and page == paginator.page %}
+       <div class="Pagination__item is-selected">{{ page }}</div>
+       {% elsif page == paginator.page %}
+       <div class="Pagination__item is-selected">{{ page }}</div>
+       {% else %}
+       <a href="/binoculars/page/{{ page }}" class="Pagination__item">{{ page }}</a>
+       {% endif %}
+       {% endif %}
+       {% else %}
 
-          {% if forloop.first %}
-          <a href="/binoculars" class="Pagination__item">1</a>
-          {% endif %}
+       {% if forloop.first %}
+       <a href="/binoculars" class="Pagination__item">1</a>
+       {% endif %}
 
-          {% assign minus_2 = paginator.page | minus: 2 %}
-          {% if forloop.index == minus_2 %}
-          <div class="Pagination__item is-ellipsis">…</div>
-          <a href="/binoculars/page/{{ minus_2 }}" class="Pagination__item">{{ minus_2 }}</a>
-          {% endif %}
+       {% assign minus_2 = paginator.page | minus: 2 %}
+       {% if forloop.index == minus_2 %}
+       <div class="Pagination__item is-ellipsis">…</div>
+       <a href="/binoculars/page/{{ minus_2 }}" class="Pagination__item">{{ minus_2 }}</a>
+       {% endif %}
 
-          {% assign minus_1 = paginator.page | minus: 1 %}
-          {% if forloop.index == minus_1 %}
-          <a href="/binoculars/page/{{ minus_1 }}" class="Pagination__item">{{ minus_1 }}</a>
-          {% endif %}
-          {% if page == paginator.page %}
-          <div class="Pagination__item is-selected" class="Pagination__item">{{ page }}</div>
-          {% endif %}
+       {% assign minus_1 = paginator.page | minus: 1 %}
+       {% if forloop.index == minus_1 %}
+       <a href="/binoculars/page/{{ minus_1 }}" class="Pagination__item">{{ minus_1 }}</a>
+       {% endif %}
+       {% if page == paginator.page %}
+       <div class="Pagination__item is-selected" class="Pagination__item">{{ page }}</div>
+       {% endif %}
 
-          {% assign plus_1 = paginator.page | plus: 1 %}
-          {% if forloop.index == plus_1%}
-          <a href="/binoculars/page/{{ page | plus: 1 }}" class="Pagination__item">{{ plus_1 }}</a>
-          {% endif %}
+       {% assign plus_1 = paginator.page | plus: 1 %}
+       {% if forloop.index == plus_1%}
+       <a href="/binoculars/page/{{ page | plus: 1 }}" class="Pagination__item">{{ plus_1 }}</a>
+       {% endif %}
 
-          {% assign plus_2 = paginator.page | plus: 2 %}
-          {% if forloop.index == plus_2 %}
-          <a href="/binoculars/page/{{ page | plus: 2 }}" class="Pagination__item">{{ plus_2 }}</a>
-          <div class="Pagination__item is-ellipsis">…</div>
-          {% endif %}
+       {% assign plus_2 = paginator.page | plus: 2 %}
+       {% if forloop.index == plus_2 %}
+       <a href="/binoculars/page/{{ page | plus: 2 }}" class="Pagination__item">{{ plus_2 }}</a>
+       <div class="Pagination__item is-ellipsis">…</div>
+       {% endif %}
 
-          {% if forloop.last %}
-          <a href="/binoculars/page/{{ forloop.index }}" class="Pagination__item">{{ forloop.index }}</a>
-          {% endif %}
-          {% endif %}
-          {% else %}
-          {% if page == paginator.page %}
-          <div class="Pagination__item is-selected">{{ page }}</div>
-          {% elsif page == 1 %}
-          <a href="/binoculars" class="Pagination__item">{{ page }}</a>
-          {% else %}
-          <a href="/binoculars/page/{{ page }}" class="Pagination__item">{{ page }}</a>
-          {% endif %}
-          {% endif %}
-          {% endfor %}
+       {% if forloop.last %}
+       <a href="/binoculars/page/{{ forloop.index }}" class="Pagination__item">{{ forloop.index }}</a>
+       {% endif %}
+       {% endif %}
+       {% else %}
+       {% if page == paginator.page %}
+       <div class="Pagination__item is-selected">{{ page }}</div>
+       {% elsif page == 1 %}
+       <a href="/binoculars" class="Pagination__item">{{ page }}</a>
+       {% else %}
+       <a href="/binoculars/page/{{ page }}" class="Pagination__item">{{ page }}</a>
+       {% endif %}
+       {% endif %}
+       {% endfor %}
   </div>
   {% endif %}
 
