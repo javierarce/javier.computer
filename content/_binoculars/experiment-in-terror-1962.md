@@ -1,5 +1,5 @@
 ---
-title: "Experiments in Terror (1962)"
+title: "Experiment in Terror (1962)"
 position: 34
 date: 2024-04-15T21:29:32.078Z
 covers: 
