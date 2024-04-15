@@ -32,7 +32,9 @@
 {% if unique_locations.size > 0 %}
 <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
 {% for location in unique_locations %}
-<a href="/maps/{{ location }}" class="Post__location-link">{{ location | capitalize }}</a>{% unless forloop.last %} 
+
+{% assign matching_location = site.locations | where: "location", location | first %}
+<a href="/maps/{{ location }}" class="Post__location-link">{{ matching_location.title }}</a>{% unless forloop.last %} 
 <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
 {% endunless %}
 {% endfor %}
