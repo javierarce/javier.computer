@@ -10,6 +10,8 @@ const TEMPLATE = `---
 title: "TITLE"
 position: POSITION
 date: DATE
+covers: 
+COVERS
 videos: 
 VIDEOS
 layout: binoculars
@@ -33,38 +35,51 @@ const removeDirectory = async (dir) => {
   }
 };
 
-const createOrUpdateFile = (permalink, content, videoUrl) => {
+const createOrUpdateFile = (permalink, content, videoUrl, coverUrl) => {
   const filePath = path.join(contentDirectory, `${permalink}.md`);
+  const coverTemplate = `- ${coverUrl}`;
+
   if (fs.existsSync(filePath)) {
     let existingContent = fs.readFileSync(filePath, 'utf8');
     const videoListMatch = existingContent.match(/videos:\s*\n([\s\S]*?)(layout: binoculars)/);
+
     if (videoListMatch) {
       existingContent = existingContent.replace(videoListMatch[1], `${videoListMatch[1]}- ${videoUrl}\n`);
     }
+
+    const coverListMatch = existingContent.match(/covers:\s*\n([\s\S]*?)(videos:)/);
+    if (coverListMatch) {
+      existingContent = existingContent.replace(coverListMatch[1], `${coverListMatch[1]}- ${coverUrl}\n`);
+    }
+
     fs.writeFileSync(filePath, existingContent);
     console.log('File updated:', filePath);
   } else {
     const videoTemplate = `- ${videoUrl}`;
-    const newContent = content.replace('VIDEOS', videoTemplate);
+    const newContent = content.replace('VIDEOS', videoTemplate).replace('COVERS', coverTemplate);
     fs.writeFileSync(filePath, newContent);
     console.log('File created:', filePath);
   }
+
   count++;
 };
 
 const onChannel = (channel) => {
   channel.map((item) => {
-    const videoUrl = item.attachment.url; // Assuming 'attachment.url' is your video URL
+    const videoUrl = item.attachment.url;
+    const coverUrl = item.image.large.url; // Assuming item.file.large.url holds the cover URL
+
     const content = TEMPLATE.replace('TITLE', item.title)
       .replace('CONTENT', item.content || '')
       .replace('DATE', item.connected_at)
       .replace('POSITION', item.position);
+
     const permalink = item.title.replace(/[^a-zA-Z0-9]/g, '-')
       .toLowerCase()
       .replace(/-+/g, '-')
       .replace(/^-|-$/g, '')
-      .replace(/:/g, '')
-    createOrUpdateFile(permalink, content, videoUrl);
+      .replace(/:/g, '');
+    createOrUpdateFile(permalink, content, videoUrl, coverUrl);
   });
   console.log('Total files created:', count);
 };
