@@ -36,7 +36,8 @@ GEM
       jekyll (>= 3.7, < 5.0)
     jekyll-feed (0.17.0)
       jekyll (>= 3.7, < 5.0)
-    jekyll-paginate (1.1.0)
+    jekyll-paginate-v2 (3.0.0)
+      jekyll (>= 3.0, < 5.0)
     jekyll-sass-converter (3.0.0)
       sass-embedded (~> 1.54)
     jekyll-watch (2.2.1)
@@ -76,7 +77,7 @@ DEPENDENCIES
   jekyll (~> 4.3.2)
   jekyll-compose (~> 0.11)
   jekyll-feed (~> 0.12)
-  jekyll-paginate
+  jekyll-paginate-v2
   rss (~> 0.2.8)
   tzinfo (~> 1.2)
   tzinfo-data

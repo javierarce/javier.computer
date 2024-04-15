@@ -1,5 +1,5 @@
 ---
-title: "Zombieland: Double Tap"
+title: "Zombieland Double Tap"
 year: 2019
 rating: 2.5
 stars: "★★½"

@@ -1,0 +1,57 @@
+.Layout__binoculars .Footer {
+  margin-top: 2em;
+}
+
+.Layout__binoculars .Content {
+  width: var(--bigWidth);
+}
+
+.Layout__binoculars .Pagination {
+  width: var(--width);
+  margin: auto;
+}
+
+
+.Binoculars {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+  margin: 0 0 2em 0;
+}
+
+.Binocular__title {
+  font-weight: 300;
+  text-align: center;
+}
+
+
+.Binocular__video {
+  border-radius: 2px;
+  width: 100%;
+  margin: 0 0 1em;
+  cursor: pointer;
+}
+
+.Layout__binoculars .Content h2 a {
+  text-decoration: none;
+}
+
+.Layout__binoculars .Content h2 {
+  margin: 0 auto 0.2em auto;
+  font-size: 1.8em;
+  text-align: center;
+}
+
+.Layout__binoculars .Content  h3 {
+  margin-top: 1em;
+  width: var(--width);
+  margin: 0 auto 4em;
+}
+
+.Layout__binoculars .Content h2+h3 {
+  font-size: 0.9em;
+  font-weight: normal;
+  opacity: 0.5;
+  text-align: center;
+  margin-top: 0;
+}

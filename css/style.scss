@@ -9,6 +9,7 @@
 @import 'About';
 @import 'Announcement';
 @import 'Archive';
+@import 'Binoculars';
 @import 'Book';
 @import 'Bot';
 @import 'Button';
@@ -319,7 +320,8 @@ img.lazy.error {
 .Movie__list li a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after,
 .Project__list li a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after,
 .Post__content ul li a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after,
-.Post__content p a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after {
+.Post__content p a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after,
+.is-external:after {
   content: '↗';
   display: inline-block;
   font-weight: 400;
@@ -370,4 +372,3 @@ span.Date {
     width: 100%;
   }
 }
-
