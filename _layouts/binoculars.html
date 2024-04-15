@@ -14,7 +14,7 @@ className: Binoculars
       <div class="Binocular__content">
         {% for video in post.videos %}
         {% assign index = forloop.index0 %}
-        <video class="Binocular__video" onclick="this.paused ? this.play() : this.pause();" preload="auto" poster="{{ post.covers[index] }}">
+        <video class="Binocular__video" onclick="this.paused ? this.play() : this.pause();" preload="auto" poster="{{ post.covers[index] }}" controls>
           <source src="{{ video }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
