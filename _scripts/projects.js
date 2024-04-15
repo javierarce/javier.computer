@@ -40,7 +40,7 @@ const projects = [
   description: 'Update your Twitter avatar and banner from the comfort of Figma.'
 }, {
   title: 'Binocular Shot',
-  url: 'https://binocularshot.tumblr.com',
+  url: 'https://javier.computer/binoculars',
   description: 'A tribute to movies with innacurate binocular shots.'
 }, {
   title: 'Go With The Flow' ,
