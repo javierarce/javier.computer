@@ -1,9 +1,9 @@
 ---
 title: "Almas muertas"
 layout: book
-rating: ""
+rating: "★★★★"
 author: Nikolai Gogol
 started: 2024-03-20
-read:
-status: reading
+read: 2024-04-14
+status: read
 ---
