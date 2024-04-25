@@ -8,7 +8,14 @@
   <div class="Post__content{% if post.extraClassName %} {{ post.extraClassName }}{% endif %} e-content">
 <a href="{{ post.url }}">
 {% if post.filenames -%}
-{% include photos/single.html photo=post filename=post.filenames.first -%}
+
+    {% if post.filenames.first.filename -%}
+    {% assign filename = post.filenames.first.filename -%}
+    {% else -%}
+    {% assign filename = post.filenames.first -%}
+    {% endif -%}
+
+{% include photos/single.html photo=post filename=filename caption=caption -%}
 {% elsif post.filename %}
 {% include photos/single.html photo=post filename=post.filename -%}
 {% endif %}

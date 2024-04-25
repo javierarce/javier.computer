@@ -34,7 +34,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:type" content="article">
 {% elsif page.filenames -%}
-{% assign filename = page.filenames | first %}
+{% assign file = page.filenames | first %}
+{% assign filename = file.filename | default: file %}
 <meta property='og:image' content="https://img.javier.computer/{{ page.location }}/{{ filename }}_1280.jpg" />
 <meta name=twitter:image content="https://img.javier.computer/{{ page.location }}/{{ filename }}_1280.jpg">
 <meta name="twitter:card" content="summary_large_image">

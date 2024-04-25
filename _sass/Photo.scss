@@ -1,6 +1,12 @@
 .Feed {
   margin-bottom: 2em;
 }
+figcaption {
+  font-size: 1em;
+  text-align: center;
+  margin-top: 0.8em;
+  opacity: 0.5;
+}
 .Layout__photo .Content,
 .Layout__photos .Content {
   width: var(--bigWidth);

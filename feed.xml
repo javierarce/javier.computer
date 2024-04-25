@@ -39,8 +39,17 @@ layout: none
       {% if post.category == 'photo' %}
       <![CDATA[
         {% if post.filenames %}
-          {% for filename in post.filenames %}
-            <img src="https://img.javier.computer/{{ post.location }}/{{ filename }}_1280.jpg" alt="{{post.title}}"/>  
+          {% for file in post.filenames %}
+
+          {% if file.filename -%}
+          {% assign filename = file.filename -%}
+          {% assign caption = file.caption | default: post.title | strip_html | strip_newlines | xml_escape -%}
+          {% else -%}
+          {% assign filename = file -%}
+          {% assign caption = post.title -%}
+          {% endif -%}
+
+            <img src="https://img.javier.computer/{{ post.location }}/{{ filename }}_1280.jpg" alt="{{ caption }}"/>  
           {% endfor %}
         {% else %}
           <img src="https://img.javier.computer/{{ post.location }}/{{ post.filename }}_1280.jpg" alt="{{post.title}}" />  
@@ -61,6 +70,7 @@ layout: none
         ]]>
       {% else %}
         {{ post.content | xml_escape }}
+        <p><a href="{{ site.url}}/heart?id={{post.url}}">Like</a></p>
         {% if post.disclaimer -%}<p>{{ post.disclaimer }}</p>{% endif -%}
           {% if matching_location -%}<p><small>{{ matching_location.title }}</small></p>{% endif -%}
       {% endif %}

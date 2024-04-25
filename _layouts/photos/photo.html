@@ -7,10 +7,22 @@ className: Photo
   {% include navigation.html -%}
   <div class="Photo__collection">
 
+    {% if page.hide_title != true -%}
     <h2>{{ page.title }}</h2>
+    {% endif -%}
+
     {% if page.filenames -%}
-    {% for filename in page.filenames -%}
-    {% include photos/single.html photo=page filename = filename -%}
+    {% for file in page.filenames -%}
+
+    {% if file.filename -%}
+    {% assign filename = file.filename -%}
+    {% assign caption = file.caption -%}
+    {% else -%}
+    {% assign filename = file -%}
+    {% assign caption = "" -%}
+    {% endif -%}
+
+    {% include photos/single.html photo=page filename = filename caption = caption -%}
     {% endfor -%}
 
     {% else -%}

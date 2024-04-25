@@ -1,21 +1,30 @@
 <!-- photos / feed -->
 <div class="Photo__collection">
   {% if post.filenames -%}
-    {% for filename in post.filenames -%}
-      {% include photos/single.html photo=post filename=filename -%}
-    {% endfor %}
-      {% assign content = post.content | strip %}
-      {% if content.size > 0 %}
-        <div class="Post__content">{{ content }}</div>
-      {% endif %}
+  {% for file in post.filenames -%}
+
+  {% if file.filename -%}
+  {% assign filename = file.filename -%}
+  {% assign caption = file.caption -%}
+  {% else -%}
+  {% assign filename = file -%}
+  {% assign caption = "" -%}
+  {% endif -%}
+
+  {% include photos/single.html photo=post filename=filename caption=caption -%}
+  {% endfor %}
+  {% assign content = post.content | strip %}
+  {% if content.size > 0 %}
+  <div class="Post__content">{{ content }}</div>
+  {% endif %}
   {% elsif post.filename %}
-    {% include photos/single.html photo=post filename=post.filename -%}
-    {% assign content = post.content | strip %}
-    {% if content.size > 0 %}
-      <div class="Post__content">{{ content }}</div>
-    {% endif %}
+  {% include photos/single.html photo=post filename=post.filename -%}
+  {% assign content = post.content | strip %}
+  {% if content.size > 0 %}
+  <div class="Post__content">{{ content }}</div>
+  {% endif %}
   {% else %}
-    {{ post.content }}
+  {{ post.content }}
   {% endif %}
 
   {% include photos/footer.html photo=post pagination=false -%}

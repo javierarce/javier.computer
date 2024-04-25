@@ -20,7 +20,6 @@
   margin: 0.8em 0 0;
 }
 
-
 .Post.is-title .Post__date,
 .Post.is-title .Post__location {
   opacity: 0.5;
@@ -36,7 +35,6 @@
 .Posts.is-more a:hover {
   color: var(--link);
 }
-
 
 .Post.is-highlighted .Post__content {
   border: 1px solid #ae81ff;
@@ -78,6 +76,12 @@
 
 .Post__content {
   margin: 0 0 0.4em 0;
+  gap: 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.Post__content p {
   font-size: 1.2em;
 }
 
