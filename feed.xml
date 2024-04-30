@@ -70,7 +70,9 @@ layout: none
         ]]>
       {% else %}
         {{ post.content | xml_escape }}
+        <![CDATA[
         <p><a href="{{ site.url}}/heart?id={{post.url}}">Like</a></p>
+        ]]>
         {% if post.disclaimer -%}<p>{{ post.disclaimer }}</p>{% endif -%}
           {% if matching_location -%}<p><small>{{ matching_location.title }}</small></p>{% endif -%}
       {% endif %}
