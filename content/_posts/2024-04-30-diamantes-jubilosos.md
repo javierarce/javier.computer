@@ -16,7 +16,7 @@ Francisco, mientras su nevera se va atiborrando de decenas y decenas de carretes
 - Los relajantes vídeos de parques de un minuto de duración que colecciona [este
 proyecto](https://oneminutepark.tv) y que incluye sesenta segundos del Volkspark Friedrichshain que grabé hace poco. 
 - La [nueva
-web](https://www.olimpiazagnoli.com) de Olimpia Zagnoli. 
+web](https://www.olimpiazagnoli.com) de Olimpia Zagnoli (y de regalo [unas fotos](/2022/10/05/olimpia) que hice en su expo en Marsella hace dos años).
 - [Diamond Jubilee](https://www.geocities.ws/ccqsk), el nuevo disco de Cindy Lee del que todo el mundo
 habla estos días (esto en realidad pasó por mis oídos, pero ya me entendéis).
 
