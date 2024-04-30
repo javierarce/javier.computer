@@ -83,10 +83,15 @@
 
 .Post__content p {
   font-size: 1.2em;
+  margin: 0;
 }
 
 .Post__content ul {
   margin: 0 0 1em 1em;
+}
+
+.Post__content ul li {
+  font-size: 1.2em;
 }
 
 .Post__footer {
