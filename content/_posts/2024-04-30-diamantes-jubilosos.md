@@ -4,7 +4,7 @@ title: "Diamantes jubilosos"
 date: "2024-04-30 18:00:00 +0200"
 ---
 
-He aquí una lista de algunas cosas interesantes que han pasado por mis ojos (y mi navegador) recientemente que no es sino una excusa para decir hola (hola) y volver a publicar por aquí.
+He aquí una lista de algunas cosas interesantes que han pasado por mis ojos (y mi navegador) recientemente, que no es sino una excusa para decir hola (hola) y volver a publicar por aquí.
 <!-- more -->
 - [Esta idea](https://www.robinsloan.com/lab/at-home-in-high-dimensional-space/?utm_source=Robin_Sloan_sent_me#valtown)
 de Robin Sloan para analizar los mensajes que llegan a una cuenta de correo usando
