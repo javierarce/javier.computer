@@ -4,7 +4,16 @@
 
 <div class="Photo__collection">
   {% if filenames | size -%}
-  {% for filename in filenames -%}
+  {% for file in filenames -%}
+
+  {% if file.filename -%}
+  {% assign filename = file.filename -%}
+  {% assign caption = file.caption -%}
+  {% else -%}
+  {% assign filename = file -%}
+  {% assign caption = "" -%}
+  {% endif -%}
+
   {% include photos/single.html photo=post filename = filename -%}
   {% endfor -%}
   {% elsif post.filename -%}
