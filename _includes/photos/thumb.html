@@ -1,8 +1,19 @@
-{% assign filename = photo.filenames | first %}
+{% assign file = photo.filenames | first %}
 {% assign id = photo.ids | first %}
 {% assign matching_location = site.locations | where: "location", photo.location | first %}
 
-{% if filename %}
+{% if file %}
+
+
+  {% if file.filename -%}
+  {% assign filename = file.filename -%}
+  {% assign caption = file.caption -%}
+  {% else -%}
+  {% assign filename = file -%}
+  {% assign caption = "" -%}
+  {% endif -%}
+
+
 <div class="Photo">
   <div class="Photo__content">
     <figure class="Figure">
