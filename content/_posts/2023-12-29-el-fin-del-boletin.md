@@ -1,12 +1,10 @@
 ---
 layout: post
-title: "El fin del boletin"
+title: "El fin del boletín"
 date: "2023-12-29 23:48:48 +0100"
 hidden: true
 tags: [newsletter]
 ---
-
-> Originalmente publicado en [tinyletter](https://tinyletter.com/javierarce/letters/el-fin-del-bolet-n) el 29 de diciembre de 2023.
 
 Hola, suscriptores y suscriptoras de mi newsletter:
 
@@ -16,7 +14,7 @@ Pero no estoy aquí para contaros lo que he hecho y lo que no he hecho (que, com
 
 Lo que voy a hacer es dar de baja esta newsletter. Y luego voy a abrirme otra. Y os voy a pedir que os apuntéis.
 
-### Algo de intrahistoria sobre esta loca idea
+## Algo de intrahistoria sobre esta loca idea
 
 Hace unos días decidí reactivar este canal de comunicación tan íntimo y secreto que tenemos vosotros y yo, y para ello monté, con estas manitas que os escriben ahora, un servicio de newsletters en mi servidor. El caso es que al poco de tenerlo todo listo, Mailchimp, la compañía tras Tinyletter, anunció que el próximo año desmantelará la operación y nos darán la patada. Como véis, tomé la decisión correcta tiempo antes de que el desastre asomara siquiera en el horizonte, lo cual digo yo que me convierte en un genio, o en un visionario, o quizá incluso ambas cosas. Dejaré que sea la historia con hache mayúscula quien decida la denominación exacta, aunque ya os digo yo que la cosa pinta a que será "genio visionario". Bueno, es igual.
 
@@ -24,7 +22,7 @@ Imagino que os estaréis preguntando acerca de los planes para esta nueva novís
 
 En cualquier caso, la idea de esta newsletter será la misma que la anterior: enviaros mensajes "cuando publique un nuevo proyecto o haga algo extremadamente gracioso". También es posible que lo utilice para mandaros posts largos de mi blog de vez en cuando, pero eso está por ver. Por cierto, los emails que os envié en su día están [aquí](/tags/newsletter), como preservados en el ámbar.
 
-### Corta el rollo
+## Corta el rollo
 
 Bien, llegados a este punto, toca daros algunos enlaces:
 

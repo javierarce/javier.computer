@@ -64,6 +64,20 @@
   color: var(--link); 
 }
 
+.Post__content h2, h3, h4 {
+  margin: 0;
+  opacity: 0.5;
+}
+
+.Post__content ul,
+.Post__content ul li:last-child {
+  margin-bottom: 0;
+}
+
+.Post__content ul li {
+  font-size: 1.2em;
+}
+
 .Post p:last-child {
   margin: 0;
 }
@@ -74,8 +88,12 @@
   margin: 0 0 .4em;
 }
 
-.Post__content {
+.Layout__home .Post__content {
   margin: 0 0 0.4em 0;
+}
+
+.Layout__post .Post__content {
+  margin: 0 0 2em 0;
   gap: 2em;
   display: flex;
   flex-direction: column;
@@ -84,14 +102,6 @@
 .Post__content p {
   font-size: 1.2em;
   margin: 0;
-}
-
-.Post__content ul {
-  margin: 0 0 1em 1em;
-}
-
-.Post__content ul li {
-  font-size: 1.2em;
 }
 
 .Post__footer {
