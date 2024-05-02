@@ -28,9 +28,9 @@ className: Blogroll
 
 ### Newsletters favoritas
 
-- [DADA issues](https://bluebed.substack.com) de Roman Muradov
-- [Design Harder](https://designharder.substack.com) de Erik Carter
-- [Fetén](https://nazaretescobedo.substack.com) de Nazaret Escobedo.
-- [Gárgola Digital](https://gargoladigital.substack.com) de Ainhoa Marzol
-- [Naive Weekly](https://www.naiveweekly.com) de Kristoffer Tjalve
-- [Nonintrusive Monthly Email](https://us9.campaign-archive.com/home/?u=a4c8b2c7fbc757f10dbda8808&id=dfc484dd24) de Joana Estrela
+- [DADA issues](https://bluebed.substack.com) <span class="is-light">de Roman Muradov</span>
+- [Design Harder](https://designharder.substack.com) <span class="is-light">de Erik Carter</span>
+- [Fetén](https://nazaretescobedo.substack.com) <span class="is-light">de Nazaret Escobedo</span>
+- [Gárgola Digital](https://gargoladigital.substack.com) <span class="is-light">de Ainhoa Marzol</span>
+- [Naive Weekly](https://www.naiveweekly.com) <span class="is-light">de Kristoffer Tjalve</span>
+- [Nonintrusive Monthly Email](https://us9.campaign-archive.com/home/?u=a4c8b2c7fbc757f10dbda8808&id=dfc484dd24) <span class="is-light">de Joana Estrela</span>

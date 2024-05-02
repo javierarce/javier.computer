@@ -7,8 +7,9 @@ class RSS extends HTMLElement {
     this.styles = document.createElement('style')
     this.styles.innerHTML = `
       rss-reader { display: block; margin: 0 0 0 0; }
-      ::part(blog) { text-decoration: none; color: #ffc107; text-decoration: underline; }
-      ::part(date) { opacity: 0; visibility: hidden; transition: opacity 250ms ease-in-out; font-size: 0.8em; }
+      ::part(blog) { text-decoration: none; color: #fff; }
+      ::part(date) { opacity: 0; visibility: hidden; transition: opacity 250ms ease-in-out; }
+      ::part(blog):after { content: '↗'; display: inline-block; font-weight: 400; padding-left: 4px; opacity: 0.5; color: #fff; }
       rss-reader.is-loaded::part(date) { opacity: 0.5; visibility: visible; }
       `
 
@@ -20,7 +21,6 @@ class RSS extends HTMLElement {
     const URL = `${blogURL}/${this.getAttribute("data-feed")}`
 
     this.title = this.getAttribute("data-title")
-    this.author = this.getAttribute("data-author")
 
     const title = document.createElement('span')
     const blog = document.createElement('a')
@@ -30,11 +30,7 @@ class RSS extends HTMLElement {
     blog.href = blogURL
     blog.part = 'blog'
 
-    const author = document.createElement('span')
-    author.textContent = ` de ${this.author}`
-
     title.appendChild(blog)
-    title.appendChild(author)
     this.shadow.appendChild(title)
 
     try {

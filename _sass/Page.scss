@@ -1,11 +1,11 @@
 .Page {
   margin: 0 0 3em;
-  font-size: 1.2em;
   width: 800px;
 }
 
-.Page a {
-    color: var(--link);
+.Page a,
+.Page ul li a {
+  text-decoration: none;
 }
 
 .Page img {
