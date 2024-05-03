@@ -323,6 +323,7 @@ img.lazy.error {
 .Movie__list li a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after,
 .Project__list li a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after,
 .Post__content ul li a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after,
+.Book__spine[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))) .Book__title:after,
 .Post__content p a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after,
 .is-external:after {
   content: '↗';
@@ -331,6 +332,11 @@ img.lazy.error {
   padding-left: 4px;
   opacity: 0.5;
   color: var(--text);
+}
+
+.Book__spine.is-2[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))) .Book__title:after,
+.Book__spine.is-6[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))) .Book__title:after {
+  color: var(--black);
 }
 
 a.is-photo::after {

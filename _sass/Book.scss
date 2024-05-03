@@ -109,22 +109,22 @@ a.Book__spine:hover {
 
 .Book__spine.is-0 {
   background: #6A1B9A;  
-  color: #FFFFFF;      
+  color: var(--white);
 }
 
 .Book__spine.is-1 {
   background: #009688;  
-  color: #FFFFFF;      
+  color: var(--white);
 }
 
 .Book__spine.is-2 {
   background: #fff;  
-  color: #000000;      
+  color: var(--black);
 }
 
 .Book__spine.is-3 {
   background: #C62828;  
-  color: #FFFFFF;      
+  color: var(--white);
 }
 
 .Book__spine.is-4 {
@@ -173,7 +173,7 @@ a.Book__spine:hover {
 }
 
 .Book__spine.is-13 {
-  background: #6D4C41;  
+  background: #222;
   color: #FFFFFF;      
 }
 
@@ -230,5 +230,15 @@ a.Book__spine:hover {
 
   .Book__spineContent {
     line-height: 1.2;
+  }
+
+  a.Book__spine {
+    text-decoration: none;
+    transition: none;
+  }
+
+  a.Book__spine:hover {
+    text-decoration: none;
+    transform: none;
   }
 }
