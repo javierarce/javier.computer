@@ -118,6 +118,26 @@ p.is-light p a {
   color: var(--text);
 }
 
+.Layout__home .is-hidden-from-home {
+  display: none;
+}
+
+.is-hidden-from-home {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 0.8em;
+  font-size: 0.9em;
+  opacity: 0.4;
+}
+
+.is-hidden-from-home a {
+  color: var(--text);
+}
+
+.is-hidden-from-home a:hover {
+  color: var(--text);
+}
+
+
 .is-hidden {
   display: none;
 }
@@ -200,7 +220,7 @@ blockquote {
 
 .Post__content blockquote p a,
 blockquote p a {
-  color: var(--orange);
+  color: var(--text);
 }
 
 blockquote p { 

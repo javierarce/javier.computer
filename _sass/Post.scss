@@ -89,7 +89,10 @@
 }
 
 .Layout__home .Post__content {
+  display: flex;
   margin: 0 0 0.4em 0;
+  flex-direction: column;
+  gap: 1.2em;
 }
 
 .Layout__post .Post__content {
