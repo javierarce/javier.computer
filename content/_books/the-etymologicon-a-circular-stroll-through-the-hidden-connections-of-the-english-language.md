@@ -3,7 +3,7 @@ title: "The Etymologicon: A Circular Stroll through the Hidden Connections of th
 layout: book
 author: Mark Forsyth
 started: 2013/01/03
-read: 
+read: 2013/01/03
 status: read
 rating: "★★★★☆"
 cover: 

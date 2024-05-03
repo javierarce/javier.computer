@@ -1,9 +1,9 @@
 ---
-title: "The Man Who Loved Only Numbers: The Story of  Paul Erdős and the Search for Mathematical Truth"
+title: "The Man Who Loved Only Numbers"
 layout: book
 author: Paul Hoffman
 started: 2012/12/06
-read: 
+read: 2012/12/06
 status: read
 rating: "★★★★☆"
 cover: 
