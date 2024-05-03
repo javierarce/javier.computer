@@ -30,12 +30,22 @@ permalink: books
 {% assign classIndex = 15 | random_number %} 
 {% assign height = book.pages | map_range: 0, 1000, 80, 300 %}
 
+{% if book.link %}
+<a href="{{ book.link }}" class="Book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
+  <div class="Book__spineContent">
+    <div class="Book__title">{{ book.title }}</div>
+    <div class="Book__author">{{ book.author }}</div>
+  </div>
+</a>
+{% else %}
 <div class="Book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
   <div class="Book__spineContent">
     <div class="Book__title">{{ book.title }}</div>
     <div class="Book__author">{{ book.author }}</div>
   </div>
 </div>
+{% endif %}
+
 {% endfor %}
 </div>
 {% endfor %}

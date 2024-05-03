@@ -12,6 +12,16 @@
   margin: 0 0 8em;
 }
 
+a.Book__spine {
+  text-decoration: none;
+  transition: transform 200ms;
+}
+
+a.Book__spine:hover {
+  text-decoration: none;
+  transform: translate(0.8em, 0);
+}
+
 .Book__spine {
   background: var(--white);
   color: var(--black);
