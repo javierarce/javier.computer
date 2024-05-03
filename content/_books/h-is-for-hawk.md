@@ -4,7 +4,7 @@ layout: book
 author: Helen Macdonald
 started: 2018/03/22
 read: 
-status: to-read
+status: read
 rating: "★★★★★"
 cover: 
 pages: 300

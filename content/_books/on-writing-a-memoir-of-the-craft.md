@@ -4,7 +4,7 @@ layout: book
 author: Stephen King
 started: 2019/04/17
 read: 
-status: to-read
+status: read
 rating: "★★★★☆"
 cover: 
 pages: 351

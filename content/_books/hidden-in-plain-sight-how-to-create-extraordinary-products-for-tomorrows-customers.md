@@ -4,7 +4,7 @@ layout: book
 author: Jan Chipchase
 started: 2015/01/10
 read: 
-status: to-read
+status: read
 rating: "★★★★☆"
 cover: 
 pages: 256

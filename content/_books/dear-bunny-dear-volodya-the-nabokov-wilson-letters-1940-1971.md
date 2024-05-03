@@ -4,7 +4,7 @@ layout: book
 author: Simon Karlinsky
 started: 2012/12/09
 read: 
-status: to-read
+status: read
 rating: "★★★★☆"
 cover: 
 pages: 398

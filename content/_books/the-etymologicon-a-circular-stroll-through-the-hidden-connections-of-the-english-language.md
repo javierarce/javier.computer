@@ -4,7 +4,7 @@ layout: book
 author: Mark Forsyth
 started: 2013/01/03
 read: 
-status: to-read
+status: read
 rating: "★★★★☆"
 cover: 
 pages: 252

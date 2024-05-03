@@ -4,7 +4,7 @@ layout: book
 author: David Foster Wallace
 started: 2013/04/02
 read: 
-status: to-read
+status: read
 rating: "★★★★★"
 cover: 
 pages: 343

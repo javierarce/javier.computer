@@ -4,7 +4,7 @@ layout: book
 author: Georges Perec
 started: 2013/03/09
 read: 
-status: to-read
+status: read
 rating: "★★★★★"
 cover: 
 pages: 292

@@ -4,7 +4,7 @@ layout: book
 author: Richard P. Feynman
 started: 2013/02/25
 read: 
-status: to-read
+status: read
 rating: "★★★★☆"
 cover: 
 pages: 391

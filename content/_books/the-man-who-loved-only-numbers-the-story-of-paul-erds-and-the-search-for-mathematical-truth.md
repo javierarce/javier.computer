@@ -4,7 +4,7 @@ layout: book
 author: Paul Hoffman
 started: 2012/12/06
 read: 
-status: to-read
+status: read
 rating: "★★★★☆"
 cover: 
 pages: 302
