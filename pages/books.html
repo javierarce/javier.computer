@@ -20,9 +20,17 @@ permalink: books
 <div class="Book__stack">
 {% for book in group.items %}
 {% assign content = book.content | strip_newlines %}
+
+{% if book.color %}
+{% assign color = book.color %}
+{% else %}
+{% assign color = 15 | random_number %} 
+{% endif %}
+
 {% assign classIndex = 15 | random_number %} 
 {% assign height = book.pages | map_range: 0, 1000, 80, 300 %}
-<div class="Book__spine is-{{ classIndex }} h{{ classIndex }}" style="height: {{height}}px">
+
+<div class="Book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
   <div class="Book__spineContent">
     <div class="Book__title">{{ book.title }}</div>
     <div class="Book__author">{{ book.author }}</div>

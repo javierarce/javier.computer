@@ -96,7 +96,10 @@ body {
 }
 
 a.is-underlined {
-  border-bottom: 1px solid var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--text);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
 .is-light {
@@ -129,6 +132,7 @@ p.is-light p a {
 
 a {
   color: var(--text);
+  text-underline-offset: 3px;
 }
 
 a:hover {
