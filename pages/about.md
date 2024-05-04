@@ -24,18 +24,10 @@ permalink: about
 {% endfor -%}
 
 My name is [Javier Arce](/me), <em>comme tout le monde</em>. {% include now.md %}
-I'm very into: 
-- [Making things online](/projects)
-- [Taking pictures](/photos)
-- [Reading](/books)
-- [Drawing](/drawings)
-- [Watching movies](/movies)
 
-### About this site
+My computer contains a wiki, [{{ post_count }} blog posts](/archive), a collection of silly songs, [{{ photo_count }} photos](/photos), at least one pun, [{{ drawings }} drawings](/drawings), a modest [blogroll](/blogroll), a hidden passage to another dimension, a ghost story, [a newsletter](/newsletter) with {{ subscribers_count}} subscribers, a list of dog names, a list of names that are not dog names, a pretty accurate list of all the [movies I've watched](/movies), a pretty innacurate list of all the [books I've read](/books), references to my early memories, [{{ map_count}} maps](/maps) listing {{ places_count }} of my favorite places, several photos of myself eating ice cream, a mirror, a coin, a yellow bird, a photo of your turtle, a turtle.
 
-This site contains a wiki, [{{ post_count }} blog posts](/archive), a collection of silly songs, [{{ photo_count }} photos](/photos), at least one pun, [{{ drawings }} drawings](/drawings), a modest [blogroll](/blogroll), a hidden passage to another dimension, a ghost story, [a newsletter](/newsletter) with {{ subscribers_count}} subscribers, a list of dog names, a list of names that are not dog names, references to my early memories, [{{ map_count}} maps](/maps) listing {{ places_count }} of my favorite places, several photos of myself eating ice cream, a mirror, a coin, a yellow bird, a photo of your turtle, a turtle.
-
-This site doesn't track you, your friends, or your enemies.
+This computer doesn't track you, your friends, or your enemies.
 
 ### Don't be a stranger
 
@@ -45,4 +37,4 @@ are only interested in the photos I publish, this [RSS](/feeds/photos.xml) is
 for you.
 
 Do you need to tell me something incredible that happened to you recently? [Use
-this link](https://javier.computer/contact) to get in touch with me.
+this link](/contact) to get in touch with me.
