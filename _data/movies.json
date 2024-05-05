@@ -1,7 +1,16 @@
 {
-  "updated_at": "2024-05-04",
-  "count": 623,
+  "updated_at": "2024-05-05",
+  "count": 624,
   "movies": [
+    {
+      "watched_on": "2024-05-04",
+      "title": "Godzilla Minus One",
+      "year": "2023",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "godzilla-minus-one"
+    },
     {
       "watched_on": "2024-05-03",
       "title": "Civil War",
