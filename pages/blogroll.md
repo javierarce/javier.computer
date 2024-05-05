@@ -30,6 +30,7 @@ className: Blogroll
 
 - [DADA issues](https://bluebed.substack.com) <span class="is-light">de Roman Muradov</span>
 - [Design Harder](https://designharder.substack.com) <span class="is-light">de Erik Carter</span>
+- [El Drugstore](https://eldrugstore.substack.com) <span class="is-light">de Abel Cuevas</span>
 - [Fetén](https://nazaretescobedo.substack.com) <span class="is-light">de Nazaret Escobedo</span>
 - [Gárgola Digital](https://gargoladigital.substack.com) <span class="is-light">de Ainhoa Marzol</span>
 - [Naive Weekly](https://www.naiveweekly.com) <span class="is-light">de Kristoffer Tjalve</span>
