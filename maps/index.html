@@ -8,7 +8,7 @@ permalink: maps
   {% assign locations_count = site.data.locations[map.location].size %}
   {% if locations_count > 0 %}
   <li>
-    <div class="Maps__title"><a href="/{{ map.permalink }}">{{ map.title}}</a><a href="/feeds/{{ map.location }}.xml"><span class="icon icon-rss"></span></a></div>
+    <div class="Maps__title"><a href="/{{ map.permalink }}">{{ map.title}}</a><a href="/feeds/{{ map.location }}.xml" class="Maps__rss"><span class="icon icon-rss"></span></a></div>
     <div class="Maps__listLocations">
       {% for location in site.data.locations[map.location] %}
       <a href="/{{ map.permalink }}/{{ location.pid }}">{{ location.title }}</a>{% unless forloop.last %} &middot; {% endunless -%}{% endfor -%}.

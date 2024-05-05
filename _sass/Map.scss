@@ -11,8 +11,11 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  vertical-align: middle;
   gap: 0.2em;
+}
+
+.Maps__rss {
+  display: flex;
 }
 
 .Trip__header {
