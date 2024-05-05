@@ -328,13 +328,21 @@ img.lazy.error {
   margin: 0 0.2em 0 0;
   color: var(--text);
   background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.icon-album {
+  background-image: url(/img/icons/headphones.svg);
 }
 
 .icon-photo {
   background-image: url(/img/icons/picture.svg);
 }
-.icon-album {
-  background-image: url(/img/icons/headphones.svg);
+
+.icon-rss {
+  width: 16px;
+  height: 16px;
+  background-image: url(/img/icons/rss.svg);
 }
 
 .About__content a[href]:not(:where( [href^="#"], [href^="/"]:not([href^="//"]))):after,

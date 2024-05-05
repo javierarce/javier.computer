@@ -7,6 +7,14 @@
   text-align: center;
 }
 
+.Maps__title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  vertical-align: middle;
+  gap: 0.2em;
+}
+
 .Trip__header {
   display: flex;
   align-items: center;
