@@ -6,10 +6,13 @@ permalink: newsletter
 className: About
 ---
 
-Suscríbete a mi lista de correo para recibir avisos cuando publique un nuevo
-proyecto o haga algo extremadamente gracioso. 
+{% assign subscribers_count = site.data.subscribers -%}
 
-Lee lo que envié en el pasado en el [archivo](/tags/newsletter).
+Únete a las {{ subscribers_count }} personas que están confundidas y suscritas a mi lista de correo de bajísima intensidad, y recibe avisos cuando publique un nuevo proyecto o haga algo extremadamente gracioso
+
+[Consulta el archivo](/tags/newsletter).
+
+<hr />
 
 <div class="Contact">
 <form class="Form" method="post" action="https://mailer.javier.computer/subscription/form">
@@ -18,12 +21,12 @@ Lee lo que envié en el pasado en el [archivo](/tags/newsletter).
 
 <label class="Label" for="name">Nombre <span class="is-optional">(opcional)</span></label>
 <div class="Input__field">
-<input class="Input" type="text" name="name" placeholder="" />
+<input class="Input" type="text" name="name" placeholder="Oedipa Maas" />
 </div>
 
 <label class="Label" for="email">Email</label>
 <div class="Input__field">
-<input class="Input" type="email" name="email" required placeholder="" />
+<input class="Input" type="email" name="email" placeholder="oedipa.maas@waste.email" required />
 </div>
 
 <div class="Actions"><input class="Button" type="submit" value="Suscríbeme" /></div>
