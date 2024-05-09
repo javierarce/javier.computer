@@ -1,7 +1,25 @@
 {
-  "updated_at": "2024-05-05",
-  "count": 625,
+  "updated_at": "2024-05-09",
+  "count": 627,
   "movies": [
+    {
+      "watched_on": "2024-05-07",
+      "title": "Dead Ringer",
+      "year": "1964",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "dead-ringer"
+    },
+    {
+      "watched_on": "2024-05-05",
+      "title": "Marnie",
+      "year": "1964",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": true,
+      "permalink": "marnie"
+    },
     {
       "watched_on": "2024-05-05",
       "title": "Riddle of Fire",
