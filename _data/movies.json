@@ -1,7 +1,34 @@
 {
-  "updated_at": "2024-05-09",
-  "count": 627,
+  "updated_at": "2024-05-12",
+  "count": 630,
   "movies": [
+    {
+      "watched_on": "2024-05-12",
+      "title": "The Intruder",
+      "year": "1962",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "the-intruder-1962"
+    },
+    {
+      "watched_on": "2024-05-12",
+      "title": "Someone's Watching Me!",
+      "year": "1978",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "someones-watching-me"
+    },
+    {
+      "watched_on": "2024-05-11",
+      "title": "Bringing Up Baby",
+      "year": "1938",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "bringing-up-baby"
+    },
     {
       "watched_on": "2024-05-07",
       "title": "Dead Ringer",
@@ -3087,7 +3114,7 @@
       "rating": 3.5,
       "stars": "★★★½",
       "rewatched": false,
-      "permalink": "shin-godzilla"
+      "permalink": "shin-godzilla-orthochromatic"
     },
     {
       "watched_on": "2021-10-04",
