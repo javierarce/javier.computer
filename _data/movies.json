@@ -1,7 +1,16 @@
 {
-  "updated_at": "2024-05-13",
-  "count": 631,
+  "updated_at": "2024-05-15",
+  "count": 632,
   "movies": [
+    {
+      "watched_on": "2024-05-14",
+      "title": "Targets",
+      "year": "1968",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "targets"
+    },
     {
       "watched_on": "2024-05-13",
       "title": "The African Queen",
