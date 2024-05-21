@@ -1,7 +1,16 @@
 {
-  "updated_at": "2024-05-20",
-  "count": 645,
+  "updated_at": "2024-05-21",
+  "count": 646,
   "movies": [
+    {
+      "watched_on": "2024-05-21",
+      "title": "Summertime",
+      "year": "1955",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "summertime"
+    },
     {
       "watched_on": "2024-05-20",
       "title": "Inherit the Wind",
