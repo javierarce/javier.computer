@@ -19,24 +19,14 @@
             "id": "7574008ec0a97137",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "7787dcc89a8808c0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
+              "type": "release-notes",
               "state": {
-                "file": "content/_posts/2024-05-21-Technicolor.md",
-                "mode": "source",
-                "source": false
+                "currentVersion": "1.6.1"
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -103,7 +93,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/_posts/2024-05-21-Technicolor.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +109,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/_posts/2024-05-21-Technicolor.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -142,9 +130,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "content/_posts/2024-05-21-Technicolor.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -165,12 +151,18 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "7787dcc89a8808c0",
+  "active": "7574008ec0a97137",
   "lastOpenFiles": [
+    "content/_movies/jumping.md",
+    "content/_movies/the-silence-of-the-sea.md",
+    "content/_movies/the-thing-from-another-world.md",
+    "content/_movies/il-sorpasso.md",
+    "content/_movies/the-manchurian-candidate.md",
+    "content/_movies/the-match-factory-girl.md",
+    "content/_posts/2024-05-21-Technicolor.md",
     "_site/summertime.html",
     "content/_movies/summertime.md",
     "content/_posts/2019-03-06-poetry-slash-ii.md",
-    "content/_posts/2024-05-21-Technicolor.md",
     "_site/Sofá-001.jpg",
     "Sofá-001.jpg",
     "Sofá-001 1.jpg",
