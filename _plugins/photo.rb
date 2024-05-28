@@ -14,7 +14,7 @@ class Photo < Liquid::Tag
 
           <source data-srcset='https://img.javier.computer/#{@filename}_640.jpg 640w, https://img.javier.computer/#{@filename}_1280.jpg 1280w, https://img.javier.computer/#{@filename}_2880.jpg 2880w'>
 
-          <img class='Photo lazy' data-src='https://img.javier.computer/#{@filename}_1280.jpg'>
+          <img class='lazy' data-src='https://img.javier.computer/#{@filename}_1280.jpg'>
 
           </picture>
       </figure>

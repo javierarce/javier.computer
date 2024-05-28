@@ -13,7 +13,7 @@
       "folder": {
         "enabled": true,
         "folders": [
-          "_posts"
+          "content/_posts"
         ],
         "chooseWhenCreatingNote": false,
         "createInSameFolderAsActiveFile": false,

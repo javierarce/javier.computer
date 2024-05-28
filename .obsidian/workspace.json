@@ -11,17 +11,23 @@
             "id": "b807acfe4454a9b7",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "content/_posts/2024-05-27-la-vida-facil.md",
+                "mode": "source",
+                "source": false
+              }
             }
           },
           {
-            "id": "7574008ec0a97137",
+            "id": "72fc6db7c42c767f",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.6.1"
+                "file": "content/_posts/2024-05-26-revelat.md",
+                "mode": "source",
+                "source": true
               }
             }
           }
@@ -55,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "revel",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -93,6 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "content/_posts/2024-05-26-revelat.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -109,6 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "content/_posts/2024-05-26-revelat.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -130,7 +138,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "content/_posts/2024-05-26-revelat.md"
+              }
             }
           }
         ]
@@ -151,8 +161,27 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "7574008ec0a97137",
+  "active": "72fc6db7c42c767f",
   "lastOpenFiles": [
+    "content/_posts/2023-06-18-revelat.md",
+    "content/_posts/2024-05-26-revelat.md",
+    "_site/in/vilassardeda.html",
+    "content/_locations/vilassardeda.md",
+    "content/_posts/2022-04-26-la-maleta.md",
+    "_site/2024/05/26/revelat.html",
+    "_site/2024/05/26",
+    "_site/2024/05/27/revelat.html",
+    "_site/2024/05/27/Revelat.html",
+    "content/_posts/2024-05-27-la-vida-facil.md",
+    "_site/2024/05/27/la-vida-facil.html",
+    "_site/2024/05/27",
+    "_posts/2024-05-27-la-vida-facil.md",
+    "_templates/Post.md",
+    "_templates",
+    "content/_templates/Post.md",
+    "content/_templates",
+    "_posts",
+    "Untitled.md",
     "content/_movies/jumping.md",
     "content/_movies/the-silence-of-the-sea.md",
     "content/_movies/the-thing-from-another-world.md",
@@ -160,28 +189,17 @@
     "content/_movies/the-manchurian-candidate.md",
     "content/_movies/the-match-factory-girl.md",
     "content/_posts/2024-05-21-Technicolor.md",
-    "_site/summertime.html",
     "content/_movies/summertime.md",
     "content/_posts/2019-03-06-poetry-slash-ii.md",
     "_site/Sofá-001.jpg",
     "Sofá-001.jpg",
     "Sofá-001 1.jpg",
-    "_templates/Post.md",
     "_posts/2023-12-11-mirando-al-mar.md",
     "_posts/2023-12-18-visita-relampago-fotos.md",
     "_posts/2024-02-09-fotos-random.md",
     "_posts/2024-02-11-caro-diario.md",
     "_posts/2024-05-21-Technicolor.md",
     "_posts/2024-05-21-hello-dolly.md",
-    "_posts/2024-05-03-newsletter.md",
-    "_posts/2024-05-21-Test.md",
-    "_posts/2024-05-21 Hola.md",
-    "Untitled.md",
-    "Untitled 1.md",
-    "2024-05-21 .md",
-    "Hola.md",
-    "_posts/2018-03-07-recital-electrico.md",
-    "_templates",
-    "_posts/2023-12-18-visita-relampago.md"
+    "_posts/2024-05-03-newsletter.md"
   ]
 }
