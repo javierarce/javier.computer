@@ -28,6 +28,12 @@ figcaption {
   margin: 0 auto;
 }
 
+.Photo__collection .Post__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
 .Photo {
   width: 100%;
   height: auto;

@@ -20,6 +20,10 @@
 {% include photos/single.html photo=post filename=post.filename -%}
 {% endif %}
 </a>
+{% if post.show_content %}
+{{ post.content }}
+{% endif %}
+
   </div>
   <div class="Post__footer">
     <a href="{{ post.url }}" class="Post__date dt-published u-url">
