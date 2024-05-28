@@ -3,20 +3,6 @@
   border-bottom: 1px solid var(--gray);
 }
 
-.Archive__year {
-  margin: 0 0 1em;
-}
-
-.Archive__month {
-  break-inside: avoid;
-  margin: 0 0 3em;
-}
-
-.Archive__list li a {
-  text-decoration: none;
-}
-
-
 .Archive__list {
   margin: 0;
 }
@@ -27,9 +13,21 @@
   padding: 0;
 }
 
+.Archive__list li a {
+  text-decoration: none;
+}
+
+.Archive__year {
+  margin: 0 0 1em;
+}
+
+.Archive__month {
+  break-inside: avoid;
+  margin: 0 0 2em;
+}
+
 .Archive__day {
   font-family: 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace;
   opacity: 0.5;
   margin: 0 0.4em 0 0;
 }
-
