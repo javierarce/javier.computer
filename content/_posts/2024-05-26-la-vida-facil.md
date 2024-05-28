@@ -1,7 +1,7 @@
 ---
 layout: post
 title: La vida fácil
-date: 2024-05-27
+date: 2024-05-26
 tags: 
 location:
 ---

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/_posts/2024-05-27-la-vida-facil.md",
+                "file": "content/_posts/2024-05-26-la-vida-facil.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/_posts/2024-05-26-revelat.md",
+                "file": "content/_posts/2024-05-26-la-vida-facil.md",
                 "mode": "source",
                 "source": true
               }
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/_posts/2024-05-26-revelat.md",
+                "file": "content/_posts/2024-05-26-la-vida-facil.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/_posts/2024-05-26-revelat.md",
+                "file": "content/_posts/2024-05-26-la-vida-facil.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/_posts/2024-05-26-revelat.md"
+                "file": "content/_posts/2024-05-26-la-vida-facil.md"
               }
             }
           }
@@ -163,8 +163,16 @@
   },
   "active": "72fc6db7c42c767f",
   "lastOpenFiles": [
-    "content/_posts/2023-06-18-revelat.md",
+    "_site/2024/05/26/la-vida-facil.html",
     "content/_posts/2024-05-26-revelat.md",
+    "content/_posts/2023-06-18-revelat.md",
+    "_site/Untitled.md",
+    "Untitled.md",
+    "content/_posts/2024-05-28-mutatis-mutandis-mudancis.md",
+    "_drafts/2024-05-28-mutatis-mutandis-mudancis.md",
+    "_site/2024/05/28/mutatis-mutandis-mudancis.html",
+    "_site/2024/05/28/mutatis-mutandis.html",
+    "_site/2024/05/28",
     "_site/in/vilassardeda.html",
     "content/_locations/vilassardeda.md",
     "content/_posts/2022-04-26-la-maleta.md",
@@ -172,16 +180,12 @@
     "_site/2024/05/26",
     "_site/2024/05/27/revelat.html",
     "_site/2024/05/27/Revelat.html",
-    "content/_posts/2024-05-27-la-vida-facil.md",
+    "content/_posts/2024-05-26-la-vida-facil.md",
     "_site/2024/05/27/la-vida-facil.html",
     "_site/2024/05/27",
     "_posts/2024-05-27-la-vida-facil.md",
     "_templates/Post.md",
-    "_templates",
     "content/_templates/Post.md",
-    "content/_templates",
-    "_posts",
-    "Untitled.md",
     "content/_movies/jumping.md",
     "content/_movies/the-silence-of-the-sea.md",
     "content/_movies/the-thing-from-another-world.md",
@@ -197,9 +201,6 @@
     "_posts/2023-12-11-mirando-al-mar.md",
     "_posts/2023-12-18-visita-relampago-fotos.md",
     "_posts/2024-02-09-fotos-random.md",
-    "_posts/2024-02-11-caro-diario.md",
-    "_posts/2024-05-21-Technicolor.md",
-    "_posts/2024-05-21-hello-dolly.md",
-    "_posts/2024-05-03-newsletter.md"
+    "_posts/2024-02-11-caro-diario.md"
   ]
 }
