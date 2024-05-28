@@ -3,15 +3,19 @@
   border-bottom: 1px solid var(--gray);
 }
 
+.Archive__year {
+  margin: 0 0 1em;
+}
+
 .Archive__month {
   break-inside: avoid;
   margin: 0 0 3em;
 }
 
-.Archive__links a, 
-.Archive__links a:hover {
-  color: var(--link);
+.Archive__list li a {
+  text-decoration: none;
 }
+
 
 .Archive__list {
   margin: 0;
