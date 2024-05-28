@@ -10,9 +10,6 @@ className: Archive
 <div class="Content">
   {% include navigation.html %}
 
-
-
-
   {% for post in site.posts %}
   {% assign current_year = post.date | date: "%Y" %}
   {% assign format_date = post.date | date: "%m-%d-%Y" %}
@@ -55,7 +52,12 @@ className: Archive
       {% if thedate != format_date %}
       {% if thedate != nil %}</div></li>{% endif %}<li><span class="Archive__day">{{ post.date | date: '%d' }}</span><div class="Archive__links">{% endif %}
 
-      <a href="{{ post.url }}" class="is-{{ post.category }}">{{ post.title }}</a>
+      <a href="{{ post.url }}"{% if post.category.size > 0 -%} class="is-{{ post.category }}"{% endif -%}>{{ post.title }}</a>
+      {% unless post.next %}
+
+    <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
+      {% endunless %}
+
 
       {% assign thedate = post.date | date: "%m-%d-%Y" %}
       {% endfor %}
