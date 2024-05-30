@@ -1,7 +1,16 @@
 {
-  "updated_at": "2024-05-28",
-  "count": 653,
+  "updated_at": "2024-05-30",
+  "count": 654,
   "movies": [
+    {
+      "watched_on": "2024-05-29",
+      "title": "Le Havre",
+      "year": "2011",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "le-havre"
+    },
     {
       "watched_on": "2024-05-28",
       "title": "The Boys from Brazil",
