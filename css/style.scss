@@ -396,3 +396,46 @@ a.is-photo::after {
     width: 100%;
   }
 }
+
+.Presence {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background: var(--link);
+}
+
+.Presence::after {
+	background-color: #222;
+	border-radius: 4px;
+	color: var(--text);
+	display: none;
+	padding: 0.4em 0.6em;
+	font-size: 0.7em;
+	position: absolute;
+	text-align: center;
+  white-space: nowrap;
+	z-index: 999;
+}
+
+.Presence:hover::after {
+	display: block;
+}
+
+.Presence:hover::before {
+	display: block;
+}
+
+.Presence::after {
+	content: 'Estoy online';
+	transform: translate(calc(-100% - 8px), calc(-50% + 4px));
+}
+
+
+@media all and (max-width: 640px) {
+  .Presence {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+  }
+}

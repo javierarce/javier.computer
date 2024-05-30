@@ -6,6 +6,7 @@ const onLoad = () => {
   })
 
   new Weather()
+  new Presence()
 }
 
 window.onload = onLoad

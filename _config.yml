@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-version: 6.0.37
+version: 6.0.38
 title: "Javier's computer"
 description: "My computer on the net"
 baseurl: "" 

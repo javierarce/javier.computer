@@ -26,6 +26,7 @@
 .Navigation__links {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .Navigation__links .Navigation__link {
@@ -87,6 +88,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: flex-start;
   }
 
   .Navigation__links .Navigation__link {
