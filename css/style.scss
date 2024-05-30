@@ -422,20 +422,15 @@ a.is-photo::after {
 	display: block;
 }
 
-.Presence:hover::before {
-	display: block;
-}
-
 .Presence::after {
 	content: 'Estoy online';
 	transform: translate(calc(-100% - 8px), calc(-50% + 4px));
 }
 
-
 @media all and (max-width: 640px) {
   .Presence {
-    position: fixed;
-    top: 1em;
-    right: 1em;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 }
