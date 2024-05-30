@@ -8,7 +8,7 @@ class Presence extends HTMLElement {
 
     setInterval(() => {
       this.getPresence()
-    }, 15 * 1000)
+    }, 60 * 1000)
   }
 
   getPresence () {
