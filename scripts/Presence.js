@@ -26,11 +26,17 @@ class Presence extends HTMLElement {
   }
 
   render (presence) {
-    const shadow = this.attachShadow({ mode: 'open' })
+    if (!this.shadow) {
+      this.shadow = this.attachShadow({ mode: 'open' })
+    }
 
+    this.toggle(presence)
+
+  }
+
+  toggle (presence) {
     if (presence.online) {
       this.classList.add('Presence')
-
       setTimeout(() => {
         this.classList.add('is-visible')
       }, 500)
