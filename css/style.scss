@@ -416,9 +416,11 @@ a.is-photo::after {
 	text-align: center;
   white-space: nowrap;
 	z-index: 999;
+	transition: all 0.2s ease;
 }
 
-.Presence:hover::after {
+.Presence:hover::after,
+.Presence:focus::after {
 	display: block;
 }
 
