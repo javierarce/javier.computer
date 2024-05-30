@@ -42,17 +42,8 @@ class Weather extends HTMLElement {
     const text = document.createElement('span')
     text.textContent = description
 
-    /*const music = document.createElement('music-snitch')
-    music.dataset.username = 'javierarce'
-    music.dataset.key = '78b4ae34c84de1d5fc6510338300bd78'
-    music.part = 'music'*/
-
     let shadow = this.attachShadow({ mode: 'open' })
     shadow.appendChild(text)
-    //shadow.appendChild(music)
-
-    //music.addEventListener('loaded', () => {
-    //})
     this.classList.add('is-visible')
   }
 

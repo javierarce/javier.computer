@@ -37,9 +37,17 @@ class Presence extends HTMLElement {
   toggle (presence) {
     if (presence.online) {
       this.classList.add('Presence')
+
+      const text = document.createElement('div')
+
+      text.textContent = presence.text || "Estoy online :)" 
+      text.part = "text"
+      this.shadow.appendChild(text)
+
       setTimeout(() => {
         this.classList.add('is-visible')
       }, 500)
+
     } else {
       this.classList.remove('is-visible')
     }
