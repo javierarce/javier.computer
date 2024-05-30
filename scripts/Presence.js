@@ -23,11 +23,12 @@ class Presence extends HTMLElement {
 
   render (presence) {
     if (presence.online) {
-      const text = document.createElement('div')
-      text.dataset.presence = 'Hello'
       const shadow = this.attachShadow({ mode: 'open' })
-      shadow.appendChild(text)
       this.classList.add('Presence')
+
+      setTimeout(() => {
+        this.classList.add('is-visible')
+      }, 500)
     }
   }
 }

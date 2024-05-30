@@ -402,7 +402,16 @@ a.is-photo::after {
   width: 10px;
   height: 10px;
   border-radius: 100%;
+  background: transparent;
+  opacity: 0;
+  visibility: hidden;
+	transition: all 250ms ease-in-out;
+}
+
+.Presence.is-visible {
   background: var(--link);
+  opacity: 1;
+  visibility: visible;
 }
 
 .Presence::after {
@@ -416,7 +425,6 @@ a.is-photo::after {
 	text-align: center;
   white-space: nowrap;
 	z-index: 999;
-	transition: all 0.2s ease;
 }
 
 .Presence:hover::after,
