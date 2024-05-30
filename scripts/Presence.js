@@ -19,7 +19,7 @@ class Presence extends HTMLElement {
         return console.error(json)
       }
 
-      this.render(JSON.parse(json))
+      this.render(json)
     }).catch((error) => {
       console.error(error)
     })
