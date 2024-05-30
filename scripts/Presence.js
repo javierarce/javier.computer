@@ -33,6 +33,8 @@ class Presence extends HTMLElement {
       setTimeout(() => {
         this.classList.add('is-visible')
       }, 500)
+    } else {
+      this.classList.remove('is-visible')
     }
   }
 }
