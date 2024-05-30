@@ -3,9 +3,13 @@ class Presence extends HTMLElement {
     super()
   }
 
-    connectedCallback () {
-        this.getPresence()
-    }
+  connectedCallback () {
+    this.getPresence()
+
+    setInterval(() => {
+      this.getPresence()
+    }, 15 * 1000)
+  }
 
   getPresence () {
     const ENDPOINT = `https://api.javier.computer/api/presence`
