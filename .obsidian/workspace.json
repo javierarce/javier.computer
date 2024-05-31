@@ -20,6 +20,30 @@
             }
           },
           {
+            "id": "bef8334efdab70bc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/_posts/2024-05-31-club del disco.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "cce12c22aee067e0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/_posts/2020-03-05-poetry-slash.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "72fc6db7c42c767f",
             "type": "leaf",
             "state": {
@@ -31,7 +55,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -98,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/_posts/2024-05-31-kaurismaki-cinematic-universe.md",
+                "file": "content/_posts/2024-05-31-club del disco.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +140,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/_posts/2024-05-31-kaurismaki-cinematic-universe.md",
+                "file": "content/_posts/2024-05-31-club del disco.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +163,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/_posts/2024-05-31-kaurismaki-cinematic-universe.md"
+                "file": "content/_posts/2024-05-31-club del disco.md"
               }
             }
           }
@@ -160,14 +185,22 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "b807acfe4454a9b7",
+  "active": "bef8334efdab70bc",
   "lastOpenFiles": [
-    "content/_posts/2020-03-05-poetry-slash.md",
-    "content/_posts/2024-05-26-la-vida-facil.md",
+    "_site/tags/musica.html",
+    "tags/musica.md",
+    "_site/2024/05/31/club-del-disco.html",
+    "content/_posts/2024-05-31-kaurismaki-cinematic-universe.md",
+    "content/_posts/2024-05-31-club del disco.md",
     "_drafts/2024-05-30-oio.md",
+    "content/_posts/2020-03-05-poetry-slash.md",
+    "content/_posts/2024-05-31-club-del-disco.md",
+    "_site/tags/música.html",
+    "tags/música.md",
+    "_site/2024/05/31/Club-del-disco.html",
+    "content/_posts/2024-05-26-la-vida-facil.md",
     "_site/2024/05/30/oio.html",
     "_site/2024/05/30",
-    "content/_posts/2024-05-31-kaurismaki-cinematic-universe.md",
     "_site/2024/05/31/kaurismaki-cinematic-universe.html",
     "content/_posts/2024-04-30-diamantes-jubilosos.md",
     "_site/tags/enlaces.html",
@@ -178,11 +211,8 @@
     "tags/cine.md",
     "_site/shadows-in-paradise.html",
     "content/_movies/shadows-in-paradise.md",
-    "_site/2024/05/31/oio.html",
-    "_site/2024/05/31",
     "Untitled.md",
     "_drafts/2024-05-30-kaurismaki-cinematic-universe.md",
-    "_site/2024/05/30/kaurismaki-cinematic-universe.html",
     "_site/Untitled.md",
     "content/_movies/ariel.md",
     "_site/photos/berlin.md",
@@ -193,11 +223,6 @@
     "_drafts/2024-05-28-mutatis-mutandis-mudancis.md",
     "content/_locations/vilassardeda.md",
     "content/_posts/2022-04-26-la-maleta.md",
-    "_posts/2024-05-27-la-vida-facil.md",
-    "_templates/Post.md",
-    "content/_templates/Post.md",
-    "content/_movies/jumping.md",
-    "content/_movies/the-silence-of-the-sea.md",
     "_site/Sofá-001.jpg",
     "Sofá-001.jpg",
     "Sofá-001 1.jpg"
