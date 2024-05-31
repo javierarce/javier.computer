@@ -34,20 +34,24 @@ class Presence extends HTMLElement {
 
   }
 
+  setOnline (text) {
+    this.classList.add('Presence')
+
+    this.shadow.innerHTML = ''
+    const $text = document.createElement('div')
+
+    $text.textContent = text || "Estoy online :)" 
+    $text.part = "text"
+    this.shadow.appendChild($text)
+
+    setTimeout(() => {
+      this.classList.add('is-visible')
+    }, 500)
+  }
+
   toggle (presence) {
     if (presence.online) {
-      this.classList.add('Presence')
-
-      const text = document.createElement('div')
-
-      text.textContent = presence.text || "Estoy online :)" 
-      text.part = "text"
-      this.shadow.appendChild(text)
-
-      setTimeout(() => {
-        this.classList.add('is-visible')
-      }, 500)
-
+      this.setOnline(presence.text)
     } else {
       this.classList.remove('is-visible')
     }
