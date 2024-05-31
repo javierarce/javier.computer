@@ -6,4 +6,4 @@ tags:
   - música
 location:
 ---
-Estoy por aquí también: [record.club/javier](https://record.club/javier).
+Nuevo destino para continuar practicando el diogenismo digital: [record.club/javier](https://record.club/javier).
