@@ -12,7 +12,7 @@ class Presence extends HTMLElement {
   }
 
   getPresence () {
-    const ENDPOINT = `https://api.javier.computer/api/presence`
+    const ENDPOINT = `https://api.javier.computer/api/presence?t=${Date.now()}`
 
     fetch(ENDPOINT).then(response => response.json()).then((json) => {
       if (json.error) {
