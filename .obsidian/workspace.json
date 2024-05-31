@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/_posts/2024-05-26-la-vida-facil.md",
+                "file": "content/_posts/2024-05-31-kaurismaki-cinematic-universe.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,14 +25,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/_posts/2024-05-26-la-vida-facil.md",
+                "file": "_drafts/2024-05-30-oio.md",
                 "mode": "source",
-                "source": true
+                "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -61,7 +60,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "revel",
+                "query": "recombinan",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -83,8 +82,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 414.5,
-    "collapsed": true
+    "width": 414.5
   },
   "right": {
     "id": "c7c9b01cf5be6ed5",
@@ -100,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/_posts/2024-05-26-la-vida-facil.md",
+                "file": "content/_posts/2024-05-31-kaurismaki-cinematic-universe.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/_posts/2024-05-26-la-vida-facil.md",
+                "file": "content/_posts/2024-05-31-kaurismaki-cinematic-universe.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/_posts/2024-05-26-la-vida-facil.md"
+                "file": "content/_posts/2024-05-31-kaurismaki-cinematic-universe.md"
               }
             }
           }
@@ -162,24 +160,32 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "72fc6db7c42c767f",
+  "active": "b807acfe4454a9b7",
   "lastOpenFiles": [
-    "_site/ariel.html",
-    "content/_movies/ariel.md",
-    "_site/css/style.css.map",
-    "_site/photos/berlin/page/186/index.html",
-    "_site/photos/berlin/page/186",
-    "_site/photos/berlin/page/185/index.html",
-    "_site/photos/berlin/page/185",
-    "_site/photos/berlin/page/184/index.html",
-    "_site/photos/berlin/page/184",
-    "_site/photos/berlin/page/183/index.html",
-    "_site/photos/berlin/page/183",
-    "_site/photos/berlin/page/182/index.html",
-    "_site/photos/berlin.md",
-    "_site/Untitled.md",
-    "Untitled.md",
+    "content/_posts/2020-03-05-poetry-slash.md",
     "content/_posts/2024-05-26-la-vida-facil.md",
+    "_drafts/2024-05-30-oio.md",
+    "_site/2024/05/30/oio.html",
+    "_site/2024/05/30",
+    "content/_posts/2024-05-31-kaurismaki-cinematic-universe.md",
+    "_site/2024/05/31/kaurismaki-cinematic-universe.html",
+    "content/_posts/2024-04-30-diamantes-jubilosos.md",
+    "_site/tags/enlaces.html",
+    "tags/enlaces.md",
+    "_site/tags/links.html",
+    "tags/links.md",
+    "_site/tags/cine.html",
+    "tags/cine.md",
+    "_site/shadows-in-paradise.html",
+    "content/_movies/shadows-in-paradise.md",
+    "_site/2024/05/31/oio.html",
+    "_site/2024/05/31",
+    "Untitled.md",
+    "_drafts/2024-05-30-kaurismaki-cinematic-universe.md",
+    "_site/2024/05/30/kaurismaki-cinematic-universe.html",
+    "_site/Untitled.md",
+    "content/_movies/ariel.md",
+    "_site/photos/berlin.md",
     "content/_movies/the-boys-from-brazil.md",
     "content/_posts/2024-05-26-revelat.md",
     "content/_posts/2023-06-18-revelat.md",
@@ -192,16 +198,8 @@
     "content/_templates/Post.md",
     "content/_movies/jumping.md",
     "content/_movies/the-silence-of-the-sea.md",
-    "content/_movies/the-thing-from-another-world.md",
-    "content/_movies/il-sorpasso.md",
-    "content/_movies/the-manchurian-candidate.md",
-    "content/_movies/the-match-factory-girl.md",
-    "content/_posts/2024-05-21-Technicolor.md",
-    "content/_movies/summertime.md",
-    "content/_posts/2019-03-06-poetry-slash-ii.md",
     "_site/Sofá-001.jpg",
     "Sofá-001.jpg",
-    "Sofá-001 1.jpg",
-    "_posts/2023-12-11-mirando-al-mar.md"
+    "Sofá-001 1.jpg"
   ]
 }
