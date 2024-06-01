@@ -442,7 +442,7 @@ presence-snitch:focus::part(text) {
 }
 
 @media all and (max-width: 640px) {
-  .Presence {
+  presence-snitch {
     position: absolute;
     top: 0;
     right: 0;
