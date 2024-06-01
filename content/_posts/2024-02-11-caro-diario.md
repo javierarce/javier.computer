@@ -2,6 +2,9 @@
 layout: post
 title: "Caro Diario"
 date: "2024-02-11 22:00:12 +0100"
+tags:
+  - cine
+  - libros
 ---
 
 _Tutto dipende da me. E se dipende da me sono sicuro che non ce la farò_ ·

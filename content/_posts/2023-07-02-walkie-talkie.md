@@ -2,6 +2,9 @@
 layout: post
 title: "Walkie Talkie"
 date: "2023-07-02 12:29:03 +0200"
+tags:
+  - cine
+  - música
 ---
 
 [Railway Station (★★★★)](https://letterboxd.com/javier/film/railway-station/) · [
