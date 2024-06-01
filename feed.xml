@@ -57,7 +57,8 @@ layout: none
         {{ post.content }}   
           <p>{% if matching_location -%} {{ matching_location.title }}. {% endif -%}
           {% if post.camera -%}{{ post.camera }}.{% endif -%}</p>
-          <p><a href="{{ site.url}}/heart?id={{post.url}}">Like</a></p>
+          <hr />
+          <p><a href="{{ site.url}}/heart?id={{post.url}}">Me gusta</a></p>
         ]]>
       {% elsif post.category == 'quote' %}
         <p><blockquote>{{ post.content | xml_escape }}</blockquote></p>
@@ -71,7 +72,8 @@ layout: none
       {% else %}
         {{ post.content | xml_escape }}
         <![CDATA[
-        <p><a href="{{ site.url}}/heart?id={{post.url}}">Like</a></p>
+        <hr />
+        <p><a href="{{ site.url}}/heart?id={{post.url}}">Me gusta</a></p>
         ]]>
         {% if post.disclaimer -%}<p>{{ post.disclaimer }}</p>{% endif -%}
           {% if matching_location -%}<p><small>{{ matching_location.title }}</small></p>{% endif -%}
