@@ -1,5 +1,6 @@
 {% assign permalink = page.permalink | strip_newlines -%}
 {% assign category = page.category | strip_newlines -%}
+{% assign layoutCategory = layout.category | strip_newlines -%}
 
 <div class="Navigation">
   <div class="Navigation__main">
@@ -8,7 +9,8 @@
     </div>
     {% include navigation/default.html %}
   </div>
-  {% if category.size > 0 %}
+  {% if category.size > 0 or layoutCategory.size > 0
+  %}
   <div class="Navigation__secondary">
     {% include navigation/secondary.html %}
   </div>

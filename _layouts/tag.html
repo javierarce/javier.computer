@@ -1,6 +1,7 @@
 ---
 layout: page
 className: Tags
+category: tags
 ---
 
 {% assign posts = "" | split: ',' %}
@@ -13,7 +14,7 @@ className: Tags
 {% endfor %}
 {% endfor %}
 
-<h3>{{ page.tag | capitalize }}</h3>
+<h2>{{ page.tag | capitalize }}</h2>
 
 <ul class="Tags__list">
   {% for post in posts %}

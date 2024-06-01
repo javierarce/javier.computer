@@ -1,8 +1,12 @@
 .Tags__list {
   padding: 0;
-  margin: 0 0 2em 0;
+  margin: 0 0 1em 0;
   font-size: 1em;
   list-style: none;
+}
+
+.Tags__list:last-child {
+  margin: 0;
 }
 
 .Tags__list li {

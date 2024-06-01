@@ -1,6 +1,14 @@
   {% case category %}
+    {% when 'tags' %}
+      {% include navigation/tags.html %}
     {% when 'photo' %}
       {% include navigation/photos.html %}
     {% when 'photos' %}
       {% include navigation/photos.html %}
   {% endcase %}
+  {% case layoutCategory %}
+    {% when 'tags' %}
+      {% include navigation/tags.html %}
+  {% endcase %}
+
+
