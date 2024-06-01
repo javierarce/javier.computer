@@ -2,18 +2,14 @@ User-agent: GPTBot
 Disallow: /
 
 User-agent: Googlebot
-Disallow:
+Disallow: /
 Crawl-delay: 300
 
 User-agent: bingbot
-Disallow:
+Disallow: /
 Crawl-delay: 300
 
 User-agent: msnbot
-Disallow:
-Crawl-delay: 300
-
-User-agent: DuckDuckBot
 Disallow: /
 Crawl-delay: 300
 
