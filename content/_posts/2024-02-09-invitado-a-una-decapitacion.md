@@ -2,6 +2,9 @@
 layout: post
 title: "Invitado a una decapitación"
 date: "2024-02-09 22:08:43 +0100"
+tags:
+  - libros
+  - cine
 ---
 
 Exceeding all expectations (menos las mías, jeje) ·
