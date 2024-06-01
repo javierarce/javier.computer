@@ -2,6 +2,10 @@
 layout: post
 title: "Future Fatigue"
 date: "2024-03-14 21:38:44 +0100"
+tags:
+  - libros
+  - cine
+  - proyectos
 ---
 
 Cinco días tras la Explosión Espontánea de Cristal Templado  que lo cambió todo
