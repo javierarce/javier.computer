@@ -1,7 +1,16 @@
 {
-  "updated_at": "2024-06-01",
-  "count": 656,
+  "updated_at": "2024-06-02",
+  "count": 657,
   "movies": [
+    {
+      "watched_on": "2024-06-01",
+      "title": "Chime",
+      "year": "2024",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "chime"
+    },
     {
       "watched_on": "2024-05-31",
       "title": "Shadows in Paradise",
