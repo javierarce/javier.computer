@@ -12,17 +12,12 @@ class Snitch extends HTMLElement {
   }
 
   fetchScrobbler () {
-    const username = this.getAttribute("data-username")
-    const key = this.getAttribute("data-key")
-    const r = Math.round(Math.random()*10000)
-    const URL  = `//ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${key}&limit=1&format=json&r=${r}`
+    const URL  = 'https://api.javier.computer/api/song'
 
     fetch(URL).then(response => response.json()).then((data) => {
-      const track = data.recenttracks.track[0]
-
-      if (track) {
-        const isPlaying = track['@attr'] && track['@attr'].nowplaying ? true : false
-        this.render(track.name, track.artist, track.url, isPlaying)
+      if (data) {
+        const { track, artist, album, playing } = data
+        this.render(track, artist, album, playing)
       }
     })
   }
@@ -65,8 +60,8 @@ class Snitch extends HTMLElement {
     }
   }
 
-  render (name, artist, URL, isPlaying) {
-    if (!isPlaying) {
+  render (track, artist, album, playing) {
+    if (!playing) {
 
       this.dispatchEvent(new CustomEvent("loaded"))
 
@@ -76,7 +71,7 @@ class Snitch extends HTMLElement {
       return
     }
 
-    const label = ` I'm listening to "${name}" by ${artist['#text']}.`
+    const label = ` I'm listening to "${track}" by ${artist}.`
 
     if (!this.shadow) {
       this.create(label)
