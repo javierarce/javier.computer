@@ -1,7 +1,25 @@
 {
-  "updated_at": "2024-06-02",
-  "count": 657,
+  "updated_at": "2024-06-03",
+  "count": 659,
   "movies": [
+    {
+      "watched_on": "2024-06-02",
+      "title": "Black Narcissus",
+      "year": "1947",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "black-narcissus"
+    },
+    {
+      "watched_on": "2024-06-02",
+      "title": "Fox and His Friends",
+      "year": "1975",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "fox-and-his-friends"
+    },
     {
       "watched_on": "2024-06-01",
       "title": "Chime",
