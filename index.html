@@ -7,8 +7,7 @@ pagination:
     enabled: true
 ---
 <div class="Content">
-  {% include navigation.html %}
-
+  {% include navigation.html -%}
   <div class="Posts">
     {% if paginator.page == 1 -%}
     {% include home_posts.html -%}
@@ -16,8 +15,6 @@ pagination:
     {% include posts.html -%}
     {% endif -%}  
   </div>
-
-  {% include pagination_index.html paginator=paginator %}
-
+  {% include pagination_index.html paginator=paginator -%}
   {% include footer.html -%}
 </div>

@@ -6,32 +6,30 @@
   {% endif -%}
   <span class="p-author h-card" style="display:none;">{{ site.author }}</span>
   <div class="Post__content{% if post.extraClassName %} {{ post.extraClassName }}{% endif %} e-content">
-<a href="{{ post.url }}">
-{% if post.filenames -%}
+    <a href="{{ post.url }}">
+      {% if post.filenames -%}
 
-    {% if post.filenames.first.filename -%}
-    {% assign filename = post.filenames.first.filename -%}
-    {% else -%}
-    {% assign filename = post.filenames.first -%}
+      {% if post.filenames.first.filename -%}
+      {% assign filename = post.filenames.first.filename -%}
+      {% else -%}
+      {% assign filename = post.filenames.first -%}
+      {% endif -%}
+
+      {% include photos/single.html photo=post filename=filename caption=caption -%}
+      {% elsif post.filename %}
+      {% include photos/single.html photo=post filename=post.filename -%}
+      {% endif %}
+    </a>
+    {% if post.show_content -%}
+    {{ post.content }}
     {% endif -%}
-
-{% include photos/single.html photo=post filename=filename caption=caption -%}
-{% elsif post.filename %}
-{% include photos/single.html photo=post filename=post.filename -%}
-{% endif %}
-</a>
-{% if post.show_content %}
-{{ post.content }}
-{% endif %}
-
   </div>
   <div class="Post__footer">
     <a href="{{ post.url }}" class="Post__date dt-published u-url">
-      {% include date.html date=post.date %}
+      {% include date.html date=post.date -%}
     </a> 
-    {% include post/locations.html page=post %}
+    {% include post/locations.html page=post -%}
     <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
-
     <a href="{{ post.url }}#more" class="is-underlined">Ver {{ post.filenames.size }} foto{% if post.filenames.size > 1 %}s{% endif %}</a>
   </div>
 </div>
