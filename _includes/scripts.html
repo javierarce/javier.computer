@@ -19,5 +19,9 @@
 {% if page.permalink == 'heart' -%}
 <script src="{{ 'scripts/like.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
 {% endif -%}
+{% if page.permalink == 'about' -%}
+<script src="{{ 'scripts/about.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
+{% else -%}
 <script src="{{ 'scripts/client.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
+{% endif -%}
 <link rel="stylesheet" href="{{ 'css/style.css' | relative_url }}?version={{site.version}}" />
