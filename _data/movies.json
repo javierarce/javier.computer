@@ -1,7 +1,34 @@
 {
-  "updated_at": "2024-06-03",
-  "count": 659,
+  "updated_at": "2024-06-05",
+  "count": 662,
   "movies": [
+    {
+      "watched_on": "2024-06-05",
+      "title": "The White Balloon",
+      "year": "1995",
+      "rating": 4.5,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "the-white-balloon"
+    },
+    {
+      "watched_on": "2024-06-04",
+      "title": "A Canterbury Tale",
+      "year": "1944",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "a-canterbury-tale"
+    },
+    {
+      "watched_on": "2024-06-03",
+      "title": "I Know Where I'm Going!",
+      "year": "1945",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "i-know-where-im-going"
+    },
     {
       "watched_on": "2024-06-02",
       "title": "Black Narcissus",
