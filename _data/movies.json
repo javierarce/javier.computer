@@ -1,7 +1,79 @@
 {
-  "updated_at": "2024-06-05",
-  "count": 662,
+  "updated_at": "2024-06-11",
+  "count": 670,
   "movies": [
+    {
+      "watched_on": "2024-06-11",
+      "title": "Where Is the Friend's House?",
+      "year": "1987",
+      "rating": 4.5,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "where-is-the-friends-house"
+    },
+    {
+      "watched_on": "2024-06-10",
+      "title": "The Omen",
+      "year": "1976",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "the-omen"
+    },
+    {
+      "watched_on": "2024-06-09",
+      "title": "The First Omen",
+      "year": "2024",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "the-first-omen"
+    },
+    {
+      "watched_on": "2024-06-09",
+      "title": "Hit Man",
+      "year": "2023",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "hit-man-2023"
+    },
+    {
+      "watched_on": "2024-06-09",
+      "title": "True Lies",
+      "year": "1994",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "true-lies"
+    },
+    {
+      "watched_on": "2024-06-08",
+      "title": "Deliverance",
+      "year": "1972",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "deliverance"
+    },
+    {
+      "watched_on": "2024-06-07",
+      "title": "The Man Without a Past",
+      "year": "2002",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "the-man-without-a-past"
+    },
+    {
+      "watched_on": "2024-06-06",
+      "title": "Jim Henson Idea Man",
+      "year": "2024",
+      "rating": 0,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "jim-henson-idea-man"
+    },
     {
       "watched_on": "2024-06-05",
       "title": "The White Balloon",

@@ -32,6 +32,26 @@
             }
           },
           {
+            "id": "b841f98255172a05",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.2"
+              }
+            }
+          },
+          {
+            "id": "65b2f7fc281f1cec",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.3"
+              }
+            }
+          },
+          {
             "id": "cce12c22aee067e0",
             "type": "leaf",
             "state": {
@@ -56,7 +76,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -185,8 +205,14 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "bef8334efdab70bc",
+  "active": "65b2f7fc281f1cec",
   "lastOpenFiles": [
+    "_site/the-white-balloon.html",
+    "_site/i-know-where-im-going.html",
+    "_site/a-canterbury-tale.html",
+    "content/_movies/i-know-where-im-going.md",
+    "content/_movies/a-canterbury-tale.md",
+    "content/_movies/the-white-balloon.md",
     "_site/scripts/about.js",
     "scripts/about.js",
     "_site/fox-and-his-friends.html",
@@ -200,9 +226,6 @@
     "_site/tags/libros.html",
     "tags/libros.md",
     "_includes/navigation/posts.html",
-    "_site/posts.html",
-    "_includes/navigation/tags.html",
-    "_site/tags/musica.html",
     "tags/musica.md",
     "content/_posts/2024-05-31-kaurismaki-cinematic-universe.md",
     "content/_posts/2024-05-31-club del disco.md",
@@ -220,9 +243,6 @@
     "_drafts/2024-05-30-kaurismaki-cinematic-universe.md",
     "_site/Untitled.md",
     "content/_movies/ariel.md",
-    "_site/photos/berlin.md",
-    "content/_movies/the-boys-from-brazil.md",
-    "content/_posts/2024-05-26-revelat.md",
     "_site/Sofá-001.jpg",
     "Sofá-001.jpg",
     "Sofá-001 1.jpg"
