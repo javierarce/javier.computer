@@ -1,96 +1,35 @@
 {
   "main": {
-    "id": "cf08c87336d074ab",
+    "id": "732cd7c0126b32d4",
     "type": "split",
     "children": [
       {
-        "id": "fa8d7cb77dcd055b",
+        "id": "808daeaa1b6e1c79",
         "type": "tabs",
         "children": [
           {
-            "id": "b807acfe4454a9b7",
+            "id": "5f8cdf35d01989e6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/_posts/2024-05-31-kaurismaki-cinematic-universe.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "bef8334efdab70bc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/_posts/2024-05-31-club del disco.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b841f98255172a05",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.6.2"
-              }
-            }
-          },
-          {
-            "id": "65b2f7fc281f1cec",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.6.3"
-              }
-            }
-          },
-          {
-            "id": "cce12c22aee067e0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/_posts/2020-03-05-poetry-slash.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "72fc6db7c42c767f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "_drafts/2024-05-30-oio.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "f3c707e681abbdd5",
+    "id": "4b71aeefcddf617e",
     "type": "split",
     "children": [
       {
-        "id": "c29aadb822e2a9ce",
+        "id": "c72f108f296d8abe",
         "type": "tabs",
         "children": [
           {
-            "id": "9cb3f24ddb0fb975",
+            "id": "6e67da6a979174f9",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -100,12 +39,12 @@
             }
           },
           {
-            "id": "0862471fb9a40b58",
+            "id": "5bba15e8483e9f48",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "recombinan",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -115,35 +54,33 @@
             }
           },
           {
-            "id": "f7d2fa74440e0e49",
+            "id": "e2877571ca2556f5",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 414.5
+    "width": 300
   },
   "right": {
-    "id": "c7c9b01cf5be6ed5",
+    "id": "68942994a6a7627a",
     "type": "split",
     "children": [
       {
-        "id": "2eb06c550be981ea",
+        "id": "e12a5c84b819fc9a",
         "type": "tabs",
         "children": [
           {
-            "id": "fc3d103c21a36633",
+            "id": "a14052df41871ed2",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/_posts/2024-05-31-club del disco.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -155,19 +92,18 @@
             }
           },
           {
-            "id": "9cb2c4cec4df8fb7",
+            "id": "5d9744cbfdc2d617",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/_posts/2024-05-31-club del disco.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "211e7c96cfd00bea",
+            "id": "7f4297d3976f0cb1",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -178,13 +114,11 @@
             }
           },
           {
-            "id": "4f4c4ad0e8a34eb2",
+            "id": "4f41b797b9454f45",
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "content/_posts/2024-05-31-club del disco.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -196,55 +130,15 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "templater-obsidian:Templater": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "templater-obsidian:Templater": false
+      "command-palette:Open command palette": false
     }
   },
-  "active": "65b2f7fc281f1cec",
-  "lastOpenFiles": [
-    "_site/the-white-balloon.html",
-    "_site/i-know-where-im-going.html",
-    "_site/a-canterbury-tale.html",
-    "content/_movies/i-know-where-im-going.md",
-    "content/_movies/a-canterbury-tale.md",
-    "content/_movies/the-white-balloon.md",
-    "_site/scripts/about.js",
-    "scripts/about.js",
-    "_site/fox-and-his-friends.html",
-    "_site/black-narcissus.html",
-    "content/_movies/fox-and-his-friends.md",
-    "content/_movies/black-narcissus.md",
-    "_site/chime.html",
-    "content/_movies/chime.md",
-    "_site/tags/proyectos.html",
-    "tags/proyectos.md",
-    "_site/tags/libros.html",
-    "tags/libros.md",
-    "_includes/navigation/posts.html",
-    "tags/musica.md",
-    "content/_posts/2024-05-31-kaurismaki-cinematic-universe.md",
-    "content/_posts/2024-05-31-club del disco.md",
-    "_drafts/2024-05-30-oio.md",
-    "content/_posts/2020-03-05-poetry-slash.md",
-    "content/_posts/2024-05-31-club-del-disco.md",
-    "tags/música.md",
-    "content/_posts/2024-05-26-la-vida-facil.md",
-    "content/_posts/2024-04-30-diamantes-jubilosos.md",
-    "tags/enlaces.md",
-    "tags/links.md",
-    "tags/cine.md",
-    "content/_movies/shadows-in-paradise.md",
-    "Untitled.md",
-    "_drafts/2024-05-30-kaurismaki-cinematic-universe.md",
-    "_site/Untitled.md",
-    "content/_movies/ariel.md",
-    "_site/Sofá-001.jpg",
-    "Sofá-001.jpg",
-    "Sofá-001 1.jpg"
-  ]
+  "active": "5f8cdf35d01989e6",
+  "lastOpenFiles": []
 }
