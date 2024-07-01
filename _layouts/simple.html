@@ -2,8 +2,18 @@
 layout: base
 className: Test
 ---
+<!--- photos/simple -->
 <div class="Content">
-  {% include navigation.html %}
+  {% include navigation.html -%}
+
+  {% if page.hide_title != true -%}
+  <h2>{{ page.title }}</h2>
+  {% endif -%}
+
+  {% if page.description -%}
+  <h3>{{ page.description }}</h3>
+  {% endif -%}
+
   <div class="Photo__layout">{{ content }}</div>
-  {% include footer.html %}
+  {% include footer.html -%}
 </div>

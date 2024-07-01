@@ -82,6 +82,24 @@ figcaption {
   width: var(--bigWidth);
 }
 
+.Layout__test h2 {
+  font-size: 1.8em;
+  text-align: center;
+  margin: 0 auto;
+}
+.Layout__test h2+h3 {
+  font-weight: normal;
+  opacity: 0.5;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 2em;
+}
+
+.Layout__test .Photo__layout p,
+.Layout__test .Photo__layout p:last-child {
+  font-size: 1.2em;
+}
+
 .Photo__layout {
   width: var(--bigWidth);
   margin: 0 auto 2em auto;
@@ -121,11 +139,6 @@ figcaption {
 .Photo__layout p:last-child {
   width: var(--width);
   margin: 0 auto;
-}
-
-.Layout__test .Photo__layout p,
-.Layout__test .Photo__layout p:last-child {
-  font-size: 1.2em;
 }
 
 @media all and (max-width: 1024px) {
