@@ -1,7 +1,169 @@
 {
-  "updated_at": "2024-06-12",
-  "count": 670,
+  "updated_at": "2024-07-01",
+  "count": 687,
   "movies": [
+    {
+      "watched_on": "2024-07-01",
+      "title": "Furiosa: A Mad Max Saga",
+      "year": "2024",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "furiosa-a-mad-max-saga"
+    },
+    {
+      "watched_on": "2024-06-30",
+      "title": "Broken Mirrors",
+      "year": "1984",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "broken-mirrors"
+    },
+    {
+      "watched_on": "2024-06-29",
+      "title": "No Way Out",
+      "year": "1950",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "no-way-out"
+    },
+    {
+      "watched_on": "2024-06-28",
+      "title": "Chess of the Wind",
+      "year": "1976",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "chess-of-the-wind"
+    },
+    {
+      "watched_on": "2024-06-28",
+      "title": "The Seventh Seal",
+      "year": "1957",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "the-seventh-seal"
+    },
+    {
+      "watched_on": "2024-06-26",
+      "title": "Altered States",
+      "year": "1980",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "altered-states"
+    },
+    {
+      "watched_on": "2024-06-23",
+      "title": "Little Shop of Horrors",
+      "year": "1986",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "little-shop-of-horrors"
+    },
+    {
+      "watched_on": "2024-06-22",
+      "title": "The Little Shop of Horrors",
+      "year": "1960",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "the-little-shop-of-horrors"
+    },
+    {
+      "watched_on": "2024-06-22",
+      "title": "Invasion of the Body Snatchers",
+      "year": "1956",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "invasion-of-the-body-snatchers"
+    },
+    {
+      "watched_on": "2024-06-21",
+      "title": "Invasion of the Body Snatchers",
+      "year": "1978",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": true,
+      "permalink": "invasion-of-the-body-snatchers-1978"
+    },
+    {
+      "watched_on": "2024-06-19",
+      "title": "Village of the Damned",
+      "year": "1960",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "village-of-the-damned"
+    },
+    {
+      "watched_on": "2024-06-18",
+      "title": "Scenes from a Marriage",
+      "year": "1973",
+      "rating": 4.5,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "scenes-from-a-marriage-1973-1"
+    },
+    {
+      "watched_on": "2024-06-17",
+      "title": "Escape from New York",
+      "year": "1981",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "escape-from-new-york"
+    },
+    {
+      "watched_on": "2024-06-16",
+      "title": "State and Main",
+      "year": "2000",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "state-and-main"
+    },
+    {
+      "watched_on": "2024-06-15",
+      "title": "I Saw the TV Glow",
+      "year": "2024",
+      "rating": 2,
+      "stars": "★★",
+      "rewatched": false,
+      "permalink": "i-saw-the-tv-glow"
+    },
+    {
+      "watched_on": "2024-06-14",
+      "title": "Seduced and Abandoned",
+      "year": "1964",
+      "rating": 2,
+      "stars": "★★",
+      "rewatched": false,
+      "permalink": "seduced-and-abandoned"
+    },
+    {
+      "watched_on": "2024-06-13",
+      "title": "Island of Lost Souls",
+      "year": "1932",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "island-of-lost-souls"
+    },
+    {
+      "watched_on": "2024-06-12",
+      "title": "Whisky",
+      "year": "2004",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "whisky"
+    },
     {
       "watched_on": "2024-06-11",
       "title": "Where Is the Friend's House?",
@@ -1526,11 +1688,11 @@
     {
       "watched_on": "2023-10-10",
       "title": "The Appointment",
-      "year": "1981",
+      "year": "1982",
       "rating": 3,
       "stars": "★★★",
       "rewatched": false,
-      "permalink": "the-appointment-1981"
+      "permalink": "the-appointment-1982"
     },
     {
       "watched_on": "2023-10-10",
@@ -3196,15 +3358,6 @@
       "stars": "★★★",
       "rewatched": true,
       "permalink": "frantic"
-    },
-    {
-      "watched_on": "2022-01-26",
-      "title": "Line Goes Up - The Problem With NFTs",
-      "year": "2022",
-      "rating": 4,
-      "stars": "★★★★",
-      "rewatched": false,
-      "permalink": "line-goes-up-the-problem-with-nfts"
     },
     {
       "watched_on": "2022-01-16",
@@ -5567,7 +5720,7 @@
     {
       "watched_on": "2020-03-28",
       "title": "The Gentlemen",
-      "year": "2019",
+      "year": "2020",
       "rating": 0,
       "stars": "",
       "rewatched": false,
