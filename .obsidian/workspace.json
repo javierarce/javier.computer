@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/_posts/2024-07-01-agorafobia-hotline.md",
+                "file": "content/_posts/2024-05-26-revelat.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/_posts/2024-07-01-agorafobia-hotline.md",
+                "file": "content/_posts/2024-05-26-revelat.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/_posts/2024-07-01-agorafobia-hotline.md",
+                "file": "content/_posts/2024-05-26-revelat.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/_posts/2024-07-01-agorafobia-hotline.md"
+                "file": "content/_posts/2024-05-26-revelat.md"
               }
             }
           }
@@ -162,24 +162,42 @@
   },
   "active": "9b93aa89743dff4b",
   "lastOpenFiles": [
-    "_site/2024/07/01/agorafobia-hotline.html",
-    "_site/2024/07/01/Fin-de-la-mudanza.html",
-    "_site/2024/07/01",
-    "_site/2024/07",
-    "_drafts/2024-06-29-mataro.md",
+    "content/_posts/2024-07-01-agorafobia-hotline.md~",
     "content/_posts/2024-07-01-agorafobia-hotline.md",
+    "_site/test.js",
+    "test.js",
+    "pages/contact.md~",
+    "_site/whisky.html",
+    "_site/village-of-the-damned.html",
+    "_site/the-seventh-seal.html",
+    "_site/the-little-shop-of-horrors.html",
+    "_site/the-appointment-1982.html",
+    "_site/state-and-main.html",
+    "_site/seduced-and-abandoned.html",
+    "content/_movies/the-appointment-1982.md",
+    "content/_movies/whisky.md",
+    "content/_movies/island-of-lost-souls.md",
+    "content/_movies/seduced-and-abandoned.md",
+    "content/_movies/i-saw-the-tv-glow.md",
+    "content/_movies/state-and-main.md",
+    "content/_movies/escape-from-new-york.md",
+    "content/_movies/scenes-from-a-marriage-1973-1.md",
+    "content/_movies/village-of-the-damned.md",
+    "content/_movies/invasion-of-the-body-snatchers-1978.md",
+    "content/_movies/invasion-of-the-body-snatchers.md",
+    "content/_movies/the-little-shop-of-horrors.md",
+    "content/_movies/little-shop-of-horrors.md",
+    "content/_movies/altered-states.md",
+    "content/_movies/the-seventh-seal.md",
+    "content/_movies/chess-of-the-wind.md",
+    "content/_movies/no-way-out.md",
+    "content/_movies/broken-mirrors.md",
+    "content/_movies/furiosa-a-mad-max-saga.md",
+    "_drafts/2024-06-29-mataro.md",
     "Untitled.md",
     "_site/Untitled.md",
-    "_site/2024/06/29/mataro.html",
-    "_site/2024/06/29",
-    "_site/2024/06",
-    "_site/2024/07/01/2024-06-29-mataro.html",
     "photos/mataro.md",
     "content/_posts/2023-07-24-boxi.md",
-    "content/_posts/2024-06-29-mataro.md~",
-    "_layouts/simple.html~",
-    "_sass/Project.scss~",
-    "_layouts/photos/photo.md",
     "_site/2024-06-27-Mataro-R0007342 1.jpg",
     "_site/2024-06-27-Mataro-R0007341 1.jpg",
     "_site/2024-06-27-Mataro-R0007340 1.jpg",
