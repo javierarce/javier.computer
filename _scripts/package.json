@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "dependencies": {
     "are.na": "^0.1.5",
     "aws-sdk": "^2.1101.0",
