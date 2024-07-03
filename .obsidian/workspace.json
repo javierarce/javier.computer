@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "d733ad27774a47eb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/_posts/2024-07-03-un-dibujo-al-dia.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/_posts/2024-05-26-revelat.md",
+                "file": "content/_posts/2024-07-03-un-dibujo-al-dia.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/_posts/2024-05-26-revelat.md",
+                "file": "content/_posts/2024-07-03-un-dibujo-al-dia.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/_posts/2024-05-26-revelat.md"
+                "file": "content/_posts/2024-07-03-un-dibujo-al-dia.md"
               }
             }
           }
@@ -160,8 +172,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9b93aa89743dff4b",
+  "active": "d733ad27774a47eb",
   "lastOpenFiles": [
+    "_site/2024/07/03/un-dibujo-al-dia.html",
+    "_site/2024/07/03",
+    "content/_posts/2024-05-26-revelat.md",
+    "content/_posts/2024-07-03-un-dibujo-al-dia.md",
     "_site/docs/video/boletin-botanico/reel.mp4",
     "content/_posts/2024-07-01-agorafobia-hotline.md~",
     "content/_posts/2024-07-01-agorafobia-hotline.md",
@@ -172,8 +188,6 @@
     "_site/village-of-the-damned.html",
     "_site/the-seventh-seal.html",
     "_site/the-little-shop-of-horrors.html",
-    "_site/the-appointment-1982.html",
-    "_site/state-and-main.html",
     "content/_movies/the-appointment-1982.md",
     "content/_movies/whisky.md",
     "content/_movies/island-of-lost-souls.md",
@@ -196,8 +210,6 @@
     "_drafts/2024-06-29-mataro.md",
     "Untitled.md",
     "_site/Untitled.md",
-    "photos/mataro.md",
-    "content/_posts/2023-07-24-boxi.md",
     "_site/2024-06-27-Mataro-R0007342 1.jpg",
     "_site/2024-06-27-Mataro-R0007341 1.jpg",
     "_site/2024-06-27-Mataro-R0007340 1.jpg",
