@@ -1,9 +1,7 @@
 ---
 layout: post
 title: Un dibujo al día
-date: 2024-07-03
-tags: 
-location:
+date: "2024-07-03 23:55:00 +0200"
 ---
 ![Erica y yo eligiendo películas en el famoso armario de Criterion](https://www.ericafustero.com/wp-content/uploads/diario-2024-06-02.jpg)
 
