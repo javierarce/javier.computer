@@ -84,6 +84,10 @@ figcaption {
   margin-bottom: 0;
 }
 
+.Layout__reportage .Photo__layout p a  {
+  color: var(--link);
+}
+
 .Layout__reportage .Content {
   width: var(--bigWidth);
 }
