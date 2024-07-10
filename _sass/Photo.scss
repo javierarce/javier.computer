@@ -88,6 +88,11 @@ figcaption {
   width: var(--bigWidth);
 }
 
+.Layout__reportage .Post__footer {
+  width: var(--width);
+  margin: 0 auto;
+}
+
 .Layout__reportage h2 {
   font-size: 1.8em;
   text-align: center;
