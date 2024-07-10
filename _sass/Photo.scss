@@ -1,10 +1,10 @@
 .Feed {
   margin-bottom: 2em;
 }
+
 figcaption {
   font-size: 1em;
   text-align: center;
-  margin-top: 0.8em;
   opacity: 0.5;
 }
 .Layout__photo .Content,
@@ -38,6 +38,12 @@ figcaption {
   width: 100%;
   height: auto;
   box-sizing: border-box;
+}
+
+.Photo__content {
+  display: flex;
+  flex-direction: column;
+  gap: .8em;
 }
 
 .Photo__content img {
@@ -78,16 +84,21 @@ figcaption {
   margin-bottom: 0;
 }
 
-.Layout__test .Content {
+.Layout__reportage .Content {
   width: var(--bigWidth);
 }
 
-.Layout__test h2 {
+.Layout__reportage h2 {
   font-size: 1.8em;
   text-align: center;
   margin: 0 auto;
 }
-.Layout__test h2+h3 {
+
+.Layout__reportage h2.is-descriptionless {
+  margin-bottom: 1em;
+}
+
+.Layout__reportage h2+h3 {
   font-weight: normal;
   opacity: 0.5;
   text-align: center;
@@ -95,9 +106,13 @@ figcaption {
   margin-bottom: 2em;
 }
 
-.Layout__test .Photo__layout p,
-.Layout__test .Photo__layout p:last-child {
+.Layout__reportage .Photo__layout p,
+.Layout__reportage .Photo__layout p:last-child {
   font-size: 1.2em;
+}
+
+.Layout__reportage .Photo__layout {
+  gap: 4em;
 }
 
 .Photo__layout {
@@ -121,10 +136,14 @@ figcaption {
   background: #f0f0f0;
 }
 
+.g.with-caption {
+  gap: 0.8em;
+}
+
 .g {
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  gap: 1em;
   width: 100%;
 }
 
@@ -132,7 +151,7 @@ figcaption {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2em;
+  gap: 1em;
 }
 
 .Photo__layout p,
@@ -189,9 +208,13 @@ figcaption {
   .h {
     flex-direction: column;
   }
+
   .h,
   .g {
     gap: 2em;
-    gap: 2em;
+  }
+
+  .g.with-caption {
+    gap: 0.8em;
   }
 }

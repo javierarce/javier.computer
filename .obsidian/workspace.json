@@ -11,40 +11,22 @@
             "id": "237cb77b8931d0f4",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "_drafts/2024-06-29-mataro.md",
-                "mode": "source",
-                "source": true
-              }
+              "type": "empty",
+              "state": {}
             }
           },
           {
             "id": "9b93aa89743dff4b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "release-notes",
               "state": {
-                "file": "content/_posts/2024-05-26-revelat.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "d733ad27774a47eb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/_posts/2024-07-03-un-dibujo-al-dia.md",
-                "mode": "source",
-                "source": false
+                "currentVersion": "1.6.6"
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -110,7 +92,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/_posts/2024-07-03-un-dibujo-al-dia.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +108,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/_posts/2024-07-03-un-dibujo-al-dia.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,9 +129,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "content/_posts/2024-07-03-un-dibujo-al-dia.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -172,22 +150,29 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d733ad27774a47eb",
+  "active": "9b93aa89743dff4b",
   "lastOpenFiles": [
-    "_site/2024/07/03/un-dibujo-al-dia.html",
-    "_site/2024/07/03",
+    "_layouts/reportage.html",
+    "_site/2024/07/10/Mataro.html",
+    "_site/2024/07/10",
+    "_site/2024/07/09/Mataro.html",
+    "_site/2024/07/09",
+    "_site/2024/07/06/Mataro.html",
+    "_site/2024/07/06",
+    "_site/2024/07/09/2024-07-06-Mataro.html",
+    "content/_posts/2024-07-06-Mataro.md~",
+    "content/_posts/2024-07-06-Mataro.md",
+    "_includes/types/photo.html~",
+    "_site/2024/07/06/mataro.html",
     "content/_posts/2024-05-26-revelat.md",
+    "_drafts/_posts/2024-06-29-mataro.md",
+    "content/_posts/2024-07-06-mataro.md",
+    "_drafts/_posts/2023-03-31-e.md",
+    "_drafts/2024-04-07-test.md",
+    "content/_posts/2022-05-11-akita.md",
     "content/_posts/2024-07-03-un-dibujo-al-dia.md",
-    "_site/docs/video/boletin-botanico/reel.mp4",
-    "content/_posts/2024-07-01-agorafobia-hotline.md~",
+    "photos/mataro.md",
     "content/_posts/2024-07-01-agorafobia-hotline.md",
-    "_site/test.js",
-    "test.js",
-    "pages/contact.md~",
-    "_site/whisky.html",
-    "_site/village-of-the-damned.html",
-    "_site/the-seventh-seal.html",
-    "_site/the-little-shop-of-horrors.html",
     "content/_movies/the-appointment-1982.md",
     "content/_movies/whisky.md",
     "content/_movies/island-of-lost-souls.md",
@@ -203,13 +188,6 @@
     "content/_movies/little-shop-of-horrors.md",
     "content/_movies/altered-states.md",
     "content/_movies/the-seventh-seal.md",
-    "content/_movies/chess-of-the-wind.md",
-    "content/_movies/no-way-out.md",
-    "content/_movies/broken-mirrors.md",
-    "content/_movies/furiosa-a-mad-max-saga.md",
-    "_drafts/2024-06-29-mataro.md",
-    "Untitled.md",
-    "_site/Untitled.md",
     "_site/2024-06-27-Mataro-R0007342 1.jpg",
     "_site/2024-06-27-Mataro-R0007341 1.jpg",
     "_site/2024-06-27-Mataro-R0007340 1.jpg",

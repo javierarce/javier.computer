@@ -1,13 +1,13 @@
 ---
 layout: base
-className: Test
+className: Reportage
 ---
-<!--- photos/simple -->
+<!--- photos/reportage -->
 <div class="Content">
   {% include navigation.html -%}
 
   {% if page.hide_title != true -%}
-  <h2>{{ page.title }}</h2>
+  <h2{% unless page.description %} class="is-descriptionless"{% endunless -%}>{{ page.title }}</h2>
   {% endif -%}
 
   {% if page.description -%}
