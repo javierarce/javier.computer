@@ -41,6 +41,16 @@
             }
           },
           {
+            "id": "b841f98255172a05",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.2"
+              }
+            }
+          },
+          {
             "id": "cce12c22aee067e0",
             "type": "leaf",
             "state": {
@@ -191,6 +201,7 @@
     }
   },
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   "active": "9b93aa89743dff4b",
   "lastOpenFiles": [
     "_includes/types/reportage.html",
@@ -242,6 +253,10 @@
 =======
   "active": "b841f98255172a05",
   "lastOpenFiles": [
+=======
+  "active": "b841f98255172a05",
+  "lastOpenFiles": [
+>>>>>>> Stashed changes
     "content/_movies/i-know-where-im-going.md",
     "content/_movies/a-canterbury-tale.md",
     "content/_movies/the-white-balloon.md",
