@@ -21,12 +21,52 @@
             "state": {
               "type": "release-notes",
               "state": {
+<<<<<<< Updated upstream
                 "currentVersion": "1.6.6"
+=======
+                "file": "content/_posts/2024-05-31-club del disco.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b841f98255172a05",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.2"
+              }
+            }
+          },
+          {
+            "id": "cce12c22aee067e0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/_posts/2020-03-05-poetry-slash.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "72fc6db7c42c767f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_drafts/2024-05-30-oio.md",
+                "mode": "source",
+                "source": false
+>>>>>>> Stashed changes
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -150,6 +190,7 @@
       "command-palette:Open command palette": false
     }
   },
+<<<<<<< Updated upstream
   "active": "9b93aa89743dff4b",
   "lastOpenFiles": [
     "_includes/types/reportage.html",
@@ -198,5 +239,48 @@
     "_site/2024-06-26-Mataro-R0007329 1.jpg",
     "2024-06-27-Mataro-R0007342 1.jpg",
     "2024-06-27-Mataro-R0007341 1.jpg"
+=======
+  "active": "b841f98255172a05",
+  "lastOpenFiles": [
+    "content/_movies/i-know-where-im-going.md",
+    "content/_movies/a-canterbury-tale.md",
+    "content/_movies/the-white-balloon.md",
+    "_site/scripts/about.js",
+    "scripts/about.js",
+    "_site/fox-and-his-friends.html",
+    "_site/black-narcissus.html",
+    "content/_movies/fox-and-his-friends.md",
+    "content/_movies/black-narcissus.md",
+    "_site/chime.html",
+    "content/_movies/chime.md",
+    "_site/tags/proyectos.html",
+    "tags/proyectos.md",
+    "_site/tags/libros.html",
+    "tags/libros.md",
+    "_includes/navigation/posts.html",
+    "_site/posts.html",
+    "_includes/navigation/tags.html",
+    "tags/musica.md",
+    "content/_posts/2024-05-31-kaurismaki-cinematic-universe.md",
+    "content/_posts/2024-05-31-club del disco.md",
+    "_drafts/2024-05-30-oio.md",
+    "content/_posts/2020-03-05-poetry-slash.md",
+    "content/_posts/2024-05-31-club-del-disco.md",
+    "tags/música.md",
+    "content/_posts/2024-05-26-la-vida-facil.md",
+    "content/_posts/2024-04-30-diamantes-jubilosos.md",
+    "tags/enlaces.md",
+    "tags/links.md",
+    "tags/cine.md",
+    "content/_movies/shadows-in-paradise.md",
+    "Untitled.md",
+    "_drafts/2024-05-30-kaurismaki-cinematic-universe.md",
+    "_site/Untitled.md",
+    "content/_movies/ariel.md",
+    "_site/photos/berlin.md",
+    "_site/Sofá-001.jpg",
+    "Sofá-001.jpg",
+    "Sofá-001 1.jpg"
+>>>>>>> Stashed changes
   ]
 }
