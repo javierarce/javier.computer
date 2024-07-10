@@ -190,6 +190,8 @@ figcaption {
 }
 
 @media all and (max-width: 640px) {
+
+  .Layout__reportage .Content,
   .Layout__photo .Content,
   .Layout__photos .Content {
     width: 100%;
