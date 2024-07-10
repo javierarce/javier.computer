@@ -1,8 +1,8 @@
-const fs = require("fs");
-const fetch = require("node-fetch");
-const { parse } = require("node-html-parser");
+import fs from 'fs'
+import fetch from 'node-fetch'
+import { parse } from 'node-html-parser'
 
-class MovieScraper {
+export class MovieScraper {
   constructor(username) {
     if (!username) {
       console.error("Error: Please provide a username.");
@@ -119,5 +119,3 @@ watched_on: ${watched_on}
     }
   }
 }
-
-module.exports = MovieScraper;

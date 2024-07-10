@@ -1,5 +1,5 @@
-const MovieScraper = require('./movies.js')
-const Subscribers = require('./subscribers.js')
+import { MovieScraper } from './movies.js';
+import { Subscribers } from './subscribers.js';
 
 const username = 'javier'
 const scraper = new MovieScraper(username)

@@ -1,12 +1,12 @@
-const fs = require('fs')
-const fetch = require('node-fetch')
-const { parse } = require('node-html-parser')
+import fs from 'fs'
+import fetch from 'node-fetch'
+import { parse } from 'node-html-parser'
 
 const OUTPUT_FILE = '_data/subscribers.json'
 
 const URL = 'https://api.javier.computer/api/subscribers'
 
-class Subscribers {
+export class Subscribers {
   constructor() {
   }
 
@@ -27,4 +27,3 @@ class Subscribers {
 
 }
 
-module.exports = Subscribers
