@@ -4,7 +4,7 @@ layout: book
 author: "Stanisław Lem"
 started: 2022-05-18
 read:
-status: reading
+status: abandoned
 rating:
 cover:
 pages: 304
