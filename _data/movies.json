@@ -1,7 +1,25 @@
 {
-  "updated_at": "2024-07-10",
-  "count": 691,
+  "updated_at": "2024-07-14",
+  "count": 693,
   "movies": [
+    {
+      "watched_on": "2024-07-14",
+      "title": "Mother",
+      "year": "1996",
+      "rating": 1.5,
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "mother-1996"
+    },
+    {
+      "watched_on": "2024-07-10",
+      "title": "Old Boyfriends",
+      "year": "1979",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "old-boyfriends"
+    },
     {
       "watched_on": "2024-07-09",
       "title": "Perfumed Nightmare",
