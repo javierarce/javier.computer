@@ -1,7 +1,16 @@
 {
-  "updated_at": "2024-07-14",
-  "count": 693,
+  "updated_at": "2024-07-15",
+  "count": 694,
   "movies": [
+    {
+      "watched_on": "2024-07-14",
+      "title": "Le Deuxième Souffle",
+      "year": "1966",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "le-deuxieme-souffle"
+    },
     {
       "watched_on": "2024-07-14",
       "title": "Mother",
