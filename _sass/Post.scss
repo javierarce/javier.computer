@@ -31,7 +31,7 @@
   gap: 0.4em;
 }
 
-.Posts.is-more a, 
+.Posts.is-more a,
 .Posts.is-more a:hover {
   color: var(--link);
 }
@@ -61,10 +61,12 @@
 
 .Post__content a,
 .Post__content a:hover {
-  color: var(--link); 
+  color: var(--link);
 }
 
-.Post__content h2, h3, h4 {
+.Post__content h2,
+h3,
+h4 {
   margin: 0;
   opacity: 0.5;
 }
@@ -118,12 +120,13 @@
   text-decoration: none;
 }
 
-.Post__footer open-heart .on {
-}
-
-.Post__footer > a:hover {
+.Post__footer>a:hover {
   opacity: 1;
   text-decoration: none;
+}
+
+.Post__footer a.is-underlined:hover {
+  text-decoration: underline;
 }
 
 .Post__pagination {
@@ -133,12 +136,13 @@
   user-select: none;
   font-weight: 400;
 }
+
 .Post__paginationArrow,
 .Post__footerSeparator {
   opacity: 0.5;
 }
 
-.Post__pagination > * {
+.Post__pagination>* {
   margin: 0 0.4em 0 0;
 }
 
@@ -186,6 +190,7 @@
 }
 
 @media all and (max-width: 1024px) {
+
   .Posts,
   .Post {
     width: 100%;
@@ -197,11 +202,13 @@
 }
 
 @media all and (max-width: 640px) {
+
   .Posts,
   .Post {
     margin: 0 0 3em;
     width: 100%;
   }
+
   .Post.is-title a {
     max-width: 300px;
     white-space: nowrap;
@@ -220,4 +227,3 @@
     flex-direction: column;
   }
 }
-
