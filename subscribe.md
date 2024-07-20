@@ -1,6 +1,6 @@
 ---
 layout: about
-title:  Subscribe
+title: Subscribe
 description: Newsletter
 permalink: newsletter
 className: About
@@ -18,13 +18,16 @@ className: About
 <form class="Form" method="post" action="https://mailer.javier.computer/subscription/form">
 <input type="hidden" name="nonce" />
 <input type="hidden" name="l" value="10546b54-985f-41ab-836c-eac7e11477ef"/>
+<input type="text" name="important" id="important" style="display:none">
 
 <label class="Label" for="name">Nombre <span class="is-optional">(opcional)</span></label>
+
 <div class="Input__field">
 <input class="Input" type="text" name="name" placeholder="Oedipa Maas" />
 </div>
 
 <label class="Label" for="email">Email</label>
+
 <div class="Input__field">
 <input class="Input" type="email" name="email" placeholder="oedipa.maas@waste.email" required />
 </div>
