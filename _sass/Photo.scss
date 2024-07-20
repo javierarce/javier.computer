@@ -7,6 +7,7 @@ figcaption {
   text-align: center;
   opacity: 0.5;
 }
+
 .Layout__photo .Content,
 .Layout__photos .Content {
   width: var(--bigWidth);
@@ -62,7 +63,7 @@ figcaption {
   text-align: center;
 }
 
-.Photos__archive > div {
+.Photos__archive>div {
   display: flex;
   align-items: center;
   line-height: 0;
@@ -80,11 +81,12 @@ figcaption {
   gap: 2em;
   margin: 0 0 4em 0;
 }
-.Photo__collection:last-child { 
+
+.Photo__collection:last-child {
   margin-bottom: 0;
 }
 
-.Layout__reportage .Photo__layout p a  {
+.Layout__reportage .Photo__layout p a {
   color: var(--link);
 }
 
@@ -132,7 +134,7 @@ figcaption {
   gap: 2em;
 }
 
-.Photo__layout .Photo > .Photo__content img {
+.Photo__layout .Photo>.Photo__content img {
   height: auto;
   width: 100%;
   max-width: none;
@@ -170,6 +172,7 @@ figcaption {
 }
 
 @media all and (max-width: 1024px) {
+
   .Layout__photo .Content,
   .Layout__photos .Content {
     width: 100%;
@@ -185,7 +188,7 @@ figcaption {
   }
 
 
-.Layout__reportage .Post__footer,
+  .Layout__reportage .Post__footer,
   .Photo .Post__content,
   .Photo .Post__footer,
   .Photo__collection .Post__content p,
@@ -230,4 +233,56 @@ figcaption {
   .g.with-caption {
     gap: 0.8em;
   }
+}
+
+.Layout__grid .Content {
+  width: var(--bigWidth);
+}
+
+
+.Layout__grid .Content .Photo__collections h2,
+.Layout__grid .Content .Photo__collections h3 {
+  margin: 0 auto;
+}
+
+.Layout__grid .Content .Photo__collections {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  margin: 0 0 4em 0;
+  text-align: center;
+}
+
+.Layout__grid .Content .Photo__collection {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  margin: 0 0 4em 0;
+  text-align: left;
+}
+
+.Layout__grid .Content .Photo__collection .Photo__content {
+  text-align: left;
+}
+
+.Layout__grid .Content .Photo__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 0.4em;
+  text-align: center;
+}
+
+.Layout__grid .Content .Photo__collection .Photo {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.Layout__grid .Content .Photo__collection .Photo img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
 }

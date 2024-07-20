@@ -13,6 +13,11 @@ className: Photos
   <div class="Photo__collection">
     <h2>{{ page.title | capitalize }}</h2>
 
+    <div class="Photo__selector">
+      Lista &middot;
+      <a href="{{ page.url }}/grid">Rejilla</a>
+    </div>
+
     {{ content }}
 
     {% for photo in photos -%}

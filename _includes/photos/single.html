@@ -2,12 +2,16 @@
   <div class="Photo__content">
     <figure class="Figure">
       <picture>
-        <source data-srcset="https://img.javier.computer/{{ include.photo.location }}/{{ include.filename }}_640.webp 640w, https://img.javier.computer/{{ include.photo.location }}/{{ include.filename }}_1280.webp 1280w, https://img.javier.computer/{{ include.photo.location }}/{{ include.filename }}_2880.webp 2880w" type=image/webp>
-          <source data-srcset="https://img.javier.computer/{{ include.photo.location }}/{{ include.filename }}_640.jpg 640w, https://img.javier.computer/{{ include.photo.location }}/{{ include.filename }}_1280.jpg 1280w, https://img.javier.computer/{{ include.photo.location }}/{{ include.filename }}_2880.jpg 2880w">
-            <img class="lazy" alt="{{ include.photo.title }}" data-src="https://img.javier.computer/{{ include.photo.location }}/{{ include.filename }}_1280.jpg">
+        <source
+          data-srcset="https://img.javier.computer/{{ include.photo.location }}/{{ include.filename }}_640.webp 640w, https://img.javier.computer/{{ include.photo.location }}/{{ include.filename }}_1280.webp 1280w, https://img.javier.computer/{{ include.photo.location }}/{{ include.filename }}_2880.webp 2880w"
+          type=image/webp>
+        <source
+          data-srcset="https://img.javier.computer/{{ include.photo.location }}/{{ include.filename }}_640.jpg 640w, https://img.javier.computer/{{ include.photo.location }}/{{ include.filename }}_1280.jpg 1280w, https://img.javier.computer/{{ include.photo.location }}/{{ include.filename }}_2880.jpg 2880w">
+        <img class="lazy" alt="{{ include.photo.title }}"
+          data-src="https://img.javier.computer/{{ include.photo.location }}/{{ include.filename }}_1280.jpg">
       </picture>
     </figure>
-    {% if include.caption -%}
+    {% if include.caption and include.caption != "" -%}
     <figcaption>{{ include.caption }}</figcaption>
     {% endif %}
   </div>

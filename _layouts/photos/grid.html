@@ -1,0 +1,56 @@
+---
+layout: base
+className: Grid
+---
+
+{% assign photos = site.photos | concat: site.posts | sort: 'date' | reverse -%}
+{% assign location = page.location | downcase -%}
+
+<!--- photos/grid -->
+<div class="Content">
+  {% include navigation.html -%}
+
+  <div class="Photo__collections">
+    <h2>{{ page.title | capitalize }}</h2>
+
+    <div class="Photo__selector">
+      <a href="/photos/{{ page.location }}">Lista</a> &middot;
+      Rejilla
+    </div>
+
+
+    {% for photo in photos -%}
+    {% if photo.category and location == photo.location -%}
+
+    <div class="Photo__collection">
+
+      {% if photo.hide_title != true -%}
+      <h3>{{ photo.title }}</h3>
+      {% endif -%}
+
+      {% if photo.filenames -%}
+      <div class="Photo__grid">
+        {% for file in photo.filenames -%}
+        {% if file.filename -%}
+        {% assign filename = file.filename -%}
+        {% assign caption = file.caption -%}
+        {% else -%}
+        {% assign filename = file -%}
+        {% assign caption = "" -%}
+        {% endif -%}
+        {% include photos/single.html photo=photo filename=filename caption=caption -%}
+        {% endfor -%}
+      </div>
+      {% else -%}
+      {% include photos/single.html photo=photo filename=photo.filename -%}
+      {% endif -%}
+
+      {% include photos/footer.html photo=photo pagination=false -%}
+    </div>
+
+    {% endif -%}
+    {% endfor -%}
+  </div>
+
+  {% include footer.html -%}
+</div>
