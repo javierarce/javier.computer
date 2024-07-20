@@ -1,39 +1,58 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% if page.title -%}{{ page.title }}{% else -%}{{ site.title }}{% endif -%}</title>
+<html lang="en">
 
-    <link rel="shortcut icon" href="{{ base.url | prepend: site.url }}/favicon.ico">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title -%}{{ page.title }}{% else -%}{{ site.title }}{% endif -%}</title>
 
-    {% include meta.html -%}
-    {% include scripts.html -%}
+  <link rel="shortcut icon" href="{{ base.url | prepend: site.url }}/favicon.ico">
 
-    {% feed_meta %}
+  {% include meta.html -%}
+  {% include scripts.html -%}
 
-    {% assign className = layout.className %}
-    {% if page.className != nil %}
-    {% assign className = page.className %}
-    {% endif %}
+  {% if page.permalink == 'newsletter' %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.querySelector('form');
+      form.addEventListener('submit', function (e) {
+        const important = document.getElementById('important');
 
-    <script>
-      const USER_LOCATION = {{ site.data.location | jsonify }};
-    </script>
+        if (important.value !== '') {
+          e.preventDefault();
+          return false;
+        }
+      });
+    });
+  </script>
+  {% endif %}
 
-    <body class="Layout__{{ className | default: page.category | downcase  }}">
-      <div class="Content">
-        {% include navigation.html %}
+  {% feed_meta %}
 
-        <div class="About__content">
-          {% if page.weather -%}
-          <weather-snitch></weather-snitch>
-          {% endif -%}
-          {{ content }}
-        </div>
+  {% assign className = layout.className %}
+  {% if page.className != nil %}
+  {% assign className = page.className %}
+  {% endif %}
 
-        {% include footer.html %}
-      </div>
-      <script src="{{ 'scripts/lazyload.min.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
-    </body>
+  <script>
+    const USER_LOCATION = {{site.data.location | jsonify }};
+  </script>
+
+<body class="Layout__{{ className | default: page.category | downcase  }}">
+  <div class="Content">
+    {% include navigation.html %}
+
+    <div class="About__content">
+      {% if page.weather -%}
+      <weather-snitch></weather-snitch>
+      {% endif -%}
+      {{ content }}
+    </div>
+
+    {% include footer.html %}
+  </div>
+  <script src="{{ 'scripts/lazyload.min.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
+</body>
+
 </html>
