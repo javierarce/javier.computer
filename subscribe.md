@@ -32,6 +32,11 @@ className: About
 <input class="Input" type="email" name="email" placeholder="oedipa.maas@waste.email" required />
 </div>
 
+<div class="Input__captcha">
+    <div class="h-captcha" data-sitekey="187a1b9c-4094-4270-b22e-24d4dede90ee"></div>
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+ </div>
+
 <div class="Actions"><input class="Button" type="submit" value="Suscríbeme" /></div>
 </form>
 </div>

@@ -141,18 +141,19 @@
   },
   "active": "8fa9a32c104b1d92",
   "lastOpenFiles": [
+    "_sass/Input.scss~",
+    "subscribe.md~",
+    "_site/video/boletin-botanico/reel.mp4",
+    "_site/docs/video/boletin-botanico/reel.mp4",
+    "_site/lights-in-the-dusk.html",
     "content/_movies/lights-in-the-dusk.md",
     "_layouts/about.html~",
-    "subscribe.md~",
     "_site/the-haunting.html",
     "content/_movies/the-haunting.md",
     "_layouts/photos/album.html~",
     "_site/photos/vilassardemar/grid.html",
     "_site/photos/vilassardemar",
     "_site/photos/vilassardedalt/grid.html",
-    "_site/photos/vilassardedalt",
-    "_site/photos/tarragona/grid.html",
-    "_site/photos/tarragona",
     "photos/grid/vilassardemar.md",
     "photos/grid/vilassardedalt.md",
     "photos/grid/tarragona.md",
@@ -175,7 +176,6 @@
     "photos/grid/berlin.md",
     "photos/grid/badalona.md",
     "photos/grid/asturias.md",
-    "photos/grid/archive.md",
-    "photos/grid/barcelona.md"
+    "photos/grid/archive.md"
   ]
 }
