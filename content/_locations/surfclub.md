@@ -1,6 +1,6 @@
 ---
 layout: location
-title: Surf club
+title: Surf Club
 location: surfclub
 permalink: in/surfclub
 ---
