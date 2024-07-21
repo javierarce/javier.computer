@@ -141,6 +141,10 @@
   },
   "active": "8fa9a32c104b1d92",
   "lastOpenFiles": [
+    "_site/un-flic.html",
+    "_site/the-texas-chain-saw-massacre.html",
+    "content/_movies/the-texas-chain-saw-massacre.md",
+    "content/_movies/un-flic.md",
     "_sass/Input.scss~",
     "subscribe.md~",
     "_site/video/boletin-botanico/reel.mp4",
@@ -152,8 +156,6 @@
     "content/_movies/the-haunting.md",
     "_layouts/photos/album.html~",
     "_site/photos/vilassardemar/grid.html",
-    "_site/photos/vilassardemar",
-    "_site/photos/vilassardedalt/grid.html",
     "photos/grid/vilassardemar.md",
     "photos/grid/vilassardedalt.md",
     "photos/grid/tarragona.md",
@@ -174,8 +176,6 @@
     "photos/grid/como.md",
     "photos/grid/bilbao.md",
     "photos/grid/berlin.md",
-    "photos/grid/badalona.md",
-    "photos/grid/asturias.md",
-    "photos/grid/archive.md"
+    "photos/grid/badalona.md"
   ]
 }
