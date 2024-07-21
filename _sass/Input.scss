@@ -1,7 +1,12 @@
-textarea, input {
+textarea,
+input {
   background: none;
   color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.Input__captcha {
+  margin: 0 0 2em;
 }
 
 .Input__field {
@@ -21,7 +26,6 @@ textarea, input {
   padding: 0.8em;
 }
 
-
 .Input {
   resize: none;
   outline: none;
@@ -37,4 +41,3 @@ textarea, input {
 .Input:focus {
   border: 1px solid var(--white);
 }
-

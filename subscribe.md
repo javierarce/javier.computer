@@ -1,6 +1,6 @@
 ---
 layout: about
-title:  Subscribe
+title: Subscribe
 description: Newsletter
 permalink: newsletter
 className: About
@@ -20,14 +20,21 @@ className: About
 <input type="hidden" name="l" value="10546b54-985f-41ab-836c-eac7e11477ef"/>
 
 <label class="Label" for="name">Nombre <span class="is-optional">(opcional)</span></label>
+
 <div class="Input__field">
 <input class="Input" type="text" name="name" placeholder="Oedipa Maas" />
 </div>
 
 <label class="Label" for="email">Email</label>
+
 <div class="Input__field">
 <input class="Input" type="email" name="email" placeholder="oedipa.maas@waste.email" required />
 </div>
+
+<div class="Input__captcha">
+    <div class="h-captcha" data-sitekey="187a1b9c-4094-4270-b22e-24d4dede90ee"></div>
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+ </div>
 
 <div class="Actions"><input class="Button" type="submit" value="Suscríbeme" /></div>
 </form>

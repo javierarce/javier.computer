@@ -1,39 +1,42 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% if page.title -%}{{ page.title }}{% else -%}{{ site.title }}{% endif -%}</title>
+<html lang="en">
 
-    <link rel="shortcut icon" href="{{ base.url | prepend: site.url }}/favicon.ico">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title -%}{{ page.title }}{% else -%}{{ site.title }}{% endif -%}</title>
 
-    {% include meta.html -%}
-    {% include scripts.html -%}
+  <link rel="shortcut icon" href="{{ base.url | prepend: site.url }}/favicon.ico">
 
-    {% feed_meta %}
+  {% include meta.html -%}
+  {% include scripts.html -%}
 
-    {% assign className = layout.className %}
-    {% if page.className != nil %}
-    {% assign className = page.className %}
-    {% endif %}
+  {% feed_meta %}
 
-    <script>
-      const USER_LOCATION = {{ site.data.location | jsonify }};
-    </script>
+  {% assign className = layout.className %}
+  {% if page.className != nil %}
+  {% assign className = page.className %}
+  {% endif %}
 
-    <body class="Layout__{{ className | default: page.category | downcase  }}">
-      <div class="Content">
-        {% include navigation.html %}
+  <script>
+    const USER_LOCATION = {{site.data.location | jsonify }};
+  </script>
 
-        <div class="About__content">
-          {% if page.weather -%}
-          <weather-snitch></weather-snitch>
-          {% endif -%}
-          {{ content }}
-        </div>
+<body class="Layout__{{ className | default: page.category | downcase  }}">
+  <div class="Content">
+    {% include navigation.html %}
 
-        {% include footer.html %}
-      </div>
-      <script src="{{ 'scripts/lazyload.min.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
-    </body>
+    <div class="About__content">
+      {% if page.weather -%}
+      <weather-snitch></weather-snitch>
+      {% endif -%}
+      {{ content }}
+    </div>
+
+    {% include footer.html %}
+  </div>
+  <script src="{{ 'scripts/lazyload.min.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
+</body>
+
 </html>

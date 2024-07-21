@@ -1,7 +1,52 @@
 {
-  "updated_at": "2024-07-15",
-  "count": 694,
+  "updated_at": "2024-07-21",
+  "count": 699,
   "movies": [
+    {
+      "watched_on": "2024-07-21",
+      "title": "Un Flic",
+      "year": "1972",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "un-flic"
+    },
+    {
+      "watched_on": "2024-07-20",
+      "title": "The Texas Chain Saw Massacre",
+      "year": "1974",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "the-texas-chain-saw-massacre"
+    },
+    {
+      "watched_on": "2024-07-18",
+      "title": "Lights in the Dusk",
+      "year": "2006",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "lights-in-the-dusk"
+    },
+    {
+      "watched_on": "2024-07-17",
+      "title": "The Haunting",
+      "year": "1963",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "the-haunting"
+    },
+    {
+      "watched_on": "2024-07-15",
+      "title": "Beyond The Visible - Hilma af Klint",
+      "year": "2019",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "beyond-the-visible-hilma-af-klint"
+    },
     {
       "watched_on": "2024-07-14",
       "title": "Le Deuxième Souffle",
