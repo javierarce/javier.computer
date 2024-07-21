@@ -1,7 +1,25 @@
 {
-  "updated_at": "2024-07-20",
-  "count": 697,
+  "updated_at": "2024-07-21",
+  "count": 699,
   "movies": [
+    {
+      "watched_on": "2024-07-21",
+      "title": "Un Flic",
+      "year": "1972",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "un-flic"
+    },
+    {
+      "watched_on": "2024-07-20",
+      "title": "The Texas Chain Saw Massacre",
+      "year": "1974",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "the-texas-chain-saw-massacre"
+    },
     {
       "watched_on": "2024-07-18",
       "title": "Lights in the Dusk",
