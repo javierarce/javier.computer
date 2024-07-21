@@ -12,22 +12,6 @@
   {% include meta.html -%}
   {% include scripts.html -%}
 
-  {% if page.permalink == 'newsletter' %}
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const form = document.querySelector('form');
-      form.addEventListener('submit', function (e) {
-        const important = document.getElementById('important');
-
-        if (important.value !== '') {
-          e.preventDefault();
-          return false;
-        }
-      });
-    });
-  </script>
-  {% endif %}
-
   {% feed_meta %}
 
   {% assign className = layout.className %}

@@ -18,7 +18,6 @@ className: About
 <form class="Form" method="post" action="https://mailer.javier.computer/subscription/form">
 <input type="hidden" name="nonce" />
 <input type="hidden" name="l" value="10546b54-985f-41ab-836c-eac7e11477ef"/>
-<input type="text" name="important" id="important" style="display:none">
 
 <label class="Label" for="name">Nombre <span class="is-optional">(opcional)</span></label>
 
