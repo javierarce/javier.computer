@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "c17d40e97fdd7c84",
+        "id": "5b21455a6b32b28d",
         "type": "tabs",
         "children": [
           {
-            "id": "ded140f74417d548",
+            "id": "8fa9a32c104b1d92",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Untitled.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Untitled.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Untitled.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Untitled.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -147,16 +139,43 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ded140f74417d548",
+  "active": "8fa9a32c104b1d92",
   "lastOpenFiles": [
-    "Untitled.md",
-    "_site/wicked-little-letters.html",
-    "_site/the-red-balloon.html",
-    "_site/perfumed-nightmare.html",
-    "_site/la-chimera.html",
-    "content/_movies/the-red-balloon.md",
-    "content/_movies/wicked-little-letters.md",
-    "content/_movies/la-chimera.md",
-    "content/_movies/perfumed-nightmare.md"
+    "_site/photos/vilassardemar/grid.html",
+    "_site/photos/vilassardemar",
+    "_site/photos/vilassardedalt/grid.html",
+    "_site/photos/vilassardedalt",
+    "_site/photos/tarragona/grid.html",
+    "_site/photos/tarragona",
+    "_site/photos/surfclub/grid.html",
+    "_site/photos/sitges/grid.html",
+    "_site/photos/sitges",
+    "_site/photos/paris/grid.html",
+    "_site/photos/newyork/grid.html",
+    "photos/grid/vilassardemar.md",
+    "photos/grid/vilassardedalt.md",
+    "photos/grid/tarragona.md",
+    "photos/grid/surfclub.md",
+    "photos/grid/sitges.md",
+    "photos/grid/paris.md",
+    "photos/grid/newyork.md",
+    "photos/grid/munich.md",
+    "photos/grid/mataro.md",
+    "photos/grid/masnou.md",
+    "photos/grid/marseille.md",
+    "photos/grid/madrid.md",
+    "photos/grid/london.md",
+    "photos/grid/lisboa.md",
+    "photos/grid/leipzig.md",
+    "photos/grid/japan.md",
+    "photos/grid/france.md",
+    "photos/grid/copenhaguen.md",
+    "photos/grid/como.md",
+    "photos/grid/bilbao.md",
+    "photos/grid/berlin.md",
+    "photos/grid/barcelona.md",
+    "photos/grid/badalona.md",
+    "photos/grid/asturias.md",
+    "photos/grid/archive.md"
   ]
 }
