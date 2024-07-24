@@ -23,7 +23,6 @@ category: posts
     {% assign last_year = current_year %}
     {% endif %}
 
-
     <h3>{% include date.html date=post.date day="false" -%}</h3>
     <ul class="Archive__list">
       {% else %}
@@ -42,34 +41,31 @@ category: posts
     {% assign last_year = current_year %}
     {% endif %}
 
-
-
     <h3>{% include date.html date=post.date day="false" -%}</h3>
     <ul class="Archive__list">
       {% endif %}
-
       {% endunless %}
 
       {% if thedate != format_date %}
       {% if thedate != nil %}
   </div>
-  </li>{% endif %}<li><span class="Archive__day">{{ post.date | date: '%d' }}</span>
-    <div class="Archive__links">{% endif %}
-
-      <a href="{{ post.url }}" {% if post.category.size> 0 -%} class="is-{{ post.category }}"{% endif -%}>{{ post.title
+  </li>{% endif %}
+  <li>
+    <span class="Archive__day">{{ post.date | date: '%d' }}</span>
+    <div class="Archive__links">
+      {% endif %}
+      <a href="{{ post.url }}" {% if post.category.size> 0 %} class="is-{{ post.category }}"{% endif %}>{{ post.title
         }}</a>
-
-      {% if post.next %}
+      {% assign d = post.date | date: "%d" %}
+      {% assign p = post.previous.date | date: "%d" %}
+      {% if d == p %}
       <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
       {% endif %}
-
 
       {% assign thedate = post.date | date: "%m-%d-%Y" %}
       {% endfor %}
   </li>
   </ul>
 </div>
-
-
 {% include footer.html %}
 </div>
