@@ -1,4 +1,16 @@
 {
+  "2024": [
+    {
+      "title": "Are.na Manager",
+      "url": "https://obsidian.md/plugins?id=arena-manager",
+      "description": "An Obsidian plugin that lets you publish content from Obsidian to Are.na and the other way around."
+    },
+    {
+      "title": "Type Simulator",
+      "url": "https://taper.badquar.to/12/type_simulator.html",
+      "description": "Type Simulator offers an easy way for anyone to enhance their typesetting skills. It exposes users to a range of real-life scenarios where typing might occur, such as on board a ship, in a dark, misty forest, under the influence of mind-altering psychedelic drugs, or in zero-gravity environments"
+    }
+  ],
   "2023": [
     {
       "title": "Letterboxd scrapper",
@@ -16,102 +28,102 @@
       "description": "Show the music you are currently scrobbling."
     }
   ],
-    "2022": [
-      {
-        "title": "Dale",
-        "url": "https://dale.javier.computer",
-        "description": "Generate DALL·E 2-like images without an invite. Without AI. Without writing a prompt. Without waiting for the process to finish. Without wasting electricity or emitting CO2. Just drag and drop an image and let the most advanced technology (well, JavaScript) do the rest."
-      },
-      {
-        "title": "Dear Reader",
-        "url": "https://reader.javierarce.com",
-        "description": "Dear Reader sends you articles and posts from your favorite newsletters and RSS feeds directly to your Kindle."
-      }
-    ],
-    "2021": [
-      {
-        "title": "aire-madrid",
-        "url": "https://github.com/javierarce/aire-madrid",
-        "description": "Node package to get information about Madrid's air quality. It's probably bad (the air quality, I mean.)"
-      },
-      {
-        "title": "Avisos Madrid",
-        "url": "https://github.com/javierarce/avisos-madrid",
-        "description": "This repository contains notices and incidents reported by Madrid's citizens regarding street furniture, lighting, urban and waste cleaning, green areas, sidewalks, etc. Automatically updated every 10 minutes."
-      },
-      {
-        "title": "Binocular Shot",
-        "url": "/binoculars",
-        "description": "A tribute to movies with inaccurate binocular shots."
-      },
-      {
-        "title": "Boletín Botánico",
-        "url": "/projects/boletin-botanico",
-        "description": "Mysterious little zine of whimsical periodicity, dubious content, dangerous editing, and suspicious ambition."
-      },
-      {
-        "title": "Figma Avatar",
-        "url": "https://github.com/javierarce/figma-avatar",
-        "description": "Update your Twitter avatar and banner from the comfort of Figma."
-      },
-      {
-        "title": "Go With The Flow",
-        "url": "https://twitter.com/javier/status/1383022713179152385",
-        "description": "A text threading plugin for Figma."
-      },
-      {
-        "title": "Paul Virilio Bot",
-        "url": "https://twitter.com/viriliobot",
-        "description": "A bot that tweets variations of a famous Paul Virilio quote."
-      }
-    ],
-    "2020": [
-      {
-        "title": "BiciMap",
-        "url": "https://bicimap.javierarce.com/",
-        "description": "An alternative and open-source map of BiciMAD."
-      },
-      {
-        "title": "Kindle to Are.na",
-        "url": "https://arena.javierarce.com/",
-        "description": "Send your Kindle's highlights and notes to Are.na."
-      },
-      {
-        "title": "Txtnau",
-        "url": "https://twitter.com/txtnau",
-        "description": "A bot that looks at art and tweets what it sees."
-      }
-    ],
-    "2019": [
-      {
-        "title": "Drawings",
-        "url": "https://drawings.javierarce.com",
-        "description": "My (incredibly silly) illustration portfolio."
-      },
-      {
-        "title": "Enfont Terrible",
-        "url": "https://enfont.javierarce.com",
-        "description": "A terrible, terrible type foundry."
-      },
-      {
-        "title": "Favicon Chameleon",
-        "url": "https://github.com/javierarce/favicon-chameleon",
-        "description": "Makes your tab disappear when nobody is paying attention."
-      },
-      {
-        "title": "I Remember Bot",
-        "url": "https://twitter.com/irememberbot",
-        "description": "A tribute to Georges Perec's 'Je me souviens' in the form of a bot."
-      },
-      {
-        "title": "Map with Me",
-        "url": "https://map.javierarce.com",
-        "description": "A tool for creating collaborative maps with your friends (and enemies)."
-      },
-      {
-        "title": "OMG Movies!",
-        "url": "https://twitter.com/omg_movies",
-        "description": "A bot that loves films but doesn't have a very good memory."
-      }
-    ]
+  "2022": [
+    {
+      "title": "Dale",
+      "url": "https://dale.javier.computer",
+      "description": "Generate DALL·E 2-like images without an invite. Without AI. Without writing a prompt. Without waiting for the process to finish. Without wasting electricity or emitting CO2. Just drag and drop an image and let the most advanced technology (well, JavaScript) do the rest."
+    },
+    {
+      "title": "Dear Reader",
+      "url": "https://reader.javierarce.com",
+      "description": "Dear Reader sends you articles and posts from your favorite newsletters and RSS feeds directly to your Kindle."
+    }
+  ],
+  "2021": [
+    {
+      "title": "aire-madrid",
+      "url": "https://github.com/javierarce/aire-madrid",
+      "description": "Node package to get information about Madrid's air quality. It's probably bad (the air quality, I mean.)"
+    },
+    {
+      "title": "Avisos Madrid",
+      "url": "https://github.com/javierarce/avisos-madrid",
+      "description": "This repository contains notices and incidents reported by Madrid's citizens regarding street furniture, lighting, urban and waste cleaning, green areas, sidewalks, etc. Automatically updated every 10 minutes."
+    },
+    {
+      "title": "Binocular Shot",
+      "url": "/binoculars",
+      "description": "A tribute to movies with inaccurate binocular shots."
+    },
+    {
+      "title": "Boletín Botánico",
+      "url": "/projects/boletin-botanico",
+      "description": "Mysterious little zine of whimsical periodicity, dubious content, dangerous editing, and suspicious ambition."
+    },
+    {
+      "title": "Figma Avatar",
+      "url": "https://github.com/javierarce/figma-avatar",
+      "description": "Update your Twitter avatar and banner from the comfort of Figma."
+    },
+    {
+      "title": "Go With The Flow",
+      "url": "https://twitter.com/javier/status/1383022713179152385",
+      "description": "A text threading plugin for Figma."
+    },
+    {
+      "title": "Paul Virilio Bot",
+      "url": "https://twitter.com/viriliobot",
+      "description": "A bot that tweets variations of a famous Paul Virilio quote."
+    }
+  ],
+  "2020": [
+    {
+      "title": "BiciMap",
+      "url": "https://bicimap.javierarce.com/",
+      "description": "An alternative and open-source map of BiciMAD."
+    },
+    {
+      "title": "Kindle to Are.na",
+      "url": "https://arena.javierarce.com/",
+      "description": "Send your Kindle's highlights and notes to Are.na."
+    },
+    {
+      "title": "Txtnau",
+      "url": "https://twitter.com/txtnau",
+      "description": "A bot that looks at art and tweets what it sees."
+    }
+  ],
+  "2019": [
+    {
+      "title": "Drawings",
+      "url": "https://drawings.javierarce.com",
+      "description": "My (incredibly silly) illustration portfolio."
+    },
+    {
+      "title": "Enfont Terrible",
+      "url": "https://enfont.javierarce.com",
+      "description": "A terrible, terrible type foundry."
+    },
+    {
+      "title": "Favicon Chameleon",
+      "url": "https://github.com/javierarce/favicon-chameleon",
+      "description": "Makes your tab disappear when nobody is paying attention."
+    },
+    {
+      "title": "I Remember Bot",
+      "url": "https://twitter.com/irememberbot",
+      "description": "A tribute to Georges Perec's 'Je me souviens' in the form of a bot."
+    },
+    {
+      "title": "Map with Me",
+      "url": "https://map.javierarce.com",
+      "description": "A tool for creating collaborative maps with your friends (and enemies)."
+    },
+    {
+      "title": "OMG Movies!",
+      "url": "https://twitter.com/omg_movies",
+      "description": "A bot that loves films but doesn't have a very good memory."
+    }
+  ]
 }
