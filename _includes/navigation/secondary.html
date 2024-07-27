@@ -1,17 +1,17 @@
-  {% case category %}
-    {% when 'posts' %}
-      {% include navigation/posts.html %}
-    {% when 'tags' %}
-      {% include navigation/posts.html %}
-    {% when 'photo' %}
-      {% include navigation/photos.html %}
-    {% when 'photos' %}
-      {% include navigation/photos.html %}
-  {% endcase %}
+{% case category -%}
+{% when 'posts' -%}
+{% include navigation/posts.html -%}
+{% when 'tags' -%}
+{% include navigation/posts.html -%}
+{% when 'photo' -%}
+{% include navigation/photos.html -%}
+{% when 'photos' -%}
+{% include navigation/photos.html -%}
+{% endcase -%}
 
-  {% case layoutCategory %}
-    {% when 'posts' %}
-      {% include navigation/posts.html %}
-    {% when 'tags' %}
-      {% include navigation/posts.html %}
-  {% endcase %}
+{% case layoutCategory -%}
+{% when 'posts' -%}
+{% include navigation/posts.html -%}
+{% when 'tags' -%}
+{% include navigation/posts.html -%}
+{% endcase -%}

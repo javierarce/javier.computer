@@ -11,8 +11,7 @@ className: Photo
   <div class="Photo__collection">
 
     {% if page.hide_title != true -%}
-    <div class="Photo__header2">
-      <a href="/photos/{{ page.location }}" class="is-light">{{ matching_location.title }}</a>
+    <div class="Photo__header">
       <h2>{{ page.title }}</h2>
     </div>
     {% endif -%}

@@ -9,16 +9,15 @@ category: photos
 
   <div class="Photos__archive">
     {% assign content = site.posts | concat: site.photos -%}
-    {% assign locations =  content | map: 'location' | join: ','  | split: ',' | uniq | compact | sort  %}
+    {% assign locations = content | map: 'location' | join: ',' | split: ',' | uniq | compact | sort -%}
 
-    {% for location in locations %}
-    {% assign tags =  content | where: 'location', location %}
-    {% assign photo = tags[0] %}
-    {% if photo.category and photo %}
+    {% for location in locations -%}
+    {% assign tags = content | where: 'location', location -%}
+    {% assign photo = tags[0] -%}
+    {% if photo.category and photo -%}
     {% include photos/thumb.html photo=photo -%}
-    {% endif %}
-    {% endfor %}
+    {% endif -%}
+    {% endfor -%}
   </div>
-
   {% include footer.html -%}
 </div>

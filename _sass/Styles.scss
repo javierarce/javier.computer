@@ -315,6 +315,18 @@ a.is-photo::after {
   font-size: 0.7em;
 }
 
+.Video {
+  width: 1200px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Video video {
+  width: 600px;
+}
+
 @media all and (max-width: 640px) {
   body {
     font-size: 1.2em;

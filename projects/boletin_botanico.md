@@ -9,6 +9,7 @@ show_title: true
 ---
 
 ## Boletín Botánico
+
 ### Un fanzine botánico que no va sobre plantas
 
 <div class="Project__intro">Pequeño y misterioso fanzine de periodicidad caprichosa, contenido dudoso, edición peligrosa y ambición sospechosa. Editado con cariño y faltas de ortografía.</div>
@@ -23,9 +24,8 @@ show_title: true
 
 <p>Vídeos que utilicé para dar la lata/engatusar a la gente y que pidieran el fanzine (era gratuito, casi me arruino con el rodaje).</p>
 
-<div class="Figure Figure__screen">
+<div class="Video">
 <video preload loop controls>
 <source src="/video/boletin-botanico/reel.mp4" type="video/mp4">
 </video>
 </div>
-

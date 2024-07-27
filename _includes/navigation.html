@@ -7,13 +7,11 @@
     <div class="Navigation__header">
       <a class="Navigation__link {% if page.home %}is-selected{% endif %}" href="/">Home</a>
     </div>
-    {% include navigation/default.html %}
+    {% include navigation/default.html -%}
   </div>
-  {% if category.size > 0 or layoutCategory.size > 0
-  %}
+  {% if category.size > 0 or layoutCategory.size > 0 -%}
   <div class="Navigation__secondary">
-    {% include navigation/secondary.html %}
+    {% include navigation/secondary.html -%}
   </div>
-  {% endif %}
+  {% endif -%}
 </div>
-
