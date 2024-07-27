@@ -9,7 +9,25 @@
     <link>https://javier.computer/feeds/barcelona.rss</link>
     <description>Sitios en barcelona</description>
     <language>es</language>
-    <pubDate>Sun, 07 Apr 2024 10:17:38 +0200</pubDate>
+    <pubDate>Sat, 27 Jul 2024 18:26:41 +0200</pubDate>
+    <item>
+      <title>Fismuler</title>
+      <link>https://javier.computer/maps/barcelona/fismuler</link>
+      <description>&lt;p&gt;Cocina mediterránea de parte de tres ex-El Bulli.&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/fismuler'&gt;Carrer del Rec Comtal, 17&lt;/a&gt;&lt;br&gt;&lt;p&gt;Este sitio aparece en los siguientes posts:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2024/07/27/vuelta-al-teletipo'&gt;Vuelta al teletipo&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Sat, 27 Jul 2024 18:26:41 +0200</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2024-07-27T18:26:41+02:00</dc:date>
+    </item>
+    <item>
+      <title>Right Side Coffee Bar</title>
+      <link>https://javier.computer/maps/barcelona/right-side-coffee-bar</link>
+      <description>&lt;p&gt;Erigido sobre las cenizas (je) de Satan’s Coffee Corner, esta es mi cafetería favorita de Barcelona y donde preparan el mejor latte con avena de la ciudad.&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/right-side-coffee-bar'&gt;Carrer de l'Arc de Sant Ramon del Call, 11&lt;/a&gt;&lt;br&gt;&lt;p&gt;Este sitio aparece en los siguientes posts:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2024/07/27/vuelta-al-teletipo'&gt;Vuelta al teletipo&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Sat, 27 Jul 2024 13:20:00 +0200</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2024-07-27T13:20:00+02:00</dc:date>
+    </item>
     <item>
       <title>Taulat 44</title>
       <link>https://javier.computer/maps/barcelona/taulat-44</link>
@@ -87,15 +105,6 @@
       <link>https://javier.computer/maps/barcelona/santa-magdalena</link>
       <description>&lt;p&gt;Cuina de barri. El entrepà de berenjena, tomate y mozzarella estaba muy rico.&lt;/p&gt;
 &lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/santa-magdalena'&gt;Carrer de Sta. Magdalena, 6&lt;/a&gt;&lt;br&gt;</description>
-      <pubDate>Sun, 28 Jan 2024 19:07:10 +0100</pubDate>
-      <dc:subject>barcelona</dc:subject>
-      <dc:date>2024-01-28T19:07:10+01:00</dc:date>
-    </item>
-    <item>
-      <title>Right Side Coffee Bar</title>
-      <link>https://javier.computer/maps/barcelona/right-side-coffee-bar</link>
-      <description>&lt;p&gt;Erigido sobre las cenizas (je) de Satan’s Coffee Corner, esta es mi cafetería favorita de Barcelona y donde preparan el mejor latte con avena de la ciudad.&lt;/p&gt;
-&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/right-side-coffee-bar'&gt;Carrer de l'Arc de Sant Ramon del Call, 11&lt;/a&gt;&lt;br&gt;</description>
       <pubDate>Sun, 28 Jan 2024 19:07:10 +0100</pubDate>
       <dc:subject>barcelona</dc:subject>
       <dc:date>2024-01-28T19:07:10+01:00</dc:date>
@@ -298,6 +307,6 @@
       <dc:subject>barcelona</dc:subject>
       <dc:date>2023-12-08T17:14:31+01:00</dc:date>
     </item>
-    <dc:date>2024-04-07T10:17:38+02:00</dc:date>
+    <dc:date>2024-07-27T18:26:41+02:00</dc:date>
   </channel>
 </rss>

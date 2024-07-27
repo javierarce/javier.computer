@@ -284,26 +284,6 @@
   },
   {
     "layout": "place",
-    "title": "Vereda Bar",
-    "pid": "vereda",
-    "description": "<p>Platos de proximidad y temporada y vinos naturales.</p>\n",
-    "address": "Carrer de la Diputació, 155",
-    "latlng": [
-      41.38460297818277,
-      2.1578119926085177
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2023-12-09T21:47:40+01:00",
-    "post_references": [
-      {
-        "url": "/2023/05/04/open-heart-protocol",
-        "title": "Open Heart Protocol",
-        "date": "2023-05-04 22:57:54 +0200"
-      }
-    ]
-  },
-  {
-    "layout": "place",
     "title": "Centre de Cultura Contemporània de Barcelona",
     "pid": "cccb",
     "description": "<p>Centro cultural y centro de artes creativas con teatro, galerías de exposiciones y salas de conferencias</p>\n",
@@ -324,21 +304,21 @@
   },
   {
     "layout": "place",
-    "pid": "funky-bakers",
-    "title": "Funky Bakers",
-    "description": "<p>No tan <em>funkies</em> como dicen ser pero tienen cosas ricas.</p>\n",
-    "address": "Pg. del Born, 10",
+    "title": "Vereda Bar",
+    "pid": "vereda",
+    "description": "<p>Platos de proximidad y temporada y vinos naturales.</p>\n",
+    "address": "Carrer de la Diputació, 155",
     "latlng": [
-      41.38458415660393,
-      2.182553957368447
+      41.38460297818277,
+      2.1578119926085177
     ],
     "location": "barcelona",
-    "last_modified_date": "2024-01-06T20:10:23+01:00",
+    "last_modified_date": "2023-12-09T21:47:40+01:00",
     "post_references": [
       {
-        "url": "/2022/09/17/funky-bakers",
-        "title": "Funky Bakers",
-        "date": "2022-09-17 09:16:14 +0200"
+        "url": "/2023/05/04/open-heart-protocol",
+        "title": "Open Heart Protocol",
+        "date": "2023-05-04 22:57:54 +0200"
       }
     ]
   },
@@ -384,6 +364,107 @@
   },
   {
     "layout": "place",
+    "pid": "funky-bakers",
+    "title": "Funky Bakers",
+    "description": "<p>No tan <em>funkies</em> como dicen ser pero tienen cosas ricas.</p>\n",
+    "address": "Pg. del Born, 10",
+    "latlng": [
+      41.38458415660393,
+      2.182553957368447
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-01-06T20:10:23+01:00",
+    "post_references": [
+      {
+        "url": "/2022/09/17/funky-bakers",
+        "title": "Funky Bakers",
+        "date": "2022-09-17 09:16:14 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "title": "Masa Vins",
+    "pid": "masa-vins",
+    "emoji": "🍷",
+    "address": "Carrer de Pallars, 154",
+    "description": "<p>Bar <em>trendy</em> de vinos naturales y también <em>trendies</em> en Poblenou.</p>\n",
+    "latlng": [
+      41.39905461518514,
+      2.1954502849044113
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-01-28T19:07:10+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "title": "Fino Bar",
+    "pid": "fino-bar",
+    "description": "<p>Queviures, salaons, xarcuteria al tall i molt de vi.</p>\n",
+    "address": "Carrer del Torrent de les Flors, 113, Gràcia",
+    "latlng": [
+      41.40912805117236,
+      2.157757869315849
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-01-28T19:07:10+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "cuina-panda",
+    "title": "Cuina Panda",
+    "description": "<p>Pequeño restaurante con comida casera típica de Sichuan. El menú cuando fui era muy carnívoro, pero lo adaptan sin problemas para vegetarianos o veganos.</p>\n",
+    "address": "Carrer de Viladomat, 101",
+    "latlng": [
+      41.38012362269991,
+      2.1572740000000006
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-01-28T19:07:10+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "chido-one",
+    "title": "Chido One",
+    "description": "<p>Un mexicano bien chido.</p>\n",
+    "address": "Carrer de Torrijos, 30, la Vila de Gràcia, Gràcia",
+    "latlng": [
+      41.4032943,
+      2.1589741
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-01-28T19:07:10+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "the-green-spot",
+    "title": "The Green Spot",
+    "description": "<p>Vegetariano bonito y rico en la Barceloneta. ¿Qué me gustó de aquí? La colifor empanada, el plato de tempeh y el risotto de 7 verdes.</p>\n",
+    "address": "Carrer de la Reina Cristina, 12",
+    "latlng": [
+      41.381787821227704,
+      2.1839794830047263
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-01-28T19:07:10+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
     "pid": "tofu-catalan",
     "title": "Tofu Catalán",
     "description": "<p>Pequeño deli donde comprar tofu fresco, bentos y otros productos japoneses.</p>\n",
@@ -416,87 +497,6 @@
   },
   {
     "layout": "place",
-    "title": "Masa Vins",
-    "pid": "masa-vins",
-    "emoji": "🍷",
-    "address": "Carrer de Pallars, 154",
-    "description": "<p>Bar <em>trendy</em> de vinos naturales y también <em>trendies</em> en Poblenou.</p>\n",
-    "latlng": [
-      41.39905461518514,
-      2.1954502849044113
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-01-28T19:07:10+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "title": "Restaurant Santa Magdalena",
-    "pid": "santa-magdalena",
-    "description": "<p>Cuina de barri. El entrepà de berenjena, tomate y mozzarella estaba muy rico.</p>\n",
-    "address": "Carrer de Sta. Magdalena, 6",
-    "latlng": [
-      41.404370532712676,
-      2.152588853967282
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-01-28T19:07:10+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "title": "Fino Bar",
-    "pid": "fino-bar",
-    "description": "<p>Queviures, salaons, xarcuteria al tall i molt de vi.</p>\n",
-    "address": "Carrer del Torrent de les Flors, 113, Gràcia",
-    "latlng": [
-      41.40912805117236,
-      2.157757869315849
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-01-28T19:07:10+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "chido-one",
-    "title": "Chido One",
-    "description": "<p>Un mexicano bien chido.</p>\n",
-    "address": "Carrer de Torrijos, 30, la Vila de Gràcia, Gràcia",
-    "latlng": [
-      41.4032943,
-      2.1589741
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-01-28T19:07:10+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "cuina-panda",
-    "title": "Cuina Panda",
-    "description": "<p>Pequeño restaurante con comida casera típica de Sichuan. El menú cuando fui era muy carnívoro, pero lo adaptan sin problemas para vegetarianos o veganos.</p>\n",
-    "address": "Carrer de Viladomat, 101",
-    "latlng": [
-      41.38012362269991,
-      2.1572740000000006
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-01-28T19:07:10+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
     "pid": "right-side-coffee-bar",
     "title": "Right Side Coffee Bar",
     "emoji": "☕️",
@@ -509,18 +509,22 @@
     "location": "barcelona",
     "last_modified_date": "2024-01-28T19:07:10+01:00",
     "post_references": [
-
+      {
+        "url": "/2024/07/27/vuelta-al-teletipo",
+        "title": "Vuelta al teletipo",
+        "date": "2024-07-27 13:20:00 +0200"
+      }
     ]
   },
   {
     "layout": "place",
-    "pid": "the-green-spot",
-    "title": "The Green Spot",
-    "description": "<p>Vegetariano bonito y rico en la Barceloneta. ¿Qué me gustó de aquí? La colifor empanada, el plato de tempeh y el risotto de 7 verdes.</p>\n",
-    "address": "Carrer de la Reina Cristina, 12",
+    "title": "Restaurant Santa Magdalena",
+    "pid": "santa-magdalena",
+    "description": "<p>Cuina de barri. El entrepà de berenjena, tomate y mozzarella estaba muy rico.</p>\n",
+    "address": "Carrer de Sta. Magdalena, 6",
     "latlng": [
-      41.381787821227704,
-      2.1839794830047263
+      41.404370532712676,
+      2.152588853967282
     ],
     "location": "barcelona",
     "last_modified_date": "2024-01-28T19:07:10+01:00",
@@ -546,14 +550,14 @@
   },
   {
     "layout": "place",
-    "pid": "frutas-selectas",
-    "title": "Nomad Frutas Selectas",
+    "pid": "pecora",
+    "title": "Pècora",
     "emoji": "☕️",
-    "description": "<p>Cafetería de Nomad con café de Nomad (claro), y pan y dulces de Pa de Kilo.</p>\n",
-    "address": "Carrer de Pujades, 95",
+    "description": "<p>Buena y bonita cafetería de especialidad a un tiro de manzana de Frutas Selectas. También tienen cosas dulces para comer.</p>\n",
+    "address": "Carrer de Pujades, 113",
     "latlng": [
-      41.398138533227154,
-      2.1959991095361917
+      41.39887555964336,
+      2.1968050417827083
     ],
     "location": "barcelona",
     "last_modified_date": "2024-04-07T10:17:38+02:00",
@@ -595,19 +599,39 @@
   },
   {
     "layout": "place",
-    "pid": "pecora",
-    "title": "Pècora",
+    "pid": "frutas-selectas",
+    "title": "Nomad Frutas Selectas",
     "emoji": "☕️",
-    "description": "<p>Buena y bonita cafetería de especialidad a un tiro de manzana de Frutas Selectas. También tienen cosas dulces para comer.</p>\n",
-    "address": "Carrer de Pujades, 113",
+    "description": "<p>Cafetería de Nomad con café de Nomad (claro), y pan y dulces de Pa de Kilo.</p>\n",
+    "address": "Carrer de Pujades, 95",
     "latlng": [
-      41.39887555964336,
-      2.1968050417827083
+      41.398138533227154,
+      2.1959991095361917
     ],
     "location": "barcelona",
     "last_modified_date": "2024-04-07T10:17:38+02:00",
     "post_references": [
 
+    ]
+  },
+  {
+    "layout": "place",
+    "title": "Fismuler",
+    "pid": "fismuler",
+    "description": "<p>Cocina mediterránea de parte de tres ex-El Bulli.</p>\n",
+    "address": "Carrer del Rec Comtal, 17",
+    "latlng": [
+      41.390302729862846,
+      2.179832104117521
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-07-27T18:26:41+02:00",
+    "post_references": [
+      {
+        "url": "/2024/07/27/vuelta-al-teletipo",
+        "title": "Vuelta al teletipo",
+        "date": "2024-07-27 13:20:00 +0200"
+      }
     ]
   }
 ]
