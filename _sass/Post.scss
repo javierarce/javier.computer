@@ -146,6 +146,23 @@ h4 {
   margin: 0 0.4em 0 0;
 }
 
+.Post__tags {
+  display: inline-flex;
+  gap: 0.4em;
+}
+
+.Post__tags a {
+  text-decoration: none;
+}
+
+.Post__tags a:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+
+
+
 .Post__location {
   text-decoration: none;
   font-weight: 400;
@@ -225,5 +242,13 @@ h4 {
     width: 100%;
     align-items: flex-start;
     flex-direction: column;
+    gap: 0.4em;
+  }
+
+  .Post__tags {
+    margin: 0;
+    flex-direction: column;
+    display: flex;
+    gap: 0;
   }
 }
