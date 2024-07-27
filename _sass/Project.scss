@@ -1,15 +1,15 @@
+.Layout__project .Content {
+  width: var(--bigWidth);
+}
+
 .Layout__project .Content h2 {
   margin: 0 auto 0;
   text-align: center;
 }
 
-.Layout__project .Content {
-  width: var(--bigWidth);
-}
-
 .Layout__project hr {
   width: 100%;
-  max-width: 800px;
+  max-width: var(--width);
 }
 
 .Projects {
@@ -66,7 +66,7 @@
   text-align: center;
 }
 
-.Project__content  h3 {
+.Project__content h3 {
   margin-top: 1em;
   width: var(--width);
 }
@@ -129,7 +129,7 @@
   width: 350px;
 }
 
-.Projects table  tr > td:nth-child(3) {
+.Projects table tr>td:nth-child(3) {
   width: 200px;
 }
 
@@ -173,11 +173,12 @@
 }
 
 @media all and (max-width: 1280px) {
-.Project__intro {
-  width: 100%;
-}
+  .Project__intro {
+    width: 100%;
+  }
 
-  .Layout__project .Project p, .Layout__project .Project__content h3 {
+  .Layout__project .Project p,
+  .Layout__project .Project__content h3 {
     width: 100%;
   }
 
@@ -197,11 +198,21 @@
 }
 
 @media all and (max-width: 800px) {
+  .Layout__project .Content {
+    width: 100%;
+  }
 
-  .Projects table  tr > td:nth-child(1){
+  .Layout__project .Content img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .Projects table tr>td:nth-child(1) {
     width: auto;
   }
-  .Projects table  tr > td:nth-child(3){
+
+  .Projects table tr>td:nth-child(3) {
     width: auto;
   }
 
@@ -213,6 +224,10 @@
 }
 
 @media all and (max-width: 640px) {
+  .Layout__project .Content {
+    width: 100%;
+  }
+
   .Projects__content table {
     margin: 0 0 2em;
   }
@@ -226,6 +241,7 @@
     flex-direction: column;
     margin: 0 0 1em;
   }
+
   .Projects table td {
     display: block;
     width: 100%;
@@ -233,11 +249,13 @@
     padding: 0;
     margin: 0 0 0.4em;
   }
+
   .Projects tr {
     display: flex;
     flex-direction: column;
     margin: 0 0 2em;
   }
+
   .Projects table td:last-child {
     margin: 0;
   }
@@ -246,4 +264,3 @@
     width: 100%;
   }
 }
-
