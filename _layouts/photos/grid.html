@@ -11,11 +11,14 @@ className: Grid
   {% include navigation.html -%}
 
   <div class="Photo__collections">
-    <h2>{{ page.title | capitalize }}</h2>
 
-    <div class="Photo__selector">
-      <a href="/photos/{{ page.location }}">Lista</a> &middot;
-      Rejilla
+
+    <div class="Photo__header">
+      <h2>{{ page.title }}</h2>
+      <div class="Photo__selector">
+        <a href="/photos/{{ page.location }}" class="icon icon-list is-light"></a>
+        <span class="icon icon-grid"></span>
+      </div>
     </div>
 
 
@@ -23,10 +26,6 @@ className: Grid
     {% if photo.category and location == photo.location -%}
 
     <div class="Photo__collection">
-
-      {% if photo.hide_title != true -%}
-      <h3>{{ photo.title }}</h3>
-      {% endif -%}
 
       {% if photo.filenames -%}
       <div class="Photo__grid">
@@ -38,11 +37,11 @@ className: Grid
         {% assign filename = file -%}
         {% assign caption = "" -%}
         {% endif -%}
-        {% include photos/single.html photo=photo filename=filename caption=caption -%}
+        {% include photos/single.html photo=photo filename=filename caption=caption url=photo.url -%}
         {% endfor -%}
       </div>
       {% else -%}
-      {% include photos/single.html photo=photo filename=photo.filename -%}
+      {% include photos/single.html photo=photo filename=photo.filename url=photo.url -%}
       {% endif -%}
 
       {% include photos/footer.html photo=photo pagination=false -%}

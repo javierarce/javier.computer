@@ -1,6 +1,6 @@
 ---
 layout: location
-title: Lisbon
+title: Lisboa
 location: lisboa
 permalink: in/lisboa
 ---

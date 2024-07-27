@@ -11,18 +11,47 @@ className: Photos
   {% include navigation.html -%}
 
   <div class="Photo__collection">
-    <h2>{{ page.title }}</h2>
 
-    <div class="Photo__selector">
-      Lista &middot;
-      <a href="{{ page.url }}/grid">Rejilla</a>
+    <div class="Photo__header">
+      <h2>{{ page.title }}</h2>
+      <div class="Photo__selector">
+        <span class="icon icon-list"></span>
+        <a href="/photos/{{ page.location }}/grid" class="icon icon-grid is-light"></a>
+      </div>
     </div>
 
     {{ content }}
 
     {% for photo in photos -%}
     {% if photo.category and location == photo.location -%}
-    {% include photos/photo.html photo=photo -%}
+    {% assign filenames = photo.filenames -%}
+    {% assign ids = photo.ids -%}
+
+    <div class="Photo__collection">
+      {% if filenames.size -%}
+      {% for file in filenames -%}
+
+      {% if file.filename -%}
+      {% assign filename = file.filename -%}
+      {% assign caption = file.caption -%}
+      {% else -%}
+      {% assign filename = file -%}
+      {% assign caption = "" -%}
+      {% endif -%}
+
+      {% include photos/single.html photo=photo filename = filename -%}
+      {% endfor -%}
+      {% elsif photo.filename -%}
+      {% include photos/single.html photo=photo filename = photo.filename -%}
+      {% endif -%}
+
+      {% assign content = photo.content | strip %}
+      {% if content.size > 0 %}
+      <div class="Post__content">{{ content }}</div>
+      {% endif %}
+
+      {% include photos/footer.html photo=photo -%}
+    </div>
     {% endif -%}
     {% endfor -%}
   </div>

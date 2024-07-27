@@ -2,13 +2,19 @@
 layout: base
 className: Photo
 ---
+
+{% assign matching_location = site.locations | where: "location", page.location | first %}
+
 <!--- photos/photo -->
 <div class="Content">
   {% include navigation.html -%}
   <div class="Photo__collection">
 
     {% if page.hide_title != true -%}
-    <h2>{{ page.title }}</h2>
+    <div class="Photo__header2">
+      <a href="/photos/{{ page.location }}" class="is-light">{{ matching_location.title }}</a>
+      <h2>{{ page.title }}</h2>
+    </div>
     {% endif -%}
 
     {% if page.filenames -%}
@@ -29,10 +35,10 @@ className: Photo
     {% include photos/single.html photo=page filename = page.filename -%}
     {% endif -%}
 
-      {% assign content = page.content | strip %}
-      {% if content.size > 0 %}
-        <div class="Post__content">{{ content }}</div>
-      {% endif %}
+    {% assign content = page.content | strip %}
+    {% if content.size > 0 %}
+    <div class="Post__content">{{ content }}</div>
+    {% endif %}
 
     {% include photos/footer.html photo=page pagination=true -%}
   </div>

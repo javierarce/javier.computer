@@ -1,0 +1,383 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --gray: rgba(255, 255, 255, 0.3);
+  --gray2: #eee;
+  --orange: #FF4500;
+  --white: #FFFFFF;
+  --black: #020b19;
+  --link: #ffc107;
+  --text: var(--white);
+  --textHover: var(--white);
+  --background: var(--black);
+  --space: 0.4em;
+  --doubleSpace: 0.8em;
+  --width: 800px;
+  --bigWidth: 1024px;
+  --fullWidth: 100%;
+
+  --pureBlack: #000000;
+  --blue: #2477BE;
+  --green: #23D5AB;
+  --sidebarWidth: 300px;
+}
+
+::selection {
+  background: rgba(142, 142, 142, 0.2);
+}
+
+::placeholder {
+  color: var(--text);
+  opacity: 0.5;
+}
+
+body {
+  color: var(--text);
+  background: var(--background);
+
+  font-size: 1.3em;
+  line-height: 1.45;
+  font-weight: normal;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+}
+
+a.is-underlined {
+  text-decoration: underline;
+  text-decoration-color: var(--text);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.is-light {
+  opacity: 0.5;
+}
+
+.is-light a:hover,
+p.is-light a:hover,
+p.is-light p a:hover {
+  color: var(--textHover);
+}
+
+.is-light a,
+p.is-light a,
+p.is-light p a {
+  color: var(--text);
+}
+
+.Layout__home .is-hidden-from-home {
+  display: none;
+}
+
+.is-hidden-from-home {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 0.8em;
+  font-size: 0.9em;
+  opacity: 0.4;
+}
+
+.is-hidden-from-home a {
+  color: var(--text);
+}
+
+.is-hidden-from-home a:hover {
+  color: var(--text);
+}
+
+.is-hidden {
+  display: none;
+}
+
+.is-small {
+  font-size: 0.8em;
+}
+
+a {
+  color: var(--text);
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  cursor: pointer;
+  color: var(--textHover);
+  text-decoration: underline;
+}
+
+em {
+  font-style: italic;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  opacity: 0.5;
+  margin-left: 2px;
+}
+
+sup {
+  top: -0.5em;
+}
+
+strong {
+  font-weight: 700;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul+h3,
+table+h3,
+table+h4 {
+  margin-top: 2em;
+}
+
+ul+h4 {
+  margin-top: 2em;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.45;
+  margin: 0 0 1em 0;
+}
+
+p:last-child {
+  margin: 0;
+}
+
+p img {
+  width: 100%;
+}
+
+blockquote {
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  opacity: 0.5;
+  margin: 0 0 1em 0;
+  padding: 0 0 0 0.8em;
+}
+
+.Post__content blockquote p a,
+blockquote p a {
+  color: var(--text);
+}
+
+blockquote p {
+  font-style: normal;
+  text-align: left;
+}
+
+blockquote strong {
+  font-weight: 600;
+}
+
+.is-domain {
+  border-radius: 30px;
+  border: 2px solid rgba(255, 255, 255, 1);
+  padding: 0.4em 0.8em;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
+p.is-light {
+  opacity: .5;
+}
+
+.Content {
+  display: flex;
+  flex-direction: column;
+  width: var(--width);
+}
+
+.Layout__error {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+}
+
+ul {
+  margin: 0 0 0 1em;
+}
+
+ul li {
+  margin: 0 0 .4em 0;
+  list-style: disc;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid var(--text);
+  margin: 1.4em 0;
+  opacity: 0.5;
+}
+
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  margin: 0 0 1em;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+h3 {
+  font-size: 1em;
+  opacity: 0.5;
+}
+
+h4 {
+  font-size: 1em;
+  font-weight: normal;
+  opacity: 0.5;
+}
+
+img.lazy {
+  transition: all 520ms ease-in-out;
+  opacity: 0.1;
+  background: var(--white);
+}
+
+img.lazy.loaded {
+  background: transparent;
+  visibility: visible;
+  opacity: 1;
+}
+
+img.lazy.error {
+  visibility: visible;
+  border: 1px solid var(--white);
+  background: none;
+  opacity: 1;
+}
+
+.Grid {
+  padding: 2em 2em 0 2em;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.About__content a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
+.Page__content a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
+.Drawing__content a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
+.Movie__list li a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
+.Project__list li a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
+.Photo__layout p a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
+.Post__content ul li a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
+.Book__spine[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))) .Book__title:after,
+.Post__content p a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
+.is-external:after {
+  content: '↗';
+  display: inline-block;
+  font-weight: 400;
+  padding-left: 4px;
+  opacity: 0.5;
+  color: var(--text);
+}
+
+.Book__spine.is-2[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))) .Book__title:after,
+.Book__spine.is-6[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))) .Book__title:after {
+  color: var(--black);
+}
+
+a.is-photo::after {
+  content: '';
+  display: inline-block;
+  vertical-align: sub;
+  width: 24px;
+  height: 24px;
+  margin: 0 0 0 0.2em;
+  background-image: url(/img/icons/picture.svg);
+  background-size: cover;
+  opacity: 0.5;
+}
+
+.tag {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.4em 0.8em;
+  border-radius: 20px;
+  font-size: 0.7em;
+}
+
+@media all and (max-width: 640px) {
+  body {
+    font-size: 1.2em;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  .Content {
+    padding: 1em;
+    width: 100%;
+  }
+}
+
+presence-snitch {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background: transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 250ms ease-in-out;
+}
+
+presence-snitch.is-visible {
+  background: var(--link);
+  opacity: 1;
+  visibility: visible;
+}
+
+presence-snitch::part(text) {
+  background-color: #222;
+  border-radius: 4px;
+  color: var(--text);
+  padding: 0.4em 0.6em;
+  font-size: 0.7em;
+  position: absolute;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(calc(-100% - 8px), calc(-50% + 4px));
+}
+
+presence-snitch:hover,
+presence-snitch:focus {
+  background: rgba(#ffc107, 0.8);
+  cursor: pointer;
+}
+
+presence-snitch:hover::part(text),
+presence-snitch:focus::part(text) {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media all and (max-width: 640px) {
+  presence-snitch {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
