@@ -1,41 +1,41 @@
-{% assign page = include.page %} 
+{% assign page = include.page -%}
 
-{% if page.location %}
-  {% assign page_location = page.location %}
-{% else %}
-  {% assign page_location = nil %}
-{% endif %}
+{% if page.location -%}
+{% assign page_location = page.location -%}
+{% else -%}
+{% assign page_location = nil -%}
+{% endif -%}
 
-{% assign unique_locations = "" | split: "" %}
+{% assign unique_locations = "" | split: "" -%}
 
-{% if page_location %}
-  {% assign map_exists = site.maps | where: "location", page_location | first %}
-  {% if map_exists %}
-    {% assign unique_locations = unique_locations | push: page_location %}
-  {% endif %}
-{% endif %}
+{% if page_location -%}
+{% assign map_exists = site.maps | where: "location", page_location | first -%}
+{% if map_exists -%}
+{% assign unique_locations = unique_locations | push: page_location -%}
+{% endif -%}
+{% endif -%}
 
-{% if page.places %}
-  {% for place_pid in page.places %}
-    {% assign place = site.places | where: "pid", place_pid | first %}
-    {% if place %}
-      {% assign map_exists = site.maps | where: "location", place.location | first %}
-      {% unless unique_locations contains place.location %}
-        {% if map_exists %}
-          {% assign unique_locations = unique_locations | push: place.location %}
-        {% endif %}
-      {% endunless %}
-    {% endif %}
-  {% endfor %}
-{% endif %}
+{% if page.places -%}
+{% for place_pid in page.places -%}
+{% assign place = site.places | where: "pid", place_pid | first -%}
+{% if place -%}
+{% assign map_exists = site.maps | where: "location", place.location | first -%}
+{% unless unique_locations contains place.location -%}
+{% if map_exists -%}
+{% assign unique_locations = unique_locations | push: place.location -%}
+{% endif -%}
+{% endunless -%}
+{% endif -%}
+{% endfor -%}
+{% endif -%}
 
-{% if unique_locations.size > 0 %}
+{% if unique_locations.size > 0 -%}
 <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
-{% for location in unique_locations %}
+{% for location in unique_locations -%}
 
-{% assign matching_location = site.locations | where: "location", location | first %}
-<a href="/maps/{{ location }}" class="Post__location-link">{{ matching_location.title }}</a>{% unless forloop.last %} 
+{% assign matching_location = site.locations | where: "location", location | first -%}
+<a href="/maps/{{ location }}" class="Post__location">{{ matching_location.title }}</a>{% unless forloop.last -%}
 <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
-{% endunless %}
-{% endfor %}
-{% endif %}
+{% endunless -%}
+{% endfor -%}
+{% endif -%}

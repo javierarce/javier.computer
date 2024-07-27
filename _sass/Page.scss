@@ -1,6 +1,6 @@
 .Page {
   margin: 0 0 3em;
-  width: 800px;
+  width: var(--width);
 }
 
 .Page a,
@@ -13,19 +13,14 @@
   max-width: 400px;
 }
 
-.Page__title {
-  margin: 0 0 1em;
-}
-
-.Page__content {
-  margin: 0 0 1em 0;
-}
-
+.Page__title,
+.Page__content,
 .Page__content p {
   margin: 0 0 1em 0;
 }
 
-.Page__date {
+.Page__date,
+.Page__date:hover {
   opacity: 0.5;
   font-size: 0.8em;
   user-select: none;
@@ -33,17 +28,8 @@
   font-weight: 400;
 }
 
-.Page__date:hover {
-  opacity: 0.5;
-  font-size: 0.8em;
-  user-select: none;
-  text-decoration: none;
-  font-weight: normal;
-}
-
 @media all and (max-width: 1024px) {
   .Page {
     width: 100%;
   }
 }
-
