@@ -1,39 +1,14 @@
 .Posts {
-  max-width: 800px;
-}
-
-.Post {
-  max-width: 800px;
-  margin: 0 0 3em;
-}
-
-.Post.is-title,
-.Post.is-archive {
-  font-size: 1.1em;
-  margin-bottom: 0;
-  display: flex;
-  flex-direction: row;
-  gap: 0.4em;
-}
-
-.Post.is-archive {
-  margin: 0.8em 0 0;
-}
-
-.Post.is-title .Post__date,
-.Post.is-title .Post__location {
-  opacity: 0.5;
-}
-
-.Posts.is-more {
   display: flex;
   flex-direction: column;
-  gap: 0.4em;
+  gap: 3em;
+  max-width: var(--width);
 }
 
-.Posts.is-more a,
-.Posts.is-more a:hover {
-  color: var(--link);
+/* Post */
+
+.Post {
+  max-width: var(--width);
 }
 
 .Post.is-highlighted .Post__content {
@@ -41,6 +16,20 @@
   border-radius: 4px;
   padding: 0.8em;
 }
+
+.Post p:last-child {
+  margin: 0;
+}
+
+/* Post__title */
+
+.Post__title {
+  display: block;
+  font-weight: bold;
+  margin: 0 0 0.4em;
+}
+
+/* Post__content */
 
 .Post__content a[href^="/maps"] {
   position: relative;
@@ -80,14 +69,9 @@ h4 {
   font-size: 1.2em;
 }
 
-.Post p:last-child {
+.Post__content p {
+  font-size: 1.2em;
   margin: 0;
-}
-
-.Post__title {
-  display: block;
-  font-weight: bold;
-  margin: 0 0 .4em;
 }
 
 .Layout__home .Post__content {
@@ -104,15 +88,7 @@ h4 {
   flex-direction: column;
 }
 
-.Post__content p {
-  font-size: 1.2em;
-  margin: 0;
-}
-
-.Post__footer {
-  user-select: none;
-  font-weight: 400;
-}
+/* Post__footer */
 
 .Post__footer a,
 .Post__footer open-heart .off {
@@ -129,12 +105,12 @@ h4 {
   text-decoration: underline;
 }
 
+/* Post__pagination */
+
 .Post__pagination {
   margin: 2em 0 0 0;
   display: flex;
   flex-direction: column;
-  user-select: none;
-  font-weight: 400;
 }
 
 .Post__paginationArrow,
@@ -142,41 +118,16 @@ h4 {
   opacity: 0.5;
 }
 
-.Post__pagination>* {
-  margin: 0 0.4em 0 0;
-}
-
-.Post__tags {
-  display: inline-flex;
-  gap: 0.4em;
-}
-
-.Post__tags a {
-  text-decoration: none;
-}
-
-.Post__tags a:hover {
-  opacity: 1;
-  text-decoration: none;
-}
-
-
-
-
-.Post__location {
-  text-decoration: none;
-  font-weight: 400;
-}
-
-.Post__date {
-  text-decoration: none;
-  font-weight: 400;
-}
-
-.Post__paginationLink {
-  font-weight: 400;
-  text-decoration: none;
+.Post__paginationLink,
+.Post__pagination,
+.Post__footer {
   user-select: none;
+  font-weight: 400;
+}
+
+.Post__paginationLink,
+.Post__location,
+.Post__date {
   text-decoration: none;
   font-weight: 400;
 }
@@ -186,24 +137,35 @@ h4 {
   text-decoration: none;
 }
 
+
+.Post__pagination>* {
+  margin: 0 0.4em 0 0;
+}
+
+/* Post__tags */
+
+.Post__tags {
+  margin: 2em 0 0 0;
+  display: inline-flex;
+  gap: 0.4em;
+}
+
+.Post__tags a,
+.Post__tags a:hover {
+  text-decoration: none;
+}
+
+.Post__tags a:hover {
+  opacity: 1;
+}
+
+/* ----- */
+
 .Post img {
   display: block;
   max-width: 1024px;
   margin: 0;
   border-radius: 2px;
-}
-
-.Post .Post__content.invites p img {
-  max-width: 400px;
-  margin: 0;
-}
-
-.Post__tags {
-  margin: 2em 0 0 0;
-}
-
-.Post__tags span {
-  opacity: 0.5;
 }
 
 @media all and (max-width: 1024px) {
@@ -222,15 +184,7 @@ h4 {
 
   .Posts,
   .Post {
-    margin: 0 0 3em;
     width: 100%;
-  }
-
-  .Post.is-title a {
-    max-width: 300px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   .Post__footerSeparator {

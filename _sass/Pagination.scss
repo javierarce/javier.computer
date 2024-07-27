@@ -81,7 +81,7 @@
 }
 
 @media all and (max-width: 640px) {
-  
+
   .Pagination {
     display: grid;
     justify-content: space-between;
@@ -92,6 +92,7 @@
   .Pagination__item.is-archive {
     display: none;
   }
+
   .Pagination__item.is-mobile-archive {
     font-size: 0.9em;
     border: 1px solid var(--white);
