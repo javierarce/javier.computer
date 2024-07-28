@@ -1,7 +1,16 @@
 {
   "updated_at": "2024-07-28",
-  "count": 702,
+  "count": 703,
   "movies": [
+    {
+      "watched_on": "2024-07-28",
+      "title": "Paranoiac",
+      "year": "1963",
+      "rating": 2,
+      "stars": "★★",
+      "rewatched": false,
+      "permalink": "paranoiac"
+    },
     {
       "watched_on": "2024-07-26",
       "title": "The Return of Godzilla",
