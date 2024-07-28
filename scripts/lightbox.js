@@ -6,7 +6,7 @@ class Lightbox {
     this.lightbox = document.querySelector(".Lightbox");
     this.$image = document.querySelector(".Lightbox__image");
     this.spinner = document.querySelector(".Spinner");
-    this.$close = document.querySelector(".Lightbox__close");
+    this.$close = document.querySelector(".Lightbox__button.is-close");
     this.$prev = document.querySelector(".Lightbox__button.is-prev");
     this.$next = document.querySelector(".Lightbox__button.is-next");
     this.photos = Array.from(document.querySelectorAll(".Photo"));
@@ -18,7 +18,7 @@ class Lightbox {
   injectMarkup() {
     const lightboxMarkup = `
       <div class="Lightbox">
-        <span class="Lightbox__close">&times;</span>
+        <button class="Lightbox__button is-close"></button>
         <div class="Lightbox__content">
           <div class="Lightbox__imageContainer">
             <img src="" alt="" class="Lightbox__image">

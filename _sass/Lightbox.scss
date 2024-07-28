@@ -25,22 +25,6 @@
   opacity: 1;
 }
 
-.Lightbox__close {
-  position: absolute;
-  top: 0.4em;
-  right: 0.4em;
-  color: var(--white);
-  font-size: 1.8em;
-  line-height: 1;
-  font-weight: 200;
-  cursor: pointer;
-  transition: transform 250ms ease-in-out;
-}
-
-.Lightbox__close:hover {
-  transform: scale(1.1);
-}
-
 .Photo {
   cursor: pointer;
   transition: opacity 250ms ease-in-out;
@@ -69,7 +53,7 @@
 }
 
 .Lightbox__image {
-  max-width: 100%;
+  max-width: 2880px;
   max-height: 95vh;
   object-fit: contain;
   opacity: 0;
@@ -79,34 +63,42 @@
 
 .Lightbox__button {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--white);
   text-decoration: none;
   font-size: 18px;
-  background: none;
   border: none;
+  background-color: transparent;
   cursor: pointer;
-  transition: color 250ms ease-in-out;
+  transition: opacity 250ms ease-in-out;
   -webkit-appearance: none;
   appearance: none;
 }
 
 .Lightbox__button:hover {
   opacity: 0.8;
-  color: red;
 }
 
 .Lightbox__button.is-prev {
-  background-image: url('/img/icons/arrow-left.svg');
-  width: 40px;
-  height: 40px;
+  background: url('/img/icons/chevron-left.svg') no-repeat center;
+  width: 32px;
+  height: 32px;
   left: 1em;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .Lightbox__button.is-next {
   right: 1em;
-  background-image: url('/img/icons/arrow-right.svg');
-  width: 40px;
-  height: 40px;
+  background: url('/img/icons/chevron-right.svg') no-repeat center;
+  width: 32px;
+  height: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.Lightbox__button.is-close {
+  top: 1em;
+  right: 1em;
+  width: 28px;
+  height: 28px;
+  background: url('/img/icons/close.svg') no-repeat center;
 }
