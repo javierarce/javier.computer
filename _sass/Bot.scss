@@ -1,3 +1,7 @@
+.Layout__bots .Content {
+  width: var(--bigWidth);
+}
+
 .Bots {
   font-size: 1.2em;
 }
@@ -20,7 +24,7 @@
   margin: 0 0 0.2em;
 }
 
-.Bot__content  h3 {
+.Bot__content h3 {
   margin-top: 1em;
   width: 925px;
 }
@@ -103,6 +107,7 @@
 }
 
 @media all and (max-width: 1280px) {
+
   .Layout__project .Bot p,
   .Layout__project .Bot__content h3 {
     width: 100%;
@@ -114,7 +119,7 @@
     margin: 0 0 2em;
   }
 
-  .Bot__content  h3 {
+  .Bot__content h3 {
     width: 100%;
   }
 
@@ -139,3 +144,16 @@
   }
 }
 
+@media all and (max-width: 1024px) {
+
+  .Layout__bots .Content,
+  .Bot__archive {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 640px) {
+  .Layout__bots .Content {
+    width: 100%;
+  }
+}

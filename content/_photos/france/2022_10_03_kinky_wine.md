@@ -1,11 +1,12 @@
 ---
 layout: photos/photo
 title: france
+hide_title: true
 date: 2022-10-11
-category: france
+category: photo
 location: france
-filenames: 
-- 2022_10_11_DSCF1528
+filenames:
+  - 2022_10_11_DSCF1528
 ---
 
 Corbubombilla

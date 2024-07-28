@@ -1,8 +1,8 @@
 ---
 layout: base
 className: Grid
+grid: true
 ---
-
 {% assign photos = site.photos | concat: site.posts | sort: 'date' | reverse -%}
 {% assign location = page.location | downcase -%}
 
@@ -14,7 +14,6 @@ className: Grid
 
 
     <div class="Photo__header">
-      <h2>{{ page.title }}</h2>
       <div class="Photo__selector">
         <a href="/photos/{{ page.location }}" class="icon icon-list is-light"></a>
         <span class="icon icon-grid"></span>
