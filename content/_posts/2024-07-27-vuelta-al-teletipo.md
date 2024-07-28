@@ -9,9 +9,10 @@ places:
 ---
 
 Vuelta al teletipo &middot; Escape from Mataró &middot; Fin de semana en una
-casa tipográfica &middot; [Right Side Coffee](/maps/barcelona/right-side-coffee-bar) x 2 &middot; [Un pensamiento
+casa tipográfica &middot; [Right Side
+Coffee](/maps/barcelona/right-side-coffee-bar) x 2 &middot; [Un pensamiento
 recurrente](https://mastodon.social/@javierarce/112852316695014061) &middot;
-Abuse of power comes as no surprise &middot; Pnin &middot; [The Return of
+Abuse of power came as no surprise &middot; [Masa Vins](/maps/barcelona/masa-vins) &middot; Pnin &middot; [The Return of
 Godzilla](https://letterboxd.com/javier/film/the-return-of-godzilla) ★★★½
 &middot; [Are.na Manager](https://obsidian.md/plugins?search=Are.na%20manager)
 &middot; [Fismuler](/maps/barcelona/fismuler).
