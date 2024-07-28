@@ -8,18 +8,18 @@ show_date: true
 show_title: true
 ---
 
-## Enfont Terrible 
+## Enfont Terrible
+
 ### A terrible type foundry
 
 <div class="Project__intro">
-I love this project because it combines many of the things I care about:
-design, code, typography… and silly puns. <a href="https://enfont.javierarce.com" target="_blank" rel="nofollow">enFont Terrible</a> produces web fonts by applying several kinds of random deformations to a given typography. 
+This project combines many of the things I care about:
+design, code, typography… and silly puns. <a href="https://enfont.javierarce.com" target="_blank" rel="nofollow">enFont Terrible</a> produces web fonts by applying random transformations to your typography. 
 </div>
 
 <figure class="Figure"> 
 <img class="Figure__image is-bn lazy" data-src="https://javier.work/images/enfont/home.jpg">
 </figure>
-
 
 ### How does it work?
 
@@ -52,10 +52,8 @@ The project runs on Node.js, and it's hosted on <a href="http://glitch.com/" tar
 
 The font is generated in the browser. The original file that users drop in the website never touches the server, so they can rest assured that their original font files won't be shared.
 
-
 <div class="Figure">
 <video class="Figure__videoFile has-border" autoplay muted preload loop>
 <source src="https://javier.work/videos/thanks.mp4" type="video/mp4">
 </video>
 </div>
-
