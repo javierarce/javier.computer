@@ -31,12 +31,10 @@ grid: true
         {% for file in photo.filenames -%}
         {% if file.filename -%}
         {% assign filename = file.filename -%}
-        {% assign caption = file.caption -%}
         {% else -%}
         {% assign filename = file -%}
-        {% assign caption = "" -%}
         {% endif -%}
-        {% include photos/single.html photo=photo filename=filename caption=caption url=photo.url -%}
+        {% include photos/single.html photo=photo filename=filename url=photo.url -%}
         {% endfor -%}
       </div>
       {% else -%}

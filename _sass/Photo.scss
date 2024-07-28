@@ -20,13 +20,13 @@ figcaption {
   flex-direction: column;
   gap: 2em;
   text-align: center;
+  margin-bottom: 4em;
 }
 
 .Layout__grid .Content .Photo__collection {
   display: flex;
   flex-direction: column;
   gap: 2em;
-  margin: 0 0 4em 0;
   text-align: left;
 }
 
@@ -138,6 +138,11 @@ figcaption {
 .Photo__content {
   display: flex;
   flex-direction: column;
+  gap: 1em;
+}
+
+.Photos__archive .Photo__content {
+  gap: 0;
 }
 
 .Photo__content img {
@@ -231,13 +236,12 @@ figcaption {
   width: 100%;
   margin: auto;
   position: relative;
+  text-align: center;
 }
 
 .Photo__header h2 {
   font-size: 1.8em;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  line-height: 1.2;
 }
 
 .Photo__selector {
@@ -288,6 +292,14 @@ figcaption {
 
 @media all and (max-width: 640px) {
 
+  .Layout__grid .Content .Photo__collection {
+    gap: 4em;
+  }
+
+  .Layout__grid .Content .Photo__collections {
+    gap: 1em;
+  }
+
   .Layout__reportage .Content,
   .Layout__photo .Content,
   .Layout__photos .Content {
@@ -307,6 +319,10 @@ figcaption {
     width: 100%;
     height: auto;
     object-fit: cover;
+  }
+
+  .Photo__collection {
+    gap: 0.4em;
   }
 
   .h {

@@ -38,7 +38,7 @@ className: Photos
       {% assign caption = "" -%}
       {% endif -%}
 
-      {% include photos/single.html photo=photo filename = filename -%}
+      {% include photos/single.html photo=photo caption=caption filename = filename -%}
       {% endfor -%}
       {% elsif photo.filename -%}
       {% include photos/single.html photo=photo filename = photo.filename -%}

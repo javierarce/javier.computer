@@ -3,19 +3,19 @@ layout: base
 className: Reportage
 ---
 <!--- photos/reportage -->
-<div class="Content">
+<div class="Content enable-lightbox">
   {% include navigation.html -%}
 
   {% if page.hide_title != true -%}
-  <h2{% unless page.description %} class="is-descriptionless"{% endunless -%}>{{ page.title }}</h2>
-  {% endif -%}
+  <h2{% unless page.description %} class="is-descriptionless" {% endunless -%}>{{ page.title }}</h2>
+    {% endif -%}
 
-  {% if page.description -%}
-  <h3>{{ page.description }}</h3>
-  {% endif -%}
+    {% if page.description -%}
+    <h3>{{ page.description }}</h3>
+    {% endif -%}
 
-  <div class="Photo__layout">{{ content }}
-    {% include photos/footer.html photo=page pagination=true -%}
-    {% include footer.html -%}
-  </div>
+    <div class="Photo__layout">{{ content }}
+      {% include photos/footer.html photo=page pagination=true -%}
+      {% include footer.html -%}
+    </div>
 </div>

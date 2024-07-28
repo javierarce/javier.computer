@@ -1,0 +1,112 @@
+.Lightbox {
+  display: flex;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out;
+}
+
+.Lightbox.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.Lightbox.is-active .Lightbox__content {
+  transform: scale(1);
+}
+
+.Lightbox-image.is-loaded {
+  opacity: 1;
+}
+
+.Lightbox__close {
+  position: absolute;
+  top: 0.4em;
+  right: 0.4em;
+  color: var(--white);
+  font-size: 1.8em;
+  line-height: 1;
+  font-weight: 200;
+  cursor: pointer;
+  transition: transform 250ms ease-in-out;
+}
+
+.Lightbox__close:hover {
+  transform: scale(1.1);
+}
+
+.Photo {
+  cursor: pointer;
+  transition: opacity 250ms ease-in-out;
+}
+
+.Photo:hover {
+  opacity: 0.8;
+}
+
+.Lightbox__content {
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Lightbox__imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Lightbox__image {
+  max-width: 100%;
+  max-height: 95vh;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+  border-radius: var(--borderRadius);
+}
+
+.Lightbox__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 250ms ease-in-out;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.Lightbox__button:hover {
+  opacity: 0.8;
+  color: red;
+}
+
+.Lightbox__button.is-prev {
+  background-image: url('/img/icons/arrow-left.svg');
+  width: 40px;
+  height: 40px;
+  left: 1em;
+}
+
+.Lightbox__button.is-next {
+  right: 1em;
+  background-image: url('/img/icons/arrow-right.svg');
+  width: 40px;
+  height: 40px;
+}
