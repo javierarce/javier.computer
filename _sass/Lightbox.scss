@@ -1,3 +1,8 @@
+.enable-lightbox .Photo {
+  cursor: pointer;
+  transition: opacity 250ms ease-in-out;
+}
+
 .Lightbox {
   display: flex;
   position: fixed;
@@ -23,11 +28,6 @@
 
 .Lightbox-image.is-loaded {
   opacity: 1;
-}
-
-.Photo {
-  cursor: pointer;
-  transition: opacity 250ms ease-in-out;
 }
 
 .Photo:hover {
