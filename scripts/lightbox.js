@@ -68,7 +68,9 @@ class Lightbox {
       });
     });
 
-    this.$close.addEventListener("click", () => this.close());
+    this.$close.addEventListener("click", () => this.close(), {
+      passive: true,
+    });
 
     this.$prev.addEventListener("click", (e) => {
       e.preventDefault();
@@ -80,11 +82,15 @@ class Lightbox {
       this.navigatePhoto(1);
     });
 
-    this.lightbox.addEventListener("click", (e) => {
-      if (e.target === this.lightbox) {
-        this.close();
-      }
-    });
+    this.lightbox.addEventListener(
+      "click",
+      (e) => {
+        if (e.target === this.lightbox) {
+          this.close();
+        }
+      },
+      { passive: true },
+    );
 
     document.addEventListener("keydown", (e) => {
       if (!this.lightbox.classList.contains("is-active")) {
