@@ -181,7 +181,7 @@ class Lightbox {
       this.lightbox.classList.add("is-active");
       this.isLoading = true;
       this.updateSpinner();
-      this.$image.style.opacity = "0";
+      // this.$image.style.opacity = "0";
       this.$image.src = this.getHighestResolutionImage(srcset);
       document.body.style.overflow = "hidden";
       this.updateNavButtons();
