@@ -84,6 +84,14 @@ class Lightbox {
     });
   }
 
+  isMobile() {
+    return window.innerWidth <= 768;
+  }
+
+  isNarrowScreen() {
+    return window.innerWidth <= 1280;
+  }
+
   getHighestResolutionImage(srcset) {
     const srcsetEntries = srcset.split(",").map((entry) => entry.trim());
     let highestResImage = srcsetEntries[0];
@@ -92,7 +100,20 @@ class Lightbox {
     srcsetEntries.forEach((entry) => {
       const [url, resolution] = entry.split(" ");
       const resValue = parseInt(resolution.replace("w", ""), 10);
-      if (resValue > highestResValue) {
+
+      if (this.isMobile() && resValue <= 640) {
+        highestResImage = url;
+      } else if (
+        this.isNarrowScreen() &&
+        !this.isMobile() &&
+        resValue <= 1280
+      ) {
+        highestResImage = url;
+      } else if (
+        !this.isMobile() &&
+        !this.isNarrowScreen() &&
+        resValue > highestResValue
+      ) {
         highestResValue = resValue;
         highestResImage = url;
       }
