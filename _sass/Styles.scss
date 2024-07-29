@@ -79,6 +79,10 @@ p.is-light p a {
   display: none;
 }
 
+.Layout__home .Content {
+  gap: 2em;
+}
+
 .is-hidden-from-home {
   border: 1px solid rgba(255, 255, 255, 0.4);
   padding: 0.8em;
