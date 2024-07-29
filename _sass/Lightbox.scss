@@ -3,6 +3,10 @@
   transition: opacity 250ms ease-in-out;
 }
 
+.enable-lightbox .Photo:hover {
+  opacity: 0.8;
+}
+
 .Lightbox {
   display: flex;
   position: fixed;
@@ -28,10 +32,6 @@
 
 .Lightbox-image.is-loaded {
   opacity: 1;
-}
-
-.Photo:hover {
-  opacity: 0.8;
 }
 
 .Lightbox__content {
