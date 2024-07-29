@@ -287,8 +287,9 @@ figcaption {
 }
 
 @media all and (max-width: 640px) {
-  .Layout__grid .Content .Photo__collection {
-    gap: 4em;
+
+  .Layout__grid .Content .Photo__grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   }
 
   .Layout__grid .Content .Photo__collections {
