@@ -102,3 +102,9 @@
   height: 28px;
   background: url('/img/icons/close.svg') no-repeat center;
 }
+
+@media all and (max-width: 640px) {
+  .Lightbox__image {
+    max-width: 100%;
+  }
+}
