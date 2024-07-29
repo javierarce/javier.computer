@@ -16,9 +16,19 @@
 
 .Spinner.is-lightbox {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 1em;
+  right: 2.6em;
+  border-top-width: 2px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+}
+
+.Spinner.is-lightbox,
+.Spinner.is-lightbox:after {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
 }
 
 .Spinner.is-visible {

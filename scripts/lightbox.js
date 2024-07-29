@@ -1,6 +1,8 @@
 class Lightbox {
   constructor() {
-    if (!document.querySelector(".enable-lightbox")) return;
+    if (!document.querySelector(".enable-lightbox")) {
+      return;
+    }
 
     this.injectMarkup();
     this.lightbox = document.querySelector(".Lightbox");
@@ -22,11 +24,11 @@ class Lightbox {
         <div class="Lightbox__content">
           <div class="Lightbox__imageContainer">
             <img src="" alt="" class="Lightbox__image">
-            <div class="Spinner is-lightbox"></div>
           </div>
         </div>
         <button class="Lightbox__button is-prev"></button>
         <button class="Lightbox__button is-next"></button>
+        <div class="Spinner is-lightbox"></div>
       </div>
     `;
 
@@ -39,10 +41,12 @@ class Lightbox {
     });
 
     this.$close.addEventListener("click", () => this.close());
+
     this.$prev.addEventListener("click", (e) => {
       e.preventDefault();
       this.navigatePhoto(-1);
     });
+
     this.$next.addEventListener("click", (e) => {
       e.preventDefault();
       this.navigatePhoto(1);
@@ -55,7 +59,9 @@ class Lightbox {
     });
 
     document.addEventListener("keydown", (e) => {
-      if (!this.lightbox.classList.contains("is-active")) return;
+      if (!this.lightbox.classList.contains("is-active")) {
+        return;
+      }
 
       switch (e.key) {
         case "ArrowLeft":
