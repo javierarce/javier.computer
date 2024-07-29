@@ -1,8 +1,12 @@
+.Posts,
+.Layout__post .Post {
+  margin: 0 0 2em 0;
+}
+
 .Posts {
   display: flex;
   flex-direction: column;
   gap: 3em;
-  margin: 0 0 2em 0;
   max-width: var(--width);
 }
 
