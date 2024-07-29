@@ -98,10 +98,6 @@ figcaption {
   font-size: 1.2em;
 }
 
-.Layout__reportage .Photo__layout {
-  gap: 4em;
-}
-
 
 /* Layout: titles */
 
@@ -291,10 +287,6 @@ figcaption {
 }
 
 @media all and (max-width: 640px) {
-  .Layout__reportage .Photo__layout {
-    gap: 2em;
-  }
-
   .Layout__grid .Content .Photo__collection {
     gap: 4em;
   }
