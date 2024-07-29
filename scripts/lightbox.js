@@ -5,6 +5,7 @@ class Lightbox {
     }
 
     this.injectMarkup();
+
     this.lightbox = document.querySelector(".Lightbox");
     this.$image = document.querySelector(".Lightbox__image");
     this.spinner = document.querySelector(".Spinner");
@@ -83,15 +84,36 @@ class Lightbox {
     });
   }
 
+  getHighestResolutionImage(srcset) {
+    const srcsetEntries = srcset.split(",").map((entry) => entry.trim());
+    let highestResImage = srcsetEntries[0];
+    let highestResValue = 0;
+
+    srcsetEntries.forEach((entry) => {
+      const [url, resolution] = entry.split(" ");
+      const resValue = parseInt(resolution.replace("w", ""), 10);
+      if (resValue > highestResValue) {
+        highestResValue = resValue;
+        highestResImage = url;
+      }
+    });
+
+    return highestResImage;
+  }
+
   open(index) {
     this.currentIndex = index;
-    const src = this.photos[this.currentIndex]
-      .querySelector("img.lazy")
-      .getAttribute("data-src");
+    const picture = this.photos[this.currentIndex].querySelector("picture");
+    const srcset = picture.querySelector("source[type='image/webp']")
+      ? picture
+          .querySelector("source[type='image/webp']")
+          .getAttribute("data-srcset")
+      : picture.querySelector("source:not([type])").getAttribute("data-srcset");
+
     this.lightbox.classList.add("is-active");
     this.spinner.style.display = "block";
     this.$image.style.opacity = "0";
-    this.$image.src = src;
+    this.$image.src = this.getHighestResolutionImage(srcset);
     document.body.style.overflow = "hidden";
     this.updateNavButtons();
   }
