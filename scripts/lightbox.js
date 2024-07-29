@@ -4,6 +4,10 @@ class Lightbox {
       return;
     }
 
+    this.BREAKPOINT_MOBILE = 640;
+    this.BREAKPOINT_NARROW_DESKTOP = 1280;
+    this.DELAY = 300;
+
     this.injectMarkup();
 
     this.lightbox = document.querySelector(".Lightbox");
@@ -85,11 +89,11 @@ class Lightbox {
   }
 
   isMobile() {
-    return window.innerWidth <= 768;
+    return window.innerWidth <= this.BREAKPOINT_MOBILE;
   }
 
   isNarrowScreen() {
-    return window.innerWidth <= 1280;
+    return window.innerWidth <= this.BREAKPOINT_NARROW_DESKTOP;
   }
 
   getHighestResolutionImage(srcset) {
@@ -101,12 +105,12 @@ class Lightbox {
       const [url, resolution] = entry.split(" ");
       const resValue = parseInt(resolution.replace("w", ""), 10);
 
-      if (this.isMobile() && resValue <= 640) {
+      if (this.isMobile() && resValue <= this.BREAKPOINT_MOBILE) {
         highestResImage = url;
       } else if (
         this.isNarrowScreen() &&
         !this.isMobile() &&
-        resValue <= 1280
+        resValue <= this.BREAKPOINT_NARROW_DESKTOP
       ) {
         highestResImage = url;
       } else if (
@@ -147,7 +151,7 @@ class Lightbox {
       this.$image.src = "";
       this.$image.classList.remove("is-loaded");
       this.spinner.style.display = "block";
-    }, 300);
+    }, this.DELAY);
   }
 
   navigatePhoto(direction) {
