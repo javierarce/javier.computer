@@ -1,9 +1,9 @@
-.enable-lightbox .Photo {
+.has-lightbox .Photo {
   cursor: pointer;
   transition: opacity 250ms ease-in-out;
 }
 
-.enable-lightbox .Photo:hover {
+.has-lightbox .Photo:hover {
   opacity: 0.8;
 }
 

@@ -1,6 +1,6 @@
 class Lightbox {
   constructor() {
-    if (!document.querySelector(".enable-lightbox")) {
+    if (!document.querySelector(".has-lightbox")) {
       return;
     }
 

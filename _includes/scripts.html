@@ -28,6 +28,6 @@
 {% endif -%}
 <link rel="stylesheet" href="{{ 'css/style.css' | relative_url }}?version={{site.version}}" />
 
-{% if page.category == 'reportage' -%}
+{% if page.category == 'reportage' or layout.grid -%}
 <script src="{{ 'scripts/lightbox.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
 {% endif -%}

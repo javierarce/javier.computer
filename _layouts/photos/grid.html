@@ -7,7 +7,7 @@ grid: true
 {% assign location = page.location | downcase -%}
 
 <!--- photos/grid -->
-<div class="Content">
+<div class="Content has-lightbox">
   {% include navigation.html -%}
 
   <div class="Photo__collections">
@@ -34,11 +34,11 @@ grid: true
         {% else -%}
         {% assign filename = file -%}
         {% endif -%}
-        {% include photos/single.html photo=photo filename=filename url=photo.url -%}
+        {% include photos/single.html photo=photo filename=filename -%}
         {% endfor -%}
       </div>
       {% else -%}
-      {% include photos/single.html photo=photo filename=photo.filename url=photo.url -%}
+      {% include photos/single.html photo=photo filename=photo.filename -%}
       {% endif -%}
 
       {% include photos/footer.html photo=photo pagination=false -%}
