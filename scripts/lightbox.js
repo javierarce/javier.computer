@@ -17,7 +17,9 @@ class Lightbox {
     this.$prev = document.querySelector(".Lightbox__button.is-prev");
     this.$next = document.querySelector(".Lightbox__button.is-next");
     this.photos = Array.from(document.querySelectorAll(".Photo"));
+
     this.currentIndex = 0;
+    this.isLoading = false;
 
     this.bindEvents();
   }
@@ -40,9 +42,30 @@ class Lightbox {
     document.body.insertAdjacentHTML("beforeend", lightboxMarkup);
   }
 
+  preloadAdjacentImages() {
+    const preloadNext = (this.currentIndex + 1) % this.photos.length;
+    const preloadPrev =
+      (this.currentIndex - 1 + this.photos.length) % this.photos.length;
+
+    [preloadNext, preloadPrev].forEach((index) => {
+      const img = new Image();
+      const picture = this.photos[index].querySelector("picture");
+      const srcset = picture.querySelector("source[type='image/webp']")
+        ? picture
+            .querySelector("source[type='image/webp']")
+            .getAttribute("data-srcset")
+        : picture
+            .querySelector("source:not([type])")
+            .getAttribute("data-srcset");
+      img.src = this.getHighestResolutionImage(srcset);
+    });
+  }
+
   bindEvents() {
     this.photos.forEach((photo, index) => {
-      photo.addEventListener("click", () => this.open(index));
+      photo.addEventListener("click", () => this.open(index), {
+        passive: true,
+      });
     });
 
     this.$close.addEventListener("click", () => this.close());
@@ -82,10 +105,18 @@ class Lightbox {
     });
 
     this.$image.addEventListener("load", () => {
-      this.spinner.style.display = "none";
+      this.isLoading = false;
+      this.updateSpinner();
       this.$image.style.opacity = "1";
       this.$image.classList.add("is-loaded");
     });
+
+    // this.$image.addEventListener("error", (e) => {
+    //   this.isLoading = false;
+    //   this.updateSpinner();
+    //   console.error("Failed to load image");
+    //   console.log(e);
+    // });
   }
 
   isMobile() {
@@ -98,21 +129,21 @@ class Lightbox {
 
   getHighestResolutionImage(srcset) {
     const srcsetEntries = srcset.split(",").map((entry) => entry.trim());
-    let highestResImage = srcsetEntries[0];
+    let highestResImage = srcsetEntries[0].split(" ")[0];
     let highestResValue = 0;
 
-    srcsetEntries.forEach((entry) => {
+    for (const entry of srcsetEntries) {
       const [url, resolution] = entry.split(" ");
       const resValue = parseInt(resolution.replace("w", ""), 10);
 
       if (this.isMobile() && resValue <= this.BREAKPOINT_MOBILE) {
-        highestResImage = url;
+        return url;
       } else if (
         this.isNarrowScreen() &&
         !this.isMobile() &&
         resValue <= this.BREAKPOINT_NARROW_DESKTOP
       ) {
-        highestResImage = url;
+        return url;
       } else if (
         !this.isMobile() &&
         !this.isNarrowScreen() &&
@@ -121,13 +152,18 @@ class Lightbox {
         highestResValue = resValue;
         highestResImage = url;
       }
-    });
+    }
 
     return highestResImage;
   }
 
+  updateSpinner() {
+    this.spinner.style.display = this.isLoading ? "block" : "none";
+  }
+
   open(index) {
     this.currentIndex = index;
+
     const picture = this.photos[this.currentIndex].querySelector("picture");
     const srcset = picture.querySelector("source[type='image/webp']")
       ? picture
@@ -135,12 +171,16 @@ class Lightbox {
           .getAttribute("data-srcset")
       : picture.querySelector("source:not([type])").getAttribute("data-srcset");
 
-    this.lightbox.classList.add("is-active");
-    this.spinner.style.display = "block";
-    this.$image.style.opacity = "0";
-    this.$image.src = this.getHighestResolutionImage(srcset);
-    document.body.style.overflow = "hidden";
-    this.updateNavButtons();
+    requestAnimationFrame(() => {
+      this.lightbox.classList.add("is-active");
+      this.isLoading = true;
+      this.updateSpinner();
+      this.$image.style.opacity = "0";
+      this.$image.src = this.getHighestResolutionImage(srcset);
+      document.body.style.overflow = "hidden";
+      this.updateNavButtons();
+      this.preloadAdjacentImages();
+    });
   }
 
   close() {
@@ -150,7 +190,8 @@ class Lightbox {
     setTimeout(() => {
       this.$image.src = "";
       this.$image.classList.remove("is-loaded");
-      this.spinner.style.display = "block";
+      this.isLoading = false;
+      this.updateSpinner();
     }, this.DELAY);
   }
 
@@ -158,6 +199,7 @@ class Lightbox {
     this.currentIndex =
       (this.currentIndex + direction + this.photos.length) % this.photos.length;
     this.open(this.currentIndex);
+    this.preloadAdjacentImages();
   }
 
   updateNavButtons() {
