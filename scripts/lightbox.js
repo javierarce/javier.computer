@@ -14,6 +14,7 @@ class Lightbox {
     this.$image = document.querySelector(".Lightbox__image");
     this.spinner = document.querySelector(".Spinner");
     this.$close = document.querySelector(".Lightbox__button.is-close");
+    this.$title = document.querySelector(".Lightbox__title");
     this.$prev = document.querySelector(".Lightbox__button.is-prev");
     this.$next = document.querySelector(".Lightbox__button.is-next");
     this.photos = Array.from(document.querySelectorAll(".Photo"));
@@ -31,6 +32,7 @@ class Lightbox {
         <div class="Lightbox__content">
           <div class="Lightbox__imageContainer">
             <img src="" alt="" class="Lightbox__image">
+            <div class="Lightbox__title"></div>
           </div>
         </div>
         <button class="Lightbox__button is-prev"></button>
@@ -181,9 +183,10 @@ class Lightbox {
       this.lightbox.classList.add("is-active");
       this.isLoading = true;
       this.updateSpinner();
-      // this.$image.style.opacity = "0";
       this.$image.src = this.getHighestResolutionImage(srcset);
+      this.title = picture.querySelector("img").getAttribute("title");
       document.body.style.overflow = "hidden";
+      this.updateTitle();
       this.updateNavButtons();
       this.preloadAdjacentImages();
     });
@@ -206,6 +209,18 @@ class Lightbox {
       (this.currentIndex + direction + this.photos.length) % this.photos.length;
     this.open(this.currentIndex);
     this.preloadAdjacentImages();
+  }
+
+  updateTitle() {
+    if (!this.title) {
+      this.$title.classList.remove("is-visible");
+      return;
+    }
+
+    this.$title.textContent = this.title;
+    this.$title.setAttribute("aria-label", this.title);
+    this.$title.classList.add("is-visible");
+    this.$image.setAttribute("title", this.title);
   }
 
   updateNavButtons() {

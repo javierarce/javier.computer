@@ -3,13 +3,17 @@
   <div class="Photo__content">
     <figure class="Figure">
       <picture>
-        <source data-srcset="https://img.javier.computer/{{ include.location }}/{{ include.filename }}_2880.webp 2880w" type="image/webp">
-          <source data-srcset="https://img.javier.computer/{{ include.location }}/{{ include.filename }}_2880.jpg 2880w">
-            <img class="lazy" data-src="https://img.javier.computer/{{ include.location }}/{{ include.filename }}_2880.jpg">
+        <source data-srcset="https://img.javier.computer/{{ include.location }}/{{ include.filename }}_2880.webp 2880w"
+          type="image/webp">
+        <source data-srcset="https://img.javier.computer/{{ include.location }}/{{ include.filename }}_2880.jpg 2880w">
+        <img class="lazy" data-src="https://img.javier.computer/{{ include.location }}/{{ include.filename }}_2880.jpg"
+          {% if include.caption -%} title="{{ include.caption }}" {% endif %}>
       </picture>
     </figure>
     {% if include.caption -%}
+    {% unless include.hide_caption %}
     <figcaption>{{ include.caption }}</figcaption>
+    {% endunless %}
     {% endif %}
   </div>
 </div>

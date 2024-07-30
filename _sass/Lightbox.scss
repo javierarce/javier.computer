@@ -21,6 +21,22 @@
   transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out;
 }
 
+.Lightbox__title {
+  position: absolute;
+  bottom: 1em;
+  text-shadow: 1px 1px 1em rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out;
+  text-align: center;
+  line-height: normal;
+}
+
+.Lightbox__title.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
 .Lightbox.is-active {
   opacity: 1;
   visibility: visible;

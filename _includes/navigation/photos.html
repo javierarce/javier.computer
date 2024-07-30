@@ -6,9 +6,11 @@
 {% endif %}
 
 <div class="Navigation__links">
-  <a class="Navigation__link is-selected" href="/photos/{{ page.location }}{{ grid }}">{{
-    matching_location.title
-    }}</a>
+  {% if page.category == 'photo' -%}
+  <a class="Navigation__link is-selected" href="{{ page.permalink }}">Post</a>
+  {% endif -%}
+  <a class="Navigation__link {% if page.category == 'photos' %}is-selected{% endif %}"
+    href="/photos/{{ page.location }}{{ grid }}">{{ matching_location.title }}</a>
   <a class="Navigation__link {% if permalink == 'photos' %}is-selected{% endif %}" href="/photos">Feed</a>
   <a class="Navigation__link {% if permalink == 'photos/archive' %}is-selected{% endif %}"
     href="/photos/archive">Archive</a>
