@@ -50,7 +50,7 @@ category: reportage
     <figcaption>Ningún animal fue maltratado etc.</figcaption>
 </div>
 
-<p>Relacionado con las fotos anteriores y volviendo a Wilder, de él aprendí que a veces es mejor sugerir que mostrar.</p>
+<p>Relacionado con lo anterior, de Wilder aprendí que es mejor sugerir que mostrar.</p>
 <div class="g">
     {% include photos/custom.html classname='is-ok' location='berlin' filename='2024-03-31-Berlin-DSCF1393_2' caption=""-%}
 </div>
@@ -102,11 +102,12 @@ category: reportage
         {% include photos/custom.html classname='is-ok' location='berlin' filename='2024-04-13-Berlin-DSCF1910' -%}
         {% include photos/custom.html classname='is-ok' location='berlin' filename='2024-04-06-Berlin-DSCF1570' -%}
     </div>
+    <figcaption>O puede que no, habría sido muy <em>creepy</em> ponerse a investigar.</figcaption>
 </div>
 
 <p>Esto ha sido todo, muchas gracias por tu atención. Como mencioné al
     principio del post, pasaré agosto en Berlín. Si estás por allí y
-    tienes sugerencias o planes interesantes <a href="/contact">escríbeme</a>.</p>
+    tienes sugerencias o planes interesantes <a href="/contact">escríbeme</a>, por favor.</p>
 
 <div class="g">
     {% include photos/custom.html classname='is-wide' location='berlin' filename='2024-04-13-Berlin-DSCF1884_2' -%}
