@@ -4,7 +4,7 @@
 <meta name="robots" content="noai, noimageai">
 
 <link rel="schema.dcterms" href="https://dublincore.org/specifications/dublin-core/dcmi-terms/">
-<meta name="dcterms.dateCopyrighted" content="{{ 'now' | date: "%Y" }}">
+<meta name="dcterms.dateCopyrighted" content="{{ 'now' | date: " %Y" }}">
 <meta name="dcterms.rightsHolder" content="Javier Arce">
 
 {% if page.title -%}
@@ -29,6 +29,11 @@
 <meta name=twitter:image content="https://api.javier.computer/svg?title={{ page.title }}">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:type" content="article">
+{% elsif page.category == "maps" -%}
+<meta property='og:image' content="https://api.javier.computer/svg?title={{ page.description }}" />
+<meta name=twitter:image content="https://api.javier.computer/svg?title={{ page.description }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="article">
 {% elsif page.filename -%}
 <meta property='og:image' content="https://img.javier.computer/{{ page.location }}/{{ page.filename }}_1280.jpg" />
 <meta name=twitter:image content="https://img.javier.computer/{{ page.location }}/{{ page.filename }}_1280.jpg">
@@ -42,7 +47,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:type" content="article">
 {% else %}
-<meta property='og:image' content="{{ base.url | prepend: site.url }}/img/card.png?version={{site.version}}"/>
+<meta property='og:image' content="{{ base.url | prepend: site.url }}/img/card.png?version={{site.version}}" />
 <meta name=twitter:image content="{{ base.url | prepend: site.url }}/img/card.png?version={{site.version}}">
 <meta name="twitter:card" content="summary_large_image">
 <meta property=og:type content="website">

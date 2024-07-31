@@ -1,7 +1,7 @@
 ---
 layout: map
-title:  Barcelona
-description: Guía de bolsillo
+title: Barcelona
+description: Guía de bolsillo de Barcelona
 className: Map
 category: maps
 permalink: maps/barcelona
