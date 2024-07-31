@@ -112,19 +112,28 @@ class Lightbox {
       }
     });
 
+    this.lightbox.addEventListener(
+      "mouseenter",
+      () => {
+        this.lightbox.classList.remove("hide-ui");
+      },
+      { passive: true },
+    );
+
+    this.lightbox.addEventListener(
+      "mouseleave",
+      () => {
+        this.lightbox.classList.add("hide-ui");
+      },
+      { passive: true },
+    );
+
     this.$image.addEventListener("load", () => {
       this.isLoading = false;
       this.updateSpinner();
       this.$image.style.opacity = "1";
       this.$image.classList.add("is-loaded");
     });
-
-    // this.$image.addEventListener("error", (e) => {
-    //   this.isLoading = false;
-    //   this.updateSpinner();
-    //   console.error("Failed to load image");
-    //   console.log(e);
-    // });
   }
 
   isMobile() {
@@ -180,13 +189,15 @@ class Lightbox {
       : picture.querySelector("source:not([type])").getAttribute("data-srcset");
 
     requestAnimationFrame(() => {
+      this.title = picture.querySelector("img").getAttribute("title");
+      this.alt = picture.querySelector("img").getAttribute("alt");
+
       this.lightbox.classList.add("is-active");
       this.isLoading = true;
       this.updateSpinner();
       this.$image.src = this.getHighestResolutionImage(srcset);
-      this.title = picture.querySelector("img").getAttribute("title");
       document.body.style.overflow = "hidden";
-      this.updateTitle();
+      this.updateMetadata();
       this.updateNavButtons();
       this.preloadAdjacentImages();
     });
@@ -211,7 +222,11 @@ class Lightbox {
     this.preloadAdjacentImages();
   }
 
-  updateTitle() {
+  updateMetadata() {
+    if (this.alt) {
+      this.$image.setAttribute("alt", this.alt);
+    }
+
     if (!this.title) {
       this.$title.classList.remove("is-visible");
       return;
@@ -219,8 +234,11 @@ class Lightbox {
 
     this.$title.textContent = this.title;
     this.$title.setAttribute("aria-label", this.title);
-    this.$title.classList.add("is-visible");
     this.$image.setAttribute("title", this.title);
+
+    setTimeout(() => {
+      this.$title.classList.add("is-visible");
+    }, this.DELAY);
   }
 
   updateNavButtons() {

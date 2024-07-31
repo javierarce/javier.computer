@@ -10,6 +10,12 @@
     <span class="on"></span>
     <span class="off"></span>
   </open-heart>
+
+  {% if include.readmore == "true" -%}
+  <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
+  <a href="{{ post.url }}" class="is-underlined">Leer más</a>
+  {% endif -%}
+
   {% if include.pagination -%}
   {% include pagination.html post=include.photo -%}
   {% endif -%}

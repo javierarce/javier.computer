@@ -1,8 +1,17 @@
 <!-- photos / feed -->
-<div class="Photo__collection">
-  {% if post.filenames -%}
-  {% for file in post.filenames -%}
+{% assign readmore = "false" %}
 
+<div class="Photo__collection">
+  {% if post.category == 'reportage' %}
+  {% assign filename = post.filename %}
+  {% include photos/single.html photo=post filename=filename caption=caption -%}
+  {% assign readmore = "true" %}
+
+  <div class="Post__content">
+    <p>{{ post.intro }}</p>
+  </div>
+  {% elsif post.filenames -%}
+  {% for file in post.filenames -%}
   {% if file.filename -%}
   {% assign filename = file.filename -%}
   {% assign caption = file.caption -%}
@@ -27,5 +36,5 @@
   {{ post.content }}
   {% endif %}
 
-  {% include photos/footer.html photo=post pagination=false -%}
+  {% include photos/footer.html photo=post pagination=false readmore=readmore-%}
 </div>

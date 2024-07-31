@@ -7,7 +7,8 @@
           type="image/webp">
         <source data-srcset="https://img.javier.computer/{{ include.location }}/{{ include.filename }}_2880.jpg 2880w">
         <img class="lazy" data-src="https://img.javier.computer/{{ include.location }}/{{ include.filename }}_2880.jpg"
-          {% if include.caption -%} title="{{ include.caption }}" {% endif %}>
+          {% if include.alt -%} alt="{{ include.alt }}" {% endif %} {% if include.caption -%}
+          title="{{ include.caption }}" {% endif %}>
       </picture>
     </figure>
     {% if include.caption -%}

@@ -21,6 +21,12 @@
   transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out;
 }
 
+.Lightbox.hide-ui .Lightbox__button,
+.Lightbox.hide-ui .Lightbox__title {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .Lightbox__title {
   position: absolute;
   bottom: 1em;
