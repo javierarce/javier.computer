@@ -332,9 +332,17 @@ figcaption {
 }
 
 @media all and (max-width: 640px) {
+
+  .gg,
   .gg.is-half {
     display: flex;
     flex-direction: column;
+  }
+
+  .gg.is-vertical .Photo img,
+  .gg.is-square .Photo img,
+  .gg .Photo img {
+    aspect-ratio: auto;
   }
 
   .Layout__grid .Content .Photo__grid {
@@ -374,12 +382,11 @@ figcaption {
     flex-direction: column;
   }
 
-  .h,
-  .g {
-    gap: 2em;
-  }
-
   .g.with-caption {
     gap: 0.8em;
+  }
+
+  figcaption {
+    font-size: 0.9em;
   }
 }
