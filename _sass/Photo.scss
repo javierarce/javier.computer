@@ -332,6 +332,10 @@ figcaption {
 }
 
 @media all and (max-width: 640px) {
+  .gg.is-half {
+    display: flex;
+    flex-direction: column;
+  }
 
   .Layout__grid .Content .Photo__grid {
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
