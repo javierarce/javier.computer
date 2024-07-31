@@ -1,6 +1,6 @@
 ---
 layout: reportage
-title: Berlin
+title: Berlín en primavera
 date: 2024-07-31
 hide_title: true
 intro: "Una lista no exhaustiva de cosas que vi durante mi último viaje a Berlín en primavera como preparación para mi inminente viaje a Berlín en verano."
@@ -28,9 +28,9 @@ category: reportage
 
 <div class="g">
     <div class="gg is-vertical">
-        {% include photos/custom.html classname='is-ok' location='berlin' filename='2024-04-09-Berlin-R0006908_2' caption="Diversos zapatos" hide_caption="true"-%}
-        {% include photos/custom.html classname='is-ok' location='berlin' filename='2024-04-10-Berlin-R0006933_2' caption="Diversos zapatos" hide_caption="true"-%}
-        {% include photos/custom.html classname='is-ok' location='berlin' filename='2024-04-13-Berlin-DSCF1866_2' caption="Diversos zapatos" hide_caption="true"-%}
+        {% include photos/custom.html classname='is-ok' location='berlin' filename='2024-04-09-Berlin-R0006908_2' -%}
+        {% include photos/custom.html classname='is-ok' location='berlin' filename='2024-04-10-Berlin-R0006933_2' -%}
+        {% include photos/custom.html classname='is-ok' location='berlin' filename='2024-04-13-Berlin-DSCF1866_2' -%}
     </div>
 </div>
 
