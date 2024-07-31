@@ -292,6 +292,13 @@ img.lazy.error {
   color: var(--text);
 }
 
+
+.Layout__contact p a,
+.Layout__contact p a:hover {
+  color: var(--link);
+}
+
+
 .Book__spine.is-2[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))) .Book__title:after,
 .Book__spine.is-6[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))) .Book__title:after {
   color: var(--black);

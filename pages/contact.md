@@ -5,8 +5,6 @@ className: contact
 permalink: contact
 ---
 
-This contact form is attached to my Kindle. You can send me messages there and
-I'll read them whenever I use it to read a book.
+The form below is attached to my eBook reader. If you send me a message, I'll see it whenever I'm reading a book.
 
-If you want to use a less silly, more traditional method of contact that I check often, you can send me an
-email <a href="mailto:email@javier.computer">here</a>.
+If you prefer a faster, more traditional method of contact that I check often, you can send me an email <a href="mailto:email@javier.computer">here</a>.
