@@ -63,6 +63,30 @@ layout: none
       {% elsif post.category == 'quote' %}
         <p><blockquote>{{ post.content | xml_escape }}</blockquote></p>
         <p>{{ post.author }} ({{post.year}}). {{ post.title }}. {{ post.editorial}}</p>
+      {% elsif post.category == 'reportage' %}
+      <![CDATA[
+        {% if post.filenames %}
+          
+
+          {% for file in post.filenames %}
+
+          {% if file.filename -%}
+          {% assign filename = file.filename -%}
+          {% assign caption = file.caption | default: post.title | strip_html | strip_newlines | xml_escape -%}
+          {% else -%}
+          {% assign filename = file -%}
+          {% assign caption = post.title -%}
+          {% endif -%}
+
+            <img src="https://img.javier.computer/{{ post.location }}/{{ filename }}_1280.jpg" alt="{{ caption }}"/>  
+          {% endfor %}
+        {% else %}
+          <img src="https://img.javier.computer/{{ post.location }}/{{ post.filename }}_1280.jpg" alt="{{post.title}}" />  
+        {% endif %}
+        <p>{{ post.intro | xml_escape }} <a href="{{ post.url }}" target="_blank">Leer más</a></p>   
+          <hr />
+          <p><a href="{{ site.url}}/heart?id={{post.url}}">Me gusta</a></p>
+        ]]>
       {% elsif post.category == 'music' %}
       <![CDATA[
       <img src="https://javier.computer{{ post.img }}" alt="{{post.title}} by {{ post.band }}"/>  
