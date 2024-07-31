@@ -1,7 +1,16 @@
 {
-  "updated_at": "2024-07-29",
-  "count": 703,
+  "updated_at": "2024-07-31",
+  "count": 704,
   "movies": [
+    {
+      "watched_on": "2024-07-30",
+      "title": "Wings of Desire",
+      "year": "1987",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": true,
+      "permalink": "wings-of-desire"
+    },
     {
       "watched_on": "2024-07-28",
       "title": "Paranoiac",
