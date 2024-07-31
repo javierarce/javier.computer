@@ -72,7 +72,7 @@ category: reportage
     <div class="g">
         {% include photos/custom.html classname='is-ok' location='berlin' filename='2024-03-24-Berlin-DSCF1311_2' -%}
     </div>
-    <figcaption>Cuesta imaginar que la ciudad cambie por completo a patir de otoño, ¿verdad?</figcaption>
+    <figcaption>Cuesta imaginar que la ciudad cambie por completo a partir de otoño, ¿verdad?</figcaption>
 </div>
 
 <p>También vi personajes de variada índole atravesando distintos momentos vitales de los que no puede decirse que fuera realmente partícipe.</p>
