@@ -86,7 +86,7 @@ category: reportage
         {% include photos/custom.html classname='is-ok' location='berlin' filename='2024-04-09-Berlin-DSCF1785' -%}
         {% include photos/custom.html classname='is-ok' location='berlin' filename='2024-04-09-Berlin-DSCF1777' -%}
     </div>
-    <figcaption>Salvo por el breve instante cuando me planté frente a ellos y capturé su alma con mi cámara, se entiende.</figcaption>
+    <figcaption>Salvo por el breve instante cuando me planté frente a ellos y les capturé con mi cámara, se entiende.</figcaption>
 </div>
 
 <p>Y por último, edificios arquitectónica y topológicamente llamativos donde puede que habitasen los personajes mencionados anteriormente.</p>
