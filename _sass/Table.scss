@@ -4,7 +4,7 @@
 .Layout__books td a:hover,
 .Layout__movies td a:hover,
 .Layout__projects td a:hover {
-  color: var(--link); 
+  color: var(--link);
 }
 
 .Layout__books h2,
@@ -12,7 +12,7 @@
   margin-bottom: 0;
 }
 
-table + h2 {
+table+h2 {
   margin: 2em 0 0 0;
 }
 
@@ -24,7 +24,7 @@ table {
 table th {
   padding: 0.8em 0;
   text-transform: uppercase;
-  opacity: 0.5;
+  opacity: var(--lightOpacity);
 }
 
 table thead,
@@ -43,6 +43,7 @@ table td {
 .Layout__projects table td:nth-child(1) {
   width: 200px;
 }
+
 .Layout__projects table th:nth-child(3),
 .Layout__projects table td:nth-child(3) {
   width: 200px;
@@ -59,8 +60,7 @@ table td {
 }
 
 .Layout__books table th:nth-child(3),
-.Layout__books table td:nth-child(3) {
-}
+.Layout__books table td:nth-child(3) {}
 
 .Layout__books table th:last-child,
 .Layout__books table td:last-child {
@@ -75,7 +75,7 @@ table td {
 }
 
 .Layout__movies table td:nth-child(1) {
-  opacity: 0.5;
+  opacity: var(--lightOpacity);
 }
 
 .Layout__movies table th:nth-child(3),
@@ -94,24 +94,29 @@ table tr:last-child td {
 }
 
 @media all and (max-width: 640px) {
+
   .Layout__books,
   .Layout__movies,
   .Layout__projects {
     table {
       width: 100%;
     }
+
     table tr:last-child {
       border: none;
     }
+
     table tr {
       display: flex;
       flex-direction: column;
       border-bottom: 1px solid var(--gray);
       padding: 0.4em 0;
     }
+
     table thead {
       display: none;
     }
+
     table td {
       width: 100% !important;
       padding: 0.2em 0;

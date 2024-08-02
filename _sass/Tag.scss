@@ -31,14 +31,12 @@
 }
 
 .Tags__list .Tag .Tag__date {
-  opacity: 0.5;
   font-size: 0.9em;
+  opacity: var(--lightOpacity);
 }
 
 .Tags__list p a {
   text-decoration: underline;
 }
 
-.Tags__listItemDate {
-
-}
+.Tags__listItemDate {}

@@ -15,7 +15,7 @@ className: About
 <hr />
 
 <div class="Contact">
-<form class="Form" method="post" action="https://mailer.javier.computer/subscription/form">
+<form class="Form is-visible" method="post" action="https://mailer.javier.computer/subscription/form">
 <input type="hidden" name="nonce" />
 <input type="hidden" name="l" value="10546b54-985f-41ab-836c-eac7e11477ef"/>
 

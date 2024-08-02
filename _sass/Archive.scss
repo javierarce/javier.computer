@@ -28,6 +28,6 @@
 
 .Archive__day {
   font-family: 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace;
-  opacity: 0.5;
   margin: 0 0.4em 0 0;
+  opacity: var(--lightOpacity);
 }

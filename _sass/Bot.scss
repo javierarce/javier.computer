@@ -32,10 +32,10 @@
 .Bot__content h2+h3 {
   font-size: 0.9em;
   font-weight: normal;
-  opacity: 0.5;
   text-align: center;
   margin-top: 0;
   margin-bottom: 2em;
+  opacity: var(--lightOpacity);
 }
 
 .Bot p,

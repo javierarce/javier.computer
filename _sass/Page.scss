@@ -21,11 +21,11 @@
 
 .Page__date,
 .Page__date:hover {
-  opacity: 0.5;
   font-size: 0.8em;
   user-select: none;
   text-decoration: none;
   font-weight: 400;
+  opacity: var(--lightOpacity);
 }
 
 @media all and (max-width: 1024px) {

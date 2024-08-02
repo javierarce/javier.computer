@@ -1,7 +1,7 @@
 figcaption {
   font-size: 1em;
   text-align: center;
-  opacity: 0.5;
+  opacity: var(--lightOpacity);
 }
 
 /* Layout: content */
@@ -87,10 +87,10 @@ figcaption {
 
 .Layout__reportage h2+h3 {
   font-weight: normal;
-  opacity: 0.5;
   text-align: center;
   margin-top: 0;
   margin-bottom: 2em;
+  opacity: var(--lightOpacity);
 }
 
 .Layout__reportage .Photo__layout p,

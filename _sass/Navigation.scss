@@ -43,7 +43,7 @@
 .Navigation__link {
   text-decoration: none;
   color: var(--text);
-  opacity: 0.5;
+  opacity: var(--lightOpacity);
 }
 
 .Navigation__link.is-selected {
@@ -60,6 +60,7 @@
   .Navigation {
     width: 100%;
   }
+
   .Navigation__secondary {
     width: 100%;
   }

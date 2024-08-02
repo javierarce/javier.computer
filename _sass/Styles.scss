@@ -13,6 +13,7 @@
   --textHover: var(--white);
   --background: var(--black);
   --borderRadius: 2px;
+  --lightOpacity: 0.5;
   --space: 0.4em;
   --doubleSpace: 0.8em;
   --width: 800px;
@@ -31,7 +32,7 @@
 
 ::placeholder {
   color: var(--text);
-  opacity: 0.5;
+  opacity: var(--lightOpacity);
 }
 
 body {
@@ -60,7 +61,7 @@ a.is-underlined {
 }
 
 .is-light {
-  opacity: 0.5;
+  opacity: var(--lightOpacity);
 }
 
 .is-light a:hover,
@@ -83,7 +84,7 @@ p.is-light p a {
   border: 1px solid rgba(255, 255, 255, 0.4);
   padding: 0.8em;
   font-size: 0.9em;
-  opacity: 0.4;
+  opacity: var(--lightOpacity);
 }
 
 .is-hidden-from-home a {
@@ -123,7 +124,7 @@ sup {
   line-height: 0;
   position: relative;
   vertical-align: baseline;
-  opacity: 0.5;
+  opacity: var(--lightOpacity);
   margin-left: 2px;
 }
 
@@ -166,9 +167,9 @@ p img {
 
 blockquote {
   border-left: 1px solid rgba(255, 255, 255, 0.2);
-  opacity: 0.5;
   margin: 0 0 1em 0;
   padding: 0 0 0 0.8em;
+  opacity: var(--lightOpacity);
 }
 
 .Post__content blockquote p a,
@@ -194,7 +195,7 @@ blockquote strong {
 }
 
 p.is-light {
-  opacity: 0.5;
+  opacity: var(--lightOpacity);
 }
 
 .Content {
@@ -223,7 +224,7 @@ hr {
   border: none;
   border-bottom: 1px solid var(--text);
   margin: 1.4em 0;
-  opacity: 0.5;
+  opacity: var(--lightOpacity);
 }
 
 h2,
@@ -239,13 +240,13 @@ h2 {
 
 h3 {
   font-size: 1em;
-  opacity: 0.5;
+  opacity: var(--lightOpacity);
 }
 
 h4 {
   font-size: 1em;
   font-weight: normal;
-  opacity: 0.5;
+  opacity: var(--lightOpacity);
 }
 
 img.lazy {
@@ -262,9 +263,10 @@ img.lazy.loaded {
 
 img.lazy.error {
   visibility: visible;
-  border: 1px solid var(--white);
-  background: none;
-  opacity: 1;
+  border: none;
+  border-radius: var(--borderRadius);
+  opacity: var(--lightOpacity);
+  min-height: 200px;
 }
 
 .Grid {
@@ -288,8 +290,8 @@ img.lazy.error {
   display: inline-block;
   font-weight: 400;
   padding-left: 4px;
-  opacity: 0.5;
   color: var(--text);
+  opacity: var(--lightOpacity);
 }
 
 
@@ -313,7 +315,7 @@ a.is-photo::after {
   margin: 0 0 0 0.2em;
   background-image: url(/img/icons/picture.svg);
   background-size: cover;
-  opacity: 0.5;
+  opacity: var(--lightOpacity);
 }
 
 .tag {

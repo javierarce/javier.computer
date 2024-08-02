@@ -4,8 +4,8 @@
   text-decoration: none;
   font-weight: 400;
   flex-direction: row;
-  opacity: 0.5;
   margin: 0 0 3em;
+  opacity: var(--lightOpacity);
 }
 
 .Announcement:hover {

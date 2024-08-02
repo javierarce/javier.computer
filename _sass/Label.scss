@@ -3,12 +3,8 @@
   margin: 0 0 0.8em;
 }
 
-.Label .is-optional {
-  opacity: 0.5;
-  font-size: 0.8em;
-}
-
+.Label .is-optional,
 .Label__help {
-  opacity: 0.5;
   font-size: 0.8em;
+  opacity: var(--lightOpacity);
 }

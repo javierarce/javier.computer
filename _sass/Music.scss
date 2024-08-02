@@ -54,7 +54,7 @@
 }
 
 .Music__header>* {
-  opacity: 0.5;
+  opacity: var(--lightOpacity);
 }
 
 .Music__header a {

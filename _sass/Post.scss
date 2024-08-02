@@ -48,9 +48,9 @@
   padding-left: 4px;
   font-size: 1.3em;
   position: absolute;
-  opacity: 0.5;
   color: var(--text);
   line-height: 115%;
+  opacity: var(--lightOpacity);
 }
 
 .Post__content a,
@@ -62,7 +62,7 @@
 h3,
 h4 {
   margin: 0;
-  opacity: 0.5;
+  opacity: var(--lightOpacity);
 }
 
 .Post__content ul,
@@ -97,8 +97,8 @@ h4 {
 
 .Post__footer a,
 .Post__footer open-heart .off {
-  opacity: 0.5;
   text-decoration: none;
+  opacity: var(--lightOpacity);
 }
 
 .Post__footer>a:hover {
@@ -120,7 +120,7 @@ h4 {
 
 .Post__paginationArrow,
 .Post__footerSeparator {
-  opacity: 0.5;
+  opacity: var(--lightOpacity);
 }
 
 .Post__paginationLink,

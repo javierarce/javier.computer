@@ -8,7 +8,7 @@
   margin: 0 0.8em 0 0;
   text-decoration: none;
   color: var(--text);
-  opacity: 0.5;
+  opacity: var(--lightOpacity);
 }
 
 .Footer__link:hover {
@@ -22,6 +22,7 @@
     display: block;
     width: 100%;
   }
+
   .Footer__link {
     margin: 0 0.4em 0 0;
   }
@@ -32,8 +33,8 @@
     display: block;
     width: 100%;
   }
+
   .Footer__link {
     margin: 0 0.4em 0 0;
   }
 }
-

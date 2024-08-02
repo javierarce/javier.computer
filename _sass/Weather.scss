@@ -4,13 +4,13 @@ weather-snitch {
   visibility: hidden;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 900ms ease-in-out, opacity  900ms ease-in-out;
+  transition: max-height 900ms ease-in-out, opacity 900ms ease-in-out;
 }
 
 weather-snitch.is-visible {
-  opacity: 0.5;
   visibility: visible;
   max-height: 300px;
+  opacity: var(--lightOpacity);
 }
 
 weather-snitch.is-single {

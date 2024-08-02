@@ -12,7 +12,7 @@
 
 .Poll__error {
   display: flex;
-  visiblity: 0;
+  visibility: 0;
   opacity: 0;
   align-items: center;
   height: 100%;
@@ -26,9 +26,10 @@
 
 .Poll.is-error .Poll__error {
   display: flex;
-  opacity: 0.5;
-  visiblity: visible;
+  visibility: visible;
+  opacity: var(--lightOpacity);
 }
+
 .Poll.is-success .Poll__success {
   display: block;
 }

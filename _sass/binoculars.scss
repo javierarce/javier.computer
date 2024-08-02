@@ -42,7 +42,7 @@
   text-align: center;
 }
 
-.Layout__binoculars .Content  h3 {
+.Layout__binoculars .Content h3 {
   margin-top: 1em;
   width: var(--width);
   margin: 0 auto 4em;
@@ -51,7 +51,7 @@
 .Layout__binoculars .Content h2+h3 {
   font-size: 0.9em;
   font-weight: normal;
-  opacity: 0.5;
+  opacity: var(--lightOpacity);
   text-align: center;
   margin-top: 0;
 }
@@ -61,7 +61,7 @@
     width: 100%;
   }
 
-  .Layout__binoculars .Content  h3 {
+  .Layout__binoculars .Content h3 {
     width: 100%;
   }
 

@@ -40,7 +40,7 @@ a.Book__spine:hover {
 }
 
 .Book__author {
-  opacity: 0.5;
+  opacity: var(--lightOpacity);
 }
 
 .Book__spine.h0 {
@@ -108,83 +108,83 @@ a.Book__spine:hover {
 }
 
 .Book__spine.is-0 {
-  background: #6A1B9A;  
+  background: #6A1B9A;
   color: var(--white);
 }
 
 .Book__spine.is-1 {
-  background: #009688;  
+  background: #009688;
   color: var(--white);
 }
 
 .Book__spine.is-2 {
-  background: var(--white);  
+  background: var(--white);
   color: var(--black);
 }
 
 .Book__spine.is-3 {
-  background: #C62828;  
+  background: #C62828;
   color: var(--white);
 }
 
 .Book__spine.is-4 {
-  background: #2E7D32;  
-  color: var(--white);      
+  background: #2E7D32;
+  color: var(--white);
 }
 
 .Book__spine.is-5 {
-  background: #1976D2;  
-  color: var(--white);      
+  background: #1976D2;
+  color: var(--white);
 }
 
 .Book__spine.is-6 {
-  background: #F9A825;  
-  color: #000000;      
+  background: #F9A825;
+  color: #000000;
 }
 
 .Book__spine.is-7 {
-  background: #8D6E63;  
-  color: var(--white);      
+  background: #8D6E63;
+  color: var(--white);
 }
 
 .Book__spine.is-8 {
-  background: #AD1457;  
-  color: var(--white);      
+  background: #AD1457;
+  color: var(--white);
 }
 
 .Book__spine.is-9 {
-  background: #00695C;  
-  color: var(--white);      
+  background: #00695C;
+  color: var(--white);
 }
 
 .Book__spine.is-10 {
-  background: #D84315;  
-  color: var(--white);      
+  background: #D84315;
+  color: var(--white);
 }
 
 .Book__spine.is-11 {
-  background: #558B2F;  
-  color: var(--white);      
+  background: #558B2F;
+  color: var(--white);
 }
 
 .Book__spine.is-12 {
-  background: #283593;  
-  color: var(--white);      
+  background: #283593;
+  color: var(--white);
 }
 
 .Book__spine.is-13 {
   background: #222;
-  color: var(--white);      
+  color: var(--white);
 }
 
 .Book__spine.is-14 {
-  background: #1565C0;  
-  color: var(--white);      
+  background: #1565C0;
+  color: var(--white);
 }
 
 .Book__spine.is-15 {
-  background: #EC407A;  
-  color: var(--white);      
+  background: #EC407A;
+  color: var(--white);
 }
 
 .Book__spineTitle {
@@ -209,21 +209,21 @@ a.Book__spine:hover {
   .Book__stack {
     display: block;
     border-bottom: none;
-    width: 100%!Important;
+    width: 100% !Important;
     margin: 0 0 1em;
     height: auto;
   }
 
   .Book__spine {
     color: var(--white) !Important;
-    background: transparent!Important;
+    background: transparent !Important;
     min-width: inherit;
     min-height: inherit;
-    height: auto!Important;
+    height: auto !Important;
     padding: 0;
     writing-mode: horizontal-tb;
     transform: initial;
-    width: 100%!Important;
+    width: 100% !Important;
     margin: 0 0 1em;
     font-size: 1em;
   }

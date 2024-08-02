@@ -3,16 +3,15 @@ layout: reportage
 title: Berlín en primavera
 date: 2024-07-31
 hide_title: true
-intro: "Una lista no exhaustiva de cosas que vi durante mi último viaje a Berlín en primavera como preparación para mi inminente viaje a Berlín en verano."
+intro: "Tras el éxito de crítica y público de mi <a href='/2024/07/10/Mataro'>anterior publi-reportaje</a>, me gustaría compartir con vosotros esta «lista no exhaustiva de cosas que vi durante mi último viaje a Berlín en primavera» como preparación para mi inminente viaje a Berlín en verano."
 location: berlin
 filename: 2024-04-07-Berlin-DSCF1702
 category: reportage
 ---
 
-<p>Tras el éxito de crítica y público de <a href="/2024/07/10/Mataro">mi anterior publi-reportaje</a>, me gustaría compartir con
-    vosotros esta «lista no exhaustiva de cosas que vi durante mi último viaje a
-    Berlín en primavera» como preparación para mi inminente viaje a Berlín en
-    verano.</p>
+<p>Tras el éxito de crítica y público de mi <a href="/2024/07/10/Mataro">anterior publi-reportaje</a>, me gustaría compartir con vosotros esta «lista no
+    exhaustiva de cosas que vi durante mi último viaje a Berlín en primavera»
+    como preparación para mi inminente viaje a Berlín en verano.</p>
 
 <div class="g">
     {% include photos/custom.html classname='is-wide' location='berlin' filename='2024-04-07-Berlin-DSCF1702' alt="Test" -%}
@@ -105,9 +104,9 @@ category: reportage
     <figcaption>O puede que no, habría sido muy <em>creepy</em> ponerse a investigar.</figcaption>
 </div>
 
-<p>Esto ha sido todo, muchas gracias por tu atención. Como mencioné al
-    principio del post, pasaré agosto en Berlín. Si estás por allí y
-    tienes sugerencias o planes interesantes <a href="/contact">escríbeme</a>, por favor.</p>
+<p>Esto ha sido todo, muchas gracias por vuestra atención. Como mencioné al
+    principio del post, pasaré agosto en Berlín. Si me leéis desde allí y
+    tenéis sugerencias o planes interesantes, <a href="/contact">os leo</a>.</p>
 
 <div class="g">
     {% include photos/custom.html classname='is-wide' location='berlin' filename='2024-04-13-Berlin-DSCF1884_2' -%}
