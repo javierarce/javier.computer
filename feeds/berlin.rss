@@ -9,15 +9,42 @@
     <link>https://javier.computer/feeds/berlin.rss</link>
     <description>Sitios en berlin</description>
     <language>es</language>
-    <pubDate>Sat, 03 Aug 2024 10:19:50 +0200</pubDate>
+    <pubDate>Sat, 03 Aug 2024 22:41:30 +0200</pubDate>
+    <item>
+      <title>Leuchtstoff Kaffeebar</title>
+      <link>https://javier.computer/maps/berlin/leuchtstoff</link>
+      <description>&lt;p&gt;Café de especialidad bastante decente en un local grande con espacio para trabajar y bancos en la calle.&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/berlin/leuchtstoff'&gt;Siegfriedstraße 18&lt;/a&gt;&lt;br&gt;&lt;p&gt;Este sitio aparece en los siguientes posts:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2024/08/03/friends-are-more-important-than-federation'&gt;Friends are more important than federation&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Sat, 03 Aug 2024 22:41:30 +0200</pubDate>
+      <dc:subject>berlin</dc:subject>
+      <dc:date>2024-08-03T22:41:30+02:00</dc:date>
+    </item>
+    <item>
+      <title>Schillermarkt</title>
+      <link>https://javier.computer/maps/berlin/schillermarkt</link>
+      <description>&lt;p&gt;Mercado de productores en el corazón de Neukölln.&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/berlin/schillermarkt'&gt;Herrfurthplatz&lt;/a&gt;&lt;br&gt;&lt;p&gt;Este sitio aparece en los siguientes posts:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2024/08/03/friends-are-more-important-than-federation'&gt;Friends are more important than federation&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Sat, 03 Aug 2024 22:33:43 +0200</pubDate>
+      <dc:subject>berlin</dc:subject>
+      <dc:date>2024-08-03T22:33:43+02:00</dc:date>
+    </item>
+    <item>
+      <title>Gazzo</title>
+      <link>https://javier.computer/maps/berlin/gazzo</link>
+      <description>&lt;p&gt;Pizza con pan de masa madre.&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/berlin/gazzo'&gt;Hobrechtstraße 57&lt;/a&gt;&lt;br&gt;&lt;p&gt;Este sitio aparece en los siguientes posts:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2024/08/03/friends-are-more-important-than-federation'&gt;Friends are more important than federation&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Sat, 03 Aug 2024 22:29:27 +0200</pubDate>
+      <dc:subject>berlin</dc:subject>
+      <dc:date>2024-08-03T22:29:27+02:00</dc:date>
+    </item>
     <item>
       <title>Isla coffee</title>
       <link>https://javier.computer/maps/berlin/isla-coffee</link>
       <description>&lt;p&gt;Vivió mejores momentos cafeterilmente hablando hace unos años, ahora es un sitio correcto donde tomar un cruasán o un kimcheese.&lt;/p&gt;
 &lt;br&gt;&lt;a href='https://javier.computer/maps/berlin/isla-coffee'&gt;Hermannstraße 37&lt;/a&gt;&lt;br&gt;&lt;p&gt;Este sitio aparece en los siguientes posts:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2023/07/29/isla-coffee-quema-las-tostadas'&gt;Isla coffee quema las tostadas&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://javier.computer/2024/08/02/berlin-mon-amour'&gt;Berlin, mon amour&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
-      <pubDate>Sat, 03 Aug 2024 10:19:50 +0200</pubDate>
+      <pubDate>Sat, 03 Aug 2024 10:22:19 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2024-08-03T10:19:50+02:00</dc:date>
+      <dc:date>2024-08-03T10:22:19+02:00</dc:date>
     </item>
     <item>
       <title>Smartdeli Sushi and More</title>
@@ -181,6 +208,6 @@
       <dc:subject>berlin</dc:subject>
       <dc:date>2023-12-09T08:31:33+01:00</dc:date>
     </item>
-    <dc:date>2024-08-03T10:19:50+02:00</dc:date>
+    <dc:date>2024-08-03T22:41:30+02:00</dc:date>
   </channel>
 </rss>
