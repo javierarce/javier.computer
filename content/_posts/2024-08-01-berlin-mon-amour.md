@@ -7,4 +7,4 @@ places:
   - isla-coffee
 ---
 
-[Isla coffee](/maps/berlin/isla-coffee) &middot; [Thank Goodness You’re Here!](https://thankgoodness.game) &middot; "On the Inconvenience of Other People" &middot; Blumenbetrachtung con tres Fusteros.
+[Isla coffee](/maps/berlin/isla-coffee) &middot; [Thank Goodness You’re Here!](https://thankgoodness.game) &middot; "On the Inconvenience of Other People" &middot; Blumenbetrachtung con las Fusteros.
