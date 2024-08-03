@@ -22,4 +22,4 @@ places:
   - gazzo
 ---
 
-[Friends are more important than federation](https://indieweb.org/POSSE) &middot; [Schillermarkt](/maps/berlin/schillermarkt) &middot; [Leuchtstoff](/maps/berlin/leuchtstoff) &middot; Portfolio por favor &middot; [Gazzo](/maps/berlin/gazzo) &middot; De paseo por Neukölln.
+[Friends are more important than federation](https://indieweb.org/POSSE) &middot; [Schillermarkt](/maps/berlin/schillermarkt) &middot; [Leuchtstoff](/maps/berlin/leuchtstoff) &middot; Portfolio por favor &middot; De paseo por Neukölln &middot; [Gazzo](/maps/berlin/gazzo).
