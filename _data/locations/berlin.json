@@ -67,13 +67,13 @@
   },
   {
     "layout": "place",
-    "pid": "mamakan",
-    "title": "Ma-Makan",
-    "description": "<p>Delicias malayas y singapurenses. Ojito al «Kaya croissant».</p>\n",
-    "address": "Lausitzer Pl. 12",
+    "pid": "tenzan",
+    "title": "tenzan lab.",
+    "description": "<p>Kakigōris y taiyakis</p>\n",
+    "address": "Wörther Straße, 22",
     "latlng": [
-      52.501010546828965,
-      13.431502823278532
+      52.5357069,
+      13.4210922
     ],
     "location": "berlin",
     "last_modified_date": "2023-12-09T21:47:40+01:00",
@@ -116,22 +116,6 @@
     ]
   },
   {
-    "layout": "place",
-    "pid": "modulor",
-    "title": "Modulor",
-    "description": "<p>Modulor Material Total</p>\n",
-    "address": "Prinzenstraße, 85",
-    "latlng": [
-      52.5033859,
-      13.4100566
-    ],
-    "location": "berlin",
-    "last_modified_date": "2023-12-09T21:47:40+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
     "layout": "page",
     "pid": "motto",
     "title": "Motto Berlin",
@@ -149,13 +133,13 @@
   },
   {
     "layout": "place",
-    "pid": "tenzan",
-    "title": "tenzan lab.",
-    "description": "<p>Kakigōris y taiyakis</p>\n",
-    "address": "Wörther Straße, 22",
+    "pid": "trauma",
+    "title": "Trauma Bar und Kino",
+    "description": "<p>Club, bar, cine, sala de conciertos y arte. Aquí se celebró el quinto aniversario de New Models. Está cerca de Berlin Hauptbahnhof. No hay mucho más alrededor.</p>\n",
+    "address": "Heidestraße, 50",
     "latlng": [
-      52.5357069,
-      13.4210922
+      52.5306327,
+      13.3667562
     ],
     "location": "berlin",
     "last_modified_date": "2023-12-09T21:47:40+01:00",
@@ -182,13 +166,14 @@
   },
   {
     "layout": "place",
-    "pid": "trauma",
-    "title": "Trauma Bar und Kino",
-    "description": "<p>Club, bar, cine, sala de conciertos y arte. Aquí se celebró el quinto aniversario de New Models. Está cerca de Berlin Hauptbahnhof. No hay mucho más alrededor.</p>\n",
-    "address": "Heidestraße, 50",
+    "pid": "carpenter",
+    "title": "Father Carpenter Coffee Brewers",
+    "emoji": "☕️",
+    "description": "<p>Mucha cola durante el fin de semana, mejor ir muy pronto o evitar directamente.</p>\n",
+    "address": "Münzstraße, 21, Scheunenviertel",
     "latlng": [
-      52.5306327,
-      13.3667562
+      52.5244438,
+      13.4065961
     ],
     "location": "berlin",
     "last_modified_date": "2023-12-09T21:47:40+01:00",
@@ -198,14 +183,29 @@
   },
   {
     "layout": "place",
-    "pid": "carpenter",
-    "title": "Father Carpenter Coffee Brewers",
-    "emoji": "☕️",
-    "description": "<p>Mucha cola durante el fin de semana, mejor ir muy pronto o evitar directamente.</p>\n",
-    "address": "Münzstraße, 21, Scheunenviertel",
+    "pid": "mamakan",
+    "title": "Ma-Makan",
+    "description": "<p>Delicias malayas y singapurenses. Ojito al «Kaya croissant».</p>\n",
+    "address": "Lausitzer Pl. 12",
     "latlng": [
-      52.5244438,
-      13.4065961
+      52.501010546828965,
+      13.431502823278532
+    ],
+    "location": "berlin",
+    "last_modified_date": "2023-12-09T21:47:40+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "modulor",
+    "title": "Modulor",
+    "description": "<p>Modulor Material Total</p>\n",
+    "address": "Prinzenstraße, 85",
+    "latlng": [
+      52.5033859,
+      13.4100566
     ],
     "location": "berlin",
     "last_modified_date": "2023-12-09T21:47:40+01:00",
@@ -291,6 +291,31 @@
     "last_modified_date": "2024-04-13T09:38:16+02:00",
     "post_references": [
 
+    ]
+  },
+  {
+    "layout": "page",
+    "pid": "isla-coffee",
+    "title": "Isla coffee",
+    "description": "<p>Vivió mejores momentos cafeterilmente hablando hace unos años, ahora es un sitio correcto donde tomar un cruasán o un kimcheese.</p>\n",
+    "address": "Hermannstraße 37",
+    "latlng": [
+      52.48058617178727,
+      13.424879566538284
+    ],
+    "location": "berlin",
+    "last_modified_date": "2024-08-03T10:19:50+02:00",
+    "post_references": [
+      {
+        "url": "/2023/07/29/isla-coffee-quema-las-tostadas",
+        "title": "Isla coffee quema las tostadas",
+        "date": "2023-07-29 17:03:10 +0200"
+      },
+      {
+        "url": "/2024/08/02/berlin-mon-amour",
+        "title": "Berlin, mon amour",
+        "date": "2024-08-02 17:54:00 +0200"
+      }
     ]
   }
 ]

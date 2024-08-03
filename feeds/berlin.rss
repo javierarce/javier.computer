@@ -9,7 +9,16 @@
     <link>https://javier.computer/feeds/berlin.rss</link>
     <description>Sitios en berlin</description>
     <language>es</language>
-    <pubDate>Sat, 13 Apr 2024 09:38:16 +0200</pubDate>
+    <pubDate>Sat, 03 Aug 2024 10:19:50 +0200</pubDate>
+    <item>
+      <title>Isla coffee</title>
+      <link>https://javier.computer/maps/berlin/isla-coffee</link>
+      <description>&lt;p&gt;Vivió mejores momentos cafeterilmente hablando hace unos años, ahora es un sitio correcto donde tomar un cruasán o un kimcheese.&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/berlin/isla-coffee'&gt;Hermannstraße 37&lt;/a&gt;&lt;br&gt;&lt;p&gt;Este sitio aparece en los siguientes posts:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2023/07/29/isla-coffee-quema-las-tostadas'&gt;Isla coffee quema las tostadas&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://javier.computer/2024/08/02/berlin-mon-amour'&gt;Berlin, mon amour&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Sat, 03 Aug 2024 10:19:50 +0200</pubDate>
+      <dc:subject>berlin</dc:subject>
+      <dc:date>2024-08-03T10:19:50+02:00</dc:date>
+    </item>
     <item>
       <title>Smartdeli Sushi and More</title>
       <link>https://javier.computer/maps/berlin/smart-deli</link>
@@ -172,6 +181,6 @@
       <dc:subject>berlin</dc:subject>
       <dc:date>2023-12-09T08:31:33+01:00</dc:date>
     </item>
-    <dc:date>2024-04-13T09:38:16+02:00</dc:date>
+    <dc:date>2024-08-03T10:19:50+02:00</dc:date>
   </channel>
 </rss>

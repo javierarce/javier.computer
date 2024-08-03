@@ -9,15 +9,15 @@
     <link>https://javier.computer/feeds/barcelona.rss</link>
     <description>Sitios en barcelona</description>
     <language>es</language>
-    <pubDate>Sat, 27 Jul 2024 18:26:41 +0200</pubDate>
+    <pubDate>Sat, 27 Jul 2024 18:39:38 +0200</pubDate>
     <item>
       <title>Fismuler</title>
       <link>https://javier.computer/maps/barcelona/fismuler</link>
       <description>&lt;p&gt;Cocina mediterránea de parte de tres ex-El Bulli.&lt;/p&gt;
 &lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/fismuler'&gt;Carrer del Rec Comtal, 17&lt;/a&gt;&lt;br&gt;&lt;p&gt;Este sitio aparece en los siguientes posts:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2024/07/27/vuelta-al-teletipo'&gt;Vuelta al teletipo&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
-      <pubDate>Sat, 27 Jul 2024 18:26:41 +0200</pubDate>
+      <pubDate>Sat, 27 Jul 2024 18:39:38 +0200</pubDate>
       <dc:subject>barcelona</dc:subject>
-      <dc:date>2024-07-27T18:26:41+02:00</dc:date>
+      <dc:date>2024-07-27T18:39:38+02:00</dc:date>
     </item>
     <item>
       <title>Right Side Coffee Bar</title>
@@ -307,6 +307,6 @@
       <dc:subject>barcelona</dc:subject>
       <dc:date>2023-12-08T17:14:31+01:00</dc:date>
     </item>
-    <dc:date>2024-07-27T18:26:41+02:00</dc:date>
+    <dc:date>2024-07-27T18:39:38+02:00</dc:date>
   </channel>
 </rss>
