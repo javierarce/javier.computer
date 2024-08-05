@@ -66,14 +66,14 @@
     ]
   },
   {
-    "layout": "page",
-    "pid": "motto",
-    "title": "Motto Berlin",
-    "description": "<p>Librería a la que ya no voy desde que descubrí que no paga a sus proveedores.</p>\n",
-    "address": "Skalitzer Straße, 68, Luisenstadt",
+    "layout": "place",
+    "pid": "modulor",
+    "title": "Modulor",
+    "description": "<p>Modulor Material Total</p>\n",
+    "address": "Prinzenstraße, 85",
     "latlng": [
-      52.5000847,
-      13.439883
+      52.5033859,
+      13.4100566
     ],
     "location": "berlin",
     "last_modified_date": "2023-12-09T21:47:40+01:00",
@@ -117,6 +117,22 @@
   },
   {
     "layout": "place",
+    "pid": "tenzan",
+    "title": "tenzan lab.",
+    "description": "<p>Kakigōris y taiyakis</p>\n",
+    "address": "Wörther Straße, 22",
+    "latlng": [
+      52.5357069,
+      13.4210922
+    ],
+    "location": "berlin",
+    "last_modified_date": "2023-12-09T21:47:40+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
     "pid": "mamakan",
     "title": "Ma-Makan",
     "description": "<p>Delicias malayas y singapurenses. Ojito al «Kaya croissant».</p>\n",
@@ -132,30 +148,14 @@
     ]
   },
   {
-    "layout": "place",
-    "pid": "modulor",
-    "title": "Modulor",
-    "description": "<p>Modulor Material Total</p>\n",
-    "address": "Prinzenstraße, 85",
+    "layout": "page",
+    "pid": "motto",
+    "title": "Motto Berlin",
+    "description": "<p>Librería a la que ya no voy desde que descubrí que no paga a sus proveedores.</p>\n",
+    "address": "Skalitzer Straße, 68, Luisenstadt",
     "latlng": [
-      52.5033859,
-      13.4100566
-    ],
-    "location": "berlin",
-    "last_modified_date": "2023-12-09T21:47:40+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "tenzan",
-    "title": "tenzan lab.",
-    "description": "<p>Kakigōris y taiyakis</p>\n",
-    "address": "Wörther Straße, 22",
-    "latlng": [
-      52.5357069,
-      13.4210922
+      52.5000847,
+      13.439883
     ],
     "location": "berlin",
     "last_modified_date": "2023-12-09T21:47:40+01:00",
@@ -376,6 +376,22 @@
         "title": "Friends are more important than federation",
         "date": "2024-08-03 19:00:00 +0200"
       }
+    ]
+  },
+  {
+    "layout": "place",
+    "title": "Flohmarkt Arkonaplatz",
+    "pid": "flohmarkt-arkonaplatz",
+    "description": "<p>Mercado favorito de los domingos en Mitte donde adquirir libros, discos, vajillas, muebles, juguetes, y basurillas de hoy y de siempre.</p>\n",
+    "address": "Arkonaplatz",
+    "latlng": [
+      52.53740688711875,
+      13.402544452482864
+    ],
+    "location": "berlin",
+    "last_modified_date": "2024-08-05T22:59:43+02:00",
+    "post_references": [
+
     ]
   }
 ]

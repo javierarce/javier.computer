@@ -9,7 +9,16 @@
     <link>https://javier.computer/feeds/berlin.rss</link>
     <description>Sitios en berlin</description>
     <language>es</language>
-    <pubDate>Sat, 03 Aug 2024 22:41:30 +0200</pubDate>
+    <pubDate>Mon, 05 Aug 2024 22:59:43 +0200</pubDate>
+    <item>
+      <title>Flohmarkt Arkonaplatz</title>
+      <link>https://javier.computer/maps/berlin/flohmarkt-arkonaplatz</link>
+      <description>&lt;p&gt;Mercado favorito de los domingos en Mitte donde adquirir libros, discos, vajillas, muebles, juguetes, y basurillas de hoy y de siempre.&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/berlin/flohmarkt-arkonaplatz'&gt;Arkonaplatz&lt;/a&gt;&lt;br&gt;</description>
+      <pubDate>Mon, 05 Aug 2024 22:59:43 +0200</pubDate>
+      <dc:subject>berlin</dc:subject>
+      <dc:date>2024-08-05T22:59:43+02:00</dc:date>
+    </item>
     <item>
       <title>Leuchtstoff Kaffeebar</title>
       <link>https://javier.computer/maps/berlin/leuchtstoff</link>
@@ -208,6 +217,6 @@
       <dc:subject>berlin</dc:subject>
       <dc:date>2023-12-09T08:31:33+01:00</dc:date>
     </item>
-    <dc:date>2024-08-03T22:41:30+02:00</dc:date>
+    <dc:date>2024-08-05T22:59:43+02:00</dc:date>
   </channel>
 </rss>
