@@ -9,12 +9,13 @@ description: Movies I've watched
 {% assign sorted_movies = site.movies | sort: 'watched_on' | reverse %}
 {% assign grouped_movies = sorted_movies | group_by_exp: "movie", "movie.watched_on | date: '%B %Y'" %}
 
-{% assign last_year = "" %} 
+{% assign last_year = "" %}
 
 {% for group in grouped_movies %}
-{% assign current_year = group.name | split: ' ' | last %} 
+{% assign current_year = group.name | split: ' ' | last %}
 
 {% if last_year != current_year %}
+
 <h2 class="Movie__year">{{ current_year }}</h2> 
 {% assign last_year = current_year %} 
 {% endif %}
@@ -31,4 +32,3 @@ description: Movies I've watched
 {% endfor %}
 </ul>
 {% endfor -%}
-
