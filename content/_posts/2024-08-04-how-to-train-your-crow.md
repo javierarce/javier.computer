@@ -19,5 +19,4 @@ filenames:
 camera: Ricoh GR IIIx
 ---
 
-Erica y yo volvemos a la carga con nuestro ambicioso plan de amistarnos con
-alguno de los cuervos locales a base de cacahuetes &middot; [Flohmarkt Arkonaplatz](/maps/berlin/flohmarkt-arkonaplatz) pasado por agua &middot; De paseo por Tempelhof &middot; [MaXXXine](https://letterboxd.com/javier/film/maxxxine) ★★.
+Erica y yo volvemos a la carga con nuestro ambicioso plan de amistarnos con la población local de cuervos a base de cacahuetes &middot; [Flohmarkt Arkonaplatz](/maps/berlin/flohmarkt-arkonaplatz) pasado por agua &middot; De paseo por Tempelhof &middot; [MaXXXine](https://letterboxd.com/javier/film/maxxxine)★★.
