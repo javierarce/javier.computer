@@ -6,7 +6,8 @@ permalink: maps
 <ul class="Maps__list">
   {% for map in site.maps -%}
   {% assign locations = site.data.locations[map.location] | sort: 'reverse' %}
-  {% if locations | size %}
+  {% assign location_count = locations | size %}
+  {% if location_count > 0 %}
   <li>
     <div class="Maps__title"><a href="/{{ map.permalink }}">{{ map.title}}</a><a href="/feeds/{{ map.location }}.xml"
         class="Maps__rss"><span class="icon icon-rss"></span></a></div>
