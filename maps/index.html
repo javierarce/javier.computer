@@ -5,7 +5,7 @@ permalink: maps
 ---
 <ul class="Maps__list">
   {% for map in site.maps -%}
-  {% assign locations = site.data.locations[map.location] | sort: 'reverse' %}
+  {% assign locations = site.data.locations[map.location] | reverse %}
   {% assign location_count = locations | size %}
   {% if location_count > 0 %}
   <li>
