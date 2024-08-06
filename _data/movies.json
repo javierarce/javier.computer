@@ -1,7 +1,16 @@
 {
-  "updated_at": "2024-07-31",
-  "count": 704,
+  "updated_at": "2024-08-06",
+  "count": 705,
   "movies": [
+    {
+      "watched_on": "2024-08-04",
+      "title": "MaXXXine",
+      "year": "2024",
+      "rating": 2,
+      "stars": "★★",
+      "rewatched": false,
+      "permalink": "maxxxine"
+    },
     {
       "watched_on": "2024-07-30",
       "title": "Wings of Desire",
