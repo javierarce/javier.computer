@@ -1,6 +1,6 @@
-import fs from 'fs'
-import fetch from 'node-fetch'
-import { parse } from 'node-html-parser'
+import fs from "fs";
+import fetch from "node-fetch";
+import { parse } from "node-html-parser";
 
 export class MovieScraper {
   constructor(username) {
@@ -12,6 +12,15 @@ export class MovieScraper {
     this.username = username;
     this.baseUrl = `https://letterboxd.com/${this.username}/films/diary/page/`;
     this.outputFile = "_data/movies.json";
+    this.lastUpdatedAt = this.getLastUpdatedAt();
+  }
+
+  getLastUpdatedAt() {
+    if (fs.existsSync(this.outputFile)) {
+      const data = JSON.parse(fs.readFileSync(this.outputFile, "utf8"));
+      return new Date(data.updated_at);
+    }
+    return new Date(0); // If file doesn't exist, return oldest possible date
   }
 
   async loadSpinner() {
@@ -62,17 +71,25 @@ watched_on: ${watched_on}
     const root = await this.fetchPage(1);
     const totalPages = await this.getTotalPages(root);
     const movies = [];
+    let shouldContinue = true;
 
-    for (let i = 1; i <= totalPages; i++) {
+    for (let i = 1; i <= totalPages && shouldContinue; i++) {
       const pageRoot = await this.fetchPage(i);
       const filmEntries = pageRoot.querySelectorAll(".diary-entry-row");
 
-      filmEntries.forEach((entry) => {
+      for (const entry of filmEntries) {
         const metadataElem = entry.querySelector(".edit-review-button");
         const td = entry.querySelector(".film-actions");
+        const watchedOn = new Date(
+          metadataElem.getAttribute("data-viewing-date"),
+        );
+        if (watchedOn <= this.lastUpdatedAt) {
+          shouldContinue = false;
+          break;
+        }
 
         const permalink = td.getAttribute("data-film-slug");
-        const watchedOn = metadataElem.getAttribute("data-viewing-date");
+        // const watchedOn = metadataElem.getAttribute("data-viewing-date");
         const filmTitle = metadataElem.getAttribute("data-film-name");
         const rewatched = metadataElem.getAttribute("data-rewatch") === "true";
         const year = metadataElem.getAttribute("data-film-year");
@@ -84,7 +101,7 @@ watched_on: ${watched_on}
 
         const stars = fullStars + halfStar;
         movies.push({
-          watched_on: watchedOn,
+          watched_on: watchedOn.toISOString().split("T")[0],
           title,
           year,
           rating,
@@ -92,7 +109,8 @@ watched_on: ${watched_on}
           rewatched,
           permalink,
         });
-      });
+      }
+      if (!shouldContinue) break;
     }
 
     return movies;
@@ -100,22 +118,32 @@ watched_on: ${watched_on}
 
   async run() {
     await this.loadSpinner();
-    this.spinner.start("Getting movies");
-
+    this.spinner.start("Getting new movies");
     try {
-      const movies = await this.scrapeMovies();
-      const updated_at = new Date().toISOString().split("T")[0];
-      const outputData = {
-        updated_at,
-        count: movies.length,
-        movies,
-      };
+      const newMovies = await this.scrapeMovies();
+      if (newMovies.length > 0) {
+        const existingData = fs.existsSync(this.outputFile)
+          ? JSON.parse(fs.readFileSync(this.outputFile, "utf8"))
+          : { movies: [] };
 
-      movies.forEach((movie) => this.createMarkdownFile(movie));
-      fs.writeFileSync(this.outputFile, JSON.stringify(outputData, null, 2));
-      this.spinner.succeed(`Total movies: ${movies.length}`);
+        const updatedMovies = [...newMovies, ...existingData.movies];
+        const updated_at = new Date().toISOString().split("T")[0];
+        const outputData = {
+          updated_at,
+          count: updatedMovies.length,
+          movies: updatedMovies,
+        };
+
+        newMovies.forEach((movie) => this.createMarkdownFile(movie));
+        fs.writeFileSync(this.outputFile, JSON.stringify(outputData, null, 2));
+        this.spinner.succeed(
+          `New movies added: ${newMovies.length}. Total movies: ${updatedMovies.length}`,
+        );
+      } else {
+        this.spinner.succeed("No new movies to add.");
+      }
     } catch (error) {
-      this.spinner.fail("Error getting movies");
+      this.spinner.fail(`Error getting movies: ${error}`);
     }
   }
 }
