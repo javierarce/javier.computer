@@ -14,6 +14,7 @@ filenames:
   - 2024-08-04-Berlin-R0008398
   - 2024-08-04-Berlin-R0008392
   - 2024-08-04-Berlin-R0008384
+  - 2024-08-04-Berlin-R0008412
   - 2024-08-04-Berlin-R0008410
   - 2024-08-04-Berlin-R0008371
 camera: Ricoh GR IIIx
