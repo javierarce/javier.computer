@@ -1,7 +1,34 @@
 {
-  "updated_at": "2024-08-06",
-  "count": 705,
+  "updated_at": "2024-08-12",
+  "count": 708,
   "movies": [
+    {
+      "watched_on": "2024-08-12",
+      "title": "Demons",
+      "year": "1985",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "demons"
+    },
+    {
+      "watched_on": "2024-08-11",
+      "title": "In a Violent Nature",
+      "year": "2024",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "in-a-violent-nature"
+    },
+    {
+      "watched_on": "2024-08-08",
+      "title": "A Quiet Place: Day One",
+      "year": "2024",
+      "rating": 1.5,
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "a-quiet-place-day-one"
+    },
     {
       "watched_on": "2024-08-04",
       "title": "MaXXXine",

@@ -4,7 +4,7 @@ layout: book
 author: "Erica van Horn (traduce Ana Flecha Marco)"
 started: 2024-07-12
 read:
-status: reading
+status: abandoned
 rating:
 cover:
 pages: 112

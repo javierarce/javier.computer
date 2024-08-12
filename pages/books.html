@@ -6,46 +6,80 @@ description: Books I'm reading, I've read, I want to read
 category: page
 permalink: books
 ---
-
 {% assign all_books_with_read = site.books | where: "status", "read" %}
 {% assign sorted_books = all_books_with_read | sort: 'read' | reverse %}
 {% assign grouped_books = sorted_books | group_by_exp: "book", "book.read | date: '%Y'" %}
 
 {% assign books_with_status_reading = site.books | where: "status", "reading" %}
-{% assign sorted_books_reading = books_with_status_reading | sort: 'started' %}
+{% assign sorted_books_reading = books_with_status_reading | sort: 'started' | reverse %}
+
+{% if sorted_books_reading.size > 0 %}
+<div id="year-leyendo" class="Stack__date">Leyendo</div>
+<div class="Book__stack">
+  {% for book in sorted_books_reading %}
+  {% assign content = book.content | strip_newlines %}
+
+  {% if book.color %}
+  {% assign color = book.color %}
+  {% else %}
+  {% assign color = 15 | random_number %}
+  {% endif %}
+
+  {% assign classIndex = 15 | random_number %}
+  {% assign height = book.pages | map_range: 0, 1000, 80, 300 %}
+
+  {% if book.link %}
+  <a href="{{ book.link }}" class="Book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
+    <div class="Book__spineContent">
+      <div class="Book__title">{{ book.title }}</div>
+      <div class="Book__author">{{ book.author }}</div>
+    </div>
+  </a>
+  {% else %}
+  <div class="Book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
+    <div class="Book__spineContent">
+      <div class="Book__title">{{ book.title }}</div>
+      <div class="Book__author">{{ book.author }}</div>
+    </div>
+  </div>
+  {% endif %}
+
+  {% endfor %}
+</div>
+{% endif %}
 
 {% for group in grouped_books %}
 <div id="year-{{group.name}}" class="Stack__date">{{ group.name }}</div>
 
 <div class="Book__stack">
-{% for book in group.items %}
-{% assign content = book.content | strip_newlines %}
+  {% for book in group.items %}
+  {% assign content = book.content | strip_newlines %}
 
-{% if book.color %}
-{% assign color = book.color %}
-{% else %}
-{% assign color = 15 | random_number %} 
-{% endif %}
+  {% if book.color %}
+  {% assign color = book.color %}
+  {% else %}
+  {% assign color = 15 | random_number %}
+  {% endif %}
 
-{% assign classIndex = 15 | random_number %} 
-{% assign height = book.pages | map_range: 0, 1000, 80, 300 %}
+  {% assign classIndex = 15 | random_number %}
+  {% assign height = book.pages | map_range: 0, 1000, 80, 300 %}
 
-{% if book.link %}
-<a href="{{ book.link }}" class="Book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
-  <div class="Book__spineContent">
-    <div class="Book__title">{{ book.title }}</div>
-    <div class="Book__author">{{ book.author }}</div>
+  {% if book.link %}
+  <a href="{{ book.link }}" class="Book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
+    <div class="Book__spineContent">
+      <div class="Book__title">{{ book.title }}</div>
+      <div class="Book__author">{{ book.author }}</div>
+    </div>
+  </a>
+  {% else %}
+  <div class="Book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
+    <div class="Book__spineContent">
+      <div class="Book__title">{{ book.title }}</div>
+      <div class="Book__author">{{ book.author }}</div>
+    </div>
   </div>
-</a>
-{% else %}
-<div class="Book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
-  <div class="Book__spineContent">
-    <div class="Book__title">{{ book.title }}</div>
-    <div class="Book__author">{{ book.author }}</div>
-  </div>
-</div>
-{% endif %}
+  {% endif %}
 
-{% endfor %}
+  {% endfor %}
 </div>
 {% endfor %}
