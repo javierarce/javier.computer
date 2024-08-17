@@ -1,7 +1,25 @@
 {
-  "updated_at": "2024-08-12",
-  "count": 708,
+  "updated_at": "2024-08-17",
+  "count": 710,
   "movies": [
+    {
+      "watched_on": "2024-08-16",
+      "title": "The Edge of the World",
+      "year": "1937",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "the-edge-of-the-world"
+    },
+    {
+      "watched_on": "2024-08-13",
+      "title": "Trap",
+      "year": "2024",
+      "rating": 2,
+      "stars": "★★",
+      "rewatched": false,
+      "permalink": "trap-2024"
+    },
     {
       "watched_on": "2024-08-12",
       "title": "Demons",
