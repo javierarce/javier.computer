@@ -9,7 +9,16 @@
     <link>https://javier.computer/feeds/berlin.rss</link>
     <description>Sitios en berlin</description>
     <language>es</language>
-    <pubDate>Mon, 05 Aug 2024 22:59:43 +0200</pubDate>
+    <pubDate>Sat, 17 Aug 2024 22:06:04 +0200</pubDate>
+    <item>
+      <title>Han West</title>
+      <link>https://javier.computer/maps/berlin/han-west</link>
+      <description>&lt;p&gt;Estupendísimo lugar de dumplings y baos en Neukölln con opciones veganas y vegetarianas. No tiene sitio para sentarse, pero gracias a la colaboración público-privada puedes llevarte la comida al bar de al lado y complementarla con alguna bebida (o acercarla a Tempelhofer Feld y compartirla con las avispas).&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/berlin/han-west'&gt;Selchower Str. 20&lt;/a&gt;&lt;br&gt;</description>
+      <pubDate>Sat, 17 Aug 2024 22:06:04 +0200</pubDate>
+      <dc:subject>berlin</dc:subject>
+      <dc:date>2024-08-17T22:06:04+02:00</dc:date>
+    </item>
     <item>
       <title>Flohmarkt Arkonaplatz</title>
       <link>https://javier.computer/maps/berlin/flohmarkt-arkonaplatz</link>
@@ -217,6 +226,6 @@
       <dc:subject>berlin</dc:subject>
       <dc:date>2023-12-09T08:31:33+01:00</dc:date>
     </item>
-    <dc:date>2024-08-05T22:59:43+02:00</dc:date>
+    <dc:date>2024-08-17T22:06:04+02:00</dc:date>
   </channel>
 </rss>

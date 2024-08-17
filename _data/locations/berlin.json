@@ -132,22 +132,6 @@
     ]
   },
   {
-    "layout": "place",
-    "pid": "mamakan",
-    "title": "Ma-Makan",
-    "description": "<p>Delicias malayas y singapurenses. Ojito al «Kaya croissant».</p>\n",
-    "address": "Lausitzer Pl. 12",
-    "latlng": [
-      52.501010546828965,
-      13.431502823278532
-    ],
-    "location": "berlin",
-    "last_modified_date": "2023-12-09T21:47:40+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
     "layout": "page",
     "pid": "motto",
     "title": "Motto Berlin",
@@ -156,6 +140,22 @@
     "latlng": [
       52.5000847,
       13.439883
+    ],
+    "location": "berlin",
+    "last_modified_date": "2023-12-09T21:47:40+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "mamakan",
+    "title": "Ma-Makan",
+    "description": "<p>Delicias malayas y singapurenses. Ojito al «Kaya croissant».</p>\n",
+    "address": "Lausitzer Pl. 12",
+    "latlng": [
+      52.501010546828965,
+      13.431502823278532
     ],
     "location": "berlin",
     "last_modified_date": "2023-12-09T21:47:40+01:00",
@@ -390,6 +390,22 @@
     ],
     "location": "berlin",
     "last_modified_date": "2024-08-05T22:59:43+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "title": "Han West",
+    "pid": "han-west",
+    "address": "Selchower Str. 20",
+    "description": "<p>Estupendísimo lugar de dumplings y baos en Neukölln con opciones veganas y vegetarianas. No tiene sitio para sentarse, pero gracias a la colaboración público-privada puedes llevarte la comida al bar de al lado y complementarla con alguna bebida (o acercarla a Tempelhofer Feld y compartirla con las avispas).</p>\n",
+    "latlng": [
+      52.47855313100116,
+      13.42016685489108
+    ],
+    "location": "berlin",
+    "last_modified_date": "2024-08-17T22:06:04+02:00",
     "post_references": [
 
     ]
