@@ -189,7 +189,7 @@ class Lightbox {
       : picture.querySelector("source:not([type])").getAttribute("data-srcset");
 
     requestAnimationFrame(() => {
-      this.title = picture.querySelector("img").getAttribute("title");
+      this.title = picture.querySelector("img").dataset.caption;
       this.alt = picture.querySelector("img").getAttribute("alt");
 
       this.lightbox.classList.add("is-active");
