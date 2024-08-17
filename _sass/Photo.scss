@@ -141,6 +141,10 @@ figcaption {
   gap: 0;
 }
 
+.Photo__content:has(figure) {
+  margin-bottom: 1em;
+}
+
 .Photo__content img {
   display: block;
   width: 100%;
