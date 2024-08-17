@@ -34,11 +34,11 @@ grid: true
         {% else -%}
         {% assign filename = file -%}
         {% endif -%}
-        {% include photos/single.html photo=photo filename=filename -%}
+        {% include photos/single.html photo=photo filename=filename caption=file.caption hide_caption=true -%}
         {% endfor -%}
       </div>
       {% else -%}
-      {% include photos/single.html photo=photo filename=photo.filename -%}
+      {% include photos/single.html photo=photo filename=photo.filename caption=file.caption hide_caption=true -%}
       {% endif -%}
 
       {% include photos/footer.html photo=photo pagination=false -%}

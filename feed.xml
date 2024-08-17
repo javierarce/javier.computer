@@ -38,6 +38,8 @@ layout: none
     <description>
       {% if post.category == 'photo' %}
       <![CDATA[
+        {{ post.content }}   
+
         {% if post.filenames %}
           {% for file in post.filenames %}
 
@@ -53,7 +55,6 @@ layout: none
         {% else %}
           <img src="https://img.javier.computer/{{ post.location }}/{{ post.filename }}_1280.jpg" alt="{{post.title}}" />  
         {% endif %}
-        {{ post.content }}   
           <p>{% if matching_location -%} {{ matching_location.title }}. {% endif -%}
           {% if post.camera -%}Cámara: {{ post.camera }}.{% endif -%}</p>
           <hr />
@@ -65,8 +66,6 @@ layout: none
       {% elsif post.category == 'reportage' %}
       <![CDATA[
         {% if post.filenames %}
-          
-
           {% for file in post.filenames %}
 
           {% if file.filename -%}

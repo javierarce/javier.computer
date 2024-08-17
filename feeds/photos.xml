@@ -30,9 +30,12 @@ layout: none
         <link>{{ site.url }}{{ post.url }}</link>
         <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
         {% if post.author.name %}<dc:creator>{{ post.author.name | xml_escape }}</dc:creator>{% endif %}
-        <description><![CDATA[{% if post.filenames -%}
-          {% for file in post.filenames %}
+      <description><![CDATA[
 
+          {{ post.content }}
+
+        {% if post.filenames -%}
+          {% for file in post.filenames %}
           {% if file.filename -%}
           {% assign filename = file.filename -%}
           {% assign caption = file.caption | default: post.title | strip_html | strip_newlines | xml_escape -%}
@@ -45,8 +48,6 @@ layout: none
           {% else -%}
             <img src="https://img.javier.computer/{{ post.location }}/{{ post.filename }}_1280.jpg" alt="{{ post.title }}" />
           {% endif -%}
-
-          {{ post.content }}
             <p>{% if matching_location -%}{{ matching_location.title }}. {% endif -%} {% if post.camera %}Cámara: {{ post.camera }}.{% endif %}</p>
             <hr />
             <p><a href="{{ site.url}}/comment?title={{post.title}}&url={{post.id}}">Comentar este post</a> &middot; <a href="{{ site.url}}/heart?id={{post.url}}">Me gusta</a></p>

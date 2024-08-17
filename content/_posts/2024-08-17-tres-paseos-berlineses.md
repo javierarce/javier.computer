@@ -25,7 +25,7 @@ filenames:
   - filename: 2024-08-11-Berlin-R0008551
     caption: Casa de baños
   - filename: 2024-08-11-Berlin-R0008533
-    caption: Ich soll Sie schön grüßen… Möbel Hübner“
+    caption: „Ich soll Sie schön grüßen… Möbel Hübner“
   - filename: 2024-08-11-Berlin-R0008528
     caption: Esquina del Körnerpark
   - filename: 2024-08-11-Berlin-R0008523

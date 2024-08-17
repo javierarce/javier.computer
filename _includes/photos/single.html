@@ -1,6 +1,5 @@
 {% assign title = include.caption | default: include.photo.title -%}
 
-
 <div class="Photo">
   <div class="Photo__content">
     <figure class="Figure">
@@ -25,7 +24,9 @@
 
     </figure>
     {% if include.caption and include.caption != "" -%}
+    {% unless include.hide_caption %}
     <figcaption>{{ include.caption }}</figcaption>
+    {% endunless %}
     {% endif %}
   </div>
 </div>
