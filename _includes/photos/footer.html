@@ -16,6 +16,9 @@
   <a href="{{ post.url }}" class="is-underlined">Leer más</a>
   {% endif -%}
 
+  <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
+  <a href="/comment?title={{ page.title }}&url={{ page.id }}">Comentar</a>
+
   {% if include.pagination -%}
   {% include pagination.html post=include.photo -%}
   {% endif -%}

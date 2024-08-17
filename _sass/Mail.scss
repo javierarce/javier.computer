@@ -4,6 +4,7 @@
 }
 
 @media all and (max-width: 640px) {
+
   .Layout__contact .Content__inner,
   .Layout__contact {
     width: 100%;
@@ -24,14 +25,4 @@
 .Message {
   opacity: 0;
   transition: opacity 100ms ease-in-out;
-}
-
-.Actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.Actions .Button {
-  margin: 0 1em 0 0;
 }

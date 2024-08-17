@@ -3,27 +3,37 @@
 }
 
 :root {
-  --gray: rgba(255, 255, 255, 0.3);
-  --gray2: #eee;
-  --orange: #FF4500;
+  /* Colors */
   --white: #FFFFFF;
   --black: #020b19;
-  --link: #ffc107;
+  --pureBlack: #000000;
+  --gray: rgba(255, 255, 255, 0.3);
+  --gray2: #EEEEEE;
+  --orange: #FF4500;
+  --blue: #2477BE;
+  --green: #23D5AB;
+  --yellow: #FFD700;
+
+  /* Semantic colors */
+  --link: #FFC107;
+  --error: var(--yellow);
   --text: var(--white);
   --textHover: var(--white);
   --background: var(--black);
-  --borderRadius: 2px;
-  --lightOpacity: 0.5;
+
+  /* Spacing */
   --space: 0.4em;
   --doubleSpace: 0.8em;
+
+  /* Dimensions */
   --width: 800px;
   --bigWidth: 1024px;
   --fullWidth: 100%;
-
-  --pureBlack: #000000;
-  --blue: #2477BE;
-  --green: #23D5AB;
   --sidebarWidth: 300px;
+
+  /* Other */
+  --borderRadius: 2px;
+  --lightOpacity: 0.5;
 }
 
 ::selection {
@@ -167,9 +177,7 @@ p img {
 
 blockquote {
   border-left: 1px solid rgba(255, 255, 255, 0.2);
-  margin: 0 0 1em 0;
   padding: 0 0 0 0.8em;
-  opacity: var(--lightOpacity);
 }
 
 .Post__content blockquote p a,

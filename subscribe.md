@@ -36,6 +36,6 @@ className: About
     <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
  </div>
 
-<div class="Actions"><input class="Button" type="submit" value="Suscríbeme" /></div>
+<div class="Form__actions"><input class="Button" type="submit" value="Suscríbeme" /></div>
 </form>
 </div>

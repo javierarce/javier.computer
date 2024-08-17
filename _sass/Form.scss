@@ -3,10 +3,11 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  gap: 1em;
   margin: 0 0 2em 0;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out;
+  transition: opacity 150ms ease-in-out, visibility 250ms ease-in-out;
 }
 
 .Form.is-visible {
@@ -20,5 +21,16 @@
 }
 
 .Form.is-error .Message {
-  color: yellow;
+  color: var(--error);
+}
+
+.Form__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em 0 0 0;
+}
+
+.Form__actions .Button {
+  margin: 0 1em 0 0;
 }

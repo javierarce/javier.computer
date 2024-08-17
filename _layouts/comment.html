@@ -19,11 +19,12 @@
     {% include navigation.html %}
     <div class="Content__inner">
       {{ content }}
+      <div class="Contact js-content"></div>
     </div>
     {% include footer.html %}
   </div>
 
-  <script src="{{ 'scripts/mail.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
+  <script src="{{ 'scripts/comment.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
   <script src="{{ 'scripts/lazyload.min.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
 </body>
 
