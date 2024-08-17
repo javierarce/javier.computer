@@ -34,4 +34,4 @@ filenames:
 camera: Ricoh GR IIIx
 ---
 
-_Photo dump_ de tres paseos berlineses el 8, el 10, y el 11 de agosto.
+_Photo dump_ de tres paseos berlineses del 8, 10, y 11 de agosto.
