@@ -137,7 +137,7 @@ class Mail {
 
     const $label = this.createElement({
       elementType: "p",
-      text: `Envía tu ${this.what.toLowerCase()} sobre `,
+      text: `Envíame tu ${this.what.toLowerCase()} sobre `,
       className: "Comment__title",
     });
 

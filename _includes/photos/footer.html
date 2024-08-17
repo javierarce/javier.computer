@@ -17,7 +17,8 @@
   {% endif -%}
 
   <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
-  <a href="/comment?title={{ page.title }}&url={{ page.id }}">Comentar</a>
+  <a href="/comment?title={{ page.title }}&url={{ page.id }}"
+    title="Envíame un comentario sobre esta entrada">Comentar</a>
 
   {% if include.pagination -%}
   {% include pagination.html post=include.photo -%}
