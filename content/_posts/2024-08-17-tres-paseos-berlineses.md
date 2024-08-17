@@ -11,7 +11,8 @@ filenames:
     caption: "The Courage to Be Disliked"
   - filename: 2024-08-10-Berlin-R0008520
     caption: "Robopuerta"
-  - 2024-08-08-Berlin-R0008483
+  - filenam: 2024-08-08-Berlin-R0008483
+    caption: Esquina del Körnerpark
   - filename: 2024-08-08-Berlin-R0008478
     caption: Sonrisa postal
   - 2024-08-08-Berlin-R0008475
@@ -26,8 +27,7 @@ filenames:
     caption: Casa de baños
   - filename: 2024-08-11-Berlin-R0008533
     caption: „Ich soll Sie schön grüßen… Möbel Hübner“
-  - filename: 2024-08-11-Berlin-R0008528
-    caption: Esquina del Körnerpark
+  - 2024-08-11-Berlin-R0008528
   - filename: 2024-08-11-Berlin-R0008523
     caption: The Fustero's Sisters
 
