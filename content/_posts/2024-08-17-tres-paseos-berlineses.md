@@ -11,7 +11,7 @@ filenames:
     caption: "The Courage to Be Disliked"
   - filename: 2024-08-10-Berlin-R0008520
     caption: "Robopuerta"
-  - filenam: 2024-08-08-Berlin-R0008483
+  - filename: 2024-08-08-Berlin-R0008483
     caption: Esquina del Körnerpark
   - filename: 2024-08-08-Berlin-R0008478
     caption: Sonrisa postal
