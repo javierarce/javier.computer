@@ -1,13 +1,22 @@
 {
   "updated_at": "2024-08-17",
-  "count": 710,
+  "count": 711,
   "movies": [
+    {
+      "watched_on": "2024-08-17",
+      "title": "Longlegs",
+      "year": "2024",
+      "rating": 1.5,
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "longlegs"
+    },
     {
       "watched_on": "2024-08-16",
       "title": "The Edge of the World",
       "year": "1937",
-      "rating": 4,
-      "stars": "★★★★",
+      "rating": 4.5,
+      "stars": "★★★★½",
       "rewatched": false,
       "permalink": "the-edge-of-the-world"
     },
@@ -6394,3 +6403,4 @@
     }
   ]
 }
+
