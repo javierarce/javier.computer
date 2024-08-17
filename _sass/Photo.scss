@@ -141,7 +141,7 @@ figcaption {
   gap: 0;
 }
 
-.Photo__content:has(figure) {
+.Photo__content:has(figcaption) {
   margin-bottom: 1em;
 }
 
