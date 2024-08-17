@@ -48,17 +48,16 @@ layout: none
           {% assign filename = file -%}
           {% assign caption = post.title -%}
           {% endif -%}
-
-            <img src="https://img.javier.computer/{{ post.location }}/{{ filename }}_1280.jpg" alt="{{ caption }}"/>  
+          <p><img src="https://img.javier.computer/{{ post.location }}/{{ filename }}_1280.jpg" alt="{{ caption }}" />{% if file.caption -%}<br />{{ file.caption }}{% endif -%}</p>
           {% endfor %}
         {% else %}
           <img src="https://img.javier.computer/{{ post.location }}/{{ post.filename }}_1280.jpg" alt="{{post.title}}" />  
         {% endif %}
         {{ post.content }}   
           <p>{% if matching_location -%} {{ matching_location.title }}. {% endif -%}
-          {% if post.camera -%}{{ post.camera }}.{% endif -%}</p>
+          {% if post.camera -%}Cámara: {{ post.camera }}.{% endif -%}</p>
           <hr />
-          <p><a href="{{ site.url}}/heart?id={{post.url}}">Me gusta</a></p>
+        <p><a href="{{ site.url}}/comment?title={{post.title}}&url={{post.id}}">Comentar este post</a> &middot; <a href="{{ site.url}}/heart?id={{post.url}}">Me gusta</a></p>
         ]]>
       {% elsif post.category == 'quote' %}
         <p><blockquote>{{ post.content | xml_escape }}</blockquote></p>
@@ -77,15 +76,14 @@ layout: none
           {% assign filename = file -%}
           {% assign caption = post.title -%}
           {% endif -%}
-
-            <img src="https://img.javier.computer/{{ post.location }}/{{ filename }}_1280.jpg" alt="{{ caption }}"/>  
+          <p><img src="https://img.javier.computer/{{ post.location }}/{{ filename }}_1280.jpg" alt="{{ caption }}" />{% if file.caption -%}<br />{{ file.caption }}{% endif -%}</p>
           {% endfor %}
         {% else %}
           <img src="https://img.javier.computer/{{ post.location }}/{{ post.filename }}_1280.jpg" alt="{{post.title}}" />  
         {% endif %}
         <p>{{ post.intro | xml_escape }} <a href="{{ post.url }}" target="_blank">Leer más</a></p>   
           <hr />
-          <p><a href="{{ site.url}}/heart?id={{post.url}}">Me gusta</a></p>
+        <p><a href="{{ site.url}}/comment?title={{post.title}}&url={{post.id}}">Comentar este post</a> &middot; <a href="{{ site.url}}/heart?id={{post.url}}">Me gusta</a></p>
         ]]>
       {% elsif post.category == 'music' %}
       <![CDATA[
@@ -97,7 +95,7 @@ layout: none
         {{ post.content | xml_escape }}
         <![CDATA[
         <hr />
-        <p><a href="{{ site.url}}/heart?id={{post.url}}">Me gusta</a></p>
+        <p><a href="{{ site.url}}/comment?title={{post.title}}&url={{post.id}}">Comentar este post</a> &middot; <a href="{{ site.url}}/heart?id={{post.url}}">Me gusta</a></p>
         ]]>
         {% if post.disclaimer -%}<p>{{ post.disclaimer }}</p>{% endif -%}
           {% if matching_location -%}<p><small>{{ matching_location.title }}</small></p>{% endif -%}

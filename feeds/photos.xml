@@ -40,18 +40,16 @@ layout: none
           {% assign filename = file -%}
           {% assign caption = post.title -%}
           {% endif -%}
-
-        <img src="https://img.javier.computer/{{ post.location }}/{{ filename }}_1280.jpg" alt="{{ caption }}" />
+          <p><img src="https://img.javier.computer/{{ post.location }}/{{ filename }}_1280.jpg" alt="{{ caption }}" />{% if file.caption -%}<br />{{ file.caption }}{% endif -%}</p>
           {% endfor -%}
           {% else -%}
-
             <img src="https://img.javier.computer/{{ post.location }}/{{ post.filename }}_1280.jpg" alt="{{ post.title }}" />
-
           {% endif -%}
+
           {{ post.content }}
-            <p>{% if matching_location -%}{{ matching_location.title }}. {% endif -%} {% if post.camera %}{{ post.camera }}.{% endif %}</p>
+            <p>{% if matching_location -%}{{ matching_location.title }}. {% endif -%} {% if post.camera %}Cámara: {{ post.camera }}.{% endif %}</p>
             <hr />
-            <p><a href="{{ site.url}}/heart?id={{post.url}}">Me gusta</a></p>
+            <p><a href="{{ site.url}}/comment?title={{post.title}}&url={{post.id}}">Comentar este post</a> &middot; <a href="{{ site.url}}/heart?id={{post.url}}">Me gusta</a></p>
               ]]>
           </description>
       </item>
