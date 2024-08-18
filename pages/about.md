@@ -55,9 +55,9 @@ This computer doesn't track you, your friends, or your enemies.
 
 ### Follow and subscribe
 
-- If you like what you are reading (and why wouldn't you?), add this
-  [RSS](/feed.xml) feed to your favorite feed reader to get the updates.
-- If you are only interested in the photos I publish, this [RSS](/feeds/photos.xml) is
+- If you like what you are reading (and why wouldn't you?), add the
+  [RSS main feed](/feed.xml) to your favorite feed reader to get the updates.
+- If you are only interested in the photos I publish, the [RSS photo feed](/feeds/photos.xml) is
   for you.
 - If you want to get an email (in Spanish) every time I do something funny [subscribe to
   my newsletter](/newsletter).
