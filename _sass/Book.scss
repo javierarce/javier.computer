@@ -35,6 +35,11 @@ a.Book__spine:hover {
   font-size: 0.9em;
 }
 
+.Book__spine.is-2[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))) .Book__title:after,
+.Book__spine.is-6[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))) .Book__title:after {
+  color: var(--black);
+}
+
 .Book__title {
   font-weight: 400;
 }

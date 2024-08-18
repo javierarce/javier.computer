@@ -302,10 +302,13 @@ img.lazy.error {
   color: var(--link);
 }
 
+.Layout__blogroll .Page__content ul {
+  margin: 0 0 2em 1em;
+}
 
-.Book__spine.is-2[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))) .Book__title:after,
-.Book__spine.is-6[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))) .Book__title:after {
-  color: var(--black);
+.Layout__blogroll h3 {
+  padding: 0 0 var(--space);
+  border-bottom: 1px solid var(--gray);
 }
 
 a.is-photo::after {
@@ -351,57 +354,5 @@ a.is-photo::after {
   .Content {
     padding: 1em;
     width: 100%;
-  }
-}
-
-presence-snitch {
-  position: relative;
-  width: 10px;
-  height: 10px;
-  border-radius: 100%;
-  background: transparent;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 250ms ease-in-out;
-}
-
-presence-snitch.is-visible {
-  background: var(--link);
-  opacity: 1;
-  visibility: visible;
-}
-
-presence-snitch::part(text) {
-  background-color: #222;
-  border-radius: 4px;
-  color: var(--text);
-  padding: 0.4em 0.6em;
-  font-size: 0.7em;
-  position: absolute;
-  text-align: center;
-  white-space: nowrap;
-  z-index: 999;
-  opacity: 0;
-  visibility: hidden;
-  transform: translate(calc(-100% - 8px), calc(-50% + 4px));
-}
-
-presence-snitch:hover,
-presence-snitch:focus {
-  background: rgba(#ffc107, 0.8);
-  cursor: pointer;
-}
-
-presence-snitch:hover::part(text),
-presence-snitch:focus::part(text) {
-  opacity: 1;
-  visibility: visible;
-}
-
-@media all and (max-width: 640px) {
-  presence-snitch {
-    position: absolute;
-    top: 0;
-    right: 0;
   }
 }
