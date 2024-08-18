@@ -36,6 +36,8 @@ permalink: about
 
 {% include now.md %}
 
+### About this computer
+
 This computer contains an amulet, a sphinx, [{{ post_count }} blog posts](/posts), a
 collection of silly songs, [{{ photo_count }} photos](/photos), one pun, [{{
 drawings }} drawings](/drawings), a modest [blogroll](/blogroll), a hidden
@@ -51,12 +53,16 @@ bird, a photo of your turtle, a turtle.
 
 This computer doesn't track you, your friends, or your enemies.
 
-### Don't be a stranger
+### Follow and subscribe
 
-If you like what you are reading (and why wouldn't you?), add this
-[RSS](/feed.xml) feed to your favorite feed reader to get the updates. If you
-are only interested in the photos I publish, this [RSS](/feeds/photos.xml) is
-for you.
+- If you like what you are reading (and why wouldn't you?), add this
+  [RSS](/feed.xml) feed to your favorite feed reader to get the updates.
+- If you are only interested in the photos I publish, this [RSS](/feeds/photos.xml) is
+  for you.
+- If you want to get an email (in Spanish) every time I do something funny [subscribe to
+  my newsletter](/newsletter).
+
+### Don't be a stranger
 
 Do you need to tell me something incredible that happened to you recently? [Use
 this link](/contact) to get in touch with me.

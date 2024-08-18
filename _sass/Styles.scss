@@ -151,16 +151,6 @@ ul {
   padding: 0;
 }
 
-ul+h3,
-table+h3,
-table+h4 {
-  margin-top: 2em;
-}
-
-ul+h4 {
-  margin-top: 2em;
-}
-
 p {
   font-size: 1em;
   line-height: 1.45;
@@ -226,6 +216,10 @@ ul {
 ul li {
   margin: 0 0 .4em 0;
   list-style: disc;
+}
+
+ul li:last-child {
+  margin: 0;
 }
 
 hr {
