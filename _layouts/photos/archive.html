@@ -3,16 +3,15 @@ layout: base
 className: Photos
 category: photos
 ---
+{% assign content = site.posts | concat: site.photos -%}
+{% assign locations = content | map: 'location' | join: ',' | split: ',' | uniq | compact | sort -%}
 <!--- photos/archive -->
 <div class="Content">
   {% include navigation.html -%}
 
   <div class="Photos__archive">
-    {% assign content = site.posts | concat: site.photos -%}
-    {% assign locations = content | map: 'location' | join: ',' | split: ',' | uniq | compact | sort -%}
-
     {% for location in locations -%}
-    {% assign tags = content | where: 'location', location -%}
+    {% assign tags = content | where: 'location', location | where: 'category', 'photo' -%}
     {% assign photo = tags[0] -%}
     {% if photo.category and photo -%}
     {% include photos/thumb.html photo=photo -%}

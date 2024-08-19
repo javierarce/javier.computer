@@ -30,7 +30,6 @@ filenames:
   - 2024-08-11-Berlin-R0008528
   - filename: 2024-08-11-Berlin-R0008523
     caption: The Fustero's Sisters
-
 camera: Ricoh GR IIIx
 ---
 
