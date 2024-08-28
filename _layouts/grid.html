@@ -12,8 +12,5 @@ className: Page
     <p class="is-light">{{ page.description }}</p>
     {{ content }}
   </div>
-  {% if page.show_date %}
-  <div class="Page__date">{{ page.date | date: '%B %d, %Y' }}</div>
-  {% endif %}
   {% include footer.html %}
 </div>

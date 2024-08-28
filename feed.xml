@@ -36,7 +36,16 @@ layout: none
     {% if post.author.name %}<dc:creator>{{ post.author.name | xml_escape }}</dc:creator>{% endif %}
 
     <description>
-      {% if post.category == 'photo' %}
+      {% if post.category == 'video' %}
+      <![CDATA[
+        {{ post.content }}   
+        <p><video controls><source src="{{ post.src }}" type="video/mp4">Tu navegador no soporta video HTML5.</video></p>
+        <p>{% if matching_location -%} {{ matching_location.title }}. {% endif -%}
+        {% if post.camera -%}Cámara: {{ post.camera }}.{% endif -%}</p>
+        <hr />
+        <p><a href="{{ site.url}}/comment?title={{post.title}}&url={{post.id}}">Comentar este post</a> &middot; <a href="{{ site.url}}/heart?id={{post.url}}">Me gusta</a></p>
+        ]]>
+      {% elsif post.category == 'photo' %}
       <![CDATA[
         {{ post.content }}   
 

@@ -1,0 +1,172 @@
+// Variables
+$overlay-bg-color: rgba(0, 0, 0, 0.3);
+$transition-duration: 0.3s;
+
+.Post__content .Video {
+  margin: 0;
+}
+
+.Video {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 0 0 1em;
+
+  video {
+    width: 100%;
+    display: block;
+    border-radius: var(--borderRadius);
+  }
+
+  .control-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $overlay-bg-color;
+    opacity: 1;
+    transition: opacity $transition-duration ease-in-out;
+
+    &.playing {
+      opacity: 0;
+    }
+  }
+
+  .time-display {
+    position: absolute;
+    bottom: 0.8em;
+    left: 0.8em;
+    color: var(--white);
+    font-size: 0.6em;
+    opacity: 0;
+    transition: opacity $transition-duration ease-in-out;
+  }
+
+  &:hover {
+
+    .control-overlay.playing,
+    .time-display,
+    .fullscreen-button {
+      opacity: 1;
+    }
+  }
+
+  .control-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+
+    &::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-top: 40px solid transparent;
+      border-bottom: 40px solid transparent;
+      border-left: 60px solid var(--white);
+    }
+
+    &.pause {
+      gap: 1em;
+
+      &::before,
+      &::after {
+        width: 24px;
+        height: 100%;
+        background-color: var(--white);
+      }
+
+      &::before {
+        border: none;
+      }
+
+      &::after {
+        content: '';
+      }
+    }
+  }
+
+  .fullscreen-button:after {
+    content: '\2197';
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--white);
+  }
+
+  .fullscreen-button {
+    position: absolute;
+    top: 0.8em;
+    right: 0.8em;
+    opacity: 0;
+    transition: opacity $transition-duration ease-in-out;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  &:fullscreen {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .fullscreen-button {
+      top: 1em;
+      right: 1em;
+
+      &:after {
+        content: '\2715';
+      }
+    }
+
+    video {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .time-display {
+      bottom: 0.4em;
+      left: 0.4em;
+      font-size: 0.8em;
+    }
+
+    .control-overlay,
+    .time-display,
+    .fullscreen-button {
+      opacity: 0;
+    }
+
+    &:hover {
+
+      .control-overlay,
+      .time-display,
+      .fullscreen-button {
+        opacity: 0;
+      }
+    }
+
+    &.show-controls {
+
+      .control-overlay,
+      .time-display,
+      .fullscreen-button {
+        opacity: 1 !Important;
+      }
+    }
+
+    // Remove default hover effect in fullscreen
+  }
+}

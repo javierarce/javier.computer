@@ -1,0 +1,34 @@
+<div class="Post {% if post.highlighted -%} is-highlighted{% endif -%} h-entry">
+  {% if post.show_title -%}
+  <div class="Post__title p-name">{{ post.title }}</div>
+  {% else -%}
+  <a href="https://javier.computer" class="p-name" style="display:none">{{ post.title }}</a>
+  {% endif -%}
+
+  <span class="p-author h-card" style="display:none;">{{ site.author }}</span>
+  <div class="Post__content{% if post.extraClassName %} {{ post.extraClassName }}{% endif %} e-content">
+    {% include video.html url=post.src -%}
+
+    {% if post.intro -%}
+    <p>{{ post.intro }}</p>
+    {% elsif post.show_content -%}
+    {{ post.content }}
+    {% endif -%}
+  </div>
+  <div class="Post__footer">
+    <a href="{{ post.url }}" class="Post__date dt-published u-url">
+      {% include date.html date=post.date -%}
+    </a>
+    {% include post/locations.html page=post -%}
+    <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
+    <open-heart class="text-open-heart" href="https://api.javier.computer/heart?id={{ page.url }}" emoji="❤️"
+      aria-labelledby="like-prompt">
+      <span class="on"></span>
+      <span class="off"></span>
+    </open-heart>
+
+    <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
+    <a href="/comment?title={{ page.title }}&url={{ page.id }}"
+      title="Envíame un comentario sobre esta entrada">Comentar</a>
+  </div>
+</div>

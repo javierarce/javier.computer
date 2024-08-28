@@ -1,0 +1,20 @@
+<div class="Video">
+  <video preload="auto">
+    <source src="{{ include.url }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="control-overlay">
+    <button class="control-button" aria-label="Play/Pause"></button>
+    <div class="time-display">
+      <span class="current-time">0:00</span>
+      /
+      <span class="total-time">0:00</span>
+    </div>
+    <button class="fullscreen-button" aria-label="Fullscreen"></button>
+  </div>
+  {% if include.caption and include.caption != "" %}
+  {% unless include.hide_caption %}
+  <figcaption>{{ include.caption }}</figcaption>
+  {% endunless %}
+  {% endif %}
+</div>

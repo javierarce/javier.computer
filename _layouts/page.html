@@ -10,15 +10,15 @@ className: Page
       {% if page.show_title %}
       <h3 class="Page__title">{{ page.title }}</h3>
       {% endif %}
-      {% if page.description and page.show_description  %}
+      {% if page.description and page.show_description %}
       <p class="is-light">{{ page.description }}</p>
       {% endif %}
       {{ content }}
+
+      {% if page.show_date != false and page.date %}
+      <div class="Page__date">{{ page.date | date: '%B %d, %Y' }}</div>
+      {% endif %}
     </div>
-    {% if page.show_date != false and page.date %}
-    <div class="Page__date">{{ page.date | date: '%B %d, %Y' }}</div>
-    {% endif %}
   </div>
   {% include footer.html %}
 </div>
-
