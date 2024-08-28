@@ -1,7 +1,43 @@
 {
-  "updated_at": "2024-08-17",
-  "count": 711,
+  "updated_at": "2024-08-28",
+  "count": 715,
   "movies": [
+    {
+      "watched_on": "2024-08-26",
+      "title": "Cycling the Frame",
+      "year": "1988",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "cycling-the-frame"
+    },
+    {
+      "watched_on": "2024-08-25",
+      "title": "The Happening",
+      "year": "2008",
+      "rating": 0.5,
+      "stars": "½",
+      "rewatched": false,
+      "permalink": "the-happening"
+    },
+    {
+      "watched_on": "2024-08-21",
+      "title": "Alien: Romulus",
+      "year": "2024",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "alien-romulus"
+    },
+    {
+      "watched_on": "2024-08-19",
+      "title": "Twilight of the Warriors: Walled In",
+      "year": "2024",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "twilight-of-the-warriors-walled-in"
+    },
     {
       "watched_on": "2024-08-17",
       "title": "Longlegs",
@@ -6403,4 +6439,3 @@
     }
   ]
 }
-
