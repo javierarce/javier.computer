@@ -96,7 +96,7 @@ $transition-duration: 0.3s;
 
   .fullscreen-button:after {
     content: '\2197';
-    font-size: 1em;
+    font-size: 1.2em;
     font-weight: bold;
     color: var(--white);
   }
@@ -166,7 +166,27 @@ $transition-duration: 0.3s;
         opacity: 1 !Important;
       }
     }
+  }
+}
 
-    // Remove default hover effect in fullscreen
+@media all and (max-width: 640px) {
+  .Video {
+    .control-button {
+      width: 40px;
+      height: 40px;
+
+      &::before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-left: 30px solid var(--white);
+      }
+
+      &.pause {
+        gap: 0.6em;
+      }
+    }
   }
 }
