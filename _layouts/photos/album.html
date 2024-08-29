@@ -22,7 +22,7 @@ className: Photos
     {{ content }}
 
     {% for photo in photos -%}
-    {% if photo.category and location == photo.location -%}
+    {% if (photo.category == "post" or photo.category == "photo") and location == photo.location -%}
     {% assign filenames = photo.filenames -%}
     {% assign ids = photo.ids -%}
 
