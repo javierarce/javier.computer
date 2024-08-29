@@ -79,6 +79,7 @@ h4 {
   margin: 0;
 }
 
+.Layout__post .Post__content,
 .Layout__home .Post__content {
   display: flex;
   margin: 0 0 0.4em 0;
@@ -86,14 +87,13 @@ h4 {
   gap: 1.2em;
 }
 
-.Layout__post .Post__content {
-  margin: 0 0 0.4em 0;
-  gap: 1.2em;
-  display: flex;
-  flex-direction: column;
-}
-
 /* Post__footer */
+
+.Post__footer {
+  display: flex;
+  flex-direction: row;
+  gap: var(--halfSpace);
+}
 
 .Post__footer a,
 .Post__footer open-heart .off {
@@ -113,10 +113,17 @@ h4 {
 /* Post__pagination */
 
 .Post__pagination {
-  margin: 2em 0 0 0;
+  width: var(--width);
+  margin: 1em auto 0 auto;
   display: flex;
   flex-direction: column;
 }
+
+.Post__pagination a {
+  text-decoration: none;
+  opacity: var(--lightOpacity);
+}
+
 
 .Post__paginationArrow,
 .Post__footerSeparator {
@@ -179,6 +186,7 @@ h4 {
     width: 100%;
   }
 
+  .Post__pagination,
   .Post__footer {
     width: 100%;
   }
