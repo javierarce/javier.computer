@@ -1,0 +1,13 @@
+---
+title: "Two-Minute Warning (1976)"
+position: 36
+date: 2024-09-19T21:27:25.557Z
+covers: 
+- https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIzMDgxNzExMC9vcmlnaW5hbF8yMjNlZTJiYTE5ZTllNTg5MjAyNDA5MTktMi12am5mbGYucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NjV9LCJqcGVnIjp7InF1YWxpdHkiOjY1fSwicm90YXRlIjpudWxsfX0=?bc=0
+- https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIzMDgxNzExNC9vcmlnaW5hbF8wYjZjODA5YzgxYWU3ZDkzMjAyNDA5MTktMi1zeGhra24ucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NjV9LCJqcGVnIjp7InF1YWxpdHkiOjY1fSwicm90YXRlIjpudWxsfX0=?bc=0
+videos: 
+- https://attachments.are.na/30817110/fd7df6d2f00f010dcffb7493386bdd96.mov?1726781247
+- https://attachments.are.na/30817114/41a16473e933bb95f19d1a6ec2e9ee55.mov?1726781255
+layout: binoculars
+---
+
