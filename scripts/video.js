@@ -152,7 +152,7 @@ class Video {
   }
 
   updateTimeDisplay() {
-    if (this.$video.currentTime && this.$video.duration) {
+    if (this.$video.duration !== Infinity) {
       this.$currentTimeDisplay.textContent = this.formatTime(
         this.$video.currentTime,
       );
