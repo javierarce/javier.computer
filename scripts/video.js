@@ -146,20 +146,24 @@ class Video {
   }
 
   formatTime(timeInSeconds) {
+    if (isNaN(timeInSeconds) || timeInSeconds === Infinity) {
+      return "0:00";
+    }
     const minutes = Math.floor(timeInSeconds / 60);
     const seconds = Math.floor(timeInSeconds % 60);
     return `${minutes}:${seconds.toString().padStart(2, "0")}`;
   }
 
   updateTimeDisplay() {
-    if (this.$video.duration !== Infinity) {
-      this.$currentTimeDisplay.textContent = this.formatTime(
-        this.$video.currentTime,
-      );
+    const currentTime = this.isLoading ? 0 : this.$video.currentTime;
+    const duration = this.$video.duration;
 
-      this.$totalTimeDisplay.textContent = this.formatTime(
-        this.$video.duration,
-      );
+    this.$currentTimeDisplay.textContent = this.formatTime(currentTime);
+
+    if (isNaN(duration) || duration === Infinity) {
+      this.$totalTimeDisplay.textContent = "0:00";
+    } else {
+      this.$totalTimeDisplay.textContent = this.formatTime(duration);
     }
   }
 
