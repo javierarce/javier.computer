@@ -107,7 +107,9 @@ class Video {
     if (this.isLoading) return;
 
     if (this.$video.paused) {
-      this.$video.play();
+      this.$video.play().catch((error) => {
+        console.error("Play was prevented:", error);
+      });
       this.$overlay.classList.add("playing");
       this.$control.classList.add("pause");
       this.$container.classList.add("is-playing");
@@ -162,27 +164,34 @@ class Video {
   }
 
   initLazyLoading() {
-    const options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.1,
-    };
+    if ("IntersectionObserver" in window) {
+      const options = {
+        root: null,
+        rootMargin: "200px",
+        threshold: 0,
+      };
 
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && !this.isInitialized) {
-          this.initializeVideo();
-          observer.unobserve(this.$container);
-        }
-      });
-    }, options);
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !this.isInitialized) {
+            this.initializeVideo();
+            observer.unobserve(this.$container);
+          }
+        });
+      }, options);
 
-    observer.observe(this.$container);
+      observer.observe(this.$container);
+    } else {
+      this.initializeVideo();
+    }
   }
 
   initializeVideo() {
+    if (this.isInitialized) return;
+
     this.isInitialized = true;
-    this.$video.src = this.videoSrc;
+    this.$source.src = this.videoSrc;
+    this.$video.load();
     this.showLoadingState();
   }
 
