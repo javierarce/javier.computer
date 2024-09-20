@@ -141,10 +141,15 @@ class Video {
   }
 
   updateTimeDisplay() {
-    this.$currentTimeDisplay.textContent = this.formatTime(
-      this.$video.currentTime,
-    );
-    this.$totalTimeDisplay.textContent = this.formatTime(this.$video.duration);
+    if (this.$video.currentTime && this.$video.duration) {
+      this.$currentTimeDisplay.textContent = this.formatTime(
+        this.$video.currentTime,
+      );
+
+      this.$totalTimeDisplay.textContent = this.formatTime(
+        this.$video.duration,
+      );
+    }
   }
 
   showControls() {
