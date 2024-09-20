@@ -1,7 +1,16 @@
 {
-  "updated_at": "2024-09-19",
-  "count": 733,
+  "updated_at": "2024-09-20",
+  "count": 734,
   "movies": [
+    {
+      "watched_on": "2024-09-20",
+      "title": "Souvenirs de Madrid",
+      "year": "2008",
+      "rating": 4.5,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "souvenirs-de-madrid"
+    },
     {
       "watched_on": "2024-09-19",
       "title": "Two-Minute Warning",
@@ -6601,4 +6610,3 @@
     }
   ]
 }
-
