@@ -107,7 +107,9 @@ class Video {
     if (this.isLoading) return;
 
     if (this.$video.paused) {
-      this.$video.play();
+      this.$video.play().catch((error) => {
+        console.error("Play was prevented:", error);
+      });
       this.$overlay.classList.add("playing");
       this.$control.classList.add("pause");
       this.$container.classList.add("is-playing");
@@ -182,8 +184,21 @@ class Video {
 
   initializeVideo() {
     this.isInitialized = true;
-    this.$video.src = this.videoSrc;
+    this.$source.src = this.videoSrc;
+    this.$video.load();
     this.showLoadingState();
+
+    if (!this.isMobile()) {
+      this.$video.play().catch((error) => {
+        console.error("Auto-play was prevented:", error);
+      });
+    }
+  }
+
+  isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent,
+    );
   }
 
   showControls() {
