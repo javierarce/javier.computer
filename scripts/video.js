@@ -2,6 +2,7 @@ class Video {
   constructor($videoContainer) {
     this.$container = $videoContainer;
     this.$video = this.$container.querySelector("video");
+    this.$source = this.$video.querySelector("source");
     this.$overlay = this.$container.querySelector(".control-overlay");
     this.$control = this.$container.querySelector(".control-button");
 
@@ -18,10 +19,13 @@ class Video {
     this.controlsTimeout;
     this.isFullscreen = false;
     this.isLoading = true;
+    this.isInitialized = false;
+
+    this.videoSrc = this.$source.getAttribute("data-src");
+    this.$video.removeAttribute("preload");
 
     this.bindEvents();
-
-    this.showLoadingState();
+    this.initLazyLoading();
   }
 
   bindEvents() {
@@ -55,13 +59,18 @@ class Video {
       this.showControls.bind(this),
     );
 
-    this.$video.addEventListener("loadstart", this.showLoadingState.bind(this));
-    this.$video.addEventListener("canplay", this.hideLoadingState.bind(this));
-    this.$video.addEventListener("waiting", this.showLoadingState.bind(this));
-    this.$video.addEventListener(
-      "canplaythrough",
-      this.hideLoadingState.bind(this),
-    );
+    this.$video.addEventListener("loadstart", () => {
+      if (this.isInitialized) this.showLoadingState();
+    });
+    this.$video.addEventListener("canplay", () => {
+      if (this.isInitialized) this.hideLoadingState();
+    });
+    this.$video.addEventListener("waiting", () => {
+      if (this.isInitialized) this.showLoadingState();
+    });
+    this.$video.addEventListener("canplaythrough", () => {
+      if (this.isInitialized) this.hideLoadingState();
+    });
   }
 
   showLoadingState() {
@@ -152,11 +161,35 @@ class Video {
     }
   }
 
+  initLazyLoading() {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !this.isInitialized) {
+          this.initializeVideo();
+          observer.unobserve(this.$container);
+        }
+      });
+    }, options);
+
+    observer.observe(this.$container);
+  }
+
+  initializeVideo() {
+    this.isInitialized = true;
+    this.$video.src = this.videoSrc;
+    this.showLoadingState();
+  }
+
   showControls() {
     this.$container.classList.add("show-controls");
 
     if (this.isFullscreen) {
-      console.log("show controls");
       this.startHideControlsTimer();
     }
   }
@@ -168,7 +201,6 @@ class Video {
   startHideControlsTimer() {
     clearTimeout(this.controlsTimeout);
     this.controlsTimeout = setTimeout(() => {
-      console.log("hide");
       this.hideControls();
     }, 1000);
   }
