@@ -4,14 +4,24 @@ class Video {
     this.$video = this.$container.querySelector("video");
     this.$overlay = this.$container.querySelector(".control-overlay");
     this.$control = this.$container.querySelector(".control-button");
+
     this.$fullscreenButton =
       this.$container.querySelector(".fullscreen-button");
+
     this.$currentTimeDisplay = this.$container.querySelector(".current-time");
     this.$totalTimeDisplay = this.$container.querySelector(".total-time");
+    this.$timeDisplay = this.$container.querySelector(".time-display");
+
+    this.spinner = new Spinner("video-spinner");
+    this.$overlay.appendChild(this.spinner.render());
 
     this.controlsTimeout;
     this.isFullscreen = false;
+    this.isLoading = true;
+
     this.bindEvents();
+
+    this.showLoadingState();
   }
 
   bindEvents() {
@@ -44,6 +54,35 @@ class Video {
       "touchstart",
       this.showControls.bind(this),
     );
+
+    this.$video.addEventListener("loadstart", this.showLoadingState.bind(this));
+    this.$video.addEventListener("canplay", this.hideLoadingState.bind(this));
+    this.$video.addEventListener("waiting", this.showLoadingState.bind(this));
+    this.$video.addEventListener(
+      "canplaythrough",
+      this.hideLoadingState.bind(this),
+    );
+  }
+
+  showLoadingState() {
+    this.isLoading = true;
+    this.$container.classList.add("is-loading");
+    this.spinner.show();
+    this.updateTimeDisplay();
+  }
+
+  hideLoadingState() {
+    this.isLoading = false;
+    this.$container.classList.remove("is-loading");
+    this.spinner.hide();
+    this.updateTimeDisplay();
+    if (!this.$video.paused) {
+      this.$container.classList.add("is-playing");
+    }
+  }
+
+  onMetadataLoaded() {
+    this.updateTimeDisplay();
   }
 
   onFullScreenChange() {
@@ -56,14 +95,18 @@ class Video {
   }
 
   togglePlayPause() {
+    if (this.isLoading) return;
+
     if (this.$video.paused) {
       this.$video.play();
       this.$overlay.classList.add("playing");
       this.$control.classList.add("pause");
+      this.$container.classList.add("is-playing");
     } else {
       this.$video.pause();
       this.$overlay.classList.remove("playing");
       this.$control.classList.remove("pause");
+      this.$container.classList.remove("is-playing");
     }
   }
 

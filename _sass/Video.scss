@@ -18,6 +18,32 @@ $transition-duration: 0.3s;
     border-radius: var(--borderRadius);
   }
 
+  &.is-loading {
+    .control-button {
+      display: none;
+    }
+
+    .time-display {
+      opacity: 1;
+    }
+  }
+
+  &:not(.is-loading):not(.is-playing) {
+    .time-display {
+      opacity: 1;
+    }
+  }
+
+  &.is-playing {
+    .control-overlay {
+      opacity: 0;
+    }
+
+    .time-display {
+      opacity: 0;
+    }
+  }
+
   .control-overlay {
     position: absolute;
     top: 0;
@@ -47,6 +73,15 @@ $transition-duration: 0.3s;
   }
 
   &:hover {
+
+    &.is-playing {
+
+      .control-overlay,
+      .time-display,
+      .fullscreen-button {
+        opacity: 1;
+      }
+    }
 
     .control-overlay.playing,
     .time-display,
