@@ -12,6 +12,6 @@ date: "2024-09-25 20:00:00 +0200"
 > arguments differently, experience them differently, carry them out differently,
 > and talk about them differently. But we would probably not view them as arguing
 > at all: they would simply be doing something different. It would seem strange
-> even to call what they were doing ‘arguing’.
+> even to call what they were doing ‘arguing’."
 
 "Metaphors We Live By" by George Lakoff and Mark Johnson
