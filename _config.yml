@@ -33,6 +33,12 @@ twitter_username: javier
 github_username: javierarce
 show_drafts: false
 
+show_likes: true
+show_comments: true
+
+show_home_likes: false
+show_home_comments: false
+
 include: [".well-known"]
 exclude: ["_data/locations/*"]
 

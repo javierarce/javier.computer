@@ -5,21 +5,27 @@
     {% if matching_location -%}<span class="Post__footerSeparator">&middot;</span>
     <a href="/photos/{{ include.photo.location -}}" class="Post__location">{{ matching_location.title }}</a>
     {% endif -%}
+
+    {% if site.show_likes %}
     <span class="Post__footerSeparator">&middot;</span>
     <open-heart class="text-open-heart" href="https://api.javier.computer/heart?id={{include.photo.url}}" emoji="❤️"
       aria-labelledby="like-prompt">
       <span class="on"></span>
       <span class="off"></span>
     </open-heart>
+    {% endif %}
+
+    {% if site.show_comments %}
+    <span class="Post__footerSeparator">&middot;</span>
+    <a href="/comment?title={{ page.title }}&url={{ page.id }}"
+      title="Envíame un comentario sobre esta entrada">Comentar</a>
+    {% endif %}
 
     {% if include.readmore == "true" -%}
     <span class="Post__footerSeparator">&middot;</span>
     <a href="{{ post.url }}" class="is-underlined">Leer más</a>
     {% endif -%}
 
-    <span class="Post__footerSeparator">&middot;</span>
-    <a href="/comment?title={{ page.title }}&url={{ page.id }}"
-      title="Envíame un comentario sobre esta entrada">Comentar</a>
   </div>
 
   {% if include.pagination -%}

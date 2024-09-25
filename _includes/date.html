@@ -2,7 +2,9 @@
 {% if include.day == "false" -%}
 {% assign showDay = false -%}
 {% endif -%}
-<time datetime="{{ include.date }}">{% if showDay -%} 
+{% assign currentYear = "now" | date: "%Y" -%}
+{% assign dateYear = include.date | date: "%Y" -%}
+<time datetime="{{ include.date }}">{% if showDay -%}
   {{ include.date | date: '%-d' }} de {% endif -%}
   {% assign m = include.date | date: '%-m' -%}
   {% case m %}
@@ -18,4 +20,5 @@
   {% when '10' %}{% if showDay %}octubre{% else %}Octubre{% endif -%}
   {% when '11' %}{% if showDay %}noviembre{% else %}Noviembre{% endif -%}
   {% when '12' %}{% if showDay %}diciembre{% else %}Diciembre{% endif -%}
-  {% endcase %} de {{ include.date | date: '%Y' }}</time>
+  {% endcase %}{% if currentYear != dateYear %} de {{ dateYear }}{% endif -%}
+</time>

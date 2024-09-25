@@ -1,7 +1,61 @@
 {
-  "updated_at": "2024-09-20",
-  "count": 734,
+  "updated_at": "2024-09-24",
+  "count": 740,
   "movies": [
+    {
+      "watched_on": "2024-09-24",
+      "title": "Joana Biarnés, una entre tots",
+      "year": "2015",
+      "rating": 0,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "joana-biarnes-una-entre-tots"
+    },
+    {
+      "watched_on": "2024-09-23",
+      "title": "Unrest",
+      "year": "2022",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "unrest-2022"
+    },
+    {
+      "watched_on": "2024-09-22",
+      "title": "45 Years",
+      "year": "2015",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "45-years"
+    },
+    {
+      "watched_on": "2024-09-22",
+      "title": "Joint Security Area",
+      "year": "2000",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "joint-security-area"
+    },
+    {
+      "watched_on": "2024-09-21",
+      "title": "Escape",
+      "year": "2024",
+      "rating": 1.5,
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "escape-2024"
+    },
+    {
+      "watched_on": "2024-09-21",
+      "title": "Alien: Covenant",
+      "year": "2017",
+      "rating": 2,
+      "stars": "★★",
+      "rewatched": true,
+      "permalink": "alien-covenant"
+    },
     {
       "watched_on": "2024-09-20",
       "title": "Souvenirs de Madrid",
