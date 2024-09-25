@@ -1,7 +1,16 @@
 {
-  "updated_at": "2024-09-24",
-  "count": 740,
+  "updated_at": "2024-09-25",
+  "count": 741,
   "movies": [
+    {
+      "watched_on": "2024-09-25",
+      "title": "Daguerréotypes",
+      "year": "1975",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "daguerreotypes"
+    },
     {
       "watched_on": "2024-09-24",
       "title": "Joana Biarnés, una entre tots",
