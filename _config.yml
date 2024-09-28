@@ -51,7 +51,6 @@ sass:
 plugins:
   - jekyll-feed
   - jekyll-paginate-v2
-  - jekyll-webmention_io
 
 pagination:
   enabled: true
@@ -97,7 +96,24 @@ wikilinks:
   exclude: []
 
 webmentions:
-  username: https://javier.computer
+  author:
+    name: Javier Arce
+    url: https://javier.computer
+  username: javier.computer
+  throttle_lookups:
+    last_week: daily
+    last_month: weekly
+    last_year: every 2 weeks
+    older: monthly
+  cache_folder: .cache
+  debug: true
+  syndication:
+    mastodon:
+      endpoint: https://brid.gy/publish/mastodon
+      response_mapping:
+        syndication: $.url
+    github:
+      endpoint: https://brid.gy/publish/github
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
