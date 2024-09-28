@@ -51,6 +51,7 @@ sass:
 plugins:
   - jekyll-feed
   - jekyll-paginate-v2
+  - jekyll-webmention_io
 
 pagination:
   enabled: true
@@ -94,6 +95,9 @@ permalink: /:year/:month/:day/:title
 wikilinks:
   enable: true
   exclude: []
+
+webmentions:
+  username: https://javier.computer
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
