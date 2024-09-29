@@ -1,7 +1,16 @@
 {
-  "updated_at": "2024-09-28",
-  "count": 742,
+  "updated_at": "2024-09-29",
+  "count": 743,
   "movies": [
+    {
+      "watched_on": "2024-09-29",
+      "title": "Z",
+      "year": "1969",
+      "rating": 4.5,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "z"
+    },
     {
       "watched_on": "2024-09-27",
       "title": "Old",
