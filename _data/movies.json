@@ -1,6 +1,6 @@
 {
   "updated_at": "2024-10-07",
-  "count": 749,
+  "count": 750,
   "movies": [
     {
       "watched_on": "2024-10-06",
@@ -55,6 +55,15 @@
       "stars": "★★★★",
       "rewatched": true,
       "permalink": "the-man-in-the-white-suit"
+    },
+    {
+      "watched_on": "2024-09-29",
+      "title": "The Social Network",
+      "year": "2010",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": true,
+      "permalink": "the-social-network"
     },
     {
       "watched_on": "2024-09-29",
