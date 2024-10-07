@@ -1,7 +1,79 @@
 {
-  "updated_at": "2024-09-28",
-  "count": 742,
+  "updated_at": "2024-10-07",
+  "count": 750,
   "movies": [
+    {
+      "watched_on": "2024-10-06",
+      "title": "Spy Game",
+      "year": "2001",
+      "rating": 2,
+      "stars": "★★",
+      "rewatched": false,
+      "permalink": "spy-game"
+    },
+    {
+      "watched_on": "2024-10-05",
+      "title": "Drunken Angel",
+      "year": "1948",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "drunken-angel"
+    },
+    {
+      "watched_on": "2024-10-04",
+      "title": "Working Girl",
+      "year": "1988",
+      "rating": 2,
+      "stars": "★★",
+      "rewatched": false,
+      "permalink": "working-girl"
+    },
+    {
+      "watched_on": "2024-10-03",
+      "title": "The Ascent",
+      "year": "1977",
+      "rating": 4.5,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "the-ascent"
+    },
+    {
+      "watched_on": "2024-10-01",
+      "title": "Rue Daguerre in 2005",
+      "year": "2005",
+      "rating": 0,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "rue-daguerre-in-2005"
+    },
+    {
+      "watched_on": "2024-09-30",
+      "title": "The Man in the White Suit",
+      "year": "1951",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": true,
+      "permalink": "the-man-in-the-white-suit"
+    },
+    {
+      "watched_on": "2024-09-29",
+      "title": "The Social Network",
+      "year": "2010",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": true,
+      "permalink": "the-social-network"
+    },
+    {
+      "watched_on": "2024-09-29",
+      "title": "Z",
+      "year": "1969",
+      "rating": 4.5,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "z"
+    },
     {
       "watched_on": "2024-09-27",
       "title": "Old",
