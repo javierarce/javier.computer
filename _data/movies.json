@@ -1,7 +1,97 @@
 {
-  "updated_at": "2024-10-07",
-  "count": 750,
+  "updated_at": "2024-10-19",
+  "count": 760,
   "movies": [
+    {
+      "watched_on": "2024-10-19",
+      "title": "Adam Sandler: Love You",
+      "year": "2024",
+      "rating": 0,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "adam-sandler-love-you"
+    },
+    {
+      "watched_on": "2024-10-17",
+      "title": "Christine",
+      "year": "1983",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "christine-1983"
+    },
+    {
+      "watched_on": "2024-10-15",
+      "title": "It's What's Inside",
+      "year": "2024",
+      "rating": 1.5,
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "its-whats-inside"
+    },
+    {
+      "watched_on": "2024-10-13",
+      "title": "Akira",
+      "year": "1988",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "akira"
+    },
+    {
+      "watched_on": "2024-10-13",
+      "title": "The Substance",
+      "year": "2024",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "the-substance"
+    },
+    {
+      "watched_on": "2024-10-12",
+      "title": "Gorky Park",
+      "year": "1983",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "gorky-park"
+    },
+    {
+      "watched_on": "2024-10-11",
+      "title": "The 4th Man",
+      "year": "1983",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "the-4th-man"
+    },
+    {
+      "watched_on": "2024-10-10",
+      "title": "Chilly Scenes of Winter",
+      "year": "1979",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "chilly-scenes-of-winter"
+    },
+    {
+      "watched_on": "2024-10-09",
+      "title": "Cuckoo",
+      "year": "2024",
+      "rating": 2,
+      "stars": "★★",
+      "rewatched": false,
+      "permalink": "cuckoo-2024"
+    },
+    {
+      "watched_on": "2024-10-08",
+      "title": "Animale",
+      "year": "2024",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "animale"
+    },
     {
       "watched_on": "2024-10-06",
       "title": "Spy Game",

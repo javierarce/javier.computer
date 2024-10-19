@@ -7,6 +7,7 @@
     "csv-parser": "^3.0.0",
     "dotenv": "^16.0.0",
     "fs": "^0.0.1-security",
+    "node-html-parser": "^6.1.13",
     "ora": "^8.0.1",
     "pretty-bytes": "^6.0.0",
     "sharp": "^0.32.6"

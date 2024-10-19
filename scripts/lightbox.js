@@ -146,12 +146,17 @@ class Lightbox {
 
   getHighestResolutionImage(srcset) {
     const srcsetEntries = srcset.split(",").map((entry) => entry.trim());
-    let highestResImage = srcsetEntries[0].split(" ")[0];
+    let highestResImage = srcsetEntries[0].match(
+      /(https:\/\/img.javier.computer\/.*?\.webp)/,
+    );
     let highestResValue = 0;
 
     for (const entry of srcsetEntries) {
-      const [url, resolution] = entry.split(" ");
-      const resValue = parseInt(resolution.replace("w", ""), 10);
+      const match = entry.match(
+        /(https:\/\/img.javier.computer\/.*?\.webp) (\d*?)w/,
+      );
+      const url = match[1];
+      const resValue = parseInt(match[2], 10);
 
       if (this.isMobile() && resValue <= this.BREAKPOINT_MOBILE) {
         return url;
