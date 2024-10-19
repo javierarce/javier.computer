@@ -1,85 +1,59 @@
 [
   {
     "layout": "place",
-    "title": "SlowMov",
-    "pid": "slowmov",
-    "emoji": "☕️",
-    "description": "<p>Mi cafetería de cabecera en el barrio.</p>\n",
-    "address": "Carrer de Luis Antúnez, 18",
+    "title": "Zumzeig Cinema",
+    "pid": "zumzeig",
+    "emoji": "🍿",
+    "description": "<p>Sala de cine cooperativa y sin ánimo de lucro, con una programación principalmente indie en VO.</p>\n",
+    "address": "Carrer de Béjar, 53",
     "latlng": [
-      41.39821818545401,
-      2.1548143969966884
+      41.378023248824405,
+      2.1448554232917982
     ],
     "location": "barcelona",
-    "last_modified_date": "2023-12-08T17:14:31+01:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
       {
-        "url": "/2022/04/28/pegatinas",
-        "title": "Pegatinas",
-        "date": "2022-04-28 21:58:21 +0200"
+        "url": "/2023/04/07/all-the-beauty-and-the-bloodshed",
+        "title": "All The Beauty And The Bloodshed",
+        "date": "2023-04-07 00:35:31 +0200"
       }
     ]
   },
   {
     "layout": "place",
-    "title": "Sato ト Tanaka",
-    "pid": "sato",
-    "description": "<p>Barra japonesa atendida por dos sushimanes que ofrece dos menús degustación. Difícil conseguir reserva, muy fácil querer volver al salir por la puerta.</p>\n",
-    "address": "Carrer del Bruc, 79",
+    "title": "Centre de Cultura Contemporània de Barcelona",
+    "pid": "cccb",
+    "description": "<p>Centro cultural y centro de artes creativas con teatro, galerías de exposiciones y salas de conferencias</p>\n",
+    "address": "Carrer de Montalegre, 5",
     "latlng": [
-      41.394977701949294,
-      2.168945380457328
+      41.38438058272032,
+      2.1666050079501575
     ],
     "location": "barcelona",
-    "last_modified_date": "2023-12-08T17:55:55+01:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
       {
-        "url": "/2023/07/04/sato-tanaka",
-        "title": "Sato Tanaka",
-        "date": "2023-07-04 22:21:20 +0200"
+        "url": "/2022/12/04/constelacion-grafica",
+        "title": "Constelación Gráfica",
+        "date": "2022-12-04 22:59:43 +0100"
       }
     ]
   },
   {
     "layout": "place",
-    "title": "Onis Coffee",
-    "pid": "onis",
-    "emoji": "☕️",
-    "description": "<p>Diminuta cafetería estratégicamente situada en Dreta de l’Eixample como un oasis en el desierto.</p>\n",
-    "address": "Carrer de Roger de Llúria, 87",
+    "pid": "chido-one",
+    "title": "Chido One",
+    "description": "<p>Un mexicano bien chido.</p>\n",
+    "address": "Carrer de Torrijos, 30, la Vila de Gràcia, Gràcia",
     "latlng": [
-      41.39524373651066,
-      2.1660161807639344
+      41.4032943,
+      2.1589741
     ],
     "location": "barcelona",
-    "last_modified_date": "2023-12-08T17:56:55+01:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
-      {
-        "url": "/2023/07/04/sato-tanaka",
-        "title": "Sato Tanaka",
-        "date": "2023-07-04 22:21:20 +0200"
-      }
-    ]
-  },
-  {
-    "layout": "place",
-    "title": "Fábrica Garage",
-    "emoji": "🍺",
-    "pid": "fabrica-garage",
-    "address": "Sant Adrià, 66",
-    "latlng": [
-      41.436009095441975,
-      2.1967577024795357
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2023-12-08T17:57:45+01:00",
-    "description": "",
-    "post_references": [
-      {
-        "url": "/2023/06/18/42",
-        "title": "42",
-        "date": "2023-06-18 23:20:54 +0200"
-      }
+
     ]
   },
   {
@@ -93,7 +67,7 @@
       2.175380638074763
     ],
     "location": "barcelona",
-    "last_modified_date": "2023-12-08T17:59:01+01:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
       {
         "url": "/2023/05/31/gail",
@@ -104,53 +78,18 @@
   },
   {
     "layout": "place",
-    "pid": "phenomena",
-    "title": "Phenomena Experience",
-    "emoji": "🍿",
-    "description": "<p>Pelis clásicas palomiteras en una buena sala. Por razones inexplicables las entradas no están numeradas y solo puedes pagar en metálico en el bar.</p>\n",
-    "address": "Carrer de St. Antoni Maria Claret, 168",
+    "pid": "cuina-panda",
+    "title": "Cuina Panda",
+    "description": "<p>Pequeño restaurante con comida casera típica de Sichuan. El menú cuando fui era muy carnívoro, pero lo adaptan sin problemas para vegetarianos o veganos.</p>\n",
+    "address": "Carrer de Viladomat, 101",
     "latlng": [
-      41.40923361160873,
-      2.1718218260341406
+      41.38012362269991,
+      2.1572740000000006
     ],
     "location": "barcelona",
-    "last_modified_date": "2023-12-08T18:54:53+01:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
-      {
-        "url": "/2023/01/22/S23W03",
-        "title": "S23W03",
-        "date": "2023-01-22 16:10:16 +0100"
-      },
-      {
-        "url": "/2023/06/03/la-cosa",
-        "title": "La Cosa",
-        "date": "2023-06-03 17:07:15 +0200"
-      }
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "jazzman",
-    "title": "JazzMan",
-    "address": "Carrer de Roger de Flor, 238",
-    "latlng": [
-      41.40213522647976,
-      2.169469046024921
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2023-12-08T18:54:57+01:00",
-    "description": "",
-    "post_references": [
-      {
-        "url": "/2023/05/06/celebracion-postconciliacion",
-        "title": "Celebración Post-conciliación",
-        "date": "2023-05-06 08:41:29 +0200"
-      },
-      {
-        "url": "/2023/06/03/la-cosa",
-        "title": "La Cosa",
-        "date": "2023-06-03 17:07:15 +0200"
-      }
+
     ]
   },
   {
@@ -165,7 +104,7 @@
       2.1899451907195195
     ],
     "location": "barcelona",
-    "last_modified_date": "2023-12-08T18:55:44+01:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
       {
         "url": "/2023/05/06/celebracion-postconciliacion",
@@ -176,88 +115,115 @@
   },
   {
     "layout": "place",
-    "pid": "cero-tres-cinco",
-    "title": "035//BAR",
-    "description": "<p>Maravilloso bar que acoge cenas popup igualmente maravillosas.</p>\n",
-    "address": "Carrer de Monlau, 35",
+    "title": "Fábrica Garage",
+    "emoji": "🍺",
+    "pid": "fabrica-garage",
+    "address": "Sant Adrià, 66",
     "latlng": [
-      41.424967802049494,
-      2.1904708306832803
+      41.436009095441975,
+      2.1967577024795357
     ],
     "location": "barcelona",
-    "last_modified_date": "2023-12-08T18:56:10+01:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "description": "",
     "post_references": [
       {
-        "url": "/2023/05/06/celebracion-postconciliacion",
-        "title": "Celebración Post-conciliación",
-        "date": "2023-05-06 08:41:29 +0200"
+        "url": "/2023/06/18/42",
+        "title": "42",
+        "date": "2023-06-18 23:20:54 +0200"
       }
     ]
   },
   {
     "layout": "place",
-    "title": "Orval",
-    "pid": "orval",
+    "title": "Fino Bar",
+    "pid": "fino-bar",
+    "description": "<p>Queviures, salaons, xarcuteria al tall i molt de vi.</p>\n",
+    "address": "Carrer del Torrent de les Flors, 113, Gràcia",
+    "latlng": [
+      41.40912805117236,
+      2.157757869315849
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "title": "Fismuler",
+    "pid": "fismuler",
+    "description": "<p>Cocina mediterránea de parte de tres ex-El Bulli.</p>\n",
+    "address": "Carrer del Rec Comtal, 17",
+    "latlng": [
+      41.390302729862846,
+      2.179832104117521
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+      {
+        "url": "/2024/07/27/vuelta-al-teletipo",
+        "title": "Vuelta al teletipo",
+        "date": "2024-07-27 13:20:00 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "frutas-selectas",
+    "title": "Nomad Frutas Selectas",
     "emoji": "☕️",
-    "description": "<p>Cafetería favorita en la zona. Alerta de kimcheese.</p>\n",
-    "address": "Carrer de Buenaventura Muñoz, 31",
+    "description": "<p>Cafetería de Nomad con café de Nomad (claro), y pan y dulces de Pa de Kilo.</p>\n",
+    "address": "Carrer de Pujades, 95",
     "latlng": [
-      41.392732992085215,
-      2.1858767125397236
+      41.398138533227154,
+      2.1959991095361917
     ],
     "location": "barcelona",
-    "last_modified_date": "2023-12-08T19:47:17+01:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "funky-bakers",
+    "title": "Funky Bakers",
+    "description": "<p>No tan <em>funkies</em> como dicen ser pero tienen cosas ricas.</p>\n",
+    "address": "Pg. del Born, 10",
+    "latlng": [
+      41.38458415660393,
+      2.182553957368447
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
       {
-        "url": "/2022/09/26/atrapado-en-un-grupo-de-telegram",
-        "title": "Atrapado en Telegram",
-        "date": "2022-09-26 23:32:23 +0200"
-      },
-      {
-        "url": "/2022/12/04/constelacion-grafica",
-        "title": "Constelación Gráfica",
-        "date": "2022-12-04 22:59:43 +0100"
+        "url": "/2022/09/17/funky-bakers",
+        "title": "Funky Bakers",
+        "date": "2022-09-17 09:16:14 +0200"
       }
     ]
   },
   {
     "layout": "place",
-    "title": "Santa Mònica",
-    "pid": "santa-monica",
-    "description": "<p>Centro interdisciplinario de artes dedicado a impulsar la creación contemporánea</p>\n",
-    "address": "La Rambla, 7",
+    "title": "Sede de la Editorial Gustavo Gili",
+    "pid": "gili",
+    "address": "Carrer del Rosselló, 87-89",
+    "description": "<p>Una visita maja a un icono del racionalismo catalán.</p>\n",
     "latlng": [
-      41.377393737045395,
-      2.1756821241850046
+      41.38692384689809,
+      2.1479082227331228
     ],
     "location": "barcelona",
-    "last_modified_date": "2023-12-08T19:47:56+01:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
       {
-        "url": "/2022/12/10/retallar-i-enganxar",
-        "title": "Retallar i enganxar",
-        "date": "2022-12-10 22:30:27 +0100"
-      }
-    ]
-  },
-  {
-    "layout": "place",
-    "title": "Zumzeig Cinema",
-    "pid": "zumzeig",
-    "emoji": "🍿",
-    "description": "<p>Sala de cine cooperativa y sin ánimo de lucro, con una programación principalmente indie en VO.</p>\n",
-    "address": "Carrer de Béjar, 53",
-    "latlng": [
-      41.378023248824405,
-      2.1448554232917982
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2023-12-08T19:48:57+01:00",
-    "post_references": [
-      {
-        "url": "/2023/04/07/all-the-beauty-and-the-bloodshed",
-        "title": "All The Beauty And The Bloodshed",
-        "date": "2023-04-07 00:35:31 +0200"
+        "url": "/2023/05/27/gili",
+        "title": "Gili",
+        "date": "2023-05-27 12:51:37 +0200"
       }
     ]
   },
@@ -273,7 +239,7 @@
       2.149860615288348
     ],
     "location": "barcelona",
-    "last_modified_date": "2023-12-08T19:52:27+01:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
       {
         "url": "/2023/06/04/kasa-hanaka",
@@ -284,101 +250,26 @@
   },
   {
     "layout": "place",
-    "title": "Centre de Cultura Contemporània de Barcelona",
-    "pid": "cccb",
-    "description": "<p>Centro cultural y centro de artes creativas con teatro, galerías de exposiciones y salas de conferencias</p>\n",
-    "address": "Carrer de Montalegre, 5",
+    "pid": "jazzman",
+    "title": "JazzMan",
+    "address": "Carrer de Roger de Flor, 238",
     "latlng": [
-      41.38438058272032,
-      2.1666050079501575
+      41.40213522647976,
+      2.169469046024921
     ],
     "location": "barcelona",
-    "last_modified_date": "2023-12-09T21:47:40+01:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "description": "",
     "post_references": [
       {
-        "url": "/2022/12/04/constelacion-grafica",
-        "title": "Constelación Gráfica",
-        "date": "2022-12-04 22:59:43 +0100"
-      }
-    ]
-  },
-  {
-    "layout": "place",
-    "title": "Vereda Bar",
-    "pid": "vereda",
-    "description": "<p>Platos de proximidad y temporada y vinos naturales.</p>\n",
-    "address": "Carrer de la Diputació, 155",
-    "latlng": [
-      41.38460297818277,
-      2.1578119926085177
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2023-12-09T21:47:40+01:00",
-    "post_references": [
+        "url": "/2023/05/06/celebracion-postconciliacion",
+        "title": "Celebración Post-conciliación",
+        "date": "2023-05-06 08:41:29 +0200"
+      },
       {
-        "url": "/2023/05/04/open-heart-protocol",
-        "title": "Open Heart Protocol",
-        "date": "2023-05-04 22:57:54 +0200"
-      }
-    ]
-  },
-  {
-    "layout": "place",
-    "title": "Sede de la Editorial Gustavo Gili",
-    "pid": "gili",
-    "address": "Carrer del Rosselló, 87-89",
-    "description": "<p>Una visita maja a un icono del racionalismo catalán.</p>\n",
-    "latlng": [
-      41.38692384689809,
-      2.1479082227331228
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-01-06T20:10:23+01:00",
-    "post_references": [
-      {
-        "url": "/2023/05/27/gili",
-        "title": "Gili",
-        "date": "2023-05-27 12:51:37 +0200"
-      }
-    ]
-  },
-  {
-    "layout": "place",
-    "title": "El Noa Noa",
-    "pid": "noanoa",
-    "description": "<p>Una cafetería-librería con cafés y libros.</p>\n",
-    "address": "Carrer de Torrijos, 22",
-    "latlng": [
-      41.403156276444605,
-      2.159198194771789
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-01-06T20:10:23+01:00",
-    "post_references": [
-      {
-        "url": "/2022/04/28/pegatinas",
-        "title": "Pegatinas",
-        "date": "2022-04-28 21:58:21 +0200"
-      }
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "funky-bakers",
-    "title": "Funky Bakers",
-    "description": "<p>No tan <em>funkies</em> como dicen ser pero tienen cosas ricas.</p>\n",
-    "address": "Pg. del Born, 10",
-    "latlng": [
-      41.38458415660393,
-      2.182553957368447
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-01-06T20:10:23+01:00",
-    "post_references": [
-      {
-        "url": "/2022/09/17/funky-bakers",
-        "title": "Funky Bakers",
-        "date": "2022-09-17 09:16:14 +0200"
+        "url": "/2023/06/03/la-cosa",
+        "title": "La Cosa",
+        "date": "2023-06-03 17:07:15 +0200"
       }
     ]
   },
@@ -394,105 +285,135 @@
       2.1954502849044113
     ],
     "location": "barcelona",
-    "last_modified_date": "2024-01-28T19:07:10+01:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
 
     ]
   },
   {
     "layout": "place",
-    "title": "Fino Bar",
-    "pid": "fino-bar",
-    "description": "<p>Queviures, salaons, xarcuteria al tall i molt de vi.</p>\n",
-    "address": "Carrer del Torrent de les Flors, 113, Gràcia",
+    "pid": "mikan",
+    "title": "MIKAN",
+    "description": "<p>Vinos naturales y gastronomía del noroeste asiático (China, Japón, Corea) con opciones vegetarianas y veganas. Menú del día a mediodía y bar de vinos y platos para compartir por la noche.</p>\n",
+    "address": "Carrer d'Aribau, 158",
     "latlng": [
-      41.40912805117236,
-      2.157757869315849
+      41.392483495253394,
+      2.1543505254535993
     ],
     "location": "barcelona",
-    "last_modified_date": "2024-01-28T19:07:10+01:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
 
     ]
   },
   {
     "layout": "place",
-    "pid": "cuina-panda",
-    "title": "Cuina Panda",
-    "description": "<p>Pequeño restaurante con comida casera típica de Sichuan. El menú cuando fui era muy carnívoro, pero lo adaptan sin problemas para vegetarianos o veganos.</p>\n",
-    "address": "Carrer de Viladomat, 101",
+    "title": "El Noa Noa",
+    "pid": "noanoa",
+    "description": "<p>Una cafetería-librería con cafés y libros.</p>\n",
+    "address": "Carrer de Torrijos, 22",
     "latlng": [
-      41.38012362269991,
-      2.1572740000000006
+      41.403156276444605,
+      2.159198194771789
     ],
     "location": "barcelona",
-    "last_modified_date": "2024-01-28T19:07:10+01:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+      {
+        "url": "/2022/04/28/pegatinas",
+        "title": "Pegatinas",
+        "date": "2022-04-28 21:58:21 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "title": "Onis Coffee",
+    "pid": "onis",
+    "emoji": "☕️",
+    "description": "<p>Diminuta cafetería estratégicamente situada en Dreta de l’Eixample como un oasis en el desierto.</p>\n",
+    "address": "Carrer de Roger de Llúria, 87",
+    "latlng": [
+      41.39524373651066,
+      2.1660161807639344
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+      {
+        "url": "/2023/07/04/sato-tanaka",
+        "title": "Sato Tanaka",
+        "date": "2023-07-04 22:21:20 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "title": "Orval",
+    "pid": "orval",
+    "emoji": "☕️",
+    "description": "<p>Cafetería favorita en la zona. Alerta de kimcheese.</p>\n",
+    "address": "Carrer de Buenaventura Muñoz, 31",
+    "latlng": [
+      41.392732992085215,
+      2.1858767125397236
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+      {
+        "url": "/2022/09/26/atrapado-en-un-grupo-de-telegram",
+        "title": "Atrapado en Telegram",
+        "date": "2022-09-26 23:32:23 +0200"
+      },
+      {
+        "url": "/2022/12/04/constelacion-grafica",
+        "title": "Constelación Gráfica",
+        "date": "2022-12-04 22:59:43 +0100"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "pecora",
+    "title": "Pècora",
+    "emoji": "☕️",
+    "description": "<p>Buena y bonita cafetería de especialidad a un tiro de manzana de Frutas Selectas. También tienen cosas dulces para comer.</p>\n",
+    "address": "Carrer de Pujades, 113",
+    "latlng": [
+      41.39887555964336,
+      2.1968050417827083
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
 
     ]
   },
   {
     "layout": "place",
-    "pid": "chido-one",
-    "title": "Chido One",
-    "description": "<p>Un mexicano bien chido.</p>\n",
-    "address": "Carrer de Torrijos, 30, la Vila de Gràcia, Gràcia",
+    "pid": "phenomena",
+    "title": "Phenomena Experience",
+    "emoji": "🍿",
+    "description": "<p>Pelis clásicas palomiteras en una buena sala. Por razones inexplicables las entradas no están numeradas y solo puedes pagar en metálico en el bar.</p>\n",
+    "address": "Carrer de St. Antoni Maria Claret, 168",
     "latlng": [
-      41.4032943,
-      2.1589741
+      41.40923361160873,
+      2.1718218260341406
     ],
     "location": "barcelona",
-    "last_modified_date": "2024-01-28T19:07:10+01:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "the-green-spot",
-    "title": "The Green Spot",
-    "description": "<p>Vegetariano bonito y rico en la Barceloneta. ¿Qué me gustó de aquí? La colifor empanada, el plato de tempeh y el risotto de 7 verdes.</p>\n",
-    "address": "Carrer de la Reina Cristina, 12",
-    "latlng": [
-      41.381787821227704,
-      2.1839794830047263
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-01-28T19:07:10+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "tofu-catalan",
-    "title": "Tofu Catalán",
-    "description": "<p>Pequeño deli donde comprar tofu fresco, bentos y otros productos japoneses.</p>\n",
-    "address": "Carrer d'Aribau, 119",
-    "latlng": [
-      41.391171858311,
-      2.1556111101123
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-01-28T19:07:10+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "tokyo-ya",
-    "title": "Tokyo-Ya",
-    "description": "<p>¿Fantástico y bien surtido súper japonés? Sí.</p>\n",
-    "address": "Carrer de Balmes, 197",
-    "latlng": [
-      41.40031912503507,
-      2.1523378229426
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-01-28T19:07:10+01:00",
-    "post_references": [
-
+      {
+        "url": "/2023/01/22/S23W03",
+        "title": "S23W03",
+        "date": "2023-01-22 16:10:16 +0100"
+      },
+      {
+        "url": "/2023/06/03/la-cosa",
+        "title": "La Cosa",
+        "date": "2023-06-03 17:07:15 +0200"
+      }
     ]
   },
   {
@@ -507,7 +428,7 @@
       2.1752526677825426
     ],
     "location": "barcelona",
-    "last_modified_date": "2024-01-28T19:07:10+01:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
       {
         "url": "/2024/07/27/vuelta-al-teletipo",
@@ -527,7 +448,132 @@
       2.152588853967282
     ],
     "location": "barcelona",
-    "last_modified_date": "2024-01-28T19:07:10+01:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "title": "Santa Mònica",
+    "pid": "santa-monica",
+    "description": "<p>Centro interdisciplinario de artes dedicado a impulsar la creación contemporánea</p>\n",
+    "address": "La Rambla, 7",
+    "latlng": [
+      41.377393737045395,
+      2.1756821241850046
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+      {
+        "url": "/2022/12/10/retallar-i-enganxar",
+        "title": "Retallar i enganxar",
+        "date": "2022-12-10 22:30:27 +0100"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "title": "Sato ト Tanaka",
+    "pid": "sato",
+    "description": "<p>Barra japonesa atendida por dos sushimanes que ofrece dos menús degustación. Difícil conseguir reserva, muy fácil querer volver al salir por la puerta.</p>\n",
+    "address": "Carrer del Bruc, 79",
+    "latlng": [
+      41.394977701949294,
+      2.168945380457328
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+      {
+        "url": "/2023/07/04/sato-tanaka",
+        "title": "Sato Tanaka",
+        "date": "2023-07-04 22:21:20 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "title": "SlowMov",
+    "pid": "slowmov",
+    "emoji": "☕️",
+    "description": "<p>Mi cafetería de cabecera en el barrio.</p>\n",
+    "address": "Carrer de Luis Antúnez, 18",
+    "latlng": [
+      41.39821818545401,
+      2.1548143969966884
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+      {
+        "url": "/2022/04/28/pegatinas",
+        "title": "Pegatinas",
+        "date": "2022-04-28 21:58:21 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "taulat-44",
+    "title": "Taulat 44",
+    "description": "<p>Deli trendy en Poblenou, con todo lo que eso significa (lo que significa es que va gente trendy… con todo lo que eso significa, etcétera).</p>\n",
+    "address": "Carrer del Taulat, 44",
+    "latlng": [
+      41.398995319447366,
+      2.205068600770623
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "the-green-spot",
+    "title": "The Green Spot",
+    "description": "<p>Vegetariano bonito y rico en la Barceloneta. ¿Qué me gustó de aquí? La colifor empanada, el plato de tempeh y el risotto de 7 verdes.</p>\n",
+    "address": "Carrer de la Reina Cristina, 12",
+    "latlng": [
+      41.381787821227704,
+      2.1839794830047263
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "tofu-catalan",
+    "title": "Tofu Catalán",
+    "description": "<p>Pequeño deli donde comprar tofu fresco, bentos y otros productos japoneses.</p>\n",
+    "address": "Carrer d'Aribau, 119",
+    "latlng": [
+      41.391171858311,
+      2.1556111101123
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "tokyo-ya",
+    "title": "Tokyo-Ya",
+    "description": "<p>¿Fantástico y bien surtido súper japonés? Sí.</p>\n",
+    "address": "Carrer de Balmes, 197",
+    "latlng": [
+      41.40031912503507,
+      2.1523378229426
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
 
     ]
@@ -543,94 +589,48 @@
       2.1336241407692733
     ],
     "location": "barcelona",
-    "last_modified_date": "2024-02-27T12:01:07+01:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
 
     ]
   },
   {
     "layout": "place",
-    "pid": "pecora",
-    "title": "Pècora",
-    "emoji": "☕️",
-    "description": "<p>Buena y bonita cafetería de especialidad a un tiro de manzana de Frutas Selectas. También tienen cosas dulces para comer.</p>\n",
-    "address": "Carrer de Pujades, 113",
+    "title": "Vereda Bar",
+    "pid": "vereda",
+    "description": "<p>Platos de proximidad y temporada y vinos naturales.</p>\n",
+    "address": "Carrer de la Diputació, 155",
     "latlng": [
-      41.39887555964336,
-      2.1968050417827083
+      41.38460297818277,
+      2.1578119926085177
     ],
     "location": "barcelona",
-    "last_modified_date": "2024-04-07T10:17:38+02:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "mikan",
-    "title": "MIKAN",
-    "description": "<p>Vinos naturales y gastronomía del noroeste asiático (China, Japón, Corea) con opciones vegetarianas y veganas. Menú del día a mediodía y bar de vinos y platos para compartir por la noche.</p>\n",
-    "address": "Carrer d'Aribau, 158",
-    "latlng": [
-      41.392483495253394,
-      2.1543505254535993
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-04-07T10:17:38+02:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "taulat-44",
-    "title": "Taulat 44",
-    "description": "<p>Deli trendy en Poblenou, con todo lo que eso significa (lo que significa es que va gente trendy… con todo lo que eso significa, etcétera).</p>\n",
-    "address": "Carrer del Taulat, 44",
-    "latlng": [
-      41.398995319447366,
-      2.205068600770623
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-04-07T10:17:38+02:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "frutas-selectas",
-    "title": "Nomad Frutas Selectas",
-    "emoji": "☕️",
-    "description": "<p>Cafetería de Nomad con café de Nomad (claro), y pan y dulces de Pa de Kilo.</p>\n",
-    "address": "Carrer de Pujades, 95",
-    "latlng": [
-      41.398138533227154,
-      2.1959991095361917
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-04-07T10:17:38+02:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "title": "Fismuler",
-    "pid": "fismuler",
-    "description": "<p>Cocina mediterránea de parte de tres ex-El Bulli.</p>\n",
-    "address": "Carrer del Rec Comtal, 17",
-    "latlng": [
-      41.390302729862846,
-      2.179832104117521
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-07-27T18:39:38+02:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
       {
-        "url": "/2024/07/27/vuelta-al-teletipo",
-        "title": "Vuelta al teletipo",
-        "date": "2024-07-27 13:20:00 +0200"
+        "url": "/2023/05/04/open-heart-protocol",
+        "title": "Open Heart Protocol",
+        "date": "2023-05-04 22:57:54 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "cero-tres-cinco",
+    "title": "035//BAR",
+    "description": "<p>Maravilloso bar que acoge cenas popup igualmente maravillosas.</p>\n",
+    "address": "Carrer de Monlau, 35",
+    "latlng": [
+      41.424967802049494,
+      2.1904708306832803
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+      {
+        "url": "/2023/05/06/celebracion-postconciliacion",
+        "title": "Celebración Post-conciliación",
+        "date": "2023-05-06 08:41:29 +0200"
       }
     ]
   }

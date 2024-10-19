@@ -1,16 +1,16 @@
 [
   {
     "layout": "place",
-    "pid": "most-high",
-    "title": "Most High",
-    "description": "<p>Una cafetería de emergencia donde pillar un latte y continuar dando un paseo.</p>\n",
-    "address": "820 Washington Ave, Brooklyn",
+    "pid": "unnameable-books",
+    "title": "Unnameable Books",
+    "description": "<p>Bien bonita y bien surtida librería de segunda mano de nombre difícil de pronunciar.</p>\n",
+    "address": "615 Vanderbilt Ave, Brooklyn",
     "latlng": [
-      40.67349277538117,
-      -73.96322140362759
+      40.679060919567554,
+      -73.96841803514663
     ],
     "location": "newyork",
-    "last_modified_date": "2023-12-09T19:54:14+01:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
 
     ]
@@ -27,151 +27,7 @@
       -73.97825295003133
     ],
     "location": "newyork",
-    "last_modified_date": "2023-12-09T21:47:40+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "desert-island",
-    "title": "Desert Island",
-    "description": "<p>¿Qué te llevarías a Desert Island?</p>\n",
-    "address": "540 E 5th St",
-    "latlng": [
-      40.713979006545344,
-      -73.95083660504864
-    ],
-    "location": "newyork",
-    "last_modified_date": "2023-12-09T21:47:40+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "banh-mi-place",
-    "title": "Banh Mi Place",
-    "description": "<p>No es el mejor Banh Mi que he comido, pero tampoco el peor Bahn Mi que he comido.</p>\n",
-    "address": "824b Washington Ave, Brooklyn",
-    "latlng": [
-      40.67329930729744,
-      -73.96314417387886
-    ],
-    "location": "newyork",
-    "last_modified_date": "2023-12-09T21:47:40+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "goods-for-the-study",
-    "title": "Goods for the Study",
-    "description": "<p>Ahora que cerró CW Pencil Enterprise este es un buen sitio donde comprar material de oficina.</p>\n",
-    "address": "234 Mulberry St, New York",
-    "latlng": [
-      40.72273113413452,
-      -73.99588703974875
-    ],
-    "location": "newyork",
-    "last_modified_date": "2023-12-09T21:47:40+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "hungry-ghost",
-    "title": "Hungry Ghost",
-    "description": "<p>Existen varios de estos fantasmas hambrientos en la ciudad, pero este es mi favorito.</p>\n",
-    "address": "183 Sterling Pl, Brooklyn",
-    "latlng": [
-      40.67691397746196,
-      -73.97148321854978
-    ],
-    "location": "newyork",
-    "last_modified_date": "2023-12-09T21:47:40+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "prospect-park",
-    "title": "Prospect Park",
-    "description": "<p>Un parque bien majo</p>\n",
-    "address": "Brooklyn, NY",
-    "latlng": [
-      40.66079205923622,
-      -73.96930685789933
-    ],
-    "location": "newyork",
-    "last_modified_date": "2023-12-09T21:47:40+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "sit-wonder",
-    "title": "Sit & Wonder",
-    "description": "<p>Cuando fui a esta cafetería me tocó el barista aprendiz</p>\n",
-    "address": "688 Washington Ave, Brooklyn",
-    "latlng": [
-      40.67739967774963,
-      -73.9638492637935
-    ],
-    "location": "newyork",
-    "last_modified_date": "2023-12-09T21:47:40+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "quimby",
-    "title": "Quimby's Bookstore NYC",
-    "description": "<p>Sales de Desert Island y te metes aquí.</p>\n",
-    "address": "536 Metropolitan Ave",
-    "latlng": [
-      40.7139612724994,
-      -73.95093182857953
-    ],
-    "location": "newyork",
-    "last_modified_date": "2023-12-09T21:47:40+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "nurish",
-    "title": "Nûrish",
-    "description": "<p>Café con platos vegetarianos y veganos (pero también con opciones para carnívoros)</p>\n",
-    "address": "637 Washington Ave, Brooklyn",
-    "latlng": [
-      40.67840685350245,
-      -73.96369051873681
-    ],
-    "location": "newyork",
-    "last_modified_date": "2023-12-09T21:47:40+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "mast-books",
-    "title": "Mast Books",
-    "description": "<p>Tienen una colección exquisita de primeras ediciones, libros raros y descatalogados, pero son un poco bordes.</p>\n",
-    "address": "72 Avenue A, New York",
-    "latlng": [
-      40.72515257580894,
-      -73.98442797315501
-    ],
-    "location": "newyork",
-    "last_modified_date": "2023-12-09T21:47:40+01:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
 
     ]
@@ -187,87 +43,23 @@
       -73.99343164307919
     ],
     "location": "newyork",
-    "last_modified_date": "2024-02-16T11:40:56+01:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
 
     ]
   },
   {
     "layout": "place",
-    "pid": "sweet-pickle-books",
-    "title": "Sweet Pickle Books",
-    "description": "<p>Si tus gustos se encuentran en la intersección de los pepinillos y los libros estás de enhorabuena.</p>\n",
-    "address": "47 Orchard St",
+    "pid": "desert-island",
+    "title": "Desert Island",
+    "description": "<p>¿Qué te llevarías a Desert Island?</p>\n",
+    "address": "540 E 5th St",
     "latlng": [
-      40.71666757262507,
-      -73.99126414493215
+      40.713979006545344,
+      -73.95083660504864
     ],
     "location": "newyork",
-    "last_modified_date": "2024-02-16T11:42:44+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "left-bank-books",
-    "title": "Left Bank Books",
-    "description": "<p>Libros de segunda mano bonitos de ver y caritos de comprar.</p>\n",
-    "address": "41 Perry St",
-    "latlng": [
-      40.73599295020406,
-      -74.00280521609535
-    ],
-    "location": "newyork",
-    "last_modified_date": "2024-02-16T11:47:53+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "unnameable-books",
-    "title": "Unnameable Books",
-    "description": "<p>Bien bonita y bien surtida librería de segunda mano de nombre difícil de pronunciar.</p>\n",
-    "address": "615 Vanderbilt Ave, Brooklyn",
-    "latlng": [
-      40.679060919567554,
-      -73.96841803514663
-    ],
-    "location": "newyork",
-    "last_modified_date": "2024-02-16T11:48:54+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "metrograph",
-    "title": "Metrograph",
-    "description": "<p>Cine indie chiquito al que iría todas las semanas si viviera en la ciudad.</p>\n",
-    "address": "7 Ludlow St",
-    "latlng": [
-      40.715305538423884,
-      -73.99098578508807
-    ],
-    "location": "newyork",
-    "last_modified_date": "2024-02-16T11:49:51+01:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "ifc-center",
-    "title": "IFC Center",
-    "description": "<p>El cine indie de confianza. Dos mirillas en el muro exterior del cine permiten ver las películas que proyectan.</p>\n",
-    "address": "323 6th Ave",
-    "latlng": [
-      40.73139256313356,
-      -74.00171511794787
-    ],
-    "location": "newyork",
-    "last_modified_date": "2024-02-16T11:50:44+01:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
 
     ]
@@ -283,23 +75,119 @@
       -74.00165074493151
     ],
     "location": "newyork",
-    "last_modified_date": "2024-02-16T11:51:35+01:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
 
     ]
   },
   {
     "layout": "place",
-    "pid": "printed-matter",
-    "title": "Printed Matter, Inc.",
-    "description": "<p>Institución fanzinera.</p>\n",
-    "address": "231 11th Ave",
+    "pid": "goods-for-the-study",
+    "title": "Goods for the Study",
+    "description": "<p>Ahora que cerró CW Pencil Enterprise este es un buen sitio donde comprar material de oficina.</p>\n",
+    "address": "234 Mulberry St, New York",
     "latlng": [
-      40.75092284674894,
-      -74.00595908911104
+      40.72273113413452,
+      -73.99588703974875
     ],
     "location": "newyork",
-    "last_modified_date": "2024-02-16T11:52:10+01:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "hungry-ghost",
+    "title": "Hungry Ghost",
+    "description": "<p>Existen varios de estos fantasmas hambrientos en la ciudad, pero este es mi favorito.</p>\n",
+    "address": "183 Sterling Pl, Brooklyn",
+    "latlng": [
+      40.67691397746196,
+      -73.97148321854978
+    ],
+    "location": "newyork",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "ifc-center",
+    "title": "IFC Center",
+    "description": "<p>El cine indie de confianza. Dos mirillas en el muro exterior del cine permiten ver las películas que proyectan.</p>\n",
+    "address": "323 6th Ave",
+    "latlng": [
+      40.73139256313356,
+      -74.00171511794787
+    ],
+    "location": "newyork",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "left-bank-books",
+    "title": "Left Bank Books",
+    "description": "<p>Libros de segunda mano bonitos de ver y caritos de comprar.</p>\n",
+    "address": "41 Perry St",
+    "latlng": [
+      40.73599295020406,
+      -74.00280521609535
+    ],
+    "location": "newyork",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "mast-books",
+    "title": "Mast Books",
+    "description": "<p>Tienen una colección exquisita de primeras ediciones, libros raros y descatalogados, pero son un poco bordes.</p>\n",
+    "address": "72 Avenue A, New York",
+    "latlng": [
+      40.72515257580894,
+      -73.98442797315501
+    ],
+    "location": "newyork",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "metrograph",
+    "title": "Metrograph",
+    "description": "<p>Cine indie chiquito al que iría todas las semanas si viviera en la ciudad.</p>\n",
+    "address": "7 Ludlow St",
+    "latlng": [
+      40.715305538423884,
+      -73.99098578508807
+    ],
+    "location": "newyork",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "most-high",
+    "title": "Most High",
+    "description": "<p>Una cafetería de emergencia donde pillar un latte y continuar dando un paseo.</p>\n",
+    "address": "820 Washington Ave, Brooklyn",
+    "latlng": [
+      40.67349277538117,
+      -73.96322140362759
+    ],
+    "location": "newyork",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
 
     ]
@@ -315,7 +203,119 @@
       -73.92402470445512
     ],
     "location": "newyork",
-    "last_modified_date": "2024-02-16T11:53:28+01:00",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "nurish",
+    "title": "Nûrish",
+    "description": "<p>Café con platos vegetarianos y veganos (pero también con opciones para carnívoros)</p>\n",
+    "address": "637 Washington Ave, Brooklyn",
+    "latlng": [
+      40.67840685350245,
+      -73.96369051873681
+    ],
+    "location": "newyork",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "printed-matter",
+    "title": "Printed Matter, Inc.",
+    "description": "<p>Institución fanzinera.</p>\n",
+    "address": "231 11th Ave",
+    "latlng": [
+      40.75092284674894,
+      -74.00595908911104
+    ],
+    "location": "newyork",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "prospect-park",
+    "title": "Prospect Park",
+    "description": "<p>Un parque bien majo</p>\n",
+    "address": "Brooklyn, NY",
+    "latlng": [
+      40.66079205923622,
+      -73.96930685789933
+    ],
+    "location": "newyork",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "quimby",
+    "title": "Quimby's Bookstore NYC",
+    "description": "<p>Sales de Desert Island y te metes aquí.</p>\n",
+    "address": "536 Metropolitan Ave",
+    "latlng": [
+      40.7139612724994,
+      -73.95093182857953
+    ],
+    "location": "newyork",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "sit-wonder",
+    "title": "Sit & Wonder",
+    "description": "<p>Cuando fui a esta cafetería me tocó el barista aprendiz</p>\n",
+    "address": "688 Washington Ave, Brooklyn",
+    "latlng": [
+      40.67739967774963,
+      -73.9638492637935
+    ],
+    "location": "newyork",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "sweet-pickle-books",
+    "title": "Sweet Pickle Books",
+    "description": "<p>Si tus gustos se encuentran en la intersección de los pepinillos y los libros estás de enhorabuena.</p>\n",
+    "address": "47 Orchard St",
+    "latlng": [
+      40.71666757262507,
+      -73.99126414493215
+    ],
+    "location": "newyork",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "banh-mi-place",
+    "title": "Banh Mi Place",
+    "description": "<p>No es el mejor Banh Mi que he comido, pero tampoco el peor Bahn Mi que he comido.</p>\n",
+    "address": "824b Washington Ave, Brooklyn",
+    "latlng": [
+      40.67329930729744,
+      -73.96314417387886
+    ],
+    "location": "newyork",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
 
     ]
