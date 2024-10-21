@@ -1,7 +1,16 @@
 {
-  "updated_at": "2024-10-19",
-  "count": 760,
+  "updated_at": "2024-10-21",
+  "count": 761,
   "movies": [
+    {
+      "watched_on": "2024-10-20",
+      "title": "The Green Ray",
+      "year": "1986",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "the-green-ray"
+    },
     {
       "watched_on": "2024-10-19",
       "title": "Adam Sandler: Love You",
