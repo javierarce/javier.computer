@@ -1,7 +1,16 @@
 {
-  "updated_at": "2024-10-21",
-  "count": 761,
+  "updated_at": "2024-10-25",
+  "count": 762,
   "movies": [
+    {
+      "watched_on": "2024-10-22",
+      "title": "Madrid",
+      "year": "1987",
+      "rating": 2,
+      "stars": "★★",
+      "rewatched": false,
+      "permalink": "madrid-1987-1"
+    },
     {
       "watched_on": "2024-10-20",
       "title": "The Green Ray",
