@@ -1,16 +1,30 @@
-<!-- photos / feed -->
 {% assign readmore = "false" %}
-
-<div class="Photo__collection">
+<div class="Photo__collection has-lightbox {% if post.filenames.size >= 4 %}has-grid{% endif %}">
   {% if post.category == 'reportage' %}
   {% assign filename = post.filename %}
   {% include photos/single.html photo=post filename=filename caption=caption -%}
   {% assign readmore = "true" %}
-
   <div class="Post__content">
     <p>{{ post.intro }}</p>
   </div>
   {% elsif post.filenames -%}
+  {% assign photo_count = post.filenames | size %}
+  {% if photo_count >= 4 %}
+  <div class="gg {% if post.square %}is-square{% endif %}">
+    {% for file in post.filenames -%}
+    {% if file.filename -%}
+    {% assign filename = file.filename -%}
+    {% assign caption = file.caption -%}
+    {% else -%}
+    {% assign filename = file -%}
+    {% assign caption = "" -%}
+    {% endif -%}
+    <div class="Photo">
+      {% include photos/single.html photo=post filename=filename caption=caption hide_caption=true -%}
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
   {% for file in post.filenames -%}
   {% if file.filename -%}
   {% assign filename = file.filename -%}
@@ -19,9 +33,9 @@
   {% assign filename = file -%}
   {% assign caption = "" -%}
   {% endif -%}
-
   {% include photos/single.html photo=post filename=filename caption=caption -%}
   {% endfor %}
+  {% endif %}
   {% assign content = post.content | strip %}
   {% if content.size > 0 %}
   <div class="Post__content">{{ content }}</div>
@@ -35,6 +49,5 @@
   {% else %}
   {{ post.content }}
   {% endif %}
-
   {% include photos/footer.html photo=post pagination=false readmore=readmore-%}
 </div>

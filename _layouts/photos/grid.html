@@ -3,6 +3,7 @@ layout: base
 className: Grid
 grid: true
 ---
+
 {% assign photos = site.photos | concat: site.posts | sort: 'date' | reverse -%}
 {% assign location = page.location | downcase -%}
 

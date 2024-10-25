@@ -4,7 +4,9 @@ title: Photos
 className: Photos
 category: photos
 permalink: photos
+grid: true
 ---
+<!-- photos / feed -->
 {% assign photos = site.categories.photo | concat: site.categories.reportage | sort: 'date' | reverse -%}
 
 <div class="Content">

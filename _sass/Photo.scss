@@ -15,6 +15,7 @@ figcaption {
   margin: 0 auto;
 }
 
+.Photo__collections.has-grid,
 .Layout__grid .Content .Photo__collections {
   display: flex;
   flex-direction: column;
@@ -23,6 +24,7 @@ figcaption {
   margin-bottom: 4em;
 }
 
+.Photo__collection.has-grid,
 .Layout__grid .Content .Photo__collection {
   display: flex;
   flex-direction: column;
@@ -34,6 +36,7 @@ figcaption {
   text-align: left;
 }
 
+.Photo__grid,
 .Layout__grid .Content .Photo__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -41,6 +44,7 @@ figcaption {
   text-align: center;
 }
 
+.Photo__collection.has-grid .Photo,
 .Layout__grid .Content .Photo__collection .Photo {
   display: flex;
   flex-direction: column;
@@ -50,6 +54,7 @@ figcaption {
   overflow: hidden;
 }
 
+.Photo__collection.has-grid .Photo img,
 .Layout__grid .Content .Photo__collection .Photo img {
   width: 100%;
   height: 100%;
