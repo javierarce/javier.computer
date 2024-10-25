@@ -1,7 +1,16 @@
 {
   "updated_at": "2024-10-25",
-  "count": 762,
+  "count": 764,
   "movies": [
+    {
+      "watched_on": "2024-10-24",
+      "title": "Gloria",
+      "year": "1980",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "gloria"
+    },
     {
       "watched_on": "2024-10-22",
       "title": "Madrid",
@@ -19,6 +28,15 @@
       "stars": "★★★★",
       "rewatched": false,
       "permalink": "the-green-ray"
+    },
+    {
+      "watched_on": "2024-10-19",
+      "title": "Rebel Ridge",
+      "year": "2024",
+      "rating": 1.5,
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "rebel-ridge"
     },
     {
       "watched_on": "2024-10-19",
