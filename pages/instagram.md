@@ -26,6 +26,8 @@ feature became available.
 A few years ago, I even created a quick iMovie compilation of some of the messages I received in 2018. Since then, the
 volume of messages has only increased.
 
+{% include video.html url='https://img.javier.computer/instagram/username.mp4'-%}
+
 I've keep taking screenshots of everyone who's asked about acquiring my account. One interesting pattern: the majority
 of these requests come from profiles without any photos. I find it so weird that people are so eager to get a username
 when they don't even share content!
@@ -45,11 +47,13 @@ different—a complete logout. When I saw this, I knew my worst fear had finally
 account.
 
 When I attempted to log back in, my password was rejected. Using the password recovery option, I discovered something
-alarming: the email associated with my account had been changed to an address I didn’t recognize: r**\*\*\***e@gmail.com
+alarming: the email associated with my account had been changed to an address I didn’t recognize: r\*\*\*\*\*\*\*e@gmail.com
 
 At this point, my @javier account still displayed all my content, but I knew this wouldn't last long. I tried
 Instagram's hacked account reporting page, but it was ineffective: when I entered my username the page simply reloaded
 without any confirmation.
+
+{% include video.html url='https://img.javier.computer/instagram/login.mp4'-%}
 
 After exhausting all recovery methods, I refreshed my now-inaccessible account to find all my content replaced by 4
 posts. Here's my account before and after the robbery.
@@ -116,4 +120,4 @@ And while I'm optimistic about getting my old username back, I'm sure this won't
 The end. Thanks for reading this far! If you're wondering how you can help, I'd appreciate it if you shared this thread.
 And if you know [@mosseri](https://x.com/mosseri), please let him know one of Instagram's earliest users is frustrated and thinking of leaving.
 
-<div class="is-highlighted">This post was published [as a thread on Twitter](https://x.com/javier/status/1850950335625388186) on 2024-10-28</div>
+<div class="is-highlighted">This post was published <a href="https://x.com/javier/status/1850950335625388186">as a thread on Twitter</a> on 2024-10-28</div>
