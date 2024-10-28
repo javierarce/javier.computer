@@ -339,6 +339,11 @@ a.is-photo::after {
   color: #ae81ff
 }
 
+.is-highlighted a,
+.is-highlighted a:hover {
+  color: #ae81ff;
+}
+
 @media all and (max-width: 640px) {
   body {
     font-size: 1.2em;
