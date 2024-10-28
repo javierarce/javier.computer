@@ -35,6 +35,11 @@
   list-style: none;
 }
 
+.Page__content a,
+.Page__content a:hover {
+  color: var(--link);
+}
+
 @media all and (max-width: 1024px) {
 
   .Layout__page .Page__content,

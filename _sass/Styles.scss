@@ -331,6 +331,14 @@ a.is-photo::after {
   font-size: 0.7em;
 }
 
+.is-highlighted {
+  border: 1px solid #ae81ff;
+  border-radius: 4px;
+  padding: 0.8em;
+  font-size: 0.9em;
+  color: #ae81ff
+}
+
 @media all and (max-width: 640px) {
   body {
     font-size: 1.2em;
