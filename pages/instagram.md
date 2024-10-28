@@ -116,4 +116,4 @@ And while I'm optimistic about getting my old username back, I'm sure this won't
 The end. Thanks for reading this far! If you're wondering how you can help, I'd appreciate it if you shared this thread.
 And if you know [@mosseri](https://x.com/mosseri), please let him know one of Instagram's earliest users is frustrated and thinking of leaving.
 
-<div class="is-highlighted">This post was published as a thread on Twitter on 2024-10-28</div>
+<div class="is-highlighted">This post was published [as a thread on Twitter](https://x.com/javier/status/1850950335625388186) on 2024-10-28</div>
