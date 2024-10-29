@@ -2,6 +2,7 @@
 title: Instagram
 layout: page
 permalink: instagram
+card: true
 ---
 
 Alright, let me share the full story of how my 14-year-old [Instagram](https://instagram.com) account, @javier, was stolen and ended up in the
