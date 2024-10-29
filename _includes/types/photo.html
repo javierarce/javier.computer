@@ -8,7 +8,11 @@
   <span class="p-author h-card" style="display:none;">{{ site.author }}</span>
   <div class="Post__content{% if post.extraClassName %} {{ post.extraClassName }}{% endif %} e-content">
     <a href="{{ post.url }}">
-      {% if post.filenames -%}
+      {% if post.cover -%}
+
+      {% include photos/single.html photo=post filename=post.cover hide_caption=true -%}
+
+      {% elsif post.filenames -%}
 
       {% if post.filenames.first.filename -%}
       {% assign filename = post.filenames.first.filename -%}
