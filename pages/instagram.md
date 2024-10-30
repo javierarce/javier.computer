@@ -5,7 +5,7 @@ permalink: instagram
 card: true
 ---
 
-<div class="is-highlighted">This post was published <a href="https://x.com/javier/status/1850950335625388186">as a thread on Twitter</a> on October 28th, 2024.
+<div class="is-highlighted">This post was originally published <a href="https://x.com/javier/status/1850950335625388186">as a thread on Twitter</a> on October 28th, 2024.
 Two days later, I published <a href="https://x.com/javier/status/1851548924437250374">a follow-up</a> explaining that I was able to recover my account.</div>
 
 Alright, let me share the full story of how my 14-year-old [Instagram](https://instagram.com) account, @javier, was stolen and ended up in the
