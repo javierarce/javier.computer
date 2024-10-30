@@ -5,6 +5,9 @@ permalink: instagram
 card: true
 ---
 
+<div class="is-highlighted">This post was published <a href="https://x.com/javier/status/1850950335625388186">as a thread on Twitter</a> on October 28th, 2024.
+Two days later, I published <a href="https://x.com/javier/status/1851548924437250374">a follow-up</a> explaining that I was able to recover my account.</div>
+
 Alright, let me share the full story of how my 14-year-old [Instagram](https://instagram.com) account, @javier, was stolen and ended up in the
 hands of a hip-hop producer—and why I believe it was an inside job.
 
@@ -121,4 +124,18 @@ And while I'm optimistic about getting my old username back, I'm sure this won't
 The end. Thanks for reading this far! If you're wondering how you can help, I'd appreciate it if you shared this thread.
 And if you know [@mosseri](https://x.com/mosseri), please let him know one of Instagram's earliest users is frustrated and thinking of leaving.
 
-<div class="is-highlighted">This post was published <a href="https://x.com/javier/status/1850950335625388186">as a thread on Twitter</a> on 2024-10-28</div>
+### Good News
+
+Hey, guess what? I'm back on @Instagram! Huge thanks to everyone who helped me recover my account, shared and liked this thread, or reached out to me over these past few days!
+
+While sadly I can't help others recover their accounts or ask the people who assisted me (since they don't work in support), I hope this thread gives some visibility to the issue and encourages others to share their stories.
+
+To me, all of this is a perfect reminder of the importance of controlling your content and building networks outside the reach of proprietary platforms.
+
+There's [an excellent post](https://www.citationneeded.news/posse) by [Molly White](https://www.mollywhite.net) about POSSE (Publish on your Own Site, Syndicate Elsewhere) that I encourage everyone to read and share:
+
+And if you don’t have a blog, consider starting one today! Creating a blog is easier than ever, and it’s one of the best ways to control your content, share your ideas, and build meaningful networks outside of traditional platforms.
+
+For me, I’ll keep posting stories on Instagram and connecting with my friends there, but I’ll also be doubling down on publishing [on my personal blog](https://javier.computer) and on the Fediverse at [mastodon.social/@javierarce](https://mastodon.social/@javierarce).
+
+See you there!
