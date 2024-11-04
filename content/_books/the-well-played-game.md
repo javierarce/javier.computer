@@ -1,10 +1,15 @@
 ---
 title: "The Well-Played Game"
+subtitle: ""
+description: ""
 layout: book
-rating: ""
 author: Bernie De Koven
 started: 2023-08-20
-read:
+read: 
 status: abandoned
+rating: 0
+color: 
 cover: the-well-played-game.jpg
+pages: 
+link: 
 ---

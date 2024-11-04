@@ -1,11 +1,15 @@
 ---
 title: "W, or the Memory of Childhood"
+subtitle: ""
+description: ""
 layout: book
 author: Georges Perec
-started: 2014/01/25
-read: 2014/01/25
+started: 2014-01-25
+read: 2014-01-25
 status: read
-rating: "★★★★☆"
+rating: 4
+color: 
 cover: 
 pages: 176
+link: 
 ---

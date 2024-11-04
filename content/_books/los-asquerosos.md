@@ -1,11 +1,15 @@
 ---
 title: "Los asquerosos"
+subtitle: ""
+description: ""
 layout: book
 author: Santiago Lorenzo
-started: 2019/01/02
-read: 2019/01/02
+started: 2019-01-02
+read: 2019-01-02
 status: read
-rating: "★★★★☆"
+rating: 4
+color: 
 cover: 
 pages: 221
+link: 
 ---

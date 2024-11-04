@@ -1,11 +1,15 @@
 ---
 title: "Content Design"
+subtitle: ""
+description: ""
 layout: book
 author: Sarah Richards
-started: 2017/10/25
-read: 2020/12/11
+started: 2017-10-25
+read: 2020-12-11
 status: read
-rating: "★★★★☆"
+rating: 4
+color: 
 cover: 
 pages: 224
+link: 
 ---

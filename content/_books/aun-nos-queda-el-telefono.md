@@ -1,12 +1,15 @@
 ---
 title: "Aún nos queda el teléfono"
+subtitle: ""
+description: ""
 layout: book
-author: "Erica van Horn (traduce Ana Flecha Marco)"
+author: Erica van Horn (traduce Ana Flecha Marco)
 started: 2024-07-12
-read:
+read: 
 status: abandoned
-rating:
-cover:
+rating: 0
+color: 
+cover: 
 pages: 112
 link: http://www.alphadecay.org/libro/aun-nos-queda-el-telefono/
 ---

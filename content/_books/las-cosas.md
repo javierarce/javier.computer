@@ -1,11 +1,15 @@
 ---
 title: "Las cosas"
+subtitle: ""
+description: ""
 layout: book
 author: Georges Perec
-started: 2016/04/25
-read: 2016/04/25
+started: 2016-04-25
+read: 2016-04-25
 status: read
-rating: "★★★★☆"
+rating: 4
+color: 
 cover: 
 pages: 158
+link: 
 ---

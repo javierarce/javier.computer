@@ -1,11 +1,15 @@
 ---
 title: "Maintainable JavaScript"
+subtitle: ""
+description: ""
 layout: book
 author: Nicholas C. Zakas
-started: 2012/09/05
+started: 2012-09-05
 read: 
 status: to-read
-rating: "★★★☆☆"
+rating: 3
+color: 
 cover: 
 pages: 242
+link: 
 ---

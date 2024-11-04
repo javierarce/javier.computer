@@ -1,11 +1,15 @@
 ---
 title: "Super Normal: Sensations of the Ordinary"
+subtitle: ""
+description: ""
 layout: book
 author: Naoto Fukasawa
-started: 2017/09/15
-read: 2017/09/15
+started: 2017-09-15
+read: 2017-09-15
 status: read
-rating: "★★★★☆"
+rating: 4
+color: 
 cover: 
 pages: 112
+link: 
 ---

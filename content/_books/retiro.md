@@ -1,11 +1,15 @@
 ---
 title: "Retiro"
+subtitle: ""
+description: ""
 layout: book
 author: Sergei Dovlatov
-started: 2017/06/24
-read: 2017/09/04
+started: 2017-06-24
+read: 2017-09-04
 status: read
-rating: "★★★★☆"
+rating: 4
+color: 
 cover: 
 pages: 216
+link: 
 ---

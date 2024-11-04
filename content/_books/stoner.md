@@ -1,11 +1,15 @@
 ---
 title: "Stoner"
+subtitle: ""
+description: ""
 layout: book
 author: John  Williams
-started: 2018/03/26
-read: 2018/03/29
+started: 2018-03-26
+read: 2018-03-29
 status: read
-rating: "★★★★★"
+rating: 5
+color: 
 cover: 
 pages: 313
+link: 
 ---
