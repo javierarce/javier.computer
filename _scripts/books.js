@@ -1,7 +1,7 @@
 import fs from "fs";
 import fetch from "node-fetch";
 
-export class BookScraper {
+export class Books {
   constructor() {
     this.apiUrl = "https://books.javier.computer/api/books";
     this.outputFile = "_data/books.json";
@@ -148,5 +148,3 @@ link: ${link || ""}
     }
   }
 }
-
-new BookScraper().run();

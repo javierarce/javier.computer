@@ -11,5 +11,5 @@ rating: 0
 color: 
 cover: 
 pages: 208
-link: 
+link: https://www.oliverburkeman.com/meditationsformortals
 ---
