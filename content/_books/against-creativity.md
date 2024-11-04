@@ -1,6 +1,6 @@
 ---
 title: "Against Creativity"
-subtitle: "jeje"
+subtitle: ""
 description: ""
 layout: book
 author: Oli Mould

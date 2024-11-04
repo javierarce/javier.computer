@@ -5,8 +5,8 @@ description: ""
 layout: book
 author: Edmund J. Bourne
 started: 2024-07-01
-read: 
-status: reading
+read: 2024-10-01
+status: read
 rating: 0
 color: 
 cover: 
