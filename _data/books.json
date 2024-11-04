@@ -36,7 +36,13 @@
           "progress": 27
         }
       ],
-      "quotes": [],
+      "quotes": [
+        {
+          "id": 5,
+          "page": 23,
+          "quote": "The main point – though it took me years to realize it – is to develop the willingness to just do something, here and now, as a one-off, regardless of whether it’s part of any system or habit or routine."
+        }
+      ],
       "status_order": 0,
       "read_percentage": "12.98"
     },

@@ -14,3 +14,9 @@ pages: 208
 progress: 12.98
 link: https://www.oliverburkeman.com/meditationsformortals
 ---
+
+## Citas
+
+> The main point – though it took me years to realize it – is to develop the willingness to just do something, here and now, as a one-off, regardless of whether it’s part of any system or habit or routine.
+
+---
