@@ -1,7 +1,7 @@
 ---
 title: "Meditations for mortals"
 subtitle: "Four Weeks to Embrace Your Limitations and Make Time for What Counts"
-description: ""
+description: "Este libro me gustó mucho"
 layout: book
 author: Oliver Burkeman
 started: 2024-11-03
@@ -13,3 +13,5 @@ cover:
 pages: 208
 link: 
 ---
+
+Este libro me gustó mucho

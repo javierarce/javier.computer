@@ -3,6 +3,15 @@
   font-weight: 600;
 }
 
+.Book__cover {
+  max-width: 500px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
 .Book__stack {
   display: flex;
   align-items: start;

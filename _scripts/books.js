@@ -52,7 +52,7 @@ export class BookScraper {
       link,
     } = book;
 
-    const mdContent = `---
+    let mdContent = `---
 title: "${title}"
 subtitle: "${subtitle || ""}"
 description: "${description || ""}"
@@ -67,6 +67,19 @@ cover: ${cover || ""}
 pages: ${pages || ""}
 link: ${link || ""}
 ---`;
+
+    if (book.description) {
+      mdContent += `\n\n${book.description}`;
+    }
+
+    if (book.quotes && book.quotes.length > 0) {
+      mdContent += `\n\n## Citas\n`;
+      book.quotes.forEach((quote) => {
+        mdContent += `\n> ${quote.quote}\n`;
+
+        mdContent += `\n---\n`;
+      });
+    }
 
     const fileName = `${slug}.md`;
     const dir = "content/_books/";

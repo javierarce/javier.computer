@@ -1,15 +1,15 @@
 ---
-title: "Bird By Bird"
+title: "Bird by Bird"
 subtitle: ""
-description: "Books I want to read"
+description: ""
 layout: book
-author: Lamott, Anne
-started: 
-read: 
-status: null
-rating: 0
+author: Anne Lamott
+started: 2022-07-22
+read: 2022-08-01
+status: read
+rating: 4
 color: 
-cover: cover.jpg
-pages: 
+cover: 
+pages: 256
 link: 
 ---
