@@ -11,5 +11,6 @@ rating: 5
 color: 
 cover: 
 pages: 160
+progress: 0
 link: https://www.mistergriffin.es/product-page/planeta-solitario
 ---

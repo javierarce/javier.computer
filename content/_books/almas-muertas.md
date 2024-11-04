@@ -11,5 +11,6 @@ rating: 4
 color: 
 cover: 
 pages: 290
+progress: 0
 link: https://es.wikipedia.org/wiki/Almas_muertas
 ---

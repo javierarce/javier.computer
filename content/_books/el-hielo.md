@@ -11,5 +11,6 @@ rating: 4
 color: 
 cover: 
 pages: 336
+progress: 0
 link: https://en.wikipedia.org/wiki/Ice_(Sorokin_novel)
 ---

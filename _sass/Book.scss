@@ -32,6 +32,7 @@ a.Book__spine:hover {
 }
 
 .Book__spine {
+  position: relative;
   background: var(--white);
   color: var(--black);
   width: 100%;
@@ -47,6 +48,27 @@ a.Book__spine:hover {
 .Book__spine.is-2[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))) .Book__title:after,
 .Book__spine.is-6[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))) .Book__title:after {
   color: var(--black);
+}
+
+.Book__spine:hover .Book__progress {
+  opacity: 1;
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.Book__progress {
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(0, 0, 0, 0.2);
+  mix-blend-mode: multiply;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: all 200ms ease-in-out;
 }
 
 .Book__title {
@@ -217,6 +239,11 @@ a.Book__spine:hover {
 .Book__header {
   margin: 0 auto 1em;
   text-align: center;
+}
+
+.Book__spineContent {
+  position: relative;
+  z-index: 10;
 }
 
 @media all and (max-width: 640px) {

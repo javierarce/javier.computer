@@ -11,5 +11,6 @@ rating: 4
 color: 
 cover: quack-this-way.jpg
 pages: 146
+progress: 0
 link: 
 ---

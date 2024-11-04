@@ -11,5 +11,6 @@ rating: 5
 color: 
 cover: 
 pages: 424
+progress: 0
 link: https://es.wikipedia.org/wiki/Poeta_chileno
 ---

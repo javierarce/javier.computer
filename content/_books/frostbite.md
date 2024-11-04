@@ -11,5 +11,6 @@ rating: 0
 color: 
 cover: 
 pages: 400
+progress: 44.00
 link: https://www.nicolatwilley.com/frostbite
 ---

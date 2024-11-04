@@ -11,5 +11,6 @@ rating: 0
 color: 
 cover: 
 pages: 304
+progress: 0
 link: https://es.wikipedia.org/wiki/Ciber%C3%ADada
 ---

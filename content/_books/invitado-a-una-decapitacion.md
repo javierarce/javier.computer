@@ -11,5 +11,6 @@ rating: 4
 color: 
 cover: 
 pages: 224
+progress: 0
 link: https://en.wikipedia.org/wiki/Invitation_to_a_Beheading
 ---

@@ -11,5 +11,6 @@ rating: 4
 color: 
 cover: 
 pages: 208
+progress: 0
 link: http://www.anagrama-ed.es/libro/narrativas-hispanicas/mis-documentos/9788433997715/NH_524
 ---

@@ -11,5 +11,6 @@ rating: 0
 color: 
 cover: 
 pages: 192
+progress: 63.54
 link: https://en.wikipedia.org/wiki/Pnin_(novel)
 ---

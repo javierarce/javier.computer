@@ -11,5 +11,6 @@ rating: 4
 color: 
 cover: stasiland.jpg
 pages: 320
+progress: 0
 link: 
 ---

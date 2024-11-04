@@ -11,5 +11,6 @@ rating: 0
 color: 
 cover: the-well-played-game.jpg
 pages: 
+progress: 0
 link: 
 ---

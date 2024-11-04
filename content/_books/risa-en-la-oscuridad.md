@@ -11,5 +11,6 @@ rating: 5
 color: 
 cover: 
 pages: 248
+progress: 0
 link: https://en.wikipedia.org/wiki/Laughter_in_the_Dark_(novel)
 ---

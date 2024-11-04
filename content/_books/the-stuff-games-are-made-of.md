@@ -11,5 +11,6 @@ rating: 4
 color: 
 cover: the-stuff-games-are-made-of.jpg
 pages: 184
+progress: 0
 link: 
 ---

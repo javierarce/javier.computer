@@ -11,5 +11,6 @@ rating: 0
 color: 
 cover: 
 pages: 
+progress: 0
 link: 
 ---

@@ -34,6 +34,9 @@ permalink: books
       <div class="Book__title">{{ book.title }}</div>
       <div class="Book__author">{{ book.author }}</div>
     </div>
+    {% if book.progress %}
+    <div class="Book__progress" style="width: {{book.progress}}%"></div>
+    {% endif %}
   </a>
   {% else %}
   <div class="Book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
@@ -41,6 +44,9 @@ permalink: books
       <div class="Book__title">{{ book.title }}</div>
       <div class="Book__author">{{ book.author }}</div>
     </div>
+    {% if book.progress %}
+    <div class="Book__progress" style="width: {{book.progress}}%"></div>
+    {% endif %}
   </div>
   {% endif %}
 

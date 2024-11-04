@@ -50,6 +50,7 @@ export class Books {
       color,
       slug,
       link,
+      read_percentage,
     } = book;
 
     let mdContent = `---
@@ -65,6 +66,7 @@ rating: ${rating || 0}
 color: ${color || ""}
 cover: ${cover || ""}
 pages: ${pages || ""}
+progress: ${read_percentage || ""}
 link: ${link || ""}
 ---`;
 
