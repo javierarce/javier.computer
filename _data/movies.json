@@ -1,7 +1,34 @@
 {
-  "updated_at": "2024-10-29",
-  "count": 765,
+  "updated_at": "2024-11-04",
+  "count": 768,
   "movies": [
+    {
+      "watched_on": "2024-11-02",
+      "title": "The Yakuza",
+      "year": "1974",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "the-yakuza"
+    },
+    {
+      "watched_on": "2024-11-02",
+      "title": "I'm Hungry, I'm Cold",
+      "year": "1984",
+      "rating": 0,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "im-hungry-im-cold"
+    },
+    {
+      "watched_on": "2024-10-31",
+      "title": "Hue and Cry",
+      "year": "1947",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "hue-and-cry"
+    },
     {
       "watched_on": "2024-10-26",
       "title": "The Third Part of the Night",
