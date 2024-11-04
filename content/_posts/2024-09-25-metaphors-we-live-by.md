@@ -14,4 +14,4 @@ date: "2024-09-25 20:00:00 +0200"
 > at all: they would simply be doing something different. It would seem strange
 > even to call what they were doing ‘arguing’."
 
-"Metaphors We Live By" by George Lakoff and Mark Johnson
+"Metaphors We Live By", George Lakoff y Mark Johnson
