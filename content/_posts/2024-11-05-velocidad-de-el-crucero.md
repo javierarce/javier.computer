@@ -90,3 +90,7 @@ cámaras en mano y así añadir una ciudad más (la mía, la que me vio nacer) a
 </div>
 
 <p>Bueno, ya esta bien de tanta foto, ¡hasta otra!</p>
+
+<div class="g">
+    {% include photos/custom.html location='leon' filename='2024-11-02-Leon-DSCF2868' -%}
+</div>
