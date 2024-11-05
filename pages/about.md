@@ -57,12 +57,12 @@ This computer doesn't track you, your friends, or your enemies.
 
 - If you like what you are reading (and why wouldn't you?), add the
   [RSS main feed](/feed.xml) to your favorite feed reader to get the updates.
-- If you are only interested in the photos I publish, the [RSS photo feed](/feeds/photos.xml) is
+- Only interested in the photos I publish? The [RSS photo feed](/feeds/photos.xml) is
   for you.
 - If you want to get an email (in Spanish) every time I do something funny [subscribe to
   my newsletter](/newsletter).
 
 ### Don't be a stranger
 
-Do you need to tell me something incredible that happened to you recently? [Use
-this link](/contact) to get in touch with me.
+Do you need to tell me something incredible that happened to you? [Use
+this link](/contact) to get in touch with me or write to 'email' at this domain.

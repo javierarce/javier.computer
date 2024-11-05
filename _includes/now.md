@@ -41,4 +41,4 @@
 {% endcase %}
 
 <p>My name is Javier Arce, <em>comme tout le monde</em>.</p>
-<p>Right now I'm in {{ site.data.location.city }}, {{ site.data.location.country }}. {% if book_titles != "" %}<a href="/books">Currently reading</a>: {{ book_titles }}. {% endif %}The last movie I watched was <a href="https://letterboxd.com/javier/film/{{ movie.permalink }}">"{{ movie.title }}"</a> {{ rating_phrase }} <music-snitch data-username='javierarce' data-key ='78b4ae34c84de1d5fc6510338300bd78'></music-snitch></p>
+<p>Right now I'm in {{ site.data.location.city }}, {{ site.data.location.country }}. {% if book_titles != "" %}I'm <a href="/books">currently reading</a>: {{ book_titles }}. {% endif %}The last movie I watched was <a href="https://letterboxd.com/javier/film/{{ movie.permalink }}">{{ movie.title }}</a> {{ rating_phrase }} <music-snitch data-username='javierarce' data-key ='78b4ae34c84de1d5fc6510338300bd78'></music-snitch></p>
