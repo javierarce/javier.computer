@@ -21,7 +21,7 @@ filenames:
   - filename: 2024-11-02-León-R0009613
   - filename: 2024-11-02-León-R0009627
   - filename: 2024-11-02-León-R0009631
-intro: "Como ya comenté ayer, y por motivos de escaso interés para ti o los tuyos, me encuentro en León. Y aunque no me aventuré al mundo real tanto como hubiera deseado, sí que puede dar un paseo cámaras en mano y así añadir una ciudad más (la mía, la que me vio nacer) al archivo."
+intro: "Como ya comenté ayer, y por motivos de escaso interés para ti o los tuyos, me encuentro en León. Y aunque no me he aventurado en el mundo real tanto como hubiera deseado, sí que he podido dar un paseo cámaras en mano y así añadir una ciudad más (la mía, la que me vio nacer) al archivo."
 location: leon
 camera:
   - Fuji X-T5
@@ -31,8 +31,8 @@ show_content: true
 ---
 
 [Como ya comenté ayer](/2024/11/04/misterioso-y-festivo), y por motivos de
-escaso interés para ti o los tuyos, me encuentro en León. Y aunque no me
-aventuré al mundo real tanto como hubiera deseado, sí que puede dar un paseo
+escaso interés para ti o los tuyos, me encuentro en León. Y aunque no me he
+aventurado en el mundo real tanto como hubiera deseado, sí que he podido dar un paseo
 cámaras en mano y así añadir una ciudad más (la mía, la que me vio nacer) al [archivo](/photos/archive).
 
 <div class="g">
