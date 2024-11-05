@@ -1,7 +1,16 @@
 {
-  "updated_at": "2024-11-04",
-  "count": 768,
+  "updated_at": "2024-11-05",
+  "count": 771,
   "movies": [
+    {
+      "watched_on": "2024-11-04",
+      "title": "Logan's Run",
+      "year": "1976",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "logans-run"
+    },
     {
       "watched_on": "2024-11-02",
       "title": "The Yakuza",
@@ -6916,3 +6925,4 @@
     }
   ]
 }
+

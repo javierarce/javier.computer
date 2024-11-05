@@ -16,6 +16,25 @@
   font-size: 1.2em;
 }
 
+.Projects__lists {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.Projects__year {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+
+.Projects__year h3 {
+  margin: 0;
+  padding: 0 0 var(--space);
+  border-bottom: 1px solid var(--gray);
+}
+
 .Project__list {
   list-style: none;
   padding: 0;
@@ -170,6 +189,10 @@
 
 .Project__cardDescription {
   opacity: var(--lightOpacity);
+}
+
+.Layout__projects .Footer {
+  margin-top: 4em;
 }
 
 @media all and (max-width: 1280px) {
