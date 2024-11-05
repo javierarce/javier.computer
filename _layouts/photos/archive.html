@@ -11,7 +11,11 @@ category: photos
 
   <div class="Photos__archive">
     {% for location in locations -%}
-    {% assign tags = content | where: 'location', location | where: 'category', 'photo' -%}
+
+    {% assign reportages = content | where: 'category', 'reportage'| where: 'location', location -%}
+    {% assign tags = content | where: 'location', location | where: 'category', 'photo' | concat: reportages -%}
+
+
     {% assign photo = tags[0] -%}
     {% if photo.category and photo -%}
     {% include photos/thumb.html photo=photo -%}

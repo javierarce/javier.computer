@@ -8,7 +8,7 @@ grid: true
 {% assign location = page.location | downcase -%}
 
 <!--- photos/grid -->
-<div class="Content has-lightbox">
+<div class="Content">
   {% include navigation.html -%}
 
   <div class="Photo__collections">
@@ -23,10 +23,9 @@ grid: true
 
 
     {% for photo in photos -%}
-    {% if photo.category and location == photo.location -%}
-
-    <div class="Photo__collection">
-
+    {% if location == photo.location %}
+    {% if photo.category == "photo" -%}
+    <div class="Photo__collection has-lightbox">
       {% if photo.filenames -%}
       <div class="Photo__grid">
         {% for file in photo.filenames -%}
@@ -44,7 +43,15 @@ grid: true
 
       {% include photos/footer.html photo=photo pagination=false -%}
     </div>
+    {% elsif photo.category == "reportage" -%}
+    <div class="Photo__collection">
+      <a href="{{ photo.url }}">
+        {% include photos/single.html photo=photo filename=photo.cover caption=file.caption hide_caption=true -%}
+      </a>
 
+      {% include photos/footer.html photo=photo pagination=false readmore="true" -%}
+    </div>
+    {% endif %}
     {% endif -%}
     {% endfor -%}
   </div>

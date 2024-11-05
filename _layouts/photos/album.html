@@ -2,11 +2,11 @@
 layout: base
 className: Photos
 ---
-<!--- photos/album -->
 
-{% assign photos = site.photos | concat: site.posts | sort: 'date' | reverse -%}
 {% assign location = page.location | downcase -%}
+{% assign photos = site.photos | concat: site.posts | where: "location", location | sort: 'date' | reverse -%}
 
+<!--- photos/album -->
 <div class="Content">
   {% include navigation.html -%}
 
@@ -19,40 +19,62 @@ className: Photos
       </div>
     </div>
 
-    {{ content }}
-
     {% for photo in photos -%}
-    {% if photo.category == "post" or photo.category == "photo" and location == photo.location -%}
-    {% assign filenames = photo.filenames -%}
-    {% assign ids = photo.ids -%}
 
-    <div class="Photo__collection">
-      {% if filenames.size -%}
-      {% for file in filenames -%}
+    {% if photo.category == "reportage" -%}
+    <!- ------------------------------------ -->
+      <div class="Photo__collection">
+        <a href="{{ photo.url }}">
+          {% include photos/single.html photo=photo filename=photo.cover caption=file.caption hide_caption=true -%}
+        </a>
 
-      {% if file.filename -%}
-      {% assign filename = file.filename -%}
-      {% assign caption = file.caption -%}
-      {% else -%}
-      {% assign filename = file -%}
-      {% assign caption = "" -%}
-      {% endif -%}
+        {% if photo.intro -%}
+        <div class="Post__content">
+          <p>{{ photo.intro }}</p>
+        </div>
+        {% endif %}
 
-      {% include photos/single.html photo=photo caption=caption filename = filename -%}
-      {% endfor -%}
-      {% elsif photo.filename -%}
-      {% include photos/single.html photo=photo filename = photo.filename -%}
-      {% endif -%}
+        {% include photos/footer.html photo=photo pagination=false readmore="true"-%}
+      </div>
+      {% elsif photo.category == "post" or photo.category == "photo" -%}
+      <!- ------------------------------------ -->
+        {% assign filenames = photo.filenames -%}
 
-      {% assign content = photo.content | strip %}
-      {% if content.size > 0 %}
-      <div class="Post__content">{{ content }}</div>
-      {% endif %}
+        <div class="Photo__collection">
+          {% if filenames.size -%}
+          {% for file in filenames -%}
 
-      {% include photos/footer.html photo=photo -%}
-    </div>
-    {% endif -%}
-    {% endfor -%}
+          {% if file.filename -%}
+          {% assign filename = file.filename -%}
+          {% assign caption = file.caption -%}
+          {% else -%}
+          {% assign filename = file -%}
+          {% assign caption = "" -%}
+          {% endif -%}
+
+          {% include photos/single.html photo=photo caption=caption filename = filename -%}
+          {% endfor -%}
+          {% elsif photo.filename -%}
+          {% include photos/single.html photo=photo filename = photo.filename -%}
+          {% endif -%}
+
+          {% assign content = photo.content | strip %}
+          {% if content.size > 0 %}
+          <div class="Post__content">{{ content }}</div>
+          {% endif %}
+
+          {% include photos/footer.html photo=photo -%}
+        </div>
+        {% elsif photo.filename -%}
+        <!- ------------------------------------ -->
+          {% include photos/single.html photo=photo filename=photo.filename caption=file.caption hide_caption=true -%}
+          <div class="Post__content">
+            <p>{{ photo.content }}</p>
+          </div>
+          {% include photos/footer.html photo=photo pagination=false -%}
+          {% endif -%}
+
+          {% endfor -%}
   </div>
 
   {% include footer.html -%}

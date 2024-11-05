@@ -3,9 +3,9 @@ layout: reportage
 title: Berlín en primavera
 date: 2024-07-31
 hide_title: true
-intro: "Tras el éxito de crítica y público de mi <a href='/2024/07/10/Mataro'>anterior publi-reportaje</a>, me gustaría compartir con vosotros esta «lista no exhaustiva de cosas que vi durante mi último viaje a Berlín en primavera» como preparación para mi inminente viaje a Berlín en verano."
+intro: "Tras el éxito de crítica y público de mi anterior publi-reportaje, me gustaría compartir con vosotros esta «lista no exhaustiva de cosas que vi durante mi último viaje a Berlín en primavera» como preparación para mi inminente viaje a Berlín en verano."
 location: berlin
-filename: 2024-04-07-Berlin-DSCF1702
+cover: 2024-04-07-Berlin-DSCF1702
 category: reportage
 ---
 

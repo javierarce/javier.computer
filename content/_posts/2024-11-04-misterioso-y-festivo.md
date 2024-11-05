@@ -2,6 +2,7 @@
 layout: post
 title: "Misterioso y festivo"
 date: "2024-11-04"
+location: leon
 ---
 
 Emitiendo desde León (cuna del parlamentarismo) por misteriosas y festivas razones ·

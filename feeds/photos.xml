@@ -23,7 +23,29 @@ layout: none
   
   {% for post in site.posts %}
     {% assign matching_location = site.locations | where: "location", post.location | first %}
-    {% if post.category == 'photo' %}
+    {% if post.category == 'reportage' %}
+      <item>
+        <title>{{ post.title | xml_escape }}</title>
+        <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+        <link>{{ site.url }}{{ post.url }}</link>
+        <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+        {% if post.author.name %}<dc:creator>{{ post.author.name | xml_escape }}</dc:creator>{% endif %}
+      <description><![CDATA[
+
+          {{ post.content }}
+
+        <p>{% if matching_location -%}{{ matching_location.title }}. {% endif -%} 
+
+{% if post.camera %}{% if post.camera.first %}Cámaras: {{ post.camera | join: ", " }}.{% else %}Cámara: {{ post.camera }}.{% endif %}{% endif %}
+
+
+        </p>
+            <hr />
+            <p><a href="{{ site.url}}/comment?title={{post.title}}&url={{post.id}}">Comentar este post</a> &middot; <a href="{{ site.url}}/heart?id={{post.url}}">Me gusta</a></p>
+              ]]>
+          </description>
+      </item>
+    {% elsif post.category == 'photo' %}
       <item>
         <title>{{ post.title | xml_escape }}</title>
         <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>

@@ -1,8 +1,11 @@
 {% assign readmore = "false" %}
-<div class="Photo__collection has-lightbox {% if post.filenames.size >= 4 %}has-grid{% endif %}">
+<div
+  class="Photo__collection {% if post.category != 'reportage' -%}has-lightbox {% if post.filenames.size >= 4 %}has-grid{% endif %}{% endif -%}">
   {% if post.category == 'reportage' %}
-  {% assign filename = post.filename %}
-  {% include photos/single.html photo=post filename=filename caption=caption -%}
+  {% assign filename = post.cover %}
+  <a href="{{ post.url }}">
+    {% include photos/single.html photo=post filename=filename caption=caption -%}
+  </a>
   {% assign readmore = "true" %}
   <div class="Post__content">
     <p>{{ post.intro }}</p>

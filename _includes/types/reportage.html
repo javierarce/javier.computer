@@ -8,7 +8,9 @@
   <span class="p-author h-card" style="display:none;">{{ site.author }}</span>
   <div class="Post__content{% if post.extraClassName %} {{ post.extraClassName }}{% endif %} e-content">
     <a href="{{ post.url }}">
-      {% if post.filenames -%}
+      {% if post.cover -%}
+      {% include photos/single.html photo=post filename=post.cover caption=caption -%}
+      {% elsif post.filenames -%}
 
       {% if post.filenames.first.filename -%}
       {% assign filename = post.filenames.first.filename -%}
@@ -53,6 +55,11 @@
     {% endif %}
 
     <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
-    <a href="{{ post.url }}#more" class="is-underlined">Leer más</a>
+    {% if post.filenames.size > 1 -%}
+    <a href="{{ post.url }}" class="is-underlined">Ver {{ post.filenames.size }} foto{% if post.filenames.size > 1
+      %}s{% endif -%}</a>
+    {% else -%}
+    <a href="{{ post.url }}" class="is-underlined">Leer más</a>
+    {% endif -%}
   </div>
 </div>

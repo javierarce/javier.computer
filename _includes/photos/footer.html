@@ -23,7 +23,14 @@
 
     {% if include.readmore == "true" -%}
     <span class="Post__footerSeparator">&middot;</span>
-    <a href="{{ post.url }}" class="is-underlined">Leer más</a>
+    {% if include.photo.filenames.size > 1 -%}
+    <a href="{{ include.photo.url }}#more" class="is-underlined">Ver {{ include.photo.filenames.size }} foto{% if
+      include.photo.filenames.size > 1
+      %}s{% endif -%}</a>
+    {% else -%}
+    <a href="{{ include.photo.url }}" class="is-underlined">Leer más</a>
+    {% endif -%}
+
     {% endif -%}
 
   </div>
