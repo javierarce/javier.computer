@@ -32,7 +32,7 @@ layout: none
         {% if post.author.name %}<dc:creator>{{ post.author.name | xml_escape }}</dc:creator>{% endif %}
       <description><![CDATA[
 
-        {% post.filenames %}
+        {% if post.filenames %}
           {% for file in post.filenames %}
           {% if file.filename -%}
           {% assign filename = file.filename -%}
