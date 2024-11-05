@@ -20,7 +20,7 @@
   {% endif %}
 
   <script>
-    const USER_LOCATION = {{site.data.location | jsonify }};
+    const USER_LOCATION = {{site.data.location[0] | jsonify }};
   </script>
 
 <body class="Layout__{{ className | default: page.category | downcase  }}">
