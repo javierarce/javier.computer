@@ -75,6 +75,7 @@ layout: none
         {% else %}
           <img src="https://img.javier.computer/{{ post.location }}/{{ post.filename }}_1280.jpg" alt="{{post.title}}" />  
         {% endif %}
+        <br />
         <p>{{ post.intro | xml_escape }} <a href="{{ post.url }}" target="_blank">Leer más</a>.
         {% if post.camera %}{% if post.camera.first %}Cámaras: {{ post.camera | join: ", " }}.{% else %}Cámara: {{ post.camera }}.{% endif %}{% endif %}</p>
           <hr />
