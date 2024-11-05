@@ -14,7 +14,8 @@ className: Reportage
     <h3>{{ page.description }}</h3>
     {% endif -%}
 
-    <div class="Photo__layout">{{ content }}
+    <div class="Photo__layout">
+      {{ content }}
       {% include photos/footer.html photo=page pagination=true -%}
       {% include footer.html -%}
     </div>
