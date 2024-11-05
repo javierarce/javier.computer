@@ -75,10 +75,10 @@ layout: none
         {% else %}
           <img src="https://img.javier.computer/{{ post.location }}/{{ post.filename }}_1280.jpg" alt="{{post.title}}" />  
         {% endif %}
-        <br />
-        <p>{{ post.intro | xml_escape }} <a href="{{ post.url }}" target="_blank">Leer más</a>.
-        {% if post.camera %}{% if post.camera.first %}Cámaras: {{ post.camera | join: ", " }}.{% else %}Cámara: {{ post.camera }}.{% endif %}{% endif %}</p>
-          <hr />
+        <p>{{ post.intro | xml_escape }}</p>
+        <p><a href="{{ post.url }}" target="_blank">Leer más</a>. {% if post.camera %}{% if post.camera.first %}Cámaras: {{ post.camera | join: ", " }}.{% else %}Cámara: {{ post.camera }}.{% endif %}{% endif %}
+        </p>
+        <hr />
         <p><a href="{{ site.url}}/comment?title={{post.title}}&url={{post.id}}">Comentar este post</a> &middot; <a href="{{ site.url}}/heart?id={{post.url}}">Me gusta</a></p>
         ]]>
       {% elsif post.category == 'music' %}
