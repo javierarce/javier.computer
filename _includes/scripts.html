@@ -34,6 +34,6 @@
 {% endif -%}
 
 <link rel="stylesheet" href="{{ 'css/style.css' | relative_url }}?version={{site.version}}" />
-{% if page.category == 'reportage' or layout.grid or page.grid -%}
+{% if page.category == 'reportage' or layout.grid or page.grid or page.category == 'photo' -%}
 <script src="{{ 'scripts/lightbox.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
 {% endif -%}

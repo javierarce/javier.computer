@@ -64,5 +64,5 @@ This computer doesn't track you, your friends, or your enemies.
 
 ### Don't be a stranger
 
-Do you need to tell me something incredible that happened to you? [Use
-this link](/contact) to get in touch with me or write to 'email' at this domain.
+Do you need to tell me something incredible that happened to you? [Go
+here](/contact) to get in touch or write to 'email' at this domain.
