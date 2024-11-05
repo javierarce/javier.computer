@@ -60,9 +60,10 @@ layout: none
       {% elsif post.category == 'reportage' %}
       <![CDATA[
         
-        {% if post.filenames %}
+        {% if post.cover %}
+          <img src="https://img.javier.computer/{{ post.location }}/{{ post.cover }}_1280.jpg" alt="{{post.title}}" />  
+        {% elsif post.filenames %}
           {% for file in post.filenames %}
-
           {% if file.filename -%}
           {% assign filename = file.filename -%}
           {% assign caption = file.caption | default: post.title | strip_html | strip_newlines | xml_escape -%}
@@ -72,12 +73,14 @@ layout: none
           {% endif -%}
           <p><img src="https://img.javier.computer/{{ post.location }}/{{ filename }}_1280.jpg" alt="{{ caption }}" />{% if file.caption -%}<br />{{ file.caption }}{% endif -%}</p>
           {% endfor %}
-        {% else %}
-          <img src="https://img.javier.computer/{{ post.location }}/{{ post.filename }}_1280.jpg" alt="{{post.title}}" />  
         {% endif %}
-        <p>{{ post.intro | xml_escape }}</p>
-        <p><a href="{{ post.url }}" target="_blank">Leer más</a>. {% if post.camera %}{% if post.camera.first %}Cámaras: {{ post.camera | join: ", " }}.{% else %}Cámara: {{ post.camera }}.{% endif %}{% endif %}
-        </p>
+
+        {% if post.intro -%}
+        <p>{{ post.intro | xml_escape }}</p> 
+        {% endif -%}
+
+        <p><a href="{{ post.url }}" target="_blank">Leer más</a>.</p>
+        <p>{% if matching_location -%}{{ matching_location.title }}. {% endif -%} {% if post.camera %}{% if post.camera.first %}Cámaras: {{ post.camera | join: ", " }}.{% else %}Cámara: {{ post.camera }}.{% endif %}{% endif %}</p>
         <hr />
         <p><a href="{{ site.url}}/comment?title={{post.title}}&url={{post.id}}">Comentar este post</a> &middot; <a href="{{ site.url}}/heart?id={{post.url}}">Me gusta</a></p>
         ]]>

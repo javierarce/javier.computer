@@ -32,7 +32,9 @@ layout: none
         {% if post.author.name %}<dc:creator>{{ post.author.name | xml_escape }}</dc:creator>{% endif %}
       <description><![CDATA[
 
-        {% if post.filenames -%}
+        {% if post.cover %}
+          <img src="https://img.javier.computer/{{ post.location }}/{{ post.cover }}_1280.jpg" alt="{{post.title}}" />  
+        {% elsif post.filenames %}
           {% for file in post.filenames %}
           {% if file.filename -%}
           {% assign filename = file.filename -%}
@@ -43,14 +45,13 @@ layout: none
           {% endif -%}
           <p><img src="https://img.javier.computer/{{ post.location }}/{{ filename }}_1280.jpg" alt="{{ caption }}" />{% if file.caption -%}<br />{{ file.caption }}{% endif -%}</p>
           {% endfor -%}
-          {% else -%}
-            <img src="https://img.javier.computer/{{ post.location }}/{{ post.filename }}_1280.jpg" alt="{{ post.title }}" />
           {% endif -%}
 
         {% if post.intro -%}
         <p>{{ post.intro | xml_escape }}</p> 
-        <p><a href="{{ post.url }}" target="_blank">Leer más</a>.</p>
         {% endif -%}
+
+        <p><a href="{{ post.url }}" target="_blank">Leer más</a>.</p>
 
             <p>{% if matching_location -%}{{ matching_location.title }}. {% endif -%} {% if post.camera %}{% if post.camera.first %}Cámaras: {{ post.camera | join: ", " }}.{% else %}Cámara: {{ post.camera }}.{% endif %}{% endif %}</p>
             <hr />
