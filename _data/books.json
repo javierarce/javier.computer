@@ -1,5 +1,5 @@
 {
-  "updated_at": "2024-11-05",
+  "updated_at": "2024-11-06",
   "count": 174,
   "books": [
     {
@@ -39,6 +39,11 @@
           "id": 6,
           "read_at": "2024-11-05T00:00:00",
           "progress": 32
+        },
+        {
+          "id": 7,
+          "read_at": "2024-11-06T00:00:00",
+          "progress": 37
         }
       ],
       "quotes": [
@@ -49,7 +54,7 @@
         }
       ],
       "status_order": 0,
-      "read_percentage": "15.38"
+      "read_percentage": "17.79"
     },
     {
       "id": 54,

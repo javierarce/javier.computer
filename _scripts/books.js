@@ -13,7 +13,7 @@ export class Books {
       const data = JSON.parse(fs.readFileSync(this.outputFile, "utf8"));
       return new Date(data.updated_at);
     }
-    return new Date(0); // Return earliest possible date if file doesn't exist
+    return new Date(0);
   }
 
   async loadSpinner() {
@@ -78,7 +78,6 @@ link: ${link || ""}
       mdContent += `\n\n## Citas\n`;
       book.quotes.forEach((quote) => {
         mdContent += `\n> ${quote.quote}\n`;
-
         mdContent += `\n---\n`;
       });
     }
@@ -91,6 +90,37 @@ link: ${link || ""}
     fs.writeFileSync(dir + fileName, mdContent);
   }
 
+  hasBookChanged(newBook, existingBook) {
+    if (!existingBook) return true;
+
+    // Check if basic properties have changed
+    if (new Date(newBook.updated_at) > this.lastUpdateDate) return true;
+
+    // Check if progress has changed
+    const existingProgress = existingBook.progresses || [];
+    const newProgress = newBook.progresses || [];
+
+    if (newProgress.length !== existingProgress.length) return true;
+
+    // Compare the latest progress entry
+    if (newProgress.length > 0 && existingProgress.length > 0) {
+      const latestNew = newProgress[newProgress.length - 1];
+      const latestExisting = existingProgress[existingProgress.length - 1];
+
+      if (
+        latestNew.progress !== latestExisting.progress ||
+        latestNew.read_at !== latestExisting.read_at
+      ) {
+        return true;
+      }
+    }
+
+    // Check if read_percentage has changed
+    if (newBook.read_percentage !== existingBook.read_percentage) return true;
+
+    return false;
+  }
+
   async run() {
     await this.loadSpinner();
     this.spinner.start("Getting books");
@@ -99,23 +129,22 @@ link: ${link || ""}
       const books = await this.fetchBooks();
       const currentDate = new Date();
 
-      // Filter books that have been updated since last check
-      const updatedBooks = books.filter((book) => {
-        const bookUpdateDate = new Date(book.updated_at);
-        return bookUpdateDate > this.lastUpdateDate;
-      });
+      // Read existing data
+      const existingData = fs.existsSync(this.outputFile)
+        ? JSON.parse(fs.readFileSync(this.outputFile, "utf8"))
+        : { books: [] };
+
+      // Create a map of existing books by ID for easy lookup
+      const existingBooksMap = new Map(
+        existingData.books.map((book) => [book.id, book]),
+      );
+
+      // Filter books that have changes
+      const updatedBooks = books.filter((book) =>
+        this.hasBookChanged(book, existingBooksMap.get(book.id)),
+      );
 
       if (updatedBooks.length > 0) {
-        // Read existing data
-        const existingData = fs.existsSync(this.outputFile)
-          ? JSON.parse(fs.readFileSync(this.outputFile, "utf8"))
-          : { books: [] };
-
-        // Create a map of existing books by ID for easy lookup
-        const existingBooksMap = new Map(
-          existingData.books.map((book) => [book.id, book]),
-        );
-
         // Update or add new books
         updatedBooks.forEach((book) => {
           if (existingBooksMap.has(book.id)) {
