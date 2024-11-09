@@ -1,7 +1,106 @@
 {
-  "updated_at": "2024-11-07",
-  "count": 770,
+  "updated_at": "2024-11-09",
+  "count": 781,
   "movies": [
+    {
+      "watched_on": "2024-11-08",
+      "title": "Eyes Without a Face",
+      "year": "1960",
+      "rating": 4.5,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "eyes-without-a-face"
+    },
+    {
+      "watched_on": "2024-11-07",
+      "title": "Witness",
+      "year": "1985",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": true,
+      "permalink": "witness"
+    },
+    {
+      "watched_on": "2024-10-28",
+      "title": "Woman of the Hour",
+      "year": "2023",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "woman-of-the-hour"
+    },
+    {
+      "watched_on": "2024-10-25",
+      "title": "Lee",
+      "year": "2023",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "lee-2023"
+    },
+    {
+      "watched_on": "2024-09-28",
+      "title": "Friedkin Uncut",
+      "year": "2018",
+      "rating": 0,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "friedkin-uncut"
+    },
+    {
+      "watched_on": "2024-09-20",
+      "title": "Prometheus",
+      "year": "2012",
+      "rating": 2.5,
+      "stars": "★★½",
+      "rewatched": true,
+      "permalink": "prometheus"
+    },
+    {
+      "watched_on": "2024-09-20",
+      "title": "Deadlier Than the Male",
+      "year": "1956",
+      "rating": 3.5,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "deadlier-than-the-male-1956"
+    },
+    {
+      "watched_on": "2024-09-14",
+      "title": "RoboCop",
+      "year": "1987",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": true,
+      "permalink": "robocop"
+    },
+    {
+      "watched_on": "2024-07-21",
+      "title": "A Cop",
+      "year": "1972",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "a-cop-1972"
+    },
+    {
+      "watched_on": "2024-02-11",
+      "title": "Caro diario",
+      "year": "1993",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "caro-diario"
+    },
+    {
+      "watched_on": "2022-10-14",
+      "title": "Werewolf by Night",
+      "year": "2022",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "werewolf-by-night-in-color"
+    },
     {
       "watched_on": "2024-11-06",
       "title": "Judex",

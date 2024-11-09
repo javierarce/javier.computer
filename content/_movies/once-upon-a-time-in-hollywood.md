@@ -1,5 +1,5 @@
 ---
-title: "Once Upon a Time… in Hollywood"
+title: "Once Upon a Time... in Hollywood"
 year: 2019
 rating: 4
 stars: "★★★★"

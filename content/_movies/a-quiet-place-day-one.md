@@ -1,5 +1,5 @@
 ---
-title: "A Quiet Place: Day One"
+title: "A Quiet Place: Day One"
 year: 2024
 rating: 1.5
 stars: "★½"

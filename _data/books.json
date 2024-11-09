@@ -1,5 +1,5 @@
 {
-  "updated_at": "2024-11-07",
+  "updated_at": "2024-11-09",
   "count": 174,
   "books": [
     {
@@ -49,6 +49,11 @@
           "id": 8,
           "read_at": "2024-11-07T00:00:00",
           "progress": 42
+        },
+        {
+          "id": 10,
+          "read_at": "2024-11-09T00:00:00",
+          "progress": 51
         }
       ],
       "quotes": [
@@ -59,7 +64,7 @@
         }
       ],
       "status_order": 0,
-      "read_percentage": "20.19"
+      "read_percentage": "24.52"
     },
     {
       "id": 54,
@@ -121,11 +126,26 @@
           "id": 4,
           "read_at": "2024-11-04T00:00:00",
           "progress": 122
+        },
+        {
+          "id": 9,
+          "read_at": "2024-11-07T00:00:00",
+          "progress": 151
+        },
+        {
+          "id": 12,
+          "read_at": "2024-11-08T00:00:00",
+          "progress": 176
+        },
+        {
+          "id": 13,
+          "read_at": "2024-11-09T00:00:00",
+          "progress": 183
         }
       ],
       "quotes": [],
       "status_order": 0,
-      "read_percentage": "63.54"
+      "read_percentage": "95.31"
     },
     {
       "id": 131,

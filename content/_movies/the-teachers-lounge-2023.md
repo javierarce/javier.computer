@@ -1,5 +1,5 @@
 ---
-title: "The Teachers’ Lounge"
+title: "The Teachers' Lounge"
 year: 2023
 rating: 3.5
 stars: "★★★½"

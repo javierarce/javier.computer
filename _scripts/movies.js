@@ -20,7 +20,7 @@ export class MovieScraper {
       const data = JSON.parse(fs.readFileSync(this.outputFile, "utf8"));
       return new Date(data.updated_at);
     }
-    return new Date(0); // If file doesn't exist, return oldest possible date
+    return new Date(0);
   }
 
   async loadSpinner() {
@@ -67,7 +67,7 @@ watched_on: ${watched_on}
     fs.writeFileSync(dir + fileName, mdContent);
   }
 
-  async scrapeMovies() {
+  async scrapeMovies(existingData) {
     const root = await this.fetchPage(1);
     const totalPages = await this.getTotalPages(root);
     const movies = [];
@@ -83,13 +83,13 @@ watched_on: ${watched_on}
         const watchedOn = new Date(
           metadataElem.getAttribute("data-viewing-date"),
         );
-        if (watchedOn <= this.lastUpdatedAt) {
-          shouldContinue = false;
-          break;
-        }
 
         const permalink = td.getAttribute("data-film-slug");
-        // const watchedOn = metadataElem.getAttribute("data-viewing-date");
+
+        const doesMovieExist = existingData.movies.some(
+          (movie) => movie.permalink === permalink,
+        );
+
         const filmTitle = metadataElem.getAttribute("data-film-name");
         const rewatched = metadataElem.getAttribute("data-rewatch") === "true";
         const year = metadataElem.getAttribute("data-film-year");
@@ -100,15 +100,18 @@ watched_on: ${watched_on}
         const halfStar = rating - Math.floor(rating) >= 0.5 ? "½" : "";
 
         const stars = fullStars + halfStar;
-        movies.push({
-          watched_on: watchedOn.toISOString().split("T")[0],
-          title,
-          year,
-          rating,
-          stars,
-          rewatched,
-          permalink,
-        });
+
+        if (!doesMovieExist) {
+          movies.push({
+            watched_on: watchedOn.toISOString().split("T")[0],
+            title,
+            year,
+            rating,
+            stars,
+            rewatched,
+            permalink,
+          });
+        }
       }
       if (!shouldContinue) break;
     }
@@ -120,12 +123,13 @@ watched_on: ${watched_on}
     await this.loadSpinner();
     this.spinner.start("Getting new movies");
     try {
-      const newMovies = await this.scrapeMovies();
-      if (newMovies.length > 0) {
-        const existingData = fs.existsSync(this.outputFile)
-          ? JSON.parse(fs.readFileSync(this.outputFile, "utf8"))
-          : { movies: [] };
+      const existingData = fs.existsSync(this.outputFile)
+        ? JSON.parse(fs.readFileSync(this.outputFile, "utf8"))
+        : { movies: [] };
 
+      const newMovies = await this.scrapeMovies(existingData);
+
+      if (newMovies.length > 0) {
         const updatedMovies = [...newMovies, ...existingData.movies];
         const updated_at = new Date().toISOString().split("T")[0];
         const outputData = {

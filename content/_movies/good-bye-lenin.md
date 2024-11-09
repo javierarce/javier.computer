@@ -1,5 +1,5 @@
 ---
-title: "Good Bye Lenin!"
+title: "Good Bye, Lenin!"
 year: 2003
 rating: 3.5
 stars: "★★★½"

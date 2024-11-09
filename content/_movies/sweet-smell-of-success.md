@@ -1,9 +1,9 @@
 ---
 title: "Sweet Smell of Success"
 year: 1957
-rating: 4
-stars: "★★★★"
-rewatched: false
+rating: 3
+stars: "★★★"
+rewatched: true
 permalink: "sweet-smell-of-success"
-watched_on: 2020-05-23
+watched_on: 2024-03-12
 ---

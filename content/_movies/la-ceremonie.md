@@ -1,5 +1,5 @@
 ---
-title: "La Cérémonie"
+title: "La Ceremonie"
 year: 1995
 rating: 4
 stars: "★★★★"
