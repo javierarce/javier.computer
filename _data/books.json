@@ -102,7 +102,7 @@
     {
       "id": 106,
       "title": "Pnin",
-      "subtitle": null,
+      "subtitle": "",
       "slug": "pnin",
       "description": "",
       "translators": null,
@@ -112,15 +112,15 @@
       "author": "Vladimir Nabokov",
       "pages": 192,
       "year": null,
-      "status": "reading",
-      "rating": null,
+      "status": "read",
+      "rating": "4",
       "cover": null,
       "color": null,
       "link": "https://en.wikipedia.org/wiki/Pnin_(novel)",
-      "started_at": null,
-      "finished_at": null,
+      "started_at": "2024-08-31T22:00:00.000Z",
+      "finished_at": "2024-11-08T23:00:00.000Z",
       "created_at": "2024-11-04T10:05:52.151Z",
-      "updated_at": "2024-11-04T10:05:52.151Z",
+      "updated_at": "2024-11-09T14:18:23.502Z",
       "progresses": [
         {
           "id": 4,
@@ -141,11 +141,16 @@
           "id": 13,
           "read_at": "2024-11-09T00:00:00",
           "progress": 183
+        },
+        {
+          "id": 14,
+          "read_at": "2024-11-09T00:00:00",
+          "progress": 192
         }
       ],
       "quotes": [],
-      "status_order": 0,
-      "read_percentage": "95.31"
+      "status_order": 1,
+      "read_percentage": "100.00"
     },
     {
       "id": 131,
