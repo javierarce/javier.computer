@@ -1,13 +1,13 @@
 [
   {
-    "city": "Zaragoza",
-    "country": "Spain",
-    "coordinates": "41.6488,0.8891"
-  },
-  {
     "city": "Barcelona",
     "country": "Spain",
     "coordinates": "41.3851,2.1734"
+  },
+  {
+    "city": "Zaragoza",
+    "country": "Spain",
+    "coordinates": "41.6488,0.8891"
   },
   {
     "city": "León",
