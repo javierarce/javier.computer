@@ -4798,14 +4798,14 @@
       "pages": 284,
       "year": null,
       "status": "read",
-      "rating": null,
+      "rating": "0",
       "cover": null,
       "color": null,
       "link": "",
       "started_at": "2024-10-20T22:00:00.000Z",
       "finished_at": "2024-10-29T23:00:00.000Z",
       "created_at": "2024-11-13T22:06:26.100Z",
-      "updated_at": "2024-11-13T22:06:26.100Z",
+      "updated_at": "2024-11-13T22:06:51.677Z",
       "progresses": [
         {
           "id": 18,
