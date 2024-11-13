@@ -86,6 +86,17 @@ figcaption {
   margin: 0 auto;
 }
 
+.Layout__reportage .g h3 {
+  width: var(--width);
+  margin: 0 auto;
+  font-size: 1.3em;
+  font-weight: normal;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 0;
+  opacity: var(--lightOpacity);
+}
+
 .Layout__reportage h2.is-descriptionless {
   margin-bottom: 1em;
 }
@@ -208,6 +219,14 @@ figcaption {
   height: auto;
   width: 100%;
   max-width: none;
+}
+
+.g.has-margin-top {
+  margin-top: 3em;
+}
+
+.g.has-margin-bottom {
+  margin-bottom: 3em;
 }
 
 .g.with-caption {

@@ -76,8 +76,11 @@ cámaras en mano y así añadir una ciudad más (la mía, la que me vio nacer) a
     {% include photos/custom.html location='leon' filename='2024-11-02-Leon-R0009587' -%}
 </div>
 
+<div class="g has-margin-top">
+    <h3>Cartelería de provincias</h3>
 <p>Y me despido con con una minúscula selección de cartelería leonesa clásica
     del barrio El Crucero que me llamó la atención.</p>
+</div>
 
 <div class="g">
     {% include photos/custom.html location='leon' filename='2024-11-02-Leon-R0009613' -%}
@@ -89,7 +92,9 @@ cámaras en mano y así añadir una ciudad más (la mía, la que me vio nacer) a
     {% include photos/custom.html location='leon' filename='2024-11-02-Leon-R0009599' -%}
 </div>
 
+<div class="g has-margin-top">
 <p>Bueno, ya esta bien de tanta foto, ¡hasta otra!</p>
+</div>
 
 <div class="g">
     {% include photos/custom.html location='leon' filename='2024-11-02-Leon-DSCF2868' -%}
