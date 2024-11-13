@@ -64,6 +64,11 @@
           "id": 16,
           "read_at": "2024-11-12T00:00:00",
           "progress": 65
+        },
+        {
+          "id": 17,
+          "read_at": "2024-11-13T00:00:00",
+          "progress": 70
         }
       ],
       "quotes": [
@@ -74,7 +79,7 @@
         }
       ],
       "status_order": 0,
-      "read_percentage": "31.25"
+      "read_percentage": "33.65"
     },
     {
       "id": 54,
