@@ -87,7 +87,7 @@ figcaption {
 }
 
 .Layout__reportage .g h3 {
-  width: 100%;
+  width: var(--width);
   margin: 0 auto;
   font-size: 1.3em;
   font-weight: normal;
@@ -360,6 +360,10 @@ figcaption {
 }
 
 @media all and (max-width: 640px) {
+
+  .Layout__reportage .g h3 {
+    width: 100%;
+  }
 
   .gg,
   .gg.is-half {
