@@ -1,6 +1,6 @@
 {
   "updated_at": "2024-11-13",
-  "count": 174,
+  "count": 175,
   "books": [
     {
       "id": 174,
@@ -4783,6 +4783,39 @@
       "quotes": [],
       "status_order": 1,
       "read_percentage": "0"
+    },
+    {
+      "id": 175,
+      "title": "Listen to the Echoes",
+      "subtitle": "The Ray Bradbury Interviews",
+      "slug": "listen-to-the-echoes",
+      "description": "",
+      "translators": null,
+      "isbn": null,
+      "edition": null,
+      "publisher": null,
+      "author": "Sam Weller",
+      "pages": 284,
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "cover": null,
+      "color": null,
+      "link": "",
+      "started_at": "2024-10-20T22:00:00.000Z",
+      "finished_at": "2024-10-29T23:00:00.000Z",
+      "created_at": "2024-11-13T22:06:26.100Z",
+      "updated_at": "2024-11-13T22:06:26.100Z",
+      "progresses": [
+        {
+          "id": 18,
+          "read_at": "2024-10-30T00:00:00",
+          "progress": 284
+        }
+      ],
+      "quotes": [],
+      "status_order": 1,
+      "read_percentage": "100.00"
     }
   ]
 }
