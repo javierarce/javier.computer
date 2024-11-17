@@ -1,7 +1,34 @@
 {
-  "updated_at": "2024-11-13",
-  "count": 784,
+  "updated_at": "2024-11-17",
+  "count": 787,
   "movies": [
+    {
+      "watched_on": "2024-11-15",
+      "title": "Vertigo",
+      "year": "1958",
+      "rating": 4,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "vertigo"
+    },
+    {
+      "watched_on": "2024-11-14",
+      "title": "Cat People",
+      "year": "1942",
+      "rating": 3,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "cat-people"
+    },
+    {
+      "watched_on": "2023-07-15",
+      "title": "Mission: Impossible – Dead Reckoning",
+      "year": "2023",
+      "rating": 1.5,
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "mission-impossible-dead-reckoning"
+    },
     {
       "watched_on": "2024-11-12",
       "title": "Kinds of Kindness",

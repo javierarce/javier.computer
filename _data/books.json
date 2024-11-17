@@ -1,6 +1,6 @@
 {
-  "updated_at": "2024-11-13",
-  "count": 175,
+  "updated_at": "2024-11-17",
+  "count": 177,
   "books": [
     {
       "id": 174,
@@ -69,6 +69,11 @@
           "id": 17,
           "read_at": "2024-11-13T00:00:00",
           "progress": 70
+        },
+        {
+          "id": 20,
+          "read_at": "2024-11-16T00:00:00",
+          "progress": 83
         }
       ],
       "quotes": [
@@ -79,7 +84,7 @@
         }
       ],
       "status_order": 0,
-      "read_percentage": "33.65"
+      "read_percentage": "39.90"
     },
     {
       "id": 54,
@@ -4816,6 +4821,71 @@
       "quotes": [],
       "status_order": 1,
       "read_percentage": "100.00"
+    },
+    {
+      "id": 176,
+      "title": "The Road to React",
+      "subtitle": "Your journey to master plain yet pragmatic React.js",
+      "slug": "the-road-to-react",
+      "description": "",
+      "translators": null,
+      "isbn": null,
+      "edition": null,
+      "publisher": null,
+      "author": "Robin Wieruch",
+      "pages": 422,
+      "year": null,
+      "status": "reading",
+      "rating": "0",
+      "cover": null,
+      "color": null,
+      "link": "",
+      "started_at": "2024-11-13T23:00:00.000Z",
+      "finished_at": null,
+      "created_at": "2024-11-15T06:34:08.633Z",
+      "updated_at": "2024-11-15T06:36:29.964Z",
+      "progresses": [
+        {
+          "id": 19,
+          "read_at": "2024-11-15T00:00:00",
+          "progress": 131
+        },
+        {
+          "id": 21,
+          "read_at": "2024-11-16T00:00:00",
+          "progress": 219
+        }
+      ],
+      "quotes": [],
+      "status_order": 0,
+      "read_percentage": "51.90"
+    },
+    {
+      "id": 177,
+      "title": "Misery",
+      "subtitle": "",
+      "slug": "misery",
+      "description": "",
+      "translators": null,
+      "isbn": null,
+      "edition": null,
+      "publisher": null,
+      "author": "Stephen King",
+      "pages": 432,
+      "year": null,
+      "status": "reading",
+      "rating": null,
+      "cover": null,
+      "color": null,
+      "link": "",
+      "started_at": "2024-11-12T23:00:00.000Z",
+      "finished_at": null,
+      "created_at": "2024-11-15T06:46:17.596Z",
+      "updated_at": "2024-11-15T06:46:17.596Z",
+      "progresses": [],
+      "quotes": [],
+      "status_order": 0,
+      "read_percentage": "0"
     }
   ]
 }
