@@ -38,6 +38,7 @@ permalink: iam
 
     a {
       color: var(--text);
+      text-decoration: none;
       transition: opacity var(--transition-duration) var(--transition-timing-function);
     }
 
@@ -112,6 +113,10 @@ permalink: iam
         --content-font-size: 8vmin;
         --sentence-spacing: 4px;
       }
+
+      #info {
+        opacity: 1;
+      }
     }
 
     @media (prefers-color-scheme: light) {
@@ -160,10 +165,43 @@ permalink: iam
       }
 
       bindEvents() {
+        const $info = document.getElementById('info');
+
+        // Initialize readingInfo property
+        this.readingInfo = false;
+
+        $info.addEventListener('mouseenter', () => {
+          this.readingInfo = true;
+          if (this.clearInfoTimeout) {
+            clearTimeout(this.clearInfoTimeout);
+            this.clearInfoTimeout = null;
+          }
+        });
+
+        $info.addEventListener('mouseleave', () => {
+          this.readingInfo = false;
+          $info.classList.remove('is-visible');
+        });
+
         document.addEventListener('mousemove', () => {
-          document.getElementById('info').classList.add('is-visible');
-          setTimeout(() => {
-            document.getElementById('info').classList.remove('is-visible');
+          // If we're reading info, don't do anything
+          if (this.readingInfo) {
+            return;
+          }
+
+          // Show info
+          $info.classList.add('is-visible');
+
+          // Clear any existing timeout
+          if (this.clearInfoTimeout) {
+            clearTimeout(this.clearInfoTimeout);
+          }
+
+          // Set new timeout
+          this.clearInfoTimeout = setTimeout(() => {
+            if (!this.readingInfo) {  // Only hide if we're not reading
+              $info.classList.remove('is-visible');
+            }
           }, 2000);
         });
       }
