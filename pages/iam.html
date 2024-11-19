@@ -7,7 +7,7 @@ permalink: iam
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>I am…</title>
+  <title>I am</title>
   <style>
     :root {
       --white: #fff;
@@ -15,10 +15,12 @@ permalink: iam
       --background: var(--black);
       --text: var(--white);
       --transition-duration: 500ms;
+      --transition-timing-function: ease-in-out;
       --font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
       --border-color: rgba(255, 255, 255, 0.1);
       --info-padding: 1em;
       --font-size-base: 14px;
+      --sentence-offset: -1em;
       --content-font-size: 10vmin;
       --sentence-spacing: 8px;
     }
@@ -32,13 +34,12 @@ permalink: iam
       font-family: var(--font-family);
       background: var(--background);
       color: var(--text);
-      overflow-x: hidden;
     }
 
     a {
       color: var(--text);
       text-decoration: none;
-      transition: opacity var(--transition-duration);
+      transition: opacity var(--transition-duration) var(--transition-timing-function);
     }
 
     a:hover {
@@ -51,38 +52,31 @@ permalink: iam
       align-items: center;
       height: 100vh;
       font-size: var(--content-font-size);
-      padding: 0 20px;
     }
 
-    .sentence {
+    .Sentence {
       position: relative;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      max-width: 100vw;
-      text-align: center;
-    }
-
-    .sentence-container {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 100%;
-      position: relative;
+      left: -1em;
     }
 
     .fixed-text {
-      text-align: right;
+      position: absolute;
+      right: 50%;
+      white-space: nowrap;
       margin-right: var(--sentence-spacing);
       opacity: 0.5;
     }
 
     #ing {
-      text-align: left;
+      position: absolute;
+      left: 50%;
+      white-space: nowrap;
       margin-left: var(--sentence-spacing);
       opacity: 1;
-      transition: opacity var(--transition-duration) ease-in-out;
+      transition: opacity var(--transition-duration) var(--transition-timing-function);
     }
 
     #info {
@@ -94,7 +88,6 @@ permalink: iam
       font-size: var(--font-size-base);
       line-height: 1.5;
       border-top: 1px solid var(--border-color);
-      background: var(--background);
     }
 
     #stats,
@@ -107,32 +100,12 @@ permalink: iam
     #credit {
       color: var(--text);
       font-size: var(--font-size-base);
-      margin-top: 0.5em;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 640px) {
       :root {
         --content-font-size: 8vmin;
         --sentence-spacing: 4px;
-      }
-
-      .sentence {
-        flex-direction: row;
-        flex-wrap: nowrap;
-      }
-
-      #content {
-        padding: 0 10px;
-      }
-
-      #info {
-        padding: 0.75em;
-      }
-    }
-
-    @media (max-width: 360px) {
-      :root {
-        --content-font-size: 7vmin;
       }
     }
 
@@ -147,106 +120,67 @@ permalink: iam
 
   <script>
     class BlueSkyItemTracker {
-      static CONFIG = {
-        ENDPOINT: 'subscribe?wantedCollections=app.bsky.feed.post',
-        JETSTREAMS: [
+      constructor() {
+        this.ENDPOINT = 'subscribe?wantedCollections=app.bsky.feed.post'
+        this.JETSTREAMS = [
           'wss://jetstream1.us-east.bsky.network',
           'wss://jetstream2.us-east.bsky.network',
           'wss://jetstream1.us-west.bsky.network',
           'wss://jetstream2.us-west.bsky.network'
-        ],
-        DEFAULT_LANG: 'en',
-        RECONNECT_DELAY: 1000,
-        PATTERN: /(?:I am|I'm)\s+(\w+ing)\b/i
-      };
+        ];
 
-      constructor() {
-        this.stats = {
-          totalPosts: 0,
-          itemCount: 0
-        };
-
-        this.state = {
-          isAnimating: false,
-          currentItem: null
-        };
-
-        this.queue = [];
+        this.totalPosts = 0;
+        this.itemCount = 0;
         this.ws = null;
-
-        this.domElements = {
-          ing: null,
-          totalPosts: null,
-          itemCount: null
-        };
-
-        // Bind methods to preserve this context
-        this.handleMessage = this.handleMessage.bind(this);
-        this.handleTransitionEnd = this.handleTransitionEnd.bind(this);
-        this.handleWebSocketError = this.handleWebSocketError.bind(this);
-        this.handleWebSocketClose = this.handleWebSocketClose.bind(this);
+        this.isAnimating = false;
+        this.queue = [];
+        this.DEFAULT_LANG = 'en';
       }
 
       initialize() {
-        this.initializeDOMElements();
-        this.setupEventListeners();
         this.connectWebSocket();
         this.updateStats();
-      }
 
-      initializeDOMElements() {
-        this.domElements = {
-          ing: document.getElementById('ing'),
-          totalPosts: document.getElementById('totalPosts'),
-          itemCount: document.getElementById('itemCount')
-        };
-
-        if (!Object.values(this.domElements).every(Boolean)) {
-          throw new Error('Required DOM elements not found');
-        }
-      }
-
-      setupEventListeners() {
-        this.domElements.ing.addEventListener('transitionend', this.handleTransitionEnd);
-      }
-
-      handleTransitionEnd() {
-        if (this.domElements.ing.style.opacity === '0') {
-          this.domElements.ing.style.opacity = '1';
-          this.domElements.ing.textContent = this.state.currentItem;
-        } else {
-          this.state.isAnimating = false;
-          this.processQueue();
-        }
+        window.ing.addEventListener('transitionend', () => {
+          if (window.ing.style.opacity === '0') {
+            window.ing.style.opacity = '1';
+            window.ing.textContent = this.currentItem;
+          } else {
+            this.isAnimating = false;
+            this.processQueue();
+          }
+        });
       }
 
       detect(text) {
-        const match = text.match(BlueSkyItemTracker.CONFIG.PATTERN);
-        return match ? match[1] : null;
+        const ing = text.match(/(?:I am|I'm)\s+(\w+ing)\b/i);
+        if (ing) {
+          return ing[1];
+        }
+        return false;
       }
 
       updateStats() {
-        this.domElements.totalPosts.textContent = this.stats.totalPosts;
-        this.domElements.itemCount.textContent = this.stats.itemCount;
+        document.getElementById('totalPosts').textContent = this.totalPosts;
+        document.getElementById('itemCount').textContent = this.itemCount;
       }
 
       handleMessage(event) {
-        try {
-          const data = JSON.parse(event.data);
-          this.stats.totalPosts++;
+        const data = JSON.parse(event.data);
+        this.totalPosts++;
 
-          const record = data.commit?.record;
-          if (record?.langs?.includes(BlueSkyItemTracker.CONFIG.DEFAULT_LANG) && record.text) {
-            const item = this.detect(record.text);
+        if (data.commit?.record?.langs?.includes(this.DEFAULT_LANG)) {
+          if (data.commit?.record?.text) {
+            const text = data.commit.record.text;
+            const item = this.detect(text);
+
             if (item) {
-              this.stats.itemCount++;
+              this.itemCount++;
               this.queueItem(item);
             }
           }
 
           this.updateStats();
-        } catch (error) {
-          console.error('Error processing message:', error);
         }
       }
 
@@ -256,70 +190,53 @@ permalink: iam
       }
 
       processQueue() {
-        if (this.state.isAnimating || this.queue.length === 0) {
+        if (this.isAnimating || this.queue.length === 0) {
           return;
         }
 
-        this.state.currentItem = this.queue.shift();
+        this.currentItem = this.queue.shift();
         this.render();
       }
 
       render() {
-        this.state.isAnimating = true;
-        this.domElements.ing.style.opacity = '0';
+        this.isAnimating = true;
+        window.ing.style.opacity = '0';
       }
 
       connectWebSocket() {
-        const randomJetstream = BlueSkyItemTracker.CONFIG.JETSTREAMS[
-          Math.floor(Math.random() * BlueSkyItemTracker.CONFIG.JETSTREAMS.length)
+        const randomJetstream = this.JETSTREAMS[
+          Math.floor(Math.random() * this.JETSTREAMS.length)
         ];
 
         this.ws = new WebSocket(
-          `${randomJetstream}/${BlueSkyItemTracker.CONFIG.ENDPOINT}`
+          `${randomJetstream}/${this.ENDPOINT}`,
         );
 
-        this.ws.onmessage = this.handleMessage;
-        this.ws.onerror = this.handleWebSocketError;
-        this.ws.onclose = this.handleWebSocketClose;
-      }
+        this.ws.onmessage = (event) => this.handleMessage(event);
 
-      handleWebSocketError(error) {
-        console.error('WebSocket error:', error);
-        this.reconnectWebSocket();
-      }
+        this.ws.onerror = (error) => {
+          console.error('WebSocket error:', error);
+          setTimeout(() => this.connectWebSocket(), 1000);
+        };
 
-      handleWebSocketClose() {
-        this.reconnectWebSocket();
-      }
-
-      reconnectWebSocket() {
-        setTimeout(() => this.connectWebSocket(), BlueSkyItemTracker.CONFIG.RECONNECT_DELAY);
-      }
-
-      disconnect() {
-        if (this.ws) {
-          this.ws.close();
-        }
-        this.domElements.ing.removeEventListener('transitionend', this.handleTransitionEnd);
+        this.ws.onclose = () => {
+          setTimeout(() => this.connectWebSocket(), 1000);
+        };
       }
     }
 
-    window.addEventListener('load', () => {
-      try {
-        const tracker = new BlueSkyItemTracker();
-        tracker.initialize();
-
-        window.tracker = tracker;
-      } catch (error) {
-        console.error('Failed to initialize BlueSky tracker:', error);
-      }
-    });
+    window.onload = function () {
+      window.ing = document.getElementById('ing');
+      const tracker = new BlueSkyItemTracker();
+      tracker.initialize();
+    };
   </script>
+
 </head>
 
 <body>
   <div id="content">
-    <div class="sentence">
+    <div class="Sentence">
       <span class="fixed-text">I am</span>
       <span id="ing">…</span>
     </div>
