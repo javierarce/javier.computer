@@ -1,0 +1,305 @@
+---
+permalink: iam
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I am</title>
+  <style>
+    /* CSS Custom Properties for theming */
+    :root {
+      --white: #fff;
+      --black: #000;
+      --background: var(--black);
+      --text: var(--white);
+      --transition-duration: 500ms;
+      --font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+      --border-color: rgba(255, 255, 255, 0.1);
+      --info-padding: 1em;
+      --font-size-base: 14px;
+      --sentence-offset: -1em;
+      --content-font-size: 10vmin;
+    }
+
+    /* Reset and base styles */
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: var(--font-family);
+      background: var(--background);
+      color: var(--text);
+    }
+
+    a {
+      color: var(--text);
+      text-decoration: none;
+      transition: opacity var(--transition-duration);
+    }
+
+    a:hover {
+      opacity: 0.8;
+    }
+
+    /* Layout components */
+    #content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-size: var(--content-font-size);
+    }
+
+    .sentence {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      left: var(--sentence-offset);
+    }
+
+    .fixed-text {
+      position: absolute;
+      right: 50%;
+      white-space: nowrap;
+      margin-right: 8px;
+      opacity: 0.5;
+    }
+
+    #ing {
+      position: absolute;
+      left: 50%;
+      white-space: nowrap;
+      margin-left: 8px;
+      opacity: 1;
+      transition: opacity var(--transition-duration) ease-in-out;
+    }
+
+    #info {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: var(--info-padding);
+      font-size: var(--font-size-base);
+      line-height: 1.5;
+      border-top: 1px solid var(--border-color);
+    }
+
+    #stats,
+    #credit {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    #credit {
+      color: var(--text);
+      font-size: var(--font-size-base);
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --background: var(--white);
+        --text: var(--black);
+        --border-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+  </style>
+
+  <script>
+    class BlueSkyItemTracker {
+      static CONFIG = {
+        ENDPOINT: 'subscribe?wantedCollections=app.bsky.feed.post',
+        JETSTREAMS: [
+          'wss://jetstream1.us-east.bsky.network',
+          'wss://jetstream2.us-east.bsky.network',
+          'wss://jetstream1.us-west.bsky.network',
+          'wss://jetstream2.us-west.bsky.network'
+        ],
+        DEFAULT_LANG: 'en',
+        RECONNECT_DELAY: 1000,
+        PATTERN: /(?:I am|I'm)\s+(\w+ing)\b/i
+      };
+
+      constructor() {
+        this.stats = {
+          totalPosts: 0,
+          itemCount: 0
+        };
+
+        this.state = {
+          isAnimating: false,
+          currentItem: null
+        };
+
+        this.queue = [];
+        this.ws = null;
+
+        this.domElements = {
+          ing: null,
+          totalPosts: null,
+          itemCount: null
+        };
+
+        // Bind methods to preserve this context
+        this.handleMessage = this.handleMessage.bind(this);
+        this.handleTransitionEnd = this.handleTransitionEnd.bind(this);
+        this.handleWebSocketError = this.handleWebSocketError.bind(this);
+        this.handleWebSocketClose = this.handleWebSocketClose.bind(this);
+      }
+
+      initialize() {
+        this.initializeDOMElements();
+        this.setupEventListeners();
+        this.connectWebSocket();
+        this.updateStats();
+      }
+
+      initializeDOMElements() {
+        this.domElements = {
+          ing: document.getElementById('ing'),
+          totalPosts: document.getElementById('totalPosts'),
+          itemCount: document.getElementById('itemCount')
+        };
+
+        if (!Object.values(this.domElements).every(Boolean)) {
+          throw new Error('Required DOM elements not found');
+        }
+      }
+
+      setupEventListeners() {
+        this.domElements.ing.addEventListener('transitionend', this.handleTransitionEnd);
+      }
+
+      handleTransitionEnd() {
+        if (this.domElements.ing.style.opacity === '0') {
+          this.domElements.ing.style.opacity = '1';
+          this.domElements.ing.textContent = this.state.currentItem;
+        } else {
+          this.state.isAnimating = false;
+          this.processQueue();
+        }
+      }
+
+      detect(text) {
+        const match = text.match(BlueSkyItemTracker.CONFIG.PATTERN);
+        return match ? match[1] : null;
+      }
+
+      updateStats() {
+        this.domElements.totalPosts.textContent = this.stats.totalPosts;
+        this.domElements.itemCount.textContent = this.stats.itemCount;
+      }
+
+      handleMessage(event) {
+        try {
+          const data = JSON.parse(event.data);
+          this.stats.totalPosts++;
+
+          const record = data.commit?.record;
+          if (record?.langs?.includes(BlueSkyItemTracker.CONFIG.DEFAULT_LANG) && record.text) {
+            const item = this.detect(record.text);
+            if (item) {
+              this.stats.itemCount++;
+              this.queueItem(item);
+            }
+          }
+
+          this.updateStats();
+        } catch (error) {
+          console.error('Error processing message:', error);
+        }
+      }
+
+      queueItem(item) {
+        this.queue.push(item);
+        this.processQueue();
+      }
+
+      processQueue() {
+        if (this.state.isAnimating || this.queue.length === 0) {
+          return;
+        }
+
+        this.state.currentItem = this.queue.shift();
+        this.render();
+      }
+
+      render() {
+        this.state.isAnimating = true;
+        this.domElements.ing.style.opacity = '0';
+      }
+
+      connectWebSocket() {
+        const randomJetstream = BlueSkyItemTracker.CONFIG.JETSTREAMS[
+          Math.floor(Math.random() * BlueSkyItemTracker.CONFIG.JETSTREAMS.length)
+        ];
+
+        this.ws = new WebSocket(
+          `${randomJetstream}/${BlueSkyItemTracker.CONFIG.ENDPOINT}`
+        );
+
+        this.ws.onmessage = this.handleMessage;
+        this.ws.onerror = this.handleWebSocketError;
+        this.ws.onclose = this.handleWebSocketClose;
+      }
+
+      handleWebSocketError(error) {
+        console.error('WebSocket error:', error);
+        this.reconnectWebSocket();
+      }
+
+      handleWebSocketClose() {
+        this.reconnectWebSocket();
+      }
+
+      reconnectWebSocket() {
+        setTimeout(() => this.connectWebSocket(), BlueSkyItemTracker.CONFIG.RECONNECT_DELAY);
+      }
+
+      disconnect() {
+        if (this.ws) {
+          this.ws.close();
+        }
+        this.domElements.ing.removeEventListener('transitionend', this.handleTransitionEnd);
+      }
+    }
+
+    // Initialize on load
+    window.addEventListener('load', () => {
+      try {
+        const tracker = new BlueSkyItemTracker();
+        tracker.initialize();
+
+        // Store instance for potential cleanup
+        window.tracker = tracker;
+      } catch (error) {
+        console.error('Failed to initialize BlueSky tracker:', error);
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <div id="content">
+    <div class="sentence">
+      <span class="fixed-text">I am</span>
+      <span id="ing">…</span>
+    </div>
+  </div>
+  <div id="info">
+    <div id="stats">
+      <span id="itemCount">0</span> of <span id="totalPosts">0</span> items found
+    </div>
+    <div id="credit">Based on <a href="https://www.bewitched.com/demo/rainbowsky">rainbowsky</a> by <a
+        href="https://bsky.app/profile/wattenberg.bsky.social">Martin Wattenberg</a></div>
+  </div>
+</body>
+
+</html>
