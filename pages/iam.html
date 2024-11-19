@@ -38,7 +38,6 @@ permalink: iam
 
     a {
       color: var(--text);
-      text-decoration: none;
       transition: opacity var(--transition-duration) var(--transition-timing-function);
     }
 
@@ -88,6 +87,12 @@ permalink: iam
       font-size: var(--font-size-base);
       line-height: 1.5;
       border-top: 1px solid var(--border-color);
+      opacity: 0;
+      transition: opacity var(--transition-duration) var(--transition-timing-function);
+    }
+
+    #info.is-visible {
+      opacity: 1;
     }
 
     #stats,
@@ -141,6 +146,8 @@ permalink: iam
         this.connectWebSocket();
         this.updateStats();
 
+        this.bindEvents();
+
         window.ing.addEventListener('transitionend', () => {
           if (window.ing.style.opacity === '0') {
             window.ing.style.opacity = '1';
@@ -150,6 +157,14 @@ permalink: iam
             this.processQueue();
           }
         });
+      }
+
+      bindEvents() {
+        document.addEventListener('mousemove', () => {
+          document.getElementById('info').classList.add('is-visible');
+          setTimeout(() => {
+            document.getElementById('info').classList.remove('is-visible');
+          }, 2000        });
       }
 
       detect(text) {
