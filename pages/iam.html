@@ -7,9 +7,8 @@ permalink: iam
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>I am</title>
+  <title>I am…</title>
   <style>
-    /* CSS Custom Properties for theming */
     :root {
       --white: #fff;
       --black: #000;
@@ -20,11 +19,10 @@ permalink: iam
       --border-color: rgba(255, 255, 255, 0.1);
       --info-padding: 1em;
       --font-size-base: 14px;
-      --sentence-offset: -1em;
       --content-font-size: 10vmin;
+      --sentence-spacing: 8px;
     }
 
-    /* Reset and base styles */
     body {
       margin: 0;
       padding: 0;
@@ -34,6 +32,7 @@ permalink: iam
       font-family: var(--font-family);
       background: var(--background);
       color: var(--text);
+      overflow-x: hidden;
     }
 
     a {
@@ -46,36 +45,42 @@ permalink: iam
       opacity: 0.8;
     }
 
-    /* Layout components */
     #content {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       font-size: var(--content-font-size);
+      padding: 0 20px;
     }
 
     .sentence {
       position: relative;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 100vw;
+      text-align: center;
+    }
+
+    .sentence-container {
       display: flex;
       justify-content: center;
       align-items: center;
-      left: var(--sentence-offset);
+      width: 100%;
+      position: relative;
     }
 
     .fixed-text {
-      position: absolute;
-      right: 50%;
-      white-space: nowrap;
-      margin-right: 8px;
+      text-align: right;
+      margin-right: var(--sentence-spacing);
       opacity: 0.5;
     }
 
     #ing {
-      position: absolute;
-      left: 50%;
-      white-space: nowrap;
-      margin-left: 8px;
+      text-align: left;
+      margin-left: var(--sentence-spacing);
       opacity: 1;
       transition: opacity var(--transition-duration) ease-in-out;
     }
@@ -89,6 +94,7 @@ permalink: iam
       font-size: var(--font-size-base);
       line-height: 1.5;
       border-top: 1px solid var(--border-color);
+      background: var(--background);
     }
 
     #stats,
@@ -101,6 +107,33 @@ permalink: iam
     #credit {
       color: var(--text);
       font-size: var(--font-size-base);
+      margin-top: 0.5em;
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --content-font-size: 8vmin;
+        --sentence-spacing: 4px;
+      }
+
+      .sentence {
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
+
+      #content {
+        padding: 0 10px;
+      }
+
+      #info {
+        padding: 0.75em;
+      }
+    }
+
+    @media (max-width: 360px) {
+      :root {
+        --content-font-size: 7vmin;
+      }
     }
 
     @media (prefers-color-scheme: light) {
@@ -271,13 +304,11 @@ permalink: iam
       }
     }
 
-    // Initialize on load
     window.addEventListener('load', () => {
       try {
         const tracker = new BlueSkyItemTracker();
         tracker.initialize();
 
-        // Store instance for potential cleanup
         window.tracker = tracker;
       } catch (error) {
         console.error('Failed to initialize BlueSky tracker:', error);
