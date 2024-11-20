@@ -139,7 +139,7 @@ permalink: bluesky/iam
         this.$verb.addEventListener('transitionend', () => {
           if (this.$verb.style.opacity === '0') {
             this.$verb.style.opacity = '1';
-            this.$verb.textContent = this.currentItem;
+            this.$verb.innerHTML = `&nbsp;${this.currentItem}`;
             this.adjustTextSize();
           } else {
             this.isAnimating = false;
