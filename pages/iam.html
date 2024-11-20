@@ -124,6 +124,12 @@ permalink: bluesky/iam
       height: 20px;
     }
 
+    @media (max-width: 640px) {
+      #voice-toggle {
+        display: none;
+      }
+    }
+
     @media (prefers-color-scheme: light) {
       :root {
         --background: var(--white);
@@ -168,22 +174,9 @@ permalink: bluesky/iam
         this.preloadedVoices = [];
         this.currentVoiceIndex = 0;
         this.PRELOAD_COUNT = 10;
-
-        this.isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        this.hasInteracted = false;
-        this.utteranceQueue = [];
       }
 
       init() {
-        if (this.isMobile) {
-          document.addEventListener('touchstart', () => {
-            if (!this.hasInteracted) {
-              this.hasInteracted = true;
-              const silentUtterance = new SpeechSynthesisUtterance('');
-              this.speechSynthesis.speak(silentUtterance);
-            }
-          }, {once: true});
-        }
         this.loadAndPreloadVoices();
 
         this.connectWebSocket();
@@ -209,22 +202,10 @@ permalink: bluesky/iam
         });
       }
 
-
       setupVoiceToggle() {
         this.$voiceToggle.addEventListener('click', () => {
           this.voiceEnabled = !this.voiceEnabled;
-
-          if (this.isMobile && this.voiceEnabled && !this.hasInteracted) {
-            this.hasInteracted = true;
-            const silentUtterance = new SpeechSynthesisUtterance('');
-            this.speechSynthesis.speak(silentUtterance);
-          }
-
           this.updateVoiceIcon();
-        });
-
-        this.$voiceToggle.addEventListener('touchend', (e) => {
-          e.preventDefault(); // Prevent double-firing on mobile
         });
 
         this.updateVoiceIcon();
@@ -270,7 +251,6 @@ permalink: bluesky/iam
 
       speakCurrentItem() {
         if (!this.speaking && this.currentItem && this.voiceEnabled) {
-          if (this.isMobile && !this.hasInteracted) return;
           try {
             this.speechSynthesis.cancel();
 
