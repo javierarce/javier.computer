@@ -184,13 +184,11 @@ permalink: bluesky/iam
         };
 
         this.$verb.addEventListener('transitionend', () => {
-          if (this.$verb.style.opacity === '1') {
-            this.speakCurrentItem();
-          }
           if (this.$verb.style.opacity === '0') {
             this.$verb.style.opacity = '1';
             this.$verb.innerHTML = `&nbsp;${this.currentItem}`;
             this.adjustTextSize();
+            this.speakCurrentItem();
           } else {
             this.isAnimating = false;
             this.processQueue();
@@ -203,6 +201,7 @@ permalink: bluesky/iam
           this.voiceEnabled = !this.voiceEnabled;
           this.updateVoiceIcon();
         });
+
         this.updateVoiceIcon();
       }
 
@@ -229,7 +228,6 @@ permalink: bluesky/iam
             rate: 0.8 + Math.random() * 0.4
           });
         }
-
       }
 
       getNextVoiceSettings() {
@@ -248,6 +246,8 @@ permalink: bluesky/iam
       speakCurrentItem() {
         if (!this.speaking && this.currentItem && this.voiceEnabled) {
           try {
+            this.speechSynthesis.cancel();
+
             this.speaking = true;
             const utterance = new SpeechSynthesisUtterance(`I am ${this.currentItem}`);
 
@@ -258,20 +258,35 @@ permalink: bluesky/iam
               utterance.rate = settings.rate;
             }
 
+            const timeout = setTimeout(() => {
+              if (this.speaking) {
+                console.log('Speech timed out, resetting...');
+                this.speechSynthesis.cancel();
+                this.speaking = false;
+              }
+            }, 5000);
+
             utterance.onend = () => {
+              clearTimeout(timeout);
               this.speaking = false;
             };
 
             utterance.onerror = (event) => {
+              clearTimeout(timeout);
+              console.error('Speech error:', event);
               this.speaking = false;
+              this.speechSynthesis.cancel();
             };
 
             this.speechSynthesis.speak(utterance);
           } catch (error) {
+            console.error('Error speaking:', error);
             this.speaking = false;
+            this.speechSynthesis.cancel();
           }
         }
       }
+
       updateVoiceIcon() {
         this.$voiceToggle.innerHTML = this.voiceEnabled ?
           '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>' :
