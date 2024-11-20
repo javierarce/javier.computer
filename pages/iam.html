@@ -1,5 +1,5 @@
 ---
-permalink: iam
+permalink: bluesky/iam
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -20,9 +20,7 @@ permalink: iam
       --border-color: rgba(255, 255, 255, 0.1);
       --info-padding: 1em;
       --font-size-base: 14px;
-      --sentence-offset: -1em;
-      --content-font-size: 10vmin;
-      --sentence-spacing: 8px;
+      --container-width: 80vw;
     }
 
     body {
@@ -50,7 +48,7 @@ permalink: iam
       justify-content: center;
       align-items: center;
       height: 100vh;
-      font-size: var(--content-font-size);
+      width: 100%;
     }
 
     .Sentence {
@@ -58,23 +56,28 @@ permalink: iam
       display: flex;
       justify-content: center;
       align-items: center;
-      left: -1em;
+      width: var(--container-width);
+      height: 20vh;
+    }
+
+    .text-container {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
     }
 
     .fixed-text {
-      position: absolute;
-      right: 50%;
-      white-space: nowrap;
-      margin-right: var(--sentence-spacing);
       opacity: 0.5;
+      white-space: nowrap;
+      margin-right: 8px;
     }
 
-    #ing {
-      position: absolute;
-      left: 50%;
-      white-space: nowrap;
-      margin-left: var(--sentence-spacing);
+    .free-text {
       opacity: 1;
+      white-space: nowrap;
+      margin-left: 8px;
       transition: opacity var(--transition-duration) var(--transition-timing-function);
     }
 
@@ -95,29 +98,6 @@ permalink: iam
       opacity: 1;
     }
 
-    #stats,
-    #credit {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    #credit {
-      color: var(--text);
-      font-size: var(--font-size-base);
-    }
-
-    @media (max-width: 640px) {
-      :root {
-        --content-font-size: 8vmin;
-        --sentence-spacing: 4px;
-      }
-
-      #info {
-        opacity: 1;
-      }
-    }
-
     @media (prefers-color-scheme: light) {
       :root {
         --background: var(--white);
@@ -130,7 +110,7 @@ permalink: iam
   <script>
     class BlueSkyItemTracker {
       constructor() {
-        this.ENDPOINT = 'subscribe?wantedCollections=app.bsky.feed.post'
+        this.ENDPOINT = 'subscribe?wantedCollections=app.bsky.feed.post';
         this.JETSTREAMS = [
           'wss://jetstream1.us-east.bsky.network',
           'wss://jetstream2.us-east.bsky.network',
@@ -144,18 +124,23 @@ permalink: iam
         this.isAnimating = false;
         this.queue = [];
         this.DEFAULT_LANG = 'en';
+
+        this.$iam = document.getElementById('iam');
+        this.$verb = document.getElementById('verb');
+
       }
 
-      initialize() {
+      init() {
         this.connectWebSocket();
         this.updateStats();
-
         this.bindEvents();
+        this.setupResizeObserver();
 
-        window.ing.addEventListener('transitionend', () => {
-          if (window.ing.style.opacity === '0') {
-            window.ing.style.opacity = '1';
-            window.ing.textContent = this.currentItem;
+        this.$verb.addEventListener('transitionend', () => {
+          if (this.$verb.style.opacity === '0') {
+            this.$verb.style.opacity = '1';
+            this.$verb.textContent = this.currentItem;
+            this.adjustTextSize();
           } else {
             this.isAnimating = false;
             this.processQueue();
@@ -163,10 +148,30 @@ permalink: iam
         });
       }
 
+      setupResizeObserver() {
+        const resizeObserver = new ResizeObserver(() => {
+          this.adjustTextSize();
+        });
+        resizeObserver.observe(document.querySelector('.Sentence'));
+      }
+
+      adjustTextSize() {
+        const container = document.querySelector('.text-container');
+
+        this.$iam.style.fontSize = '100px';
+        this.$verb.style.fontSize = '100px';
+
+        const containerWidth = container.offsetWidth;
+        const totalWidth = this.$iam.offsetWidth + this.$verb.offsetWidth;
+        const scaleFactor = containerWidth / totalWidth;
+
+        const newFontSize = Math.floor(100 * scaleFactor * 0.95);
+        this.$iam.style.fontSize = `${newFontSize}px`;
+        this.$verb.style.fontSize = `${newFontSize}px`;
+      }
+
       bindEvents() {
         const $info = document.getElementById('info');
-
-        // Initialize readingInfo property
         this.readingInfo = false;
 
         $info.addEventListener('mouseenter', () => {
@@ -183,22 +188,16 @@ permalink: iam
         });
 
         document.addEventListener('mousemove', () => {
-          // If we're reading info, don't do anything
-          if (this.readingInfo) {
-            return;
-          }
+          if (this.readingInfo) return;
 
-          // Show info
           $info.classList.add('is-visible');
 
-          // Clear any existing timeout
           if (this.clearInfoTimeout) {
             clearTimeout(this.clearInfoTimeout);
           }
 
-          // Set new timeout
           this.clearInfoTimeout = setTimeout(() => {
-            if (!this.readingInfo) {  // Only hide if we're not reading
+            if (!this.readingInfo) {
               $info.classList.remove('is-visible');
             }
           }, 2000);
@@ -207,10 +206,7 @@ permalink: iam
 
       detect(text) {
         const ing = text.match(/(?:I am|I'm)\s+(\w+ing)\b/i);
-        if (ing) {
-          return ing[1];
-        }
-        return false;
+        return ing ? ing[1] : false;
       }
 
       updateStats() {
@@ -227,12 +223,12 @@ permalink: iam
             const text = data.commit.record.text;
             const item = this.detect(text);
 
-            if (item) {
+            if (item && item !== this.previousItem) {
               this.itemCount++;
               this.queueItem(item);
+              this.previousItem = item;
             }
           }
-
           this.updateStats();
         }
       }
@@ -253,7 +249,7 @@ permalink: iam
 
       render() {
         this.isAnimating = true;
-        window.ing.style.opacity = '0';
+        this.$verb.style.opacity = '0';
       }
 
       connectWebSocket() {
@@ -279,19 +275,19 @@ permalink: iam
     }
 
     window.onload = function () {
-      window.ing = document.getElementById('ing');
       const tracker = new BlueSkyItemTracker();
-      tracker.initialize();
+      tracker.init();
     };
   </script>
-
 </head>
 
 <body>
   <div id="content">
     <div class="Sentence">
-      <span class="fixed-text">I am</span>
-      <span id="ing">…</span>
+      <div class="text-container">
+        <span id="iam" class="fixed-text">I am</span>
+        <span id="verb" class="free-text">…</span>
+      </div>
     </div>
   </div>
   <div id="info">
