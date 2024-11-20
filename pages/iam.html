@@ -149,6 +149,7 @@ permalink: bluesky/iam
           document.getElementById('voice-toggle').style.display = 'none';
           return;
         }
+
         this.speechSynthesis = window.speechSynthesis;
 
         this.speaking = false;
@@ -335,7 +336,10 @@ permalink: bluesky/iam
 
       detect(text) {
         const ing = text.match(/(?:I am|I'm)\s+(\w+ing)\b/i);
-        return ing ? ing[1] : false;
+
+        if (ing[1] && ing[1].toLowerCase() !== 'going') {
+          return ing ? ing[1] : false;
+        }
       }
 
       updateStats() {
