@@ -337,7 +337,7 @@ permalink: bluesky/iam
       detect(text) {
         const ing = text.match(/(?:I am|I'm)\s+(\w+ing)\b/i);
 
-        if (ing[1] && ing[1].toLowerCase() !== 'going') {
+        if (ing && ing[1] && ing[1].toLowerCase() !== 'going') {
           return ing ? ing[1] : false;
         }
       }
