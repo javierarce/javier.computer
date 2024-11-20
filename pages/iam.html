@@ -143,7 +143,14 @@ permalink: bluesky/iam
           'wss://jetstream1.us-west.bsky.network',
           'wss://jetstream2.us-west.bsky.network'
         ];
+
+        if (!('speechSynthesis' in window)) {
+          console.error('Speech synthesis not supported');
+          document.getElementById('voice-toggle').style.display = 'none';
+          return;
+        }
         this.speechSynthesis = window.speechSynthesis;
+
         this.speaking = false;
         this.totalPosts = 0;
         this.itemCount = 0;
@@ -156,18 +163,23 @@ permalink: bluesky/iam
         this.$iam = document.getElementById('iam');
         this.$verb = document.getElementById('verb');
         this.$voiceToggle = document.getElementById('voice-toggle');
+
+        this.preloadedVoices = [];
+        this.currentVoiceIndex = 0;
+        this.PRELOAD_COUNT = 7;
       }
 
       init() {
-        this.loadVoices();
+        this.loadAndPreloadVoices();
+
         this.connectWebSocket();
         this.updateStats();
         this.bindEvents();
         this.setupResizeObserver();
         this.setupVoiceToggle();
 
-        speechSynthesis.onvoiceschanged = () => {
-          this.loadVoices();
+        window.speechSynthesis.onvoiceschanged = () => {
+          this.loadAndPreloadVoices();
         };
 
         this.$verb.addEventListener('transitionend', () => {
@@ -193,44 +205,76 @@ permalink: bluesky/iam
         this.updateVoiceIcon();
       }
 
-      getRandomVoice() {
+      loadAndPreloadVoices() {
+        const voices = this.speechSynthesis.getVoices();
+
+        this.englishVoices = voices.filter(voice => voice.lang.startsWith('en'));
+
+        if (this.englishVoices.length > 0 || voices.length > 0) {
+          this.preloadVoices();
+        }
+      }
+
+      preloadVoices() {
         const voicePool = this.englishVoices.length > 0 ? this.englishVoices : this.voices;
-        console.log(voicePool);
-        return voicePool[Math.floor(Math.random() * voicePool.length)];
+
+        this.preloadedVoices = [];
+
+        while (this.preloadedVoices.length < this.PRELOAD_COUNT) {
+          const randomIndex = Math.floor(Math.random() * voicePool.length);
+          this.preloadedVoices.push({
+            voice: voicePool[randomIndex],
+            pitch: 0.8 + Math.random() * 0.4,
+            rate: 0.8 + Math.random() * 0.4
+          });
+        }
+
       }
 
-      getRandomPitch() {
-        return 0.8 + Math.random() * 0.4;
-      }
+      getNextVoiceSettings() {
+        if (this.preloadedVoices.length === 0) {
+          return {
+            voice: null,
+            pitch: 1,
+            rate: 1
+          };
+        }
 
-      getRandomRate() {
-        return 0.8 + Math.random() * 0.4;
-      }
-      loadVoices() {
-        this.voices = this.speechSynthesis.getVoices();
-        this.englishVoices = this.voices.filter(voice => voice.lang.startsWith('en'));
-      }
-
-      updateVoiceIcon() {
-        this.$voiceToggle.innerHTML = this.voiceEnabled ?
-          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>' :
-          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>';
+        const randomIndex = Math.floor(Math.random() * this.preloadedVoices.length);
+        return this.preloadedVoices[randomIndex];
       }
 
       speakCurrentItem() {
         if (!this.speaking && this.currentItem && this.voiceEnabled) {
-          this.speaking = true;
-          const utterance = new SpeechSynthesisUtterance(`I am ${this.currentItem}`);
+          try {
+            this.speaking = true;
+            const utterance = new SpeechSynthesisUtterance(`I am ${this.currentItem}`);
 
-          utterance.voice = this.getRandomVoice();
-          utterance.pitch = this.getRandomPitch();
-          utterance.rate = this.getRandomRate();
+            if (this.preloadedVoices.length > 0) {
+              const settings = this.getNextVoiceSettings();
+              utterance.voice = settings.voice;
+              utterance.pitch = settings.pitch;
+              utterance.rate = settings.rate;
+            }
 
-          utterance.onend = () => {
+            utterance.onend = () => {
+              this.speaking = false;
+            };
+
+            utterance.onerror = (event) => {
+              this.speaking = false;
+            };
+
+            this.speechSynthesis.speak(utterance);
+          } catch (error) {
             this.speaking = false;
-          };
-          this.speechSynthesis.speak(utterance);
+          }
         }
+      }
+      updateVoiceIcon() {
+        this.$voiceToggle.innerHTML = this.voiceEnabled ?
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>' :
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>';
       }
 
       setupResizeObserver() {
