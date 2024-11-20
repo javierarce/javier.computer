@@ -124,12 +124,6 @@ permalink: bluesky/iam
       height: 20px;
     }
 
-    @media (max-width: 640px) {
-      #voice-toggle {
-        display: none;
-      }
-    }
-
     @media (prefers-color-scheme: light) {
       :root {
         --background: var(--white);
@@ -150,9 +144,13 @@ permalink: bluesky/iam
           'wss://jetstream2.us-west.bsky.network'
         ];
 
+        this.$iam = document.getElementById('iam');
+        this.$verb = document.getElementById('verb');
+        this.$voiceToggle = document.getElementById('voice-toggle');
+
         if (!('speechSynthesis' in window)) {
           console.error('Speech synthesis not supported');
-          document.getElementById('voice-toggle').style.display = 'none';
+          this.$voiceToggle.style.display = 'none';
           return;
         }
 
@@ -167,10 +165,6 @@ permalink: bluesky/iam
         this.DEFAULT_LANG = 'en';
         this.voiceEnabled = false;
 
-        this.$iam = document.getElementById('iam');
-        this.$verb = document.getElementById('verb');
-        this.$voiceToggle = document.getElementById('voice-toggle');
-
         this.preloadedVoices = [];
         this.currentVoiceIndex = 0;
         this.PRELOAD_COUNT = 10;
@@ -183,7 +177,7 @@ permalink: bluesky/iam
         this.updateStats();
         this.bindEvents();
         this.setupResizeObserver();
-        this.setupVoiceToggle();
+        this.updateVoiceIcon();
 
         window.speechSynthesis.onvoiceschanged = () => {
           this.loadAndPreloadVoices();
@@ -200,15 +194,6 @@ permalink: bluesky/iam
             this.processQueue();
           }
         });
-      }
-
-      setupVoiceToggle() {
-        this.$voiceToggle.addEventListener('click', () => {
-          this.voiceEnabled = !this.voiceEnabled;
-          this.updateVoiceIcon();
-        });
-
-        this.updateVoiceIcon();
       }
 
       loadAndPreloadVoices() {
@@ -266,7 +251,6 @@ permalink: bluesky/iam
 
             const timeout = setTimeout(() => {
               if (this.speaking) {
-                console.log('Speech timed out, resetting...');
                 this.speechSynthesis.cancel();
                 this.speaking = false;
               }
@@ -324,6 +308,18 @@ permalink: bluesky/iam
       bindEvents() {
         const $info = document.getElementById('info');
         this.readingInfo = false;
+
+        this.$voiceToggle.addEventListener('click', () => {
+
+
+          if (!this.speaking && !this.voiceEnabled) {
+            const utterance = new SpeechSynthesisUtterance("Voice enabled");
+            window.speechSynthesis.speak(utterance);
+          }
+
+          this.voiceEnabled = !this.voiceEnabled;
+          this.updateVoiceIcon();
+        });
 
         $info.addEventListener('mouseenter', () => {
           this.readingInfo = true;
