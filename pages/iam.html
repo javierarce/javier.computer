@@ -96,6 +96,34 @@ permalink: bluesky/iam
       opacity: 1;
     }
 
+    #voice-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: transparent;
+      border: 1px solid var(--text);
+      color: var(--text);
+      padding: 0.5rem;
+      cursor: pointer;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-duration) var(--transition-timing-function);
+    }
+
+    #voice-toggle:hover {
+      background: var(--text);
+      color: var(--background);
+    }
+
+    #voice-toggle svg {
+      width: 20px;
+      height: 20px;
+    }
+
     @media (prefers-color-scheme: light) {
       :root {
         --background: var(--white);
@@ -115,26 +143,37 @@ permalink: bluesky/iam
           'wss://jetstream1.us-west.bsky.network',
           'wss://jetstream2.us-west.bsky.network'
         ];
-
+        this.speechSynthesis = window.speechSynthesis;
+        this.speaking = false;
         this.totalPosts = 0;
         this.itemCount = 0;
         this.ws = null;
         this.isAnimating = false;
         this.queue = [];
         this.DEFAULT_LANG = 'en';
+        this.voiceEnabled = false;
 
         this.$iam = document.getElementById('iam');
         this.$verb = document.getElementById('verb');
-
+        this.$voiceToggle = document.getElementById('voice-toggle');
       }
 
       init() {
+        this.loadVoices();
         this.connectWebSocket();
         this.updateStats();
         this.bindEvents();
         this.setupResizeObserver();
+        this.setupVoiceToggle();
+
+        speechSynthesis.onvoiceschanged = () => {
+          this.loadVoices();
+        };
 
         this.$verb.addEventListener('transitionend', () => {
+          if (this.$verb.style.opacity === '1') {
+            this.speakCurrentItem();
+          }
           if (this.$verb.style.opacity === '0') {
             this.$verb.style.opacity = '1';
             this.$verb.innerHTML = `&nbsp;${this.currentItem}`;
@@ -144,6 +183,54 @@ permalink: bluesky/iam
             this.processQueue();
           }
         });
+      }
+
+      setupVoiceToggle() {
+        this.$voiceToggle.addEventListener('click', () => {
+          this.voiceEnabled = !this.voiceEnabled;
+          this.updateVoiceIcon();
+        });
+        this.updateVoiceIcon();
+      }
+
+      getRandomVoice() {
+        const voicePool = this.englishVoices.length > 0 ? this.englishVoices : this.voices;
+        console.log(voicePool);
+        return voicePool[Math.floor(Math.random() * voicePool.length)];
+      }
+
+      getRandomPitch() {
+        return 0.8 + Math.random() * 0.4;
+      }
+
+      getRandomRate() {
+        return 0.8 + Math.random() * 0.4;
+      }
+      loadVoices() {
+        this.voices = this.speechSynthesis.getVoices();
+        this.englishVoices = this.voices.filter(voice => voice.lang.startsWith('en'));
+      }
+
+      updateVoiceIcon() {
+        this.$voiceToggle.innerHTML = this.voiceEnabled ?
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>' :
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>';
+      }
+
+      speakCurrentItem() {
+        if (!this.speaking && this.currentItem && this.voiceEnabled) {
+          this.speaking = true;
+          const utterance = new SpeechSynthesisUtterance(`I am ${this.currentItem}`);
+
+          utterance.voice = this.getRandomVoice();
+          utterance.pitch = this.getRandomPitch();
+          utterance.rate = this.getRandomRate();
+
+          utterance.onend = () => {
+            this.speaking = false;
+          };
+          this.speechSynthesis.speak(utterance);
+        }
       }
 
       setupResizeObserver() {
@@ -288,6 +375,7 @@ permalink: bluesky/iam
       </div>
     </div>
   </div>
+  <button id="voice-toggle" aria-label="Toggle voice"></button>
   <div id="info">
     <div id="stats">
       <span id="itemCount">0</span> of <span id="totalPosts">0</span> items found
