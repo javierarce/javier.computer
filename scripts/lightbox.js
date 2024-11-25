@@ -14,7 +14,7 @@ class Lightbox {
     this.$image = document.querySelector(".Lightbox__image");
     this.spinner = document.querySelector(".Spinner");
     this.$close = document.querySelector(".Lightbox__button.is-close");
-    this.$title = document.querySelector(".Lightbox__title");
+    this.$caption = document.querySelector(".Lightbox__caption");
     this.$prev = document.querySelector(".Lightbox__button.is-prev");
     this.$next = document.querySelector(".Lightbox__button.is-next");
     this.photos = Array.from(document.querySelectorAll(".Photo"));
@@ -31,8 +31,8 @@ class Lightbox {
         <button class="Lightbox__button is-close"></button>
         <div class="Lightbox__content">
           <div class="Lightbox__imageContainer">
-            <img src="" alt="" class="Lightbox__image">
-            <div class="Lightbox__title"></div>
+            <img src="" alt="" title="" class="Lightbox__image">
+            <div class="Lightbox__caption"></div>
           </div>
         </div>
         <button class="Lightbox__button is-prev"></button>
@@ -194,7 +194,8 @@ class Lightbox {
       : picture.querySelector("source:not([type])").getAttribute("data-srcset");
 
     requestAnimationFrame(() => {
-      this.title = picture.querySelector("img").dataset.caption;
+      this.title = picture.querySelector("img").title;
+      this.caption = picture.querySelector("img").dataset.caption;
       this.alt = picture.querySelector("img").getAttribute("alt");
 
       this.lightbox.classList.add("is-active");
@@ -232,18 +233,19 @@ class Lightbox {
       this.$image.setAttribute("alt", this.alt);
     }
 
-    if (!this.title) {
-      this.$title.classList.remove("is-visible");
-      return;
+    if (this.title) {
+      this.$image.setAttribute("title", this.title);
     }
 
-    this.$title.textContent = this.title;
-    this.$title.setAttribute("aria-label", this.title);
-    this.$image.setAttribute("title", this.title);
+    if (!this.caption) {
+      this.$caption.classList.remove("is-visible");
+    } else {
+      this.$caption.textContent = this.caption;
 
-    setTimeout(() => {
-      this.$title.classList.add("is-visible");
-    }, this.DELAY);
+      setTimeout(() => {
+        this.$caption.classList.add("is-visible");
+      }, this.DELAY);
+    }
   }
 
   updateNavButtons() {

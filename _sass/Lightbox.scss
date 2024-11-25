@@ -22,12 +22,12 @@
 }
 
 .Lightbox.hide-ui .Lightbox__button,
-.Lightbox.hide-ui .Lightbox__title {
+.Lightbox.hide-ui .Lightbox__caption {
   opacity: 0;
   visibility: hidden;
 }
 
-.Lightbox__title {
+.Lightbox__caption {
   position: absolute;
   bottom: 1em;
   text-shadow: 1px 1px 1em rgba(0, 0, 0, 0.8);
@@ -38,7 +38,7 @@
   line-height: normal;
 }
 
-.Lightbox__title.is-visible {
+.Lightbox__caption.is-visible {
   opacity: 1;
   visibility: visible;
 }
