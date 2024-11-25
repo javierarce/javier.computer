@@ -1,7 +1,25 @@
 {
-  "updated_at": "2024-11-17",
-  "count": 787,
+  "updated_at": "2024-11-25",
+  "count": 789,
   "movies": [
+    {
+      "watched_on": "2024-11-21",
+      "title": "Saturday Night",
+      "year": "2024",
+      "rating": 1.5,
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "saturday-night-2024"
+    },
+    {
+      "watched_on": "2024-11-20",
+      "title": "Absolution",
+      "year": "2024",
+      "rating": 0.5,
+      "stars": "½",
+      "rewatched": false,
+      "permalink": "absolution-2024-1"
+    },
     {
       "watched_on": "2024-11-15",
       "title": "Vertigo",
