@@ -10,8 +10,8 @@ status: reading
 rating: 0
 color: 
 cover: 
-pages: 208
-progress: 39.90
+pages: 172
+progress: 64.53
 link: https://www.oliverburkeman.com/meditationsformortals
 ---
 
