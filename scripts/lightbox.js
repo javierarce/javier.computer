@@ -148,7 +148,7 @@ class Lightbox {
     const srcsetEntries = srcset.split(",").map((entry) => entry.trim());
     let highestResImage = srcsetEntries[0].match(
       /(https:\/\/img.javier.computer\/.*?\.webp)/,
-    );
+    )[1];
     let highestResValue = 0;
 
     for (const entry of srcsetEntries) {

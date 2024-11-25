@@ -332,6 +332,14 @@ a.is-photo::after {
   font-size: 0.7em;
 }
 
+.has-margin-bottom {
+  margin-bottom: 1em;
+}
+
+.has-margin-top {
+  margin-top: 1em;
+}
+
 .is-highlighted {
   border: 1px solid #ae81ff;
   border-radius: 4px;
