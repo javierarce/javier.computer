@@ -1,6 +1,46 @@
 [
   {
     "layout": "place",
+    "pid": "cero-tres-cinco",
+    "title": "035//BAR",
+    "description": "<p>Maravilloso bar que acoge cenas popup igualmente maravillosas.</p>\n",
+    "address": "Carrer de Monlau, 35",
+    "latlng": [
+      41.424967802049494,
+      2.1904708306832803
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+      {
+        "url": "/2023/05/06/celebracion-postconciliacion",
+        "title": "Celebración Post-conciliación",
+        "date": "2023-05-06 08:41:29 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "title": "Vereda Bar",
+    "pid": "vereda",
+    "description": "<p>Platos de proximidad y temporada y vinos naturales.</p>\n",
+    "address": "Carrer de la Diputació, 155",
+    "latlng": [
+      41.38460297818277,
+      2.1578119926085177
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+      {
+        "url": "/2023/05/04/open-heart-protocol",
+        "title": "Open Heart Protocol",
+        "date": "2023-05-04 22:57:54 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
     "title": "Zumzeig Cinema",
     "pid": "zumzeig",
     "emoji": "🍿",
@@ -17,26 +57,6 @@
         "url": "/2023/04/07/all-the-beauty-and-the-bloodshed",
         "title": "All The Beauty And The Bloodshed",
         "date": "2023-04-07 00:35:31 +0200"
-      }
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "cero-tres-cinco",
-    "title": "035//BAR",
-    "description": "<p>Maravilloso bar que acoge cenas popup igualmente maravillosas.</p>\n",
-    "address": "Carrer de Monlau, 35",
-    "latlng": [
-      41.424967802049494,
-      2.1904708306832803
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-10-07T12:17:21+02:00",
-    "post_references": [
-      {
-        "url": "/2023/05/06/celebracion-postconciliacion",
-        "title": "Celebración Post-conciliación",
-        "date": "2023-05-06 08:41:29 +0200"
       }
     ]
   },
@@ -616,26 +636,6 @@
   },
   {
     "layout": "place",
-    "title": "Vereda Bar",
-    "pid": "vereda",
-    "description": "<p>Platos de proximidad y temporada y vinos naturales.</p>\n",
-    "address": "Carrer de la Diputació, 155",
-    "latlng": [
-      41.38460297818277,
-      2.1578119926085177
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-10-07T12:17:21+02:00",
-    "post_references": [
-      {
-        "url": "/2023/05/04/open-heart-protocol",
-        "title": "Open Heart Protocol",
-        "date": "2023-05-04 22:57:54 +0200"
-      }
-    ]
-  },
-  {
-    "layout": "place",
     "title": "Amateur",
     "pid": "amateur",
     "address": "Carrer de Llull, 101",
@@ -646,6 +646,23 @@
     ],
     "location": "barcelona",
     "last_modified_date": "2024-11-26T22:20:50+01:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "title": "El Noa Noa",
+    "emoji": "☕️",
+    "pid": "noanoa-2",
+    "description": "<p>Versión maxi del Noa Noa de Gràcia, con más espacio, más mesas y más opciones para comer y beber. Y en el momento de escribir estas líneas, es una buena opción para pasar un rato íntimo con el ordenador.</p>\n",
+    "address": "Carrer de Villarroel, 71",
+    "latlng": [
+      41.38387661698233,
+      2.1586243260297446
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-11-26T22:25:20+01:00",
     "post_references": [
 
     ]

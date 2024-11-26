@@ -9,7 +9,16 @@
     <link>https://javier.computer/feeds/barcelona.rss</link>
     <description>Sitios en barcelona</description>
     <language>es</language>
-    <pubDate>Tue, 26 Nov 2024 22:20:50 +0100</pubDate>
+    <pubDate>Tue, 26 Nov 2024 22:25:20 +0100</pubDate>
+    <item>
+      <title>El Noa Noa</title>
+      <link>https://javier.computer/maps/barcelona/noanoa-2</link>
+      <description>&lt;p&gt;Versión maxi del Noa Noa de Gràcia, con más espacio, más mesas y más opciones para comer y beber. Y en el momento de escribir estas líneas, es una buena opción para pasar un rato íntimo con el ordenador.&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/noanoa-2'&gt;Carrer de Villarroel, 71&lt;/a&gt;&lt;br&gt;</description>
+      <pubDate>Tue, 26 Nov 2024 22:25:20 +0100</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2024-11-26T22:25:20+01:00</dc:date>
+    </item>
     <item>
       <title>Amateur</title>
       <link>https://javier.computer/maps/barcelona/amateur</link>
@@ -316,6 +325,6 @@
       <dc:subject>barcelona</dc:subject>
       <dc:date>2024-10-07T12:17:21+02:00</dc:date>
     </item>
-    <dc:date>2024-11-26T22:20:50+01:00</dc:date>
+    <dc:date>2024-11-26T22:25:20+01:00</dc:date>
   </channel>
 </rss>
