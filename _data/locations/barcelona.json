@@ -22,6 +22,26 @@
   },
   {
     "layout": "place",
+    "pid": "cero-tres-cinco",
+    "title": "035//BAR",
+    "description": "<p>Maravilloso bar que acoge cenas popup igualmente maravillosas.</p>\n",
+    "address": "Carrer de Monlau, 35",
+    "latlng": [
+      41.424967802049494,
+      2.1904708306832803
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+      {
+        "url": "/2023/05/06/celebracion-postconciliacion",
+        "title": "Celebración Post-conciliación",
+        "date": "2023-05-06 08:41:29 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
     "title": "Centre de Cultura Contemporània de Barcelona",
     "pid": "cccb",
     "description": "<p>Centro cultural y centro de artes creativas con teatro, galerías de exposiciones y salas de conferencias</p>\n",
@@ -616,22 +636,18 @@
   },
   {
     "layout": "place",
-    "pid": "cero-tres-cinco",
-    "title": "035//BAR",
-    "description": "<p>Maravilloso bar que acoge cenas popup igualmente maravillosas.</p>\n",
-    "address": "Carrer de Monlau, 35",
+    "title": "Amateur",
+    "pid": "amateur",
+    "address": "Carrer de Llull, 101",
+    "description": "<p>Yet another sitio de vinos naturales en Poblenou y comida rica para picar.</p>\n",
     "latlng": [
-      41.424967802049494,
-      2.1904708306832803
+      41.396904435535205,
+      2.1966596217800127
     ],
     "location": "barcelona",
-    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "last_modified_date": "2024-11-26T22:20:50+01:00",
     "post_references": [
-      {
-        "url": "/2023/05/06/celebracion-postconciliacion",
-        "title": "Celebración Post-conciliación",
-        "date": "2023-05-06 08:41:29 +0200"
-      }
+
     ]
   }
 ]

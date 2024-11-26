@@ -9,7 +9,16 @@
     <link>https://javier.computer/feeds/barcelona.rss</link>
     <description>Sitios en barcelona</description>
     <language>es</language>
-    <pubDate>Mon, 07 Oct 2024 12:17:21 +0200</pubDate>
+    <pubDate>Tue, 26 Nov 2024 22:20:50 +0100</pubDate>
+    <item>
+      <title>Amateur</title>
+      <link>https://javier.computer/maps/barcelona/amateur</link>
+      <description>&lt;p&gt;Yet another sitio de vinos naturales en Poblenou y comida rica para picar.&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/amateur'&gt;Carrer de Llull, 101&lt;/a&gt;&lt;br&gt;</description>
+      <pubDate>Tue, 26 Nov 2024 22:20:50 +0100</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2024-11-26T22:20:50+01:00</dc:date>
+    </item>
     <item>
       <title>Zumzeig Cinema</title>
       <link>https://javier.computer/maps/barcelona/zumzeig</link>
@@ -307,6 +316,6 @@
       <dc:subject>barcelona</dc:subject>
       <dc:date>2024-10-07T12:17:21+02:00</dc:date>
     </item>
-    <dc:date>2024-10-07T12:17:21+02:00</dc:date>
+    <dc:date>2024-11-26T22:20:50+01:00</dc:date>
   </channel>
 </rss>
