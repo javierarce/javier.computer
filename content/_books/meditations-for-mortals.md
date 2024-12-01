@@ -5,13 +5,13 @@ description: ""
 layout: book
 author: Oliver Burkeman
 started: 2024-11-03
-read: 
-status: reading
-rating: 0
+read: 2024-11-30
+status: read
+rating: 4
 color: 
 cover: 
 pages: 172
-progress: 64.53
+progress: 100.00
 link: https://www.oliverburkeman.com/meditationsformortals
 ---
 

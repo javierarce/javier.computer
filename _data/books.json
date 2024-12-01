@@ -1,5 +1,5 @@
 {
-  "updated_at": "2024-11-25",
+  "updated_at": "2024-12-01",
   "count": 177,
   "books": [
     {
@@ -15,15 +15,15 @@
       "author": "Oliver Burkeman",
       "pages": 172,
       "year": null,
-      "status": "reading",
-      "rating": "0",
+      "status": "read",
+      "rating": "4",
       "cover": null,
       "color": null,
       "link": "https://www.oliverburkeman.com/meditationsformortals",
       "started_at": "2024-11-02T23:00:00.000Z",
-      "finished_at": null,
+      "finished_at": "2024-11-29T23:00:00.000Z",
       "created_at": "2024-11-04T10:06:30.227Z",
-      "updated_at": "2024-11-22T08:49:57.088Z",
+      "updated_at": "2024-12-01T22:14:48.194Z",
       "progresses": [
         {
           "id": 2,
@@ -79,6 +79,11 @@
           "id": 22,
           "read_at": "2024-11-22T00:00:00",
           "progress": 111
+        },
+        {
+          "id": 24,
+          "read_at": "2024-11-30T00:00:00",
+          "progress": 172
         }
       ],
       "quotes": [
@@ -88,8 +93,8 @@
           "quote": "The main point – though it took me years to realize it – is to develop the willingness to just do something, here and now, as a one-off, regardless of whether it’s part of any system or habit or routine."
         }
       ],
-      "status_order": 0,
-      "read_percentage": "64.53"
+      "status_order": 1,
+      "read_percentage": "100.00"
     },
     {
       "id": 54,
