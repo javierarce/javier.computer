@@ -43,13 +43,22 @@ export class MovieScraper {
   }
 
   createMarkdownFile(movie) {
-    const { title, year, rating, stars, rewatched, permalink, watched_on } =
-      movie;
+    const {
+      title,
+      year,
+      rating,
+      stars,
+      liked,
+      rewatched,
+      permalink,
+      watched_on,
+    } = movie;
     const mdContent = `---
 title: "${title}"
 year: ${year}
 rating: ${rating}
 stars: "${stars}"
+liked: ${liked}
 rewatched: ${rewatched}
 permalink: "${permalink}"
 watched_on: ${watched_on}
@@ -98,6 +107,7 @@ watched_on: ${watched_on}
           parseInt(metadataElem.getAttribute("data-rating"), 10) / 2;
         const fullStars = "★".repeat(Math.floor(rating));
         const halfStar = rating - Math.floor(rating) >= 0.5 ? "½" : "";
+        const liked = metadataElem.getAttribute("data-liked");
 
         const stars = fullStars + halfStar;
 
@@ -107,6 +117,7 @@ watched_on: ${watched_on}
             title,
             year,
             rating,
+            liked,
             stars,
             rewatched,
             permalink,

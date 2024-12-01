@@ -47,11 +47,17 @@
 {% assign movie = site.data.movies.movies | first %}
 
 {% assign movie_rating = movie.rating %}
+{% assign liked = movie.liked %}
 {% assign rating_phrase = "" %}
 
 {% case movie_rating %}
 {% when 0 %}
+{% if liked %}
+{% assign rating_phrase = "and I liked." %}
+{% else %}
 {% assign rating_phrase = "and I didn't like it at all." %}
+{% endif %}
+
 {% when 0.5 %}
 {% assign rating_phrase = "and it was pretty bad." %}
 {% when 1 %}
