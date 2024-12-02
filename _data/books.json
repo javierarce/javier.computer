@@ -1,6 +1,6 @@
 {
-  "updated_at": "2024-12-01",
-  "count": 177,
+  "updated_at": "2024-12-02",
+  "count": 178,
   "books": [
     {
       "id": 174,
@@ -4901,6 +4901,39 @@
       "quotes": [],
       "status_order": 0,
       "read_percentage": "0"
+    },
+    {
+      "id": 178,
+      "title": "Comedy Book",
+      "subtitle": "",
+      "slug": "comedy-book",
+      "description": "",
+      "translators": null,
+      "isbn": null,
+      "edition": null,
+      "publisher": null,
+      "author": "Jesse David Fox",
+      "pages": 358,
+      "year": null,
+      "status": "reading",
+      "rating": "0",
+      "cover": null,
+      "color": null,
+      "link": "",
+      "started_at": "2024-11-20T23:00:00.000Z",
+      "finished_at": null,
+      "created_at": "2024-12-02T09:42:01.049Z",
+      "updated_at": "2024-12-02T09:43:05.198Z",
+      "progresses": [
+        {
+          "id": 25,
+          "read_at": "2024-12-02T00:00:00",
+          "progress": 161
+        }
+      ],
+      "quotes": [],
+      "status_order": 0,
+      "read_percentage": "44.97"
     }
   ]
 }
