@@ -1,7 +1,17 @@
 {
-  "updated_at": "2024-12-02",
-  "count": 794,
+  "updated_at": "2024-12-04",
+  "count": 795,
   "movies": [
+    {
+      "watched_on": "2024-12-03",
+      "title": "The Count of Monte-Cristo",
+      "year": "2024",
+      "rating": 2,
+      "liked": "false",
+      "stars": "★★",
+      "rewatched": false,
+      "permalink": "the-count-of-monte-cristo-2024"
+    },
     {
       "watched_on": "2024-12-02",
       "title": "Monkey Man",

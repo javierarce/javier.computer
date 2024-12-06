@@ -1,6 +1,6 @@
 {
-  "updated_at": "2024-12-02",
-  "count": 178,
+  "updated_at": "2024-12-06",
+  "count": 179,
   "books": [
     {
       "id": 174,
@@ -4934,6 +4934,33 @@
       "quotes": [],
       "status_order": 0,
       "read_percentage": "44.97"
+    },
+    {
+      "id": 179,
+      "title": "Building Design Systems",
+      "subtitle": "",
+      "slug": "building-design-systems",
+      "description": "",
+      "translators": null,
+      "isbn": null,
+      "edition": null,
+      "publisher": null,
+      "author": "Sarrah Vesselov, Taurie Davis",
+      "pages": 144,
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "cover": null,
+      "color": null,
+      "link": "",
+      "started_at": "2024-12-02T23:00:00.000Z",
+      "finished_at": "2024-12-03T23:00:00.000Z",
+      "created_at": "2024-12-04T13:58:16.797Z",
+      "updated_at": "2024-12-04T13:58:16.797Z",
+      "progresses": [],
+      "quotes": [],
+      "status_order": 1,
+      "read_percentage": "0"
     }
   ]
 }
