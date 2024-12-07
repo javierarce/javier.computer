@@ -24,8 +24,4 @@ show_title: true
 
 <p>Vídeos que utilicé para dar la lata/engatusar a la gente y que pidieran el fanzine (era gratuito, casi me arruino con el rodaje).</p>
 
-<div class="Video">
-<video preload loop controls>
-<source src="/video/boletin-botanico/reel.mp4" type="video/mp4">
-</video>
-</div>
+{% include video.html url='https://img.javier.computer/videos/boletin.mp4'-%}
