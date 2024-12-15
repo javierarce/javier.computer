@@ -1,7 +1,57 @@
 {
-  "updated_at": "2024-12-04",
-  "count": 795,
+  "updated_at": "2024-12-15",
+  "count": 800,
   "movies": [
+    {
+      "watched_on": "2024-12-14",
+      "title": "Martha: A Picture Story",
+      "year": "2019",
+      "rating": 0,
+      "liked": "true",
+      "stars": "",
+      "rewatched": false,
+      "permalink": "martha-a-picture-story"
+    },
+    {
+      "watched_on": "2024-12-12",
+      "title": "Heretic",
+      "year": "2024",
+      "rating": 3,
+      "liked": "false",
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "heretic-2024"
+    },
+    {
+      "watched_on": "2024-12-10",
+      "title": "Geoff McFetridge: Drawing a Life",
+      "year": "2023",
+      "rating": 0,
+      "liked": "false",
+      "stars": "",
+      "rewatched": false,
+      "permalink": "geoff-mcfetridge-drawing-a-life"
+    },
+    {
+      "watched_on": "2024-12-08",
+      "title": "Juror #2",
+      "year": "2024",
+      "rating": 1.5,
+      "liked": "false",
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "juror-2"
+    },
+    {
+      "watched_on": "2024-12-07",
+      "title": "Querer",
+      "year": "2024",
+      "rating": 4,
+      "liked": "false",
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "querer-2024"
+    },
     {
       "watched_on": "2024-12-03",
       "title": "The Count of Monte-Cristo",
