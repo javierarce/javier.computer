@@ -14,7 +14,7 @@
             type=image/webp>
           <source
             data-srcset="https://img.javier.computer/{{ include.photo.location }}/{{ include.filename }}_640.jpg 640w, https://img.javier.computer/{{ include.photo.location }}/{{ include.filename }}_1280.jpg 1280w, https://img.javier.computer/{{ include.photo.location }}/{{ include.filename }}_2880.jpg 2880w">
-          <img class="lazy" title="{{ title }}" {% if (include.caption) -%}data-caption="{{ include.caption }}" {% endif
+          <img class="lazy" alt="{{title}}" title="{{ title }}" {% if (include.caption) -%}data-caption="{{ include.caption }}" {% endif
             -%} data-src="https://img.javier.computer/{{ include.photo.location }}/{{ include.filename }}_1280.jpg">
         </picture>
 

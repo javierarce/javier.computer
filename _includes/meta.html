@@ -1,6 +1,6 @@
 <meta name="generator" content="Javier's computer">
-<meta property="og:locale" content="en_ES" />
-<meta property="og:site_name" content="{{ site.title }}" />
+<meta property="og:locale" content="en_ES">
+<meta property="og:site_name" content="{{ site.title }}">
 <meta name="robots" content="noai, noimageai">
 
 <link rel="schema.dcterms" href="https://dublincore.org/specifications/dublin-core/dcmi-terms/">
@@ -16,48 +16,48 @@
 {% endif -%}
 
 {% if page.description -%}
-<meta property="og:description" content="{{ page.description }}" />
-<meta property="twitter:description" content="{{ page.description }}" />
+<meta property="og:description" content="{{ page.description }}">
+<meta property="twitter:description" content="{{ page.description }}">
 {% else -%}
-<meta property="og:description" content="{{ site.description }}" />
-<meta property="twitter:description" content="{{ site.description }}" />
+<meta property="og:description" content="{{ site.description }}">
+<meta property="twitter:description" content="{{ site.description }}">
 <meta name="description" content="{{ site.description }}">
 {% endif -%}
 
 {% if page.layout == "post" or page.card -%}
-<meta property="og:image" content="https://api.javier.computer/svg?title={{ page.title }}" />
+<meta property="og:image" content="https://api.javier.computer/svg?title={{ page.title }}">
 <meta name="twitter:image" content="https://api.javier.computer/svg?title={{ page.title }}">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:type" content="article">
 {% elsif page.category == "maps" -%}
-<meta property="og:image" content="https://api.javier.computer/svg?title={{ page.description }}" />
+<meta property="og:image" content="https://api.javier.computer/svg?title={{ page.description }}">
 <meta name="twitter:image" content="https://api.javier.computer/svg?title={{ page.description }}">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:type" content="article">
 {% elsif page.cover -%}
-<meta property="og:image" content="https://img.javier.computer/{{ page.location }}/{{ page.cover }}_1280.jpg" />
+<meta property="og:image" content="https://img.javier.computer/{{ page.location }}/{{ page.cover }}_1280.jpg">
 <meta name="twitter:image" content="https://img.javier.computer/{{ page.location }}/{{ page.cover }}_1280.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:type" content="article">
 {% elsif page.filename -%}
-<meta property="og:image" content="https://img.javier.computer/{{ page.location }}/{{ page.filename }}_1280.jpg" />
+<meta property="og:image" content="https://img.javier.computer/{{ page.location }}/{{ page.filename }}_1280.jpg">
 <meta name="twitter:image" content="https://img.javier.computer/{{ page.location }}/{{ page.filename }}_1280.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:type" content="article">
 {% elsif page.filenames -%}
 {% assign file = page.filenames | first %}
 {% assign filename = file.filename | default: file %}
-<meta property="og:image" content="https://img.javier.computer/{{ page.location }}/{{ filename }}_1280.jpg" />
+<meta property="og:image" content="https://img.javier.computer/{{ page.location }}/{{ filename }}_1280.jpg">
 <meta name="twitter:image" content="https://img.javier.computer/{{ page.location }}/{{ filename }}_1280.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:type" content="article">
 {% else %}
-<meta property="og:image" content='{{ base.url | prepend: site.url }}/img/card.png?version={{site.version}}' />
+<meta property="og:image" content='{{ base.url | prepend: site.url }}/img/card.png?version={{site.version}}'>
 <meta name="twitter:image" content="{{ base.url | prepend: site.url }}/img/card.png?version={{site.version}}">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:type" content="website">
 {% endif %}
-<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 <meta property="article:author" content="{{ site.url }}/about">
 <meta name="author" content="{{ site.author }}">
@@ -67,8 +67,8 @@
 <meta name="twitter:creator" content="@javier">
 <meta name="fediverse:creator" content="@javierarce@mastodon.social">
 
-<link rel="webmention" href="https://webmention.io/javier.computer/webmention" />
-<link rel="pingback" href="https://webmention.io/javier.computer/xmlrpc" />
+<link rel="webmention" href="https://webmention.io/javier.computer/webmention">
+<link rel="pingback" href="https://webmention.io/javier.computer/xmlrpc">
 
 {% if page.date -%}
 <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
