@@ -1,24 +1,19 @@
-{% assign showDay = true -%}
-{% if include.day == "false" -%}
-{% assign showDay = false -%}
-{% endif -%}
-{% assign currentYear = "now" | date: "%Y" -%}
-{% assign dateYear = include.date | date: "%Y" -%}
-<time datetime="{{ include.date }}">{% if showDay -%}
-  {{ include.date | date: '%-d' }} de {% endif -%}
-  {% assign m = include.date | date: '%-m' -%}
-  {% case m %}
-  {% when '1' %}{% if showDay %}enero{% else %}Enero{% endif -%}
-  {% when '2' %}{% if showDay %}febrero{% else %}Febrero{% endif -%}
-  {% when '3' %}{% if showDay %}marzo{% else %}Marzo{% endif -%}
-  {% when '4' %}{% if showDay %}abril{% else %}Abril{% endif -%}
-  {% when '5' %}{% if showDay %}mayo{% else %}Mayo{% endif -%}
-  {% when '6' %}{% if showDay %}junio{% else %}Junio{% endif -%}
-  {% when '7' %}{% if showDay %}julio{% else %}Julio{% endif -%}
-  {% when '8' %}{% if showDay %}agosto{% else %}Agosto{% endif -%}
-  {% when '9' %}{% if showDay %}septiembre{% else %}Septiembre{% endif -%}
-  {% when '10' %}{% if showDay %}octubre{% else %}Octubre{% endif -%}
-  {% when '11' %}{% if showDay %}noviembre{% else %}Noviembre{% endif -%}
-  {% when '12' %}{% if showDay %}diciembre{% else %}Diciembre{% endif -%}
-  {% endcase %}{% if currentYear != dateYear %} de {{ dateYear }}{% endif -%}
+{% assign showDay = true -%} {% if include.day == "false" -%} {% assign showDay
+= false -%} {% endif -%} {% assign currentYear = "now" | date: "%Y" -%} {%
+assign dateYear = include.date | date: "%Y" -%}
+<time datetime="{{ include.date | date: '%Y-%m-%dT%H:%M:%S%z' }}"
+  >{% if showDay -%} {{ include.date | date: '%-d' }} de {% endif -%} {% assign
+  m = include.date | date: '%-m' -%} {% case m %} {% when '1' %}{% if showDay
+  %}enero{% else %}Enero{% endif -%} {% when '2' %}{% if showDay %}febrero{%
+  else %}Febrero{% endif -%} {% when '3' %}{% if showDay %}marzo{% else
+  %}Marzo{% endif -%} {% when '4' %}{% if showDay %}abril{% else %}Abril{% endif
+  -%} {% when '5' %}{% if showDay %}mayo{% else %}Mayo{% endif -%} {% when '6'
+  %}{% if showDay %}junio{% else %}Junio{% endif -%} {% when '7' %}{% if showDay
+  %}julio{% else %}Julio{% endif -%} {% when '8' %}{% if showDay %}agosto{% else
+  %}Agosto{% endif -%} {% when '9' %}{% if showDay %}septiembre{% else
+  %}Septiembre{% endif -%} {% when '10' %}{% if showDay %}octubre{% else
+  %}Octubre{% endif -%} {% when '11' %}{% if showDay %}noviembre{% else
+  %}Noviembre{% endif -%} {% when '12' %}{% if showDay %}diciembre{% else
+  %}Diciembre{% endif -%} {% endcase %}{% if currentYear != dateYear %} de {{
+  dateYear }}{% endif -%}
 </time>
