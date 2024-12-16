@@ -1,6 +1,11 @@
 {
   "2024": [
     {
+      "title": "Bluesky Looky Looker",
+      "url": "https://bsky.javier.computer",
+      "description": "Find out which Bluesky lists and starter packs you're on."
+    },
+    {
       "title": "Are.na Manager",
       "url": "https://obsidian.md/plugins?id=arena-manager",
       "description": "An Obsidian plugin that lets you publish content from Obsidian to Are.na and the other way around."
