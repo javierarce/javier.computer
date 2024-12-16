@@ -5,6 +5,7 @@ date: "2024-12-15"
 category: reportage
 cover: 2024-12-15-Doors-Cover
 location: doors
+hide_location: true
 intro: "No 'Doors of Perception' si no más bien 'Perception of Doors'."
 filenames:
   - filename: 2024-11-16-Barcelona-R0009895

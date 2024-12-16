@@ -1,41 +1,48 @@
-{% assign matching_location = site.locations | where: "location", include.photo.location | first -%}
+{% assign matching_location = site.locations | where: "location",
+include.photo.location | first -%}
 <div class="Photo__footer">
   <div class="Post__footer">
-    <a href="{{ include.photo.url }}" class="Post__date">{% include date.html date=include.photo.date -%}</a>
-    {% if matching_location -%}<span class="Post__footerSeparator">&middot;</span>
-    <a href="/photos/{{ include.photo.location -}}" class="Post__location">{{ matching_location.title }}</a>
-    {% endif -%}
+    <a href="{{ include.photo.url }}" class="Post__date"
+      >{% include date.html date=include.photo.date -%}</a
+    >
 
-    {% if site.show_likes %}
+    {% unless include.photo.hide_location %} {% if matching_location -%}<span
+      class="Post__footerSeparator"
+      >&middot;</span
+    >
+    <a href="/photos/{{ include.photo.location -}}" class="Post__location"
+      >{{ matching_location.title }}</a
+    >
+    {% endif -%} {% endunless %} {% if site.show_likes %}
     <span class="Post__footerSeparator">&middot;</span>
-    <open-heart class="text-open-heart" href="https://api.javier.computer/heart?id={{include.photo.url}}" emoji="❤️"
-      aria-labelledby="like-prompt">
+    <open-heart
+      class="text-open-heart"
+      href="https://api.javier.computer/heart?id={{include.photo.url}}"
+      emoji="❤️"
+      aria-labelledby="like-prompt"
+    >
       <span class="on"></span>
       <span class="off"></span>
     </open-heart>
-    {% endif %}
-
-    {% if site.show_comments %}
+    {% endif %} {% if site.show_comments %}
     <span class="Post__footerSeparator">&middot;</span>
-    <a href="/comment?title={{ page.title }}&url={{ page.id }}"
-      title="Envíame un comentario sobre esta entrada">Comentar</a>
-    {% endif -%}
-
-    {% if include.readmore == "true" -%}
+    <a
+      href="/comment?title={{ page.title }}&url={{ page.id }}"
+      title="Envíame un comentario sobre esta entrada"
+      >Comentar</a
+    >
+    {% endif -%} {% if include.readmore == "true" -%}
     <span class="Post__footerSeparator">&middot;</span>
     {% if include.photo.filenames.size > 1 -%}
-    <a href="{{ include.photo.url }}#more" class="is-underlined">Ver {{ include.photo.filenames.size }} foto{% if
-      include.photo.filenames.size > 1
-      %}s{% endif -%}</a>
+    <a href="{{ include.photo.url }}#more" class="is-underlined"
+      >Ver {{ include.photo.filenames.size }} foto{% if
+      include.photo.filenames.size > 1 %}s{% endif -%}</a
+    >
     {% else -%}
     <a href="{{ include.photo.url }}" class="is-underlined">Leer más</a>
-    {% endif -%}
-
-    {% endif -%}
-
+    {% endif -%} {% endif -%}
   </div>
 
-  {% if include.pagination -%}
-  {% include pagination.html post=include.photo -%}
+  {% if include.pagination -%} {% include pagination.html post=include.photo -%}
   {% endif -%}
 </div>
