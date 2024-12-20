@@ -76,6 +76,26 @@ watched_on: ${watched_on}
     fs.writeFileSync(dir + fileName, mdContent);
   }
 
+  extractDateFromLink(entry) {
+    const dateTd = entry.querySelector("td.td-day.diary-day a");
+
+    if (!dateTd) {
+      console.log("HTML structure for debugging:", entry.toString());
+      return null;
+    }
+
+    const href = dateTd.getAttribute("href");
+    const matches = href.match(/\/(\d{4})\/(\d{2})\/(\d{2})\/?$/);
+
+    if (matches) {
+      const [_, year, month, day] = matches;
+      return `${year}-${month}-${day}`;
+    }
+
+    console.log("Could not parse date from href:", href);
+    return null;
+  }
+
   async scrapeMovies(existingData) {
     const root = await this.fetchPage(1);
     const totalPages = await this.getTotalPages(root);
@@ -89,9 +109,12 @@ watched_on: ${watched_on}
       for (const entry of filmEntries) {
         const metadataElem = entry.querySelector(".edit-review-button");
         const td = entry.querySelector(".film-actions");
-        const watchedOn = new Date(
-          metadataElem.getAttribute("data-viewing-date"),
-        );
+        const watchedOn = this.extractDateFromLink(entry);
+
+        if (!watchedOn) {
+          console.warn("Could not extract date for entry, skipping...");
+          continue;
+        }
 
         const permalink = td.getAttribute("data-film-slug");
 
@@ -113,7 +136,7 @@ watched_on: ${watched_on}
 
         if (!doesMovieExist) {
           movies.push({
-            watched_on: watchedOn.toISOString().split("T")[0],
+            watched_on: watchedOn,
             title,
             year,
             rating,
