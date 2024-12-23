@@ -11,5 +11,9 @@
     "ora": "^8.0.1",
     "pretty-bytes": "^6.0.0",
     "sharp": "^0.32.6"
+  },
+  "devDependencies": {
+    "eslint": "^9.17.0",
+    "globals": "^15.14.0"
   }
 }

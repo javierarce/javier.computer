@@ -1,9 +1,9 @@
-import { MovieScraper } from "./movies.js";
+import { MovieRSSParser } from "./movies.js";
 import { Subscribers } from "./subscribers.js";
 import { Books } from "./books.js";
 
 const username = "javier";
-const scraper = new MovieScraper(username);
+const scraper = new MovieRSSParser(username);
 scraper.run();
 
 const subscribers = new Subscribers(username);

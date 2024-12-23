@@ -1,8 +1,8 @@
 import fs from "fs";
 import fetch from "node-fetch";
-import { parse } from "node-html-parser";
+import { XMLParser } from "fast-xml-parser";
 
-export class MovieScraper {
+export class MovieRSSParser {
   constructor(username) {
     if (!username) {
       console.error("Error: Please provide a username.");
@@ -10,7 +10,7 @@ export class MovieScraper {
     }
 
     this.username = username;
-    this.baseUrl = `https://letterboxd.com/${this.username}/films/diary/page/`;
+    this.feedUrl = `https://letterboxd.com/${this.username}/rss/`;
     this.outputFile = "_data/movies.json";
     this.lastUpdatedAt = this.getLastUpdatedAt();
   }
@@ -28,18 +28,14 @@ export class MovieScraper {
     this.spinner = ora({ text: "Loading…", spinner: "dots" });
   }
 
-  async fetchPage(pageNumber) {
-    const response = await fetch(this.baseUrl + pageNumber);
+  async fetchFeed() {
+    const response = await fetch(this.feedUrl);
     const text = await response.text();
-    return parse(text);
-  }
-
-  async getTotalPages(root) {
-    const pagination = root.querySelector(".paginate-pages");
-    if (!pagination) return 1;
-
-    const lastPageLink = pagination.querySelectorAll("li a").pop();
-    return lastPageLink ? parseInt(lastPageLink.innerText.trim(), 10) : 1;
+    const parser = new XMLParser({
+      ignoreAttributes: false,
+      attributeNamePrefix: "@_",
+    });
+    return parser.parse(text);
   }
 
   createMarkdownFile(movie) {
@@ -66,7 +62,6 @@ watched_on: ${watched_on}
 
     const safePermalink = isNaN(permalink) ? permalink : `${permalink}-movie`;
     const fileName = `${safePermalink}.md`;
-
     const dir = "content/_movies/";
 
     if (!fs.existsSync(dir)) {
@@ -76,55 +71,47 @@ watched_on: ${watched_on}
     fs.writeFileSync(dir + fileName, mdContent);
   }
 
-  async scrapeMovies(existingData) {
-    const root = await this.fetchPage(1);
-    const totalPages = await this.getTotalPages(root);
+  getRatingStars(rating) {
+    const fullStars = "★".repeat(Math.floor(rating));
+    const halfStar = rating % 1 >= 0.5 ? "½" : "";
+    return fullStars + halfStar;
+  }
+
+  async parseMovies(existingData) {
+    const feed = await this.fetchFeed();
     const movies = [];
-    let shouldContinue = true;
 
-    for (let i = 1; i <= totalPages && shouldContinue; i++) {
-      const pageRoot = await this.fetchPage(i);
-      const filmEntries = pageRoot.querySelectorAll(".diary-entry-row");
+    // Only process items that are movies (not lists)
+    const movieEntries = feed.rss.channel.item.filter(
+      (item) => item["letterboxd:filmTitle"] && item["letterboxd:filmYear"],
+    );
 
-      for (const entry of filmEntries) {
-        const metadataElem = entry.querySelector(".edit-review-button");
-        const td = entry.querySelector(".film-actions");
-        const watchedOn = new Date(
-          metadataElem.getAttribute("data-viewing-date"),
-        );
+    for (const entry of movieEntries) {
+      const permalink = entry.link.split("/film/")[1].replace(/\/$/, "");
 
-        const permalink = td.getAttribute("data-film-slug");
+      // Check if movie already exists
+      const doesMovieExist = existingData.movies.some(
+        (movie) => movie.permalink === permalink,
+      );
 
-        const doesMovieExist = existingData.movies.some(
-          (movie) => movie.permalink === permalink,
-        );
+      if (!doesMovieExist) {
+        const rating = entry["letterboxd:memberRating"]
+          ? parseFloat(entry["letterboxd:memberRating"])
+          : null;
 
-        const filmTitle = metadataElem.getAttribute("data-film-name");
-        const rewatched = metadataElem.getAttribute("data-rewatch") === "true";
-        const year = metadataElem.getAttribute("data-film-year");
-        const title = `${filmTitle}`;
-        const rating =
-          parseInt(metadataElem.getAttribute("data-rating"), 10) / 2;
-        const fullStars = "★".repeat(Math.floor(rating));
-        const halfStar = rating - Math.floor(rating) >= 0.5 ? "½" : "";
-        const liked = metadataElem.getAttribute("data-liked");
+        const movie = {
+          watched_on: entry["letterboxd:watchedDate"],
+          title: entry["letterboxd:filmTitle"],
+          year: parseInt(entry["letterboxd:filmYear"]),
+          rating,
+          liked: entry["letterboxd:memberRating"] >= 4.0, // Consider 4+ stars as "liked"
+          stars: rating ? this.getRatingStars(rating) : "",
+          rewatched: entry["letterboxd:rewatch"] === "Yes",
+          permalink,
+        };
 
-        const stars = fullStars + halfStar;
-
-        if (!doesMovieExist) {
-          movies.push({
-            watched_on: watchedOn.toISOString().split("T")[0],
-            title,
-            year,
-            rating,
-            liked,
-            stars,
-            rewatched,
-            permalink,
-          });
-        }
+        movies.push(movie);
       }
-      if (!shouldContinue) break;
     }
 
     return movies;
@@ -132,13 +119,13 @@ watched_on: ${watched_on}
 
   async run() {
     await this.loadSpinner();
-    this.spinner.start("Getting new movies");
+    this.spinner.start("Getting new movies from RSS feed");
     try {
       const existingData = fs.existsSync(this.outputFile)
         ? JSON.parse(fs.readFileSync(this.outputFile, "utf8"))
         : { movies: [] };
 
-      const newMovies = await this.scrapeMovies(existingData);
+      const newMovies = await this.parseMovies(existingData);
 
       if (newMovies.length > 0) {
         const updatedMovies = [...newMovies, ...existingData.movies];

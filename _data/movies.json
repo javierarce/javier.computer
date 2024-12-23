@@ -1,7 +1,97 @@
 {
-  "updated_at": "2024-12-15",
-  "count": 803,
+  "updated_at": "2024-12-23",
+  "count": 809,
   "movies": [
+    {
+      "watched_on": "2024-12-23",
+      "title": "Prince of the City",
+      "year": 1981,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "prince-of-the-city"
+    },
+    {
+      "watched_on": "2024-12-22",
+      "title": "Mafioso",
+      "year": 1962,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "mafioso"
+    },
+    {
+      "watched_on": "2024-12-22",
+      "title": "Wolfs",
+      "year": 2024,
+      "rating": 2,
+      "liked": false,
+      "stars": "★★",
+      "rewatched": false,
+      "permalink": "wolfs"
+    },
+    {
+      "watched_on": "2024-12-22",
+      "title": "Murder by Contract",
+      "year": 1958,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "murder-by-contract"
+    },
+    {
+      "watched_on": "2024-12-21",
+      "title": "The Hitcher",
+      "year": 1986,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "the-hitcher"
+    },
+    {
+      "watched_on": "2024-12-21",
+      "title": "Woman on the Run",
+      "year": 1950,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "woman-on-the-run"
+    },
+    {
+      "watched_on": "2024-12-20",
+      "title": "Captain Volkonogov Escaped",
+      "year": 2021,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "captain-volkonogov-escaped"
+    },
+    {
+      "watched_on": "2024-12-18",
+      "title": "Celeste",
+      "year": 2024,
+      "rating": 1.5,
+      "liked": false,
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "celeste-2024"
+    },
+    {
+      "watched_on": "2024-12-15",
+      "title": "Mare of Easttown",
+      "year": 2021,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": true,
+      "permalink": "mare-of-easttown"
+    },
     {
       "watched_on": "2024-12-14",
       "title": "Martha: A Picture Story",
