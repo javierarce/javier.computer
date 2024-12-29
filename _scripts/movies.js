@@ -38,6 +38,12 @@ export class MovieRSSParser {
     return parser.parse(text);
   }
 
+  getSafePermalink(permalink) {
+    permalink = permalink.split("/").slice(0, 1);
+    permalink = isNaN(permalink) ? permalink : `${permalink}-movie`;
+    return permalink;
+  }
+
   createMarkdownFile(movie) {
     const {
       title,
@@ -60,7 +66,7 @@ permalink: "${permalink}"
 watched_on: ${watched_on}
 ---`;
 
-    const safePermalink = isNaN(permalink) ? permalink : `${permalink}-movie`;
+    const safePermalink = this.getSafePermalink(permalink);
     const fileName = `${safePermalink}.md`;
     const dir = "content/_movies/";
 

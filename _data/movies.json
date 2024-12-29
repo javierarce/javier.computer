@@ -1,7 +1,77 @@
 {
-  "updated_at": "2024-12-23",
-  "count": 809,
+  "updated_at": "2024-12-29",
+  "count": 816,
   "movies": [
+    {
+      "watched_on": "2024-12-28",
+      "title": "Key Largo",
+      "year": 1948,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "key-largo"
+    },
+    {
+      "watched_on": "2024-12-28",
+      "title": "Bird",
+      "year": 2024,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "bird-2024"
+    },
+    {
+      "watched_on": "2024-12-27",
+      "title": "Of Unknown Origin",
+      "year": 1983,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "of-unknown-origin"
+    },
+    {
+      "watched_on": "2024-12-25",
+      "title": "Nightfall",
+      "year": 1956,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "nightfall"
+    },
+    {
+      "watched_on": "2024-12-25",
+      "title": "Frenzy",
+      "year": 1972,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "frenzy/1"
+    },
+    {
+      "watched_on": "2024-12-25",
+      "title": "The Order",
+      "year": 2024,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "the-order-2024"
+    },
+    {
+      "watched_on": "2024-12-24",
+      "title": "The Pawnbroker",
+      "year": 1964,
+      "rating": 4.5,
+      "liked": true,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "the-pawnbroker"
+    },
     {
       "watched_on": "2024-12-23",
       "title": "Prince of the City",
