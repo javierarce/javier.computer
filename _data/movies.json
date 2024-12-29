@@ -1,7 +1,17 @@
 {
   "updated_at": "2024-12-29",
-  "count": 816,
+  "count": 817,
   "movies": [
+    {
+      "watched_on": "2024-12-29",
+      "title": "Nowhere to Go",
+      "year": 1958,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "nowhere-to-go"
+    },
     {
       "watched_on": "2024-12-28",
       "title": "Key Largo",
