@@ -43,7 +43,7 @@ layout: none
           {% assign caption = post.title -%}
           {% assign location = post.location -%}
           {% endif -%}
-          <p><img src="https://img.javier.computer/{{ location }}/{{ filename }}_1280.jpg" alt="{{ caption }}" />{% if file.caption -%}<br />{{ file.caption }}{% endif -%}</p>
+          <p><img src="https://img.javier.computer/{{ location }}/{{ filename }}_1280.jpg" style="max-width: 1204px" alt="{{ caption }}" />{% if file.caption -%}<br />{{ file.caption }}{% endif -%}</p>
           {% endfor -%}
           {% endif -%}
 
@@ -84,10 +84,10 @@ layout: none
           <p><img src="https://img.javier.computer/{{ location }}/{{ filename }}_1280.jpg" alt="{{ caption }}" />{% if file.caption -%}<br />{{ file.caption }}{% endif -%}</p>
           {% endfor -%}
           {% else -%}
-            <img src="https://img.javier.computer/{{ post.location }}/{{ post.filename }}_1280.jpg" alt="{{ post.title }}" />
+            <img src="https://img.javier.computer/{{ post.location }}/{{ post.filename }}_1280.jpg" style="max-width: 1204px" alt="{{ post.title }}" />
           {% endif -%}
             <p>{% if matching_location -%}{{ matching_location.title }}. {% endif -%} 
-        {% if post.camera %}{% if post.camera.first %}Cámaras: {{ post.camera | join: ", " }}.{% else %}Cámara: {{ post.camera }}.{% endif %}{% endif %} </p>
+            {% if post.camera %}{% if post.camera.first %}Cámaras: {{ post.camera | join: ", " }}.{% else %}Cámara: {{ post.camera }}.{% endif %}{% endif %} </p>
             <hr />
             <p><a href="{{ site.url}}/comment?title={{post.title}}&url={{post.id}}">Comentar este post</a> &middot; <a href="{{ site.url}}/heart?id={{post.url}}">Me gusta</a></p>
               ]]>
