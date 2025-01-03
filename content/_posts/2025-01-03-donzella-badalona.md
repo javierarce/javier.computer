@@ -28,7 +28,7 @@ filenames:
   - filename: 2024-12-27-Badalona-R0010497
   - filename: 2024-12-27-Badalona-R0010559
   - filename: 2024-12-27-Badalona-R0010598
-intro: "La semana pasada del año pasado que se nos fue, quedé para comer con unos amigos en Badalona y saqué las fotos que vas a ver a continuación si haces scroll, o que ya estás viendo, si es que tienes un monitor ridículamente alargado."
+intro: "La semana pasada del año pasado que se nos fue, quedé para comer con unos amigos en Badalona. Lo que pasó después te sorprenderá (no pasó nada)."
 location: badalona
 camera:
   - Ricoh GR IIIx
