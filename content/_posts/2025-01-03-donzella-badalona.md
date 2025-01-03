@@ -1,6 +1,6 @@
 ---
 layout: reportage
-title: "Donzella"
+title: "La Donzella de la Costa"
 date: "2025-01-03"
 category: reportage
 cover: 2024-12-27-Badalona-R0010451
