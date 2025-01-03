@@ -1,4 +1,5 @@
 {% assign title = include.caption | default: include.photo.title -%}
+{% assign alt = include.caption | default: title -%}
 
 <div class="Photo">
   <div class="Photo__content">
@@ -14,8 +15,11 @@
             type=image/webp>
           <source
             data-srcset="https://img.javier.computer/{{ include.photo.location }}/{{ include.filename }}_640.jpg 640w, https://img.javier.computer/{{ include.photo.location }}/{{ include.filename }}_1280.jpg 1280w, https://img.javier.computer/{{ include.photo.location }}/{{ include.filename }}_2880.jpg 2880w">
-          <img class="lazy" alt="{{title}}" title="{{ title }}" {% if (include.caption) -%}data-caption="{{ include.caption }}" {% endif
-            -%} data-src="https://img.javier.computer/{{ include.photo.location }}/{{ include.filename }}_1280.jpg">
+          <img class="lazy" 
+            {% if alt and alt != "" %} alt="{{ alt }}" {% endif %}
+            {% if title and title != "" %} title="{{ title }}" {% endif %}
+            {% if include.caption -%} data-caption="{{ include.caption }}" {% endif %} 
+            data-src="https://img.javier.computer/{{ include.photo.location }}/{{ include.filename }}_1280.jpg">
         </picture>
 
         {% if include.url and include.url != "" -%}

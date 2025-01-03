@@ -73,11 +73,13 @@ layout: none
           {% if file.filename -%}
           {% assign filename = file.filename -%}
           {% assign caption = file.caption | default: post.title | strip_html | strip_newlines | xml_escape -%}
+          {% assign location = file.location | default: post.location | strip_html | strip_newlines | xml_escape -%}
           {% else -%}
           {% assign filename = file -%}
           {% assign caption = post.title -%}
+          {% assign location = post.location -%}
           {% endif -%}
-          <p><img src="https://img.javier.computer/{{ post.location }}/{{ filename }}_1280.jpg" alt="{{ caption }}" />{% if file.caption -%}<br />{{ file.caption }}{% endif -%}</p>
+          <p><img src="https://img.javier.computer/{{ location }}/{{ filename }}_1280.jpg" alt="{{ caption }}" />{% if file.caption -%}<br />{{ file.caption }}{% endif -%}</p>
           {% endfor -%}
           {% else -%}
             <img src="https://img.javier.computer/{{ post.location }}/{{ post.filename }}_1280.jpg" alt="{{ post.title }}" />
