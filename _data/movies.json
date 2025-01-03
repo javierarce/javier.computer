@@ -1,7 +1,37 @@
 {
-  "updated_at": "2024-12-29",
-  "count": 817,
+  "updated_at": "2025-01-03",
+  "count": 820,
   "movies": [
+    {
+      "watched_on": "2025-01-01",
+      "title": "Wallace & Gromit: Vengeance Most Fowl",
+      "year": 2024,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "wallace-gromit-vengeance-most-fowl"
+    },
+    {
+      "watched_on": "2024-12-31",
+      "title": "To Die For",
+      "year": 1995,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "to-die-for"
+    },
+    {
+      "watched_on": "2024-12-30",
+      "title": "Nosferatu",
+      "year": 2024,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "nosferatu-2024"
+    },
     {
       "watched_on": "2024-12-29",
       "title": "Nowhere to Go",
