@@ -94,8 +94,8 @@ sobra para venir a verla.
 {% include photos/custom.html location='badalona' filename='2024-12-27-Badalona-R0010520' caption="Según Scrabble Score Calculator esta palabra te daría, como mínimo, 10 puntos" alt="Foto de un letrero donde se puede leer la palabra 'restaurant' en vertical. Cada letra está dibujada sobre un cubo blanco. El letrero está colgado sobre una pared de ladrillo verde." -%}
 
 <div class="g">
-    <p>Y aunque la siguiente foto no es de aquel día, la otra pista para encontrar el restaurante es su logotipo: una sirena comiéndose lo que solo puede ser una gyoza gigante.</p>
-    {% include photos/custom.html location='badalona' filename='DSCF0955' caption="Hay quien también sugiere que es una ninfa acuática con un serio problema de déficit de colágeno." alt="Foto de una pared y el dibujo de una sirena tocando una concha de mar sobre una pared de ladrillo naranja. En la esquina inferior izquierda una chica de espaldas con camisa azul y un bolso naranja le hace una foto con el móvil." -%}
+    <p>Y aunque la siguiente foto no es de aquel día, la otra pista para encontrar el restaurante es su logotipo: una sirena comiendo lo que solo puede ser una gyoza gigante.</p>
+    {% include photos/custom.html location='badalona' filename='DSCF0955' caption="Hay quien también sugiere que es una ninfa acuática con un serio problema de déficit de colágeno." alt="Foto de una pared y el dibujo de una sirena tocando una concha sobre una pared de ladrillo naranja. En la esquina inferior izquierda una chica de espaldas con camisa azul y un bolso naranja le hace una foto con el móvil." -%}
 </div>
 
 <div class="g">
@@ -130,7 +130,7 @@ Ni un solo teléfono a la vista, solo gente viviendo el momento.</p>
 
 <div class="g">
     {% include photos/custom.html location='badalona' filename='2024-12-27-Badalona-R0010559' alt="Foto de una playa y el mar al atardecer, sin nubes, y con una plataforma de madera al fondo." -%}
-    {% include photos/custom.html location='badalona' filename='2024-12-27-Badalona-R0010598' alt="Foto noctura de la palabra Peste grafiteda sobre una pared de hormigón" -%}
+    {% include photos/custom.html location='badalona' filename='2024-12-27-Badalona-R0010598' alt="Foto nocturna de la palabra Peste grafiteada sobre una pared de hormigón" -%}
 </div>
 
 <div class="g">
