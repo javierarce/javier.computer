@@ -1,7 +1,17 @@
 {
-  "updated_at": "2025-01-03",
-  "count": 820,
+  "updated_at": "2025-01-04",
+  "count": 821,
   "movies": [
+    {
+      "watched_on": "2025-01-03",
+      "title": "The Anderson Tapes",
+      "year": 1971,
+      "rating": 2,
+      "liked": false,
+      "stars": "★★",
+      "rewatched": false,
+      "permalink": "the-anderson-tapes"
+    },
     {
       "watched_on": "2025-01-01",
       "title": "Wallace & Gromit: Vengeance Most Fowl",
