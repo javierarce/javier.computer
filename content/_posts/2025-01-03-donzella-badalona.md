@@ -28,7 +28,7 @@ filenames:
   - filename: 2024-12-27-Badalona-R0010497
   - filename: 2024-12-27-Badalona-R0010559
   - filename: 2024-12-27-Badalona-R0010598
-intro: "La semana pasada del año pasado que se nos fue, quedé para comer con unos amigos en Badalona. Lo que pasó después te sorprenderá (no pasó nada)."
+intro: "La semana pasada del año pasado que se nos fue, quedé para comer con unos amigos en Badalona. Lo que ocurrió después te sorprenderá (no ocurrió nada)."
 location: badalona
 camera:
   - Ricoh GR IIIx
@@ -94,12 +94,12 @@ sobra para venir a verla.
 {% include photos/custom.html location='badalona' filename='2024-12-27-Badalona-R0010520' caption="Según Scrabble Score Calculator esta palabra te daría, como mínimo, 10 puntos" alt="Foto de un letrero donde se puede leer la palabra 'restaurant' en vertical. Cada letra está dibujada sobre un cubo blanco. El letrero está colgado sobre una pared de ladrillo verde." -%}
 
 <div class="g">
-    <p>Y aunque la siguiente foto no es de aquel día, la otra pista para encontrar el restaurante es su logotipo: una sirena comiéndose la que solo puede ser una gyoza gigante.</p>
+    <p>Y aunque la siguiente foto no es de aquel día, la otra pista para encontrar el restaurante es su logotipo: una sirena comiéndose lo que solo puede ser una gyoza gigante.</p>
     {% include photos/custom.html location='badalona' filename='DSCF0955' caption="Hay quien también sugiere que es una ninfa acuática con un serio problema de déficit de colágeno." alt="Foto de una pared y el dibujo de una sirena tocando una concha de mar sobre una pared de ladrillo naranja. En la esquina inferior izquierda una chica de espaldas con camisa azul y un bolso naranja le hace una foto con el móvil." -%}
 </div>
 
 <div class="g">
-<p>Y aquí están Orlando y Laura, siendo majísimos en nuestra mesa.</p>
+<p>Y aquí están <a href="https://www.drawlikeamonkey.com">Orlando</a> y <a href="https://www.laurameseguer.com">Laura</a>, siendo majísimos en nuestra mesa.</p>
 </div>
 
 <div class="g">
@@ -112,7 +112,7 @@ sobra para venir a verla.
 
 <div class="g has-margin-top">
 <p>El restaurante ha mantenido la zona de las casetas de baño de 1929. Si tienes curiosidad, puedes ver cómo eran en los años 50 en <a href="https://www.flickr.com/photos/museudebadalona/albums/72157696422445131">esta galería de fotos</a>. 
-Ni un solo teléfono a la vista. Solo gente viviendo el momento.</p>
+Ni un solo teléfono a la vista, solo gente viviendo el momento.</p>
 </div>
 
 <div class="g">
@@ -125,7 +125,7 @@ Ni un solo teléfono a la vista. Solo gente viviendo el momento.</p>
 </div>
 
 <div class="g">
-<p>Después de dar buena cuenta de nuestras paellas y nuestras fideuás, salimos a dar un paseo y yo saqué las dos últimas fotos del día.</p>
+<p>Después de dar buena cuenta de nuestras paellas y fideuás, salimos a dar un paseo y yo saqué las dos últimas fotos del día.</p>
 </div>
 
 <div class="g">
@@ -134,5 +134,6 @@ Ni un solo teléfono a la vista. Solo gente viviendo el momento.</p>
 </div>
 
 <div class="g">
-<p>Si te has quedado con más ganas de Badalona (ya, yo qué sé), aquí tienes <a href="/photos/badalona">más fotos</a> que hice en mi primera visita, también excelentemente acompañado de buenos amigos.</p>
+<p>Si te has quedado con más ganas de Badalona (ya, yo qué sé), puedes echarle un vistazo a las fotos que hice en <a href="/2023/10/29/badalona">mi primera visita</a> a la ciudad
+        y durante el <a href="/2024/02/17/mendo-world-tour-ii">Luis Mendo World Tour 2024</a>.</p>
 </div>
