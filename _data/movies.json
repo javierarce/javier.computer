@@ -1,7 +1,17 @@
 {
-  "updated_at": "2025-01-04",
-  "count": 821,
+  "updated_at": "2025-01-06",
+  "count": 822,
   "movies": [
+    {
+      "watched_on": "2025-01-04",
+      "title": "Touch of Evil",
+      "year": 1958,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "touch-of-evil"
+    },
     {
       "watched_on": "2025-01-03",
       "title": "The Anderson Tapes",
