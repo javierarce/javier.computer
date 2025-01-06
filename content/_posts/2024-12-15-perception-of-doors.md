@@ -8,6 +8,8 @@ location: doors
 hide_location: true
 intro: "No 'Doors of Perception' si no más bien 'Perception of Doors'."
 filenames:
+  - filename: 2025-01-05-Sant-Pol-de-Mar-R0011013
+  - filename: 2025-01-05-Mataro-R0011010
   - filename: 2024-11-16-Barcelona-R0009895
   - filename: 2024-11-16-Barcelona-R0009885
   - filename: 2024-11-16-Barcelona-R0009886
@@ -29,6 +31,7 @@ filenames:
   - filename: 2019-02-18-Paris-P1130354
   - filename: 2023-04-20-Barcelona-R0002905
   - filename: 2024-03-25-Berlin-R0006559
+  - filename: 2024-12-28-Mataro-R0010632
 camera:
   - Ricoh GR IIIx
   - Fujifilm XT-5
@@ -73,4 +76,11 @@ show_content: true
     {% include photos/custom.html location="doors" filename='2023-04-20-Barcelona-R0002905' hide_caption="true" caption="Barcelona, 20 de abril de 2023" -%}
     {% include photos/custom.html location="doors" filename='2024-03-25-Berlin-R0006559' hide_caption="true" caption="Berlín, 25 de marzo de 2024" -%}
 </div>
+
+<div class="h">
+    {% include photos/custom.html location="doors" filename='2025-01-05-Sant-Pol-de-Mar-R0011013' hide_caption="true" caption="Sant Pol de Mar, 5 de enero de 2025" -%}
+    {% include photos/custom.html location="doors" filename='2025-01-05-Mataro-R0011010' hide_caption="true" caption="Mataró, 5 de enero de 2025" -%}
+    {% include photos/custom.html location="doors" filename='2024-12-28-Mataro-R0010632' hide_caption="true" caption="Mataró, 28 de diciembre de 2024" -%}
+</div>
+
 </div>
