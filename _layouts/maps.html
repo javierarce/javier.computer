@@ -1,37 +1,57 @@
-<!DOCTYPE html>
-<html lang="es"><head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% if page.title -%}{{ page.title }}{% else -%}{{ site.title }}{% endif -%}</title>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      {% if page.title -%}{{ page.title }}{% else -%}{{ site.title }}{% endif
+      -%}
+    </title>
 
-    <link rel="shortcut icon" href="{{ base.url | prepend: site.url }}/favicon.ico">
+    <link
+      rel="shortcut icon"
+      href="{{ base.url | prepend: site.url }}/favicon.ico"
+    />
 
-
-    {% include meta.html -%}
-    {% include scripts.html -%}
-
-    {% feed_meta %}
-
-    {% assign className = layout.className %}
-    {% if page.className != nil %}
-    {% assign className = page.className %}
-    {% endif %}
+    {% include meta.html -%} {% include scripts.html -%} {% feed_meta %} {%
+    assign className = layout.className %} {% if page.className != nil %} {%
+    assign className = page.className %} {% endif %}
 
     <script>
-    const locations = {{ site.data.locations[page.location] | reverse | jsonify }}
+      const locations = {{ site.data.locations[page.location] | reverse | jsonify }}
     </script>
 
-    <script src="{{ '/scripts/lazyload.min.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
-    <script src="{{ '/scripts/map.js' }}?version={{site.version}}" charset="utf-8"></script>
-    <script src="{{ '/scripts/map/ejs.min.js' }}?version={{site.version}}" charset="utf-8"></script>
-    <script src="{{ '/scripts/map/leaflet.js' }}?version={{site.version}}" charset="utf-8"></script>
-    <script src="{{ '/scripts/map/leaflet.markercluster.js' }}?version={{site.version}}" charset="utf-8"></script>
+    <script
+      src="{{ '/scripts/lazyload.min.js' | relative_url }}?version={{site.version}}"
+      charset="utf-8"
+    ></script>
+    <script
+      src="{{ '/scripts/map.js' }}?version={{site.version}}"
+      charset="utf-8"
+    ></script>
+    <script
+      src="{{ '/scripts/map/ejs.min.js' }}?version={{site.version}}"
+      charset="utf-8"
+    ></script>
+    <script
+      src="{{ '/scripts/map/leaflet.js' }}?version={{site.version}}"
+      charset="utf-8"
+    ></script>
+    <script
+      src="{{ '/scripts/map/leaflet.markercluster.js' }}?version={{site.version}}"
+      charset="utf-8"
+    ></script>
 
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+  </head>
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-
-    <body class="Layout__{{ className | default: page.category | downcase  }}">
-      {{ content }}
-    </body>
+  <body class="Layout__{{ className | default: page.category | downcase  }}">
+    {{ content }}
+  </body>
 </html>
