@@ -366,4 +366,32 @@ a.is-photo::after {
     padding: 1em;
     width: 100%;
   }
+
+  .Layout__error {
+    padding: 1em;
+  }
+
+}
+
+.Layout__office .Content {
+  width: var(--bigWidth);
+}
+
+.Layout__office .Footer {
+  margin-top: 2em;
+}
+
+.Layout__office .Content p {
+  width: var(--width);
+  font-size: 1.2em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media all and (max-width: 1024px) {
+
+  .Layout__office .Content,
+  .Layout__office .Content p {
+    width: 100%;
+  }
 }
