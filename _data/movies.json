@@ -1,7 +1,67 @@
 {
-  "updated_at": "2025-01-06",
-  "count": 822,
+  "updated_at": "2025-01-20",
+  "count": 828,
   "movies": [
+    {
+      "watched_on": "2025-01-19",
+      "title": "A Real Pain",
+      "year": 2024,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "a-real-pain"
+    },
+    {
+      "watched_on": "2025-01-18",
+      "title": "Exhuma",
+      "year": 2024,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "exhuma"
+    },
+    {
+      "watched_on": "2025-01-14",
+      "title": "Unhinged",
+      "year": 2020,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "unhinged-2020"
+    },
+    {
+      "watched_on": "2025-01-13",
+      "title": "Parade, or Here They Come Down Our Street",
+      "year": 1952,
+      "rating": null,
+      "liked": false,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "parade-or-here-they-come-down-our-street"
+    },
+    {
+      "watched_on": "2025-01-08",
+      "title": "The Wicker Man",
+      "year": 1973,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "the-wicker-man"
+    },
+    {
+      "watched_on": "2025-01-06",
+      "title": "The Deer Hunter",
+      "year": 1978,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "the-deer-hunter"
+    },
     {
       "watched_on": "2025-01-04",
       "title": "Touch of Evil",
