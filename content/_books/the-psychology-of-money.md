@@ -5,8 +5,8 @@ description: ""
 layout: book
 author: Morgan Housel
 started: 2024-12-06
-read: 
-status: reading
+read: 2024-12-20
+status: read
 rating: 0
 color: 
 cover: 

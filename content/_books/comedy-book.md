@@ -6,7 +6,7 @@ layout: book
 author: Jesse David Fox
 started: 2024-11-21
 read: 
-status: reading
+status: abandoned
 rating: 0
 color: 
 cover: 

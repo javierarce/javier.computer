@@ -5,8 +5,8 @@ description: ""
 layout: book
 author: Robin Wieruch
 started: 2024-11-14
-read: 
-status: reading
+read: 2024-12-30
+status: read
 rating: 0
 color: 
 cover: 
