@@ -1,6 +1,6 @@
 {
   "updated_at": "2025-01-20",
-  "count": 182,
+  "count": 183,
   "books": [
     {
       "id": 174,
@@ -5047,6 +5047,33 @@
       "progresses": [],
       "quotes": [],
       "status_order": 1,
+      "read_percentage": "0"
+    },
+    {
+      "id": 183,
+      "title": "A Year with Swollen Appendices",
+      "subtitle": "",
+      "slug": "a-year-with-swollen-appendices",
+      "description": "",
+      "translators": null,
+      "isbn": null,
+      "edition": null,
+      "publisher": null,
+      "author": "Brian Eno",
+      "pages": 424,
+      "year": null,
+      "status": "reading",
+      "rating": "0",
+      "cover": null,
+      "color": null,
+      "link": "",
+      "started_at": "2024-12-31T23:00:00.000Z",
+      "finished_at": null,
+      "created_at": "2025-01-20T17:21:24.628Z",
+      "updated_at": "2025-01-20T17:21:27.052Z",
+      "progresses": [],
+      "quotes": [],
+      "status_order": 0,
       "read_percentage": "0"
     }
   ]
