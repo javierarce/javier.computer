@@ -66,3 +66,5 @@ This computer doesn't track you, your friends, or your enemies.
 
 Do you need to tell me something incredible that happened to you? [Go
 here](/contact) to get in touch or write to 'email' at this domain.
+
+If you'd rather talk, you can [schedule a meeting](/office-hours) with me.

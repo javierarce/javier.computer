@@ -1,7 +1,17 @@
 {
-  "updated_at": "2025-01-20",
-  "count": 828,
+  "updated_at": "2025-01-22",
+  "count": 829,
   "movies": [
+    {
+      "watched_on": "2025-01-20",
+      "title": "Beezel",
+      "year": 2024,
+      "rating": 0.5,
+      "liked": false,
+      "stars": "½",
+      "rewatched": false,
+      "permalink": "beezel"
+    },
     {
       "watched_on": "2025-01-19",
       "title": "A Real Pain",

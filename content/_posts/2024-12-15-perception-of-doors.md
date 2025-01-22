@@ -83,4 +83,15 @@ show_content: true
     {% include photos/custom.html location="doors" filename='2024-12-28-Mataro-R0010632' hide_caption="true" caption="Mataró, 28 de diciembre de 2024" -%}
 </div>
 
+<div class="h">
+    {% include photos/custom.html location="doors" filename='2025-01-21-Badalona-R0011466' hide_caption="true" caption="Badalona, 21 de enero de 2025" -%}
+    {% include photos/custom.html location="doors" filename='2025-01-21-Badalona-R0011467' hide_caption="true" caption="Badalona, 21 de enero de 2025" -%}
+    {% include photos/custom.html location="doors" filename='2025-01-21-Badalona-R0011472' hide_caption="true" caption="Badalona, 21 de enero de 2025" -%}
+</div>
+
+<div class="h has-two">
+    {% include photos/custom.html location="doors" filename='2025-01-21-Badalona-R0011474' hide_caption="true" caption="Badalona, 21 de enero de 2025" -%}
+    {% include photos/custom.html location="doors" filename='2025-01-17-Vilassar-de-Mar-R0011340' hide_caption="true" caption="Viilassar de Mar, 17 de enero de 2025" -%}
+</div>
+
 </div>

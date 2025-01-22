@@ -306,6 +306,16 @@ figcaption {
   gap: 0.4em;
 }
 
+.h.has-one,
+.h.has-two {
+  justify-content: flex-start;
+}
+
+.h.has-one>div,
+.h.has-two>div {
+  width: 33.3333%;
+}
+
 .Photo__layout p,
 .Photo__layout p:last-child {
   width: var(--width);
@@ -441,6 +451,16 @@ figcaption {
 
   .h {
     flex-direction: column;
+  }
+
+  .h.has-one,
+  .h.has-two {
+    justify-content: center;
+  }
+
+  .h.has-one>div,
+  .h.has-two>div {
+    width: 100%;
   }
 
   .g.with-caption {
