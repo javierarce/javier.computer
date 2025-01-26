@@ -1,7 +1,17 @@
 {
   "updated_at": "2025-01-26",
-  "count": 831,
+  "count": 832,
   "movies": [
+    {
+      "watched_on": "2025-01-26",
+      "title": "The Colours",
+      "year": 1976,
+      "rating": null,
+      "liked": false,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "the-colours"
+    },
     {
       "watched_on": "2025-01-25",
       "title": "Cloak and Dagger",
