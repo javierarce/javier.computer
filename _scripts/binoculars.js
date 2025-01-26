@@ -1,6 +1,11 @@
-const fs = require("fs");
-const Arena = require("are.na");
-const path = require("path");
+import fs from "fs";
+import Arena from "are.na";
+import path from "path";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const CHANNEL_NAME = "binocular-shot";
 const contentDirectory = "content/_binoculars";
