@@ -1,7 +1,27 @@
 {
-  "updated_at": "2025-01-22",
-  "count": 829,
+  "updated_at": "2025-01-26",
+  "count": 831,
   "movies": [
+    {
+      "watched_on": "2025-01-25",
+      "title": "Cloak and Dagger",
+      "year": 1946,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "cloak-and-dagger"
+    },
+    {
+      "watched_on": "2025-01-24",
+      "title": "The Spiral Staircase",
+      "year": 1946,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "the-spiral-staircase"
+    },
     {
       "watched_on": "2025-01-20",
       "title": "Beezel",
