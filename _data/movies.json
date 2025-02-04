@@ -1,7 +1,37 @@
 {
-  "updated_at": "2025-01-26",
-  "count": 832,
+  "updated_at": "2025-02-04",
+  "count": 835,
   "movies": [
+    {
+      "watched_on": "2025-02-02",
+      "title": "Say Nothing",
+      "year": 2024,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "say-nothing-2024"
+    },
+    {
+      "watched_on": "2025-02-01",
+      "title": "The Room Next Door",
+      "year": 2024,
+      "rating": 2,
+      "liked": false,
+      "stars": "★★",
+      "rewatched": false,
+      "permalink": "the-room-next-door-2024"
+    },
+    {
+      "watched_on": "2025-01-28",
+      "title": "Funeral in Berlin",
+      "year": 1966,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "funeral-in-berlin"
+    },
     {
       "watched_on": "2025-01-26",
       "title": "The Colours",
