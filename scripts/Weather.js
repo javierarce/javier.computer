@@ -20,21 +20,20 @@ class Weather extends HTMLElement {
         const description = this.capitalizeFirstLetter(
           weather.weather[0].description,
         );
-        const uvi = weather.uvi;
-        const temperature = weather.temp;
-        const feelsLike = weather.feels_like;
-        const humidity = weather.humidity;
-        const sunset = new Date(weather.sunset * 1000)
-          .toLocaleTimeString()
-          .substring(0, 5);
+
+        const temperature = weather.main.temp;
+        const feelsLike = weather.main.feels_like;
+        const humidity = weather.main.humidity;
+        const sunset = new Date(weather.sys.sunset * 1000).toLocaleTimeString(
+          ["en-US"],
+          { hour: "2-digit", minute: "2-digit" },
+        );
 
         let parts = [description];
         parts.push(
           `The temperature in ${city} is ${temperature}ºC (feels like ${feelsLike}ºC)`,
         );
-        if (uvi > 2) {
-          parts.push(`UVI: ${uvi}`);
-        }
+
         parts.push(`Humidity: ${humidity}%`);
         parts.push(`Sunset time is ${sunset}.`);
 
