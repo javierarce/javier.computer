@@ -1,7 +1,27 @@
 {
   "updated_at": "2025-02-07",
-  "count": 836,
+  "count": 838,
   "movies": [
+    {
+      "watched_on": "2025-02-07",
+      "title": "Amsterdamned",
+      "year": 1988,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "amsterdamned"
+    },
+    {
+      "watched_on": "2025-02-06",
+      "title": "Boogie Nights",
+      "year": 1997,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "boogie-nights"
+    },
     {
       "watched_on": "2025-02-04",
       "title": "Crossing Delancey",
