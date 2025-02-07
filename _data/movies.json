@@ -1,7 +1,17 @@
 {
-  "updated_at": "2025-02-04",
-  "count": 835,
+  "updated_at": "2025-02-07",
+  "count": 836,
   "movies": [
+    {
+      "watched_on": "2025-02-04",
+      "title": "Crossing Delancey",
+      "year": 1988,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "crossing-delancey"
+    },
     {
       "watched_on": "2025-02-02",
       "title": "Say Nothing",
