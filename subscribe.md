@@ -1,7 +1,10 @@
 ---
 layout: about
-title: Subscribe
-description: Newsletter
+title: Newsletter
+description: >
+    Únete a las 84 personas que están confundidas y suscritas a mi lista de
+    correo de bajísima intensidad, y recibe avisos cuando publique un nuevo
+    proyecto o haga algo extremadamente gracioso.
 permalink: newsletter
 className: About
 ---
