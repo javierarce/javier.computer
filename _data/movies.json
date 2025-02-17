@@ -1,7 +1,57 @@
 {
-  "updated_at": "2025-02-07",
-  "count": 838,
+  "updated_at": "2025-02-17",
+  "count": 843,
   "movies": [
+    {
+      "watched_on": "2025-02-15",
+      "title": "Oddity",
+      "year": 2024,
+      "rating": 2,
+      "liked": false,
+      "stars": "★★",
+      "rewatched": false,
+      "permalink": "oddity-2024"
+    },
+    {
+      "watched_on": "2025-02-14",
+      "title": "Salve Maria",
+      "year": 2024,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "salve-maria"
+    },
+    {
+      "watched_on": "2025-02-11",
+      "title": "The Wailing",
+      "year": 2024,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "the-wailing-2024"
+    },
+    {
+      "watched_on": "2025-02-08",
+      "title": "If I Should Die Before I Wake",
+      "year": 1952,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "if-i-should-die-before-i-wake-1952"
+    },
+    {
+      "watched_on": "2025-02-08",
+      "title": "The Year of Living Dangerously",
+      "year": 1982,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "the-year-of-living-dangerously"
+    },
     {
       "watched_on": "2025-02-07",
       "title": "Amsterdamned",
