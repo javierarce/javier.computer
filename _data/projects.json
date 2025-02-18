@@ -1,4 +1,15 @@
 {
+  "2025": [
+    {
+      "title": "Book Saboteur",
+      "url": "https://booksaboteur.com",
+      "description": "Poetically sabotage your electronic books"
+    }, {
+      "title": "Binocular Shot",
+      "url": "https://binocularshot.com",
+      "description": "A tribute to movies with inaccurate binocular shots."
+    }
+  ],
   "2024": [
     {
       "title": "Bluesky Looky Looker",
@@ -58,7 +69,7 @@
     },
     {
       "title": "Binocular Shot",
-      "url": "/binoculars",
+      "url": "https://binocularshot.com",
       "description": "A tribute to movies with inaccurate binocular shots."
     },
     {

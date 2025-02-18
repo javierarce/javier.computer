@@ -32,24 +32,22 @@ permalink: about
 {% assign drawings = drawings | plus: current_count -%}
 {% endfor -%}
 
-{% assign binocular_count = site.binoculars | size -%}
-
 {% include now.md %}
 
 ### About this computer
 
-This computer contains an amulet, a sphinx, [{{ post_count }} blog posts](/posts), a
-collection of silly songs, [{{ photo_count }} photos](/photos), one pun, [{{
-drawings }} drawings](/drawings), a modest [blogroll](/blogroll), a hidden
-passage to another dimension, a ghost story, [a newsletter](/newsletter) with
-{{ subscribers_count}} subscribers, a list of dog names, a list of names that
-are not dog names, references to [{{ projects}} of my personal projects](/projects), a pretty accurate list of all the [movies I've
-watched](/movies) since 2020, a pretty inaccurate list of all the [books I've
-read](/books), references to my early memories, [{{ map_count}} maps](/maps)
-listing {{ places_count }} of my favorite places, several photos of myself
-eating ice cream, a list of [{{ binocular_count }} movies](/binoculars) with
-scenes where binoculars are incorrectly depicted, a mirror, a coin, a yellow
-bird, a photo of your turtle, a turtle.
+This computer contains an amulet, a sphinx, [{{ post_count }} blog
+posts](/posts), a collection of silly songs, [{{ photo_count }}
+photos](/photos), one pun, [{{ drawings }} drawings](/drawings), a modest
+[blogroll](/blogroll), a hidden passage to another dimension, a ghost story, [a
+newsletter](/newsletter) with {{ subscribers_count}} subscribers, a list of dog
+names, a list of names that are not dog names, references to [{{ projects}} of
+my personal projects](/projects), a pretty accurate list of all the [movies
+I've watched](/movies) since 2020, a pretty inaccurate list of all the [books
+I've read](/books), references to my early memories, [{{ map_count}}
+maps](/maps) listing {{ places_count }} of my favorite places, several photos
+of myself eating ice cream, a mirror, a coin, a yellow bird, a photo of your
+turtle, a turtle.
 
 This computer doesn't track you, your friends, or your enemies.
 
