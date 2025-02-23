@@ -1,7 +1,47 @@
 {
-  "updated_at": "2025-02-17",
-  "count": 843,
+  "updated_at": "2025-02-23",
+  "count": 847,
   "movies": [
+    {
+      "watched_on": "2025-02-23",
+      "title": "In No Great Hurry: 13 Lessons in Life with Saul Leiter",
+      "year": 2014,
+      "rating": null,
+      "liked": false,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "in-no-great-hurry-13-lessons-in-life-with-saul-leiter"
+    },
+    {
+      "watched_on": "2025-02-23",
+      "title": "The Brutalist",
+      "year": 2024,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "the-brutalist"
+    },
+    {
+      "watched_on": "2025-02-21",
+      "title": "I Am Martin Parr",
+      "year": 2024,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "i-am-martin-parr"
+    },
+    {
+      "watched_on": "2025-02-19",
+      "title": "The New Years",
+      "year": 2024,
+      "rating": null,
+      "liked": false,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "the-new-years"
+    },
     {
       "watched_on": "2025-02-15",
       "title": "Oddity",
