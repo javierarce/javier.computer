@@ -7,7 +7,7 @@ class Photo < Liquid::Tag
   def render(context)
     "<div class='Photo'>
     <div class='Photo__content'>
-    <figure class='Figure'>
+    <figure class='figure'>
         <picture>
 
           <source data-srcset='https://img.javier.computer/#{@filename}_640.webp 640w, https://img.javier.computer/#{@filename}_1280.webp 1280w, https://img.javier.computer/#{@filename}_2880.webp 2880w' type='image/webp'>

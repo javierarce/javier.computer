@@ -2,15 +2,15 @@
 {% assign category = page.category | strip_newlines -%}
 {% assign layoutCategory = layout.category | strip_newlines -%}
 
-<div class="Navigation">
-  <div class="Navigation__main">
-    <div class="Navigation__header">
-      <a class="Navigation__link {% if page.home %}is-selected{% endif %}" href="/">Home</a>
+<div class="navigation">
+  <div class="navigation__main">
+    <div class="navigation__header">
+      <a class="navigation__link {% if page.home %}is-selected{% endif %}" href="/">Home</a>
     </div>
     {% include navigation/default.html -%}
   </div>
   {% if category.size > 0 or layoutCategory.size > 0 -%}
-  <div class="Navigation__secondary">
+  <div class="navigation__secondary">
     {% include navigation/secondary.html -%}
   </div>
   {% endif -%}

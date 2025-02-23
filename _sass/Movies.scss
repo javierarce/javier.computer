@@ -2,7 +2,7 @@
   margin: 0 0 1em;
 }
 
-.Layout__movies .Footer {
+.Layout__movies .footer {
   margin-top: 4em;
 }
 
@@ -37,7 +37,7 @@
 .Movie__list .Movie__listDate {
   display: inline-block;
   margin: 0 0.2em 0 0;
-  font-family: 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace;
+  font-family: var(--font-text-mono);
 }
 
 .Movie__list span {

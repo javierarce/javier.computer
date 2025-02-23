@@ -26,6 +26,6 @@ más lo peta ahora mismo.
 
 ---
 
-<div class="Footnotes">
+<div class="footnotes">
 <sub>1</sub> Actualización 8 de abril de 2020: obviamente el recital ha sido cancelado por… la Situación.
 </div>

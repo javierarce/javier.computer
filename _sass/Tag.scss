@@ -1,42 +1,43 @@
-.Tags__list {
-  padding: 0;
-  margin: 0 0 1em 0;
-  font-size: 1em;
-  list-style: none;
-}
+.Tags {
+  &__list {
+    padding: 0;
+    margin: 0 0 1em 0;
+    font-size: 1em;
+    list-style: none;
 
-.Tags__list:last-child {
-  margin: 0;
-}
+    &:last-child {
+      margin: 0;
+    }
 
-.Tags__list li {
-  margin: 0 0 0.4em 0;
-  list-style: none;
-}
+    li {
+      margin: 0 0 0.4em 0;
+      list-style: none;
 
-.Tags__list li a {
-  color: var(--white);
-  text-decoration: none;
-}
+      a {
+        color: var(--white);
+        text-decoration: none;
+      }
 
-.Tags__list .Tag {
-  margin: 0 0 2em;
-  list-style: none;
-  font-size: 1em;
-}
+    }
 
-.Tags__list .Tag a {
-  text-decoration: none;
-  color: var(--white);
-}
+    .Tag {
+      margin: 0 0 2em;
+      list-style: none;
+      font-size: 1em;
 
-.Tags__list .Tag .Tag__date {
-  font-size: 0.9em;
-  opacity: var(--lightOpacity);
-}
+      a {
+        text-decoration: none;
+        color: var(--white);
+      }
 
-.Tags__list p a {
-  text-decoration: underline;
-}
+      .Tag__date {
+        font-size: 0.9em;
+        opacity: var(--lightOpacity);
+      }
 
-.Tags__listItemDate {}
+      p a {
+        text-decoration: underline;
+      }
+    }
+  }
+}

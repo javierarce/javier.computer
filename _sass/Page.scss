@@ -1,50 +1,36 @@
-.Layout__page ul li a,
-.Layout__page p a,
-.Layout__page p a:hover {}
+.Layout__page {
+  .Page__content {
+    width: var(--width);
+    font-size: 1.2em;
+    margin: 0 auto 2em auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 
-.Layout__page .Page__content {
-  width: var(--width);
-  font-size: 1.2em;
-  margin: 0 auto 2em auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
+    p,
+    h3 {
+      margin-bottom: 0;
+    }
+  }
+
+  table {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        list-style: none;
+      }
+    }
+  }
 }
 
-.Layout__page .Page__content p,
-.Layout__page .Page__content h3 {
-  margin-bottom: 0;
-}
+.Page__content {
 
-.Layout__page .Page__content {
-  width: var(--width);
-  font-size: 1.2em;
-  margin: 0 auto 2em auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-}
-
-.Layout__page table ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.Layout__page table ul li {
-  list-style: none;
-}
-
-.Page__content a,
-.Page__content a:hover {
-  color: var(--link);
-}
-
-@media all and (max-width: 1024px) {
-
-  .Layout__page .Page__content,
-  .Layout__page {
-    width: 100%;
+  a,
+  a:hover {
+    color: var(--link);
   }
 }
 
@@ -56,6 +42,14 @@
   opacity: var(--lightOpacity);
 }
 
+@media all and (max-width: 1024px) {
+
+  .Layout__page .Page__content,
+  .Layout__page {
+    width: 100%;
+  }
+}
+
 @media all and (max-width: 640px) {
 
   .Layout__page .Page__content,
@@ -63,35 +57,34 @@
     width: 100%;
   }
 
-  .Layout__page table {
-    margin: 0;
-  }
+  .Layout__page {
+    table {
+      margin: 0;
 
-  .Layout__page thead {
-    display: none;
-  }
+      thead {
+        display: none;
+      }
 
-  .Layout__page tr {
-    display: flex;
-    flex-direction: column;
-    margin: 0 0 1em;
-  }
+      tr {
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 1em;
+      }
 
-  .Layout__page table td {
-    display: block;
-    width: 100%;
-    border: none;
-    padding: 0;
-    margin: 0 0 var(--space);
-  }
+      td {
+        display: block;
+        width: 100%;
+        border: none;
+        padding: 0;
+        margin: 0 0 var(--space);
 
-  .Layout__page tr {
-    display: flex;
-    flex-direction: column;
-    margin: 0 0 1em;
-  }
+        &:last-child {
+          margin: 0;
+        }
+      }
 
-  .Layout__page table td:last-child {
-    margin: 0;
+    }
+
+
   }
 }

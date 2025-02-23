@@ -1,40 +1,40 @@
-.Footer {
+.footer {
   display: flex;
   margin: 0 auto;
   width: var(--width);
-}
 
-.Footer__link {
-  margin: 0 0.8em 0 0;
-  text-decoration: none;
-  color: var(--text);
-  opacity: var(--lightOpacity);
-}
+  &__link {
+    margin: 0 0.8em 0 0;
+    text-decoration: none;
+    color: var(--text);
+    opacity: var(--op-light);
 
-.Footer__link:hover {
-  text-decoration: none;
-  color: var(--textHover);
-  opacity: 1;
+    &:hover {
+      text-decoration: none;
+      color: var(--textHover);
+      opacity: 1;
+    }
+  }
 }
 
 @media all and (max-width: 1024px) {
-  .Footer {
+  .footer {
     display: block;
     width: 100%;
-  }
 
-  .Footer__link {
-    margin: 0 0.4em 0 0;
+    &__link {
+      margin: 0 0.4em 0 0;
+    }
   }
 }
 
 @media all and (max-width: 640px) {
-  .Footer {
+  .footer {
     display: block;
     width: 100%;
-  }
 
-  .Footer__link {
-    margin: 0 0.4em 0 0;
+    &__link {
+      margin: 0 0.4em 0 0;
+    }
   }
 }

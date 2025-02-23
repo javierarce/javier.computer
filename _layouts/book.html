@@ -5,15 +5,15 @@ className: Book
 <div class="Content">
   {% include navigation.html %}
 
-  <div class="Book">
-    <div class="Book__content">
-      <div class="Book__header">
-        <div class="Book__title">{{ page.title }}</div>
-        <div class="Book__author">{{ page.author }}</div>
+  <div class="book">
+    <div class="book__content">
+      <div class="book__header">
+        <div class="book__title">{{ page.title }}</div>
+        <div class="book__author">{{ page.author }}</div>
       </div>
-      <div class="Book__page">
+      <div class="book__page">
           {% if page.cover -%}
-        <div class="Book__cover">
+        <div class="book__cover">
           <img src="/img/covers/{{page.cover}}" alt="Cover for {{page.title}}">
         </div>
           {% endif -%}

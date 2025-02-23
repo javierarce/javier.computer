@@ -14,11 +14,11 @@ show_title: true
 
 <div class="Project__intro">Pequeño y misterioso fanzine de periodicidad caprichosa, contenido dudoso, edición peligrosa y ambición sospechosa. Editado con cariño y faltas de ortografía.</div>
 
-<figure class="Figure"> 
-<img class="Figure__image is-bn lazy" data-src="/img/boletin-botanico/01/01.png"> </figure>
+<figure class="figure"> 
+<img class="figure__image is-bn lazy" data-src="/img/boletin-botanico/01/01.png"> </figure>
 
-<figure class="Figure"> 
-<img class="Figure__image is-bn lazy" data-src="/img/boletin-botanico/01/02.png"> </figure>
+<figure class="figure"> 
+<img class="figure__image is-bn lazy" data-src="/img/boletin-botanico/01/02.png"> </figure>
 
 ### Promoción
 

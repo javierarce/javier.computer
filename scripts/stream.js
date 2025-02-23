@@ -15,7 +15,7 @@ fetch(URL).then(response => response.json()).then((data) => {
     $photoContent.classList.add('Photo__content')
 
     const $figure = document.createElement('figure')
-    $figure.classList.add('Figure')
+    $figure.classList.add('figure')
 
     const $picture = document.createElement('picture')
 

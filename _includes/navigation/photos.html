@@ -1,27 +1,31 @@
 {% assign matching_location = site.locations | where: "location", page.location
-| first -%} {% if layout.grid == true %} {% assign grid = '/grid' %} {% else %}
-{% assign grid = '' %} {% endif %}
+| first -%} 
+{% if layout.grid == true -%} 
+  {% assign grid = '/grid' -%} 
+{% else -%}
+  {% assign grid = '' -%} 
+{% endif -%}
 
-<div class="Navigation__links">
+<div class="navigation__links">
   {% if page.category == 'photo' -%}
-  <a class="Navigation__link is-selected" href="{{ page.permalink }}">Post</a>
+  <a class="navigation__link is-selected" href="{{ page.permalink }}">Post</a>
   {% endif -%} {% unless page.hide_location %}
   <a
-    class="Navigation__link {% if page.category == 'photos' %}is-selected{% endif %}"
-    href="/photos/{{ page.location }}{{ grid }}"
-    >{{ matching_location.title }}</a
-  >
-  {% endunless %}
+      class="navigation__link {% if page.category == 'photos' %}is-selected{% endif %}"
+      href="/photos/{{ page.location }}{{ grid }}"
+      >{{ matching_location.title }}</a
+    >
+    {% endunless %}
 
-  <a
-    class="Navigation__link {% if permalink == 'photos' %}is-selected{% endif %}"
-    href="/photos"
-    >Feed</a
-  >
-  <a
-    class="Navigation__link {% if permalink == 'photos/archive' %}is-selected{% endif %}"
-    href="/photos/archive"
-    >Archive</a
-  >
-  <a class="Navigation__link" href="/feeds/photos.xml">RSS</a>
+    <a
+        class="navigation__link {% if permalink == 'photos' %}is-selected{% endif %}"
+        href="/photos"
+        >Feed</a
+      >
+      <a
+          class="navigation__link {% if permalink == 'photos/archive' %}is-selected{% endif %}"
+          href="/photos/archive"
+          >Archive</a
+        >
+        <a class="navigation__link" href="/feeds/photos.xml">RSS</a>
 </div>

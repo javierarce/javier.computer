@@ -10,13 +10,13 @@ class Lightbox {
 
     this.injectMarkup();
 
-    this.lightbox = document.querySelector(".Lightbox");
-    this.$image = document.querySelector(".Lightbox__image");
+    this.lightbox = document.querySelector(".lightbox");
+    this.$image = document.querySelector(".lightbox__image");
     this.spinner = document.querySelector(".Spinner");
-    this.$close = document.querySelector(".Lightbox__button.is-close");
-    this.$caption = document.querySelector(".Lightbox__caption");
-    this.$prev = document.querySelector(".Lightbox__button.is-prev");
-    this.$next = document.querySelector(".Lightbox__button.is-next");
+    this.$close = document.querySelector(".lightbox__button.is-close");
+    this.$caption = document.querySelector(".lightbox__caption");
+    this.$prev = document.querySelector(".lightbox__button.is-prev");
+    this.$next = document.querySelector(".lightbox__button.is-next");
     this.photos = Array.from(document.querySelectorAll(".Photo"));
 
     this.currentIndex = 0;
@@ -27,16 +27,16 @@ class Lightbox {
 
   injectMarkup() {
     const lightboxMarkup = `
-      <div class="Lightbox">
-        <button class="Lightbox__button is-close"></button>
-        <div class="Lightbox__content">
-          <div class="Lightbox__imageContainer">
-            <img src="" alt="" title="" class="Lightbox__image">
-            <div class="Lightbox__caption"></div>
+      <div class="lightbox">
+        <button class="lightbox__button is-close"></button>
+        <div class="lightbox__content">
+          <div class="lightbox__imageContainer">
+            <img src="" alt="" title="" class="lightbox__image">
+            <div class="lightbox__caption"></div>
           </div>
         </div>
-        <button class="Lightbox__button is-prev"></button>
-        <button class="Lightbox__button is-next"></button>
+        <button class="lightbox__button is-prev"></button>
+        <button class="lightbox__button is-next"></button>
         <div class="Spinner is-lightbox"></div>
       </div>
     `;

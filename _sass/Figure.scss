@@ -1,11 +1,11 @@
-.Figure {
+.figure {
   width: 100%;
   height: auto;
   box-sizing: border-box;
-}
 
-.Figure__title {
-  margin: 1.4em 0 2em 0;
-  font-weight: 500;
-  text-transform: capitalize;
+  &__title {
+    margin: 1.4em 0 2em 0;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
 }

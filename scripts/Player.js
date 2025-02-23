@@ -143,20 +143,20 @@ class Player {
     this.dataset = this.$element.dataset
     this.videoId = this.dataset.video
     this.title = this.dataset.title
-    this.$element.classList.add('Player__frame')
+    this.$element.classList.add('player__frame')
 
-    this.$player = this.createElement('div', 'Player')
-    this.$play = this.createElement('div', 'Player__play', '▶')
-    this.$time = this.createElement('div', 'Player__time')
-    this.$progress = this.createElement('div', 'Player__progress')
-    this.$progressBar = this.createElement('div', 'Player__progressBar')
+    this.$player = this.createElement('div', 'player')
+    this.$play = this.createElement('div', 'player__play', '▶')
+    this.$time = this.createElement('div', 'player__time')
+    this.$progress = this.createElement('div', 'player__progress')
+    this.$progressBar = this.createElement('div', 'player__progressBar')
 
-    this.$played = this.createElement('div', 'Player__played', '00:00')
-    this.$duration = this.createElement('div', 'Player__duration', '00:00')
-    this.$title = this.createElement('a', 'Player__title', '...')
+    this.$played = this.createElement('div', 'player__played', '00:00')
+    this.$duration = this.createElement('div', 'player__duration', '00:00')
+    this.$title = this.createElement('a', 'player__title', '...')
 
-    let $separator = this.createElement('div', 'Player__separator', '/')
-    let $left = this.createElement('div', 'Player__info')
+    let $separator = this.createElement('div', 'player__separator', '/')
+    let $left = this.createElement('div', 'player__info')
 
     this.$time.onclick = this.killEvent.bind(this)
     this.$play.onclick = this.onClickPlay.bind(this)

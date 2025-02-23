@@ -1,0 +1,106 @@
+:root {
+  /* Colors */
+  --white: #FFFFFF;
+  --black: #020b19;
+  --pureBlack: #000000;
+  --gray: rgba(255, 255, 255, 0.3);
+  --gray2: #EEEEEE;
+  --orange: #FF4500;
+  --blue: #2477BE;
+  --green: #23D5AB;
+  --yellow: #FFD700;
+  --purple: #AE81FF;
+
+  /* Semantic colors */
+  --link: #FFC107;
+  --error: var(--yellow);
+  --text: var(--white);
+  --textHover: var(--white);
+  --background: var(--black);
+  --color-book-purple: #6A1B9A;
+  --color-book-teal: #009688;
+  --color-book-white: var(--white);
+  --color-book-black: var(--black);
+  --color-book-red: #C62828;
+  --color-book-green: #2E7D32;
+  --color-book-blue: #1976D2;
+  --color-book-yellow: #F9A825;
+  --color-book-brown: #8D6E63;
+  --color-book-pink: #AD1457;
+  --color-book-dark-teal: #00695C;
+  --color-book-orange: #D84315;
+  --color-book-dark-green: #558B2F;
+  --color-book-dark-blue: #283593;
+  --color-book-dark-gray: #222;
+  --color-book-light-blue: #1565C0;
+  --color-book-light-pink: #EC407A;
+
+  /* Font */
+  --font-text-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-text-mono: 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace;
+
+  /*
+  --bg-color: var(--dark-blue);
+  --bg-player-color: var(--black);
+
+  --bg-color-button: var(--yellow);
+  --bg-color-button-hover: var(--dark-yellow);
+
+  --bg-color-input: var(--black);
+
+  --txt-color: var(--gray);
+  --txt-color-highlighted: var(--white);
+  --txt-color-input: var(--white);
+  --txt-color-button: var(--black);
+  --txt-color-button-hover: var(--black);
+
+  --txt-color-input-placeholder: var(--gray);
+
+  --txt-link: var(--yellow);
+  --txt-link-hover: var(--yellow);
+  */
+
+  /* Spacing */
+  --halfSpace: 0.2em;
+  --space: 0.4em;
+  --doubleSpace: 0.8em;
+
+  /* Dimensions */
+  --width: 800px;
+  --bigWidth: 1024px;
+  --fullWidth: 100%;
+  --sidebarWidth: 300px;
+
+  /* Other */
+  --borderRadius: 2px;
+  --lightOpacity: 0.5;
+
+  /* Opacity */
+  --op-light: 0.5;
+
+  /* Spacing */
+  --sp-sm: 0.2em;
+  --sp-md: 0.4em;
+  --sp-lg: 0.8em;
+  --sp-xl: 1em;
+  --sp-xxl: 1.5em;
+  --sp-xxxl: 3em;
+
+  /* Padding */
+  --pd-sm: 0.2rem;
+  --pd-md: 0.4rem;
+  --pd-lg: 0.8rem;
+  --pd-xl: 1rem;
+  --pd-xxl: 2rem;
+  --pd-xxxl: 3rem;
+
+  --pd-desktop: var(--pd-xxl);
+  --pd-mobile: var(--pd-xl);
+
+  /* Border radius */
+  --br-sm: 2px;
+  --br-md: 4px;
+  --br-lg: 6px;
+
+  --br-default: var(--br-lg);
+}

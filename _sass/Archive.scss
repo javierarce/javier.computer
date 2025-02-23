@@ -3,31 +3,33 @@
   border-bottom: 1px solid var(--gray);
 }
 
-.Archive__list {
-  margin: 0;
-}
+.archive {
+  &__list {
+    margin: 0;
 
-.Archive__list li {
-  display: flex;
-  list-style: none;
-  padding: 0;
-}
+    li {
+      display: flex;
+      list-style: none;
+      padding: 0;
 
-.Archive__list li a {
-  text-decoration: none;
-}
+      a {
+        text-decoration: none;
+      }
+    }
+  }
 
-.Archive__year {
-  margin: 0 0 1em;
-}
+  &__year {
+    margin: 0 0 1em;
+  }
 
-.Archive__month {
-  break-inside: avoid;
-  margin: 0 0 2em;
-}
+  &__month {
+    break-inside: avoid;
+    margin: 0 0 2em;
+  }
 
-.Archive__day {
-  font-family: 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace;
-  margin: 0 0.4em 0 0;
-  opacity: var(--lightOpacity);
+  &__day {
+    font-family: var(--font-text-mono);
+    margin: 0 0.4em 0 0;
+    opacity: var(--lightOpacity);
+  }
 }

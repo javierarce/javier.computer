@@ -15,7 +15,7 @@ permalink: books
 
 {% if sorted_books_reading.size > 0 %}
 <div id="year-leyendo" class="Stack__date">Leyendo</div>
-<div class="Book__stack">
+<div class="book__stack">
   {% for book in sorted_books_reading %}
   {% assign content = book.content | strip_newlines %}
 
@@ -29,23 +29,23 @@ permalink: books
   {% assign height = book.pages | map_range: 0, 1000, 80, 300 %}
 
   {% if book.link %}
-  <a href="{{ book.link }}" class="Book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
-    <div class="Book__spineContent">
-      <div class="Book__title">{{ book.title }}</div>
-      <div class="Book__author">{{ book.author }}</div>
+  <a href="{{ book.link }}" class="book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
+    <div class="book__content">
+      <div class="book__title">{{ book.title }}</div>
+      <div class="book__author">{{ book.author }}</div>
     </div>
     {% if book.progress %}
-    <div class="Book__progress" style="width: {{book.progress}}%"></div>
+    <div class="book__progress" style="width: {{book.progress}}%"></div>
     {% endif %}
   </a>
   {% else %}
-  <div class="Book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
-    <div class="Book__spineContent">
-      <div class="Book__title">{{ book.title }}</div>
-      <div class="Book__author">{{ book.author }}</div>
+  <div class="book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
+    <div class="book__content">
+      <div class="book__title">{{ book.title }}</div>
+      <div class="book__author">{{ book.author }}</div>
     </div>
     {% if book.progress %}
-    <div class="Book__progress" style="width: {{book.progress}}%"></div>
+    <div class="book__progress" style="width: {{book.progress}}%"></div>
     {% endif %}
   </div>
   {% endif %}
@@ -57,7 +57,7 @@ permalink: books
 {% for group in grouped_books %}
 <div id="year-{{group.name}}" class="Stack__date">{{ group.name }}</div>
 
-<div class="Book__stack">
+<div class="book__stack">
   {% for book in group.items %}
   {% assign content = book.content | strip_newlines %}
 
@@ -71,17 +71,17 @@ permalink: books
   {% assign height = book.pages | map_range: 0, 1000, 80, 300 %}
 
   {% if book.link %}
-  <a href="{{ book.link }}" class="Book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
-    <div class="Book__spineContent">
-      <div class="Book__title">{{ book.title }}</div>
-      <div class="Book__author">{{ book.author }}</div>
+  <a href="{{ book.link }}" class="book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
+    <div class="book__content">
+      <div class="book__title">{{ book.title }}</div>
+      <div class="book__author">{{ book.author }}</div>
     </div>
   </a>
   {% else %}
-  <div class="Book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
-    <div class="Book__spineContent">
-      <div class="Book__title">{{ book.title }}</div>
-      <div class="Book__author">{{ book.author }}</div>
+  <div class="book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
+    <div class="book__content">
+      <div class="book__title">{{ book.title }}</div>
+      <div class="book__author">{{ book.author }}</div>
     </div>
   </div>
   {% endif %}

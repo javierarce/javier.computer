@@ -5,42 +5,46 @@
   border-bottom: 3px solid var(--white);
   border-left: 3px solid var(--background);
   animation: spinner 0.8s infinite linear;
-}
 
-.Spinner.is-inside-button {
-  position: absolute;
-  right: -34px;
-  width: 20px;
-  height: 20px;
-}
-
-.Spinner.is-lightbox {
-  position: absolute;
-  top: 1em;
-  right: 2.6em;
-  border-top-width: 2px;
-  border-right-width: 2px;
-  border-bottom-width: 2px;
-  border-left-width: 2px;
-}
-
-.Spinner.is-lightbox,
-.Spinner.is-lightbox:after {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-}
-
-.Spinner.is-visible {
-  display: block;
-}
-
-.Spinner,
-.Spinner:after {
   width: 30px;
   height: 30px;
   border-radius: 50%;
+
+  &:after {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+
+  &.is-inside-button {
+    position: absolute;
+    right: -34px;
+    width: 20px;
+    height: 20px;
+  }
+
+  &.is-lightbox {
+    position: absolute;
+    top: 1em;
+    right: 2.6em;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+  }
+
+  &.is-lightbox,
+  &.is-lightbox:after {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+  }
+
+  &.is-visible {
+    display: block;
+  }
 }
+
 
 @keyframes spinner {
   0% {

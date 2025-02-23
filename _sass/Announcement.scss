@@ -6,11 +6,11 @@
   flex-direction: row;
   margin: 0 0 3em;
   opacity: var(--lightOpacity);
-}
 
-.Announcement:hover {
-  opacity: 1;
-  text-decoration: none;
+  &:hover {
+    opacity: 1;
+    text-decoration: none;
+  }
 }
 
 @media all and (max-width: 640px) {

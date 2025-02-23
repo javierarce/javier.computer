@@ -15,8 +15,8 @@ show_title: true
 <p>Working at <a href="https://carto.com">CARTO</a>, the Location Intelligence platform, taught me a lot about digital cartography and web mapping, something I’ve continued applying in several personal projects.<sup>1</sup></p>
 </div>
 
-<figure class="Figure"> 
-<img class="Figure__image is-bn lazy" data-src="https://javier.work/images/mapwithme/home.jpg">
+<figure class="figure"> 
+<img class="figure__image is-bn lazy" data-src="https://javier.work/images/mapwithme/home.jpg">
 </figure>
 
 [This project](https://map.javierarce.com) started because I wanted to create a simple solution to get travel tips from my friends. In the past, I had made a couple of interactive maps to get recommendations for my trips to Japan and [New York](https://twitter.com/javier/status/771076164517523456) and it had worked pretty well.
@@ -25,8 +25,8 @@ Setting up new maps was manual process, though. I wanted to set up new maps fast
 
 Another big reason to create this project was that I wanted other people to do the same thing without dealing with server configurations.
 
-<figure class="Figure"> 
-<img class="Figure__image is-bn lazy" data-src="https://javier.work/images/mapwithme/config.jpg">
+<figure class="figure"> 
+<img class="figure__image is-bn lazy" data-src="https://javier.work/images/mapwithme/config.jpg">
 </figure>
 
 ### Export / Import
@@ -37,8 +37,8 @@ Users can subscribe to the map using RSS or download the public data in CSV form
 
 Initially, I decided to use Twitter OAuth as the login system and also as a way to reduce spam messages. In a second version, I expanded the options to allow for more fine-grained interactions with the maps.
 
-<figure class="Figure"> 
-<img class="Figure__image is-bn lazy" data-src="https://javier.work/images/mapwithme/about.jpg">
+<figure class="figure"> 
+<img class="figure__image is-bn lazy" data-src="https://javier.work/images/mapwithme/about.jpg">
 </figure>
 
 In the current version, map administrators can now select three different publication settings: anonymous (anybody can publish anything without login), moderated (the admin has to approve every publication), and protected (nobody except for the administrator can publish anything).
@@ -50,8 +50,8 @@ Right from the start of the project, I decided to avoid using any Google solutio
 Because of this, the reverse geocoding (which is the system that transforms a point in a map into an address) is powered by the open-source project <a href="https://nominatim.openstreetmap.org/ui/search" target="_blank">Nominatim by OpenStreetMap</a>.
           
 
-<figure class="Figure"> 
-<img class="Figure__image is-bn lazy" data-src="https://javier.work/images/mapwithme/error.jpg">
+<figure class="figure"> 
+<img class="figure__image is-bn lazy" data-src="https://javier.work/images/mapwithme/error.jpg">
 </figure>
 
 Since **OpenStreetMap** is a public project and has limited resources, if they don’t have the address for the location, I encourage the visitor to add it to the project themself. In a future version, I'd like to automate this process entirely. But in any case, visitors can still add the place manually to the map.
@@ -63,6 +63,6 @@ Thanks to **Glitch's** remix functionality people can clone my example and creat
 ---
 
 
-<div class="Footnotes">
+<div class="footnotes">
 <p><sub>1</sub> Like this one I launched back in 2015 called Spotimap, which was a catalog of 7,681 songs that were related to 212 cities across the globe. The project was covered in Boing Boing, The Washington Post, Bloomberg, and Die Welt).</p>
 </div>  

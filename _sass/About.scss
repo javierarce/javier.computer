@@ -1,7 +1,7 @@
 .Layout__about ul li a,
 .Layout__about p a,
 .Layout__about p a:hover {
-    color: var(--link); 
+  color: var(--link);
 }
 
 .Layout__about .About__content p,
@@ -18,17 +18,21 @@
   gap: 1em;
 }
 
-.Layout__about table ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.Layout__about {
+  table ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      list-style: none;
+    }
+  }
 }
 
-.Layout__about table ul li {
-  list-style: none;
-}
 
 @media all and (max-width: 1024px) {
+
   .Layout__about .About__content,
   .Layout__about {
     width: 100%;
@@ -36,40 +40,40 @@
 }
 
 @media all and (max-width: 640px) {
+
   .Layout__about .About__content,
   .Layout__about {
     width: 100%;
   }
 
-  .Layout__about table {
-    margin: 0;
-  }
+  .Layout__about {
 
-  .Layout__about thead {
-    display: none;
-  }
+    table {
+      margin: 0;
 
-  .Layout__about tr {
-    display: flex;
-    flex-direction: column;
-    margin: 0 0 1em;
-  }
+      td {
+        display: block;
+        width: 100%;
+        border: none;
+        padding: 0;
+        margin: 0 0 var(--space);
 
-  .Layout__about table td {
-    display: block;
-    width: 100%;
-    border: none;
-    padding: 0;
-    margin: 0 0 var(--space);
-  }
+        &:last-child {
+          margin: 0;
+        }
+      }
 
-  .Layout__about tr {
-    display: flex;
-    flex-direction: column;
-    margin: 0 0 1em;
-  }
+    }
 
-  .Layout__about table td:last-child {
-    margin: 0;
+    thead {
+      display: none;
+    }
+
+    tr {
+      display: flex;
+      flex-direction: column;
+      margin: 0 0 1em;
+    }
+
   }
 }

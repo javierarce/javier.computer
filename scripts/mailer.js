@@ -160,7 +160,7 @@ class Mail {
       elementType: "label",
       text: "Email",
       htmlFor: inputId,
-      className: "Label",
+      className: "label",
     });
 
     this.$email = this.createElement({
@@ -180,7 +180,7 @@ class Mail {
     const textareaId = "comment-textarea";
     const $input = this.createElement({ className: "Input__field" });
     const $label = this.createElement({
-      className: "Label",
+      className: "label",
       elementType: "label",
       text: this.what,
       htmlFor: textareaId,
@@ -201,7 +201,7 @@ class Mail {
   renderSendButton() {
     const $actions = this.createElement({
       elementType: "div",
-      className: "Form__actions",
+      className: "form__actions",
     });
 
     this.$message = this.createElement({
@@ -211,7 +211,7 @@ class Mail {
 
     this.$sendButton = this.createElement({
       elementType: "button",
-      className: "Button is-disabled",
+      className: "button is-disabled",
       text: `Enviar ${this.what.toLowerCase()}`,
       onclick: () => this.sendText(),
     });
@@ -262,7 +262,7 @@ class Mail {
   render() {
     this.$el = document.querySelector(".js-form");
     this.what = this.$el.getAttribute("data-what");
-    this.$form = this.createElement({ className: "Form" });
+    this.$form = this.createElement({ className: "form" });
 
     this.renderTitle();
     this.renderComment();

@@ -1,13 +1,15 @@
-.has-lightbox .Photo {
-  cursor: zoom-in;
-  transition: opacity 250ms ease-in-out;
+.has-lightbox {
+  .Photo {
+    cursor: zoom-in;
+    transition: opacity 250ms ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 }
 
-.has-lightbox .Photo:hover {
-  opacity: 0.8;
-}
-
-.Lightbox {
+.lightbox {
   display: flex;
   position: fixed;
   z-index: 999;
@@ -19,120 +21,123 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out;
-}
 
-.Lightbox.hide-ui .Lightbox__button,
-.Lightbox.hide-ui .Lightbox__caption {
-  opacity: 0;
-  visibility: hidden;
-}
+  &.hide-ui {
 
-.Lightbox__caption {
-  position: absolute;
-  bottom: 1em;
-  text-shadow: 1px 1px 1em rgba(0, 0, 0, 0.8);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out;
-  text-align: center;
-  line-height: normal;
-}
+    .lightbox__button,
+    .lightbox__caption {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
 
-.Lightbox__caption.is-visible {
-  opacity: 1;
-  visibility: visible;
-}
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
 
-.Lightbox.is-active {
-  opacity: 1;
-  visibility: visible;
-}
+    .lightbox__content {
+      transform: scale(1);
+    }
+  }
 
-.Lightbox.is-active .Lightbox__content {
-  transform: scale(1);
-}
+  &-image.is-loaded {
+    opacity: 1;
+  }
 
-.Lightbox-image.is-loaded {
-  opacity: 1;
-}
+  &__caption {
+    position: absolute;
+    bottom: 1em;
+    text-shadow: 1px 1px 1em rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out;
+    text-align: center;
+    line-height: normal;
 
-.Lightbox__content {
-  margin: auto;
-  max-width: 90%;
-  max-height: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    &.is-visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
 
-.Lightbox__imageContainer {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  &__content {
+    margin: auto;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-.Lightbox__image {
-  max-width: 2880px;
-  max-height: 95vh;
-  object-fit: contain;
-  opacity: 0;
-  transition: opacity 250ms ease-in-out;
-  border-radius: var(--borderRadius);
-}
+  &__imageContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-.Lightbox__button {
-  position: absolute;
-  text-decoration: none;
-  font-size: 18px;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  transition: opacity 250ms ease-in-out;
-  -webkit-appearance: none;
-  appearance: none;
-}
+  &__image {
+    max-width: 2880px;
+    max-height: 95vh;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+    border-radius: var(--borderRadius);
+  }
 
-.Lightbox__button:hover {
-  opacity: 0.8;
-}
+  &__button {
+    position: absolute;
+    text-decoration: none;
+    font-size: 18px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: opacity 250ms ease-in-out;
+    -webkit-appearance: none;
+    appearance: none;
 
-.Lightbox__button.is-prev {
-  background: url('/img/icons/chevron-left.svg') no-repeat center;
-  width: 32px;
-  height: 32px;
-  left: 1em;
-  top: 50%;
-  transform: translateY(-50%);
-}
+    &:hover {
+      opacity: 0.8;
+    }
 
-.Lightbox__button.is-next {
-  right: 1em;
-  background: url('/img/icons/chevron-right.svg') no-repeat center;
-  width: 32px;
-  height: 32px;
-  top: 50%;
-  transform: translateY(-50%);
-}
+    &.is-prev {
+      background: url('/img/icons/chevron-left.svg') no-repeat center;
+      width: 32px;
+      height: 32px;
+      left: 1em;
+      top: 50%;
+      transform: translateY(-50%);
+    }
 
-.Lightbox__button.is-close {
-  top: 1em;
-  right: 1em;
-  width: 28px;
-  height: 28px;
-  background: url('/img/icons/close.svg') no-repeat center;
+    &.is-next {
+      right: 1em;
+      background: url('/img/icons/chevron-right.svg') no-repeat center;
+      width: 32px;
+      height: 32px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &.is-close {
+      top: 1em;
+      right: 1em;
+      width: 28px;
+      height: 28px;
+      background: url('/img/icons/close.svg') no-repeat center;
+    }
+  }
 }
 
 @media all and (max-width: 1500px) {
-  .Lightbox__image {
+  .lightbox__image {
     max-width: 100%;
   }
 }
 
 @media all and (max-width: 640px) {
-  .Lightbox__image {
+  .lightbox__image {
     max-width: 100%;
   }
 }

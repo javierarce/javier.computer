@@ -2,6 +2,7 @@
 # this ensures Jekyll reads the file to be transformed into CSS later 
 # only Main files contain this front matter, not partials. 
 --- 
+@import '_variables';
 @import '_transitions';
 @import '_reset';
 
@@ -33,7 +34,6 @@
 @import 'Pagination';
 @import 'Photo';
 @import 'Player';
-@import 'Poll';
 @import 'Post';
 @import 'Project';
 @import 'Song';

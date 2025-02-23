@@ -15,8 +15,8 @@ show_title: true
 <p>This project was a gift to one of my favorite communities
 , <a href="https://are.na">Are.na</a>. With <a href="https://arena.javierarce.com">Kindle to Arena</a> people can easily send highlights and notes from their Kindle reader into <strong>Are.na</strong>.</p></div>
 
-<figure class="Figure"> 
-<img class="Figure__image is-bn lazy" data-src="https://javier.work/images/arena/home.jpg">
+<figure class="figure"> 
+<img class="figure__image is-bn lazy" data-src="https://javier.work/images/arena/home.jpg">
 </figure>
 
 
@@ -26,8 +26,8 @@ show_title: true
 
 **Are.na** has been described as "social media for people who dislike social media", "social media that doesn’t damage your brain," and also "Pinterest for nerds." I think all those descriptions are highly accurate.
 
-<figure class="Figure"> 
-<img class="Figure__image is-bn lazy" data-src="https://javier.work/images/arena/highlights.jpg">
+<figure class="figure"> 
+<img class="figure__image is-bn lazy" data-src="https://javier.work/images/arena/highlights.jpg">
 </figure>
 
 ### How does it work?
@@ -38,8 +38,8 @@ Like with my [enFont Terrible project](/projects/enfont), I took a respectful ap
 
 The user can modify the highlights and notes before sending the data to Are.na, and since Are.na uses Markdown in the description of the content, users can apply their own formatting.
 
-<figure class="Figure"> 
-<img class="Figure__image is-bn lazy" data-src="https://javier.work/images/arena/about.jpg">
+<figure class="figure"> 
+<img class="figure__image is-bn lazy" data-src="https://javier.work/images/arena/about.jpg">
 </figure>
 
 Future updates include adding a mechanism to create simple templates so users can customize the way they publish the highlights, and an option to share the clippings into a common Are.na channel.

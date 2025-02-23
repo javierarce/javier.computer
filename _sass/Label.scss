@@ -1,9 +1,9 @@
-.Label {
+.label {
   font-weight: 500;
-}
 
-.Label .is-optional,
-.Label__help {
-  font-size: 0.8em;
-  opacity: var(--lightOpacity);
+  .is-optional,
+  &__help {
+    font-size: 0.8em;
+    opacity: var(--lightOpacity);
+  }
 }
