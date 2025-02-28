@@ -17,7 +17,7 @@ table+h2 {
 }
 
 table {
-  width: 100%;
+  width: var(--width-full);
   font-size: var(--font-size-lg);
 }
 
@@ -99,7 +99,7 @@ table tr:last-child td {
   .Layout__movies,
   .Layout__projects {
     table {
-      width: 100%;
+      width: var(--width-full);
     }
 
     table tr:last-child {
@@ -118,7 +118,7 @@ table tr:last-child td {
     }
 
     table td {
-      width: 100% !important;
+      width: var(--width-full) !important;
       padding: 0.2em 0;
       border: none;
     }

@@ -25,7 +25,7 @@ description: Movies I've watched
 <ul class="Movie__list">
 {% for movie in group.items -%}
 <li>
-<span class="Movie__listDate">{{ movie.watched_on | date: "%d" }}</span>
+<span class="Movie__date">{{ movie.watched_on | date: "%d" }}</span>
 <a href="https://letterboxd.com/javier/film/{{ movie.permalink }}">{{ movie.title }} ({{ movie.year }})</a>
 <span>{{ movie.stars }}</span> 
 </li>

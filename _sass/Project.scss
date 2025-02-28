@@ -9,7 +9,7 @@
   }
 
   hr {
-    width: 100%;
+    width: var(--width-full);
     max-width: var(--width-md);
   }
 
@@ -33,11 +33,11 @@
   }
 
   &__lists {
-    gap: 2em;
+    gap: var(--gap-xl);
   }
 
   &__year {
-    gap: 1em;
+    gap: var(--gap-md);
 
     h3 {
       margin: 0;
@@ -92,13 +92,13 @@
     img,
     video {
       display: block;
-      width: 100%;
+      width: var(--width-full);
       border-radius: var(--br-sm);
     }
 
     .Photo__caption {
       display: block;
-      width: 100%;
+      width: var(--width-full);
     }
   }
 
@@ -132,7 +132,7 @@
   display: grid;
   grid-template-columns: repeat(2, 2fr);
   grid-gap: 0.8em;
-  width: 100%;
+  width: var(--width-full);
   margin-bottom: 4em;
 }
 
@@ -172,25 +172,19 @@
 
   .Project__intro,
   .Layout__project .Project p,
-  .Layout__project .Project__content h3 {
-    width: 100%;
-  }
-
-  .Layout__project .Project .figure {
-    width: 100%;
-  }
-
+  .Layout__project .Project__content h3,
+  .Layout__project .Project .figure,
   .Project__cards {
-    width: 100%;
+    width: var(--width-full);
   }
 }
 
 @media all and (max-width: 800px) {
   .Layout__project .Content {
-    width: 100%;
+    width: var(--width-full);
 
     img {
-      width: 100%;
+      width: var(--width-full);
       height: auto;
       object-fit: cover;
     }
@@ -204,6 +198,6 @@
 
 @media all and (max-width: 640px) {
   .Layout__project .Content {
-    width: 100%;
+    width: var(--width-full);
   }
 }

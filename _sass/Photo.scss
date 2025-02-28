@@ -19,7 +19,7 @@ figcaption {
 .Layout__grid .Content .Photo__collections {
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  gap: var(--gap-xl);
   text-align: center;
   margin-bottom: 4em;
 }
@@ -28,7 +28,7 @@ figcaption {
 .Layout__grid .Content .Photo__collection {
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  gap: var(--gap-xl);
   text-align: left;
 }
 
@@ -48,15 +48,15 @@ figcaption {
 .Layout__grid .Content .Photo__collection .Photo {
   display: flex;
   flex-direction: column;
-  gap: 1em;
-  width: 100%;
+  gap: var(--gap-md);
+  width: var(--width-full);
   height: auto;
   overflow: hidden;
 }
 
 .Photo__collection.has-grid .Photo img,
 .Layout__grid .Content .Photo__collection .Photo img {
-  width: 100%;
+  width: var(--width-full);
   height: 100%;
   object-fit: cover;
   aspect-ratio: 1;
@@ -151,13 +151,13 @@ figcaption {
 .Photo__collection .Post__content {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: var(--gap-md);
 }
 
 /* Photo */
 
 .Photo {
-  width: 100%;
+  width: var(--width-full);
   height: auto;
   box-sizing: border-box;
 }
@@ -165,7 +165,7 @@ figcaption {
 .Photo__content {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: var(--gap-md);
 }
 
 .Photos__archive .Photo__content {
@@ -178,7 +178,7 @@ figcaption {
 
 .Photo__content img {
   display: block;
-  width: 100%;
+  width: var(--width-full);
   max-width: var(--width-lg);
   border-radius: var(--br-sm);
 }
@@ -192,7 +192,7 @@ figcaption {
 
 .Photos__archive {
   display: grid;
-  width: 100%;
+  width: var(--width-full);
   margin: 0 auto 2em auto;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: var(--gap-sm);
@@ -214,7 +214,7 @@ figcaption {
 .Photo__collection {
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  gap: var(--gap-xl);
   margin: 0 0 4em 0;
 }
 
@@ -232,7 +232,7 @@ figcaption {
 
 .Photo__layout .Photo>.Photo__content img {
   height: auto;
-  width: 100%;
+  width: var(--width-full);
   max-width: none;
 }
 
@@ -264,21 +264,21 @@ figcaption {
 }
 
 .gg.is-vertical .Photo img {
-  width: 100%;
+  width: var(--width-full);
   height: 100%;
   object-fit: cover;
   aspect-ratio: 9/16;
 }
 
 .gg.is-square .Photo img {
-  width: 100%;
+  width: var(--width-full);
   height: 100%;
   object-fit: cover;
   aspect-ratio: 1;
 }
 
 .gg .Photo img {
-  width: 100%;
+  width: var(--width-full);
   height: 100%;
   object-fit: cover;
   aspect-ratio: 4/3;
@@ -288,7 +288,7 @@ figcaption {
   display: flex;
   flex-direction: column;
   gap: var(--gap-sm);
-  width: 100%;
+  width: var(--width-full);
 }
 
 .g>.g {
@@ -338,7 +338,7 @@ figcaption {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: var(--width-full);
   margin: auto;
   position: relative;
   text-align: center;
@@ -351,7 +351,7 @@ figcaption {
 
 .Photo__selector {
   font-size: 0.8em;
-  width: 100%;
+  width: var(--width-full);
   text-align: right;
 }
 
@@ -372,18 +372,17 @@ figcaption {
 
   .Layout__photo .Content,
   .Layout__photos .Content {
-    width: 100%;
+    width: var(--width-full);
   }
 
   .Photo__layout {
-    width: 100%;
+    width: var(--width-full);
   }
 
   .Photo__layout p,
   .Photo__layout p:last-child {
-    width: 100%;
+    width: var(--width-full);
   }
-
 
   .Layout__reportage .Post__footer,
   .Photo .Post__content,
@@ -392,14 +391,14 @@ figcaption {
   .Photo__collection .Post__content p,
   .Photo__collection .Post__content,
   .Photo__collection .Post__footer {
-    width: 100%;
+    width: var(--width-full);
   }
 }
 
 @media all and (max-width: 640px) {
 
   .Layout__reportage .g h3 {
-    width: 100%;
+    width: var(--width-full);
   }
 
   .gg,
@@ -419,28 +418,28 @@ figcaption {
   }
 
   .Layout__grid .Content .Photo__collections {
-    gap: 1em;
+    gap: var(--gap-md);
   }
 
   .Layout__reportage .Content,
   .Layout__photo .Content,
   .Layout__photos .Content {
-    width: 100%;
+    width: var(--width-full);
   }
 
   .Photo__layout {
-    width: 100%;
+    width: var(--width-full);
   }
 
   .Photo__layout p,
   .Photo__layout p:last-child,
   .Photo__layout .g ul,
   .Photo__layout .g ul:last-child {
-    width: 100%;
+    width: var(--width-full);
   }
 
   .Photos__archive img {
-    width: 100%;
+    width: var(--width-full);
     height: auto;
     object-fit: cover;
   }
@@ -460,7 +459,7 @@ figcaption {
 
   .h.has-one>div,
   .h.has-two>div {
-    width: 100%;
+    width: var(--width-full);
   }
 
   .g.with-caption {

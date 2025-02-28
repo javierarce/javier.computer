@@ -1,6 +1,6 @@
 .Music__grid {
   display: grid;
-  width: 100%;
+  width: var(--width-full);
   margin: auto;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-gap: 4em 1em;
@@ -9,7 +9,7 @@
 
 .Music__album {
   max-width: 500px;
-  width: 100%;
+  width: var(--width-full);
 }
 
 .Music__album .Music__albumTitle {
@@ -17,7 +17,7 @@
 }
 
 .Music__album img {
-  border-radius: 2px;
+  border-radius: var(--br-sm);
   margin: 0 0 1em;
 }
 
@@ -39,7 +39,7 @@
 
 .Music__photo {
   margin: 0 0 1em 0;
-  border-radius: 2px;
+  border-radius: var(--br-sm);
 }
 
 .Music__content,

@@ -20,7 +20,7 @@
 @media all and (max-width: 1024px) {
   .footer {
     display: block;
-    width: 100%;
+    width: var(--width-full);
 
     &__link {
       margin: 0 0.4em 0 0;
@@ -31,7 +31,7 @@
 @media all and (max-width: 640px) {
   .footer {
     display: block;
-    width: 100%;
+    width: var(--width-full);
 
     &__link {
       margin: 0 0.4em 0 0;

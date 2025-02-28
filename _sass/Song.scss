@@ -1,5 +1,5 @@
 .Song {
-  width: 100%;
+  width: var(--width-full);
   font-size: 0.7em;
   opacity: var(--op-hidden);
   transition: opacity 250ms ease-in-out;

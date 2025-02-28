@@ -46,7 +46,7 @@
   &__progressBar {
     height: 10px;
     background: transparent;
-    width: 100%;
+    width: var(--width-full);
     position: absolute;
     bottom: 0;
     left: 0;

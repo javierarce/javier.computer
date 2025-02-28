@@ -14,7 +14,7 @@ input {
 .Input,
 .Textarea,
 .Input__field {
-  width: 100%;
+  width: var(--width-full);
 }
 
 .Input,

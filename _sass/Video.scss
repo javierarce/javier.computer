@@ -8,12 +8,12 @@ $transition-duration: 0.3s;
 
 .Video {
   position: relative;
-  max-width: 100%;
+  max-width: var(--width-full);
   overflow: hidden;
   margin: 0 0 1em;
 
   video {
-    width: 100%;
+    width: var(--width-full);
     display: block;
     border-radius: var(--br-sm);
   }
@@ -110,7 +110,7 @@ $transition-duration: 0.3s;
     }
 
     &.pause {
-      gap: 1em;
+      gap: var(--gap-md);
 
       &::before,
       &::after {
@@ -168,7 +168,7 @@ $transition-duration: 0.3s;
     video {
       width: auto;
       height: auto;
-      max-width: 100%;
+      max-width: var(--width-full);
       max-height: 100%;
     }
 

@@ -9,14 +9,14 @@
   gap: 0.4em;
 
   &__main {
-    width: 100%;
+    width: var(--width-full);
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
   &__secondary {
-    width: 100%;
+    width: var(--width-full);
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -36,7 +36,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1em;
+    gap: var(--gap-md);
   }
 
   &__link {
@@ -58,10 +58,10 @@
 
 @media all and (max-width: 1024px) {
   .navigation {
-    width: 100%;
+    width: var(--width-full);
 
     &__secondary {
-      width: 100%;
+      width: var(--width-full);
     }
   }
 }
@@ -70,7 +70,7 @@
   .navigation {
     flex-direction: row;
     align-items: flex-start;
-    width: 100%;
+    width: var(--width-full);
     margin-bottom: 2em;
 
     &__main {

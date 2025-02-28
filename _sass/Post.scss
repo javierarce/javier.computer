@@ -17,12 +17,12 @@
     display: block;
     max-width: 1024px;
     margin: 0;
-    border-radius: 2px;
+    border-radius: var(--br-sm);
   }
 
   &.is-highlighted .Post__content {
     border: 1px solid #ae81ff;
-    border-radius: 4px;
+    border-radius: var(--br-md);
     padding: 0.8em;
   }
 
@@ -174,21 +174,21 @@ h4 {
 
   .Posts,
   .Post {
-    width: 100%;
+    width: var(--width-full);
   }
 
   .Post__pagination,
   .Post__footer {
-    width: 100%;
+    width: var(--width-full);
   }
 }
 
 @media all and (max-width: 640px) {
   .Posts {
-    width: 100%;
+    width: var(--width-full);
 
     .Post {
-      width: 100%;
+      width: var(--width-full);
 
       &__footerSeparator {
         display: none;
@@ -196,7 +196,7 @@ h4 {
 
       &__footer {
         display: flex;
-        width: 100%;
+        width: var(--width-full);
         align-items: flex-start;
         flex-direction: column;
         gap: 0;

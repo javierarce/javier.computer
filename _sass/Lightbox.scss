@@ -15,7 +15,7 @@
   z-index: 999;
   top: 0;
   left: 0;
-  width: 100%;
+  width: var(--width-full);
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   opacity: var(--op-hidden);
@@ -71,7 +71,7 @@
 
   &__imageContainer {
     position: relative;
-    width: 100%;
+    width: var(--width-full);
     height: 100%;
     display: flex;
     align-items: center;
@@ -132,12 +132,12 @@
 
 @media all and (max-width: 1500px) {
   .lightbox__image {
-    max-width: 100%;
+    max-width: var(--width-full);
   }
 }
 
 @media all and (max-width: 640px) {
   .lightbox__image {
-    max-width: 100%;
+    max-width: var(--width-full);
   }
 }

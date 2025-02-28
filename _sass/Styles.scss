@@ -128,7 +128,7 @@ p:last-child {
 }
 
 p img {
-  width: 100%;
+  width: var(--width-full);
 }
 
 blockquote {
@@ -235,7 +235,7 @@ img.lazy.error {
   padding-bottom: 0;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: var(--width-full);
 }
 
 .About__content a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
@@ -334,7 +334,7 @@ a.is-photo::after {
 
   .Content {
     padding: var(--pd-xl);
-    width: 100%;
+    width: var(--width-full);
   }
 
   .Layout__error {
@@ -346,6 +346,6 @@ a.is-photo::after {
 
   .Layout__office .Content,
   .Layout__office .Content p {
-    width: 100%;
+    width: var(--width-full);
   }
 }

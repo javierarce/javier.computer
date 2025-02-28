@@ -42,7 +42,7 @@
 
 .Drawing__pagination {
   text-align: center;
-  width: 100%;
+  width: var(--width-full);
   max-width: var(--width-lg);
   margin: 0 auto 2em auto;
   font-size: var(--font-size-lg);
@@ -86,7 +86,7 @@
   margin: 0 auto 2em auto;
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: var(--gap-md);
 }
 
 .Drawings.is-gap {
@@ -109,8 +109,8 @@
 }
 
 .Drawing img {
-  width: 100%;
-  border-radius: 2px;
+  width: var(--width-full);
+  border-radius: var(--br-sm);
 }
 
 .Drawing__link {
@@ -132,17 +132,17 @@
 
 .Drawings.is-fullheight img {
   height: auto;
-  width: 100%;
+  width: var(--width-full);
 }
 
 .Drawings img {
-  width: 100%;
+  width: var(--width-full);
 }
 
 @media (max-width: 1294px) {
   .Drawings img {
     height: auto;
-    width: 100%;
+    width: var(--width-full);
   }
 }
 

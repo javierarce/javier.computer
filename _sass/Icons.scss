@@ -1,38 +1,36 @@
+$size: 24px;
+
 .icon {
   display: inline-block;
-  width: 24px;
-  height: 24px;
+  width: $size;
+  height: $size;
   color: var(--white);
   background-size: cover;
   background-repeat: no-repeat;
-}
 
-a.icon.is-light:hover {
-  opacity: 1;
-}
+  &-list {
+    background-image: url(/img/icons/list.svg);
+  }
 
-.icon-list {
-  background-image: url(/img/icons/list.svg);
-}
+  &-grid {
+    background-image: url(/img/icons/grid.svg);
+  }
 
-.icon-grid {
-  background-image: url(/img/icons/grid.svg);
-}
+  &-album {
+    background-image: url(/img/icons/headphones.svg);
+  }
 
-.icon-album {
-  background-image: url(/img/icons/headphones.svg);
-}
+  &-photo {
+    background-image: url(/img/icons/picture.svg);
+  }
 
-.icon-photo {
-  background-image: url(/img/icons/picture.svg);
-}
+  &-rss {
+    width: 20px;
+    height: 20px;
+    background-image: url(/img/icons/rss.svg);
+  }
 
-.icon-rss {
-  width: 20px;
-  height: 20px;
-  background-image: url(/img/icons/rss.svg);
-}
-
-.icon-fullscreen {
-  background-image: url(/img/icons/fullscreen.svg);
+  &-fullscreen {
+    background-image: url(/img/icons/fullscreen.svg);
+  }
 }

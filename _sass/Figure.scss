@@ -1,11 +1,11 @@
 .figure {
-  width: 100%;
+  width: var(--width-full);
   height: auto;
   box-sizing: border-box;
 
   &__title {
     margin: 1.4em 0 2em 0;
-    font-weight: 500;
+    font-weight: var(--font-weight-semibold);
     text-transform: capitalize;
   }
 }

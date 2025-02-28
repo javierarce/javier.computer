@@ -3,12 +3,12 @@
   -webkit-appearance: none;
   align-items: center;
   background: transparent;
-  border-radius: 2px;
-  border: 1px solid #fff;
-  color: #fff;
+  border-radius: var(--br-sm);
+  border: 1px solid var(--white);
+  color: var(--white);
   cursor: pointer;
   display: flex;
-  font-size: 0.8em;
+  font-size: var(--font-size-sm);
   justify-content: center;
   margin: 0;
   outline: none;
@@ -31,5 +31,4 @@
       background: transparent;
     }
   }
-
 }

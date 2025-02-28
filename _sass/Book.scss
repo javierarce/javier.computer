@@ -13,7 +13,7 @@ a.book__spine {
     position: relative;
     background: var(--white);
     color: var(--black);
-    width: 100%;
+    width: var(--width-full);
     color: #000;
     padding: 1.4em;
     writing-mode: horizontal-tb;
@@ -170,7 +170,7 @@ a.book__spine {
     &__stack {
       display: block;
       border-bottom: none;
-      width: 100% !Important;
+      width: var(--width-full) !Important;
       margin: 0 0 1em;
       height: auto;
     }
@@ -184,7 +184,7 @@ a.book__spine {
       padding: 0;
       writing-mode: horizontal-tb;
       transform: initial;
-      width: 100% !Important;
+      width: var(--width-full) !Important;
       margin: 0 0 1em;
       font-size: var(--font-size-md);
     }

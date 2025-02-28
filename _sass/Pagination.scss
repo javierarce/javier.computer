@@ -100,7 +100,7 @@
         text-decoration: none;
         cursor: pointer;
         user-select: none;
-        border-radius: 100%;
+        border-radius: var(--br-round);
       }
     }
   }
