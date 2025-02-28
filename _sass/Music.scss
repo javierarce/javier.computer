@@ -24,8 +24,8 @@
 
 .Music {
   margin: 0 0 3em;
-  font-size: 1.2em;
-  width: var(--width);
+  font-size: var(--font-size-lg);
+  width: var(--width-md);
   margin: auto;
 }
 
@@ -54,7 +54,7 @@
 }
 
 .Music__header>* {
-  opacity: var(--lightOpacity);
+  opacity: var(--op-light);
 }
 
 .Music__header a {

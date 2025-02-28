@@ -20,7 +20,7 @@ a.book__spine {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    font-size: 0.9em;
+    font-size: var(--font-size-sm);
   }
 
   &__content {
@@ -38,13 +38,13 @@ a.book__spine {
   }
 
   &__spine:hover &__progress {
-    opacity: 1;
+    opacity: var(--op-visible);
     visibility: visible;
     transform: scaleX(1);
   }
 
   &__progress {
-    opacity: 0;
+    opacity: var(--op-hidden);
     visibility: hidden;
     background: rgba(0, 0, 0, 0.2);
     mix-blend-mode: multiply;
@@ -59,11 +59,11 @@ a.book__spine {
   }
 
   &__title {
-    font-weight: 400;
+    font-weight: var(--font-weight-regular);
   }
 
   &__author {
-    opacity: var(--lightOpacity);
+    opacity: var(--op-light);
   }
 
   &__spine.is-2[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))) .book__title:after,
@@ -186,7 +186,7 @@ a.book__spine {
       transform: initial;
       width: 100% !Important;
       margin: 0 0 1em;
-      font-size: 1em;
+      font-size: var(--font-size-md);
     }
 
     &__content {

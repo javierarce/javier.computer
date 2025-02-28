@@ -19,13 +19,13 @@
 
   &:hover {
     background: var(--textHover);
-    color: var(--background);
+    color: var(--black);
   }
 
   &.is-disabled {
     pointer-events: none;
     cursor: default;
-    opacity: var(--lightOpacity);
+    opacity: var(--op-light);
 
     &:hover {
       background: transparent;

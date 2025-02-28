@@ -1,6 +1,6 @@
 weather-snitch {
   display: block;
-  opacity: 0;
+  opacity: var(--op-hidden);
   visibility: hidden;
   max-height: 0;
   overflow: hidden;
@@ -10,7 +10,7 @@ weather-snitch {
 weather-snitch.is-visible {
   visibility: visible;
   max-height: 300px;
-  opacity: var(--lightOpacity);
+  opacity: var(--op-light);
 }
 
 weather-snitch.is-single {

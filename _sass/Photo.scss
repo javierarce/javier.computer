@@ -1,13 +1,13 @@
 figcaption {
   font-size: 1em;
   text-align: center;
-  opacity: var(--lightOpacity);
+  opacity: var(--op-light);
 }
 
 /* Layout: content */
 
 .Layout__grid .Content {
-  width: var(--bigWidth);
+  width: var(--width-lg);
 }
 
 .Layout__grid .Content .Photo__collections h2,
@@ -40,7 +40,7 @@ figcaption {
 .Layout__grid .Content .Photo__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 0.4em;
+  grid-gap: var(--gap-sm);
   text-align: center;
 }
 
@@ -64,7 +64,7 @@ figcaption {
 
 .Layout__photo .Content,
 .Layout__photos .Content {
-  width: var(--bigWidth);
+  width: var(--width-lg);
 }
 
 .Layout__reportage .Photo__layout p a {
@@ -72,11 +72,11 @@ figcaption {
 }
 
 .Layout__reportage .Content {
-  width: var(--bigWidth);
+  width: var(--width-lg);
 }
 
 .Layout__reportage .Post__footer {
-  width: var(--width);
+  width: var(--width-md);
   margin: 0 auto;
 }
 
@@ -87,14 +87,14 @@ figcaption {
 }
 
 .Layout__reportage .g h3 {
-  width: var(--width);
+  width: var(--width-md);
   margin: 0 auto;
-  font-size: 1.3em;
-  font-weight: normal;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-regular);
   text-align: left;
   margin-top: 0;
   margin-bottom: 0;
-  opacity: var(--lightOpacity);
+  opacity: var(--op-light);
 }
 
 .Layout__reportage h2.is-descriptionless {
@@ -102,11 +102,11 @@ figcaption {
 }
 
 .Layout__reportage h2+h3 {
-  font-weight: normal;
+  font-weight: var(--font-weight-regular);
   text-align: center;
   margin-top: 0;
   margin-bottom: 2em;
-  opacity: var(--lightOpacity);
+  opacity: var(--op-light);
 }
 
 .Layout__reportage .Photo__layout .g p:not(:last-child) {
@@ -117,7 +117,7 @@ figcaption {
 .Layout__reportage .Photo__layout ul li,
 .Layout__reportage .Photo__layout ul:last-child li,
 .Layout__reportage .Photo__layout p:last-child {
-  font-size: 1.2em;
+  font-size: var(--font-size-lg);
 }
 
 .Layout__reportage .Photo__layout ul li {
@@ -126,7 +126,7 @@ figcaption {
 
 .Layout__reportage .Photo__layout ul,
 .Layout__reportage .Photo__layout ul:last-child {
-  width: var(--width);
+  width: var(--width-md);
   margin: 0 auto;
 }
 
@@ -144,7 +144,7 @@ figcaption {
 .Photo .Post__footer,
 .Photo__collection .Post__content p,
 .Photo__collection .Post__footer {
-  width: var(--width);
+  width: var(--width-md);
   margin: 0 auto;
 }
 
@@ -179,8 +179,8 @@ figcaption {
 .Photo__content img {
   display: block;
   width: 100%;
-  max-width: var(--bigWidth);
-  border-radius: 2px;
+  max-width: var(--width-lg);
+  border-radius: var(--br-sm);
 }
 
 /* --- */
@@ -195,7 +195,7 @@ figcaption {
   width: 100%;
   margin: 0 auto 2em auto;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 0.4em;
+  grid-gap: var(--gap-sm);
   text-align: center;
 }
 
@@ -223,11 +223,11 @@ figcaption {
 }
 
 .Photo__layout {
-  width: var(--bigWidth);
+  width: var(--width-lg);
   margin: 0 auto 2em auto;
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  gap: var(--gap-xl);
 }
 
 .Photo__layout .Photo>.Photo__content img {
@@ -251,7 +251,7 @@ figcaption {
 .gg {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 0.4em;
+  grid-gap: var(--gap-sm);
   text-align: center;
 }
 
@@ -287,7 +287,7 @@ figcaption {
 .g {
   display: flex;
   flex-direction: column;
-  gap: 0.4em;
+  gap: var(--gap-sm);
   width: 100%;
 }
 
@@ -296,14 +296,14 @@ figcaption {
 }
 
 .g:has(.gg) {
-  gap: 0.4em;
+  gap: var(--gap-sm);
 }
 
 .h {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.4em;
+  gap: var(--gap-sm);
 }
 
 .h.has-one,
@@ -318,7 +318,7 @@ figcaption {
 
 .Photo__layout p,
 .Photo__layout p:last-child {
-  width: var(--width);
+  width: var(--width-md);
   margin: 0 auto;
 }
 
@@ -446,7 +446,7 @@ figcaption {
   }
 
   .Photo__collection {
-    gap: 0.4em;
+    gap: var(--gap-sm);
   }
 
   .h {

@@ -5,18 +5,18 @@
   justify-content: flex-start;
   gap: 1em;
   margin: 0 0 2em 0;
-  opacity: 0;
+  opacity: var(--op-hidden);
   visibility: hidden;
   transition: opacity 150ms ease-in-out, visibility 250ms ease-in-out;
 
   &.is-visible {
-    opacity: 1;
+    opacity: var(--op-visible);
     visibility: visible;
   }
 
   &.is-error .Message,
   &.was-sent .Message {
-    opacity: 1;
+    opacity: var(--op-visible);
   }
 
   &.is-error .Message {

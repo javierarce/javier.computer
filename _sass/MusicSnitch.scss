@@ -1,11 +1,10 @@
-::part(music) { 
-  opacity: 0;
+::part(music) {
+  opacity: var(--op-hidden);
   visibility: hidden;
   transition: opacity 500ms ease-in-out;
 
-  &.is-visible { 
-    opacity: 1;
-    visibility: visible; 
+  &.is-visible {
+    opacity: var(--op-visible);
+    visibility: visible;
   }
 }
-

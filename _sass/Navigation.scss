@@ -1,7 +1,7 @@
 .navigation {
   position: relative;
   margin: 0 auto 3em auto;
-  width: var(--width);
+  width: var(--width-md);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,7 +41,7 @@
 
   &__link {
     text-decoration: none;
-    color: var(--text);
+    color: var(--white);
     opacity: var(--op-light);
   }
 

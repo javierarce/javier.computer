@@ -1,9 +1,9 @@
 .Layout__bots .Content {
-  width: var(--bigWidth);
+  width: var(--width-lg);
 }
 
 .Bots {
-  font-size: 1.2em;
+  font-size: var(--font-size-lg);
 }
 
 .Bot {
@@ -33,11 +33,11 @@
 
     h2+h3 {
       font-size: 0.9em;
-      font-weight: normal;
+      font-weight: var(--font-weight-regular);
       text-align: center;
       margin-top: 0;
       margin-bottom: 2em;
-      opacity: var(--lightOpacity);
+      opacity: var(--op-light);
     }
   }
 
@@ -54,22 +54,22 @@
   }
 
   &__description {
-    width: var(--width);
+    width: var(--width-md);
     margin: 0 0 2em;
   }
 
   &__archive {
-    width: var(--bigWidth);
+    width: var(--width-lg);
     background: var(--white);
-    color: var(--background);
+    color: var(--black);
     padding: 2em;
     margin: auto 2em;
     transition: opacity 250ms ease-in-out;
-    opacity: 0;
+    opacity: var(--op-hidden);
     visibility: hidden;
 
     &.is-visible {
-      opacity: 1;
+      opacity: var(--op-visible);
       visibility: visible;
     }
 

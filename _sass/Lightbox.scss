@@ -4,7 +4,7 @@
     transition: opacity 250ms ease-in-out;
 
     &:hover {
-      opacity: 0.8;
+      opacity: var(--op-8);
     }
   }
 }
@@ -18,7 +18,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  opacity: 0;
+  opacity: var(--op-hidden);
   visibility: hidden;
   transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out;
 
@@ -26,7 +26,7 @@
 
     .lightbox__button,
     .lightbox__caption {
-      opacity: 0;
+      opacity: var(--op-hidden);
       visibility: hidden;
     }
   }
@@ -48,7 +48,7 @@
     position: absolute;
     bottom: 1em;
     text-shadow: 1px 1px 1em rgba(0, 0, 0, 0.8);
-    opacity: 0;
+    opacity: var(--op-hidden);
     visibility: hidden;
     transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out;
     text-align: center;
@@ -82,9 +82,9 @@
     max-width: 2880px;
     max-height: 95vh;
     object-fit: contain;
-    opacity: 0;
+    opacity: var(--op-hidden);
     transition: opacity 250ms ease-in-out;
-    border-radius: var(--borderRadius);
+    border-radius: var(--br-sm);
   }
 
   &__button {
@@ -99,7 +99,7 @@
     appearance: none;
 
     &:hover {
-      opacity: 0.8;
+      opacity: var(--op-8);
     }
 
     &.is-prev {

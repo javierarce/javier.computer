@@ -1,7 +1,7 @@
 .Song {
   width: 100%;
   font-size: 0.7em;
-  opacity: 0;
+  opacity: var(--op-hidden);
   transition: opacity 250ms ease-in-out;
 
   &.is-visible {

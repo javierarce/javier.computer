@@ -1,6 +1,6 @@
 /* Layout & Container Styles */
 .Layout__map .Content {
-  width: var(--fullWidth);
+  width: var(--width-full);
 }
 
 .Layout__map .Content h2 {
@@ -81,7 +81,7 @@
 
 .Maps__list .Maps__listCount,
 .Maps__list p a {
-  opacity: var(--lightOpacity);
+  opacity: var(--op-light);
 }
 
 .Maps__list p a {
@@ -89,7 +89,7 @@
 }
 
 .Maps__listLocations {
-  opacity: var(--lightOpacity);
+  opacity: var(--op-light);
 }
 
 /* Trip Header Styles */
@@ -138,7 +138,7 @@
   width: 1.7em;
   height: 1.7em;
   border-radius: 50%;
-  color: var(--pureBlack);
+  color: var(--black-pure);
   background: var(--link);
   font-size: 0.7em;
   margin: 0 0.1em 0 0;
@@ -147,7 +147,7 @@
 .has-emoji .Location__id {
   background: none;
   border-radius: 0;
-  font-size: 1.2em;
+  font-size: var(--font-size-lg);
   padding: 0;
   height: auto;
   width: auto;
@@ -172,7 +172,7 @@
 .Location__address {
   text-decoration: none;
   font-size: 0.8em;
-  opacity: var(--lightOpacity);
+  opacity: var(--op-light);
 }
 
 .Location__posts {
@@ -197,7 +197,7 @@
 .Location__post:hover {
   text-decoration: none;
   background: var(--white);
-  color: var(--pureBlack);
+  color: var(--black-pure);
 }
 
 /* Marker Styles */
@@ -207,7 +207,7 @@
   padding: 1em;
   font-size: 1em;
   font-weight: bold;
-  background: var(--pureBlack);
+  background: var(--black-pure);
   background-size: 400% 400%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 100%;
@@ -218,7 +218,7 @@
 }
 
 .Marker.leaflet-zoom-animated.leaflet-interactive:focus {
-  background: var(--pureBlack);
+  background: var(--black-pure);
   color: var(--white);
   outline: none !important;
   z-index: 100 !important;
@@ -259,7 +259,7 @@
 
 .Popup__address {
   font-size: 0.9em;
-  opacity: var(--lightOpacity);
+  opacity: var(--op-light);
 }
 
 .Popup__posts {
@@ -277,7 +277,7 @@
   height: 1.4em;
   padding: 0.2em;
   background: var(--gray2);
-  color: var(--pureBlack);
+  color: var(--black-pure);
   font-size: 0.8em;
   border-radius: 100%;
   transition: background 140ms ease-in-out;
@@ -302,7 +302,7 @@
   padding: 1em;
   border: none;
   background: var(--white);
-  color: var(--pureBlack);
+  color: var(--black-pure);
   font-size: 14px;
   line-height: 24px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -339,7 +339,7 @@
 }
 
 .ZoomControl.leaflet-control-zoom.leaflet-bar.leaflet-control a:hover {
-  color: var(--pureBlack);
+  color: var(--black-pure);
 }
 
 /* Leaflet Animations */
@@ -371,6 +371,6 @@
 
   .Sidebar {
     width: 100%;
-    font-size: 1.2em;
+    font-size: var(--font-size-lg);
   }
 }

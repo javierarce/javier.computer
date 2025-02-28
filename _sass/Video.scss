@@ -15,7 +15,7 @@ $transition-duration: 0.3s;
   video {
     width: 100%;
     display: block;
-    border-radius: var(--borderRadius);
+    border-radius: var(--br-sm);
   }
 
   &.is-loading {
@@ -36,11 +36,11 @@ $transition-duration: 0.3s;
 
   &.is-playing {
     .control-overlay {
-      opacity: 0;
+      opacity: var(--op-hidden);
     }
 
     .time-display {
-      opacity: 0;
+      opacity: var(--op-hidden);
     }
   }
 
@@ -58,7 +58,7 @@ $transition-duration: 0.3s;
     transition: opacity $transition-duration ease-in-out;
 
     &.playing {
-      opacity: 0;
+      opacity: var(--op-hidden);
     }
   }
 
@@ -68,7 +68,7 @@ $transition-duration: 0.3s;
     left: 0.8em;
     color: var(--white);
     font-size: 0.6em;
-    opacity: 0;
+    opacity: var(--op-hidden);
     transition: opacity $transition-duration ease-in-out;
   }
 
@@ -131,7 +131,7 @@ $transition-duration: 0.3s;
 
   .fullscreen-button:after {
     content: '\2197';
-    font-size: 1.2em;
+    font-size: var(--font-size-lg);
     font-weight: bold;
     color: var(--white);
   }
@@ -140,7 +140,7 @@ $transition-duration: 0.3s;
     position: absolute;
     top: 0.8em;
     right: 0.8em;
-    opacity: 0;
+    opacity: var(--op-hidden);
     transition: opacity $transition-duration ease-in-out;
     cursor: pointer;
     border: none;
@@ -181,7 +181,7 @@ $transition-duration: 0.3s;
     .control-overlay,
     .time-display,
     .fullscreen-button {
-      opacity: 0;
+      opacity: var(--op-hidden);
     }
 
     &:hover {
@@ -189,7 +189,7 @@ $transition-duration: 0.3s;
       .control-overlay,
       .time-display,
       .fullscreen-button {
-        opacity: 0;
+        opacity: var(--op-hidden);
       }
     }
 

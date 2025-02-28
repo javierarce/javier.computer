@@ -1,6 +1,6 @@
 .Layout__project {
   .Content {
-    width: var(--bigWidth);
+    width: var(--width-lg);
 
     h2 {
       margin: 0 auto 0;
@@ -10,7 +10,7 @@
 
   hr {
     width: 100%;
-    max-width: var(--width);
+    max-width: var(--width-md);
   }
 
 }
@@ -24,7 +24,7 @@
 }
 
 .Projects {
-  font-size: 1.2em;
+  font-size: var(--font-size-lg);
 
   &__lists,
   &__year {
@@ -41,7 +41,7 @@
 
     h3 {
       margin: 0;
-      padding-bottom: var(--space);
+      padding-bottom: var(--pd-xl);
       border-bottom: 1px solid var(--gray);
     }
   }
@@ -59,19 +59,19 @@
 
     h3 {
       margin-top: 1em;
-      width: var(--width);
+      width: var(--width-md);
     }
 
     h2+h3 {
-      font-size: 0.9em;
-      font-weight: normal;
-      text-align: center;
       margin: 0 0 2em;
-      opacity: var(--lightOpacity);
+      text-align: center;
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-regular);
+      opacity: var(--op-light);
     }
 
     p {
-      width: var(--width);
+      width: var(--width-md);
       margin-bottom: 1em;
 
       &:last-child {
@@ -81,19 +81,19 @@
   }
 
   h2 {
-    font-size: 1.8em;
+    font-size: var(--font-size-xxl);
     text-align: center;
   }
 
   .figure {
-    width: var(--bigWidth);
+    width: var(--width-lg);
     margin: 2em auto;
 
     img,
     video {
       display: block;
       width: 100%;
-      border-radius: 2px;
+      border-radius: var(--br-sm);
     }
 
     .Photo__caption {
@@ -103,7 +103,7 @@
   }
 
   &__intro {
-    width: var(--width);
+    width: var(--width-md);
     margin: auto;
     text-align: center;
   }
@@ -124,7 +124,7 @@
   }
 
   p {
-    opacity: var(--lightOpacity);
+    opacity: var(--op-light);
   }
 }
 
@@ -142,7 +142,7 @@
   display: flex;
   flex-direction: column;
   border: 1px solid var(--gray);
-  border-radius: 2px;
+  border-radius: var(--br-sm);
   text-decoration: none;
 
   &:hover {
@@ -154,8 +154,8 @@
     position: absolute;
     top: 1em;
     right: 1em;
-    font-size: 0.8em;
-    opacity: var(--lightOpacity);
+    font-size: var(--font-size-sm);
+    opacity: var(--op-light);
   }
 
   &Title {
@@ -164,7 +164,7 @@
 
   &Description {
     text-decoration: none;
-    opacity: var(--lightOpacity);
+    opacity: var(--op-light);
   }
 }
 

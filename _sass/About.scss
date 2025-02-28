@@ -10,8 +10,8 @@
 }
 
 .Layout__about .About__content {
-  width: var(--width);
-  font-size: 1.2em;
+  width: var(--width-md);
+  font-size: var(--font-size-lg);
   margin: 0 auto 2em auto;
   display: flex;
   flex-direction: column;

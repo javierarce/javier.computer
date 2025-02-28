@@ -1,28 +1,25 @@
 .Layout__contact .Content__inner {
-  width: var(--width);
-  font-size: 1.2em;
+  width: var(--width-md);
+  font-size: var(--font-size-lg);
+}
+
+.Message {
+  opacity: var(--op-hidden);
+  transition: opacity 100ms ease-in-out;
 }
 
 @media all and (max-width: 640px) {
 
   .Layout__contact .Content__inner,
   .Layout__contact {
-    width: 100%;
+    width: var(--width-full);
     margin: 0;
   }
 
   .Layout__contact .form,
   .Layout__contact .Input,
-  .Layout__contact .Textarea {
-    width: 100%;
-  }
-
+  .Layout__contact .Textarea,
   .Layout__contact .button {
-    width: 100%;
+    width: var(--width-full);
   }
-}
-
-.Message {
-  opacity: 0;
-  transition: opacity 100ms ease-in-out;
 }

@@ -2,7 +2,7 @@
 .Layout__drawing .Content,
 .Layout__drawings .Content,
 .Layout__drawings .Content {
-  width: var(--bigWidth);
+  width: var(--width-lg);
 }
 
 .Layout__drawing .Content h2,
@@ -14,26 +14,26 @@
 }
 
 .Drawings__thumbs {
-  max-width: var(--bigWidth);
+  max-width: var(--width-lg);
   margin: 0 auto 2em auto;
 }
 
 .Drawing__content {
-  font-size: 1.2em;
-  max-width: var(--bigWidth);
+  font-size: var(--font-size-lg);
+  max-width: var(--width-lg);
   margin: 0 auto 2em;
   text-align: center;
 }
 
 .Drawing__header {
   text-align: center;
-  max-width: var(--bigWidth);
+  max-width: var(--width-lg);
   margin: 0 auto 2em auto;
-  font-size: 1.2em;
+  font-size: var(--font-size-lg);
 }
 
 .Drawing__header>* {
-  opacity: var(--lightOpacity);
+  opacity: var(--op-light);
 }
 
 .Drawing__header a {
@@ -43,16 +43,16 @@
 .Drawing__pagination {
   text-align: center;
   width: 100%;
-  max-width: var(--bigWidth);
+  max-width: var(--width-lg);
   margin: 0 auto 2em auto;
-  font-size: 1.2em;
+  font-size: var(--font-size-lg);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .Drawing__pagination>* {
-  opacity: var(--lightOpacity);
+  opacity: var(--op-light);
 }
 
 .Drawing__content a {
@@ -68,16 +68,16 @@
 }
 
 .Drawing:hover .Drawing__title {
-  opacity: 0.8;
+  opacity: var(--op-8);
 }
 
 .Drawing__title {
   text-align: center;
-  max-width: var(--bigWidth);
+  max-width: var(--width-lg);
   margin: auto;
   margin: 0 auto 2em auto;
-  font-size: 1.2em;
-  opacity: var(--lightOpacity);
+  font-size: var(--font-size-lg);
+  opacity: var(--op-light);
 }
 
 .Drawings {

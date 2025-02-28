@@ -7,17 +7,17 @@
 }
 
 ::placeholder {
-  color: var(--text);
+  color: var(--white);
   opacity: var(--op-light);
 }
 
 body {
-  color: var(--text);
-  background: var(--background);
+  color: var(--color-txt-site);
+  background: var(--color-bg-site);
 
-  font-size: 1.3em;
   line-height: 1.45;
-  font-weight: normal;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-regular);
   font-family: var(--font-text-sans);
 
   text-rendering: optimizeLegibility;
@@ -31,7 +31,7 @@ body {
 
 a.is-underlined {
   text-decoration: underline;
-  text-decoration-color: var(--text);
+  text-decoration-color: var(--white);
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
@@ -43,13 +43,13 @@ a.is-underlined {
 .is-light a:hover,
 p.is-light a:hover,
 p.is-light p a:hover {
-  color: var(--textHover);
+  color: var(--whiteHover);
 }
 
 .is-light a,
 p.is-light a,
 p.is-light p a {
-  color: var(--text);
+  color: var(--white);
 }
 
 .Layout__home .is-hidden-from-home {
@@ -59,16 +59,16 @@ p.is-light p a {
 .is-hidden-from-home {
   border: 1px solid rgba(255, 255, 255, 0.4);
   padding: var(--pd-lg);
-  font-size: 0.9em;
+  font-size: var(--font-size-sm);
   opacity: var(--op-light);
 }
 
 .is-hidden-from-home a {
-  color: var(--text);
+  color: var(--white);
 }
 
 .is-hidden-from-home a:hover {
-  color: var(--text);
+  color: var(--white);
 }
 
 .is-hidden {
@@ -76,17 +76,17 @@ p.is-light p a {
 }
 
 .is-small {
-  font-size: 0.8em;
+  font-size: var(--font-size-sm);
 }
 
 a {
-  color: var(--text);
+  color: var(--white);
   text-underline-offset: 3px;
 }
 
 a:hover {
   cursor: pointer;
-  color: var(--textHover);
+  color: var(--whiteHover);
   text-decoration: underline;
 }
 
@@ -118,7 +118,7 @@ ul {
 }
 
 p {
-  font-size: 1em;
+  font-size: var(--font-size-md);
   line-height: 1.45;
   margin: 0 0 1em 0;
 }
@@ -139,7 +139,7 @@ blockquote {
 
 .Post__content blockquote p a,
 blockquote p a {
-  color: var(--text);
+  color: var(--white);
 }
 
 blockquote p {
@@ -151,14 +151,6 @@ blockquote strong {
   font-weight: 600;
 }
 
-.is-domain {
-  border-radius: 30px;
-  border: 2px solid rgba(255, 255, 255, 1);
-  padding: var(--pd-md) var(--pd-lg);
-  font-size: 0.8em;
-  font-weight: 600;
-}
-
 p.is-light {
   opacity: var(--op-light);
 }
@@ -166,7 +158,7 @@ p.is-light {
 .Content {
   display: flex;
   flex-direction: column;
-  width: var(--width);
+  width: var(--width-md);
 }
 
 .Layout__error {
@@ -191,7 +183,7 @@ ul li:last-child {
 
 hr {
   border: none;
-  border-bottom: 1px solid var(--text);
+  border-bottom: 1px solid var(--white);
   margin: 1.4em 0;
   opacity: var(--op-light);
 }
@@ -204,36 +196,36 @@ h4 {
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: var(--font-size-lg);
 }
 
 h3 {
-  font-size: 1em;
+  font-size: var(--font-size-md);
   opacity: var(--op-light);
 }
 
 h4 {
-  font-size: 1em;
-  font-weight: normal;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-md);
   opacity: var(--op-light);
 }
 
 img.lazy {
   transition: all 520ms ease-in-out;
-  opacity: 0.1;
+  opacity: var(--op-1);
   background: var(--white);
 }
 
 img.lazy.loaded {
   background: transparent;
   visibility: visible;
-  opacity: 1;
+  opacity: var(--op-visible);
 }
 
 img.lazy.error {
   visibility: visible;
   border: none;
-  border-radius: var(--borderRadius);
+  border-radius: var(--br-sm);
   opacity: var(--op-light);
   min-height: 200px;
 }
@@ -260,7 +252,7 @@ img.lazy.error {
   display: inline-block;
   font-weight: 400;
   padding-left: var(--pd-sm);
-  color: var(--text);
+  color: var(--white);
   opacity: var(--op-light);
 }
 
@@ -299,10 +291,10 @@ a.is-photo::after {
 }
 
 .is-highlighted {
-  border: 1px solid var(--purple);
-  border-radius: 4px;
   padding: 0.8em;
-  font-size: 0.9em;
+  font-size: var(--font-size-sm);
+  border: 1px solid var(--purple);
+  border-radius: var(--br-md);
   color: var(--purple);
 }
 
@@ -312,7 +304,7 @@ a.is-photo::after {
 }
 
 .Layout__office .Content {
-  width: var(--bigWidth);
+  width: var(--width-lg);
 }
 
 .Layout__office .footer {
@@ -320,20 +312,20 @@ a.is-photo::after {
 }
 
 .Layout__office .Content p {
-  width: var(--width);
-  font-size: 1.2em;
+  width: var(--width-md);
+  font-size: var(--font-size-lg);
   margin-left: auto;
   margin-right: auto;
 }
 
 .Stack__date {
   margin: 0 0 1em;
-  font-weight: 600;
+  font-weight: var(--font-weight-bold);
 }
 
 @media all and (max-width: 640px) {
   body {
-    font-size: 1.2em;
+    font-size: var(--font-size-lg);
   }
 
   body {

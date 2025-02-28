@@ -1,12 +1,12 @@
 .footer {
   display: flex;
   margin: 0 auto;
-  width: var(--width);
+  width: var(--width-md);
 
   &__link {
     margin: 0 0.8em 0 0;
     text-decoration: none;
-    color: var(--text);
+    color: var(--white);
     opacity: var(--op-light);
 
     &:hover {

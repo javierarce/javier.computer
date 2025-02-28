@@ -4,9 +4,9 @@
 
   &.is-centered {
     gap: 0.8em;
-    width: var(--width);
+    width: var(--width-md);
     margin: 2em auto 0 auto;
-    opacity: var(--lightOpacity);
+    opacity: var(--op-light);
   }
 
   &__item {
@@ -22,11 +22,11 @@
     cursor: pointer;
     user-select: none;
     font-size: 0.9em;
-    opacity: var(--lightOpacity);
+    opacity: var(--op-light);
 
     &:hover {
       color: var(--textHover);
-      background: var(--background);
+      background: var(--black);
       opacity: 1;
       text-decoration: none;
     }
@@ -38,14 +38,14 @@
       padding: 0;
 
       &:hover {
-        opacity: var(--lightOpacity);
+        opacity: var(--op-light);
       }
     }
 
     &.is-selected {
       cursor: default;
-      background: var(--background);
-      color: var(--text);
+      background: var(--black);
+      color: var(--white);
       opacity: 1;
 
       &:hover {

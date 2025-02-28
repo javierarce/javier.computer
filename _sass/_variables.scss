@@ -2,33 +2,43 @@
   /* Colors */
   --white: #FFFFFF;
   --black: #020b19;
-  --pureBlack: #000000;
+  --black-pure: #000000;
   --gray: rgba(255, 255, 255, 0.3);
   --gray2: #EEEEEE;
-  --orange: #FF4500;
-  --blue: #2477BE;
-  --green: #23D5AB;
-  --yellow: #FFD700;
+
   --purple: #AE81FF;
 
+  --orange-yellow: #F9A825;
+  --yellow: #FFC107;
+  --pink: #AD1457;
+  --orange: #D84315;
+  --red: #C62828;
+  --blue: #1976D2;
+  --green: #2E7D32;
+  --teal: #009688;
+  --brown: #8D6E63;
+
   /* Semantic colors */
-  --link: #FFC107;
+  --link: var(--yellow);
   --error: var(--yellow);
   --text: var(--white);
   --textHover: var(--white);
-  --background: var(--black);
+
+  --color-txt-site: var(--white);
+  --color-bg-site: var(--black);
+
   --color-book-purple: #6A1B9A;
-  --color-book-teal: #009688;
+  --color-book-yellow: var(--orange-yellow);
+  --color-book-teal: var(--teal);
   --color-book-white: var(--white);
   --color-book-black: var(--black);
-  --color-book-red: #C62828;
-  --color-book-green: #2E7D32;
-  --color-book-blue: #1976D2;
-  --color-book-yellow: #F9A825;
-  --color-book-brown: #8D6E63;
-  --color-book-pink: #AD1457;
+  --color-book-red: var(--red);
+  --color-book-green: var(--green);
+  --color-book-blue: var(--blue);
+  --color-book-brown: var(--brown);
+  --color-book-pink: var(--pink);
   --color-book-dark-teal: #00695C;
-  --color-book-orange: #D84315;
+  --color-book-orange: var(--orange);
   --color-book-dark-green: #558B2F;
   --color-book-dark-blue: #283593;
   --color-book-dark-gray: #222;
@@ -39,44 +49,44 @@
   --font-text-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-text-mono: 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace;
 
-  /*
-  --bg-color: var(--dark-blue);
-  --bg-player-color: var(--black);
+  /* Font sizes */
+  --font-size-base: 1rem;
+  --font-size-xs: 0.75em;
+  --font-size-sm: 0.875em;
+  --font-size-md: 1em;
+  --font-size-lg: 1.2em;
+  --font-size-xl: 1.3em;
+  --font-size-xxl: 1.8em;
 
-  --bg-color-button: var(--yellow);
-  --bg-color-button-hover: var(--dark-yellow);
-
-  --bg-color-input: var(--black);
-
-  --txt-color: var(--gray);
-  --txt-color-highlighted: var(--white);
-  --txt-color-input: var(--white);
-  --txt-color-button: var(--black);
-  --txt-color-button-hover: var(--black);
-
-  --txt-color-input-placeholder: var(--gray);
-
-  --txt-link: var(--yellow);
-  --txt-link-hover: var(--yellow);
-  */
-
-  /* Spacing */
-  --halfSpace: 0.2em;
-  --space: 0.4em;
-  --doubleSpace: 0.8em;
+  --font-weight-bold: 600;
+  --font-weight-semibold: 500;
+  --font-weight-regular: 400;
+  --font-weight-light: 300;
 
   /* Dimensions */
-  --width: 800px;
-  --bigWidth: 1024px;
-  --fullWidth: 100%;
-  --sidebarWidth: 300px;
+  --width-full: 100%;
+  --width-md: 800px;
+  --width-lg: 1024px;
 
   /* Other */
-  --borderRadius: 2px;
-  --lightOpacity: 0.5;
+  --space: 1em;
 
   /* Opacity */
-  --op-light: 0.5;
+  --op-10: 1;
+  --op-9: 0.9;
+  --op-8: 0.8;
+  --op-7: 0.7;
+  --op-6: 0.6;
+  --op-5: 0.5;
+  --op-4: 0.4;
+  --op-3: 0.3;
+  --op-2: 0.2;
+  --op-1: 0.1;
+  --op-0: 0;
+
+  --op-hidden: var(--op-0);
+  --op-light: var(--op-5);
+  --op-visible: var(--op-10);
 
   /* Spacing */
   --sp-sm: 0.2em;
@@ -103,4 +113,17 @@
   --br-lg: 6px;
 
   --br-default: var(--br-lg);
+
+  /* Gaps  */
+  --gap-xss: 0.1em;
+  --gap-xs: 0.2em;
+  --gap-sm: 0.4em;
+  --gap-md: 1em;
+  --gap-lg: 1.4em;
+  --gap-xl: 2em;
+
+  /* Transitions */
+  --transition-speed-default: 140ms;
+  --transition-speed-slow: 300ms;
+  --transition-speed-super-slow: 500ms;
 }

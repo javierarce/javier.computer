@@ -18,13 +18,13 @@ table+h2 {
 
 table {
   width: 100%;
-  font-size: 1.2em;
+  font-size: var(--font-size-lg);
 }
 
 table th {
   padding: 0.8em 0;
   text-transform: uppercase;
-  opacity: var(--lightOpacity);
+  opacity: var(--op-light);
 }
 
 table thead,
@@ -75,7 +75,7 @@ table td {
 }
 
 .Layout__movies table td:nth-child(1) {
-  opacity: var(--lightOpacity);
+  opacity: var(--op-light);
 }
 
 .Layout__movies table th:nth-child(3),

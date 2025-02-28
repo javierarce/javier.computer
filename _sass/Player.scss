@@ -21,7 +21,7 @@
   }
 
   &__title {
-    font-weight: normal;
+    font-weight: var(--font-weight-regular);
     text-decoration: none;
     display: block;
     background: none;
@@ -33,7 +33,7 @@
 
   &__link {
     margin: 0 0 0 4px;
-    font-weight: normal;
+    font-weight: var(--font-weight-regular);
     text-decoration: none;
   }
 
@@ -81,7 +81,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    opacity: var(--lightOpacity);
+    opacity: var(--op-light);
   }
 
   &__frame iframe {

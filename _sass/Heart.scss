@@ -49,6 +49,6 @@ open-heart.text-open-heart[aria-pressed="true"] .off {
 
 open-heart.text-open-heart[count]::after {
   content: attr(count);
-  opacity: var(--lightOpacity);
+  opacity: var(--op-light);
   margin-left: -2px;
 }

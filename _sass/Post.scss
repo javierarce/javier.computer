@@ -7,11 +7,11 @@
   display: flex;
   flex-direction: column;
   gap: 3em;
-  max-width: var(--width);
+  max-width: var(--width-md);
 }
 
 .Post {
-  max-width: var(--width);
+  max-width: var(--width-md);
 
   img {
     display: block;
@@ -47,9 +47,9 @@
       padding-left: 4px;
       font-size: 1.3em;
       position: absolute;
-      color: var(--text);
+      color: var(--white);
       line-height: 115%;
-      opacity: var(--lightOpacity);
+      opacity: var(--op-light);
     }
 
   }
@@ -65,11 +65,11 @@
   }
 
   &__content ul li {
-    font-size: 1.2em;
+    font-size: var(--font-size-lg);
   }
 
   &__content p {
-    font-size: 1.2em;
+    font-size: var(--font-size-lg);
     margin: 0;
   }
 
@@ -77,13 +77,13 @@
   &__footer {
     display: flex;
     flex-direction: row;
-    gap: var(--halfSpace);
+    gap: var(--gap-xs);
   }
 
   &__footer a,
   &__footer open-heart .off {
     text-decoration: none;
-    opacity: var(--lightOpacity);
+    opacity: var(--op-light);
   }
 
   &__footer>a:hover {
@@ -96,7 +96,7 @@
   }
 
   &__pagination {
-    width: var(--width);
+    width: var(--width-md);
     margin: 1em auto 0 auto;
     display: flex;
     flex-direction: column;
@@ -104,13 +104,13 @@
 
   &__pagination a {
     text-decoration: none;
-    opacity: var(--lightOpacity);
+    opacity: var(--op-light);
   }
 
 
   &__paginationArrow,
   &__footerSeparator {
-    opacity: var(--lightOpacity);
+    opacity: var(--op-light);
   }
 
   &__paginationLink,
@@ -158,7 +158,7 @@
 h3,
 h4 {
   margin: 0;
-  opacity: var(--lightOpacity);
+  opacity: var(--op-light);
 }
 
 
