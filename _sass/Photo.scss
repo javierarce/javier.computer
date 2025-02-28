@@ -350,7 +350,7 @@ figcaption {
 }
 
 .Photo__selector {
-  font-size: 0.8em;
+  font-size: var(--font-size-sm);
   width: var(--width-full);
   text-align: right;
 }

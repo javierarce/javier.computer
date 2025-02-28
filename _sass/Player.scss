@@ -76,7 +76,7 @@
 
   &__time {
     user-select: none;
-    font-size: 0.8em;
+    font-size: var(--font-size-sm);
     display: flex;
     flex-direction: row;
     align-items: center;

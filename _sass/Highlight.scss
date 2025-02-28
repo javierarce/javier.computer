@@ -1,7 +1,7 @@
 div.highlight {
   font-family: var(--font-text-mono);
   padding: 1em;
-  font-size: 0.8em;
+  font-size: var(--font-size-sm);
   margin: 0;
   border-radius: var(--br-md);
   border: 1px solid #fff;
@@ -61,7 +61,7 @@ div.highlight {
   .gh {
     color: #66d9ef;
     background-color: #272822;
-    font-weight: bold;
+    font-weight: var(--font-weight-bold);
   }
 
   .k,
