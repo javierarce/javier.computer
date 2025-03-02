@@ -1,23 +1,29 @@
 <div class="Post__footer">
   <a href="{{ page.url }}" class="Post__date">{% include date.html date=page.date -%}</a>
-  {% include post/locations.html page=page %}
+  {% include post/locations.html page=page -%}
   {% include post/tags.html page=page -%}
 
-  {% if site.show_likes %}
-  <span class="Post__footerSeparator">&middot</span>
-  <open-heart class="text-open-heart" href="https://api.javier.computer/heart?id={{ page.url }}" emoji="❤️"
-    aria-labelledby="like-prompt">
-    <span class="on"></span>
-    <span class="off"></span>
-  </open-heart>
-  {% endif %}
+  {% if site.show_likes -%}
+    <span class="Post__footerSeparator">&middot</span>
+    <open-heart
+      class="text-open-heart"
+      href="https://api.javier.computer/heart?id={{ page.url }}"
+      emoji="❤️"
+      aria-labelledby="like-prompt"
+    >
+      <span class="on"></span>
+      <span class="off"></span>
+    </open-heart>
+  {% endif -%}
 
-  {% if site.show_comments %}
-  <span class="Post__footerSeparator">&middot;</span>
-  <a href="/comment?title={{ page.title }}&url={{ page.id }}"
-    title="Envíame un comentario sobre esta entrada">Comentar</a>
-  {% endif %}
+  {% if site.show_comments -%}
+    <span class="Post__footerSeparator">&middot;</span>
+    <a
+      href="/comment?title={{ page.title }}&url={{ page.id }}"
+      title="Envíame un comentario sobre esta entrada"
+      >Comentar</a
+    >
+  {% endif -%}
 </div>
-
 
 {% include pagination.html post=page -%}

@@ -3,15 +3,14 @@ layout: base
 className: Quote
 ---
 <div class="Content">
-  {% include navigation.html %}
+  {% include navigation.html -%}
 
-<div class="Post is-quote">
-  <div class="Post__content">
-    <blockquote>{{ content }}</blockquote>
-    {{ page.author }} ({{page.year}}). {{ page.title }}. {{ page.editorial}}
-  </div>
-    {% include post/footer.html %}
-    
+  <div class="Post is-quote">
+    <div class="Post__content">
+      <blockquote>{{ content }}</blockquote>
+      {{ page.author }} ({{ page.year }}). {{ page.title }}. {{ page.editorial }}
+    </div>
+    {% include post/footer.html -%}
   </div>
   {% include footer.html -%}
 </div>

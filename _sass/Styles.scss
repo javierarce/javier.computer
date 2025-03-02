@@ -210,6 +210,10 @@ h4 {
   opacity: var(--op-light);
 }
 
+img {
+  aspect-ratio: var(--aspect-ratio);
+}
+
 img.lazy {
   transition: all 520ms ease-in-out;
   opacity: var(--op-1);

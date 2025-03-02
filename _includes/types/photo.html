@@ -1,36 +1,36 @@
 <div class="Post {% if post.highlighted -%} is-highlighted{% endif -%} h-entry">
   {% if post.show_title -%}
-  <div class="Post__title p-name">{{ post.title }}</div>
+    <div class="Post__title p-name">{{ post.title }}</div>
   {% else -%}
-  <a href="https://javier.computer" class="p-name" style="display:none">{{ post.title }}</a>
+    <a href="https://javier.computer" class="p-name" style="display:none">{{ post.title }}</a>
   {% endif -%}
 
   <span class="p-author h-card" style="display:none;">{{ site.author }}</span>
   <div class="Post__content{% if post.extraClassName %} {{ post.extraClassName }}{% endif %} e-content">
     <a href="{{ post.url }}">
       {% if post.cover -%}
-
-      {% include photos/single.html photo=post filename=post.cover hide_caption=true -%}
+        {% include photos/single.html photo=post filename=post.cover hide_caption=true -%}
 
       {% elsif post.filenames -%}
+        {% if post.filenames.first.filename -%}
+          {% assign filename = post.filenames.first.filename -%}
+          {% assign ratio = post.filenames.first.ratio -%}
+          {% assign caption = post.filenames.first.caption -%}
+        {% else -%}
+          {% assign filename = post.filenames.first -%}
+          {% assign ratio = post.ratio -%}
+        {% endif -%}
 
-      {% if post.filenames.first.filename -%}
-      {% assign filename = post.filenames.first.filename -%}
-      {% assign caption = post.filenames.first.caption -%}
-      {% else -%}
-      {% assign filename = post.filenames.first -%}
-      {% endif -%}
-
-      {% include photos/single.html photo=post filename=filename caption=caption hide_caption=true -%}
+        {% include photos/single.html photo=post filename=filename caption=caption hide_caption=true ratio=ratio -%}
       {% elsif post.filename %}
-      {% include photos/single.html photo=post filename=post.filename -%}
+        {% include photos/single.html photo=post filename=post.filename ratio=post.ratio -%}
       {% endif %}
     </a>
 
     {% if post.intro -%}
-    <p>{{ post.intro }}</p>
+      <p>{{ post.intro }}</p>
     {% elsif post.show_content -%}
-    {{ post.content }}
+      {{ post.content }}
     {% endif -%}
   </div>
   <div class="Post__footer">
@@ -40,22 +40,33 @@
     {% include post/locations.html page=post -%}
 
     {% if site.show_home_likes %}
-    <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
-    <open-heart class="text-open-heart" href="https://api.javier.computer/heart?id={{ page.url }}" emoji="❤️"
-      aria-labelledby="like-prompt">
-      <span class="on"></span>
-      <span class="off"></span>
-    </open-heart>
+      <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
+      <open-heart
+        class="text-open-heart"
+        href="https://api.javier.computer/heart?id={{ page.url }}"
+        emoji="❤️"
+        aria-labelledby="like-prompt"
+      >
+        <span class="on"></span>
+        <span class="off"></span>
+      </open-heart>
     {% endif %}
 
     {% if site.show_home_comments %}
-    <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
-    <a href="/comment?title={{ page.title }}&url={{ page.id }}"
-      title="Envíame un comentario sobre esta entrada">Comentar</a>
+      <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
+      <a
+        href="/comment?title={{ page.title }}&url={{ page.id }}"
+        title="Envíame un comentario sobre esta entrada"
+        >Comentar</a
+      >
     {% endif %}
 
     <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
-    <a href="{{ post.url }}#more" class="is-underlined">Ver {{ post.filenames.size }} foto{% if post.filenames.size > 1
-      %}s{% endif -%}</a>
+    <a href="{{ post.url }}#more" class="is-underlined"
+      >Ver {{ post.filenames.size }} foto
+      {%- if post.filenames.size > 1 -%}
+        s
+      {%- endif -%}
+    </a>
   </div>
 </div>

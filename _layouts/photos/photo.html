@@ -2,43 +2,40 @@
 layout: base
 className: Photo
 ---
+{% assign matching_location = site.locations | where: 'location', page.location | first %}
 
-{% assign matching_location = site.locations | where: "location", page.location | first %}
-
-<!--- photos/photo -->
+<!-- - photos/photo -->
 <div class="Content">
   {% include navigation.html -%}
   <div class="Photo__collection has-lightbox">
-
     {% if page.hide_title != true -%}
-    <div class="Photo__header">
-      <h2>{{ page.title }}</h2>
-    </div>
+      <div class="Photo__header">
+        <h2>{{ page.title }}</h2>
+      </div>
     {% endif -%}
-
     {% if page.filenames -%}
-    {% for file in page.filenames -%}
-
-    {% if file.filename -%}
-    {% assign filename = file.filename -%}
-    {% assign caption = file.caption -%}
+      {% for file in page.filenames -%}
+        {% if file.filename -%}
+          {% assign filename = file.filename -%}
+          {% assign caption = file.caption -%}
+          {% assign ratio = file.ratio -%}
+        {% else -%}
+          {% assign filename = file -%}
+          {% assign ratio = page.ratio -%}
+          {% assign caption = '' -%}
+        {% endif -%}
+        {%
+          include photos/single.html
+          photo=page filename=filename caption=caption ratio=ratio
+        -%}
+      {% endfor -%}
     {% else -%}
-    {% assign filename = file -%}
-    {% assign caption = "" -%}
+      {% include photos/single.html photo=page filename=page.filename ratio=page.ratio -%}
     {% endif -%}
-
-    {% include photos/single.html photo=page filename = filename caption = caption -%}
-    {% endfor -%}
-
-    {% else -%}
-    {% include photos/single.html photo=page filename = page.filename -%}
-    {% endif -%}
-
     {% assign content = page.content | strip %}
     {% if content.size > 0 %}
-    <div class="Post__content">{{ content }}</div>
+      <div class="Post__content">{{ content }}</div>
     {% endif %}
-
     {% include photos/footer.html photo=page pagination=true -%}
   </div>
   {% include footer.html -%}

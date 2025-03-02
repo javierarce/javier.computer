@@ -11,11 +11,10 @@ className: Post
 
   <div class="Music">
     <div class="Music__content">
-      <img class="Music__photo Photo lazy" data-src="{{ page.img }}" />
-      {{ content }} 
+      <img class="Music__photo Photo lazy" data-src="{{ page.img }}">
+      {{ content }}
       <a href="{{ page.link }}" target="_blank">{{ page.title }}</a> by {{ page.band }}
     </div>
   </div>
   {% include footer.html -%}
 </div>
-

@@ -10,15 +10,16 @@ category: drawings
 
   <h2>{{ page.title }}</h2>
   <div class="Drawings {% if page.gap == true -%}is-gap{% endif -%} {% if page.fullheight == true -%}is-fullheight{% endif -%}">
-
-    {% for filename in page.filenames %}
-    <div class="Drawing">
-      <img src="/img/drawings/{{ page.dir }}/{{ filename }}" alt="{{ page.title }}" />
-    </div>
-    {% endfor %}
+    {% for filename in page.filenames -%}
+      <div class="Drawing">
+        <img src="/img/drawings/{{ page.dir }}/{{ filename }}" alt="{{ page.title }}">
+      </div>
+    {% endfor -%}
   </div>
 
-{% if content != nil and content != "" -%}<div class="Drawing__content">{{ content }}</div>{% endif -%}
+  {% if content != null and content != '' -%}
+    <div class="Drawing__content">{{ content }}</div>
+  {% endif -%}
 
   {% include footer.html -%}
 </div>

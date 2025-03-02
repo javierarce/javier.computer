@@ -1,37 +1,25 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-      {% if page.show_title and page.title -%}{{ page.title }} - {% endif -%}{{
-      site.description }}
+      {% if page.show_title and page.title -%}{{ page.title }} - {% endif -%}
+      {{ site.description }}
     </title>
-
-    <link
-      rel="shortcut icon"
-      href="{{ base.url | prepend: site.url }}/favicon.ico"
-    />
-
-    {% include meta.html -%} {% include scripts.html -%} {% feed_meta %}
+    <link rel="shortcut icon" href="{{ base.url | prepend: site.url }}/favicon.ico">
+    {% include meta.html -%}
+    {% include scripts.html -%}
+    {% feed_meta -%}
   </head>
-  <body
-    class="Layout__{{ page.className | default: page.category | downcase  }}"
-  >
+  <body class="Layout__{{ page.className | default: page.category | downcase  }}">
     <div class="Content">
-      {% include navigation.html %}
+      {% include navigation.html -%}
       <div class="Content__inner">{{ content }}</div>
-      {% include footer.html %}
+      {% include footer.html -%}
     </div>
-
-    <script
-      src="{{ 'scripts/mailer.js' | relative_url }}?version={{site.version}}"
-      charset="utf-8"
-    ></script>
-    <script
-      src="{{ 'scripts/lazyload.min.js' | relative_url }}?version={{site.version}}"
-      charset="utf-8"
-    ></script>
+    <script src="{{ 'scripts/mailer.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
+    <script src="{{ 'scripts/lazyload.min.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
   </body>
 </html>

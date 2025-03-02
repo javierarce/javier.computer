@@ -1,46 +1,47 @@
---- 
-# this ensures Jekyll reads the file to be transformed into CSS later 
-# only Main files contain this front matter, not partials. 
---- 
-@import '_variables';
-@import '_transitions';
-@import '_reset';
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
 
-@import 'About';
-@import 'Announcement';
-@import 'Archive';
-@import 'Book';
-@import 'Bot';
-@import 'Button';
-@import 'Calendar';
-@import 'Drawing';
-@import 'Figure';
-@import 'Footer';
-@import 'Footnotes';
-@import 'Form';
-@import 'Heart';
-@import 'Highlight';
-@import 'Icons';
-@import 'Input';
-@import 'Label';
-@import 'Lightbox';
-@import 'Mail';
-@import 'Map';
-@import 'Movies';
-@import 'Music';
-@import 'MusicSnitch';
-@import 'Navigation';
-@import 'Page';
-@import 'Pagination';
-@import 'Photo';
-@import 'Player';
-@import 'Post';
-@import 'Project';
-@import 'Song';
-@import 'Spinner';
-@import 'Table';
-@import 'Tag';
-@import 'Video';
-@import 'Weather';
+@import "_variables";
+@import "_transitions";
+@import "_reset";
 
-@import 'Styles';
+@import "About";
+@import "Announcement";
+@import "Archive";
+@import "Book";
+@import "Bot";
+@import "Button";
+@import "Calendar";
+@import "Drawing";
+@import "Figure";
+@import "Footer";
+@import "Footnotes";
+@import "Form";
+@import "Heart";
+@import "Highlight";
+@import "Icons";
+@import "Input";
+@import "Label";
+@import "Lightbox";
+@import "Mail";
+@import "Map";
+@import "Movies";
+@import "Music";
+@import "MusicSnitch";
+@import "Navigation";
+@import "Page";
+@import "Pagination";
+@import "Photo";
+@import "Player";
+@import "Post";
+@import "Project";
+@import "Song";
+@import "Spinner";
+@import "Table";
+@import "Tag";
+@import "Video";
+@import "Weather";
+
+@import "Styles";

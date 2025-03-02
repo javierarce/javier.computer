@@ -7,14 +7,22 @@ show_content: true
 category: photo
 location: berlin
 filenames:
-  - 2024-08-03-Berlin-R0008339
-  - 2024-08-03-Berlin-R0008299
-  - 2024-08-03-Berlin-R0008301
-  - 2024-08-03-Berlin-R0008304
-  - 2024-08-03-Berlin-R0008312
-  - 2024-08-03-Berlin-R0008315
-  - 2024-08-03-Berlin-R0008324
-  - 2024-08-03-Berlin-R0008352
+  - filename: 2024-08-03-Berlin-R0008339
+    ratio: 3/2
+  - filename: 2024-08-03-Berlin-R0008299
+    ratio: 3/2
+  - filename: 2024-08-03-Berlin-R0008301
+    ratio: 3/2
+  - filename: 2024-08-03-Berlin-R0008304
+    ratio: 3/2
+  - filename: 2024-08-03-Berlin-R0008312
+    ratio: 2/3
+  - filename: 2024-08-03-Berlin-R0008315
+    ratio: 3/2
+  - filename: 2024-08-03-Berlin-R0008324
+    ratio: 2/3
+  - filename: 2024-08-03-Berlin-R0008352
+    ratio: 3/2
 camera: Ricoh GR IIIx
 places:
   - schillermarkt

@@ -2,23 +2,22 @@
 layout: base
 className: Page
 ---
-
 <div class="Content">
-  {% include navigation.html %}
+  {% include navigation.html -%}
   <div class="Page">
     <div class="Page__content">
-      {% if page.show_title %}
-      <h3 class="Page__title">{{ page.title }}</h3>
-      {% endif %}
-      {% if page.description and page.show_description %}
-      <p class="is-light">{{ page.description }}</p>
-      {% endif %}
+      {% if page.show_title -%}
+        <h3 class="Page__title">{{ page.title }}</h3>
+      {% endif -%}
+      {% if page.description and page.show_description -%}
+        <p class="is-light">{{ page.description }}</p>
+      {% endif -%}
       {{ content }}
 
-      {% if page.show_date != false and page.date %}
-      <div class="Page__date">{{ page.date | date: '%B %d, %Y' }}</div>
-      {% endif %}
+      {% if page.show_date != false and page.date -%}
+        <div class="Page__date">{{ page.date | date: '%B %d, %Y' }}</div>
+      {% endif -%}
     </div>
   </div>
-  {% include footer.html %}
+  {% include footer.html -%}
 </div>

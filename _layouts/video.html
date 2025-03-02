@@ -3,27 +3,17 @@ layout: base
 className: Post
 category: videos
 ---
-
-{% assign matching_location = site.locations | where: "location", page.location | first %}
-
-<!--- video -->
-
+{% assign matching_location = site.locations | where: 'location', page.location | first -%}
+<!-- - video -->
 <div class="Content">
   {% include navigation.html -%}
-
-
-  {% assign content = page.content | strip %}
+  {% assign content = page.content | strip -%}
   <div class="Post">
-
     {% include video.html url=page.src -%}
-
-    <div class="Post__content{% if page.extraClassName %} {{ page.extraClassName }}{% endif %}">
+    <div class="Post__content{% if page.extraClassName -%} {{ page.extraClassName }}{% endif -%}">
       {{ content }}
     </div>
-
-    {% include post/footer.html %}
-
+    {% include post/footer.html -%}
   </div>
-
   {% include footer.html -%}
 </div>

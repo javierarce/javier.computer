@@ -38,15 +38,15 @@ pude capturar algunos estupendos carteles retro que hay esparcidos por la
 ciudad.
 
 <div class="g">
-{% include photos/custom.html location='zaragoza' filename='2024-11-09-Zaragoza-R0009640' -%}
-{% include photos/custom.html location='zaragoza' filename='2024-11-09-Zaragoza-R0009645' -%}
-{% include photos/custom.html location='zaragoza' filename='2024-11-09-Zaragoza-R0009649' -%}
-{% include photos/custom.html location='zaragoza' filename='2024-11-09-Zaragoza-R0009654' -%}
-{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009656' -%}
+{% include photos/custom.html location='zaragoza' filename='2024-11-09-Zaragoza-R0009640' ratio="3/2"-%}
+{% include photos/custom.html location='zaragoza' filename='2024-11-09-Zaragoza-R0009645' ratio="3/2"-%}
+{% include photos/custom.html location='zaragoza' filename='2024-11-09-Zaragoza-R0009649' ratio="3/2"-%}
+{% include photos/custom.html location='zaragoza' filename='2024-11-09-Zaragoza-R0009654' ratio="3/2"-%}
+{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009656' ratio="3/2"-%}
 
 <div class="h">
-{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009655' -%}
-{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009658' -%}
+{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009655' ratio="2/3"-%}
+{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009658' ratio="2/3"-%}
     </div>
     </div>
 
@@ -56,22 +56,22 @@ ciudad.
 </div>
 
 <div class="g">
-{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009669' -%}
+{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009669' ratio="3/2" -%}
     <div class="h">
-{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009662' -%}
-{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009663' -%}
+{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009662' ratio="3/2" -%}
+{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009663' ratio="3/2" -%}
 </div>
     <div class="h">
-{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009665' -%}
-{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009676' -%}
+{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009665' ratio="3/2" -%}
+{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009676' ratio="3/2" -%}
     </div>
 
 <div class="g">
-{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009671' -%}
+{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009671' ratio="3/2" -%}
     </div>
     </div>
 
 <div class="g has-margin-top">
 <p>¡Hasta otra!</p>
     </div>
-{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-DSCF2881' -%}
+{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-DSCF2881' ratio="3/2" -%}

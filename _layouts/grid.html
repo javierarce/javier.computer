@@ -2,15 +2,14 @@
 layout: base
 className: Page
 ---
-
 <div class="Grid">
-  {% include navigation.html %}
+  {% include navigation.html -%}
   <div class="Page__content">
-    {% if page.show_title %}
-    <h3 class="Page__title">{{ page.title }}</h3>
-    {% endif %}
+    {% if page.show_title -%}
+      <h3 class="Page__title">{{ page.title }}</h3>
+    {% endif -%}
     <p class="is-light">{{ page.description }}</p>
     {{ content }}
   </div>
-  {% include footer.html %}
+  {% include footer.html -%}
 </div>

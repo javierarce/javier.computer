@@ -4,25 +4,24 @@
 
 <div class="Photo__collection">
   {% if filenames | size -%}
-  {% for file in filenames -%}
+    {% for file in filenames -%}
+      {% if file.filename -%}
+        {% assign filename = file.filename -%}
+        {% assign caption = file.caption -%}
+      {% else -%}
+        {% assign filename = file -%}
+        {% assign caption = '' -%}
+      {% endif -%}
 
-  {% if file.filename -%}
-  {% assign filename = file.filename -%}
-  {% assign caption = file.caption -%}
-  {% else -%}
-  {% assign filename = file -%}
-  {% assign caption = "" -%}
-  {% endif -%}
-
-  {% include photos/single.html photo=post filename = filename -%}
-  {% endfor -%}
+      {% include photos/single.html photo=post filename = filename -%}
+    {% endfor -%}
   {% elsif post.filename -%}
-  {% include photos/single.html photo=post filename = post.filename -%}
+    {% include photos/single.html photo=post filename = post.filename -%}
   {% endif -%}
 
   {% assign content = post.content | strip %}
   {% if content.size > 0 %}
-  <div class="Post__content">{{ content }}</div>
+    <div class="Post__content">{{ content }}</div>
   {% endif %}
 
   {% include photos/footer.html photo=post -%}

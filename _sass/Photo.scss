@@ -80,6 +80,11 @@ figcaption {
   margin: 0 auto;
 }
 
+.Layout__reportage blockquote {
+  width: var(--width-md);
+  margin: 0 auto;
+}
+
 .Layout__reportage h2 {
   font-size: 1.8em;
   text-align: center;
@@ -101,7 +106,7 @@ figcaption {
   margin-bottom: 1em;
 }
 
-.Layout__reportage h2+h3 {
+.Layout__reportage h2 + h3 {
   font-weight: var(--font-weight-regular);
   text-align: center;
   margin-top: 0;
@@ -185,7 +190,6 @@ figcaption {
 
 /* --- */
 
-
 .Photo__feed {
   margin-bottom: 2em;
 }
@@ -199,7 +203,7 @@ figcaption {
   text-align: center;
 }
 
-.Photos__archive>div {
+.Photos__archive > div {
   display: flex;
   align-items: center;
   line-height: 0;
@@ -230,7 +234,7 @@ figcaption {
   gap: var(--gap-xl);
 }
 
-.Photo__layout .Photo>.Photo__content img {
+.Photo__layout .Photo > .Photo__content img {
   height: auto;
   width: var(--width-full);
   max-width: none;
@@ -291,7 +295,7 @@ figcaption {
   width: var(--width-full);
 }
 
-.g>.g {
+.g > .g {
   margin-bottom: 0;
 }
 
@@ -311,8 +315,8 @@ figcaption {
   justify-content: flex-start;
 }
 
-.h.has-one>div,
-.h.has-two>div {
+.h.has-one > div,
+.h.has-two > div {
   width: 33.3333%;
 }
 
@@ -327,12 +331,10 @@ figcaption {
   margin-top: 1em;
 }
 
-
 .Photo__layout p.has-margin-bottom,
 .Photo__layout p.has-margin-bottom:last-child {
   margin-bottom: 1em;
 }
-
 
 .Photo__header {
   display: flex;
@@ -369,7 +371,6 @@ figcaption {
 }
 
 @media all and (max-width: 1024px) {
-
   .Layout__photo .Content,
   .Layout__photos .Content {
     width: var(--width-full);
@@ -396,7 +397,6 @@ figcaption {
 }
 
 @media all and (max-width: 640px) {
-
   .Layout__reportage .g h3 {
     width: var(--width-full);
   }
@@ -457,8 +457,8 @@ figcaption {
     justify-content: center;
   }
 
-  .h.has-one>div,
-  .h.has-two>div {
+  .h.has-one > div,
+  .h.has-two > div {
     width: var(--width-full);
   }
 

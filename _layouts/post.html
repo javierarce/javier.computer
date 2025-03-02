@@ -7,12 +7,11 @@ category: posts
   {% include navigation.html -%}
 
   <div class="Post">
-    <div class="Post__content{% if page.extraClassName %} {{ page.extraClassName }}{% endif %}">
+    <div class="Post__content{% if page.extraClassName -%} {{ page.extraClassName }}{% endif -%}">
       {{ content }}
     </div>
 
-    {% include post/footer.html %}
-
+    {% include post/footer.html -%}
   </div>
   {% include footer.html -%}
 </div>

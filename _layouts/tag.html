@@ -3,25 +3,23 @@ layout: page
 className: Tags
 category: tags
 ---
+{% assign posts = '' | split: ',' -%}
 
-{% assign posts = "" | split: ',' %}
-
-{% for post in site.posts %}
-{% for tag in post.tags %}
-{% if tag == page.tag %}
-{% assign posts = posts | push: post %}
-{% endif %}
-{% endfor %}
-{% endfor %}
+{% for post in site.posts -%}
+  {% for tag in post.tags -%}
+    {% if tag == page.tag -%}
+      {% assign posts = posts | push: post -%}
+    {% endif -%}
+  {% endfor -%}
+{% endfor -%}
 
 <h2>{{ page.tag | capitalize }}</h2>
 
 <ul class="Tags__list">
-  {% for post in posts %}
-  <li class="Tag">
-    <a href="{{ post.url }}" class="is-{{ post.category }}">{{ post.title }}</a>
-    <div class="Tag__date">{% include date.html date=post.date day=true %}</div>
-  </li>
-  {% endfor %}
+  {% for post in posts -%}
+    <li class="Tag">
+      <a href="{{ post.url }}" class="is-{{ post.category }}">{{ post.title }}</a>
+      <div class="Tag__date">{% include date.html date=post.date day=true -%}</div>
+    </li>
+  {% endfor -%}
 </ul>
-

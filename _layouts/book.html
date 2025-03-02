@@ -3,7 +3,7 @@ layout: base
 className: Book
 ---
 <div class="Content">
-  {% include navigation.html %}
+  {% include navigation.html -%}
 
   <div class="book">
     <div class="book__content">
@@ -12,15 +12,15 @@ className: Book
         <div class="book__author">{{ page.author }}</div>
       </div>
       <div class="book__page">
-          {% if page.cover -%}
-        <div class="book__cover">
-          <img src="/img/covers/{{page.cover}}" alt="Cover for {{page.title}}">
-        </div>
-          {% endif -%}
+        {% if page.cover -%}
+          <div class="book__cover">
+            <img src="/img/covers/{{page.cover}}" alt="Cover for {{page.title}}">
+          </div>
+        {% endif -%}
         {{ content }}
       </div>
     </div>
   </div>
 
-  {% include footer.html %}
+  {% include footer.html -%}
 </div>
