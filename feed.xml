@@ -80,7 +80,7 @@ layout: none
         {% endif %}
 
         {% if post.intro -%}
-        <p>{{ post.intro | xml_escape }}</p> 
+        <p>{{ post.intro  }}</p> 
         {% endif -%}
 
         <p><a href="{{ post.url }}" target="_blank">Leer más</a>.</p>
