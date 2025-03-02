@@ -1,7 +1,37 @@
 {
-  "updated_at": "2025-02-26",
-  "count": 848,
+  "updated_at": "2025-03-02",
+  "count": 851,
   "movies": [
+    {
+      "watched_on": "2025-03-02",
+      "title": "Sailor Suit and Machine Gun",
+      "year": 1981,
+      "rating": 1.5,
+      "liked": false,
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "sailor-suit-and-machine-gun"
+    },
+    {
+      "watched_on": "2025-03-01",
+      "title": "Companion",
+      "year": 2025,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "companion-2025"
+    },
+    {
+      "watched_on": "2025-02-27",
+      "title": "September 5",
+      "year": 2024,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "september-5"
+    },
     {
       "watched_on": "2025-02-26",
       "title": "Columbus",

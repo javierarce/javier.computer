@@ -74,6 +74,13 @@ entities@^4.2.0:
   resolved "https://registry.npmjs.org/entities/-/entities-4.5.0.tgz"
   integrity sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==
 
+fast-xml-parser@^5.0.8:
+  version "5.0.8"
+  resolved "https://registry.npmjs.org/fast-xml-parser/-/fast-xml-parser-5.0.8.tgz"
+  integrity sha512-qY8NiI5L8ff00F2giyICiJxSSKHO52tC36LJqx2JtvGyAd5ZfehC/l4iUVVHpmpIa6sM9N5mneSLHQG2INGoHA==
+  dependencies:
+    strnum "^2.0.5"
+
 he@1.2.0:
   version "1.2.0"
   resolved "https://registry.npmjs.org/he/-/he-1.2.0.tgz"
@@ -128,3 +135,8 @@ ohm-js@^16.3.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/prettier/-/prettier-3.0.0.tgz"
   integrity sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==
+
+strnum@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.npmjs.org/strnum/-/strnum-2.0.5.tgz"
+  integrity sha512-YAT3K/sgpCUxhxNMrrdhtod3jckkpYwH6JAuwmUdXZsmzH1wUyzTMrrK2wYCEEqlKwrWDd35NeuUkbBy/1iK+Q==

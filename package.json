@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "fast-xml-parser": "^5.0.8",
     "node-html-parser": "^6.1.13"
   },
   "devDependencies": {
