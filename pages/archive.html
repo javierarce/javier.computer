@@ -54,7 +54,7 @@ category: posts
     <span class="archive__day">{{ post.date | date: '%d' }}</span>
     <div class="archive__links">
       {% endif -%}
-      <a href="{{ post.url }}" {% if post.category.size> 0 -%} class="is-{{ post.category }}"{% endif -%}>{{ post.title
+      <a href="{{ post.url }}" {% if post.category.size > 0 -%} class="is-{{ post.category }}"{% endif -%}>{{ post.title
         }}</a>
       {% assign d = post.date | date: "%d" -%}
       {% assign p = post.previous.date | date: "%d" -%}

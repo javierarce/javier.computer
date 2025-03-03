@@ -8,7 +8,8 @@ show_date: true
 show_title: true
 ---
 
-## Kindle to Are.na 
+## Kindle to Are.na
+
 ### A little gift for the geeks
 
 <div class="Project__intro">
@@ -18,7 +19,6 @@ show_title: true
 <figure class="figure"> 
 <img class="figure__image is-bn lazy" data-src="https://javier.work/images/arena/home.jpg">
 </figure>
-
 
 ### What is Are.na?
 
@@ -45,4 +45,3 @@ The user can modify the highlights and notes before sending the data to Are.na, 
 Future updates include adding a mechanism to create simple templates so users can customize the way they publish the highlights, and an option to share the clippings into a common Are.na channel.
 
 The project's code is publicly available in [this GitHub repo](https://github.com/javierarce/kindle-to-arena).
-

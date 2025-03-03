@@ -6,9 +6,6 @@
 {% endif -%}
 
 <div class="navigation__links">
-  {% if page.category == 'photo' -%}
-    <a class="navigation__link is-selected" href="{{ page.permalink }}">Post</a>
-  {% endif -%}
   {% unless page.hide_location -%}
     <a
       class="navigation__link {% if page.category == 'photos' %}is-selected{% endif %}"

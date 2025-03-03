@@ -173,7 +173,7 @@ ul {
 }
 
 ul li {
-  margin: 0 0 .4em 0;
+  margin: 0 0 0.4em 0;
   list-style: disc;
 }
 
@@ -252,7 +252,7 @@ img.lazy.error {
 .book__spine[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))) .Book__title:after,
 .Post__content p a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
 .is-external:after {
-  content: '↗';
+  content: "↗";
   display: inline-block;
   font-weight: 400;
   padding-left: var(--pd-sm);
@@ -274,8 +274,9 @@ img.lazy.error {
   border-bottom: 1px solid var(--gray);
 }
 
+a.is-reportage::after,
 a.is-photo::after {
-  content: '';
+  content: "";
   display: inline-block;
   vertical-align: sub;
   width: 24px;
@@ -347,7 +348,6 @@ a.is-photo::after {
 }
 
 @media all and (max-width: 1024px) {
-
   .Layout__office .Content,
   .Layout__office .Content p {
     width: var(--width-full);
