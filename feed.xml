@@ -31,7 +31,11 @@ layout: none
         <p>{% if matching_location -%} {{ matching_location.title }}. {% endif -%}
         {% if post.camera %}{% if post.camera.first %}Cámaras: {{ post.camera | join: ", " }}.{% else %}Cámara: {{ post.camera }}.{% endif %}{% endif %}</p>
         <hr />
-        <p><a href="{{ site.url}}/comment?title={{post.title}}&url={{post.id}}">Comentar este post</a> &middot; <a href="{{ site.url}}/heart?id={{post.url}}">Me gusta</a></p>
+        <p>
+          <a href="{{ site.url}}/comment?title={{post.title}}&url={{post.id}}">Comentar este post</a> 
+          &middot; <a href="{{ site.url}}/heart?id={{post.url}}">Dar me gusta</a> 
+          &middot; <a href="{{ site.url}}/newsletter">Subscríbete a mi newsletter</a>
+        </p>
         ]]>
       {% elsif post.category == 'photo' %}
       <![CDATA[
@@ -57,7 +61,11 @@ layout: none
           <p>{% if matching_location -%} {{ matching_location.title }}. {% endif -%}
         {% if post.camera %}{% if post.camera.first %}Cámaras: {{ post.camera | join: ", " }}.{% else %}Cámara: {{ post.camera }}.{% endif %}{% endif %}</p>
           <hr />
-        <p><a href="{{ site.url}}/comment?title={{post.title}}&url={{post.id}}">Comentar este post</a> &middot; <a href="{{ site.url}}/heart?id={{post.url}}">Me gusta</a></p>
+        <p>
+          <a href="{{ site.url}}/comment?title={{post.title}}&url={{post.id}}">Comentar este post</a> 
+          &middot; <a href="{{ site.url}}/heart?id={{post.url}}">Dar me gusta</a> 
+          &middot; <a href="{{ site.url}}/newsletter">Subscríbete a mi newsletter</a>
+        </p>
         ]]>
       {% elsif post.category == 'reportage' %}
       <![CDATA[
@@ -86,7 +94,11 @@ layout: none
         <p><a href="{{ post.url }}" target="_blank">Leer más</a>.</p>
         <p>{% if matching_location -%}{{ matching_location.title }}. {% endif -%} {% if post.camera %}{% if post.camera.first %}Cámaras: {{ post.camera | join: ", " }}.{% else %}Cámara: {{ post.camera }}.{% endif %}{% endif %}</p>
         <hr />
-        <p><a href="{{ site.url}}/comment?title={{post.title}}&url={{post.id}}">Comentar este post</a> &middot; <a href="{{ site.url}}/heart?id={{post.url}}">Me gusta</a></p>
+        <p>
+          <a href="{{ site.url}}/comment?title={{post.title}}&url={{post.id}}">Comentar este post</a> 
+          &middot; <a href="{{ site.url}}/heart?id={{post.url}}">Dar me gusta</a> 
+          &middot; <a href="{{ site.url}}/newsletter">Subscríbete a mi newsletter</a>
+        </p>
         ]]>
       {% elsif post.category == 'music' %}
       <![CDATA[
@@ -98,7 +110,11 @@ layout: none
         {{ post.content | xml_escape }}
         <![CDATA[
         <hr />
-        <p><a href="{{ site.url}}/comment?title={{post.title}}&url={{post.id}}">Comentar este post</a> &middot; <a href="{{ site.url}}/heart?id={{post.url}}">Me gusta</a></p>
+        <p>
+          <a href="{{ site.url}}/comment?title={{post.title}}&url={{post.id}}">Comentar este post</a> 
+          &middot; <a href="{{ site.url}}/heart?id={{post.url}}">Dar me gusta</a> 
+          &middot; <a href="{{ site.url}}/newsletter">Subscríbete a mi newsletter</a>
+        </p>
         {% if post.disclaimer -%}<p>{{ post.disclaimer }}</p>{% endif -%}
           {% if matching_location -%}<p><small>{{ matching_location.title }}</small></p>{% endif -%}
         ]]>

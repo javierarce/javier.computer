@@ -1,7 +1,17 @@
 {
-  "updated_at": "2025-03-02",
-  "count": 851,
+  "updated_at": "2025-03-06",
+  "count": 852,
   "movies": [
+    {
+      "watched_on": "2025-03-05",
+      "title": "That Man from Rio",
+      "year": 1964,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "that-man-from-rio"
+    },
     {
       "watched_on": "2025-03-02",
       "title": "Sailor Suit and Machine Gun",
