@@ -54,11 +54,7 @@ layout: none
         <p><a href="{{ post.url }}" target="_blank">Leer más</a>.</p>
             <p>{% if matching_location -%}{{ matching_location.title }}. {% endif -%} {% if post.camera %}{% if post.camera.first %}Cámaras: {{ post.camera | join: ", " }}.{% else %}Cámara: {{ post.camera }}.{% endif %}{% endif %}</p>
             <hr />
-        <p>
-          <a href="{{ site.url}}/comment?title={{post.title}}&url={{post.id}}">Comenta este post</a> 
-          &middot; <a href="{{ site.url}}/heart?id={{post.url}}">Da me gusta</a> 
-          &middot; <a href="{{ site.url}}/newsletter">Subscríbete a mi newsletter</a>
-        </p>
+            {% include rss/footer.html post=post -%}
               ]]>
           </description>
       </item>
@@ -92,11 +88,7 @@ layout: none
             <p>{% if matching_location -%}{{ matching_location.title }}. {% endif -%} 
             {% if post.camera %}{% if post.camera.first %}Cámaras: {{ post.camera | join: ", " }}.{% else %}Cámara: {{ post.camera }}.{% endif %}{% endif %} </p>
             <hr />
-        <p>
-          <a href="{{ site.url}}/comment?title={{post.title}}&url={{post.id}}">Comenta este post</a> 
-          &middot; <a href="{{ site.url}}/heart?id={{post.url}}">Da me gusta</a> 
-          &middot; <a href="{{ site.url}}/newsletter">Subscríbete a mi newsletter</a>
-        </p>
+            {% include rss/footer.html post=post -%}
               ]]>
           </description>
       </item>

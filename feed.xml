@@ -3,124 +3,109 @@ layout: none
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-<channel>
-  <title>{{ site.title | xml_escape }}</title>
-  <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>		
+  <channel>
+    <title>{{ site.title | xml_escape }}</title>
+    <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>		
 
-  <atom:link href="{{ page.url | absolute_url }}" rel="self" type="application/atom+xml" />
-  <link>{{ site.url }}</link>
-  <atom:link href="{{ site.url }}/{{ page.path }}" rel="self" type="application/rss+xml" />
-  <lastBuildDate>{% for post in site.posts limit:1 %}{{ post.date | date_to_rfc822 }}{% endfor %}</lastBuildDate>
+    <atom:link href="{{ page.url | absolute_url }}" rel="self" type="application/atom+xml" />
+    <link>{{ site.url }}</link>
+    <atom:link href="{{ site.url }}/{{ page.path }}" rel="self" type="application/rss+xml" />
+    <lastBuildDate>{% for post in site.posts limit:1 %}{{ post.date | date_to_rfc822 }}{% endfor %}</lastBuildDate>
     {% assign feed_items = site.feed_items | default: 10 %}
     {% for post in site.posts limit:feed_items %}
 
     {% assign matching_location = site.locations | where: "location", post.location | first %}
 
-  <item>
-    <title>{{ post.title | xml_escape }}</title>
-    <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-    <link>{{ site.url }}{{ post.url }}</link>
-    <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
-    {% if post.author.name %}<dc:creator>{{ post.author.name | xml_escape }}</dc:creator>{% endif %}
+    <item>
+      <title>{{ post.title | xml_escape }}</title>
+      <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+      <link>{{ site.url }}{{ post.url }}</link>
+      <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+      {% if post.author.name %}<dc:creator>{{ post.author.name | xml_escape }}</dc:creator>{% endif %}
 
-    <description>
-      {% if post.category == 'video' %}
-      <![CDATA[
-        {{ post.content }}   
-        <p><video controls><source src="{{ post.src }}" type="video/mp4">Tu navegador no soporta video HTML5.</video></p>
-        <p>{% if matching_location -%} {{ matching_location.title }}. {% endif -%}
-        {% if post.camera %}{% if post.camera.first %}Cámaras: {{ post.camera | join: ", " }}.{% else %}Cámara: {{ post.camera }}.{% endif %}{% endif %}</p>
-        <hr />
-        <p>
-          <a href="{{ site.url}}/comment?title={{post.title}}&url={{post.id}}">Comenta este post</a> 
-          &middot; <a href="{{ site.url}}/heart?id={{post.url}}">Da me gusta</a> 
-          &middot; <a href="{{ site.url}}/newsletter">Subscríbete a mi newsletter</a>
-        </p>
-        ]]>
-      {% elsif post.category == 'photo' %}
-      <![CDATA[
-        {{ post.content }}   
-
-        {% if post.filenames %}
-          {% for file in post.filenames %}
-
-          {% if file.filename -%}
-          {% assign filename = file.filename -%}
-          {% assign caption = file.caption | default: post.title | strip_html | strip_newlines | xml_escape -%}
-          {% assign location = file.location | default: post.location | strip_html | strip_newlines | xml_escape -%}
-          {% else -%}
-          {% assign filename = file -%}
-          {% assign caption = post.title -%}
-          {% assign location = post.location -%}
-          {% endif -%}
-          <p><img src="https://img.javier.computer/{{ location }}/{{ filename }}_1280.jpg" style="max-width: 1024px;" alt="{{ caption }}" />{% if file.caption -%}<br />{{ file.caption }}{% endif -%}</p>
-          {% endfor %}
-        {% else %}
-          <img src="https://img.javier.computer/{{ post.location }}/{{ post.filename }}_1280.jpg" style="max-width: 1024px;" alt="{{post.title}}" />  
-        {% endif %}
-          <p>{% if matching_location -%} {{ matching_location.title }}. {% endif -%}
-        {% if post.camera %}{% if post.camera.first %}Cámaras: {{ post.camera | join: ", " }}.{% else %}Cámara: {{ post.camera }}.{% endif %}{% endif %}</p>
-          <hr />
-        <p>
-          <a href="{{ site.url}}/comment?title={{post.title}}&url={{post.id}}">Comenta este post</a> 
-          &middot; <a href="{{ site.url}}/heart?id={{post.url}}">Da me gusta</a> 
-          &middot; <a href="{{ site.url}}/newsletter">Subscríbete a mi newsletter</a>
-        </p>
-        ]]>
-      {% elsif post.category == 'reportage' %}
-      <![CDATA[
-        
-        {% if post.cover %}
-          <img src="https://img.javier.computer/{{ post.location }}/{{ post.cover }}_1280.jpg" alt="{{post.title}}" />  
-        {% elsif post.filenames %}
-          {% for file in post.filenames %}
-          {% if file.filename -%}
-          {% assign filename = file.filename -%}
-          {% assign caption = file.caption | default: post.title | strip_html | strip_newlines | xml_escape -%}
-          {% assign location = file.location | default: post.location | strip_html | strip_newlines | xml_escape -%}
-          {% else -%}
-          {% assign filename = file -%}
-          {% assign caption = post.title -%}
-          {% assign location = post.location -%}
-          {% endif -%}
-          <p><img src="https://img.javier.computer/{{ location }}/{{ filename }}_1280.jpg" style="max-width: 1024px;" alt="{{ caption }}" />{% if file.caption -%}<br />{{ file.caption }}{% endif -%}</p>
-          {% endfor %}
-        {% endif %}
-
-        {% if post.intro -%}
-        <p>{{ post.intro  }}</p> 
-        {% endif -%}
-
-        <p><a href="{{ post.url }}" target="_blank">Leer más</a>.</p>
-        <p>{% if matching_location -%}{{ matching_location.title }}. {% endif -%} {% if post.camera %}{% if post.camera.first %}Cámaras: {{ post.camera | join: ", " }}.{% else %}Cámara: {{ post.camera }}.{% endif %}{% endif %}</p>
-        <hr />
-        <p>
-          <a href="{{ site.url}}/comment?title={{post.title}}&url={{post.id}}">Comenta este post</a> 
-          &middot; <a href="{{ site.url}}/heart?id={{post.url}}">Da me gusta</a> 
-          &middot; <a href="{{ site.url}}/newsletter">Subscríbete a mi newsletter</a>
-        </p>
-        ]]>
-      {% elsif post.category == 'music' %}
-      <![CDATA[
-      <img src="https://javier.computer{{ post.img }}" alt="{{post.title}} by {{ post.band }}"/>  
-      {{ post.content }}   
-      <a href="{{ post.link }}" target="_blank">{{ post.title }} by {{ post.band }}</a>
-        ]]>
-      {% else %}
-        {{ post.content | xml_escape }}
+      <description>
+        {% if post.category == 'video' %}
         <![CDATA[
-        <hr />
-        <p>
-          <a href="{{ site.url}}/comment?title={{post.title}}&url={{post.id}}">Comenta este post</a> 
-          &middot; <a href="{{ site.url}}/heart?id={{post.url}}">Da me gusta</a> 
-          &middot; <a href="{{ site.url}}/newsletter">Subscríbete a mi newsletter</a>
-        </p>
-        {% if post.disclaimer -%}<p>{{ post.disclaimer }}</p>{% endif -%}
-          {% if matching_location -%}<p><small>{{ matching_location.title }}</small></p>{% endif -%}
-        ]]>
-      {% endif %}
-    </description>
-  </item>
-    {% endfor %}
-</channel>
-</rss>
+          {{ post.content }}   
+          <p><video controls><source src="{{ post.src }}" type="video/mp4">Tu navegador no soporta video HTML5.</video></p>
+          <p>{% if matching_location -%} {{ matching_location.title }}. {% endif -%}
+            {% if post.camera %}{% if post.camera.first %}Cámaras: {{ post.camera | join: ", " }}.{% else %}Cámara: {{ post.camera }}.{% endif %}{% endif %}</p>
+          <hr />
+            {% include rss/footer.html post=post -%}
+            ]]>
+          {% elsif post.category == 'photo' %}
+          <![CDATA[
+            {{ post.content }}   
+
+            {% if post.filenames %}
+            {% for file in post.filenames %}
+
+            {% if file.filename -%}
+            {% assign filename = file.filename -%}
+            {% assign caption = file.caption | default: post.title | strip_html | strip_newlines | xml_escape -%}
+            {% assign location = file.location | default: post.location | strip_html | strip_newlines | xml_escape -%}
+            {% else -%}
+            {% assign filename = file -%}
+            {% assign caption = post.title -%}
+            {% assign location = post.location -%}
+            {% endif -%}
+          <p><img src="https://img.javier.computer/{{ location }}/{{ filename }}_1280.jpg" style="max-width: 1024px;" alt="{{ caption }}" />{% if file.caption -%}<br />{{ file.caption }}{% endif -%}</p>
+            {% endfor %}
+            {% else %}
+          <img src="https://img.javier.computer/{{ post.location }}/{{ post.filename }}_1280.jpg" style="max-width: 1024px;" alt="{{post.title}}" />  
+            {% endif %}
+          <p>{% if matching_location -%} {{ matching_location.title }}. {% endif -%}
+            {% if post.camera %}{% if post.camera.first %}Cámaras: {{ post.camera | join: ", " }}.{% else %}Cámara: {{ post.camera }}.{% endif %}{% endif %}</p>
+          <hr />
+          {% include rss/footer.html post=post -%}
+                ]]>
+              {% elsif post.category == 'reportage' %}
+              <![CDATA[
+
+                {% if post.cover %}
+              <img src="https://img.javier.computer/{{ post.location }}/{{ post.cover }}_1280.jpg" alt="{{post.title}}" />  
+                {% elsif post.filenames %}
+                {% for file in post.filenames %}
+                {% if file.filename -%}
+                {% assign filename = file.filename -%}
+                {% assign caption = file.caption | default: post.title | strip_html | strip_newlines | xml_escape -%}
+                {% assign location = file.location | default: post.location | strip_html | strip_newlines | xml_escape -%}
+                {% else -%}
+                {% assign filename = file -%}
+                {% assign caption = post.title -%}
+                {% assign location = post.location -%}
+                {% endif -%}
+              <p><img src="https://img.javier.computer/{{ location }}/{{ filename }}_1280.jpg" style="max-width: 1024px;" alt="{{ caption }}" />{% if file.caption -%}<br />{{ file.caption }}{% endif -%}</p>
+                {% endfor %}
+                {% endif %}
+
+                {% if post.intro -%}
+              <p>{{ post.intro  }}</p> 
+                {% endif -%}
+
+              <p><a href="{{ post.url }}" target="_blank">Leer más</a>.</p>
+              <p>{% if matching_location -%}{{ matching_location.title }}. {% endif -%} {% if post.camera %}{% if post.camera.first %}Cámaras: {{ post.camera | join: ", " }}.{% else %}Cámara: {{ post.camera }}.{% endif %}{% endif %}</p>
+              <hr />
+                {% include rss/footer.html post=post -%}
+                ]]>
+              {% elsif post.category == 'music' %}
+              <![CDATA[
+              <img src="https://javier.computer{{ post.img }}" alt="{{post.title}} by {{ post.band }}"/>  
+                {{ post.content }}   
+              <a href="{{ post.link }}" target="_blank">{{ post.title }} by {{ post.band }}</a>
+                ]]>
+              {% else %}
+              {{ post.content | xml_escape }}
+              <![CDATA[
+              <hr />
+                {% include rss/footer.html post=post -%}
+                {% if post.disclaimer -%}<p>{{ post.disclaimer }}</p>{% endif -%}
+                  {% if matching_location -%}<p><small>{{ matching_location.title }}</small></p>
+                    {% endif -%}
+                    ]]>
+                  {% endif %}
+                </description>
+              </item>
+              {% endfor %}
+            </channel>
+          </rss>
