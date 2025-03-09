@@ -5,7 +5,7 @@ date: "2025-03-09 20:00:00 +0100"
 ---
 
 Muy feliz con la acogida de mi proyecto <a
-    href="https://binocularshot.com">binacularoso</a>, que esta semana ha
+    href="https://binocularshot.com">binocularoso</a>, que esta semana ha
 aparecido en sitios favoritos y de renombre como <a
     href="https://www.naiveweekly.com">Naive Weekly</a>, <a
     href="https://waxy.org">Waxy</a>, <a href="https://kottke.org">Kottke</a>,
