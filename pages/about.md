@@ -51,7 +51,7 @@ turtle, a turtle.
 
 This computer doesn't track you, your friends, or your enemies.
 
-### Follow and subscribe
+### Feeds and newsletter
 
 - If you like what you are reading (and why wouldn't you?), add the
   [RSS main feed](/feed.xml) to your favorite feed reader to get the updates.
@@ -60,7 +60,14 @@ This computer doesn't track you, your friends, or your enemies.
 - If you want to get an email (in Spanish) every time I do something funny [subscribe to
   my newsletter](/newsletter).
 
-### Don't be a stranger
+### Also find me on
+
+[Mastodon](https://mastodon.social/@javierarce),
+[Instagram](https://instagram.com/javier),
+[Bluesky](https://bsky.app/profile/javier.bsky.social),
+[Letterboxd](https://letterboxd.com/javier), and [GitHub](https://github.com/javierarce).
+
+### Don't be a stranger!
 
 Do you need to tell me something incredible that happened to you? [Go
 here](/contact) to get in touch or write to 'email' at this domain.
