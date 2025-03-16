@@ -1,7 +1,17 @@
 {
   "updated_at": "2025-03-16",
-  "count": 854,
+  "count": 855,
   "movies": [
+    {
+      "watched_on": "2025-03-16",
+      "title": "Salaam Cinema",
+      "year": 1995,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "salaam-cinema"
+    },
     {
       "watched_on": "2025-03-15",
       "title": "The Day of the Jackal",
