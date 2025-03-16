@@ -21,7 +21,7 @@ filenames:
   - filename: 2025-02-13-Mataro-CanonAE1-000008
   - filename: 2025-02-13-Mataro-CanonAE1-000005
   - filename: 2024-12-19-Barcelona-Canonet-000027
-  - filename: 2025-01-09-Barcelona-000067
+  - filename: 2025-01-09-Barcelona-000067_2
 intro: >
   En este post recupero algunas de las fotos analógicas que he sacado en los
   últimos meses, en mi incansable ambición por complicarme la vida
@@ -109,7 +109,7 @@ In this post, I'm sharing some of the analog photos I've taken over the past
 </div>
 <div class="h">
     {% include photos/custom.html location='analog' filename='2024-12-19-Barcelona-Canonet-000027' aspect="2/3" -%}
-    {% include photos/custom.html location='analog' filename='2025-01-09-Barcelona-000067' aspect="2/3" -%}
+    {% include photos/custom.html location='analog' filename='2025-01-09-Barcelona-000067_2' aspect="2/3" -%}
 </div>
 </div>
 
