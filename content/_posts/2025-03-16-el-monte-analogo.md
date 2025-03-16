@@ -27,6 +27,11 @@ intro: >
   últimos meses, en mi incansable ambición por complicarme la vida
   innecesariamente y perder dinero poco a poco. Perdón, ¡quería decir en mi
   incansable búsqueda de la belleza y la apreciación del momento!
+translation: >
+  In this post, I'm sharing some of the analog photos I've taken over the past
+  few months, driven by my relentless ambition to make my life needlessly
+  complicated and slowly drain my wallet. Sorry, I meant my relentless pursuit of
+  beauty and appreciation of the moment!
 camera:
   - Canonet G-III QL17
   - Nikon FM10

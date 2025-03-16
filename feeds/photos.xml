@@ -51,6 +51,10 @@ layout: none
         <p>{{ post.intro }}</p> 
         {% endif -%}
 
+        {% if post.translation -%}
+        <p style="opacity: 0.6">{{ post.translation  }}</p> 
+        {% endif -%}
+
         <p><a href="{{ post.url }}" target="_blank">Leer más</a>.</p>
             <p>{% if matching_location -%}{{ matching_location.title }}. {% endif -%} {% if post.camera %}{% if post.camera.first %}Cámaras: {{ post.camera | join: ", " }}.{% else %}Cámara: {{ post.camera }}.{% endif %}{% endif %}</p>
             <hr />
