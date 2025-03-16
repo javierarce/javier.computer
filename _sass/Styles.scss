@@ -38,6 +38,10 @@ a.is-underlined {
 
 .is-light {
   opacity: var(--op-light);
+
+  a {
+    color: var(--white);
+  }
 }
 
 .is-light a:hover,

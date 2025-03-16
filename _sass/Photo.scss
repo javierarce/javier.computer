@@ -72,6 +72,10 @@ figcaption {
     color: var(--link);
   }
 
+  .Photo__layout p.is-light a {
+    color: var(--white);
+  }
+
   .Content {
     width: var(--width-lg);
   }
@@ -288,6 +292,17 @@ figcaption {
   height: 100%;
   object-fit: cover;
   aspect-ratio: 4/3;
+}
+
+.t {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-md);
+  width: var(--width-full);
+
+  p {
+    margin-bottom: 0;
+  }
 }
 
 .g {
