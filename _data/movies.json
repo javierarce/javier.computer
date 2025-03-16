@@ -1,7 +1,17 @@
 {
-  "updated_at": "2025-03-09",
-  "count": 853,
+  "updated_at": "2025-03-16",
+  "count": 854,
   "movies": [
+    {
+      "watched_on": "2025-03-15",
+      "title": "The Day of the Jackal",
+      "year": 1973,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": true,
+      "permalink": "the-day-of-the-jackal"
+    },
     {
       "watched_on": "2025-03-08",
       "title": "The Devil&#039;s Bath",
