@@ -96,7 +96,8 @@ figcaption {
     margin: 0 auto;
   }
 
-  .g h3 {
+  .g h3,
+  .t h3 {
     width: var(--width-md);
     margin: 0 auto;
     font-size: var(--font-size-xl);
