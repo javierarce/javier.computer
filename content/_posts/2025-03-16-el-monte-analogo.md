@@ -38,6 +38,8 @@ camera:
   - Canon AE-1 Program
 hide_title: true
 show_content: true
+redirect_from:
+  - /monte-analogo
 ---
 
 <div class="t">
