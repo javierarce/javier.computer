@@ -1,56 +1,61 @@
-{% assign readmore = "false" %}
+{% assign readmore = 'false' %}
 <div
-  class="Photo__collection {% if post.category != 'reportage' -%}has-lightbox {% if post.filenames.size >= 4 %}has-grid{% endif %}{% endif -%}">
+  class="Photo__collection {% if post.category != 'reportage' -%}has-lightbox {% if post.filenames.size >= 4 %}has-grid{% endif %}{% endif -%}"
+>
   {% if post.category == 'reportage' %}
-  {% assign filename = post.cover %}
-  <a href="{{ post.url }}">
-    {% include photos/single.html photo=post filename=filename caption=caption -%}
-  </a>
-  {% assign readmore = "true" %}
-  <div class="Post__content">
-    <p>{{ post.intro }}</p>
-  </div>
-  {% elsif post.filenames -%}
-  {% assign photo_count = post.filenames | size %}
-  {% if photo_count >= 4 %}
-  <div class="gg {% if post.square %}is-square{% endif %}">
-    {% for file in post.filenames -%}
-    {% if file.filename -%}
-    {% assign filename = file.filename -%}
-    {% assign caption = file.caption -%}
-    {% else -%}
-    {% assign filename = file -%}
-    {% assign caption = "" -%}
-    {% endif -%}
-    <div class="Photo">
-      {% include photos/single.html photo=post filename=filename caption=caption hide_caption=true -%}
+    {% assign filename = post.cover %}
+    <a href="{{ post.url }}">
+      {% include photos/single.html photo=post filename=filename caption=caption -%}
+    </a>
+    {% assign readmore = 'true' %}
+    <div class="Post__content">
+      <p>{{ post.intro }}</p>
     </div>
-    {% endfor %}
-  </div>
-  {% else %}
-  {% for file in post.filenames -%}
-  {% if file.filename -%}
-  {% assign filename = file.filename -%}
-  {% assign caption = file.caption -%}
-  {% else -%}
-  {% assign filename = file -%}
-  {% assign caption = "" -%}
-  {% endif -%}
-  {% include photos/single.html photo=post filename=filename caption=caption -%}
-  {% endfor %}
-  {% endif %}
-  {% assign content = post.content | strip %}
-  {% if content.size > 0 %}
-  <div class="Post__content">{{ content }}</div>
-  {% endif %}
+  {% elsif post.filenames -%}
+    {% assign photo_count = post.filenames | size %}
+    {% if photo_count >= 4 %}
+      <div class="gg {% if post.square %}is-square{% endif %}">
+        {% for file in post.filenames -%}
+          {% if file.filename -%}
+            {% assign filename = file.filename -%}
+            {% assign caption = file.caption -%}
+            {% assign ratio = file.ratio -%}
+          {% else -%}
+            {% assign filename = file -%}
+            {% assign caption = '' -%}
+            {% assign ratio = '' -%}
+          {% endif -%}
+          <div class="Photo">
+            {% include photos/single.html photo=post filename=filename caption=caption hide_caption=true ratio=ratio -%}
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      {% for file in post.filenames -%}
+        {% if file.filename -%}
+          {% assign filename = file.filename -%}
+          {% assign caption = file.caption -%}
+          {% assign ratio = file.ratio -%}
+        {% else -%}
+          {% assign filename = file -%}
+          {% assign caption = '' -%}
+          {% assign ratio = '' -%}
+        {% endif -%}
+        {% include photos/single.html photo=post filename=filename caption=caption ratio=ratio -%}
+      {% endfor %}
+    {% endif %}
+    {% assign content = post.content | strip %}
+    {% if content.size > 0 %}
+      <div class="Post__content">{{ content }}</div>
+    {% endif %}
   {% elsif post.filename %}
-  {% include photos/single.html photo=post filename=post.filename -%}
-  {% assign content = post.content | strip %}
-  {% if content.size > 0 %}
-  <div class="Post__content">{{ content }}</div>
-  {% endif %}
+    {% include photos/single.html photo=post filename=post.filename -%}
+    {% assign content = post.content | strip %}
+    {% if content.size > 0 %}
+      <div class="Post__content">{{ content }}</div>
+    {% endif %}
   {% else %}
-  {{ post.content }}
+    {{ post.content }}
   {% endif %}
-  {% include photos/footer.html photo=post pagination=false readmore=readmore-%}
+  {% include photos/footer.html photo=post pagination=false readmore=readmore -%}
 </div>
