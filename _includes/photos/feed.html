@@ -5,7 +5,7 @@
   {% if post.category == 'reportage' %}
     {% assign filename = post.cover %}
     <a href="{{ post.url }}">
-      {% include photos/single.html photo=post filename=filename caption=caption -%}
+      {% include photos/single.html photo=post filename=filename -%}
     </a>
     {% assign readmore = 'true' %}
     <div class="Post__content">
@@ -19,14 +19,12 @@
           {% if file.filename -%}
             {% assign filename = file.filename -%}
             {% assign caption = file.caption -%}
-            {% assign ratio = file.ratio -%}
           {% else -%}
             {% assign filename = file -%}
             {% assign caption = '' -%}
-            {% assign ratio = '' -%}
           {% endif -%}
           <div class="Photo">
-            {% include photos/single.html photo=post filename=filename caption=caption hide_caption=true ratio=ratio -%}
+            {% include photos/single.html photo=post filename=filename caption=caption hide_caption=true -%}
           </div>
         {% endfor %}
       </div>
@@ -35,13 +33,11 @@
         {% if file.filename -%}
           {% assign filename = file.filename -%}
           {% assign caption = file.caption -%}
-          {% assign ratio = file.ratio -%}
         {% else -%}
           {% assign filename = file -%}
           {% assign caption = '' -%}
-          {% assign ratio = '' -%}
         {% endif -%}
-        {% include photos/single.html photo=post filename=filename caption=caption ratio=ratio -%}
+        {% include photos/single.html photo=post filename=filename caption=caption -%}
       {% endfor %}
     {% endif %}
     {% assign content = post.content | strip %}
