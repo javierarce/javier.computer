@@ -41,7 +41,7 @@
     padding-right: 1em;
 
     &:after {
-      content: '◌';
+      content: "◌";
       display: inline-block;
       font-weight: 400;
       padding-left: 4px;
@@ -51,7 +51,6 @@
       line-height: 115%;
       opacity: var(--op-light);
     }
-
   }
 
   &__content a,
@@ -73,7 +72,6 @@
     margin: 0;
   }
 
-
   &__footer {
     display: flex;
     flex-direction: row;
@@ -86,7 +84,7 @@
     opacity: var(--op-light);
   }
 
-  &__footer>a:hover {
+  &__footer > a:hover {
     opacity: 1;
     text-decoration: none;
   }
@@ -106,7 +104,6 @@
     text-decoration: none;
     opacity: var(--op-light);
   }
-
 
   &__paginationArrow,
   &__footerSeparator {
@@ -132,8 +129,7 @@
     text-decoration: none;
   }
 
-
-  &__pagination>* {
+  &__pagination > * {
     margin: 0 0.4em 0 0;
   }
 
@@ -150,9 +146,7 @@
   &__tags a:hover {
     opacity: 1;
   }
-
 }
-
 
 .Post__content h2,
 h3,
@@ -160,7 +154,6 @@ h4 {
   margin: 0;
   opacity: var(--op-light);
 }
-
 
 .Layout__post .Post__content,
 .Layout__home .Post__content {
@@ -171,7 +164,6 @@ h4 {
 }
 
 @media all and (max-width: 1024px) {
-
   .Posts,
   .Post {
     width: var(--width-full);
@@ -186,28 +178,28 @@ h4 {
 @media all and (max-width: 640px) {
   .Posts {
     width: var(--width-full);
+  }
 
-    .Post {
+  .Post {
+    width: var(--width-full);
+
+    &__footerSeparator {
+      display: none;
+    }
+
+    &__footer {
+      display: flex;
       width: var(--width-full);
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0;
+    }
 
-      &__footerSeparator {
-        display: none;
-      }
-
-      &__footer {
-        display: flex;
-        width: var(--width-full);
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 0;
-      }
-
-      &__tags {
-        margin: 0;
-        flex-direction: column;
-        display: flex;
-        gap: 0;
-      }
+    &__tags {
+      margin: 0;
+      flex-direction: column;
+      display: flex;
+      gap: 0;
     }
   }
 }
