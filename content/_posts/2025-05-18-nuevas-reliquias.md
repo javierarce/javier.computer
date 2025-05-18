@@ -12,30 +12,4 @@ local](https://www.theverge.com/2024/9/27/24256361/wordpress-wp-engine-drama-exp
 sin apenas energía para alimentar a mi yo digital. El proceso de búsqueda de
 empleo y el sentirme sobrepasado por la atención recibida por los
 <a href="/projects">proyectos</a> que publiqué en los últimos meses me
-agotaron. Pero ya estoy de vuelta, y con muchas ganas de retomar este blog. Y son las <current-time>18:00:00</current-time>.
-
-<script>
-class CurrentTime extends HTMLElement {
-    constructor() {
-        super();
-        this.textContent = '…';
-        this.timer = setInterval(() => this.updateTime(), 1000);
-        this.updateTime();
-    }
-
-    updateTime() {
-        const now = new Date();
-
-        const hours = String(now.getHours()).padStart(2, '0');
-        const minutes = String(now.getMinutes()).padStart(2, '0');
-        const seconds = String(now.getSeconds()).padStart(2, '0');
-
-        this.textContent = `${hours}:${minutes}:${seconds}`;
-    }
-
-    disconnectedCallback() {
-        clearInterval(this.timer);
-    }
-}
-customElements.define('current-time', CurrentTime);
-</script>
+agotaron. Pero ya estoy de vuelta, y con muchas ganas de retomar este blog.
