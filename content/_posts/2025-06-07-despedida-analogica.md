@@ -12,7 +12,7 @@ filenames:
     caption: David y Alba, pre-photowalk
     ratio: 3/2
   - filename: 2025-06-06-Barcelona-R0012547
-    caption: Tres sktaters
+    caption: Tres skaters
     ratio: 3/2
   - filename: 2025-06-06-Barcelona-R0012530
     ratio: 2/3
