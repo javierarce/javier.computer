@@ -2,10 +2,6 @@
   .Photo {
     cursor: zoom-in;
     transition: opacity 250ms ease-in-out;
-
-    &:hover {
-      opacity: var(--op-8);
-    }
   }
 }
 
