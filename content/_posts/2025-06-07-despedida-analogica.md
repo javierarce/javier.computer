@@ -24,3 +24,10 @@ camera: Ricoh GR IIIx
 hide_title: true
 hide: false
 ---
+
+Fotos del antes, el durante, y el después del photowalk de
+[08mm](https://www.instagram.com/08mm______) y
+[dubblelab](https://dubblelab.com), en el que primero decido dejar la fotografía
+analógica para siempre, luego cambio de opinión y decido que lo que voy a dejar es la
+fotografía en general para siempre, pero luego reculo y decido no dejar nada para siempre para, al final, pensármelo mejor y cambiar de opinión,
+aunque ya no me acuerdo qué decidí dejar o no dejar para siempre.
