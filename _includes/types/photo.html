@@ -19,6 +19,7 @@
         {% else -%}
           {% assign filename = post.filenames.first -%}
           {% assign ratio = post.ratio -%}
+          {% assign caption = nil -%}
         {% endif -%}
 
         {% include photos/single.html photo=post filename=filename caption=caption hide_caption=true ratio=ratio -%}
