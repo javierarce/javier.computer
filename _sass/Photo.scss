@@ -177,10 +177,6 @@
   flex-direction: column;
   gap: var(--gap-md);
 
-  &:has(figcaption) {
-    margin-bottom: 1em;
-  }
-
   img {
     display: block;
     width: var(--width-full);
