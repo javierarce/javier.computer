@@ -27,11 +27,11 @@
       {% endif %}
     </a>
 
-    {% if post.intro -%}
+    {% if post.intro != nil -%}
     <div class="Post__content Post__text">
       <p>{{ post.intro }}</p>
     </div>
-    {% elsif post.show_content -%}
+    {% elsif post.show_content != nil-%}
     <div class="Post__content Post__text">
       {{ post.content }}
     </div>

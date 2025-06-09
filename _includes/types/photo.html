@@ -28,7 +28,7 @@
       {% endif %}
     </a>
 
-    {% if post.intro -%}
+    {% if post.intro != nil -%}
     <div class="Post__content Post__text">
       <p>{{ post.intro }}</p>
     </div>
@@ -38,6 +38,7 @@
     </div>
     {% endif -%}
   </div>
+
   <div class="Post__footer">
     <a href="{{ post.url }}" class="Post__date dt-published u-url">
       {% include date.html date=post.date -%}

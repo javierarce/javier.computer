@@ -3,7 +3,7 @@ layout: photos/photo
 title: "Barcelona"
 hide_title: true
 date: "2024-09-29 12:00:00 +0200"
-show_content: true
+show_content: false
 category: photo
 location: barcelona
 filenames:
