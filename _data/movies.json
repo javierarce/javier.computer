@@ -1,7 +1,17 @@
 {
   "updated_at": "2025-06-09",
-  "count": 880,
+  "count": 881,
   "movies": [
+    {
+      "watched_on": "2025-06-08",
+      "title": "Raising Cain",
+      "year": 1992,
+      "rating": 2,
+      "liked": false,
+      "stars": "★★",
+      "rewatched": false,
+      "permalink": "raising-cain"
+    },
     {
       "watched_on": "2025-06-07",
       "title": "All We Imagine as Light",
