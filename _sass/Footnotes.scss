@@ -1,6 +1,10 @@
 .footnotes {
+  width: var(--width-full);
   font-size: var(--font-size-sm);
-  opacity: var(--op-light);
+
+  a {
+    color: var(--white);
+  }
 
   p {
     margin: 0 0 0.2em;

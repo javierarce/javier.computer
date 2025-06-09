@@ -1,5 +1,6 @@
 .pagination {
   display: flex;
+  width: var(--width-full);
 
   &.is-centered {
     gap: 0.8em;

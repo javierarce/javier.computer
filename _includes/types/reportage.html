@@ -28,9 +28,13 @@
     </a>
 
     {% if post.intro -%}
+    <div class="Post__content Post__text">
       <p>{{ post.intro }}</p>
+    </div>
     {% elsif post.show_content -%}
+    <div class="Post__content Post__text">
       {{ post.content }}
+    </div>
     {% endif -%}
   </div>
 
