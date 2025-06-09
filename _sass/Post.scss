@@ -1,12 +1,20 @@
+.Layout__post .Post__content,
+.Layout__home .Post__content {
+  display: flex;
+  margin: 0 0 var(--sp-md) 0;
+  flex-direction: column;
+  gap: var(--gap-lg);
+}
+
 .Posts,
 .Layout__post .Post {
-  margin: 0 0 2em 0;
+  margin: 0 0 var(--sp-xxl) 0;
 }
 
 .Posts {
   display: flex;
   flex-direction: column;
-  gap: 3em;
+  gap: var(--gap-xl);
   max-width: var(--width-md);
 }
 
@@ -53,44 +61,51 @@
     }
   }
 
-  &__content a,
-  &__content a:hover {
-    color: var(--link);
-  }
+  &__content {
+    h2 {
+      margin: 0;
+      opacity: var(--op-light);
+    }
 
-  &__content ul,
-  &__content ul li:last-child {
-    margin-bottom: 0;
-  }
+    a,
+    a:hover {
+      color: var(--link);
+    }
 
-  &__content ul li {
-    font-size: var(--font-size-lg);
-  }
+    ul,
+    ul li:last-child {
+      margin-bottom: 0;
+    }
 
-  &__content p {
-    font-size: var(--font-size-lg);
-    margin: 0;
+    ul li {
+      font-size: var(--font-size-lg);
+    }
+
+    p {
+      font-size: var(--font-size-lg);
+      margin: 0;
+    }
   }
 
   &__footer {
     display: flex;
     flex-direction: row;
     gap: var(--gap-xs);
-  }
 
-  &__footer a,
-  &__footer open-heart .off {
-    text-decoration: none;
-    opacity: var(--op-light);
-  }
+    a,
+    open-heart .off {
+      text-decoration: none;
+      opacity: var(--op-light);
+    }
 
-  &__footer > a:hover {
-    opacity: 1;
-    text-decoration: none;
-  }
+    &>a:hover {
+      opacity: 1;
+      text-decoration: none;
+    }
 
-  &__footer a.is-underlined:hover {
-    text-decoration: underline;
+    a.is-underlined:hover {
+      text-decoration: underline;
+    }
   }
 
   &__pagination {
@@ -98,11 +113,16 @@
     margin: 1em auto 0 auto;
     display: flex;
     flex-direction: column;
-  }
 
-  &__pagination a {
-    text-decoration: none;
-    opacity: var(--op-light);
+    &>* {
+      margin: 0 0.4em 0 0;
+    }
+
+    a {
+      text-decoration: none;
+      opacity: var(--op-light);
+    }
+
   }
 
   &__paginationArrow,
@@ -129,41 +149,24 @@
     text-decoration: none;
   }
 
-  &__pagination > * {
-    margin: 0 0.4em 0 0;
-  }
-
   &__tags {
     display: inline-flex;
     gap: 0.4em;
+
+    a,
+    a:hover {
+      text-decoration: none;
+    }
+
+    a:hover {
+      opacity: 1;
+    }
   }
 
-  &__tags a,
-  &__tags a:hover {
-    text-decoration: none;
-  }
-
-  &__tags a:hover {
-    opacity: 1;
-  }
-}
-
-.Post__content h2,
-h3,
-h4 {
-  margin: 0;
-  opacity: var(--op-light);
-}
-
-.Layout__post .Post__content,
-.Layout__home .Post__content {
-  display: flex;
-  margin: 0 0 0.4em 0;
-  flex-direction: column;
-  gap: 1.2em;
 }
 
 @media all and (max-width: 1024px) {
+
   .Posts,
   .Post {
     width: var(--width-full);
