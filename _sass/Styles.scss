@@ -354,6 +354,7 @@ a.is-photo::after {
 }
 
 @media all and (max-width: 1024px) {
+
   .Layout__office .Content,
   .Layout__office .Content p {
     width: var(--width-full);
