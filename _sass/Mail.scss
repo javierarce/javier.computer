@@ -8,6 +8,22 @@
   transition: opacity 100ms ease-in-out;
 }
 
+@media all and (max-width: 1024px) {
+
+  .Layout__contact .Content__inner,
+  .Layout__contact {
+    width: var(--width-full);
+    margin: 0;
+  }
+
+  .Layout__contact .form,
+  .Layout__contact .Input,
+  .Layout__contact .Textarea,
+  .Layout__contact .button {
+    width: var(--width-full);
+  }
+}
+
 @media all and (max-width: 640px) {
 
   .Layout__contact .Content__inner,
