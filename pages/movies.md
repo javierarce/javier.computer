@@ -1,6 +1,6 @@
 ---
 title: Movies
-layout: movies
+layout: simple
 className: Movies
 permalink: movies
 description: Movies I've watched
@@ -16,19 +16,23 @@ description: Movies I've watched
 
 {% if last_year != current_year -%}
 
-<h2 class="Movie__year">{{ current_year }}</h2> 
-{% assign last_year = current_year -%} 
-{% endif -%}
+<div class="Movies">
+    <h2 class="Movie__year">{{ current_year }}</h2> 
+    {% assign last_year = current_year -%} 
+    {% endif -%}
 
 <h3>{% include date.html date=group.name day="false" -%} ({{ group.items.size }})</h3>
 
-<ul class="Movie__list">
+    <ul class="Movie__list">
     {% for movie in group.items -%}
     <li>
-        <span class="Movie__date">{{ movie.watched_on | date: "%d" }}</span>
-        <a href="https://letterboxd.com/javier/film/{{ movie.permalink }}">{{ movie.title }} ({{ movie.year }})</a>
-        <span>{{ movie.stars }}</span> 
-    </li>
+    <span class="Movie__date">{{ movie.watched_on | date: "%d" }}</span>
+
+<a href="https://letterboxd.com/javier/film/{{ movie.permalink }}">{{ movie.title }} ({{ movie.year }})</a>
+<span>{{ movie.stars }}</span>
+
+</li>
     {% endfor -%}
-</ul>
-{% endfor -%}
+    </ul>
+    {% endfor -%}
+</div>

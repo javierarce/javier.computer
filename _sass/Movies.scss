@@ -9,6 +9,10 @@
   }
 }
 
+.Movies {
+  width: var(--width-md);
+}
+
 .Movie__year {
   margin: 0 0 1em;
 }
@@ -43,5 +47,19 @@
     display: inline-block;
     margin: 0 0.2em 0 0;
     font-family: var(--font-text-mono);
+  }
+}
+
+
+@media all and (max-width: 1024px) {
+  .Movies {
+    width: var(--width-full);
+  }
+}
+
+@media all and (max-width: 640px) {
+
+  .Movies {
+    width: var(--width-full);
   }
 }

@@ -1,13 +1,14 @@
 ---
 title: Projects
 permalink: projects
-layout: table
+layout: simple
 category: projects
 className: Projects
 description: List of personal projects
 ---
 
-### Documented projects
+<div class="Projects">
+<h3>Documented projects</h3>
 
 <div class="Project__cards">
     <a href="/projects/arena" class="Project__card">
@@ -51,4 +52,5 @@ description: List of personal projects
     </ul>
 </div>
 {% endfor %}
+</div>
 </div>

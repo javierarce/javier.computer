@@ -6,11 +6,6 @@
   gap: var(--gap-lg);
 }
 
-.Posts,
-.Layout__post .Post {
-  margin: 0 0 var(--sp-xxl) 0;
-}
-
 .Posts {
   display: flex;
   flex-direction: column;

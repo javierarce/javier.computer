@@ -161,8 +161,10 @@ blockquote p a {
 
 .Content {
   display: flex;
+  align-items: center;
   flex-direction: column;
   width: var(--width-md);
+  gap: 3em;
 }
 
 .Layout__error {
@@ -334,29 +336,33 @@ a.is-photo::after {
   font-weight: var(--font-weight-bold);
 }
 
+@media all and (max-width: 1024px) {
+
+  .Content {
+    width: var(--width-md);
+  }
+
+  .Layout__office .Content,
+  .Layout__office .Content p {
+    width: var(--width-full);
+  }
+}
+
 @media all and (max-width: 640px) {
   body {
     font-size: var(--font-size-lg);
-  }
-
-  body {
     padding: 0;
   }
 
   .Content {
     padding: var(--pd-xl);
+  }
+
+  .Content {
     width: var(--width-full);
   }
 
   .Layout__error {
     padding: var(--pd-xl);
-  }
-}
-
-@media all and (max-width: 1024px) {
-
-  .Layout__office .Content,
-  .Layout__office .Content p {
-    width: var(--width-full);
   }
 }

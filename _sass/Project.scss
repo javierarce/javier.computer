@@ -15,16 +15,7 @@
 
 }
 
-.Layout__projects {
-  .Content {
-    .footer {
-      margin-top: 4em;
-    }
-  }
-}
-
 .Projects {
-  font-size: var(--font-size-lg);
 
   &__lists,
   &__year {
@@ -48,14 +39,13 @@
 }
 
 .Project {
-  margin: 0 auto 2em;
+  font-size: var(--font-size-lg);
 
   &__content {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: var(--defaultWidth);
-    margin-bottom: 4em;
 
     h3 {
       margin-top: 1em;

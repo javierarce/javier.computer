@@ -4,9 +4,12 @@
   width: var(--width-lg);
 }
 
-.Layout__grid .Content .Photo__collections h2,
-.Layout__grid .Content .Photo__collections h3 {
-  margin: 0 auto;
+.Layout__grid .Content .Photo__collections {
+
+  h2,
+  h3 {
+    margin: 0 auto;
+  }
 }
 
 .Photo__collections.has-grid,
@@ -15,7 +18,6 @@
   flex-direction: column;
   gap: var(--gap-xl);
   text-align: center;
-  margin-bottom: 4em;
 }
 
 .Photo__collection.has-grid,
@@ -109,25 +111,28 @@
     opacity: var(--op-light);
   }
 
-  .Photo__layout .g p:not(:last-child) {
-    margin-bottom: 1em;
-  }
+  .Photo__layout {
 
-  .Photo__layout p,
-  .Photo__layout ul li,
-  .Photo__layout ul:last-child li,
-  .Photo__layout p:last-child {
-    font-size: var(--font-size-lg);
-  }
+    .g p:not(:last-child) {
+      margin-bottom: 1em;
+    }
 
-  .Photo__layout ul li {
-    margin-left: 1em;
-  }
+    p,
+    ul li,
+    ul:last-child li,
+    p:last-child {
+      font-size: var(--font-size-lg);
+    }
 
-  .Photo__layout ul,
-  .Photo__layout ul:last-child {
-    width: var(--width-md);
-    margin: 0 auto;
+    ul li {
+      margin-left: 1em;
+    }
+
+    ul,
+    ul:last-child {
+      width: var(--width-md);
+      margin: 0 auto;
+    }
   }
 }
 
@@ -187,6 +192,10 @@
 
 .Photo__feed {
   margin-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xxxl);
+  width: var(--width-lg);
 }
 
 .Photos__archive {
@@ -214,7 +223,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--gap-xl);
-  margin: 0 0 4em 0;
 
   &:last-child {
     margin-bottom: 0;
@@ -392,6 +400,10 @@ figcaption {
 }
 
 @media all and (max-width: 1024px) {
+
+  .Photo__feed {
+    width: var(--width-full);
+  }
 
   .Layout__photo .Content,
   .Layout__photos .Content {

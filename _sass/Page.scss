@@ -2,7 +2,6 @@
   .Page__content {
     width: var(--width-md);
     font-size: var(--font-size-lg);
-    margin: 0 auto 2em auto;
     display: flex;
     flex-direction: column;
     gap: var(--gap-md);
@@ -26,23 +25,31 @@
   }
 }
 
-.Page__content {
+.Page {
+  width: var(--width-md);
 
-  a,
-  a:hover {
-    color: var(--link);
+  &__content {
+
+    a,
+    a:hover {
+      color: var(--link);
+    }
+  }
+
+  &__date,
+  &__date:hover {
+    user-select: none;
+    text-decoration: none;
+    font-weight: 400;
+    opacity: var(--op-light);
   }
 }
 
-.Page__date,
-.Page__date:hover {
-  user-select: none;
-  text-decoration: none;
-  font-weight: 400;
-  opacity: var(--op-light);
-}
-
 @media all and (max-width: 1024px) {
+
+  .Page {
+    width: var(--width-full);
+  }
 
   .Layout__page .Page__content,
   .Layout__page {
@@ -51,6 +58,10 @@
 }
 
 @media all and (max-width: 640px) {
+
+  .Page {
+    width: var(--width-full);
+  }
 
   .Layout__page .Page__content,
   .Layout__page {

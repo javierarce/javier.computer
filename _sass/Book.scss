@@ -1,11 +1,10 @@
-a.book__spine {
-  text-decoration: none;
-  transition: transform 200ms;
+.books {
+  width: var(--width-md);
+}
 
-  &:hover {
-    text-decoration: none;
-    transform: translate(0.8em, 0);
-  }
+a.book__spine:hover {
+  transform: translate(0.8em, 0);
+  text-decoration: none;
 }
 
 .book {
@@ -14,13 +13,14 @@ a.book__spine {
     background: var(--white);
     color: var(--black);
     width: var(--width-full);
-    color: #000;
     padding: 1.4em;
     writing-mode: horizontal-tb;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     font-size: var(--font-size-sm);
+    text-decoration: none;
+    transition: transform 200ms;
   }
 
   &__content {
@@ -154,17 +154,13 @@ a.book__spine {
   }
 }
 
-@media all and (max-width: 640px) {
-
-  a.book__spine {
-    text-decoration: none;
-    transition: none;
-
-    &:hover {
-      text-decoration: none;
-      transform: none;
-    }
+@media all and (max-width: 1024px) {
+  .books {
+    width: var(--width-full);
   }
+}
+
+@media all and (max-width: 640px) {
 
   .book {
     &__stack {
@@ -187,6 +183,16 @@ a.book__spine {
       width: var(--width-full) !Important;
       margin: 0 0 1em;
       font-size: var(--font-size-md);
+    }
+
+    a.book__spine {
+      text-decoration: none;
+      transition: none;
+
+      &:hover {
+        text-decoration: none;
+        transform: none;
+      }
     }
 
     &__content {

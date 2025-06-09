@@ -4,6 +4,8 @@
 }
 
 .archive {
+  width: var(--width-md);
+
   &__list {
     margin: 0;
 
@@ -31,5 +33,17 @@
     font-family: var(--font-text-mono);
     margin: 0 0.4em 0 0;
     opacity: var(--op-light);
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .archive {
+    width: var(--width-full);
+  }
+}
+
+@media all and (max-width: 640px) {
+  .archive {
+    width: var(--width-full);
   }
 }

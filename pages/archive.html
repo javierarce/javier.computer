@@ -11,6 +11,7 @@ category: posts
 <div class="Content">
   {% include navigation.html -%}
 
+  <div class="archive">
   {% for post in site.posts -%}
   {% assign current_year = post.date | date: "%Y" -%}
   {% assign format_date = post.date | date: "%m-%d-%Y" -%}
@@ -67,5 +68,7 @@ category: posts
   </li>
   </ul>
 </div>
+</div>
+
 {% include footer.html -%}
 </div>

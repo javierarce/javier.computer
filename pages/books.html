@@ -1,6 +1,6 @@
 ---
 title: "Books"
-layout: table
+layout: simple
 className: Books
 description: Books I'm reading, I've read, I want to read
 category: page
@@ -13,6 +13,7 @@ permalink: books
 {% assign books_with_status_reading = site.books | where: 'status', 'reading' -%}
 {% assign sorted_books_reading = books_with_status_reading | sort: 'started' | reverse -%}
 
+<div class="books">
 {% if sorted_books_reading.size > 0 -%}
   <div id="year-leyendo" class="Stack__date">Leyendo</div>
   <div class="book__stack">
@@ -87,3 +88,4 @@ permalink: books
     {% endfor -%}
   </div>
 {% endfor -%}
+</div>

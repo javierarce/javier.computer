@@ -1,6 +1,5 @@
 .navigation {
   position: relative;
-  margin: 0 auto 3em auto;
   width: var(--width-md);
   display: flex;
   align-items: center;
@@ -71,7 +70,6 @@
     flex-direction: row;
     align-items: flex-start;
     width: var(--width-full);
-    margin-bottom: 2em;
 
     &__main {
       display: flex;
