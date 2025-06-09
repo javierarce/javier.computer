@@ -1,7 +1,17 @@
 {
-  "updated_at": "2025-06-07",
-  "count": 879,
+  "updated_at": "2025-06-09",
+  "count": 880,
   "movies": [
+    {
+      "watched_on": "2025-06-07",
+      "title": "All We Imagine as Light",
+      "year": 2024,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "all-we-imagine-as-light"
+    },
     {
       "watched_on": "2025-06-02",
       "title": "Mountainhead",
