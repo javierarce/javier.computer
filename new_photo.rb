@@ -30,9 +30,18 @@ filename = date.strftime("content/_posts/%Y-%m-%d-#{slug}.md")
 
 front_matter = <<~FRONTMATTER
   ---
-  layout: post
+  layout: photos/photo
+  category: photo
+  location: barcelona
   title: "#{title}"
   date: "#{date.strftime("%Y-%m-%d %H:%M:%S %z")}"
+  camera: Ricoh GR IIIx
+  hide_title: true
+  hide: false
+  filenames:
+  - filename: 
+    caption: 
+    ratio: 3/2
   ---
 FRONTMATTER
 
