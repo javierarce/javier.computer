@@ -1,6 +1,11 @@
 {
   "2025": [
     {
+      "title": "Glossary",
+      "url": "https://www.raycast.com/javierarce/glossary",
+      "description": "A Raycast extension to help you build and maintain a glossary of terms and concepts."
+    },
+    {
       "title": "PoetiCal",
       "url": "https://poetical.day",
       "description": "An experimental, collaborative publication that lives in your calendar"
