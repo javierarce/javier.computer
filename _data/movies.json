@@ -1,7 +1,17 @@
 {
-  "updated_at": "2025-06-22",
-  "count": 889,
+  "updated_at": "2025-06-24",
+  "count": 890,
   "movies": [
+    {
+      "watched_on": "2025-06-23",
+      "title": "Drylongso",
+      "year": 1998,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "drylongso"
+    },
     {
       "watched_on": "2025-06-22",
       "title": "World Between Us",
