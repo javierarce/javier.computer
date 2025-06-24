@@ -1,7 +1,17 @@
 {
   "updated_at": "2025-06-24",
-  "count": 890,
+  "count": 891,
   "movies": [
+    {
+      "watched_on": "2025-06-24",
+      "title": "Floating Weeds",
+      "year": 1959,
+      "rating": 4.5,
+      "liked": true,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "floating-weeds"
+    },
     {
       "watched_on": "2025-06-23",
       "title": "Drylongso",
