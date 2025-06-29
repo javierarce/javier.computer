@@ -1,7 +1,27 @@
 {
-  "updated_at": "2025-06-24",
-  "count": 891,
+  "updated_at": "2025-06-29",
+  "count": 893,
   "movies": [
+    {
+      "watched_on": "2025-06-29",
+      "title": "Aparajito",
+      "year": 1956,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "aparajito"
+    },
+    {
+      "watched_on": "2025-06-27",
+      "title": "Pecker",
+      "year": 1998,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": true,
+      "permalink": "pecker"
+    },
     {
       "watched_on": "2025-06-24",
       "title": "Floating Weeds",
