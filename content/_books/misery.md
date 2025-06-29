@@ -5,12 +5,13 @@ description: ""
 layout: book
 author: Stephen King
 started: 2024-11-13
-read: 
-status: reading
+read:
+status: abandoned
 rating: 0
-color: 
-cover: 
+color:
+cover:
 pages: 432
 progress: 0
-link: 
+link:
 ---
+
