@@ -1,7 +1,17 @@
 {
-  "updated_at": "2025-06-29",
-  "count": 893,
+  "updated_at": "2025-07-03",
+  "count": 894,
   "movies": [
+    {
+      "watched_on": "2025-07-03",
+      "title": "Criss Cross",
+      "year": 1949,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "criss-cross"
+    },
     {
       "watched_on": "2025-06-29",
       "title": "Aparajito",
