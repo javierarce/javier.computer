@@ -216,6 +216,10 @@ h4 {
   opacity: var(--op-light);
 }
 
+img:not([src]):not([srcset]) {
+  visibility: hidden;
+}
+
 img {
   aspect-ratio: var(--aspect-ratio);
 
