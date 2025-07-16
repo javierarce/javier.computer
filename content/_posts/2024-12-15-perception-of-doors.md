@@ -91,6 +91,7 @@ show_content: true
 
 <div class="h has-two">
     {% include photos/custom.html location="doors" filename='2025-01-21-Badalona-R0011474' hide_caption="true" caption="Badalona, 21 de enero de 2025" ratio="2/3" -%}
-    {% include photos/custom.html location="doors" filename='2025-01-17-Vilassar-de-Mar-R0011340' hide_caption="true" caption="Viilassar de Mar, 17 de enero de 2025" ratio="2/3" -%}
+    {% include photos/custom.html location="doors" filename='2025-01-17-Vilassar-de-Mar-R0011340' hide_caption="true" caption="Vilassar de Mar, 17 de enero de 2025" ratio="2/3" -%}
+    {% include photos/custom.html location="doors" filename='2025-07-11-Berlin-R1-00958-025A' hide_caption="true" caption="Berlin, 11 de julio de 2025" ratio="2/3" -%}
 </div>
 </div>
