@@ -7,6 +7,7 @@ cover: 2024-12-15-Doors-Cover
 location: doors
 hide_location: true
 intro: "No 'Doors of Perception' si no más bien 'Perception of Doors'."
+permalink: doors
 filenames:
   - filename: 2025-01-05-Sant-Pol-de-Mar-R0011013
   - filename: 2025-01-05-Mataro-R0011010
