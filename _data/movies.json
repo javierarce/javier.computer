@@ -1,7 +1,27 @@
 {
-  "updated_at": "2025-07-30",
-  "count": 898,
+  "updated_at": "2025-08-04",
+  "count": 900,
   "movies": [
+    {
+      "watched_on": "2025-07-25",
+      "title": "Taken",
+      "year": 2008,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "taken"
+    },
+    {
+      "watched_on": "2025-08-02",
+      "title": "28 Years Later",
+      "year": 2025,
+      "rating": 1.5,
+      "liked": false,
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "28-years-later"
+    },
     {
       "watched_on": "2025-07-22",
       "title": "Materialists",
