@@ -12,12 +12,12 @@
   }
 }
 
+.Photo__collections,
 .Photo__collections.has-grid,
 .Layout__grid .Content .Photo__collections {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-xl);
-  text-align: center;
+  gap: var(--gap-xxxl);
 }
 
 .Photo__collection.has-grid,

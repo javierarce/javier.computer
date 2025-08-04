@@ -10,8 +10,6 @@ className: Photos
 <div class="Content">
   {% include navigation.html -%}
 
-  <div class="Photo__collection">
-
     <div class="Photo__header">
       <div class="Photo__selector">
         <span class="icon icon-list"></span>
@@ -19,10 +17,11 @@ className: Photos
       </div>
     </div>
 
+  <div class="Photo__collections">
+
     {% for photo in photos -%}
 
     {% if photo.category == "reportage" -%}
-    <!- ------------------------------------ -->
       <div class="Photo__collection">
         <a href="{{ photo.url }}">
           {% include photos/single.html photo=photo filename=photo.cover caption=file.caption hide_caption=true -%}
@@ -37,7 +36,6 @@ className: Photos
         {% include photos/footer.html photo=photo pagination=false readmore="true"-%}
       </div>
       {% elsif photo.category == "post" or photo.category == "photo" -%}
-      <!- ------------------------------------ -->
         {% assign filenames = photo.filenames -%}
 
         <div class="Photo__collection">
@@ -66,7 +64,6 @@ className: Photos
           {% include photos/footer.html photo=photo -%}
         </div>
         {% elsif photo.filename -%}
-        <!- ------------------------------------ -->
           {% include photos/single.html photo=photo filename=photo.filename caption=file.caption hide_caption=true -%}
           <div class="Post__content">
             <p>{{ photo.content }}</p>

@@ -11,9 +11,6 @@ grid: true
 <div class="Content">
   {% include navigation.html -%}
 
-  <div class="Photo__collections">
-
-
     <div class="Photo__header">
       <div class="Photo__selector">
         <a href="/photos/{{ page.location }}" class="icon icon-list is-light"></a>
@@ -22,6 +19,7 @@ grid: true
     </div>
 
 
+  <div class="Photo__collections">
     {% for photo in photos -%}
     {% if location == photo.location %}
     {% if photo.category == "photo" -%}
@@ -44,13 +42,29 @@ grid: true
       {% include photos/footer.html photo=photo pagination=false -%}
     </div>
     {% elsif photo.category == "reportage" -%}
+
     <div class="Photo__collection">
+      {% if photo.filenames -%}
+      <div class="Photo__grid">
+        {% for file in photo.filenames -%}
+        {% if file.filename -%}
+        {% assign filename = file.filename -%}
+        {% else -%}
+        {% assign filename = file -%}
+        {% endif -%}
+        {% include photos/single.html photo=photo filename=filename caption=file.caption hide_caption=true -%}
+        {% endfor -%}
+      </div>
+      {% else -%}
+
       <a href="{{ photo.url }}">
         {% include photos/single.html photo=photo filename=photo.cover caption=file.caption hide_caption=true -%}
       </a>
 
+      {% endif %}
       {% include photos/footer.html photo=photo pagination=false readmore="true" -%}
     </div>
+
     {% endif %}
     {% endif -%}
     {% endfor -%}

@@ -7,6 +7,30 @@ intro: "Tras el éxito de crítica y público de mi anterior publi-reportaje, me
 location: berlin
 cover: 2024-04-07-Berlin-DSCF1702
 category: reportage
+filenames:
+  - filename: 2024-04-07-Berlin-DSCF1702
+    ratio: 3/2
+  - filename: 2024-04-09-Berlin-DSCF1836_2
+    caption: "Un añito entero pasó aquí, que se dice pronto."
+    ratio: 2/3
+  - filename: 2024-04-09-Berlin-R0006908_2
+    ratio: 2/3
+  - filename: 2024-04-10-Berlin-R0006933_2
+    ratio: 2/3
+  - filename: 2024-04-13-Berlin-DSCF1866_2
+    ratio: 2/3
+  - filename: 2024-04-08-Berlin-R0006902_2
+    ratio: 3/2
+  - filename: 2024-04-13-Berlin-DSCF1900_2
+    ratio: 3/2
+  - filename: 2024-04-05-Berlin-R0006724_2
+    ratio: 3/2
+  - filename: 2024-04-09-Berlin-R0006910_2
+    ratio: 3/2
+  - filename: 2024-03-30-Berlin-R0006634_2
+    ratio: 3/2
+  - filename: 2024-04-07-Berlin-R0006888
+    ratio: 3/2
 ---
 
 <p>Tras el éxito de crítica y público de mi <a href="/2024/07/10/Mataro">anterior publi-reportaje</a>, me gustaría compartir con vosotros esta «lista no
@@ -14,7 +38,7 @@ category: reportage
     como preparación para mi inminente viaje a Berlín en verano.</p>
 
 <div class="g">
-    {% include photos/custom.html classname='is-wide' location='berlin' filename='2024-04-07-Berlin-DSCF1702' alt="Test" -%}
+    {% include photos/custom.html classname='is-wide' location='berlin' filename='2024-04-07-Berlin-DSCF1702' -%}
 </div>
 
 <p>En primer lugar, la casa donde Billy Wilder vivió de joven cuando ejerció de <a href="https://en.wikipedia.org/wiki/Taxi_dancer">taxi dancer</a>.</p>
