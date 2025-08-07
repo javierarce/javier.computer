@@ -1,19 +1,24 @@
-.Layout__archive h3 {
-  padding: 0 0 var(--space);
-  border-bottom: 1px solid var(--gray);
-}
-
 .archive {
   width: var(--width-md);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xl);
 
   &__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm);
     margin: 0;
 
     li {
       display: flex;
+      flex-direction: row;
       list-style: none;
       padding: 0;
       font-size: var(--font-size-lg);
+      gap: var(--gap-sm);
+      margin: 0;
 
       a {
         text-decoration: none;
@@ -22,17 +27,25 @@
   }
 
   &__year {
-    margin: 0 0 1em;
+    margin: 0;
   }
 
   &__month {
+    display: flex;
+    flex-direction: column;
     break-inside: avoid;
-    margin: 0 0 2em;
+    margin: 0;
+    gap: var(--gap-md);
+  }
+
+  &__month-name {
+    padding: 0 0 var(--space);
+    border-bottom: 1px solid var(--gray);
+    margin: 0;
   }
 
   &__day {
     font-family: var(--font-text-mono);
-    margin: 0 0.4em 0 0;
     opacity: var(--op-light);
   }
 }
