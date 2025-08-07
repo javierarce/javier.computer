@@ -10,6 +10,7 @@ show_content: true
 intro: "Paseo crepuscular por el jardín circular"
 translation: "Twilight stroll through the circular garden."
 cover: 2025-07-02-Berlin-R0012818
+ratio: 3/2
 filenames:
   - filename: 2025-07-02-Berlin-R0012818
   - filename: 2025-07-02-Berlin-R0012814
