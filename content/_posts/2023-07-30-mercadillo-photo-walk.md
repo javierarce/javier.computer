@@ -3,6 +3,7 @@ layout: reportage
 title: "Mercadillo Photo Walk"
 date: "2023-07-30 19:52:00 +0200"
 category: reportage
+tag: photo
 location: berlin
 hide_title: true
 cover: R0004177

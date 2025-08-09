@@ -3,6 +3,7 @@ layout: photos/photo
 title: Paseo Improvisado
 date: "2024-10-29"
 category: photo
+tag: photo
 cover: 2024-10-29-Mataro-DSCF2770
 location: mataro
 filenames:

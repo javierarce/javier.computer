@@ -6,6 +6,7 @@ cover: 2024-08-10-Berlin-R0008500
 date: "2024-08-17 06:00:00 +0200"
 show_content: true
 category: reportage
+tag: photo
 location: berlin
 camera: Ricoh GR IIIx
 intro: Photo dump de tres paseos berlineses del 8, 10, y 11 de agosto.

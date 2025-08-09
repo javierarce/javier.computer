@@ -7,6 +7,7 @@ intro: "Tras el éxito de crítica y público de mi anterior publi-reportaje, me
 location: berlin
 cover: 2024-04-07-Berlin-DSCF1702
 category: reportage
+tag: photo
 filenames:
   - filename: 2024-04-07-Berlin-DSCF1702
     ratio: 3/2

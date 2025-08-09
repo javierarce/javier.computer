@@ -6,8 +6,10 @@ category: photo
 location: newyork
 camera: Ricoh GR IIIx
 hide: true
-filenames: 
-- R0002602
-- R0002577
+tag: photo
+filenames:
+  - R0002602
+  - R0002577
 ---
+
 Men Working

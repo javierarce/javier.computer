@@ -3,6 +3,7 @@ layout: photos/photo
 title: "Mendo World Tour II"
 date: "2024-02-17 21:31:22 +0100"
 category: photo
+tag: photo
 location: badalona
 filenames:
   - DSCF1225

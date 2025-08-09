@@ -3,6 +3,7 @@ layout: photos/photo
 title: Las Tres Chimeneas
 date: 2024-10-19
 category: photo
+tag: photo
 location: sant-adria-de-besos
 filenames:
   - filename: 2024-10-17-sant-adria-de-besos-DSCF2711

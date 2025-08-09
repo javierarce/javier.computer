@@ -11,4 +11,5 @@ filenames:
 camera: Fuji X-T5
 hide_title: true
 hide: true
+tag: photo
 ---

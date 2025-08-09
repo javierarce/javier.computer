@@ -4,6 +4,7 @@ title: "Flohmärkte"
 hide_title: true
 date: "2023-07-16 18:51:21 +0200"
 category: reportage
+tag: photo
 location: berlin
 camera: Ricoh GR IIIx
 cover: R0003711

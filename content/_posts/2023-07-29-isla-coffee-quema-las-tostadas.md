@@ -5,6 +5,7 @@ date: "2023-07-29 17:03:10 +0200"
 hidden: true
 hide_title: true
 category: reportage
+tag: photo
 cover: R0004118
 location: berlin
 camera: Ricoh GR IIIx

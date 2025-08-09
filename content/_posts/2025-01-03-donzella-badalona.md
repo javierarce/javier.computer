@@ -34,6 +34,7 @@ camera:
   - Ricoh GR IIIx
 hide_title: true
 show_content: true
+tag: photo
 ---
 
 <div class="t">

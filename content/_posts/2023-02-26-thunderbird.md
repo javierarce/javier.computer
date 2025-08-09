@@ -6,7 +6,9 @@ category: photo
 location: newyork
 camera: Ricoh GR IIIx
 hide: true
-filenames: 
-- R0002397
+tag: photo
+filenames:
+  - R0002397
 ---
+
 Thunderbird

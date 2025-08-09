@@ -40,6 +40,7 @@ hide_title: true
 show_content: true
 redirect_from:
   - /monte-analogo
+tag: photo
 ---
 
 <div class="t">

@@ -3,6 +3,7 @@ layout: reportage
 title: "Perception of Doors"
 date: "2024-12-15"
 category: reportage
+tag: photo
 cover: 2024-12-15-Doors-Cover
 location: doors
 hide_location: true
@@ -38,6 +39,7 @@ camera:
   - Fujifilm XT-5
 hide_title: true
 show_content: true
+tag: photo
 ---
 
 <div class="g">

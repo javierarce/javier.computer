@@ -3,6 +3,7 @@ layout: reportage
 title: "Cartelismo zaragozano"
 date: "2024-11-12"
 category: reportage
+tag: photo
 cover: 2024-11-10-Zaragoza-R0009669
 filenames:
   - filename: 2024-11-09-Zaragoza-R0009640

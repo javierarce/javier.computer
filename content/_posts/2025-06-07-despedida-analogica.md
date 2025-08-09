@@ -4,6 +4,7 @@ title: "Mi despedida de la fotografía analógica (irónico)"
 date: "2025-06-07 10:00:00"
 category: photo
 location: barcelona
+tag: photo
 filenames:
   - filename: 2025-06-06-Barcelona-R0012539
     caption: Luis Yang

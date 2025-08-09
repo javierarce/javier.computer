@@ -11,6 +11,7 @@ hide: false
 intro: "Mi mercadillo favorito de Berlín no es el que vende los objetos más curiosos o extraños, ni tampoco el que ofrece productos de mayor calidad. Tampoco es el que tiene las mejores gangas o el que está mejor ubicado."
 camera: Ricoh GR IIIx
 show_content: true
+tag: photo
 filenames:
   - filename: 2025-07-20-Berlin-R0013415
     caption:

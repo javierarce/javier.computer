@@ -6,6 +6,7 @@ date: "2024-08-04 13:00:00 +0200"
 show_content: true
 cover: 2024-08-04-Berlin-R0008378
 category: reportage
+tag: photo
 location: berlin
 intro: "Erica y yo volvemos a la carga con nuestro ambicioso plan de amistarnos con la población local de cuervos a base de cacahuetes."
 filenames:

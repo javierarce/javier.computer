@@ -5,6 +5,7 @@ hide_title: true
 date: "2024-08-03 19:00:00 +0200"
 show_content: true
 category: photo
+tag: photo
 location: berlin
 filenames:
   - filename: 2024-08-03-Berlin-R0008339

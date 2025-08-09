@@ -5,6 +5,7 @@ hide_title: true
 date: "2024-09-29 12:00:00 +0200"
 show_content: false
 category: photo
+tag: photo
 location: barcelona
 filenames:
   - filename: 2024-09-28-Barcelona-R0009075

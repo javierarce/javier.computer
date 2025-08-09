@@ -1,23 +1,14 @@
 ---
-layout: base
+layout: photos
 title: Photos
 className: Photos
-category: photos
+category: photo
 permalink: photos
 grid: true
+pagination:
+  enabled: true
+  per_page: 15
+  sort_field: "date"
+  sort_reverse: true
+  tag: photo
 ---
-
-<!-- photos / feed -->
-{% assign photos = site.categories.photo | concat: site.categories.reportage |
-sort: 'date' | reverse -%}
-
-<div class="Content">
-  {% include navigation.html -%}
-
-  <div class="Photo__feed">
-    {% for post in photos limit: 10 -%} {% include photos/feed.html photo=photo
-    -%} {% endfor -%}
-  </div>
-
-  {% include footer.html %}
-</div>

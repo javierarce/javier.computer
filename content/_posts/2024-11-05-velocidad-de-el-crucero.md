@@ -3,6 +3,7 @@ layout: reportage
 title: "Velocidad de El Crucero"
 date: "2024-11-05"
 category: reportage
+tag: photo
 cover: 2024-11-02-Leon-DSCF2868
 filenames:
   - filename: 2024-11-02-Leon-DSCF2868
