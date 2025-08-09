@@ -1,7 +1,17 @@
 {
-  "updated_at": "2025-08-07",
-  "count": 901,
+  "updated_at": "2025-08-09",
+  "count": 902,
   "movies": [
+    {
+      "watched_on": "2025-08-08",
+      "title": "Contemporary Photography in America",
+      "year": 1982,
+      "rating": null,
+      "liked": false,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "contemporary-photography-in-america"
+    },
     {
       "watched_on": "2025-08-06",
       "title": "Jurassic World Rebirth",
