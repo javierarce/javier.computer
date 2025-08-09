@@ -204,16 +204,10 @@
 @media all and (max-width: 640px) {
 
   .Post {
-    &__footerSeparator {
-      display: none;
-    }
-
     &__footer {
-      display: flex;
-      width: var(--width-full);
-      align-items: flex-start;
-      flex-direction: column;
-      gap: 0;
+      display: inline-block;
+      /* width: var(--width-full); */
+      /* align-items: flex-start; */
     }
 
     &__tags {
