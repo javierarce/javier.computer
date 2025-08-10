@@ -19,7 +19,6 @@
     {% include post/tags.html page=post -%}
 
     {% if site.show_home_likes %}
-    <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
 
     <open-heart class="text-open-heart" href="https://api.javier.computer/heart?id={{ page.url }}" emoji="❤️"
       aria-labelledby="like-prompt">
@@ -29,7 +28,6 @@
     {% endif %}
 
     {% if site.show_home_comments %}
-    <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
 
     <a href="/comment?title={{ page.title }}&url={{ page.id }}"
       class="Post__comment"
@@ -37,8 +35,7 @@
     {% endif %}
 
     {% if post.content contains "<!-- more -->" -%}
-    <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
-    <a href="{{ post.url }}#more" class="is-underlined">Leer más</a>
+    <a href="{{ post.url }}#more" class="Post__more">Leer más</a>
     {% endif -%}
   </div>
 </div>

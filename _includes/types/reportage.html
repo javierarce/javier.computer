@@ -47,7 +47,6 @@
     {% include post/tags.html page=page -%}
 
     {% if site.show_home_likes %}
-      <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
       <open-heart
         class="text-open-heart"
         href="https://api.javier.computer/heart?id={{ page.url }}"
@@ -60,7 +59,6 @@
     {% endif %}
 
     {% if site.show_home_comments %}
-      <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
       <a
         href="/comment?title={{ page.title }}&url={{ page.id }}"
         class="Post__comment"
@@ -69,16 +67,14 @@
       >
     {% endif %}
 
-    <span class="Post__footerSeparator">&nbsp;&middot;&nbsp;</span>
     {% if post.filenames.size > 1 -%}
-      <a href="{{ post.url }}" class="is-underlined"
-        >Ver {{ post.filenames.size }} foto
+      <a href="{{ post.url }}" class="Post__more-photos">{{ post.filenames.size }} foto
         {%- if post.filenames.size > 1 -%}
           s
         {%- endif -%}
       </a>
     {% else -%}
-      <a href="{{ post.url }}" class="is-underlined">Leer más</a>
+      <a href="{{ post.url }}" class="Post__more">Leer más</a>
     {% endif -%}
   </div>
 </div>

@@ -288,12 +288,18 @@ a.is-reportage::after,
 a.is-photo::after {
   content: "";
   display: inline-block;
-  vertical-align: sub;
   width: 24px;
   height: 24px;
-  margin: 0 0 0 0.2em;
-  background-image: url(/img/icons/picture.svg);
-  background-size: cover;
+  vertical-align: sub;
+  margin-left: var(--gap-xs);
+  background-image: url(/img/icons/camera.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+}
+
+a.is-icon-light.is-photo::after,
+a.is-icon-light.is-reportage::after {
   opacity: var(--op-light);
 }
 

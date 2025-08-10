@@ -112,7 +112,8 @@
     width: var(--width-full);
     display: flex;
     flex-direction: row;
-    gap: var(--gap-xs);
+    flex-wrap: wrap;
+    gap: 0.6em;
 
     a,
     open-heart .off {
@@ -147,8 +148,7 @@
 
   }
 
-  &__paginationArrow,
-  &__footerSeparator {
+  &__paginationArrow {
     opacity: var(--op-light);
   }
 
@@ -171,9 +171,43 @@
     text-decoration: none;
   }
 
+  &__more:before,
+  &__more-photos:before,
+  &__location:before,
+  &__tag-link:before {
+    position: relative;
+    top: 2px;
+    content: "";
+    margin-right: var(--gap-xs);
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+  }
+
+  &__location:before {
+    background-image: url(/img/icons/pin.svg);
+  }
+
+  &__more:before {
+    background-image: url(/img/icons/glasses.svg);
+  }
+
+  &__more-photos:before {
+    background-image: url(/img/icons/camera.svg);
+  }
+
+  &__tag-link:before {
+    background-image: url(/img/icons/tag.svg);
+  }
+
   &__tags {
     display: inline-flex;
-    gap: 0.4em;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6em;
 
     a,
     a:hover {
@@ -202,19 +236,17 @@
 }
 
 @media all and (max-width: 640px) {
-
   .Post {
     &__footer {
-      display: inline-block;
-      /* width: var(--width-full); */
-      /* align-items: flex-start; */
+      font-size: var(--font-size-lg);
     }
 
-    &__tags {
-      margin: 0;
-      flex-direction: column;
-      display: flex;
-      gap: 0;
+    &__more:before,
+    &__more-photos:before,
+    &__location:before,
+    &__tag-link:before {
+      width: 14px;
+      height: 14px;
     }
   }
 }

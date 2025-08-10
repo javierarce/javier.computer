@@ -1,6 +1,5 @@
 open-heart.text-open-heart {
   display: inline;
-  font-size: 0.85em;
   cursor: pointer;
 }
 
@@ -19,18 +18,19 @@ open-heart.text-open-heart .on {
 
 open-heart.text-open-heart span {
   position: relative;
+  top: 2px;
+  margin-right: var(--gap-xxs);
   display: inline-block;
   background-image: url(/img/icons/heart.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  top: 4px;
-  width: 1.2em;
-  height: 1.2em;
+  width: 18px;
+  height: 18px;
 }
 
 open-heart.text-open-heart .on {
-  background-image: url(/img/icons/heart_fill.svg);
+  background-image: url(/img/icons/heart-filled.svg);
 }
 
 
@@ -50,5 +50,11 @@ open-heart.text-open-heart[aria-pressed="true"] .off {
 open-heart.text-open-heart[count]::after {
   content: attr(count);
   opacity: var(--op-light);
-  margin-left: -2px;
+}
+
+@media all and (max-width: 640px) {
+  open-heart.text-open-heart span {
+    width: 14px;
+    height: 14px;
+  }
 }

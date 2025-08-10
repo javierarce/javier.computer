@@ -4,7 +4,6 @@
   {% include post/tags.html page=page -%}
 
   {% if site.show_likes -%}
-    <span class="Post__footerSeparator">&middot</span>
     <open-heart
       class="text-open-heart"
       href="https://api.javier.computer/heart?id={{ page.url }}"
@@ -17,7 +16,6 @@
   {% endif -%}
 
   {% if site.show_comments -%}
-    <span class="Post__footerSeparator">&middot;</span>
     <a
       href="/comment?title={{ page.title }}&url={{ page.id }}"
       class="Post__comment"

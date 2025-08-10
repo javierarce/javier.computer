@@ -6,15 +6,11 @@ include.photo.location | first -%}
       >{% include date.html date=include.photo.date -%}</a
     >
 
-    {% unless include.photo.hide_location %} {% if matching_location -%}<span
-      class="Post__footerSeparator"
-      >&middot;</span
-    >
+    {% unless include.photo.hide_location %} {% if matching_location -%}
     <a href="/photos/{{ include.photo.location -}}" class="Post__location"
       >{{ matching_location.title }}</a
     >
     {% endif -%} {% endunless %} {% if site.show_likes %}
-    <span class="Post__footerSeparator">&middot;</span>
     <open-heart
       class="text-open-heart"
       href="https://api.javier.computer/heart?id={{include.photo.url}}"
@@ -25,7 +21,6 @@ include.photo.location | first -%}
       <span class="off"></span>
     </open-heart>
     {% endif %} {% if site.show_comments %}
-    <span class="Post__footerSeparator">&middot;</span>
     <a
       href="/comment?title={{ page.title }}&url={{ page.id }}"
       class="Post__comment"
@@ -33,14 +28,12 @@ include.photo.location | first -%}
       >Comentar</a
     >
     {% endif -%} {% if include.readmore == "true" -%}
-    <span class="Post__footerSeparator">&middot;</span>
     {% if include.photo.filenames.size > 1 -%}
-    <a href="{{ include.photo.url }}#more" class="is-underlined"
-      >Ver {{ include.photo.filenames.size }} foto{% if
+    <a href="{{ include.photo.url }}#more" class="Post__more-photos">{{ include.photo.filenames.size }} foto{% if
       include.photo.filenames.size > 1 %}s{% endif -%}</a
     >
     {% else -%}
-    <a href="{{ include.photo.url }}" class="is-underlined">Leer más</a>
+    <a class="Post__more" href="{{ include.photo.url }}">Leer más</a>
     {% endif -%} {% endif -%}
   </div>
 
