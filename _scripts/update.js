@@ -1,6 +1,10 @@
 import { MovieRSSParser } from "./movies.js";
 import { Subscribers } from "./subscribers.js";
 import { Books } from "./books.js";
+import { Places } from "./places.js";
+
+const places = new Places();
+places.run();
 
 const username = "javier";
 const scraper = new MovieRSSParser(username);
