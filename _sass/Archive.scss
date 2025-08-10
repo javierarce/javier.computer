@@ -45,7 +45,15 @@
   }
 
   &__day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--pd-md);
     font-family: var(--font-text-mono);
+    font-size: var(--font-size-xs);
+    border: 1px solid var(--white);
+    border-radius: var(--br-md);
+    line-height: normal;
     opacity: var(--op-light);
   }
 }

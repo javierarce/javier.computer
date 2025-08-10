@@ -60,6 +60,7 @@ category: posts
       {% assign d = post.date | date: "%d" -%}
       {% assign p = post.previous.date | date: "%d" -%}
       {% if d == p -%}
+      <span class="Post__footerSeparator">&middot;</span>
       {% endif -%}
 
       {% assign thedate = post.date | date: "%m-%d-%Y" -%}
