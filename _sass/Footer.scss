@@ -1,5 +1,6 @@
 .footer {
   display: flex;
+  flex-wrap: wrap;
   margin: 0 auto;
   width: var(--width-md);
 
@@ -30,7 +31,6 @@
 
 @media all and (max-width: 640px) {
   .footer {
-    display: block;
     width: var(--width-full);
 
     &__link {

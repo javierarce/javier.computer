@@ -45,9 +45,7 @@
   }
 
   &__day {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
     padding: var(--pd-md);
     font-family: var(--font-text-mono);
     font-size: var(--font-size-xs);

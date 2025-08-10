@@ -64,7 +64,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 0.2em;
+    gap: var(--gap-xs);
   }
 
   &__rss {
@@ -119,7 +119,7 @@
 .Location {
   display: flex;
   flex-direction: column;
-  gap: 0.2em;
+  gap: var(--gap-xs);
   font-size: var(--font-size-sm);
   break-inside: avoid;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -171,7 +171,7 @@
 
   &__posts {
     display: flex;
-    gap: 0.1em;
+    gap: var(--gap-xxs);
   }
 
   &__post {
@@ -252,7 +252,7 @@
     width: 300px;
     display: flex;
     flex-direction: column;
-    gap: 0.2em;
+    gap: var(--gap-xs);
   }
 
   &__title {
@@ -273,7 +273,7 @@
   &__posts {
     margin: 0 0 .4em;
     display: flex;
-    gap: 0.1em;
+    gap: var(--gap-xxs);
   }
 
   &__posts &__post {
