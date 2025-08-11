@@ -9,7 +9,16 @@
     <link>https://javier.computer/feeds/barcelona.rss</link>
     <description>Sitios en barcelona</description>
     <language>es</language>
-    <pubDate>Tue, 26 Nov 2024 22:25:20 +0100</pubDate>
+    <pubDate>Sun, 10 Aug 2025 18:12:26 +0200</pubDate>
+    <item>
+      <title>035//BAR</title>
+      <link>https://javier.computer/maps/barcelona/cero-tres-cinco</link>
+      <description>&lt;p&gt;Maravilloso bar que acoge cenas popup igualmente maravillosas.&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/cero-tres-cinco'&gt;Carrer de Monlau, 35&lt;/a&gt;&lt;br&gt;&lt;p&gt;Este sitio aparece en los siguientes posts:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2023/05/06/celebracion-postconciliacion'&gt;Celebración Post-conciliación&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Sun, 10 Aug 2025 18:12:26 +0200</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2025-08-10T18:12:26+02:00</dc:date>
+    </item>
     <item>
       <title>El Noa Noa</title>
       <link>https://javier.computer/maps/barcelona/noanoa-2</link>
@@ -316,15 +325,6 @@
       <dc:subject>barcelona</dc:subject>
       <dc:date>2024-10-07T12:17:21+02:00</dc:date>
     </item>
-    <item>
-      <title>035//BAR</title>
-      <link>https://javier.computer/maps/barcelona/cero-tres-cinco</link>
-      <description>&lt;p&gt;Maravilloso bar que acoge cenas popup igualmente maravillosas.&lt;/p&gt;
-&lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/cero-tres-cinco'&gt;Carrer de Monlau, 35&lt;/a&gt;&lt;br&gt;&lt;p&gt;Este sitio aparece en los siguientes posts:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2023/05/06/celebracion-postconciliacion'&gt;Celebración Post-conciliación&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
-      <pubDate>Mon, 07 Oct 2024 12:17:21 +0200</pubDate>
-      <dc:subject>barcelona</dc:subject>
-      <dc:date>2024-10-07T12:17:21+02:00</dc:date>
-    </item>
-    <dc:date>2024-11-26T22:25:20+01:00</dc:date>
+    <dc:date>2025-08-10T18:12:26+02:00</dc:date>
   </channel>
 </rss>

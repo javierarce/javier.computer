@@ -1,22 +1,18 @@
 [
   {
     "layout": "place",
-    "pid": "cero-tres-cinco",
-    "title": "035//BAR",
-    "description": "<p>Maravilloso bar que acoge cenas popup igualmente maravillosas.</p>\n",
-    "address": "Carrer de Monlau, 35",
+    "pid": "tramendu",
+    "title": "Tramendu",
+    "description": "<p>El nombre completo del sitio es “Tramendu. Ens agrada el vermuting” (no confundir con “Tramendu. Encenem els fogons” que está en la misma calle y no he probado). Si lees las críticas en Google Maps verás que la mayoría comentan lo rica que está la comida, lo encantador que es el personal, y lo económico que es el precio. Pues eso.</p>\n",
+    "address": "Passatge d'Andalusia, 8",
     "latlng": [
-      41.424967802049494,
-      2.1904708306832803
+      41.370565789006044,
+      2.1336241407692733
     ],
     "location": "barcelona",
     "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
-      {
-        "url": "/2023/05/06/celebracion-postconciliacion",
-        "title": "Celebración Post-conciliación",
-        "date": "2023-05-06 08:41:29 +0200"
-      }
+
     ]
   },
   {
@@ -36,27 +32,6 @@
         "url": "/2023/05/04/open-heart-protocol",
         "title": "Open Heart Protocol",
         "date": "2023-05-04 22:57:54 +0200"
-      }
-    ]
-  },
-  {
-    "layout": "place",
-    "title": "Zumzeig Cinema",
-    "pid": "zumzeig",
-    "emoji": "🍿",
-    "description": "<p>Sala de cine cooperativa y sin ánimo de lucro, con una programación principalmente indie en VO.</p>\n",
-    "address": "Carrer de Béjar, 53",
-    "latlng": [
-      41.378023248824405,
-      2.1448554232917982
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-10-07T12:17:21+02:00",
-    "post_references": [
-      {
-        "url": "/2023/04/07/all-the-beauty-and-the-bloodshed",
-        "title": "All The Beauty And The Bloodshed",
-        "date": "2023-04-07 00:35:31 +0200"
       }
     ]
   },
@@ -348,6 +323,27 @@
   },
   {
     "layout": "place",
+    "title": "Zumzeig Cinema",
+    "pid": "zumzeig",
+    "emoji": "🍿",
+    "description": "<p>Sala de cine cooperativa y sin ánimo de lucro, con una programación principalmente indie en VO.</p>\n",
+    "address": "Carrer de Béjar, 53",
+    "latlng": [
+      41.378023248824405,
+      2.1448554232917982
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+      {
+        "url": "/2023/04/07/all-the-beauty-and-the-bloodshed",
+        "title": "All The Beauty And The Bloodshed",
+        "date": "2023-04-07 00:35:31 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
     "title": "El Noa Noa",
     "pid": "noanoa",
     "description": "<p>Una cafetería-librería con cafés y libros.</p>\n",
@@ -620,22 +616,6 @@
   },
   {
     "layout": "place",
-    "pid": "tramendu",
-    "title": "Tramendu",
-    "description": "<p>El nombre completo del sitio es “Tramendu. Ens agrada el vermuting” (no confundir con “Tramendu. Encenem els fogons” que está en la misma calle y no he probado). Si lees las críticas en Google Maps verás que la mayoría comentan lo rica que está la comida, lo encantador que es el personal, y lo económico que es el precio. Pues eso.</p>\n",
-    "address": "Passatge d'Andalusia, 8",
-    "latlng": [
-      41.370565789006044,
-      2.1336241407692733
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-10-07T12:17:21+02:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
     "title": "Amateur",
     "pid": "amateur",
     "address": "Carrer de Llull, 101",
@@ -665,6 +645,26 @@
     "last_modified_date": "2024-11-26T22:25:20+01:00",
     "post_references": [
 
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "cero-tres-cinco",
+    "title": "035//BAR",
+    "description": "<p>Maravilloso bar que acoge cenas popup igualmente maravillosas.</p>\n",
+    "address": "Carrer de Monlau, 35",
+    "latlng": [
+      41.424967802049494,
+      2.1904708306832803
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2025-08-10T18:12:26+02:00",
+    "post_references": [
+      {
+        "url": "/2023/05/06/celebracion-postconciliacion",
+        "title": "Celebración Post-conciliación",
+        "date": "2023-05-06 08:41:29 +0200"
+      }
     ]
   }
 ]

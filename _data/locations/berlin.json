@@ -11,7 +11,7 @@
       13.397690437523185
     ],
     "location": "berlin",
-    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "last_modified_date": "2025-08-10T21:54:30+02:00",
     "post_references": [
 
     ],
@@ -19,95 +19,13 @@
   },
   {
     "layout": "place",
-    "pid": "bartleby",
-    "title": "Bartleby & Co",
-    "description": "<p>Librería española capitaneada por Ana Pareja.</p>\n",
-    "address": "Boppstraße 2",
+    "pid": "three-schwestern",
+    "title": "3 Schwestern",
+    "description": "<p>Un restaurante que ofrece comida típica alemana situado en el interior de  un antiguo hospital construido en 1846.</p>\n",
+    "address": "Mariannenpl. 2",
     "latlng": [
-      52.493500792859805,
-      13.435139298296505
-    ],
-    "location": "berlin",
-    "last_modified_date": "2024-10-07T12:17:21+02:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "bonanza",
-    "title": "Bonanza",
-    "emoji": "☕️",
-    "address": "Adalbertstraße, 70",
-    "latlng": [
-      52.504183,
-      13.420258
-    ],
-    "location": "berlin",
-    "last_modified_date": "2024-10-07T12:17:21+02:00",
-    "description": "",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "cafe-strauss",
-    "title": "Café Strauss",
-    "emoji": "☕️",
-    "description": "<p>Un café muy tranquilo frente a un cementerio muy tranquilo (espero).</p>\n",
-    "address": "Bergmannstraße, 42",
-    "latlng": [
-      52.4886291,
-      13.4011481
-    ],
-    "location": "berlin",
-    "last_modified_date": "2024-10-07T12:17:21+02:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "cafe-leo",
-    "title": "Das neue Café Leo",
-    "description": "<p>Una caftería situada en un kiosko en medio de una plaza del barrio de Wedding, que además de ofrecer café de especialidad a precios populares, ofrece asesoramiento social y actividades vecinales.</p>\n",
-    "address": "Auf dem Leopoldplatz",
-    "latlng": [
-      52.54719755887236,
-      13.358785015341178
-    ],
-    "location": "berlin",
-    "last_modified_date": "2024-10-07T12:17:21+02:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "dashi",
-    "title": "DASHI",
-    "description": "<p>Diner asiático. Favoritos: Tempeh Sando (V) y Korokke Curry (V)</p>\n",
-    "address": "Invalidenstraße 112",
-    "latlng": [
-      52.530706060553854,
-      13.383605195376553
-    ],
-    "location": "berlin",
-    "last_modified_date": "2024-10-07T12:17:21+02:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "dotori",
-    "title": "Dotori Korean Anju Bar",
-    "description": "<p>Bonitísimo y compactísimo y riquísimo bar de tapas coreanas.</p>\n",
-    "address": "Gustav-Adolf-Straße 159",
-    "latlng": [
-      52.553966826503334,
-      13.433880192070449
+      52.505166826173365,
+      13.423695851822046
     ],
     "location": "berlin",
     "last_modified_date": "2024-10-07T12:17:21+02:00",
@@ -380,13 +298,95 @@
   },
   {
     "layout": "place",
-    "pid": "three-schwestern",
-    "title": "3 Schwestern",
-    "description": "<p>Un restaurante que ofrece comida típica alemana situado en el interior de  un antiguo hospital construido en 1846.</p>\n",
-    "address": "Mariannenpl. 2",
+    "pid": "bartleby",
+    "title": "Bartleby & Co",
+    "description": "<p>Librería española capitaneada por Ana Pareja.</p>\n",
+    "address": "Boppstraße 2",
     "latlng": [
-      52.505166826173365,
-      13.423695851822046
+      52.493500792859805,
+      13.435139298296505
+    ],
+    "location": "berlin",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "bonanza",
+    "title": "Bonanza",
+    "emoji": "☕️",
+    "address": "Adalbertstraße, 70",
+    "latlng": [
+      52.504183,
+      13.420258
+    ],
+    "location": "berlin",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "description": "",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "cafe-strauss",
+    "title": "Café Strauss",
+    "emoji": "☕️",
+    "description": "<p>Un café muy tranquilo frente a un cementerio muy tranquilo (espero).</p>\n",
+    "address": "Bergmannstraße, 42",
+    "latlng": [
+      52.4886291,
+      13.4011481
+    ],
+    "location": "berlin",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "cafe-leo",
+    "title": "Das neue Café Leo",
+    "description": "<p>Una caftería situada en un kiosko en medio de una plaza del barrio de Wedding, que además de ofrecer café de especialidad a precios populares, ofrece asesoramiento social y actividades vecinales.</p>\n",
+    "address": "Auf dem Leopoldplatz",
+    "latlng": [
+      52.54719755887236,
+      13.358785015341178
+    ],
+    "location": "berlin",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "dashi",
+    "title": "DASHI",
+    "description": "<p>Diner asiático. Favoritos: Tempeh Sando (V) y Korokke Curry (V)</p>\n",
+    "address": "Invalidenstraße 112",
+    "latlng": [
+      52.530706060553854,
+      13.383605195376553
+    ],
+    "location": "berlin",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "dotori",
+    "title": "Dotori Korean Anju Bar",
+    "description": "<p>Bonitísimo y compactísimo y riquísimo bar de tapas coreanas.</p>\n",
+    "address": "Gustav-Adolf-Straße 159",
+    "latlng": [
+      52.553966826503334,
+      13.433880192070449
     ],
     "location": "berlin",
     "last_modified_date": "2024-10-07T12:17:21+02:00",
@@ -405,7 +405,242 @@
       13.42246464603288
     ],
     "location": "berlin",
-    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "last_modified_date": "2025-08-10T21:54:30+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "duo",
+    "title": "Duo",
+    "description": "\n",
+    "address": "",
+    "category": "ice_cream",
+    "poi_id": "10963865464",
+    "latlng": [
+      52.5298888,
+      13.4336106
+    ],
+    "location": "berlin",
+    "last_modified_date": "2025-08-10T21:54:39+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "tresen-treff",
+    "title": "Tresen-Treff",
+    "description": "<p>Un pub de barrio rescatado por sus tres dueños. La clientela es una mezcla de gente del barrio de hoy y siempre y gente joven. Sirven especialidades berlinesas actualizadas. Muy rico.</p>\n",
+    "address": "Berliner Straße, 167",
+    "category": "pub",
+    "latlng": [
+      52.48805,
+      13.336748
+    ],
+    "location": "berlin",
+    "last_modified_date": "2025-08-10T22:04:05+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "amato",
+    "title": "amató",
+    "description": "<p>Heladería japonesa</p>\n",
+    "address": "Dunckerstraße, 69, 10437",
+    "emoji": "🍦",
+    "latlng": [
+      52.5451364,
+      13.422882
+    ],
+    "location": "berlin",
+    "last_modified_date": "2025-08-10T22:16:00+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "babel",
+    "title": "Babel",
+    "description": "<p>Nunca me he sentado para comer aquí, pero puedo recomendar sus falafels para llevar.</p>\n",
+    "address": "Kastanienallee, 33",
+    "latlng": [
+      52.5367,
+      13.407453
+    ],
+    "location": "berlin",
+    "last_modified_date": "2025-08-10T22:18:18+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "bekarei",
+    "title": "Bekarei",
+    "description": "<p>Especialidades de repostería portuguesa y griega en Berlín. Nota para mí: abstenerse de volver a pedir café.</p>\n",
+    "address": "Dunckerstraße 23",
+    "latlng": [
+      52.544327,
+      13.422646
+    ],
+    "location": "berlin",
+    "last_modified_date": "2025-08-10T22:19:49+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "watapas",
+    "title": "Watapas",
+    "description": "<p>Una más que buena izakaya tapas bar.</p>\n",
+    "address": "Bötzowstraße 33",
+    "category": "restaurant",
+    "latlng": [
+      52.5320983,
+      13.434446
+    ],
+    "location": "berlin",
+    "last_modified_date": "2025-08-10T22:20:16+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "odeon",
+    "title": "Odeon",
+    "description": "<p>Cine de una única sala con clara inspiración americana. Es parte del Yorck Kinogruppe, por lo que merece la pena abrirse una cuenta en la web y ahorrarse un euro por entrada comprando online. Calcula 15 minutos de anuncios y trailers antes de la película.</p>\n",
+    "address": "Hauptstraße, 116",
+    "emoji": "🎬",
+    "latlng": [
+      52.482044,
+      13.349654
+    ],
+    "location": "berlin",
+    "last_modified_date": "2025-08-10T22:26:36+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "dashi-canteen",
+    "title": "DASHI Canteen",
+    "description": "<p>Como el Dashi de Invalidenstraße, pero con vistas al Spree y con mucho más espacio. El tamago sando es lo que siempre me pido aquí.</p>\n",
+    "address": "Englische Straße, 21",
+    "latlng": [
+      52.51656,
+      13.332574
+    ],
+    "location": "berlin",
+    "last_modified_date": "2025-08-10T22:29:40+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "acid",
+    "title": "Acid P-Berg",
+    "description": "<p>Segunda cafetería de Acid en la ciudad. El café está rico pero es muy caro.</p>\n",
+    "address": "Christinenstraße 19a",
+    "emoji": "☕",
+    "latlng": [
+      52.532215,
+      13.410291
+    ],
+    "location": "berlin",
+    "last_modified_date": "2025-08-11T08:53:10+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "kiez-kaffee-kraft",
+    "title": "Kiez Kaffee Kraft",
+    "description": "<p>Lugar de confianza cafetera en la zona. Precios razonables y baño, lo cual es cada vez más difícil de encontrar.</p>\n",
+    "address": "Schivelbeiner Straße, 23",
+    "emoji": "☕",
+    "latlng": [
+      52.551186,
+      13.404072
+    ],
+    "location": "berlin",
+    "last_modified_date": "2025-08-11T08:54:38+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "foto-meyer",
+    "title": "Foto Meyer",
+    "description": "<p>Bien surtida tienda de fotografía digital, con buenos precios en cámaras analógicas de segunda mano.</p>\n",
+    "address": "Welserstraße, 1",
+    "emoji": "📷",
+    "latlng": [
+      52.49624,
+      13.341607
+    ],
+    "location": "berlin",
+    "last_modified_date": "2025-08-11T08:55:57+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "cafe-sgaminegg",
+    "title": "Cafe Sgaminegg",
+    "description": "<p>Cafetería con menú del día y ambiente acogedor.</p>\n",
+    "address": "Seelower Straße, 2",
+    "latlng": [
+      52.550415,
+      13.410474
+    ],
+    "location": "berlin",
+    "last_modified_date": "2025-08-11T08:56:29+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "jules",
+    "title": "Jules",
+    "description": "<p>Buena cafetería en esta zona, perfecta como plan B si Café Komine está imposible.</p>\n",
+    "address": "Geisbergstraße, 9",
+    "emoji": "☕",
+    "latlng": [
+      52.497444,
+      13.342103
+    ],
+    "location": "berlin",
+    "last_modified_date": "2025-08-11T08:58:27+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "caf-komine",
+    "title": "Cafe Komine",
+    "description": "<p>Pastelería franco-japonesa bastante fina. Solo abren los fines de semana y se puede (y quizá se debe) reservar.</p>\n",
+    "address": "Welserstraße, 13-15",
+    "emoji": "🍰",
+    "latlng": [
+      52.49783,
+      13.341739
+    ],
+    "location": "berlin",
+    "last_modified_date": "2025-08-11T08:58:58+02:00",
     "post_references": [
 
     ]

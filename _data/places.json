@@ -1,0 +1,226 @@
+{
+  "updated_at": "2025-08-10",
+  "count": 20,
+  "places": [
+    {
+      "slug": "lola-pizzaiola",
+      "name": "Lola Pizzaiola",
+      "notes": null,
+      "address": "Winsstraße, 21, 10405 Berlin, DE",
+      "category": "restaurant",
+      "poi_id": 1250081543,
+      "lat": 52.5343946,
+      "lon": 13.4260316,
+      "checkin_id": 47
+    },
+    {
+      "slug": "duo",
+      "name": "Duo",
+      "notes": null,
+      "address": null,
+      "category": "ice_cream",
+      "poi_id": 10963865464,
+      "lat": 52.5298888,
+      "lon": 13.4336106,
+      "checkin_id": 45
+    },
+    {
+      "slug": "watapas",
+      "name": "Watapas",
+      "notes": null,
+      "address": "Bötzowstraße, 33, 10407 Berlin, DE",
+      "category": "restaurant",
+      "poi_id": 2661807853,
+      "lat": 52.5320983,
+      "lon": 13.434446,
+      "checkin_id": 44
+    },
+    {
+      "slug": "acid",
+      "name": "Acid",
+      "notes": null,
+      "address": null,
+      "category": "cafe",
+      "poi_id": 12997953059,
+      "lat": 52.532215,
+      "lon": 13.410291,
+      "checkin_id": 43
+    },
+    {
+      "slug": "tresen-treff",
+      "name": "Tresen-Treff",
+      "notes": null,
+      "address": "Berliner Straße, 167, 10715 Berlin, DE",
+      "category": "pub",
+      "poi_id": 2055163663,
+      "lat": 52.48805,
+      "lon": 13.336748,
+      "checkin_id": 42
+    },
+    {
+      "slug": "odeon",
+      "name": "Odeon",
+      "notes": "Weapons",
+      "address": "Hauptstraße, 116, 10827 Berlin, DE",
+      "category": "cinema",
+      "poi_id": 23453625,
+      "lat": 52.482044,
+      "lon": 13.349654,
+      "checkin_id": 41
+    },
+    {
+      "slug": "foto-meyer",
+      "name": "Foto Meyer",
+      "notes": null,
+      "address": "Welserstraße, 1, 10777 Berlin, DE",
+      "category": "photo",
+      "poi_id": 6646026364,
+      "lat": 52.49624,
+      "lon": 13.341607,
+      "checkin_id": 39
+    },
+    {
+      "slug": "jules",
+      "name": "Jules",
+      "notes": null,
+      "address": "Geisbergstraße, 9, 10777 Berlin",
+      "category": "cafe",
+      "poi_id": 7864807685,
+      "lat": 52.497444,
+      "lon": 13.342103,
+      "checkin_id": 38
+    },
+    {
+      "slug": "caf-komine",
+      "name": "Café Komine",
+      "notes": null,
+      "address": "Welserstraße, 13-15, 10777 Berlin",
+      "category": "cafe",
+      "poi_id": 4775081056,
+      "lat": 52.49783,
+      "lon": 13.341739,
+      "checkin_id": 37
+    },
+    {
+      "slug": "love-deluxe",
+      "name": "Love Deluxe",
+      "notes": null,
+      "address": "Pannierstraße, 32, 12047 Berlin, DE",
+      "category": "fast_food",
+      "poi_id": 454251011,
+      "lat": 52.491016,
+      "lon": 13.435289,
+      "checkin_id": 36
+    },
+    {
+      "slug": "saint-georges",
+      "name": "Saint George's",
+      "notes": null,
+      "address": "Wörther Straße, 27, 10405 Berlin, DE",
+      "category": "books",
+      "poi_id": 4299136189,
+      "lat": 52.5359773,
+      "lon": 13.4211738,
+      "checkin_id": 35
+    },
+    {
+      "slug": "lola-pizzaiola",
+      "name": "Lola Pizzaiola",
+      "notes": "Bla bla ",
+      "address": "Winsstraße, 21, 10405 Berlin, DE",
+      "category": "restaurant",
+      "poi_id": 1250081543,
+      "lat": 52.534393,
+      "lon": 13.426032,
+      "checkin_id": 34
+    },
+    {
+      "slug": "cafe-sgaminegg",
+      "name": "Cafe Sgaminegg",
+      "notes": null,
+      "address": "Seelower Straße, 2, 10439 Berlin",
+      "category": "cafe",
+      "poi_id": 476810292,
+      "lat": 52.550415,
+      "lon": 13.410474,
+      "checkin_id": 33
+    },
+    {
+      "slug": "dashi-canteen",
+      "name": "DASHI Canteen",
+      "notes": "Bunker",
+      "address": "Englische Straße, 21",
+      "category": "restaurant",
+      "poi_id": 12317788097,
+      "lat": 52.51656,
+      "lon": 13.332574,
+      "checkin_id": 32
+    },
+    {
+      "slug": "babel",
+      "name": "Babel",
+      "notes": null,
+      "address": "Kastanienallee, 33, 10435 Berlin, DE",
+      "category": "restaurant",
+      "poi_id": 778710969,
+      "lat": 52.5367,
+      "lon": 13.407453,
+      "checkin_id": 30
+    },
+    {
+      "slug": "amat",
+      "name": "amató",
+      "notes": null,
+      "address": "Dunckerstraße, 69, 10437",
+      "category": "ice_cream",
+      "poi_id": 12962099301,
+      "lat": 52.5451364,
+      "lon": 13.422882,
+      "checkin_id": 27
+    },
+    {
+      "slug": "bekarei",
+      "name": "Bekarei",
+      "notes": null,
+      "address": null,
+      "category": "bakery",
+      "poi_id": 11266194611,
+      "lat": 52.544327,
+      "lon": 13.422646,
+      "checkin_id": 26
+    },
+    {
+      "slug": "do-you-read-me",
+      "name": "do you read me?!",
+      "notes": null,
+      "address": "Auguststraße, 28, 10117 Berlin, DE",
+      "category": "books",
+      "poi_id": 1860405872,
+      "lat": 52.52711,
+      "lon": 13.3978195,
+      "checkin_id": 25
+    },
+    {
+      "slug": "shiso-burger",
+      "name": "Shiso Burger",
+      "notes": null,
+      "address": "Auguststraße, 29a-c, 10119 Berlin, DE",
+      "category": "restaurant",
+      "poi_id": 1552074537,
+      "lat": 52.52724,
+      "lon": 13.398714,
+      "checkin_id": 24
+    },
+    {
+      "slug": "kiez-kaffee-kraft",
+      "name": "Kiez Kaffee Kraft",
+      "notes": null,
+      "address": "Schivelbeiner Straße, 23, 10439 Berlin, DE",
+      "category": "cafe",
+      "poi_id": 308523030,
+      "lat": 52.551186,
+      "lon": 13.404072,
+      "checkin_id": 23
+    }
+  ]
+}
