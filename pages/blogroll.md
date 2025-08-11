@@ -25,6 +25,7 @@ className: Blogroll
 - <rss-reader data-title="v's blog" data-author="v buckenham" data-url="https://v21.io/blog" data-feed="feed.xml"></rss-reader>
 - <rss-reader data-title="Ideas, essays, and projects" data-author="Steph Ango" data-url="https://stephanango.com" data-feed="feed.xml"></rss-reader>
 - <rss-reader data-title="A blog from Cabel Sasser" data-author="Cabel Sasser" data-url="https://cabel.com" data-feed="feed"></rss-reader>
+- <rss-reader data-title="Christowski Blog" data-author="Christoph Rauscher" data-url="https://christowski.de/blog" data-feed="feed"></rss-reader>
 
 ### Newsletters favoritas
 
