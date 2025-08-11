@@ -9,7 +9,7 @@ permalink: maps
   {% assign location_count = locations | size %}
   {% if location_count > 0 %}
   <li>
-    <div class="Maps__title"><a href="/{{ map.permalink }}">{{ map.title}}</a><a href="/feeds/{{ map.location }}.xml"
+    <div class="Maps__title"><a href="/{{ map.permalink }}">{{ map.title}}</a><a href="/feeds/{{ map.location }}.rss"
         class="Maps__rss"><span class="icon icon-rss"></span></a></div>
     <div class="Maps__listLocations">
       {% for location in locations %}
