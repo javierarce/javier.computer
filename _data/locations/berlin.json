@@ -35,23 +35,6 @@
   },
   {
     "layout": "place",
-    "pid": "carpenter",
-    "title": "Father Carpenter Coffee Brewers",
-    "emoji": "☕️",
-    "description": "<p>Mucha cola durante el fin de semana, mejor ir muy pronto o evitar directamente.</p>\n",
-    "address": "Münzstraße, 21, Scheunenviertel",
-    "latlng": [
-      52.5244438,
-      13.4065961
-    ],
-    "location": "berlin",
-    "last_modified_date": "2024-10-07T12:17:21+02:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
     "title": "Flohmarkt Arkonaplatz",
     "pid": "flohmarkt-arkonaplatz",
     "description": "<p>Mercado favorito de los domingos en Mitte donde adquirir libros, discos, vajillas, muebles, juguetes, y basurillas de hoy y de siempre.</p>\n",
@@ -396,6 +379,23 @@
   },
   {
     "layout": "place",
+    "pid": "carpenter",
+    "title": "Father Carpenter Coffee Brewers",
+    "emoji": "☕️",
+    "description": "<p>Mucha cola durante el fin de semana, mejor ir muy pronto o evitar directamente.</p>\n",
+    "address": "Münzstraße, 21, Scheunenviertel",
+    "latlng": [
+      52.5244438,
+      13.4065961
+    ],
+    "location": "berlin",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
     "pid": "zola",
     "title": "Zola",
     "description": "<p>La «Zola Neapolitan mit Fior di Latte, Birne, Walnüssen und Gorgonzola» estaba muy rica.</p>\n",
@@ -406,24 +406,6 @@
     ],
     "location": "berlin",
     "last_modified_date": "2025-08-10T21:54:30+02:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "duo",
-    "title": "Duo",
-    "description": "\n",
-    "address": "",
-    "category": "ice_cream",
-    "poi_id": "10963865464",
-    "latlng": [
-      52.5298888,
-      13.4336106
-    ],
-    "location": "berlin",
-    "last_modified_date": "2025-08-10T21:54:39+02:00",
     "post_references": [
 
     ]
