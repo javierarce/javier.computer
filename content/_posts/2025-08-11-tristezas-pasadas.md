@@ -2,6 +2,7 @@
 layout: post
 title: "Tristezas pasadas"
 date: "2025-08-11 22:26:53 +0200"
+location: berlin
 ---
 
 Tristezas pasadas no garantizan tristezas futuras (y esto no es consejo de ningún tipo) &middot; [Una
