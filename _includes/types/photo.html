@@ -7,7 +7,7 @@
 
   <span class="p-author h-card" style="display:none;">{{ site.author }}</span>
   <div class="Post__content{% if post.extraClassName %} {{ post.extraClassName }}{% endif %} e-content">
-    <a href="{{ post.url }}">
+    <a href="{{ post.url }}" title="{{ post.title }}">
       {% if post.cover -%}
         {% include photos/single.html photo=post filename=post.cover hide_caption=true -%}
 
@@ -40,7 +40,7 @@
   </div>
 
   <div class="Post__footer">
-    <a href="{{ post.url }}" class="Post__date dt-published u-url">
+    <a href="{{ post.url }}" class="Post__date dt-published u-url" title="{{ post.title }}">
       {% include date.html date=post.date -%}
     </a>
     {% include post/locations.html page=post -%}
@@ -66,10 +66,12 @@
       >
     {% endif %}
 
-    <a href="{{ post.url }}#more" class="Post__more-photos" >{{ post.filenames.size }} foto
+    {% if post.filenames.size > 1 -%}
+    <a href="{{ post.url }}#more" class="Post__more-photos">{{ post.filenames.size }} foto
       {%- if post.filenames.size > 1 -%}
         s
       {%- endif -%}
     </a>
+      {%- endif -%}
   </div>
 </div>
