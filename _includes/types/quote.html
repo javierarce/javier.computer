@@ -1,7 +1,7 @@
 <div class="Post is-quote">
   <div class="Post__content">
     <blockquote>{{ post.content }}</blockquote>
-    {{ post.author }} ({{post.year}}). {{ post.title }}. {{ post.editorial}}
+    <p>{{ post.author }} ({{post.year}}). {{ post.title }}. {{ post.editorial}}</p>
   </div>
   <div class="Post__footer">
     <a href="{{ post.url }}" class="Post__date">{% include date.html date=post.date %}</a> 

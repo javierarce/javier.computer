@@ -6,9 +6,9 @@ className: Quote
   {% include navigation.html -%}
 
   <div class="Post is-quote">
-    <div class="Post__content">
+    <div class="Post__content Post__text">
       <blockquote>{{ content }}</blockquote>
-      {{ page.author }} ({{ page.year }}). {{ page.title }}. {{ page.editorial }}
+      <p>{{ page.author }} ({{ page.year }}). {{ page.title }}. {{ page.editorial }}</p>
     </div>
     {% include post/footer.html -%}
   </div>
