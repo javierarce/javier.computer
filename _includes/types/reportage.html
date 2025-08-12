@@ -7,7 +7,7 @@
 
   <span class="p-author h-card" style="display:none;">{{ site.author }}</span>
   <div class="Post__content{% if post.extraClassName %} {{ post.extraClassName }}{% endif %} e-content">
-    <a href="{{ post.url }}">
+    <a href="{{ post.url }}" title="{{ post.title }}">
       {% if post.cover -%}
         {% include photos/single.html photo=post filename=post.cover caption=post.caption ratio=post.ratio -%}
       {% elsif post.filenames -%}
