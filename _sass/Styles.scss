@@ -178,15 +178,15 @@ blockquote p a {
 
 ul {
   margin: 0 0 0 1em;
-}
 
-ul li {
-  margin: 0 0 0.4em 0;
-  list-style: disc;
-}
+  li {
+    margin: 0 0 0.4em 0;
+    list-style: disc;
 
-ul li:last-child {
-  margin: 0;
+    &:last-child {
+      margin: 0;
+    }
+  }
 }
 
 hr {
