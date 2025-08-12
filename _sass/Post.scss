@@ -55,17 +55,17 @@
 
   &__content a[href^="/maps"] {
     position: relative;
-    padding-right: 1em;
 
     &:after {
-      content: "◌";
+      content: "";
       display: inline-block;
-      font-weight: 400;
-      padding-left: 4px;
-      font-size: 1.3em;
-      position: absolute;
-      color: var(--white);
-      line-height: 115%;
+      width: 24px;
+      height: 24px;
+      vertical-align: sub;
+      background-image: url(/img/icons/pin.svg);
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: contain;
       opacity: var(--op-light);
     }
   }
@@ -247,6 +247,10 @@
     &__tag-link:before {
       width: 14px;
       height: 14px;
+    }
+
+    &__content a[href^="/maps"]:after {
+      height: 18px;
     }
   }
 }
