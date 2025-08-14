@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-version: 6.0.81
+version: 6.0.82
 title: "Javier's computer"
 description: "My computer on the net"
 baseurl: ""
@@ -36,7 +36,7 @@ show_drafts: false
 show_likes: true
 show_comments: false
 
-show_home_likes: false
+show_home_likes: true
 show_home_comments: false
 
 include: [".well-known"]

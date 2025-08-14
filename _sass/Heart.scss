@@ -1,60 +1,57 @@
 open-heart.text-open-heart {
   display: inline;
   cursor: pointer;
-}
 
-open-heart.text-open-heart:not([disabled]):hover span {
-  opacity: 1;
-  cursor: pointer;
-}
+  &:not([disabled]):hover {
+    span {
+      opacity: 1;
+      cursor: pointer;
+    }
 
-open-heart.text-open-heart:not([disabled]):hover::after {
-  opacity: 1;
-}
+    &::after {
+      opacity: 1;
+    }
+  }
 
-open-heart.text-open-heart .on {
-  display: none
-}
+  span {
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    background-image: url(/img/icons/heart.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 18px;
+    height: 18px;
 
-open-heart.text-open-heart span {
-  position: relative;
-  top: 2px;
-  margin-right: var(--gap-xxs);
-  display: inline-block;
-  background-image: url(/img/icons/heart.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  width: 18px;
-  height: 18px;
-}
+    @media all and (max-width: 640px) {
+      width: 14px;
+      height: 14px;
+    }
+  }
 
-open-heart.text-open-heart .on {
-  background-image: url(/img/icons/heart-filled.svg);
-}
+  .on {
+    display: none;
+    background-image: url(/img/icons/heart-filled.svg);
+  }
 
+  .off {
+    transition: filter 0.2s ease-in-out;
+  }
 
-open-heart.text-open-heart[aria-pressed="true"] .on {
-  opacity: 1;
-  display: inline-block;
-}
+  &[aria-pressed="true"] {
+    .on {
+      opacity: 1;
+      display: inline-block;
+    }
 
-open-heart.text-open-heart .off {
-  transition: filter 0.2s ease-in-out;
-}
+    .off {
+      display: none;
+    }
+  }
 
-open-heart.text-open-heart[aria-pressed="true"] .off {
-  display: none
-}
-
-open-heart.text-open-heart[count]::after {
-  content: attr(count);
-  opacity: var(--op-light);
-}
-
-@media all and (max-width: 640px) {
-  open-heart.text-open-heart span {
-    width: 14px;
-    height: 14px;
+  &[count]::after {
+    content: attr(count);
+    opacity: var(--op-light);
   }
 }
