@@ -27,6 +27,7 @@ className: Blogroll
 - <rss-reader data-title="A blog from Cabel Sasser" data-author="Cabel Sasser" data-url="https://cabel.com" data-feed="feed"></rss-reader>
 - <rss-reader data-title="Christowski Blog" data-author="Christoph Rauscher" data-url="https://christowski.de/blog" data-feed="feed"></rss-reader>
 - <rss-reader data-title="Alba G. Mora" data-author="Alba G. Mora" data-url="https://albagmora.substack.com" data-feed="feed"></rss-reader>
+- <rss-reader data-title="croasan" data-author="Raúl Ibarra" data-url="https://croasan.com" data-feed="feed"></rss-reader>
 
 ### Newsletters favoritas
 
