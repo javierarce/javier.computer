@@ -50,7 +50,7 @@
     width: var(--width-full);
     display: block;
     font-weight: var(--font-weight-bold);
-    margin: 0 0 0.4em;
+    margin: 0 0 var(--sp-md);
   }
 
   &__content a[href^="/maps"] {
@@ -115,6 +115,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0.6em;
+    line-height: normal;
 
     a,
     open-heart .off {
@@ -139,7 +140,7 @@
     flex-direction: column;
 
     &>* {
-      margin: 0 0.4em 0 0;
+      margin: 0 var(--sp-md) 0 0;
     }
 
     a {
@@ -240,14 +241,6 @@
   .Post {
     &__footer {
       font-size: var(--font-size-lg);
-    }
-
-    &__more:before,
-    &__more-photos:before,
-    &__location:before,
-    &__tag-link:before {
-      width: 14px;
-      height: 14px;
     }
 
     &__content a[href^="/maps"]:after {

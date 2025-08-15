@@ -277,13 +277,15 @@ img {
   color: var(--link);
 }
 
-.Layout__blogroll .Page__content ul {
-  margin: 0 0 2em 1em;
-}
+.Layout__blogroll {
+  .Page__content ul {
+    margin: 0 0 2em 1em;
+  }
 
-.Layout__blogroll h3 {
-  padding: 0 0 var(--space);
-  border-bottom: 1px solid var(--gray);
+  h3 {
+    padding: 0 0 var(--space);
+    border-bottom: 1px solid var(--gray);
+  }
 }
 
 a.is-reportage::after,
@@ -362,16 +364,13 @@ a.is-icon-light.is-reportage::after {
 
 @media all and (max-width: 640px) {
   body {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-md);
     padding: 0;
   }
 
   .Content {
-    padding: var(--pd-xl);
-  }
-
-  .Content {
     width: var(--width-full);
+    padding: var(--pd-xl);
   }
 
   .Layout__error {

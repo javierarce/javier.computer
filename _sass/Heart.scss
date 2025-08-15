@@ -23,11 +23,6 @@ open-heart.text-open-heart {
     background-size: contain;
     width: 18px;
     height: 18px;
-
-    @media all and (max-width: 640px) {
-      width: 14px;
-      height: 14px;
-    }
   }
 
   .on {
