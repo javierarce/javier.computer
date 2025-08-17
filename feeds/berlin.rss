@@ -9,7 +9,25 @@
     <link>https://javier.computer/feeds/berlin.rss</link>
     <description>Sitios en berlin</description>
     <language>es</language>
-    <pubDate>Mon, 11 Aug 2025 08:58:58 +0200</pubDate>
+    <pubDate>Sun, 17 Aug 2025 22:38:44 +0200</pubDate>
+    <item>
+      <title>onette</title>
+      <link>https://javier.computer/maps/berlin/onette</link>
+      <description>&lt;p&gt;Diner americano en el barrio de Schöneberg. El servicio es súper amable y la cola para entrar súper larga si llegas en mal momento. Me quedé sin probar el Krosses Fischbrötchen (aka Crispy Fish Bun), pero la alternativa (sandwich de col rizada, espinacas y acelgas estofadas, acompañadas de ensalada de col y queso Old Amsterdam en un pan de molde gordísimo) me gustó mucho.&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/berlin/onette'&gt;Grunewaldstraße 11&lt;/a&gt;&lt;br&gt;&lt;p&gt;Este sitio aparece en los siguientes posts:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2025/08/17/time-to-check-in'&gt;Time to check in&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Sun, 17 Aug 2025 22:38:44 +0200</pubDate>
+      <dc:subject>berlin</dc:subject>
+      <dc:date>2025-08-17T22:38:44+02:00</dc:date>
+    </item>
+    <item>
+      <title>Modulor</title>
+      <link>https://javier.computer/maps/berlin/modulor</link>
+      <description>&lt;p&gt;Modulor Material Total&lt;/p&gt;
+&lt;br&gt;&lt;a href='https://javier.computer/maps/berlin/modulor'&gt;Prinzenstraße, 85&lt;/a&gt;&lt;br&gt;</description>
+      <pubDate>Mon, 11 Aug 2025 09:14:38 +0200</pubDate>
+      <dc:subject>berlin</dc:subject>
+      <dc:date>2025-08-11T09:14:38+02:00</dc:date>
+    </item>
     <item>
       <title>Cafe Komine</title>
       <link>https://javier.computer/maps/berlin/caf-komine</link>
@@ -200,15 +218,6 @@
       <dc:date>2024-10-07T12:17:21+02:00</dc:date>
     </item>
     <item>
-      <title>Modulor</title>
-      <link>https://javier.computer/maps/berlin/modulor</link>
-      <description>&lt;p&gt;Modulor Material Total&lt;/p&gt;
-&lt;br&gt;&lt;a href='https://javier.computer/maps/berlin/modulor'&gt;Prinzenstraße, 85&lt;/a&gt;&lt;br&gt;</description>
-      <pubDate>Mon, 07 Oct 2024 12:17:21 +0200</pubDate>
-      <dc:subject>berlin</dc:subject>
-      <dc:date>2024-10-07T12:17:21+02:00</dc:date>
-    </item>
-    <item>
       <title>MIBAP</title>
       <link>https://javier.computer/maps/berlin/mibap</link>
       <description>&lt;p&gt;Cocina fusión taiwanesa con opciones veganas.&lt;/p&gt;
@@ -343,6 +352,6 @@
       <dc:subject>berlin</dc:subject>
       <dc:date>2024-10-07T12:17:21+02:00</dc:date>
     </item>
-    <dc:date>2025-08-11T08:58:58+02:00</dc:date>
+    <dc:date>2025-08-17T22:38:44+02:00</dc:date>
   </channel>
 </rss>

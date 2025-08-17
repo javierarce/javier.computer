@@ -1,7 +1,18 @@
 {
-  "updated_at": "2025-08-10",
-  "count": 20,
+  "updated_at": "2025-08-17",
+  "count": 21,
   "places": [
+    {
+      "slug": "onette",
+      "name": "onette",
+      "notes": "No tenían el crispy fish bun",
+      "address": null,
+      "category": "restaurant",
+      "poi_id": 12902534401,
+      "lat": 52.490185,
+      "lon": 13.355147,
+      "checkin_id": 51
+    },
     {
       "slug": "lola-pizzaiola",
       "name": "Lola Pizzaiola",

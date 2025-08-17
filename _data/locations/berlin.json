@@ -35,6 +35,55 @@
   },
   {
     "layout": "place",
+    "pid": "dashi",
+    "title": "DASHI",
+    "description": "<p>Diner asiático. Favoritos: Tempeh Sando (V) y Korokke Curry (V)</p>\n",
+    "address": "Invalidenstraße 112",
+    "latlng": [
+      52.530706060553854,
+      13.383605195376553
+    ],
+    "location": "berlin",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "dotori",
+    "title": "Dotori Korean Anju Bar",
+    "description": "<p>Bonitísimo y compactísimo y riquísimo bar de tapas coreanas.</p>\n",
+    "address": "Gustav-Adolf-Straße 159",
+    "latlng": [
+      52.553966826503334,
+      13.433880192070449
+    ],
+    "location": "berlin",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "carpenter",
+    "title": "Father Carpenter Coffee Brewers",
+    "emoji": "☕️",
+    "description": "<p>Mucha cola durante el fin de semana, mejor ir muy pronto o evitar directamente.</p>\n",
+    "address": "Münzstraße, 21, Scheunenviertel",
+    "latlng": [
+      52.5244438,
+      13.4065961
+    ],
+    "location": "berlin",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
     "title": "Flohmarkt Arkonaplatz",
     "pid": "flohmarkt-arkonaplatz",
     "description": "<p>Mercado favorito de los domingos en Mitte donde adquirir libros, discos, vajillas, muebles, juguetes, y basurillas de hoy y de siempre.</p>\n",
@@ -155,22 +204,6 @@
     "latlng": [
       52.527908251990475,
       13.413073501974143
-    ],
-    "location": "berlin",
-    "last_modified_date": "2024-10-07T12:17:21+02:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "modulor",
-    "title": "Modulor",
-    "description": "<p>Modulor Material Total</p>\n",
-    "address": "Prinzenstraße, 85",
-    "latlng": [
-      52.5033859,
-      13.4100566
     ],
     "location": "berlin",
     "last_modified_date": "2024-10-07T12:17:21+02:00",
@@ -338,55 +371,6 @@
     "latlng": [
       52.54719755887236,
       13.358785015341178
-    ],
-    "location": "berlin",
-    "last_modified_date": "2024-10-07T12:17:21+02:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "dashi",
-    "title": "DASHI",
-    "description": "<p>Diner asiático. Favoritos: Tempeh Sando (V) y Korokke Curry (V)</p>\n",
-    "address": "Invalidenstraße 112",
-    "latlng": [
-      52.530706060553854,
-      13.383605195376553
-    ],
-    "location": "berlin",
-    "last_modified_date": "2024-10-07T12:17:21+02:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "dotori",
-    "title": "Dotori Korean Anju Bar",
-    "description": "<p>Bonitísimo y compactísimo y riquísimo bar de tapas coreanas.</p>\n",
-    "address": "Gustav-Adolf-Straße 159",
-    "latlng": [
-      52.553966826503334,
-      13.433880192070449
-    ],
-    "location": "berlin",
-    "last_modified_date": "2024-10-07T12:17:21+02:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "carpenter",
-    "title": "Father Carpenter Coffee Brewers",
-    "emoji": "☕️",
-    "description": "<p>Mucha cola durante el fin de semana, mejor ir muy pronto o evitar directamente.</p>\n",
-    "address": "Münzstraße, 21, Scheunenviertel",
-    "latlng": [
-      52.5244438,
-      13.4065961
     ],
     "location": "berlin",
     "last_modified_date": "2024-10-07T12:17:21+02:00",
@@ -625,6 +609,43 @@
     "last_modified_date": "2025-08-11T08:58:58+02:00",
     "post_references": [
 
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "modulor",
+    "title": "Modulor",
+    "description": "<p>Modulor Material Total</p>\n",
+    "address": "Prinzenstraße, 85",
+    "latlng": [
+      52.5033859,
+      13.4100566
+    ],
+    "location": "berlin",
+    "last_modified_date": "2025-08-11T09:14:38+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "onette",
+    "title": "onette",
+    "description": "<p>Diner americano en el barrio de Schöneberg. El servicio es súper amable y la cola para entrar súper larga si llegas en mal momento. Me quedé sin probar el Krosses Fischbrötchen (aka Crispy Fish Bun), pero la alternativa (sandwich de col rizada, espinacas y acelgas estofadas, acompañadas de ensalada de col y queso Old Amsterdam en un pan de molde gordísimo) me gustó mucho.</p>\n",
+    "address": "Grunewaldstraße 11",
+    "poi_id": "12902534401",
+    "latlng": [
+      52.490185,
+      13.355147
+    ],
+    "location": "berlin",
+    "last_modified_date": "2025-08-17T22:38:44+02:00",
+    "post_references": [
+      {
+        "url": "/2025/08/17/time-to-check-in",
+        "title": "Time to check in",
+        "date": "2025-08-17 20:39:47 +0200"
+      }
     ]
   }
 ]
