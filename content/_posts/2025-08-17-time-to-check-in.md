@@ -17,4 +17,4 @@ knowledge](https://irisvanrooijcogsci.com/2025/08/12/ai-slop-and-the-destruction
 Como cada vez me interesa más la industria del cine y la creación de películas,
 disfruté mucho leyendo «Making Movies» de [Sidney Lumet](https://en.wikipedia.org/wiki/Sidney_Lumet), un libro en el
 que, además de hablar sobre su propia obra, explica con un buen nivel de
-detalle técnico el proceso de llevar una historia a la pantalla. Si tienes alguna recomendación sobre otros libros sobre cine, [envíame un mensaje](https://javier.computer/contact).
+detalle técnico el proceso de llevar una historia a la pantalla. Si tienes recomendaciones de otros libros parecidos, [envíame un mensaje](https://javier.computer/contact).
