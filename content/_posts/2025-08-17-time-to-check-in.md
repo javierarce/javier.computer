@@ -14,7 +14,8 @@ Time to check in &middot; [onette](/maps/berlin/onette) con
 destruction of
 knowledge](https://irisvanrooijcogsci.com/2025/08/12/ai-slop-and-the-destruction-of-knowledge)
 &middot;
-Como cada vez me interesa más la industria del cine y el proceso de creación de películas,
+Como cada vez me interesa más la industria del cine y la creación de películas,
 disfruté mucho leyendo «Making Movies» de [Sidney Lumet](https://en.wikipedia.org/wiki/Sidney_Lumet), un libro en el
-que, además de hablar sobre sus propia obra, explica con buen nivel de
-detalle los distintos elementos necesarios para llevar una historia a la pantalla.
+que, además de hablar sobre su propia obra, explica con un buen nivel de
+detalle técnico todo el proceso de llevar una historia a la pantalla.
+Si tienes alguna recomendación sobre otros libros sobre cine, [envíame un mensaje](https://javier.computer/contact).
