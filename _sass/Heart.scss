@@ -48,5 +48,6 @@ open-heart.text-open-heart {
   &[count]::after {
     content: attr(count);
     opacity: var(--op-light);
+    margin-left: -0.1em;
   }
 }

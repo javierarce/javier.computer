@@ -20,14 +20,18 @@ include.photo.location | first -%}
       <span class="on"></span>
       <span class="off"></span>
     </open-heart>
-    {% endif %} {% if site.show_comments %}
+    {% endif %} 
+
+    {% if site.show_footer_comments %}
     <a
       href="/comment?title={{ page.title }}&url={{ page.id }}"
       class="Post__comment"
       title="Envíame un comentario sobre esta entrada"
       >Comentar</a
     >
-    {% endif -%} {% if include.readmore == "true" -%}
+    {% endif -%} 
+
+    {% if include.readmore == "true" -%}
     {% if include.photo.filenames.size > 1 -%}
     <a href="{{ include.photo.url }}#more" class="Post__more-photos">{{ include.photo.filenames.size }} foto{% if
       include.photo.filenames.size > 1 %}s{% endif -%}</a

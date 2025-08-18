@@ -175,6 +175,7 @@
 
   &__more:before,
   &__more-photos:before,
+  &__comment:before,
   &__location:before,
   &__tag-link:before {
     position: relative;
@@ -187,6 +188,10 @@
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: contain;
+  }
+
+  &__comment:before {
+    background-image: url(/img/icons/comment.svg);
   }
 
   &__location:before {
