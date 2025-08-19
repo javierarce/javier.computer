@@ -24,7 +24,7 @@ include.photo.location | first -%}
 
     {% if site.show_footer_comments %}
     <a
-      href="/comment?title={{ page.title }}&url={{ page.id }}"
+      href="/comment?title={{ include.photo.title }}&url={{ include.photo.id }}"
       class="Post__comment"
       title="Envíame un comentario sobre esta entrada"
       >Comentar</a
