@@ -8,9 +8,13 @@
       {% include photos/single.html photo=post filename=filename -%}
     </a>
     {% assign readmore = 'true' %}
+    
+    {% if post.intro -%}
     <div class="Post__content">
       <p>{{ post.intro }}</p>
     </div>
+    {% endif -%}
+
   {% elsif post.filenames -%}
     {% assign photo_count = post.filenames | size %}
     {% if photo_count >= 4 %}
