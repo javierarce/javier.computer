@@ -671,7 +671,7 @@
     "layout": "place",
     "pid": "apurado-cafe",
     "title": "Apurado Café",
-    "description": "\n",
+    "description": "<p>Una cafetería que parece un salón de casa, con dulces argentinos y café de Nomad a buen precio.</p>\n",
     "address": "Carrer de Roger de Flor, 253",
     "emojis": "☕️",
     "latlng": [
@@ -679,7 +679,7 @@
       2.1667554
     ],
     "location": "barcelona",
-    "last_modified_date": "2025-08-22T19:50:07+02:00",
+    "last_modified_date": "2025-08-22T20:40:25+02:00",
     "post_references": [
 
     ]

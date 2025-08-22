@@ -9,15 +9,15 @@
     <link>https://javier.computer/feeds/barcelona.rss</link>
     <description>Sitios en barcelona</description>
     <language>es</language>
-    <pubDate>Fri, 22 Aug 2025 19:50:07 +0200</pubDate>
+    <pubDate>Fri, 22 Aug 2025 20:40:25 +0200</pubDate>
     <item>
       <title>Apurado Café</title>
       <link>https://javier.computer/maps/barcelona/apurado-cafe</link>
-      <description>
+      <description>&lt;p&gt;Una cafetería que parece un salón de casa, con dulces argentinos y café de Nomad a buen precio.&lt;/p&gt;
 &lt;br&gt;&lt;a href='https://javier.computer/maps/barcelona/apurado-cafe'&gt;Carrer de Roger de Flor, 253&lt;/a&gt;&lt;br&gt;</description>
-      <pubDate>Fri, 22 Aug 2025 19:50:07 +0200</pubDate>
+      <pubDate>Fri, 22 Aug 2025 20:40:25 +0200</pubDate>
       <dc:subject>barcelona</dc:subject>
-      <dc:date>2025-08-22T19:50:07+02:00</dc:date>
+      <dc:date>2025-08-22T20:40:25+02:00</dc:date>
     </item>
     <item>
       <title>035//BAR</title>
@@ -334,6 +334,6 @@
       <dc:subject>barcelona</dc:subject>
       <dc:date>2024-10-07T12:17:21+02:00</dc:date>
     </item>
-    <dc:date>2025-08-22T19:50:07+02:00</dc:date>
+    <dc:date>2025-08-22T20:40:25+02:00</dc:date>
   </channel>
 </rss>
