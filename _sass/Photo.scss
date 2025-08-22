@@ -395,6 +395,16 @@ figcaption {
   opacity: var(--op-light);
 }
 
+
+@media all and (min-width: 1900px) {
+
+  .Layout__reportage .Content,
+  .Photo__layout {
+    width: var(--width-xl);
+  }
+}
+
+
 @media all and (max-width: 1024px) {
 
   .Photo__feed {
