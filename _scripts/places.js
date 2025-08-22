@@ -30,17 +30,27 @@ export class Places {
     return await response.json();
   }
 
+  extractLocation(checkin) {
+    if (checkin.addr_city) {
+      return this.createSlug(checkin.addr_city);
+    }
+
+    return "unknown";
+  }
+
   createSlug(name) {
     return name
       .toLowerCase()
-      .replace(/[^a-z0-9\s-]/g, "") // Remove special characters
-      .replace(/\s+/g, "-") // Replace spaces with hyphens
-      .replace(/-+/g, "-") // Replace multiple hyphens with single
-      .replace(/^-+|-+$/g, ""); // Remove leading/trailing hyphens
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9\s-]/g, "")
+      .replace(/\s+/g, "-")
+      .replace(/-+/g, "-")
+      .replace(/^-+|-+$/g, "");
   }
 
   createMarkdownFile(place) {
-    const { name, notes, address, lat, lon, category, poi_id } = place;
+    const { name, notes, address, lat, lon, category, location } = place;
 
     const slug = this.createSlug(name);
 
@@ -51,11 +61,10 @@ title: "${name}"
 description: "${notes || ""}"
 address: "${address || ""}"
 category: "${category || ""}"
-poi_id: "${poi_id || ""}"
 latlng:
 - ${lat}
 - ${lon}
-location: berlin
+location: ${location}
 ---`;
 
     const fileName = `${slug}.md`;
@@ -82,15 +91,17 @@ location: berlin
       );
 
       if (!doesPlaceExist) {
+        const location = this.extractLocation(checkin);
+
         const place = {
           slug,
           name: checkin.name,
           notes: checkin.notes,
           address: checkin.address,
           category: checkin.category,
-          poi_id: checkin.poi_id,
           lat: checkin.lat,
           lon: checkin.lon,
+          location,
           created_at: checkin.created_at,
           checkin_id: checkin.id,
         };

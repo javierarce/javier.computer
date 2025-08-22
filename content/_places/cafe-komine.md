@@ -1,12 +1,13 @@
 ---
 layout: place
-pid: caf-komine
-title: "Cafe Komine"
-description: "Pastelería franco-japonesa bastante fina. Solo abren los fines de semana y se puede (y quizá se debe) reservar."
+pid: cafe-komine
+title: "Café Komine"
+description: ""
 address: "Welserstraße, 13-15"
-emoji: "🍰"
+emojis: "🍰"
 latlng:
   - 52.49783
   - 13.341739
 location: berlin
 ---
+

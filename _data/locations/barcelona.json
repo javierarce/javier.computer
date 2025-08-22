@@ -1,6 +1,22 @@
 [
   {
     "layout": "place",
+    "pid": "tokyo-ya",
+    "title": "Tokyo-Ya",
+    "description": "<p>¿Fantástico y bien surtido súper japonés? Sí.</p>\n",
+    "address": "Carrer de Balmes, 197",
+    "latlng": [
+      41.40031912503507,
+      2.1523378229426
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2024-10-07T12:17:21+02:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
     "pid": "tramendu",
     "title": "Tramendu",
     "description": "<p>El nombre completo del sitio es “Tramendu. Ens agrada el vermuting” (no confundir con “Tramendu. Encenem els fogons” que está en la misma calle y no he probado). Si lees las críticas en Google Maps verás que la mayoría comentan lo rica que está la comida, lo encantador que es el personal, y lo económico que es el precio. Pues eso.</p>\n",
@@ -17,21 +33,22 @@
   },
   {
     "layout": "place",
-    "title": "Vereda Bar",
-    "pid": "vereda",
-    "description": "<p>Platos de proximidad y temporada y vinos naturales.</p>\n",
-    "address": "Carrer de la Diputació, 155",
+    "title": "Zumzeig Cinema",
+    "pid": "zumzeig",
+    "emoji": "🍿",
+    "description": "<p>Sala de cine cooperativa y sin ánimo de lucro, con una programación principalmente indie en VO.</p>\n",
+    "address": "Carrer de Béjar, 53",
     "latlng": [
-      41.38460297818277,
-      2.1578119926085177
+      41.378023248824405,
+      2.1448554232917982
     ],
     "location": "barcelona",
     "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
       {
-        "url": "/2023/05/04/open-heart-protocol",
-        "title": "Open Heart Protocol",
-        "date": "2023-05-04 22:57:54 +0200"
+        "url": "/2023/04/07/all-the-beauty-and-the-bloodshed",
+        "title": "All The Beauty And The Bloodshed",
+        "date": "2023-04-07 00:35:31 +0200"
       }
     ]
   },
@@ -323,22 +340,21 @@
   },
   {
     "layout": "place",
-    "title": "Zumzeig Cinema",
-    "pid": "zumzeig",
-    "emoji": "🍿",
-    "description": "<p>Sala de cine cooperativa y sin ánimo de lucro, con una programación principalmente indie en VO.</p>\n",
-    "address": "Carrer de Béjar, 53",
+    "title": "Vereda Bar",
+    "pid": "vereda",
+    "description": "<p>Platos de proximidad y temporada y vinos naturales.</p>\n",
+    "address": "Carrer de la Diputació, 155",
     "latlng": [
-      41.378023248824405,
-      2.1448554232917982
+      41.38460297818277,
+      2.1578119926085177
     ],
     "location": "barcelona",
     "last_modified_date": "2024-10-07T12:17:21+02:00",
     "post_references": [
       {
-        "url": "/2023/04/07/all-the-beauty-and-the-bloodshed",
-        "title": "All The Beauty And The Bloodshed",
-        "date": "2023-04-07 00:35:31 +0200"
+        "url": "/2023/05/04/open-heart-protocol",
+        "title": "Open Heart Protocol",
+        "date": "2023-05-04 22:57:54 +0200"
       }
     ]
   },
@@ -600,22 +616,6 @@
   },
   {
     "layout": "place",
-    "pid": "tokyo-ya",
-    "title": "Tokyo-Ya",
-    "description": "<p>¿Fantástico y bien surtido súper japonés? Sí.</p>\n",
-    "address": "Carrer de Balmes, 197",
-    "latlng": [
-      41.40031912503507,
-      2.1523378229426
-    ],
-    "location": "barcelona",
-    "last_modified_date": "2024-10-07T12:17:21+02:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
     "title": "Amateur",
     "pid": "amateur",
     "address": "Carrer de Llull, 101",
@@ -665,6 +665,23 @@
         "title": "Celebración Post-conciliación",
         "date": "2023-05-06 08:41:29 +0200"
       }
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "apurado-cafe",
+    "title": "Apurado Café",
+    "description": "\n",
+    "address": "Carrer de Roger de Flor, 253",
+    "emojis": "☕️",
+    "latlng": [
+      41.403088,
+      2.1667554
+    ],
+    "location": "barcelona",
+    "last_modified_date": "2025-08-22T19:50:07+02:00",
+    "post_references": [
+
     ]
   }
 ]
