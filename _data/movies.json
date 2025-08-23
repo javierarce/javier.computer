@@ -1,7 +1,17 @@
 {
-  "updated_at": "2025-08-22",
-  "count": 905,
+  "updated_at": "2025-08-23",
+  "count": 906,
   "movies": [
+    {
+      "watched_on": "2025-08-23",
+      "title": "Mission: Impossible – The Final Reckoning",
+      "year": 2025,
+      "rating": 1,
+      "liked": false,
+      "stars": "★",
+      "rewatched": false,
+      "permalink": "mission-impossible-the-final-reckoning"
+    },
     {
       "watched_on": "2025-08-21",
       "title": "Three Days of the Condor",
