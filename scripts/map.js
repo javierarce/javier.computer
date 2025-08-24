@@ -1,101 +1,111 @@
 class Base {
-  constructor () {
-    this.className = this.constructor.name
-    this.templateData = {}
+  constructor() {
+    this.className = this.constructor.name;
+    this.templateData = {};
   }
 
-  killEvent (event) {
+  killEvent(event) {
     if (event) {
-      event.stopPropagation()
-      event.preventDefault()
+      event.stopPropagation();
+      event.preventDefault();
     }
   }
 
-  isEmpty (obj) {
+  isEmpty(obj) {
     return Object.keys(obj).length === 0;
   }
 
-  createElement ({ className, html, text, elementType = 'div', type,  ...options }) {
-    let $el = document.createElement(elementType)
+  createElement({
+    className,
+    html,
+    text,
+    elementType = "div",
+    type,
+    ...options
+  }) {
+    let $el = document.createElement(elementType);
 
     if (type) {
-      $el.type = 'text'
+      $el.type = "text";
     }
 
     if (html) {
-      $el.innerHTML = html
+      $el.innerHTML = html;
     } else if (text) {
-      $el.innerText = text
+      $el.innerText = text;
     }
 
-    className.split(' ').filter(c => c).forEach(name => $el.classList.add(name))
+    className
+      .split(" ")
+      .filter((c) => c)
+      .forEach((name) => $el.classList.add(name));
 
     if (!this.isEmpty(options)) {
       Object.keys(options).forEach((key) => {
-        $el[key] = options[key]
-      })
+        $el[key] = options[key];
+      });
     }
 
-    return $el
+    return $el;
   }
 
-  template () {
-    return `<div class="Template"></div>`
+  template() {
+    return `<div class="Template"></div>`;
   }
 
-  renderTemplate () {
-    let className = this.className
-    this.$el = this.createElement({ className })
-    const html = ejs.render(this.template(), this.templateData)
-    this.$el.insertAdjacentHTML('beforeend', html)
+  renderTemplate() {
+    let className = this.className;
+    this.$el = this.createElement({ className });
+    const html = ejs.render(this.template(), this.templateData);
+    this.$el.insertAdjacentHTML("beforeend", html);
   }
 
-  on (name, callback) {
-    const $el = this.$el || document.body
+  on(name, callback) {
+    const $el = this.$el || document.body;
 
     $el.addEventListener(name, (e) => {
-      callback && callback(e.detail)
-    })
+      callback && callback(e.detail);
+    });
   }
 
-  emit (name, data) {
+  emit(name, data) {
     if (!name) {
-      console.error('Error: empty name event')
-      return
+      console.error("Error: empty name event");
+      return;
     }
 
-    let event = undefined
+    let event = undefined;
 
     if (data) {
-      event = new CustomEvent(name, { detail: data })
+      event = new CustomEvent(name, { detail: data });
     } else {
-      event = new Event(name)
+      event = new Event(name);
     }
 
-    const $el = this.$el || document.body
-    $el.dispatchEvent(event)
+    const $el = this.$el || document.body;
+    $el.dispatchEvent(event);
   }
 
-  render () {
-    this.renderTemplate()
-    return this.$el
+  render() {
+    this.renderTemplate();
+    return this.$el;
   }
 }
 
 class Popup extends Base {
-  constructor (coordinates, options) {
-    super()
+  constructor(coordinates, options) {
+    super();
 
-    options = options || { }
-    options.title = options.title || false
-    options.address = options.address || ''
-    options.description = options.description || ''
-    options.post_references = options.post_references || []
+    options = options || {};
+    options.title = options.title || false;
+    options.address = options.address || "";
+    options.description = options.description || "";
+    options.post_references = options.post_references || [];
 
-    this.templateData = options
+    this.templateData = options;
   }
 
-  template () {
+  template() {
     return `
       <div class="Popup__content">
         <% if (title) { %><div class="Popup__title"><%= title %></div> <% } %>
@@ -107,378 +117,419 @@ class Popup extends Base {
         </div> <% } %>
         <% if (address) { %><div class="Popup__address"><%= address %></div><% } %>
       </div>
-      `
+      `;
   }
 
-  render () {
-    this.renderTemplate()
+  render() {
+    this.renderTemplate();
 
-    const className = 'Popup'
+    const className = "Popup";
 
     this.el = L.popup({
-      className
-    })
+      className,
+    });
 
-    this.el.setContent(this.$el)
-    let content = this.el.getContent()
+    this.el.setContent(this.$el);
+    let content = this.el.getContent();
 
-    return this.el
+    return this.el;
   }
 }
 
 class Map extends Base {
-  constructor (coordinates) {
-    super()
-    this.selectedMarkerOrderId = -1
+  constructor(coordinates) {
+    super();
+    this.selectedMarkerOrderId = -1;
 
-    this.coordinates = coordinates
+    this.coordinates = coordinates;
 
-    this.tileLayer = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}'
-    this.attribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>'
+    this.tileLayer =
+      "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}";
+    this.attribution =
+      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>';
 
-    this.options = { 
+    this.options = {
       scrollWheelZoom: true,
       zoomControl: true,
-      maxBoundsViscosity: 1.0
-    }
+      maxBoundsViscosity: 1.0,
+    };
   }
 
-  show () {
-    this.map.getContainer().classList.add('is-visible')
-    this.fitBoundsToMarkers()
-    this.map.invalidateSize()
+  show() {
+    this.map.getContainer().classList.add("is-visible");
+    this.fitBoundsToMarkers();
+    this.map.invalidateSize();
   }
 
-  hide () {
-    this.map.getContainer().remove()
+  hide() {
+    this.map.getContainer().remove();
   }
 
-  fitBoundsToMarkers () {
-    const latlngs = this.getMarkers().map(marker => marker.getLatLng())
-    this.map.fitBounds(L.latLngBounds(latlngs))
+  fitBoundsToMarkers() {
+    const latlngs = this.getMarkers().map((marker) => marker.getLatLng());
+    this.map.fitBounds(L.latLngBounds(latlngs));
   }
 
-  selectMarkerByPermalink (permalink) {
-    const marker = this.getMarkers().find(marker => marker.options.location.pid === permalink)
+  selectMarkerByPermalink(permalink) {
+    const marker = this.getMarkers().find(
+      (marker) => marker.options.location.pid === permalink,
+    );
     if (marker) {
-      this.selectedMarkerOrderId = marker.options.location.id -1
-      this.selectMarker(marker, 18)
+      this.selectedMarkerOrderId = marker.options.location.id - 1;
+      this.selectMarker(marker, 18);
     }
   }
 
-  selectMarkerById (id) {
-    const marker = this.getMarkers().find(marker => marker.options.location.id === id)
-    this.selectedMarkerOrderId = marker.options.location.id -1
-    this.selectMarker(marker, 18)
+  selectMarkerById(id) {
+    const marker = this.getMarkers().find(
+      (marker) => marker.options.location.id === id,
+    );
+    this.selectedMarkerOrderId = marker.options.location.id - 1;
+    this.selectMarker(marker, 18);
   }
 
-  getMarkers () {
-    return this.markers.getLayers().sort((a, b) => b._leaflet_id - a._leaflet_id)
+  getMarkers() {
+    return this.markers
+      .getLayers()
+      .sort((a, b) => b._leaflet_id - a._leaflet_id);
   }
 
-  getSelectedMarker () {
-    return this.getMarkers()[this.selectedMarkerOrderId]
+  getSelectedMarker() {
+    return this.getMarkers()[this.selectedMarkerOrderId];
   }
 
   goToMarker(direction) {
-    const markers = this.getMarkers()
-    this.selectedMarkerOrderId = direction === 'next' ? this.getNextMarker(markers, this.selectedMarkerOrderId) : this.getPrevMarker(markers, this.selectedMarkerOrderId)
+    const markers = this.getMarkers();
+    this.selectedMarkerOrderId =
+      direction === "next"
+        ? this.getNextMarker(markers, this.selectedMarkerOrderId)
+        : this.getPrevMarker(markers, this.selectedMarkerOrderId);
 
-    const marker = markers[this.selectedMarkerOrderId % markers.length]
-    this.selectMarker(marker, 18)
-    const location = marker.options.location
-    const permalink = location.pid
+    const marker = markers[this.selectedMarkerOrderId % markers.length];
+    this.selectMarker(marker, 18);
+    const location = marker.options.location;
+    const permalink = location.pid;
 
-    window.history.replaceState({}, '', '/maps/' + location.location + '/' + permalink)
+    window.history.replaceState(
+      {},
+      "",
+      "/maps/" + location.location + "/" + permalink,
+    );
   }
 
-  getPrevMarker (markers, id) {
-    id = (id - 1) % markers.length
+  getPrevMarker(markers, id) {
+    id = (id - 1) % markers.length;
 
     if (id < 0) {
-      id = markers.length - 1
+      id = markers.length - 1;
     }
 
-    return id
+    return id;
   }
 
-  getNextMarker (markers, id) {
-    return id = (id + 1) % markers.length
+  getNextMarker(markers, id) {
+    return (id = (id + 1) % markers.length);
   }
 
-  renderLocations (locations) {
-    let markers = []
+  renderLocations(locations) {
+    let markers = [];
 
     locations.forEach((location, index) => {
-      const marker = this.createMarker(location)
-      markers.push(marker)
-    }) 
+      const marker = this.createMarker(location);
+      markers.push(marker);
+    });
 
-    this.markers = L.layerGroup(markers)
-    this.markers.addTo(this.map)
-
+    this.markers = L.layerGroup(markers);
+    this.markers.addTo(this.map);
   }
 
-  flattenCoordinates (coordinates) {
-    return [coordinates.lat, coordinates.lng]
+  flattenCoordinates(coordinates) {
+    return [coordinates.lat, coordinates.lng];
   }
 
-  closePopup () {
-    this.map.closePopup()
+  closePopup() {
+    this.map.closePopup();
   }
 
-  createMarker (location) {
-    const latlng = location.latlng
-    const name = location.name
-    const description = location.description
-    const user = location.user
-    const address = location.address
-    const zoom = this.map.getZoom()
+  createMarker(location) {
+    const latlng = location.latlng;
+    const name = location.name;
+    const description = location.description;
+    const user = location.user;
+    const address = location.address;
+    const zoom = this.map.getZoom();
 
-    const icon = this.getIcon({ location, className: 'Marker' })
+    const icon = this.getIcon({ location, className: "Marker" });
 
-    const popup = new Popup(latlng, location)
-    const marker = L.marker(latlng, { icon, location })
-    marker.bindPopup(popup.render(), { maxWidth: 'auto'})
-    marker.on('click', this.onMarkerClick.bind(this, location))
-    return marker
+    const popup = new Popup(latlng, location);
+    const marker = L.marker(latlng, { icon, location });
+    marker.bindPopup(popup.render(), { maxWidth: "auto" });
+    marker.on("click", this.onMarkerClick.bind(this, location));
+    return marker;
   }
 
-  onMarkerClick (location) {
-    this.selectedMarkerOrderId = location.id - 1
-    this.emit('marker:click', location.id)
+  onMarkerClick(location) {
+    this.selectedMarkerOrderId = location.id - 1;
+    this.emit("marker:click", location.id);
   }
 
-  selectMarker (marker, zoom = 18) {
+  selectMarker(marker, zoom = 18) {
     if (!marker) {
-      return
+      return;
     }
 
-    const location = marker.options.location
+    const location = marker.options.location;
 
-    const zoomLevel = this.map.getZoom() < zoom ? zoom : this.map.getZoom()
+    const zoomLevel = this.map.getZoom() < zoom ? zoom : this.map.getZoom();
 
-    this.emit('marker:select', location.id)
+    this.emit("marker:select", location.id);
 
     this.map.once("zoomend, moveend", () => {
       if (marker && marker.getElement()) {
-        marker.openPopup()
+        marker.openPopup();
 
         setTimeout(() => {
-          this.map.setView(location.latlng, zoomLevel)
-        }, 100)
+          this.map.setView(location.latlng, zoomLevel);
+        }, 100);
       }
-    })
+    });
 
-    this.map.setView(location.latlng, zoomLevel)
+    this.map.setView(location.latlng, zoomLevel);
   }
 
-  getIcon ({ location, className }) {
-    let html = location.id
-    let classNames = ['Marker', 'has-title']
+  getIcon({ location, className }) {
+    let html = location.id;
+    let classNames = ["Marker", "has-title"];
 
     if (location.emoji) {
-      html = location.emoji
-      classNames.push('has-emoji')
+      html = location.emoji;
+      classNames.push("has-emoji");
     }
 
     return new L.divIcon({
-      className: classNames.join(' '),
+      className: classNames.join(" "),
       html,
       iconSize: [16, 16],
-      iconAnchor: new L.Point(16, 0)
-    })
+      iconAnchor: new L.Point(16, 0),
+    });
   }
 
-  onMapClick (e) {
+  onMapClick(e) {
     const latlng = this.map.layerPointToLatLng(e.layerPoint);
     let clickedMarker = null;
 
-    const markers = this.getMarkers()
+    const markers = this.getMarkers();
 
     for (let i = 0; i < markers.length; i++) {
       const layerPoint = this.map.latLngToLayerPoint(markers[i].getLatLng());
-      const distance = Math.sqrt(Math.pow(layerPoint.x - e.layerPoint.x, 2) + Math.pow(layerPoint.y - e.layerPoint.y, 2));
-      if (distance < 40) { 
+      const distance = Math.sqrt(
+        Math.pow(layerPoint.x - e.layerPoint.x, 2) +
+          Math.pow(layerPoint.y - e.layerPoint.y, 2),
+      );
+      if (distance < 40) {
         clickedMarker = markers[i];
         break;
       }
     }
 
     if (clickedMarker) {
-      this.map.flyTo(clickedMarker.getLatLng(), 18)
-      clickedMarker.openPopup()
+      this.map.flyTo(clickedMarker.getLatLng(), 18);
+      clickedMarker.openPopup();
     }
   }
 
-  render () {
-    const coordinates = this.flattenCoordinates(this.coordinates)
-    this.map = L.map('map', this.options).setView(coordinates, this.coordinates.zoom)
+  render() {
+    const coordinates = this.flattenCoordinates(this.coordinates);
+    this.map = L.map("map", this.options).setView(
+      coordinates,
+      this.coordinates.zoom,
+    );
 
-    this.map.on('click', this.onMapClick.bind(this))
+    this.map.on("click", this.onMapClick.bind(this));
 
-    this.map.zoomControl.setPosition('topright')
-    this.map.zoomControl.getContainer().classList.add('ZoomControl')
-    this.addAttribution()
+    this.map.zoomControl.setPosition("topright");
+    this.map.zoomControl.getContainer().classList.add("ZoomControl");
+    this.addAttribution();
   }
 
-  addAttribution () {
-    const attribution = this.attribution
+  addAttribution() {
+    const attribution = this.attribution;
 
-    L.tileLayer(this.tileLayer+ (L.Browser.retina ? '@2x.png' : '.png'), {
+    L.tileLayer(this.tileLayer + (L.Browser.retina ? "@2x.png" : ".png"), {
       attribution,
-      subdomains: 'abcd',
+      subdomains: "abcd",
       maxZoom: 22,
-      minZoom: 0
-    }).addTo(this.map)
+      minZoom: 0,
+    }).addTo(this.map);
   }
 }
 
 class App {
-  constructor () {
-    this.$el = document.querySelector('.js-map')
+  constructor() {
+    this.$el = document.querySelector(".js-map");
 
-    this.flexDirection = window.getComputedStyle(document.querySelector('.BigMap')).getPropertyValue('flex-direction')
+    this.flexDirection = window
+      .getComputedStyle(document.querySelector(".BigMap"))
+      .getPropertyValue("flex-direction");
 
-    const lng = this.$el.attributes['data-lng'].value
-    const lat = this.$el.attributes['data-lat'].value
-    const zoom = this.$el.attributes['data-zoom'].value
+    const lng = this.$el.attributes["data-lng"].value;
+    const lat = this.$el.attributes["data-lat"].value;
+    const zoom = this.$el.attributes["data-zoom"].value;
 
-    this.map = new Map({ lng, lat, zoom })
+    this.map = new Map({ lng, lat, zoom });
 
-    this.locations = locations.reverse()
+    this.locations = locations;
 
     this.locations.forEach((location, index) => {
-      location.id = index + 1
-    })
+      location.id = index + 1;
+    });
 
-    this.$locations = document.querySelector('.js-locations')
+    this.$locations = document.querySelector(".js-locations");
 
-    this.render()
-    this.bindEvents()
+    this.render();
+    this.bindEvents();
 
-    const queryString = window.location.href
-    const permalink = queryString.split('/').pop()
+    const queryString = window.location.href;
+    const permalink = queryString.split("/").pop();
 
     if (permalink) {
-      this.map.selectMarkerByPermalink(permalink)
+      this.map.selectMarkerByPermalink(permalink);
     }
   }
 
-  bindKeyEvents () {
-    document.addEventListener('keydown', (event) => {
-
-      if (event.key === 'Escape') {
-        event.preventDefault()
-        this.unselectLocation()
-      } else if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
-        event.preventDefault()
-        event.stopPropagation()
-        this.map.goToMarker('next')
-      } else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
-        event.stopPropagation()
-        event.preventDefault()
-        this.map.goToMarker('prev')
-      } else if (event.key === 'Tab') {
-        event.preventDefault()
+  bindKeyEvents() {
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        this.unselectLocation();
+      } else if (event.key === "ArrowDown" || event.key === "ArrowRight") {
+        event.preventDefault();
+        event.stopPropagation();
+        this.map.goToMarker("next");
+      } else if (event.key === "ArrowUp" || event.key === "ArrowLeft") {
+        event.stopPropagation();
+        event.preventDefault();
+        this.map.goToMarker("prev");
+      } else if (event.key === "Tab") {
+        event.preventDefault();
 
         if (event.shiftKey) {
-          this.map.goToMarker('prev')
+          this.map.goToMarker("prev");
         } else {
-          this.map.goToMarker('next')
+          this.map.goToMarker("next");
         }
       }
-    })
+    });
   }
 
-  unselectLocation () {
-    this.$locations.querySelector(`[data-id="${this.previousLocationID}"]`).classList.remove('is-active')
-    this.previousLocationID = null
-    this.map.closePopup()
-    this.map.show()
+  unselectLocation() {
+    this.$locations
+      .querySelector(`[data-id="${this.previousLocationID}"]`)
+      .classList.remove("is-active");
+    this.previousLocationID = null;
+    this.map.closePopup();
+    this.map.show();
   }
 
-  scrollIntoView ($element) {
+  scrollIntoView($element) {
     if (!$element) {
-      return
+      return;
     }
 
-    if (this.flexDirection !== 'column') {
-      $element.scrollIntoView({behavior: "smooth", block: "nearest", inline: "start"})
+    if (this.flexDirection !== "column") {
+      $element.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "start",
+      });
     }
   }
 
-  pinMarker (id) {
-    const $element = this.$locations.querySelector(`[data-id="${id}"]`)
-    $element.classList.add('is-active')
+  pinMarker(id) {
+    const $element = this.$locations.querySelector(`[data-id="${id}"]`);
+    $element.classList.add("is-active");
     setTimeout(() => {
-      this.scrollIntoView($element)
-    }, 300)
+      this.scrollIntoView($element);
+    }, 300);
 
     if (this.previousLocationID) {
-      this.$locations.querySelector(`[data-id="${this.previousLocationID}"]`).classList.remove('is-active')
+      this.$locations
+        .querySelector(`[data-id="${this.previousLocationID}"]`)
+        .classList.remove("is-active");
     }
 
-    this.previousLocationID = id
+    this.previousLocationID = id;
   }
 
-  bindEvents () {
-    window.addEventListener('resize', () => {
-      this.flexDirection = window.getComputedStyle(document.querySelector('.BigMap')).getPropertyValue('flex-direction')
-    })
+  bindEvents() {
+    window.addEventListener("resize", () => {
+      this.flexDirection = window
+        .getComputedStyle(document.querySelector(".BigMap"))
+        .getPropertyValue("flex-direction");
+    });
 
-    this.map.on('marker:select', this.pinMarker.bind(this));
+    this.map.on("marker:select", this.pinMarker.bind(this));
 
-
-    this.map.on('marker:click', (id) => {
-      this.$locations.querySelectorAll('.js-location').forEach(($element) => {
+    this.map.on("marker:click", (id) => {
+      this.$locations.querySelectorAll(".js-location").forEach(($element) => {
         if ($element.dataset.id == id) {
-          $element.classList.add('is-active')
+          $element.classList.add("is-active");
           if (this.previousLocationID) {
-            this.$locations.querySelector(`[data-id="${this.previousLocationID}"]`).classList.remove('is-active')
+            this.$locations
+              .querySelector(`[data-id="${this.previousLocationID}"]`)
+              .classList.remove("is-active");
           }
-          this.scrollIntoView($element)
-          this.previousLocationID = id
-          const location = this.locations[id - 1]
-          const permalink = location.pid
-          window.history.replaceState({}, '', '/maps/' + location.location + '/' + permalink)
+          this.scrollIntoView($element);
+          this.previousLocationID = id;
+          const location = this.locations[id - 1];
+          const permalink = location.pid;
+          window.history.replaceState(
+            {},
+            "",
+            "/maps/" + location.location + "/" + permalink,
+          );
         }
-      })
+      });
+    });
 
-    })
+    this.$locations.querySelectorAll(".js-location").forEach(($element) => {
+      $element.addEventListener("click", (event) => {
+        const id = +$element.dataset.id;
+        this.showLocation(id);
+        const location = this.locations[id - 1];
+        const permalink = location.pid;
+        window.history.replaceState(
+          {},
+          "",
+          "/maps/" + location.location + "/" + permalink,
+        );
+      });
+    });
 
-    this.$locations.querySelectorAll('.js-location').forEach(($element) => {
-      $element.addEventListener('click', (event) => {
-        const id = +$element.dataset.id
-        this.showLocation(id)
-        const location = this.locations[id - 1]
-        const permalink = location.pid
-        window.history.replaceState({}, '', '/maps/' + location.location + '/' + permalink)
-      })
-    })
-
-    this.bindKeyEvents()
+    this.bindKeyEvents();
   }
 
-  showLocation (id) {
+  showLocation(id) {
     if (this.previousLocationID) {
       if (this.previousLocationID === id) {
-        this.unselectLocation()
-        return
+        this.unselectLocation();
+        return;
       }
-      this.$locations.querySelector(`[data-id="${this.previousLocationID}"]`).classList.remove('is-active')
+      this.$locations
+        .querySelector(`[data-id="${this.previousLocationID}"]`)
+        .classList.remove("is-active");
     }
 
-    this.map.selectMarkerById(id)
+    this.map.selectMarkerById(id);
   }
 
-  render () {
-    this.map.render()
-    this.map.renderLocations(this.locations)
-    this.map.show()
+  render() {
+    this.map.render();
+    this.map.renderLocations(this.locations);
+    this.map.show();
   }
 }
 
 window.onload = () => {
-  new App()
-}
+  new App();
+};
