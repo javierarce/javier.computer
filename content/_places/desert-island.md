@@ -1,11 +1,12 @@
 ---
 layout: place
 pid: desert-island
-title: "Desert Island"
+title: Desert Island
 description: "¿Qué te llevarías a Desert Island?"
-address: "540 E 5th St"
+address: 540 E 5th St
 latlng:
 - 40.713979006545344
 - -73.95083660504864
 location: newyork
+updated_at: '2024-10-07'
 ---
