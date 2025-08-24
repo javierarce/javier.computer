@@ -9,7 +9,16 @@
     <link>https://javier.computer/feeds/barcelona.rss</link>
     <description>Sitios en barcelona</description>
     <language>es</language>
-    <pubDate>Fri, 22 Aug 2025 00:00:00 +0000</pubDate>
+    <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
+    <item>
+      <title>035//BAR</title>
+      <link>https://javier.computer/maps/barcelona/cero-tres-cinco</link>
+      <description>&lt;p&gt;Maravilloso bar que acogía cenas popup igualmente maravillosas. Cerró en 2024. RIP.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/cero-tres-cinco'&gt;Carrer de Monlau, 35&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Aparece en estos posts:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2023/05/06/celebracion-postconciliacion'&gt;Celebración Post-conciliación&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2025-08-24T00:00:00+00:00</dc:date>
+    </item>
     <item>
       <title>Apurado Café</title>
       <link>https://javier.computer/maps/barcelona/apurado-cafe</link>
@@ -18,15 +27,6 @@
       <pubDate>Fri, 22 Aug 2025 00:00:00 +0000</pubDate>
       <dc:subject>barcelona</dc:subject>
       <dc:date>2025-08-22T00:00:00+00:00</dc:date>
-    </item>
-    <item>
-      <title>035//BAR</title>
-      <link>https://javier.computer/maps/barcelona/cero-tres-cinco</link>
-      <description>&lt;p&gt;Maravilloso bar que acoge cenas popup igualmente maravillosas.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/cero-tres-cinco'&gt;Carrer de Monlau, 35&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Aparece en estos posts:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2023/05/06/celebracion-postconciliacion'&gt;Celebración Post-conciliación&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
-      <pubDate>Sun, 10 Aug 2025 00:00:00 +0000</pubDate>
-      <dc:subject>barcelona</dc:subject>
-      <dc:date>2025-08-10T00:00:00+00:00</dc:date>
     </item>
     <item>
       <title>Masa Vins</title>
@@ -332,6 +332,6 @@
       <dc:subject>barcelona</dc:subject>
       <dc:date>2024-10-07T00:00:00+00:00</dc:date>
     </item>
-    <dc:date>2025-08-22T00:00:00+00:00</dc:date>
+    <dc:date>2025-08-24T00:00:00+00:00</dc:date>
   </channel>
 </rss>

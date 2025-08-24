@@ -1,6 +1,27 @@
 [
   {
     "layout": "place",
+    "pid": "cero-tres-cinco",
+    "title": "035//BAR",
+    "description": "<p>Maravilloso bar que acogía cenas popup igualmente maravillosas. Cerró en 2024. RIP.</p>\n",
+    "address": "Carrer de Monlau, 35",
+    "latlng": [
+      41.424967802049494,
+      2.1904708306832803
+    ],
+    "location": "barcelona",
+    "updated_at": "2025-08-24",
+    "last_updated": "2025-08-24T00:00:00+00:00",
+    "post_references": [
+      {
+        "url": "/2023/05/06/celebracion-postconciliacion",
+        "title": "Celebración Post-conciliación",
+        "date": "2023-05-06 08:41:29 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
     "pid": "apurado-cafe",
     "title": "Apurado Café",
     "description": "<p>Una cafetería que parece un salón de casa, con dulces argentinos y café de Nomad a buen precio.</p>\n",
@@ -15,27 +36,6 @@
     "last_updated": "2025-08-22T00:00:00+00:00",
     "post_references": [
 
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "cero-tres-cinco",
-    "title": "035//BAR",
-    "description": "<p>Maravilloso bar que acoge cenas popup igualmente maravillosas.</p>\n",
-    "address": "Carrer de Monlau, 35",
-    "latlng": [
-      41.424967802049494,
-      2.1904708306832803
-    ],
-    "location": "barcelona",
-    "updated_at": "2025-08-10",
-    "last_updated": "2025-08-10T00:00:00+00:00",
-    "post_references": [
-      {
-        "url": "/2023/05/06/celebracion-postconciliacion",
-        "title": "Celebración Post-conciliación",
-        "date": "2023-05-06 08:41:29 +0200"
-      }
     ]
   },
   {
