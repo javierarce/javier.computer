@@ -1,7 +1,17 @@
 {
-  "updated_at": "2025-08-23",
-  "count": 906,
+  "updated_at": "2025-08-24",
+  "count": 907,
   "movies": [
+    {
+      "watched_on": "2025-08-24",
+      "title": "The Seats of the Alcazar",
+      "year": 1989,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "the-seats-of-the-alcazar"
+    },
     {
       "watched_on": "2025-08-23",
       "title": "Mission: Impossible – The Final Reckoning",
