@@ -1,16 +1,28 @@
 ---
 layout: table
+title: Maps
 className: Maps
 permalink: maps
 ---
+{% assign map_count = site.maps | size -%}
+{% assign places_count = site.places | size -%}
+{% assign recent_location = site.places | sort: 'updated_at' | reverse | first -%}
+
+<div class="Maps__content">
+  <p>Esta página contiene un listado de {{ places_count }} de mis lugares favoritos en el mundo. La última actualización fue 
+  el {% include date.html date=recent_location.updated_at -%}.
+
+  </p>
+</div>
+
+
 <ul class="Maps__list">
   {% for map in site.maps -%}
-  {% assign locations = site.data.locations[map.location] | reverse %}
+  {% assign locations = site.data.locations[map.location] %}
   {% assign location_count = locations | size %}
   {% if location_count > 0 %}
   <li>
-    <div class="Maps__title"><a href="/{{ map.permalink }}">{{ map.title}}</a><a href="/feeds/{{ map.location }}.rss"
-        class="Maps__rss"><span class="icon icon-rss"></span></a></div>
+    <div class="Maps__title"><a href="/{{ map.permalink }}">{{ map.title}}</a><a href="/feeds/{{ map.location }}.rss" class="Maps__rss"><span class="icon icon-rss"></span></a></div>
     <div class="Maps__listLocations">
       {% for location in locations %}
       <a href="/{{ map.permalink }}/{{ location.pid }}">{{ location.title }}</a>{% unless forloop.last %} &middot; {%

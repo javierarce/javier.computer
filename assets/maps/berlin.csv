@@ -1,77 +1,74 @@
-name,description,address,latitude,longitude
+name,description,address,latitude,longitude,updated_at
+amató,"Heladería japonesa. Su yuzu cake es muy recomendable.
+","Dunckerstraße, 69, 10437",52.5451364,13.422882,2025-08-24
+Café Komine,"
+","Welserstraße, 13-15",52.49783,13.341739,2025-08-22
 onette,"Diner americano en el barrio de Schöneberg. El servicio es súper amable y la cola para entrar súper larga si llegas en mal momento. Me quedé sin probar el Krosses Fischbrötchen (aka Crispy Fish Bun), pero la alternativa (sandwich de col rizada, espinacas y acelgas estofadas, acompañadas de ensalada de col y queso Old Amsterdam en un pan de molde gordísimo) me gustó mucho.
-",Grunewaldstraße 11,52.490185,13.355147
-Modulor,"Modulor Material Total
-","Prinzenstraße, 85",52.5033859,13.4100566
-Cafe Komine,"Pastelería franco-japonesa bastante fina. Solo abren los fines de semana y se puede (y quizá se debe) reservar.
-","Welserstraße, 13-15",52.49783,13.341739
-Jules,"Buena cafetería en esta zona, perfecta como plan B si Café Komine está imposible.
-","Geisbergstraße, 9",52.497444,13.342103
-Cafe Sgaminegg,"Cafetería con menú del día y ambiente acogedor.
-","Seelower Straße, 2",52.550415,13.410474
-Foto Meyer,"Bien surtida tienda de fotografía digital, con buenos precios en cámaras analógicas de segunda mano.
-","Welserstraße, 1",52.49624,13.341607
-Kiez Kaffee Kraft,"Lugar de confianza cafetera en la zona. Precios razonables y baño, lo cual es cada vez más difícil de encontrar.
-","Schivelbeiner Straße, 23",52.551186,13.404072
+",Grunewaldstraße 11,52.490185,13.355147,2025-08-17
 Acid P-Berg,"Segunda cafetería de Acid en la ciudad. El café está rico pero es muy caro.
-",Christinenstraße 19a,52.532215,13.410291
-DASHI Canteen,"Como el Dashi de Invalidenstraße, pero con vistas al Spree y con mucho más espacio. El tamago sando es lo que siempre me pido aquí.
-","Englische Straße, 21",52.51656,13.332574
-Odeon,"Cine de una única sala con clara inspiración americana. Es parte del Yorck Kinogruppe, por lo que merece la pena abrirse una cuenta en la web y ahorrarse un euro por entrada comprando online. Calcula 15 minutos de anuncios y trailers antes de la película.
-","Hauptstraße, 116",52.482044,13.349654
-Watapas,"Una más que buena izakaya tapas bar.
-",Bötzowstraße 33,52.5320983,13.434446
-Bekarei,"Especialidades de repostería portuguesa y griega en Berlín. Nota para mí: abstenerse de volver a pedir café.
-",Dunckerstraße 23,52.544327,13.422646
+",Christinenstraße 19a,52.532215,13.410291,2025-08-11
+Kiez Kaffee Kraft,"Lugar de confianza cafetera en la zona. Precios razonables y baño, lo cual es cada vez más difícil de encontrar.
+","Schivelbeiner Straße, 23",52.551186,13.404072,2025-08-11
+Jules,"Buena cafetería en esta zona, perfecta como plan B si Café Komine está imposible.
+","Geisbergstraße, 9",52.497444,13.342103,2025-08-11
+Cafe Sgaminegg,"Cafetería con menú del día y ambiente acogedor.
+","Seelower Straße, 2",52.550415,13.410474,2025-08-11
+Modulor,"Modulor Material Total
+","Prinzenstraße, 85",52.5033859,13.4100566,2025-08-11
+Foto Meyer,"Bien surtida tienda de fotografía digital, con buenos precios en cámaras analógicas de segunda mano.
+","Welserstraße, 1",52.49624,13.341607,2025-08-11
 Babel,"Nunca me he sentado para comer aquí, pero puedo recomendar sus falafels para llevar.
-","Kastanienallee, 33",52.5367,13.407453
-amató,"Heladería japonesa
-","Dunckerstraße, 69, 10437",52.5451364,13.422882
-Tresen-Treff,"Un pub de barrio rescatado por sus tres dueños. La clientela es una mezcla de gente del barrio de hoy y siempre y gente joven. Sirven especialidades berlinesas actualizadas. Muy rico.
-","Berliner Straße, 167",52.48805,13.336748
+","Kastanienallee, 33",52.5367,13.407453,2025-08-10
 Zola,"La «Zola Neapolitan mit Fior di Latte, Birne, Walnüssen und Gorgonzola» estaba muy rica.
-","Paul-Lincke-Ufer, 39-40",52.49674658332709,13.42246464603288
-do you read me?!,"
-",Auguststraße 28,52.52726714641086,13.397690437523185
-Trauma Bar und Kino,"Club, bar, cine, sala de conciertos y arte. Aquí se celebró el quinto aniversario de New Models. Está cerca de Berlin Hauptbahnhof. No hay mucho más alrededor.
-","Heidestraße, 50",52.5306327,13.3667562
-Town Mouse Coffee,"
-",Marienburger Str. 5,52.535379464403334,13.423648746035223
-tenzan lab.,"Kakigōris y taiyakis
-","Wörther Straße, 22",52.5357069,13.4210922
-Smartdeli Sushi and More,"Restaurante japonés que también vende snacks y otros productos de Japón.
-",Novalisstraße 2,52.52832929299127,13.389288376705881
-Schillermarkt,"Mercado de productores en el corazón de Neukölln.
-",Herrfurthplatz,52.47735706149071,13.422736997220522
-Motto Berlin,"Librería a la que ya no voy desde que descubrí que no paga a sus proveedores.
-","Skalitzer Straße, 68, Luisenstadt",52.5000847,13.439883
-MIBAP,"Cocina fusión taiwanesa con opciones veganas.
-",Torstraße 22,52.527908251990475,13.413073501974143
-Ma-Makan,"Delicias malayas y singapurenses. Ojito al «Kaya croissant».
-",Lausitzer Pl. 12,52.501010546828965,13.431502823278532
-Leuchtstoff Kaffeebar,"Café de especialidad bastante decente en un local grande con espacio para trabajar y bancos en la calle.
-",Siegfriedstraße 18,52.468267364603435,13.432445053043422
-Isla coffee,"Vivió mejores momentos cafeterilmente hablando hace unos años, ahora es un sitio correcto donde tomar un cruasán o un kimcheese.
-",Hermannstraße 37,52.48058617178727,13.424879566538284
-Han West,"Estupendísimo lugar de dumplings y baos en Neukölln con opciones veganas y vegetarianas. No tiene sitio para sentarse, pero gracias a la colaboración público-privada puedes llevarte la comida al bar de al lado y complementarla con alguna bebida (o acercarla a Tempelhofer Feld y compartirla con las avispas).
-",Selchower Str. 20,52.47855313100116,13.42016685489108
-Gazzo,"Pizza con pan de masa madre.
-",Hobrechtstraße 57,52.49128602416569,13.425898299068328
-Flohmarkt Arkonaplatz,"Mercado favorito de los domingos en Mitte donde adquirir libros, discos, vajillas, muebles, juguetes, y basurillas de hoy y de siempre.
-",Arkonaplatz,52.53740688711875,13.402544452482864
-Father Carpenter Coffee Brewers,"Mucha cola durante el fin de semana, mejor ir muy pronto o evitar directamente.
-","Münzstraße, 21, Scheunenviertel",52.5244438,13.4065961
-Dotori Korean Anju Bar,"Bonitísimo y compactísimo y riquísimo bar de tapas coreanas.
-",Gustav-Adolf-Straße 159,52.553966826503334,13.433880192070449
-DASHI,"Diner asiático. Favoritos: Tempeh Sando (V) y Korokke Curry (V)
-",Invalidenstraße 112,52.530706060553854,13.383605195376553
+","Paul-Lincke-Ufer, 39-40",52.49674658332709,13.42246464603288,2025-08-10
+Watapas,"Una más que buena izakaya tapas bar.
+",Bötzowstraße 33,52.5320983,13.434446,2025-08-10
+Tresen-Treff,"Un pub de barrio rescatado por sus tres dueños. La clientela es una mezcla de gente del barrio de hoy y siempre y gente joven. Sirven especialidades berlinesas actualizadas. Muy rico.
+","Berliner Straße, 167",52.48805,13.336748,2025-08-10
+DASHI Canteen,"Como el Dashi de Invalidenstraße, pero con vistas al Spree y con mucho más espacio. El tamago sando es lo que siempre me pido aquí.
+","Englische Straße, 21",52.51656,13.332574,2025-08-10
+Bekarei,"Especialidades de repostería portuguesa y griega en Berlín. Nota para mí: abstenerse de volver a pedir café.
+",Dunckerstraße 23,52.544327,13.422646,2025-08-10
+Odeon,"Cine de una única sala con clara inspiración americana. Es parte del Yorck Kinogruppe, por lo que merece la pena abrirse una cuenta en la web y ahorrarse un euro por entrada comprando online. Calcula 15 minutos de anuncios y trailers antes de la película.
+","Hauptstraße, 116",52.482044,13.349654,2025-08-10
 Das neue Café Leo,"Una caftería situada en un kiosko en medio de una plaza del barrio de Wedding, que además de ofrecer café de especialidad a precios populares, ofrece asesoramiento social y actividades vecinales.
-",Auf dem Leopoldplatz,52.54719755887236,13.358785015341178
+",Auf dem Leopoldplatz,52.54719755887236,13.358785015341178,2024-10-07
 Café Strauss,"Un café muy tranquilo frente a un cementerio muy tranquilo (espero).
-","Bergmannstraße, 42",52.4886291,13.4011481
-Bonanza,"
-","Adalbertstraße, 70",52.504183,13.420258
+","Bergmannstraße, 42",52.4886291,13.4011481,2024-10-07
+Bonanza,"","Adalbertstraße, 70",52.504183,13.420258,2024-10-07
 Bartleby & Co,"Librería española capitaneada por Ana Pareja.
-",Boppstraße 2,52.493500792859805,13.435139298296505
+",Boppstraße 2,52.493500792859805,13.435139298296505,2024-10-07
+Trauma Bar und Kino,"Club, bar, cine, sala de conciertos y arte. Aquí se celebró el quinto aniversario de New Models. Está cerca de Berlin Hauptbahnhof. No hay mucho más alrededor.
+","Heidestraße, 50",52.5306327,13.3667562,2024-10-07
+Town Mouse Coffee,"",Marienburger Str. 5,52.535379464403334,13.423648746035223,2024-10-07
+tenzan lab.,"Kakigōris y taiyakis
+","Wörther Straße, 22",52.5357069,13.4210922,2024-10-07
+Smartdeli Sushi and More,"Restaurante japonés que también vende snacks y otros productos de Japón.
+",Novalisstraße 2,52.52832929299127,13.389288376705881,2024-10-07
+Schillermarkt,"Mercado de productores en el corazón de Neukölln.
+",Herrfurthplatz,52.47735706149071,13.422736997220522,2024-10-07
+Motto Berlin,"Librería a la que ya no voy desde que descubrí que no paga a sus proveedores.
+","Skalitzer Straße, 68, Luisenstadt",52.5000847,13.439883,2024-10-07
+MIBAP,"Cocina fusión taiwanesa con opciones veganas.
+",Torstraße 22,52.527908251990475,13.413073501974143,2024-10-07
+Ma-Makan,"Delicias malayas y singapurenses. Ojito al «Kaya croissant».
+",Lausitzer Pl. 12,52.501010546828965,13.431502823278532,2024-10-07
+Leuchtstoff Kaffeebar,"Café de especialidad bastante decente en un local grande con espacio para trabajar y bancos en la calle.
+",Siegfriedstraße 18,52.468267364603435,13.432445053043422,2024-10-07
+Isla coffee,"Vivió mejores momentos cafeterilmente hablando hace unos años, ahora es un sitio correcto donde tomar un cruasán o un kimcheese.
+",Hermannstraße 37,52.48058617178727,13.424879566538284,2024-10-07
+Han West,"Estupendísimo lugar de dumplings y baos en Neukölln con opciones veganas y vegetarianas. No tiene sitio para sentarse, pero gracias a la colaboración público-privada puedes llevarte la comida al bar de al lado y complementarla con alguna bebida (o acercarla a Tempelhofer Feld y compartirla con las avispas).
+",Selchower Str. 20,52.47855313100116,13.42016685489108,2024-10-07
+Gazzo,"Pizza con pan de masa madre.
+",Hobrechtstraße 57,52.49128602416569,13.425898299068328,2024-10-07
+Flohmarkt Arkonaplatz,"Mercado favorito de los domingos en Mitte donde adquirir libros, discos, vajillas, muebles, juguetes, y basurillas de hoy y de siempre.
+",Arkonaplatz,52.53740688711875,13.402544452482864,2024-10-07
+Father Carpenter Coffee Brewers,"Mucha cola durante el fin de semana, mejor ir muy pronto o evitar directamente.
+","Münzstraße, 21, Scheunenviertel",52.5244438,13.4065961,2024-10-07
+Dotori Korean Anju Bar,"Bonitísimo y compactísimo y riquísimo bar de tapas coreanas.
+",Gustav-Adolf-Straße 159,52.553966826503334,13.433880192070449,2024-10-07
+DASHI,"Diner asiático. Favoritos: Tempeh Sando (V) y Korokke Curry (V)
+",Invalidenstraße 112,52.530706060553854,13.383605195376553,2024-10-07
 3 Schwestern,"Un restaurante que ofrece comida típica alemana situado en el interior de  un antiguo hospital construido en 1846.
-",Mariannenpl. 2,52.505166826173365,13.423695851822046
+",Mariannenpl. 2,52.505166826173365,13.423695851822046,2024-10-07
+do you read me?!,"",Auguststraße 28,52.52726714641086,13.397690437523185,2023-03-31

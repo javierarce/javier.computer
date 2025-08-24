@@ -14,7 +14,7 @@ className: Trip
           </div>
 
           <div class="Sidebar">
-            {% assign posts = site.data.locations[page.location] | reverse -%}
+            {% assign posts = site.data.locations[page.location] -%}
             {% assign i = posts.size | plus: 1 -%}
             <div class="Locations js-locations">
               {% for location in posts -%}
