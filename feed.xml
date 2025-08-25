@@ -63,7 +63,8 @@ layout: none
               <![CDATA[
 
                 {% if post.cover %}
-              <img src="https://img.javier.computer/{{ post.location }}/{{ post.cover }}_1280.jpg" alt="{{post.title}}" />  
+                {% assign location = post.cover_location | default: post.location %}
+              <img src="https://img.javier.computer/{{ location }}/{{ post.cover }}_1280.jpg" alt="{{post.title}}" />  
                 {% elsif post.filenames %}
                 {% for file in post.filenames %}
                 {% if file.filename -%}
