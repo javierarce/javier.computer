@@ -1,7 +1,7 @@
 ---
 layout: reportage
 title: "Maldiciones analógicas"
-date: "2025-08-24 20:01:10 +0200"
+date: "2025-08-25 21:00:00 +0200"
 hide_title: true
 category: reportage
 tag: photo
