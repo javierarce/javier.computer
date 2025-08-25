@@ -21,66 +21,87 @@ places:
   - film-speed-lab
 filenames:
   - filename: 2025-07-11-Berlin-R1-00958-029A
+    location: analog
     caption:
     ratio: 2/3
   - filename: 2025-07-11-Berlin-R1-00958-025A
+    location: analog
     caption:
     ratio: 2/3
   - filename: 2025-07-11-Berlin-R1-00958-030A
+    location: analog
     caption:
     ratio: 2/3
   - filename: 2025-07-11-Berlin-R1-00958-036A
+    location: analog
     caption:
     ratio: 3/2
   - filename: 2025-07-11-Berlin-R1-00958-034A
+    location: analog
     caption:
     ratio: 3/2
   - filename: 2025-07-11-Berlin-R1-00958-026A
+    location: analog
     caption:
     ratio: 3/2
   - filename: 2025-08-18-HexarAF-Berlin-45098-000450980013
+    location: analog
     caption:
     ratio: 3/2
   - filename: 2025-08-18-HexarAF-Berlin-45098-000450980016
+    location: analog
     caption:
     ratio: 2/3
   - filename: 2025-08-18-HexarAF-Berlin-45098-000450980006
+    location: analog
     caption:
     ratio: 2/3
   - filename: 2025-08-18-HexarAF-Berlin-45098-000450980005
+    location: analog
     caption:
     ratio: 2/3
   - filename: 2025-08-18-HexarAF-Berlin-45098-000450980015
+    location: analog
     caption:
     ratio: 3/2
   - filename: 2025-08-18-HexarAF-Berlin-45098-000450980012
+    location: analog
     caption:
     ratio: 3/2
   - filename: 2025-08-14-OlympusXA2-Berlin-000448270013
+    location: analog
     caption:
     ratio: 3/2
   - filename: 2025-08-14-OlympusXA2-Berlin-000448270032
+    location: analog
     caption:
     ratio: 2/3
   - filename: 2025-08-14-OlympusXA2-Berlin-000448270025
+    location: analog
     caption:
     ratio: 2/3
   - filename: 2025-07-11-Berlin-R1-00959-0025
+    location: analog
     caption:
     ratio: 3/2
   - filename: 2025-07-11-Berlin-R1-00959-0026
+    location: analog
     caption:
     ratio: 2/3
   - filename: 2025-08-14-OlympusXA2-Berlin-000448270011
+    location: analog
     caption:
     ratio: 3/2
   - filename: 2025-07-11-Berlin-R1-00959-0033
+    location: analog
     caption:
     ratio: 3/2
   - filename: 2025-08-14-OlympusXA2-Berlin-000448270020
+    location: analog
     caption:
     ratio: 2/3
   - filename: 2025-08-14-OlympusXA2-Berlin-000448270024
+    location: analog
     caption:
     ratio: 2/3
 ---
