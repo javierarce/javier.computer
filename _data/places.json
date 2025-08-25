@@ -1,7 +1,29 @@
 {
-  "updated_at": "2025-08-22",
-  "count": 24,
+  "updated_at": "2025-08-25",
+  "count": 25,
   "places": [
+    {
+      "slug": "film-speed-lab",
+      "name": "Film Speed Lab",
+      "notes": null,
+      "address": "Dietrich-Bonhoeffer-Straße, 32, 10407",
+      "category": "photo",
+      "lat": 52.53526,
+      "lon": 13.43277,
+      "location": "unknown",
+      "checkin_id": 65
+    },
+    {
+      "slug": "safelight",
+      "name": "Safelight",
+      "notes": null,
+      "address": "Schivelbeiner Straße, 9, 10439 Berlin",
+      "category": "photographic_laboratory",
+      "lat": 52.55102,
+      "lon": 13.411127,
+      "location": "berlin",
+      "checkin_id": 64
+    },
     {
       "slug": "apurado-cafe",
       "name": "Apurado Café",
@@ -256,4 +278,3 @@
     }
   ]
 }
-

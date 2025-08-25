@@ -53,23 +53,6 @@
     margin: 0 0 var(--sp-md);
   }
 
-  &__content a[href^="/maps"] {
-    position: relative;
-
-    &:after {
-      content: "";
-      display: inline-block;
-      width: 24px;
-      height: 24px;
-      vertical-align: sub;
-      background-image: url(/img/icons/pin.svg);
-      background-repeat: no-repeat;
-      background-position: bottom;
-      background-size: contain;
-      opacity: var(--op-light);
-    }
-  }
-
   &__content {
     h2 {
       margin: 0;

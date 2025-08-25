@@ -1,6 +1,42 @@
 [
   {
     "layout": "place",
+    "pid": "safelight",
+    "title": "Safelight",
+    "description": "<p>Tienda de cámaras analógicas y laboratorio fotográfico.</p>\n",
+    "address": "Schivelbeiner Straße, 9",
+    "emoji": "📷",
+    "latlng": [
+      52.55102,
+      13.411127
+    ],
+    "location": "berlin",
+    "updated_at": "2025-08-24",
+    "last_updated": "2025-08-24T00:00:00+00:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "film-speed-lab",
+    "title": "Film Speed Lab",
+    "description": "<p>Laboratorio de de fotografía analógica. Son bastante rápidos, pero algo más caros que Safelight.</p>\n",
+    "address": "Dietrich-Bonhoeffer-Straße, 32",
+    "emoji": "📷",
+    "latlng": [
+      52.53526,
+      13.43277
+    ],
+    "location": "berlin",
+    "updated_at": "2025-08-24",
+    "last_updated": "2025-08-24T00:00:00+00:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
     "pid": "amato",
     "title": "amató",
     "description": "<p>Heladería japonesa. Su yuzu cake es muy recomendable.</p>\n",
@@ -59,42 +95,6 @@
   },
   {
     "layout": "place",
-    "pid": "acid",
-    "title": "Acid P-Berg",
-    "description": "<p>Segunda cafetería de Acid en la ciudad. El café está rico pero es muy caro.</p>\n",
-    "address": "Christinenstraße 19a",
-    "emoji": "☕",
-    "latlng": [
-      52.532215,
-      13.410291
-    ],
-    "location": "berlin",
-    "updated_at": "2025-08-11",
-    "last_updated": "2025-08-11T00:00:00+00:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "kiez-kaffee-kraft",
-    "title": "Kiez Kaffee Kraft",
-    "description": "<p>Lugar de confianza cafetera en la zona. Precios razonables y baño, lo cual es cada vez más difícil de encontrar.</p>\n",
-    "address": "Schivelbeiner Straße, 23",
-    "emoji": "☕",
-    "latlng": [
-      52.551186,
-      13.404072
-    ],
-    "location": "berlin",
-    "updated_at": "2025-08-11",
-    "last_updated": "2025-08-11T00:00:00+00:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
     "pid": "jules",
     "title": "Jules",
     "description": "<p>Buena cafetería en esta zona, perfecta como plan B si Café Komine está imposible.</p>\n",
@@ -113,30 +113,14 @@
   },
   {
     "layout": "place",
-    "pid": "cafe-sgaminegg",
-    "title": "Cafe Sgaminegg",
-    "description": "<p>Cafetería con menú del día y ambiente acogedor.</p>\n",
-    "address": "Seelower Straße, 2",
+    "pid": "acid",
+    "title": "Acid P-Berg",
+    "description": "<p>Segunda cafetería de Acid en la ciudad. El café está rico pero es muy caro.</p>\n",
+    "address": "Christinenstraße 19a",
+    "emoji": "☕",
     "latlng": [
-      52.550415,
-      13.410474
-    ],
-    "location": "berlin",
-    "updated_at": "2025-08-11",
-    "last_updated": "2025-08-11T00:00:00+00:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "modulor",
-    "title": "Modulor",
-    "description": "<p>Modulor Material Total</p>\n",
-    "address": "Prinzenstraße, 85",
-    "latlng": [
-      52.5033859,
-      13.4100566
+      52.532215,
+      13.410291
     ],
     "location": "berlin",
     "updated_at": "2025-08-11",
@@ -165,17 +149,52 @@
   },
   {
     "layout": "place",
-    "pid": "babel",
-    "title": "Babel",
-    "description": "<p>Nunca me he sentado para comer aquí, pero puedo recomendar sus falafels para llevar.</p>\n",
-    "address": "Kastanienallee, 33",
+    "pid": "modulor",
+    "title": "Modulor",
+    "description": "<p>Modulor Material Total</p>\n",
+    "address": "Prinzenstraße, 85",
     "latlng": [
-      52.5367,
-      13.407453
+      52.5033859,
+      13.4100566
     ],
     "location": "berlin",
-    "updated_at": "2025-08-10",
-    "last_updated": "2025-08-10T00:00:00+00:00",
+    "updated_at": "2025-08-11",
+    "last_updated": "2025-08-11T00:00:00+00:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "kiez-kaffee-kraft",
+    "title": "Kiez Kaffee Kraft",
+    "description": "<p>Lugar de confianza cafetera en la zona. Precios razonables y baño, lo cual es cada vez más difícil de encontrar.</p>\n",
+    "address": "Schivelbeiner Straße, 23",
+    "emoji": "☕",
+    "latlng": [
+      52.551186,
+      13.404072
+    ],
+    "location": "berlin",
+    "updated_at": "2025-08-11",
+    "last_updated": "2025-08-11T00:00:00+00:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "cafe-sgaminegg",
+    "title": "Cafe Sgaminegg",
+    "description": "<p>Cafetería con menú del día y ambiente acogedor.</p>\n",
+    "address": "Seelower Straße, 2",
+    "latlng": [
+      52.550415,
+      13.410474
+    ],
+    "location": "berlin",
+    "updated_at": "2025-08-11",
+    "last_updated": "2025-08-11T00:00:00+00:00",
     "post_references": [
 
     ]
@@ -207,24 +226,6 @@
     "latlng": [
       52.5320983,
       13.434446
-    ],
-    "location": "berlin",
-    "updated_at": "2025-08-10",
-    "last_updated": "2025-08-10T00:00:00+00:00",
-    "post_references": [
-
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "tresen-treff",
-    "title": "Tresen-Treff",
-    "description": "<p>Un pub de barrio rescatado por sus tres dueños. La clientela es una mezcla de gente del barrio de hoy y siempre y gente joven. Sirven especialidades berlinesas actualizadas. Muy rico.</p>\n",
-    "address": "Berliner Straße, 167",
-    "category": "pub",
-    "latlng": [
-      52.48805,
-      13.336748
     ],
     "location": "berlin",
     "updated_at": "2025-08-10",
@@ -287,35 +288,35 @@
   },
   {
     "layout": "place",
-    "pid": "cafe-leo",
-    "title": "Das neue Café Leo",
-    "description": "<p>Una caftería situada en un kiosko en medio de una plaza del barrio de Wedding, que además de ofrecer café de especialidad a precios populares, ofrece asesoramiento social y actividades vecinales.</p>\n",
-    "address": "Auf dem Leopoldplatz",
+    "pid": "babel",
+    "title": "Babel",
+    "description": "<p>Nunca me he sentado para comer aquí, pero puedo recomendar sus falafels para llevar.</p>\n",
+    "address": "Kastanienallee, 33",
     "latlng": [
-      52.54719755887236,
-      13.358785015341178
+      52.5367,
+      13.407453
     ],
     "location": "berlin",
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
+    "updated_at": "2025-08-10",
+    "last_updated": "2025-08-10T00:00:00+00:00",
     "post_references": [
 
     ]
   },
   {
     "layout": "place",
-    "pid": "cafe-strauss",
-    "title": "Café Strauss",
-    "emoji": "☕️",
-    "description": "<p>Un café muy tranquilo frente a un cementerio muy tranquilo (espero).</p>\n",
-    "address": "Bergmannstraße, 42",
+    "pid": "tresen-treff",
+    "title": "Tresen-Treff",
+    "description": "<p>Un pub de barrio rescatado por sus tres dueños. La clientela es una mezcla de gente del barrio de hoy y siempre y gente joven. Sirven especialidades berlinesas actualizadas. Muy rico.</p>\n",
+    "address": "Berliner Straße, 167",
+    "category": "pub",
     "latlng": [
-      52.4886291,
-      13.4011481
+      52.48805,
+      13.336748
     ],
     "location": "berlin",
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
+    "updated_at": "2025-08-10",
+    "last_updated": "2025-08-10T00:00:00+00:00",
     "post_references": [
 
     ]
@@ -642,6 +643,41 @@
     "latlng": [
       52.530706060553854,
       13.383605195376553
+    ],
+    "location": "berlin",
+    "updated_at": "2024-10-07",
+    "last_updated": "2024-10-07T00:00:00+00:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "cafe-leo",
+    "title": "Das neue Café Leo",
+    "description": "<p>Una caftería situada en un kiosko en medio de una plaza del barrio de Wedding, que además de ofrecer café de especialidad a precios populares, ofrece asesoramiento social y actividades vecinales.</p>\n",
+    "address": "Auf dem Leopoldplatz",
+    "latlng": [
+      52.54719755887236,
+      13.358785015341178
+    ],
+    "location": "berlin",
+    "updated_at": "2024-10-07",
+    "last_updated": "2024-10-07T00:00:00+00:00",
+    "post_references": [
+
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "cafe-strauss",
+    "title": "Café Strauss",
+    "emoji": "☕️",
+    "description": "<p>Un café muy tranquilo frente a un cementerio muy tranquilo (espero).</p>\n",
+    "address": "Bergmannstraße, 42",
+    "latlng": [
+      52.4886291,
+      13.4011481
     ],
     "location": "berlin",
     "updated_at": "2024-10-07",

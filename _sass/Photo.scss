@@ -90,12 +90,10 @@
   .g h3,
   .t h3 {
     width: var(--width-md);
-    margin: 0 auto;
-    font-size: var(--font-size-xl);
+    margin: 0 auto var(--sp-md) auto;
+    font-size: var(--font-size-lg);
     font-weight: var(--font-weight-regular);
     text-align: left;
-    margin-top: 0;
-    margin-bottom: 0;
     opacity: var(--op-light);
   }
 

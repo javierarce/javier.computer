@@ -11,6 +11,24 @@
     <language>es</language>
     <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
     <item>
+      <title>Safelight</title>
+      <link>https://javier.computer/maps/berlin/safelight</link>
+      <description>&lt;p&gt;Tienda de cámaras analógicas y laboratorio fotográfico.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/safelight'&gt;Schivelbeiner Straße, 9&lt;/a&gt;</description>
+      <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
+      <dc:subject>berlin</dc:subject>
+      <dc:date>2025-08-24T00:00:00+00:00</dc:date>
+    </item>
+    <item>
+      <title>Film Speed Lab</title>
+      <link>https://javier.computer/maps/berlin/film-speed-lab</link>
+      <description>&lt;p&gt;Laboratorio de de fotografía analógica. Son bastante rápidos, pero algo más caros que Safelight.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/film-speed-lab'&gt;Dietrich-Bonhoeffer-Straße, 32&lt;/a&gt;</description>
+      <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
+      <dc:subject>berlin</dc:subject>
+      <dc:date>2025-08-24T00:00:00+00:00</dc:date>
+    </item>
+    <item>
       <title>amató</title>
       <link>https://javier.computer/maps/berlin/amato</link>
       <description>&lt;p&gt;Heladería japonesa. Su yuzu cake es muy recomendable.&lt;/p&gt;
@@ -38,24 +56,6 @@
       <dc:date>2025-08-17T00:00:00+00:00</dc:date>
     </item>
     <item>
-      <title>Acid P-Berg</title>
-      <link>https://javier.computer/maps/berlin/acid</link>
-      <description>&lt;p&gt;Segunda cafetería de Acid en la ciudad. El café está rico pero es muy caro.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/acid'&gt;Christinenstraße 19a&lt;/a&gt;</description>
-      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      <dc:subject>berlin</dc:subject>
-      <dc:date>2025-08-11T00:00:00+00:00</dc:date>
-    </item>
-    <item>
-      <title>Kiez Kaffee Kraft</title>
-      <link>https://javier.computer/maps/berlin/kiez-kaffee-kraft</link>
-      <description>&lt;p&gt;Lugar de confianza cafetera en la zona. Precios razonables y baño, lo cual es cada vez más difícil de encontrar.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/kiez-kaffee-kraft'&gt;Schivelbeiner Straße, 23&lt;/a&gt;</description>
-      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      <dc:subject>berlin</dc:subject>
-      <dc:date>2025-08-11T00:00:00+00:00</dc:date>
-    </item>
-    <item>
       <title>Jules</title>
       <link>https://javier.computer/maps/berlin/jules</link>
       <description>&lt;p&gt;Buena cafetería en esta zona, perfecta como plan B si Café Komine está imposible.&lt;/p&gt;
@@ -65,19 +65,10 @@
       <dc:date>2025-08-11T00:00:00+00:00</dc:date>
     </item>
     <item>
-      <title>Cafe Sgaminegg</title>
-      <link>https://javier.computer/maps/berlin/cafe-sgaminegg</link>
-      <description>&lt;p&gt;Cafetería con menú del día y ambiente acogedor.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/cafe-sgaminegg'&gt;Seelower Straße, 2&lt;/a&gt;</description>
-      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      <dc:subject>berlin</dc:subject>
-      <dc:date>2025-08-11T00:00:00+00:00</dc:date>
-    </item>
-    <item>
-      <title>Modulor</title>
-      <link>https://javier.computer/maps/berlin/modulor</link>
-      <description>&lt;p&gt;Modulor Material Total&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/modulor'&gt;Prinzenstraße, 85&lt;/a&gt;</description>
+      <title>Acid P-Berg</title>
+      <link>https://javier.computer/maps/berlin/acid</link>
+      <description>&lt;p&gt;Segunda cafetería de Acid en la ciudad. El café está rico pero es muy caro.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/acid'&gt;Christinenstraße 19a&lt;/a&gt;</description>
       <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
       <dc:subject>berlin</dc:subject>
       <dc:date>2025-08-11T00:00:00+00:00</dc:date>
@@ -92,13 +83,31 @@
       <dc:date>2025-08-11T00:00:00+00:00</dc:date>
     </item>
     <item>
-      <title>Babel</title>
-      <link>https://javier.computer/maps/berlin/babel</link>
-      <description>&lt;p&gt;Nunca me he sentado para comer aquí, pero puedo recomendar sus falafels para llevar.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/babel'&gt;Kastanienallee, 33&lt;/a&gt;</description>
-      <pubDate>Sun, 10 Aug 2025 00:00:00 +0000</pubDate>
+      <title>Modulor</title>
+      <link>https://javier.computer/maps/berlin/modulor</link>
+      <description>&lt;p&gt;Modulor Material Total&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/modulor'&gt;Prinzenstraße, 85&lt;/a&gt;</description>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2025-08-10T00:00:00+00:00</dc:date>
+      <dc:date>2025-08-11T00:00:00+00:00</dc:date>
+    </item>
+    <item>
+      <title>Kiez Kaffee Kraft</title>
+      <link>https://javier.computer/maps/berlin/kiez-kaffee-kraft</link>
+      <description>&lt;p&gt;Lugar de confianza cafetera en la zona. Precios razonables y baño, lo cual es cada vez más difícil de encontrar.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/kiez-kaffee-kraft'&gt;Schivelbeiner Straße, 23&lt;/a&gt;</description>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <dc:subject>berlin</dc:subject>
+      <dc:date>2025-08-11T00:00:00+00:00</dc:date>
+    </item>
+    <item>
+      <title>Cafe Sgaminegg</title>
+      <link>https://javier.computer/maps/berlin/cafe-sgaminegg</link>
+      <description>&lt;p&gt;Cafetería con menú del día y ambiente acogedor.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/cafe-sgaminegg'&gt;Seelower Straße, 2&lt;/a&gt;</description>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <dc:subject>berlin</dc:subject>
+      <dc:date>2025-08-11T00:00:00+00:00</dc:date>
     </item>
     <item>
       <title>Zola</title>
@@ -114,15 +123,6 @@
       <link>https://javier.computer/maps/berlin/watapas</link>
       <description>&lt;p&gt;Una más que buena izakaya tapas bar.&lt;/p&gt;
 &lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/watapas'&gt;Bötzowstraße 33&lt;/a&gt;</description>
-      <pubDate>Sun, 10 Aug 2025 00:00:00 +0000</pubDate>
-      <dc:subject>berlin</dc:subject>
-      <dc:date>2025-08-10T00:00:00+00:00</dc:date>
-    </item>
-    <item>
-      <title>Tresen-Treff</title>
-      <link>https://javier.computer/maps/berlin/tresen-treff</link>
-      <description>&lt;p&gt;Un pub de barrio rescatado por sus tres dueños. La clientela es una mezcla de gente del barrio de hoy y siempre y gente joven. Sirven especialidades berlinesas actualizadas. Muy rico.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/tresen-treff'&gt;Berliner Straße, 167&lt;/a&gt;</description>
       <pubDate>Sun, 10 Aug 2025 00:00:00 +0000</pubDate>
       <dc:subject>berlin</dc:subject>
       <dc:date>2025-08-10T00:00:00+00:00</dc:date>
@@ -155,22 +155,22 @@
       <dc:date>2025-08-10T00:00:00+00:00</dc:date>
     </item>
     <item>
-      <title>Das neue Café Leo</title>
-      <link>https://javier.computer/maps/berlin/cafe-leo</link>
-      <description>&lt;p&gt;Una caftería situada en un kiosko en medio de una plaza del barrio de Wedding, que además de ofrecer café de especialidad a precios populares, ofrece asesoramiento social y actividades vecinales.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/cafe-leo'&gt;Auf dem Leopoldplatz&lt;/a&gt;</description>
-      <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
+      <title>Babel</title>
+      <link>https://javier.computer/maps/berlin/babel</link>
+      <description>&lt;p&gt;Nunca me he sentado para comer aquí, pero puedo recomendar sus falafels para llevar.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/babel'&gt;Kastanienallee, 33&lt;/a&gt;</description>
+      <pubDate>Sun, 10 Aug 2025 00:00:00 +0000</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2024-10-07T00:00:00+00:00</dc:date>
+      <dc:date>2025-08-10T00:00:00+00:00</dc:date>
     </item>
     <item>
-      <title>Café Strauss</title>
-      <link>https://javier.computer/maps/berlin/cafe-strauss</link>
-      <description>&lt;p&gt;Un café muy tranquilo frente a un cementerio muy tranquilo (espero).&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/cafe-strauss'&gt;Bergmannstraße, 42&lt;/a&gt;</description>
-      <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
+      <title>Tresen-Treff</title>
+      <link>https://javier.computer/maps/berlin/tresen-treff</link>
+      <description>&lt;p&gt;Un pub de barrio rescatado por sus tres dueños. La clientela es una mezcla de gente del barrio de hoy y siempre y gente joven. Sirven especialidades berlinesas actualizadas. Muy rico.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/tresen-treff'&gt;Berliner Straße, 167&lt;/a&gt;</description>
+      <pubDate>Sun, 10 Aug 2025 00:00:00 +0000</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2024-10-07T00:00:00+00:00</dc:date>
+      <dc:date>2025-08-10T00:00:00+00:00</dc:date>
     </item>
     <item>
       <title>Bonanza</title>
@@ -328,6 +328,24 @@
       <link>https://javier.computer/maps/berlin/dashi</link>
       <description>&lt;p&gt;Diner asiático. Favoritos: Tempeh Sando (V) y Korokke Curry (V)&lt;/p&gt;
 &lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/dashi'&gt;Invalidenstraße 112&lt;/a&gt;</description>
+      <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
+      <dc:subject>berlin</dc:subject>
+      <dc:date>2024-10-07T00:00:00+00:00</dc:date>
+    </item>
+    <item>
+      <title>Das neue Café Leo</title>
+      <link>https://javier.computer/maps/berlin/cafe-leo</link>
+      <description>&lt;p&gt;Una caftería situada en un kiosko en medio de una plaza del barrio de Wedding, que además de ofrecer café de especialidad a precios populares, ofrece asesoramiento social y actividades vecinales.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/cafe-leo'&gt;Auf dem Leopoldplatz&lt;/a&gt;</description>
+      <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
+      <dc:subject>berlin</dc:subject>
+      <dc:date>2024-10-07T00:00:00+00:00</dc:date>
+    </item>
+    <item>
+      <title>Café Strauss</title>
+      <link>https://javier.computer/maps/berlin/cafe-strauss</link>
+      <description>&lt;p&gt;Un café muy tranquilo frente a un cementerio muy tranquilo (espero).&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/cafe-strauss'&gt;Bergmannstraße, 42&lt;/a&gt;</description>
       <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
       <dc:subject>berlin</dc:subject>
       <dc:date>2024-10-07T00:00:00+00:00</dc:date>

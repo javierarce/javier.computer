@@ -264,6 +264,25 @@ img {
   opacity: var(--op-light);
 }
 
+
+.Photo__layout a[href^="/maps"],
+.Post__content a[href^="/maps"] {
+  position: relative;
+
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: sub;
+    background-image: url(/img/icons/pin.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+    opacity: var(--op-light);
+  }
+}
+
 .Grid {
   padding: var(--pd-xxl);
   padding-bottom: 0;
