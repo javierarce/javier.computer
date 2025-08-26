@@ -35,8 +35,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:type" content="article">
 {% elsif page.cover -%}
-<meta property="og:image" content="https://img.javier.computer/{{ page.location }}/{{ page.cover }}_1280.jpg">
-<meta name="twitter:image" content="https://img.javier.computer/{{ page.location }}/{{ page.cover }}_1280.jpg">
+{% assign cover_location = page.cover_location | default: page.location -%}
+<meta property="og:image" content="https://img.javier.computer/{{ cover_location }}/{{ page.cover }}_1280.jpg">
+<meta name="twitter:image" content="https://img.javier.computer/{{ cover_location }}/{{ page.cover }}_1280.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:type" content="article">
 {% elsif page.filename -%}
