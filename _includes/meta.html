@@ -25,6 +25,7 @@
 {% endif -%}
 
 {% if page.layout == "post" or page.card -%}
+<meta property="og:image:alt" content="{{ page.title }}">
 <meta property="og:image" content="https://api.javier.computer/svg?title={{ page.title }}">
 <meta name="twitter:image" content="https://api.javier.computer/svg?title={{ page.title }}">
 <meta name="twitter:card" content="summary_large_image">
@@ -36,11 +37,15 @@
 <meta property="og:type" content="article">
 {% elsif page.cover -%}
 {% assign cover_location = page.cover_location | default: page.location -%}
+<meta property="og:image:alt" content="{{ page.title }}">
+<meta property="og:image:type" content="image/jpg">
 <meta property="og:image" content="https://img.javier.computer/{{ cover_location }}/{{ page.cover }}_1280.jpg">
 <meta name="twitter:image" content="https://img.javier.computer/{{ cover_location }}/{{ page.cover }}_1280.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:type" content="article">
 {% elsif page.filename -%}
+<meta property="og:image:alt" content="{{ page.title }}">
+<meta property="og:image:type" content="image/jpg">
 <meta property="og:image" content="https://img.javier.computer/{{ page.location }}/{{ page.filename }}_1280.jpg">
 <meta name="twitter:image" content="https://img.javier.computer/{{ page.location }}/{{ page.filename }}_1280.jpg">
 <meta name="twitter:card" content="summary_large_image">
