@@ -6,7 +6,7 @@ layout: book
 author: James Grady
 started: 2025-09-21
 read:
-status: reading
+status: abandoned
 rating:
 color:
 cover:
