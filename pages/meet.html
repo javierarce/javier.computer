@@ -4,21 +4,20 @@ title: Open Office Hours
 category: page
 className: Office
 permalink: "/office-hours"
+redirect_from:
+  - /unoffice-hours
 ---
-
 <p>
-  Use the form below to schedule a meeting with, well, me. We can talk in
-  Spanish, English, or a combination of the two. And we can discuss anything
-  you'd like, but I'm especially excited to talk about personal projects (yours
-  or mine), design, Natalie Jeremijenko's Robotic Geese, creative coding,
-  man-eating plants, photography, movies, and illustration.
+  Use the form below to schedule a meeting with, well, me. We can talk in Spanish, English, or a combination of the two.
+  And we can discuss anything you'd like, but I'm especially excited to talk about personal projects (yours or mine),
+  design, Natalie Jeremijenko's Robotic Geese, creative coding, man-eating plants, photography, movies, and
+  illustration.
 </p>
 
 <p>
   If you prefer to grab a coffee in Barcelona instead, shoot me an email to
   <code>office.hours</code>
-  at this very domain and my people will get in touch with your people and we'll
-  make it happen.
+  at this very domain and my people will get in touch with your people and we'll make it happen.
 </p>
 
 <div
@@ -39,7 +38,7 @@ permalink: "/office-hours"
         if (!cal.loaded) {
           cal.ns = {};
           cal.q = cal.q || [];
-          d.head.appendChild(d.createElement("script")).src = A;
+          d.head.appendChild(d.createElement('script')).src = A;
           cal.loaded = true;
         }
         if (ar[0] === L) {
@@ -48,31 +47,37 @@ permalink: "/office-hours"
           };
           const namespace = ar[1];
           api.q = api.q || [];
-          if (typeof namespace === "string") {
+          if (typeof namespace === 'string') {
             cal.ns[namespace] = cal.ns[namespace] || api;
             p(cal.ns[namespace], ar);
-            p(cal, ["initNamespace", namespace]);
+            p(cal, ['initNamespace', namespace]);
           } else p(cal, ar);
           return;
         }
         p(cal, ar);
       };
-  })(window, "https://app.cal.com/embed/embed.js", "init");
-  Cal("init", "45", { origin: "https://cal.com" });
+  })(window, 'https://app.cal.com/embed/embed.js', 'init');
+  Cal('init', '45', { origin: 'https://cal.com' });
 
-  Cal.ns["45"]("inline", {
-    elementOrSelector: "#my-cal-inline",
-    config: { layout: "month_view", theme: "dark" },
-    calLink: "javierarce/45",
+  Cal.ns['45']('inline', {
+    elementOrSelector: '#my-cal-inline',
+    config: { layout: 'month_view', theme: 'dark' },
+    calLink: 'javierarce/45',
   });
 
-  Cal.ns["45"]("ui", {
-    theme: "dark",
+  Cal.ns['45']('ui', {
+    theme: 'dark',
     cssVarsPerTheme: {
-      light: { "cal-brand": "#000" },
-      dark: { "cal-brand": "#ffc107" },
+      light: { 'cal-brand': '#000' },
+      dark: { 'cal-brand': '#ffc107' },
     },
     hideEventTypeDetails: false,
-    layout: "month_view",
+    layout: 'month_view',
   });
 </script>
+
+<p>
+  This page is part of the <a href="https://unofficehours.com">Unoffice Hours</a> webring. Visit a
+  <a href="https://unofficehours.com/random.html">random site</a> in the ring to book a meeting with someone else, or
+  <a href="https://unofficehours.com/join.html">join the ring</a>.
+</p>
