@@ -1,9 +1,10 @@
 ---
-title: "I'm Not Everything I Want to Be"
+title: "I&#039;m Not Everything I Want to Be"
 year: 2024
-rating: 4
-stars: "★★★★"
-rewatched: false
-permalink: "im-not-everything-i-want-to-be"
-watched_on: 2024-09-08
+rating: 4.5
+stars: "★★★★½"
+liked: true
+rewatched: true
+permalink: "im-not-everything-i-want-to-be/1"
+watched_on: 2025-09-09
 ---
