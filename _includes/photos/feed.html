@@ -1,11 +1,33 @@
+<!-- Photo feed -->
+
 {% assign readmore = 'false' %}
 <div
   class="Photo__collection {% if post.category != 'reportage' -%}has-lightbox {% if post.filenames.size >= 4 %}has-grid{% endif %}{% endif -%}"
 >
   {% if post.category == 'reportage' %}
-    {% assign filename = post.cover %}
-    <a href="{{ post.url }}">
-      {% include photos/single.html photo=post filename=filename -%}
+
+    <a href="{{ post.url }}" title="{{ post.title }}">
+      {% if post.cover -%}
+      {% assign location = post.location -%}
+      {% if post.cover_location -%}
+      {% assign location = post.cover_location -%}
+      {% endif -%}
+        {% include photos/single.html photo=post filename=post.cover location=location caption=post.caption ratio=post.ratio -%}
+      {% elsif post.filenames -%}
+        {% if post.filenames.first.filename -%}
+          {% assign filename = post.filenames.first.filename -%}
+          {% assign caption = post.filenames.first.caption -%}
+          {% assign ratio = post.filenames.first.ratio -%}
+        {% else -%}
+          {% assign filename = post.filenames.first -%}
+          {% assign ratio = post.ratio -%}
+          {% assign caption = nil -%}
+        {% endif -%}
+
+        {% include photos/single.html photo=post filename=filename caption=caption ratio=ratio -%}
+      {% elsif post.filename %}
+        {% include photos/single.html photo=post filename=post.filename ratio=post.ratio -%}
+      {% endif %}
     </a>
     {% assign readmore = 'true' %}
     
