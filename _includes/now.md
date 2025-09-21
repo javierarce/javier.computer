@@ -34,14 +34,14 @@
 {% assign book_rating_phrase = "and I totally recommend it!" %}
 {% endcase %}
 
-{% assign book_titles = "" %}
-{% for book in sorted_books_reading %}
+{% assign book_titles = "" -%}
+{% for book in sorted_books_reading -%}
 {% if forloop.first %}
-{% assign book_titles = '"' | append: book.title | append: '"' %}
+{% assign book_titles = book.title -%}
 {% elsif forloop.last %}
-{% assign book_titles = book_titles | append: ", and " | append: '"' | append: book.title | append: '"' %}
+{% assign book_titles = book_titles | append: ", and " | append: book.title -%}
 {% else %}
-{% assign book_titles = book_titles | append: ", " | append: '"' | append: book.title | append: '"' %}
+{% assign book_titles = book_titles | append: ", " | append: book.title -%}
 {% endif %}
 {% endfor %}
 {% assign movie = site.data.movies.movies | first %}
