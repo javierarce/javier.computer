@@ -1,7 +1,17 @@
 {
   "updated_at": "2025-09-21",
-  "count": 918,
+  "count": 919,
   "movies": [
+    {
+      "watched_on": "2025-09-21",
+      "title": "Carlito&#039;s Way",
+      "year": 1993,
+      "rating": 4.5,
+      "liked": true,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "carlitos-way"
+    },
     {
       "watched_on": "2025-09-20",
       "title": "Victim",
