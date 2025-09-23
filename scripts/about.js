@@ -1,6 +1,9 @@
 const onLoad = () => {
-  new Chameleon(['twitter', 'gmail', 'wikipedia', 'tumblr'])
-  new Weather()
-}
+  new Chameleon(["twitter", "gmail", "wikipedia", "tumblr"]);
 
-window.onload = onLoad
+  window.lazyLoadInstance = new LazyLoad({
+    elements_selector: ".lazy",
+  });
+};
+
+window.onload = onLoad;

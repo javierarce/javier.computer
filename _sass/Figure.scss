@@ -8,4 +8,10 @@
     font-weight: var(--font-weight-semibold);
     text-transform: capitalize;
   }
+
+  &__source {
+    font-size: var(--font-size-xs);
+    text-align: right;
+    opacity: var(--op-light);
+  }
 }

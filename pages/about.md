@@ -32,7 +32,16 @@ permalink: about
 {% assign drawings = drawings | plus: current_count -%}
 {% endfor -%}
 
-<img src="/assets/me.png" alt="Me eating ice cream" class="About__photo" />
+<div class="Photo">
+    <div class="Photo__content with-source">
+        <figure class="figure">
+            <picture>
+                <img class="lazy" style="--aspect-ratio: 135∶91" data-src="/assets/me.png" alt="Me eating ice cream" />
+            </picture>
+        </figure>
+        <div class="figure__source">Original photo by <a href="http://ericafustero.com">Erica</a></div>
+    </div>
+</div>
 
 {% include now.md %}
 
