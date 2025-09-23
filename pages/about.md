@@ -107,8 +107,9 @@ This computer was updated {{ days_diff }} days ago {{ selected_phrase }}.
 {% endif %}
 {% else %}
 {% if current_year == update_year %}
-This computer was updated on {{ site.time | date: "%B %d" }} {{ selected_phrase }}.
+
+<p class="is-small">This computer was updated on {{ site.time | date: "%B %d" }} {{ selected_phrase }}.</p>
 {% else %}
-This computer was updated on {{ site.time | date: "%B %d, %Y" }} {{ selected_phrase }}.
+<p class="is-small">This computer was updated on {{ site.time | date: "%B %d, %Y" }} {{ selected_phrase }}.</p>
 {% endif %}
 {% endif %}
