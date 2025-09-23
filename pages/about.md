@@ -82,10 +82,6 @@ turtle, a turtle.
     </div>
 </div>
 
-{% comment %}
-Custom update display with random phrases, conditional year, and days ago
-{% endcomment %}
-
 {% assign random_phrases = "by a magician,while nobody was looking" | split: "," %}
 {% assign phrase_count = random_phrases.size %}
 {% assign random_index = site.time | date: "%s" | modulo: phrase_count %}
@@ -99,11 +95,12 @@ Custom update display with random phrases, conditional year, and days ago
 
 {% if days_diff < 7 and days_diff >= 0 %}
 {% if days_diff == 0 %}
-This computer was updated today {{ selected_phrase }}.
+
+<p class="is-small">This computer was updated today {{ selected_phrase }}.</p>
 {% elsif days_diff == 1 %}
-This computer was updated yesterday {{ selected_phrase }}.
+<p class="is-small">This computer was updated yesterday {{ selected_phrase }}.</p>
 {% else %}
-This computer was updated {{ days_diff }} days ago {{ selected_phrase }}.
+<p class="is-small">This computer was updated {{ days_diff }} days ago {{ selected_phrase }}.</p>
 {% endif %}
 {% else %}
 {% if current_year == update_year %}
