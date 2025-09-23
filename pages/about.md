@@ -36,7 +36,7 @@ permalink: about
     <div class="Photo__content with-source">
         <figure class="figure">
             <picture>
-                <img class="lazy" style="--aspect-ratio: 135∶91" data-src="/assets/me.png" alt="Me eating ice cream" />
+                <img class="lazy" style="--aspect-ratio: 135∶91" data-src="/assets/me.jpg" alt="Me eating ice cream" />
             </picture>
         </figure>
         <div class="figure__source">Original photo by <a href="http://ericafustero.com">Erica</a></div>
