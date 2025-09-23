@@ -1,7 +1,84 @@
 {
-  "updated_at": "2025-08-25",
-  "count": 25,
+  "updated_at": "2025-09-23",
+  "count": 32,
   "places": [
+    {
+      "slug": "juliette",
+      "name": "Juliette",
+      "notes": null,
+      "address": "Carrer Sant Ignasi, 73, 08340",
+      "category": "bakery",
+      "lat": 41.504375,
+      "lon": 2.3917017,
+      "location": "unknown",
+      "checkin_id": 72
+    },
+    {
+      "slug": "antisouvenir",
+      "name": "ANTISOUVENIR®",
+      "notes": null,
+      "address": "Calle Paloma, 11",
+      "category": "books",
+      "lat": 42.598507,
+      "lon": -5.567531,
+      "location": "unknown",
+      "checkin_id": 71
+    },
+    {
+      "slug": "llibreria-finestres",
+      "name": "Llibreria Finestres",
+      "notes": null,
+      "address": "Carrer de la Diputació, 249, 08007 Barcelona",
+      "category": "books",
+      "lat": 41.38897,
+      "lon": 2.164941,
+      "location": "barcelona",
+      "checkin_id": 70
+    },
+    {
+      "slug": "finestres",
+      "name": "Finestres",
+      "notes": null,
+      "address": null,
+      "category": "books",
+      "lat": 41.388836,
+      "lon": 2.1651819,
+      "location": "unknown",
+      "checkin_id": 69
+    },
+    {
+      "slug": "el-noa-noa",
+      "name": "El Noa Noa",
+      "notes": null,
+      "address": "Carrer de Villarroel, 71, 08015 Barcelona",
+      "category": "cafe",
+      "lat": 41.383686,
+      "lon": 2.1586106,
+      "location": "barcelona",
+      "checkin_id": 68
+    },
+    {
+      "slug": "dubblefilm",
+      "name": "dubblefilm",
+      "notes": null,
+      "address": "Carrer de Verdi, 28",
+      "category": "photographic_laboratory",
+      "lat": 41.403824,
+      "lon": 2.156979,
+      "location": "unknown",
+      "checkin_id": 67
+    },
+    {
+      "slug": "right-side-coffee-bar",
+      "name": "Right Side Coffee Bar",
+      "notes": null,
+      "address": "Carrer de l'Arc de Sant Ramon del Call, 11, 08002 Barcelona",
+      "category": "cafe",
+      "lat": 41.382645,
+      "lon": 2.1752355,
+      "location": "barcelona",
+      "checkin_id": 66
+    },
     {
       "slug": "film-speed-lab",
       "name": "Film Speed Lab",
