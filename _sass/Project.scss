@@ -121,42 +121,43 @@
 .Project__cards {
   display: grid;
   grid-template-columns: repeat(2, 2fr);
-  grid-gap: 0.8em;
+  grid-gap: var(--gap-md);
   width: var(--width-full);
   margin-bottom: 4em;
+
+  .Project__card {
+    position: relative;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--gray);
+    border-radius: var(--br-sm);
+    text-decoration: none;
+
+    &:hover {
+      border: 1px solid var(--white);
+      text-decoration: none;
+    }
+
+    &Date {
+      position: absolute;
+      top: 1em;
+      right: 1em;
+      font-size: var(--font-size-sm);
+      opacity: var(--op-light);
+    }
+
+    &Title {
+      text-decoration: none;
+    }
+
+    &Description {
+      text-decoration: none;
+      opacity: var(--op-light);
+    }
+  }
 }
 
-.Project__card {
-  position: relative;
-  padding: 1em;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--gray);
-  border-radius: var(--br-sm);
-  text-decoration: none;
-
-  &:hover {
-    border: 1px solid var(--white);
-    text-decoration: none;
-  }
-
-  &Date {
-    position: absolute;
-    top: 1em;
-    right: 1em;
-    font-size: var(--font-size-sm);
-    opacity: var(--op-light);
-  }
-
-  &Title {
-    text-decoration: none;
-  }
-
-  &Description {
-    text-decoration: none;
-    opacity: var(--op-light);
-  }
-}
 
 @media all and (max-width: 1280px) {
 

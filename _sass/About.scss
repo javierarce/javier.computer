@@ -19,6 +19,10 @@
     h3 {
       margin-bottom: 0;
     }
+
+    h3 {
+      margin-top: 0.8em;
+    }
   }
 
   table ul {
@@ -28,6 +32,41 @@
 
     li {
       list-style: none;
+    }
+  }
+}
+
+.About__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  grid-gap: var(--gap-md);
+  width: var(--width-full);
+
+  .About__card {
+    position: relative;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--gray);
+    border-radius: var(--br-sm);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+
+    &Date {
+      position: absolute;
+      top: 1em;
+      right: 1em;
+      font-size: var(--font-size-sm);
+      opacity: var(--op-light);
+    }
+
+    &Title {
+      text-decoration: none;
+    }
+
+    &Description {
+      text-decoration: none;
+      opacity: var(--op-light);
     }
   }
 }
@@ -47,33 +86,9 @@
     width: var(--width-full);
   }
 
-  .Layout__about {
-
-    table {
-      margin: 0;
-
-      td {
-        display: block;
-        width: var(--width-full);
-        border: none;
-        padding: 0;
-        margin: 0 0 var(--space);
-
-        &:last-child {
-          margin: 0;
-        }
-      }
-
-    }
-
-    thead {
-      display: none;
-    }
-
-    tr {
-      display: flex;
-      flex-direction: column;
-      margin: 0 0 1em;
-    }
+  .About__cards {
+    display: flex;
+    flex-direction: column;
   }
+
 }

@@ -32,6 +32,8 @@ permalink: about
 {% assign drawings = drawings | plus: current_count -%}
 {% endfor -%}
 
+<img src="/assets/me.png" alt="Me eating ice cream" class="About__photo" />
+
 {% include now.md %}
 
 ### About this computer
@@ -49,21 +51,55 @@ maps](/maps) listing {{ places_count }} of my favorite places in the world, seve
 of myself eating ice cream, a mirror, a coin, a yellow bird, a photo of your
 turtle, a turtle.
 
-This computer doesn't track you, your friends, or your enemies. It was updated on
-{{ site.time | date: "%B %d, %Y" }}.
+### Wait, there's more!
 
-### Feeds and newsletter
+<div class="About__cards">
+    <div class="About__card">
+        <div class="About__cardTitle">Contact</div>
+        <div class="About__cardDescription">Do you need to tell me something incredible that happened to you? I want to know! <a href="/contact">Send me a message</a>.</div>
+    </div>
+    <div class="About__card">
+        <div class="About__cardTitle">Newsletter</div>
+        <div class="About__cardDescription"><a href="/newsletter">Subscribe to my newsletter</a> to get an email every time I do something extremely funny.</div>
+    </div>
+    <div class="About__card">
+        <div class="About__cardTitle">Let's chat!</div>
+        <div class="About__cardDescription"><a href="/office-hours">Schedule a meeting</a> with me and let's talk online or in person.</div>
+    </div>
+    <div class="About__card">
+        <div class="About__cardTitle">RSS</div>
+        <div class="About__cardDescription">Don't miss a post! <a href="/feed.xml">Subscribe to the main feed</a> or to the <a href="/photos.xml">photo feed</a>.
+        </div>
+    </div>
+</div>
 
-- If you like what you are reading (and why wouldn't you?), add the
-  [RSS main feed](/feed.xml) to your favorite feed reader to get the updates.
-- Only interested in the photos I publish? The [RSS photo feed](/feeds/photos.xml) is
-  for you.
-- If you want to get an email (in Spanish) every time I do something funny [subscribe to
-  my newsletter](/newsletter).
+{% comment %}
+Custom update display with random phrases, conditional year, and days ago
+{% endcomment %}
 
-### Don't be a stranger!
+{% assign random_phrases = "by a magician,while nobody was looking" | split: "," %}
+{% assign phrase_count = random_phrases.size %}
+{% assign random_index = site.time | date: "%s" | modulo: phrase_count %}
+{% assign selected_phrase = random_phrases[random_index] %}
 
-Do you need to tell me something incredible that happened to you? [Go
-here](/contact) to get in touch or write to 'email' at this domain.
+{% assign current_date = "now" | date: "%s" %}
+{% assign update_time = site.time | date: "%s" %}
+{% assign current_year = "now" | date: "%Y" %}
+{% assign update_year = site.time | date: "%Y" %}
+{% assign days_diff = current_date | minus: update_time | divided_by: 86400 %}
 
-If you'd rather talk, you can [schedule a meeting](/office-hours) with me.
+{% if days_diff < 7 and days_diff >= 0 %}
+{% if days_diff == 0 %}
+This computer was updated today {{ selected_phrase }}.
+{% elsif days_diff == 1 %}
+This computer was updated yesterday {{ selected_phrase }}.
+{% else %}
+This computer was updated {{ days_diff }} days ago {{ selected_phrase }}.
+{% endif %}
+{% else %}
+{% if current_year == update_year %}
+This computer was updated on {{ site.time | date: "%B %d" }} {{ selected_phrase }}.
+{% else %}
+This computer was updated on {{ site.time | date: "%B %d, %Y" }} {{ selected_phrase }}.
+{% endif %}
+{% endif %}
