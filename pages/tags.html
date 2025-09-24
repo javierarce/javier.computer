@@ -9,7 +9,7 @@ category: tags
     {% for tag in site.tags -%}
     <li>
       <a href="/tags/{{ tag[0] }}">{{ tag[0] | capitalize }}</a>
-      <span class="is-light is-small">({{ tag[1] | size }})</span>
+      <span class="is-light is-sm">({{ tag[1] | size }})</span>
     </li>
     {% endfor -%}
   </ul>

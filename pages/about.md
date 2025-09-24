@@ -32,6 +32,14 @@ permalink: about
 {% assign drawings = drawings | plus: current_count -%}
 {% endfor -%}
 
+{% assign random_phrases = site.data.reasons -%}
+{% assign phrase_count = random_phrases.size -%}
+{% assign random_index = site.time | date: "%s" | modulo: phrase_count -%}
+{% assign selected_phrase = random_phrases[random_index] -%}
+
+{% assign current_timestamp = 'now' | date: "%s" -%}
+{% assign update_timestamp = site.time | date: "%s" -%}
+
 <div class="Photo">
     <div class="Photo__content with-source">
         <figure class="figure">
@@ -60,6 +68,8 @@ maps](/maps) listing {{ places_count }} of my favorite places in the world, seve
 of myself eating ice cream, a mirror, a coin, a yellow bird, a photo of your
 turtle, a turtle.
 
+<p data-update-timestamp="{{ site.time | date: '%s' }}">This computer was updated <span id="time-phrase">on {{ site.time | date: "%B %d, %Y" }}</span> {{ selected_phrase }}.</p>
+
 ### Wait, there's more!
 
 <div class="About__cards">
@@ -81,32 +91,3 @@ turtle, a turtle.
         </div>
     </div>
 </div>
-
-{% assign random_phrases = "by a magician,while nobody was looking" | split: "," %}
-{% assign phrase_count = random_phrases.size %}
-{% assign random_index = site.time | date: "%s" | modulo: phrase_count %}
-{% assign selected_phrase = random_phrases[random_index] %}
-
-{% assign current_date = "now" | date: "%s" %}
-{% assign update_time = site.time | date: "%s" %}
-{% assign current_year = "now" | date: "%Y" %}
-{% assign update_year = site.time | date: "%Y" %}
-{% assign days_diff = current_date | minus: update_time | divided_by: 86400 %}
-
-{% if days_diff < 7 and days_diff >= 0 %}
-{% if days_diff == 0 %}
-
-<p class="is-small">This computer was updated today {{ selected_phrase }}.</p>
-{% elsif days_diff == 1 %}
-<p class="is-small">This computer was updated yesterday {{ selected_phrase }}.</p>
-{% else %}
-<p class="is-small">This computer was updated {{ days_diff }} days ago {{ selected_phrase }}.</p>
-{% endif %}
-{% else %}
-{% if current_year == update_year %}
-
-<p class="is-small">This computer was updated on {{ site.time | date: "%B %d" }} {{ selected_phrase }}.</p>
-{% else %}
-<p class="is-small">This computer was updated on {{ site.time | date: "%B %d, %Y" }} {{ selected_phrase }}.</p>
-{% endif %}
-{% endif %}

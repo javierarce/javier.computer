@@ -79,8 +79,16 @@ p.is-light p a {
   display: none;
 }
 
-.is-small {
+.is-centered {
+  text-align: center;
+}
+
+.is-sm {
   font-size: var(--font-size-sm);
+}
+
+.is-xs {
+  font-size: var(--font-size-xs);
 }
 
 a {
