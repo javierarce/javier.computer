@@ -1,7 +1,27 @@
 {
-  "updated_at": "2025-09-24",
-  "count": 922,
+  "updated_at": "2025-09-28",
+  "count": 924,
   "movies": [
+    {
+      "watched_on": "2025-09-28",
+      "title": "Duel",
+      "year": 1971,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": true,
+      "permalink": "duel"
+    },
+    {
+      "watched_on": "2025-09-27",
+      "title": "Nights of Cabiria",
+      "year": 1957,
+      "rating": 4.5,
+      "liked": true,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "nights-of-cabiria"
+    },
     {
       "watched_on": "2025-09-24",
       "title": "My Dinner with Skinner",
