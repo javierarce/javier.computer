@@ -5,6 +5,7 @@ description: ""
 layout: book
 author: Solvej Balle
 started: 2025-05-03
+read: 2025-06-01
 read:
 status: read
 rating:

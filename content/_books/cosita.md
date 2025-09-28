@@ -6,7 +6,7 @@ layout: book
 author: Alba G. Mora
 started: 2025-09-27
 read:
-status: read
+status: reading
 rating:
 color:
 cover:
