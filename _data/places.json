@@ -1,4 +1,5 @@
 {
+<<<<<<< Updated upstream
   "updated_at": "2025-09-28",
   "count": 33,
   "places": [
@@ -14,6 +15,12 @@
       "checkin_id": 73
     },
     {
+=======
+  "updated_at": "2025-09-21",
+  "count": 32,
+  "places": [
+    {
+>>>>>>> Stashed changes
       "slug": "juliette",
       "name": "Juliette",
       "notes": null,
