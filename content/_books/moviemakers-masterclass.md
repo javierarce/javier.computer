@@ -11,6 +11,6 @@ rating:
 color:
 cover:
 pages: 240
-progress: 54
+progress: 83
 link:
 ---
