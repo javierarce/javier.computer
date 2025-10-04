@@ -5,8 +5,8 @@ description: ""
 layout: book
 author: Laurent Tirard
 started: 2025-09-21
-read:
-status: reading
+read: 2025-10-03
+status: read
 rating:
 color:
 cover:
