@@ -1,7 +1,27 @@
 {
-  "updated_at": "2025-09-28",
-  "count": 924,
+  "updated_at": "2025-10-04",
+  "count": 926,
   "movies": [
+    {
+      "watched_on": "2025-10-03",
+      "title": "Office Killer",
+      "year": 1997,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "office-killer"
+    },
+    {
+      "watched_on": "2025-10-02",
+      "title": "Hackers",
+      "year": 1995,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "hackers"
+    },
     {
       "watched_on": "2025-09-28",
       "title": "Duel",
