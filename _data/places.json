@@ -1,18 +1,7 @@
 {
-  "updated_at": "2025-09-28",
-  "count": 33,
+  "updated_at": "2025-09-21",
+  "count": 32,
   "places": [
-    {
-      "slug": "espai-puntal",
-      "name": "Espai Puntal",
-      "notes": null,
-      "address": null,
-      "category": "cafe",
-      "lat": 41.386528,
-      "lon": 2.1799483,
-      "location": "unknown",
-      "checkin_id": 73
-    },
     {
       "slug": "juliette",
       "name": "Juliette",
