@@ -1,5 +1,10 @@
 [
   {
+    "city": "Madrid",
+    "country": "Spain",
+    "coordinates": "40.416775,-3.703790"
+  },
+  {
     "city": "Barcelona",
     "country": "Spain",
     "coordinates": "41.3851,2.1734"
