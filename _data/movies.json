@@ -1,7 +1,37 @@
 {
-  "updated_at": "2025-10-04",
-  "count": 926,
+  "updated_at": "2025-10-12",
+  "count": 929,
   "movies": [
+    {
+      "watched_on": "2025-10-11",
+      "title": "The Coffee Table",
+      "year": 2022,
+      "rating": 1,
+      "liked": false,
+      "stars": "★",
+      "rewatched": false,
+      "permalink": "the-coffee-table"
+    },
+    {
+      "watched_on": "2025-10-10",
+      "title": "Network",
+      "year": 1976,
+      "rating": 4.5,
+      "liked": true,
+      "stars": "★★★★½",
+      "rewatched": true,
+      "permalink": "network"
+    },
+    {
+      "watched_on": "2025-10-05",
+      "title": "One Battle After Another",
+      "year": 2025,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "one-battle-after-another"
+    },
     {
       "watched_on": "2025-10-03",
       "title": "Office Killer",
