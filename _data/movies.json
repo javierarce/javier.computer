@@ -1,7 +1,57 @@
 {
-  "updated_at": "2025-10-12",
-  "count": 929,
+  "updated_at": "2025-10-20",
+  "count": 934,
   "movies": [
+    {
+      "watched_on": "2025-10-19",
+      "title": "Fury",
+      "year": 2025,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "fury-2025"
+    },
+    {
+      "watched_on": "2025-10-18",
+      "title": "The Gambler",
+      "year": 1974,
+      "rating": 4.5,
+      "liked": true,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "the-gambler"
+    },
+    {
+      "watched_on": "2025-10-17",
+      "title": "Bell, Book and Candle",
+      "year": 1958,
+      "rating": 2,
+      "liked": false,
+      "stars": "★★",
+      "rewatched": false,
+      "permalink": "bell-book-and-candle"
+    },
+    {
+      "watched_on": "2025-10-17",
+      "title": "Get Carter",
+      "year": 1971,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "get-carter"
+    },
+    {
+      "watched_on": "2025-10-16",
+      "title": "Madrid, Ext.",
+      "year": 2025,
+      "rating": null,
+      "liked": false,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "madrid-ext"
+    },
     {
       "watched_on": "2025-10-11",
       "title": "The Coffee Table",
