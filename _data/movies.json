@@ -1,7 +1,57 @@
 {
-  "updated_at": "2025-10-20",
-  "count": 934,
+  "updated_at": "2025-10-26",
+  "count": 939,
   "movies": [
+    {
+      "watched_on": "2025-10-26",
+      "title": "A Short Vision",
+      "year": 1956,
+      "rating": 5,
+      "liked": true,
+      "stars": "★★★★★",
+      "rewatched": false,
+      "permalink": "a-short-vision"
+    },
+    {
+      "watched_on": "2025-10-24",
+      "title": "Detour",
+      "year": 1945,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "detour"
+    },
+    {
+      "watched_on": "2025-10-23",
+      "title": "The Conjuring: Last Rites",
+      "year": 2025,
+      "rating": 1.5,
+      "liked": false,
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "the-conjuring-last-rites"
+    },
+    {
+      "watched_on": "2025-10-22",
+      "title": "Strange way of living",
+      "year": 2017,
+      "rating": null,
+      "liked": false,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "strange-way-of-living"
+    },
+    {
+      "watched_on": "2025-10-20",
+      "title": "Mr. Nobody Against Putin",
+      "year": 2025,
+      "rating": null,
+      "liked": false,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "mr-nobody-against-putin"
+    },
     {
       "watched_on": "2025-10-19",
       "title": "Fury",
