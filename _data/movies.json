@@ -1,7 +1,47 @@
 {
-  "updated_at": "2025-10-26",
-  "count": 939,
+  "updated_at": "2025-11-02",
+  "count": 943,
   "movies": [
+    {
+      "watched_on": "2025-11-02",
+      "title": "Misery",
+      "year": 1990,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "misery"
+    },
+    {
+      "watched_on": "2025-11-01",
+      "title": "The Man Who Haunted Himself",
+      "year": 1970,
+      "rating": 2,
+      "liked": false,
+      "stars": "★★",
+      "rewatched": false,
+      "permalink": "the-man-who-haunted-himself"
+    },
+    {
+      "watched_on": "2025-10-29",
+      "title": "Heat",
+      "year": 1995,
+      "rating": 4.5,
+      "liked": true,
+      "stars": "★★★★½",
+      "rewatched": true,
+      "permalink": "heat-1995"
+    },
+    {
+      "watched_on": "2025-10-27",
+      "title": "The Long Walk",
+      "year": 2025,
+      "rating": 1.5,
+      "liked": false,
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "the-long-walk-2025"
+    },
     {
       "watched_on": "2025-10-26",
       "title": "A Short Vision",
