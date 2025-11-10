@@ -1,7 +1,27 @@
 {
-  "updated_at": "2025-11-02",
-  "count": 943,
+  "updated_at": "2025-11-10",
+  "count": 945,
   "movies": [
+    {
+      "watched_on": "2025-11-05",
+      "title": "The Smashing Machine",
+      "year": 2025,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "the-smashing-machine-2025"
+    },
+    {
+      "watched_on": "2025-11-02",
+      "title": "Carnival of Souls",
+      "year": 1962,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "carnival-of-souls"
+    },
     {
       "watched_on": "2025-11-02",
       "title": "Misery",
