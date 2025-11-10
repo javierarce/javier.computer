@@ -5,7 +5,7 @@ description: ""
 layout: book
 author: Xavi Puig
 started: 2025-11-07
-read:
+read: 2025-11-10
 status: read
 rating: 4
 color:
