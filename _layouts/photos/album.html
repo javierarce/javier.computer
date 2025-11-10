@@ -22,9 +22,16 @@ className: Photos
     {% for photo in photos -%}
 
     {% if photo.category == "reportage" -%}
+
+    {% assign location = photo.location -%}
+
+    {% if photo.cover_location -%}
+    {% assign location = photo.cover_location -%}
+    {% endif -%}
+
       <div class="Photo__collection">
         <a href="{{ photo.url }}">
-          {% include photos/single.html photo=photo filename=photo.cover caption=file.caption hide_caption=true -%}
+          {% include photos/single.html photo=photo filename=photo.cover caption=file.caption hide_caption=true location = location -%}
         </a>
 
         {% if photo.intro -%}
@@ -45,6 +52,7 @@ className: Photos
           {% if file.filename -%}
           {% assign filename = file.filename -%}
           {% assign caption = file.caption -%}
+
           {% else -%}
           {% assign filename = file -%}
           {% assign caption = "" -%}

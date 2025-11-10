@@ -49,10 +49,12 @@ grid: true
         {% for file in photo.filenames -%}
         {% if file.filename -%}
         {% assign filename = file.filename -%}
+        {% assign location = file.location -%}
         {% else -%}
         {% assign filename = file -%}
+        {% assign location = photo.location -%}
         {% endif -%}
-        {% include photos/single.html photo=photo filename=filename caption=file.caption hide_caption=true -%}
+        {% include photos/single.html photo=photo filename=filename caption=file.caption hide_caption=true location=location -%}
         {% endfor -%}
       </div>
       {% else -%}
