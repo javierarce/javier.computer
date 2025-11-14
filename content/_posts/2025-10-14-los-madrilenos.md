@@ -6,6 +6,7 @@ date: "2025-10-14 00:00:00 +0200"
 category: reportage
 tag: photo
 location: madrid
+ratio: 3/2
 intro: >
   Imagínate titular este post "Los madrileños" y que alguien pensara que es algo
   más que una referencia barata al título del libro de Robert Frank. ¡Me moriría
