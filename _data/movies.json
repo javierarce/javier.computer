@@ -1,7 +1,27 @@
 {
-  "updated_at": "2025-11-10",
-  "count": 945,
+  "updated_at": "2025-11-14",
+  "count": 947,
   "movies": [
+    {
+      "watched_on": "2025-11-11",
+      "title": "The 39 Steps",
+      "year": 1935,
+      "rating": 4.5,
+      "liked": true,
+      "stars": "★★★★½",
+      "rewatched": true,
+      "permalink": "the-39-steps"
+    },
+    {
+      "watched_on": "2025-11-09",
+      "title": "All That Money Can Buy",
+      "year": 1941,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "all-that-money-can-buy"
+    },
     {
       "watched_on": "2025-11-05",
       "title": "The Smashing Machine",
