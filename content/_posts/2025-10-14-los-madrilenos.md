@@ -7,15 +7,13 @@ category: reportage
 tag: photo
 location: madrid
 intro: >
-'Imagínate titular este post "Los madrileños" y que alguien pensara que es
-  una referencia a "The Americans" de Robert Frank o algo así. ¡Me moriría de la vergüenza!
-  Por suerte no soy tan pretencioso: las fotos de aquí abajo son simplemente imágenes
-  de personas que tomé en Madrid en octubre de este año.'
+  Imagínate titular este post "Los madrileños" y que alguien pensara que es algo
+  más que una referencia barata al título del libro de Robert Frank. ¡Me moriría
+  de la vergüenza! Por suerte no soy tan pretencioso.
 translation: >
-'Imagine titling this post “The Madrilenians” and someone thinking it
-  was a reference to Robert Frank’s The Americans or something like that. I would
-  die of embarrassment! Luckily, I’m not that pretentious: the photos below are
-  simply pictures of people I photographed in Madrid this past October.'
+  Imagine titling this post “The Madrilenians” and someone thinking it was a
+  reference to Robert Frank’s The Americans or something like that. I would
+  die of embarrassment! Luckily, I’m not that pretentious.
 camera:
   - Fuji X-T5
   - Ricoh GR IIIx
@@ -98,7 +96,7 @@ filenames:
 <div class="t">
     <p>
         Imagínate titular este post "Los madrileños" y que alguien pensara que es algo
-        más que una referencia facilona al título del libro de Robert Frank. ¡Me moriría
+        más que una referencia barata al título del libro de Robert Frank. ¡Me moriría
         de la vergüenza! Por suerte no soy tan pretencioso: las de abajo son solo algunas de mis fotos
         favoritas de personas (madrileñas o no) que tomé en <a href="/photos/madrid/grid">la capital</a> el pasado
         octubre.
