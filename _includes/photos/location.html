@@ -1,0 +1,5 @@
+{% assign matching_location = site.locations | where: 'location', include.page.location | first -%}
+
+{% if matching_location -%}
+  <a href="/photos/{{ include.photo.location -}}" class="Post__location">{{ matching_location.title }}</a>
+{% endif -%}
