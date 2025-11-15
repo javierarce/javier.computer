@@ -3,138 +3,161 @@
     "title": "Alejandra's blog",
     "author": "Alejandra Striuk",
     "url": "https://striuk.tumblr.com",
-    "feed": "rss"
+    "feed": "rss",
+    "type": "blog"
   },
   {
     "title": "Ariana's blog",
     "author": "Ariana Escobar",
     "url": "https://blog.arianaescobar.com",
-    "feed": "feed.rss"
+    "feed": "feed.rss",
+    "type": "blog"
   },
   {
     "title": "Erica's blog",
     "author": "Erica Fustero",
     "url": "https://www.ericafustero.com",
-    "feed": "feed"
+    "feed": "feed",
+    "type": "blog"
   },
   {
     "title": "Feed",
     "author": "Mu-An Chiou",
     "url": "https://muan.co",
-    "feed": "feed.xml"
+    "feed": "feed.xml",
+    "type": "blog"
   },
   {
     "title": "Notes",
     "author": "Mu-An Chiou",
     "url": "https://muan.co",
-    "feed": "notes.xml"
+    "feed": "notes.xml",
+    "type": "blog"
   },
   {
     "title": "Interconnected",
     "author": "Matt Webb",
     "url": "https://interconnected.org/home",
-    "feed": "feed"
+    "feed": "feed",
+    "type": "blog"
   },
   {
     "title": "Notes",
     "author": "Sam Lavigne",
     "url": "https://lav.io/notes",
-    "feed": "index.xml"
+    "feed": "index.xml",
+    "type": "blog"
   },
   {
     "title": "Notes, blog posts, etc.",
     "author": "Robin Sloan",
     "url": "https://www.robinsloan.com",
-    "feed": "feed.xml"
+    "feed": "feed.xml",
+    "type": "blog"
   },
   {
     "title": "Tom's blog",
     "author": "Tom MacWright",
     "url": "https://macwright.com",
-    "feed": "rss.xml"
+    "feed": "rss.xml",
+    "type": "blog"
   },
   {
     "title": "v's blog",
     "author": "v buckenham",
     "url": "https://vbuckenham.com/blog",
-    "feed": "feed.xml"
+    "feed": "feed.xml",
+    "type": "blog"
   },
   {
     "title": "Ideas, essays, and projects",
     "author": "Steph Ango",
     "url": "https://stephanango.com",
-    "feed": "feed.xml"
+    "feed": "feed.xml",
+    "type": "blog"
   },
   {
     "title": "A blog from Cabel Sasser",
     "author": "Cabel Sasser",
     "url": "https://cabel.com",
-    "feed": "feed"
+    "feed": "feed",
+    "type": "blog"
   },
   {
     "title": "Christowski Blog",
     "author": "Christoph Rauscher",
     "url": "https://christowski.de/blog",
-    "feed": "feed"
+    "feed": "feed",
+    "type": "blog"
   },
   {
     "title": "Alba G. Mora",
     "author": "Alba G. Mora",
     "url": "https://albagmora.substack.com",
-    "feed": "feed"
+    "feed": "feed",
+    "type": "newsletter"
   },
   {
     "title": "croasan",
     "author": "Raúl Ibarra",
     "url": "https://croasan.com",
-    "feed": "feed"
+    "feed": "feed",
+    "type": "blog"
   },
   {
     "title": "Keko Ponte",
     "author": "Keko Ponte",
     "url": "https://www.kekoponte.com",
-    "feed": "rss.xml"
+    "feed": "rss.xml",
+    "type": "blog"
   },
   {
     "title": "DADA issues",
     "author": "Roman Muradov",
     "url": "https://bluebed.substack.com",
-    "feed": "feed"
+    "feed": "feed",
+    "type": "newsletter"
   },
   {
     "title": "Design Harder",
     "author": "Erik Carter",
     "url": "https://designharder.substack.com",
-    "feed": "feed"
+    "feed": "feed",
+    "type": "newsletter"
   },
   {
     "title": "El Drugstore",
     "author": "Abel Cuevas",
     "url": "https://eldrugstore.substack.com",
-    "feed": "feed"
+    "feed": "feed",
+    "type": "newsletter"
   },
   {
     "title": "Fetén",
     "author": "Nazaret Escobedo",
     "url": "https://nazaretescobedo.substack.com",
-    "feed": "feed"
+    "feed": "feed",
+    "type": "newsletter"
   },
   {
     "title": "Gárgola Digital",
     "author": "Ainhoa Marzol",
     "url": "https://gargoladigital.substack.com",
-    "feed": "feed"
+    "feed": "feed",
+    "type": "newsletter"
   },
   {
     "title": "Naive Weekly",
     "author": "Kristoffer Tjalve",
     "url": "https://www.naiveweekly.com",
-    "feed": "rss"
+    "feed": "feed",
+    "type": "newsletter"
   },
   {
     "title": "Nonintrusive Monthly Email",
     "author": "Joana Estrela",
     "url": "https://us9.campaign-archive.com/home/?u=a4c8b2c7fbc757f10dbda8808&id=dfc484dd24",
-    "feed": null
+    "feed": null,
+    "type": "newsletter"
   }
 ]

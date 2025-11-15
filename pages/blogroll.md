@@ -11,15 +11,40 @@ description: A list of blogs and newsletters that I enjoy reading
 className: Blogroll
 ---
 
+<a href="/feeds/blogroll.opml" download="blogroll.opml">Descárgate la lista</a>
+en formato OPML, impórtala en tu lector de RSS y sé tan listo como yo leyendo
+mis blogs y newsletters favoritas.
+
+### Blogs
+
 <ul>
 {% for blog in site.data.blogroll %}
-  <li>
-    <rss-reader
-      data-title="{{ blog.title }}"
-      data-author="{{ blog.author }}"
-      data-url="{{ blog.url }}"
-      data-feed="{{ blog.feed }}">
-    </rss-reader>
-  </li>
+  {% if blog.type == "blog" %}
+    <li>
+      <rss-reader
+        data-title="{{ blog.title }}"
+        data-author="{{ blog.author }}"
+        data-url="{{ blog.url }}"
+        data-feed="{{ blog.feed }}">
+      </rss-reader>
+    </li>
+  {% endif %}
+{% endfor %}
+</ul>
+
+### Newsletters
+
+<ul>
+{% for blog in site.data.blogroll %}
+  {% if blog.type == "newsletter" %}
+    <li>
+      <rss-reader
+        data-title="{{ blog.title }}"
+        data-author="{{ blog.author }}"
+        data-url="{{ blog.url }}"
+        data-feed="{{ blog.feed }}">
+      </rss-reader>
+    </li>
+  {% endif %}
 {% endfor %}
 </ul>

@@ -58,8 +58,8 @@ permalink: about
 This computer contains an amulet, a sphinx, [{{ post_count }} blog
 posts](/posts), a collection of silly songs, [{{ photo_count }}
 photos](/photos), one pun, [{{ drawings }} drawings](/drawings), a modest
-[blogroll](/blogroll), a hidden passage to another dimension, a ghost story, [a
-newsletter](/newsletter) with {{ subscribers_count}} subscribers, a list of dog
+[blogroll](/blogroll) with {{ site.data.blogroll | size }} fantastic blogs and newsletters, a hidden passage to another dimension, a ghost story, [a
+newsletter](/newsletter) that reaches {{ subscribers_count}} subscribers, a list of dog
 names, a list of names that aren't dog names, references to [{{ projects}} of
 my personal projects](/projects), a pretty accurate list of all the [movies
 I've watched](/movies) since 2020, a pretty inaccurate list of all the [books
