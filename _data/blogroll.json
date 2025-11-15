@@ -56,6 +56,13 @@
     "type": "blog"
   },
   {
+    "title": "v buckenham",
+    "author": "v buckenham",
+    "url": "https://blog.vbuckenham.com",
+    "feed": "rss",
+    "type": "blog"
+  },
+  {
     "title": "Ideas, essays, and projects",
     "author": "Steph Ango",
     "url": "https://stephanango.com",
