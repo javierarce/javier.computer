@@ -112,6 +112,13 @@
     "type": "blog"
   },
   {
+    "title": "Alberto Romero",
+    "author": "Alberto Romero",
+    "url": "https://albertoromero.com",
+    "feed": "feed.xml",
+    "type": "blog"
+  },
+  {
     "title": "DADA issues",
     "author": "Roman Muradov",
     "url": "https://bluebed.substack.com",
