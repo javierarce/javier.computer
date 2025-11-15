@@ -21,14 +21,7 @@
     "type": "blog"
   },
   {
-    "title": "Feed",
-    "author": "Mu-An Chiou",
-    "url": "https://muan.co",
-    "feed": "feed.xml",
-    "type": "blog"
-  },
-  {
-    "title": "Notes",
+    "title": "Mu-An Chiou",
     "author": "Mu-An Chiou",
     "url": "https://muan.co",
     "feed": "notes.xml",
@@ -42,7 +35,7 @@
     "type": "blog"
   },
   {
-    "title": "Notes",
+    "title": "Sam Lavigne",
     "author": "Sam Lavigne",
     "url": "https://lav.io/notes",
     "feed": "index.xml",
