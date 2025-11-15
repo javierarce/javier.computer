@@ -147,6 +147,13 @@
     "type": "newsletter"
   },
   {
+    "title": "Correo ordinario",
+    "author": "Ana Flecha Marco",
+    "url": "https://correoordinario.substack.com",
+    "feed": "feed",
+    "type": "newsletter"
+  },
+  {
     "title": "Gárgola Digital",
     "author": "Ainhoa Marzol",
     "url": "https://gargoladigital.substack.com",
