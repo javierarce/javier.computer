@@ -37,13 +37,14 @@
 {% assign book_titles = "" -%}
 {% for book in sorted_books_reading -%}
 {% if forloop.first %}
-{% assign book_titles = book.title -%}
+{% assign book_titles = "<em>" | append: book.title | append: "</em>" -%}
 {% elsif forloop.last %}
-{% assign book_titles = book_titles | append: ", and " | append: book.title -%}
+{% assign book_titles = book_titles | append: ", and <em>" | append: book.title | append: "</em>" -%}
 {% else %}
-{% assign book_titles = book_titles | append: ", " | append: book.title -%}
+{% assign book_titles = book_titles | append: ", <em>" | append: book.title | append: "</em>" -%}
 {% endif %}
 {% endfor %}
+
 {% assign movie = site.data.movies.movies | first %}
 
 {% assign movie_rating = movie.rating %}
@@ -88,7 +89,7 @@
 <p>Right now I'm in {{ site.data.location[0].city }}, {{
     site.data.location[0].country }}. {% if book_titles != "" %}I'm <a
         href="/books">currently reading</a>: {{ book_titles }}. {% endif %}The
-    last book I read was  {{ book.title }} by {{ book.author }}. The last movie
+    last book I read was <em>{{ book.title }}</em> by {{ book.author }}. The last movie
     I watched was <a href="https://letterboxd.com/javier/film/{{
         movie.permalink }}">{{ movie.title }}</a> {{ rating_phrase }}
     <music-snitch data-username='javierarce' data-key

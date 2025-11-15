@@ -1,0 +1,24 @@
+---
+layout: none
+content_type: "text/xml"
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>{{ site.title | default: "Blogroll" }}</title>
+  </head>
+  <body>
+    <outline text="Blogs favoritos">
+
+    {% for blog in site.data.blogroll %}
+      <outline
+        text="{{ blog.title }}"
+        title="{{ blog.title }}"
+        type="rss"
+        xmlUrl="{{ blog.url }}/{{ blog.feed }}"
+        htmlUrl="{{ blog.url }}" />
+    {% endfor %}
+
+    </outline>
+  </body>
+</opml>
