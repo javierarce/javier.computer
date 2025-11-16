@@ -1,17 +1,4 @@
-[
-  {
-    "date": "2025-11-16",
-    "changes": [
-      "Esto es una prueba",
-      "Arregla el sistema para añadir changelogs"
-    ]
-  }
-,
-  {
-    "date": "2025-11-16",
-    "changes": [
-      "Esto es una prueba",
-      "Arregla el sistema para añadir changelogs"
-    ]
-  }
-]
+{
+  "date": "2025-11-16",
+  "changes": ["Esto es una prueba", "Arregla el sistema para añadir changelogs"]
+}
