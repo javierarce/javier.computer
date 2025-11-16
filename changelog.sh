@@ -16,7 +16,7 @@ awk -F'|' '{
     date = substr($1, 1, 10)
     msg = $2
     sub(/^doc: /, "", msg)
-    dates[date] = dates[date] (dates[date] ? "|||" : "") msg
+    dates[date] = dates[date] (dates[date] ? "\036" : "") msg
 }
 END {
     first = 1
@@ -25,7 +25,7 @@ END {
         first = 0
         printf "  {\n    \"date\": \"%s\",\n    \"changes\": [\n", date
         
-        split(dates[date], messages, "|||")
+        split(dates[date], messages, "\036")
         for (i in messages) {
             if (i > 1) printf ",\n"
             printf "      \"%s\"", messages[i]
