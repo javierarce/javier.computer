@@ -30,28 +30,11 @@ if [ -z "$NEW_COMMITS" ]; then
     exit 0
 fi
 
-# Read existing changelog
-EXISTING_JSON=$(cat "$OUTPUT_FILE")
-
-# Remove closing bracket from existing JSON
-EXISTING_JSON=$(echo "$EXISTING_JSON" | sed '$ d')
-
-# Check if we need a comma (if there's existing content)
-if [ "$EXISTING_JSON" != "[" ]; then
-    NEEDS_COMMA=true
-else
-    NEEDS_COMMA=false
-fi
-
-# Create temp file for new entries
-TEMP_FILE=$(mktemp)
-echo "$EXISTING_JSON" > "$TEMP_FILE"
+# Create temp file with new entries
+TEMP_NEW=$(mktemp)
 
 # Process new commits and group by date
-echo "$NEW_COMMITS" | awk -F'|' -v needs_comma="$NEEDS_COMMA" '
-BEGIN {
-    first_entry = 1
-}
+echo "$NEW_COMMITS" | awk -F'|' '
 {
     hash = $1
     date = substr($2, 1, 10)
@@ -68,28 +51,55 @@ END {
     for (idx = 1; idx <= date_count; idx++) {
         date = date_order[idx]
         
-        if (!first_entry || needs_comma == "true") {
-            printf ",\n"
-        }
-        first_entry = 0
-        
-        printf "  {\n    \"date\": \"%s\",\n    \"changes\": [\n", date
-        
-        n = split(dates[date], messages, "\036")
-        for (i = 1; i <= n; i++) {
-            if (i > 1) printf ",\n"
-            printf "      \"%s\"", messages[i]
-        }
-        printf "\n    ]\n  }"
+        printf "%s\036", date
+        print dates[date]
     }
-}' >> "$TEMP_FILE"
+}' > "$TEMP_NEW"
 
-# Close JSON array
-echo "" >> "$TEMP_FILE"
-echo "]" >> "$TEMP_FILE"
+# Merge with existing changelog using Python
+python3 - "$OUTPUT_FILE" "$TEMP_NEW" << 'PYTHON_SCRIPT'
+import json
+import sys
 
-# Replace the original file
-mv "$TEMP_FILE" "$OUTPUT_FILE"
+# Read existing changelog
+with open(sys.argv[1], 'r') as f:
+    changelog = json.load(f)
+
+# Create a dict for easier merging (date -> changes list)
+changelog_dict = {}
+for entry in changelog:
+    date = entry['date']
+    changelog_dict[date] = entry['changes']
+
+# Read new entries
+with open(sys.argv[2], 'r') as f:
+    for line in f:
+        if line.strip():
+            parts = line.strip().split('\036')
+            date = parts[0]
+            changes = parts[1].split('\036') if len(parts) > 1 else []
+            
+            # Add to existing date or create new
+            if date in changelog_dict:
+                changelog_dict[date].extend(changes)
+            else:
+                changelog_dict[date] = changes
+
+# Convert back to list format, sorted by date (newest first)
+result = []
+for date in sorted(changelog_dict.keys(), reverse=True):
+    result.append({
+        'date': date,
+        'changes': changelog_dict[date]
+    })
+
+# Write output
+with open(sys.argv[1], 'w') as f:
+    json.dump(result, f, indent=2, ensure_ascii=False)
+
+PYTHON_SCRIPT
+
+rm "$TEMP_NEW"
 
 # Save the last commit hash
 git log -1 --pretty=format:"%H" > "$LAST_COMMIT_FILE"
