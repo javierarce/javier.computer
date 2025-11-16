@@ -1,7 +1,17 @@
 {
-  "updated_at": "2025-11-14",
-  "count": 947,
+  "updated_at": "2025-11-16",
+  "count": 948,
   "movies": [
+    {
+      "watched_on": "2025-11-16",
+      "title": "Sundays",
+      "year": 2025,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "sundays-2025"
+    },
     {
       "watched_on": "2025-11-11",
       "title": "The 39 Steps",
