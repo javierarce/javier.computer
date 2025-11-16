@@ -11,6 +11,6 @@ rating:
 color:
 cover:
 pages: 648
-progress: 14
+progress: 18
 link: https://es.wikipedia.org/wiki/Obl%C3%B3mov
 ---
