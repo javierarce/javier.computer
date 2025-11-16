@@ -2,33 +2,40 @@
 # generate_changelog.sh
 # Place this in your Jekyll root directory
 
-OUTPUT_FILE="CHANGELOG.md"
+OUTPUT_FILE="_data/changelog.json"
 
-echo "# Changelog" > $OUTPUT_FILE
-echo "" >> $OUTPUT_FILE
-echo "All notable changes to this project are documented here." >> $OUTPUT_FILE
-echo "" >> $OUTPUT_FILE
+# Create _data directory if it doesn't exist
+mkdir -p _data
 
-# Get all commits with "Changelog: yes" in the message
-git log --grep="Changelog: yes" --pretty=format:"%H|%ai|%s|%b" --reverse | while IFS='|' read -r hash date subject body; do
-    # Extract just the date (YYYY-MM-DD)
-    short_date=$(echo $date | cut -d' ' -f1)
-    
-    # Remove the "Changelog: yes" line from body
-    clean_body=$(echo "$body" | grep -v "Changelog: yes" | sed '/^$/d')
-    
-    echo "## $(echo $subject | sed 's/^[a-z]*: //')" >> $OUTPUT_FILE
-    echo "" >> $OUTPUT_FILE
-    echo "_${short_date}_" >> $OUTPUT_FILE
-    echo "" >> $OUTPUT_FILE
-    
-    if [ -n "$clean_body" ]; then
-        echo "$clean_body" >> $OUTPUT_FILE
-        echo "" >> $OUTPUT_FILE
-    fi
-    
-    echo "---" >> $OUTPUT_FILE
-    echo "" >> $OUTPUT_FILE
-done
+# Start JSON array
+echo "[" > $OUTPUT_FILE
+
+# Get all commits with "doc:" prefix, grouped by date
+git log --grep="^doc:" --pretty=format:"%ai|%s" --reverse | \
+awk -F'|' '{
+    date = substr($1, 1, 10)
+    msg = $2
+    sub(/^doc: /, "", msg)
+    dates[date] = dates[date] (dates[date] ? "|||" : "") msg
+}
+END {
+    first = 1
+    for (date in dates) {
+        if (!first) printf ",\n"
+        first = 0
+        printf "  {\n    \"date\": \"%s\",\n    \"changes\": [\n", date
+        
+        split(dates[date], messages, "|||")
+        for (i in messages) {
+            if (i > 1) printf ",\n"
+            printf "      \"%s\"", messages[i]
+        }
+        printf "\n    ]\n  }"
+    }
+}' >> $OUTPUT_FILE
+
+# Close JSON array
+echo "" >> $OUTPUT_FILE
+echo "]" >> $OUTPUT_FILE
 
 echo "✅ Changelog generated at $OUTPUT_FILE"
