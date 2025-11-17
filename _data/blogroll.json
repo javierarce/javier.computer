@@ -119,6 +119,13 @@
     "type": "newsletter"
   },
   {
+    "title": "Andrés Magán",
+    "url": "https://andresmagan.substack.com",
+    "author": "Andrés Magán",
+    "feed": "feed",
+    "type": "newsletter"
+  },
+  {
     "title": "Design Harder",
     "author": "Erik Carter",
     "url": "https://designharder.substack.com",
@@ -161,7 +168,7 @@
     "type": "newsletter"
   },
   {
-    "title": "Joana Estrela's non-intrusive newsletter",
+    "title": "Joana Estrela",
     "author": "Joana Estrela",
     "url": "https://us9.campaign-archive.com/home/?u=a4c8b2c7fbc757f10dbda8808&id=dfc484dd24",
     "feed": null,

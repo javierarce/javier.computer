@@ -18,24 +18,27 @@ mis blogs y newsletters favoritas.
 ### Blogs
 
 <ul>
-{% for blog in site.data.blogroll %}
-  {% if blog.type == "blog" %}
-    <li>
-      <rss-reader
-        data-title="{{ blog.title }}"
+{% assign sorted_blogs = site.data.blogroll | where: "type", "blog" | sort: "author" %}
+{% for blog in sorted_blogs %}
+{% if blog.type == "blog" %}
+<li>
+<rss-reader
+        data-title="{{ blog.author }}"
         data-author="{{ blog.author }}"
         data-url="{{ blog.url }}"
         data-feed="{{ blog.feed }}">
-      </rss-reader>
-    </li>
-  {% endif %}
+</rss-reader>
+</li>
+{% endif %}
 {% endfor %}
+
 </ul>
 
 ### Newsletters
 
 <ul>
-{% for blog in site.data.blogroll %}
+{% assign sorted_newsletters = site.data.blogroll | where: "type", "newsletter" | sort: "title" %}
+{% for blog in sorted_newsletters %}
   {% if blog.type == "newsletter" %}
     <li>
       <rss-reader
