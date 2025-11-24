@@ -12,5 +12,5 @@ color:
 cover:
 pages: 208
 progress: 19
-link: https://terrranova.com/product/why-i-make-documentaries/
+link: https://www.kazuhirosoda.com/10-commandments
 ---
