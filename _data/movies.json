@@ -1,7 +1,37 @@
 {
-  "updated_at": "2025-11-16",
-  "count": 948,
+  "updated_at": "2025-11-24",
+  "count": 951,
   "movies": [
+    {
+      "watched_on": "2025-11-22",
+      "title": "First Cow",
+      "year": 2019,
+      "rating": 4.5,
+      "liked": true,
+      "stars": "★★★★½",
+      "rewatched": true,
+      "permalink": "first-cow/1"
+    },
+    {
+      "watched_on": "2025-11-21",
+      "title": "The Mastermind",
+      "year": 2025,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "the-mastermind-2025"
+    },
+    {
+      "watched_on": "2025-11-17",
+      "title": "Retirement Plan",
+      "year": 2024,
+      "rating": null,
+      "liked": false,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "retirement-plan"
+    },
     {
       "watched_on": "2025-11-16",
       "title": "Sundays",

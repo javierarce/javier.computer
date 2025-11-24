@@ -1,9 +1,10 @@
 ---
 title: "First Cow"
 year: 2019
-rating: 4
-stars: "★★★★"
-rewatched: false
-permalink: "first-cow"
-watched_on: 2020-07-18
+rating: 4.5
+stars: "★★★★½"
+liked: true
+rewatched: true
+permalink: "first-cow/1"
+watched_on: 2025-11-22
 ---
