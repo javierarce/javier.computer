@@ -1,7 +1,57 @@
 {
-  "updated_at": "2025-11-24",
-  "count": 951,
+  "updated_at": "2025-12-06",
+  "count": 956,
   "movies": [
+    {
+      "watched_on": "2025-12-06",
+      "title": "Bad Day at Black Rock",
+      "year": 1955,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "bad-day-at-black-rock"
+    },
+    {
+      "watched_on": "2025-12-03",
+      "title": "Candyman",
+      "year": 1992,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "candyman"
+    },
+    {
+      "watched_on": "2025-12-02",
+      "title": "Over the Garden Wall",
+      "year": 2014,
+      "rating": 5,
+      "liked": true,
+      "stars": "★★★★★",
+      "rewatched": true,
+      "permalink": "over-the-garden-wall-2014"
+    },
+    {
+      "watched_on": "2025-11-28",
+      "title": "Thoughts & Prayers",
+      "year": 2025,
+      "rating": null,
+      "liked": false,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "thoughts-prayers-2025"
+    },
+    {
+      "watched_on": "2025-11-26",
+      "title": "Puriykachay",
+      "year": 2025,
+      "rating": null,
+      "liked": false,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "puriykachay"
+    },
     {
       "watched_on": "2025-11-22",
       "title": "First Cow",
