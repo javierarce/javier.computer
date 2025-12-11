@@ -1,7 +1,37 @@
 {
-  "updated_at": "2025-12-06",
-  "count": 956,
+  "updated_at": "2025-12-11",
+  "count": 959,
   "movies": [
+    {
+      "watched_on": "2025-12-10",
+      "title": "Ex Libris: The New York Public Library",
+      "year": 2017,
+      "rating": null,
+      "liked": false,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "ex-libris-the-new-york-public-library"
+    },
+    {
+      "watched_on": "2025-12-08",
+      "title": "You&#039;ve Got Mail",
+      "year": 1998,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "youve-got-mail"
+    },
+    {
+      "watched_on": "2025-12-07",
+      "title": "The Exorcist",
+      "year": 1973,
+      "rating": 4.5,
+      "liked": true,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "the-exorcist"
+    },
     {
       "watched_on": "2025-12-06",
       "title": "Bad Day at Black Rock",
