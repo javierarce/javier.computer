@@ -4,13 +4,13 @@ subtitle:
 description: ""
 layout: book
 author: Alba G. Mora
-started: 2025-09-27
+started:
 read:
-status: reading
+status:
 rating:
 color:
 cover:
 pages: 216
-progress: 10
+progress: 0
 link: https://blackiebooks.org/producto/alba-g-mora-cosita/
 ---
