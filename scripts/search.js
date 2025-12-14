@@ -74,59 +74,92 @@
     }
     return text.substring(0, radius * 2) + "...";
   }
+
   var searchTerm = getQuery("q");
 
   if (searchTerm) {
-    document.getElementById("search-box").setAttribute("value", searchTerm);
-
-    console.log("Searching for:", searchTerm);
-
-    if (window.plausible) {
-      window.plausible("Search", { props: { query: searchTerm } });
+    // Function to track search with Plausible
+    function trackSearch(eventName, query) {
+      if (window.plausible) {
+        window.plausible(eventName, { props: { query: query } });
+      } else {
+        // Wait for Plausible to load
+        setTimeout(function () {
+          if (window.plausible) {
+            window.plausible(eventName, { props: { query: query } });
+          }
+        }, 500);
+      }
     }
 
-    var idx = lunr(function () {
-      this.ref("id"); // 👈 IMPORTANT
-      this.metadataWhitelist = ["position"];
-
-      // Disable pipeline functions that might interfere with Spanish words
-      this.pipeline.remove(lunr.stemmer);
-      this.searchPipeline.remove(lunr.stemmer);
-
-      this.field("title", { boost: 10 });
-      this.field("author");
-      this.field("category");
-      this.field("content");
-      for (var key in window.store) {
-        // Add the JSON we generated from the site content to Lunr.js.
-        this.add({
-          id: key,
-          title: window.store[key].title,
-          author: window.store[key].author,
-          category: window.store[key].category,
-          content: window.store[key].content,
-        });
+    // Main search initialization function
+    function initSearch() {
+      var searchBox = document.getElementById("search-box");
+      if (!searchBox) {
+        console.error("Search box element not found");
+        return;
       }
-    });
-    var results = idx.query(function (q) {
-      var terms = searchTerm.toLowerCase().split(/\s+/);
-      terms.forEach(function (term) {
-        q.term(term, {
-          wildcard: lunr.Query.wildcard.TRAILING,
-          presence: lunr.Query.presence.OPTIONAL,
-        });
-        q.term(term, {
-          wildcard: lunr.Query.wildcard.LEADING | lunr.Query.wildcard.TRAILING,
-          presence: lunr.Query.presence.OPTIONAL,
+
+      searchBox.setAttribute("value", searchTerm);
+
+      console.log("Searching for:", searchTerm);
+
+      trackSearch("Search", searchTerm);
+
+      // Initialize lunr.js with the fields to search.
+      // The title field is given more weight with the "boost" parameter
+      var idx = lunr(function () {
+        this.ref("id"); // 👈 IMPORTANT
+        this.metadataWhitelist = ["position"];
+
+        // Disable pipeline functions that might interfere with Spanish words
+        this.pipeline.remove(lunr.stemmer);
+        this.searchPipeline.remove(lunr.stemmer);
+
+        this.field("title", { boost: 10 });
+        this.field("author");
+        this.field("category");
+        this.field("content");
+        for (var key in window.store) {
+          // Add the JSON we generated from the site content to Lunr.js.
+          this.add({
+            id: key,
+            title: window.store[key].title,
+            author: window.store[key].author,
+            category: window.store[key].category,
+            content: window.store[key].content,
+          });
+        }
+      });
+
+      var results = idx.query(function (q) {
+        var terms = searchTerm.toLowerCase().split(/\s+/);
+        terms.forEach(function (term) {
+          q.term(term, {
+            wildcard: lunr.Query.wildcard.TRAILING,
+            presence: lunr.Query.presence.OPTIONAL,
+          });
+          q.term(term, {
+            wildcard:
+              lunr.Query.wildcard.LEADING | lunr.Query.wildcard.TRAILING,
+            presence: lunr.Query.presence.OPTIONAL,
+          });
         });
       });
-    });
 
-    // Track if search had no results
-    if (window.plausible && results.length === 0) {
-      window.plausible("Search: No Results", { props: { query: searchTerm } });
+      // Track if search had no results
+      if (results.length === 0) {
+        trackSearch("Search: No Results", searchTerm);
+      }
+
+      showResults(results, window.store);
     }
 
-    showResults(results, window.store);
+    // Run when DOM is ready
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initSearch);
+    } else {
+      initSearch();
+    }
   }
 })();
