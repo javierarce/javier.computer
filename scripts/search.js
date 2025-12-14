@@ -75,9 +75,11 @@
     return text.substring(0, radius * 2) + "...";
   }
   var searchTerm = getQuery("q");
+
   if (searchTerm) {
     document.getElementById("search-box").setAttribute("value", searchTerm);
 
+    console.log("Searching for:", searchTerm);
     if (window.plausible) {
       window.plausible("Search", { props: { query: searchTerm } });
     }
