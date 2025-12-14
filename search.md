@@ -6,7 +6,8 @@ className: archive
 category: posts
 ---
 
-{% include search-form.html %}
+<div class="Content">
+  {% include navigation.html -%}
 
 <ul id="search-results" class="search-results"></ul>
 
@@ -24,6 +25,11 @@ category: posts
     {% endfor %}
   };
 </script>
+
+{% include footer.html -%}
+
+</div>
+{% include search-form.html %}
 
 <script src="https://unpkg.com/lunr/lunr.js"></script>
 <script src="/scripts/search.js"></script>
