@@ -9,8 +9,9 @@ category: posts
 <div class="Content">
   {% include navigation.html -%}
 
-<ul id="search-results" class="search-results"></ul>
 {% include search-form.html %}
+
+<ul id="search-results" class="search-results"></ul>
 
 <script>
   window.store = {
