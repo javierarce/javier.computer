@@ -78,13 +78,10 @@
   if (searchTerm) {
     document.getElementById("search-box").setAttribute("value", searchTerm);
 
-    // Track search with Plausible
     if (window.plausible) {
-      plausible("Search", { props: { query: searchTerm } });
+      window.plausible("Search", { props: { query: searchTerm } });
     }
 
-    // Initalize lunr.js with the fields to search.
-    // The title field is given more weight with the "boost" parameter
     var idx = lunr(function () {
       this.ref("id"); // 👈 IMPORTANT
       this.metadataWhitelist = ["position"];
@@ -124,7 +121,7 @@
 
     // Track if search had no results
     if (window.plausible && results.length === 0) {
-      plausible("Search: No Results", { props: { query: searchTerm } });
+      window.plausible("Search: No Results", { props: { query: searchTerm } });
     }
 
     showResults(results, window.store);
