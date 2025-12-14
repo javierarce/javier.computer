@@ -1,7 +1,17 @@
 {
   "updated_at": "2025-12-14",
-  "count": 961,
+  "count": 962,
   "movies": [
+    {
+      "watched_on": "2025-12-14",
+      "title": "Blow-Up",
+      "year": 1966,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "blow-up"
+    },
     {
       "watched_on": "2025-12-13",
       "title": "Gentlemen Prefer Blondes",
