@@ -1,0 +1,36 @@
+.search-form {
+  display: flex;
+  gap: var(--gap-sm);
+  width: var(--width-full);
+}
+
+.search-results {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-lg);
+  padding: 0;
+  margin: 0;
+
+  h3 {
+    opacity: var(--op-visible);
+  }
+
+  li {
+    list-style: none;
+    padding: 0;
+  }
+
+  .is-highlighted {
+    padding: var(--pd-sm) var(--pd-md);
+    font-size: inherit;
+    border: none;
+    border-radius: var(--br-md);
+    color: inherit;
+    background-color: rgb(48 48 48);
+
+    a,
+    a:hover {
+      color: var(--purple);
+    }
+  }
+}

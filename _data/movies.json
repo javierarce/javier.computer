@@ -1,7 +1,27 @@
 {
-  "updated_at": "2025-12-11",
-  "count": 959,
+  "updated_at": "2025-12-14",
+  "count": 961,
   "movies": [
+    {
+      "watched_on": "2025-12-13",
+      "title": "Gentlemen Prefer Blondes",
+      "year": 1953,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "gentlemen-prefer-blondes"
+    },
+    {
+      "watched_on": "2025-12-12",
+      "title": "Mishima: A Life in Four Chapters",
+      "year": 1985,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "mishima-a-life-in-four-chapters"
+    },
     {
       "watched_on": "2025-12-10",
       "title": "Ex Libris: The New York Public Library",
