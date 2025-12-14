@@ -1,6 +1,9 @@
 ---
-layout: page
-title: Search Results
+layout: base
+title: Búsqueda
+permalink: search
+className: archive
+category: posts
 ---
 
 {% include search-form.html %}
