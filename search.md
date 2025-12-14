@@ -10,6 +10,7 @@ category: posts
   {% include navigation.html -%}
 
 <ul id="search-results" class="search-results"></ul>
+{% include search-form.html %}
 
 <script>
   window.store = {
@@ -29,7 +30,6 @@ category: posts
 {% include footer.html -%}
 
 </div>
-{% include search-form.html %}
 
 <script src="https://unpkg.com/lunr/lunr.js"></script>
 <script src="/scripts/search.js"></script>
