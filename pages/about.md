@@ -70,6 +70,8 @@ turtle, a turtle.
 
 <p data-update-timestamp="{{ site.time | date: '%s' }}">This computer was updated <span id="time-phrase">on {{ site.time | date: "%B %d, %Y" }}</span> {{ selected_phrase }}.</p>
 
+        {% include search-form.html %}
+
 ### Wait, there's more!
 
 <div class="About__cards">

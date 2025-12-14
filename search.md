@@ -32,6 +32,3 @@ category: posts
 {% include footer.html -%}
 
 </div>
-
-<script src="https://unpkg.com/lunr/lunr.js"></script>
-<script src="/scripts/search.js"></script>
