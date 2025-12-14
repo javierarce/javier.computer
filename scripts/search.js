@@ -104,8 +104,6 @@
 
       console.log("Searching for:", searchTerm);
 
-      trackSearch("Search", searchTerm);
-
       // Initialize lunr.js with the fields to search.
       // The title field is given more weight with the "boost" parameter
       var idx = lunr(function () {
@@ -147,9 +145,11 @@
         });
       });
 
-      // Track if search had no results
+      // Track search results
       if (results.length === 0) {
         trackSearch("Search: No Results", searchTerm);
+      } else {
+        trackSearch("Search", searchTerm);
       }
 
       showResults(results, window.store);
