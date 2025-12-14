@@ -7,11 +7,12 @@ category: posts
 ---
 
 <div class="Content">
-  {% include navigation.html -%}
+    {% include navigation.html -%}
 
-{% include search-form.html %}
-
-<ul id="search-results" class="search-results"></ul>
+    <div class="search">
+        {% include search-form.html %}
+        <ul id="search-results" class="search-results"></ul>
+    </div>
 
 <script>
   window.store = {

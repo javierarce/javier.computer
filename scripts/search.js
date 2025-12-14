@@ -1,63 +1,47 @@
 (function () {
   function showResults(results, store) {
     var searchResults = document.getElementById("search-results");
-
     if (results.length) {
       // If there are results...
       var appendString = "";
-
       for (var i = 0; i < results.length; i++) {
         var result = results[i];
         var item = store[result.ref];
-
         var excerpt = buildExcerpt(item.content, result.matchData);
         excerpt = highlight(excerpt, searchTerm);
-
-        var title = item.title;
-
+        // Title is no longer highlighted
         appendString +=
-          '<li><a href="' + item.url + '"><h3>' + title + "</h3></a>";
+          '<li><a href="' + item.url + '"><h3>' + item.title + "</h3></a>";
         appendString += "<p>" + excerpt + "</p></li>";
       }
-
       searchResults.innerHTML = appendString;
     } else {
       searchResults.innerHTML = "<li>No hay resultados para esa búsqueda</li>";
     }
   }
-
   function highlight(text, query) {
     if (!query) return text;
-
     // Escape regex special characters in the query
     var escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     var regex = new RegExp("(" + escapedQuery + ")", "gi");
-
     return text.replace(regex, '<span class="is-highlighted">$1</span>');
   }
-
   function getQuery(variable) {
     var query = window.location.search.substring(1);
     var vars = query.split("&");
-
     for (var i = 0; i < vars.length; i++) {
       var pair = vars[i].split("=");
-
       if (pair[0] === variable) {
         return decodeURIComponent(pair[1].replace(/\+/g, "%20"));
       }
     }
   }
-
   function buildExcerpt(text, matchData, radius) {
     radius = radius || 120;
-
     if (!matchData || !matchData.metadata) {
       return text.substring(0, radius * 2) + "...";
     }
-
     var query = searchTerm.toLowerCase();
-
     // 1️⃣ Prefer the searched term
     if (matchData.metadata[query]) {
       for (var field in matchData.metadata[query]) {
@@ -73,7 +57,6 @@
         }
       }
     }
-
     // 2️⃣ Fallback: first available match
     for (var term in matchData.metadata) {
       for (var field in matchData.metadata[term]) {
@@ -89,25 +72,25 @@
         }
       }
     }
-
     return text.substring(0, radius * 2) + "...";
   }
-
   var searchTerm = getQuery("q");
-
   if (searchTerm) {
     document.getElementById("search-box").setAttribute("value", searchTerm);
-
     // Initalize lunr.js with the fields to search.
     // The title field is given more weight with the "boost" parameter
     var idx = lunr(function () {
       this.ref("id"); // 👈 IMPORTANT
       this.metadataWhitelist = ["position"];
+
+      // Disable pipeline functions that might interfere with Spanish words
+      this.pipeline.remove(lunr.stemmer);
+      this.searchPipeline.remove(lunr.stemmer);
+
       this.field("title", { boost: 10 });
       this.field("author");
       this.field("category");
       this.field("content");
-
       for (var key in window.store) {
         // Add the JSON we generated from the site content to Lunr.js.
         this.add({
@@ -119,11 +102,17 @@
         });
       }
     });
-
     var results = idx.query(function (q) {
-      q.term(searchTerm.toLowerCase(), {
-        wildcard: lunr.Query.wildcard.TRAILING,
-        presence: lunr.Query.presence.REQUIRED,
+      var terms = searchTerm.toLowerCase().split(/\s+/);
+      terms.forEach(function (term) {
+        q.term(term, {
+          wildcard: lunr.Query.wildcard.TRAILING,
+          presence: lunr.Query.presence.OPTIONAL,
+        });
+        q.term(term, {
+          wildcard: lunr.Query.wildcard.LEADING | lunr.Query.wildcard.TRAILING,
+          presence: lunr.Query.presence.OPTIONAL,
+        });
       });
     });
     showResults(results, window.store);
