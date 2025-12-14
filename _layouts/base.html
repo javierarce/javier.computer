@@ -31,6 +31,10 @@
     >
 
     <script defer data-api="/api/event" data-domain="javier.computer" src="/js/stats.js"></script>
+    {% if page.url contains '/search' or page.name == 'search.md' %}
+      <script src="https://unpkg.com/lunr/lunr.js"></script>
+      <script src="/scripts/search.js"></script>
+    {% endif %}
   </head>
 
   <body class="Layout__{{ className | default: page.category | downcase  }}">
