@@ -80,8 +80,9 @@
     document.getElementById("search-box").setAttribute("value", searchTerm);
 
     console.log("Searching for:", searchTerm);
-    if (plausible) {
-      plausible("Search", { props: { query: searchTerm } });
+
+    if (window.plausible) {
+      window.plausible("Search", { props: { query: searchTerm } });
     }
 
     var idx = lunr(function () {
@@ -122,8 +123,8 @@
     });
 
     // Track if search had no results
-    if (plausible && results.length === 0) {
-      plausible("Search: No Results", { props: { query: searchTerm } });
+    if (window.plausible && results.length === 0) {
+      window.plausible("Search: No Results", { props: { query: searchTerm } });
     }
 
     showResults(results, window.store);
