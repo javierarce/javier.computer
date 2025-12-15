@@ -12,7 +12,7 @@ class Lightbox {
 
     this.lightbox = document.querySelector(".lightbox");
     this.$image = document.querySelector(".lightbox__image");
-    this.spinner = document.querySelector(".Spinner");
+    this.spinner = document.querySelector(".spinner");
     this.$close = document.querySelector(".lightbox__button.is-close");
     this.$caption = document.querySelector(".lightbox__caption");
     this.$prev = document.querySelector(".lightbox__button.is-prev");
@@ -37,7 +37,7 @@ class Lightbox {
         </div>
         <button class="lightbox__button is-prev"></button>
         <button class="lightbox__button is-next"></button>
-        <div class="Spinner is-lightbox"></div>
+        <div class="spinner is-lightbox"></div>
       </div>
     `;
 

@@ -1,16 +1,15 @@
 ---
 layout: base
-className: Post
+className: Video
 category: videos
 ---
-{% assign matching_location = site.locations | where: 'location', page.location | first -%}
 <!-- - video -->
 <div class="Content">
   {% include navigation.html -%}
-  {% assign content = page.content | strip -%}
+
   <div class="Post">
-    {% include video.html url=page.src -%}
     <div class="Post__content{% if page.extraClassName -%} {{ page.extraClassName }}{% endif -%}">
+      {% include video.html url=page.src -%}
       {{ content }}
     </div>
     {% include post/footer.html -%}
