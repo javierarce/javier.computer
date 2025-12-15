@@ -272,7 +272,6 @@ img {
   opacity: var(--op-light);
 }
 
-
 .Photo__layout a[href^="/maps"],
 .Post__content a[href^="/maps"] {
   position: relative;
@@ -378,7 +377,6 @@ a.is-icon-light.is-reportage::after {
 }
 
 @media all and (max-width: 1024px) {
-
   .Content {
     width: var(--width-md);
   }

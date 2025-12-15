@@ -1,24 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap");
 
 :root {
   /* Colors */
-  --white: #FFFFFF;
+  --white: #ffffff;
   --black: #020b19;
   --black-pure: #000000;
   --gray: rgba(255, 255, 255, 0.3);
-  --gray2: #EEEEEE;
+  --gray2: #eeeeee;
 
-  --purple: #AE81FF;
+  --purple: #ae81ff;
 
-  --orange-yellow: #F9A825;
-  --yellow: #FFC107;
-  --pink: #AD1457;
-  --orange: #D84315;
-  --red: #C62828;
-  --blue: #1976D2;
-  --green: #2E7D32;
+  --orange-yellow: #f9a825;
+  --yellow: #ffc107;
+  --pink: #ad1457;
+  --orange: #d84315;
+  --red: #c62828;
+  --blue: #1976d2;
+  --green: #2e7d32;
   --teal: #009688;
-  --brown: #8D6E63;
+  --brown: #8d6e63;
 
   /* Semantic colors */
   --link: var(--yellow);
@@ -28,10 +28,10 @@
 
   --color-txt-site: var(--white);
   --color-bg-site: var(--black);
-  --color-txt-quote: #FD6F42;
-  --color-brd-quote: #FD6F42;
+  --color-txt-quote: #fd6f42;
+  --color-brd-quote: #fd6f42;
 
-  --color-book-purple: #6A1B9A;
+  --color-book-purple: #6a1b9a;
   --color-book-yellow: var(--orange-yellow);
   --color-book-teal: var(--teal);
   --color-book-white: var(--white);
@@ -41,18 +41,22 @@
   --color-book-blue: var(--blue);
   --color-book-brown: var(--brown);
   --color-book-pink: var(--pink);
-  --color-book-dark-teal: #00695C;
+  --color-book-dark-teal: #00695c;
   --color-book-orange: var(--orange);
-  --color-book-dark-green: #558B2F;
+  --color-book-dark-green: #558b2f;
   --color-book-dark-blue: #283593;
   --color-book-dark-gray: #222;
-  --color-book-light-blue: #1565C0;
-  --color-book-light-pink: #EC407A;
+  --color-book-light-blue: #1565c0;
+  --color-book-light-pink: #ec407a;
 
   /* Font */
-  --font-text-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-text-serif: 'Newsreader', Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-text-mono: 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace;
+  --font-text-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  --font-text-serif: "Newsreader", Georgia, Cambria, "Times New Roman", Times,
+    serif;
+  --font-text-mono: "SF Mono", SFMono-Regular, ui-monospace, "DejaVu Sans Mono",
+    Menlo, Consolas, monospace;
 
   /* Font sizes */
   --font-size-base: 1rem;

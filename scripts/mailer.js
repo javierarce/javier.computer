@@ -154,7 +154,7 @@ class Mail {
 
   renderEmail() {
     const inputId = "email-input";
-    const $input = this.createElement({ className: "Input__field" });
+    const $input = this.createElement({ className: "input__field" });
 
     const $label = this.createElement({
       elementType: "label",
@@ -167,7 +167,7 @@ class Mail {
       id: inputId,
       type: "email",
       elementType: "input",
-      className: "Input",
+      className: "input",
       required: true,
     });
 
@@ -178,7 +178,7 @@ class Mail {
 
   renderComment() {
     const textareaId = "comment-textarea";
-    const $input = this.createElement({ className: "Input__field" });
+    const $input = this.createElement({ className: "input__field" });
     const $label = this.createElement({
       className: "label",
       elementType: "label",
@@ -190,7 +190,7 @@ class Mail {
     this.$content = this.createElement({
       id: textareaId,
       elementType: "textarea",
-      className: "Textarea",
+      className: "textarea",
     });
 
     $input.appendChild($label);
@@ -206,7 +206,7 @@ class Mail {
 
     this.$message = this.createElement({
       elementType: "div",
-      className: "Message",
+      className: "message",
     });
 
     this.$sendButton = this.createElement({

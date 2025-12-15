@@ -2,9 +2,9 @@
 layout: about
 title: Newsletter
 description: >
-    Únete a las 84 personas que están confundidas y suscritas a mi lista de
-    correo de bajísima intensidad, y recibe avisos cuando publique un nuevo
-    proyecto o haga algo extremadamente gracioso.
+  Únete a las 84 personas que están confundidas y suscritas a mi lista de
+  correo de bajísima intensidad, y recibe avisos cuando publique un nuevo
+  proyecto o haga algo extremadamente gracioso.
 permalink: newsletter
 className: About
 ---
@@ -24,17 +24,17 @@ className: About
 
 <label class="label" for="name">Nombre <span class="is-optional">(opcional)</span></label>
 
-<div class="Input__field">
-<input class="Input" type="text" name="name" placeholder="Oedipa Maas" />
+<div class="input__field">
+<input class="input" type="text" name="name" placeholder="Oedipa Maas" />
 </div>
 
 <label class="label" for="email">Email</label>
 
-<div class="Input__field">
-<input class="Input" type="email" name="email" placeholder="oedipa.maas@waste.email" required />
+<div class="input__field">
+<input class="input" type="email" name="email" placeholder="oedipa.maas@waste.email" required />
 </div>
 
-<div class="Input__captcha">
+<div class="input__captcha">
     <div class="h-captcha" data-sitekey="187a1b9c-4094-4270-b22e-24d4dede90ee"></div>
     <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
  </div>

@@ -156,7 +156,6 @@
     text-decoration: none;
   }
 
-  &__more:before,
   &__more-photos:before,
   &__comment:before,
   &__location:before,
@@ -179,10 +178,6 @@
 
   &__location:before {
     background-image: url(/img/icons/pin.svg);
-  }
-
-  &__more:before {
-    background-image: url(/img/icons/glasses.svg);
   }
 
   &__more-photos:before {

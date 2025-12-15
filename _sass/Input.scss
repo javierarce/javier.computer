@@ -5,40 +5,36 @@ input {
   font-family: var(--font-text-sans);
 }
 
-.Input__field {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-sm);
-}
-
-.Input,
-.Textarea,
-.Input__field {
+.input {
   width: var(--width-full);
+  resize: none;
+  outline: none;
+  border-radius: var(--br-sm);
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm);
+    width: var(--width-full);
+  }
 }
 
-.Input,
-.Textarea {
-  padding: 0.8em;
+.input,
+.textarea {
+  padding: var(--pd-xl);
   resize: none;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, var(--op-5));
   font-size: var(--font-size-md);
   border-radius: var(--br-sm);
+  transition: border var(--transition-speed-default) ease-in-out;
   outline: none;
-  transition: border 140ms ease-in-out;
+
+  &:focus {
+    border: 1px solid var(--white);
+  }
 }
 
-.Input {
-  resize: none;
-  outline: none;
-  border-radius: var(--br-sm);
-}
-
-.Textarea {
+.textarea {
+  width: var(--width-full);
   height: 240px;
-}
-
-.Textarea:focus,
-.Input:focus {
-  border: 1px solid var(--white);
 }

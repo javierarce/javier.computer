@@ -4,22 +4,23 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--gap-md);
-  margin: 0 0 2em 0;
   opacity: var(--op-hidden);
   visibility: hidden;
-  transition: opacity 150ms ease-in-out, visibility 250ms ease-in-out;
+  transition:
+    opacity var(--transition-speed-default) ease-in-out,
+    visibility var(--transition-speed-slow) ease-in-out;
 
   &.is-visible {
     opacity: var(--op-visible);
     visibility: visible;
   }
 
-  &.is-error .Message,
-  &.was-sent .Message {
+  &.is-error .message,
+  &.was-sent .message {
     opacity: var(--op-visible);
   }
 
-  &.is-error .Message {
+  &.is-error .message {
     color: var(--error);
   }
 
@@ -27,10 +28,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1em 0 0 0;
-
-    .button {
-      margin: 0 1em 0 0;
-    }
+    gap: var(--gap-md);
   }
 }

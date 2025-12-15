@@ -12,9 +12,12 @@
   justify-content: center;
   margin: 0;
   outline: none;
-  padding: 0.8em 1em;
+  padding: var(--pd-lg) var(--pd-xl);
   position: relative;
-  transition: background 100ms ease-in-out, opacity 100ms ease-in-out, color 100ms ease-in-out;
+  transition:
+    background var(--transition-speed-default) ease-in-out,
+    opacity var(--transition-speed-default) ease-in-out,
+    color var(--transition-speed-default) ease-in-out;
   user-select: none;
 
   &:hover {
