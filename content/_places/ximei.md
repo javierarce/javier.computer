@@ -1,7 +1,7 @@
 ---
 layout: place
 pid: ximei
-title: "ximei"
+title: "Ximei"
 description: "Italiano veneciano"
 address: "Pg. de l'Exposició, 85"
 category: "restaurant"
