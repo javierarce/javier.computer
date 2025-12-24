@@ -1,7 +1,47 @@
 {
-  "updated_at": "2025-12-19",
-  "count": 963,
+  "updated_at": "2025-12-22",
+  "count": 967,
   "movies": [
+    {
+      "watched_on": "2025-12-21",
+      "title": "The Running Man",
+      "year": 2025,
+      "rating": 2,
+      "liked": false,
+      "stars": "★★",
+      "rewatched": false,
+      "permalink": "the-running-man-2025"
+    },
+    {
+      "watched_on": "2025-12-21",
+      "title": "Dark Passage",
+      "year": 1947,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "dark-passage"
+    },
+    {
+      "watched_on": "2025-12-20",
+      "title": "Wake Up Dead Man",
+      "year": 2025,
+      "rating": 2,
+      "liked": false,
+      "stars": "★★",
+      "rewatched": false,
+      "permalink": "wake-up-dead-man"
+    },
+    {
+      "watched_on": "2025-12-20",
+      "title": "Play Dirty",
+      "year": 1969,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "play-dirty"
+    },
     {
       "watched_on": "2025-12-19",
       "title": "National Gallery",
