@@ -1,7 +1,27 @@
 {
-  "updated_at": "2025-12-25",
-  "count": 971,
+  "updated_at": "2025-12-27",
+  "count": 973,
   "movies": [
+    {
+      "watched_on": "2025-12-27",
+      "title": "Eyes Wide Shut",
+      "year": 1999,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": true,
+      "permalink": "eyes-wide-shut"
+    },
+    {
+      "watched_on": "2025-12-26",
+      "title": "The Ax",
+      "year": 2005,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "the-ax"
+    },
     {
       "watched_on": "2025-12-25",
       "title": "Bugonia",
