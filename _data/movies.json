@@ -1,7 +1,17 @@
 {
-  "updated_at": "2025-12-27",
-  "count": 973,
+  "updated_at": "2025-12-28",
+  "count": 974,
   "movies": [
+    {
+      "watched_on": "2025-12-27",
+      "title": "Close-Up",
+      "year": 1990,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "close-up"
+    },
     {
       "watched_on": "2025-12-27",
       "title": "Eyes Wide Shut",
