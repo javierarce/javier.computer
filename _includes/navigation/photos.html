@@ -7,12 +7,14 @@
 
 <div class="navigation__links">
   {% unless page.hide_location -%}
+  {% if page.location != nil %}
     <a
       class="navigation__link {% if page.category == 'photos' %}is-selected{% endif %}"
       href="/photos/{{ page.location }}{{ grid }}"
     >
       {{- matching_location.title -}}
     </a>
+      {% endif -%}
   {% endunless %}
 
   <a
