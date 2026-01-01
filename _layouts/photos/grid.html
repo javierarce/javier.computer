@@ -3,74 +3,72 @@ layout: base
 className: Grid
 grid: true
 ---
-
 {% assign photos = site.photos | concat: site.posts | sort: 'date' | reverse -%}
-{% assign location = page.location | downcase -%}
+{% assign target_location = page.location | downcase -%}
 
-<!--- photos/grid -->
 <div class="Content">
   {% include navigation.html -%}
-
-    <div class="Photo__header">
-      <div class="Photo__selector">
-        <a href="/photos/{{ page.location }}" class="icon icon-list is-light"></a>
-        <span class="icon icon-grid"></span>
-      </div>
+  <div class="Photo__header">
+    <div class="Photo__selector">
+      <a href="/photos/{{ page.location }}" class="icon icon-list is-light"></a>
+      <span class="icon icon-grid"></span>
     </div>
-
+  </div>
 
   <div class="Photo__collections">
     {% for photo in photos -%}
-    {% if location == photo.location %}
-    {% if photo.category == "photo" -%}
-    <div class="Photo__collection has-lightbox">
-      {% if photo.filenames -%}
-      <div class="Photo__grid">
-        {% for file in photo.filenames -%}
-        {% if file.filename -%}
-        {% assign filename = file.filename -%}
-        {% else -%}
-        {% assign filename = file -%}
-        {% endif -%}
-        {% include photos/single.html photo=photo filename=filename caption=file.caption hide_caption=true -%}
-        {% endfor -%}
-      </div>
-      {% else -%}
-      {% include photos/single.html photo=photo filename=photo.filename caption=file.caption hide_caption=true -%}
+      {% assign photo_location = photo.location | downcase -%}
+      
+      {% if target_location == photo_location %}
+        {% if photo.category == "photo" -%}
+          <div class="Photo__collection has-lightbox">
+            {% if photo.filenames -%}
+              <div class="Photo__grid">
+                {% for file in photo.filenames -%}
+                  {% if file.filename -%}
+                    {% assign current_filename = file.filename -%}
+                  {% else -%}
+                    {% assign current_filename = file -%}
+                  {% endif -%}
+                  {% include photos/single.html photo=photo filename=current_filename caption=file.caption hide_caption=true -%}
+                {% endfor -%}
+              </div>
+            {% else -%}
+              {% include photos/single.html photo=photo filename=photo.filename caption=photo.caption hide_caption=true -%}
+            {% endif -%}
+            {% include photos/footer.html photo=photo pagination=false -%}
+          </div>
+
+        {% elsif photo.category == "reportage" -%}
+          <div class="Photo__collection">
+            {% if photo.filenames -%}
+              <div class="Photo__grid">
+                {% for file in photo.filenames -%}
+                  {% comment %} Reset scope-specific variables inside the loop {% endcomment %}
+                  {% assign current_filename = nil %}
+                  {% assign current_image_loc = nil %}
+
+                  {% if file.filename -%}
+                    {% assign current_filename = file.filename -%}
+                    {% assign current_image_loc = file.location | default: photo.location -%}
+                  {% else -%}
+                    {% assign current_filename = file -%}
+                    {% assign current_image_loc = photo.location -%}
+                  {% endif -%}
+                  
+                  {% include photos/single.html photo=photo filename=current_filename caption=file.caption hide_caption=true location=current_image_loc -%}
+                {% endfor -%}
+              </div>
+            {% else -%}
+              <a href="{{ photo.url }}">
+                {% include photos/single.html photo=photo filename=photo.cover caption=photo.caption hide_caption=true -%}
+              </a>
+            {% endif %}
+            {% include photos/footer.html photo=photo pagination=false readmore="true" -%}
+          </div>
+        {% endif %}
       {% endif -%}
-
-      {% include photos/footer.html photo=photo pagination=false -%}
-    </div>
-    {% elsif photo.category == "reportage" -%}
-
-    <div class="Photo__collection">
-      {% if photo.filenames -%}
-      <div class="Photo__grid">
-        {% for file in photo.filenames -%}
-        {% if file.filename -%}
-        {% assign filename = file.filename -%}
-        {% assign location = file.location -%}
-        {% else -%}
-        {% assign filename = file -%}
-        {% assign location = photo.location -%}
-        {% endif -%}
-        {% include photos/single.html photo=photo filename=filename caption=file.caption hide_caption=true location=location -%}
-        {% endfor -%}
-      </div>
-      {% else -%}
-
-      <a href="{{ photo.url }}">
-        {% include photos/single.html photo=photo filename=photo.cover caption=file.caption hide_caption=true -%}
-      </a>
-
-      {% endif %}
-      {% include photos/footer.html photo=photo pagination=false readmore="true" -%}
-    </div>
-
-    {% endif %}
-    {% endif -%}
     {% endfor -%}
   </div>
-
   {% include footer.html -%}
 </div>
