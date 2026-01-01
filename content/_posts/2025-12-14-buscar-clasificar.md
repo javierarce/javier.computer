@@ -10,4 +10,5 @@ rato ya se pueden buscar entradas en el blog desde la página de [posts](/posts)
 [Andrés](https://andresmagan.bigcartel.com) compartieron el audio de [una
 conversación](https://albagmora.substack.com/p/dejar-de-pisar-la-manguera) en
 la que hablan sobre creatividad, publicar, personas que les inspiran y por qué
-no le ponen estrellitas a las cosas.
+no le ponen estrellitas a las cosas. El audio no está disponible en este momento, pero dejo
+el enlace por si Alba vuelve a ponerlo online.

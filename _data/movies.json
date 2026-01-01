@@ -1,7 +1,17 @@
 {
-  "updated_at": "2025-12-31",
-  "count": 975,
+  "updated_at": "2026-01-01",
+  "count": 976,
   "movies": [
+    {
+      "watched_on": "2025-12-31",
+      "title": "Violent Cop",
+      "year": 1989,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "violent-cop"
+    },
     {
       "watched_on": "2025-12-30",
       "title": "Sentimental Value",
