@@ -44,7 +44,6 @@ grid: true
             {% if photo.filenames -%}
               <div class="Photo__grid">
                 {% for file in photo.filenames -%}
-                  {% comment %} Reset scope-specific variables inside the loop {% endcomment %}
                   {% assign current_filename = nil %}
                   {% assign current_image_loc = nil %}
 
