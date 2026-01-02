@@ -12,7 +12,7 @@ className: Blogroll
 ---
 
 <a href="/feeds/blogroll.opml" download="blogroll.opml">Descárgate la lista</a>
-en formato OPML, impórtala en tu lector de RSS y sé tan listo como yo leyendo
+en formato OPML, impórtala en tu lector de RSS y sé tan listo como yo (o incluso más) leyendo
 mis blogs y newsletters favoritas.
 
 ### Blogs

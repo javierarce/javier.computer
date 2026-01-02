@@ -314,6 +314,11 @@ img {
   }
 }
 
+sp {
+  display: inline-block;
+  opacity: var(--op-light);
+}
+
 a.is-reportage::after,
 a.is-photo::after {
   content: "";

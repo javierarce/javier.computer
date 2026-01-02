@@ -173,5 +173,19 @@
     "url": "https://us9.campaign-archive.com/home/?u=a4c8b2c7fbc757f10dbda8808&id=dfc484dd24",
     "feed": null,
     "type": "newsletter"
+  },
+  {
+    "title": "Personal canon",
+    "author": "Celine Nguyen",
+    "url": "https://personalcanon.com",
+    "feed": "feed",
+    "type": "newsletter"
+  },
+  {
+    "title": "Escaping Flatland",
+    "author": "Henrik Karlsson",
+    "url": "https://www.henrikkarlsson.xyz",
+    "feed": "feed",
+    "type": "newsletter"
   }
 ]
