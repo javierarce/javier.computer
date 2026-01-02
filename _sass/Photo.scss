@@ -482,6 +482,10 @@ figcaption {
     width: var(--width-full);
   }
 
+  .Photos__archive {
+    gap: var(--gap-md);
+  }
+
   .Photos__archive img {
     width: var(--width-full);
     height: auto;
