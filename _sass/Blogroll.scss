@@ -1,0 +1,9 @@
+.blogroll {
+  column-count: 3;
+}
+
+@media all and (max-width: 640px) {
+  .blogroll {
+    column-count: 1;
+  }
+}
