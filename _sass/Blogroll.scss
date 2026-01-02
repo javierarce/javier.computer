@@ -1,5 +1,23 @@
-.blogroll {
-  column-count: 3;
+.Layout__blogroll {
+  h3 {
+    padding: 0 0 var(--space);
+    border-bottom: 1px solid var(--gray);
+  }
+}
+
+ul.blogroll {
+  column-count: 2;
+  margin: 0 0 var(--sp-xxl) 0;
+  padding: 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  li {
+    list-style: none;
+    break-inside: avoid;
+  }
 }
 
 @media all and (max-width: 640px) {
