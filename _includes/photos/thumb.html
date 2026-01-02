@@ -16,23 +16,23 @@
 
 <div class="Photo">
   <div class="Photo__content">
-    <figure class="figure">
+    <div class="thumb">
       <picture>
         <a href="{{ include.photo.location }}"><img class="lazy" data-src="https://img.javier.computer/{{ photo.location }}/{{ filename }}_640.jpg"></a>
       </picture>
-    </figure>
-      <div class="figure__title">{{ matching_location.title }}</div>
+      <div class="thumb__title">{{ matching_location.title }}</div>
+    </div>
   </div>
 </div>
 {% else %}
 <div class="Photo">
   <div class="Photo__content">
-    <figure class="figure">
+    <div class="thumb">
       <picture>
         <a href="{{ include.photo.location }}"><img class="lazy" data-src="https://img.javier.computer/{{ photo.location }}/{{ include.photo.filename }}_640.jpg"></a>
       </picture>
-    </figure>
-      <div class="figure__title">{{ matching_location.title }}</div>
+      <div class="thumb__title">{{ matching_location.title }}</div>
+    </div>
   </div>
 </div>
 {% endif %}

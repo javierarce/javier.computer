@@ -5,7 +5,6 @@
 }
 
 .Layout__grid .Content .Photo__collections {
-
   h2,
   h3 {
     margin: 0 auto;
@@ -101,7 +100,7 @@
     margin-bottom: 1em;
   }
 
-  h2+h3 {
+  h2 + h3 {
     font-weight: var(--font-weight-regular);
     text-align: center;
     margin-top: 0;
@@ -110,7 +109,6 @@
   }
 
   .Photo__layout {
-
     .g p:not(:last-child) {
       margin-bottom: 1em;
     }
@@ -156,7 +154,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--gap-md);
-
 }
 
 /* Photo */
@@ -196,13 +193,13 @@
   display: grid;
   width: var(--width-full);
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: var(--gap-sm);
+  grid-gap: var(--gap-xs);
 
   .Photo__content {
     gap: 0;
   }
 
-  &>div {
+  & > div {
     display: flex;
     align-items: center;
     line-height: 0;
@@ -235,7 +232,7 @@
   gap: var(--gap-xl);
 }
 
-.Photo__layout .Photo>.Photo__content img {
+.Photo__layout .Photo > .Photo__content img {
   height: auto;
   width: var(--width-full);
   max-width: none;
@@ -291,7 +288,6 @@
   }
 }
 
-
 .t {
   display: flex;
   flex-direction: column;
@@ -310,7 +306,7 @@
   width: var(--width-full);
 }
 
-.g>.g {
+.g > .g {
   margin-bottom: 0;
 }
 
@@ -330,13 +326,12 @@
   justify-content: flex-start;
 }
 
-.h.has-one>div,
-.h.has-two>div {
+.h.has-one > div,
+.h.has-two > div {
   width: 33.3333%;
 }
 
 .Photo__layout {
-
   p,
   p:last-child {
     width: var(--width-md);
@@ -344,7 +339,6 @@
   }
 
   p {
-
     &.has-margin-top,
     &.has-margin-top:last-child {
       margin-top: 1em;
@@ -397,18 +391,14 @@ figcaption {
   opacity: var(--op-light);
 }
 
-
 @media all and (min-width: 1900px) {
-
   .Layout__reportage .Content,
   .Photo__layout {
     width: var(--width-xl);
   }
 }
 
-
 @media all and (max-width: 1024px) {
-
   .Photo__feed {
     width: var(--width-full);
   }
@@ -442,7 +432,6 @@ figcaption {
     height: auto;
     object-fit: cover;
   }
-
 }
 
 @media all and (max-width: 640px) {
@@ -512,8 +501,8 @@ figcaption {
     justify-content: center;
   }
 
-  .h.has-one>div,
-  .h.has-two>div {
+  .h.has-one > div,
+  .h.has-two > div {
     width: var(--width-full);
   }
 

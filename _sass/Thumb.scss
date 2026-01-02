@@ -1,0 +1,23 @@
+.thumb {
+  position: relative;
+  width: var(--width-full);
+  height: auto;
+  box-sizing: border-box;
+
+  picture {
+    transition: opacity var(--transition-speed-default) ease-in-out;
+  }
+
+  &:hover picture {
+    opacity: var(--op-5);
+  }
+
+  &__title {
+    position: absolute;
+    bottom: var(--sp-xxl);
+    right: var(--sp-xl);
+    font-weight: var(--font-weight-semibold);
+    text-transform: capitalize;
+    pointer-events: none;
+  }
+}
