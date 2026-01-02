@@ -17,7 +17,7 @@ mis blogs y newsletters favoritas.
 
 ### Blogs
 
-<ul>
+<ul class="blogroll">
 {% assign sorted_blogs = site.data.blogroll | where: "type", "blog" | sort: "author" %}
 {% for blog in sorted_blogs %}
 {% if blog.type == "blog" %}
@@ -36,7 +36,7 @@ mis blogs y newsletters favoritas.
 
 ### Newsletters
 
-<ul>
+<ul class="blogroll">
 {% assign sorted_newsletters = site.data.blogroll | where: "type", "newsletter" | sort: "title" %}
 {% for blog in sorted_newsletters %}
   {% if blog.type == "newsletter" %}

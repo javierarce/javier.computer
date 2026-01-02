@@ -381,6 +381,10 @@ a.is-icon-light.is-reportage::after {
   font-weight: var(--font-weight-bold);
 }
 
+.blogroll {
+  column-count: 3;
+}
+
 @media all and (max-width: 1024px) {
   .Content {
     width: var(--width-md);
