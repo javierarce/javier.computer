@@ -5,6 +5,10 @@
   flex-direction: column;
   gap: var(--gap-xl);
 
+  &__links {
+    font-size: var(--font-size-sm);
+  }
+
   &__list {
     display: flex;
     flex-direction: column;
@@ -14,6 +18,7 @@
     li {
       display: flex;
       flex-direction: row;
+      align-items: center;
       list-style: none;
       padding: 0;
       font-size: var(--font-size-lg);

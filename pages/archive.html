@@ -13,7 +13,22 @@ category: posts
 
   {% include search-form.html %}
 
+
   <div class="archive">
+
+  <div class="tags">
+    <h2 class="tags__title">Tags</h2>
+
+    <div class="tags__list">
+      {% for tag in site.tags -%}
+      <div class="tags__listItem">
+        <a href="/tags/{{ tag[0] }}">{{ tag[0] | capitalize }}</a>
+        <span class="is-light is-sm">({{ tag[1] | size }})</span>
+      </div>
+      {% endfor -%}
+    </div>
+  </div>
+
 
     {% for post in site.posts -%}
     {% assign current_year = post.date | date: "%Y" -%}
