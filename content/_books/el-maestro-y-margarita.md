@@ -11,6 +11,6 @@ rating:
 color:
 cover:
 pages: 560
-progress: 0
+progress: 11
 link: https://es.wikipedia.org/wiki/El_maestro_y_Margarita
 ---
