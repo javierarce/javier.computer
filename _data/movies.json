@@ -1,7 +1,17 @@
 {
-  "updated_at": "2026-01-02",
-  "count": 977,
+  "updated_at": "2026-01-03",
+  "count": 978,
   "movies": [
+    {
+      "watched_on": "2026-01-03",
+      "title": "Late Autumn",
+      "year": 1960,
+      "rating": 4.5,
+      "liked": true,
+      "stars": "★★★★½",
+      "rewatched": false,
+      "permalink": "late-autumn"
+    },
     {
       "watched_on": "2026-01-01",
       "title": "A Matter of Life and Death",
