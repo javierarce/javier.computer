@@ -87,7 +87,7 @@ turtle, a turtle.
     </div>
     <div class="About__card">
         <div class="About__cardTitle">RSS</div>
-        <div class="About__cardDescription">Don't miss a post! <a href="/feed.xml">Subscribe to the main feed</a> or to the <a href="/feeds/photos.xml">photo feed</a>.
+        <div class="About__cardDescription">Don't miss a post! <a href="/rss">Subscribe to the main feed</a> or to the <a href="/photos.rss">photo feed</a>.
         </div>
     </div>
 </div>
