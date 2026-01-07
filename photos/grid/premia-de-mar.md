@@ -1,0 +1,7 @@
+---
+layout: photos/grid
+title: Premiá de Mar
+location: premia-de-mar
+permalink: photos/premia-de-mar/grid
+category: photos
+---

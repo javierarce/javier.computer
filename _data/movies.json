@@ -1,7 +1,17 @@
 {
-  "updated_at": "2026-01-03",
-  "count": 978,
+  "updated_at": "2026-01-07",
+  "count": 979,
   "movies": [
+    {
+      "watched_on": "2026-01-04",
+      "title": "Kagemusha",
+      "year": 1980,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "kagemusha"
+    },
     {
       "watched_on": "2026-01-03",
       "title": "Late Autumn",
