@@ -1,6 +1,6 @@
 ---
 layout: location
 title: Premià de Mar
-location: premia
+location: premia-de-mar
 permalink: in/premia
 ---
