@@ -1,7 +1,17 @@
 {
-  "updated_at": "2026-01-07",
-  "count": 979,
+  "updated_at": "2026-01-08",
+  "count": 980,
   "movies": [
+    {
+      "watched_on": "2026-01-07",
+      "title": "Taxi Driver",
+      "year": 1976,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": true,
+      "permalink": "taxi-driver"
+    },
     {
       "watched_on": "2026-01-04",
       "title": "Kagemusha",
