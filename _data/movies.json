@@ -1,7 +1,17 @@
 {
   "updated_at": "2026-01-10",
-  "count": 981,
+  "count": 982,
   "movies": [
+    {
+      "watched_on": "2026-01-10",
+      "title": "Nouvelle Vague",
+      "year": 2025,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "nouvelle-vague-2025"
+    },
     {
       "watched_on": "2026-01-08",
       "title": "Predator: Badlands",
