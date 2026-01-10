@@ -1,7 +1,17 @@
 {
-  "updated_at": "2026-01-08",
-  "count": 980,
+  "updated_at": "2026-01-10",
+  "count": 981,
   "movies": [
+    {
+      "watched_on": "2026-01-08",
+      "title": "Predator: Badlands",
+      "year": 2025,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "predator-badlands"
+    },
     {
       "watched_on": "2026-01-07",
       "title": "Taxi Driver",
