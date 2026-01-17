@@ -386,6 +386,7 @@ class TerminalUI {
 
   handleListNavigation(key) {
     const list = this.filteredBooks || this.books;
+    const pageSize = Math.floor((Terminal.height() - 6) / 2); // Jump by half the visible list
 
     switch (key) {
       case "k":
@@ -399,6 +400,18 @@ class TerminalUI {
       case "n":
         this.setMode("create");
         this.createStep = 0;
+        break;
+      case "\u0004": // Ctrl+D (Scroll Down)
+        this.index = Math.min(list.length - 1, this.index + pageSize);
+        break;
+      case "\u0015": // Ctrl+U (Scroll Up)
+        this.index = Math.max(0, this.index - pageSize);
+        break;
+      case "G":
+        this.index = list.length - 1;
+        break;
+      case "g":
+        this.index = 0;
         break;
       case "x":
         if (list.length > 0) this.mode = "confirm-delete";
