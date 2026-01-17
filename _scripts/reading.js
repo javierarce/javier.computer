@@ -225,7 +225,15 @@ class TerminalUI {
       const selected = realIndex === this.index;
 
       const cursor = selected ? color.invert + "❯" + color.reset : " ";
-      const bookTitle = b.title.padEnd(35);
+
+      // Truncate title if longer than 35 chars
+      const maxTitleWidth = 35;
+      const truncatedTitle =
+        b.title.length > maxTitleWidth
+          ? b.title.slice(0, maxTitleWidth - 1) + "…"
+          : b.title;
+      const bookTitle = truncatedTitle.padEnd(maxTitleWidth);
+
       const bar = this.progressBar(b.progress);
       const pct = color.dim + `${b.progress}%` + color.reset;
 
@@ -346,6 +354,26 @@ class TerminalUI {
       return;
     }
 
+    if (key === "\u0004") {
+      // Ctrl+D
+      if (this.mode === "list") {
+        const pageSize = Math.floor((Terminal.height() - 5) / 2);
+        this.index = Math.min(this.books.length - 1, this.index + pageSize);
+        this.render();
+      }
+      return;
+    }
+
+    if (key === "\u0015") {
+      // Ctrl+U
+      if (this.mode === "list") {
+        const pageSize = Math.floor((Terminal.height() - 5) / 2);
+        this.index = Math.max(0, this.index - pageSize);
+        this.render();
+      }
+      return;
+    }
+
     // Text input
     if (this.mode === "input") {
       if (key === "\u007f") {
@@ -386,6 +414,42 @@ class TerminalUI {
       this.mode = "input";
       this.input = "";
       this.render();
+      return;
+    }
+    // Go back or quit with 'q'
+    if (key === "q") {
+      if (this.mode === "input") {
+        // Exit input mode and go back to list
+        this.mode = "list";
+        this.input = "";
+        if (this.searchMode) {
+          this.searchMode = false;
+          this.search = "";
+          this.filteredBooks = null;
+        }
+        this.render();
+        return;
+      }
+
+      if (this.mode === "list") {
+        if (this.filteredBooks !== null) {
+          // Clear search and go back to full list
+          this.search = "";
+          this.filteredBooks = null;
+          this.index = 0;
+          this.offset = 0;
+          this.render();
+        } else if (this.view === "reading") {
+          // Exit if on reading view (first screen)
+          this.exit();
+        } else {
+          // Go back to reading view from all books
+          this.view = "reading";
+          this.books = this.library.getReading();
+          this.index = 0;
+          this.render();
+        }
+      }
       return;
     }
   }
