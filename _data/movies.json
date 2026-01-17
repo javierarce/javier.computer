@@ -1,7 +1,37 @@
 {
-  "updated_at": "2026-01-10",
-  "count": 982,
+  "updated_at": "2026-01-17",
+  "count": 985,
   "movies": [
+    {
+      "watched_on": "2026-01-16",
+      "title": "The Color of Money",
+      "year": 1986,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "the-color-of-money"
+    },
+    {
+      "watched_on": "2026-01-14",
+      "title": "Mr. Scorsese",
+      "year": 2025,
+      "rating": null,
+      "liked": false,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "mr-scorsese"
+    },
+    {
+      "watched_on": "2026-01-13",
+      "title": "The King of Comedy",
+      "year": 1982,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "the-king-of-comedy"
+    },
     {
       "watched_on": "2026-01-10",
       "title": "Nouvelle Vague",
