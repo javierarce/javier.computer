@@ -419,6 +419,8 @@ class TerminalUI {
       case "a":
         this.view = "all";
         this.books = this.library.allBooks;
+        this.filteredBooks = null; // Clear existing search results
+        this.search = "";
         this.index = 0;
         break;
       case "r":
@@ -466,23 +468,43 @@ class TerminalUI {
 
   handleTextInput(key) {
     if (key === "\r") {
-      this.mode === "create" ? this.handleCreateSubmit() : this.submitInput();
+      if (this.searchMode) {
+        // COMMIT SEARCH: Exit input mode but keep the filter active
+        this.searchMode = false;
+        this.mode = "list";
+      } else {
+        // EDIT PROGRESS: Normal behavior for updating a book
+        this.mode === "create" ? this.handleCreateSubmit() : this.submitInput();
+      }
       return;
     }
+
     if (key === "\u001b") {
+      // Escape
       this.error = "";
       this.searchMode = false;
+      this.search = "";
+      this.filteredBooks = null;
       this.setMode("list");
       return;
     }
+
     if (key === "\u007f") {
+      // Backspace
       this.input = this.input.slice(0, -1);
-      if (this.searchMode) this.applySearch();
+      if (this.searchMode) {
+        this.search = this.input.toLowerCase();
+        this.applySearch();
+      }
       return;
     }
+
     if (key.length === 1 && key >= " ") {
       this.input += key;
-      if (this.searchMode) this.applySearch();
+      if (this.searchMode) {
+        this.search = this.input.toLowerCase();
+        this.applySearch();
+      }
     }
   }
 
@@ -544,13 +566,19 @@ class TerminalUI {
   }
 
   applySearch() {
+    // Search the full library or the current view based on preference
+    // Usually, search feels best when it looks through the current list
     const list = this.books;
+
     if (!this.search) {
       this.filteredBooks = null;
       return;
     }
-    this.filteredBooks = list.filter((b) =>
-      b.title.toLowerCase().includes(this.search),
+
+    this.filteredBooks = list.filter(
+      (b) =>
+        b.title.toLowerCase().includes(this.search) ||
+        b.author.toLowerCase().includes(this.search),
     );
     this.index = 0;
   }
