@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { MovieRSSParser } from "./movies.js";
 import { Subscribers } from "./subscribers.js";
 // import { Books } from "./books.js";

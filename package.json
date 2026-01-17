@@ -1,4 +1,9 @@
 {
+  "name": "commands",
+  "bin": {
+    "reading": "./_scripts/reading.js",
+    "update": "./_scripts/update.js"
+  },
   "scripts": {
     "reading": "node _scripts/reading.js"
   },
