@@ -1,6 +1,12 @@
 {
+  "scripts": {
+    "reading": "node _scripts/reading.js"
+  },
   "dependencies": {
+    "fast-glob": "^3.3.3",
     "fast-xml-parser": "^5.0.8",
+    "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.1",
     "node-html-parser": "^6.1.13"
   },
   "devDependencies": {
