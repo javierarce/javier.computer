@@ -1,7 +1,17 @@
 {
-  "updated_at": "2026-01-17",
-  "count": 986,
+  "updated_at": "2026-01-18",
+  "count": 987,
   "movies": [
+    {
+      "watched_on": "2026-01-18",
+      "title": "Casablanca",
+      "year": 1942,
+      "rating": 5,
+      "liked": true,
+      "stars": "★★★★★",
+      "rewatched": true,
+      "permalink": "casablanca"
+    },
     {
       "watched_on": "2026-01-17",
       "title": "The Age of Innocence",
