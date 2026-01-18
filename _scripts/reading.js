@@ -22,6 +22,9 @@ const color = {
 };
 
 const MAX_TITLE_WIDTH = 60;
+const STATUS_UNREAD = "unread";
+const STATUS_READ = "read";
+const STATUS_READING = "reading";
 
 /* ============================================
    Terminal helpers
@@ -62,7 +65,7 @@ class Book {
     this.author = author || "Unknown";
     this.pages = pages || 0;
     this.progress = progress || 0;
-    this.status = status || "unread";
+    this.status = status || STATUS_UNREAD;
     this.started = started || "";
   }
 }
@@ -98,7 +101,7 @@ class BookLibrary {
             author: data.author,
             pages: Number(data.pages),
             progress: Number(data.progress),
-            status: data.status || "unread",
+            status: data.status || STATUS_UNREAD,
             started: data.started,
           }),
         );
@@ -108,7 +111,7 @@ class BookLibrary {
   }
 
   getReading() {
-    return this.allBooks.filter((b) => b.status === "reading");
+    return this.allBooks.filter((b) => b.status === STATUS_READING);
   }
 }
 
@@ -127,8 +130,19 @@ class BookWriter {
 
     parsed.data.progress = newProgress;
 
+    // Handle "Reading" status
+    if (
+      newProgress > 0 &&
+      newProgress < 100 &&
+      parsed.data.status === STATUS_UNREAD
+    ) {
+      parsed.data.status = STATUS_READING;
+      parsed.data.started = BookWriter.today();
+    }
+
+    // Handle "Read" (Finished) status
     if (newProgress >= 100) {
-      parsed.data.status = "finished";
+      parsed.data.status = STATUS_READ;
       parsed.data.read = BookWriter.today();
     }
 
@@ -241,7 +255,7 @@ class TerminalUI {
     }
 
     const title = this.view === "reading" ? "Reading" : "Library";
-    const hint = " (j/k move, Enter edit, n new, a all, Esc quit)";
+    const hint = " ([j/k] move, [o] edit, [n] new, [a] all, [Esc] quit)";
 
     console.log(
       `${color.bold}${color.blue}${title}${color.reset}${color.dim}${hint}\n${color.reset}`,
@@ -366,7 +380,6 @@ class TerminalUI {
   }
 
   handleKey(key) {
-    // Global exit - always works
     if (key === "\u0003") return this.exit(); // Ctrl+C
 
     switch (this.mode) {
@@ -390,11 +403,11 @@ class TerminalUI {
 
     switch (key) {
       case "k":
-      case "\u001b[A":
+      case "\u001b[A": // Up Arrow
         this.index = Math.max(0, this.index - 1);
         break;
       case "j":
-      case "\u001b[B":
+      case "\u001b[B": // Down Arrow
         this.index = Math.min(list.length - 1, this.index + 1);
         break;
       case "n":
@@ -432,11 +445,12 @@ class TerminalUI {
         this.searchMode = true;
         this.setMode("input");
         break;
-      case "\r":
+      case "o":
+      case "\r": // Enter
         if (list.length > 0) this.setMode("input");
         break;
       case "q":
-      case "\u001b":
+      case "\u001b": // Escape
         this.handleBackOrExit();
         break;
     }
@@ -553,8 +567,19 @@ class TerminalUI {
     const pct = this.parseProgress(this.input, book.pages);
 
     if (pct !== null) {
+      // 1. Update the local object status if progress started
+      if (pct > 0 && pct < 100 && book.status === STATUS_UNREAD) {
+        book.status = STATUS_READING;
+        // Optionally set a start date if it doesn't have one
+        if (!book.started) book.started = BookWriter.today();
+      }
+
+      // 2. Write to the file
       BookWriter.writeProgress(book, pct);
+
       book.progress = pct;
+
+      // 3. Handle UI list filtering
       if (pct >= 100) {
         this.books = this.books.filter((b) => b.file !== book.file);
         if (this.index >= this.books.length)
