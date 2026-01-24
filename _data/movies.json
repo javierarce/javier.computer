@@ -1,7 +1,17 @@
 {
-  "updated_at": "2026-01-18",
-  "count": 987,
+  "updated_at": "2026-01-24",
+  "count": 988,
   "movies": [
+    {
+      "watched_on": "2026-01-21",
+      "title": "The Ogre of Athens",
+      "year": 1956,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "the-ogre-of-athens"
+    },
     {
       "watched_on": "2026-01-18",
       "title": "Casablanca",
