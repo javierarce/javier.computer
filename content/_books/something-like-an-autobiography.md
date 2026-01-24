@@ -11,6 +11,6 @@ rating: null
 color: null
 cover: null
 pages: 316
-progress: 36
+progress: 75
 link: https://en.wikipedia.org/wiki/Something_Like_an_Autobiography
 ---
