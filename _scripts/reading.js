@@ -286,10 +286,6 @@ class TerminalUI {
       console.log(selected ? color.invert + line + color.reset : line);
     });
 
-    console.log(
-      `${color.dim}\n${this.index + 1}/${list.length}${this.filteredBooks ? `  filter: "${this.search}"` : ""}${color.reset}`,
-    );
-
     if (this.mode === "input") {
       const label = this.searchMode
         ? "Search:"
@@ -319,25 +315,28 @@ class TerminalUI {
   renderStatusBar() {
     const height = Terminal.height();
     const width = process.stdout.columns || 80;
-    const hints = "[j/k] move [o] edit [n] new [a] all [Esc] quit";
 
-    // Force the hints to the very last line of the terminal
-    const row = height;
-    const col = Math.max(1, width - hints.length);
+    // 1. Prepare the Left Side (Counter)
+    const list = this.filteredBooks || this.books;
+    const counter = `${this.index + 1}/${list.length}${this.filteredBooks ? ` (filter: "${this.search}")` : ""}`;
 
-    // \x1b[H moves to top left, \x1b[s saves cursor, \x1b[u restores it
-    // But simpler: just move to the specific row/col
-    process.stdout.write(
-      `\x1b[${row};${col}H${color.dim}${hints}${color.reset}`,
-    );
+    // 2. Prepare the Right Side (Hints)
+    const hints = "[j/k] move [e] edit [n] new [a] all [Esc] quit";
 
+    // 3. Calculate Padding
+    // We subtract the lengths of our strings from total width to find the gap
+    const paddingSize = Math.max(0, width - counter.length - hints.length);
+    const padding = " ".repeat(paddingSize);
+
+    // 4. Construct the full line
+    const bar = `${color.dim}${counter}${padding}${hints}${color.reset}`;
+
+    // 5. Write to the very last line (row = height)
+    process.stdout.write(`\x1b[${height};1H${bar}`);
+
+    // 6. Handle Cursor Placement for Input Mode
     if (this.mode === "input") {
-      const label = this.searchMode
-        ? "Search:"
-        : "Enter page number or percentage";
-      // Place cursor exactly after the "> " in your input line
-      // The input line is rendered 2 lines above the bottom usually
-      const inputRow = height - 1;
+      const inputRow = height - 1; // Input field is usually one line above the status bar
       const cursorCol = 3 + this.input.length;
       process.stdout.write(`\x1b[${inputRow};${cursorCol}H`);
     }
@@ -511,20 +510,21 @@ class TerminalUI {
   }
 
   handleTextInput(key) {
+    // 1. Handle Enter
     if (key === "\r") {
       if (this.searchMode) {
-        // COMMIT SEARCH: Exit input mode but keep the filter active
         this.searchMode = false;
         this.mode = "list";
       } else {
-        // EDIT PROGRESS: Normal behavior for updating a book
         this.mode === "create" ? this.handleCreateSubmit() : this.submitInput();
       }
       return;
     }
 
-    if (key === "\u001b") {
-      // Escape
+    // 2. Handle Escape OR 'q' (but only when not searching or creating)
+    // This ensures 'q' quits the edit screen immediately without being typed.
+    const isEditingProgress = this.mode === "input" && !this.searchMode;
+    if (key === "\u001b" || (key === "q" && isEditingProgress)) {
       this.error = "";
       this.searchMode = false;
       this.search = "";
@@ -533,8 +533,8 @@ class TerminalUI {
       return;
     }
 
+    // 3. Handle Backspace
     if (key === "\u007f") {
-      // Backspace
       this.input = this.input.slice(0, -1);
       if (this.searchMode) {
         this.search = this.input.toLowerCase();
@@ -543,6 +543,7 @@ class TerminalUI {
       return;
     }
 
+    // 4. Handle Character Input
     if (key.length === 1 && key >= " ") {
       this.input += key;
       if (this.searchMode) {
