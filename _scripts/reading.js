@@ -130,20 +130,22 @@ class BookWriter {
 
     parsed.data.progress = newProgress;
 
-    // Handle "Reading" status
-    if (
-      newProgress > 0 &&
-      newProgress < 100 &&
-      parsed.data.status === STATUS_UNREAD
-    ) {
-      parsed.data.status = STATUS_READING;
-      parsed.data.started = BookWriter.today();
-    }
-
-    // Handle "Read" (Finished) status
-    if (newProgress >= 100) {
+    if (newProgress <= 0) {
+      // If reset to 0, return to unread state
+      parsed.data.status = null;
+      parsed.data.started = null;
+      parsed.data.read = null;
+    } else if (newProgress >= 100) {
+      // If finished
       parsed.data.status = STATUS_READ;
       parsed.data.read = BookWriter.today();
+    } else {
+      // If anywhere between 1 and 99
+      parsed.data.status = STATUS_READING;
+      // Only set started date if it's not already there
+      if (!parsed.data.started) {
+        parsed.data.started = BookWriter.today();
+      }
     }
 
     const newYaml = yaml.dump(parsed.data, { lineWidth: 1000 });
@@ -208,7 +210,7 @@ class TerminalUI {
 
   getVisibleBooks() {
     const list = this.filteredBooks || this.books;
-    const height = Terminal.height() - 6;
+    const height = Math.max(1, Terminal.height() - 8);
     const maxOffset = Math.max(0, list.length - height);
 
     if (this.index < this.offset) {
@@ -251,15 +253,12 @@ class TerminalUI {
 
     if (this.mode === "create") {
       this.renderCreateFlow();
+      this.renderStatusBar();
       return;
     }
 
     const title = this.view === "reading" ? "Reading" : "Library";
-    const hint = " ([j/k] move, [o] edit, [n] new, [a] all, [Esc] quit)";
-
-    console.log(
-      `${color.bold}${color.blue}${title}${color.reset}${color.dim}${hint}\n${color.reset}`,
-    );
+    console.log(`${color.bold}${color.blue}${title}${color.reset}\n`);
 
     const visible = this.getVisibleBooks();
     const list = this.filteredBooks || this.books;
@@ -312,6 +311,35 @@ class TerminalUI {
       console.log(
         `\nConfirm: [${color.green}y${color.reset}]es / [${color.yellow}n${color.reset}]o`,
       );
+    }
+
+    this.renderStatusBar();
+  }
+
+  renderStatusBar() {
+    const height = Terminal.height();
+    const width = process.stdout.columns || 80;
+    const hints = "[j/k] move [o] edit [n] new [a] all [Esc] quit";
+
+    // Force the hints to the very last line of the terminal
+    const row = height;
+    const col = Math.max(1, width - hints.length);
+
+    // \x1b[H moves to top left, \x1b[s saves cursor, \x1b[u restores it
+    // But simpler: just move to the specific row/col
+    process.stdout.write(
+      `\x1b[${row};${col}H${color.dim}${hints}${color.reset}`,
+    );
+
+    if (this.mode === "input") {
+      const label = this.searchMode
+        ? "Search:"
+        : "Enter page number or percentage";
+      // Place cursor exactly after the "> " in your input line
+      // The input line is rendered 2 lines above the bottom usually
+      const inputRow = height - 1;
+      const cursorCol = 3 + this.input.length;
+      process.stdout.write(`\x1b[${inputRow};${cursorCol}H`);
     }
   }
 
@@ -371,6 +399,8 @@ class TerminalUI {
     if (this.filteredBooks) {
       this.filteredBooks = null;
       this.search = "";
+      this.input = "";
+      // Stay in current view (Reading or All) but show original list
     } else if (this.view === "all") {
       this.view = "reading";
       this.books = this.library.getReading();
@@ -445,7 +475,7 @@ class TerminalUI {
         this.searchMode = true;
         this.setMode("input");
         break;
-      case "o":
+      case "e":
       case "\r": // Enter
         if (list.length > 0) this.setMode("input");
         break;
@@ -567,33 +597,38 @@ class TerminalUI {
     const pct = this.parseProgress(this.input, book.pages);
 
     if (pct !== null) {
-      // 1. Update the local object status if progress started
-      if (pct > 0 && pct < 100 && book.status === STATUS_UNREAD) {
+      // Update local object memory to match file logic
+      if (pct <= 0) {
+        book.status = null;
+        book.started = null;
+      } else if (pct >= 100) {
+        book.status = STATUS_READ;
+      } else {
         book.status = STATUS_READING;
-        // Optionally set a start date if it doesn't have one
         if (!book.started) book.started = BookWriter.today();
       }
 
-      // 2. Write to the file
+      // Write to file
       BookWriter.writeProgress(book, pct);
-
       book.progress = pct;
 
-      // 3. Handle UI list filtering
-      if (pct >= 100) {
-        this.books = this.books.filter((b) => b.file !== book.file);
-        if (this.index >= this.books.length)
+      // Refresh the view if we are in "reading" mode
+      // This removes books that are now 0% or 100% from the active list
+      if (this.view === "reading") {
+        this.books = this.library.getReading();
+        if (this.index >= this.books.length) {
           this.index = Math.max(0, this.books.length - 1);
+        }
       }
     }
+
     this.mode = "list";
     this.input = "";
   }
 
   applySearch() {
-    // Search the full library or the current view based on preference
-    // Usually, search feels best when it looks through the current list
-    const list = this.books;
+    // Always search the full library, regardless of the current view
+    const list = this.library.allBooks;
 
     if (!this.search) {
       this.filteredBooks = null;
@@ -605,6 +640,8 @@ class TerminalUI {
         b.title.toLowerCase().includes(this.search) ||
         b.author.toLowerCase().includes(this.search),
     );
+
+    // Reset selection to the top of the search results
     this.index = 0;
   }
 
