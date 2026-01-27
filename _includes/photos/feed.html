@@ -59,11 +59,13 @@
         {% if file.filename -%}
           {% assign filename = file.filename -%}
           {% assign caption = file.caption -%}
+          {% assign ratio = file.ratio -%}
         {% else -%}
           {% assign filename = file -%}
           {% assign caption = '' -%}
+          {% assign ratio = '' -%}
         {% endif -%}
-        {% include photos/single.html photo=post filename=filename caption=caption -%}
+        {% include photos/single.html photo=post filename=filename caption=caption ratio=ratio -%}
       {% endfor %}
     {% endif %}
     {% assign content = post.content | strip %}
