@@ -1,16 +1,16 @@
 ---
-title: "Cosita"
-subtitle:
-description: ""
+title: Cosita
+subtitle: null
+description: ''
 layout: book
 author: Alba G. Mora
-started:
-read:
-status:
-rating:
-color:
-cover:
+started: '2026-01-27'
+read: null
+status: reading
+rating: null
+color: null
+cover: null
 pages: 216
-progress: 0
+progress: 10
 link: https://blackiebooks.org/producto/alba-g-mora-cosita/
 ---
