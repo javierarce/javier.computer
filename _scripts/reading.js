@@ -65,6 +65,7 @@ class Book {
     this.author = author || "Unknown";
     this.pages = pages || 0;
     this.progress = progress || 0;
+    this.displayProgress = progress || 0; // The value used for rendering
     this.status = status || STATUS_UNREAD;
     this.started = started || "";
   }
@@ -261,7 +262,6 @@ class TerminalUI {
     console.log(`${color.bold}${color.blue}${title}${color.reset}\n`);
 
     const visible = this.getVisibleBooks();
-    const list = this.filteredBooks || this.books;
 
     visible.forEach((b, i) => {
       const realIndex = this.offset + i;
@@ -275,8 +275,11 @@ class TerminalUI {
           : b.title;
       const bookTitle = truncatedTitle.padEnd(maxTitleWidth);
 
-      const bar = this.progressBar(b.progress);
-      const pct = color.dim + `${b.progress}%`.padStart(4) + color.reset;
+      const bar = this.progressBar(b.displayProgress);
+      const pct =
+        color.dim +
+        `${Math.round(b.displayProgress)}%`.padStart(4) +
+        color.reset;
       const status =
         this.view === "all"
           ? color.dim + " " + b.status.padEnd(8) + color.reset
@@ -312,6 +315,31 @@ class TerminalUI {
     this.renderStatusBar();
   }
 
+  animateProgress(book, targetPct) {
+    const duration = 500; // Animation length in ms
+    const frameRate = 30; // Frames per second
+    const totalFrames = (duration / 1000) * frameRate;
+    const increment = (targetPct - book.displayProgress) / totalFrames;
+
+    let frame = 0;
+    const interval = setInterval(() => {
+      frame++;
+      book.displayProgress += increment;
+
+      // Final frame cleanup
+      if (frame >= totalFrames) {
+        book.displayProgress = targetPct;
+        clearInterval(interval);
+
+        // If in reading view and book is finished/reset, refresh list after animation
+        if (this.view === "reading" && (targetPct >= 100 || targetPct <= 0)) {
+          this.books = this.library.getReading();
+          this.index = Math.max(0, Math.min(this.index, this.books.length - 1));
+        }
+      }
+      this.render();
+    }, 1000 / frameRate);
+  }
   renderStatusBar() {
     const height = Terminal.height();
     const width = process.stdout.columns || 80;
@@ -598,29 +626,21 @@ class TerminalUI {
     const pct = this.parseProgress(this.input, book.pages);
 
     if (pct !== null) {
-      // Update local object memory to match file logic
+      // 1. Logic updates (same as before)
       if (pct <= 0) {
         book.status = null;
-        book.started = null;
       } else if (pct >= 100) {
         book.status = STATUS_READ;
       } else {
         book.status = STATUS_READING;
-        if (!book.started) book.started = BookWriter.today();
       }
 
-      // Write to file
+      // 2. Persist to file
       BookWriter.writeProgress(book, pct);
       book.progress = pct;
 
-      // Refresh the view if we are in "reading" mode
-      // This removes books that are now 0% or 100% from the active list
-      if (this.view === "reading") {
-        this.books = this.library.getReading();
-        if (this.index >= this.books.length) {
-          this.index = Math.max(0, this.books.length - 1);
-        }
-      }
+      // 3. Trigger the animation
+      this.animateProgress(book, pct);
     }
 
     this.mode = "list";
