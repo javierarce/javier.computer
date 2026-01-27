@@ -262,32 +262,38 @@ class TerminalUI {
     console.log(`${color.bold}${color.blue}${title}${color.reset}\n`);
 
     const visible = this.getVisibleBooks();
+    if (visible.length === 0) {
+      console.log(`\n   ${color.gray}No matches found...${color.reset}`);
 
-    visible.forEach((b, i) => {
-      const realIndex = this.offset + i;
-      const selected = realIndex === this.index;
-      const cursor = selected ? color.invert + "❯" + color.reset : " ";
+      const emptyLines = Math.max(0, Terminal.height() - 8);
+      for (let i = 0; i < emptyLines; i++) console.log("");
+    } else {
+      visible.forEach((b, i) => {
+        const realIndex = this.offset + i;
+        const selected = realIndex === this.index;
+        const cursor = selected ? color.invert + "❯" + color.reset : " ";
 
-      const maxTitleWidth = MAX_TITLE_WIDTH;
-      const truncatedTitle =
-        b.title.length > maxTitleWidth
-          ? b.title.slice(0, maxTitleWidth - 1) + "…"
-          : b.title;
-      const bookTitle = truncatedTitle.padEnd(maxTitleWidth);
+        const maxTitleWidth = MAX_TITLE_WIDTH;
+        const truncatedTitle =
+          b.title.length > maxTitleWidth
+            ? b.title.slice(0, maxTitleWidth - 1) + "…"
+            : b.title;
+        const bookTitle = truncatedTitle.padEnd(maxTitleWidth);
 
-      const bar = this.progressBar(b.displayProgress);
-      const pct =
-        color.dim +
-        `${Math.round(b.displayProgress)}%`.padStart(4) +
-        color.reset;
-      const status =
-        this.view === "all"
-          ? color.dim + " " + b.status.padEnd(8) + color.reset
-          : "";
+        const bar = this.progressBar(b.displayProgress);
+        const pct =
+          color.dim +
+          `${Math.round(b.displayProgress)}%`.padStart(4) +
+          color.reset;
+        const status =
+          this.view === "all"
+            ? color.dim + " " + b.status.padEnd(8) + color.reset
+            : "";
 
-      const line = `${cursor} ${bookTitle} [${bar}] ${pct}${status}`;
-      console.log(selected ? color.invert + line + color.reset : line);
-    });
+        const line = `${cursor} ${bookTitle} [${bar}] ${pct}${status}`;
+        console.log(selected ? color.invert + line + color.reset : line);
+      });
+    }
 
     if (this.mode === "input") {
       const label = this.searchMode
@@ -423,11 +429,11 @@ class TerminalUI {
   }
 
   handleBackOrExit() {
-    if (this.filteredBooks) {
+    if (this.searchMode || this.filteredBooks) {
       this.filteredBooks = null;
       this.search = "";
       this.input = "";
-      // Stay in current view (Reading or All) but show original list
+      this.searchMode = false;
     } else if (this.view === "all") {
       this.view = "reading";
       this.books = this.library.getReading();
@@ -457,6 +463,7 @@ class TerminalUI {
   handleListNavigation(key) {
     const list = this.filteredBooks || this.books;
     const pageSize = Math.floor((Terminal.height() - 6) / 2); // Jump by half the visible list
+    const hasBooks = list.length > 0; // Helper flag
 
     switch (key) {
       case "k":
@@ -483,9 +490,6 @@ class TerminalUI {
       case "g":
         this.index = 0;
         break;
-      case "x":
-        if (list.length > 0) this.mode = "confirm-delete";
-        break;
       case "a":
         this.view = "all";
         this.books = this.library.allBooks;
@@ -501,10 +505,14 @@ class TerminalUI {
       case "/":
         this.searchMode = true;
         this.setMode("input");
+        this.applySearch();
         break;
       case "e":
-      case "\r": // Enter
-        if (list.length > 0) this.setMode("input");
+      case "\r":
+        if (hasBooks) this.setMode("input"); // Only allow edit if book exists
+        break;
+      case "x":
+        if (hasBooks) this.mode = "confirm-delete";
         break;
       case "q":
       case "\u001b": // Escape
@@ -648,21 +656,19 @@ class TerminalUI {
   }
 
   applySearch() {
-    // Always search the full library, regardless of the current view
     const list = this.library.allBooks;
 
+    // If search is empty, show everything instead of null
     if (!this.search) {
-      this.filteredBooks = null;
-      return;
+      this.filteredBooks = [...list];
+    } else {
+      this.filteredBooks = list.filter(
+        (b) =>
+          b.title.toLowerCase().includes(this.search) ||
+          b.author.toLowerCase().includes(this.search),
+      );
     }
 
-    this.filteredBooks = list.filter(
-      (b) =>
-        b.title.toLowerCase().includes(this.search) ||
-        b.author.toLowerCase().includes(this.search),
-    );
-
-    // Reset selection to the top of the search results
     this.index = 0;
   }
 
