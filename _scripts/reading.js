@@ -133,7 +133,7 @@ class BookWriter {
 
     if (newProgress <= 0) {
       // If reset to 0, return to unread state
-      parsed.data.status = null;
+      parsed.data.status = STATUS_UNREAD; // Use the constant "unread"
       parsed.data.started = null;
       parsed.data.read = null;
     } else if (newProgress >= 100) {
@@ -634,9 +634,9 @@ class TerminalUI {
     const pct = this.parseProgress(this.input, book.pages);
 
     if (pct !== null) {
-      // 1. Logic updates (same as before)
+      // 1. Logic updates
       if (pct <= 0) {
-        book.status = null;
+        book.status = STATUS_UNREAD; // Changed from null for consistency
       } else if (pct >= 100) {
         book.status = STATUS_READ;
       } else {
@@ -647,7 +647,15 @@ class TerminalUI {
       BookWriter.writeProgress(book, pct);
       book.progress = pct;
 
-      // 3. Trigger the animation
+      // 3. IMMEDIATELY refresh the list if we are in reading view
+      // This ensures if a book becomes 'read' or 'unread', it vanishes from the list
+      if (this.view === "reading") {
+        this.books = this.library.getReading();
+        // Adjust index so it doesn't go out of bounds
+        this.index = Math.max(0, Math.min(this.index, this.books.length - 1));
+      }
+
+      // 4. Trigger the animation
       this.animateProgress(book, pct);
     }
 
