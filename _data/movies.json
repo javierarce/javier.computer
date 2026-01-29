@@ -1,7 +1,27 @@
 {
-  "updated_at": "2026-01-27",
-  "count": 990,
+  "updated_at": "2026-01-29",
+  "count": 992,
   "movies": [
+    {
+      "watched_on": "2026-01-28",
+      "title": "The Departed",
+      "year": 2006,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": true,
+      "permalink": "the-departed"
+    },
+    {
+      "watched_on": "2026-01-27",
+      "title": "Infernal Affairs",
+      "year": 2002,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "infernal-affairs"
+    },
     {
       "watched_on": "2026-01-26",
       "title": "Maspalomas",
