@@ -1,0 +1,79 @@
+.Layout__zine {
+  background: var(--color-bg-zine);
+  color: var(--color-txt-site-inverted);
+  margin: auto;
+}
+.zine {
+  &__content {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: var(--gap-xl);
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+  }
+
+  &__cover {
+    display: flex;
+    gap: var(--gap-md);
+    flex-direction: column;
+    text-align: center;
+
+    p {
+      font-size: var(--font-size-base);
+      opacity: var(--op-5);
+      font-family: var(--font-text-serif);
+    }
+
+    &Image {
+      position: relative;
+      width: 840px;
+      height: 1160px;
+      background-image: url("../assets/zine-cover.svg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      &:after {
+        content: "";
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: var(--white);
+        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.06);
+        z-index: -1;
+      }
+    }
+  }
+  &__description {
+    width: 536px;
+    font-size: var(--font-size-lg);
+    font-family: var(--font-text-serif);
+    text-align: center;
+    margin: 0;
+  }
+  &__buyButton {
+    width: 220px;
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    border-radius: var(--br-xxxl);
+    text-decoration: none;
+    &:hover {
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

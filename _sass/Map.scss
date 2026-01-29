@@ -235,7 +235,7 @@
 .has-emoji .Location__id {
   background: none;
   border-radius: var(--br-flat);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-xl);
   padding: 0;
   height: auto;
   width: auto;
@@ -429,6 +429,6 @@
 
   .Sidebar {
     width: var(--width-full);
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-xl);
   }
 }

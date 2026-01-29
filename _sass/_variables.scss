@@ -19,6 +19,7 @@
   --green: #2e7d32;
   --teal: #009688;
   --brown: #8d6e63;
+  --light-pink: #ffe0e6;
 
   /* Semantic colors */
   --link: var(--yellow);
@@ -27,6 +28,7 @@
   --textHover: var(--white);
 
   --color-txt-site: var(--white);
+  --color-txt-site-inverted: var(--black);
   --color-bg-site: var(--black);
   --color-txt-quote: #fd6f42;
   --color-brd-quote: #fd6f42;
@@ -49,23 +51,27 @@
   --color-book-light-blue: #1565c0;
   --color-book-light-pink: #ec407a;
 
+  --color-bg-zine: var(--light-pink);
+
   /* Font */
-  --font-text-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
-  --font-text-serif: "Newsreader", Georgia, Cambria, "Times New Roman", Times,
-    serif;
-  --font-text-mono: "SF Mono", SFMono-Regular, ui-monospace, "DejaVu Sans Mono",
-    Menlo, Consolas, monospace;
+  --font-text-sans:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-text-serif:
+    "Newsreader", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-text-mono:
+    "SF Mono", SFMono-Regular, ui-monospace, "DejaVu Sans Mono", Menlo,
+    Consolas, monospace;
 
   /* Font sizes */
   --font-size-base: 1rem;
   --font-size-xs: 0.75em;
   --font-size-sm: 0.875em;
   --font-size-md: 1em;
-  --font-size-lg: 1.2em;
-  --font-size-xl: 1.3em;
-  --font-size-xxl: 1.8em;
+  --font-size-lg: 1.1em;
+  --font-size-xl: 1.2em;
+  --font-size-xxl: 1.3em;
+  --font-size-xxxl: 1.8em;
 
   --font-weight-bold: 600;
   --font-weight-semibold: 500;
@@ -123,6 +129,9 @@
   --br-sm: 2px;
   --br-md: 4px;
   --br-lg: 6px;
+  --br-xl: 8px;
+  --br-xxl: 32px;
+  --br-xxxl: 64px;
   --br-round: 100%;
   --br-flat: 0;
 

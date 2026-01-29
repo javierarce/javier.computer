@@ -75,7 +75,7 @@
     }
 
     ul li {
-      font-size: var(--font-size-lg);
+      font-size: var(--font-size-xl);
     }
 
     h2,
@@ -87,7 +87,7 @@
 
     p {
       width: var(--width-full);
-      font-size: var(--font-size-lg);
+      font-size: var(--font-size-xl);
       margin: 0;
     }
   }
@@ -223,7 +223,7 @@
 @media all and (max-width: 640px) {
   .Post {
     &__footer {
-      font-size: var(--font-size-lg);
+      font-size: var(--font-size-xl);
     }
 
     &__content a[href^="/maps"]:after {
