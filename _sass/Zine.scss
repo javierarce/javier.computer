@@ -16,8 +16,9 @@
 
   &__cover {
     display: flex;
-    gap: var(--gap-md);
+    align-items: center;
     flex-direction: column;
+    gap: var(--gap-md);
     text-align: center;
 
     p {
@@ -65,6 +66,44 @@
       background: var(--black);
       color: var(--white);
       text-decoration: none;
+    }
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .zine {
+    &__coverImage {
+      width: 600px;
+      height: 828px;
+    }
+
+    &__description {
+      width: 90%;
+      max-width: 536px;
+    }
+  }
+}
+
+@media all and (max-width: 640px) {
+  .Layout__zine {
+    padding: var(--pd-mobile);
+  }
+
+  .zine {
+    &__content {
+      gap: var(--gap-lg);
+    }
+
+    &__coverImage {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 840 / 1160;
+    }
+
+    &__description {
+      width: 100%;
+      font-size: var(--font-size-md);
+      line-height: 1.4;
     }
   }
 }
