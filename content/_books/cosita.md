@@ -11,6 +11,6 @@ rating: null
 color: null
 cover: null
 pages: 216
-progress: 10
+progress: 32
 link: https://blackiebooks.org/producto/alba-g-mora-cosita/
 ---
