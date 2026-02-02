@@ -4,6 +4,11 @@
   margin: auto;
 }
 .zine {
+  &__page {
+    position: relative;
+    width: 540px;
+  }
+
   &__content {
     text-align: center;
     display: flex;

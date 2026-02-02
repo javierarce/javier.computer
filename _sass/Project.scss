@@ -12,11 +12,9 @@
     width: var(--width-full);
     max-width: var(--width-md);
   }
-
 }
 
 .Projects {
-
   &__lists,
   &__year {
     display: flex;
@@ -52,7 +50,7 @@
       width: var(--width-md);
     }
 
-    h2+h3 {
+    h2 + h3 {
       margin: 0 0 2em;
       text-align: center;
       font-size: var(--font-size-sm);
@@ -92,9 +90,14 @@
     }
   }
 
+  &__intro:has(+ .figure) {
+    margin-top: 0;
+  }
+
   &__intro {
     width: var(--width-md);
     margin: auto;
+    margin-bottom: 2em;
     text-align: center;
   }
 }
@@ -158,9 +161,7 @@
   }
 }
 
-
 @media all and (max-width: 1280px) {
-
   .Project__intro,
   .Layout__project .Project p,
   .Layout__project .Project__content h3,
