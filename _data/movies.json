@@ -1,7 +1,17 @@
 {
-  "updated_at": "2026-01-29",
-  "count": 992,
+  "updated_at": "2026-02-02",
+  "count": 993,
   "movies": [
+    {
+      "watched_on": "2026-01-31",
+      "title": "Marty Supreme",
+      "year": 2025,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "marty-supreme"
+    },
     {
       "watched_on": "2026-01-28",
       "title": "The Departed",
