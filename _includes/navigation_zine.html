@@ -1,0 +1,21 @@
+{% assign lang = page.lang -%}
+
+<div class="navigation">
+  <div class="navigation__main">
+    <div class="navigation__header">
+      <a class="navigation__link" href="/">Home</a>
+    </div>
+    <div class="navigation__links">
+      {% if lang == 'es' -%}
+      <a class="navigation__link is-selected" href="/zine">Español</a>
+      {% else -%}
+      <a class="navigation__link" href="/zine">Español</a>
+      {% endif -%}
+      {% if lang == 'en' -%}
+      <a class="navigation__link is-selected" href="/zine/en">English</a>
+      {% else -%}
+      <a class="navigation__link" href="/zine/en">English</a>
+      {% endif -%}
+    </div>
+  </div>
+</div>

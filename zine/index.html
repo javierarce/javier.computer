@@ -2,12 +2,14 @@
 layout: zine
 title: Zine
 className: zine
+lang: es
 ---
 <div class="Content">
+  {% include navigation_zine.html -%}
   <div class="zine__content">
     <div class="zine__cover">
-      <div class="zine__coverImage"></div>
-      <p>8 páginas · Formato A5 · Tirada en offset de 75 ejemplares · B/N sobre papel rosa de 80 gr.</p>
+      <img class="lazy zine__coverImage" data-src="/assets/zine-cover.svg" alt="Portada">
+      <p>8 páginas en formato A5 · Tirada en offset de 75 ejemplares · B/N sobre papel rosa de 80 gr.</p>
     </div>
 
     <p class="zine__description">

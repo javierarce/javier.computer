@@ -7,6 +7,11 @@
   flex-direction: column;
   gap: var(--gap-sm);
 
+  &--fullwidth,
+  &--fullwidth &__main {
+    width: var(--width-full);
+  }
+
   &__main {
     width: var(--width-full);
     display: flex;
