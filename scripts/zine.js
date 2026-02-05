@@ -18,6 +18,11 @@ const createInputField = () => {
   input.type = "text";
   input.className = "input";
 
+  input.setAttribute("autocapitalize", "none");
+  input.setAttribute("autocomplete", "off");
+  input.setAttribute("autocorrect", "off");
+  input.setAttribute("spellcheck", "false");
+
   field.appendChild(input);
 
   return field;
