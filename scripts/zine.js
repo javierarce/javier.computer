@@ -4,21 +4,77 @@ let $message;
 let debounceTimer = null;
 let lastSentCode = null;
 let controller = null;
+
+const codeLength = 4;
 const URL = "http://localhost:3000/zine/check";
+
+const TIMEOUT = 100;
+
+const createInputField = () => {
+  const field = document.createElement("div");
+  field.className = "input__field input--zine is-hidden";
+
+  const input = document.createElement("input");
+  input.type = "text";
+  input.className = "input";
+
+  field.appendChild(input);
+
+  return field;
+};
+
+const createSeparator = () => {
+  const separator = document.createElement("div");
+  separator.className = "input__separator is-hidden";
+  return separator;
+};
+
+const showCode = () => {
+  const $fields = $code.getElementsByClassName("input__field");
+  const $separators = $code.getElementsByClassName("input__separator");
+
+  let delayIndex = 0;
+
+  for (let i = 0; i < $fields.length; i++) {
+    $fields[i].style.transitionDelay = TIMEOUT * delayIndex + "ms";
+    setTimeout(() => {
+      $fields[i].classList.remove("is-hidden");
+    }, TIMEOUT * delayIndex);
+    delayIndex++;
+
+    // Add separator after each field except the last one
+    if (i < $separators.length) {
+      $separators[i].style.transitionDelay = TIMEOUT * delayIndex + "ms";
+      setTimeout(() => {
+        $separators[i].classList.remove("is-hidden");
+      }, TIMEOUT * delayIndex);
+      delayIndex++;
+    }
+  }
+};
 
 const hideCode = () => {
   const $fields = $code.getElementsByClassName("input__field");
+  const $separators = $code.getElementsByClassName("input__separator");
+
+  let delayIndex = 0;
 
   for (let i = 0; i < $fields.length; i++) {
-    $fields[i].style.transitionDelay = 100 * i + "ms";
+    $fields[i].style.transitionDelay = TIMEOUT * delayIndex + "ms";
     $fields[i].classList.add("is-hidden");
+    delayIndex++;
+
+    if (i < $separators.length) {
+      $separators[i].style.transitionDelay = TIMEOUT * delayIndex + "ms";
+      $separators[i].classList.add("is-hidden");
+      delayIndex++;
+    }
   }
 };
 
 const showMessage = (data) => {
-  $message.innerHTML = data.message;
+  $message.innerHTML = data.message.replace(/\n/g, "<br /><br />");
   $message.classList.add("is-visible");
-  console.log(data);
 };
 
 const startLoading = () => {
@@ -34,10 +90,13 @@ const checkCode = ($fields) => {
 
   for (let i = 0; i < $fields.length; i++) {
     const value = $fields[i].getElementsByTagName("input")[0].value;
-    code.push(value);
+
+    if (value) {
+      code.push(value.trim());
+    }
   }
 
-  if (code.some((v) => v.trim() === "")) return;
+  if (code.length !== codeLength) return;
 
   const joinedCode = code.join("-");
 
@@ -78,11 +137,29 @@ const checkCode = ($fields) => {
   }, 500);
 };
 
-const onLoad = () => {
+const loadCode = () => {
   $code = document.getElementById("code");
   $message = document.getElementById("message");
 
+  if (!$code) {
+    return;
+  }
+
+  // Create input fields and separators
+  for (let i = 0; i < codeLength; i++) {
+    const $field = createInputField();
+    $code.appendChild($field);
+
+    // Add separator after each field except the last one
+    if (i < codeLength - 1) {
+      const $separator = createSeparator();
+      $code.appendChild($separator);
+    }
+  }
+
   const $fields = $code.getElementsByClassName("input__field");
+
+  showCode();
 
   for (let i = 0; i < $fields.length; i++) {
     const $input = $fields[i].getElementsByTagName("input")[0];
@@ -126,6 +203,14 @@ const onLoad = () => {
       }
     });
   }
+};
+
+const onLoad = () => {
+  window.lazyLoadInstance = new LazyLoad({
+    elements_selector: ".lazy",
+  });
+
+  loadCode();
 };
 
 window.onload = onLoad;

@@ -30,6 +30,21 @@
     }
   }
 
+  .input__separator {
+    width: 2em;
+    height: 2px;
+    background: var(--color-txt-site-inverted);
+    opacity: var(--op-5);
+    mix-blend-mode: luminosity;
+
+    transition: opacity var(--transition-speed-super-slow) ease-in-out;
+
+    &.is-hidden {
+      display: block;
+      opacity: var(--op-0);
+    }
+  }
+
   .input--zine {
     background: var(--white);
     border: none;
@@ -64,6 +79,19 @@
 }
 
 .zine {
+  &__head {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    z-index: 100;
+
+    transition: transform var(--transition-speed-default) ease-in-out;
+
+    &:hover {
+      transform: scale(0.95) rotate(1.8deg);
+    }
+  }
+
   &__content {
     position: relative;
     display: flex;
@@ -73,21 +101,17 @@
   }
 
   &__message {
+    width: 540px;
     position: absolute;
     opacity: var(--op-0);
     visibility: hidden;
-    background: var(--white);
-    border-radius: var(--br-md);
     text-align: left;
-    overflow: hidden;
-    overflow-y: scroll;
-    width: var(--width-full);
-    height: 400px;
-    padding: 1em;
 
+    font-size: var(--font-size-md);
+    font-family: var(--font-text-serif);
     transition: opacity var(--transition-speed-super-slow) ease-in-out;
 
-    transform: rotate(0.8deg);
+    /* transform: rotate(0.8deg); */
 
     &.is-visible {
       opacity: var(--op-10);
@@ -98,6 +122,8 @@
   &__code {
     display: flex;
     flex-direction: row;
+    align-items: center;
+
     gap: var(--gap-sm);
 
     transition: opacity var(--transition-speed-super-slow) ease-in-out;
@@ -188,7 +214,27 @@
     padding: var(--pd-mobile);
   }
 
+  .Layout__lol {
+    padding: var(--pd-mobile);
+    .input__separator {
+      display: none;
+
+      &.is-hidden {
+        display: none;
+        opacity: var(--op-0);
+      }
+    }
+  }
   .zine {
+    &__head {
+      position: relative;
+      bottom: auto;
+      top: 1em;
+      right: 1em;
+      transform: scale(0.6);
+      position: absolute;
+    }
+
     &__content {
       gap: var(--gap-lg);
     }
