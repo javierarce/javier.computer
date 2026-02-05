@@ -31,10 +31,14 @@
 
 {% if page.permalink == 'heart' -%}
 <script src="{{ 'scripts/like.js' | relative_url }}?version={{site.version}}"></script>
-{% endif -%} {% if page.permalink == 'about' -%}
-<script src="{{ 'scripts/about.js' | relative_url }}?version={{site.version}}"></script>
+{% endif -%} 
+
+{% if page.permalink == 'about' -%}
+  <script src="{{ 'scripts/about.js' | relative_url }}?version={{site.version}}"></script>
+{% elsif page.layout == 'zine' -%}
+  <script src="{{ 'scripts/zine.js' | relative_url }}?version={{site.version}}"></script>
 {% else -%}
-<script src="{{ 'scripts/client.js' | relative_url }}?version={{site.version}}"></script>
+  <script src="{{ 'scripts/client.js' | relative_url }}?version={{site.version}}"></script>
 {% endif -%}
 
 <link

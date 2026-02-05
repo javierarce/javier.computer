@@ -1,3 +1,9 @@
+.html-lol,
+.html-lol body,
+.Layout__lol {
+  height: 100%;
+}
+.Layout__lol,
 .Layout__zine {
   background: var(--color-bg-zine);
   color: var(--color-txt-site-inverted);
@@ -6,6 +12,7 @@
   .Content {
     width: var(--width-full);
   }
+
   .navigation__link {
     mix-blend-mode: luminosity;
     color: var(--color-txt-site-inverted);
@@ -22,9 +29,89 @@
       opacity: var(--op-10);
     }
   }
+
+  .input--zine {
+    background: var(--white);
+    border: none;
+    border-radius: var(--br-md);
+
+    transition: opacity var(--transition-speed-super-slow) ease-in-out;
+
+    &.is-hidden {
+      display: block;
+      opacity: var(--op-0);
+    }
+  }
+
+  .input--zine input {
+    text-align: center;
+    color: var(--color-txt-site-inverted);
+    mix-blend-mode: luminosity;
+    opacity: var(--op-7);
+
+    outline: 1px solid rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0);
+
+    transition:
+      outline var(--transition-speed-slow) ease-in-out,
+      box-shadow var(--transition-speed-slow) ease-in-out;
+
+    &:focus {
+      outline: 1px solid rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+    }
+  }
 }
 
 .zine {
+  &__content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &__message {
+    position: absolute;
+    opacity: var(--op-0);
+    visibility: hidden;
+    background: var(--white);
+    border-radius: var(--br-md);
+    text-align: left;
+    overflow: hidden;
+    overflow-y: scroll;
+    width: var(--width-full);
+    height: 400px;
+    padding: 1em;
+
+    transition: opacity var(--transition-speed-super-slow) ease-in-out;
+
+    transform: rotate(0.8deg);
+
+    &.is-visible {
+      opacity: var(--op-10);
+      visibility: visible;
+    }
+  }
+
+  &__code {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap-sm);
+
+    transition: opacity var(--transition-speed-super-slow) ease-in-out;
+
+    &.is-loading {
+      opacity: var(--op-5);
+    }
+
+    &.is-hidden {
+      opacity: var(--op-0);
+      visibility: hidden;
+    }
+  }
+
   &__page {
     position: relative;
     width: 540px;
@@ -36,7 +123,7 @@
     align-items: center;
     gap: var(--gap-xl);
     flex-direction: column;
-    opacity: 0;
+    opacity: var(--op-0);
     animation: fadeIn 1s ease-in forwards;
   }
 
@@ -104,6 +191,10 @@
   .zine {
     &__content {
       gap: var(--gap-lg);
+    }
+
+    &__code {
+      flex-direction: column;
     }
 
     &__coverImage {
