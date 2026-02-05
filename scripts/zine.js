@@ -172,6 +172,8 @@ const loadCode = () => {
     $input.tabIndex = i + 1;
 
     $input.addEventListener("input", () => {
+      $input.value = $input.value.toLowerCase();
+
       checkCode($fields);
     });
 
