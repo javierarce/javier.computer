@@ -96,6 +96,14 @@
     height: 100%;
   }
 
+  &__text {
+    width: var(--width-md);
+
+    strong {
+      font-weight: 500;
+    }
+  }
+
   &__message {
     width: 540px;
     position: absolute;
