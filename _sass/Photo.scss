@@ -238,6 +238,10 @@
   max-width: none;
 }
 
+.Project .g {
+  margin: 0 0 var(--sp-xxl) 0;
+}
+
 .g {
   &.has-margin-top {
     margin-top: 3em;

@@ -25,6 +25,6 @@ show_title: true
     </div>
 </div>
 
-### Descarga
+Boletín Botánico, vol. 1 (2021). Edición de 4 páginas en formato A5, impresa en láser (B/N) sobre papel amarillo de 80 gr. Tirada limitada de 25 ejemplares.
 
 [Descargar fanzine](/assets/zine/boletin-botanico-01.pdf) (PDF, 4 páginas, 9,6MB).
