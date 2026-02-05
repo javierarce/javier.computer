@@ -25,10 +25,6 @@ show_title: true
     </div>
 </div>
 
-### Promoción
+### Descarga
 
-<p>Reel de los cuatro vídeos que utilicé para dar la lata/engatusar a la gente
-    y que pidieran el fanzine (era gratuito, casi me arruino con el
-    rodaje).</p>
-
-{% include video.html url='https://img.javier.computer/videos/boletin.mp4#t=2.00' -%}
+[Descargar fanzine](/assets/zine/boletin-botanico-01.pdf) (PDF, 4 páginas, 9,6MB).
