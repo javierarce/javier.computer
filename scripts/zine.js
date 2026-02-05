@@ -199,14 +199,21 @@ const loadCode = () => {
 
     $input.addEventListener("keydown", (e) => {
       if (e.key === "Tab") {
-        e.preventDefault(); // stop normal tab behavior
+        e.preventDefault();
+
+        let targetInput;
 
         if (e.shiftKey) {
           const prevIndex = (i - 1 + $fields.length) % $fields.length;
-          $fields[prevIndex].getElementsByTagName("input")[0].focus();
+          targetInput = $fields[prevIndex].getElementsByTagName("input")[0];
         } else {
           const nextIndex = (i + 1) % $fields.length;
-          $fields[nextIndex].getElementsByTagName("input")[0].focus();
+          targetInput = $fields[nextIndex].getElementsByTagName("input")[0];
+        }
+
+        if (targetInput) {
+          targetInput.focus();
+          targetInput.select(); // <--- This selects the existing text
         }
       }
     });
