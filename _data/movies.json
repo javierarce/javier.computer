@@ -1,7 +1,17 @@
 {
-  "updated_at": "2026-02-02",
-  "count": 993,
+  "updated_at": "2026-02-05",
+  "count": 994,
   "movies": [
+    {
+      "watched_on": "2026-02-04",
+      "title": "Panic",
+      "year": 1946,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "panic"
+    },
     {
       "watched_on": "2026-01-31",
       "title": "Marty Supreme",
