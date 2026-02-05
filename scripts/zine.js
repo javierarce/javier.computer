@@ -127,6 +127,7 @@ const checkCode = ($fields) => {
       .then((data) => {
         stopLoading();
         if (data.valid) {
+          document.activeElement?.blur();
           hideCode();
           setTimeout(() => {
             showMessage(data.data);
