@@ -6,7 +6,7 @@ let lastSentCode = null;
 let controller = null;
 
 const codeLength = 4;
-const URL = "http://api.javier.computer/zine/check";
+const URL = "https://api.javier.computer/zine/check";
 
 const TIMEOUT = 100;
 
