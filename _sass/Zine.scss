@@ -254,6 +254,10 @@
       font-size: var(--font-size-md);
       line-height: 1.4;
     }
+
+    &__message {
+      width: var(--width-full);
+    }
   }
 }
 
