@@ -86,10 +86,6 @@
     z-index: 100;
 
     transition: transform var(--transition-speed-default) ease-in-out;
-
-    &:hover {
-      transform: scale(0.95) rotate(1.8deg);
-    }
   }
 
   &__content {
