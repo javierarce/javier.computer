@@ -30,6 +30,7 @@ const createInputField = () => {
 
 const showCode = () => {
   const $fields = $code.getElementsByClassName("input__field");
+  const $separators = $code.getElementsByClassName("input__separator");
 
   let delayIndex = 0;
 
@@ -39,11 +40,21 @@ const showCode = () => {
       $fields[i].classList.remove("is-hidden");
     }, TIMEOUT * delayIndex);
     delayIndex++;
+
+    // Add separator after each field except the last one
+    if (i < $separators.length) {
+      $separators[i].style.transitionDelay = TIMEOUT * delayIndex + "ms";
+      setTimeout(() => {
+        $separators[i].classList.remove("is-hidden");
+      }, TIMEOUT * delayIndex);
+      delayIndex++;
+    }
   }
 };
 
 const hideCode = () => {
   const $fields = $code.getElementsByClassName("input__field");
+  const $separators = $code.getElementsByClassName("input__separator");
 
   let delayIndex = 0;
 
@@ -51,6 +62,12 @@ const hideCode = () => {
     $fields[i].style.transitionDelay = TIMEOUT * delayIndex + "ms";
     $fields[i].classList.add("is-hidden");
     delayIndex++;
+
+    if (i < $separators.length) {
+      $separators[i].style.transitionDelay = TIMEOUT * delayIndex + "ms";
+      $separators[i].classList.add("is-hidden");
+      delayIndex++;
+    }
   }
 };
 
@@ -126,6 +143,12 @@ const loadCode = () => {
 
   if (!$code) {
     return;
+  }
+
+  // Create input fields and separators
+  for (let i = 0; i < codeLength; i++) {
+    const $field = createInputField();
+    $code.appendChild($field);
   }
 
   const $fields = $code.getElementsByClassName("input__field");
