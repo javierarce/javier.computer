@@ -30,21 +30,6 @@
     }
   }
 
-  .input__separator {
-    width: 2em;
-    height: 2px;
-    background: var(--color-txt-site-inverted);
-    opacity: var(--op-5);
-    mix-blend-mode: luminosity;
-
-    transition: opacity var(--transition-speed-super-slow) ease-in-out;
-
-    &.is-hidden {
-      display: block;
-      opacity: var(--op-0);
-    }
-  }
-
   .input--zine {
     background: var(--white);
     border: none;
@@ -220,14 +205,6 @@
 
   .Layout__lol {
     padding: var(--pd-mobile);
-    .input__separator {
-      display: none;
-
-      &.is-hidden {
-        display: none;
-        opacity: var(--op-0);
-      }
-    }
   }
   .zine {
     &__head {
