@@ -66,6 +66,8 @@
 
 .zine {
   &__head {
+    display: none;
+
     position: fixed;
     bottom: 1em;
     right: 1em;
@@ -169,7 +171,21 @@
     font-family: var(--font-text-serif);
     text-align: center;
     margin: 0;
+
+    a {
+      color: var(--color-txt-site-inverted) !important;
+
+      &:hover {
+        color: var(--color-txt-site-inverted) !important;
+      }
+    }
   }
+
+  &__highlight {
+    font-size: var(--font-size-md);
+    font-family: var(--font-text-serif);
+  }
+
   &__buyButton {
     width: 220px;
     background: var(--black);
@@ -210,6 +226,7 @@
 
   .zine {
     &__head {
+      display: none;
       position: relative;
       bottom: auto;
       top: 1em;
