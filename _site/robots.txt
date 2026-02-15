@@ -1,0 +1,14 @@
+User-agent: GPTBot
+Disallow: /
+
+User-agent: bingbot
+Disallow: /
+Crawl-delay: 300
+
+User-agent: msnbot
+Disallow: /
+Crawl-delay: 300
+
+User-agent: YandexBot
+Disallow: /
+Crawl-delay: 300

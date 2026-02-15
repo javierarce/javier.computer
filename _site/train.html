@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R1 Trains → Mataró</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family:
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          sans-serif;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: #fff;
+      }
+
+      header {
+        padding: 20px;
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: bold;
+      }
+
+      #status {
+        text-align: center;
+        font-size: 0.9rem;
+        opacity: 0.8;
+        margin-bottom: 10px;
+      }
+
+      /* Default desktop layout (horizontal) */
+      .controls {
+        text-align: center;
+        margin-bottom: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        /* Adds space between the groups */
+        align-items: center;
+      }
+
+      select {
+        padding: 6px 10px;
+        border-radius: 6px;
+        border: none;
+        font-size: 0.9rem;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 10px 20px 0;
+      }
+
+      .train-card.selected {
+        outline: 2px solid #00d2ff;
+        background: rgba(255, 255, 255, 0.15);
+        transform: scale(1.02);
+        box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+      }
+
+      .train-card {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(6px);
+        border-radius: 14px;
+        padding: 16px 18px;
+        margin-bottom: 14px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        transition: transform 0.15s ease;
+        cursor: pointer;
+      }
+
+      .train-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      .badge {
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: bold;
+      }
+
+      .on-time {
+        background: #1b8f3a;
+      }
+
+      .delayed {
+        background: #b02a2a;
+      }
+
+      .at-station {
+        background: #1565c0;
+      }
+
+      .train-details {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 8px;
+        font-size: 0.9rem;
+      }
+
+      .label {
+        opacity: 0.7;
+        font-size: 0.75rem;
+      }
+
+      .value {
+        font-weight: 600;
+      }
+
+      .empty {
+        text-align: center;
+        margin-top: 40px;
+        opacity: 0.7;
+      }
+
+      footer {
+        text-align: center;
+        font-size: 0.75rem;
+        opacity: 0.5;
+        margin-top: 30px;
+      }
+
+      /* Mobile layout (vertical) */
+      @media (max-width: 600px) {
+        .controls {
+          flex-direction: column;
+          padding: 0 20px;
+        }
+
+        .controls select {
+          width: 100%;
+          /* Makes selects full-width on mobile */
+          max-width: 300px;
+          padding: 10px;
+          /* Bigger tap target for fingers */
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>🚆 R1 Trains → Mataró</header>
+    <div class="controls">
+      <select id="directionFilter">
+        <option value="all">Direction: Both</option>
+        <option value="north">To Mataró / Blanes / Maçanet</option>
+        <option value="L'Hospitalet">To BCN / L'Hospitalet</option>
+      </select>
+
+      <select id="sortSelect">
+        <option value="eta">ETA (soonest)</option>
+        <option value="distance">Distance (closest)</option>
+        <option value="delay">Delay (least first)</option>
+        <option value="arrival">Next arrival time</option>
+      </select>
+    </div>
+
+    <div class="container" id="trains"></div>
+
+    <div id="status">Loading live data…</div>
+
+    <script>
+      const API_URL = 'https://api.javier.computer/api/train';
+      const container = document.getElementById('trains');
+      const statusEl = document.getElementById('status');
+      const sortSelect = document.getElementById('sortSelect');
+      const directionFilter = document.getElementById('directionFilter');
+
+      let trainsData = [];
+
+      function formatTime(iso) {
+        if (!iso) return '—';
+        const d = new Date(iso);
+        return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      }
+
+      function selectTrain(trainId) {
+        window.location.hash = trainId;
+
+        document.querySelectorAll('.train-card').forEach((card) => {
+          card.classList.toggle('selected', card.dataset.id === String(trainId));
+        });
+      }
+
+      function sortTrains(data) {
+        const type = sortSelect.value;
+
+        return data.sort((a, b) => {
+          switch (type) {
+            case 'eta':
+              return a.etaMin - b.etaMin;
+            case 'distance':
+              return a.distanceKm - b.distanceKm;
+            case 'delay':
+              return a.delayMin - b.delayMin;
+            case 'arrival':
+              return new Date(a.nextArrival) - new Date(b.nextArrival);
+            default:
+              return 0;
+          }
+        });
+      }
+
+      function createTrainCard(train) {
+        const delayClass = train.delayMin > 0 ? 'delayed' : 'on-time';
+        const delayText = train.delayMin > 0 ? `+${train.delayMin} min delay` : 'On time';
+        const atStationBadge = train.atMataro ? `<span class="badge at-station">At Mataró</span>` : '';
+
+        // Check if this train should be highlighted based on the URL hash
+        const isSelected = window.location.hash === `#${train.train}`;
+
+        return `
+    <div class="train-card ${isSelected ? 'selected' : ''}" 
+         data-id="${train.train}" 
+         onclick="selectTrain('${train.train}')">
+      <div class="train-header">
+        <div>Train ${train.train}</div>
+        <div>
+          <span class="badge ${delayClass}">${delayText}</span>
+          ${atStationBadge}
+        </div>
+      </div>
+      <div class="train-details">
+        <div><div class="label">Route</div><div class="value">${train.origin.name} → ${train.destination.name}</div></div>
+        <div><div class="label">ETA to Mataró</div><div class="value">${train.etaMin} min</div></div>
+        <div><div class="label">Distance</div><div class="value">${train.distanceKm} km</div></div>
+        <div><div class="label">Platform</div><div class="value">${train.platform ?? '—'}</div></div>
+        <div><div class="label">Next arrival</div><div class="value">${formatTime(train.nextArrival)}</div></div>
+      </div>
+    </div>
+  `;
+      }
+
+      function render() {
+        container.innerHTML = '';
+
+        if (!trainsData.length) {
+          container.innerHTML = `<div class="empty">No R1 trains running right now 🚉</div>`;
+          return;
+        }
+
+        const selectedDir = directionFilter.value;
+
+        let filteredData = trainsData.filter((train) => {
+          if (selectedDir === 'all') return true;
+
+          const dest = train.destination.name;
+
+          if (selectedDir === 'north') {
+            // Catch all trains heading away from BCN
+            return dest.includes('Blanes') || dest.includes('Mataró') || dest.includes('Maçanet');
+          }
+
+          // Southbound usually just ends at Hospitalet or Molins de Rei
+          return dest.includes(selectedDir);
+        });
+
+        const sorted = sortTrains([...filteredData]);
+
+        if (sorted.length === 0) {
+          container.innerHTML = `<div class="empty">No trains found for this direction.</div>`;
+          return;
+        }
+
+        sorted.forEach((train) => (container.innerHTML += createTrainCard(train)));
+      }
+
+      async function loadTrains() {
+        try {
+          statusEl.textContent = 'Updating…';
+
+          const res = await fetch(API_URL);
+          trainsData = await res.json();
+
+          render();
+
+          statusEl.textContent = 'Last updated at ' + new Date().toLocaleTimeString();
+        } catch (err) {
+          statusEl.textContent = 'Error loading data';
+          console.error(err);
+        }
+      }
+
+      sortSelect.addEventListener('change', render);
+      directionFilter.addEventListener('change', render);
+
+      loadTrains();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+  <channel>
+    <title>RSS feed de nyc</title>
+    <link>http://localhost:4001/feeds/nyc.rss</link>
+    <description>Sitios en nyc</description>
+    <pubDate>Sun, 10 Dec 2023 10:39:00 +0100</pubDate>
+    <item>
+      <title>Hungry Ghost</title>
+      <link>http://localhost:4001/maps/nyc</link>
+      <description>&lt;br&gt;&lt;br&gt;183 Sterling Pl, Brooklyn&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
+      <pubDate>Sun, 10 Dec 2023 10:39:00 +0100</pubDate>
+      <dc:subject>nyc</dc:subject>
+      <dc:date>2023-12-10T10:39:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>Most High</title>
+      <link>http://localhost:4001/maps/nyc</link>
+      <description>&lt;br&gt;&lt;br&gt;820 Washington Ave, Brooklyn&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;/ul&gt;</description>
+      <pubDate>Sun, 10 Dec 2023 10:39:00 +0100</pubDate>
+      <dc:subject>nyc</dc:subject>
+      <dc:date>2023-12-10T10:39:00+01:00</dc:date>
+    </item>
+    <dc:date>2023-12-10T10:39:00+01:00</dc:date>
+  </channel>
+</rss>

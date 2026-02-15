@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>Javier's computer</title>
+  </head>
+  <body>
+    <outline text="Blogs favoritos">
+
+    
+      <outline
+        text="Alejandra's blog"
+        title="Alejandra's blog"
+        type="rss"
+        xmlUrl="https://striuk.tumblr.com/rss"
+        htmlUrl="https://striuk.tumblr.com" />
+    
+      <outline
+        text="Ariana's blog"
+        title="Ariana's blog"
+        type="rss"
+        xmlUrl="https://blog.arianaescobar.com/feed.rss"
+        htmlUrl="https://blog.arianaescobar.com" />
+    
+      <outline
+        text="Erica's blog"
+        title="Erica's blog"
+        type="rss"
+        xmlUrl="https://www.ericafustero.com/feed"
+        htmlUrl="https://www.ericafustero.com" />
+    
+      <outline
+        text="Mu-An Chiou"
+        title="Mu-An Chiou"
+        type="rss"
+        xmlUrl="https://muan.co/notes.xml"
+        htmlUrl="https://muan.co" />
+    
+      <outline
+        text="Interconnected"
+        title="Interconnected"
+        type="rss"
+        xmlUrl="https://interconnected.org/home/feed"
+        htmlUrl="https://interconnected.org/home" />
+    
+      <outline
+        text="Sam Lavigne"
+        title="Sam Lavigne"
+        type="rss"
+        xmlUrl="https://lav.io/notes/index.xml"
+        htmlUrl="https://lav.io/notes" />
+    
+      <outline
+        text="Notes, blog posts, etc."
+        title="Notes, blog posts, etc."
+        type="rss"
+        xmlUrl="https://www.robinsloan.com/feed.xml"
+        htmlUrl="https://www.robinsloan.com" />
+    
+      <outline
+        text="Tom's blog"
+        title="Tom's blog"
+        type="rss"
+        xmlUrl="https://macwright.com/rss.xml"
+        htmlUrl="https://macwright.com" />
+    
+      <outline
+        text="v buckenham"
+        title="v buckenham"
+        type="rss"
+        xmlUrl="https://blog.vbuckenham.com/rss"
+        htmlUrl="https://blog.vbuckenham.com" />
+    
+      <outline
+        text="Ideas, essays, and projects"
+        title="Ideas, essays, and projects"
+        type="rss"
+        xmlUrl="https://stephanango.com/feed.xml"
+        htmlUrl="https://stephanango.com" />
+    
+      <outline
+        text="A blog from Cabel Sasser"
+        title="A blog from Cabel Sasser"
+        type="rss"
+        xmlUrl="https://cabel.com/feed"
+        htmlUrl="https://cabel.com" />
+    
+      <outline
+        text="Christowski Blog"
+        title="Christowski Blog"
+        type="rss"
+        xmlUrl="https://christowski.de/blog/feed"
+        htmlUrl="https://christowski.de/blog" />
+    
+      <outline
+        text="Alba G. Mora"
+        title="Alba G. Mora"
+        type="rss"
+        xmlUrl="https://albagmora.substack.com/feed"
+        htmlUrl="https://albagmora.substack.com" />
+    
+      <outline
+        text="croasan"
+        title="croasan"
+        type="rss"
+        xmlUrl="https://croasan.com/feed"
+        htmlUrl="https://croasan.com" />
+    
+      <outline
+        text="Keko Ponte"
+        title="Keko Ponte"
+        type="rss"
+        xmlUrl="https://www.kekoponte.com/rss.xml"
+        htmlUrl="https://www.kekoponte.com" />
+    
+      <outline
+        text="Alberto Romero"
+        title="Alberto Romero"
+        type="rss"
+        xmlUrl="https://albertoromero.com/feed.xml"
+        htmlUrl="https://albertoromero.com" />
+    
+      <outline
+        text="DADA issues"
+        title="DADA issues"
+        type="rss"
+        xmlUrl="https://bluebed.substack.com/feed"
+        htmlUrl="https://bluebed.substack.com" />
+    
+      <outline
+        text="Andrés Magán"
+        title="Andrés Magán"
+        type="rss"
+        xmlUrl="https://andresmagan.substack.com/feed"
+        htmlUrl="https://andresmagan.substack.com" />
+    
+      <outline
+        text="Design Harder"
+        title="Design Harder"
+        type="rss"
+        xmlUrl="https://designharder.substack.com/feed"
+        htmlUrl="https://designharder.substack.com" />
+    
+      <outline
+        text="El Drugstore"
+        title="El Drugstore"
+        type="rss"
+        xmlUrl="https://eldrugstore.substack.com/feed"
+        htmlUrl="https://eldrugstore.substack.com" />
+    
+      <outline
+        text="Fetén"
+        title="Fetén"
+        type="rss"
+        xmlUrl="https://nazaretescobedo.substack.com/feed"
+        htmlUrl="https://nazaretescobedo.substack.com" />
+    
+      <outline
+        text="Correo ordinario"
+        title="Correo ordinario"
+        type="rss"
+        xmlUrl="https://correoordinario.substack.com/feed"
+        htmlUrl="https://correoordinario.substack.com" />
+    
+      <outline
+        text="Gárgola Digital"
+        title="Gárgola Digital"
+        type="rss"
+        xmlUrl="https://gargoladigital.substack.com/feed"
+        htmlUrl="https://gargoladigital.substack.com" />
+    
+      <outline
+        text="Naive Weekly"
+        title="Naive Weekly"
+        type="rss"
+        xmlUrl="https://www.naiveweekly.com/feed"
+        htmlUrl="https://www.naiveweekly.com" />
+    
+      <outline
+        text="Joana Estrela"
+        title="Joana Estrela"
+        type="rss"
+        xmlUrl="https://us9.campaign-archive.com/home/?u=a4c8b2c7fbc757f10dbda8808&id=dfc484dd24/"
+        htmlUrl="https://us9.campaign-archive.com/home/?u=a4c8b2c7fbc757f10dbda8808&id=dfc484dd24" />
+    
+      <outline
+        text="Personal canon"
+        title="Personal canon"
+        type="rss"
+        xmlUrl="https://personalcanon.com/feed"
+        htmlUrl="https://personalcanon.com" />
+    
+      <outline
+        text="Escaping Flatland"
+        title="Escaping Flatland"
+        type="rss"
+        xmlUrl="https://www.henrikkarlsson.xyz/feed"
+        htmlUrl="https://www.henrikkarlsson.xyz" />
+    
+
+    </outline>
+  </body>
+</opml>

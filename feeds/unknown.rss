@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+  <channel>
+    <title>Feed de lugares de Unknown</title>
+    <link>https://javier.computer/feeds/unknown.rss</link>
+    <description>Sitios en unknown</description>
+    <language>es</language>
+    <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+    <item>
+      <title>Juliette</title>
+      <link>https://javier.computer/maps/unknown/juliette</link>
+      <description>
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/unknown/juliette'&gt;Carrer Sant Ignasi, 73, 08340&lt;/a&gt;</description>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <dc:subject>unknown</dc:subject>
+      <dc:date>2023-01-01T00:00:00+00:00</dc:date>
+    </item>
+    <item>
+      <title>Finestres</title>
+      <link>https://javier.computer/maps/unknown/finestres</link>
+      <description>
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/unknown/finestres'&gt;&lt;/a&gt;</description>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <dc:subject>unknown</dc:subject>
+      <dc:date>2023-01-01T00:00:00+00:00</dc:date>
+    </item>
+    <item>
+      <title>Espai Puntal</title>
+      <link>https://javier.computer/maps/unknown/espai-puntal</link>
+      <description>
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/unknown/espai-puntal'&gt;&lt;/a&gt;</description>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <dc:subject>unknown</dc:subject>
+      <dc:date>2023-01-01T00:00:00+00:00</dc:date>
+    </item>
+    <item>
+      <title>dubblefilm</title>
+      <link>https://javier.computer/maps/unknown/dubblefilm</link>
+      <description>
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/unknown/dubblefilm'&gt;Carrer de Verdi, 28&lt;/a&gt;</description>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <dc:subject>unknown</dc:subject>
+      <dc:date>2023-01-01T00:00:00+00:00</dc:date>
+    </item>
+    <item>
+      <title>ANTISOUVENIR®</title>
+      <link>https://javier.computer/maps/unknown/antisouvenir</link>
+      <description>
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/unknown/antisouvenir'&gt;Calle Paloma, 11&lt;/a&gt;</description>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <dc:subject>unknown</dc:subject>
+      <dc:date>2023-01-01T00:00:00+00:00</dc:date>
+    </item>
+    <dc:date>2023-01-01T00:00:00+00:00</dc:date>
+  </channel>
+</rss>
