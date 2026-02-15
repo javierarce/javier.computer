@@ -90,7 +90,7 @@ class Newsletter {
 
       if (result.success) {
         this.$message.innerText =
-          "¡Suscrito! Recibirás un email de confirmación pronto (si no lo ves, revisa tu carpeta de spam).";
+          "¡Funcionó! Recibirás un email de confirmación pronto (si no lo ves, revisa tu carpeta de spam).";
         this.$form.classList.add("was-sent");
 
         this.$email.value = "";
@@ -98,14 +98,16 @@ class Newsletter {
         this.disabled = true;
         this.$sendButton.classList.add("is-disabled");
       } else {
-        this.$message.innerText = "¡Ya estabas en la lista!";
+        this.$message.innerText =
+          "¡Ya estabas en la lista! Busca un email de confirmación en tu bandeja de entrada (o spam). Si no lo encuentras, envíame un mensaje para que pueda ayudarte.";
         this.$form.classList.add("is-error");
       }
     } catch (err) {
       console.error("Subscription error:", err);
       this.spinner.hide();
       this.$sendButton.classList.remove("is-loading");
-      this.$message.innerText = "Error. Inténtalo más tarde.";
+      this.$message.innerText =
+        "¡Ups! Algo salió mal. Por favor, inténtalo de nuevo más tarde o envíame un mensaje para que pueda ayudarte.";
       this.$form.classList.add("is-error");
     }
   }
