@@ -1,1 +1,0 @@
-JEKYLL_ENV=development bundle exec jekyll serve --trace --port 4001
