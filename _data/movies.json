@@ -1,7 +1,17 @@
 {
   "updated_at": "2026-02-15",
-  "count": 998,
+  "count": 999,
   "movies": [
+    {
+      "watched_on": "2026-02-15",
+      "title": "The Plague",
+      "year": 2025,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "the-plague-2025"
+    },
     {
       "watched_on": "2026-02-14",
       "title": "Sanjuro",
