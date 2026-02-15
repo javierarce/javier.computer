@@ -89,7 +89,8 @@ class Newsletter {
       this.$sendButton.classList.remove("is-loading");
 
       if (result.success) {
-        this.$message.innerText = "¡Suscrito! Mira tu email para confirmar.";
+        this.$message.innerText =
+          "¡Suscrito! Recibirás un email de confirmación pronto (si no lo ves, revisa tu carpeta de spam).";
         this.$form.classList.add("was-sent");
 
         this.$email.value = "";
@@ -136,7 +137,9 @@ class Newsletter {
     $emailGroup.appendChild(this.$email);
 
     // Actions
-    const $actions = this.createElement({ className: "form__actions" });
+    const $actions = this.createElement({
+      className: "form__actions two-lines",
+    });
     this.$sendButton = this.createElement({
       elementType: "button",
       className: "button is-disabled",

@@ -29,5 +29,10 @@
     align-items: center;
     justify-content: center;
     gap: var(--gap-md);
+
+    &.two-lines {
+      align-items: flex-start;
+      flex-direction: column;
+    }
   }
 }
