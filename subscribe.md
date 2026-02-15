@@ -1,5 +1,5 @@
 ---
-layout: about
+layout: newsletter
 title: Newsletter
 description: >
   Únete a las 84 personas que están confundidas y suscritas a mi lista de
@@ -15,25 +15,6 @@ className: About
 
 [Consulta el archivo](/tags/newsletter).
 
-<hr />
-
 <div class="Contact">
-<form class="form is-visible" method="post" action="https://mailer.javier.computer/subscription/form">
-<input type="hidden" name="nonce" />
-<input type="hidden" name="l" value="10546b54-985f-41ab-836c-eac7e11477ef"/>
-
-<label class="label" for="name">Nombre <span class="is-optional">(opcional)</span></label>
-
-<div class="input__field">
-<input class="input" type="text" name="name" placeholder="Oedipa Maas" />
-</div>
-
-<label class="label" for="email">Email</label>
-
-<div class="input__field">
-<input class="input" type="email" name="email" placeholder="oedipa.maas@waste.email" required />
-</div>
-
-<div class="form__actions"><input class="button" type="submit" value="Suscríbeme" /></div>
-</form>
+  <div class="js-newsletter-container"></div>
 </div>
