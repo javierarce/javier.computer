@@ -36,7 +36,9 @@ class Newsletter {
   }
 
   bind() {
-    this.$email.addEventListener("keyup", this.onWriting.bind(this));
+    this.$name.addEventListener("input", this.onWriting.bind(this));
+    this.$email.addEventListener("input", this.onWriting.bind(this));
+
     this.$form.addEventListener("submit", (e) => {
       e.preventDefault();
       this.subscribe();
@@ -44,12 +46,18 @@ class Newsletter {
   }
 
   onWriting() {
-    const isValid = this.validateEmail(this.$email.value);
-    this.disabled = !isValid;
-    this.$sendButton.classList.toggle("is-disabled", !isValid);
+    const isEmailValid = this.validateEmail(this.$email.value);
+    const isNameValid = this.$name.value.trim().length > 0;
+
+    // The button is only enabled if both are true
+    this.disabled = !(isEmailValid && isNameValid);
+
+    this.$sendButton.classList.toggle("is-disabled", this.disabled);
+
+    // Visual feedback for the email field specifically
     this.$email.classList.toggle(
       "invalid-email",
-      this.$email.value && !isValid,
+      this.$email.value && !isEmailValid,
     );
   }
 
@@ -113,6 +121,13 @@ class Newsletter {
   }
 
   render() {
+    this.$header = this.createElement({
+      elementType: "h2",
+      className: "newsletter__title",
+      text: "Suscríbete a mi newsletter", // You can change this text as needed
+    });
+    this.$el.appendChild(this.$header);
+
     this.$form = this.createElement({ elementType: "form", className: "form" });
 
     // Name Field
@@ -121,9 +136,11 @@ class Newsletter {
       elementType: "input",
       className: "input",
       type: "text",
-      placeholder: "Nombre (opcional)",
+      placeholder: "Nombre",
       name: "name",
+      required: true,
     });
+
     $nameGroup.appendChild(this.$name);
 
     // Email Field
@@ -138,7 +155,6 @@ class Newsletter {
     });
     $emailGroup.appendChild(this.$email);
 
-    // Actions
     const $actions = this.createElement({
       className: "form__actions two-lines",
     });
@@ -159,6 +175,8 @@ class Newsletter {
     this.$form.appendChild($actions);
     this.$el.appendChild(this.$form);
 
+    // 3. Append the form after the header
+    this.$el.appendChild(this.$form);
     setTimeout(() => this.$form.classList.add("is-visible"), 200);
   }
 }
