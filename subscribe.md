@@ -2,7 +2,7 @@
 layout: newsletter
 title: Newsletter
 description: >
-  Únete a las 84 personas que están confundidas y suscritas a mi lista de
+  Únete a las 141 personas que están confundidas y suscritas a mi lista de
   correo de bajísima intensidad, y recibe avisos cuando publique un nuevo
   proyecto o haga algo extremadamente gracioso.
 permalink: newsletter

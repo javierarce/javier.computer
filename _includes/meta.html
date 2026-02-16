@@ -30,6 +30,11 @@
 <meta name="twitter:image" content="https://api.javier.computer/svg?title={{ page.title }}">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:type" content="article">
+{% elsif page.layout == "newsletter" -%}
+<meta property="og:image" content="https://api.javier.computer/svg?title={{ page.title }}">
+<meta name="twitter:image" content="https://api.javier.computer/svg?title={{ page.title }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="article">
 {% elsif page.category == "maps" -%}
 <meta property="og:image" content="https://api.javier.computer/svg?title={{ page.description }}">
 <meta name="twitter:image" content="https://api.javier.computer/svg?title={{ page.description }}">
