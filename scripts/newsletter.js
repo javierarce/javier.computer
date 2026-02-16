@@ -1,6 +1,8 @@
 class Newsletter {
   constructor() {
     this.$el = document.querySelector(".js-newsletter-container");
+    this.$countDisplay = document.getElementById("subscribers-count"); // Target the span
+
     if (!this.$el) return;
 
     this.spinner = new Spinner("is-inside-button");
@@ -8,6 +10,7 @@ class Newsletter {
 
     this.render();
     this.bind();
+    this.fetchSubscribers();
   }
 
   // Helper to build elements (matches your existing style)
@@ -59,6 +62,29 @@ class Newsletter {
       "invalid-email",
       this.$email.value && !isEmailValid,
     );
+  }
+
+  async fetchSubscribers() {
+    if (!this.$countDisplay) return;
+
+    try {
+      const response = await fetch(
+        "https://api.javier.computer/api/subscribers",
+      );
+      const count = await response.json();
+
+      if (count && count.toString() !== this.$countDisplay.innerText) {
+        this.$countDisplay.classList.add("is-fading");
+
+        setTimeout(() => {
+          this.$countDisplay.innerText = count;
+
+          this.$countDisplay.classList.remove("is-fading");
+        }, 140);
+      }
+    } catch (err) {
+      console.error("Subscriber fetch failed:", err);
+    }
   }
 
   async subscribe() {
