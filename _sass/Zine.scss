@@ -3,6 +3,7 @@
 .Layout__lol {
   height: 100%;
 }
+
 .Layout__lol,
 .Layout__zine {
   background: var(--color-bg-zine);
@@ -62,12 +63,24 @@
       box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
     }
   }
+
+  footer {
+    font-size: var(--font-size-sm);
+    opacity: var(--op-5);
+    a {
+      color: var(--color-txt-site-inverted);
+      font-weight: 600;
+      text-decoration: none;
+
+      &:hover {
+        color: var(--color-txt-site-inverted);
+      }
+    }
+  }
 }
 
 .zine {
   &__head {
-    display: none;
-
     position: fixed;
     bottom: 1em;
     right: 1em;
