@@ -1,7 +1,27 @@
 {
-  "updated_at": "2026-02-15",
-  "count": 999,
+  "updated_at": "2026-02-18",
+  "count": 1001,
   "movies": [
+    {
+      "watched_on": "2026-02-18",
+      "title": "Ricochet",
+      "year": 1991,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "ricochet"
+    },
+    {
+      "watched_on": "2026-02-17",
+      "title": "Brief Encounter",
+      "year": 1945,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": true,
+      "permalink": "brief-encounter/1"
+    },
     {
       "watched_on": "2026-02-15",
       "title": "The Plague",
