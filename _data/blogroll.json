@@ -7,13 +7,6 @@
     "type": "blog"
   },
   {
-    "title": "Ariana's blog",
-    "author": "Ariana Escobar",
-    "url": "https://blog.arianaescobar.com",
-    "feed": "feed.rss",
-    "type": "blog"
-  },
-  {
     "title": "Erica's blog",
     "author": "Erica Fustero",
     "url": "https://www.ericafustero.com",
@@ -25,13 +18,6 @@
     "author": "Mu-An Chiou",
     "url": "https://muan.co",
     "feed": "notes.xml",
-    "type": "blog"
-  },
-  {
-    "title": "Interconnected",
-    "author": "Matt Webb",
-    "url": "https://interconnected.org/home",
-    "feed": "feed",
     "type": "blog"
   },
   {
@@ -126,13 +112,6 @@
     "type": "newsletter"
   },
   {
-    "title": "Design Harder",
-    "author": "Erik Carter",
-    "url": "https://designharder.substack.com",
-    "feed": "feed",
-    "type": "newsletter"
-  },
-  {
     "title": "El Drugstore",
     "author": "Abel Cuevas",
     "url": "https://eldrugstore.substack.com",
@@ -150,13 +129,6 @@
     "title": "Correo ordinario",
     "author": "Ana Flecha Marco",
     "url": "https://correoordinario.substack.com",
-    "feed": "feed",
-    "type": "newsletter"
-  },
-  {
-    "title": "Gárgola Digital",
-    "author": "Ainhoa Marzol",
-    "url": "https://gargoladigital.substack.com",
     "feed": "feed",
     "type": "newsletter"
   },
