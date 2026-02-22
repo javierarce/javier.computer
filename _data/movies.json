@@ -1,7 +1,27 @@
 {
-  "updated_at": "2026-02-18",
-  "count": 1001,
+  "updated_at": "2026-02-22",
+  "count": 1003,
   "movies": [
+    {
+      "watched_on": "2026-02-21",
+      "title": "Obsession",
+      "year": 1976,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "obsession-1976"
+    },
+    {
+      "watched_on": "2026-02-20",
+      "title": "Emotional Architecture 1959",
+      "year": 2022,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "emotional-architecture-1959"
+    },
     {
       "watched_on": "2026-02-18",
       "title": "Ricochet",
