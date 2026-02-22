@@ -11,3 +11,6 @@ node_modules
 vendor
 release
 _site
+scripts/direcciones.txt
+scripts/secrets.csv
+scripts/words.js
