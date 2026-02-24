@@ -72,8 +72,42 @@ const hideCode = () => {
 };
 
 const showMessage = (data) => {
-  $message.innerHTML = data.message.replace(/\n/g, "<br /><br />");
+  let content = data.message;
+
+  // 1. Define the Regex for the image/media (GIF/WebP)
+  const imgRegex = /(https?:\/\/[^\s]+\.(?:gif|webp))/gi;
+
+  // 2. Transform URLs into the wrapper first
+  content = content.replace(imgRegex, (match) => {
+    return `[[MEDIA_SPLIT]]<div class="message__media-wrapper"><img src="${match}" alt="Embedded media" class="message__img" loading="lazy" /></div>[[MEDIA_SPLIT]]`;
+  });
+
+  // 3. Split the content by our marker, filter empty strings, and wrap text in <p>
+  const parts = content.split("[[MEDIA_SPLIT]]");
+
+  const finalHTML = parts
+    .map((part) => {
+      const trimmed = part.trim();
+      if (!trimmed) return ""; // Skip empty chunks
+
+      // If it's the media wrapper we just built, return it as is
+      if (trimmed.startsWith('<div class="message__media-wrapper"')) {
+        return trimmed;
+      }
+
+      // Otherwise, it's text. Convert internal newlines to single breaks if needed,
+      // or just wrap the whole block in a paragraph.
+      const textWithBreaks = trimmed.replace(/[\r\n]+/g, "<br />");
+      return `<p>${textWithBreaks}</p>`;
+    })
+    .join("");
+
+  $message.innerHTML = finalHTML;
   $message.classList.add("is-visible");
+
+  if (window.lazyLoadInstance) {
+    window.lazyLoadInstance.update();
+  }
 };
 
 const startLoading = () => {
