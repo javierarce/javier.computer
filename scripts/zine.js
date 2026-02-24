@@ -8,7 +8,7 @@ let controller = null;
 const codeLength = 4;
 const URL = "https://api.javier.computer/zine/check";
 
-const TIMEOUT = 100;
+const TIMEOUT = 75;
 
 const createInputField = () => {
   const field = document.createElement("div");
@@ -155,6 +155,10 @@ const checkCode = ($fields) => {
       .then((data) => {
         stopLoading();
         if (data.valid) {
+          // Update URL with the successful code
+          const newUrl = `${window.location.pathname}?code=${joinedCode}`;
+          window.history.replaceState({ path: newUrl }, "", newUrl);
+
           document.activeElement?.blur();
           hideCode();
           setTimeout(() => {
@@ -175,19 +179,32 @@ const loadCode = () => {
   $code = document.getElementById("code");
   $message = document.getElementById("message");
 
-  if (!$code) {
-    return;
-  }
+  if (!$code) return;
 
-  // Create input fields and separators
+  // Check for code in URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlCode = urlParams.get("code"); // e.g., "word-word-word-word"
+  const prefilledParts = urlCode ? urlCode.split("-") : [];
+
   for (let i = 0; i < codeLength; i++) {
     const $field = createInputField();
+    const $input = $field.querySelector("input");
+
+    // Fill input if code exists in URL
+    if (prefilledParts[i]) {
+      $input.value = prefilledParts[i];
+    }
+
     $code.appendChild($field);
   }
 
   const $fields = $code.getElementsByClassName("input__field");
-
   showCode();
+
+  // If we prefilled the whole thing, trigger the check immediately
+  if (prefilledParts.length === codeLength) {
+    checkCode($fields);
+  }
 
   for (let i = 0; i < $fields.length; i++) {
     const $input = $fields[i].getElementsByTagName("input")[0];
