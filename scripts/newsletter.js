@@ -131,7 +131,7 @@ class Newsletter {
 
       if (result.success) {
         this.$message.innerText =
-          "¡Funcionó! Recibirás un email de confirmación pronto (si no lo ves, revisa tu carpeta de spam).";
+          "¡Funcionó! Recibirás un email de confirmación inmediatamente. Si no lo ves, revisa tu carpeta de spam.";
         this.$form.classList.add("was-sent");
 
         this.$email.value = "";
