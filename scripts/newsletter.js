@@ -90,6 +90,13 @@ class Newsletter {
   async subscribe() {
     if (this.disabled) return;
 
+    if (this.$phone.value !== "") {
+      this.$form.classList.add("was-sent");
+      this.$message.innerText =
+        "¡Gracias! Recibirás un email de confirmación pronto.";
+      return;
+    }
+
     this.spinner.show();
     this.$sendButton.classList.add("is-loading");
 
@@ -190,7 +197,24 @@ class Newsletter {
       text: "Suscríbeme",
       type: "submit",
     });
+
     this.$message = this.createElement({ className: "message" });
+
+    this.$phoneGroup = this.createElement({
+      className: "input__field",
+      style: "display:none !important;",
+      tabIndex: "-1",
+      ariaHidden: "true",
+    });
+
+    this.$phone = this.createElement({
+      elementType: "input",
+      name: "user_phone_confirm",
+      type: "text",
+      autocomplete: "off",
+    });
+
+    this.$phoneGroup.appendChild(this.$phone);
 
     this.$sendButton.appendChild(this.spinner.$element);
     $actions.appendChild(this.$sendButton);
@@ -199,6 +223,7 @@ class Newsletter {
     this.$form.appendChild($nameGroup);
     this.$form.appendChild($emailGroup);
     this.$form.appendChild($actions);
+    this.$form.appendChild(this.$phoneGroup);
     this.$el.appendChild(this.$form);
 
     // 3. Append the form after the header
