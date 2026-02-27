@@ -186,11 +186,13 @@ class Newsletter {
       name: "email",
       required: true,
     });
+
     $emailGroup.appendChild(this.$email);
 
     const $actions = this.createElement({
       className: "form__actions two-lines",
     });
+
     this.$sendButton = this.createElement({
       elementType: "button",
       className: "button is-disabled",
@@ -200,7 +202,7 @@ class Newsletter {
 
     this.$message = this.createElement({ className: "message" });
 
-    this.$phoneGroup = this.createElement({
+    const $phoneGroup = this.createElement({
       className: "input__field",
       style: "display:none !important;",
       tabIndex: "-1",
@@ -214,7 +216,7 @@ class Newsletter {
       autocomplete: "off",
     });
 
-    this.$phoneGroup.appendChild(this.$phone);
+    $phoneGroup.appendChild(this.$phone);
 
     this.$sendButton.appendChild(this.spinner.$element);
     $actions.appendChild(this.$sendButton);
@@ -222,8 +224,8 @@ class Newsletter {
 
     this.$form.appendChild($nameGroup);
     this.$form.appendChild($emailGroup);
+    this.$form.appendChild($phoneGroup);
     this.$form.appendChild($actions);
-    this.$form.appendChild(this.$phoneGroup);
     this.$el.appendChild(this.$form);
 
     // 3. Append the form after the header
