@@ -88,12 +88,14 @@ class Newsletter {
   }
 
   async subscribe() {
-    if (this.disabled) return;
+    const timeTaken = (Date.now() - this.startTime) / 1000;
 
-    if (this.$phone.value !== "") {
+    if (timeTaken < 3) {
       this.$form.classList.add("was-sent");
-      this.$message.innerText =
-        "¡Gracias! Recibirás un email de confirmación pronto.";
+      return;
+    }
+
+    if (this.disabled) {
       return;
     }
 
@@ -154,6 +156,8 @@ class Newsletter {
   }
 
   render() {
+    this.startTime = Date.now();
+
     this.$header = this.createElement({
       elementType: "h2",
       className: "newsletter__title",
@@ -202,33 +206,15 @@ class Newsletter {
 
     this.$message = this.createElement({ className: "message" });
 
-    const $phoneGroup = this.createElement({
-      className: "input__field",
-      style: "display:none !important;",
-      tabIndex: "-1",
-      ariaHidden: "true",
-    });
-
-    this.$phone = this.createElement({
-      elementType: "input",
-      name: "user_phone_confirm",
-      type: "text",
-      autocomplete: "off",
-    });
-
-    $phoneGroup.appendChild(this.$phone);
-
     this.$sendButton.appendChild(this.spinner.$element);
     $actions.appendChild(this.$sendButton);
     $actions.appendChild(this.$message);
 
     this.$form.appendChild($nameGroup);
     this.$form.appendChild($emailGroup);
-    this.$form.appendChild($phoneGroup);
     this.$form.appendChild($actions);
     this.$el.appendChild(this.$form);
 
-    // 3. Append the form after the header
     this.$el.appendChild(this.$form);
     setTimeout(() => this.$form.classList.add("is-visible"), 200);
   }
