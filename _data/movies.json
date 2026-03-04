@@ -1,7 +1,37 @@
 {
-  "updated_at": "2026-02-27",
-  "count": 1005,
+  "updated_at": "2026-03-04",
+  "count": 1008,
   "movies": [
+    {
+      "watched_on": "2026-03-02",
+      "title": "Red Eye",
+      "year": 2005,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "red-eye"
+    },
+    {
+      "watched_on": "2026-03-01",
+      "title": "The Most Beautiful",
+      "year": 1944,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "the-most-beautiful"
+    },
+    {
+      "watched_on": "2026-02-27",
+      "title": "High School",
+      "year": 1968,
+      "rating": null,
+      "liked": false,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "high-school"
+    },
     {
       "watched_on": "2026-02-26",
       "title": "Model",
