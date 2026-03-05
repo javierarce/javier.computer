@@ -69,7 +69,8 @@ class Newsletter {
     const isEmailValid = this.validateEmail(this.$email.value);
     const isNameValid = this.$name.value.trim().length > 0;
     const isCaptchaValid =
-      parseInt(this.$captchaInput.value, 10) === this.captcha.answer;
+      parseInt(this.$captchaInput.value, 10) ===
+      this.captcha.a + this.captcha.b;
 
     this.disabled = !(isEmailValid && isNameValid && isCaptchaValid);
     this.$sendButton.classList.toggle("is-disabled", this.disabled);
