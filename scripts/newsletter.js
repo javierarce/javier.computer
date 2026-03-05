@@ -1,19 +1,19 @@
 class Newsletter {
   constructor() {
     this.$el = document.querySelector(".js-newsletter-container");
-    this.$countDisplay = document.getElementById("subscribers-count");
+    this.$countDisplay = document.getElementById("subscribers-count"); // Target the span
 
     if (!this.$el) return;
 
     this.spinner = new Spinner("is-inside-button");
     this.disabled = true;
-    this.turnstileToken = null;
 
     this.render();
     this.bind();
     this.fetchSubscribers();
   }
 
+  // Helper to build elements (matches your existing style)
   createElement({ className, html, text, elementType = "div", ...options }) {
     const $el = document.createElement(elementType);
     if (options.id) $el.id = options.id;
@@ -52,40 +52,16 @@ class Newsletter {
     const isEmailValid = this.validateEmail(this.$email.value);
     const isNameValid = this.$name.value.trim().length > 0;
 
-    this.disabled = !(isEmailValid && isNameValid && this.turnstileToken);
+    // The button is only enabled if both are true
+    this.disabled = !(isEmailValid && isNameValid);
+
     this.$sendButton.classList.toggle("is-disabled", this.disabled);
 
+    // Visual feedback for the email field specifically
     this.$email.classList.toggle(
       "invalid-email",
       this.$email.value && !isEmailValid,
     );
-  }
-
-  initTurnstile() {
-    const renderWidget = () => {
-      turnstile.render(this.$turnstileContainer, {
-        sitekey: "YOUR_SITE_KEY",
-        callback: (token) => {
-          this.turnstileToken = token;
-          this.onWriting();
-        },
-        "expired-callback": () => {
-          this.turnstileToken = null;
-          this.onWriting();
-        },
-        "error-callback": () => {
-          this.turnstileToken = null;
-          this.onWriting();
-        },
-      });
-    };
-
-    if (typeof turnstile !== "undefined") {
-      renderWidget();
-    } else {
-      // Expose a global callback for the Turnstile script to call
-      window.turnstileCb = renderWidget;
-    }
   }
 
   async fetchSubscribers() {
@@ -99,8 +75,10 @@ class Newsletter {
 
       if (count && count.toString() !== this.$countDisplay.innerText) {
         this.$countDisplay.classList.add("is-fading");
+
         setTimeout(() => {
           this.$countDisplay.innerText = count;
+
           this.$countDisplay.classList.remove("is-fading");
         }, 140);
       }
@@ -117,19 +95,19 @@ class Newsletter {
       return;
     }
 
-    if (this.disabled || !this.turnstileToken) {
+    if (this.disabled) {
       return;
     }
 
     this.spinner.show();
     this.$sendButton.classList.add("is-loading");
+
     this.$form.classList.remove("is-error", "was-sent");
     this.$message.innerText = "";
 
     const payload = {
       email: this.$email.value,
       name: this.$name.value || "",
-      token: this.turnstileToken, // Send the token to your backend
     };
 
     try {
@@ -137,7 +115,9 @@ class Newsletter {
         "https://api.javier.computer/api/subscribe",
         {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+          },
           body: JSON.stringify(payload),
         },
       );
@@ -155,6 +135,7 @@ class Newsletter {
         this.$message.innerText =
           "¡Funcionó! Recibirás un email de confirmación inmediatamente. Si no lo ves, revisa tu carpeta de spam.";
         this.$form.classList.add("was-sent");
+
         this.$email.value = "";
         this.$name.value = "";
         this.disabled = true;
@@ -164,9 +145,6 @@ class Newsletter {
           "¡Ya estabas en la lista! Busca un email de confirmación en tu bandeja de entrada (o spam). Si no lo encuentras, envíame un mensaje para que pueda ayudarte.";
         this.$form.classList.add("is-error");
       }
-
-      // Reset Turnstile for the next submission
-      this.resetTurnstile();
     } catch (err) {
       console.error("Subscription error:", err);
       this.spinner.hide();
@@ -174,14 +152,6 @@ class Newsletter {
       this.$message.innerText =
         "¡Ups! Algo salió mal. Por favor, inténtalo de nuevo más tarde o envíame un mensaje para que pueda ayudarte.";
       this.$form.classList.add("is-error");
-      this.resetTurnstile();
-    }
-  }
-
-  resetTurnstile() {
-    this.turnstileToken = null;
-    if (typeof turnstile !== "undefined") {
-      turnstile.reset(this.$turnstileContainer);
     }
   }
 
@@ -191,7 +161,7 @@ class Newsletter {
     this.$header = this.createElement({
       elementType: "h2",
       className: "newsletter__title",
-      text: "Suscríbete a mi newsletter",
+      text: "Suscríbete a mi newsletter", // You can change this text as needed
     });
     this.$el.appendChild(this.$header);
 
@@ -207,6 +177,7 @@ class Newsletter {
       name: "name",
       required: true,
     });
+
     $nameGroup.appendChild(this.$name);
 
     // Email Field
@@ -219,13 +190,8 @@ class Newsletter {
       name: "email",
       required: true,
     });
-    $emailGroup.appendChild(this.$email);
 
-    // Turnstile container
-    this.$turnstileContainer = this.createElement({
-      className: "turnstile-container",
-      id: "turnstile-widget",
-    });
+    $emailGroup.appendChild(this.$email);
 
     const $actions = this.createElement({
       className: "form__actions two-lines",
@@ -246,14 +212,11 @@ class Newsletter {
 
     this.$form.appendChild($nameGroup);
     this.$form.appendChild($emailGroup);
-    this.$form.appendChild(this.$turnstileContainer);
     this.$form.appendChild($actions);
     this.$el.appendChild(this.$form);
 
+    this.$el.appendChild(this.$form);
     setTimeout(() => this.$form.classList.add("is-visible"), 200);
-
-    // Initialize Turnstile after the container is in the DOM
-    this.initTurnstile();
   }
 }
 
