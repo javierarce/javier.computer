@@ -64,10 +64,10 @@ class Newsletter {
   initTurnstile() {
     const renderWidget = () => {
       turnstile.render(this.$turnstileContainer, {
-        sitekey: "0x4AAAAAACmXvVuXVZIt4sxw",
+        sitekey: "YOUR_SITE_KEY",
         callback: (token) => {
           this.turnstileToken = token;
-          this.onWriting(); // Re-evaluate form validity
+          this.onWriting();
         },
         "expired-callback": () => {
           this.turnstileToken = null;
@@ -80,13 +80,11 @@ class Newsletter {
       });
     };
 
-    // If the Turnstile script is already loaded, render immediately.
-    // Otherwise, wait for it.
     if (typeof turnstile !== "undefined") {
       renderWidget();
     } else {
-      window.addEventListener("turnstileCb", renderWidget);
-      // The script tag should use: ?onload=turnstileCb
+      // Expose a global callback for the Turnstile script to call
+      window.turnstileCb = renderWidget;
     }
   }
 
