@@ -25,7 +25,7 @@
     <script>
       const USER_LOCATION = {{ site.data.location[0] | jsonify }};
     </script>
-
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=turnstileCb" async defer></script>
     <script defer data-api="/api/event" data-domain="javier.computer" src="/js/stats.js"></script>
   </head>
   <body class="Layout__{{ className | default: page.category | downcase  }}">
