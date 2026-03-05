@@ -16,6 +16,10 @@ input {
     flex-direction: column;
     gap: var(--gap-sm);
     width: var(--width-full);
+
+    &-short {
+      width: var(--width-sm);
+    }
   }
 }
 

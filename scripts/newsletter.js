@@ -1,19 +1,23 @@
 class Newsletter {
   constructor() {
     this.$el = document.querySelector(".js-newsletter-container");
-    this.$countDisplay = document.getElementById("subscribers-count"); // Target the span
+    this.$countDisplay = document.getElementById("subscribers-count");
 
     if (!this.$el) return;
 
     this.spinner = new Spinner("is-inside-button");
     this.disabled = true;
 
+    this.init();
+  }
+
+  async init() {
+    this.captcha = await this.generateCaptcha();
     this.render();
     this.bind();
     this.fetchSubscribers();
   }
 
-  // Helper to build elements (matches your existing style)
   createElement({ className, html, text, elementType = "div", ...options }) {
     const $el = document.createElement(elementType);
     if (options.id) $el.id = options.id;
@@ -38,9 +42,22 @@ class Newsletter {
     return re.test(String(email).toLowerCase());
   }
 
+  async generateCaptcha() {
+    try {
+      const response = await fetch("https://api.javier.computer/api/captcha");
+      const data = await response.json();
+      return data; // { a, b, signature }
+    } catch (err) {
+      // Fallback in case the endpoint is unreachable
+      const a = Math.floor(Math.random() * 10) + 1;
+      const b = Math.floor(Math.random() * 10) + 1;
+      return { a, b, signature: null };
+    }
+  }
   bind() {
     this.$name.addEventListener("input", this.onWriting.bind(this));
     this.$email.addEventListener("input", this.onWriting.bind(this));
+    this.$captchaInput.addEventListener("input", this.onWriting.bind(this));
 
     this.$form.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -51,13 +68,12 @@ class Newsletter {
   onWriting() {
     const isEmailValid = this.validateEmail(this.$email.value);
     const isNameValid = this.$name.value.trim().length > 0;
+    const isCaptchaValid =
+      parseInt(this.$captchaInput.value, 10) === this.captcha.answer;
 
-    // The button is only enabled if both are true
-    this.disabled = !(isEmailValid && isNameValid);
-
+    this.disabled = !(isEmailValid && isNameValid && isCaptchaValid);
     this.$sendButton.classList.toggle("is-disabled", this.disabled);
 
-    // Visual feedback for the email field specifically
     this.$email.classList.toggle(
       "invalid-email",
       this.$email.value && !isEmailValid,
@@ -75,10 +91,8 @@ class Newsletter {
 
       if (count && count.toString() !== this.$countDisplay.innerText) {
         this.$countDisplay.classList.add("is-fading");
-
         setTimeout(() => {
           this.$countDisplay.innerText = count;
-
           this.$countDisplay.classList.remove("is-fading");
         }, 140);
       }
@@ -101,13 +115,18 @@ class Newsletter {
 
     this.spinner.show();
     this.$sendButton.classList.add("is-loading");
-
     this.$form.classList.remove("is-error", "was-sent");
     this.$message.innerText = "";
 
     const payload = {
       email: this.$email.value,
       name: this.$name.value || "",
+      captcha: {
+        a: this.captcha.a,
+        b: this.captcha.b,
+        answer: parseInt(this.$captchaInput.value, 10),
+        signature: this.captcha.signature,
+      },
     };
 
     try {
@@ -115,9 +134,7 @@ class Newsletter {
         "https://api.javier.computer/api/subscribe",
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
         },
       );
@@ -135,11 +152,14 @@ class Newsletter {
         this.$message.innerText =
           "¡Funcionó! Recibirás un email de confirmación inmediatamente. Si no lo ves, revisa tu carpeta de spam.";
         this.$form.classList.add("was-sent");
-
         this.$email.value = "";
         this.$name.value = "";
+        this.$captchaInput.value = "";
         this.disabled = true;
         this.$sendButton.classList.add("is-disabled");
+
+        this.captcha = await this.generateCaptcha();
+        this.$captchaInput.placeholder = `¿Cuánto es ${this.captcha.a} + ${this.captcha.b}?`;
       } else {
         this.$message.innerText =
           "¡Ya estabas en la lista! Busca un email de confirmación en tu bandeja de entrada (o spam). Si no lo encuentras, envíame un mensaje para que pueda ayudarte.";
@@ -161,7 +181,7 @@ class Newsletter {
     this.$header = this.createElement({
       elementType: "h2",
       className: "newsletter__title",
-      text: "Suscríbete a mi newsletter", // You can change this text as needed
+      text: "Suscríbete a mi newsletter",
     });
     this.$el.appendChild(this.$header);
 
@@ -177,7 +197,6 @@ class Newsletter {
       name: "name",
       required: true,
     });
-
     $nameGroup.appendChild(this.$name);
 
     // Email Field
@@ -190,8 +209,20 @@ class Newsletter {
       name: "email",
       required: true,
     });
-
     $emailGroup.appendChild(this.$email);
+
+    const $captchaGroup = this.createElement({
+      className: "input__field input__field-short",
+    });
+    this.$captchaInput = this.createElement({
+      elementType: "input",
+      className: "input",
+      type: "text",
+      placeholder: `¿Cuánto es ${this.captcha.a} + ${this.captcha.b}?`,
+      name: "captcha",
+      required: true,
+    });
+    $captchaGroup.appendChild(this.$captchaInput);
 
     const $actions = this.createElement({
       className: "form__actions two-lines",
@@ -212,10 +243,10 @@ class Newsletter {
 
     this.$form.appendChild($nameGroup);
     this.$form.appendChild($emailGroup);
+    this.$form.appendChild($captchaGroup);
     this.$form.appendChild($actions);
     this.$el.appendChild(this.$form);
 
-    this.$el.appendChild(this.$form);
     setTimeout(() => this.$form.classList.add("is-visible"), 200);
   }
 }
