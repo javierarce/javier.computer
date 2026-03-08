@@ -1,6 +1,6 @@
 .Layout__project {
   .Content {
-    width: var(--width-lg);
+    width: var(--width-wide);
 
     h2 {
       margin: 0 auto 0;
@@ -10,7 +10,7 @@
 
   hr {
     width: var(--width-full);
-    max-width: var(--width-md);
+    max-width: var(--width-content);
   }
 }
 
@@ -47,7 +47,7 @@
 
     h3 {
       margin-top: 1em;
-      width: var(--width-md);
+      width: var(--width-content);
     }
 
     h2 + h3 {
@@ -59,7 +59,7 @@
     }
 
     p {
-      width: var(--width-md);
+      width: var(--width-content);
       margin-bottom: 1em;
 
       &:last-child {
@@ -74,14 +74,14 @@
   }
 
   .figure {
-    width: var(--width-lg);
+    width: var(--width-wide);
     margin: 2em auto;
 
     img,
     video {
       display: block;
       width: var(--width-full);
-      border-radius: var(--br-sm);
+      border-radius: var(--br-subtle);
     }
 
     .Photo__caption {
@@ -95,7 +95,7 @@
   }
 
   &__intro {
-    width: var(--width-md);
+    width: var(--width-content);
     margin: auto;
     margin-bottom: 2em;
     text-align: center;
@@ -134,7 +134,7 @@
     display: flex;
     flex-direction: column;
     border: 1px solid var(--gray);
-    border-radius: var(--br-sm);
+    border-radius: var(--br-subtle);
     text-decoration: none;
 
     &:hover {

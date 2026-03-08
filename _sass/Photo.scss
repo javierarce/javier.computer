@@ -1,7 +1,7 @@
 .Layout__grid .Content,
 .Layout__photo .Content,
 .Layout__photos .Content {
-  width: var(--width-lg);
+  width: var(--width-wide);
 }
 
 .Layout__grid .Content .Photo__collections {
@@ -67,16 +67,16 @@
   }
 
   .Content {
-    width: var(--width-lg);
+    width: var(--width-wide);
   }
 
   .Post__footer {
-    width: var(--width-md);
+    width: var(--width-content);
     margin: 0 auto;
   }
 
   blockquote {
-    width: var(--width-md);
+    width: var(--width-content);
     margin: 0 auto;
   }
 
@@ -88,7 +88,7 @@
 
   .g h3,
   .t h3 {
-    width: var(--width-md);
+    width: var(--width-content);
     margin: 0 auto var(--sp-md) auto;
     font-size: var(--font-size-content);
     font-weight: var(--font-weight-regular);
@@ -126,7 +126,7 @@
 
     ul,
     ul:last-child {
-      width: var(--width-md);
+      width: var(--width-content);
       margin: 0 auto;
     }
   }
@@ -146,7 +146,7 @@
 .Photo .Post__footer,
 .Photo__collection .Post__content p,
 .Photo__collection .Post__footer {
-  width: var(--width-md);
+  width: var(--width-content);
   margin: 0 auto;
 }
 
@@ -172,8 +172,8 @@
   img {
     display: block;
     width: var(--width-full);
-    max-width: var(--width-lg);
-    border-radius: var(--br-sm);
+    max-width: var(--width-wide);
+    border-radius: var(--br-subtle);
   }
 
   &.with-source {
@@ -186,7 +186,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--gap-xxxl);
-  width: var(--width-lg);
+  width: var(--width-wide);
 }
 
 .Photos__archive {
@@ -225,7 +225,7 @@
 }
 
 .Photo__layout {
-  width: var(--width-lg);
+  width: var(--width-wide);
   margin: 0 auto 2em auto;
   display: flex;
   flex-direction: column;
@@ -338,7 +338,7 @@
 .Photo__layout {
   p,
   p:last-child {
-    width: var(--width-md);
+    width: var(--width-content);
     margin: 0 auto;
   }
 

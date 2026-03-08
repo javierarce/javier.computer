@@ -29,7 +29,7 @@
 .Map {
   width: var(--width-full);
   height: 100%;
-  border-radius: var(--br-md);
+  border-radius: var(--br-default);
 
   &:focus-visible {
     outline: none;
@@ -160,7 +160,7 @@
   font-size: var(--font-size-meta);
   break-inside: avoid;
   border: 1px solid var(--color-border-subtle);
-  border-radius: var(--br-md);
+  border-radius: var(--br-default);
   padding: 0.8em;
   cursor: pointer;
 
@@ -222,7 +222,7 @@
     color: var(--white);
     background: #333;
     font-size: var(--font-size-meta);
-    border-radius: var(--br-round);
+    border-radius: var(--br-pill);
 
     &:hover {
       text-decoration: none;
@@ -251,7 +251,7 @@
     background: var(--black-pure);
     background-size: 400% 400%;
     box-shadow: 0 2px 4px var(--color-shadow);
-    border-radius: var(--br-round);
+    border-radius: var(--br-pill);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -322,7 +322,7 @@
     background: var(--gray2);
     color: var(--black-pure);
     font-size: var(--font-size-meta);
-    border-radius: var(--br-round);
+    border-radius: var(--br-pill);
     transition: background var(--transition-speed-default) ease-in-out;
   }
 
@@ -377,7 +377,7 @@
   background: var(--white);
   width: auto;
   height: auto;
-  border-radius: var(--br-sm);
+  border-radius: var(--br-subtle);
   cursor: pointer;
 }
 

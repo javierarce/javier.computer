@@ -8,12 +8,12 @@
 
   &__content {
     display: flex;
-    width: var(--width-md);
+    width: var(--width-content);
   }
 
   &.is-centered {
     gap: 0.8em;
-    width: var(--width-md);
+    width: var(--width-content);
     margin: 2em auto 0 auto;
     opacity: var(--op-light);
   }
@@ -115,7 +115,7 @@
         text-decoration: none;
         cursor: pointer;
         user-select: none;
-        border-radius: var(--br-round);
+        border-radius: var(--br-pill);
       }
     }
   }

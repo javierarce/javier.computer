@@ -1,6 +1,6 @@
 .Layout__page {
   .Page__content {
-    width: var(--width-md);
+    width: var(--width-content);
     font-size: var(--font-size-content);
     display: flex;
     flex-direction: column;
@@ -26,7 +26,7 @@
 }
 
 .Page {
-  width: var(--width-md);
+  width: var(--width-content);
 
   &__content {
 

@@ -1,5 +1,5 @@
 .Layout__bots .Content {
-  width: var(--width-lg);
+  width: var(--width-wide);
 }
 
 .Bots {
@@ -53,12 +53,12 @@
   }
 
   &__description {
-    width: var(--width-md);
+    width: var(--width-content);
     margin: 0 0 2em;
   }
 
   &__archive {
-    width: var(--width-lg);
+    width: var(--width-wide);
     background: var(--white);
     color: var(--black);
     padding: 2em;

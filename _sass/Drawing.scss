@@ -1,6 +1,6 @@
 .Layout__drawing .Content,
 .Layout__drawings .Content {
-  width: var(--width-lg);
+  width: var(--width-wide);
 }
 
 .Layout__drawing .Content h2,
@@ -10,21 +10,21 @@
 }
 
 .Drawings__thumbs {
-  max-width: var(--width-lg);
+  max-width: var(--width-wide);
   margin: 0 auto 2em auto;
 }
 
 .Drawing {
   &__content {
     font-size: var(--font-size-content);
-    max-width: var(--width-lg);
+    max-width: var(--width-wide);
     margin: 0 auto 2em;
     text-align: center;
   }
 
   &__header {
     text-align: center;
-    max-width: var(--width-lg);
+    max-width: var(--width-wide);
     margin: 0 auto 2em auto;
     font-size: var(--font-size-content);
   }
@@ -40,7 +40,7 @@
   &__pagination {
     text-align: center;
     width: var(--width-full);
-    max-width: var(--width-lg);
+    max-width: var(--width-wide);
     margin: 0 auto 2em auto;
     font-size: var(--font-size-content);
     display: flex;
@@ -70,7 +70,7 @@
 
   &__title {
     text-align: center;
-    max-width: var(--width-lg);
+    max-width: var(--width-wide);
     margin: 0 auto 2em auto;
     font-size: var(--font-size-content);
     opacity: var(--op-light);
@@ -114,7 +114,7 @@
 
   img {
     width: var(--width-full);
-    border-radius: var(--br-sm);
+    border-radius: var(--br-subtle);
   }
 
   &__link {

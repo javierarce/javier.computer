@@ -9,7 +9,7 @@ input {
   width: var(--width-full);
   resize: none;
   outline: none;
-  border-radius: var(--br-sm);
+  border-radius: var(--br-subtle);
 
   &__field {
     display: flex;
@@ -29,7 +29,7 @@ input {
   resize: none;
   border: 1px solid rgba(255, 255, 255, var(--op-5));
   font-size: var(--font-size-ui);
-  border-radius: var(--br-sm);
+  border-radius: var(--br-subtle);
   transition: border var(--transition-speed-default) ease-in-out;
   outline: none;
 

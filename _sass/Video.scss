@@ -3,11 +3,11 @@ $overlay-bg-color: rgba(0, 0, 0, 0.3);
 $transition-duration: 0.3s;
 
 .Layout__video .Content {
-  width: var(--width-lg);
+  width: var(--width-wide);
 }
 
 .Layout__video .Post .Post__footer {
-  width: var(--width-md);
+  width: var(--width-content);
   margin: 0 auto;
 }
 
@@ -24,7 +24,7 @@ $transition-duration: 0.3s;
   video {
     width: var(--width-full);
     display: block;
-    border-radius: var(--br-sm);
+    border-radius: var(--br-subtle);
   }
 
   &.is-loading {

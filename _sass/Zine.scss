@@ -78,7 +78,7 @@
   .input--zine {
     background: var(--white);
     border: none;
-    border-radius: var(--br-md);
+    border-radius: var(--br-default);
 
     transition: opacity var(--transition-speed-super-slow) ease-in-out;
 
@@ -148,7 +148,7 @@
   }
 
   &__text {
-    width: var(--width-md);
+    width: var(--width-content);
 
     strong {
       font-weight: 500;

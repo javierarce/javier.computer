@@ -3,7 +3,7 @@ div.highlight {
   padding: 1em;
   font-size: var(--font-size-meta);
   margin: 0;
-  border-radius: var(--br-md);
+  border-radius: var(--br-default);
   border: 1px solid #fff;
 }
 
@@ -169,7 +169,7 @@ div.highlight {
   background-color: #222;
   padding: 0.1em 0.2em;
   font-size: 0.9em;
-  border-radius: var(--br-md);
+  border-radius: var(--br-default);
   font-family: var(--font-text-mono);
 }
 

@@ -103,6 +103,10 @@
   --width-xl: 1440px;
   --width-xxl: 1920px;
 
+  /* Semantic widths */
+  --width-content: var(--width-md);  /* standard content column */
+  --width-wide: var(--width-lg);     /* wider sections and layouts */
+
   /* Other */
   --space: 1em;
 
@@ -153,7 +157,10 @@
   --br-round: 100%;
   --br-flat: 0;
 
-  --br-default: var(--br-lg);
+  /* Semantic border radii */
+  --br-subtle:  var(--br-sm);    /* minimal rounding: images, small elements */
+  --br-default: var(--br-md);    /* standard rounding: cards, inputs, tags */
+  --br-pill:    var(--br-round); /* full pill/circle */
 
   /* Gaps  */
   --gap-xxs: 0.1em;

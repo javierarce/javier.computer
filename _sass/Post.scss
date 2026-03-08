@@ -11,12 +11,12 @@
   display: flex;
   flex-direction: column;
   gap: var(--gap-xxl);
-  max-width: var(--width-md);
+  max-width: var(--width-content);
 }
 
 .Post .Video,
 .Post .Photo {
-  width: var(--width-lg);
+  width: var(--width-wide);
 }
 
 .Post {
@@ -29,12 +29,12 @@
     display: block;
     max-width: 1024px;
     margin: 0;
-    border-radius: var(--br-sm);
+    border-radius: var(--br-subtle);
   }
 
   &.is-highlighted .Post__content {
     border: 1px solid #ae81ff;
-    border-radius: var(--br-md);
+    border-radius: var(--br-default);
     padding: 0.8em;
   }
 
@@ -43,7 +43,7 @@
   }
 
   &__text {
-    width: var(--width-md);
+    width: var(--width-content);
   }
 
   &__title {
@@ -117,7 +117,7 @@
   }
 
   &__pagination {
-    width: var(--width-md);
+    width: var(--width-content);
     margin: 1em auto 0 auto;
     display: flex;
     flex-direction: column;

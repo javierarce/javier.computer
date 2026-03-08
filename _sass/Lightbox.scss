@@ -80,7 +80,7 @@
     object-fit: contain;
     opacity: var(--op-hidden);
     transition: opacity var(--transition-speed-medium) ease-in-out;
-    border-radius: var(--br-sm);
+    border-radius: var(--br-subtle);
   }
 
   &__button {

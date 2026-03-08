@@ -1,5 +1,5 @@
 .archive {
-  width: var(--width-md);
+  width: var(--width-content);
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -55,7 +55,7 @@
     font-family: var(--font-text-mono);
     font-size: var(--font-size-caption);
     border: 1px solid var(--white);
-    border-radius: var(--br-md);
+    border-radius: var(--br-default);
     line-height: normal;
     opacity: var(--op-light);
   }
