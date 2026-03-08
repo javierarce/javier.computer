@@ -1,7 +1,27 @@
 {
-  "updated_at": "2026-03-04",
-  "count": 1008,
+  "updated_at": "2026-03-08",
+  "count": 1010,
   "movies": [
+    {
+      "watched_on": "2026-03-07",
+      "title": "52 Pick-Up",
+      "year": 1986,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "52-pick-up"
+    },
+    {
+      "watched_on": "2026-03-06",
+      "title": "Speaking Parts",
+      "year": 1989,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "speaking-parts"
+    },
     {
       "watched_on": "2026-03-02",
       "title": "Red Eye",
