@@ -86,8 +86,8 @@
     margin: 0 auto;
   }
 
-  .g h3,
-  .t h3 {
+  .stack h3,
+  .text h3 {
     width: var(--width-content);
     margin: 0 auto var(--space-sm) auto;
     font-size: var(--font-size-content);
@@ -109,7 +109,7 @@
   }
 
   .Photo__layout {
-    .g p:not(:last-child) {
+    .stack p:not(:last-child) {
       margin-bottom: 1em;
     }
 
@@ -238,11 +238,11 @@
   max-width: none;
 }
 
-.Project .g {
+.Project .stack {
   margin: 0 0 var(--space-xl) 0;
 }
 
-.g {
+.stack {
   &.has-margin-top {
     margin-top: 3em;
   }
@@ -256,7 +256,7 @@
   }
 }
 
-.gg {
+.grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: var(--gap-sm);
@@ -292,7 +292,7 @@
   }
 }
 
-.t {
+.text {
   display: flex;
   flex-direction: column;
   gap: var(--gap-md);
@@ -303,35 +303,35 @@
   }
 }
 
-.g {
+.stack {
   display: flex;
   flex-direction: column;
   gap: var(--gap-sm);
   width: var(--width-full);
 }
 
-.g > .g {
+.stack > .stack {
   margin-bottom: 0;
 }
 
-.g:has(.gg) {
+.stack:has(.grid) {
   gap: var(--gap-sm);
 }
 
-.h {
+.row {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--gap-sm);
 }
 
-.h.has-one,
-.h.has-two {
+.row.has-one,
+.row.has-two {
   justify-content: flex-start;
 }
 
-.h.has-one > div,
-.h.has-two > div {
+.row.has-one > div,
+.row.has-two > div {
   width: 33.3333%;
 }
 
@@ -444,20 +444,20 @@ figcaption {
       width: auto;
     }
 
-    .g h3 {
+    .stack h3 {
       width: var(--width-full);
     }
   }
 
-  .gg,
-  .gg.is-half {
+  .grid,
+  .grid.is-half {
     display: flex;
     flex-direction: column;
   }
 
-  .gg.is-vertical .Photo img,
-  .gg.is-square .Photo img,
-  .gg .Photo img {
+  .grid.is-vertical .Photo img,
+  .grid.is-square .Photo img,
+  .grid .Photo img {
     aspect-ratio: auto;
   }
 
@@ -481,8 +481,8 @@ figcaption {
 
   .Photo__layout p,
   .Photo__layout p:last-child,
-  .Photo__layout .g ul,
-  .Photo__layout .g ul:last-child {
+  .Photo__layout .stack ul,
+  .Photo__layout .stack ul:last-child {
     width: var(--width-full);
   }
 
@@ -500,21 +500,21 @@ figcaption {
     gap: var(--gap-sm);
   }
 
-  .h {
+  .row {
     flex-direction: column;
   }
 
-  .h.has-one,
-  .h.has-two {
+  .row.has-one,
+  .row.has-two {
     justify-content: center;
   }
 
-  .h.has-one > div,
-  .h.has-two > div {
+  .row.has-one > div,
+  .row.has-two > div {
     width: var(--width-full);
   }
 
-  .g.with-caption {
+  .stack.with-caption {
     gap: 0.8em;
   }
 

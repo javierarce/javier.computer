@@ -7,7 +7,7 @@ module PhotoLayout
 
     def render(context)
       content = super
-      classes = ['g', @extra_classes].reject(&:empty?).join(' ')
+      classes = ['stack', @extra_classes].reject(&:empty?).join(' ')
       "<div class=\"#{classes}\">#{content}</div>"
     end
   end
@@ -20,7 +20,7 @@ module PhotoLayout
 
     def render(context)
       content = super
-      classes = ['h', @extra_classes].reject(&:empty?).join(' ')
+      classes = ['row', @extra_classes].reject(&:empty?).join(' ')
       "<div class=\"#{classes}\">#{content}</div>"
     end
   end
@@ -33,7 +33,7 @@ module PhotoLayout
 
     def render(context)
       content = super
-      classes = ['t', @extra_classes].reject(&:empty?).join(' ')
+      classes = ['text', @extra_classes].reject(&:empty?).join(' ')
       "<div class=\"#{classes}\">#{content}</div>"
     end
   end
@@ -46,7 +46,7 @@ module PhotoLayout
 
     def render(context)
       content = super
-      classes = ['gg', @extra_classes].reject(&:empty?).join(' ')
+      classes = ['grid', @extra_classes].reject(&:empty?).join(' ')
       "<div class=\"#{classes}\">#{content}</div>"
     end
   end

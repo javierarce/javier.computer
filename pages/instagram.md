@@ -15,13 +15,18 @@ the hands of a hip-hop producer—and why I believe it was an inside job.
 
 ### Background
 
-First off, here’s some backstory: I’ve had the
+First off, here's some backstory: I've had the
 [@javier](https://instagram.com/javier) username since October 2010, the same
 month the app launched. I joined so early, that I even have emails reporting
-bugs to [@joshriedel](https://x.com/joshriedel), Instagram’s very first
+bugs to [@joshriedel](https://x.com/joshriedel), Instagram's very first
 employee.
 
-<div class="g"> {% include photos/custom.html classname='is-wide' location='instagram' filename='Recovery_04' -%} {% include photos/custom.html classname='is-wide' location='instagram' filename='Recovery_03' -%} {% include photos/custom.html classname='is-wide' location='instagram' filename='Recovery_02' -%} {% include photos/custom.html classname='is-wide' location='instagram' filename='Recovery_01' -%} </div>
+{% stack %}
+{% photo instagram Recovery_04 class:is-wide %}
+{% photo instagram Recovery_03 class:is-wide %}
+{% photo instagram Recovery_02 class:is-wide %}
+{% photo instagram Recovery_01 class:is-wide %}
+{% endstack %}
 
 Over the past 14 years, I've received countless messages to buy my account.
 Early on, I made a conscious decision not to engage with these requests. Rather
@@ -39,7 +44,10 @@ account. One interesting pattern: the majority of these requests come from
 profiles without any photos. I find it so weird that people are so eager to get
 a username when they don't even share content!
 
-<g> {% include photos/custom.html classname='is-wide' location='instagram' filename='0_photos_01' -%} {% include photos/custom.html classname='is-wide' location='instagram' filename='0_photos_02' -%} </g>
+{% stack %}
+{% photo instagram 0_photos_01 class:is-wide %}
+{% photo instagram 0_photos_02 class:is-wide %}
+{% endstack %}
 
 ### The Theft
 
@@ -54,7 +62,7 @@ Instagram account.
 
 When I attempted to log back in, my password was rejected. Using the password
 recovery option, I discovered something alarming: the email associated with my
-account had been changed to an address I didn’t recognize:
+account had been changed to an address I didn't recognize:
 r\*\*\*\*\*\*\*e@gmail.com
 
 At this point, my [@javier](https://instagram.com/javier) account still
@@ -68,13 +76,15 @@ After exhausting all recovery methods, I refreshed my now-inaccessible account
 to find all my content replaced by 4 posts. Here's my account before and after
 the robbery.
 
-<div class="g">{% include photos/custom.html classname='is-wide' location='instagram' filename='javier_before' -%} {% include photos/custom.html classname='is-wide' location='instagram' filename='javier_after' -%}</div>
+{% stack %}
+{% photo instagram javier_before class:is-wide %}
+{% photo instagram javier_after class:is-wide %}
+{% endstack %}
 
 The hackers had moved my content to a new account, @javier.typeshi, stripped of
 my profile photo and description, ironically adding the text "meta official".
 
-{% include photos/custom.html classname='is-wide' location='instagram'
-filename='javier' -%}
+{% photo instagram javier class:is-wide %}
 
 The profile picture in that account belongs to a man also named Javier Arce. He
 was a journalist that worked for @azcentral [who sadly passed away from stomach cancer last month](https://eu.azcentral.com/story/news/local/phoenix/2024/09/06/javier-arce-la-voz-and-arizona-republic-journalist-dies-at-age-48/75106323007).
@@ -110,15 +120,13 @@ Back to the story. Let me tell you about the new account owner. His name is
 Javier "Jay" Sang. Looking at the tagged photos, he seems to be the founder and
 CEO of a label called Rebel Music.
 
-{% include photos/custom.html classname='is-wide' location='instagram'
-filename='jay sang' -%}
+{% photo instagram filename:"jay sang" class:is-wide %}
 
 And do you remember how I take a screenshot of every account that ask me to
 sell or change my username? Jay did that in April this year. It seems he may
 have sought alternative means after I didn't respond to his request lol
 
-{% include photos/custom.html classname='is-wide' location='instagram'
-filename='jayrebelmusic' -%}
+{% photo instagram jayrebelmusic class:is-wide %}
 
 ### Current Status
 
@@ -167,12 +175,12 @@ There's [an excellent post](https://www.citationneeded.news/posse) by [Molly
 White](https://www.mollywhite.net) about POSSE (Publish on your Own Site,
 Syndicate Elsewhere) that I encourage everyone to read and share.
 
-And if you don’t have a blog, consider starting one today! Creating a blog is
-easier than ever, and it’s one of the best ways to control your content, share
+And if you don't have a blog, consider starting one today! Creating a blog is
+easier than ever, and it's one of the best ways to control your content, share
 your ideas, and build meaningful networks outside of traditional platforms.
 
-For me, I’ll keep posting stories on Instagram and connecting with my friends
-there, but I’ll also be doubling down on publishing [on my personal
+For me, I'll keep posting stories on Instagram and connecting with my friends
+there, but I'll also be doubling down on publishing [on my personal
 blog](https://javier.computer) and on the [Fediverse](https://mastodon.social/@javierarce).
 
 See you there!

@@ -28,10 +28,12 @@ class Photo < Liquid::Tag
 
   def assign_named(key, value)
     case key
-    when 'alt'     then @alt       = value
-    when 'caption' then @caption   = value
-    when 'class'   then @classname = value
-    when 'ratio'   then @ratio     = value
+    when 'alt'      then @alt       = value
+    when 'caption'  then @caption   = value
+    when 'class'    then @classname = value
+    when 'ratio'    then @ratio     = value
+    when 'filename' then @filename  = value
+    when 'location' then @location  = value
     end
   end
 
