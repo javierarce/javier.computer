@@ -8,6 +8,9 @@ tag: photo
 location: barcelona
 camera: Ricoh GR IIIx
 cover: 2026-03-06-Barcelona-R0018085
+ratio: 3/2
+intro: Fotos de la presentación del fanzine de Andrés Magán «Big Comic for Boy» en la librería Terranova.
+translation: Photos from the presentation of Andrés Magán's fanzine "Big Comic for Boy" at Terranova.
 filenames:
   - filename: 2026-03-06-Barcelona-R0018016
     ratio: 3/2
