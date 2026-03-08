@@ -141,14 +141,14 @@
   &__pagination,
   &__footer {
     user-select: none;
-    font-weight: 400;
+    font-weight: var(--font-weight-regular);
   }
 
   &__paginationLink,
   &__location,
   &__date {
     text-decoration: none;
-    font-weight: 400;
+    font-weight: var(--font-weight-regular);
   }
 
   &__paginationLink:hover {

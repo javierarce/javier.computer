@@ -40,7 +40,7 @@
   &__date:hover {
     user-select: none;
     text-decoration: none;
-    font-weight: 400;
+    font-weight: var(--font-weight-regular);
     opacity: var(--op-light);
   }
 }

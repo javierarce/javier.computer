@@ -90,6 +90,7 @@
   --font-size-caption: var(--font-size-xs);    /* smallest text: figure titles, tiny labels */
   --font-size-display: var(--font-size-xxxl);  /* large display headers */
 
+  --font-weight-heavy: 700;
   --font-weight-bold: 600;
   --font-weight-semibold: 500;
   --font-weight-regular: 400;
@@ -101,7 +102,6 @@
   --width-md: 800px;
   --width-lg: 1024px;
   --width-xl: 1440px;
-  --width-xxl: 1920px;
 
   /* Semantic widths */
   --width-content: var(--width-md);  /* standard content column */
@@ -133,7 +133,6 @@
   --sp-lg: 0.8em;
   --sp-xl: 1em;
   --sp-xxl: 1.5em;
-  --sp-xxxl: 3em;
 
   /* Padding */
   --pd-sm: 0.2rem;
@@ -150,9 +149,6 @@
   /* Border radius */
   --br-sm: 2px;
   --br-md: 4px;
-  --br-lg: 6px;
-  --br-xl: 8px;
-  --br-xxl: 32px;
   --br-xxxl: 64px;
   --br-round: 100%;
   --br-flat: 0;

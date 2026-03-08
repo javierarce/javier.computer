@@ -117,7 +117,7 @@ sup {
 }
 
 strong {
-  font-weight: 700;
+  font-weight: var(--font-weight-heavy);
 }
 
 
@@ -152,7 +152,7 @@ blockquote {
   }
 
   strong {
-    font-weight: 600;
+    font-weight: var(--font-weight-bold);
   }
 }
 
@@ -201,7 +201,7 @@ hr {
 h2,
 h3,
 h4 {
-  font-weight: 600;
+  font-weight: var(--font-weight-bold);
   margin: 0 0 1em;
 }
 
@@ -275,7 +275,7 @@ img {
 .is-external:after {
   content: "↗";
   display: inline-block;
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   padding-left: var(--pd-sm);
   color: var(--white);
   opacity: var(--op-light);
