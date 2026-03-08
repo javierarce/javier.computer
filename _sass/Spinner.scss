@@ -1,10 +1,8 @@
 .Spinner {
   display: none;
-  border-top: 3px solid var(--white);
-  border-right: 3px solid var(--white);
-  border-bottom: 3px solid var(--white);
-  border-left: 3px solid var(--black);
-  animation: spinner 0.8s infinite linear;
+  border: 3px solid var(--white);
+  border-left-color: var(--black);
+  animation: rotating 0.8s infinite linear;
 
   width: 30px;
   height: 30px;
@@ -42,16 +40,5 @@
 
   &.is-visible {
     display: block;
-  }
-}
-
-
-@keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
   }
 }

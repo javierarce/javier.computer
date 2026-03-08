@@ -1,7 +1,7 @@
 ::part(music) {
   opacity: var(--op-hidden);
   visibility: hidden;
-  transition: opacity 500ms ease-in-out;
+  transition: opacity var(--transition-speed-super-slow) ease-in-out;
 
   &.is-visible {
     opacity: var(--op-visible);

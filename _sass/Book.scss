@@ -46,7 +46,7 @@ a.book__spine:hover {
   &__progress {
     opacity: var(--op-hidden);
     visibility: hidden;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, var(--op-2));
     mix-blend-mode: multiply;
     height: 100%;
     transform: scaleX(0);

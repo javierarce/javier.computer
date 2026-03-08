@@ -2,7 +2,7 @@
   width: var(--width-full);
   font-size: 0.7em;
   opacity: var(--op-hidden);
-  transition: opacity 250ms ease-in-out;
+  transition: opacity var(--transition-speed-medium) ease-in-out;
 
   &.is-visible {
     opacity: 1;

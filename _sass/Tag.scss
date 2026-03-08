@@ -5,7 +5,7 @@
   width: var(--width-md);
 
   &__title {
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--sp-sm);
   }
 
   &__listItem {
@@ -32,8 +32,3 @@
   }
 }
 
-@media all and (max-width: 640px) {
-  .tags {
-    width: var(--width-full);
-  }
-}

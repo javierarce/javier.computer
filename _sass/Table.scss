@@ -59,9 +59,6 @@ table td {
   width: 20%;
 }
 
-.Layout__books table th:nth-child(3),
-.Layout__books table td:nth-child(3) {}
-
 .Layout__books table th:last-child,
 .Layout__books table td:last-child {
   width: 60px;
@@ -98,10 +95,6 @@ table tr:last-child td {
   .Layout__books,
   .Layout__movies,
   .Layout__projects {
-    table {
-      width: var(--width-full);
-    }
-
     table tr:last-child {
       border: none;
     }

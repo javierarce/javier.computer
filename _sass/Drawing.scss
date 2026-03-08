@@ -1,13 +1,9 @@
 .Layout__drawing .Content,
-.Layout__drawing .Content,
-.Layout__drawings .Content,
 .Layout__drawings .Content {
   width: var(--width-lg);
 }
 
 .Layout__drawing .Content h2,
-.Layout__drawing .Content h2,
-.Layout__drawings .Content h2,
 .Layout__drawings .Content h2 {
   margin: 0 auto 2em;
   text-align: center;
@@ -75,7 +71,6 @@
   &__title {
     text-align: center;
     max-width: var(--width-lg);
-    margin: auto;
     margin: 0 auto 2em auto;
     font-size: var(--font-size-xl);
     opacity: var(--op-light);
@@ -83,7 +78,6 @@
 }
 
 .Drawings {
-  margin: auto;
   max-width: 90vw;
   margin: 0 auto 2em auto;
   display: flex;
@@ -125,7 +119,7 @@
 
   &__link {
     display: flex;
-    transition: all 140ms ease-in-out;
+    transition: all var(--transition-speed-default) ease-in-out;
   }
 
   &__title {

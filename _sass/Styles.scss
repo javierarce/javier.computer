@@ -38,10 +38,6 @@ a.is-underlined {
 
 .is-light {
   opacity: var(--op-light);
-
-  a {
-    color: var(--white);
-  }
 }
 
 .is-light a:hover,
@@ -61,7 +57,7 @@ p.is-light p a {
 }
 
 .is-hidden-from-home {
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, var(--op-4));
   padding: var(--pd-lg);
   font-size: var(--font-size-sm);
   opacity: var(--op-light);
@@ -124,10 +120,6 @@ strong {
   font-weight: 700;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-}
 
 p {
   font-size: var(--font-size-md);
@@ -185,6 +177,8 @@ blockquote p a {
 }
 
 ul {
+  list-style: none;
+  padding: 0;
   margin: 0 0 0 1em;
 
   li {

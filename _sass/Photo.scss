@@ -81,7 +81,7 @@
   }
 
   h2 {
-    font-size: 1.8em;
+    font-size: var(--font-size-xxxl);
     text-align: center;
     margin: 0 auto;
   }
@@ -366,7 +366,7 @@
 }
 
 .Photo__header h2 {
-  font-size: 1.8em;
+  font-size: var(--font-size-xxxl);
   line-height: 1.2;
 }
 

@@ -1,7 +1,7 @@
 .has-lightbox {
   .Photo {
     cursor: zoom-in;
-    transition: opacity 250ms ease-in-out;
+    transition: opacity var(--transition-speed-medium) ease-in-out;
   }
 }
 
@@ -13,10 +13,10 @@
   left: 0;
   width: var(--width-full);
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, var(--op-8));
   opacity: var(--op-hidden);
   visibility: hidden;
-  transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out;
+  transition: opacity var(--transition-speed-medium) ease-in-out, visibility var(--transition-speed-medium) ease-in-out;
 
   &.hide-ui {
 
@@ -43,10 +43,10 @@
   &__caption {
     position: absolute;
     bottom: 1em;
-    text-shadow: 1px 1px 1em rgba(0, 0, 0, 0.8);
+    text-shadow: 1px 1px 1em rgba(0, 0, 0, var(--op-8));
     opacity: var(--op-hidden);
     visibility: hidden;
-    transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out;
+    transition: opacity var(--transition-speed-medium) ease-in-out, visibility var(--transition-speed-medium) ease-in-out;
     text-align: center;
     line-height: normal;
 
@@ -79,7 +79,7 @@
     max-height: 95vh;
     object-fit: contain;
     opacity: var(--op-hidden);
-    transition: opacity 250ms ease-in-out;
+    transition: opacity var(--transition-speed-medium) ease-in-out;
     border-radius: var(--br-sm);
   }
 
@@ -90,7 +90,7 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
-    transition: opacity 250ms ease-in-out;
+    transition: opacity var(--transition-speed-medium) ease-in-out;
     -webkit-appearance: none;
     appearance: none;
 
@@ -132,8 +132,3 @@
   }
 }
 
-@media all and (max-width: 640px) {
-  .lightbox__image {
-    max-width: var(--width-full);
-  }
-}

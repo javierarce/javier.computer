@@ -159,14 +159,14 @@
   gap: var(--gap-xs);
   font-size: var(--font-size-sm);
   break-inside: avoid;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, var(--op-2));
   border-radius: var(--br-md);
   padding: 0.8em;
   cursor: pointer;
 
   &.is-active {
     border-color: var(--link);
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, var(--op-1));
   }
 
   &__id {
@@ -250,7 +250,7 @@
     font-weight: var(--font-weight-bold);
     background: var(--black-pure);
     background-size: 400% 400%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, var(--op-2));
     border-radius: var(--br-round);
     display: flex;
     justify-content: center;
@@ -323,7 +323,7 @@
     color: var(--black-pure);
     font-size: var(--font-size-sm);
     border-radius: var(--br-round);
-    transition: background 140ms ease-in-out;
+    transition: background var(--transition-speed-default) ease-in-out;
   }
 
   &__posts &__post:hover {
@@ -347,7 +347,7 @@
     color: var(--black-pure);
     font-size: 14px;
     line-height: 24px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, var(--op-2));
   }
 
   .leaflet-popup-content p {
@@ -366,13 +366,13 @@
     padding: 1px;
     border: 1px solid transparent;
     background: var(--white);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, var(--op-2));
   }
 }
 
 /* Leaflet Controls */
 .ZoomControl.leaflet-control-zoom.leaflet-bar.leaflet-control {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, var(--op-2));
   border: none;
   background: var(--white);
   width: auto;
