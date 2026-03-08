@@ -14,8 +14,8 @@
 
   &__title {
     position: absolute;
-    bottom: var(--sp-xxl);
-    right: var(--sp-xl);
+    bottom: var(--space-xl);
+    right: var(--space-lg);
     font-weight: var(--font-weight-semibold);
     text-transform: capitalize;
     pointer-events: none;

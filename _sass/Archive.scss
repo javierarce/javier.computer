@@ -44,14 +44,14 @@
   }
 
   &__month-name {
-    padding: 0 0 var(--space);
+    padding: 0 0 var(--space-lg);
     border-bottom: 1px solid var(--gray);
     margin: 0;
   }
 
   &__day {
     display: block;
-    padding: var(--pd-md);
+    padding: var(--space-sm);
     font-family: var(--font-text-mono);
     font-size: var(--font-size-caption);
     border: 1px solid var(--white);

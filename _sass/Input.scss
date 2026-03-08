@@ -25,7 +25,7 @@ input {
 
 .input,
 .textarea {
-  padding: var(--pd-xl);
+  padding: var(--space-lg);
   resize: none;
   border: 1px solid rgba(255, 255, 255, var(--op-5));
   font-size: var(--font-size-ui);

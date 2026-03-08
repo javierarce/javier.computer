@@ -89,7 +89,7 @@
   .g h3,
   .t h3 {
     width: var(--width-content);
-    margin: 0 auto var(--sp-md) auto;
+    margin: 0 auto var(--space-sm) auto;
     font-size: var(--font-size-content);
     font-weight: var(--font-weight-regular);
     text-align: left;
@@ -239,7 +239,7 @@
 }
 
 .Project .g {
-  margin: 0 0 var(--sp-xxl) 0;
+  margin: 0 0 var(--space-xl) 0;
 }
 
 .g {

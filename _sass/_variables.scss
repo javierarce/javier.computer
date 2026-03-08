@@ -107,8 +107,15 @@
   --width-content: var(--width-md);  /* standard content column */
   --width-wide: var(--width-lg);     /* wider sections and layouts */
 
-  /* Other */
-  --space: 1em;
+  /* Spacing */
+  --space-xs:   0.2rem;
+  --space-sm:   0.4rem;
+  --space-md:   0.8rem;
+  --space-lg:   1rem;
+  --space-xl:   1.5rem;
+  --space-xxl:  2rem;
+  --space-xxxl: 3rem;
+  --space-4xl:  4rem;
 
   /* Opacity */
   --op-10: 1;
@@ -126,25 +133,6 @@
   --op-hidden: var(--op-0);
   --op-light: var(--op-5);
   --op-visible: var(--op-10);
-
-  /* Spacing */
-  --sp-sm: 0.2em;
-  --sp-md: 0.4em;
-  --sp-lg: 0.8em;
-  --sp-xl: 1em;
-  --sp-xxl: 1.5em;
-
-  /* Padding */
-  --pd-sm: 0.2rem;
-  --pd-md: 0.4rem;
-  --pd-lg: 0.8rem;
-  --pd-xl: 1rem;
-  --pd-xxl: 2rem;
-  --pd-xxxl: 3rem;
-  --pd-xxxxl: 4rem;
-
-  --pd-desktop: var(--pd-xxl);
-  --pd-mobile: var(--pd-xl);
 
   /* Border radius */
   --br-sm: 2px;

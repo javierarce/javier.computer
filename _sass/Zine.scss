@@ -161,7 +161,7 @@
     opacity: var(--op-hidden);
     visibility: hidden;
     text-align: left;
-    padding: var(--pd-lg);
+    padding: var(--space-md);
     background: var(--white);
     box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.06);
 
@@ -283,11 +283,11 @@
 
 @media all and (max-width: 640px) {
   .Layout__zine {
-    padding: var(--pd-mobile);
+    padding: var(--space-lg);
   }
 
   .Layout__lol {
-    padding: var(--pd-mobile);
+    padding: var(--space-lg);
   }
 
   .zine {
