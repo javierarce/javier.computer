@@ -1,0 +1,32 @@
+#!/bin/bash
+set -e
+
+# Load environment variables
+if [ ! -f .env ]; then
+    echo "ERROR: .env file not found"
+    exit 1
+fi
+source .env
+
+# Always restore stash on exit (success or failure)
+trap 'git stash pop 2>/dev/null || true' EXIT
+
+# Run update script and commit any data changes
+node _scripts/update.js
+
+if ! git diff --quiet; then
+    git add _data/movies.json _data/subscribers.json content/_movies
+    git commit -m "Auto-update data files and content"
+fi
+
+# Stash uncommitted changes so only committed content gets deployed
+git stash push --include-untracked -m "release: temp stash"
+
+# Build into a separate directory to avoid conflicts with the dev server
+JEKYLL_ENV=production bundle exec jekyll build -d _site_release
+
+# Sync to server
+rsync -avz --exclude='node_modules' -e "ssh -p $DEPLOY_PORT" _site_release/ "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH"
+
+# Clean up release build
+rm -rf _site_release
