@@ -18,7 +18,7 @@ a.book__spine:hover {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-meta);
     text-decoration: none;
     transition: transform 200ms;
   }
@@ -182,7 +182,7 @@ a.book__spine:hover {
       transform: initial;
       width: var(--width-full) !Important;
       margin: 0 0 1em;
-      font-size: var(--font-size-md);
+      font-size: var(--font-size-ui);
     }
 
     a.book__spine {

@@ -81,7 +81,7 @@
   }
 
   h2 {
-    font-size: var(--font-size-xxxl);
+    font-size: var(--font-size-display);
     text-align: center;
     margin: 0 auto;
   }
@@ -90,7 +90,7 @@
   .t h3 {
     width: var(--width-md);
     margin: 0 auto var(--sp-md) auto;
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-content);
     font-weight: var(--font-weight-regular);
     text-align: left;
     opacity: var(--op-light);
@@ -117,7 +117,7 @@
     ul li,
     ul:last-child li,
     p:last-child {
-      font-size: var(--font-size-xl);
+      font-size: var(--font-size-content);
     }
 
     ul li {
@@ -366,12 +366,12 @@
 }
 
 .Photo__header h2 {
-  font-size: var(--font-size-xxxl);
+  font-size: var(--font-size-display);
   line-height: 1.2;
 }
 
 .Photo__selector {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-meta);
   width: var(--width-full);
   text-align: right;
 }

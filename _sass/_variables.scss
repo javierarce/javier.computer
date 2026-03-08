@@ -82,6 +82,14 @@
   --font-size-xxl: 1.3em;
   --font-size-xxxl: 1.8em;
 
+  /* Semantic font sizes */
+  --font-size-body:    var(--font-size-xxl);   /* base body text */
+  --font-size-content: var(--font-size-xl);    /* reading content: posts, tables, drawings */
+  --font-size-ui:      var(--font-size-md);    /* UI elements: inputs, h3/h4, paragraphs */
+  --font-size-meta:    var(--font-size-sm);    /* secondary text: labels, captions, buttons */
+  --font-size-caption: var(--font-size-xs);    /* smallest text: figure titles, tiny labels */
+  --font-size-display: var(--font-size-xxxl);  /* large display headers */
+
   --font-weight-bold: 600;
   --font-weight-semibold: 500;
   --font-weight-regular: 400;

@@ -9,7 +9,7 @@
   .About__content {
 
     width: var(--width-md);
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-content);
     margin: 0 auto 2em auto;
     display: flex;
     flex-direction: column;
@@ -50,13 +50,13 @@
     border: 1px solid var(--gray);
     border-radius: var(--br-sm);
     text-decoration: none;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-meta);
 
     &Date {
       position: absolute;
       top: 1em;
       right: 1em;
-      font-size: var(--font-size-sm);
+      font-size: var(--font-size-meta);
       opacity: var(--op-light);
     }
 

@@ -6,7 +6,7 @@
   gap: var(--gap-xl);
 
   &__links {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-meta);
   }
 
   &__list {
@@ -21,7 +21,7 @@
       align-items: center;
       list-style: none;
       padding: 0;
-      font-size: var(--font-size-xl);
+      font-size: var(--font-size-content);
       gap: var(--gap-sm);
       margin: 0;
 
@@ -53,7 +53,7 @@
     display: block;
     padding: var(--pd-md);
     font-family: var(--font-text-mono);
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-caption);
     border: 1px solid var(--white);
     border-radius: var(--br-md);
     line-height: normal;

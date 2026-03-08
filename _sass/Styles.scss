@@ -16,7 +16,7 @@ body {
   background: var(--color-bg-site);
 
   line-height: 1.45;
-  font-size: var(--font-size-xxl);
+  font-size: var(--font-size-body);
   font-weight: var(--font-weight-regular);
   font-family: var(--font-text-sans);
 
@@ -59,7 +59,7 @@ p.is-light p a {
 .is-hidden-from-home {
   border: 1px solid var(--color-border-muted);
   padding: var(--pd-lg);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-meta);
   opacity: var(--op-light);
 }
 
@@ -80,11 +80,11 @@ p.is-light p a {
 }
 
 .is-sm {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-meta);
 }
 
 .is-xs {
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-caption);
 }
 
 a {
@@ -122,7 +122,7 @@ strong {
 
 
 p {
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-ui);
   line-height: 1.45;
   margin: 0 0 1em 0;
 
@@ -143,7 +143,7 @@ blockquote {
   border-left: 1px solid var(--color-brd-quote);
   padding: 0 0 0 var(--pd-xl);
   font-family: var(--font-text-serif);
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-content);
   color: var(--color-txt-quote);
 
   p {
@@ -206,17 +206,17 @@ h4 {
 }
 
 h2 {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-content);
 }
 
 h3 {
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-ui);
   opacity: var(--op-light);
 }
 
 h4 {
   font-weight: var(--font-weight-regular);
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-ui);
   opacity: var(--op-light);
 }
 
@@ -346,7 +346,7 @@ a.is-icon-light.is-reportage::after {
 
 .is-highlighted {
   padding: 0.8em;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-meta);
   border: 1px solid var(--purple);
   border-radius: var(--br-md);
   color: var(--purple);
@@ -363,7 +363,7 @@ a.is-icon-light.is-reportage::after {
 
     p {
       width: var(--width-md);
-      font-size: var(--font-size-xl);
+      font-size: var(--font-size-content);
       margin-left: auto;
       margin-right: auto;
     }
@@ -401,7 +401,7 @@ a.is-icon-light.is-reportage::after {
 
 @media all and (max-width: 640px) {
   body {
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-ui);
     padding: 0;
   }
 

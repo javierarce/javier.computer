@@ -45,7 +45,7 @@
   width: 400px;
   display: flex;
   flex-direction: column;
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-ui);
   height: 100%;
   overflow: hidden;
   overflow-y: scroll;
@@ -157,7 +157,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--gap-xs);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-meta);
   break-inside: avoid;
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--br-md);
@@ -202,7 +202,7 @@
 
   &__address {
     text-decoration: none;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-meta);
     opacity: var(--op-light);
   }
 
@@ -221,7 +221,7 @@
     padding: 0.2em;
     color: var(--white);
     background: #333;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-meta);
     border-radius: var(--br-round);
 
     &:hover {
@@ -235,7 +235,7 @@
 .has-emoji .Location__id {
   background: none;
   border-radius: var(--br-flat);
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-content);
   padding: 0;
   height: auto;
   width: auto;
@@ -321,7 +321,7 @@
     padding: 0.2em;
     background: var(--gray2);
     color: var(--black-pure);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-meta);
     border-radius: var(--br-round);
     transition: background var(--transition-speed-default) ease-in-out;
   }
@@ -429,6 +429,6 @@
 
   .Sidebar {
     width: var(--width-full);
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-content);
   }
 }

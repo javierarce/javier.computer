@@ -138,7 +138,7 @@ $transition-duration: 0.3s;
 
   .fullscreen-button:after {
     content: "\2197";
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-content);
     font-weight: var(--font-weight-bold);
     color: var(--white);
   }
@@ -182,7 +182,7 @@ $transition-duration: 0.3s;
     .time-display {
       bottom: 0.4em;
       left: 0.4em;
-      font-size: var(--font-size-sm);
+      font-size: var(--font-size-meta);
     }
 
     .control-overlay,

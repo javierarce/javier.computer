@@ -3,7 +3,7 @@
 }
 
 .Bots {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-content);
 }
 
 .Bot {
@@ -85,7 +85,7 @@
   &__archiveContent {
     column-count: 2;
     column-gap: var(--gap-xl);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-meta);
     font-family: Times New Roman;
   }
 

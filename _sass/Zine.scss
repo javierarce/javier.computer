@@ -109,7 +109,7 @@
   }
 
   footer {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-meta);
     opacity: var(--op-light);
     a {
       color: var(--color-txt-site-inverted);
@@ -165,7 +165,7 @@
     background: var(--white);
     box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.06);
 
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-ui);
     font-family: var(--font-text-serif);
     transition: opacity var(--transition-speed-super-slow) ease-in-out;
 
@@ -248,7 +248,7 @@
   }
 
   &__highlight {
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-ui);
     font-family: var(--font-text-serif);
   }
 
@@ -316,7 +316,7 @@
 
     &__description {
       width: 100%;
-      font-size: var(--font-size-md);
+      font-size: var(--font-size-ui);
       line-height: 1.4;
     }
 

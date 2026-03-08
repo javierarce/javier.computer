@@ -16,7 +16,7 @@
 
 .Drawing {
   &__content {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-content);
     max-width: var(--width-lg);
     margin: 0 auto 2em;
     text-align: center;
@@ -26,7 +26,7 @@
     text-align: center;
     max-width: var(--width-lg);
     margin: 0 auto 2em auto;
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-content);
   }
 
   &__header>* {
@@ -42,7 +42,7 @@
     width: var(--width-full);
     max-width: var(--width-lg);
     margin: 0 auto 2em auto;
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-content);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,7 +72,7 @@
     text-align: center;
     max-width: var(--width-lg);
     margin: 0 auto 2em auto;
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-content);
     opacity: var(--op-light);
   }
 }
