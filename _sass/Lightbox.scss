@@ -13,7 +13,7 @@
   left: 0;
   width: var(--width-full);
   height: 100%;
-  background-color: rgba(0, 0, 0, var(--op-8));
+  background-color: var(--color-overlay);
   opacity: var(--op-hidden);
   visibility: hidden;
   transition: opacity var(--transition-speed-medium) ease-in-out, visibility var(--transition-speed-medium) ease-in-out;
@@ -43,7 +43,7 @@
   &__caption {
     position: absolute;
     bottom: 1em;
-    text-shadow: 1px 1px 1em rgba(0, 0, 0, var(--op-8));
+    text-shadow: 1px 1px 1em var(--color-overlay);
     opacity: var(--op-hidden);
     visibility: hidden;
     transition: opacity var(--transition-speed-medium) ease-in-out, visibility var(--transition-speed-medium) ease-in-out;

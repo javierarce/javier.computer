@@ -52,7 +52,7 @@
     transition: background var(--transition-speed-medium) ease-in-out;
 
     &:hover {
-      background: rgba(255, 255, 255, var(--op-2));
+      background: var(--color-bg-active);
 
       &__progress {
         height: 100%;

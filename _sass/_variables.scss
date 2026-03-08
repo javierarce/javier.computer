@@ -33,6 +33,15 @@
   --color-txt-quote: #fd6f42;
   --color-brd-quote: #fd6f42;
 
+  /* Semantic rgba tokens */
+  --color-overlay:       rgba(0, 0, 0, var(--op-8));        /* modal/lightbox overlay */
+  --color-shadow:        rgba(0, 0, 0, var(--op-2));        /* drop shadows */
+  --color-border-dark:   rgba(0, 0, 0, var(--op-5));        /* borders/focus on light bg */
+  --color-border-subtle: rgba(255, 255, 255, var(--op-2));  /* borders on dark bg */
+  --color-border-muted:  rgba(255, 255, 255, var(--op-4));  /* stronger borders on dark bg */
+  --color-bg-hover:      rgba(255, 255, 255, var(--op-1));  /* hover bg on dark */
+  --color-bg-active:     rgba(255, 255, 255, var(--op-2));  /* active bg on dark */
+
   --color-book-purple: #6a1b9a;
   --color-book-yellow: var(--orange-yellow);
   --color-book-teal: var(--teal);

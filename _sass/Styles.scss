@@ -57,7 +57,7 @@ p.is-light p a {
 }
 
 .is-hidden-from-home {
-  border: 1px solid rgba(255, 255, 255, var(--op-4));
+  border: 1px solid var(--color-border-muted);
   padding: var(--pd-lg);
   font-size: var(--font-size-sm);
   opacity: var(--op-light);
