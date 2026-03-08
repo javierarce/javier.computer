@@ -133,28 +133,28 @@ GR1s, la Hexar AF, y la XA-2 (a la cual le envío un beso desde aquí). La
 película que utilicé en los tres casos fue Kodak UltraMax 400 (disparada a ISO 200) y los carretes fueron revelados y escaneados diligentemente por
 [Safelight](/maps/berlin/safelight) y por [Film Speed Lab](/maps/berlin/film-speed-lab).
 
-<div class="g">
+{% stack %}
     <h3>Ricoh GR1s</h3>
     
     <p>Salvo por el hecho de que me dejó tirado y arruinó las que sin duda iban a convertirse en
     las mejores fotos que he disparado en la vida, me gustó mucho el manejo de esta cámara y lo bien que expuso y enfocó.</p>
 
-    <div class="h">
-        {% include photos/custom.html location='analog' filename='2025-07-11-Berlin-R1-00958-029A' ratio="2/3" -%}
-        {% include photos/custom.html location='analog' filename='2025-07-11-Berlin-R1-00958-025A' ratio="2/3" -%}
-        {% include photos/custom.html location='analog' filename='2025-07-11-Berlin-R1-00958-030A' ratio="2/3" -%}
-    </div>
-    <div class="h">
-        {% include photos/custom.html location='analog' filename='2025-07-11-Berlin-R1-00958-036A' ratio="3/2" -%}
-    </div>
-    <div class="h">
-        {% include photos/custom.html location='analog' filename='2025-07-11-Berlin-R1-00958-034A' ratio="3/2" -%}
-        {% include photos/custom.html location='analog' filename='2025-07-11-Berlin-R1-00958-026A' ratio="3/2" -%}
-    </div>
+    {% row %}
+        {% photo analog 2025-07-11-Berlin-R1-00958-029A 2/3 %}
+        {% photo analog 2025-07-11-Berlin-R1-00958-025A 2/3 %}
+        {% photo analog 2025-07-11-Berlin-R1-00958-030A 2/3 %}
+    {% endrow %}
+    {% row %}
+        {% photo analog 2025-07-11-Berlin-R1-00958-036A 3/2 %}
+    {% endrow %}
+    {% row %}
+        {% photo analog 2025-07-11-Berlin-R1-00958-034A 3/2 %}
+        {% photo analog 2025-07-11-Berlin-R1-00958-026A 3/2 %}
+    {% endrow %}
 
-</div>
+{% endstack %}
 
-<div class="g has-margin-top">
+{% stack has-margin-top %}
     <h3>Konica Hexar AF</h3>
     <p>A pesar de que esta cámara se las prometía cómoda de usar y era,
         como ya mencioné, más tranquila y silenciosa que yo, no me entusiasmó
@@ -162,18 +162,18 @@ película que utilicé en los tres casos fue Kodak UltraMax 400 (disparada a ISO
         intermedia para enfocar y una completa para disparar, me hizo perder alguna foto por no esperar lo suficiente mientras la cámara enfocaba.
     </p>
 
-    {% include photos/custom.html location='analog' filename='2025-08-18-HexarAF-Berlin-45098-000450980013' ratio="3/2" -%}
-        {% include photos/custom.html location='analog' filename='2025-08-18-HexarAF-Berlin-45098-000450980016' ratio="2/3" -%}
-    <div class="h">
-    {% include photos/custom.html location='analog' filename='2025-08-18-HexarAF-Berlin-45098-000450980006' ratio="2/3" -%}
-        {% include photos/custom.html location='analog' filename='2025-08-18-HexarAF-Berlin-45098-000450980005' ratio="2/3" -%}
-    </div>
-    {% include photos/custom.html location='analog' filename='2025-08-18-HexarAF-Berlin-45098-000450980015' ratio="3/2" -%}
-    {% include photos/custom.html location='analog' filename='2025-08-18-HexarAF-Berlin-45098-000450980012' ratio="3/2" -%}
+    {% photo analog 2025-08-18-HexarAF-Berlin-45098-000450980013 3/2 %}
+        {% photo analog 2025-08-18-HexarAF-Berlin-45098-000450980016 2/3 %}
+    {% row %}
+    {% photo analog 2025-08-18-HexarAF-Berlin-45098-000450980006 2/3 %}
+        {% photo analog 2025-08-18-HexarAF-Berlin-45098-000450980005 2/3 %}
+    {% endrow %}
+    {% photo analog 2025-08-18-HexarAF-Berlin-45098-000450980015 3/2 %}
+    {% photo analog 2025-08-18-HexarAF-Berlin-45098-000450980012 3/2 %}
 
-</div>
+{% endstack %}
 
-<div class="g has-margin-top">
+{% stack has-margin-top %}
     <h3>Olympus XA-2</h3>
 
     <p>La Olympus, a diferencia de las otras dos cámaras, es relativamente
@@ -182,24 +182,24 @@ película que utilicé en los tres casos fue Kodak UltraMax 400 (disparada a ISO
     la cámara es inconspicua, bonita, y da muchísimo más de lo que promete.
     </p>
 
-    {% include photos/custom.html location='analog' filename='2025-08-14-OlympusXA2-Berlin-000448270013' ratio="3/2" -%}
+    {% photo analog 2025-08-14-OlympusXA2-Berlin-000448270013 3/2 %}
 
-    <div class="h">
-    {% include photos/custom.html location='analog' filename='2025-08-14-OlympusXA2-Berlin-000448270032' ratio="2/3" -%}
-    {% include photos/custom.html location='analog' filename='2025-08-14-OlympusXA2-Berlin-000448270025' ratio="2/3" -%}
-    </div>
+    {% row %}
+    {% photo analog 2025-08-14-OlympusXA2-Berlin-000448270032 2/3 %}
+    {% photo analog 2025-08-14-OlympusXA2-Berlin-000448270025 2/3 %}
+    {% endrow %}
 
-    {% include photos/custom.html location='analog' filename='2025-07-11-Berlin-R1-00959-0025' ratio="3/2" -%}
+    {% photo analog 2025-07-11-Berlin-R1-00959-0025 3/2 %}
 
-    <div class="h">
-    {% include photos/custom.html location='analog' filename='2025-07-11-Berlin-R1-00959-0026' ratio="2/3" -%}
-    </div>
-    {% include photos/custom.html location='analog' filename='2025-08-14-OlympusXA2-Berlin-000448270011' ratio="3/2" -%}
-    {% include photos/custom.html location='analog' filename='2025-07-11-Berlin-R1-00959-0033' ratio="3/2" -%}
+    {% row %}
+    {% photo analog 2025-07-11-Berlin-R1-00959-0026 2/3 %}
+    {% endrow %}
+    {% photo analog 2025-08-14-OlympusXA2-Berlin-000448270011 3/2 %}
+    {% photo analog 2025-07-11-Berlin-R1-00959-0033 3/2 %}
 
-    <div class="h">
-    {% include photos/custom.html location='analog' filename='2025-08-14-OlympusXA2-Berlin-000448270020' ratio="2/3" -%}
-    {% include photos/custom.html location='analog' filename='2025-08-14-OlympusXA2-Berlin-000448270024' ratio="2/3" -%}
-    </div>
+    {% row %}
+    {% photo analog 2025-08-14-OlympusXA2-Berlin-000448270020 2/3 %}
+    {% photo analog 2025-08-14-OlympusXA2-Berlin-000448270024 2/3 %}
+    {% endrow %}
 
-</div>
+{% endstack %}

@@ -32,16 +32,16 @@ filenames:
 
 Dos mercados · Coral demostrando el funcionamiento del «Telehang it all» · This could be you · [Erica](https://www.ericafustero.com) having a nice day.
 
-<div class="g">
-    {% include photos/custom.html location='berlin' filename='R0003695' alt="" ratio="2/3" -%}
-    {% include photos/custom.html location='berlin' filename='R0003699' alt="" ratio="3/2" -%}
-    <div class="h">
-    {% include photos/custom.html location='berlin' filename='R0003708' alt="" ratio="2/3" -%}
-        {% include photos/custom.html location='berlin' filename='R0003728' alt="" ratio="2/3" -%}
-    </div>
-        {% include photos/custom.html location='berlin' filename='R0003723' alt="" ratio="2/3" -%}
-    {% include photos/custom.html location='berlin' filename='R0003700' alt="" ratio="3/2" -%}
-    {% include photos/custom.html location='berlin' filename='R0003709' alt="" ratio="3/2" -%}
-    {% include photos/custom.html location='berlin' filename='R0003711' alt="" ratio="3/2" -%}
-    {% include photos/custom.html location='berlin' filename='R0003732' alt="" ratio="2/3" -%}
-</div>
+{% stack %}
+    {% photo berlin R0003695 2/3 %}
+    {% photo berlin R0003699 3/2 %}
+    {% row %}
+    {% photo berlin R0003708 2/3 %}
+        {% photo berlin R0003728 2/3 %}
+    {% endrow %}
+        {% photo berlin R0003723 2/3 %}
+    {% photo berlin R0003700 3/2 %}
+    {% photo berlin R0003709 3/2 %}
+    {% photo berlin R0003711 3/2 %}
+    {% photo berlin R0003732 2/3 %}
+{% endstack %}

@@ -26,11 +26,11 @@ filenames:
     ratio: 3/2
 ---
 
-<div class="g">
-    {% include photos/custom.html location='berlin' filename='R0004118' alt="" ratio="3/2" -%}
-    {% include photos/custom.html location='berlin' filename='R0004127' alt="" ratio="2/3" -%}
-    {% include photos/custom.html location='berlin' filename='R0004129' alt="" ratio="2/3" -%}
-    {% include photos/custom.html location='berlin' filename='R0004149' alt="" ratio="3/2" -%}
-    {% include photos/custom.html location='berlin' filename='R0004150' alt="" ratio="2/3" -%}
-    {% include photos/custom.html location='berlin' filename='R0004163' alt="" ratio="3/2" -%}
-</div>
+{% stack %}
+    {% photo berlin R0004118 3/2 %}
+    {% photo berlin R0004127 2/3 %}
+    {% photo berlin R0004129 2/3 %}
+    {% photo berlin R0004149 3/2 %}
+    {% photo berlin R0004150 2/3 %}
+    {% photo berlin R0004163 3/2 %}
+{% endstack %}

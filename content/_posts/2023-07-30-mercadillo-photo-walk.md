@@ -34,16 +34,16 @@ filenames:
     ratio: 3/2
 ---
 
-<div class="g">
-    {% include photos/custom.html location='berlin' filename='R0004177' alt="" ratio="2/3" -%}
-    {% include photos/custom.html location='berlin' filename='R0004171' alt="" ratio="3/2" -%}
-    {% include photos/custom.html location='berlin' filename='R0004219' alt="" ratio="2/3" -%}
-    {% include photos/custom.html location='berlin' filename='R0004211' alt="" ratio="3/2" -%}
-    {% include photos/custom.html location='berlin' filename='R0004185' alt="" ratio="3/2" -%}
-    {% include photos/custom.html location='berlin' filename='R0004192' alt="" ratio="3/2" -%}
-    {% include photos/custom.html location='berlin' filename='R0004269' alt="" ratio="3/2" -%}
-    {% include photos/custom.html location='berlin' filename='R0004240' alt="" ratio="3/2" -%}
-    {% include photos/custom.html location='berlin' filename='R0004230' alt="" ratio="2/3" -%}
-    {% include photos/custom.html location='berlin' filename='R0004224' alt="" ratio="3/2" -%}
-    {% include photos/custom.html location='berlin' filename='R0004270' alt="" ratio="3/2" -%}
-</div>
+{% stack %}
+    {% photo berlin R0004177 2/3 %}
+    {% photo berlin R0004171 3/2 %}
+    {% photo berlin R0004219 2/3 %}
+    {% photo berlin R0004211 3/2 %}
+    {% photo berlin R0004185 3/2 %}
+    {% photo berlin R0004192 3/2 %}
+    {% photo berlin R0004269 3/2 %}
+    {% photo berlin R0004240 3/2 %}
+    {% photo berlin R0004230 2/3 %}
+    {% photo berlin R0004224 3/2 %}
+    {% photo berlin R0004270 3/2 %}
+{% endstack %}

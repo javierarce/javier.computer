@@ -43,7 +43,7 @@ redirect_from:
 tag: photo
 ---
 
-<div class="t">
+{% text %}
     <p>
         En este post recupero algunas de las fotos analógicas que he sacado en los
         últimos meses, en mi incansable ambición por complicarme la vida
@@ -56,14 +56,14 @@ In this post, I'm sharing some of the analog photos I've taken over the past
         complicated and slowly drain my wallet. Sorry, I meant my relentless
         pursuit of beauty and appreciation of the moment!
 </p>
-</div>
+{% endtext %}
 
-<div class="g">
-{% include photos/custom.html location='analog' filename='2025-02-13-Madrid-CanonAE1-000002' aspect="3/2" -%}
-{% include photos/custom.html location='analog' filename='2025-02-13-Madrid-CanonAE1-000001' aspect="3/2" -%}
-</div>
+{% stack %}
+{% photo analog 2025-02-13-Madrid-CanonAE1-000002 %}
+{% photo analog 2025-02-13-Madrid-CanonAE1-000001 %}
+{% endstack %}
 
-<div class="t">
+{% text %}
     <p>No recuerdo qué camáras en combinación con qué carretes usé (¿eso le importa a alguien?), pero las siguientes imágenes son cortesía de una Canonet G-III QL17 que le compré a Japan Camera Hunter en 2018 por un precio que ahora me da vergüenza admitir, una Nikon FM10 que me regaló mi casero de Madrid (ACAB, excepto él, que fue siempre encantador y justo), y la Canon AE-1 Program de <a href="https://www.ericafustero.com">Erica</a> (gracias, Erica).</p>
     <p class="is-light"> I don't remember which cameras I used with which film (does anyone actually
     care?), but the following images come courtesy of a Canonet G-III QL17 I
@@ -72,51 +72,51 @@ In this post, I'm sharing some of the analog photos I've taken over the past
     for him, he was always kind and fair), and <a href="https://www.ericafustero.com">Erica</a>'s Canon AE-1 Program
     (thanks, Erica).
         </p>
-</div>
+{% endtext %}
 
-<div class="g">
-{% include photos/custom.html location='analog' filename='2025-01-09-Canet_de_Mar-000006' aspect="3/2" -%}
-{% include photos/custom.html location='analog' filename='2025-01-09-Mataro-000053' aspect="3/2" -%}
-{% include photos/custom.html location='analog' filename='2024-12-19-Canonet-000042' aspect="3/2" -%}
-</div>
+{% stack %}
+{% photo analog 2025-01-09-Canet_de_Mar-000006 %}
+{% photo analog 2025-01-09-Mataro-000053 %}
+{% photo analog 2024-12-19-Canonet-000042 %}
+{% endstack %}
 
-<div class="t">
+{% text %}
     <p>Y al igual que es de rigor mencionar quién traduce cuando se habla de un libro, escanea y revela <a href="https://dubblelab.com">Dubblelab</a>, un laboratorio guay que resiste en el corazón de El Poblenou, la meca del emprendimiento barcelonés.</p>
     <p class="is-light">And just like translators deserve credit when we talk
         about books, scanning and developing were done by <a
             href="https://dubblelab.com">Dubblelab</a>, a cool lab still
         holding its ground in the heart of El Poblenou, Barcelona's startup
         mecca.</p>
-</div>
+{% endtext %}
 
-<div class="g">
-<div class="h">
-    {% include photos/custom.html location='analog' filename='2025-02-17-Barcelona-CanonAE1-000049' aspect="2/3" -%}
-    {% include photos/custom.html location='analog' filename='2025-02-17-Barcelona-CanonAE1-000054' aspect="2/3" -%}
-</div>
-<div class="h">
-    {% include photos/custom.html location='analog' filename='2025-02-13-Badalona-CanonAE1-000020' aspect="2/3" -%}
-    {% include photos/custom.html location='analog' filename='2025-02-17-Barcelona-CanonAE1-000050' aspect="2/3" -%}
-</div>
-</div>
+{% stack %}
+{% row %}
+    {% photo analog 2025-02-17-Barcelona-CanonAE1-000049 %}
+    {% photo analog 2025-02-17-Barcelona-CanonAE1-000054 %}
+{% endrow %}
+{% row %}
+    {% photo analog 2025-02-13-Badalona-CanonAE1-000020 %}
+    {% photo analog 2025-02-17-Barcelona-CanonAE1-000050 %}
+{% endrow %}
+{% endstack %}
 
-<div class="g">
-<div class="g">
-    {% include photos/custom.html location='analog' filename='2024-12-19-Barcelona-Canonet-000019' aspect="3/2" -%}
-    {% include photos/custom.html location='analog' filename='2025-02-17-Barcelona-CanonAE1-000048' aspect="3/2" -%}
-</div>
+{% stack %}
+{% stack %}
+    {% photo analog 2024-12-19-Barcelona-Canonet-000019 %}
+    {% photo analog 2025-02-17-Barcelona-CanonAE1-000048 %}
+{% endstack %}
 
-<div class="h">
-    {% include photos/custom.html location='analog' filename='2025-02-13-Mataro-CanonAE1-000008' aspect="2/3" -%}
-    {% include photos/custom.html location='analog' filename='2025-02-13-Mataro-CanonAE1-000005' aspect="2/3" -%}
-</div>
-<div class="h">
-    {% include photos/custom.html location='analog' filename='2024-12-19-Barcelona-Canonet-000027' aspect="2/3" -%}
-    {% include photos/custom.html location='analog' filename='2025-01-09-Barcelona-000067_2' aspect="2/3" -%}
-</div>
-</div>
+{% row %}
+    {% photo analog 2025-02-13-Mataro-CanonAE1-000008 %}
+    {% photo analog 2025-02-13-Mataro-CanonAE1-000005 %}
+{% endrow %}
+{% row %}
+    {% photo analog 2024-12-19-Barcelona-Canonet-000027 %}
+    {% photo analog 2025-01-09-Barcelona-000067_2 %}
+{% endrow %}
+{% endstack %}
 
-<div class="t">
+{% text %}
     <p>Y ya está. A pesar de las decepciones que da la fotografía analógica, las
         incomodidades, y la incertidumbre, seguiré metiendo moneditas en esta
         máquina porque es divertido y cuando capturas una buena imagen hace que
@@ -125,4 +125,4 @@ In this post, I'm sharing some of the analog photos I've taken over the past
         inconveniences, and uncertainty of shooting film, I'll keep feeding
         coins into this machine because it's fun, and when you capture a good
         shot, all the suffering is worth it.</p>
-</div>
+{% endtext %}

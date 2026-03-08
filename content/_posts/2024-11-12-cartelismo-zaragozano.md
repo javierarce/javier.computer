@@ -38,41 +38,41 @@ Fotográficamente hablando no fue una incursión muy provechosa, pero al menos
 pude capturar algunos estupendos carteles retro que hay esparcidos por la
 ciudad.
 
-<div class="g">
-{% include photos/custom.html location='zaragoza' filename='2024-11-09-Zaragoza-R0009640' ratio="3/2"-%}
-{% include photos/custom.html location='zaragoza' filename='2024-11-09-Zaragoza-R0009645' ratio="3/2"-%}
-{% include photos/custom.html location='zaragoza' filename='2024-11-09-Zaragoza-R0009649' ratio="3/2"-%}
-{% include photos/custom.html location='zaragoza' filename='2024-11-09-Zaragoza-R0009654' ratio="3/2"-%}
-{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009656' ratio="3/2"-%}
+{% stack %}
+{% photo zaragoza 2024-11-09-Zaragoza-R0009640 3/2 %}
+{% photo zaragoza 2024-11-09-Zaragoza-R0009645 3/2 %}
+{% photo zaragoza 2024-11-09-Zaragoza-R0009649 3/2 %}
+{% photo zaragoza 2024-11-09-Zaragoza-R0009654 3/2 %}
+{% photo zaragoza 2024-11-10-Zaragoza-R0009656 3/2 %}
 
-<div class="h">
-{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009655' ratio="2/3"-%}
-{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009658' ratio="2/3"-%}
-    </div>
-    </div>
+{% row %}
+{% photo zaragoza 2024-11-10-Zaragoza-R0009655 2/3 %}
+{% photo zaragoza 2024-11-10-Zaragoza-R0009658 2/3 %}
+    {% endrow %}
+    {% endstack %}
 
-<div class="g has-margin-top">
+{% stack has-margin-top %}
     <h3>Mercadillo de San Bruno</h3>
 <p>Añado unas pocas instantáneas de la visita al mercadillo dominical que hay junto a La Seo que incluyen todos los objetos que no adquirí.</p>
-</div>
+{% endstack %}
 
-<div class="g">
-{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009669' ratio="3/2" -%}
-    <div class="h">
-{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009662' ratio="3/2" -%}
-{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009663' ratio="3/2" -%}
-</div>
-    <div class="h">
-{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009665' ratio="3/2" -%}
-{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009676' ratio="3/2" -%}
-    </div>
+{% stack %}
+{% photo zaragoza 2024-11-10-Zaragoza-R0009669 3/2 %}
+    {% row %}
+{% photo zaragoza 2024-11-10-Zaragoza-R0009662 3/2 %}
+{% photo zaragoza 2024-11-10-Zaragoza-R0009663 3/2 %}
+{% endrow %}
+    {% row %}
+{% photo zaragoza 2024-11-10-Zaragoza-R0009665 3/2 %}
+{% photo zaragoza 2024-11-10-Zaragoza-R0009676 3/2 %}
+    {% endrow %}
 
-<div class="g">
-{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-R0009671' ratio="3/2" -%}
-    </div>
-    </div>
+{% stack %}
+{% photo zaragoza 2024-11-10-Zaragoza-R0009671 3/2 %}
+    {% endstack %}
+    {% endstack %}
 
-<div class="g has-margin-top">
+{% stack has-margin-top %}
 <p>¡Hasta otra!</p>
-    </div>
-{% include photos/custom.html location='zaragoza' filename='2024-11-10-Zaragoza-DSCF2881' ratio="3/2" -%}
+    {% endstack %}
+{% photo zaragoza 2024-11-10-Zaragoza-DSCF2881 3/2 %}

@@ -29,24 +29,24 @@ filenames:
     ratio: 2/3
 ---
 
-<div class="g">
-<div class="h">
-    {% include photos/custom.html location='barcelona' filename='2025-12-12-Barcelona-R0016958' ratio="2/3" -%}
-    {% include photos/custom.html location='barcelona' filename='2025-12-12-Barcelona-R0016960' ratio="2/3" -%}
-</div>
+{% stack %}
+{% row %}
+    {% photo barcelona 2025-12-12-Barcelona-R0016958 2/3 %}
+    {% photo barcelona 2025-12-12-Barcelona-R0016960 2/3 %}
+{% endrow %}
 
-<div class="h">
-    {% include photos/custom.html location='barcelona' filename='2025-12-12-Barcelona-R0016950' ratio="2/3" -%}
-    {% include photos/custom.html location='barcelona' filename='2025-12-12-Barcelona-R0016955' ratio="2/3" -%}
-</div>
+{% row %}
+    {% photo barcelona 2025-12-12-Barcelona-R0016950 2/3 %}
+    {% photo barcelona 2025-12-12-Barcelona-R0016955 2/3 %}
+{% endrow %}
 
-<div class="h">
-    {% include photos/custom.html location='barcelona' filename='2025-12-12-Barcelona-R0016961' ratio="2/3" -%}
-    {% include photos/custom.html location='barcelona' filename='2025-12-12-Barcelona-R0016968' ratio="2/3" -%}
-</div>
+{% row %}
+    {% photo barcelona 2025-12-12-Barcelona-R0016961 2/3 %}
+    {% photo barcelona 2025-12-12-Barcelona-R0016968 2/3 %}
+{% endrow %}
 
-<div class="h">
-    {% include photos/custom.html location='barcelona' filename='2025-12-12-Barcelona-R0016965' ratio="2/3" -%}
-    {% include photos/custom.html location='barcelona' filename='2025-12-12-Barcelona-R0016963' ratio="2/3" -%}
-</div>
-</div>
+{% row %}
+    {% photo barcelona 2025-12-12-Barcelona-R0016965 2/3 %}
+    {% photo barcelona 2025-12-12-Barcelona-R0016963 2/3 %}
+{% endrow %}
+{% endstack %}

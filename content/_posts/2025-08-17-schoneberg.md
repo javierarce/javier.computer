@@ -27,17 +27,17 @@ filenames:
     ratio: 2/3
 ---
 
-<div class="g">
-{% include photos/custom.html location='berlin' filename='2025-08-17-Berlin-R0014403' ratio="3/2" -%}
-    <div class="h">
-{% include photos/custom.html location='berlin' filename='2025-08-17-Berlin-R0014442' ratio="2/3" -%}
-{% include photos/custom.html location='berlin' filename='2025-08-17-Berlin-R0014407' ratio="2/3" -%}
-        </div>
-    <div class="h">
-{% include photos/custom.html location='berlin' filename='2025-08-17-Berlin-R0014429' ratio="2/3" -%}
-{% include photos/custom.html location='berlin' filename='2025-08-17-Berlin-R0014431' ratio="2/3" -%}
-        </div>
-{% include photos/custom.html location='berlin' filename='2025-08-17-Berlin-R0014410' ratio="3/2" -%}
-{% include photos/custom.html location='berlin' filename='2025-08-17-Berlin-R0014411' ratio="3/2" -%}
-{% include photos/custom.html location='berlin' filename='2025-08-17-Berlin-R0014405' ratio="2/3" -%}
-</div>
+{% stack %}
+{% photo berlin 2025-08-17-Berlin-R0014403 3/2 %}
+    {% row %}
+{% photo berlin 2025-08-17-Berlin-R0014442 2/3 %}
+{% photo berlin 2025-08-17-Berlin-R0014407 2/3 %}
+        {% endrow %}
+    {% row %}
+{% photo berlin 2025-08-17-Berlin-R0014429 2/3 %}
+{% photo berlin 2025-08-17-Berlin-R0014431 2/3 %}
+        {% endrow %}
+{% photo berlin 2025-08-17-Berlin-R0014410 3/2 %}
+{% photo berlin 2025-08-17-Berlin-R0014411 3/2 %}
+{% photo berlin 2025-08-17-Berlin-R0014405 2/3 %}
+{% endstack %}

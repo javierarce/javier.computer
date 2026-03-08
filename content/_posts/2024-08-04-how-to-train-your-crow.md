@@ -39,15 +39,15 @@ Arkonaplatz](/maps/berlin/flohmarkt-arkonaplatz) pasado por agua &middot; De
 paseo por Tempelhof &middot;
 [MaXXXine](https://letterboxd.com/javier/film/maxxxine)★★.
 
-<div class="g">
-    {% include photos/custom.html location='berlin' filename='2024-08-04-Berlin-R0008378' ratio="3/2" -%}
-    {% include photos/custom.html location='berlin' filename='2024-08-04-Berlin-R0008418_2' ratio="2/3" -%}
-    {% include photos/custom.html location='berlin' filename='2024-08-04-Berlin-R0008417' ratio="3/2" -%}
-    {% include photos/custom.html location='berlin' filename='2024-08-04-Berlin-R0008403' ratio="3/2" -%}
-    {% include photos/custom.html location='berlin' filename='2024-08-04-Berlin-R0008398' ratio="3/2" -%}
-    {% include photos/custom.html location='berlin' filename='2024-08-04-Berlin-R0008392' ratio="3/2" -%}
-    {% include photos/custom.html location='berlin' filename='2024-08-04-Berlin-R0008384' ratio="2/3" -%}
-    {% include photos/custom.html location='berlin' filename='2024-08-04-Berlin-R0008412' ratio="2/3" -%}
-    {% include photos/custom.html location='berlin' filename='2024-08-04-Berlin-R0008410' ratio="3/2" -%}
-    {% include photos/custom.html location='berlin' filename='2024-08-04-Berlin-R0008371' ratio="3/2" -%}
-</div>
+{% stack %}
+    {% photo berlin 2024-08-04-Berlin-R0008378 3/2 %}
+    {% photo berlin 2024-08-04-Berlin-R0008418_2 2/3 %}
+    {% photo berlin 2024-08-04-Berlin-R0008417 3/2 %}
+    {% photo berlin 2024-08-04-Berlin-R0008403 3/2 %}
+    {% photo berlin 2024-08-04-Berlin-R0008398 3/2 %}
+    {% photo berlin 2024-08-04-Berlin-R0008392 3/2 %}
+    {% photo berlin 2024-08-04-Berlin-R0008384 2/3 %}
+    {% photo berlin 2024-08-04-Berlin-R0008412 2/3 %}
+    {% photo berlin 2024-08-04-Berlin-R0008410 3/2 %}
+    {% photo berlin 2024-08-04-Berlin-R0008371 3/2 %}
+{% endstack %}

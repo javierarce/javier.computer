@@ -36,67 +36,67 @@ escaso interés para ti o los tuyos, me encuentro en León. Y aunque no me he
 aventurado en el mundo real tanto como hubiera deseado, sí que he podido dar un paseo
 cámaras en mano y así añadir una ciudad más (la mía, la que me vio nacer) al [archivo](/photos/archive).
 
-<div class="g">
-    {% include photos/custom.html location='leon' filename='2024-11-02-Leon-R0009573' caption="Café a media asta" -%}
-</div>
+{% stack %}
+    {% photo leon 2024-11-02-Leon-R0009573 caption:"Café a media asta" %}
+{% endstack %}
 
 <p>Primera parada: la «Fábrica de Productos Químicos Abelló». La chimenea
     pertenece a la antigua «Sociedad Papelera Leonesa», cuyo año de construcción
     se deja como ejercicio a los avispados lectores y lectoras de este humilde blog.</p>
 
-<div class="g">
-    {% include photos/custom.html location='leon' filename='2024-11-02-Leon-R0009592' -%}
-</div>
+{% stack %}
+    {% photo leon 2024-11-02-Leon-R0009592 %}
+{% endstack %}
 
-<div class="g with-caption">
-    <div class="h">
-        {% include photos/custom.html location='leon' filename='2024-11-02-Leon-R0009594' -%}
-        {% include photos/custom.html location='leon' filename='2024-11-02-Leon-R0009595' -%}
-    </div>
+{% stack with-caption %}
+    {% row %}
+        {% photo leon 2024-11-02-Leon-R0009594 %}
+        {% photo leon 2024-11-02-Leon-R0009595 %}
+    {% endrow %}
 <figcaption>Prohibido mezclar estos dos edificios.</figcaption>
-</div>
+{% endstack %}
 
-<div class="g">
-    {% include photos/custom.html location='leon' filename='2024-11-02-Leon-R0009590' caption="Autorretrato asombroso" -%}
-</div>
+{% stack %}
+    {% photo leon 2024-11-02-Leon-R0009590 caption:"Autorretrato asombroso" %}
+{% endstack %}
 
 <p>Si hay algo de lo que me arrepiento es de no haber aprovechado esta rara oportunidad (yo en León) para colar el «Parque
     de Quevedo» en su versión otoño-invierno al <a href="https://oneminutepark.tv">one
         minute park</a>, pero no se puede estar en todo.</p>
 
-<div class="g">
-    {% include photos/custom.html location='leon' filename='2024-11-02-Leon-R0009607' -%}
-    {% include photos/custom.html location='leon' filename='2024-11-02-Leon-R0009608' -%}
-    {% include photos/custom.html location='leon' filename='2024-11-02-Leon-R0009610' -%}
-</div>
+{% stack %}
+    {% photo leon 2024-11-02-Leon-R0009607 %}
+    {% photo leon 2024-11-02-Leon-R0009608 %}
+    {% photo leon 2024-11-02-Leon-R0009610 %}
+{% endstack %}
 
 <p>Lo que sí hice bien fue capturar algunas equis de madera para mi colección de equis.</p>
 
-<div class="g">
-    {% include photos/custom.html location='leon' filename='2024-11-02-Leon-R0009583' -%}
-    {% include photos/custom.html location='leon' filename='2024-11-02-Leon-R0009587' -%}
-</div>
+{% stack %}
+    {% photo leon 2024-11-02-Leon-R0009583 %}
+    {% photo leon 2024-11-02-Leon-R0009587 %}
+{% endstack %}
 
-<div class="g has-margin-top">
+{% stack has-margin-top %}
     <h3>Cartelería de provincias</h3>
 <p>Y me despido con con una minúscula selección de cartelería leonesa clásica
     del barrio El Crucero que me llamó la atención.</p>
-</div>
+{% endstack %}
 
-<div class="g">
-    {% include photos/custom.html location='leon' filename='2024-11-02-Leon-R0009613' -%}
-    {% include photos/custom.html location='leon' filename='2024-11-02-Leon-R0009600' -%}
-    <div class="h">
-        {% include photos/custom.html location='leon' filename='2024-11-02-Leon-R0009627' -%}
-        {% include photos/custom.html location='leon' filename='2024-11-02-Leon-R0009631' -%}
-    </div>
-    {% include photos/custom.html location='leon' filename='2024-11-02-Leon-R0009599' -%}
-</div>
+{% stack %}
+    {% photo leon 2024-11-02-Leon-R0009613 %}
+    {% photo leon 2024-11-02-Leon-R0009600 %}
+    {% row %}
+        {% photo leon 2024-11-02-Leon-R0009627 %}
+        {% photo leon 2024-11-02-Leon-R0009631 %}
+    {% endrow %}
+    {% photo leon 2024-11-02-Leon-R0009599 %}
+{% endstack %}
 
-<div class="g has-margin-top">
+{% stack has-margin-top %}
 <p>Bueno, ya esta bien de tanta foto, ¡hasta otra!</p>
-</div>
+{% endstack %}
 
-<div class="g">
-    {% include photos/custom.html location='leon' filename='2024-11-02-Leon-DSCF2868' -%}
-</div>
+{% stack %}
+    {% photo leon 2024-11-02-Leon-DSCF2868 %}
+{% endstack %}

@@ -27,36 +27,36 @@ filenames:
   - filename: 2025-07-01-Berlin-R0012753
 ---
 
-<div class="g">
-    {% include photos/custom.html location='berlin' filename='2025-07-02-Berlin-R0012818' ratio="3/2"-%}
-    {% include photos/custom.html location='berlin' filename='2025-07-02-Berlin-R0012814' ratio="3/2"-%}
+{% stack %}
+    {% photo berlin 2025-07-02-Berlin-R0012818 3/2 %}
+    {% photo berlin 2025-07-02-Berlin-R0012814 3/2 %}
 
-    <div class="h">
+    {% row %}
 
-{% include photos/custom.html location='berlin' filename='2025-07-02-Berlin-R0012829' ratio="2/3"-%}
-{% include photos/custom.html location='berlin' filename='2025-07-02-Berlin-R0012825' ratio="2/3"-%}
+{% photo berlin 2025-07-02-Berlin-R0012829 2/3 %}
+{% photo berlin 2025-07-02-Berlin-R0012825 2/3 %}
 
-</div>
-<div class="h">
-{% include photos/custom.html location='berlin' filename='2025-07-02-Berlin-R0012793' ratio="2/3"-%}
-{% include photos/custom.html location='berlin' filename='2025-07-02-Berlin-R0012802' ratio="2/3"-%}
-</div>
+{% endrow %}
+{% row %}
+{% photo berlin 2025-07-02-Berlin-R0012793 2/3 %}
+{% photo berlin 2025-07-02-Berlin-R0012802 2/3 %}
+{% endrow %}
 
-{% include photos/custom.html location='berlin' filename='2025-07-02-Berlin-R0012845' ratio="3/2"-%}
+{% photo berlin 2025-07-02-Berlin-R0012845 3/2 %}
 
-    <div class="h">
+    {% row %}
 
-{% include photos/custom.html location='berlin' filename='2025-07-02-Berlin-R0012803' ratio="2/3"-%}
-{% include photos/custom.html location='berlin' filename='2025-07-02-Berlin-R0012821' ratio="2/3"-%}
+{% photo berlin 2025-07-02-Berlin-R0012803 2/3 %}
+{% photo berlin 2025-07-02-Berlin-R0012821 2/3 %}
 
-</div>
+{% endrow %}
 
-    <div class="h">
+    {% row %}
 
-{% include photos/custom.html location='berlin' filename='2025-07-02-Berlin-R0012843' ratio="2/3"-%}
-{% include photos/custom.html location='berlin' filename='2025-07-02-Berlin-R0012815' ratio="2/3"-%}
+{% photo berlin 2025-07-02-Berlin-R0012843 2/3 %}
+{% photo berlin 2025-07-02-Berlin-R0012815 2/3 %}
 
-</div>
-{% include photos/custom.html location='berlin' filename='2025-07-01-Berlin-R0012753' ratio="3/2"-%}
+{% endrow %}
+{% photo berlin 2025-07-01-Berlin-R0012753 3/2 %}
 
-</div>
+{% endstack %}

@@ -51,21 +51,21 @@ filenames:
 
 _Photo dump_ de tres paseos berlineses del 8, 10, y 11 de agosto.
 
-{% include photos/custom.html location='berlin' filename='2024-08-10-Berlin-R0008500' caption="The Courage to Be Disliked" ratio="3/2" -%}
+{% photo berlin 2024-08-10-Berlin-R0008500 3/2 caption:"The Courage to Be Disliked" %}
 
-{% include photos/custom.html location='berlin' filename='2024-08-08-Berlin-R0008483' caption="Esquina del Körnerpark" ratio="2/3" -%}
+{% photo berlin 2024-08-08-Berlin-R0008483 2/3 caption:"Esquina del Körnerpark" %}
 
-<div class="h">
-    {% include photos/custom.html location='berlin' filename='2024-08-10-Berlin-R0008520' caption="Robopuerta" ratio="2/3" -%}
-    {% include photos/custom.html location='berlin' filename='2024-08-08-Berlin-R0008478' caption="Sonrisa postal" ratio="2/3" -%}
-</div>
+{% row %}
+    {% photo berlin 2024-08-10-Berlin-R0008520 2/3 caption:"Robopuerta" %}
+    {% photo berlin 2024-08-08-Berlin-R0008478 2/3 caption:"Sonrisa postal" %}
+{% endrow %}
 
-{% include photos/custom.html location='berlin' filename='2024-08-08-Berlin-R0008475' ratio="3/2" -%}
-{% include photos/custom.html location='berlin' filename='2024-08-08-Berlin-R0008461' caption="Prohibido el paseo" ratio="3/2" -%}
-{% include photos/custom.html location='berlin' filename='2024-08-08-Berlin-R0008464' ratio="3/2" -%}
-{% include photos/custom.html location='berlin' filename='2024-08-08-Berlin-R0008454' caption="Torreta misteriosa" ratio="2/3" -%}
-{% include photos/custom.html location='berlin' filename='2024-08-11-Berlin-R0008545' caption="«Solo al ladrón le gusta la aglomeración»" ratio="3/2" -%}
-{% include photos/custom.html location='berlin' filename='2024-08-11-Berlin-R0008551' caption="Casa de baños" ratio="2/3" -%}
-{% include photos/custom.html location='berlin' filename='2024-08-11-Berlin-R0008533' caption="„Ich soll Sie schön grüßen… Möbel Hübner“" ratio="2/3" -%}
-{% include photos/custom.html location='berlin' filename='2024-08-11-Berlin-R0008528' ratio="2/3" -%}
-{% include photos/custom.html location='berlin' filename='2024-08-11-Berlin-R0008523' caption="The Fustero's Sisters" ratio="3/2" -%}
+{% photo berlin 2024-08-08-Berlin-R0008475 3/2 %}
+{% photo berlin 2024-08-08-Berlin-R0008461 3/2 caption:"Prohibido el paseo" %}
+{% photo berlin 2024-08-08-Berlin-R0008464 3/2 %}
+{% photo berlin 2024-08-08-Berlin-R0008454 2/3 caption:"Torreta misteriosa" %}
+{% photo berlin 2024-08-11-Berlin-R0008545 3/2 caption:"«Solo al ladrón le gusta la aglomeración»" %}
+{% photo berlin 2024-08-11-Berlin-R0008551 2/3 caption:"Casa de baños" %}
+{% photo berlin 2024-08-11-Berlin-R0008533 2/3 caption:"„Ich soll Sie schön grüßen… Möbel Hübner“" %}
+{% photo berlin 2024-08-11-Berlin-R0008528 2/3 %}
+{% photo berlin 2024-08-11-Berlin-R0008523 3/2 caption:"The Fustero's Sisters" %}

@@ -94,7 +94,7 @@ filenames:
     ratio: 3/2
 ---
 
-<div class="t">
+{% text %}
     <p>
         Imagínate titular este post "Los madrileños" y que alguien pensara que es algo
         más que una referencia barata al título del libro de Robert Frank. ¡Me moriría
@@ -112,95 +112,95 @@ some of my favorite images of people (Madrileños or not) that I photographed in
 Madrid this past October.
 
 </p>
-</div>
+{% endtext %}
 
-<div class="g has-margin-bottom">
-{% include photos/custom.html location='madrid' filename='2025-10-14-Madrid-R0015607' ratio="3/2" -%}
-{% include photos/custom.html location='madrid' filename='2025-10-13-Madrid-R0015574' ratio="3/2" -%}
-{% include photos/custom.html location='madrid' filename='2025-10-13-Madrid-DSCF6477' ratio="3/2" -%}
-{% include photos/custom.html location='madrid' filename='2025-10-13-Madrid-DSCF6500' ratio="3/2" -%}
-    </div>
+{% stack has-margin-bottom %}
+{% photo madrid 2025-10-14-Madrid-R0015607 3/2 %}
+{% photo madrid 2025-10-13-Madrid-R0015574 3/2 %}
+{% photo madrid 2025-10-13-Madrid-DSCF6477 3/2 %}
+{% photo madrid 2025-10-13-Madrid-DSCF6500 3/2 %}
+    {% endstack %}
 
-<div class="g has-margin-bottom">
-    {% include photos/custom.html location='madrid' filename='2025-10-18-Madrid-R0015881' ratio="2/3" -%}
-</div>
+{% stack has-margin-bottom %}
+    {% photo madrid 2025-10-18-Madrid-R0015881 2/3 %}
+{% endstack %}
 
-<div class="g has-margin-bottom">
-    <div class="h">
-        {% include photos/custom.html location='madrid' filename='2025-10-16-Madrid-R0015762' ratio="2/3" -%}
-        {% include photos/custom.html location='madrid' filename='2025-10-18-Madrid-R0015923' ratio="2/3" -%}
-        {% include photos/custom.html location='madrid' filename='2025-10-18-Madrid-R0015939' ratio="2/3" -%}
-    </div>
-    <div class="h">
-        {% include photos/custom.html location='madrid' filename='2025-10-12-Madrid-R0015532' ratio="2/3" -%}
-        {% include photos/custom.html location='madrid' filename='2025-10-18-Madrid-R0015877' ratio="2/3" -%}
-    </div>
-</div>
+{% stack has-margin-bottom %}
+    {% row %}
+        {% photo madrid 2025-10-16-Madrid-R0015762 2/3 %}
+        {% photo madrid 2025-10-18-Madrid-R0015923 2/3 %}
+        {% photo madrid 2025-10-18-Madrid-R0015939 2/3 %}
+    {% endrow %}
+    {% row %}
+        {% photo madrid 2025-10-12-Madrid-R0015532 2/3 %}
+        {% photo madrid 2025-10-18-Madrid-R0015877 2/3 %}
+    {% endrow %}
+{% endstack %}
 
-<div class="g has-margin-bottom">
-    {% include photos/custom.html location='madrid' filename='2025-10-18-Madrid-R0015870' ratio="2/3" -%}
-</div>
+{% stack has-margin-bottom %}
+    {% photo madrid 2025-10-18-Madrid-R0015870 2/3 %}
+{% endstack %}
 
-<div class="g has-margin-bottom">
-    {% include photos/custom.html location='madrid' filename='2025-10-12-Madrid-R0015479' ratio="3/2" -%}
-    {% include photos/custom.html location='madrid' filename='2025-10-18-Madrid-R0015814' ratio="3/2" -%}
-</div>
+{% stack has-margin-bottom %}
+    {% photo madrid 2025-10-12-Madrid-R0015479 3/2 %}
+    {% photo madrid 2025-10-18-Madrid-R0015814 3/2 %}
+{% endstack %}
 
-<div class="h has-margin-bottom">
-    {% include photos/custom.html location='madrid' filename='2025-10-18-Madrid-R0015872' ratio="2/3" -%}
-    {% include photos/custom.html location='madrid' filename='2025-10-13-Madrid-R0015586' ratio="2/3" -%}
-</div>
+{% row has-margin-bottom %}
+    {% photo madrid 2025-10-18-Madrid-R0015872 2/3 %}
+    {% photo madrid 2025-10-13-Madrid-R0015586 2/3 %}
+{% endrow %}
 
-<div class="g has-margin-bottom">
-    {% include photos/custom.html location='madrid' filename='2025-10-12-Madrid-DSCF6423' ratio="3/2" -%}
-    {% include photos/custom.html location='madrid' filename='2025-10-15-Madrid-R0015707' ratio="3/2" -%}
-</div>
+{% stack has-margin-bottom %}
+    {% photo madrid 2025-10-12-Madrid-DSCF6423 3/2 %}
+    {% photo madrid 2025-10-15-Madrid-R0015707 3/2 %}
+{% endstack %}
 
-<div class="g has-margin-bottom">
-    <div class="h">
-        {% include photos/custom.html location='madrid' filename='2025-10-12-Madrid-DSCF6429' ratio="2/3" -%}
-        {% include photos/custom.html location='madrid' filename='2025-10-14-Madrid-R0015659' ratio="2/3" -%}
-    </div>
-    {% include photos/custom.html location='madrid' filename='2025-10-12-Madrid-DSCF6336' ratio="3/2" -%}
-    {% include photos/custom.html location='madrid' filename='2025-10-12-Madrid-R0015502' ratio="3/2" -%}
-    {% include photos/custom.html location='madrid' filename='2025-10-12-Madrid-R0015545' ratio="3/2" -%}
-</div>
+{% stack has-margin-bottom %}
+    {% row %}
+        {% photo madrid 2025-10-12-Madrid-DSCF6429 2/3 %}
+        {% photo madrid 2025-10-14-Madrid-R0015659 2/3 %}
+    {% endrow %}
+    {% photo madrid 2025-10-12-Madrid-DSCF6336 3/2 %}
+    {% photo madrid 2025-10-12-Madrid-R0015502 3/2 %}
+    {% photo madrid 2025-10-12-Madrid-R0015545 3/2 %}
+{% endstack %}
 
-<div class="g has-margin-bottom">
-    {% include photos/custom.html location='madrid' filename='2025-10-12-Madrid-DSCF6382' ratio="2/3" -%}
-</div>
+{% stack has-margin-bottom %}
+    {% photo madrid 2025-10-12-Madrid-DSCF6382 2/3 %}
+{% endstack %}
 
-<div class="h has-margin-bottom">
-    {% include photos/custom.html location='madrid' filename='2025-10-12-Madrid-DSCF6416' ratio="2/3" -%}
-    {% include photos/custom.html location='madrid' filename='2025-10-18-Madrid-R0015869' ratio="2/3" -%}
-</div>
+{% row has-margin-bottom %}
+    {% photo madrid 2025-10-12-Madrid-DSCF6416 2/3 %}
+    {% photo madrid 2025-10-18-Madrid-R0015869 2/3 %}
+{% endrow %}
 
-<div class="g has-margin-bottom">
-    {% include photos/custom.html location='madrid' filename='2025-10-15-Madrid-R0015690' ratio="3/2" -%}
-</div>
+{% stack has-margin-bottom %}
+    {% photo madrid 2025-10-15-Madrid-R0015690 3/2 %}
+{% endstack %}
 
-<div class="g has-margin-bottom">
-    <div class="h">
-        {% include photos/custom.html location='madrid' filename='2025-10-15-Madrid-R0015697' ratio="3/2" -%}
-        {% include photos/custom.html location='madrid' filename='2025-10-18-Madrid-R0015821' ratio="3/2" -%}
-    </div>
-    <div class="h">
-        {% include photos/custom.html location='madrid' filename='2025-10-12-Madrid-R0015518' ratio="3/2" -%}
-        {% include photos/custom.html location='madrid' filename='2025-10-12-Madrid-DSCF6438' ratio="3/2" -%}
-    </div>
-</div>
+{% stack has-margin-bottom %}
+    {% row %}
+        {% photo madrid 2025-10-15-Madrid-R0015697 3/2 %}
+        {% photo madrid 2025-10-18-Madrid-R0015821 3/2 %}
+    {% endrow %}
+    {% row %}
+        {% photo madrid 2025-10-12-Madrid-R0015518 3/2 %}
+        {% photo madrid 2025-10-12-Madrid-DSCF6438 3/2 %}
+    {% endrow %}
+{% endstack %}
 
-<div class="g has-margin-bottom">
-    {% include photos/custom.html location='madrid' filename='2025-10-13-Madrid-R0015575' ratio="3/2" -%}
-    {% include photos/custom.html location='madrid' filename='2025-10-14-Madrid-R0015663' ratio="3/2" -%}
-</div>
+{% stack has-margin-bottom %}
+    {% photo madrid 2025-10-13-Madrid-R0015575 3/2 %}
+    {% photo madrid 2025-10-14-Madrid-R0015663 3/2 %}
+{% endstack %}
 
-<div class="g has-margin-bottom">
-    {% include photos/custom.html location='madrid' filename='2025-10-15-Madrid-R0015675' ratio="3/2" -%}
-    {% include photos/custom.html location='madrid' filename='2025-10-18-Madrid-R0015931' ratio="3/2" -%}
-    {% include photos/custom.html location='madrid' filename='2025-10-14-Madrid-R0015621' ratio="3/2" -%}
-</div>
+{% stack has-margin-bottom %}
+    {% photo madrid 2025-10-15-Madrid-R0015675 3/2 %}
+    {% photo madrid 2025-10-18-Madrid-R0015931 3/2 %}
+    {% photo madrid 2025-10-14-Madrid-R0015621 3/2 %}
+{% endstack %}
 
-<div class="g has-margin-bottom">
-    {% include photos/custom.html location='madrid' filename='2025-10-14-Madrid-DSCF6535' ratio="3/2" -%}
-</div>
+{% stack has-margin-bottom %}
+    {% photo madrid 2025-10-14-Madrid-DSCF6535 3/2 %}
+{% endstack %}

@@ -47,37 +47,37 @@ filenames:
 Fotos de la presentación del fanzine de [Andrés Magán](https://www.instagram.com/a.mag.an) [Big Comic for
 Boy](https://peepmedia.bigcartel.com/product/big-comic-for-boy) en la librería [Terranova](https://terrranova.com).
 
-<div class="g">
-<div class="h">
-{% include photos/custom.html location='barcelona' filename='2026-03-06-Barcelona-R0018016' ratio="3/2" -%}
-{% include photos/custom.html location='barcelona' filename='2026-03-06-Barcelona-R0018085' ratio="3/2" -%}
-        </div>
-<div class="h">
-{% include photos/custom.html location='barcelona' filename='2026-03-06-Barcelona-R0018081' ratio="3/2" -%}
-{% include photos/custom.html location='barcelona' filename='2026-03-06-Barcelona-R0017978' ratio="3/2" -%}
-        </div>
+{% stack %}
+    {% row %}
+        {% photo barcelona 2026-03-06-Barcelona-R0018016 3/2 %}
+        {% photo barcelona 2026-03-06-Barcelona-R0018085 3/2 %}
+    {% endrow %}
+    {% row %}
+        {% photo barcelona 2026-03-06-Barcelona-R0018081 3/2 %}
+        {% photo barcelona 2026-03-06-Barcelona-R0017978 3/2 %}
+    {% endrow %}
 
-{% include photos/custom.html location='barcelona' filename='2026-03-06-Barcelona-R0018021' ratio="3/2" -%}
+    {% photo barcelona 2026-03-06-Barcelona-R0018021 3/2 %}
 
-<div class="h">
-{% include photos/custom.html location='barcelona' filename='2026-03-06-Barcelona-R0018074' ratio="2/3" -%}
-{% include photos/custom.html location='barcelona' filename='2026-03-06-Barcelona-R0018075' ratio="2/3" -%}
-{% include photos/custom.html location='barcelona' filename='2026-03-06-Barcelona-R0017957' ratio="2/3" -%}
-</div>
+    {% row %}
+        {% photo barcelona 2026-03-06-Barcelona-R0018074 2/3 %}
+        {% photo barcelona 2026-03-06-Barcelona-R0018075 2/3 %}
+        {% photo barcelona 2026-03-06-Barcelona-R0017957 2/3 %}
+    {% endrow %}
 
-{% include photos/custom.html location='barcelona' filename='2026-03-06-Barcelona-R0018033' ratio="3/2" -%}
-{% include photos/custom.html location='barcelona' filename='2026-03-06-Barcelona-R0017987' ratio="3/2" -%}
+    {% photo barcelona 2026-03-06-Barcelona-R0018033 3/2 %}
+    {% photo barcelona 2026-03-06-Barcelona-R0017987 3/2 %}
 
-<div class="g">
-{% include photos/custom.html location='barcelona' filename='2026-03-06-Barcelona-R0018048' ratio="2/3" -%}
-<div class="h">
-    {% include photos/custom.html location='barcelona' filename='2026-03-06-Barcelona-R0018009' ratio="2/3" -%}
-    {% include photos/custom.html location='barcelona' filename='2026-03-06-Barcelona-R0018005' ratio="2/3" -%}
-</div>
-<div class="h">
-{% include photos/custom.html location='barcelona' filename='2026-03-06-Barcelona-R0018053' ratio="2/3" -%}
-{% include photos/custom.html location='barcelona' filename='2026-03-06-Barcelona-R0018026' ratio="2/3" -%}
-</div>
-</div>
+    {% stack %}
+        {% photo barcelona 2026-03-06-Barcelona-R0018048 2/3 %}
+        {% row %}
+            {% photo barcelona 2026-03-06-Barcelona-R0018009 2/3 %}
+            {% photo barcelona 2026-03-06-Barcelona-R0018005 2/3 %}
+        {% endrow %}
+        {% row %}
+            {% photo barcelona 2026-03-06-Barcelona-R0018053 2/3 %}
+            {% photo barcelona 2026-03-06-Barcelona-R0018026 2/3 %}
+        {% endrow %}
+    {% endstack %}
 
-</div>
+{% endstack %}
