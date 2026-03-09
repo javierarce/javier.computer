@@ -2,7 +2,7 @@
 {% assign filenames = post.filenames -%}
 {% assign ids = post.ids -%}
 
-<div class="Photo__collection">
+<div class="photo__collection">
   {% if filenames | size -%}
     {% for file in filenames -%}
       {% if file.filename -%}
@@ -21,7 +21,7 @@
 
   {% assign content = post.content | strip %}
   {% if content.size > 0 %}
-    <div class="Post__content">{{ content }}</div>
+    <div class="post__content">{{ content }}</div>
   {% endif %}
 
   {% include photos/footer.html photo=post -%}

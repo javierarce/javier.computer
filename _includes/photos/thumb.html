@@ -14,8 +14,8 @@
   {% endif -%}
 
 
-<div class="Photo">
-  <div class="Photo__content">
+<div class="photo">
+  <div class="photo__content">
     <div class="thumb">
       <picture>
         <a href="{{ include.photo.location }}"><img class="lazy" data-src="https://img.javier.computer/{{ photo.location }}/{{ filename }}_640.jpg"></a>
@@ -25,8 +25,8 @@
   </div>
 </div>
 {% else %}
-<div class="Photo">
-  <div class="Photo__content">
+<div class="photo">
+  <div class="photo__content">
     <div class="thumb">
       <picture>
         <a href="{{ include.photo.location }}"><img class="lazy" data-src="https://img.javier.computer/{{ photo.location }}/{{ include.photo.filename }}_640.jpg"></a>

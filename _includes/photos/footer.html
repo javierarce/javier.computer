@@ -1,13 +1,13 @@
 {% assign matching_location = site.locations | where: "location",
 include.photo.location | first -%}
-<div class="Photo__footer">
-  <div class="Post__footer">
-    <a href="{{ include.photo.url }}" class="Post__date"
+<div class="photo__footer">
+  <div class="post__footer">
+    <a href="{{ include.photo.url }}" class="post__date"
       >{% include date.html date=include.photo.date -%}</a
     >
 
     {% unless include.photo.hide_location %} {% if matching_location -%}
-    <a href="/photos/{{ include.photo.location -}}" class="Post__location"
+    <a href="/photos/{{ include.photo.location -}}" class="post__location"
       >{{ matching_location.title }}</a
     >
     {% endif -%} {% endunless %} {% if site.show_likes %}
@@ -25,7 +25,7 @@ include.photo.location | first -%}
     {% if site.show_footer_comments %}
     <a
       href="/comment?title={{ include.photo.title }}&url={{ include.photo.id }}"
-      class="Post__comment"
+      class="post__comment"
       title="Envíame un comentario sobre esta entrada"
       >Comentar</a
     >
@@ -33,11 +33,11 @@ include.photo.location | first -%}
 
     {% if include.readmore == "true" -%}
     {% if include.photo.filenames.size > 1 -%}
-    <a href="{{ include.photo.url }}#more" class="Post__more-photos">{{ include.photo.filenames.size }} foto{% if
+    <a href="{{ include.photo.url }}#more" class="post__more-photos">{{ include.photo.filenames.size }} foto{% if
       include.photo.filenames.size > 1 %}s{% endif -%}</a
     >
     {% else -%}
-    <a class="Post__more" href="{{ include.photo.url }}">Leer más</a>
+    <a class="post__more" href="{{ include.photo.url }}">Leer más</a>
     {% endif -%} {% endif -%}
   </div>
 

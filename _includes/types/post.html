@@ -1,11 +1,11 @@
-<div class="Post {% if post.highlighted -%} is-highlighted{% endif -%} h-entry">
+<div class="post {% if post.highlighted -%} is-highlighted{% endif -%} h-entry">
   {% if post.show_title -%}
-  <div class="Post__title p-name">{{ post.title }}</div>
+  <div class="post__title p-name">{{ post.title }}</div>
   {% else -%}
   <a href="https://javier.computer" class="p-name" style="display:none">{{ post.title }}</a>
   {% endif -%}
   <span class="p-author h-card" style="display:none;">{{ site.author }}</span>
-  <div class="Post__content Post__text {% if post.extraClassName %} {{ post.extraClassName }}{% endif %} e-content">
+  <div class="post__content post__text {% if post.extraClassName %} {{ post.extraClassName }}{% endif %} e-content">
     {% if post.content contains "<!-- more -->" -%}
     {{ post.content | split:"<!-- more -->" | first }}
     {% else -%}
@@ -13,8 +13,8 @@
     {% endif -%}
   </div>
 
-  <div class="Post__footer">
-    <a href="{{ post.url }}" class="Post__date dt-published u-url">{% include date.html date=post.date -%}</a>
+  <div class="post__footer">
+    <a href="{{ post.url }}" class="post__date dt-published u-url">{% include date.html date=post.date -%}</a>
     {% include post/locations.html page=post -%}
     {% include post/tags.html page=post -%}
 
@@ -29,12 +29,12 @@
     {% if site.show_home_comments %}
 
     <a href="/comment?title={{ page.title }}&url={{ page.id }}"
-      class="Post__comment"
+      class="post__comment"
       title="Envíame un comentario sobre esta entrada">Comentar</a>
     {% endif %}
 
     {% if post.content contains "<!-- more -->" -%}
-    <a href="{{ post.url }}#more" class="Post__more">Leer más</a>
+    <a href="{{ post.url }}#more" class="post__more">Leer más</a>
     {% endif -%}
   </div>
 </div>

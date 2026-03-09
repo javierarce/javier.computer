@@ -3,14 +3,14 @@
     {% assign month = 'now' | date: "%m" %}
     {% assign today = 'now' | date: "%d" %}
     {% assign fd = false %}
-    <div class="Calendar">
-      <span class="Calendar__day is-title">L</span>
-      <span class="Calendar__day is-title">M</span>
-      <span class="Calendar__day is-title">M</span>
-      <span class="Calendar__day is-title">J</span>
-      <span class="Calendar__day is-title">V</span>
-      <span class="Calendar__day is-title">S</span>
-      <span class="Calendar__day is-title">D</span>
+    <div class="calendar">
+      <span class="calendar__day is-title">L</span>
+      <span class="calendar__day is-title">M</span>
+      <span class="calendar__day is-title">M</span>
+      <span class="calendar__day is-title">J</span>
+      <span class="calendar__day is-title">V</span>
+      <span class="calendar__day is-title">S</span>
+      <span class="calendar__day is-title">D</span>
       {%- for i in (-7..30) %}
       {%- assign day = 86400 | times: i | plus: month_starts_ts %}
       {%- assign dow = day | date: '%u' %}
@@ -41,11 +41,11 @@
 
       {%- endfor %}
       {% if url <> "" %}
-      <a href="{{ url}}" class="Calendar__day {{ is_today }} {{ has_posts }}">{{ day | date: '%e' }}</a>
+      <a href="{{ url}}" class="calendar__day {{ is_today }} {{ has_posts }}">{{ day | date: '%e' }}</a>
         {% else %}
-        <span class="Calendar__day {{is_today}} {{ has_posts }}">{{ day | date: '%e' }}</span>
+        <span class="calendar__day {{is_today}} {{ has_posts }}">{{ day | date: '%e' }}</span>
         {% endif %}
-      {%- else %}<span class="Calendar__day"></span>{% endif %}
+      {%- else %}<span class="calendar__day"></span>{% endif %}
       {%- endfor %}
     </div>
 

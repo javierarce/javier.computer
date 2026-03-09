@@ -1,5 +1,5 @@
-<div class="Post__footer">
-  <a href="{{ page.url }}" class="Post__date">{% include date.html date=page.date -%}</a>
+<div class="post__footer">
+  <a href="{{ page.url }}" class="post__date">{% include date.html date=page.date -%}</a>
   {% include post/locations.html page=page -%}
   {% include post/tags.html page=page -%}
 
@@ -18,7 +18,7 @@
   {% if site.show_footer_comments -%}
     <a
       href="/comment?title={{ page.title }}&url={{ page.id }}"
-      class="Post__comment"
+      class="post__comment"
       title="Envíame un comentario sobre esta entrada"
       >Comentar</a
     >

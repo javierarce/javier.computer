@@ -1,9 +1,9 @@
 {% assign filtered_tags = include.page.tags | where_exp: "tag", "tag != 'photo'" %}
 
 {% if filtered_tags.size > 0 -%}
-<div class="Post__tags">
+<div class="post__tags">
   {% for tag in filtered_tags -%}
-  <a href="/tags/{{ tag | slugify }}" class="Post__tag-link">{{ tag }}</a>{% unless forloop.last %}
+  <a href="/tags/{{ tag | slugify }}" class="post__tag-link">{{ tag }}</a>{% unless forloop.last %}
   {% endunless -%}
   {% endfor -%}
 </div>

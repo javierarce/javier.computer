@@ -2,7 +2,7 @@
 
 {% assign readmore = 'false' %}
 <div
-  class="Photo__collection {% if post.category != 'reportage' -%}has-lightbox {% if post.filenames.size >= 4 %}has-grid{% endif %}{% endif -%}"
+  class="photo__collection {% if post.category != 'reportage' -%}has-lightbox {% if post.filenames.size >= 4 %}has-grid{% endif %}{% endif -%}"
 >
   {% if post.category == 'reportage' %}
 
@@ -32,7 +32,7 @@
     {% assign readmore = 'true' %}
     
     {% if post.intro -%}
-    <div class="Post__content">
+    <div class="post__content">
       <p>{{ post.intro }}</p>
     </div>
     {% endif -%}
@@ -49,7 +49,7 @@
             {% assign filename = file -%}
             {% assign caption = '' -%}
           {% endif -%}
-          <div class="Photo">
+          <div class="photo">
             {% include photos/single.html photo=post filename=filename caption=caption hide_caption=true -%}
           </div>
         {% endfor %}
@@ -70,13 +70,13 @@
     {% endif %}
     {% assign content = post.content | strip %}
     {% if content.size > 0 %}
-      <div class="Post__content">{{ content }}</div>
+      <div class="post__content">{{ content }}</div>
     {% endif %}
   {% elsif post.filename %}
     {% include photos/single.html photo=post filename=post.filename -%}
     {% assign content = post.content | strip %}
     {% if content.size > 0 %}
-      <div class="Post__content">{{ content }}</div>
+      <div class="post__content">{{ content }}</div>
     {% endif %}
   {% else %}
     {{ post.content }}

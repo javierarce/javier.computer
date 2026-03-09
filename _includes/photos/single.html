@@ -3,8 +3,8 @@
 {% assign ratio = include.ratio | default: include.photo.ratio -%}
 {% assign location = include.location | default: include.photo.location -%}
 
-<div class="Photo">
-  <div class="Photo__content">
+<div class="photo">
+  <div class="photo__content">
     <figure class="figure">
       {% if include.url and include.url != '' -%}
         <a href="{{ include.url }}">
