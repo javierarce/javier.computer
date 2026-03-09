@@ -4,7 +4,7 @@ div.highlight {
   font-size: var(--font-size-meta);
   margin: 0;
   border-radius: var(--br-default);
-  border: 1px solid #fff;
+  border: 1px solid var(--color-bg-code-block-border);
 }
 
 .highlighter-rouge {
@@ -166,7 +166,7 @@ div.highlight {
 }
 
 .language-plaintext.highlighter-rouge {
-  background-color: #222;
+  background-color: var(--color-bg-code-inline);
   padding: 0.1em 0.2em;
   font-size: 0.9em;
   border-radius: var(--br-default);

@@ -42,7 +42,7 @@
     border: none;
     border-radius: var(--br-default);
     color: inherit;
-    background-color: rgb(48 48 48);
+    background-color: var(--color-bg-search-highlight);
 
     a,
     a:hover {

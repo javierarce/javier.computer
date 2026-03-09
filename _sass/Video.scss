@@ -1,5 +1,4 @@
 // Variables
-$overlay-bg-color: rgba(0, 0, 0, 0.3);
 $transition-duration: 0.3s;
 
 .Layout__video .Content {
@@ -62,7 +61,7 @@ $transition-duration: 0.3s;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $overlay-bg-color;
+    background-color: var(--color-bg-overlay-video);
     opacity: 1;
     transition: opacity $transition-duration ease-in-out;
 
@@ -158,7 +157,7 @@ $transition-duration: 0.3s;
   }
 
   &:fullscreen {
-    background-color: black;
+    background-color: var(--black-pure);
     display: flex;
     justify-content: center;
     align-items: center;

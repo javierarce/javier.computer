@@ -61,6 +61,13 @@
   --color-book-light-pink: #ec407a;
 
   --color-bg-zine: var(--light-pink);
+  --color-bg-selection: rgba(142, 142, 142, 0.2);
+  --color-bg-search-highlight: rgb(48, 48, 48);
+  --color-bg-code-inline: #222;
+  --color-bg-code-block-border: var(--white);
+  --color-bg-muted: #333;
+  --color-bg-muted-hover: #ccc;
+  --color-bg-overlay-video: rgba(0, 0, 0, 0.3);
 
   /* Font */
   --font-text-sans:

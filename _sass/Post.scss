@@ -33,7 +33,7 @@
   }
 
   &.is-highlighted .Post__content {
-    border: 1px solid #ae81ff;
+    border: 1px solid var(--purple);
     border-radius: var(--br-default);
     padding: 0.8em;
   }
