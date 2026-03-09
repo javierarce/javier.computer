@@ -12,7 +12,7 @@ show_title: true
 
 ### A terrible type foundry
 
-<div class="Project__intro">
+<div class="project__intro">
 This project combines many of the things I care about:
 design, code, typography… and silly puns. <a href="https://enfont.javierarce.com" target="_blank" rel="nofollow">enFont Terrible</a> produces web fonts by applying random transformations to your typography. 
 </div>

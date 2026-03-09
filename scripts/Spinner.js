@@ -1,7 +1,7 @@
 
 class Spinner {
   constructor (className = '') {
-    this.className = `${this.constructor.name} ${className}`
+    this.className = `${this.constructor.name.toLowerCase()} ${className}`
     this.visible = false
     this.render()
   }

@@ -1,20 +1,20 @@
-.Layout__drawing .Content,
-.Layout__drawings .Content {
+.layout__drawing .content,
+.layout__drawings .content {
   width: var(--width-wide);
 }
 
-.Layout__drawing .Content h2,
-.Layout__drawings .Content h2 {
+.layout__drawing .content h2,
+.layout__drawings .content h2 {
   margin: 0 auto 2em;
   text-align: center;
 }
 
-.Drawings__thumbs {
+.drawings__thumbs {
   max-width: var(--width-wide);
   margin: 0 auto 2em auto;
 }
 
-.Drawing {
+.drawing {
   &__content {
     font-size: var(--font-size-content);
     max-width: var(--width-wide);
@@ -77,7 +77,7 @@
   }
 }
 
-.Drawings {
+.drawings {
   max-width: 90vw;
   margin: 0 auto 2em auto;
   display: flex;
@@ -104,7 +104,7 @@
   }
 }
 
-.Drawing {
+.drawing {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -137,20 +137,20 @@
 
 
 @media (max-width: 1294px) {
-  .Drawings img {
+  .drawings img {
     height: auto;
     width: var(--width-full);
   }
 }
 
 @media (max-width: 1023px) {
-  .Drawings__content {
+  .drawings__content {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 767px) {
-  .Drawings__content {
+  .drawings__content {
     grid-template-columns: repeat(1, 1fr);
   }
 }

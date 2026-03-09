@@ -16,17 +16,17 @@ description: Movies I've watched
 
 {% if last_year != current_year -%}
 
-<div class="Movies">
-    <h2 class="Movie__year">{{ current_year }}</h2> 
+<div class="movies">
+    <h2 class="movie__year">{{ current_year }}</h2> 
     {% assign last_year = current_year -%} 
     {% endif -%}
 
 <h3>{% include date.html date=group.name day="false" -%} ({{ group.items.size }})</h3>
 
-    <ul class="Movie__list">
+    <ul class="movie__list">
     {% for movie in group.items -%}
     <li>
-    <span class="Movie__date">{{ movie.watched_on | date: "%d" }}</span>
+    <span class="movie__date">{{ movie.watched_on | date: "%d" }}</span>
 
 <a href="https://letterboxd.com/javier/film/{{ movie.permalink }}">{{ movie.title }} ({{ movie.year }})</a>
 <span>{{ movie.stars }}</span>

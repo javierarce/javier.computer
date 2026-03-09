@@ -1,6 +1,6 @@
 class Base {
   constructor() {
-    this.className = this.constructor.name;
+    this.className = this.constructor.name.toLowerCase();
     this.templateData = {};
   }
 
@@ -50,7 +50,7 @@ class Base {
   }
 
   template() {
-    return `<div class="Template"></div>`;
+    return `<div class="template"></div>`;
   }
 
   renderTemplate() {
@@ -107,15 +107,15 @@ class Popup extends Base {
 
   template() {
     return `
-      <div class="Popup__content">
-        <% if (title) { %><div class="Popup__title"><%= title %></div> <% } %>
-        <% if (description) { %><div class="Popup__description"><%- description %></div> <% } %>
-        <% if (post_references && post_references.length > 0) { %><div class="Popup__posts">
+      <div class="popup__content">
+        <% if (title) { %><div class="popup__title"><%= title %></div> <% } %>
+        <% if (description) { %><div class="popup__description"><%- description %></div> <% } %>
+        <% if (post_references && post_references.length > 0) { %><div class="popup__posts">
         <% for (let i = 0; i < post_references.length; i++) { %>
-            <a class="Popup__post" href="<%= post_references[i].url -%>"><%= i + 1 -%></a>
+            <a class="popup__post" href="<%= post_references[i].url -%>"><%= i + 1 -%></a>
         <% } %>
         </div> <% } %>
-        <% if (address) { %><div class="Popup__address"><%= address %></div><% } %>
+        <% if (address) { %><div class="popup__address"><%= address %></div><% } %>
       </div>
       `;
   }
@@ -123,7 +123,7 @@ class Popup extends Base {
   render() {
     this.renderTemplate();
 
-    const className = "Popup";
+    const className = "popup";
 
     this.el = L.popup({
       className,
@@ -259,7 +259,7 @@ class Map extends Base {
     const address = location.address;
     const zoom = this.map.getZoom();
 
-    const icon = this.getIcon({ location, className: "Marker" });
+    const icon = this.getIcon({ location, className: "marker" });
 
     const popup = new Popup(latlng, location);
     const marker = L.marker(latlng, { icon, location });
@@ -299,7 +299,7 @@ class Map extends Base {
 
   getIcon({ location, className }) {
     let html = location.id;
-    let classNames = ["Marker", "has-title"];
+    let classNames = ["marker", "has-title"];
 
     if (location.emoji) {
       html = location.emoji;
@@ -348,7 +348,7 @@ class Map extends Base {
     this.map.on("click", this.onMapClick.bind(this));
 
     this.map.zoomControl.setPosition("topright");
-    this.map.zoomControl.getContainer().classList.add("ZoomControl");
+    this.map.zoomControl.getContainer().classList.add("zoom-control");
     this.addAttribution();
   }
 
@@ -369,7 +369,7 @@ class App {
     this.$el = document.querySelector(".js-map");
 
     this.flexDirection = window
-      .getComputedStyle(document.querySelector(".BigMap"))
+      .getComputedStyle(document.querySelector(".big-map"))
       .getPropertyValue("flex-direction");
 
     const lng = this.$el.attributes["data-lng"].value;
@@ -464,7 +464,7 @@ class App {
   bindEvents() {
     window.addEventListener("resize", () => {
       this.flexDirection = window
-        .getComputedStyle(document.querySelector(".BigMap"))
+        .getComputedStyle(document.querySelector(".big-map"))
         .getPropertyValue("flex-direction");
     });
 

@@ -12,18 +12,19 @@ show_title: true
 
 ### Un fanzine que bien podría haber sido una reunión
 
-<div class="Project__intro">Pequeño y misterioso fanzine de periodicidad caprichosa, contenido dudoso, edición peligrosa y ambición sospechosa. Editado con cariño y faltas de ortografía.</div>
+<div class="project__intro">Pequeño y misterioso fanzine de periodicidad caprichosa, contenido dudoso, edición peligrosa y ambición sospechosa. Editado con cariño y faltas de ortografía.</div>
 
-<div class="g">
-    <div class="h">
+{% stack %}
+    {% row %}
         <img class="zine__page is-bn lazy" aspect-ratio="12/17" data-src="/img/boletin-botanico/01/page-01.png"> 
         <img class="zine__page is-bn lazy" aspect-ratio="12/17" data-src="/img/boletin-botanico/01/page-02.png"> 
-    </div>
-    <div class="h">
+    {% endrow %}
+    {% row %}
         <img class="zine__page is-bn lazy" aspect-ratio="12/17" data-src="/img/boletin-botanico/01/page-03.png"> 
         <img class="zine__page is-bn lazy" aspect-ratio="12/17" data-src="/img/boletin-botanico/01/page-04.png">
-    </div>
-</div>
+    {% endrow %}
+
+{% endstack %}
 
 Boletín Botánico, vol. 1 (2021). Edición de 4 páginas en formato A5, impresa en láser (B/N) sobre papel amarillo de 80 gr. Tirada limitada de 25 ejemplares.
 

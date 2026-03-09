@@ -1,4 +1,4 @@
-.Layout__about {
+.layout__about {
 
   ul li a,
   p a,
@@ -6,7 +6,7 @@
     color: var(--link);
   }
 
-  .About__content {
+  .about__content {
 
     width: var(--width-content);
     font-size: var(--font-size-content);
@@ -36,13 +36,13 @@
   }
 }
 
-.About__cards {
+.about__cards {
   display: grid;
   grid-template-columns: repeat(2, 2fr);
   grid-gap: var(--gap-md);
   width: var(--width-full);
 
-  .About__card {
+  .about__card {
     position: relative;
     padding: 1em;
     display: flex;
@@ -73,20 +73,20 @@
 
 @media all and (max-width: 1024px) {
 
-  .Layout__about .About__content,
-  .Layout__about {
+  .layout__about .about__content,
+  .layout__about {
     width: var(--width-full);
   }
 }
 
 @media all and (max-width: 640px) {
 
-  .Layout__about .About__content,
-  .Layout__about {
+  .layout__about .about__content,
+  .layout__about {
     width: var(--width-full);
   }
 
-  .About__cards {
+  .about__cards {
     display: flex;
     flex-direction: column;
   }

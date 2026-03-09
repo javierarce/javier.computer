@@ -1,20 +1,20 @@
 // Variables
 $transition-duration: 0.3s;
 
-.Layout__video .Content {
+.layout__video .content {
   width: var(--width-wide);
 }
 
-.Layout__video .Post .Post__footer {
+.layout__video .post .post__footer {
   width: var(--width-content);
   margin: 0 auto;
 }
 
-.Post__content .Video {
+.post__content .video {
   margin: 0;
 }
 
-.Video {
+.video {
   position: relative;
   max-width: var(--width-full);
   overflow: hidden;
@@ -209,7 +209,7 @@ $transition-duration: 0.3s;
 }
 
 @media all and (max-width: 640px) {
-  .Video {
+  .video {
     .control-button {
       width: 40px;
       height: 40px;

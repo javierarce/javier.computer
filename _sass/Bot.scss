@@ -1,12 +1,12 @@
-.Layout__bots .Content {
+.layout__bots .content {
   width: var(--width-wide);
 }
 
-.Bots {
+.bots {
   font-size: var(--font-size-content);
 }
 
-.Bot {
+.bot {
   margin: 0 auto 2em auto;
 
   &__content {
@@ -82,7 +82,7 @@
 
   }
 
-  &__archiveContent {
+  &__archive-content {
     column-count: 2;
     column-gap: var(--gap-xl);
     font-size: var(--font-size-meta);
@@ -109,52 +109,52 @@
 
 @media all and (max-width: 1280px) {
 
-  .Layout__project .Bot p,
-  .Layout__project .Bot__content h3 {
+  .layout__project .bot p,
+  .layout__project .bot__content h3 {
     width: var(--width-full);
   }
 
-  .Bot__intro,
-  .Bot__description {
+  .bot__intro,
+  .bot__description {
     width: var(--width-full);
     margin: 0 0 2em;
   }
 
-  .Bot__content h3 {
+  .bot__content h3 {
     width: var(--width-full);
   }
 
-  .Bot__archiveContent {
+  .bot__archive-content {
     column-count: 1;
     font-size: 0.9em;
   }
 
-  .Bot__archive {
+  .bot__archive {
     padding: 2em;
     margin: 0;
   }
 
-  .Layout__project .Bot .Bot__intro {
+  .layout__project .bot .bot__intro {
     width: var(--width-full);
     margin: auto;
     text-align: center;
   }
 
-  .Layout__project .Bot .figure {
+  .layout__project .bot .figure {
     width: var(--width-full);
   }
 }
 
 @media all and (max-width: 1024px) {
 
-  .Layout__bots .Content,
-  .Bot__archive {
+  .layout__bots .content,
+  .bot__archive {
     width: var(--width-full);
   }
 }
 
 @media all and (max-width: 640px) {
-  .Layout__bots .Content {
+  .layout__bots .content {
     width: var(--width-full);
   }
 }

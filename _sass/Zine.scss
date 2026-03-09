@@ -1,10 +1,10 @@
 .html-lol,
 .html-lol body,
-.Layout__lol {
+.layout__lol {
   height: 100%;
 }
 
-.Layout__thanks {
+.layout__thanks {
   background: var(--color-bg-zine);
   color: var(--color-txt-site-inverted);
   margin: auto;
@@ -48,13 +48,13 @@
   }
 }
 
-.Layout__lol,
-.Layout__zine {
+.layout__lol,
+.layout__zine {
   background: var(--color-bg-zine);
   color: var(--color-txt-site-inverted);
   margin: auto;
 
-  .Content {
+  .content {
     width: var(--width-full);
   }
 
@@ -252,7 +252,7 @@
     font-family: var(--font-text-serif);
   }
 
-  &__buyButton {
+  &__buybutton {
     width: 220px;
     background: var(--black);
     color: var(--white);
@@ -282,11 +282,11 @@
 }
 
 @media all and (max-width: 640px) {
-  .Layout__zine {
+  .layout__zine {
     padding: var(--space-lg);
   }
 
-  .Layout__lol {
+  .layout__lol {
     padding: var(--space-lg);
   }
 

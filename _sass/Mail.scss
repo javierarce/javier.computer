@@ -1,4 +1,4 @@
-.Layout__contact .Content__inner {
+.layout__contact .content__inner {
   width: var(--width-content);
   font-size: var(--font-size-content);
 }
@@ -9,31 +9,31 @@
 }
 
 @media all and (max-width: 1024px) {
-  .Layout__contact .Content__inner,
-  .Layout__contact {
+  .layout__contact .content__inner,
+  .layout__contact {
     width: var(--width-full);
     margin: 0;
   }
 
-  .Layout__contact .form,
-  .Layout__contact .input,
-  .Layout__contact .textarea,
-  .Layout__contact .button {
+  .layout__contact .form,
+  .layout__contact .input,
+  .layout__contact .textarea,
+  .layout__contact .button {
     width: var(--width-full);
   }
 }
 
 @media all and (max-width: 640px) {
-  .Layout__contact .Content__inner,
-  .Layout__contact {
+  .layout__contact .content__inner,
+  .layout__contact {
     width: var(--width-full);
     margin: 0;
   }
 
-  .Layout__contact .form,
-  .Layout__contact .input,
-  .Layout__contact .textarea,
-  .Layout__contact .button {
+  .layout__contact .form,
+  .layout__contact .input,
+  .layout__contact .textarea,
+  .layout__contact .button {
     width: var(--width-full);
   }
 }

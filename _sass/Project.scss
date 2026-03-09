@@ -1,5 +1,5 @@
-.Layout__project {
-  .Content {
+.layout__project {
+  .content {
     width: var(--width-wide);
 
     h2 {
@@ -14,7 +14,7 @@
   }
 }
 
-.Projects {
+.projects {
   &__lists,
   &__year {
     display: flex;
@@ -36,7 +36,7 @@
   }
 }
 
-.Project {
+.project {
   font-size: var(--font-size-content);
 
   &__content {
@@ -84,7 +84,7 @@
       border-radius: var(--br-subtle);
     }
 
-    .Photo__caption {
+    .photo__caption {
       display: block;
       width: var(--width-full);
     }
@@ -102,7 +102,7 @@
   }
 }
 
-.Project__list {
+.project__list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -121,14 +121,14 @@
   }
 }
 
-.Project__cards {
+.project__cards {
   display: grid;
   grid-template-columns: repeat(2, 2fr);
   grid-gap: var(--gap-md);
   width: var(--width-full);
   margin-bottom: 4em;
 
-  .Project__card {
+  .project__card {
     position: relative;
     padding: 1em;
     display: flex;
@@ -142,7 +142,7 @@
       text-decoration: none;
     }
 
-    &Date {
+    &-date {
       position: absolute;
       top: 1em;
       right: 1em;
@@ -150,11 +150,11 @@
       opacity: var(--op-light);
     }
 
-    &Title {
+    &-title {
       text-decoration: none;
     }
 
-    &Description {
+    &-description {
       text-decoration: none;
       opacity: var(--op-light);
     }
@@ -162,17 +162,17 @@
 }
 
 @media all and (max-width: 1280px) {
-  .Project__intro,
-  .Layout__project .Project p,
-  .Layout__project .Project__content h3,
-  .Layout__project .Project .figure,
-  .Project__cards {
+  .project__intro,
+  .layout__project .project p,
+  .layout__project .project__content h3,
+  .layout__project .project .figure,
+  .project__cards {
     width: var(--width-full);
   }
 }
 
 @media all and (max-width: 800px) {
-  .Layout__project .Content {
+  .layout__project .content {
     width: var(--width-full);
 
     img {
@@ -182,14 +182,14 @@
     }
   }
 
-  .Project__cards {
+  .project__cards {
     display: flex;
     flex-direction: column;
   }
 }
 
 @media all and (max-width: 640px) {
-  .Layout__project .Content {
+  .layout__project .content {
     width: var(--width-full);
   }
 }

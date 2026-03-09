@@ -1,4 +1,4 @@
-.Calendar {
+.calendar {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   margin: 0 0 2em;
@@ -50,7 +50,7 @@
 
 
 @media all and (max-width: 1024px) {
-  .Calendar__day {
+  .calendar__day {
     font-size: 2vw;
 
     &.has-posts {
@@ -68,7 +68,7 @@
 }
 
 @media all and (max-width: 640px) {
-  .Calendar__day {
+  .calendar__day {
     font-size: 0.9em;
 
     &.has-posts {

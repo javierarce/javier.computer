@@ -1,46 +1,46 @@
-.Layout__grid .Content,
-.Layout__photo .Content,
-.Layout__photos .Content {
+.layout__grid .content,
+.layout__photo .content,
+.layout__photos .content {
   width: var(--width-wide);
 }
 
-.Layout__grid .Content .Photo__collections {
+.layout__grid .content .photo__collections {
   h2,
   h3 {
     margin: 0 auto;
   }
 }
 
-.Photo__collections,
-.Photo__collections.has-grid,
-.Layout__grid .Content .Photo__collections {
+.photo__collections,
+.photo__collections.has-grid,
+.layout__grid .content .photo__collections {
   display: flex;
   flex-direction: column;
   gap: var(--gap-xxxl);
 }
 
-.Photo__collection.has-grid,
-.Layout__grid .Content .Photo__collection {
+.photo__collection.has-grid,
+.layout__grid .content .photo__collection {
   display: flex;
   flex-direction: column;
   gap: var(--gap-xl);
   text-align: left;
 }
 
-.Layout__grid .Content .Photo__collection .Photo__content {
+.layout__grid .content .photo__collection .photo__content {
   text-align: left;
 }
 
-.Photo__grid,
-.Layout__grid .Content .Photo__grid {
+.photo__grid,
+.layout__grid .content .photo__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: var(--gap-sm);
   text-align: center;
 }
 
-.Photo__collection.has-grid .Photo,
-.Layout__grid .Content .Photo__collection .Photo {
+.photo__collection.has-grid .photo,
+.layout__grid .content .photo__collection .photo {
   display: flex;
   flex-direction: column;
   gap: var(--gap-md);
@@ -49,28 +49,28 @@
   overflow: hidden;
 }
 
-.Photo__collection.has-grid .Photo img,
-.Layout__grid .Content .Photo__collection .Photo img {
+.photo__collection.has-grid .photo img,
+.layout__grid .content .photo__collection .photo img {
   width: var(--width-full);
   height: 100%;
   object-fit: cover;
   aspect-ratio: 1;
 }
 
-.Layout__reportage {
-  .Photo__layout p a {
+.layout__reportage {
+  .photo__layout p a {
     color: var(--link);
   }
 
-  .Photo__layout p.is-light a {
+  .photo__layout p.is-light a {
     color: var(--white);
   }
 
-  .Content {
+  .content {
     width: var(--width-wide);
   }
 
-  .Post__footer {
+  .post__footer {
     width: var(--width-content);
     margin: 0 auto;
   }
@@ -108,7 +108,7 @@
     opacity: var(--op-light);
   }
 
-  .Photo__layout {
+  .photo__layout {
     .stack p:not(:last-child) {
       margin-bottom: 1em;
     }
@@ -132,39 +132,39 @@
   }
 }
 
-/* Layout: titles */
+/* layout: titles */
 
-.Layout__photo .Content h2,
-.Layout__photos .Content h2,
-.Layout__photo .Photo__collection h2,
-.Layout__photos .Photo__collection h2 {
+.layout__photo .content h2,
+.layout__photos .content h2,
+.layout__photo .photo__collection h2,
+.layout__photos .photo__collection h2 {
   margin: 0 auto;
   text-align: center;
 }
 
-.Photo .Post__content,
-.Photo .Post__footer,
-.Photo__collection .Post__content p,
-.Photo__collection .Post__footer {
+.photo .post__content,
+.photo .post__footer,
+.photo__collection .post__content p,
+.photo__collection .post__footer {
   width: var(--width-content);
   margin: 0 auto;
 }
 
-.Photo__collection .Post__content {
+.photo__collection .post__content {
   display: flex;
   flex-direction: column;
   gap: var(--gap-md);
 }
 
-/* Photo */
+/* photo */
 
-.Photo {
+.photo {
   width: var(--width-full);
   height: auto;
   box-sizing: border-box;
 }
 
-.Photo__content {
+.photo__content {
   display: flex;
   flex-direction: column;
   gap: var(--gap-md);
@@ -181,7 +181,7 @@
   }
 }
 
-.Photo__feed {
+.photo__feed {
   margin-bottom: 2em;
   display: flex;
   flex-direction: column;
@@ -189,13 +189,13 @@
   width: var(--width-wide);
 }
 
-.Photos__archive {
+.photos__archive {
   display: grid;
   width: var(--width-full);
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: var(--gap-xs);
 
-  .Photo__content {
+  .photo__content {
     gap: 0;
   }
 
@@ -214,7 +214,7 @@
   }
 }
 
-.Photo__collection {
+.photo__collection {
   display: flex;
   flex-direction: column;
   gap: var(--gap-xl);
@@ -224,7 +224,7 @@
   }
 }
 
-.Photo__layout {
+.photo__layout {
   width: var(--width-wide);
   margin: 0 auto 2em auto;
   display: flex;
@@ -232,13 +232,13 @@
   gap: var(--gap-xl);
 }
 
-.Photo__layout .Photo > .Photo__content img {
+.photo__layout .photo > .photo__content img {
   height: auto;
   width: var(--width-full);
   max-width: none;
 }
 
-.Project .stack {
+.project .stack {
   margin: 0 0 var(--space-xl) 0;
 }
 
@@ -262,14 +262,14 @@
   grid-gap: var(--gap-sm);
   text-align: center;
 
-  &.is-vertical .Photo img {
+  &.is-vertical .photo img {
     width: var(--width-full);
     height: 100%;
     object-fit: cover;
     aspect-ratio: 9/16;
   }
 
-  &.is-square .Photo img {
+  &.is-square .photo img {
     width: var(--width-full);
     height: 100%;
     object-fit: cover;
@@ -284,7 +284,7 @@
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
 
-  .Photo img {
+  .photo img {
     width: var(--width-full);
     height: 100%;
     object-fit: cover;
@@ -335,7 +335,7 @@
   width: 33.3333%;
 }
 
-.Photo__layout {
+.photo__layout {
   p,
   p:last-child {
     width: var(--width-content);
@@ -355,7 +355,7 @@
   }
 }
 
-.Photo__header {
+.photo__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -365,18 +365,18 @@
   text-align: center;
 }
 
-.Photo__header h2 {
+.photo__header h2 {
   font-size: var(--font-size-display);
   line-height: 1.2;
 }
 
-.Photo__selector {
+.photo__selector {
   font-size: var(--font-size-meta);
   width: var(--width-full);
   text-align: right;
 }
 
-.Photo__caption {
+.photo__caption {
   text-align: center;
   margin: 1.4em auto;
   max-width: 900px;
@@ -384,7 +384,7 @@
   line-height: 1.5;
 }
 
-.Layout__photo .Photo__caption {
+.layout__photo .photo__caption {
   text-align: left;
   margin: 1.4em 0;
 }
@@ -396,42 +396,42 @@ figcaption {
 }
 
 @media all and (min-width: 1900px) {
-  .Layout__reportage .Content,
-  .Photo__layout {
+  .layout__reportage .content,
+  .photo__layout {
     width: var(--width-xl);
   }
 }
 
 @media all and (max-width: 1024px) {
-  .Photo__feed {
+  .photo__feed {
     width: var(--width-full);
   }
 
-  .Layout__photo .Content,
-  .Layout__photos .Content {
+  .layout__photo .content,
+  .layout__photos .content {
     width: var(--width-full);
   }
 
-  .Photo__layout {
+  .photo__layout {
     width: var(--width-full);
   }
 
-  .Photo__layout p,
-  .Photo__layout p:last-child {
+  .photo__layout p,
+  .photo__layout p:last-child {
     width: var(--width-full);
   }
 
-  .Layout__reportage .Post__footer,
-  .Photo .Post__content,
-  .Photo .Post__footer,
-  .Photo .Post__pagination,
-  .Photo__collection .Post__content p,
-  .Photo__collection .Post__content,
-  .Photo__collection .Post__footer {
+  .layout__reportage .post__footer,
+  .photo .post__content,
+  .photo .post__footer,
+  .photo .post__pagination,
+  .photo__collection .post__content p,
+  .photo__collection .post__content,
+  .photo__collection .post__footer {
     width: var(--width-full);
   }
 
-  .Photos__archive img {
+  .photos__archive img {
     width: var(--width-full);
     height: auto;
     object-fit: cover;
@@ -439,7 +439,7 @@ figcaption {
 }
 
 @media all and (max-width: 640px) {
-  .Layout__reportage {
+  .layout__reportage {
     blockquote {
       width: auto;
     }
@@ -455,48 +455,48 @@ figcaption {
     flex-direction: column;
   }
 
-  .grid.is-vertical .Photo img,
-  .grid.is-square .Photo img,
-  .grid .Photo img {
+  .grid.is-vertical .photo img,
+  .grid.is-square .photo img,
+  .grid .photo img {
     aspect-ratio: auto;
   }
 
-  .Layout__grid .Content .Photo__grid {
+  .layout__grid .content .photo__grid {
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   }
 
-  .Layout__grid .Content .Photo__collections {
+  .layout__grid .content .photo__collections {
     gap: var(--gap-md);
   }
 
-  .Layout__reportage .Content,
-  .Layout__photo .Content,
-  .Layout__photos .Content {
+  .layout__reportage .content,
+  .layout__photo .content,
+  .layout__photos .content {
     width: var(--width-full);
   }
 
-  .Photo__layout {
+  .photo__layout {
     width: var(--width-full);
   }
 
-  .Photo__layout p,
-  .Photo__layout p:last-child,
-  .Photo__layout .stack ul,
-  .Photo__layout .stack ul:last-child {
+  .photo__layout p,
+  .photo__layout p:last-child,
+  .photo__layout .stack ul,
+  .photo__layout .stack ul:last-child {
     width: var(--width-full);
   }
 
-  .Photos__archive {
+  .photos__archive {
     gap: var(--gap-md);
   }
 
-  .Photos__archive img {
+  .photos__archive img {
     width: var(--width-full);
     height: auto;
     object-fit: cover;
   }
 
-  .Photo__collection {
+  .photo__collection {
     gap: var(--gap-sm);
   }
 

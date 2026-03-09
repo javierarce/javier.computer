@@ -12,7 +12,7 @@ show_title: true
 
 ### A little gift for the geeks
 
-<div class="Project__intro">
+<div class="project__intro">
 <p>This project was a gift to one of my favorite communities
 , <a href="https://are.na">Are.na</a>. With <a href="https://arena.javierarce.com">Kindle to Arena</a> people can easily send highlights and notes from their Kindle reader into <strong>Are.na</strong>.</p></div>
 

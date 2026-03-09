@@ -35,7 +35,7 @@ class Presence extends HTMLElement {
   }
 
   setOnline (text) {
-    this.classList.add('Presence')
+    this.classList.add('presence')
 
     this.shadow.innerHTML = ''
     const $text = document.createElement('div')

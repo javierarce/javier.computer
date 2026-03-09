@@ -1,4 +1,4 @@
-.Announcement {
+.announcement {
   margin: 0 0 3em;
   display: flex;
   flex-direction: row;
@@ -14,11 +14,11 @@
 }
 
 @media all and (max-width: 640px) {
-  .Announcement__icon {
+  .announcement__icon {
     margin-top: 4px;
   }
 
-  .Announcement {
+  .announcement {
     align-items: start;
   }
 }

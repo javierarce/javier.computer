@@ -13,11 +13,11 @@ window.onload = () => {
 
 
       let $items = document.createElement('div')
-      $items.classList.add('Bot__items')
+      $items.classList.add('bot__items')
 
       data.items.reverse().forEach((text) => {
         let $item = document.createElement('div')
-        $item.classList.add('Bot__item')
+        $item.classList.add('bot__item')
         $item.innerHTML = text
         $items.appendChild($item)
       })

@@ -9,10 +9,10 @@ fetch(URL).then(response => response.json()).then((data) => {
 
   data.reverse().forEach((filename) => {
     const $photo = document.createElement('div')
-    $photo.classList.add('Photo')
+    $photo.classList.add('photo')
 
     const $photoContent = document.createElement('div')
-    $photoContent.classList.add('Photo__content')
+    $photoContent.classList.add('photo__content')
 
     const $figure = document.createElement('figure')
     $figure.classList.add('figure')
@@ -20,7 +20,7 @@ fetch(URL).then(response => response.json()).then((data) => {
     const $picture = document.createElement('picture')
 
     const $img = document.createElement('img')
-    $img.classList.add('Photo', 'lazy')
+    $img.classList.add('photo', 'lazy')
     $img.dataset.src = `https://img.javier.computer/stream/${filename}`
 
     $picture.appendChild($img)

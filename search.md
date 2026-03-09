@@ -6,7 +6,7 @@ className: archive
 category: posts
 ---
 
-<div class="Content">
+<div class="content">
     {% include navigation.html -%}
 
     <div class="search">

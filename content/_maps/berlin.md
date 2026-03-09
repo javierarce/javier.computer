@@ -2,7 +2,7 @@
 layout: map
 title: Berlín
 description: Guía de bolsillo de Berlín
-className: Map
+className: map
 permalink: maps/berlin
 category: maps
 location: berlin

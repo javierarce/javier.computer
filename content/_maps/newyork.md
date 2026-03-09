@@ -2,7 +2,7 @@
 layout: map
 title: Nueva York
 description: Guía de bolsillo de Nueva York
-className: Map
+className: map
 permalink: maps/newyork
 category: maps
 location: newyork

@@ -1,5 +1,5 @@
-.Layout__page {
-  .Page__content {
+.layout__page {
+  .page__content {
     width: var(--width-content);
     font-size: var(--font-size-content);
     display: flex;
@@ -25,7 +25,7 @@
   }
 }
 
-.Page {
+.page {
   width: var(--width-content);
 
   &__content {
@@ -47,28 +47,28 @@
 
 @media all and (max-width: 1024px) {
 
-  .Page {
+  .page {
     width: var(--width-full);
   }
 
-  .Layout__page .Page__content,
-  .Layout__page {
+  .layout__page .page__content,
+  .layout__page {
     width: var(--width-full);
   }
 }
 
 @media all and (max-width: 640px) {
 
-  .Page {
+  .page {
     width: var(--width-full);
   }
 
-  .Layout__page .Page__content,
-  .Layout__page {
+  .layout__page .page__content,
+  .layout__page {
     width: var(--width-full);
   }
 
-  .Layout__page {
+  .layout__page {
     table {
       margin: 0;
 

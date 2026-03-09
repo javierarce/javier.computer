@@ -1,14 +1,14 @@
-.Layout__books td a,
-.Layout__movies td a,
-.Layout__projects td a,
-.Layout__books td a:hover,
-.Layout__movies td a:hover,
-.Layout__projects td a:hover {
+.layout__books td a,
+.layout__movies td a,
+.layout__projects td a,
+.layout__books td a:hover,
+.layout__movies td a:hover,
+.layout__projects td a:hover {
   color: var(--link);
 }
 
-.Layout__books h2,
-.Layout__projects h2 {
+.layout__books h2,
+.layout__projects h2 {
   margin-bottom: 0;
 }
 
@@ -33,56 +33,56 @@ table td {
   padding: 0.8em 0;
 }
 
-.Layout__books table th,
-.Layout__movies table th,
-.Layout__projects table th {
+.layout__books table th,
+.layout__movies table th,
+.layout__projects table th {
   text-align: left;
 }
 
-.Layout__projects table th:nth-child(1),
-.Layout__projects table td:nth-child(1) {
+.layout__projects table th:nth-child(1),
+.layout__projects table td:nth-child(1) {
   width: 200px;
 }
 
-.Layout__projects table th:nth-child(3),
-.Layout__projects table td:nth-child(3) {
+.layout__projects table th:nth-child(3),
+.layout__projects table td:nth-child(3) {
   width: 200px;
 }
 
-.Layout__books table th:nth-child(1),
-.Layout__books table td:nth-child(1) {
+.layout__books table th:nth-child(1),
+.layout__books table td:nth-child(1) {
   width: 60%;
 }
 
-.Layout__books table th:nth-child(2),
-.Layout__books table td:nth-child(2) {
+.layout__books table th:nth-child(2),
+.layout__books table td:nth-child(2) {
   width: 20%;
 }
 
-.Layout__books table th:last-child,
-.Layout__books table td:last-child {
+.layout__books table th:last-child,
+.layout__books table td:last-child {
   width: 60px;
 }
 
 
-.Layout__movies table th:nth-child(1),
-.Layout__movies table td:nth-child(1) {
+.layout__movies table th:nth-child(1),
+.layout__movies table td:nth-child(1) {
   width: 60px;
   text-align: left;
 }
 
-.Layout__movies table td:nth-child(1) {
+.layout__movies table td:nth-child(1) {
   opacity: var(--op-light);
 }
 
-.Layout__movies table th:nth-child(3),
-.Layout__movies table td:nth-child(3) {
+.layout__movies table th:nth-child(3),
+.layout__movies table td:nth-child(3) {
   width: 80px;
   text-align: left;
 }
 
-.Layout__movies table th:nth-child(2),
-.Layout__movies table td:nth-child(2) {
+.layout__movies table th:nth-child(2),
+.layout__movies table td:nth-child(2) {
   text-align: left;
 }
 
@@ -92,9 +92,9 @@ table tr:last-child td {
 
 @media all and (max-width: 640px) {
 
-  .Layout__books,
-  .Layout__movies,
-  .Layout__projects {
+  .layout__books,
+  .layout__movies,
+  .layout__projects {
     table tr:last-child {
       border: none;
     }

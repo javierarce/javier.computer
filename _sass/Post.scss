@@ -1,5 +1,5 @@
-.Layout__post .Post__content,
-.Layout__home .Post__content {
+.layout__post .post__content,
+.layout__home .post__content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,19 +7,19 @@
   gap: var(--gap-lg);
 }
 
-.Posts {
+.posts {
   display: flex;
   flex-direction: column;
   gap: var(--gap-xxl);
   max-width: var(--width-content);
 }
 
-.Post .Video,
-.Post .Photo {
+.post .video,
+.post .photo {
   width: var(--width-wide);
 }
 
-.Post {
+.post {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,7 +32,7 @@
     border-radius: var(--br-subtle);
   }
 
-  &.is-highlighted .Post__content {
+  &.is-highlighted .post__content {
     border: 1px solid var(--purple);
     border-radius: var(--br-default);
     padding: 0.8em;
@@ -133,25 +133,25 @@
 
   }
 
-  &__paginationArrow {
+  &__pagination-arrow {
     opacity: var(--op-light);
   }
 
-  &__paginationLink,
+  &__pagination-link,
   &__pagination,
   &__footer {
     user-select: none;
     font-weight: var(--font-weight-regular);
   }
 
-  &__paginationLink,
+  &__pagination-link,
   &__location,
   &__date {
     text-decoration: none;
     font-weight: var(--font-weight-regular);
   }
 
-  &__paginationLink:hover {
+  &__pagination-link:hover {
     opacity: 1;
     text-decoration: none;
   }
@@ -208,20 +208,20 @@
 
 @media all and (max-width: 1024px) {
 
-  .Post .Video,
-  .Post .Photo,
-  .Posts,
-  .Post,
-  .Post__content,
-  .Post__content.Post__text,
-  .Post__pagination,
-  .Post__footer {
+  .post .video,
+  .post .photo,
+  .posts,
+  .post,
+  .post__content,
+  .post__content.post__text,
+  .post__pagination,
+  .post__footer {
     width: var(--width-full);
   }
 }
 
 @media all and (max-width: 640px) {
-  .Post {
+  .post {
     &__footer {
       font-size: var(--font-size-content);
     }

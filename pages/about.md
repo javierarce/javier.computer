@@ -40,8 +40,8 @@ permalink: about
 {% assign current_timestamp = 'now' | date: "%s" -%}
 {% assign update_timestamp = site.time | date: "%s" -%}
 
-<div class="Photo">
-    <div class="Photo__content with-source">
+<div class="photo">
+    <div class="photo__content with-source">
         <figure class="figure">
             <picture>
                 <img class="lazy" style="--aspect-ratio: 135∶91" data-src="/assets/me.jpg" alt="Me eating ice cream" />
@@ -72,22 +72,22 @@ turtle, a turtle.
 
 ### Wait, there's more!
 
-<div class="About__cards">
-    <div class="About__card">
-        <div class="About__cardTitle">Contact</div>
-        <div class="About__cardDescription">Do you need to tell me something incredible that happened to you? I want to know! <a href="/contact">Send me a message</a>.</div>
+<div class="about__cards">
+    <div class="about__card">
+        <div class="about__card-title">Contact</div>
+        <div class="about__card-description">Do you need to tell me something incredible that happened to you? I want to know! <a href="/contact">Send me a message</a>.</div>
     </div>
-    <div class="About__card">
-        <div class="About__cardTitle">Newsletter</div>
-        <div class="About__cardDescription"><a href="/newsletter">Subscribe to my newsletter</a> to get an email every time I do something extremely funny.</div>
+    <div class="about__card">
+        <div class="about__card-title">Newsletter</div>
+        <div class="about__card-description"><a href="/newsletter">Subscribe to my newsletter</a> to get an email every time I do something extremely funny.</div>
     </div>
-    <div class="About__card">
-        <div class="About__cardTitle">Let's chat!</div>
-        <div class="About__cardDescription"><a href="/office-hours">Schedule a meeting</a> with me and let's talk online or in person.</div>
+    <div class="about__card">
+        <div class="about__card-title">Let's chat!</div>
+        <div class="about__card-description"><a href="/office-hours">Schedule a meeting</a> with me and let's talk online or in person.</div>
     </div>
-    <div class="About__card">
-        <div class="About__cardTitle">RSS</div>
-        <div class="About__cardDescription">Don't miss a post! <a href="/rss">Subscribe to the main feed</a> or to the <a href="/photos.rss">photo feed</a>.
+    <div class="about__card">
+        <div class="about__card-title">RSS</div>
+        <div class="about__card-description">Don't miss a post! <a href="/rss">Subscribe to the main feed</a> or to the <a href="/photos.rss">photo feed</a>.
         </div>
     </div>
 </div>
