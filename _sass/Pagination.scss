@@ -26,7 +26,7 @@
     width: 40px;
     height: 40px;
     margin: 0 0.4em 0 0;
-    border: 1px solid var(--white);
+    border: 1px solid var(--color-border-muted);
     text-decoration: none;
     cursor: pointer;
     user-select: none;
@@ -35,7 +35,7 @@
 
     &:hover {
       color: var(--textHover);
-      background: var(--black);
+      background: var(--color-bg-active);
       opacity: 1;
       text-decoration: none;
     }
@@ -53,8 +53,8 @@
 
     &.is-selected {
       cursor: default;
-      background: var(--black);
-      color: var(--white);
+      background: var(--color-bg-active);
+      color: var(--color-txt-site);
       opacity: 1;
 
       &:hover {
@@ -105,7 +105,7 @@
 
       &.is-mobile-archive {
         font-size: 0.9em;
-        border: 1px solid var(--white);
+        border: 1px solid var(--color-border-muted);
         padding: 0.8em;
         display: flex;
         align-items: center;

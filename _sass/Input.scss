@@ -1,7 +1,7 @@
 textarea,
 input {
   background: none;
-  color: var(--white);
+  color: var(--color-txt-site);
   font-family: var(--font-text-sans);
 }
 
@@ -27,14 +27,14 @@ input {
 .textarea {
   padding: var(--space-lg);
   resize: none;
-  border: 1px solid rgba(255, 255, 255, var(--op-5));
+  border: 1px solid var(--color-border-muted);
   font-size: var(--font-size-ui);
   border-radius: var(--br-subtle);
   transition: border var(--transition-speed-default) ease-in-out;
   outline: none;
 
   &:focus {
-    border: 1px solid var(--white);
+    border: 1px solid var(--color-txt-site);
   }
 }
 

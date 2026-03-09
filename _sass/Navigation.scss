@@ -46,7 +46,7 @@
 
   &__link {
     text-decoration: none;
-    color: var(--white);
+    color: var(--color-txt-site);
     opacity: var(--op-light);
 
     &.is-selected {
@@ -59,7 +59,23 @@
       opacity: 1;
     }
   }
+
+  &__theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: var(--color-txt-site);
+    opacity: var(--op-light);
+    font-size: var(--font-size-md);
+    display: flex;
+    align-items: center;
+    &:hover { opacity: 1; }
+  }
 }
+
+html[data-theme="light"] .theme-icon--dark,
+html[data-theme="dark"]  .theme-icon--light { display: none; }
 
 @media all and (max-width: 1024px) {
   .navigation {
