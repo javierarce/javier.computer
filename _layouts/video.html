@@ -1,14 +1,14 @@
 ---
 layout: base
-className: Video
+className: video
 category: videos
 ---
 <!-- - video -->
-<div class="Content">
+<div class="content">
   {% include navigation.html -%}
 
-  <div class="Post">
-    <div class="Post__content{% if page.extraClassName -%} {{ page.extraClassName }}{% endif -%}">
+  <div class="post">
+    <div class="post__content{% if page.extraClassName -%} {{ page.extraClassName }}{% endif -%}">
       {% include video.html url=page.src -%}
       {{ content }}
     </div>

@@ -1,29 +1,29 @@
 ---
 layout: base
-className: Grid
+className: grid
 grid: true
 ---
 {% assign photos = site.photos | concat: site.posts | sort: 'date' | reverse -%}
 {% assign target_location = page.location | downcase -%}
 
-<div class="Content">
+<div class="content">
   {% include navigation.html -%}
-  <div class="Photo__header">
-    <div class="Photo__selector">
+  <div class="photo__header">
+    <div class="photo__selector">
       <a href="/photos/{{ page.location }}" class="icon icon-list is-light"></a>
       <span class="icon icon-grid"></span>
     </div>
   </div>
 
-  <div class="Photo__collections">
+  <div class="photo__collections">
     {% for photo in photos -%}
       {% assign photo_location = photo.location | downcase -%}
       
       {% if target_location == photo_location %}
         {% if photo.category == "photo" -%}
-          <div class="Photo__collection has-lightbox">
+          <div class="photo__collection has-lightbox">
             {% if photo.filenames -%}
-              <div class="Photo__grid">
+              <div class="photo__grid">
                 {% for file in photo.filenames -%}
                   {% if file.filename -%}
                     {% assign current_filename = file.filename -%}
@@ -40,9 +40,9 @@ grid: true
           </div>
 
         {% elsif photo.category == "reportage" -%}
-          <div class="Photo__collection">
+          <div class="photo__collection">
             {% if photo.filenames -%}
-              <div class="Photo__grid">
+              <div class="photo__grid">
                 {% for file in photo.filenames -%}
                   {% assign current_filename = nil %}
                   {% assign current_image_loc = nil %}

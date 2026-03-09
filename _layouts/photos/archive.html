@@ -1,15 +1,15 @@
 ---
 layout: base
-className: Photos
+className: photos
 category: photos
 ---
 {% assign content = site.posts | concat: site.photos -%}
 {% assign locations = content | map: 'location' | join: ',' | split: ',' | uniq | compact | sort -%}
 <!--- photos/archive -->
-<div class="Content">
+<div class="content">
   {% include navigation.html -%}
 
-  <div class="Photos__archive">
+  <div class="photos__archive">
     {% for location in locations -%}
 
     {% assign reportages = content | where: 'category', 'reportage'| where: 'location', location -%}

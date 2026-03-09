@@ -1,18 +1,18 @@
 ---
 layout: base
-className: Drawings
+className: drawings
 ---
-<div class="Content">
+<div class="content">
   {% include navigation.html -%}
-  <div class="Drawings__thumbs">
-    <div class="Drawings__content">
+  <div class="drawings__thumbs">
+    <div class="drawings__content">
       {% for drawing in site.drawings -%}
         {% assign thumb = drawing.thumb -%}
-        <div class="Drawing">
-          <a href="{{ drawing.url }}" class="Drawing__link"
+        <div class="drawing">
+          <a href="{{ drawing.url }}" class="drawing__link"
             ><img src="/img/drawings/{{ drawing.dir }}/{{ thumb }}" alt="{{ drawing.title }}"
           ></a>
-          <div class="Drawing__title">{{ drawing.title }}</div>
+          <div class="drawing__title">{{ drawing.title }}</div>
         </div>
       {% endfor -%}
     </div>

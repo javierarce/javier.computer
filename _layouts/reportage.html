@@ -1,9 +1,9 @@
 ---
 layout: base
-className: Reportage
+className: reportage
 ---
 <!-- - photos/reportage -->
-<div class="Content has-lightbox">
+<div class="content has-lightbox">
   {% include navigation.html -%}
 
   {% if page.hide_title != true -%}
@@ -20,7 +20,7 @@ className: Reportage
     <h3>{{ page.description }}</h3>
   {% endif -%}
 
-  <div class="Photo__layout">
+  <div class="photo__layout">
     {{ content }}
     {% include photos/footer.html photo=page pagination=true -%}
     {% include footer.html -%}

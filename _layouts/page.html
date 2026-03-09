@@ -1,13 +1,13 @@
 ---
 layout: base
-className: Page
+className: page
 ---
-<div class="Content">
+<div class="content">
   {% include navigation.html -%}
-  <div class="Page">
-    <div class="Page__content">
+  <div class="page">
+    <div class="page__content">
       {% if page.show_title -%}
-        <h3 class="Page__title">{{ page.title }}</h3>
+        <h3 class="page__title">{{ page.title }}</h3>
       {% endif -%}
       {% if page.description and page.show_description -%}
         <p class="is-light">{{ page.description }}</p>
@@ -15,7 +15,7 @@ className: Page
       {{ content }}
 
       {% if page.show_date != false and page.date -%}
-        <div class="Page__date">{{ page.date | date: '%B %d, %Y' }}</div>
+        <div class="page__date">{{ page.date | date: '%B %d, %Y' }}</div>
       {% endif -%}
     </div>
   </div>

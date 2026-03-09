@@ -1,11 +1,11 @@
 ---
 layout: base
-className: Photos
+className: photos
 ---
-<div class="Content">
+<div class="content">
   {% include navigation.html %}
 
-  <div class="Photo__feed">
+  <div class="photo__feed">
     {% for post in paginator.posts %}
       {% include photos/feed.html photo=post %}
     {% endfor %}

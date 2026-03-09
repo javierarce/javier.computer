@@ -1,13 +1,13 @@
 ---
 layout: base
-className: Location
+className: location
 ---
 {% assign posts = site.posts | where: "location", page.location -%}
 
-<div class="Content">
+<div class="content">
     {% include navigation.html -%}
 
-    <div class="Archive">
+    <div class="archive">
         {% assign prev_date = nil -%}
         {% for post in posts -%}
         {% assign current_date = post.date | date: '%B %Y' -%}
@@ -15,12 +15,12 @@ className: Location
         {% if prev_date != nil -%}
     </div>
     {% endif -%}
-    <div class="Archive__month">
+    <div class="archive__month">
         <h3>{{ post.date | date: '%B %Y' }}</h3>
         <ul>
             {% assign prev_date = current_date -%}
             {% endif -%}
-            <li><span class="Archive__day">{{ post.date | date: '%d' }}</span><a href="{{ post.url }}" class="is-{{ post.category }}">{{ post.title }}</a></li>
+            <li><span class="archive__day">{{ post.date | date: '%d' }}</span><a href="{{ post.url }}" class="is-{{ post.category }}">{{ post.title }}</a></li>
             {% endfor -%}
         </ul>
     </div>

@@ -23,15 +23,15 @@
     {% feed_meta -%}
   </head>
   <body
-    class="Layout__{{ page.className | default: page.category | downcase  }}"
+    class="layout__{{ page.className | default: page.category | downcase  }}"
   >
-    <div class="Content">
+    <div class="content">
       {% include navigation.html -%}
-      <div class="Bots">
-        <div class="Bot">
-          <div class="Bot__content">
+      <div class="bots">
+        <div class="bot">
+          <div class="bot__content">
             {{ content }}
-            <div class="Bot__stuff js-content"></div>
+            <div class="bot__stuff js-content"></div>
           </div>
         </div>
       </div>

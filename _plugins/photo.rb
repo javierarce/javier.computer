@@ -40,7 +40,7 @@ class Photo < Liquid::Tag
   def render(context)
     base      = "https://img.javier.computer/#{@location}/#{@filename}"
     alt_text  = @alt || @caption || ''
-    css_class = ['Photo', @classname].compact.join(' ')
+    css_class = ['photo', @classname].compact.join(' ')
 
     style          = @ratio    ? " style=\"--aspect-ratio: #{@ratio};\""   : ''
     alt_attr       = alt_text != '' ? " alt=\"#{alt_text}\""               : ''
@@ -49,7 +49,7 @@ class Photo < Liquid::Tag
 
     <<~HTML
       <div class="#{css_class}">
-        <div class="Photo__content">
+        <div class="photo__content">
           <figure class="figure">
             <picture>
               <source data-srcset="#{base}_2880.webp 2880w" type="image/webp">

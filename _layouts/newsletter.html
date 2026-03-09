@@ -27,11 +27,11 @@
     </script>
     <script defer data-api="/api/event" data-domain="javier.computer" src="/js/stats.js"></script>
   </head>
-  <body class="Layout__{{ className | default: page.category | downcase  }}">
-    <div class="Content">
+  <body class="layout__{{ className | default: page.category | downcase  }}">
+    <div class="content">
       {% include navigation.html -%}
 
-      <div class="About__content">
+      <div class="about__content">
         {% if page.weather -%}
           <weather-snitch></weather-snitch>
         {% endif -%}

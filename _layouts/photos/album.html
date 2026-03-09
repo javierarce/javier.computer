@@ -1,23 +1,23 @@
 ---
 layout: base
-className: Photos
+className: photos
 ---
 
 {% assign location = page.location | downcase -%}
 {% assign photos = site.photos | concat: site.posts | where: "location", location | sort: 'date' | reverse -%}
 
 <!--- photos/album -->
-<div class="Content">
+<div class="content">
   {% include navigation.html -%}
 
-    <div class="Photo__header">
-      <div class="Photo__selector">
+    <div class="photo__header">
+      <div class="photo__selector">
         <span class="icon icon-list"></span>
         <a href="/photos/{{ page.location }}/grid" class="icon icon-grid is-light"></a>
       </div>
     </div>
 
-  <div class="Photo__collections">
+  <div class="photo__collections">
 
     {% for photo in photos -%}
 
@@ -29,13 +29,13 @@ className: Photos
     {% assign location = photo.cover_location -%}
     {% endif -%}
 
-      <div class="Photo__collection">
+      <div class="photo__collection">
         <a href="{{ photo.url }}">
           {% include photos/single.html photo=photo filename=photo.cover caption=file.caption hide_caption=true location = location -%}
         </a>
 
         {% if photo.intro -%}
-        <div class="Post__content">
+        <div class="post__content">
           <p>{{ photo.intro }}</p>
         </div>
         {% endif %}
@@ -45,7 +45,7 @@ className: Photos
       {% elsif photo.category == "post" or photo.category == "photo" -%}
         {% assign filenames = photo.filenames -%}
 
-        <div class="Photo__collection">
+        <div class="photo__collection">
           {% if filenames.size -%}
           {% for file in filenames -%}
 
@@ -66,14 +66,14 @@ className: Photos
 
           {% assign content = photo.content | strip %}
           {% if content.size > 0 %}
-          <div class="Post__content">{{ content }}</div>
+          <div class="post__content">{{ content }}</div>
           {% endif %}
 
           {% include photos/footer.html photo=photo -%}
         </div>
         {% elsif photo.filename -%}
           {% include photos/single.html photo=photo filename=photo.filename caption=file.caption hide_caption=true -%}
-          <div class="Post__content">
+          <div class="post__content">
             <p>{{ photo.content }}</p>
           </div>
           {% include photos/footer.html photo=photo pagination=false -%}

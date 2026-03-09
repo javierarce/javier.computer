@@ -1,12 +1,12 @@
 ---
 layout: base
-className: Quote
+className: quote
 ---
-<div class="Content">
+<div class="content">
   {% include navigation.html -%}
 
-  <div class="Post is-quote">
-    <div class="Post__content Post__text">
+  <div class="post is-quote">
+    <div class="post__content post__text">
       <blockquote>{{ content }}</blockquote>
       <p>{{ page.author }} ({{ page.year }}). {{ page.title }}. {{ page.editorial }}</p>
     </div>

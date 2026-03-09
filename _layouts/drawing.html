@@ -1,24 +1,24 @@
 ---
 layout: base
-className: Drawing
+className: drawing
 category: drawings
 ---
 {% assign content = page.content | strip -%}
 
-<div class="Content">
+<div class="content">
   {% include navigation.html -%}
 
   <h2>{{ page.title }}</h2>
-  <div class="Drawings {% if page.gap == true -%}is-gap{% endif -%} {% if page.fullheight == true -%}is-fullheight{% endif -%}">
+  <div class="drawings {% if page.gap == true -%}is-gap{% endif -%} {% if page.fullheight == true -%}is-fullheight{% endif -%}">
     {% for filename in page.filenames -%}
-      <div class="Drawing">
+      <div class="drawing">
         <img src="/img/drawings/{{ page.dir }}/{{ filename }}" alt="{{ page.title }}">
       </div>
     {% endfor -%}
   </div>
 
   {% if content != null and content != '' -%}
-    <div class="Drawing__content">{{ content }}</div>
+    <div class="drawing__content">{{ content }}</div>
   {% endif -%}
 
   {% include footer.html -%}

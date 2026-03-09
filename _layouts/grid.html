@@ -1,12 +1,12 @@
 ---
 layout: base
-className: Page
+className: page
 ---
-<div class="Grid">
+<div class="grid">
   {% include navigation.html -%}
-  <div class="Page__content">
+  <div class="page__content">
     {% if page.show_title -%}
-      <h3 class="Page__title">{{ page.title }}</h3>
+      <h3 class="page__title">{{ page.title }}</h3>
     {% endif -%}
     <p class="is-light">{{ page.description }}</p>
     {{ content }}

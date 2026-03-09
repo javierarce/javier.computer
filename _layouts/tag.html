@@ -1,6 +1,6 @@
 ---
 layout: page
-className: Tags
+className: tags
 category: tags
 ---
 {% assign posts = '' | split: ',' -%}
@@ -15,11 +15,11 @@ category: tags
 
 <h2>{{ page.tag | capitalize }}</h2>
 
-<ul class="Tags__list">
+<ul class="tags__list">
   {% for post in posts -%}
-    <li class="Tag">
+    <li class="tag">
       <a href="{{ post.url }}" class="is-{{ post.category }}">{{ post.title }}</a>
-      <div class="Tag__date">{% include date.html date=post.date day=true -%}</div>
+      <div class="tag__date">{% include date.html date=post.date day=true -%}</div>
     </li>
   {% endfor -%}
 </ul>

@@ -13,10 +13,10 @@
     {% include scripts.html -%}
     {% feed_meta -%}
   </head>
-  <body class="Layout__{{ page.className | default: page.category | downcase  }}">
-    <div class="Content">
+  <body class="layout__{{ page.className | default: page.category | downcase  }}">
+    <div class="content">
       {% include navigation.html -%}
-      <div class="Content__inner">{{ content }}</div>
+      <div class="content__inner">{{ content }}</div>
       {% include footer.html -%}
     </div>
     <script src="{{ 'scripts/mailer.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
