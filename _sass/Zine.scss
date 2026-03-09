@@ -224,7 +224,7 @@
       font-family: var(--font-text-serif);
     }
 
-    &Image {
+    &-image {
       position: relative;
       width: 840px;
       height: 1160px;
@@ -252,7 +252,7 @@
     font-family: var(--font-text-serif);
   }
 
-  &__buybutton {
+  &__buy-button {
     width: 220px;
     background: var(--black);
     color: var(--white);

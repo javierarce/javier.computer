@@ -22,7 +22,7 @@
   padding: 0;
   margin: 0 0 2em;
 
-  .movie__list+h2 {
+  .movie__list + h2 {
     margin-top: 2em;
   }
 
@@ -43,13 +43,12 @@
     opacity: var(--op-light);
   }
 
-  &Date {
+  &-date {
     display: inline-block;
     margin: 0 0.2em 0 0;
     font-family: var(--font-text-mono);
   }
 }
-
 
 @media all and (max-width: 1024px) {
   .movies {
@@ -58,7 +57,6 @@
 }
 
 @media all and (max-width: 640px) {
-
   .movies {
     width: var(--width-full);
   }

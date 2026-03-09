@@ -12,6 +12,10 @@
     width: var(--width-full);
   }
 
+  &--right &__main {
+    justify-content: flex-end;
+  }
+
   &__main {
     width: var(--width-full);
     display: flex;

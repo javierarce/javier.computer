@@ -1,5 +1,4 @@
 .layout__about {
-
   ul li a,
   p a,
   p a:hover {
@@ -7,7 +6,6 @@
   }
 
   .about__content {
-
     width: var(--width-content);
     font-size: var(--font-size-content);
     margin: 0 auto 2em auto;
@@ -52,7 +50,7 @@
     text-decoration: none;
     font-size: var(--font-size-meta);
 
-    &Date {
+    &-date {
       position: absolute;
       top: 1em;
       right: 1em;
@@ -60,11 +58,11 @@
       opacity: var(--op-light);
     }
 
-    &Title {
+    &-title {
       text-decoration: none;
     }
 
-    &Description {
+    &-description {
       text-decoration: none;
       opacity: var(--op-light);
     }
@@ -72,7 +70,6 @@
 }
 
 @media all and (max-width: 1024px) {
-
   .layout__about .about__content,
   .layout__about {
     width: var(--width-full);
@@ -80,7 +77,6 @@
 }
 
 @media all and (max-width: 640px) {
-
   .layout__about .about__content,
   .layout__about {
     width: var(--width-full);
@@ -90,5 +86,4 @@
     display: flex;
     flex-direction: column;
   }
-
 }
