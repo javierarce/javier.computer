@@ -114,7 +114,29 @@ const showMessage = (data, replied) => {
     $reply.remove();
   }
 
-  $message.classList.add("is-visible");
+  const revealMessage = () => {
+    $message.classList.add("is-visible");
+  };
+
+  // Wait for images to load before fading in
+  const images = $message.querySelectorAll("img");
+  if (images.length > 0) {
+    let loaded = 0;
+    const onLoad = () => {
+      loaded++;
+      if (loaded === images.length) revealMessage();
+    };
+    images.forEach((img) => {
+      if (img.complete) {
+        onLoad();
+      } else {
+        img.addEventListener("load", onLoad, { once: true });
+        img.addEventListener("error", onLoad, { once: true });
+      }
+    });
+  } else {
+    revealMessage();
+  }
 
   $message.addEventListener("transitionend", () => {
     const $intro = document.getElementById("intro");
