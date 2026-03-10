@@ -155,11 +155,18 @@
     }
   }
 
+  &__stage {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   &__message {
     width: 540px;
-    position: absolute;
     opacity: var(--op-hidden);
     visibility: hidden;
+    position: absolute;
     text-align: left;
     padding: var(--space-md);
     background: var(--white);
@@ -174,6 +181,79 @@
     &.is-visible {
       opacity: var(--op-visible);
       visibility: visible;
+    }
+
+    &.is-settled {
+      position: static;
+    }
+  }
+
+  &__reply {
+    display: none;
+    margin-top: var(--space-md);
+    opacity: var(--op-hidden);
+    transition: opacity var(--transition-speed-super-slow) ease-in-out;
+
+    &.is-visible {
+      display: block;
+      opacity: var(--op-visible);
+    }
+
+    &.is-fading-out {
+      opacity: var(--op-hidden);
+    }
+
+    .reply__confirmation {
+      margin: 0;
+      opacity: var(--op-light);
+      font-family: var(--font-text-serif);
+      font-size: var(--font-size-ui);
+    }
+
+    textarea {
+      width: 100%;
+      padding: var(--space-sm);
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: var(--br-subtle);
+      color: var(--black);
+      font-family: var(--font-text-sans);
+      font-size: var(--font-size-sm);
+      resize: vertical;
+      outline: none;
+      transition: border-color var(--transition-speed-default) ease-in-out;
+
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.35);
+      }
+
+      &:focus {
+        border-color: rgba(0, 0, 0, 0.3);
+      }
+
+      &:disabled {
+        opacity: var(--op-light);
+      }
+    }
+
+    button {
+      padding: var(--space-md) var(--space-lg);
+      border-radius: var(--br-subtle);
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      font-family: var(--font-text-sans);
+      font-size: var(--font-size-meta);
+      cursor: pointer;
+      transition: opacity var(--transition-speed-default) ease-in-out;
+
+      &:hover {
+        opacity: var(--op-9);
+      }
+
+      &:disabled {
+        opacity: var(--op-light);
+        cursor: default;
+      }
     }
   }
 

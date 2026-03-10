@@ -15,13 +15,6 @@
     >
 
     {% include meta.html -%}
-    <script>
-      (function() {
-        var saved = localStorage.getItem('theme');
-        var preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', saved || preferred);
-      })();
-    </script>
     {% include scripts.html -%}
     <script
       src="{{ 'scripts/bots.js' | relative_url }}?version={{site.version}}"

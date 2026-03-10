@@ -10,13 +10,6 @@
     </title>
     <link rel="shortcut icon" href="{{ base.url | prepend: site.url }}/favicon.ico">
     {% include meta.html -%}
-    <script>
-      (function() {
-        var saved = localStorage.getItem('theme');
-        var preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', saved || preferred);
-      })();
-    </script>
     {% include scripts.html -%}
     {% feed_meta -%}
   </head>

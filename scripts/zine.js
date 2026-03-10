@@ -1,12 +1,15 @@
 let $code;
 let $message;
+let $reply;
 
 let debounceTimer = null;
 let lastSentCode = null;
 let controller = null;
+let currentCode = null;
 
 const codeLength = 4;
 const URL = "https://api.javier.computer/zine/check";
+const REPLY_URL = "https://api.javier.computer/zine/reply";
 
 const TIMEOUT = 75;
 
@@ -71,7 +74,7 @@ const hideCode = () => {
   }
 };
 
-const showMessage = (data) => {
+const showMessage = (data, replied) => {
   let content = data.message;
 
   // 1. Define the Regex for the image/media (GIF/WebP)
@@ -102,12 +105,73 @@ const showMessage = (data) => {
     })
     .join("");
 
-  $message.innerHTML = finalHTML;
+  document.getElementById("message-content").innerHTML = finalHTML;
+
+  // Show reply form in layout before message fades in (no shift later)
+  if (!replied) {
+    $reply.style.display = "block";
+  } else {
+    $reply.remove();
+  }
+
   $message.classList.add("is-visible");
 
-  if (window.lazyLoadInstance) {
-    window.lazyLoadInstance.update();
-  }
+  $message.addEventListener("transitionend", () => {
+    const $intro = document.getElementById("intro");
+    if ($intro) $intro.style.display = "none";
+    $code.style.display = "none";
+    $message.classList.add("is-settled");
+    document.documentElement.style.height = "auto";
+    document.body.style.height = "auto";
+    document.body.style.minHeight = "100%";
+    document.querySelector(".layout__lol").style.height = "auto";
+    document.querySelector(".layout__lol").style.minHeight = "100%";
+    document.querySelector(".zine__content").style.height = "auto";
+    document.querySelector(".zine__content").style.minHeight = "100vh";
+    window.scrollTo(0, 0);
+
+    if (window.lazyLoadInstance) {
+      window.lazyLoadInstance.update();
+    }
+
+    if (!replied) {
+      showReply();
+    }
+  }, { once: true });
+};
+
+const showReply = () => {
+  $reply.classList.add("is-visible");
+};
+
+const sendReply = () => {
+  const $textarea = $reply.querySelector("textarea");
+  const $button = $reply.querySelector("button");
+  const message = $textarea.value.trim();
+
+  if (!message || !currentCode) return;
+
+  $button.disabled = true;
+  $button.textContent = "Enviando…";
+
+  fetch(REPLY_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ code: currentCode, message }),
+  })
+    .then((res) => res.json())
+    .then(() => {
+      $reply.classList.add("is-fading-out");
+      $reply.addEventListener("transitionend", () => {
+        $reply.innerHTML = "<p class='reply__confirmation'>Mensaje enviado</p>";
+        $reply.classList.remove("is-fading-out");
+      }, { once: true });
+    })
+    .catch((err) => {
+      console.error("Reply error:", err);
+      $button.disabled = false;
+      $button.textContent = "Responder";
+    });
 };
 
 const startLoading = () => {
@@ -155,14 +219,19 @@ const checkCode = ($fields) => {
       .then((data) => {
         stopLoading();
         if (data.valid) {
+          currentCode = joinedCode;
+
           // Update URL with the successful code
           const newUrl = `${window.location.pathname}?code=${joinedCode}`;
           window.history.replaceState({ path: newUrl }, "", newUrl);
 
           document.activeElement?.blur();
+          const $intro = document.getElementById("intro");
+          $intro.style.transition = "opacity var(--transition-speed-super-slow) ease-in-out";
+          $intro.style.opacity = "0";
           hideCode();
           setTimeout(() => {
-            showMessage(data.data);
+            showMessage(data.data, data.replied);
           }, 800);
         }
       })
@@ -178,8 +247,18 @@ const checkCode = ($fields) => {
 const loadCode = () => {
   $code = document.getElementById("code");
   $message = document.getElementById("message");
+  $reply = document.getElementById("reply");
 
   if (!$code) return;
+
+  const $replyButton = $reply.querySelector("button");
+  $replyButton.addEventListener("click", sendReply);
+
+  $reply.querySelector("textarea").addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) {
+      sendReply();
+    }
+  });
 
   // Check for code in URL
   const urlParams = new URLSearchParams(window.location.search);
