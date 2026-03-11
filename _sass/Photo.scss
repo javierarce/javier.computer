@@ -164,6 +164,10 @@
   box-sizing: border-box;
 }
 
+.photo.caption-right figcaption {
+  text-align: right;
+}
+
 .photo__content {
   display: flex;
   flex-direction: column;

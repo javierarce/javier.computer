@@ -80,20 +80,19 @@
 
     h2,
     h3,
-
     blockquote {
       width: var(--width-full);
     }
 
     p {
-      width: var(--width-full);
+      width: var(--width-md);
       font-size: var(--font-size-content);
       margin: 0;
     }
   }
 
   &__footer {
-    width: var(--width-full);
+    width: var(--width-md);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -106,7 +105,7 @@
       opacity: var(--op-light);
     }
 
-    &>a:hover {
+    & > a:hover {
       opacity: 1;
       text-decoration: none;
     }
@@ -122,7 +121,7 @@
     display: flex;
     flex-direction: column;
 
-    &>* {
+    & > * {
       margin: 0 var(--space-sm) 0 0;
     }
 
@@ -130,7 +129,6 @@
       text-decoration: none;
       opacity: var(--op-light);
     }
-
   }
 
   &__pagination-arrow {
@@ -203,11 +201,9 @@
       opacity: 1;
     }
   }
-
 }
 
 @media all and (max-width: 1024px) {
-
   .post .video,
   .post .photo,
   .posts,
