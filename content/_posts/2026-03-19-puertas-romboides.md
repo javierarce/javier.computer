@@ -2,7 +2,7 @@
 layout: photos/photo
 category: photo
 location: mataro
-title: "2026-03-19-Mataro-R0018515"
+title: "Puertas romboides"
 date: "2026-03-19 22:43:14 +0100"
 camera: Ricoh GR IIIx
 hide_title: true
