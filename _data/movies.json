@@ -1,7 +1,27 @@
 {
-  "updated_at": "2026-03-11",
-  "count": 1011,
+  "updated_at": "2026-03-19",
+  "count": 1013,
   "movies": [
+    {
+      "watched_on": "2026-03-18",
+      "title": "Good Luck, Have Fun, Don&#039;t Die",
+      "year": 2025,
+      "rating": 1,
+      "liked": false,
+      "stars": "★",
+      "rewatched": false,
+      "permalink": "good-luck-have-fun-dont-die"
+    },
+    {
+      "watched_on": "2026-03-12",
+      "title": "Cliffhanger",
+      "year": 1993,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "cliffhanger"
+    },
     {
       "watched_on": "2026-03-11",
       "title": "Videoheaven",
