@@ -36,10 +36,6 @@
     }
   }
 
-  &-image.is-loaded {
-    opacity: 1;
-  }
-
   &__caption {
     position: absolute;
     bottom: 1em;
@@ -81,6 +77,15 @@
     opacity: var(--op-hidden);
     transition: opacity var(--transition-speed-medium) ease-in-out;
     border-radius: var(--br-subtle);
+
+    &.is-opening {
+      transform: scale(0.97);
+      transition: opacity var(--transition-speed-medium) ease-in-out, transform var(--transition-speed-medium) ease-in-out;
+
+      &.is-loaded {
+        transform: scale(1);
+      }
+    }
   }
 
   &__button {
