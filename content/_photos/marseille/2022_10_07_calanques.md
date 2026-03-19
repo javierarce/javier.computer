@@ -4,6 +4,7 @@ title: marseille
 hide_title: true
 date: 2022-10-07
 category: photo
+tag: photo
 location: marseille
 filenames:
   - 2022_10_08_R0001876-2
