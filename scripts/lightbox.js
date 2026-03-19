@@ -17,27 +17,28 @@ class Lightbox {
     this.$caption = document.querySelector(".lightbox__caption");
     this.$prev = document.querySelector(".lightbox__button.is-prev");
     this.$next = document.querySelector(".lightbox__button.is-next");
-    this.photos = Array.from(document.querySelectorAll(".Photo"));
+    this.photos = Array.from(document.querySelectorAll(".photo"));
 
     this.currentIndex = 0;
     this.isLoading = false;
+    this.isOpen = false;
 
     this.bindEvents();
   }
 
   injectMarkup() {
     const lightboxMarkup = `
-      <div class="lightbox">
-        <button class="lightbox__button is-close"></button>
+      <div class="lightbox" role="dialog" aria-label="Image viewer" aria-modal="true">
+        <button class="lightbox__button is-close" aria-label="Close"></button>
         <div class="lightbox__content">
           <div class="lightbox__imageContainer">
             <img src="" alt="" title="" class="lightbox__image">
-            <div class="lightbox__caption"></div>
+            <div class="lightbox__caption" aria-live="polite"></div>
           </div>
         </div>
-        <button class="lightbox__button is-prev"></button>
-        <button class="lightbox__button is-next"></button>
-        <div class="spinner is-lightbox"></div>
+        <button class="lightbox__button is-prev" aria-label="Previous image"></button>
+        <button class="lightbox__button is-next" aria-label="Next image"></button>
+        <div class="spinner is-lightbox" aria-hidden="true"></div>
       </div>
     `;
 
@@ -87,7 +88,9 @@ class Lightbox {
     this.lightbox.addEventListener(
       "click",
       (e) => {
-        if (e.target === this.lightbox) {
+        const isButton = e.target.closest(".lightbox__button");
+        const isImage = e.target === this.$image;
+        if (!isButton && !isImage) {
           this.close();
         }
       },
@@ -109,6 +112,9 @@ class Lightbox {
         case "Escape":
           this.close();
           break;
+        case "Tab":
+          this.trapFocus(e);
+          break;
       }
     });
 
@@ -128,12 +134,6 @@ class Lightbox {
       { passive: true },
     );
 
-    this.$image.addEventListener("load", () => {
-      this.isLoading = false;
-      this.updateSpinner();
-      this.$image.style.opacity = "1";
-      this.$image.classList.add("is-loaded");
-    });
   }
 
   isMobile() {
@@ -146,17 +146,13 @@ class Lightbox {
 
   getHighestResolutionImage(srcset) {
     const srcsetEntries = srcset.split(",").map((entry) => entry.trim());
-    let highestResImage = srcsetEntries[0].match(
-      /(https:\/\/img.javier.computer\/.*?\.webp)/,
-    )[1];
+    let highestResImage = srcsetEntries[0].split(/\s+/)[0];
     let highestResValue = 0;
 
     for (const entry of srcsetEntries) {
-      const match = entry.match(
-        /(https:\/\/img.javier.computer\/.*?\.webp) (\d*?)w/,
-      );
-      const url = match[1];
-      const resValue = parseInt(match[2], 10);
+      const parts = entry.split(/\s+/);
+      const url = parts[0];
+      const resValue = parseInt(parts[1], 10);
 
       if (this.isMobile() && resValue <= this.BREAKPOINT_MOBILE) {
         return url;
@@ -179,30 +175,77 @@ class Lightbox {
     return highestResImage;
   }
 
+  getSrcsetForIndex(index) {
+    const picture = this.photos[index].querySelector("picture");
+    return picture.querySelector("source[type='image/webp']")
+      ? picture
+          .querySelector("source[type='image/webp']")
+          .getAttribute("data-srcset")
+      : picture
+          .querySelector("source:not([type])")
+          .getAttribute("data-srcset");
+  }
+
   updateSpinner() {
     this.spinner.style.display = this.isLoading ? "block" : "none";
+  }
+
+  loadImage(srcset) {
+    const url = this.getHighestResolutionImage(srcset);
+    const probe = new Image();
+
+    this.$image.classList.remove("is-loaded");
+    this.isLoading = true;
+    this.updateSpinner();
+
+    probe.src = url;
+    const show = () => {
+      probe.decode().then(() => {
+        this.$image.src = url;
+        this.isLoading = false;
+        this.updateSpinner();
+        this.$image.offsetHeight;
+        this.$image.style.opacity = "1";
+        this.$image.classList.add("is-loaded");
+        this.$image.classList.remove("is-opening");
+      });
+    };
+
+    if (probe.complete) {
+      show();
+    } else {
+      probe.onload = show;
+    }
   }
 
   open(index) {
     this.currentIndex = index;
 
     const picture = this.photos[this.currentIndex].querySelector("picture");
-    const srcset = picture.querySelector("source[type='image/webp']")
-      ? picture
-          .querySelector("source[type='image/webp']")
-          .getAttribute("data-srcset")
-      : picture.querySelector("source:not([type])").getAttribute("data-srcset");
+    const srcset = this.getSrcsetForIndex(index);
 
     requestAnimationFrame(() => {
       this.title = picture.querySelector("img").title;
       this.caption = picture.querySelector("img").dataset.caption;
       this.alt = picture.querySelector("img").getAttribute("alt");
 
-      this.lightbox.classList.add("is-active");
-      this.isLoading = true;
-      this.updateSpinner();
-      this.$image.src = this.getHighestResolutionImage(srcset);
-      document.body.style.overflow = "hidden";
+      this.$image.style.opacity = "0";
+      this.$image.classList.remove("is-loaded");
+
+      if (!this.isOpen) {
+        this.$image.classList.add("is-opening");
+        this.lightbox.classList.add("is-active");
+        this.previouslyFocused = document.activeElement;
+        const scrollY = window.scrollY;
+        document.body.style.overflowY = "scroll";
+        document.body.style.position = "fixed";
+        document.body.style.width = "100%";
+        document.body.style.top = `-${scrollY}px`;
+        this.isOpen = true;
+      }
+
+      this.loadImage(srcset);
+      this.$close.focus();
       this.updateMetadata();
       this.updateNavButtons();
       this.preloadAdjacentImages();
@@ -210,8 +253,18 @@ class Lightbox {
   }
 
   close() {
+    const scrollY = document.body.style.top;
     this.lightbox.classList.remove("is-active");
-    document.body.style.overflow = "";
+    this.isOpen = false;
+    if (this.previouslyFocused) {
+      this.previouslyFocused.focus();
+      this.previouslyFocused = null;
+    }
+    document.body.style.overflowY = "";
+    document.body.style.position = "";
+    document.body.style.width = "";
+    document.body.style.top = "";
+    window.scrollTo(0, parseInt(scrollY || "0") * -1);
 
     setTimeout(() => {
       this.$image.src = "";
@@ -222,10 +275,29 @@ class Lightbox {
   }
 
   navigatePhoto(direction) {
-    this.currentIndex =
-      (this.currentIndex + direction + this.photos.length) % this.photos.length;
-    this.open(this.currentIndex);
-    this.preloadAdjacentImages();
+    const newIndex = this.currentIndex + direction;
+    if (newIndex < 0 || newIndex >= this.photos.length) {
+      return;
+    }
+
+    // Fade out the current image, then load the new one with some overlap
+    this.$image.style.opacity = "0";
+    this.$caption.classList.remove("is-visible");
+
+    this.currentIndex = newIndex;
+    const picture = this.photos[this.currentIndex].querySelector("picture");
+    const srcset = this.getSrcsetForIndex(this.currentIndex);
+
+    this.title = picture.querySelector("img").title;
+    this.caption = picture.querySelector("img").dataset.caption;
+    this.alt = picture.querySelector("img").getAttribute("alt");
+
+    setTimeout(() => {
+      this.loadImage(srcset);
+      this.updateMetadata();
+      this.updateNavButtons();
+      this.preloadAdjacentImages();
+    }, this.DELAY / 4);
   }
 
   updateMetadata() {
@@ -245,6 +317,22 @@ class Lightbox {
       setTimeout(() => {
         this.$caption.classList.add("is-visible");
       }, this.DELAY);
+    }
+  }
+
+  trapFocus(e) {
+    const focusable = this.lightbox.querySelectorAll(
+      'button:not([style*="display: none"])',
+    );
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
     }
   }
 
