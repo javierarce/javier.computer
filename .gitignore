@@ -1,4 +1,6 @@
 .obsidian
+.claude
+CLAUDE.md
 .DS_Store
 .env
 .jekyll-cache
