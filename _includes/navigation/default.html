@@ -1,11 +1,5 @@
 <div class="navigation__links">
-
-    <a class="navigation__link {% if page.home %}is-selected{% endif %}" href="/">Blog</a>
-  <a
-    class="navigation__link {% if permalink == 'posts' or page.layout == 'post' or category == 'tags' %}is-selected{% endif %}"
-    href="/posts"
-    >Posts</a
-  >
+  <a class="navigation__link {% if page.home %}is-selected{% endif %}" href="/">Blog</a>
   <a
     class="navigation__link {% if permalink == 'photos' or permalink == 'photos/archive' or category == 'photo' or category == 'reportage' or category == 'photos' %}is-selected{% endif %}"
     href="/photos"
