@@ -1,28 +1,6 @@
 [
   {
     "layout": "place",
-    "pid": "safelight",
-    "title": "Safelight",
-    "description": "<p>Tienda de cámaras analógicas y laboratorio fotográfico.</p>\n",
-    "address": "Schivelbeiner Straße, 9",
-    "emoji": "📷",
-    "latlng": [
-      52.55102,
-      13.411127
-    ],
-    "location": "berlin",
-    "updated_at": "2025-08-24",
-    "last_updated": "2025-08-24T00:00:00+00:00",
-    "post_references": [
-      {
-        "url": "/2025/08/25/maldiciones-analogicas",
-        "title": "Maldiciones analógicas",
-        "date": "2025-08-25 21:00:00 +0200"
-      }
-    ]
-  },
-  {
-    "layout": "place",
     "pid": "film-speed-lab",
     "title": "Film Speed Lab",
     "description": "<p>Laboratorio de de fotografía analógica. Son bastante rápidos, pero algo más caros que Safelight.</p>\n",
@@ -58,6 +36,28 @@
     "updated_at": "2025-08-24",
     "last_updated": "2025-08-24T00:00:00+00:00",
     "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "safelight",
+    "title": "Safelight",
+    "description": "<p>Tienda de cámaras analógicas y laboratorio fotográfico.</p>\n",
+    "address": "Schivelbeiner Straße, 9",
+    "emoji": "📷",
+    "latlng": [
+      52.55102,
+      13.411127
+    ],
+    "location": "berlin",
+    "updated_at": "2025-08-24",
+    "last_updated": "2025-08-24T00:00:00+00:00",
+    "post_references": [
+      {
+        "url": "/2025/08/25/maldiciones-analogicas",
+        "title": "Maldiciones analógicas",
+        "date": "2025-08-25 21:00:00 +0200"
+      }
+    ]
   },
   {
     "layout": "place",
@@ -99,6 +99,22 @@
   },
   {
     "layout": "place",
+    "pid": "foto-meyer",
+    "title": "Foto Meyer",
+    "description": "<p>Bien surtida tienda de fotografía digital, con buenos precios en cámaras analógicas de segunda mano.</p>\n",
+    "address": "Welserstraße, 1",
+    "emoji": "📷",
+    "latlng": [
+      52.49624,
+      13.341607
+    ],
+    "location": "berlin",
+    "updated_at": "2025-08-11",
+    "last_updated": "2025-08-11T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
     "pid": "jules",
     "title": "Jules",
     "description": "<p>Buena cafetería en esta zona, perfecta como plan B si Café Komine está imposible.</p>\n",
@@ -123,37 +139,6 @@
     "latlng": [
       52.532215,
       13.410291
-    ],
-    "location": "berlin",
-    "updated_at": "2025-08-11",
-    "last_updated": "2025-08-11T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "foto-meyer",
-    "title": "Foto Meyer",
-    "description": "<p>Bien surtida tienda de fotografía digital, con buenos precios en cámaras analógicas de segunda mano.</p>\n",
-    "address": "Welserstraße, 1",
-    "emoji": "📷",
-    "latlng": [
-      52.49624,
-      13.341607
-    ],
-    "location": "berlin",
-    "updated_at": "2025-08-11",
-    "last_updated": "2025-08-11T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "modulor",
-    "title": "Modulor",
-    "description": "<p>Modulor Material Total</p>\n",
-    "address": "Prinzenstraße, 85",
-    "latlng": [
-      52.5033859,
-      13.4100566
     ],
     "location": "berlin",
     "updated_at": "2025-08-11",
@@ -193,33 +178,17 @@
   },
   {
     "layout": "place",
-    "pid": "zola",
-    "title": "Zola",
-    "description": "<p>La «Zola Neapolitan mit Fior di Latte, Birne, Walnüssen und Gorgonzola» estaba muy rica.</p>\n",
-    "address": "Paul-Lincke-Ufer, 39-40",
+    "pid": "modulor",
+    "title": "Modulor",
+    "description": "<p>Modulor Material Total</p>\n",
+    "address": "Prinzenstraße, 85",
     "latlng": [
-      52.49674658332709,
-      13.42246464603288
+      52.5033859,
+      13.4100566
     ],
     "location": "berlin",
-    "updated_at": "2025-08-10",
-    "last_updated": "2025-08-10T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "watapas",
-    "title": "Watapas",
-    "description": "<p>Una más que buena izakaya tapas bar.</p>\n",
-    "address": "Bötzowstraße 33",
-    "category": "restaurant",
-    "latlng": [
-      52.5320983,
-      13.434446
-    ],
-    "location": "berlin",
-    "updated_at": "2025-08-10",
-    "last_updated": "2025-08-10T00:00:00+00:00",
+    "updated_at": "2025-08-11",
+    "last_updated": "2025-08-11T00:00:00+00:00",
     "post_references": []
   },
   {
@@ -301,6 +270,37 @@
   },
   {
     "layout": "place",
+    "pid": "watapas",
+    "title": "Watapas",
+    "description": "<p>Una más que buena izakaya tapas bar.</p>\n",
+    "address": "Bötzowstraße 33",
+    "category": "restaurant",
+    "latlng": [
+      52.5320983,
+      13.434446
+    ],
+    "location": "berlin",
+    "updated_at": "2025-08-10",
+    "last_updated": "2025-08-10T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "zola",
+    "title": "Zola",
+    "description": "<p>La «Zola Neapolitan mit Fior di Latte, Birne, Walnüssen und Gorgonzola» estaba muy rica.</p>\n",
+    "address": "Paul-Lincke-Ufer, 39-40",
+    "latlng": [
+      52.49674658332709,
+      13.42246464603288
+    ],
+    "location": "berlin",
+    "updated_at": "2025-08-10",
+    "last_updated": "2025-08-10T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
     "pid": "bonanza",
     "title": "Bonanza",
     "emoji": "☕️",
@@ -332,13 +332,13 @@
   },
   {
     "layout": "place",
-    "pid": "trauma",
-    "title": "Trauma Bar und Kino",
-    "description": "<p>Club, bar, cine, sala de conciertos y arte. Aquí se celebró el quinto aniversario de New Models. Está cerca de Berlin Hauptbahnhof. No hay mucho más alrededor.</p>\n",
-    "address": "Heidestraße, 50",
+    "pid": "three-schwestern",
+    "title": "3 Schwestern",
+    "description": "<p>Un restaurante que ofrece comida típica alemana situado en el interior de  un antiguo hospital construido en 1846.</p>\n",
+    "address": "Mariannenpl. 2",
     "latlng": [
-      52.5306327,
-      13.3667562
+      52.505166826173365,
+      13.423695851822046
     ],
     "location": "berlin",
     "updated_at": "2024-10-07",
@@ -347,29 +347,14 @@
   },
   {
     "layout": "place",
-    "pid": "town-mouse-coffee",
-    "title": "Town Mouse Coffee",
+    "pid": "cafe-strauss",
+    "title": "Café Strauss",
     "emoji": "☕️",
-    "address": "Marienburger Str. 5",
+    "description": "<p>Un café muy tranquilo frente a un cementerio muy tranquilo (espero).</p>\n",
+    "address": "Bergmannstraße, 42",
     "latlng": [
-      52.535379464403334,
-      13.423648746035223
-    ],
-    "location": "berlin",
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
-    "description": "",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "tenzan",
-    "title": "tenzan lab.",
-    "description": "<p>Kakigōris y taiyakis</p>\n",
-    "address": "Wörther Straße, 22",
-    "latlng": [
-      52.5357069,
-      13.4210922
+      52.4886291,
+      13.4011481
     ],
     "location": "berlin",
     "updated_at": "2024-10-07",
@@ -378,13 +363,13 @@
   },
   {
     "layout": "place",
-    "pid": "smart-deli",
-    "title": "Smartdeli Sushi and More",
-    "description": "<p>Restaurante japonés que también vende snacks y otros productos de Japón.</p>\n",
-    "address": "Novalisstraße 2",
+    "pid": "cafe-leo",
+    "title": "Das neue Café Leo",
+    "description": "<p>Una caftería situada en un kiosko en medio de una plaza del barrio de Wedding, que además de ofrecer café de especialidad a precios populares, ofrece asesoramiento social y actividades vecinales.</p>\n",
+    "address": "Auf dem Leopoldplatz",
     "latlng": [
-      52.52832929299127,
-      13.389288376705881
+      52.54719755887236,
+      13.358785015341178
     ],
     "location": "berlin",
     "updated_at": "2024-10-07",
@@ -393,34 +378,13 @@
   },
   {
     "layout": "place",
-    "pid": "schillermarkt",
-    "title": "Schillermarkt",
-    "description": "<p>Mercado de productores en el corazón de Neukölln.</p>\n",
-    "address": "Herrfurthplatz",
+    "pid": "dashi",
+    "title": "DASHI",
+    "description": "<p>Diner asiático. Favoritos: Tempeh Sando (V) y Korokke Curry (V)</p>\n",
+    "address": "Invalidenstraße 112",
     "latlng": [
-      52.47735706149071,
-      13.422736997220522
-    ],
-    "location": "berlin",
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
-    "post_references": [
-      {
-        "url": "/2024/08/03/friends-are-more-important-than-federation",
-        "title": "Friends are more important than federation",
-        "date": "2024-08-03 19:00:00 +0200"
-      }
-    ]
-  },
-  {
-    "layout": "page",
-    "pid": "motto",
-    "title": "Motto Berlin",
-    "description": "<p>Librería a la que ya no voy desde que descubrí que no paga a sus proveedores.</p>\n",
-    "address": "Skalitzer Straße, 68, Luisenstadt",
-    "latlng": [
-      52.5000847,
-      13.439883
+      52.530706060553854,
+      13.383605195376553
     ],
     "location": "berlin",
     "updated_at": "2024-10-07",
@@ -429,13 +393,13 @@
   },
   {
     "layout": "place",
-    "pid": "mibap",
-    "title": "MIBAP",
-    "description": "<p>Cocina fusión taiwanesa con opciones veganas.</p>\n",
-    "address": "Torstraße 22",
+    "pid": "dotori",
+    "title": "Dotori Korean Anju Bar",
+    "description": "<p>Bonitísimo y compactísimo y riquísimo bar de tapas coreanas.</p>\n",
+    "address": "Gustav-Adolf-Straße 159",
     "latlng": [
-      52.527908251990475,
-      13.413073501974143
+      52.553966826503334,
+      13.433880192070449
     ],
     "location": "berlin",
     "updated_at": "2024-10-07",
@@ -444,13 +408,14 @@
   },
   {
     "layout": "place",
-    "pid": "mamakan",
-    "title": "Ma-Makan",
-    "description": "<p>Delicias malayas y singapurenses. Ojito al «Kaya croissant».</p>\n",
-    "address": "Lausitzer Pl. 12",
+    "pid": "carpenter",
+    "title": "Father Carpenter Coffee Brewers",
+    "emoji": "☕️",
+    "description": "<p>Mucha cola durante el fin de semana, mejor ir muy pronto o evitar directamente.</p>\n",
+    "address": "Münzstraße, 21, Scheunenviertel",
     "latlng": [
-      52.501010546828965,
-      13.431502823278532
+      52.5244438,
+      13.4065961
     ],
     "location": "berlin",
     "updated_at": "2024-10-07",
@@ -459,60 +424,13 @@
   },
   {
     "layout": "place",
-    "pid": "leuchtstoff",
-    "title": "Leuchtstoff Kaffeebar",
-    "description": "<p>Café de especialidad bastante decente en un local grande con espacio para trabajar y bancos en la calle.</p>\n",
-    "address": "Siegfriedstraße 18",
+    "title": "Flohmarkt Arkonaplatz",
+    "pid": "flohmarkt-arkonaplatz",
+    "description": "<p>Mercado favorito de los domingos en Mitte donde adquirir libros, discos, vajillas, muebles, juguetes, y basurillas de hoy y de siempre.</p>\n",
+    "address": "Arkonaplatz",
     "latlng": [
-      52.468267364603435,
-      13.432445053043422
-    ],
-    "location": "berlin",
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
-    "post_references": [
-      {
-        "url": "/2024/08/03/friends-are-more-important-than-federation",
-        "title": "Friends are more important than federation",
-        "date": "2024-08-03 19:00:00 +0200"
-      }
-    ]
-  },
-  {
-    "layout": "page",
-    "pid": "isla-coffee",
-    "title": "Isla coffee",
-    "description": "<p>Vivió mejores momentos cafeterilmente hablando hace unos años, ahora es un sitio correcto donde tomar un cruasán o un kimcheese.</p>\n",
-    "address": "Hermannstraße 37",
-    "latlng": [
-      52.48058617178727,
-      13.424879566538284
-    ],
-    "location": "berlin",
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
-    "post_references": [
-      {
-        "url": "/2023/07/29/isla-coffee-quema-las-tostadas",
-        "title": "Isla coffee quema las tostadas",
-        "date": "2023-07-29 17:03:10 +0200"
-      },
-      {
-        "url": "/2024/08/02/berlin-mon-amour",
-        "title": "Berlin, mon amour",
-        "date": "2024-08-02 17:54:00 +0200"
-      }
-    ]
-  },
-  {
-    "layout": "place",
-    "title": "Han West",
-    "pid": "han-west",
-    "address": "Selchower Str. 20",
-    "description": "<p>Estupendísimo lugar de dumplings y baos en Neukölln con opciones veganas y vegetarianas. No tiene sitio para sentarse, pero gracias a la colaboración público-privada puedes llevarte la comida al bar de al lado y complementarla con alguna bebida (o acercarla a Tempelhofer Feld y compartirla con las avispas).</p>\n",
-    "latlng": [
-      52.47855313100116,
-      13.42016685489108
+      52.53740688711875,
+      13.402544452482864
     ],
     "location": "berlin",
     "updated_at": "2024-10-07",
@@ -542,13 +460,75 @@
   },
   {
     "layout": "place",
-    "title": "Flohmarkt Arkonaplatz",
-    "pid": "flohmarkt-arkonaplatz",
-    "description": "<p>Mercado favorito de los domingos en Mitte donde adquirir libros, discos, vajillas, muebles, juguetes, y basurillas de hoy y de siempre.</p>\n",
-    "address": "Arkonaplatz",
+    "title": "Han West",
+    "pid": "han-west",
+    "address": "Selchower Str. 20",
+    "description": "<p>Estupendísimo lugar de dumplings y baos en Neukölln con opciones veganas y vegetarianas. No tiene sitio para sentarse, pero gracias a la colaboración público-privada puedes llevarte la comida al bar de al lado y complementarla con alguna bebida (o acercarla a Tempelhofer Feld y compartirla con las avispas).</p>\n",
     "latlng": [
-      52.53740688711875,
-      13.402544452482864
+      52.47855313100116,
+      13.42016685489108
+    ],
+    "location": "berlin",
+    "updated_at": "2024-10-07",
+    "last_updated": "2024-10-07T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "page",
+    "pid": "isla-coffee",
+    "title": "Isla coffee",
+    "description": "<p>Vivió mejores momentos cafeterilmente hablando hace unos años, ahora es un sitio correcto donde tomar un cruasán o un kimcheese.</p>\n",
+    "address": "Hermannstraße 37",
+    "latlng": [
+      52.48058617178727,
+      13.424879566538284
+    ],
+    "location": "berlin",
+    "updated_at": "2024-10-07",
+    "last_updated": "2024-10-07T00:00:00+00:00",
+    "post_references": [
+      {
+        "url": "/2023/07/29/isla-coffee-quema-las-tostadas",
+        "title": "Isla coffee quema las tostadas",
+        "date": "2023-07-29 17:03:10 +0200"
+      },
+      {
+        "url": "/2024/08/02/berlin-mon-amour",
+        "title": "Berlin, mon amour",
+        "date": "2024-08-02 17:54:00 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "leuchtstoff",
+    "title": "Leuchtstoff Kaffeebar",
+    "description": "<p>Café de especialidad bastante decente en un local grande con espacio para trabajar y bancos en la calle.</p>\n",
+    "address": "Siegfriedstraße 18",
+    "latlng": [
+      52.468267364603435,
+      13.432445053043422
+    ],
+    "location": "berlin",
+    "updated_at": "2024-10-07",
+    "last_updated": "2024-10-07T00:00:00+00:00",
+    "post_references": [
+      {
+        "url": "/2024/08/03/friends-are-more-important-than-federation",
+        "title": "Friends are more important than federation",
+        "date": "2024-08-03 19:00:00 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "mamakan",
+    "title": "Ma-Makan",
+    "description": "<p>Delicias malayas y singapurenses. Ojito al «Kaya croissant».</p>\n",
+    "address": "Lausitzer Pl. 12",
+    "latlng": [
+      52.501010546828965,
+      13.431502823278532
     ],
     "location": "berlin",
     "updated_at": "2024-10-07",
@@ -557,90 +537,110 @@
   },
   {
     "layout": "place",
-    "pid": "carpenter",
-    "title": "Father Carpenter Coffee Brewers",
+    "pid": "mibap",
+    "title": "MIBAP",
+    "description": "<p>Cocina fusión taiwanesa con opciones veganas.</p>\n",
+    "address": "Torstraße 22",
+    "latlng": [
+      52.527908251990475,
+      13.413073501974143
+    ],
+    "location": "berlin",
+    "updated_at": "2024-10-07",
+    "last_updated": "2024-10-07T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "page",
+    "pid": "motto",
+    "title": "Motto Berlin",
+    "description": "<p>Librería a la que ya no voy desde que descubrí que no paga a sus proveedores.</p>\n",
+    "address": "Skalitzer Straße, 68, Luisenstadt",
+    "latlng": [
+      52.5000847,
+      13.439883
+    ],
+    "location": "berlin",
+    "updated_at": "2024-10-07",
+    "last_updated": "2024-10-07T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "schillermarkt",
+    "title": "Schillermarkt",
+    "description": "<p>Mercado de productores en el corazón de Neukölln.</p>\n",
+    "address": "Herrfurthplatz",
+    "latlng": [
+      52.47735706149071,
+      13.422736997220522
+    ],
+    "location": "berlin",
+    "updated_at": "2024-10-07",
+    "last_updated": "2024-10-07T00:00:00+00:00",
+    "post_references": [
+      {
+        "url": "/2024/08/03/friends-are-more-important-than-federation",
+        "title": "Friends are more important than federation",
+        "date": "2024-08-03 19:00:00 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "smart-deli",
+    "title": "Smartdeli Sushi and More",
+    "description": "<p>Restaurante japonés que también vende snacks y otros productos de Japón.</p>\n",
+    "address": "Novalisstraße 2",
+    "latlng": [
+      52.52832929299127,
+      13.389288376705881
+    ],
+    "location": "berlin",
+    "updated_at": "2024-10-07",
+    "last_updated": "2024-10-07T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "tenzan",
+    "title": "tenzan lab.",
+    "description": "<p>Kakigōris y taiyakis</p>\n",
+    "address": "Wörther Straße, 22",
+    "latlng": [
+      52.5357069,
+      13.4210922
+    ],
+    "location": "berlin",
+    "updated_at": "2024-10-07",
+    "last_updated": "2024-10-07T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "town-mouse-coffee",
+    "title": "Town Mouse Coffee",
     "emoji": "☕️",
-    "description": "<p>Mucha cola durante el fin de semana, mejor ir muy pronto o evitar directamente.</p>\n",
-    "address": "Münzstraße, 21, Scheunenviertel",
+    "address": "Marienburger Str. 5",
     "latlng": [
-      52.5244438,
-      13.4065961
+      52.535379464403334,
+      13.423648746035223
     ],
     "location": "berlin",
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
+    "description": "",
     "post_references": []
   },
   {
     "layout": "place",
-    "pid": "dotori",
-    "title": "Dotori Korean Anju Bar",
-    "description": "<p>Bonitísimo y compactísimo y riquísimo bar de tapas coreanas.</p>\n",
-    "address": "Gustav-Adolf-Straße 159",
+    "pid": "trauma",
+    "title": "Trauma Bar und Kino",
+    "description": "<p>Club, bar, cine, sala de conciertos y arte. Aquí se celebró el quinto aniversario de New Models. Está cerca de Berlin Hauptbahnhof. No hay mucho más alrededor.</p>\n",
+    "address": "Heidestraße, 50",
     "latlng": [
-      52.553966826503334,
-      13.433880192070449
-    ],
-    "location": "berlin",
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "dashi",
-    "title": "DASHI",
-    "description": "<p>Diner asiático. Favoritos: Tempeh Sando (V) y Korokke Curry (V)</p>\n",
-    "address": "Invalidenstraße 112",
-    "latlng": [
-      52.530706060553854,
-      13.383605195376553
-    ],
-    "location": "berlin",
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "cafe-leo",
-    "title": "Das neue Café Leo",
-    "description": "<p>Una caftería situada en un kiosko en medio de una plaza del barrio de Wedding, que además de ofrecer café de especialidad a precios populares, ofrece asesoramiento social y actividades vecinales.</p>\n",
-    "address": "Auf dem Leopoldplatz",
-    "latlng": [
-      52.54719755887236,
-      13.358785015341178
-    ],
-    "location": "berlin",
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "cafe-strauss",
-    "title": "Café Strauss",
-    "emoji": "☕️",
-    "description": "<p>Un café muy tranquilo frente a un cementerio muy tranquilo (espero).</p>\n",
-    "address": "Bergmannstraße, 42",
-    "latlng": [
-      52.4886291,
-      13.4011481
-    ],
-    "location": "berlin",
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "three-schwestern",
-    "title": "3 Schwestern",
-    "description": "<p>Un restaurante que ofrece comida típica alemana situado en el interior de  un antiguo hospital construido en 1846.</p>\n",
-    "address": "Mariannenpl. 2",
-    "latlng": [
-      52.505166826173365,
-      13.423695851822046
+      52.5306327,
+      13.3667562
     ],
     "location": "berlin",
     "updated_at": "2024-10-07",
