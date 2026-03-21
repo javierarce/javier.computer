@@ -8,7 +8,7 @@ class Weather extends HTMLElement {
   }
 
   getWeatherFor(city, coordinates) {
-    const WEATHER_ENDPOINT = `https://api.javier.computer/api/weather?coordinates=${coordinates}`;
+    const WEATHER_ENDPOINT = `https://api.javier.computer/weather?coordinates=${coordinates}`;
 
     fetch(WEATHER_ENDPOINT)
       .then((response) => response.json())

@@ -34,7 +34,7 @@ class RSS extends HTMLElement {
     this.shadow.appendChild(title)
 
     try {
-      this.fetch(`//api.javier.computer/api/feed/${URL}`)
+      this.fetch(`//api.javier.computer/feed/${URL}`)
     } catch (e) {
       console.error(e)
     }

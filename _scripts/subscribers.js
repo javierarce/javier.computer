@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 
 const OUTPUT_FILE = "_data/subscribers.json";
 
-const URL = "https://api.javier.computer/api/subscribers";
+const URL = "https://api.javier.computer/subscribers";
 
 export class Subscribers {
   constructor() {}
