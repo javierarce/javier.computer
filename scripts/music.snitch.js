@@ -12,7 +12,7 @@ class Snitch extends HTMLElement {
   }
 
   fetchScrobbler () {
-    const URL  = 'https://api.javier.computer/api/song'
+    const URL  = 'https://api.javier.computer/song'
 
     fetch(URL).then(response => response.json()).then((data) => {
       if (data) {

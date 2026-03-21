@@ -235,7 +235,7 @@ class Mail {
     const title = urlParams.get("title") || "Contacto general";
     const subject = `Nuevo ${this.what.toLowerCase()}`;
 
-    this.post("https://api.javier.computer/api/comment", {
+    this.post("https://api.javier.computer/comment", {
       subject,
       email,
       title,

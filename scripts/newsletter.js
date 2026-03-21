@@ -44,7 +44,7 @@ class Newsletter {
 
   async generateCaptcha() {
     try {
-      const response = await fetch("https://api.javier.computer/api/captcha");
+      const response = await fetch("https://api.javier.computer/captcha");
       const data = await response.json();
       return data; // { a, b, signature }
     } catch (err) {
@@ -86,7 +86,7 @@ class Newsletter {
 
     try {
       const response = await fetch(
-        "https://api.javier.computer/api/subscribers",
+        "https://api.javier.computer/subscribers",
       );
       const count = await response.json();
 
@@ -132,7 +132,7 @@ class Newsletter {
 
     try {
       const response = await fetch(
-        "https://api.javier.computer/api/subscribe",
+        "https://api.javier.computer/subscribe",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
