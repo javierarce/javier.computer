@@ -22,8 +22,7 @@
     {% include post/locations.html page=post -%}
 
     {% if site.show_home_likes %}
-    <open-heart class="text-open-heart" href="https://api.javier.computer/heart?id={{ page.url }}" emoji="❤️"
-      aria-labelledby="like-prompt">
+    <open-heart class="text-open-heart" href="https://api.javier.computer/heart?id={{ page.url }}" emoji="❤️" title="{{ post.title }}" aria-labelledby="like-prompt">
       <span class="on"></span>
       <span class="off"></span>
     </open-heart>
