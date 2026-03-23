@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   push:
-    branches: [main, javierarce/gh-actions-deploy]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
