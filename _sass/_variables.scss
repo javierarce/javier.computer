@@ -34,13 +34,13 @@
   --color-brd-quote: #fd6f42;
 
   /* Semantic rgba tokens */
-  --color-overlay:       rgba(0, 0, 0, var(--op-8));        /* modal/lightbox overlay */
-  --color-shadow:        rgba(0, 0, 0, var(--op-2));        /* drop shadows */
-  --color-border-dark:   rgba(0, 0, 0, var(--op-5));        /* borders/focus on light bg */
-  --color-border-subtle: rgba(255, 255, 255, var(--op-2));  /* borders on dark bg */
-  --color-border-muted:  rgba(255, 255, 255, var(--op-4));  /* stronger borders on dark bg */
-  --color-bg-hover:      rgba(255, 255, 255, var(--op-1));  /* hover bg on dark */
-  --color-bg-active:     rgba(255, 255, 255, var(--op-2));  /* active bg on dark */
+  --color-overlay: rgba(0, 0, 0, var(--op-8)); /* modal/lightbox overlay */
+  --color-shadow: rgba(0, 0, 0, var(--op-2)); /* drop shadows */
+  --color-border-dark: rgba(0, 0, 0, var(--op-5)); /* borders/focus on light bg */
+  --color-border-subtle: rgba(255, 255, 255, var(--op-2)); /* borders on dark bg */
+  --color-border-muted: rgba(255, 255, 255, var(--op-4)); /* stronger borders on dark bg */
+  --color-bg-hover: rgba(255, 255, 255, var(--op-1)); /* hover bg on dark */
+  --color-bg-active: rgba(255, 255, 255, var(--op-2)); /* active bg on dark */
 
   --color-book-purple: #6a1b9a;
   --color-book-yellow: var(--orange-yellow);
@@ -71,13 +71,10 @@
 
   /* Font */
   --font-text-sans:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-text-serif:
-    "Newsreader", Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-text-mono:
-    "SF Mono", SFMono-Regular, ui-monospace, "DejaVu Sans Mono", Menlo,
-    Consolas, monospace;
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-text-serif: "Newsreader", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-text-mono: "SF Mono", SFMono-Regular, ui-monospace, "DejaVu Sans Mono", Menlo, Consolas, monospace;
 
   /* Font sizes */
   --font-size-base: 1rem;
@@ -90,12 +87,12 @@
   --font-size-xxxl: 1.8em;
 
   /* Semantic font sizes */
-  --font-size-body:    var(--font-size-xxl);   /* base body text */
-  --font-size-content: var(--font-size-xl);    /* reading content: posts, tables, drawings */
-  --font-size-ui:      var(--font-size-md);    /* UI elements: inputs, h3/h4, paragraphs */
-  --font-size-meta:    var(--font-size-sm);    /* secondary text: labels, captions, buttons */
-  --font-size-caption: var(--font-size-xs);    /* smallest text: figure titles, tiny labels */
-  --font-size-display: var(--font-size-xxxl);  /* large display headers */
+  --font-size-body: var(--font-size-xl); /* base body text */
+  --font-size-content: var(--font-size-xl); /* reading content: posts, tables, drawings */
+  --font-size-ui: var(--font-size-md); /* UI elements: inputs, h3/h4, paragraphs */
+  --font-size-meta: var(--font-size-sm); /* secondary text: labels, captions, buttons */
+  --font-size-caption: var(--font-size-xs); /* smallest text: figure titles, tiny labels */
+  --font-size-display: var(--font-size-xxxl); /* large display headers */
 
   --font-weight-heavy: 700;
   --font-weight-bold: 600;
@@ -111,18 +108,18 @@
   --width-xl: 1440px;
 
   /* Semantic widths */
-  --width-content: var(--width-md);  /* standard content column */
-  --width-wide: var(--width-lg);     /* wider sections and layouts */
+  --width-content: var(--width-md); /* standard content column */
+  --width-wide: var(--width-lg); /* wider sections and layouts */
 
   /* Spacing */
-  --space-xs:   0.2rem;
-  --space-sm:   0.4rem;
-  --space-md:   0.8rem;
-  --space-lg:   1rem;
-  --space-xl:   1.5rem;
-  --space-xxl:  2rem;
+  --space-xs: 0.2rem;
+  --space-sm: 0.4rem;
+  --space-md: 0.8rem;
+  --space-lg: 1rem;
+  --space-xl: 1.5rem;
+  --space-xxl: 2rem;
   --space-xxxl: 3rem;
-  --space-4xl:  4rem;
+  --space-4xl: 4rem;
 
   /* Opacity */
   --op-10: 1;
@@ -149,9 +146,9 @@
   --br-flat: 0;
 
   /* Semantic border radii */
-  --br-subtle:  var(--br-sm);    /* minimal rounding: images, small elements */
-  --br-default: var(--br-md);    /* standard rounding: cards, inputs, tags */
-  --br-pill:    var(--br-round); /* full pill/circle */
+  --br-subtle: var(--br-sm); /* minimal rounding: images, small elements */
+  --br-default: var(--br-md); /* standard rounding: cards, inputs, tags */
+  --br-pill: var(--br-round); /* full pill/circle */
 
   /* Gaps  */
   --gap-xxs: 0.1em;
@@ -171,31 +168,31 @@
 }
 
 html[data-theme="light"] {
-  --icon-filter:          invert(1);
-  --color-txt-site:       var(--black);
-  --color-bg-site:        var(--white);
-  --text:                 var(--black);
-  --textHover:            var(--black);
-  --link:                 #1565c0;
-  --gray:                 rgba(0, 0, 0, 0.3);
-  --color-border-subtle:  rgba(0, 0, 0, var(--op-2));
-  --color-border-muted:   rgba(0, 0, 0, var(--op-4));
-  --color-bg-hover:       rgba(0, 0, 0, var(--op-1));
-  --color-bg-active:      rgba(0, 0, 0, var(--op-2));
+  --icon-filter: invert(1);
+  --color-txt-site: var(--black);
+  --color-bg-site: var(--white);
+  --text: var(--black);
+  --textHover: var(--black);
+  --link: #1565c0;
+  --gray: rgba(0, 0, 0, 0.3);
+  --color-border-subtle: rgba(0, 0, 0, var(--op-2));
+  --color-border-muted: rgba(0, 0, 0, var(--op-4));
+  --color-bg-hover: rgba(0, 0, 0, var(--op-1));
+  --color-bg-active: rgba(0, 0, 0, var(--op-2));
 }
 
 @media (prefers-color-scheme: light) {
   html:not([data-theme="dark"]) {
-    --icon-filter:          invert(1);
-    --color-txt-site:       var(--black);
-    --color-bg-site:        var(--white);
-    --text:                 var(--black);
-    --textHover:            var(--black);
-    --link:                 #1565c0;
-    --gray:                 rgba(0, 0, 0, 0.3);
-    --color-border-subtle:  rgba(0, 0, 0, var(--op-2));
-    --color-border-muted:   rgba(0, 0, 0, var(--op-4));
-    --color-bg-hover:       rgba(0, 0, 0, var(--op-1));
-    --color-bg-active:      rgba(0, 0, 0, var(--op-2));
+    --icon-filter: invert(1);
+    --color-txt-site: var(--black);
+    --color-bg-site: var(--white);
+    --text: var(--black);
+    --textHover: var(--black);
+    --link: #1565c0;
+    --gray: rgba(0, 0, 0, 0.3);
+    --color-border-subtle: rgba(0, 0, 0, var(--op-2));
+    --color-border-muted: rgba(0, 0, 0, var(--op-4));
+    --color-bg-hover: rgba(0, 0, 0, var(--op-1));
+    --color-bg-active: rgba(0, 0, 0, var(--op-2));
   }
 }
