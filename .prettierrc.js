@@ -7,5 +7,11 @@ module.exports = {
         parser: "liquid-html",
       },
     },
+    {
+      files: "*.scss",
+      options: {
+        printWidth: 120,
+      },
+    },
   ],
 };
