@@ -251,6 +251,20 @@ textarea { resize: vertical; min-height: 60px; }
 .shelf__photo.is-dragging {
   opacity: 0.3;
 }
+.shelf__photo.is-used {
+  opacity: 0.4;
+  filter: grayscale(1);
+  position: relative;
+}
+.shelf__photo.is-used::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--yellow);
+  opacity: 0.25;
+  border-radius: 4px;
+  pointer-events: none;
+}
 .shelf__reorder-indicator {
   width: 2px;
   align-self: stretch;
@@ -533,6 +547,19 @@ textarea { resize: vertical; min-height: 60px; }
   border-radius: 0 0 var(--br-subtle) var(--br-subtle);
 }
 .photo-item:hover .photo-overlay { display: flex; }
+.photo-item.is-highlighted::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--yellow);
+  border-radius: var(--br-subtle);
+  pointer-events: none;
+  animation: highlightOverlay 1.5s ease-out forwards;
+}
+@keyframes highlightOverlay {
+  0% { opacity: 0.4; }
+  100% { opacity: 0; }
+}
 .photo-overlay__info {
   display: flex;
   flex-direction: column;
@@ -1243,7 +1270,27 @@ function renderShelf() {
     div.dataset.filename = photo.filename;
     const imgSrc = photo.objectUrl || `https://img.javier.computer/${photo.location}/${photo.filename}_2880.jpg`;
 
-    div.addEventListener('click', e => e.stopPropagation());
+    div.addEventListener('click', e => {
+      e.stopPropagation();
+      // Scroll to this photo in the canvas if it's used
+      const filename = photo.filename;
+      const canvasPhotos = document.querySelectorAll('#canvas .node[data-type="photo"]');
+      for (const w of canvasPhotos) {
+        const id = w.dataset.id;
+        const n = findNode(id);
+        if (n && n.filename === filename) {
+          w.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          const photoItem = w.querySelector('.photo-item');
+          if (photoItem) {
+            photoItem.classList.remove('is-highlighted');
+            void photoItem.offsetWidth;
+            photoItem.classList.add('is-highlighted');
+            photoItem.addEventListener('animationend', () => photoItem.classList.remove('is-highlighted'), { once: true });
+          }
+          return;
+        }
+      }
+    });
     div.addEventListener('dragstart', e => {
       e.stopPropagation();
       div.classList.add('is-dragging');
@@ -1479,7 +1526,15 @@ function renderCanvas() {
 
   initSortable(canvas, state.nodes, true);
   updateCoverDropdown();
+  updateShelfUsedState();
   saveState();
+}
+
+function updateShelfUsedState() {
+  const usedFilenames = new Set(getAllPhotos().map(p => p.filename));
+  document.querySelectorAll('.shelf__photo').forEach(el => {
+    el.classList.toggle('is-used', usedFilenames.has(el.dataset.filename));
+  });
 }
 
 // Canvas-level drop (registered once, outside renderCanvas)
