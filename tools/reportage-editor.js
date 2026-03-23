@@ -78,6 +78,7 @@ function removeNode(id) {
     if (!info) return;
     const idx = info.list.findIndex(n => n.id === id);
     if (idx >= 0) info.list.splice(idx, 1);
+    removeEmptyContainers(state.nodes);
     renderCanvas();
   };
   if (el) {
@@ -1032,9 +1033,32 @@ function initSortable(el, list, isRoot) {
         document.removeEventListener('mousemove', onSortableMouseMove);
       }
       syncOrderFromDOM();
+      wrapNakedPhotos();
+      removeEmptyContainers(state.nodes);
       renderCanvas();
     }
   });
+}
+
+function wrapNakedPhotos() {
+  for (let i = 0; i < state.nodes.length; i++) {
+    if (state.nodes[i].type === 'photo') {
+      state.nodes[i] = {
+        id: uid(), type: 'stack', classes: [],
+        children: [state.nodes[i]]
+      };
+    }
+  }
+}
+
+function removeEmptyContainers(nodes) {
+  for (let i = nodes.length - 1; i >= 0; i--) {
+    const n = nodes[i];
+    if (n.children) {
+      removeEmptyContainers(n.children);
+      if (n.children.length === 0) nodes.splice(i, 1);
+    }
+  }
 }
 
 function syncOrderFromDOM() {
