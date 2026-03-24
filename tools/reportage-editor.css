@@ -151,19 +151,9 @@ textarea { resize: vertical; min-height: 60px; }
 }
 
 /* ── Drag preview ─────────────────────────────────────── */
-.sortable-fallback {
-  opacity: 0 !important;
-}
-.sortable-custom-ghost {
-  position: fixed;
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  opacity: 0.85;
-  pointer-events: none;
-  z-index: 9999;
+.node.is-dragging {
+  opacity: 0.3;
+  filter: grayscale(1);
 }
 .drag-preview {
   position: fixed;
@@ -236,8 +226,7 @@ textarea { resize: vertical; min-height: 60px; }
   flex-shrink: 0;
   animation: shelfFadeIn 200ms ease both;
 }
-.shelf__photo:active,
-.shelf__photo.sortable-chosen {
+.shelf__photo:active {
   cursor: grabbing;
 }
 .shelf__photo.is-dragging {
@@ -491,8 +480,7 @@ textarea { resize: vertical; min-height: 60px; }
   width: 100%;
   cursor: grab;
 }
-.photo-item:active,
-.sortable-chosen .photo-item {
+.photo-item:active {
   cursor: grabbing;
 }
 .photo-item img {
@@ -600,13 +588,6 @@ textarea { resize: vertical; min-height: 60px; }
   justify-content: center;
   transition: border-color 200ms;
 }
-.sortable-ghost {
-  opacity: 0.4;
-}
-.sortable-chosen {
-  opacity: 0.8;
-}
-
 /* ── Drop indicator ───────────────────────────────────── */
 .drop-indicator {
   position: absolute;
@@ -616,8 +597,9 @@ textarea { resize: vertical; min-height: 60px; }
   z-index: 20;
   transition: top 80ms ease, left 80ms ease;
 }
-/* Vertical containers (stack): horizontal line */
-.stack-container > .drop-indicator {
+/* Vertical containers (stack, canvas): horizontal line */
+.stack-container > .drop-indicator,
+#canvas > .drop-indicator {
   height: 2px;
   left: 0;
   right: 0;

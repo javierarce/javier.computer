@@ -533,22 +533,32 @@ function removePhotoNodes(filename, nodes) {
 }
 
 // ─── Drop indicator helpers ─────────────────────────────
-function getDropIndex(container, event, isVertical) {
+function getDropIndex(container, event, isVertical, skipId) {
   const children = Array.from(container.querySelectorAll(':scope > .node'));
   const mousePos = isVertical ? event.clientY : event.clientX;
+  const visible = [];
 
   for (let i = 0; i < children.length; i++) {
-    const rect = children[i].getBoundingClientRect();
-    const mid = isVertical
-      ? rect.top + rect.height / 2
-      : rect.left + rect.width / 2;
-    if (mousePos < mid) return i;
+    if (skipId && children[i].dataset.id === skipId) continue;
+    visible.push(children[i]);
   }
-  return children.length;
+
+  for (let i = 0; i < visible.length; i++) {
+    const rect = visible[i].getBoundingClientRect();
+    const isLast = i === visible.length - 1;
+    // Use 2/3 threshold for last item so "after last" zone is easier to reach
+    const fraction = isLast ? 0.67 : 0.5;
+    const threshold = isVertical
+      ? rect.top + rect.height * fraction
+      : rect.left + rect.width * fraction;
+    if (mousePos < threshold) return i;
+  }
+  return visible.length;
 }
 
-function positionIndicator(container, indicator, index, isVertical) {
-  const children = Array.from(container.querySelectorAll(':scope > .node'));
+function positionIndicator(container, indicator, index, isVertical, skipId) {
+  const children = Array.from(container.querySelectorAll(':scope > .node'))
+    .filter(c => !skipId || c.dataset.id !== skipId);
 
   if (isVertical) {
     let top;
@@ -658,7 +668,6 @@ function renderCanvas() {
   addBlockBtn.onclick = (e) => { e.stopPropagation(); showAddMenu(e); };
   canvas.appendChild(addBlockBtn);
 
-  initSortable(canvas, state.nodes, true);
   updateCoverDropdown();
   updateShelfUsedState();
   saveState();
@@ -671,38 +680,86 @@ function updateShelfUsedState() {
   });
 }
 
+// Track canvas drag source globally
+let canvasDragNodeId = null;
+
 // Canvas-level drop (registered once, outside renderCanvas)
 (function() {
   const canvas = document.getElementById('canvas');
+  canvas.style.position = 'relative';
+  let indicator = null;
+
+  function removeIndicator() {
+    if (indicator) { indicator.remove(); indicator = null; }
+  }
+
   canvas.addEventListener('dragover', e => {
+    // Only handle on the canvas itself, not inside containers
+    if (e.target !== canvas && !e.target.classList.contains('canvas__empty') && !e.target.classList.contains('canvas__add')) {
+      if (e.target.closest('[data-parent-id]')) return;
+    }
     e.preventDefault();
-    e.dataTransfer.dropEffect = 'copy';
+    e.dataTransfer.dropEffect = canvasDragNodeId ? 'move' : 'copy';
+
+    if (!indicator) {
+      indicator = document.createElement('div');
+      indicator.className = 'drop-indicator';
+      canvas.appendChild(indicator);
+    }
+    const insertIdx = getDropIndex(canvas, e, true, canvasDragNodeId);
+    positionIndicator(canvas, indicator, insertIdx, true, canvasDragNodeId);
   });
+
+  canvas.addEventListener('dragleave', e => {
+    if (!canvas.contains(e.relatedTarget)) removeIndicator();
+  });
+
   canvas.addEventListener('drop', e => {
     // Only handle if dropped on the canvas itself, not inside a container node
     if (e.target !== canvas && !e.target.classList.contains('canvas__empty') && !e.target.classList.contains('canvas__add')) {
-      // Check if drop target is inside a container — if so, let the container handle it
-      if (e.target.closest('.node')) return;
+      if (e.target.closest('[data-parent-id]')) { removeIndicator(); return; }
     }
     e.preventDefault();
     e.stopPropagation();
 
-    const stack = { id: uid(), type: 'stack', classes: [], children: [] };
+    const insertIdx = getDropIndex(canvas, e, true, canvasDragNodeId);
+    removeIndicator();
 
     if (e.dataTransfer.files && e.dataTransfer.files.length) {
+      const stack = { id: uid(), type: 'stack', classes: [], children: [] };
       addFilesToNewStack(e.dataTransfer.files, stack);
       return;
     }
 
     try {
       const data = JSON.parse(e.dataTransfer.getData('text/plain'));
+
+      if (data.source === 'canvas') {
+        const info = findParent(data.nodeId);
+        if (!info) return;
+        const idx = info.list.findIndex(n => n.id === data.nodeId);
+        if (idx < 0) return;
+        const [moved] = info.list.splice(idx, 1);
+        // Wrap in a stack if it's a photo
+        const toInsert = moved.type === 'photo'
+          ? { id: uid(), type: 'stack', classes: [], children: [moved] }
+          : moved;
+        // getDropIndex already skips the dragged item, so insertIdx
+        // is relative to the array without it — no adjustment needed
+        state.nodes.splice(insertIdx, 0, toInsert);
+        removeEmptyContainers(state.nodes);
+        renderCanvas();
+        return;
+      }
+
       if (data.source === 'shelf') {
+        const stack = { id: uid(), type: 'stack', classes: [], children: [] };
         stack.children.push({
           id: uid(), type: 'photo',
           location: data.location, filename: data.filename,
           ratio: data.ratio || '3/2', caption: '', alt: '', classes: []
         });
-        state.nodes.push(stack);
+        state.nodes.splice(insertIdx, 0, stack);
         renderCanvas();
       }
     } catch {}
@@ -767,6 +824,23 @@ function renderContainerNode(node, wrapper) {
   delBtn.onclick = (e) => { e.stopPropagation(); removeNode(node.id); };
   controls.appendChild(delBtn);
 
+  // Make container draggable via handle
+  const handle = controls.querySelector('.node__handle');
+  handle.draggable = true;
+  handle.addEventListener('dragstart', e => {
+    e.stopPropagation();
+    canvasDragNodeId = node.id;
+    wrapper.classList.add('is-dragging');
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/plain', JSON.stringify({
+      source: 'canvas', nodeId: node.id
+    }));
+  });
+  handle.addEventListener('dragend', () => {
+    canvasDragNodeId = null;
+    wrapper.classList.remove('is-dragging');
+  });
+
   wrapper.appendChild(controls);
 
   // Container
@@ -781,16 +855,14 @@ function renderContainerNode(node, wrapper) {
     });
   }
 
-  initSortable(container, node.children, false);
-
-  // Enable drop from shelf or Finder, with indicator
+  // Enable drop from shelf, Finder, or canvas photos — with indicator
   container.style.position = 'relative';
   let indicator = null;
 
   container.addEventListener('dragover', e => {
     e.preventDefault();
     e.stopPropagation();
-    e.dataTransfer.dropEffect = 'copy';
+    e.dataTransfer.dropEffect = canvasDragNodeId ? 'move' : 'copy';
 
     if (!indicator) {
       indicator = document.createElement('div');
@@ -799,8 +871,8 @@ function renderContainerNode(node, wrapper) {
     }
 
     const isVertical = node.type === 'stack';
-    const insertIdx = getDropIndex(container, e, isVertical);
-    positionIndicator(container, indicator, insertIdx, isVertical);
+    const insertIdx = getDropIndex(container, e, isVertical, canvasDragNodeId);
+    positionIndicator(container, indicator, insertIdx, isVertical, canvasDragNodeId);
   });
 
   container.addEventListener('dragleave', e => {
@@ -814,7 +886,7 @@ function renderContainerNode(node, wrapper) {
     e.stopPropagation();
 
     const isVertical = node.type === 'stack';
-    const insertIdx = getDropIndex(container, e, isVertical);
+    const insertIdx = getDropIndex(container, e, isVertical, canvasDragNodeId);
     removeIndicator();
 
     // Files from Finder
@@ -823,9 +895,25 @@ function renderContainerNode(node, wrapper) {
       return;
     }
 
-    // From shelf
     try {
       const data = JSON.parse(e.dataTransfer.getData('text/plain'));
+
+      // From canvas (reorder within/between containers)
+      if (data.source === 'canvas') {
+        const info = findParent(data.nodeId);
+        if (!info) return;
+        const idx = info.list.findIndex(n => n.id === data.nodeId);
+        if (idx < 0) return;
+        const [moved] = info.list.splice(idx, 1);
+        // getDropIndex already skips the dragged item, so insertIdx
+        // is relative to the array without it — no adjustment needed
+        node.children.splice(insertIdx, 0, moved);
+        removeEmptyContainers(state.nodes);
+        renderCanvas();
+        return;
+      }
+
+      // From shelf
       if (data.source === 'shelf') {
         const photoNode = {
           id: uid(), type: 'photo',
@@ -879,6 +967,26 @@ function renderPhotoNode(node, wrapper) {
       </div>
     </div>
   `;
+
+  // Make photos natively draggable
+  wrapper.draggable = true;
+  div.querySelector('img').draggable = false; // prevent native image drag
+  wrapper.addEventListener('dragstart', e => {
+    e.stopPropagation();
+    canvasDragNodeId = node.id;
+    wrapper.classList.add('is-dragging');
+    const preview = createDragPreview(imgSrc);
+    e.dataTransfer.setDragImage(preview, 30, 30);
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/plain', JSON.stringify({
+      source: 'canvas', nodeId: node.id
+    }));
+  });
+  wrapper.addEventListener('dragend', () => {
+    canvasDragNodeId = null;
+    wrapper.classList.remove('is-dragging');
+    removeDragPreview();
+  });
 
   wrapper.appendChild(div);
   return wrapper;
@@ -994,63 +1102,6 @@ function updatePhotoField(id, field, value) {
   }
 }
 
-// ─── SortableJS ─────────────────────────────────────────
-let sortableGhost = null;
-function onSortableMouseMove(e) {
-  if (sortableGhost) {
-    sortableGhost.style.left = (e.clientX - 40) + 'px';
-    sortableGhost.style.top = (e.clientY - 40) + 'px';
-  }
-}
-
-function initSortable(el, list, isRoot) {
-  new Sortable(el, {
-    group: 'nodes',
-    animation: 150,
-    handle: isRoot ? '.node__handle' : undefined,
-    draggable: '.node',
-    ghostClass: 'sortable-ghost',
-    chosenClass: 'sortable-chosen',
-    forceFallback: true,
-    fallbackClass: 'sortable-fallback',
-    fallbackTolerance: 3,
-    filter: '.add-child-btn, .canvas__add',
-    onStart(evt) {
-      // Find the image in the dragged element
-      const img = evt.item.querySelector('img');
-      if (img) {
-        sortableGhost = document.createElement('img');
-        sortableGhost.className = 'sortable-custom-ghost';
-        sortableGhost.src = img.src;
-        document.body.appendChild(sortableGhost);
-        document.addEventListener('mousemove', onSortableMouseMove);
-      }
-    },
-    onEnd(evt) {
-      if (sortableGhost) {
-        sortableGhost.remove();
-        sortableGhost = null;
-        document.removeEventListener('mousemove', onSortableMouseMove);
-      }
-      syncOrderFromDOM();
-      wrapNakedPhotos();
-      removeEmptyContainers(state.nodes);
-      renderCanvas();
-    }
-  });
-}
-
-function wrapNakedPhotos() {
-  for (let i = 0; i < state.nodes.length; i++) {
-    if (state.nodes[i].type === 'photo') {
-      state.nodes[i] = {
-        id: uid(), type: 'stack', classes: [],
-        children: [state.nodes[i]]
-      };
-    }
-  }
-}
-
 function removeEmptyContainers(nodes) {
   for (let i = nodes.length - 1; i >= 0; i--) {
     const n = nodes[i];
@@ -1059,48 +1110,6 @@ function removeEmptyContainers(nodes) {
       if (n.children.length === 0) nodes.splice(i, 1);
     }
   }
-}
-
-function syncOrderFromDOM() {
-  // Rebuild state.nodes from the DOM structure
-  const canvas = document.getElementById('canvas');
-  state.nodes = collectNodesFromDOM(canvas);
-}
-
-function collectNodesFromDOM(el) {
-  const result = [];
-  for (const child of el.children) {
-    if (!child.classList.contains('node')) continue;
-    const id = child.dataset.id;
-    const node = findNodeGlobal(id);
-    if (!node) continue;
-
-    if (node.children) {
-      const container = child.querySelector(`.${node.type}-container`);
-      if (container) {
-        node.children = collectNodesFromDOM(container);
-      }
-    }
-    result.push(node);
-  }
-  return result;
-}
-
-// Search in a flat cache so we don't lose nodes during reorder
-let nodeCache = {};
-function buildNodeCache(nodes) {
-  nodeCache = {};
-  function walk(list) {
-    for (const n of list) {
-      nodeCache[n.id] = n;
-      if (n.children) walk(n.children);
-    }
-  }
-  walk(nodes || state.nodes);
-}
-
-function findNodeGlobal(id) {
-  return nodeCache[id] || findNode(id);
 }
 
 // ─── Add containers ─────────────────────────────────────
@@ -1678,5 +1687,4 @@ if (loaded) {
   renderShelf();
   restoreImages();
 }
-buildNodeCache(state.nodes);
 renderCanvas();
