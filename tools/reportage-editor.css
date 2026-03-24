@@ -89,6 +89,12 @@ button.is-primary:hover {
   background: #1d35b4;
 }
 
+button:disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+
 button.is-danger {
   border-color: var(--red);
   color: var(--red);
@@ -1127,15 +1133,28 @@ textarea {
   align-items: center;
   justify-content: space-between;
   padding: 16px;
-  border-bottom: 1px solid var(--editor-border);
 }
 
 .modal__header h3 {
   font-size: 1rem;
 }
 
+.modal__header button {
+  background: none;
+  border: none;
+  color: var(--editor-fg-muted);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+}
+
+.modal__header button:hover {
+  color: var(--editor-fg);
+}
+
 .modal__body {
-  padding: 16px;
+  padding: 0 16px;
   overflow-y: auto;
   flex: 1;
 }
@@ -1145,7 +1164,6 @@ textarea {
   justify-content: flex-end;
   gap: 8px;
   padding: 12px 16px;
-  border-top: 1px solid var(--editor-border);
 }
 
 .modal textarea.export-output {

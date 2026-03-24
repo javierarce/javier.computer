@@ -11,6 +11,25 @@ const state = {
 
 function uid() { return crypto.randomUUID(); }
 
+// ─── Keyboard shortcuts ─────────────────────────────────
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeMarkdownModal();
+    return;
+  }
+
+  const tag = e.target.tagName;
+  if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || e.target.isContentEditable) return;
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+
+  switch (e.key.toLowerCase()) {
+    case 't': e.preventDefault(); toggleShelf(); break;
+    case 'm': e.preventDefault(); toggleSidebar(); break;
+    case 'e': e.preventDefault(); openMarkdownModal(); break;
+    case 'n': e.preventDefault(); newReportage(); break;
+  }
+});
+
 function newReportage() {
   if (!confirm('Start a new reportage? This will clear everything.')) return;
   // Revoke object URLs
@@ -1448,24 +1467,40 @@ function addTopLevelNode(type) {
 }
 
 // ─── Export ─────────────────────────────────────────────
-function exportMarkdown() {
-  const md = generateMarkdown();
-  document.getElementById('exportOutput').value = md;
-  document.getElementById('exportModal').classList.add('is-open');
+let markdownOriginal = '';
+
+function openMarkdownModal() {
+  const ta = document.getElementById('markdownOutput');
+  markdownOriginal = generateMarkdown();
+  ta.value = markdownOriginal;
+  document.getElementById('markdownModal').classList.add('is-open');
+  document.getElementById('importBtn').disabled = true;
 }
 
-function closeExportModal() {
-  document.getElementById('exportModal').classList.remove('is-open');
+document.getElementById('markdownOutput').addEventListener('input', () => {
+  document.getElementById('importBtn').disabled = document.getElementById('markdownOutput').value === markdownOriginal;
+});
+
+function closeMarkdownModal() {
+  document.getElementById('markdownModal').classList.remove('is-open');
 }
 
-function copyExport() {
-  const ta = document.getElementById('exportOutput');
+function copyMarkdown() {
+  const ta = document.getElementById('markdownOutput');
   navigator.clipboard.writeText(ta.value).then(() => {
     const btn = ta.closest('.modal').querySelector('.is-primary');
     const orig = btn.textContent;
     btn.textContent = 'Copied!';
     setTimeout(() => btn.textContent = orig, 1500);
   });
+}
+
+function doImportFromModal() {
+  const input = document.getElementById('markdownOutput').value.trim();
+  if (!input) return;
+  if (!confirm('Import this markdown? This will replace the current reportage.')) return;
+  closeMarkdownModal();
+  doImportText(input);
 }
 
 function generateMarkdown() {
@@ -1574,19 +1609,7 @@ function renderNodeToLiquid(node, depth) {
 }
 
 // ─── Import ─────────────────────────────────────────────
-function importMarkdown() {
-  document.getElementById('importInput').value = '';
-  document.getElementById('importModal').classList.add('is-open');
-}
-
-function closeImportModal() {
-  document.getElementById('importModal').classList.remove('is-open');
-}
-
-function doImport() {
-  const input = document.getElementById('importInput').value.trim();
-  if (!input) return;
-
+function doImportText(input) {
   try {
     const parsed = parseMarkdown(input);
     Object.assign(state.meta, parsed.meta);
@@ -1609,7 +1632,6 @@ function doImport() {
     syncMetaUI();
     renderShelf();
     renderCanvas();
-    closeImportModal();
   } catch (err) {
     alert('Parse error: ' + err.message);
     console.error(err);
