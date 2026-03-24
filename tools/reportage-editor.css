@@ -339,14 +339,7 @@ textarea { resize: vertical; min-height: 60px; }
 /* ── Node (container wrapper) ─────────────────────────── */
 .node {
   position: relative;
-  border-left: 3px solid transparent;
-  transition: border-color 200ms;
 }
-.node[data-type="stack"]  { border-left-color: var(--blue); }
-.node[data-type="row"]    { border-left-color: var(--green); }
-.node[data-type="grid"]   { border-left-color: var(--orange); }
-.node[data-type="text"]   { border-left-color: var(--purple); }
-.node[data-type="photo"]  { border-left-color: transparent; }
 
 .node__controls {
   display: flex;
