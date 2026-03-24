@@ -1120,12 +1120,18 @@ function updatePhotoField(id, field, value) {
   }
 }
 
+
+
+// Remove empty containers without cascading — only removes containers
+// that are already empty, then stops. A parent that becomes empty because
+// its child was just removed will be cleaned up on the next explicit call.
 function removeEmptyContainers(nodes) {
   for (let i = nodes.length - 1; i >= 0; i--) {
     const n = nodes[i];
-    if (n.children) {
+    if (n.children && n.children.length === 0) {
+      nodes.splice(i, 1);
+    } else if (n.children) {
       removeEmptyContainers(n.children);
-      if (n.children.length === 0) nodes.splice(i, 1);
     }
   }
 }
