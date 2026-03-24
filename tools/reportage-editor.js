@@ -533,6 +533,22 @@ function removePhotoNodes(filename, nodes) {
 }
 
 // ─── Drop indicator helpers ─────────────────────────────
+// Single global indicator element — only one can exist at a time
+let globalIndicator = null;
+
+function showIndicatorIn(container, index, isVertical, skipId) {
+  if (!globalIndicator) {
+    globalIndicator = document.createElement('div');
+    globalIndicator.className = 'drop-indicator';
+  }
+  container.appendChild(globalIndicator);
+  positionIndicator(container, globalIndicator, index, isVertical, skipId);
+}
+
+function removeDropIndicator() {
+  if (globalIndicator) { globalIndicator.remove(); }
+}
+
 function getDropIndex(container, event, isVertical, skipId) {
   const children = Array.from(container.querySelectorAll(':scope > .node'));
   const mousePos = isVertical ? event.clientY : event.clientX;
@@ -687,43 +703,33 @@ let canvasDragNodeId = null;
 (function() {
   const canvas = document.getElementById('canvas');
   canvas.style.position = 'relative';
-  let indicator = null;
-
-  function removeIndicator() {
-    if (indicator) { indicator.remove(); indicator = null; }
-  }
 
   canvas.addEventListener('dragover', e => {
     // Only handle on the canvas itself, not inside containers
     if (e.target !== canvas && !e.target.classList.contains('canvas__empty') && !e.target.classList.contains('canvas__add')) {
-      if (e.target.closest('[data-parent-id]')) return;
+      if (e.target.closest('[data-parent-id]')) { removeDropIndicator(); return; }
     }
     e.preventDefault();
     e.dataTransfer.dropEffect = canvasDragNodeId ? 'move' : 'copy';
 
-    if (!indicator) {
-      indicator = document.createElement('div');
-      indicator.className = 'drop-indicator';
-      canvas.appendChild(indicator);
-    }
     const insertIdx = getDropIndex(canvas, e, true, canvasDragNodeId);
-    positionIndicator(canvas, indicator, insertIdx, true, canvasDragNodeId);
+    showIndicatorIn(canvas, insertIdx, true, canvasDragNodeId);
   });
 
   canvas.addEventListener('dragleave', e => {
-    if (!canvas.contains(e.relatedTarget)) removeIndicator();
+    if (!canvas.contains(e.relatedTarget)) removeDropIndicator();
   });
 
   canvas.addEventListener('drop', e => {
     // Only handle if dropped on the canvas itself, not inside a container node
     if (e.target !== canvas && !e.target.classList.contains('canvas__empty') && !e.target.classList.contains('canvas__add')) {
-      if (e.target.closest('[data-parent-id]')) { removeIndicator(); return; }
+      if (e.target.closest('[data-parent-id]')) { removeDropIndicator(); return; }
     }
     e.preventDefault();
     e.stopPropagation();
 
     const insertIdx = getDropIndex(canvas, e, true, canvasDragNodeId);
-    removeIndicator();
+    removeDropIndicator();
 
     if (e.dataTransfer.files && e.dataTransfer.files.length) {
       const stack = { id: uid(), type: 'stack', classes: [], children: [] };
@@ -857,27 +863,20 @@ function renderContainerNode(node, wrapper) {
 
   // Enable drop from shelf, Finder, or canvas photos — with indicator
   container.style.position = 'relative';
-  let indicator = null;
 
   container.addEventListener('dragover', e => {
     e.preventDefault();
     e.stopPropagation();
     e.dataTransfer.dropEffect = canvasDragNodeId ? 'move' : 'copy';
 
-    if (!indicator) {
-      indicator = document.createElement('div');
-      indicator.className = 'drop-indicator';
-      container.appendChild(indicator);
-    }
-
     const isVertical = node.type === 'stack';
     const insertIdx = getDropIndex(container, e, isVertical, canvasDragNodeId);
-    positionIndicator(container, indicator, insertIdx, isVertical, canvasDragNodeId);
+    showIndicatorIn(container, insertIdx, isVertical, canvasDragNodeId);
   });
 
   container.addEventListener('dragleave', e => {
     if (!container.contains(e.relatedTarget)) {
-      removeIndicator();
+      removeDropIndicator();
     }
   });
 
@@ -887,7 +886,7 @@ function renderContainerNode(node, wrapper) {
 
     const isVertical = node.type === 'stack';
     const insertIdx = getDropIndex(container, e, isVertical, canvasDragNodeId);
-    removeIndicator();
+    removeDropIndicator();
 
     // Files from Finder
     if (e.dataTransfer.files && e.dataTransfer.files.length) {
@@ -1004,6 +1003,25 @@ function renderTextNode(node, wrapper) {
   delBtn.innerHTML = '✕';
   delBtn.onclick = () => { removeNode(node.id); };
   controls.appendChild(delBtn);
+
+  // Make text node draggable via handle
+  const handle = controls.querySelector('.node__handle');
+  handle.draggable = true;
+  handle.addEventListener('dragstart', e => {
+    e.stopPropagation();
+    canvasDragNodeId = node.id;
+    wrapper.classList.add('is-dragging');
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/plain', JSON.stringify({
+      source: 'canvas', nodeId: node.id
+    }));
+  });
+  handle.addEventListener('dragend', () => {
+    canvasDragNodeId = null;
+    wrapper.classList.remove('is-dragging');
+    removeDropIndicator();
+  });
+
   wrapper.appendChild(controls);
 
   const container = document.createElement('div');
