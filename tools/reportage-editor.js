@@ -704,6 +704,74 @@ function getShelfPhoto(filename) {
   return state.shelf.find(s => s.filename === filename);
 }
 
+// ─── Canvas Inserter ────────────────────────────────────
+function createInserter(index) {
+  const inserter = document.createElement('div');
+  inserter.className = 'canvas__inserter';
+
+  const line = document.createElement('div');
+  line.className = 'canvas__inserter-line';
+  inserter.appendChild(line);
+
+  const btn = document.createElement('button');
+  btn.className = 'canvas__inserter-btn';
+  btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="1" y1="6" x2="11" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
+  btn.onclick = (e) => {
+    e.stopPropagation();
+    showInsertMenu(e, index);
+  };
+  inserter.appendChild(btn);
+
+  return inserter;
+}
+
+function showInsertMenu(e, index) {
+  const menu = document.getElementById('contextMenu');
+  menu.innerHTML = '';
+
+  // Add photos option
+  const photosBtn = document.createElement('button');
+  photosBtn.className = 'context-menu__item';
+  photosBtn.textContent = 'Add photos…';
+  photosBtn.onclick = () => {
+    closeContextMenu();
+    const input = document.getElementById('fileInput');
+    input.onchange = function() {
+      const stackNode = { id: uid(), type: 'stack', classes: [], children: [] };
+      state.nodes.splice(index, 0, stackNode);
+      addFilesToContainer(this.files, stackNode);
+      this.onchange = originalFileInputHandler;
+    };
+    input.click();
+  };
+  menu.appendChild(photosBtn);
+
+  const sep = document.createElement('div');
+  sep.className = 'context-menu__sep';
+  menu.appendChild(sep);
+
+  ['stack', 'row', 'grid', 'text'].forEach(type => {
+    const btn = document.createElement('button');
+    btn.className = 'context-menu__item';
+    btn.textContent = type.charAt(0).toUpperCase() + type.slice(1);
+    btn.onclick = () => {
+      insertNodeAt(type, index);
+      closeContextMenu();
+    };
+    menu.appendChild(btn);
+  });
+
+  showContextMenuAt(menu, e);
+}
+
+function insertNodeAt(type, index) {
+  const node = type === 'text'
+    ? { id: uid(), type: 'text', classes: [], html: '<p></p>' }
+    : { id: uid(), type, classes: [], children: [] };
+  state.nodes.splice(index, 0, node);
+  renderCanvas();
+}
+
 // ─── Canvas Rendering ───────────────────────────────────
 function renderCanvas() {
   const canvas = document.getElementById('canvas');
@@ -712,9 +780,13 @@ function renderCanvas() {
   if (state.nodes.length === 0) {
     // no empty message, just show the + button
   } else {
-    state.nodes.forEach(node => {
+    state.nodes.forEach((node, i) => {
+      // Inserter before each node
+      canvas.appendChild(createInserter(i));
       canvas.appendChild(renderNode(node));
     });
+    // Inserter after last node
+    canvas.appendChild(createInserter(state.nodes.length));
   }
 
   // Add block buttons at the bottom
@@ -764,8 +836,9 @@ let canvasDragNodeId = null;
   canvas.style.position = 'relative';
 
   canvas.addEventListener('dragover', e => {
+    canvas.classList.add('is-dragging');
     // Only handle on the canvas itself, not inside containers
-    if (e.target !== canvas && !e.target.classList.contains('canvas__empty') && !e.target.closest('.canvas__add-bar')) {
+    if (e.target !== canvas && !e.target.classList.contains('canvas__empty') && !e.target.closest('.canvas__add-bar') && !e.target.closest('.canvas__inserter')) {
       if (e.target.closest('[data-parent-id]') || e.target.closest('.node')) { removeDropIndicator(); return; }
     }
     e.preventDefault();
@@ -778,12 +851,15 @@ let canvasDragNodeId = null;
   });
 
   canvas.addEventListener('dragleave', e => {
-    if (!canvas.contains(e.relatedTarget)) removeDropIndicator();
+    if (!canvas.contains(e.relatedTarget)) {
+      removeDropIndicator();
+      canvas.classList.remove('is-dragging');
+    }
   });
 
   canvas.addEventListener('drop', e => {
     // Only handle if dropped on the canvas itself, not inside a container node
-    if (e.target !== canvas && !e.target.classList.contains('canvas__empty') && !e.target.closest('.canvas__add-bar')) {
+    if (e.target !== canvas && !e.target.classList.contains('canvas__empty') && !e.target.closest('.canvas__add-bar') && !e.target.closest('.canvas__inserter')) {
       if (e.target.closest('[data-parent-id]') || e.target.closest('.node')) { removeDropIndicator(); return; }
     }
     e.preventDefault();
@@ -791,6 +867,7 @@ let canvasDragNodeId = null;
 
     const insertIdx = getDropIndex(canvas, e, true, canvasDragNodeId);
     removeDropIndicator();
+    canvas.classList.remove('is-dragging');
 
     if (e.dataTransfer.files && e.dataTransfer.files.length) {
       const stack = { id: uid(), type: 'stack', classes: [], children: [] };

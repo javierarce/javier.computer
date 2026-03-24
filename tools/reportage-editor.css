@@ -531,6 +531,70 @@ textarea {
   background: var(--editor-hover-bg);
 }
 
+/* ── Canvas inserter ──────────────────────────────────── */
+.canvas__inserter {
+  position: relative;
+  height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  /* Expand clickable area without affecting layout */
+  margin: -12px 0;
+  padding: 12px 0;
+  cursor: default;
+}
+
+.canvas__inserter-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: var(--editor-border);
+  opacity: 0;
+  transition: opacity 150ms;
+}
+
+.canvas__inserter:hover .canvas__inserter-line {
+  opacity: 1;
+}
+
+.canvas__inserter-btn {
+  position: relative;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--editor-border);
+  background: var(--editor-surface);
+  color: var(--editor-fg-faint);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  opacity: 0;
+  transition: opacity 150ms, color 150ms, border-color 150ms, background 150ms;
+}
+
+.canvas__inserter:hover .canvas__inserter-btn {
+  opacity: 1;
+  background: var(--editor-surface);
+}
+
+.canvas__inserter-btn:hover {
+  color: var(--editor-fg);
+  border-color: var(--editor-border-hover);
+  background: var(--editor-surface);
+}
+
+/* Hide inserters while dragging */
+.canvas.is-dragging .canvas__inserter {
+  pointer-events: none;
+  visibility: hidden;
+}
+
 /* ── Transitions ──────────────────────────────────────── */
 @keyframes fadeIn {
   from {
