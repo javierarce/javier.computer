@@ -1249,10 +1249,38 @@ function renderTextNode(node, wrapper) {
   editable.innerHTML = html;
 
   // Force paragraph mode: Enter creates <p>, not <br>
+  // Markdown shortcuts: Cmd+B for bold, Cmd+I for italic
   editable.addEventListener('keydown', e => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       document.execCommand('insertParagraph', false);
+      return;
+    }
+
+    if ((e.metaKey || e.ctrlKey) && (e.key === 'b' || e.key === 'i')) {
+      e.preventDefault();
+      const sel = window.getSelection();
+      if (!sel.rangeCount || sel.isCollapsed) return;
+      const text = sel.getRangeAt(0).toString();
+      const marker = e.key === 'b' ? '**' : '*';
+      document.execCommand('insertText', false, `${marker}${text}${marker}`);
+      return;
+    }
+  });
+
+  // Paste: if text is a URL and there's a selection, wrap as markdown link
+  // Paste: always strip formatting; wrap as markdown link if pasting a URL over a selection
+  editable.addEventListener('paste', e => {
+    e.preventDefault();
+    const clipboard = e.clipboardData.getData('text/plain');
+    const sel = window.getSelection();
+    const hasSelection = sel.rangeCount && !sel.isCollapsed;
+    const trimmed = clipboard.trim();
+    if (hasSelection && trimmed.match(/^https?:\/\/\S+$/)) {
+      const text = sel.getRangeAt(0).toString();
+      document.execCommand('insertText', false, `[${text}](${trimmed})`);
+    } else {
+      document.execCommand('insertText', false, clipboard);
     }
   });
 
