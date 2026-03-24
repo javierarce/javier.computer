@@ -208,16 +208,25 @@ function toggleMeta() {
 let _shelfHeight = null;
 function toggleShelf() {
   const shelf = document.getElementById('shelf');
+  const chevron = document.getElementById('toolbarChevron');
   const collapsing = !shelf.classList.contains('is-collapsed');
   if (collapsing) {
     _shelfHeight = shelf.style.height || null;
     shelf.style.height = '';
   }
   shelf.classList.toggle('is-collapsed');
+  chevron.classList.toggle('is-collapsed', shelf.classList.contains('is-collapsed'));
+  localStorage.setItem('reportage-editor-shelf', shelf.classList.contains('is-collapsed') ? 'collapsed' : 'open');
   if (!collapsing && _shelfHeight) {
     shelf.style.height = _shelfHeight;
   }
 }
+
+(function initShelf() {
+  if (localStorage.getItem('reportage-editor-shelf') === 'collapsed') {
+    toggleShelf();
+  }
+})();
 
 // Shelf resize
 (function() {
@@ -698,13 +707,31 @@ function renderCanvas() {
     });
   }
 
-  // Add block button at the bottom
-  const addBlockBtn = document.createElement('button');
-  addBlockBtn.className = 'canvas__add';
-  addBlockBtn.textContent = '+';
-  addBlockBtn.title = 'Add stack, row, grid, or text';
-  addBlockBtn.onclick = (e) => { e.stopPropagation(); showAddMenu(e); };
-  canvas.appendChild(addBlockBtn);
+  // Add block buttons at the bottom
+  const addBar = document.createElement('div');
+  addBar.className = 'canvas__add-bar';
+  ['stack', 'row', 'grid', 'text', 'photos'].forEach(type => {
+    const btn = document.createElement('button');
+    btn.className = 'canvas__add-btn';
+    btn.textContent = type.charAt(0).toUpperCase() + type.slice(1);
+    if (type === 'photos') {
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        const input = document.getElementById('fileInput');
+        input.onchange = function() {
+          const stackNode = { id: uid(), type: 'stack', classes: [], children: [] };
+          state.nodes.push(stackNode);
+          addFilesToContainer(this.files, stackNode);
+          this.onchange = originalFileInputHandler;
+        };
+        input.click();
+      };
+    } else {
+      btn.onclick = (e) => { e.stopPropagation(); addTopLevelNode(type); };
+    }
+    addBar.appendChild(btn);
+  });
+  canvas.appendChild(addBar);
 
   updateCoverDropdown();
   updateShelfUsedState();
@@ -728,7 +755,7 @@ let canvasDragNodeId = null;
 
   canvas.addEventListener('dragover', e => {
     // Only handle on the canvas itself, not inside containers
-    if (e.target !== canvas && !e.target.classList.contains('canvas__empty') && !e.target.classList.contains('canvas__add')) {
+    if (e.target !== canvas && !e.target.classList.contains('canvas__empty') && !e.target.closest('.canvas__add-bar')) {
       if (e.target.closest('[data-parent-id]')) { removeDropIndicator(); return; }
     }
     e.preventDefault();
@@ -744,7 +771,7 @@ let canvasDragNodeId = null;
 
   canvas.addEventListener('drop', e => {
     // Only handle if dropped on the canvas itself, not inside a container node
-    if (e.target !== canvas && !e.target.classList.contains('canvas__empty') && !e.target.classList.contains('canvas__add')) {
+    if (e.target !== canvas && !e.target.classList.contains('canvas__empty') && !e.target.closest('.canvas__add-bar')) {
       if (e.target.closest('[data-parent-id]')) { removeDropIndicator(); return; }
     }
     e.preventDefault();
@@ -825,9 +852,20 @@ function renderContainerNode(node, wrapper) {
     renderCanvas();
   });
 
-  // Class toggles
+  // Ellipsis menu with class toggles
   const classOpts = getClassOptions(node.type);
   if (classOpts.length) {
+    const menuWrap = document.createElement('div');
+    menuWrap.className = 'node__menu-wrap';
+
+    const menuBtn = document.createElement('button');
+    menuBtn.className = 'node__menu-btn';
+    menuBtn.innerHTML = '···';
+    menuBtn.title = 'Options';
+
+    const menu = document.createElement('div');
+    menu.className = 'node__menu';
+
     const classDiv = document.createElement('div');
     classDiv.className = 'node__classes';
     classOpts.forEach(cls => {
@@ -840,7 +878,20 @@ function renderContainerNode(node, wrapper) {
       };
       classDiv.appendChild(btn);
     });
-    controls.appendChild(classDiv);
+    menu.appendChild(classDiv);
+
+    menuBtn.onclick = (e) => {
+      e.stopPropagation();
+      // Close any other open menus
+      document.querySelectorAll('.node__menu.is-open').forEach(m => {
+        if (m !== menu) m.classList.remove('is-open');
+      });
+      menu.classList.toggle('is-open');
+    };
+
+    menuWrap.appendChild(menuBtn);
+    menuWrap.appendChild(menu);
+    controls.appendChild(menuWrap);
   }
 
   // Delete button
@@ -1714,19 +1765,42 @@ const originalFileInputHandler = function() { handleFiles(this.files); };
 document.getElementById('fileInput').onchange = originalFileInputHandler;
 
 // ─── Theme ──────────────────────────────────────────────
+const THEME_ICONS = {
+  light: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="3"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.17 3.17l1.06 1.06M11.77 11.77l1.06 1.06M3.17 12.83l1.06-1.06M11.77 4.23l1.06-1.06"/></svg>',
+  dark: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13.2 10.6A5.5 5.5 0 015.4 2.8a5.5 5.5 0 107.8 7.8z"/></svg>',
+  system: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="9" rx="1.5"/><path d="M5.5 14h5M8 11v3"/></svg>'
+};
+const THEME_CYCLE = ['light', 'dark', 'system'];
+
+function applyTheme(mode) {
+  let effective = mode;
+  if (mode === 'system') {
+    effective = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  document.documentElement.setAttribute('data-theme', effective);
+  document.getElementById('themeBtn').innerHTML = THEME_ICONS[mode];
+  document.getElementById('themeBtn').title = mode.charAt(0).toUpperCase() + mode.slice(1);
+}
+
 function toggleTheme() {
-  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-  const next = isDark ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', next);
-  document.getElementById('themeBtn').textContent = next === 'dark' ? 'Light' : 'Dark';
+  const saved = localStorage.getItem('reportage-editor-theme') || 'light';
+  const next = THEME_CYCLE[(THEME_CYCLE.indexOf(saved) + 1) % THEME_CYCLE.length];
   localStorage.setItem('reportage-editor-theme', next);
+  applyTheme(next);
 }
 
 (function initTheme() {
   const saved = localStorage.getItem('reportage-editor-theme') || 'light';
-  document.documentElement.setAttribute('data-theme', saved);
-  document.getElementById('themeBtn').textContent = saved === 'dark' ? 'Light' : 'Dark';
+  applyTheme(saved);
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    if (localStorage.getItem('reportage-editor-theme') === 'system') applyTheme('system');
+  });
 })();
+
+// ─── Close menus on outside click ───────────────────────
+document.addEventListener('click', () => {
+  document.querySelectorAll('.node__menu.is-open').forEach(m => m.classList.remove('is-open'));
+});
 
 // ─── Init ───────────────────────────────────────────────
 const loaded = loadState();
