@@ -78,7 +78,14 @@ function removeNode(id) {
     if (!info) return;
     const idx = info.list.findIndex(n => n.id === id);
     if (idx >= 0) info.list.splice(idx, 1);
-    removeEmptyContainers(state.nodes);
+    // If the parent container is now empty, remove it too (but only one level up)
+    if (info.parent && info.list.length === 0) {
+      const grandparent = findParent(info.parent.id);
+      if (grandparent) {
+        const pIdx = grandparent.list.findIndex(n => n.id === info.parent.id);
+        if (pIdx >= 0) grandparent.list.splice(pIdx, 1);
+      }
+    }
     renderCanvas();
   };
   if (el) {
@@ -753,7 +760,6 @@ let canvasDragNodeId = null;
         // getDropIndex already skips the dragged item, so insertIdx
         // is relative to the array without it — no adjustment needed
         state.nodes.splice(insertIdx, 0, toInsert);
-        removeEmptyContainers(state.nodes);
         renderCanvas();
         return;
       }
@@ -861,6 +867,10 @@ function renderContainerNode(node, wrapper) {
     });
   }
 
+  if (!node.children || node.children.length === 0) {
+    container.classList.add('is-empty');
+  }
+
   // Enable drop from shelf, Finder, or canvas photos — with indicator
   container.style.position = 'relative';
 
@@ -868,6 +878,7 @@ function renderContainerNode(node, wrapper) {
     e.preventDefault();
     e.stopPropagation();
     e.dataTransfer.dropEffect = canvasDragNodeId ? 'move' : 'copy';
+    container.classList.add('is-dragover');
 
     const isVertical = node.type === 'stack';
     const insertIdx = getDropIndex(container, e, isVertical, canvasDragNodeId);
@@ -876,6 +887,7 @@ function renderContainerNode(node, wrapper) {
 
   container.addEventListener('dragleave', e => {
     if (!container.contains(e.relatedTarget)) {
+      container.classList.remove('is-dragover');
       removeDropIndicator();
     }
   });
@@ -883,6 +895,7 @@ function renderContainerNode(node, wrapper) {
   container.addEventListener('drop', e => {
     e.preventDefault();
     e.stopPropagation();
+    container.classList.remove('is-dragover');
 
     const isVertical = node.type === 'stack';
     const insertIdx = getDropIndex(container, e, isVertical, canvasDragNodeId);
@@ -907,7 +920,6 @@ function renderContainerNode(node, wrapper) {
         // getDropIndex already skips the dragged item, so insertIdx
         // is relative to the array without it — no adjustment needed
         node.children.splice(insertIdx, 0, moved);
-        removeEmptyContainers(state.nodes);
         renderCanvas();
         return;
       }
@@ -1090,6 +1102,13 @@ function cleanUpContentEditable(el) {
       child.remove();
     }
   });
+  // Remove empty <p> tags (but keep at least one)
+  const paras = el.querySelectorAll('p');
+  paras.forEach(p => {
+    if (!p.textContent.trim() && !p.querySelector('img') && paras.length > 1) {
+      p.remove();
+    }
+  });
 }
 
 function escAttr(str) {
@@ -1120,15 +1139,11 @@ function updatePhotoField(id, field, value) {
   }
 }
 
-function removeEmptyContainers(nodes) {
-  for (let i = nodes.length - 1; i >= 0; i--) {
-    const n = nodes[i];
-    if (n.children) {
-      removeEmptyContainers(n.children);
-      if (n.children.length === 0) nodes.splice(i, 1);
-    }
-  }
-}
+
+
+// Remove empty containers without cascading — only removes containers
+// that are already empty, then stops. A parent that becomes empty because
+
 
 // ─── Add containers ─────────────────────────────────────
 function showAddMenu(e) {
