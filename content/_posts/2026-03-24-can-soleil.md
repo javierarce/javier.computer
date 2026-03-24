@@ -1,0 +1,166 @@
+---
+layout: reportage
+title: "Parc de Can Solei i Ca l'Arnús"
+hide_title: true
+date: "2026-03-23 00:00:00 +0200"
+category: reportage
+tag: photo
+location: badalona
+camera: Ricoh GR IIIx
+cover: 2026-03-21-Badalona-R0018693
+ratio: 3/2
+intro: >
+  El sábado pasado Erica y yo nos aventuramos en el mundo real y nos acercamos a Badalona a tomar un café. A la vuelta descubrimos un parque con mucho potencial fotográfico, el Parc de Can Solei i Can el Arnús.
+translation: >
+  Last Saturday, Erica and I ventured into the real world and went to Badalona for a coffee. On the way back, we discovered a park with great photographic potential: Parc de Can Solei i Can el Arnús.
+filenames:
+  - filename: 2026-03-21-Badalona-R0018583
+    ratio: 3/2
+  - filename: 2026-03-21-Badalona-R0018590
+    ratio: 3/2
+  - filename: 2026-03-21-Badalona-R0018591
+    ratio: 3/2
+  - filename: 2026-03-21-Badalona-R0018586
+    ratio: 3/2
+  - filename: 2026-03-21-Badalona-R0018802
+    ratio: 2/3
+  - filename: 2026-03-21-Badalona-R0018621
+    ratio: 2/3
+  - filename: 2026-03-21-Badalona-R0018616
+    ratio: 2/3
+  - filename: 2026-03-21-Badalona-R0018641
+    ratio: 3/2
+  - filename: 2026-03-21-Badalona-R0018650
+    ratio: 3/2
+  - filename: 2026-03-21-Badalona-R0018693
+    ratio: 3/2
+  - filename: 2026-03-21-Badalona-R0018695
+    ratio: 3/2
+  - filename: 2026-03-21-Badalona-R0018668
+    ratio: 2/3
+  - filename: 2026-03-21-Badalona-R0018713
+    ratio: 3/2
+  - filename: 2026-03-21-Badalona-R0018734
+    ratio: 3/2
+  - filename: 2026-03-21-Badalona-R0018742
+    ratio: 3/2
+  - filename: 2026-03-21-Badalona-R0018751
+    ratio: 2/3
+  - filename: 2026-03-21-Badalona-R0018749
+    ratio: 2/3
+  - filename: 2026-03-21-Badalona-R0018753
+    ratio: 3/2
+  - filename: 2026-03-21-Badalona-R0018771
+    ratio: 2/3
+  - filename: 2026-03-21-Badalona-R0018778
+    ratio: 2/3
+  - filename: 2026-03-21-Badalona-R0018774
+    ratio: 2/3
+  - filename: 2026-03-21-Badalona-R0018772
+    ratio: 3/2
+---
+
+{% text %}
+    <p>El sábado pasado <a href="https://www.ericafustero.com">Erica</a> y yo nos aventuramos en el mundo real y nos acercamos a Badalona a tomar un café. A la vuelta descubrimos un parque con mucho potencial fotográfico, el Parc de Can Solei i Ca l'Arnús.</p>
+    <p class="is-light">Last Saturday, Erica and I ventured into the real world and went to Badalona for a coffee. On the way back, we discovered a park with great photographic potential: Parc de Can Solei i Ca l'Arnús.</p>
+{% endtext %}
+
+{% stack %}
+    {% photo badalona 2026-03-21-Badalona-R0018583 3/2 %}
+{% endstack %}
+
+{% text %}
+    <p>Pero primero, un par de fotos de nuestro compañero de mesa en nuestra cafetería de confianza en Badalona, Amauta Coffee.</p>
+    <p class="is-light">But first, a couple of shots of our table companion at our go-to coffee shop in Badalona, Amauta Coffee.</p>
+{% endtext %}
+
+{% stack %}
+    {% row %}
+        {% photo badalona 2026-03-21-Badalona-R0018590 3/2 %}
+        {% photo badalona 2026-03-21-Badalona-R0018591 3/2 %}
+    {% endrow %}
+    {% photo badalona 2026-03-21-Badalona-R0018586 3/2 %}
+{% endstack %}
+
+{% text %}
+    <p>Después del café y antes&nbsp;del parque aproveché para continuar añadiendo especímenes a mi colección de <a href="https://javier.computer/doors">puertas adorables</a>.</p>
+    <p class="is-light">After the coffee and before the park, I took the opportunity to continue adding specimens to my collection of doors I adore.</p>
+{% endtext %}
+
+{% stack %}
+    {% row %}
+        {% photo badalona 2026-03-21-Badalona-R0018802 2/3 %}
+        {% photo badalona 2026-03-21-Badalona-R0018621 2/3 %}
+        {% photo badalona 2026-03-21-Badalona-R0018616 2/3 %}
+    {% endrow %}
+{% endstack %}
+
+{% stack %}
+    {% photo badalona 2026-03-21-Badalona-R0018641 3/2 %}
+{% endstack %}
+
+{% text %}
+    <p>Y aquí comienza la visita al parque, que cae justo en frente de otro de nuestros sitios favoritos: la urbanización Can Mercader.</p>
+    <p class="is-light">And here begins the visit to the park, located right across from another favorite spot of ours: the Can Mercader housing estate</p>
+{% endtext %}
+
+{% stack %}
+    {% photo badalona 2026-03-21-Badalona-R0018650 3/2 %}
+{% endstack %}
+
+{% stack %}
+    {% photo badalona 2026-03-21-Badalona-R0018693 3/2 %}
+{% endstack %}
+
+{% stack %}
+    {% photo badalona 2026-03-21-Badalona-R0018695 3/2 %}
+{% endstack %}
+
+{% stack %}
+    {% photo badalona 2026-03-21-Badalona-R0018668 2/3 %}
+{% endstack %}
+
+{% stack %}
+    {% photo badalona 2026-03-21-Badalona-R0018713 3/2 %}
+{% endstack %}
+
+{% text %}
+    <p>En el parque, aproveché para marcarme un <em>aiweiwei</em>.</p>
+    <p class="is-light">While in the park, I took the chance to pull an <em>aiweiwei</em>.</p>
+{% endtext %}
+
+{% stack %}
+    {% photo badalona 2026-03-21-Badalona-R0018734 3/2 %}
+{% endstack %}
+
+{% text %}
+    <p>Y una foto a Erica haciendo una foto.</p>
+    <p class="is-light">And a photo of Erica taking a photo.</p>
+{% endtext %}
+
+{% stack %}
+    {% photo badalona 2026-03-21-Badalona-R0018742 3/2 %}
+{% endstack %}
+
+{% row %}
+    {% photo badalona 2026-03-21-Badalona-R0018751 2/3 %}
+    {% photo badalona 2026-03-21-Badalona-R0018749 2/3 %}
+{% endrow %}
+
+{% stack %}
+    {% photo badalona 2026-03-21-Badalona-R0018753 3/2 %}
+{% endstack %}
+
+{% row %}
+    {% photo badalona 2026-03-21-Badalona-R0018771 2/3 %}
+    {% photo badalona 2026-03-21-Badalona-R0018778 2/3 %}
+{% endrow %}
+
+{% stack %}
+    {% photo badalona 2026-03-21-Badalona-R0018774 2/3 %}
+{% endstack %}
+
+{% stack %}
+    {% photo badalona 2026-03-21-Badalona-R0018772 3/2 %}
+{% endstack %}
+
