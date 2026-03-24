@@ -582,6 +582,7 @@ function getDropIndex(container, event, isVertical, skipId) {
 function positionIndicator(container, indicator, index, isVertical, skipId) {
   const children = Array.from(container.querySelectorAll(':scope > .node'))
     .filter(c => !skipId || c.dataset.id !== skipId);
+  const PAD = 4;
 
   if (isVertical) {
     let top;
@@ -589,9 +590,16 @@ function positionIndicator(container, indicator, index, isVertical, skipId) {
       top = 0;
     } else if (index >= children.length) {
       const last = children[children.length - 1];
-      top = last.offsetTop + last.offsetHeight;
+      top = last.offsetTop + last.offsetHeight + PAD;
+    } else if (index > 0) {
+      if (skipId) {
+        top = children[index].offsetTop - PAD;
+      } else {
+        const prev = children[index - 1];
+        top = Math.round((prev.offsetTop + prev.offsetHeight + children[index].offsetTop) / 2);
+      }
     } else {
-      top = children[index].offsetTop - 1;
+      top = children[index].offsetTop - PAD;
     }
     indicator.style.top = top + 'px';
     indicator.style.left = '0';
@@ -605,9 +613,16 @@ function positionIndicator(container, indicator, index, isVertical, skipId) {
       left = 0;
     } else if (index >= children.length) {
       const last = children[children.length - 1];
-      left = last.offsetLeft + last.offsetWidth;
+      left = last.offsetLeft + last.offsetWidth + PAD;
+    } else if (index > 0) {
+      if (skipId) {
+        left = children[index].offsetLeft - PAD;
+      } else {
+        const prev = children[index - 1];
+        left = Math.round((prev.offsetLeft + prev.offsetWidth + children[index].offsetLeft) / 2);
+      }
     } else {
-      left = children[index].offsetLeft - 1;
+      left = children[index].offsetLeft - PAD;
     }
     indicator.style.left = left + 'px';
     indicator.style.top = '0';
