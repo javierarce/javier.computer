@@ -98,6 +98,17 @@ button.is-danger:hover {
   background: rgba(198, 40, 40, 0.15);
 }
 
+#themeBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 8px;
+}
+
+#themeBtn svg {
+  display: block;
+}
+
 input,
 textarea,
 select {
@@ -160,6 +171,7 @@ textarea {
   padding: 10px 16px;
   background: var(--editor-surface);
   border-bottom: 1px solid var(--editor-border);
+  cursor: pointer;
 }
 
 .toolbar__title {
@@ -169,9 +181,20 @@ textarea {
   opacity: 0.6;
 }
 
+.toolbar__chevron {
+  color: var(--editor-fg-muted);
+  transition: transform 250ms ease;
+  flex-shrink: 0;
+}
+
+.toolbar__chevron.is-collapsed {
+  transform: rotate(-90deg);
+}
+
 .toolbar__group {
   display: flex;
   gap: 4px;
+  cursor: default;
 }
 
 /* ── Metadata Panel ───────────────────────────────────── */
@@ -378,7 +401,7 @@ textarea {
 .canvas {
   max-width: 1024px;
   margin: 0 auto;
-  padding: 32px 48px 120px;
+  padding: 48px 48px 120px;
   display: flex;
   flex-direction: column;
   gap: var(--gap-xl);
@@ -392,26 +415,29 @@ textarea {
   font-size: 0.95rem;
 }
 
-.canvas__add {
-  display: block;
-  margin: 12px auto 0;
-  background: none;
-  border: 1px dashed var(--editor-border);
-  color: var(--editor-fg-faint);
-  font-size: 20px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: color 150ms, border-color 150ms;
-  padding: 0;
-  line-height: 38px;
+.canvas__add-bar {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 12px;
 }
 
-.canvas__add:hover {
+.canvas__add-btn {
+  font-family: inherit;
+  font-size: 0.75rem;
+  padding: 5px 14px;
+  border: 1px dashed var(--editor-border);
+  background: none;
+  color: var(--editor-fg-faint);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 150ms, border-color 150ms, background 150ms;
+}
+
+.canvas__add-btn:hover {
   color: var(--editor-fg);
   border-color: var(--editor-border-hover);
-  background: none;
+  background: var(--editor-hover-bg);
 }
 
 /* ── Transitions ──────────────────────────────────────── */
@@ -439,16 +465,17 @@ textarea {
 
 .node__controls {
   position: absolute;
-  bottom: 100%;
+  bottom: calc(100% + 4px);
   left: 0;
   display: flex;
   align-items: center;
-  gap: 4px;
-  padding: 2px 4px;
+  gap: 6px;
+  padding: 4px 8px;
   opacity: 0;
   transition: opacity 150ms;
   z-index: 10;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--editor-surface);
+  border: 1px solid var(--editor-border);
   border-radius: 4px;
 }
 
@@ -457,10 +484,10 @@ textarea {
 }
 
 .node__label {
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  padding: 1px 6px;
+  padding: 2px 8px;
   border-radius: 3px;
   font-weight: 600;
 }
@@ -488,7 +515,7 @@ textarea {
 .node__btn {
   background: none;
   border: none;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--editor-fg-muted);
   font-size: 14px;
   cursor: pointer;
   padding: 2px 4px;
@@ -496,18 +523,56 @@ textarea {
 }
 
 .node__btn:hover {
-  color: #fff;
+  color: var(--editor-fg);
   background: none;
 }
 
 .node__handle {
   cursor: grab;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--editor-fg-faint);
   font-size: 14px;
 }
 
 .node__handle:hover {
-  color: #fff;
+  color: var(--editor-fg);
+}
+
+/* ── Ellipsis menu ────────────────────────────────────── */
+.node__menu-wrap {
+  position: relative;
+}
+
+.node__menu-btn {
+  background: none;
+  border: none;
+  color: var(--editor-fg-muted);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 2px 4px;
+  line-height: 1;
+}
+
+.node__menu-btn:hover {
+  color: var(--editor-fg);
+}
+
+.node__menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  background: var(--editor-surface);
+  border: 1px solid var(--editor-border);
+  border-radius: 4px;
+  padding: 6px;
+  z-index: 20;
+  min-width: 120px;
+}
+
+.node__menu.is-open {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 /* ── Class toggles ────────────────────────────────────── */
@@ -521,16 +586,16 @@ textarea {
   font-size: 0.6rem;
   padding: 1px 5px;
   border-radius: 3px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid var(--editor-border);
   background: transparent;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--editor-fg-muted);
   cursor: pointer;
 }
 
 .class-toggle.is-active {
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.5);
+  background: var(--editor-hover-bg);
+  color: var(--editor-fg);
+  border-color: var(--editor-border-hover);
 }
 
 /* ── Layout: stack, row, grid, text ───────────────────── */

@@ -11,13 +11,13 @@
 <!-- Header (toolbar + shelf) -->
 <div class="header" id="header">
 <!-- Toolbar -->
-<div class="toolbar">
+<div class="toolbar" id="toolbar" onclick="toggleShelf()">
   <span class="toolbar__title">Reportage Editor</span>
-  <div class="toolbar__group">
-    <button onclick="toggleShelf()" id="shelfBtn">Photos</button>
+  <svg class="toolbar__chevron" id="toolbarChevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 6 8 10 12 6"/></svg>
+  <div class="toolbar__group" onclick="event.stopPropagation()">
     <button onclick="toggleMeta()">Metadata</button>
   </div>
-  <div class="toolbar__group">
+  <div class="toolbar__group" onclick="event.stopPropagation()">
     <button onclick="newReportage()">New</button>
     <button onclick="importMarkdown()">Import</button>
     <button class="is-primary" onclick="exportMarkdown()">Export</button>
