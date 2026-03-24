@@ -861,6 +861,31 @@ textarea {
   display: none;
 }
 
+.text-translation {
+  margin-top: 4px;
+  border-style: dashed;
+  opacity: 0.7;
+}
+
+.text-translation:focus {
+  opacity: 1;
+}
+
+.text-translation:empty::before {
+  content: 'Write the translation here…';
+}
+
+.node__btn.is-translation {
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.5;
+}
+
+.node__btn.is-translation.is-active {
+  opacity: 1;
+  color: var(--purple);
+}
+
 /* ── Photo in canvas ──────────────────────────────────── */
 .photo-item {
   position: relative;
