@@ -543,12 +543,19 @@ textarea {
   min-height: 30px;
 }
 
-.stack-container:empty,
-.row-container:empty,
-.grid-container:empty {
+.stack-container.is-empty,
+.row-container.is-empty,
+.grid-container.is-empty {
   background: var(--editor-hover-bg);
   border-radius: 4px;
   border: 1px dashed var(--editor-border);
+}
+
+.stack-container.is-empty.is-dragover,
+.row-container.is-empty.is-dragover,
+.grid-container.is-empty.is-dragover {
+  border-color: var(--yellow);
+  background: rgba(255, 193, 7, 0.08);
 }
 
 .stack-container.has-margin-top {
@@ -594,7 +601,6 @@ textarea {
 
 .text-container {
   width: 100%;
-  padding: 2px 0 6px 8px;
 }
 
 .text-editable {
@@ -625,6 +631,10 @@ textarea {
 
 .text-editable p:last-child {
   margin-bottom: 0;
+}
+
+.text-editable p:empty {
+  display: none;
 }
 
 /* ── Photo in canvas ──────────────────────────────────── */
