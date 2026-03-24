@@ -264,7 +264,11 @@ function shelfDragOver(e) {
   document.getElementById('shelf').classList.add('is-dragover');
 }
 function shelfDragLeave(e) {
-  document.getElementById('shelf').classList.remove('is-dragover');
+  const shelf = document.getElementById('shelf');
+  if (!shelf.contains(e.relatedTarget)) {
+    shelf.classList.remove('is-dragover');
+    shelf.querySelectorAll('.shelf__reorder-indicator').forEach(el => el.remove());
+  }
 }
 function shelfDrop(e) {
   e.preventDefault();
@@ -756,10 +760,12 @@ let canvasDragNodeId = null;
   canvas.addEventListener('dragover', e => {
     // Only handle on the canvas itself, not inside containers
     if (e.target !== canvas && !e.target.classList.contains('canvas__empty') && !e.target.closest('.canvas__add-bar')) {
-      if (e.target.closest('[data-parent-id]')) { removeDropIndicator(); return; }
+      if (e.target.closest('[data-parent-id]') || e.target.closest('.node')) { removeDropIndicator(); return; }
     }
     e.preventDefault();
     e.dataTransfer.dropEffect = canvasDragNodeId ? 'move' : 'copy';
+    // Clean up any shelf indicators when dragging over canvas
+    document.querySelectorAll('.shelf__reorder-indicator').forEach(el => el.remove());
 
     const insertIdx = getDropIndex(canvas, e, true, canvasDragNodeId);
     showIndicatorIn(canvas, insertIdx, true, canvasDragNodeId);
@@ -772,7 +778,7 @@ let canvasDragNodeId = null;
   canvas.addEventListener('drop', e => {
     // Only handle if dropped on the canvas itself, not inside a container node
     if (e.target !== canvas && !e.target.classList.contains('canvas__empty') && !e.target.closest('.canvas__add-bar')) {
-      if (e.target.closest('[data-parent-id]')) { removeDropIndicator(); return; }
+      if (e.target.closest('[data-parent-id]') || e.target.closest('.node')) { removeDropIndicator(); return; }
     }
     e.preventDefault();
     e.stopPropagation();
