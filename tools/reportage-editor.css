@@ -95,6 +95,7 @@ button:disabled {
   pointer-events: none;
 }
 
+
 button.is-danger {
   border-color: var(--red);
   color: var(--red);
@@ -512,30 +513,6 @@ textarea {
   font-size: 0.95rem;
 }
 
-.canvas__add-bar {
-  display: flex;
-  justify-content: center;
-  gap: 6px;
-  margin-top: 12px;
-}
-
-.canvas__add-btn {
-  font-family: inherit;
-  font-size: 0.75rem;
-  padding: 5px 14px;
-  border: 1px dashed var(--editor-border);
-  background: none;
-  color: var(--editor-fg-faint);
-  border-radius: 4px;
-  cursor: pointer;
-  transition: color 150ms, border-color 150ms, background 150ms;
-}
-
-.canvas__add-btn:hover {
-  color: var(--editor-fg);
-  border-color: var(--editor-border-hover);
-  background: var(--editor-hover-bg);
-}
 
 /* ── Canvas inserter ──────────────────────────────────── */
 .canvas__inserter {

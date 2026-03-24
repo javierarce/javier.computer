@@ -808,32 +808,6 @@ function renderCanvas() {
     canvas.appendChild(createInserter(state.nodes.length));
   }
 
-  // Add block buttons at the bottom
-  const addBar = document.createElement('div');
-  addBar.className = 'canvas__add-bar';
-  ['stack', 'row', 'grid', 'text', 'photos'].forEach(type => {
-    const btn = document.createElement('button');
-    btn.className = 'canvas__add-btn';
-    btn.textContent = type.charAt(0).toUpperCase() + type.slice(1);
-    if (type === 'photos') {
-      btn.onclick = (e) => {
-        e.stopPropagation();
-        const input = document.getElementById('fileInput');
-        input.onchange = function() {
-          const stackNode = { id: uid(), type: 'stack', classes: [], children: [] };
-          state.nodes.push(stackNode);
-          addFilesToContainer(this.files, stackNode);
-          this.onchange = originalFileInputHandler;
-        };
-        input.click();
-      };
-    } else {
-      btn.onclick = (e) => { e.stopPropagation(); addTopLevelNode(type); };
-    }
-    addBar.appendChild(btn);
-  });
-  canvas.appendChild(addBar);
-
   updateCoverDropdown();
   updateShelfUsedState();
   saveState();
@@ -857,7 +831,7 @@ let canvasDragNodeId = null;
   canvas.addEventListener('dragover', e => {
     canvas.classList.add('is-dragging');
     // Only handle on the canvas itself, not inside containers
-    if (e.target !== canvas && !e.target.classList.contains('canvas__empty') && !e.target.closest('.canvas__add-bar') && !e.target.closest('.canvas__inserter')) {
+    if (e.target !== canvas && !e.target.classList.contains('canvas__empty') && !e.target.closest('.canvas__inserter')) {
       if (e.target.closest('[data-parent-id]') || e.target.closest('.node')) { removeDropIndicator(); return; }
     }
     e.preventDefault();
@@ -878,7 +852,7 @@ let canvasDragNodeId = null;
 
   canvas.addEventListener('drop', e => {
     // Only handle if dropped on the canvas itself, not inside a container node
-    if (e.target !== canvas && !e.target.classList.contains('canvas__empty') && !e.target.closest('.canvas__add-bar') && !e.target.closest('.canvas__inserter')) {
+    if (e.target !== canvas && !e.target.classList.contains('canvas__empty') && !e.target.closest('.canvas__inserter')) {
       if (e.target.closest('[data-parent-id]') || e.target.closest('.node')) { removeDropIndicator(); return; }
     }
     e.preventDefault();
