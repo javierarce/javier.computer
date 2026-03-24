@@ -1208,6 +1208,21 @@ function renderTextNode(node, wrapper) {
     <span class="node__handle" title="Drag to reorder">⠿</span>
     <span class="node__label">text</span>
   `;
+  const translationBtn = document.createElement('button');
+  translationBtn.className = 'node__btn is-translation' + (node.translation != null ? ' is-active' : '');
+  translationBtn.innerHTML = '译';
+  translationBtn.title = 'Toggle translation';
+  translationBtn.onclick = () => {
+    if (node.translation != null) {
+      delete node.translation;
+    } else {
+      node.translation = '';
+    }
+    renderCanvas();
+    saveState();
+  };
+  controls.appendChild(translationBtn);
+
   const delBtn = document.createElement('button');
   delBtn.className = 'node__btn is-delete';
   delBtn.innerHTML = '✕';
@@ -1305,6 +1320,70 @@ function renderTextNode(node, wrapper) {
   });
 
   container.appendChild(editable);
+
+  if (node.translation != null) {
+    const translationEditable = document.createElement('div');
+    translationEditable.className = 'text-editable text-translation';
+    translationEditable.contentEditable = true;
+
+    let thtml = node.translation || '';
+    if (thtml && !thtml.trim().startsWith('<')) {
+      thtml = thtml.split(/\n\n+/).map(p => `<p>${p.trim()}</p>`).join('');
+    }
+    translationEditable.innerHTML = thtml;
+
+    translationEditable.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        document.execCommand('insertParagraph', false);
+        return;
+      }
+      if ((e.metaKey || e.ctrlKey) && (e.key === 'b' || e.key === 'i')) {
+        e.preventDefault();
+        const sel = window.getSelection();
+        if (!sel.rangeCount || sel.isCollapsed) return;
+        const text = sel.getRangeAt(0).toString();
+        const marker = e.key === 'b' ? '**' : '*';
+        document.execCommand('insertText', false, `${marker}${text}${marker}`);
+        return;
+      }
+    });
+
+    translationEditable.addEventListener('paste', e => {
+      e.preventDefault();
+      const clipboard = e.clipboardData.getData('text/plain');
+      const sel = window.getSelection();
+      const hasSelection = sel.rangeCount && !sel.isCollapsed;
+      const trimmed = clipboard.trim();
+      if (hasSelection && trimmed.match(/^https?:\/\/\S+$/)) {
+        const text = sel.getRangeAt(0).toString();
+        document.execCommand('insertText', false, `[${text}](${trimmed})`);
+      } else {
+        document.execCommand('insertText', false, clipboard);
+      }
+    });
+
+    translationEditable.addEventListener('focus', () => {
+      if (!translationEditable.querySelector('p')) {
+        translationEditable.innerHTML = '<p><br></p>';
+        const sel = window.getSelection();
+        const range = document.createRange();
+        range.setStart(translationEditable.querySelector('p'), 0);
+        range.collapse(true);
+        sel.removeAllRanges();
+        sel.addRange(range);
+      }
+    });
+
+    translationEditable.addEventListener('blur', () => {
+      cleanUpContentEditable(translationEditable);
+      node.translation = translationEditable.innerHTML;
+      saveState();
+    });
+
+    container.appendChild(translationEditable);
+  }
+
   wrapper.appendChild(container);
   return wrapper;
 }
@@ -1635,11 +1714,26 @@ function renderNodeToLiquid(node, depth) {
       if (!el.textContent.trim() && !el.querySelector('img, br')) el.remove();
     });
     const cleaned = div.innerHTML.trim();
-    if (!cleaned) return '';
+
+    // Clean translation HTML if present
+    let translationCleaned = '';
+    if (node.translation != null) {
+      const tdiv = document.createElement('div');
+      tdiv.innerHTML = node.translation;
+      tdiv.querySelectorAll('p, div').forEach(el => {
+        if (!el.textContent.trim() && !el.querySelector('img, br')) el.remove();
+      });
+      // Add is-light class to each <p> in the translation
+      tdiv.querySelectorAll('p').forEach(p => p.classList.add('is-light'));
+      translationCleaned = tdiv.innerHTML.trim();
+    }
+
+    if (!cleaned && !translationCleaned) return '';
 
     // Indent the HTML content
     const innerIndent = indent + '    ';
-    const indented = cleaned.split('\n').map(line => {
+    const allHtml = [cleaned, translationCleaned].filter(Boolean).join('\n');
+    const indented = allHtml.split('\n').map(line => {
       const trimmed = line.trim();
       return trimmed ? innerIndent + trimmed : '';
     }).filter(Boolean).join('\n');
@@ -1842,7 +1936,23 @@ function parseTokens(tokens, closeTag) {
         }
         if (tokens.length) tokens.shift(); // consume endtext
         const classes = tok.params ? tok.params.split(/\s+/).filter(Boolean) : [];
-        nodes.push({ id: uid(), type: 'text', classes, html });
+        // Separate translation paragraphs (class="is-light") from main text
+        const tmpDiv = document.createElement('div');
+        tmpDiv.innerHTML = html;
+        const lightParas = tmpDiv.querySelectorAll('p.is-light');
+        let translation = undefined;
+        if (lightParas.length) {
+          const tDiv = document.createElement('div');
+          lightParas.forEach(p => {
+            p.classList.remove('is-light');
+            tDiv.appendChild(p);
+          });
+          translation = tDiv.innerHTML;
+          html = tmpDiv.innerHTML;
+        }
+        const textNode = { id: uid(), type: 'text', classes, html };
+        if (translation != null) textNode.translation = translation;
+        nodes.push(textNode);
       } else {
         const classes = tok.params ? tok.params.split(/\s+/).filter(Boolean) : [];
         const children = parseTokens(tokens, tok.tag);
