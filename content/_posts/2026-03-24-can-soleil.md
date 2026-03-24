@@ -2,7 +2,7 @@
 layout: reportage
 title: "Parc de Can Solei i Ca l'Arnús"
 hide_title: true
-date: "2026-03-23 00:00:00 +0200"
+date: "2026-03-24 18:00:00 +0200"
 category: reportage
 tag: photo
 location: badalona
@@ -10,9 +10,9 @@ camera: Ricoh GR IIIx
 cover: 2026-03-21-Badalona-R0018693
 ratio: 3/2
 intro: >
-  El sábado pasado Erica y yo nos aventuramos en el mundo real y nos acercamos a Badalona a tomar un café. A la vuelta descubrimos un parque con mucho potencial fotográfico, el Parc de Can Solei i Can el Arnús.
+  El sábado pasado Erica y yo nos aventuramos en el mundo real y nos acercamos a Badalona a tomar un café. A la vuelta descubrimos un parque con mucho potencial fotográfico, el Parc de Can Solei i Ca l'Arnús.
 translation: >
-  Last Saturday, Erica and I ventured into the real world and went to Badalona for a coffee. On the way back, we discovered a park with great photographic potential: Parc de Can Solei i Can el Arnús.
+  Last Saturday, Erica and I ventured into the real world and went to Badalona for a coffee. On the way back, we discovered a park with great photographic potential: Parc de Can Solei i Ca l'Arnús.
 filenames:
   - filename: 2026-03-21-Badalona-R0018583
     ratio: 3/2
