@@ -976,6 +976,56 @@ function renderContainerNode(node, wrapper) {
     controls.appendChild(menuWrap);
   }
 
+  // Move up button
+  const upBtn = document.createElement('button');
+  upBtn.className = 'node__btn is-move';
+  upBtn.innerHTML = '↑';
+  upBtn.title = 'Move up';
+  upBtn.onclick = (e) => {
+    e.stopPropagation();
+    const info = findParent(node.id);
+    if (!info) return;
+    const idx = info.list.findIndex(n => n.id === node.id);
+    if (idx > 0) {
+      const oldRect = wrapper.getBoundingClientRect();
+      const offsetFromBottom = window.innerHeight - oldRect.top;
+      [info.list[idx - 1], info.list[idx]] = [info.list[idx], info.list[idx - 1]];
+      renderCanvas();
+      const el = document.querySelector(`.node[data-id="${node.id}"]`);
+      if (el) {
+        const newRect = el.getBoundingClientRect();
+        const drift = newRect.top - (window.innerHeight - offsetFromBottom);
+        window.scrollBy({ top: drift, behavior: 'smooth' });
+      }
+    }
+  };
+  controls.appendChild(upBtn);
+
+  // Move down button
+  const downBtn = document.createElement('button');
+  downBtn.className = 'node__btn is-move';
+  downBtn.innerHTML = '↓';
+  downBtn.title = 'Move down';
+  downBtn.onclick = (e) => {
+    e.stopPropagation();
+    const info = findParent(node.id);
+    if (!info) return;
+    const idx = info.list.findIndex(n => n.id === node.id);
+    if (idx < info.list.length - 1) {
+      const oldRect = wrapper.getBoundingClientRect();
+      const offsetFromBottom = window.innerHeight - oldRect.top;
+      [info.list[idx], info.list[idx + 1]] = [info.list[idx + 1], info.list[idx]];
+      renderCanvas();
+      const el = document.querySelector(`.node[data-id="${node.id}"]`);
+      if (el) {
+        const newRect = el.getBoundingClientRect();
+        const drift = newRect.top - (window.innerHeight - offsetFromBottom);
+        window.scrollBy({ top: drift, behavior: 'smooth' });
+      }
+    }
+  };
+  controls.appendChild(downBtn);
+
   // Delete button
   const delBtn = document.createElement('button');
   delBtn.className = 'node__btn is-delete';
