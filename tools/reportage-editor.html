@@ -18,9 +18,8 @@
     </button>
   </div>
   <div class="toolbar__group">
-    <button onclick="newReportage()">New</button>
-    <button onclick="importMarkdown()">Import</button>
-    <button class="is-primary" onclick="exportMarkdown()">Export</button>
+    <button class="is-primary" onclick="newReportage()">New</button>
+    <button onclick="openMarkdownModal()">Markdown</button>
     <button onclick="toggleSidebar()" id="sidebarToggleBtn" class="toolbar__icon-btn" title="Toggle settings sidebar">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
     </button>
@@ -106,36 +105,19 @@
 <!-- Context Menu -->
 <div class="context-menu" id="contextMenu"></div>
 
-<!-- Export Modal -->
-<div class="modal-overlay" id="exportModal">
+<!-- Markdown Modal -->
+<div class="modal-overlay" id="markdownModal" onmousedown="if(event.target===this)closeMarkdownModal()">
   <div class="modal">
     <div class="modal__header">
-      <h3>Export Markdown</h3>
-      <button onclick="closeExportModal()">✕</button>
+      <h3>Markdown</h3>
+      <button onclick="closeMarkdownModal()">✕</button>
     </div>
     <div class="modal__body">
-      <textarea class="export-output" id="exportOutput" readonly></textarea>
+      <textarea class="export-output" id="markdownOutput" placeholder="Paste your reportage markdown here to import..."></textarea>
     </div>
     <div class="modal__footer">
-      <button onclick="closeExportModal()">Close</button>
-      <button class="is-primary" onclick="copyExport()">Copy to clipboard</button>
-    </div>
-  </div>
-</div>
-
-<!-- Import Modal -->
-<div class="modal-overlay" id="importModal">
-  <div class="modal">
-    <div class="modal__header">
-      <h3>Import Markdown</h3>
-      <button onclick="closeImportModal()">✕</button>
-    </div>
-    <div class="modal__body">
-      <textarea class="export-output" id="importInput" placeholder="Paste your reportage markdown here..."></textarea>
-    </div>
-    <div class="modal__footer">
-      <button onclick="closeImportModal()">Cancel</button>
-      <button class="is-primary" onclick="doImport()">Import</button>
+      <button id="importBtn" onclick="doImportFromModal()" disabled>Import</button>
+      <button class="is-primary" onclick="copyMarkdown()">Copy to clipboard</button>
     </div>
   </div>
 </div>
