@@ -6,7 +6,6 @@
   --black: #020b19;
   --black-pure: #000000;
   --gray: rgba(255, 255, 255, 0.3);
-  --gray2: #eeeeee;
 
   --purple: #ae81ff;
 
@@ -41,6 +40,9 @@
   --color-border-muted: rgba(255, 255, 255, var(--op-4)); /* stronger borders on dark bg */
   --color-bg-hover: rgba(255, 255, 255, var(--op-1)); /* hover bg on dark */
   --color-bg-active: rgba(255, 255, 255, var(--op-2)); /* active bg on dark */
+
+  --color-caption: rgba(255, 255, 255, 0.5);
+  --color-map-background: #eeeeee;
 
   --color-book-purple: #6a1b9a;
   --color-book-yellow: var(--orange-yellow);

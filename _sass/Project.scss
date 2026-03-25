@@ -87,6 +87,11 @@
     .photo__caption {
       display: block;
       width: var(--width-full);
+      max-width: 900px;
+      text-align: center;
+      margin: var(--gap-md) auto 0 auto;
+      color: var(--color-caption);
+      line-height: 1.5;
     }
   }
 
