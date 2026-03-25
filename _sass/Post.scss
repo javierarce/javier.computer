@@ -225,5 +225,9 @@
     &__content a[href^="/maps"]:after {
       height: 18px;
     }
+
+    &__content p {
+      width: auto;
+    }
   }
 }
