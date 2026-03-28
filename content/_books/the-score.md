@@ -6,5 +6,5 @@ started: '2026-03-28'
 read: null
 status: reading
 pages: 368
-progress: 11
+progress: 13
 ---
