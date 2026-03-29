@@ -33,7 +33,7 @@
 {% for location in unique_locations -%}
 
 {% assign matching_location = site.locations | where: "location", location | first -%}
-<a href="/maps/{{ location }}" class="post__location">{{ matching_location.title }}</a>{% unless forloop.last -%}
+<a href="/in/{{ location }}" class="post__location">{{ matching_location.title }}</a>{% unless forloop.last -%}
 {% endunless -%}
 {% endfor -%}
 {% endif -%}

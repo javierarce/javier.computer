@@ -167,6 +167,11 @@ class Map extends Base {
 
   fitBoundsToMarkers() {
     const latlngs = this.getMarkers().map((marker) => marker.getLatLng());
+    if (this.postMarkers) {
+      this.postMarkers.getLayers().forEach((marker) => {
+        latlngs.push(marker.getLatLng());
+      });
+    }
     this.map.fitBounds(L.latLngBounds(latlngs));
   }
 
@@ -241,6 +246,51 @@ class Map extends Base {
 
     this.markers = L.layerGroup(markers);
     this.markers.addTo(this.map);
+  }
+
+  renderGeotaggedPosts(geotaggedPosts) {
+    if (!geotaggedPosts || !geotaggedPosts.length) return;
+
+    let markers = [];
+
+    geotaggedPosts.forEach((group) => {
+      const marker = this.createPostMarker(group);
+      markers.push(marker);
+    });
+
+    this.postMarkers = L.layerGroup(markers);
+    this.postMarkers.addTo(this.map);
+  }
+
+  createPostMarker(group) {
+    const latlng = group.latlng;
+    const posts = group.posts;
+
+    const icon = new L.divIcon({
+      className: "marker marker--post",
+      html: "",
+      iconSize: [20, 20],
+      iconAnchor: new L.Point(10, 10),
+    });
+
+    const popup = new Popup(latlng, {
+      title: "Posts sobre este lugar",
+      description: this.buildPostPopupHTML(posts),
+    });
+
+    const marker = L.marker(latlng, { icon, isPostMarker: true });
+    marker.bindPopup(popup.render(), { maxWidth: "auto" });
+    return marker;
+  }
+
+  buildPostPopupHTML(posts) {
+    if (posts.length === 1) {
+      return `<a href="${posts[0].url}">${posts[0].title}</a>`;
+    }
+    const items = posts
+      .map((p) => `<li><a href="${p.url}">${p.title}</a></li>`)
+      .join("");
+    return `<ul>${items}</ul>`;
   }
 
   flattenCoordinates(coordinates) {
@@ -379,6 +429,7 @@ class App {
     this.map = new Map({ lng, lat, zoom });
 
     this.locations = locations;
+    this.geotaggedPosts = typeof geotaggedPosts !== "undefined" ? geotaggedPosts : [];
 
     this.locations.forEach((location, index) => {
       location.id = index + 1;
@@ -526,6 +577,7 @@ class App {
   render() {
     this.map.render();
     this.map.renderLocations(this.locations);
+    this.map.renderGeotaggedPosts(this.geotaggedPosts);
     this.map.show();
   }
 }

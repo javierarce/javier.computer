@@ -29,6 +29,22 @@ category: posts
     </div>
   </div>
 
+  <div class="tags">
+    <h2 class="tags__title">Ciudades</h2>
+
+    <div class="tags__list">
+      {% for location in site.locations -%}
+      {% assign post_count = site.posts | where: "location", location.location | size -%}
+      {% if post_count > 0 -%}
+      <div class="tags__listItem">
+        <a href="/in/{{ location.location }}">{{ location.title }}</a>
+        <span class="is-light is-sm">({{ post_count }})</span>
+      </div>
+      {% endif -%}
+      {% endfor -%}
+    </div>
+  </div>
+
 
     {% for post in site.posts -%}
     {% assign current_year = post.date | date: "%Y" -%}
