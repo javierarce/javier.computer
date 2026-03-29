@@ -261,6 +261,7 @@ module Jekyll
         rss_file_path = File.join(feeds_dir, "#{location}.rss")
 
         rss_content = rss.to_s.encode('UTF-8')
+          .sub('?>', "?>\n<?xml-stylesheet href=\"/feed-places.xsl\" type=\"text/xsl\"?>")
 
         # Only write if content has changed
         if File.exist?(rss_file_path)
