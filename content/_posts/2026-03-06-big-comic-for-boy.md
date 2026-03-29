@@ -42,6 +42,8 @@ filenames:
     ratio: 2/3
   - filename: 2026-03-06-Barcelona-R0018026
     ratio: 2/3
+places:
+  - terranova
 ---
 
 Fotos de la presentación del fanzine de [Andrés Magán](https://www.instagram.com/a.mag.an) [Big Comic for
