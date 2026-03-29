@@ -9,7 +9,7 @@ category: posts
   <div class="post h-entry">
     <span class="p-author h-card" style="display:none">{{ site.author }}</span>
     <a href="{{ page.url }}" class="p-name" style="display:none">{{ page.title }}</a>
-    <div class="post__content{% if page.extraClassName -%} {{ page.extraClassName }}{% endif -%} e-content">
+    <div class="post__content{% if page.extraClassName %} {{ page.extraClassName }}{% endif %} e-content">
       {{ content }}
     </div>
 
