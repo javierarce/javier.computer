@@ -40,6 +40,11 @@ camera:
 hide_title: true
 show_content: true
 tag: photo
+syndication:
+  - https://bsky.app/profile/javier.bsky.social/post/3ldg4bkvwks2j
+  - https://bsky.app/profile/javier.bsky.social/post/3lgpqekka522a
+  - https://mastodon.social/@javierarce/113663609809087537
+  - https://mastodon.social/@javierarce/113899870025031899
 ---
 
 {% stack %}

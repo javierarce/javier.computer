@@ -104,6 +104,9 @@ filenames:
     location: analog
     caption:
     ratio: 2/3
+syndication:
+  - https://bsky.app/profile/javier.bsky.social/post/3lxcc3gotvs25
+  - https://mastodon.social/@javierarce/115094255986653606
 ---
 
 Primero me compré una [Ricoh

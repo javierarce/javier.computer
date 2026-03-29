@@ -124,6 +124,9 @@ filenames:
   - filename: 2025-07-20-Berlin-R0013461
     caption:
     ratio: 3/2
+syndication:
+  - https://bsky.app/profile/javier.bsky.social/post/3lukpdvvoak2e
+  - https://mastodon.social/@javierarce/114896396830175301
 ---
 
 {% text %}

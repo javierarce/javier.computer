@@ -43,6 +43,8 @@ filenames:
 camera: Fuji X-T5
 hide_title: true
 show_content: true
+syndication:
+  - https://mastodon.social/@javierarce/113338767957609382
 ---
 
 Fotos de mi visita a [Las Tres Chimeneas](https://www.manifesta15.org/es/sedes/las-tres-chimeneas) de Sant Adrià de Besòs.

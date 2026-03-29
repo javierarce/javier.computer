@@ -21,6 +21,8 @@ filenames:
 camera: Fuji X-T5
 hide_title: true
 show_content: true
+syndication:
+  - https://mastodon.social/@javierarce/113391335340550947
 ---
 
 Esta mañana, aprovechando nuestros respectivos _impasses_ laborales,
