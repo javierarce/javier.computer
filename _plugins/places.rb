@@ -221,7 +221,7 @@ module Jekyll
 
         rss = RSS::Maker.make("2.0") do |maker|
           maker.channel.title = "Feed de lugares de #{location.capitalize}"
-          maker.channel.link = "#{site.config['url']}/feeds/#{location}.rss"
+          maker.channel.link = "#{site.config['url']}/feeds/#{location}.xml"
           maker.channel.language = "es"
           maker.channel.description = "Sitios en #{location}"
           maker.channel.updated = most_recent_update.iso8601
@@ -258,7 +258,7 @@ module Jekyll
           end
         end
 
-        rss_file_path = File.join(feeds_dir, "#{location}.rss")
+        rss_file_path = File.join(feeds_dir, "#{location}.xml")
 
         rss_content = rss.to_s.encode('UTF-8')
           .sub('?>', "?>\n<?xml-stylesheet href=\"/feed-places.xsl\" type=\"text/xsl\"?>")

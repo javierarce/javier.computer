@@ -42,11 +42,6 @@ show_home_comments: false
 include: [".well-known"]
 exclude: ["_data/locations/*"]
 
-webrick:
-  headers:
-    "*.rss":
-      Content-Type: "application/rss+xml; charset=utf-8"
-
 sass:
   load_paths:
     - _sass

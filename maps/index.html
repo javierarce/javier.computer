@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
   {% assign location_count = locations | size %}
   {% if location_count > 0 %}
   <li>
-    <div class="maps__title"><a href="/{{ map.permalink }}">{{ map.title}}</a><a href="/feeds/{{ map.location }}.rss" class="maps__rss"><span class="icon icon-rss"></span></a></div>
+    <div class="maps__title"><a href="/{{ map.permalink }}">{{ map.title}}</a><a href="/feeds/{{ map.location }}.xml" class="maps__rss"><span class="icon icon-rss"></span></a></div>
     <div class="maps__list-locations">
       {% for location in locations %}
       <a href="/{{ map.permalink }}/{{ location.pid }}">{{ location.title }}</a>{% unless forloop.last %} &middot; {%
