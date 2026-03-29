@@ -2,7 +2,7 @@
 layout: place
 title: "Amauta Coffee"
 pid: amauta
-description: Cafetería de especialidad en Badalona
+description: "Cafetería de especialidad en Badalona que también cuenta con un local en Barcelona."
 address: Carrer del Carme, 53
 latlng:
 - 41.450064749267256
