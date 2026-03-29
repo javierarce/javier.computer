@@ -19,6 +19,11 @@
     <a href="{{ post.url }}" class="post__date dt-published u-url">
       {% include date.html date=post.date -%}
     </a>
+    {% if post.syndication -%}
+      {% for url in post.syndication -%}
+        <a href="{{ url }}" class="u-syndication" rel="syndication" style="display:none"></a>
+      {% endfor -%}
+    {% endif -%}
     {% include post/locations.html page=post -%}
 
     {% if site.show_home_likes %}
