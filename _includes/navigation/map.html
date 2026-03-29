@@ -1,7 +1,7 @@
 {% assign matching_location = site.locations | where: "location", page.location | first %}
 
 <div class="navigation__links">
-  <a class="navigation__link" href="/maps">Cities</a>
+  <a class="navigation__link" href="/maps">Ciudades</a>
   <a class="navigation__link is-selected" href="/maps/{{ page.location }}">{{ matching_location.title }}</a>
   <a class="navigation__link" href="/assets/maps/{{ page.location }}.csv">CSV</a>
   <a class="navigation__link" href="/feeds/{{ page.location }}.xml">RSS</a>

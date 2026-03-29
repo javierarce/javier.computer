@@ -3,11 +3,31 @@
     "layout": "place",
     "title": "Amauta Coffee",
     "pid": "amauta",
-    "description": "<p>Cafetería de especialidad en Badalona</p>\n",
+    "description": "<p>Cafetería de especialidad en Badalona que también cuenta con un local en Barcelona.</p>\n",
     "address": "Carrer del Carme, 53",
     "latlng": [
       41.450064749267256,
       2.2508383018008424
+    ],
+    "location": "badalona",
+    "last_updated": "2026-03-24T17:00:00+01:00",
+    "post_references": [
+      {
+        "url": "/2026/03/24/can-solei",
+        "title": "Parc de Can Solei i Ca l'Arnús",
+        "date": "2026-03-24 17:00:00 +0100"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "title": "Parc de Can Solei i Ca l'Arnús",
+    "pid": "parc-de-can-solei",
+    "description": "<p>Fantástico parque cerca del centro de la ciudad con multitud de espacios diferentes, incluyendo un castillo en un lago, una torre del reloj, un huerto, un mirador.</p>\n",
+    "address": "Av. Navarra, 205I",
+    "latlng": [
+      41.456689232292014,
+      2.2527243644814563
     ],
     "location": "badalona",
     "last_updated": "2026-03-24T17:00:00+01:00",
