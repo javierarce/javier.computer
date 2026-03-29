@@ -8,7 +8,7 @@ category: videos
   {% include navigation.html -%}
 
   <div class="post">
-    <div class="post__content{% if page.extraClassName -%} {{ page.extraClassName }}{% endif -%}">
+    <div class="post__content{% if page.extraClassName %} {{ page.extraClassName }}{% endif %} e-content">
       {% include video.html url=page.src -%}
       {{ content }}
     </div>
