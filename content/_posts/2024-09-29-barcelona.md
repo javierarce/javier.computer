@@ -19,4 +19,6 @@ filenames:
   - filename: 2024-09-28-Barcelona-R0009077
     ratio: 2/3
 camera: Ricoh GR IIIx
+syndication:
+  - https://mastodon.social/@javierarce/113226005940051394
 ---

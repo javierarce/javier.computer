@@ -27,6 +27,8 @@ camera:
   - Ricoh GR IIIx
 hide_title: true
 show_content: true
+syndication:
+  - https://mastodon.social/@javierarce/113474825427315040
 ---
 
 El fin de semana pasado estuve en Zaragoza por primera vez. Aproveché la visita
