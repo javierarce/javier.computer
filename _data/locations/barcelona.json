@@ -1,6 +1,80 @@
 [
   {
     "layout": "place",
+    "title": "Llibreria Terranova",
+    "pid": "terranova",
+    "description": "<p>Librería favoritísima</p>\n",
+    "address": "Carrer del Comte Borrell, 99",
+    "latlng": [
+      41.379582775455034,
+      2.159436667846462
+    ],
+    "location": "barcelona",
+    "updated_at": "2026-03-29",
+    "last_updated": "2026-03-29T00:00:00+00:00",
+    "post_references": [
+      {
+        "url": "/2026/03/06/big-comic-for-boy",
+        "title": "Big Comic for Boy",
+        "date": "2026-03-06 00:00:00 +0100"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "title": "El Noa Noa",
+    "pid": "noanoa",
+    "description": "<p>Una cafetería-librería con cafés y libros.</p>\n",
+    "address": "Carrer de Torrijos, 22",
+    "latlng": [
+      41.403156276444605,
+      2.159198194771789
+    ],
+    "location": "barcelona",
+    "updated_at": "2024-10-07",
+    "last_updated": "2026-03-11T22:26:44+01:00",
+    "post_references": [
+      {
+        "url": "/2022/04/28/pegatinas",
+        "title": "Pegatinas",
+        "date": "2022-04-28 21:58:21 +0200"
+      },
+      {
+        "url": "/2026/03/11/graf",
+        "title": "Graf",
+        "date": "2026-03-11 22:26:44 +0100"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "title": "SlowMov",
+    "pid": "slowmov",
+    "emoji": "☕️",
+    "description": "<p>Mi cafetería de cabecera en el barrio.</p>\n",
+    "address": "Carrer de Luis Antúnez, 18",
+    "latlng": [
+      41.39821818545401,
+      2.1548143969966884
+    ],
+    "location": "barcelona",
+    "updated_at": "2024-10-07",
+    "last_updated": "2026-03-11T22:26:44+01:00",
+    "post_references": [
+      {
+        "url": "/2022/04/28/pegatinas",
+        "title": "Pegatinas",
+        "date": "2022-04-28 21:58:21 +0200"
+      },
+      {
+        "url": "/2026/03/11/graf",
+        "title": "Graf",
+        "date": "2026-03-11 22:26:44 +0100"
+      }
+    ]
+  },
+  {
+    "layout": "place",
     "pid": "cero-tres-cinco",
     "title": "035//BAR",
     "description": "<p>Maravilloso bar que acogía cenas popup igualmente maravillosas. Cerró en 2024. RIP.</p>\n",
@@ -38,14 +112,13 @@
   },
   {
     "layout": "place",
-    "title": "El Noa Noa",
-    "emoji": "☕️",
-    "pid": "noanoa-2",
-    "description": "<p>Versión maxi del Noa Noa de Gràcia, con más espacio, más mesas y más opciones para comer y beber. Y en el momento de escribir estas líneas, es una buena opción para pasar un rato íntimo con el ordenador.</p>\n",
-    "address": "Carrer de Villarroel, 71",
+    "title": "Amateur",
+    "pid": "amateur",
+    "address": "Carrer de Llull, 101",
+    "description": "<p>Yet another sitio de vinos naturales en Poblenou y comida rica para picar.</p>\n",
     "latlng": [
-      41.38387661698233,
-      2.1586243260297446
+      41.396904435535205,
+      2.1966596217800127
     ],
     "location": "barcelona",
     "updated_at": "2024-11-26",
@@ -70,18 +143,40 @@
   },
   {
     "layout": "place",
-    "title": "Amateur",
-    "pid": "amateur",
-    "address": "Carrer de Llull, 101",
-    "description": "<p>Yet another sitio de vinos naturales en Poblenou y comida rica para picar.</p>\n",
+    "title": "El Noa Noa",
+    "emoji": "☕️",
+    "pid": "noanoa-2",
+    "description": "<p>Versión maxi del Noa Noa de Gràcia, con más espacio, más mesas y más opciones para comer y beber. Y en el momento de escribir estas líneas, es una buena opción para pasar un rato íntimo con el ordenador.</p>\n",
+    "address": "Carrer de Villarroel, 71",
     "latlng": [
-      41.396904435535205,
-      2.1966596217800127
+      41.38387661698233,
+      2.1586243260297446
     ],
     "location": "barcelona",
     "updated_at": "2024-11-26",
     "last_updated": "2024-11-26T00:00:00+00:00",
     "post_references": []
+  },
+  {
+    "layout": "place",
+    "title": "Centre de Cultura Contemporània de Barcelona",
+    "pid": "cccb",
+    "description": "<p>Centro cultural y centro de artes creativas con teatro, galerías de exposiciones y salas de conferencias</p>\n",
+    "address": "Carrer de Montalegre, 5",
+    "latlng": [
+      41.38438058272032,
+      2.1666050079501575
+    ],
+    "location": "barcelona",
+    "updated_at": "2024-10-07",
+    "last_updated": "2024-10-07T00:00:00+00:00",
+    "post_references": [
+      {
+        "url": "/2022/12/04/constelacion-grafica",
+        "title": "Constelación Gráfica",
+        "date": "2022-12-04 22:59:43 +0100"
+      }
+    ]
   },
   {
     "layout": "place",
@@ -322,27 +417,6 @@
   },
   {
     "layout": "place",
-    "title": "Centre de Cultura Contemporània de Barcelona",
-    "pid": "cccb",
-    "description": "<p>Centro cultural y centro de artes creativas con teatro, galerías de exposiciones y salas de conferencias</p>\n",
-    "address": "Carrer de Montalegre, 5",
-    "latlng": [
-      41.38438058272032,
-      2.1666050079501575
-    ],
-    "location": "barcelona",
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
-    "post_references": [
-      {
-        "url": "/2022/12/04/constelacion-grafica",
-        "title": "Constelación Gráfica",
-        "date": "2022-12-04 22:59:43 +0100"
-      }
-    ]
-  },
-  {
-    "layout": "place",
     "pid": "mikan",
     "title": "MIKAN",
     "description": "<p>Vinos naturales y gastronomía del noroeste asiático (China, Japón, Corea) con opciones vegetarianas y veganas. Menú del día a mediodía y bar de vinos y platos para compartir por la noche.</p>\n",
@@ -358,153 +432,14 @@
   },
   {
     "layout": "place",
-    "title": "Zumzeig Cinema",
-    "pid": "zumzeig",
-    "emoji": "🍿",
-    "description": "<p>Sala de cine cooperativa y sin ánimo de lucro, con una programación principalmente indie en VO.</p>\n",
-    "address": "Carrer de Béjar, 53",
-    "latlng": [
-      41.378023248824405,
-      2.1448554232917982
-    ],
-    "location": "barcelona",
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
-    "post_references": [
-      {
-        "url": "/2023/04/07/all-the-beauty-and-the-bloodshed",
-        "title": "All The Beauty And The Bloodshed",
-        "date": "2023-04-07 00:35:31 +0200"
-      }
-    ]
-  },
-  {
-    "layout": "place",
-    "title": "Vereda Bar",
-    "pid": "vereda",
-    "description": "<p>Platos de proximidad y temporada y vinos naturales.</p>\n",
-    "address": "Carrer de la Diputació, 155",
-    "latlng": [
-      41.38460297818277,
-      2.1578119926085177
-    ],
-    "location": "barcelona",
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
-    "post_references": [
-      {
-        "url": "/2023/05/04/open-heart-protocol",
-        "title": "Open Heart Protocol",
-        "date": "2023-05-04 22:57:54 +0200"
-      }
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "tramendu",
-    "title": "Tramendu",
-    "description": "<p>El nombre completo del sitio es “Tramendu. Ens agrada el vermuting” (no confundir con “Tramendu. Encenem els fogons” que está en la misma calle y no he probado). Si lees las críticas en Google Maps verás que la mayoría comentan lo rica que está la comida, lo encantador que es el personal, y lo económico que es el precio. Pues eso.</p>\n",
-    "address": "Passatge d'Andalusia, 8",
-    "latlng": [
-      41.370565789006044,
-      2.1336241407692733
-    ],
-    "location": "barcelona",
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "tokyo-ya",
-    "title": "Tokyo-Ya",
-    "description": "<p>¿Fantástico y bien surtido súper japonés? Sí.</p>\n",
-    "address": "Carrer de Balmes, 197",
-    "latlng": [
-      41.40031912503507,
-      2.1523378229426
-    ],
-    "location": "barcelona",
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "tofu-catalan",
-    "title": "Tofu Catalán",
-    "description": "<p>Pequeño deli donde comprar tofu fresco, bentos y otros productos japoneses.</p>\n",
-    "address": "Carrer d'Aribau, 119",
-    "latlng": [
-      41.391171858311,
-      2.1556111101123
-    ],
-    "location": "barcelona",
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "the-green-spot",
-    "title": "The Green Spot",
-    "description": "<p>Vegetariano bonito y rico en la Barceloneta. ¿Qué me gustó de aquí? La colifor empanada, el plato de tempeh y el risotto de 7 verdes.</p>\n",
-    "address": "Carrer de la Reina Cristina, 12",
-    "latlng": [
-      41.381787821227704,
-      2.1839794830047263
-    ],
-    "location": "barcelona",
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "taulat-44",
-    "title": "Taulat 44",
-    "description": "<p>Deli trendy en Poblenou, con todo lo que eso significa (lo que significa es que va gente trendy… con todo lo que eso significa, etcétera).</p>\n",
-    "address": "Carrer del Taulat, 44",
-    "latlng": [
-      41.398995319447366,
-      2.205068600770623
-    ],
-    "location": "barcelona",
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "title": "SlowMov",
-    "pid": "slowmov",
+    "title": "Onis Coffee",
+    "pid": "onis",
     "emoji": "☕️",
-    "description": "<p>Mi cafetería de cabecera en el barrio.</p>\n",
-    "address": "Carrer de Luis Antúnez, 18",
+    "description": "<p>Diminuta cafetería estratégicamente situada en Dreta de l’Eixample como un oasis en el desierto.</p>\n",
+    "address": "Carrer de Roger de Llúria, 87",
     "latlng": [
-      41.39821818545401,
-      2.1548143969966884
-    ],
-    "location": "barcelona",
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
-    "post_references": [
-      {
-        "url": "/2022/04/28/pegatinas",
-        "title": "Pegatinas",
-        "date": "2022-04-28 21:58:21 +0200"
-      }
-    ]
-  },
-  {
-    "layout": "place",
-    "title": "Sato ト Tanaka",
-    "pid": "sato",
-    "description": "<p>Barra japonesa atendida por dos sushimanes que ofrece dos menús degustación. Difícil conseguir reserva, muy fácil querer volver al salir por la puerta.</p>\n",
-    "address": "Carrer del Bruc, 79",
-    "latlng": [
-      41.394977701949294,
-      2.168945380457328
+      41.39524373651066,
+      2.1660161807639344
     ],
     "location": "barcelona",
     "updated_at": "2024-10-07",
@@ -519,34 +454,41 @@
   },
   {
     "layout": "place",
-    "title": "Santa Mònica",
-    "pid": "santa-monica",
-    "description": "<p>Centro interdisciplinario de artes dedicado a impulsar la creación contemporánea</p>\n",
-    "address": "La Rambla, 7",
+    "title": "Orval",
+    "pid": "orval",
+    "emoji": "☕️",
+    "description": "<p>Cafetería favorita en la zona. Alerta de kimcheese.</p>\n",
+    "address": "Carrer de Buenaventura Muñoz, 31",
     "latlng": [
-      41.377393737045395,
-      2.1756821241850046
+      41.392732992085215,
+      2.1858767125397236
     ],
     "location": "barcelona",
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": [
       {
-        "url": "/2022/12/10/retallar-i-enganxar",
-        "title": "Retallar i enganxar",
-        "date": "2022-12-10 22:30:27 +0100"
+        "url": "/2022/09/26/atrapado-en-un-grupo-de-telegram",
+        "title": "Atrapado en Telegram",
+        "date": "2022-09-26 23:32:23 +0200"
+      },
+      {
+        "url": "/2022/12/04/constelacion-grafica",
+        "title": "Constelación Gráfica",
+        "date": "2022-12-04 22:59:43 +0100"
       }
     ]
   },
   {
     "layout": "place",
-    "title": "Restaurant Santa Magdalena",
-    "pid": "santa-magdalena",
-    "description": "<p>Cuina de barri. El entrepà de berenjena, tomate y mozzarella estaba muy rico.</p>\n",
-    "address": "Carrer de Sta. Magdalena, 6",
+    "pid": "pecora",
+    "title": "Pècora",
+    "emoji": "☕️",
+    "description": "<p>Buena y bonita cafetería de especialidad a un tiro de manzana de Frutas Selectas. También tienen cosas dulces para comer.</p>\n",
+    "address": "Carrer de Pujades, 113",
     "latlng": [
-      41.404370532712676,
-      2.152588853967282
+      41.39887555964336,
+      2.1968050417827083
     ],
     "location": "barcelona",
     "updated_at": "2024-10-07",
@@ -582,14 +524,13 @@
   },
   {
     "layout": "place",
-    "pid": "pecora",
-    "title": "Pècora",
-    "emoji": "☕️",
-    "description": "<p>Buena y bonita cafetería de especialidad a un tiro de manzana de Frutas Selectas. También tienen cosas dulces para comer.</p>\n",
-    "address": "Carrer de Pujades, 113",
+    "title": "Restaurant Santa Magdalena",
+    "pid": "santa-magdalena",
+    "description": "<p>Cuina de barri. El entrepà de berenjena, tomate y mozzarella estaba muy rico.</p>\n",
+    "address": "Carrer de Sta. Magdalena, 6",
     "latlng": [
-      41.39887555964336,
-      2.1968050417827083
+      41.404370532712676,
+      2.152588853967282
     ],
     "location": "barcelona",
     "updated_at": "2024-10-07",
@@ -598,41 +539,34 @@
   },
   {
     "layout": "place",
-    "title": "Orval",
-    "pid": "orval",
-    "emoji": "☕️",
-    "description": "<p>Cafetería favorita en la zona. Alerta de kimcheese.</p>\n",
-    "address": "Carrer de Buenaventura Muñoz, 31",
+    "title": "Santa Mònica",
+    "pid": "santa-monica",
+    "description": "<p>Centro interdisciplinario de artes dedicado a impulsar la creación contemporánea</p>\n",
+    "address": "La Rambla, 7",
     "latlng": [
-      41.392732992085215,
-      2.1858767125397236
+      41.377393737045395,
+      2.1756821241850046
     ],
     "location": "barcelona",
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": [
       {
-        "url": "/2022/09/26/atrapado-en-un-grupo-de-telegram",
-        "title": "Atrapado en Telegram",
-        "date": "2022-09-26 23:32:23 +0200"
-      },
-      {
-        "url": "/2022/12/04/constelacion-grafica",
-        "title": "Constelación Gráfica",
-        "date": "2022-12-04 22:59:43 +0100"
+        "url": "/2022/12/10/retallar-i-enganxar",
+        "title": "Retallar i enganxar",
+        "date": "2022-12-10 22:30:27 +0100"
       }
     ]
   },
   {
     "layout": "place",
-    "title": "Onis Coffee",
-    "pid": "onis",
-    "emoji": "☕️",
-    "description": "<p>Diminuta cafetería estratégicamente situada en Dreta de l’Eixample como un oasis en el desierto.</p>\n",
-    "address": "Carrer de Roger de Llúria, 87",
+    "title": "Sato ト Tanaka",
+    "pid": "sato",
+    "description": "<p>Barra japonesa atendida por dos sushimanes que ofrece dos menús degustación. Difícil conseguir reserva, muy fácil querer volver al salir por la puerta.</p>\n",
+    "address": "Carrer del Bruc, 79",
     "latlng": [
-      41.39524373651066,
-      2.1660161807639344
+      41.394977701949294,
+      2.168945380457328
     ],
     "location": "barcelona",
     "updated_at": "2024-10-07",
@@ -647,39 +581,121 @@
   },
   {
     "layout": "place",
-    "title": "El Noa Noa",
-    "pid": "noanoa",
-    "description": "<p>Una cafetería-librería con cafés y libros.</p>\n",
-    "address": "Carrer de Torrijos, 22",
+    "pid": "taulat-44",
+    "title": "Taulat 44",
+    "description": "<p>Deli trendy en Poblenou, con todo lo que eso significa (lo que significa es que va gente trendy… con todo lo que eso significa, etcétera).</p>\n",
+    "address": "Carrer del Taulat, 44",
     "latlng": [
-      41.403156276444605,
-      2.159198194771789
+      41.398995319447366,
+      2.205068600770623
+    ],
+    "location": "barcelona",
+    "updated_at": "2024-10-07",
+    "last_updated": "2024-10-07T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "the-green-spot",
+    "title": "The Green Spot",
+    "description": "<p>Vegetariano bonito y rico en la Barceloneta. ¿Qué me gustó de aquí? La colifor empanada, el plato de tempeh y el risotto de 7 verdes.</p>\n",
+    "address": "Carrer de la Reina Cristina, 12",
+    "latlng": [
+      41.381787821227704,
+      2.1839794830047263
+    ],
+    "location": "barcelona",
+    "updated_at": "2024-10-07",
+    "last_updated": "2024-10-07T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "tofu-catalan",
+    "title": "Tofu Catalán",
+    "description": "<p>Pequeño deli donde comprar tofu fresco, bentos y otros productos japoneses.</p>\n",
+    "address": "Carrer d'Aribau, 119",
+    "latlng": [
+      41.391171858311,
+      2.1556111101123
+    ],
+    "location": "barcelona",
+    "updated_at": "2024-10-07",
+    "last_updated": "2024-10-07T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "tokyo-ya",
+    "title": "Tokyo-Ya",
+    "description": "<p>¿Fantástico y bien surtido súper japonés? Sí.</p>\n",
+    "address": "Carrer de Balmes, 197",
+    "latlng": [
+      41.40031912503507,
+      2.1523378229426
+    ],
+    "location": "barcelona",
+    "updated_at": "2024-10-07",
+    "last_updated": "2024-10-07T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "tramendu",
+    "title": "Tramendu",
+    "description": "<p>El nombre completo del sitio es “Tramendu. Ens agrada el vermuting” (no confundir con “Tramendu. Encenem els fogons” que está en la misma calle y no he probado). Si lees las críticas en Google Maps verás que la mayoría comentan lo rica que está la comida, lo encantador que es el personal, y lo económico que es el precio. Pues eso.</p>\n",
+    "address": "Passatge d'Andalusia, 8",
+    "latlng": [
+      41.370565789006044,
+      2.1336241407692733
+    ],
+    "location": "barcelona",
+    "updated_at": "2024-10-07",
+    "last_updated": "2024-10-07T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "title": "Vereda Bar",
+    "pid": "vereda",
+    "description": "<p>Platos de proximidad y temporada y vinos naturales.</p>\n",
+    "address": "Carrer de la Diputació, 155",
+    "latlng": [
+      41.38460297818277,
+      2.1578119926085177
     ],
     "location": "barcelona",
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": [
       {
-        "url": "/2022/04/28/pegatinas",
-        "title": "Pegatinas",
-        "date": "2022-04-28 21:58:21 +0200"
+        "url": "/2023/05/04/open-heart-protocol",
+        "title": "Open Heart Protocol",
+        "date": "2023-05-04 22:57:54 +0200"
       }
     ]
   },
   {
     "layout": "place",
-    "pid": "el-noa-noa",
-    "title": "El Noa Noa",
-    "description": "\n",
-    "address": "Carrer de Villarroel, 71, 08015 Barcelona",
-    "category": "cafe",
+    "title": "Zumzeig Cinema",
+    "pid": "zumzeig",
+    "emoji": "🍿",
+    "description": "<p>Sala de cine cooperativa y sin ánimo de lucro, con una programación principalmente indie en VO.</p>\n",
+    "address": "Carrer de Béjar, 53",
     "latlng": [
-      41.383686,
-      2.1586106
+      41.378023248824405,
+      2.1448554232917982
     ],
     "location": "barcelona",
-    "last_updated": "2023-01-01T00:00:00+00:00",
-    "post_references": []
+    "updated_at": "2024-10-07",
+    "last_updated": "2024-10-07T00:00:00+00:00",
+    "post_references": [
+      {
+        "url": "/2023/04/07/all-the-beauty-and-the-bloodshed",
+        "title": "All The Beauty And The Bloodshed",
+        "date": "2023-04-07 00:35:31 +0200"
+      }
+    ]
   },
   {
     "layout": "place",
@@ -693,7 +709,7 @@
       2.1752355
     ],
     "location": "barcelona",
-    "last_updated": "2023-01-01T00:00:00+00:00",
+    "last_updated": "2024-07-27T13:20:00+02:00",
     "post_references": [
       {
         "url": "/2024/07/27/vuelta-al-teletipo",

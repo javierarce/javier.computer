@@ -11,9 +11,7 @@ module Jekyll
     priority :lowest
 
     def generate(site)
-      if ENV["JEKYLL_ENV"] == "production"
-        generate_places(site)
-      end
+      generate_places(site)
     end
 
     def strip_html_tags(text)
@@ -101,13 +99,6 @@ module Jekyll
         end
       end
 
-      # Sort places by last_updated date (most recent first)
-      locations_hash.each do |location_name, places|
-        locations_hash[location_name] = places.sort_by do |place|
-          place['last_updated'].to_time.to_i
-        end.reverse
-      end
-
       # Process post locations
       site.posts.docs.each do |post|
         if post.data['places']
@@ -121,11 +112,18 @@ module Jekyll
 
               location_name = pid_hash[place_pid]['location'] || 'unknown'
               place_details = locations_hash[location_name].find { |ld| ld['pid'] == place_pid }
-              
+
               if place_details
                 # Avoid duplicate post references
                 unless place_details['post_references'].any? { |pr| pr['url'] == post_ref['url'] }
                   place_details['post_references'] << post_ref
+                end
+
+                # Update last_updated if this post is newer — so the place
+                # resurfaces in the feed with the new post as context
+                post_date = parse_date(post.data['date'])
+                if post_date && post_date > place_details['last_updated']
+                  place_details['last_updated'] = post_date
                 end
               end
             end
@@ -133,17 +131,32 @@ module Jekyll
         end
       end
 
+      # Sort after processing post references, since a new post can update
+      # a place's effective date. Sorted most recent first, pid as tiebreaker.
+      locations_hash.each do |location_name, places|
+        locations_hash[location_name] = places.sort_by do |place|
+          [-place['last_updated'].to_time.to_i, place['pid'].to_s]
+        end
+      end
+
       generate_json(locations_hash)
-      generate_rss(site, locations_hash)
-      generate_csv(locations_hash)
+
+      # RSS and CSV only in production — they contain absolute URLs from site.config
+      # and don't feed back into the build, so generating them in dev would just
+      # trigger unnecessary rebuild loops
+      if ENV["JEKYLL_ENV"] == "production"
+        generate_rss(site, locations_hash)
+        generate_csv(locations_hash)
+      end
     end
 
     def generate_csv(locations_hash)
       # Ensure the directory exists
       FileUtils.mkdir_p("assets/maps")
-      
+
       locations_hash.each do |location, places|
-        CSV.open("assets/maps/#{location}.csv", "w") do |csv|
+        csv_file_path = "assets/maps/#{location}.csv"
+        new_content = CSV.generate do |csv|
           csv << ["name", "description", "address", "latitude", "longitude", "updated_at"]
 
           places.each do |place|
@@ -157,6 +170,14 @@ module Jekyll
             csv << [name, description, address, lat, lng, updated_at]
           end
         end
+
+        # Only write if content has changed
+        if File.exist?(csv_file_path)
+          next if File.read(csv_file_path) == new_content
+        end
+
+        File.write(csv_file_path, new_content)
+        puts "Generated CSV for #{location} (#{places.length} places)"
       end
     end
 
@@ -165,22 +186,23 @@ module Jekyll
     def generate_json(locations_hash)
       # Ensure the directory exists
       FileUtils.mkdir_p("_data/locations")
-      
+
       locations_hash.each do |location, data|
         json_file_path = "_data/locations/#{location}.json"
+        new_content = JSON.pretty_generate(data.uniq { |d| d['pid'] })
 
         # Only write if data has changed
         if File.exist?(json_file_path)
           begin
-            current_data = JSON.parse(File.read(json_file_path))
-            next if current_data == data
-          rescue JSON::ParserError
-            puts "Warning: Could not parse existing JSON file #{json_file_path}"
+            current_content = File.read(json_file_path).strip
+            next if current_content == new_content.strip
+          rescue => e
+            puts "Warning: Could not read existing file #{json_file_path}: #{e.message}"
           end
         end
 
         File.open(json_file_path, 'w') do |file|
-          file.write(JSON.pretty_generate(data.uniq { |d| d['pid'] }))
+          file.write(new_content)
         end
 
         puts "Generated JSON for #{location} (#{data.length} places)"
@@ -199,7 +221,7 @@ module Jekyll
 
         rss = RSS::Maker.make("2.0") do |maker|
           maker.channel.title = "Feed de lugares de #{location.capitalize}"
-          maker.channel.link = "#{site.config['url']}/feeds/#{location}.rss"
+          maker.channel.link = "#{site.config['url']}/feeds/#{location}.xml"
           maker.channel.language = "es"
           maker.channel.description = "Sitios en #{location}"
           maker.channel.updated = most_recent_update.iso8601
@@ -236,16 +258,18 @@ module Jekyll
           end
         end
 
-        rss_file_path = File.join(feeds_dir, "#{location}.rss")
+        rss_file_path = File.join(feeds_dir, "#{location}.xml")
+
+        rss_content = rss.to_s.encode('UTF-8')
+          .sub('?>', "?>\n<?xml-stylesheet href=\"/feed-places.xsl\" type=\"text/xsl\"?>")
 
         # Only write if content has changed
         if File.exist?(rss_file_path)
-          current_content = File.read(rss_file_path).strip
-          new_content = rss.to_s.strip
-          next if current_content == new_content
+          current_content = File.read(rss_file_path, encoding: 'UTF-8').strip
+          next if current_content == rss_content.strip
         end
 
-        File.write(rss_file_path, rss.to_s)
+        File.write(rss_file_path, rss_content, encoding: 'UTF-8')
         puts "Generated RSS feed for #{location} (#{points_of_interest.length} items)"
       end
     end

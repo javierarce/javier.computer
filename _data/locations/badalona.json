@@ -1,0 +1,22 @@
+[
+  {
+    "layout": "place",
+    "title": "Amauta Coffee",
+    "pid": "amauta",
+    "description": "<p>Cafetería de especialidad en Badalona</p>\n",
+    "address": "Carrer del Carme, 53",
+    "latlng": [
+      41.450064749267256,
+      2.2508383018008424
+    ],
+    "location": "badalona",
+    "last_updated": "2026-03-24T17:00:00+01:00",
+    "post_references": [
+      {
+        "url": "/2026/03/24/can-solei",
+        "title": "Parc de Can Solei i Ca l'Arnús",
+        "date": "2026-03-24 17:00:00 +0100"
+      }
+    ]
+  }
+]

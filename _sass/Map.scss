@@ -58,6 +58,16 @@
   }
 }
 
+#maps-overview {
+  width: var(--width-wide);
+}
+
+@media all and (max-width: 1024px) {
+  #maps-overview {
+    width: 100%;
+  }
+}
+
 .maps {
   &__title {
     display: flex;
