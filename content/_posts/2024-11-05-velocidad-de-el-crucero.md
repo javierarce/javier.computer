@@ -29,6 +29,8 @@ camera:
   - Ricoh GR IIIx
 hide_title: true
 show_content: true
+syndication:
+  - https://mastodon.social/@javierarce/113435180468926875
 ---
 
 [Como ya comenté ayer](/2024/11/04/misterioso-y-festivo), y por motivos de

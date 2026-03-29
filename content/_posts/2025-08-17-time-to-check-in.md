@@ -5,6 +5,8 @@ date: "2025-08-17 20:39:47 +0200"
 location: berlin
 places:
   - onette
+syndication:
+  - https://mastodon.social/@javierarce/115046205966961274
 ---
 
 Time to check in <span class="sp">✦</span> [onette](/maps/berlin/onette) con [Erica](https://www.ericafustero.com),

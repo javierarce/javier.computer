@@ -2,6 +2,7 @@
 
 import { MovieRSSParser } from "./movies.js";
 import { Subscribers } from "./subscribers.js";
+import { Syndication } from "./syndication.js";
 // import { Books } from "./books.js";
 // import { Places } from "./places.js";
 
@@ -14,6 +15,9 @@ scraper.run();
 
 const subscribers = new Subscribers(username);
 subscribers.run();
+
+const syndication = new Syndication();
+syndication.run();
 
 // const books = new Books();
 // books.run();

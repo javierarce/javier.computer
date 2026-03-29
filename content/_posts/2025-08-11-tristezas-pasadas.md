@@ -3,6 +3,8 @@ layout: post
 title: "Tristezas pasadas"
 date: "2025-08-11 22:26:53 +0200"
 location: berlin
+syndication:
+  - https://mastodon.social/@javierarce/115012094282810816
 ---
 
 Tristezas pasadas no garantizan tristezas futuras (y esto no es consejo de ningún tipo) <span class="sp">✦</span> [Una

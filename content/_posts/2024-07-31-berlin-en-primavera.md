@@ -32,6 +32,8 @@ filenames:
     ratio: 3/2
   - filename: 2024-04-07-Berlin-R0006888
     ratio: 3/2
+syndication:
+  - https://mastodon.social/@javierarce/112880488731505487
 ---
 
 <p>Tras el éxito de crítica y público de mi <a href="/2024/07/10/Mataro">anterior publi-reportaje</a>, me gustaría compartir con vosotros esta «lista no

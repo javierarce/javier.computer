@@ -20,4 +20,6 @@ filenames:
     caption:
 camera: Fuji X-T5
 hide_title: true
+syndication:
+  - https://mastodon.social/@javierarce/112333940908102805
 ---
