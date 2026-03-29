@@ -12,7 +12,29 @@
     ],
     "location": "berlin",
     "updated_at": "2025-08-24",
-    "last_updated": "2025-08-24T00:00:00+00:00",
+    "last_updated": "2025-08-25T21:00:00+02:00",
+    "post_references": [
+      {
+        "url": "/2025/08/25/maldiciones-analogicas",
+        "title": "Maldiciones analógicas",
+        "date": "2025-08-25 21:00:00 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "safelight",
+    "title": "Safelight",
+    "description": "<p>Tienda de cámaras analógicas y laboratorio fotográfico.</p>\n",
+    "address": "Schivelbeiner Straße, 9",
+    "emoji": "📷",
+    "latlng": [
+      52.55102,
+      13.411127
+    ],
+    "location": "berlin",
+    "updated_at": "2025-08-24",
+    "last_updated": "2025-08-25T21:00:00+02:00",
     "post_references": [
       {
         "url": "/2025/08/25/maldiciones-analogicas",
@@ -36,28 +58,6 @@
     "updated_at": "2025-08-24",
     "last_updated": "2025-08-24T00:00:00+00:00",
     "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "safelight",
-    "title": "Safelight",
-    "description": "<p>Tienda de cámaras analógicas y laboratorio fotográfico.</p>\n",
-    "address": "Schivelbeiner Straße, 9",
-    "emoji": "📷",
-    "latlng": [
-      52.55102,
-      13.411127
-    ],
-    "location": "berlin",
-    "updated_at": "2025-08-24",
-    "last_updated": "2025-08-24T00:00:00+00:00",
-    "post_references": [
-      {
-        "url": "/2025/08/25/maldiciones-analogicas",
-        "title": "Maldiciones analógicas",
-        "date": "2025-08-25 21:00:00 +0200"
-      }
-    ]
   },
   {
     "layout": "place",
@@ -88,7 +88,7 @@
     ],
     "location": "berlin",
     "updated_at": "2025-08-17",
-    "last_updated": "2025-08-17T00:00:00+00:00",
+    "last_updated": "2025-08-17T20:39:47+02:00",
     "post_references": [
       {
         "url": "/2025/08/17/time-to-check-in",
@@ -96,6 +96,37 @@
         "date": "2025-08-17 20:39:47 +0200"
       }
     ]
+  },
+  {
+    "layout": "place",
+    "pid": "acid",
+    "title": "Acid P-Berg",
+    "description": "<p>Segunda cafetería de Acid en la ciudad. El café está rico pero es muy caro.</p>\n",
+    "address": "Christinenstraße 19a",
+    "emoji": "☕",
+    "latlng": [
+      52.532215,
+      13.410291
+    ],
+    "location": "berlin",
+    "updated_at": "2025-08-11",
+    "last_updated": "2025-08-11T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "cafe-sgaminegg",
+    "title": "Cafe Sgaminegg",
+    "description": "<p>Cafetería con menú del día y ambiente acogedor.</p>\n",
+    "address": "Seelower Straße, 2",
+    "latlng": [
+      52.550415,
+      13.410474
+    ],
+    "location": "berlin",
+    "updated_at": "2025-08-11",
+    "last_updated": "2025-08-11T00:00:00+00:00",
+    "post_references": []
   },
   {
     "layout": "place",
@@ -131,22 +162,6 @@
   },
   {
     "layout": "place",
-    "pid": "acid",
-    "title": "Acid P-Berg",
-    "description": "<p>Segunda cafetería de Acid en la ciudad. El café está rico pero es muy caro.</p>\n",
-    "address": "Christinenstraße 19a",
-    "emoji": "☕",
-    "latlng": [
-      52.532215,
-      13.410291
-    ],
-    "location": "berlin",
-    "updated_at": "2025-08-11",
-    "last_updated": "2025-08-11T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
     "pid": "kiez-kaffee-kraft",
     "title": "Kiez Kaffee Kraft",
     "description": "<p>Lugar de confianza cafetera en la zona. Precios razonables y baño, lo cual es cada vez más difícil de encontrar.</p>\n",
@@ -155,21 +170,6 @@
     "latlng": [
       52.551186,
       13.404072
-    ],
-    "location": "berlin",
-    "updated_at": "2025-08-11",
-    "last_updated": "2025-08-11T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "cafe-sgaminegg",
-    "title": "Cafe Sgaminegg",
-    "description": "<p>Cafetería con menú del día y ambiente acogedor.</p>\n",
-    "address": "Seelower Straße, 2",
-    "latlng": [
-      52.550415,
-      13.410474
     ],
     "location": "berlin",
     "updated_at": "2025-08-11",
@@ -193,13 +193,13 @@
   },
   {
     "layout": "place",
-    "pid": "dashi-canteen",
-    "title": "DASHI Canteen",
-    "description": "<p>Como el Dashi de Invalidenstraße, pero con vistas al Spree y con mucho más espacio. El tamago sando es lo que siempre me pido aquí.</p>\n",
-    "address": "Englische Straße, 21",
+    "pid": "babel",
+    "title": "Babel",
+    "description": "<p>Nunca me he sentado para comer aquí, pero puedo recomendar sus falafels para llevar.</p>\n",
+    "address": "Kastanienallee, 33",
     "latlng": [
-      52.51656,
-      13.332574
+      52.5367,
+      13.407453
     ],
     "location": "berlin",
     "updated_at": "2025-08-10",
@@ -223,14 +223,13 @@
   },
   {
     "layout": "place",
-    "pid": "odeon",
-    "title": "Odeon",
-    "description": "<p>Cine de una única sala con clara inspiración americana. Es parte del Yorck Kinogruppe, por lo que merece la pena abrirse una cuenta en la web y ahorrarse un euro por entrada comprando online. Calcula 15 minutos de anuncios y trailers antes de la película.</p>\n",
-    "address": "Hauptstraße, 116",
-    "emoji": "🎬",
+    "pid": "dashi-canteen",
+    "title": "DASHI Canteen",
+    "description": "<p>Como el Dashi de Invalidenstraße, pero con vistas al Spree y con mucho más espacio. El tamago sando es lo que siempre me pido aquí.</p>\n",
+    "address": "Englische Straße, 21",
     "latlng": [
-      52.482044,
-      13.349654
+      52.51656,
+      13.332574
     ],
     "location": "berlin",
     "updated_at": "2025-08-10",
@@ -239,13 +238,14 @@
   },
   {
     "layout": "place",
-    "pid": "babel",
-    "title": "Babel",
-    "description": "<p>Nunca me he sentado para comer aquí, pero puedo recomendar sus falafels para llevar.</p>\n",
-    "address": "Kastanienallee, 33",
+    "pid": "odeon",
+    "title": "Odeon",
+    "description": "<p>Cine de una única sala con clara inspiración americana. Es parte del Yorck Kinogruppe, por lo que merece la pena abrirse una cuenta en la web y ahorrarse un euro por entrada comprando online. Calcula 15 minutos de anuncios y trailers antes de la película.</p>\n",
+    "address": "Hauptstraße, 116",
+    "emoji": "🎬",
     "latlng": [
-      52.5367,
-      13.407453
+      52.482044,
+      13.349654
     ],
     "location": "berlin",
     "updated_at": "2025-08-10",
@@ -301,6 +301,21 @@
   },
   {
     "layout": "place",
+    "pid": "bartleby",
+    "title": "Bartleby & Co",
+    "description": "<p>Librería española capitaneada por Ana Pareja.</p>\n",
+    "address": "Boppstraße 2",
+    "latlng": [
+      52.493500792859805,
+      13.435139298296505
+    ],
+    "location": "berlin",
+    "updated_at": "2024-10-07",
+    "last_updated": "2024-10-07T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
     "pid": "bonanza",
     "title": "Bonanza",
     "emoji": "☕️",
@@ -317,28 +332,13 @@
   },
   {
     "layout": "place",
-    "pid": "bartleby",
-    "title": "Bartleby & Co",
-    "description": "<p>Librería española capitaneada por Ana Pareja.</p>\n",
-    "address": "Boppstraße 2",
+    "pid": "cafe-leo",
+    "title": "Das neue Café Leo",
+    "description": "<p>Una caftería situada en un kiosko en medio de una plaza del barrio de Wedding, que además de ofrecer café de especialidad a precios populares, ofrece asesoramiento social y actividades vecinales.</p>\n",
+    "address": "Auf dem Leopoldplatz",
     "latlng": [
-      52.493500792859805,
-      13.435139298296505
-    ],
-    "location": "berlin",
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "three-schwestern",
-    "title": "3 Schwestern",
-    "description": "<p>Un restaurante que ofrece comida típica alemana situado en el interior de  un antiguo hospital construido en 1846.</p>\n",
-    "address": "Mariannenpl. 2",
-    "latlng": [
-      52.505166826173365,
-      13.423695851822046
+      52.54719755887236,
+      13.358785015341178
     ],
     "location": "berlin",
     "updated_at": "2024-10-07",
@@ -363,13 +363,14 @@
   },
   {
     "layout": "place",
-    "pid": "cafe-leo",
-    "title": "Das neue Café Leo",
-    "description": "<p>Una caftería situada en un kiosko en medio de una plaza del barrio de Wedding, que además de ofrecer café de especialidad a precios populares, ofrece asesoramiento social y actividades vecinales.</p>\n",
-    "address": "Auf dem Leopoldplatz",
+    "pid": "carpenter",
+    "title": "Father Carpenter Coffee Brewers",
+    "emoji": "☕️",
+    "description": "<p>Mucha cola durante el fin de semana, mejor ir muy pronto o evitar directamente.</p>\n",
+    "address": "Münzstraße, 21, Scheunenviertel",
     "latlng": [
-      52.54719755887236,
-      13.358785015341178
+      52.5244438,
+      13.4065961
     ],
     "location": "berlin",
     "updated_at": "2024-10-07",
@@ -400,22 +401,6 @@
     "latlng": [
       52.553966826503334,
       13.433880192070449
-    ],
-    "location": "berlin",
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "carpenter",
-    "title": "Father Carpenter Coffee Brewers",
-    "emoji": "☕️",
-    "description": "<p>Mucha cola durante el fin de semana, mejor ir muy pronto o evitar directamente.</p>\n",
-    "address": "Münzstraße, 21, Scheunenviertel",
-    "latlng": [
-      52.5244438,
-      13.4065961
     ],
     "location": "berlin",
     "updated_at": "2024-10-07",
@@ -610,6 +595,21 @@
     "latlng": [
       52.5357069,
       13.4210922
+    ],
+    "location": "berlin",
+    "updated_at": "2024-10-07",
+    "last_updated": "2024-10-07T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "three-schwestern",
+    "title": "3 Schwestern",
+    "description": "<p>Un restaurante que ofrece comida típica alemana situado en el interior de  un antiguo hospital construido en 1846.</p>\n",
+    "address": "Mariannenpl. 2",
+    "latlng": [
+      52.505166826173365,
+      13.423695851822046
     ],
     "location": "berlin",
     "updated_at": "2024-10-07",

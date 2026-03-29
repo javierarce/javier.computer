@@ -8,13 +8,96 @@ permalink: maps
 {% assign places_count = site.places | size -%}
 {% assign recent_location = site.places | sort: 'updated_at' | reverse | first -%}
 
-<div class="maps__content">
-  <p>Esta página contiene un listado de {{ places_count }} de mis lugares favoritos en el mundo. La última actualización fue 
-  el {% include date.html date=recent_location.updated_at -%}.
+<div id="maps-overview" style="height: 420px; border-radius: var(--br-default);"></div>
 
-  </p>
+<div class="maps__content">
+  <p>Esta página contiene un listado de {{ places_count }} de mis lugares favoritos en el mundo. La última actualización fue
+  el {% include date.html date=recent_location.updated_at -%}.</p>
 </div>
 
+<script src="{{ '/scripts/map/leaflet.js' }}?version={{site.version}}" charset="utf-8"></script>
+<script src="{{ '/scripts/map/leaflet.markercluster.js' }}?version={{site.version}}" charset="utf-8"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var cities = [
+    {% for map in site.maps -%}
+      {% assign locations = site.data.locations[map.location] %}
+      {% assign location_count = locations | size %}
+      {% if location_count > 0 %}
+      {
+        title: {{ map.title | jsonify }},
+        lat: {{ map.lat }},
+        lng: {{ map.lng }},
+        count: {{ location_count }},
+        url: "/{{ map.permalink }}"
+      },
+      {% endif -%}
+    {% endfor -%}
+  ];
+
+  var map = L.map("maps-overview", {
+    scrollWheelZoom: true,
+    zoomControl: true
+  });
+
+  L.tileLayer(
+    "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}" + (L.Browser.retina ? "@2x.png" : ".png"),
+    {
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      subdomains: "abcd",
+      maxZoom: 22,
+      minZoom: 0
+    }
+  ).addTo(map);
+
+  map.zoomControl.setPosition("topright");
+  map.zoomControl.getContainer().classList.add("zoom-control");
+
+  var cluster = L.markerClusterGroup({
+    maxClusterRadius: 60,
+    iconCreateFunction: function(c) {
+      var total = 0;
+      c.getAllChildMarkers().forEach(function(m) { total += m.options.cityCount; });
+      return new L.divIcon({
+        className: "marker has-title",
+        html: total,
+        iconSize: [16, 16],
+        iconAnchor: new L.Point(16, 0)
+      });
+    }
+  });
+
+  cities.forEach(function(city) {
+    var icon = new L.divIcon({
+      className: "marker has-title",
+      html: city.count,
+      iconSize: [16, 16],
+      iconAnchor: new L.Point(16, 0)
+    });
+
+    var marker = L.marker([city.lat, city.lng], { icon: icon, cityCount: city.count });
+    var popup = L.popup({ className: "popup" })
+      .setContent(
+        '<div class="popup__content">' +
+          '<div class="popup__title">' + city.title + '</div>' +
+          '<div class="popup__address">' + city.count + ' places</div>' +
+        '</div>'
+      );
+
+    marker.bindPopup(popup, { maxWidth: "auto" });
+    marker.on("click", function() {
+      window.location.href = city.url;
+    });
+    cluster.addLayer(marker);
+  });
+
+  map.addLayer(cluster);
+
+  var bounds = cluster.getBounds();
+  map.fitBounds(bounds, { padding: [40, 40] });
+  setTimeout(function() { map.invalidateSize(); }, 100);
+});
+</script>
 
 <ul class="maps__list">
   {% for map in site.maps -%}
@@ -22,7 +105,7 @@ permalink: maps
   {% assign location_count = locations | size %}
   {% if location_count > 0 %}
   <li>
-    <div class="maps__title"><a href="/{{ map.permalink }}">{{ map.title}}</a><a href="/feeds/{{ map.location }}.rss" class="maps__rss"><span class="icon icon-rss"></span></a></div>
+    <div class="maps__title"><a href="/{{ map.permalink }}">{{ map.title}}</a><a href="/feeds/{{ map.location }}.xml" class="maps__rss"><span class="icon icon-rss"></span></a></div>
     <div class="maps__list-locations">
       {% for location in locations %}
       <a href="/{{ map.permalink }}/{{ location.pid }}">{{ location.title }}</a>{% unless forloop.last %} &middot; {%

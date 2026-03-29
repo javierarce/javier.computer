@@ -45,6 +45,9 @@
   rel="stylesheet"
   href="{{ 'css/style.css' | relative_url }}?version={{site.version}}"
 />
+{% if page.permalink == 'maps' -%}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="">
+{% endif -%}
 {% if page.category == 'reportage' or layout.grid or page.grid or page.category
 == 'photo' -%}
 <script src="{{ 'scripts/lightbox.js' | relative_url }}?version={{site.version}}"></script>

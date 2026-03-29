@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/feed-places.xsl" type="text/xsl"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+  <channel>
+    <title>Feed de lugares de Badalona</title>
+    <link>https://javier.computer/feeds/badalona.xml</link>
+    <description>Sitios en badalona</description>
+    <language>es</language>
+    <pubDate>Tue, 24 Mar 2026 17:00:00 +0100</pubDate>
+    <item>
+      <title>Amauta Coffee</title>
+      <link>https://javier.computer/maps/badalona/amauta</link>
+      <description>&lt;p&gt;Cafetería de especialidad en Badalona&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/badalona/amauta'&gt;Carrer del Carme, 53&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Aparece en estos posts:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2026/03/24/can-solei'&gt;Parc de Can Solei i Ca l'Arnús&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Tue, 24 Mar 2026 17:00:00 +0100</pubDate>
+      <dc:subject>badalona</dc:subject>
+      <dc:date>2026-03-24T17:00:00+01:00</dc:date>
+    </item>
+    <dc:date>2026-03-24T17:00:00+01:00</dc:date>
+  </channel>
+</rss>
