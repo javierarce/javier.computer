@@ -99,14 +99,6 @@ module Jekyll
         end
       end
 
-      # Sort places by last_updated date (most recent first), with pid as tiebreaker
-      # for deterministic ordering when dates are identical
-      locations_hash.each do |location_name, places|
-        locations_hash[location_name] = places.sort_by do |place|
-          [-place['last_updated'].to_time.to_i, place['pid'].to_s]
-        end
-      end
-
       # Process post locations
       site.posts.docs.each do |post|
         if post.data['places']
@@ -120,15 +112,30 @@ module Jekyll
 
               location_name = pid_hash[place_pid]['location'] || 'unknown'
               place_details = locations_hash[location_name].find { |ld| ld['pid'] == place_pid }
-              
+
               if place_details
                 # Avoid duplicate post references
                 unless place_details['post_references'].any? { |pr| pr['url'] == post_ref['url'] }
                   place_details['post_references'] << post_ref
                 end
+
+                # Update last_updated if this post is newer — so the place
+                # resurfaces in the feed with the new post as context
+                post_date = parse_date(post.data['date'])
+                if post_date && post_date > place_details['last_updated']
+                  place_details['last_updated'] = post_date
+                end
               end
             end
           end
+        end
+      end
+
+      # Sort after processing post references, since a new post can update
+      # a place's effective date. Sorted most recent first, pid as tiebreaker.
+      locations_hash.each do |location_name, places|
+        locations_hash[location_name] = places.sort_by do |place|
+          [-place['last_updated'].to_time.to_i, place['pid'].to_s]
         end
       end
 

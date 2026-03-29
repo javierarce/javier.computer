@@ -9,30 +9,30 @@
     <link>https://javier.computer/feeds/berlin.rss</link>
     <description>Sitios en berlin</description>
     <language>es</language>
-    <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
-    <item>
-      <title>amató</title>
-      <link>https://javier.computer/maps/berlin/amato</link>
-      <description>&lt;p&gt;Heladería japonesa. Su yuzu cake es muy recomendable.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/amato'&gt;Dunckerstraße, 69, 10437&lt;/a&gt;</description>
-      <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
-      <dc:subject>berlin</dc:subject>
-      <dc:date>2025-08-24T00:00:00+00:00</dc:date>
-    </item>
+    <pubDate>Mon, 25 Aug 2025 21:00:00 +0200</pubDate>
     <item>
       <title>Film Speed Lab</title>
       <link>https://javier.computer/maps/berlin/film-speed-lab</link>
       <description>&lt;p&gt;Laboratorio de de fotografía analógica. Son bastante rápidos, pero algo más caros que Safelight.&lt;/p&gt;
 &lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/film-speed-lab'&gt;Dietrich-Bonhoeffer-Straße, 32&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Aparece en estos posts:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2025/08/25/maldiciones-analogicas'&gt;Maldiciones analógicas&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
-      <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 25 Aug 2025 21:00:00 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2025-08-24T00:00:00+00:00</dc:date>
+      <dc:date>2025-08-25T21:00:00+02:00</dc:date>
     </item>
     <item>
       <title>Safelight</title>
       <link>https://javier.computer/maps/berlin/safelight</link>
       <description>&lt;p&gt;Tienda de cámaras analógicas y laboratorio fotográfico.&lt;/p&gt;
 &lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/safelight'&gt;Schivelbeiner Straße, 9&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Aparece en estos posts:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2025/08/25/maldiciones-analogicas'&gt;Maldiciones analógicas&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Mon, 25 Aug 2025 21:00:00 +0200</pubDate>
+      <dc:subject>berlin</dc:subject>
+      <dc:date>2025-08-25T21:00:00+02:00</dc:date>
+    </item>
+    <item>
+      <title>amató</title>
+      <link>https://javier.computer/maps/berlin/amato</link>
+      <description>&lt;p&gt;Heladería japonesa. Su yuzu cake es muy recomendable.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/amato'&gt;Dunckerstraße, 69, 10437&lt;/a&gt;</description>
       <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
       <dc:subject>berlin</dc:subject>
       <dc:date>2025-08-24T00:00:00+00:00</dc:date>
@@ -51,9 +51,9 @@
       <link>https://javier.computer/maps/berlin/onette</link>
       <description>&lt;p&gt;Diner americano en el barrio de Schöneberg. El servicio es súper amable y la cola para entrar súper larga si llegas en mal momento. Me quedé sin probar el Krosses Fischbrötchen (aka Crispy Fish Bun), pero la alternativa (sandwich de col rizada, espinacas y acelgas estofadas, acompañadas de ensalada de col y queso Old Amsterdam en un pan de molde gordísimo) me gustó mucho.&lt;/p&gt;
 &lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/onette'&gt;Grunewaldstraße 11&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Aparece en estos posts:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2025/08/17/time-to-check-in'&gt;Time to check in&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
-      <pubDate>Sun, 17 Aug 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 17 Aug 2025 20:39:47 +0200</pubDate>
       <dc:subject>berlin</dc:subject>
-      <dc:date>2025-08-17T00:00:00+00:00</dc:date>
+      <dc:date>2025-08-17T20:39:47+02:00</dc:date>
     </item>
     <item>
       <title>Acid P-Berg</title>
@@ -367,6 +367,6 @@
       <dc:subject>berlin</dc:subject>
       <dc:date>2023-03-31T00:00:00+00:00</dc:date>
     </item>
-    <dc:date>2025-08-24T00:00:00+00:00</dc:date>
+    <dc:date>2025-08-25T21:00:00+02:00</dc:date>
   </channel>
 </rss>

@@ -1,4 +1,10 @@
 name,description,address,latitude,longitude,updated_at
+Llibreria Terranova,"Librería favoritísima
+","Carrer del Comte Borrell, 99",41.379582775455034,2.159436667846462,2026-03-29
+El Noa Noa,"Una cafetería-librería con cafés y libros.
+","Carrer de Torrijos, 22",41.403156276444605,2.159198194771789,2024-10-07
+SlowMov,"Mi cafetería de cabecera en el barrio.
+","Carrer de Luis Antúnez, 18",41.39821818545401,2.1548143969966884,2024-10-07
 035//BAR,"Maravilloso bar que acogía cenas popup igualmente maravillosas. Cerró en 2024. RIP.
 ","Carrer de Monlau, 35",41.424967802049494,2.1904708306832803,2025-08-24
 Apurado Café,"Una cafetería que parece un salón de casa, con dulces argentinos y café de Nomad a buen precio.
@@ -35,8 +41,6 @@ Cafetería Japonesa Kasa Hanaka,"Una cafetería y sitio de almuerzos (y solo alm
 JazzMan,"","Carrer de Roger de Flor, 238",41.40213522647976,2.169469046024921,2024-10-07
 MIKAN,"Vinos naturales y gastronomía del noroeste asiático (China, Japón, Corea) con opciones vegetarianas y veganas. Menú del día a mediodía y bar de vinos y platos para compartir por la noche.
 ","Carrer d'Aribau, 158",41.392483495253394,2.1543505254535993,2024-10-07
-El Noa Noa,"Una cafetería-librería con cafés y libros.
-","Carrer de Torrijos, 22",41.403156276444605,2.159198194771789,2024-10-07
 Onis Coffee,"Diminuta cafetería estratégicamente situada en Dreta de l’Eixample como un oasis en el desierto.
 ","Carrer de Roger de Llúria, 87",41.39524373651066,2.1660161807639344,2024-10-07
 Orval,"Cafetería favorita en la zona. Alerta de kimcheese.
@@ -51,8 +55,6 @@ Santa Mònica,"Centro interdisciplinario de artes dedicado a impulsar la creaci�
 ","La Rambla, 7",41.377393737045395,2.1756821241850046,2024-10-07
 Sato ト Tanaka,"Barra japonesa atendida por dos sushimanes que ofrece dos menús degustación. Difícil conseguir reserva, muy fácil querer volver al salir por la puerta.
 ","Carrer del Bruc, 79",41.394977701949294,2.168945380457328,2024-10-07
-SlowMov,"Mi cafetería de cabecera en el barrio.
-","Carrer de Luis Antúnez, 18",41.39821818545401,2.1548143969966884,2024-10-07
 Taulat 44,"Deli trendy en Poblenou, con todo lo que eso significa (lo que significa es que va gente trendy… con todo lo que eso significa, etcétera).
 ","Carrer del Taulat, 44",41.398995319447366,2.205068600770623,2024-10-07
 The Green Spot,"Vegetariano bonito y rico en la Barceloneta. ¿Qué me gustó de aquí? La colifor empanada, el plato de tempeh y el risotto de 7 verdes.
@@ -67,9 +69,9 @@ Vereda Bar,"Platos de proximidad y temporada y vinos naturales.
 ","Carrer de la Diputació, 155",41.38460297818277,2.1578119926085177,2024-10-07
 Zumzeig Cinema,"Sala de cine cooperativa y sin ánimo de lucro, con una programación principalmente indie en VO.
 ","Carrer de Béjar, 53",41.378023248824405,2.1448554232917982,2024-10-07
-Llibreria Finestres,"
-","Carrer de la Diputació, 249, 08007 Barcelona",41.38897,2.164941,
 Right Side Coffee Bar,"
 ","Carrer de l'Arc de Sant Ramon del Call, 11, 08002 Barcelona",41.382645,2.1752355,
+Llibreria Finestres,"
+","Carrer de la Diputació, 249, 08007 Barcelona",41.38897,2.164941,
 Ximei,"Italiano veneciano
 ","Pg. de l'Exposició, 85",41.37164601705916,2.1608460273475036,

@@ -1,6 +1,80 @@
 [
   {
     "layout": "place",
+    "title": "Llibreria Terranova",
+    "pid": "terranova",
+    "description": "<p>Librería favoritísima</p>\n",
+    "address": "Carrer del Comte Borrell, 99",
+    "latlng": [
+      41.379582775455034,
+      2.159436667846462
+    ],
+    "location": "barcelona",
+    "updated_at": "2026-03-29",
+    "last_updated": "2026-03-29T00:00:00+00:00",
+    "post_references": [
+      {
+        "url": "/2026/03/06/big-comic-for-boy",
+        "title": "Big Comic for Boy",
+        "date": "2026-03-06 00:00:00 +0100"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "title": "El Noa Noa",
+    "pid": "noanoa",
+    "description": "<p>Una cafetería-librería con cafés y libros.</p>\n",
+    "address": "Carrer de Torrijos, 22",
+    "latlng": [
+      41.403156276444605,
+      2.159198194771789
+    ],
+    "location": "barcelona",
+    "updated_at": "2024-10-07",
+    "last_updated": "2026-03-11T22:26:44+01:00",
+    "post_references": [
+      {
+        "url": "/2022/04/28/pegatinas",
+        "title": "Pegatinas",
+        "date": "2022-04-28 21:58:21 +0200"
+      },
+      {
+        "url": "/2026/03/11/graf",
+        "title": "Graf",
+        "date": "2026-03-11 22:26:44 +0100"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "title": "SlowMov",
+    "pid": "slowmov",
+    "emoji": "☕️",
+    "description": "<p>Mi cafetería de cabecera en el barrio.</p>\n",
+    "address": "Carrer de Luis Antúnez, 18",
+    "latlng": [
+      41.39821818545401,
+      2.1548143969966884
+    ],
+    "location": "barcelona",
+    "updated_at": "2024-10-07",
+    "last_updated": "2026-03-11T22:26:44+01:00",
+    "post_references": [
+      {
+        "url": "/2022/04/28/pegatinas",
+        "title": "Pegatinas",
+        "date": "2022-04-28 21:58:21 +0200"
+      },
+      {
+        "url": "/2026/03/11/graf",
+        "title": "Graf",
+        "date": "2026-03-11 22:26:44 +0100"
+      }
+    ]
+  },
+  {
+    "layout": "place",
     "pid": "cero-tres-cinco",
     "title": "035//BAR",
     "description": "<p>Maravilloso bar que acogía cenas popup igualmente maravillosas. Cerró en 2024. RIP.</p>\n",
@@ -358,32 +432,6 @@
   },
   {
     "layout": "place",
-    "title": "El Noa Noa",
-    "pid": "noanoa",
-    "description": "<p>Una cafetería-librería con cafés y libros.</p>\n",
-    "address": "Carrer de Torrijos, 22",
-    "latlng": [
-      41.403156276444605,
-      2.159198194771789
-    ],
-    "location": "barcelona",
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
-    "post_references": [
-      {
-        "url": "/2022/04/28/pegatinas",
-        "title": "Pegatinas",
-        "date": "2022-04-28 21:58:21 +0200"
-      },
-      {
-        "url": "/2026/03/11/graf",
-        "title": "Graf",
-        "date": "2026-03-11 22:26:44 +0100"
-      }
-    ]
-  },
-  {
-    "layout": "place",
     "title": "Onis Coffee",
     "pid": "onis",
     "emoji": "☕️",
@@ -533,33 +581,6 @@
   },
   {
     "layout": "place",
-    "title": "SlowMov",
-    "pid": "slowmov",
-    "emoji": "☕️",
-    "description": "<p>Mi cafetería de cabecera en el barrio.</p>\n",
-    "address": "Carrer de Luis Antúnez, 18",
-    "latlng": [
-      41.39821818545401,
-      2.1548143969966884
-    ],
-    "location": "barcelona",
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
-    "post_references": [
-      {
-        "url": "/2022/04/28/pegatinas",
-        "title": "Pegatinas",
-        "date": "2022-04-28 21:58:21 +0200"
-      },
-      {
-        "url": "/2026/03/11/graf",
-        "title": "Graf",
-        "date": "2026-03-11 22:26:44 +0100"
-      }
-    ]
-  },
-  {
-    "layout": "place",
     "pid": "taulat-44",
     "title": "Taulat 44",
     "description": "<p>Deli trendy en Poblenou, con todo lo que eso significa (lo que significa es que va gente trendy… con todo lo que eso significa, etcétera).</p>\n",
@@ -678,6 +699,27 @@
   },
   {
     "layout": "place",
+    "pid": "right-side-coffee-bar",
+    "title": "Right Side Coffee Bar",
+    "description": "\n",
+    "address": "Carrer de l'Arc de Sant Ramon del Call, 11, 08002 Barcelona",
+    "category": "cafe",
+    "latlng": [
+      41.382645,
+      2.1752355
+    ],
+    "location": "barcelona",
+    "last_updated": "2024-07-27T13:20:00+02:00",
+    "post_references": [
+      {
+        "url": "/2024/07/27/vuelta-al-teletipo",
+        "title": "Vuelta al teletipo",
+        "date": "2024-07-27 13:20:00 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
     "pid": "llibreria-finestres",
     "title": "Llibreria Finestres",
     "description": "\n",
@@ -690,27 +732,6 @@
     "location": "barcelona",
     "last_updated": "2023-01-01T00:00:00+00:00",
     "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "right-side-coffee-bar",
-    "title": "Right Side Coffee Bar",
-    "description": "\n",
-    "address": "Carrer de l'Arc de Sant Ramon del Call, 11, 08002 Barcelona",
-    "category": "cafe",
-    "latlng": [
-      41.382645,
-      2.1752355
-    ],
-    "location": "barcelona",
-    "last_updated": "2023-01-01T00:00:00+00:00",
-    "post_references": [
-      {
-        "url": "/2024/07/27/vuelta-al-teletipo",
-        "title": "Vuelta al teletipo",
-        "date": "2024-07-27 13:20:00 +0200"
-      }
-    ]
   },
   {
     "layout": "place",

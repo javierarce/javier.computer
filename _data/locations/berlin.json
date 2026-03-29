@@ -1,22 +1,6 @@
 [
   {
     "layout": "place",
-    "pid": "amato",
-    "title": "amató",
-    "description": "<p>Heladería japonesa. Su yuzu cake es muy recomendable.</p>\n",
-    "address": "Dunckerstraße, 69, 10437",
-    "emoji": "🍦",
-    "latlng": [
-      52.5451364,
-      13.422882
-    ],
-    "location": "berlin",
-    "updated_at": "2025-08-24",
-    "last_updated": "2025-08-24T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
     "pid": "film-speed-lab",
     "title": "Film Speed Lab",
     "description": "<p>Laboratorio de de fotografía analógica. Son bastante rápidos, pero algo más caros que Safelight.</p>\n",
@@ -28,7 +12,7 @@
     ],
     "location": "berlin",
     "updated_at": "2025-08-24",
-    "last_updated": "2025-08-24T00:00:00+00:00",
+    "last_updated": "2025-08-25T21:00:00+02:00",
     "post_references": [
       {
         "url": "/2025/08/25/maldiciones-analogicas",
@@ -50,7 +34,7 @@
     ],
     "location": "berlin",
     "updated_at": "2025-08-24",
-    "last_updated": "2025-08-24T00:00:00+00:00",
+    "last_updated": "2025-08-25T21:00:00+02:00",
     "post_references": [
       {
         "url": "/2025/08/25/maldiciones-analogicas",
@@ -58,6 +42,22 @@
         "date": "2025-08-25 21:00:00 +0200"
       }
     ]
+  },
+  {
+    "layout": "place",
+    "pid": "amato",
+    "title": "amató",
+    "description": "<p>Heladería japonesa. Su yuzu cake es muy recomendable.</p>\n",
+    "address": "Dunckerstraße, 69, 10437",
+    "emoji": "🍦",
+    "latlng": [
+      52.5451364,
+      13.422882
+    ],
+    "location": "berlin",
+    "updated_at": "2025-08-24",
+    "last_updated": "2025-08-24T00:00:00+00:00",
+    "post_references": []
   },
   {
     "layout": "place",
@@ -88,7 +88,7 @@
     ],
     "location": "berlin",
     "updated_at": "2025-08-17",
-    "last_updated": "2025-08-17T00:00:00+00:00",
+    "last_updated": "2025-08-17T20:39:47+02:00",
     "post_references": [
       {
         "url": "/2025/08/17/time-to-check-in",
