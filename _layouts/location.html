@@ -1,30 +1,68 @@
 ---
 layout: base
-className: location
+className: archive
 ---
 {% assign posts = site.posts | where: "location", page.location -%}
+{% assign prev_year = nil -%}
+{% assign prev_month = nil -%}
+{% assign prev_date = nil -%}
 
 <div class="content">
-    {% include navigation.html -%}
+  {% include navigation.html -%}
 
-    <div class="archive">
-        {% assign prev_date = nil -%}
-        {% for post in posts -%}
-        {% assign current_date = post.date | date: '%B %Y' -%}
-        {% if prev_date != current_date -%}
-        {% if prev_date != nil -%}
+
+  <div class="archive">
+    <h2>Posts en {{ page.title }}</h2>
+    {% for post in posts -%}
+    {% assign current_year = post.date | date: "%Y" -%}
+    {% assign current_month = post.date | date: "%Y %b" -%}
+    {% assign format_date = post.date | date: "%m-%d-%Y" -%}
+
+    {% if current_month != prev_month -%}
+      {% if prev_month != nil -%}
     </div>
-    {% endif -%}
+    </li>
+      </ul>
+    </div>
+      {% endif -%}
     <div class="archive__month">
-        <h3>{{ post.date | date: '%B %Y' }}</h3>
-        <ul>
-            {% assign prev_date = current_date -%}
-            {% endif -%}
-            <li><span class="archive__day">{{ post.date | date: '%d' }}</span><a href="{{ post.url }}" class="is-{{ post.category }}">{{ post.title }}</a></li>
-            {% endfor -%}
-        </ul>
-    </div>
-</div>
+      {% if current_year != prev_year -%}
+      <h2 class="archive__year">{{ current_year }}</h2>
+      {% assign prev_year = current_year -%}
+      {% endif -%}
 
-{% include footer.html -%}
+      <h3 class="archive__month-name">{% include date.html date=post.date day="false" -%}</h3>
+      <ul class="archive__list">
+    {% assign prev_date = nil -%}
+    {% assign prev_month = current_month -%}
+    {% endif -%}
+
+    {% if format_date != prev_date -%}
+      {% if prev_date != nil -%}
+    </div>
+    </li>
+      {% endif -%}
+    <li>
+      <span class="archive__day">{{ post.date | date: '%d' }}</span>
+      <div class="archive__links">
+    {% endif -%}
+        <a href="{{ post.url }}" {% if post.category.size > 0 -%} class="is-icon-light is-{{ post.category }}"{% endif -%}>{{ post.title }}</a>
+    {% assign next_index = forloop.index -%}
+    {% assign next_post = posts[next_index] -%}
+    {% if next_post -%}
+      {% assign next_date = next_post.date | date: "%m-%d-%Y" -%}
+      {% if next_date == format_date -%}
+        <span class="Post__footerSeparator">&middot;</span>
+      {% endif -%}
+    {% endif -%}
+
+    {% assign prev_date = format_date -%}
+    {% endfor -%}
+    </div>
+    </li>
+      </ul>
+      </div>
+  </div>
+
+  {% include footer.html -%}
 </div>

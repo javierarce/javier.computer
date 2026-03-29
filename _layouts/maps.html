@@ -26,7 +26,8 @@
     {% endif -%}
 
     <script>
-      const locations = {{ site.data.locations[page.location] | reverse | jsonify }}
+      const locations = {{ site.data.locations[page.location] | reverse | jsonify }};
+      const geotaggedPosts = {% if site.data.geotagged_posts[page.location] %}{{ site.data.geotagged_posts[page.location] | jsonify }}{% else %}[]{% endif %};
     </script>
 
     <script

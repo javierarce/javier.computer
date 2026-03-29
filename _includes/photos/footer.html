@@ -12,7 +12,7 @@ include.photo.location | first -%}
     {% endif -%}
 
     {% unless include.photo.hide_location %} {% if matching_location -%}
-    <a href="/photos/{{ include.photo.location -}}" class="post__location"
+    <a href="/in/{{ include.photo.location -}}" class="post__location"
       >{{ matching_location.title }}</a
     >
     {% endif -%} {% endunless %} {% if site.show_likes %}
