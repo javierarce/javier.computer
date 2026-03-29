@@ -12,6 +12,7 @@ module Jekyll
 
     def generate(site)
       generate_places(site)
+      generate_geotagged_posts(site)
     end
 
     def strip_html_tags(text)
@@ -148,6 +149,81 @@ module Jekyll
         generate_rss(site, locations_hash)
         generate_csv(locations_hash)
       end
+    end
+
+    def generate_geotagged_posts(site)
+      puts "Generating geotagged posts..."
+
+      # Group posts by location, then by latlng
+      posts_by_location = {}
+
+      site.posts.docs.each do |post|
+        next unless post.data['latlng'] && post.data['location']
+
+        latlng = post.data['latlng']
+        location_name = post.data['location']
+
+        posts_by_location[location_name] ||= {}
+
+        # Use latlng as a key to group posts at the same coordinates
+        coord_key = "#{latlng[0]},#{latlng[1]}"
+        posts_by_location[location_name][coord_key] ||= {
+          'latlng' => latlng,
+          'posts' => []
+        }
+
+        posts_by_location[location_name][coord_key]['posts'] << {
+          'url' => post.url,
+          'title' => post.data['title'],
+          'date' => post.data['date'].to_s
+        }
+      end
+
+      # Sort posts within each group (newest first)
+      posts_by_location.each do |location_name, coord_groups|
+        coord_groups.each do |coord_key, group|
+          group['posts'].sort_by! { |p| p['date'] }.reverse!
+        end
+      end
+
+      # Generate JSON files, removing stale ones
+      FileUtils.mkdir_p("_data/geotagged_posts")
+
+      Dir.glob("_data/geotagged_posts/*.json").each do |existing_file|
+        location_name = File.basename(existing_file, ".json")
+        unless posts_by_location.key?(location_name)
+          File.delete(existing_file)
+          puts "Removed stale geotagged posts JSON for #{location_name}"
+        end
+      end
+
+      posts_by_location.each do |location_name, coord_groups|
+        data = coord_groups.values
+        json_file_path = "_data/geotagged_posts/#{location_name}.json"
+        new_content = JSON.pretty_generate(data)
+
+        if File.exist?(json_file_path)
+          begin
+            current_content = File.read(json_file_path).strip
+            next if current_content == new_content.strip
+          rescue => e
+            puts "Warning: Could not read existing file #{json_file_path}: #{e.message}"
+          end
+        end
+
+        File.open(json_file_path, 'w') do |file|
+          file.write(new_content)
+        end
+
+        puts "Generated geotagged posts JSON for #{location_name} (#{data.length} locations)"
+      end
+
+      # Store in site.data for templates
+      site.data['geotagged_posts'] ||= {}
+      posts_by_location.each do |location_name, coord_groups|
+        site.data['geotagged_posts'][location_name] = coord_groups.values
+      end
+
     end
 
     def generate_csv(locations_hash)
