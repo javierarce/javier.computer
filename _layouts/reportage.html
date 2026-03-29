@@ -3,8 +3,9 @@ layout: base
 className: reportage
 ---
 <!-- - photos/reportage -->
-<div class="content has-lightbox">
+<div class="content has-lightbox h-entry">
   {% include navigation.html -%}
+  <span class="p-author h-card" style="display:none">{{ site.author }}</span>
 
   {% if page.hide_title != true -%}
     <h2
@@ -12,15 +13,17 @@ className: reportage
         class="is-descriptionless"
       {% endunless -%}
     >
-      {{ page.title }}
+      <span class="p-name">{{ page.title }}</span>
     </h2>
+  {% else -%}
+    <a href="{{ page.url }}" class="p-name" style="display:none">{{ page.title }}</a>
   {% endif -%}
 
   {% if page.description -%}
     <h3>{{ page.description }}</h3>
   {% endif -%}
 
-  <div class="photo__layout">
+  <div class="photo__layout e-content">
     {{ content }}
     {% include photos/footer.html photo=page pagination=true -%}
     {% include footer.html -%}
