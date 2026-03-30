@@ -38,6 +38,7 @@
   </head>
 
   <body class="layout__{{ className | default: page.category | downcase  }}">
+    <a class="p-author h-card" href="https://javier.computer" rel="me" style="display:none">Javier Arce</a>
     {{ content }}
     <script src="{{ 'scripts/lazyload.min.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
   </body>
