@@ -291,7 +291,8 @@ module Jekyll
 
       locations_hash.each do |location, points_of_interest|
         # Points are already sorted by last_updated (most recent first)
-        
+        points_of_interest = points_of_interest.first(20)
+
         # Get the most recent update date for the channel
         most_recent_update = points_of_interest.first&.dig('last_updated') || DateTime.new(2023, 1, 1)
 
@@ -347,6 +348,68 @@ module Jekyll
 
         File.write(rss_file_path, rss_content, encoding: 'UTF-8')
         puts "Generated RSS feed for #{location} (#{points_of_interest.length} items)"
+      end
+
+      # Generate combined feed with all places from all cities
+      all_places = locations_hash.values.flatten.sort_by do |place|
+        [-place['last_updated'].to_time.to_i, place['pid'].to_s]
+      end.first(20)
+
+      most_recent = all_places.first&.dig('last_updated') || DateTime.new(2023, 1, 1)
+
+      rss = RSS::Maker.make("2.0") do |maker|
+        maker.channel.title = "Feed de lugares"
+        maker.channel.link = "#{site.config['url']}/feeds/places.xml"
+        maker.channel.language = "es"
+        maker.channel.description = "Todos los sitios"
+        maker.channel.updated = most_recent.iso8601
+
+        all_places.each do |point|
+          location = point['location'] || 'unknown'
+
+          maker.items.new_item do |item|
+            item.link = "#{site.config['url']}/maps/#{location}/#{point['pid']}"
+            item.title = point['title'] || 'Sin título'
+
+            description_parts = []
+
+            if point['description']
+              description_parts << point['description']
+            end
+
+            if point['address']
+              description_parts << "<br><strong>Dirección:</strong> <a href='#{item.link}'>#{point['address']}</a>"
+            end
+
+            if point['post_references'] && !point['post_references'].empty?
+              description_parts << "<br><br><strong>Aparece en estos posts:</strong>"
+              description_parts << "<ul>"
+              point['post_references'].each do |post_ref|
+                description_parts << "<li><a href='#{site.config['url']}#{post_ref['url']}'>#{post_ref['title']}</a></li>"
+              end
+              description_parts << "</ul>"
+            end
+
+            item.description = description_parts.join
+            item.updated = point['last_updated'].iso8601
+            item.dc_subject = location
+          end
+        end
+      end
+
+      rss_file_path = File.join(feeds_dir, "places.xml")
+      rss_content = rss.to_s.encode('UTF-8')
+        .sub('?>', "?>\n<?xml-stylesheet href=\"/feed-places.xsl\" type=\"text/xsl\"?>")
+
+      write_needed = true
+      if File.exist?(rss_file_path)
+        current_content = File.read(rss_file_path, encoding: 'UTF-8').strip
+        write_needed = current_content != rss_content.strip
+      end
+
+      if write_needed
+        File.write(rss_file_path, rss_content, encoding: 'UTF-8')
+        puts "Generated combined RSS feed (#{all_places.length} items)"
       end
     end
   end

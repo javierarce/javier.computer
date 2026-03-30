@@ -8,5 +8,5 @@ category: "cafe"
 latlng:
 - 41.386528
 - 2.1799483
-location: unknown
+location: barcelona
 ---

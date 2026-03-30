@@ -109,13 +109,13 @@
     p {
       margin: 1.4em auto;
       width: var(--width-md);
+      font-size: var(--font-size-content);
     }
   }
 
   &__content {
     margin: 1.4em auto;
     width: var(--width-md);
-
   }
 
   &__list {
@@ -144,7 +144,15 @@
 
   &__list-locations {
     margin: 0 0 1em;
-    opacity: var(--op-light);
+
+    a {
+      opacity: var(--op-light);
+      text-decoration: none;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 }
 

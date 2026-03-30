@@ -1,0 +1,17 @@
+[
+  {
+    "layout": "place",
+    "pid": "antisouvenir",
+    "title": "ANTISOUVENIR®",
+    "description": "\n",
+    "address": "Calle Paloma, 11",
+    "category": "books",
+    "latlng": [
+      42.598507,
+      -5.567531
+    ],
+    "location": "leon",
+    "last_updated": "2023-01-01T00:00:00+00:00",
+    "post_references": []
+  }
+]

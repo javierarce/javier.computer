@@ -6,11 +6,56 @@
   xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
   xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
   <channel>
-    <title>Feed de lugares de Berlin</title>
-    <link>https://javier.computer/feeds/berlin.xml</link>
-    <description>Sitios en berlin</description>
+    <title>Feed de lugares</title>
+    <link>https://javier.computer/feeds/places.xml</link>
+    <description>Todos los sitios</description>
     <language>es</language>
-    <pubDate>Mon, 25 Aug 2025 21:00:00 +0200</pubDate>
+    <pubDate>Sun, 29 Mar 2026 00:00:00 +0000</pubDate>
+    <item>
+      <title>Llibreria Terranova</title>
+      <link>https://javier.computer/maps/barcelona/terranova</link>
+      <description>&lt;p&gt;Librería favoritísima&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/terranova'&gt;Carrer del Comte Borrell, 99&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Aparece en estos posts:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2026/03/06/big-comic-for-boy'&gt;Big Comic for Boy&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://javier.computer/2026/03/06/como-escribir-una-novela-autobiografica'&gt;Cómo escribir una novela autobiográfica&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Sun, 29 Mar 2026 00:00:00 +0000</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2026-03-29T00:00:00+00:00</dc:date>
+    </item>
+    <item>
+      <title>Amauta Coffee</title>
+      <link>https://javier.computer/maps/badalona/amauta</link>
+      <description>&lt;p&gt;Cafetería de especialidad en Badalona que también cuenta con un local en Barcelona.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/badalona/amauta'&gt;Carrer del Carme, 53&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Aparece en estos posts:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2026/03/24/can-solei'&gt;Parc de Can Solei i Ca l'Arnús&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Tue, 24 Mar 2026 17:00:00 +0100</pubDate>
+      <dc:subject>badalona</dc:subject>
+      <dc:date>2026-03-24T17:00:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>Parc de Can Solei i Ca l'Arnús</title>
+      <link>https://javier.computer/maps/badalona/parc-de-can-solei</link>
+      <description>&lt;p&gt;Fantástico parque cerca del centro de la ciudad con multitud de espacios diferentes, incluyendo un castillo en un lago, una torre del reloj, un huerto, un mirador.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/badalona/parc-de-can-solei'&gt;Av. Navarra, 205I&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Aparece en estos posts:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2026/03/24/can-solei'&gt;Parc de Can Solei i Ca l'Arnús&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Tue, 24 Mar 2026 17:00:00 +0100</pubDate>
+      <dc:subject>badalona</dc:subject>
+      <dc:date>2026-03-24T17:00:00+01:00</dc:date>
+    </item>
+    <item>
+      <title>El Noa Noa</title>
+      <link>https://javier.computer/maps/barcelona/noanoa</link>
+      <description>&lt;p&gt;Una cafetería-librería con cafés y libros.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/noanoa'&gt;Carrer de Torrijos, 22&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Aparece en estos posts:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2022/04/28/pegatinas'&gt;Pegatinas&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://javier.computer/2026/03/11/graf'&gt;Graf&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Wed, 11 Mar 2026 22:26:44 +0100</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2026-03-11T22:26:44+01:00</dc:date>
+    </item>
+    <item>
+      <title>SlowMov</title>
+      <link>https://javier.computer/maps/barcelona/slowmov</link>
+      <description>&lt;p&gt;Mi cafetería de cabecera en el barrio.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/slowmov'&gt;Carrer de Luis Antúnez, 18&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Aparece en estos posts:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2022/04/28/pegatinas'&gt;Pegatinas&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://javier.computer/2026/03/11/graf'&gt;Graf&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Wed, 11 Mar 2026 22:26:44 +0100</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2026-03-11T22:26:44+01:00</dc:date>
+    </item>
     <item>
       <title>Film Speed Lab</title>
       <link>https://javier.computer/maps/berlin/film-speed-lab</link>
@@ -37,6 +82,24 @@
       <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
       <dc:subject>berlin</dc:subject>
       <dc:date>2025-08-24T00:00:00+00:00</dc:date>
+    </item>
+    <item>
+      <title>035//BAR</title>
+      <link>https://javier.computer/maps/barcelona/cero-tres-cinco</link>
+      <description>&lt;p&gt;Maravilloso bar que acogía cenas popup igualmente maravillosas. Cerró en 2024. RIP.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/cero-tres-cinco'&gt;Carrer de Monlau, 35&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Aparece en estos posts:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2023/05/06/celebracion-postconciliacion'&gt;Celebración Post-conciliación&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Sun, 24 Aug 2025 00:00:00 +0000</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2025-08-24T00:00:00+00:00</dc:date>
+    </item>
+    <item>
+      <title>Apurado Café</title>
+      <link>https://javier.computer/maps/barcelona/apurado-cafe</link>
+      <description>&lt;p&gt;Una cafetería que parece un salón de casa, con dulces argentinos y café de Nomad a buen precio.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/apurado-cafe'&gt;Carrer de Roger de Flor, 253&lt;/a&gt;</description>
+      <pubDate>Fri, 22 Aug 2025 00:00:00 +0000</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2025-08-22T00:00:00+00:00</dc:date>
     </item>
     <item>
       <title>Café Komine</title>
@@ -128,68 +191,6 @@
       <dc:subject>berlin</dc:subject>
       <dc:date>2025-08-10T00:00:00+00:00</dc:date>
     </item>
-    <item>
-      <title>DASHI Canteen</title>
-      <link>https://javier.computer/maps/berlin/dashi-canteen</link>
-      <description>&lt;p&gt;Como el Dashi de Invalidenstraße, pero con vistas al Spree y con mucho más espacio. El tamago sando es lo que siempre me pido aquí.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/dashi-canteen'&gt;Englische Straße, 21&lt;/a&gt;</description>
-      <pubDate>Sun, 10 Aug 2025 00:00:00 +0000</pubDate>
-      <dc:subject>berlin</dc:subject>
-      <dc:date>2025-08-10T00:00:00+00:00</dc:date>
-    </item>
-    <item>
-      <title>Odeon</title>
-      <link>https://javier.computer/maps/berlin/odeon</link>
-      <description>&lt;p&gt;Cine de una única sala con clara inspiración americana. Es parte del Yorck Kinogruppe, por lo que merece la pena abrirse una cuenta en la web y ahorrarse un euro por entrada comprando online. Calcula 15 minutos de anuncios y trailers antes de la película.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/odeon'&gt;Hauptstraße, 116&lt;/a&gt;</description>
-      <pubDate>Sun, 10 Aug 2025 00:00:00 +0000</pubDate>
-      <dc:subject>berlin</dc:subject>
-      <dc:date>2025-08-10T00:00:00+00:00</dc:date>
-    </item>
-    <item>
-      <title>Tresen-Treff</title>
-      <link>https://javier.computer/maps/berlin/tresen-treff</link>
-      <description>&lt;p&gt;Un pub de barrio rescatado por sus tres dueños. La clientela es una mezcla de gente del barrio de hoy y siempre y gente joven. Sirven especialidades berlinesas actualizadas. Muy rico.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/tresen-treff'&gt;Berliner Straße, 167&lt;/a&gt;</description>
-      <pubDate>Sun, 10 Aug 2025 00:00:00 +0000</pubDate>
-      <dc:subject>berlin</dc:subject>
-      <dc:date>2025-08-10T00:00:00+00:00</dc:date>
-    </item>
-    <item>
-      <title>Watapas</title>
-      <link>https://javier.computer/maps/berlin/watapas</link>
-      <description>&lt;p&gt;Una más que buena izakaya tapas bar.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/watapas'&gt;Bötzowstraße 33&lt;/a&gt;</description>
-      <pubDate>Sun, 10 Aug 2025 00:00:00 +0000</pubDate>
-      <dc:subject>berlin</dc:subject>
-      <dc:date>2025-08-10T00:00:00+00:00</dc:date>
-    </item>
-    <item>
-      <title>Zola</title>
-      <link>https://javier.computer/maps/berlin/zola</link>
-      <description>&lt;p&gt;La «Zola Neapolitan mit Fior di Latte, Birne, Walnüssen und Gorgonzola» estaba muy rica.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/zola'&gt;Paul-Lincke-Ufer, 39-40&lt;/a&gt;</description>
-      <pubDate>Sun, 10 Aug 2025 00:00:00 +0000</pubDate>
-      <dc:subject>berlin</dc:subject>
-      <dc:date>2025-08-10T00:00:00+00:00</dc:date>
-    </item>
-    <item>
-      <title>Bartleby &amp; Co</title>
-      <link>https://javier.computer/maps/berlin/bartleby</link>
-      <description>&lt;p&gt;Librería española capitaneada por Ana Pareja.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/bartleby'&gt;Boppstraße 2&lt;/a&gt;</description>
-      <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
-      <dc:subject>berlin</dc:subject>
-      <dc:date>2024-10-07T00:00:00+00:00</dc:date>
-    </item>
-    <item>
-      <title>Bonanza</title>
-      <link>https://javier.computer/maps/berlin/bonanza</link>
-      <description>&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/bonanza'&gt;Adalbertstraße, 70&lt;/a&gt;</description>
-      <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
-      <dc:subject>berlin</dc:subject>
-      <dc:date>2024-10-07T00:00:00+00:00</dc:date>
-    </item>
-    <dc:date>2025-08-25T21:00:00+02:00</dc:date>
+    <dc:date>2026-03-29T00:00:00+00:00</dc:date>
   </channel>
 </rss>

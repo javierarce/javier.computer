@@ -397,7 +397,7 @@ class Map extends Base {
 
     this.map.on("click", this.onMapClick.bind(this));
 
-    this.map.zoomControl.setPosition("topright");
+    this.map.zoomControl.setPosition("bottomright");
     this.map.zoomControl.getContainer().classList.add("zoom-control");
     this.addAttribution();
   }
