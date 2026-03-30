@@ -6,7 +6,10 @@
 {% assign currentYear = "now" | date: "%Y" -%}
 {% assign dateYear = include.date | date: "%Y" -%}
 
-<time datetime="{{ include.date | date: '%Y-%m-%dT%H:%M:%S%z' }}">
+{% assign raw_tz = include.date | date: '%z' -%}
+{% assign tz_hours = raw_tz | slice: 0, 3 -%}
+{% assign tz_minutes = raw_tz | slice: 3, 2 -%}
+<time datetime="{{ include.date | date: '%Y-%m-%dT%H:%M:%S' }}{{ tz_hours }}:{{ tz_minutes }}">
   {% if showDay -%}
     {{ include.date | date: '%-d' }} de
   {% endif -%}
