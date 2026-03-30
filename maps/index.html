@@ -43,10 +43,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   ).addTo(map);
 
-  map.zoomControl.setPosition("topright");
+  map.zoomControl.setPosition("bottomright");
   map.zoomControl.getContainer().classList.add("zoom-control");
 
   var cluster = L.markerClusterGroup({
+    showCoverageOnHover: false,
     maxClusterRadius: 60,
     iconCreateFunction: function(c) {
       var total = 0;
@@ -96,8 +97,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   <div id="maps-overview" style="height: 480px; border-radius: var(--br-default);"></div>
 
-  <p>Esta página contiene un listado de {{ places_count }} de algunos de mis lugares favoritos en el mundo real. La última actualización fue
-  el {% include date.html date=recent_location.updated_at %}</p>
+  <p>Esta página contiene un listado de {{ places_count }} de algunos de mis lugares favoritos en el mundo real. Suscríbete a <a href="/feeds/places.xml">este feed</a> para estar al tanto de los sitios que añado en general, o usa los feeds individuales si quieres saber qué añado en cada ciudad.</p>
+  <p>La última actualización fue el {% include date.html date=recent_location.updated_at %}</p>
 
   <div class="maps__content">
     <ul class="maps__list">
@@ -122,6 +123,5 @@ document.addEventListener("DOMContentLoaded", function() {
         {% endif -%}
       {% endfor -%}
     </ul>
-
   </div>
 </div>

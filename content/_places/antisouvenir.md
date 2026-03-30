@@ -8,5 +8,5 @@ category: "books"
 latlng:
 - 42.598507
 - -5.567531
-location: unknown
+location: leon
 ---

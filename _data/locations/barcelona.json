@@ -725,6 +725,36 @@
   },
   {
     "layout": "place",
+    "pid": "dubblefilm",
+    "title": "dubblefilm",
+    "description": "\n",
+    "address": "Carrer de Verdi, 28",
+    "category": "photographic_laboratory",
+    "latlng": [
+      41.403824,
+      2.156979
+    ],
+    "location": "barcelona",
+    "last_updated": "2023-01-01T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "espai-puntal",
+    "title": "Espai Puntal",
+    "description": "\n",
+    "address": "",
+    "category": "cafe",
+    "latlng": [
+      41.386528,
+      2.1799483
+    ],
+    "location": "barcelona",
+    "last_updated": "2023-01-01T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
     "pid": "llibreria-finestres",
     "title": "Llibreria Finestres",
     "description": "\n",

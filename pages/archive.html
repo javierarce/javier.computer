@@ -45,6 +45,21 @@ category: posts
     </div>
   </div>
 
+  <div class="tags">
+    <h2 class="tags__title">Mapas</h2>
+
+    <div class="tags__list">
+      {% for map in site.maps -%}
+      {% assign place_count = site.data.locations[map.location] | size -%}
+      {% if place_count > 0 -%}
+      <div class="tags__listItem">
+        <a href="/{{ map.permalink }}">{{ map.title }}</a>
+        <span class="is-light is-sm">({{ place_count }})</span>
+      </div>
+      {% endif -%}
+      {% endfor -%}
+    </div>
+  </div>
 
     {% for post in site.posts -%}
     {% assign current_year = post.date | date: "%Y" -%}
