@@ -4,7 +4,7 @@
   {% else -%}
   <a href="https://javier.computer" class="p-name" style="display:none">{{ post.title }}</a>
   {% endif -%}
-  <span class="p-author h-card" style="display:none;">{{ site.author }}</span>
+  <a class="p-author h-card" href="https://javier.computer" style="display:none">{{ site.author }}</a>
   <div class="post__content post__text {% if post.extraClassName %} {{ post.extraClassName }}{% endif %} e-content">
     {% if post.content contains "<!-- more -->" -%}
     {{ post.content | split:"<!-- more -->" | first }}
