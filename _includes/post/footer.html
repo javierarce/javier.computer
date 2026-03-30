@@ -1,5 +1,5 @@
 <div class="post__footer">
-  <a href="{{ page.url }}" class="post__date dt-published u-url">{% include date.html date=page.date -%}</a>
+  <a href="{{ page.url }}" class="post__date u-url">{% include date.html date=page.date -%}</a>
   {% if page.syndication -%}
     {% for url in page.syndication -%}
       <a href="{{ url }}" class="u-syndication" rel="syndication" style="display:none"></a>
