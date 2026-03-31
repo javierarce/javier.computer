@@ -105,7 +105,7 @@
     "title": "Apurado Café",
     "description": "<p>Una cafetería que parece un salón de casa, con dulces argentinos y café de Nomad a buen precio.</p>\n",
     "address": "Carrer de Roger de Flor, 253",
-    "emojis": "☕️",
+    "emoji": "☕️",
     "latlng": [
       41.403088,
       2.1667554
@@ -786,14 +786,29 @@
   },
   {
     "layout": "place",
-    "pid": "llibreria-finestres",
+    "pid": "finestres",
     "title": "Llibreria Finestres",
-    "description": "\n",
-    "address": "Carrer de la Diputació, 249, 08007 Barcelona",
+    "description": "<p>Librería de referencia en Barcelona con libros en múltiples idiomas.</p>\n",
+    "address": "Carrer de la Diputació, 249",
     "category": "books",
     "latlng": [
       41.38897,
       2.164941
+    ],
+    "location": "barcelona",
+    "last_updated": "2023-01-01T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "llibreria-finestres",
+    "title": "Llibreria Finestres d'Art i Còmic",
+    "description": "<p>Librería de referencia en Barcelona con libros en múltiples idiomas. Este local está dedicado a cómics, libros de arte, fotografía, música y cine.</p>\n",
+    "address": "Carrer de la Diputació, 250",
+    "category": "books",
+    "latlng": [
+      41.38883499560368,
+      2.1653960674309207
     ],
     "location": "barcelona",
     "last_updated": "2023-01-01T00:00:00+00:00",
