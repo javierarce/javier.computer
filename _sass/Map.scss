@@ -467,4 +467,9 @@
     width: var(--width-full);
     font-size: var(--font-size-content);
   }
+
+  .maps__container p,
+  .maps__content {
+    width: var(--width-full);
+  }
 }
