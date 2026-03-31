@@ -1,10 +1,24 @@
 name,description,address,latitude,longitude,updated_at
+Llibreria Finestres,"Librería de referencia en Barcelona con libros en múltiples idiomas.
+","Carrer de la Diputació, 249",41.38897,2.164941,
+Llibreria Finestres d'Art i Còmic,"Librería de referencia en Barcelona con libros en múltiples idiomas. Este local está dedicado a cómics, libros de arte, fotografía, música y cine.
+","Carrer de la Diputació, 250",41.38883499560368,2.1653960674309207,
+dubblelab,"Laboratorio fotográfico favorito en la ciudad.
+","Carrer de Zamora, 99, 3-2",41.3961663306281,2.1892947239946126,
+Amauta Coffee Bar,"Cafetería de especialidad en Barcelona que también cuenta con un local en Badalona.
+","Travessera de Gràcia, 90",41.398227880319936,2.1527225374895456,
 Llibreria Terranova,"Librería favoritísima
 ","Carrer del Comte Borrell, 99",41.379582775455034,2.159436667846462,2026-03-29
 El Noa Noa,"Una cafetería-librería con cafés y libros.
 ","Carrer de Torrijos, 22",41.403156276444605,2.159198194771789,2024-10-07
-SlowMov,"Mi cafetería de cabecera en el barrio.
+SlowMov,"Mi antigua cafetería de cabecera en el barrio, aunque ahora prefiero Amauta.
 ","Carrer de Luis Antúnez, 18",41.39821818545401,2.1548143969966884,2024-10-07
+Ximei,"Italiano veneciano
+","Pg. de l'Exposició, 85",41.37164601705916,2.1608460273475036,
+Espai Puntal,"
+","",41.386528,2.1799483,
+dubblefilm,"Tienda de fotografía. Puedes dejar aquí tus carretes para que te los revele dubblelab
+","Carrer de Verdi, 28",41.403824,2.156979,
 035//BAR,"Maravilloso bar que acogía cenas popup igualmente maravillosas. Cerró en 2024. RIP.
 ","Carrer de Monlau, 35",41.424967802049494,2.1904708306832803,2025-08-24
 Apurado Café,"Una cafetería que parece un salón de casa, con dulces argentinos y café de Nomad a buen precio.
@@ -71,11 +85,3 @@ Zumzeig Cinema,"Sala de cine cooperativa y sin ánimo de lucro, con una programa
 ","Carrer de Béjar, 53",41.378023248824405,2.1448554232917982,2024-10-07
 Right Side Coffee Bar,"
 ","Carrer de l'Arc de Sant Ramon del Call, 11, 08002 Barcelona",41.382645,2.1752355,
-dubblefilm,"
-","Carrer de Verdi, 28",41.403824,2.156979,
-Espai Puntal,"
-","",41.386528,2.1799483,
-Llibreria Finestres,"
-","Carrer de la Diputació, 249, 08007 Barcelona",41.38897,2.164941,
-Ximei,"Italiano veneciano
-","Pg. de l'Exposició, 85",41.37164601705916,2.1608460273475036,

@@ -1,6 +1,66 @@
 [
   {
     "layout": "place",
+    "pid": "finestres",
+    "title": "Llibreria Finestres",
+    "description": "<p>Librería de referencia en Barcelona con libros en múltiples idiomas.</p>\n",
+    "address": "Carrer de la Diputació, 249",
+    "category": "books",
+    "latlng": [
+      41.38897,
+      2.164941
+    ],
+    "location": "barcelona",
+    "last_updated": "2026-03-31T11:27:12+02:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "llibreria-finestres",
+    "title": "Llibreria Finestres d'Art i Còmic",
+    "description": "<p>Librería de referencia en Barcelona con libros en múltiples idiomas. Este local está dedicado a cómics, libros de arte, fotografía, música y cine.</p>\n",
+    "address": "Carrer de la Diputació, 250",
+    "category": "books",
+    "latlng": [
+      41.38883499560368,
+      2.1653960674309207
+    ],
+    "location": "barcelona",
+    "last_updated": "2026-03-31T11:27:12+02:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "dubblelab",
+    "title": "dubblelab",
+    "description": "<p>Laboratorio fotográfico favorito en la ciudad.</p>\n",
+    "emoji": "📸",
+    "address": "Carrer de Zamora, 99, 3-2",
+    "category": "photographic_laboratory",
+    "latlng": [
+      41.3961663306281,
+      2.1892947239946126
+    ],
+    "location": "barcelona",
+    "last_updated": "2026-03-31T11:19:51+02:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "title": "Amauta Coffee Bar",
+    "pid": "amauta-bcn",
+    "description": "<p>Cafetería de especialidad en Barcelona que también cuenta con un local en Badalona.</p>\n",
+    "address": "Travessera de Gràcia, 90",
+    "latlng": [
+      41.398227880319936,
+      2.1527225374895456
+    ],
+    "location": "barcelona",
+    "last_updated": "2026-03-31T10:58:25+02:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
     "title": "Llibreria Terranova",
     "pid": "terranova",
     "description": "<p>Librería favoritísima</p>\n",
@@ -77,6 +137,52 @@
         "date": "2026-03-11 22:26:44 +0100"
       }
     ]
+  },
+  {
+    "layout": "place",
+    "pid": "ximei",
+    "title": "Ximei",
+    "description": "<p>Italiano veneciano</p>\n",
+    "address": "Pg. de l'Exposició, 85",
+    "category": "restaurant",
+    "latlng": [
+      41.37164601705916,
+      2.1608460273475036
+    ],
+    "location": "barcelona",
+    "last_updated": "2025-12-18T19:17:34+01:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "espai-puntal",
+    "title": "Espai Puntal",
+    "description": "\n",
+    "address": "",
+    "category": "cafe",
+    "latlng": [
+      41.386528,
+      2.1799483
+    ],
+    "location": "barcelona",
+    "last_updated": "2025-09-28T23:05:45+02:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "dubblefilm",
+    "title": "dubblefilm",
+    "description": "<p>Tienda de fotografía. Puedes dejar aquí tus carretes para que te los revele dubblelab</p>\n",
+    "address": "Carrer de Verdi, 28",
+    "emoji": "📸",
+    "category": "photographic_laboratory",
+    "latlng": [
+      41.403824,
+      2.156979
+    ],
+    "location": "barcelona",
+    "last_updated": "2025-09-23T15:42:55+02:00",
+    "post_references": []
   },
   {
     "layout": "place",
@@ -722,111 +828,5 @@
         "date": "2024-07-27 13:20:00 +0200"
       }
     ]
-  },
-  {
-    "layout": "place",
-    "title": "Amauta Coffee Bar",
-    "pid": "amauta-bcn",
-    "description": "<p>Cafetería de especialidad en Barcelona que también cuenta con un local en Badalona.</p>\n",
-    "address": "Travessera de Gràcia, 90",
-    "latlng": [
-      41.398227880319936,
-      2.1527225374895456
-    ],
-    "location": "barcelona",
-    "last_updated": "2023-01-01T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "dubblefilm",
-    "title": "dubblefilm",
-    "description": "<p>Tienda de fotografía. Puedes dejar aquí tus carretes para que te los revele dubblelab</p>\n",
-    "address": "Carrer de Verdi, 28",
-    "emoji": "📸",
-    "category": "photographic_laboratory",
-    "latlng": [
-      41.403824,
-      2.156979
-    ],
-    "location": "barcelona",
-    "last_updated": "2023-01-01T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "dubblelab",
-    "title": "dubblelab",
-    "description": "<p>Laboratorio fotográfico favorito en la ciudad.</p>\n",
-    "emoji": "📸",
-    "address": "Carrer de Zamora, 99, 3-2",
-    "category": "photographic_laboratory",
-    "latlng": [
-      41.3961663306281,
-      2.1892947239946126
-    ],
-    "location": "barcelona",
-    "last_updated": "2023-01-01T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "espai-puntal",
-    "title": "Espai Puntal",
-    "description": "\n",
-    "address": "",
-    "category": "cafe",
-    "latlng": [
-      41.386528,
-      2.1799483
-    ],
-    "location": "barcelona",
-    "last_updated": "2023-01-01T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "finestres",
-    "title": "Llibreria Finestres",
-    "description": "<p>Librería de referencia en Barcelona con libros en múltiples idiomas.</p>\n",
-    "address": "Carrer de la Diputació, 249",
-    "category": "books",
-    "latlng": [
-      41.38897,
-      2.164941
-    ],
-    "location": "barcelona",
-    "last_updated": "2023-01-01T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "llibreria-finestres",
-    "title": "Llibreria Finestres d'Art i Còmic",
-    "description": "<p>Librería de referencia en Barcelona con libros en múltiples idiomas. Este local está dedicado a cómics, libros de arte, fotografía, música y cine.</p>\n",
-    "address": "Carrer de la Diputació, 250",
-    "category": "books",
-    "latlng": [
-      41.38883499560368,
-      2.1653960674309207
-    ],
-    "location": "barcelona",
-    "last_updated": "2023-01-01T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "ximei",
-    "title": "Ximei",
-    "description": "<p>Italiano veneciano</p>\n",
-    "address": "Pg. de l'Exposició, 85",
-    "category": "restaurant",
-    "latlng": [
-      41.37164601705916,
-      2.1608460273475036
-    ],
-    "location": "barcelona",
-    "last_updated": "2023-01-01T00:00:00+00:00",
-    "post_references": []
   }
 ]

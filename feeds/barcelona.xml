@@ -10,7 +10,43 @@
     <link>https://javier.computer/feeds/barcelona.xml</link>
     <description>Sitios en barcelona</description>
     <language>es</language>
-    <pubDate>Sun, 29 Mar 2026 00:00:00 +0000</pubDate>
+    <pubDate>Tue, 31 Mar 2026 11:27:12 +0200</pubDate>
+    <item>
+      <title>Llibreria Finestres</title>
+      <link>https://javier.computer/maps/barcelona/finestres</link>
+      <description>&lt;p&gt;Librería de referencia en Barcelona con libros en múltiples idiomas.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/finestres'&gt;Carrer de la Diputació, 249&lt;/a&gt;</description>
+      <pubDate>Tue, 31 Mar 2026 11:27:12 +0200</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2026-03-31T11:27:12+02:00</dc:date>
+    </item>
+    <item>
+      <title>Llibreria Finestres d'Art i Còmic</title>
+      <link>https://javier.computer/maps/barcelona/llibreria-finestres</link>
+      <description>&lt;p&gt;Librería de referencia en Barcelona con libros en múltiples idiomas. Este local está dedicado a cómics, libros de arte, fotografía, música y cine.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/llibreria-finestres'&gt;Carrer de la Diputació, 250&lt;/a&gt;</description>
+      <pubDate>Tue, 31 Mar 2026 11:27:12 +0200</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2026-03-31T11:27:12+02:00</dc:date>
+    </item>
+    <item>
+      <title>dubblelab</title>
+      <link>https://javier.computer/maps/barcelona/dubblelab</link>
+      <description>&lt;p&gt;Laboratorio fotográfico favorito en la ciudad.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/dubblelab'&gt;Carrer de Zamora, 99, 3-2&lt;/a&gt;</description>
+      <pubDate>Tue, 31 Mar 2026 11:19:51 +0200</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2026-03-31T11:19:51+02:00</dc:date>
+    </item>
+    <item>
+      <title>Amauta Coffee Bar</title>
+      <link>https://javier.computer/maps/barcelona/amauta-bcn</link>
+      <description>&lt;p&gt;Cafetería de especialidad en Barcelona que también cuenta con un local en Badalona.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/amauta-bcn'&gt;Travessera de Gràcia, 90&lt;/a&gt;</description>
+      <pubDate>Tue, 31 Mar 2026 10:58:25 +0200</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2026-03-31T10:58:25+02:00</dc:date>
+    </item>
     <item>
       <title>Llibreria Terranova</title>
       <link>https://javier.computer/maps/barcelona/terranova</link>
@@ -32,11 +68,38 @@
     <item>
       <title>SlowMov</title>
       <link>https://javier.computer/maps/barcelona/slowmov</link>
-      <description>&lt;p&gt;Mi cafetería de cabecera en el barrio.&lt;/p&gt;
+      <description>&lt;p&gt;Mi antigua cafetería de cabecera en el barrio, aunque ahora prefiero Amauta.&lt;/p&gt;
 &lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/slowmov'&gt;Carrer de Luis Antúnez, 18&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Aparece en estos posts:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2022/04/28/pegatinas'&gt;Pegatinas&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://javier.computer/2026/03/11/graf'&gt;Graf&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
       <pubDate>Wed, 11 Mar 2026 22:26:44 +0100</pubDate>
       <dc:subject>barcelona</dc:subject>
       <dc:date>2026-03-11T22:26:44+01:00</dc:date>
+    </item>
+    <item>
+      <title>Ximei</title>
+      <link>https://javier.computer/maps/barcelona/ximei</link>
+      <description>&lt;p&gt;Italiano veneciano&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/ximei'&gt;Pg. de l'Exposició, 85&lt;/a&gt;</description>
+      <pubDate>Thu, 18 Dec 2025 19:17:34 +0100</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2025-12-18T19:17:34+01:00</dc:date>
+    </item>
+    <item>
+      <title>Espai Puntal</title>
+      <link>https://javier.computer/maps/barcelona/espai-puntal</link>
+      <description>
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/espai-puntal'&gt;&lt;/a&gt;</description>
+      <pubDate>Sun, 28 Sep 2025 23:05:45 +0200</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2025-09-28T23:05:45+02:00</dc:date>
+    </item>
+    <item>
+      <title>dubblefilm</title>
+      <link>https://javier.computer/maps/barcelona/dubblefilm</link>
+      <description>&lt;p&gt;Tienda de fotografía. Puedes dejar aquí tus carretes para que te los revele dubblelab&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/dubblefilm'&gt;Carrer de Verdi, 28&lt;/a&gt;</description>
+      <pubDate>Tue, 23 Sep 2025 15:42:55 +0200</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2025-09-23T15:42:55+02:00</dc:date>
     </item>
     <item>
       <title>035//BAR</title>
@@ -128,68 +191,6 @@
       <dc:subject>barcelona</dc:subject>
       <dc:date>2024-10-07T00:00:00+00:00</dc:date>
     </item>
-    <item>
-      <title>Fábrica Garage</title>
-      <link>https://javier.computer/maps/barcelona/fabrica-garage</link>
-      <description>&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/fabrica-garage'&gt;Sant Adrià, 66&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Aparece en estos posts:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2023/06/18/42'&gt;42&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
-      <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
-      <dc:subject>barcelona</dc:subject>
-      <dc:date>2024-10-07T00:00:00+00:00</dc:date>
-    </item>
-    <item>
-      <title>Fino Bar</title>
-      <link>https://javier.computer/maps/barcelona/fino-bar</link>
-      <description>&lt;p&gt;Queviures, salaons, xarcuteria al tall i molt de vi.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/fino-bar'&gt;Carrer del Torrent de les Flors, 113, Gràcia&lt;/a&gt;</description>
-      <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
-      <dc:subject>barcelona</dc:subject>
-      <dc:date>2024-10-07T00:00:00+00:00</dc:date>
-    </item>
-    <item>
-      <title>Fismuler</title>
-      <link>https://javier.computer/maps/barcelona/fismuler</link>
-      <description>&lt;p&gt;Cocina mediterránea de parte de tres ex-El Bulli.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/fismuler'&gt;Carrer del Rec Comtal, 17&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Aparece en estos posts:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2024/07/27/vuelta-al-teletipo'&gt;Vuelta al teletipo&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
-      <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
-      <dc:subject>barcelona</dc:subject>
-      <dc:date>2024-10-07T00:00:00+00:00</dc:date>
-    </item>
-    <item>
-      <title>Nomad Frutas Selectas</title>
-      <link>https://javier.computer/maps/barcelona/frutas-selectas</link>
-      <description>&lt;p&gt;Cafetería de Nomad con café de Nomad (claro), y pan y dulces de Pa de Kilo.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/frutas-selectas'&gt;Carrer de Pujades, 95&lt;/a&gt;</description>
-      <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
-      <dc:subject>barcelona</dc:subject>
-      <dc:date>2024-10-07T00:00:00+00:00</dc:date>
-    </item>
-    <item>
-      <title>Funky Bakers</title>
-      <link>https://javier.computer/maps/barcelona/funky-bakers</link>
-      <description>&lt;p&gt;No tan &lt;em&gt;funkies&lt;/em&gt; como dicen ser pero tienen cosas ricas.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/funky-bakers'&gt;Pg. del Born, 10&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Aparece en estos posts:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2022/09/17/funky-bakers'&gt;Funky Bakers&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
-      <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
-      <dc:subject>barcelona</dc:subject>
-      <dc:date>2024-10-07T00:00:00+00:00</dc:date>
-    </item>
-    <item>
-      <title>Sede de la Editorial Gustavo Gili</title>
-      <link>https://javier.computer/maps/barcelona/gili</link>
-      <description>&lt;p&gt;Una visita maja a un icono del racionalismo catalán.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/gili'&gt;Carrer del Rosselló, 87-89&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Aparece en estos posts:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2023/05/27/gili'&gt;Gili&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
-      <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
-      <dc:subject>barcelona</dc:subject>
-      <dc:date>2024-10-07T00:00:00+00:00</dc:date>
-    </item>
-    <item>
-      <title>Cafetería Japonesa Kasa Hanaka</title>
-      <link>https://javier.computer/maps/barcelona/hanaka</link>
-      <description>&lt;p&gt;Una cafetería y sitio de almuerzos (y solo almuerzos) japo-catalán escondido y muy recomendable.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/hanaka'&gt;Carrer de Saragossa, 29&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Aparece en estos posts:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2023/06/04/kasa-hanaka'&gt;Kasa Hanaka&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
-      <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
-      <dc:subject>barcelona</dc:subject>
-      <dc:date>2024-10-07T00:00:00+00:00</dc:date>
-    </item>
-    <dc:date>2026-03-29T00:00:00+00:00</dc:date>
+    <dc:date>2026-03-31T11:27:12+02:00</dc:date>
   </channel>
 </rss>

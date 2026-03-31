@@ -10,7 +10,61 @@
     <link>https://javier.computer/feeds/places.xml</link>
     <description>Todos los sitios</description>
     <language>es</language>
-    <pubDate>Sun, 29 Mar 2026 00:00:00 +0000</pubDate>
+    <pubDate>Tue, 31 Mar 2026 11:27:12 +0200</pubDate>
+    <item>
+      <title>Llibreria Finestres</title>
+      <link>https://javier.computer/maps/barcelona/finestres</link>
+      <description>&lt;p&gt;Librería de referencia en Barcelona con libros en múltiples idiomas.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/finestres'&gt;Carrer de la Diputació, 249&lt;/a&gt;</description>
+      <pubDate>Tue, 31 Mar 2026 11:27:12 +0200</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2026-03-31T11:27:12+02:00</dc:date>
+    </item>
+    <item>
+      <title>Llibreria Finestres d'Art i Còmic</title>
+      <link>https://javier.computer/maps/barcelona/llibreria-finestres</link>
+      <description>&lt;p&gt;Librería de referencia en Barcelona con libros en múltiples idiomas. Este local está dedicado a cómics, libros de arte, fotografía, música y cine.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/llibreria-finestres'&gt;Carrer de la Diputació, 250&lt;/a&gt;</description>
+      <pubDate>Tue, 31 Mar 2026 11:27:12 +0200</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2026-03-31T11:27:12+02:00</dc:date>
+    </item>
+    <item>
+      <title>dubblelab</title>
+      <link>https://javier.computer/maps/barcelona/dubblelab</link>
+      <description>&lt;p&gt;Laboratorio fotográfico favorito en la ciudad.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/dubblelab'&gt;Carrer de Zamora, 99, 3-2&lt;/a&gt;</description>
+      <pubDate>Tue, 31 Mar 2026 11:19:51 +0200</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2026-03-31T11:19:51+02:00</dc:date>
+    </item>
+    <item>
+      <title>Amauta Coffee Bar</title>
+      <link>https://javier.computer/maps/barcelona/amauta-bcn</link>
+      <description>&lt;p&gt;Cafetería de especialidad en Barcelona que también cuenta con un local en Badalona.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/amauta-bcn'&gt;Travessera de Gràcia, 90&lt;/a&gt;</description>
+      <pubDate>Tue, 31 Mar 2026 10:58:25 +0200</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2026-03-31T10:58:25+02:00</dc:date>
+    </item>
+    <item>
+      <title>Parc de Can Solei i Ca l'Arnús</title>
+      <link>https://javier.computer/maps/badalona/parc-de-can-solei</link>
+      <description>&lt;p&gt;Fantástico parque cerca del centro de la ciudad con multitud de espacios diferentes, incluyendo un castillo en un lago, una torre del reloj, un huerto, un mirador.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/badalona/parc-de-can-solei'&gt;Av. Navarra, 205I&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Aparece en estos posts:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2026/03/24/can-solei'&gt;Parc de Can Solei i Ca l'Arnús&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Sun, 29 Mar 2026 22:00:53 +0200</pubDate>
+      <dc:subject>badalona</dc:subject>
+      <dc:date>2026-03-29T22:00:53+02:00</dc:date>
+    </item>
+    <item>
+      <title>Amauta Coffee</title>
+      <link>https://javier.computer/maps/badalona/amauta</link>
+      <description>&lt;p&gt;Cafetería de especialidad en Badalona que también cuenta con un local en Barcelona.&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/badalona/amauta'&gt;Carrer del Carme, 53&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Aparece en estos posts:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2026/03/24/can-solei'&gt;Parc de Can Solei i Ca l'Arnús&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Sun, 29 Mar 2026 20:31:35 +0200</pubDate>
+      <dc:subject>badalona</dc:subject>
+      <dc:date>2026-03-29T20:31:35+02:00</dc:date>
+    </item>
     <item>
       <title>Llibreria Terranova</title>
       <link>https://javier.computer/maps/barcelona/terranova</link>
@@ -19,24 +73,6 @@
       <pubDate>Sun, 29 Mar 2026 00:00:00 +0000</pubDate>
       <dc:subject>barcelona</dc:subject>
       <dc:date>2026-03-29T00:00:00+00:00</dc:date>
-    </item>
-    <item>
-      <title>Amauta Coffee</title>
-      <link>https://javier.computer/maps/badalona/amauta</link>
-      <description>&lt;p&gt;Cafetería de especialidad en Badalona que también cuenta con un local en Barcelona.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/badalona/amauta'&gt;Carrer del Carme, 53&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Aparece en estos posts:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2026/03/24/can-solei'&gt;Parc de Can Solei i Ca l'Arnús&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
-      <pubDate>Tue, 24 Mar 2026 17:00:00 +0100</pubDate>
-      <dc:subject>badalona</dc:subject>
-      <dc:date>2026-03-24T17:00:00+01:00</dc:date>
-    </item>
-    <item>
-      <title>Parc de Can Solei i Ca l'Arnús</title>
-      <link>https://javier.computer/maps/badalona/parc-de-can-solei</link>
-      <description>&lt;p&gt;Fantástico parque cerca del centro de la ciudad con multitud de espacios diferentes, incluyendo un castillo en un lago, una torre del reloj, un huerto, un mirador.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/badalona/parc-de-can-solei'&gt;Av. Navarra, 205I&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Aparece en estos posts:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2026/03/24/can-solei'&gt;Parc de Can Solei i Ca l'Arnús&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
-      <pubDate>Tue, 24 Mar 2026 17:00:00 +0100</pubDate>
-      <dc:subject>badalona</dc:subject>
-      <dc:date>2026-03-24T17:00:00+01:00</dc:date>
     </item>
     <item>
       <title>El Noa Noa</title>
@@ -50,11 +86,56 @@
     <item>
       <title>SlowMov</title>
       <link>https://javier.computer/maps/barcelona/slowmov</link>
-      <description>&lt;p&gt;Mi cafetería de cabecera en el barrio.&lt;/p&gt;
+      <description>&lt;p&gt;Mi antigua cafetería de cabecera en el barrio, aunque ahora prefiero Amauta.&lt;/p&gt;
 &lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/slowmov'&gt;Carrer de Luis Antúnez, 18&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Aparece en estos posts:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2022/04/28/pegatinas'&gt;Pegatinas&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://javier.computer/2026/03/11/graf'&gt;Graf&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
       <pubDate>Wed, 11 Mar 2026 22:26:44 +0100</pubDate>
       <dc:subject>barcelona</dc:subject>
       <dc:date>2026-03-11T22:26:44+01:00</dc:date>
+    </item>
+    <item>
+      <title>Ximei</title>
+      <link>https://javier.computer/maps/barcelona/ximei</link>
+      <description>&lt;p&gt;Italiano veneciano&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/ximei'&gt;Pg. de l'Exposició, 85&lt;/a&gt;</description>
+      <pubDate>Thu, 18 Dec 2025 19:17:34 +0100</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2025-12-18T19:17:34+01:00</dc:date>
+    </item>
+    <item>
+      <title>Espai Puntal</title>
+      <link>https://javier.computer/maps/barcelona/espai-puntal</link>
+      <description>
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/espai-puntal'&gt;&lt;/a&gt;</description>
+      <pubDate>Sun, 28 Sep 2025 23:05:45 +0200</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2025-09-28T23:05:45+02:00</dc:date>
+    </item>
+    <item>
+      <title>ANTISOUVENIR®</title>
+      <link>https://javier.computer/maps/leon/antisouvenir</link>
+      <description>
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/leon/antisouvenir'&gt;Calle Paloma, 11&lt;/a&gt;</description>
+      <pubDate>Tue, 23 Sep 2025 15:42:55 +0200</pubDate>
+      <dc:subject>leon</dc:subject>
+      <dc:date>2025-09-23T15:42:55+02:00</dc:date>
+    </item>
+    <item>
+      <title>dubblefilm</title>
+      <link>https://javier.computer/maps/barcelona/dubblefilm</link>
+      <description>&lt;p&gt;Tienda de fotografía. Puedes dejar aquí tus carretes para que te los revele dubblelab&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/barcelona/dubblefilm'&gt;Carrer de Verdi, 28&lt;/a&gt;</description>
+      <pubDate>Tue, 23 Sep 2025 15:42:55 +0200</pubDate>
+      <dc:subject>barcelona</dc:subject>
+      <dc:date>2025-09-23T15:42:55+02:00</dc:date>
+    </item>
+    <item>
+      <title>Juliette</title>
+      <link>https://javier.computer/maps/badalona/juliette</link>
+      <description>
+&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/badalona/juliette'&gt;Carrer Sant Ignasi, 73, 08340&lt;/a&gt;</description>
+      <pubDate>Tue, 23 Sep 2025 15:42:55 +0200</pubDate>
+      <dc:subject>badalona</dc:subject>
+      <dc:date>2025-09-23T15:42:55+02:00</dc:date>
     </item>
     <item>
       <title>Film Speed Lab</title>
@@ -110,87 +191,6 @@
       <dc:subject>berlin</dc:subject>
       <dc:date>2025-08-22T00:00:00+00:00</dc:date>
     </item>
-    <item>
-      <title>onette</title>
-      <link>https://javier.computer/maps/berlin/onette</link>
-      <description>&lt;p&gt;Diner americano en el barrio de Schöneberg. El servicio es súper amable y la cola para entrar súper larga si llegas en mal momento. Me quedé sin probar el Krosses Fischbrötchen (aka Crispy Fish Bun), pero la alternativa (sandwich de col rizada, espinacas y acelgas estofadas, acompañadas de ensalada de col y queso Old Amsterdam en un pan de molde gordísimo) me gustó mucho.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/onette'&gt;Grunewaldstraße 11&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;Aparece en estos posts:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://javier.computer/2025/08/17/time-to-check-in'&gt;Time to check in&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
-      <pubDate>Sun, 17 Aug 2025 20:39:47 +0200</pubDate>
-      <dc:subject>berlin</dc:subject>
-      <dc:date>2025-08-17T20:39:47+02:00</dc:date>
-    </item>
-    <item>
-      <title>Acid P-Berg</title>
-      <link>https://javier.computer/maps/berlin/acid</link>
-      <description>&lt;p&gt;Segunda cafetería de Acid en la ciudad. El café está rico pero es muy caro.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/acid'&gt;Christinenstraße 19a&lt;/a&gt;</description>
-      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      <dc:subject>berlin</dc:subject>
-      <dc:date>2025-08-11T00:00:00+00:00</dc:date>
-    </item>
-    <item>
-      <title>Cafe Sgaminegg</title>
-      <link>https://javier.computer/maps/berlin/cafe-sgaminegg</link>
-      <description>&lt;p&gt;Cafetería con menú del día y ambiente acogedor.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/cafe-sgaminegg'&gt;Seelower Straße, 2&lt;/a&gt;</description>
-      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      <dc:subject>berlin</dc:subject>
-      <dc:date>2025-08-11T00:00:00+00:00</dc:date>
-    </item>
-    <item>
-      <title>Foto Meyer</title>
-      <link>https://javier.computer/maps/berlin/foto-meyer</link>
-      <description>&lt;p&gt;Bien surtida tienda de fotografía digital, con buenos precios en cámaras analógicas de segunda mano.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/foto-meyer'&gt;Welserstraße, 1&lt;/a&gt;</description>
-      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      <dc:subject>berlin</dc:subject>
-      <dc:date>2025-08-11T00:00:00+00:00</dc:date>
-    </item>
-    <item>
-      <title>Jules</title>
-      <link>https://javier.computer/maps/berlin/jules</link>
-      <description>&lt;p&gt;Buena cafetería en esta zona, perfecta como plan B si Café Komine está imposible.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/jules'&gt;Geisbergstraße, 9&lt;/a&gt;</description>
-      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      <dc:subject>berlin</dc:subject>
-      <dc:date>2025-08-11T00:00:00+00:00</dc:date>
-    </item>
-    <item>
-      <title>Kiez Kaffee Kraft</title>
-      <link>https://javier.computer/maps/berlin/kiez-kaffee-kraft</link>
-      <description>&lt;p&gt;Lugar de confianza cafetera en la zona. Precios razonables y baño, lo cual es cada vez más difícil de encontrar.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/kiez-kaffee-kraft'&gt;Schivelbeiner Straße, 23&lt;/a&gt;</description>
-      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      <dc:subject>berlin</dc:subject>
-      <dc:date>2025-08-11T00:00:00+00:00</dc:date>
-    </item>
-    <item>
-      <title>Modulor</title>
-      <link>https://javier.computer/maps/berlin/modulor</link>
-      <description>&lt;p&gt;Modulor Material Total&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/modulor'&gt;Prinzenstraße, 85&lt;/a&gt;</description>
-      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
-      <dc:subject>berlin</dc:subject>
-      <dc:date>2025-08-11T00:00:00+00:00</dc:date>
-    </item>
-    <item>
-      <title>Babel</title>
-      <link>https://javier.computer/maps/berlin/babel</link>
-      <description>&lt;p&gt;Nunca me he sentado para comer aquí, pero puedo recomendar sus falafels para llevar.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/babel'&gt;Kastanienallee, 33&lt;/a&gt;</description>
-      <pubDate>Sun, 10 Aug 2025 00:00:00 +0000</pubDate>
-      <dc:subject>berlin</dc:subject>
-      <dc:date>2025-08-10T00:00:00+00:00</dc:date>
-    </item>
-    <item>
-      <title>Bekarei</title>
-      <link>https://javier.computer/maps/berlin/bekarei</link>
-      <description>&lt;p&gt;Especialidades de repostería portuguesa y griega en Berlín. Nota para mí: abstenerse de volver a pedir café.&lt;/p&gt;
-&lt;br&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; &lt;a href='https://javier.computer/maps/berlin/bekarei'&gt;Dunckerstraße 23&lt;/a&gt;</description>
-      <pubDate>Sun, 10 Aug 2025 00:00:00 +0000</pubDate>
-      <dc:subject>berlin</dc:subject>
-      <dc:date>2025-08-10T00:00:00+00:00</dc:date>
-    </item>
-    <dc:date>2026-03-29T00:00:00+00:00</dc:date>
+    <dc:date>2026-03-31T11:27:12+02:00</dc:date>
   </channel>
 </rss>
