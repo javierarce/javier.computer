@@ -307,6 +307,15 @@ module Jekyll
       feeds_dir = File.join(site.config['source'], 'feeds')
       FileUtils.mkdir_p(feeds_dir)
 
+      # Build a map from location slug to display title (e.g. "newyork" => "Nueva York")
+      location_titles = {}
+      if site.collections['maps']
+        site.collections['maps'].docs.each do |map_doc|
+          slug = map_doc.data['location']
+          location_titles[slug] = map_doc.data['title'] if slug
+        end
+      end
+
       locations_hash.each do |location, points_of_interest|
         # Points are already sorted by last_updated (most recent first)
         points_of_interest = points_of_interest.first(20)
@@ -396,7 +405,10 @@ module Jekyll
             end
 
             if point['address']
-              description_parts << "<br><strong>Dirección:</strong> <a href='#{item.link}'>#{point['address']}</a>"
+              address_text = point['address']
+              city_name = location_titles[location] || location&.capitalize
+              address_text = "#{address_text}, #{city_name}" if city_name && location != 'unknown'
+              description_parts << "<br><strong>Dirección:</strong> <a href='#{item.link}'>#{address_text}</a>"
             end
 
             if point['post_references'] && !point['post_references'].empty?
