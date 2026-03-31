@@ -56,7 +56,7 @@
     "title": "SlowMov",
     "pid": "slowmov",
     "emoji": "☕️",
-    "description": "<p>Mi cafetería de cabecera en el barrio.</p>\n",
+    "description": "<p>Mi antigua cafetería de cabecera en el barrio, aunque ahora prefiero Amauta.</p>\n",
     "address": "Carrer de Luis Antúnez, 18",
     "latlng": [
       41.39821818545401,
@@ -725,14 +725,45 @@
   },
   {
     "layout": "place",
+    "title": "Amauta Coffee Bar",
+    "pid": "amauta-bcn",
+    "description": "<p>Cafetería de especialidad en Barcelona que también cuenta con un local en Badalona.</p>\n",
+    "address": "Travessera de Gràcia, 90",
+    "latlng": [
+      41.398227880319936,
+      2.1527225374895456
+    ],
+    "location": "barcelona",
+    "last_updated": "2023-01-01T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
     "pid": "dubblefilm",
     "title": "dubblefilm",
-    "description": "\n",
+    "description": "<p>Tienda de fotografía. Puedes dejar aquí tus carretes para que te los revele dubblelab</p>\n",
     "address": "Carrer de Verdi, 28",
+    "emoji": "📸",
     "category": "photographic_laboratory",
     "latlng": [
       41.403824,
       2.156979
+    ],
+    "location": "barcelona",
+    "last_updated": "2023-01-01T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "dubblelab",
+    "title": "dubblelab",
+    "description": "<p>Laboratorio fotográfico favorito en la ciudad.</p>\n",
+    "emoji": "📸",
+    "address": "Carrer de Zamora, 99, 3-2",
+    "category": "photographic_laboratory",
+    "latlng": [
+      41.3961663306281,
+      2.1892947239946126
     ],
     "location": "barcelona",
     "last_updated": "2023-01-01T00:00:00+00:00",
