@@ -42,16 +42,26 @@ module Jekyll
       end
     end
 
-    def get_place_last_updated(location_data)
-      # Priority order: updated_at > date > fallback to a default
+    def get_file_first_commit_date(file)
+      date_str = `git log --diff-filter=A --format=%aI -- #{file}`.strip
+      parse_date(date_str)
+    end
+
+    def get_place_last_updated(location_data, file = nil)
+      # Priority order: updated_at > date > git first-commit date > fallback
       updated_at = parse_date(location_data['updated_at'])
       return updated_at if updated_at
 
       frontmatter_date = parse_date(location_data['date'])
       return frontmatter_date if frontmatter_date
 
-      # Fallback to a reasonable default date
-      DateTime.new(2023, 1, 1)
+      if file
+        git_date = get_file_first_commit_date(file)
+        return git_date if git_date
+      end
+
+      # Fallback for uncommitted files
+      DateTime.now
     end
 
     def generate_places(site)
@@ -78,7 +88,7 @@ module Jekyll
         next if location_data.nil? || location_data['pid'].nil?
 
         # Use the new date parsing method
-        location_data['last_updated'] = get_place_last_updated(location_data)
+        location_data['last_updated'] = get_place_last_updated(location_data, file)
         location_data['description'] = render_markdown(location_data['description'])
         location_data['post_references'] ||= []
         
@@ -141,6 +151,14 @@ module Jekyll
       end
 
       generate_json(locations_hash)
+
+      # Update site.data so templates use the freshly computed locations
+      # (Jekyll loads _data/ files before generators run, so the JSON on
+      # disk alone isn't enough for the current build)
+      site.data['locations'] ||= {}
+      locations_hash.each do |location_name, places|
+        site.data['locations'][location_name] = places
+      end
 
       # RSS and CSV only in production — they contain absolute URLs from site.config
       # and don't feed back into the build, so generating them in dev would just
