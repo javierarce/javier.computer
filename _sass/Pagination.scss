@@ -26,16 +26,18 @@
     width: 40px;
     height: 40px;
     margin: 0 0.4em 0 0;
-    border: 1px solid var(--color-border-muted);
+    background: var(--color-bg-pagination);
+    color: var(--color-txt-pagination);
+    border: 1px solid var(--color-border-pagination);
     text-decoration: none;
     cursor: pointer;
     user-select: none;
     font-size: 0.9em;
-    opacity: var(--op-light);
 
     &:hover {
-      color: var(--textHover);
-      background: var(--color-bg-active);
+      background: var(--color-bg-pagination-hover);
+      color: var(--color-txt-pagination-hover);
+      border: 1px solid var(--color-border-pagination-hover);
       opacity: 1;
       text-decoration: none;
     }
@@ -53,13 +55,15 @@
 
     &.is-selected {
       cursor: default;
-      background: var(--color-bg-active);
-      color: var(--color-txt-site);
+      background: var(--color-bg-pagination-selected);
+      color: var(--color-txt-pagination-selected);
+      border: 1px solid var(--color-border-pagination-selected);
       opacity: 1;
 
       &:hover {
-        background: transparent;
-        color: var(--textHover);
+        background: var(--color-bg-pagination-selected);
+        color: var(--color-txt-pagination-selected);
+        border: 1px solid var(--color-border-pagination-selected);
         opacity: 1;
       }
     }
@@ -70,12 +74,11 @@
       height: auto;
       padding: 0;
       margin: 0 0 0 0.4em;
-      font-size: 1em;
+      font-size: var(--font-size-ui);
 
       &:hover {
         background: none;
         color: var(--textHover);
-        text-decoration: underline;
       }
     }
 
@@ -96,7 +99,6 @@
       display: flex;
       width: 100%;
     }
-
 
     &__item {
       &.is-archive {

@@ -62,6 +62,18 @@
   --color-book-light-blue: #1565c0;
   --color-book-light-pink: #ec407a;
 
+  --color-bg-pagination: rgba(255, 255, 255, var(--op-0));
+  --color-txt-pagination: rgba(255, 255, 255, var(--op-5));
+  --color-border-pagination: rgba(255, 255, 255, var(--op-5));
+
+  --color-bg-pagination-hover: rgba(255, 255, 255, var(--op-0));
+  --color-txt-pagination-hover: rgba(255, 255, 255, var(--op-10));
+  --color-border-pagination-hover: rgba(255, 255, 255, var(--op-10));
+
+  --color-bg-pagination-selected: rgba(255, 255, 255, var(--op-0));
+  --color-txt-pagination-selected: rgba(255, 255, 255, var(--op-10));
+  --color-border-pagination-selected: rgba(255, 255, 255, var(--op-10));
+
   --color-bg-zine: var(--light-pink);
   --color-bg-selection: rgba(142, 142, 142, 0.2);
   --color-bg-search-highlight: rgb(48, 48, 48);
