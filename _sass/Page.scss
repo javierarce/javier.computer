@@ -1,10 +1,10 @@
 .layout__page {
   .page__content {
     width: var(--width-content);
-    font-size: var(--font-size-content);
+    font-size: var(--font-size-body);
     display: flex;
     flex-direction: column;
-    gap: var(--gap-md);
+    gap: var(--s-4);
 
     p,
     h3 {
@@ -40,7 +40,7 @@
   &__date:hover {
     user-select: none;
     text-decoration: none;
-    font-weight: var(--font-weight-regular);
+    font-weight: var(--weight-regular);
     opacity: var(--op-light);
   }
 }
@@ -87,7 +87,7 @@
         width: var(--width-full);
         border: none;
         padding: 0;
-        margin: 0 0 var(--space-lg);
+        margin: 0 0 var(--s-4);
 
         &:last-child {
           margin: 0;

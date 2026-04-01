@@ -69,7 +69,7 @@
 
 @media all and (max-width: 640px) {
   .calendar__day {
-    font-size: 0.9em;
+    font-size: var(--font-size-ui);
 
     &.has-posts {
       position: relative;

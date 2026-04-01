@@ -32,7 +32,7 @@
     text-decoration: none;
     cursor: pointer;
     user-select: none;
-    font-size: 0.9em;
+    font-size: var(--font-size-ui);
 
     &:hover {
       background: var(--color-bg-pagination-hover);
@@ -106,7 +106,7 @@
       }
 
       &.is-mobile-archive {
-        font-size: 0.9em;
+        font-size: var(--font-size-ui);
         border: 1px solid var(--color-border-muted);
         padding: 0.8em;
         display: flex;

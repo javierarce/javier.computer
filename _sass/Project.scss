@@ -15,6 +15,10 @@
 }
 
 .projects {
+  &__cards {
+    margin-bottom: var(--s-12);
+  }
+
   &__lists,
   &__year {
     display: flex;
@@ -22,22 +26,22 @@
   }
 
   &__lists {
-    gap: var(--gap-xl);
+    gap: var(--s-10);
   }
 
   &__year {
-    gap: var(--gap-md);
+    gap: var(--s-4);
 
     h3 {
       margin: 0;
-      padding-bottom: var(--space-lg);
+      padding-bottom: var(--s-4);
       border-bottom: 1px solid var(--gray);
     }
   }
 }
 
 .project {
-  font-size: var(--font-size-content);
+  font-size: var(--font-size-body);
 
   &__content {
     display: flex;
@@ -54,7 +58,7 @@
       margin: 0 0 2em;
       text-align: center;
       font-size: var(--font-size-meta);
-      font-weight: var(--font-weight-regular);
+      font-weight: var(--weight-regular);
       opacity: var(--op-light);
     }
 
@@ -89,7 +93,7 @@
       width: var(--width-full);
       max-width: 900px;
       text-align: center;
-      margin: var(--gap-md) auto 0 auto;
+      margin: var(--s-4) auto 0 auto;
       color: var(--color-caption);
       line-height: 1.5;
     }
@@ -113,65 +117,27 @@
   margin: 0;
 
   li {
-    margin-bottom: 2em;
+    margin-bottom: var(--s-6);
     list-style: none;
 
     a {
       text-decoration: none;
     }
-  }
-
-  p {
-    opacity: var(--op-light);
+    p {
+      opacity: var(--op-light);
+    }
+    p, a {
+      font-size: var(--font-size-project);
+    }
   }
 }
 
-.project__cards {
-  display: grid;
-  grid-template-columns: repeat(2, 2fr);
-  grid-gap: var(--gap-md);
-  width: var(--width-full);
-  margin-bottom: 4em;
-
-  .project__card {
-    position: relative;
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid var(--gray);
-    border-radius: var(--br-subtle);
-    text-decoration: none;
-
-    &:hover {
-      border: 1px solid var(--white);
-      text-decoration: none;
-    }
-
-    &-date {
-      position: absolute;
-      top: 1em;
-      right: 1em;
-      font-size: var(--font-size-meta);
-      opacity: var(--op-light);
-    }
-
-    &-title {
-      text-decoration: none;
-    }
-
-    &-description {
-      text-decoration: none;
-      opacity: var(--op-light);
-    }
-  }
-}
 
 @media all and (max-width: 1280px) {
   .project__intro,
   .layout__project .project p,
   .layout__project .project__content h3,
-  .layout__project .project .figure,
-  .project__cards {
+  .layout__project .project .figure {
     width: var(--width-full);
   }
 }
@@ -185,11 +151,6 @@
       height: auto;
       object-fit: cover;
     }
-  }
-
-  .project__cards {
-    display: flex;
-    flex-direction: column;
   }
 }
 

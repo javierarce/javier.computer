@@ -3,20 +3,20 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--gap-xl);
+  gap: var(--s-8);
 
   h2 {
     margin: 0;
   }
 
   &__links {
-    font-size: var(--font-size-meta);
+    font-size: var(--font-size-list);
   }
 
   &__list {
     display: flex;
     flex-direction: column;
-    gap: var(--gap-sm);
+    gap: var(--s-2);
     margin: 0;
 
     li {
@@ -25,8 +25,7 @@
       align-items: center;
       list-style: none;
       padding: 0;
-      font-size: var(--font-size-content);
-      gap: var(--gap-sm);
+      gap: var(--s-2);
       margin: 0;
 
       a {
@@ -44,24 +43,13 @@
     flex-direction: column;
     break-inside: avoid;
     margin: 0;
-    gap: var(--gap-md);
+    gap: var(--s-4);
   }
 
   &__month-name {
-    padding: 0 0 var(--space-lg);
+    padding: 0 0 var(--s-4);
     border-bottom: 1px solid var(--gray);
     margin: 0;
-  }
-
-  &__day {
-    display: block;
-    padding: var(--space-sm);
-    font-family: var(--font-text-mono);
-    font-size: var(--font-size-caption);
-    border: 1px solid var(--color-border-muted);
-    border-radius: var(--br-default);
-    line-height: normal;
-    opacity: var(--op-light);
   }
 }
 

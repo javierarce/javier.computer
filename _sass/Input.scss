@@ -14,7 +14,7 @@ input {
   &__field {
     display: flex;
     flex-direction: column;
-    gap: var(--gap-sm);
+    gap: var(--s-2);
     width: var(--width-full);
 
     &-short {
@@ -25,10 +25,10 @@ input {
 
 .input,
 .textarea {
-  padding: var(--space-lg);
+  padding: var(--s-4);
   resize: none;
   border: 1px solid var(--color-border-muted);
-  font-size: var(--font-size-ui);
+  font-size: var(--font-size-input);
   border-radius: var(--br-subtle);
   transition: border var(--transition-speed-default) ease-in-out;
   outline: none;

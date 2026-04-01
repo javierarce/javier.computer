@@ -1,0 +1,92 @@
+.popup {
+  &__content {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-1);
+  }
+
+  &__title,
+  &__description p {
+    font-size: var(--font-size-ui);
+  }
+
+  &__title {
+    display: block;
+    font-weight: var(--weight-bold);
+    margin: 0 0 0.2rem;
+  }
+
+  &__description {
+    margin: 0 0 0.4rem;
+  }
+
+  &__address {
+    opacity: var(--op-light);
+    font-size: var(--font-size-meta);
+  }
+
+  &__posts {
+    margin: 0 0 0.4rem;
+    display: flex;
+    gap: var(--s-1);
+  }
+
+  &__posts &__post {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.2rem;
+    height: 1.2rem;
+    padding: 0.4rem;
+    background: var(--color-map-background);
+    color: var(--black-pure);
+    font-size: var(--font-size-caption);
+    border-radius: var(--br-pill);
+    transition: background var(--transition-speed-default) ease-in-out;
+  }
+
+  &__posts &__post:hover {
+    background: var(--color-bg-muted-hover);
+  }
+
+  .leaflet-popup-close-button {
+    display: none;
+  }
+
+  .leaflet-popup-content {
+    margin: 0;
+  }
+
+  .leaflet-popup-content-wrapper {
+    min-width: 200px;
+    border-radius: var(--br-flat);
+    padding: 1rem; // TODO: add variable
+    border: none;
+    background: var(--white);
+    color: var(--black-pure);
+    font-size: var(--font-size-body);
+    box-shadow: 0 2px 4px var(--color-shadow);
+    border-radius: var(--br-md);
+  }
+
+  .leaflet-popup-content p {
+    margin: 0;
+  }
+
+  .leaflet-popup-tip-container {
+    margin-top: 0;
+  }
+
+  .leaflet-popup-tip {
+    border-radius: var(--br-flat);
+    width: 12px;
+    height: 12px;
+    margin: -8px auto 0;
+    padding: 1px;
+    border: 1px solid transparent;
+    background: var(--white);
+    box-shadow: 0 2px 4px var(--color-shadow);
+  }
+}

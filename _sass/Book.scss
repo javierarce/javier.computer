@@ -13,12 +13,11 @@ a.book__spine:hover {
     background: var(--white);
     color: var(--black);
     width: var(--width-full);
-    padding: 1.4em;
+    padding: var(--s-6);
     writing-mode: horizontal-tb;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    font-size: var(--font-size-meta);
     text-decoration: none;
     transition: transform 200ms;
   }
@@ -34,7 +33,7 @@ a.book__spine:hover {
     justify-content: flex-start;
     gap: 1px;
     flex-direction: column;
-    margin: 0 0 7em;
+    margin: 0 0 var(--s-16);
   }
 
   &__spine:hover &__progress {
@@ -59,11 +58,13 @@ a.book__spine:hover {
   }
 
   &__title {
-    font-weight: var(--font-weight-regular);
+    font-weight: var(--weight-regular);
+    font-size: var(--font-size-ui);
   }
 
   &__author {
     opacity: var(--op-light);
+    font-size: var(--font-size-ui);
   }
 
   &__spine.is-2[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))) .book__title:after,

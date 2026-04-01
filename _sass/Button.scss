@@ -8,11 +8,11 @@
   color: var(--color-txt-site);
   cursor: pointer;
   display: flex;
-  font-size: var(--font-size-meta);
+  font-size: var(--font-size-input);
   justify-content: center;
   margin: 0;
   outline: none;
-  padding: var(--space-md) var(--space-lg);
+  padding: var(--s-3) var(--s-4);
   position: relative;
   transition:
     background var(--transition-speed-default) ease-in-out,

@@ -75,7 +75,7 @@ $transition-duration: 0.3s;
     bottom: 0.8em;
     left: 0.8em;
     color: var(--white);
-    font-size: 0.6em;
+    font-size: var(--font-size-caption);
     opacity: var(--op-hidden);
     transition: opacity $transition-duration ease-in-out;
   }
@@ -116,7 +116,7 @@ $transition-duration: 0.3s;
     }
 
     &.pause {
-      gap: var(--gap-md);
+      gap: var(--s-4);
 
       &::before,
       &::after {
@@ -137,8 +137,8 @@ $transition-duration: 0.3s;
 
   .fullscreen-button:after {
     content: "\2197";
-    font-size: var(--font-size-content);
-    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-body);
+    font-weight: var(--weight-bold);
     color: var(--white);
   }
 

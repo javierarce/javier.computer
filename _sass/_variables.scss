@@ -90,29 +90,66 @@
   --font-text-serif: "Newsreader", Georgia, Cambria, "Times New Roman", Times, serif;
   --font-text-mono: "SF Mono", SFMono-Regular, ui-monospace, "DejaVu Sans Mono", Menlo, Consolas, monospace;
 
-  /* Font sizes */
-  --font-size-base: 1rem;
-  --font-size-xs: 0.75em;
-  --font-size-sm: 0.875em;
-  --font-size-md: 1em;
-  --font-size-lg: 1.1em;
-  --font-size-xl: 1.2em;
-  --font-size-xxl: 1.3em;
-  --font-size-xxxl: 1.8em;
+/* --- RAW TYPE SCALE (Geometric/Major Third) --- */
+  --text-xs:   0.75rem;     /* 12px */
+  --text-sm:   0.875rem;    /* 14px */
+  --text-md:   1rem;        /* 16px (Base) */
+  --text-lg:   1.25rem;     /* 20px (x1.25) */
+  --text-xl:   1.5rem;      /* 24px (x1.20) */
+  --text-2xl:  2rem;        /* 32px (x1.33) */
+  --text-3xl:  2.5rem;      /* 40px (x1.25) */
+  --text-4xl:  3rem;        /* 48px (x1.20) */
+  --text-5xl:  4rem;        /* 64px (x1.33) */
 
-  /* Semantic font sizes */
-  --font-size-body: var(--font-size-xl); /* base body text */
-  --font-size-content: var(--font-size-xl); /* reading content: posts, tables, drawings */
-  --font-size-ui: var(--font-size-md); /* UI elements: inputs, h3/h4, paragraphs */
-  --font-size-meta: var(--font-size-sm); /* secondary text: labels, captions, buttons */
-  --font-size-caption: var(--font-size-xs); /* smallest text: figure titles, tiny labels */
-  --font-size-display: var(--font-size-xxxl); /* large display headers */
+  /* --- SEMANTIC TYPOGRAPHY --- */
+  --font-size-display:   var(--text-5xl); /* Large hero/marketing type */
+  --font-size-title-xl:  var(--text-2xl); /* H1 */
+  --font-size-title-lg:  var(--text-xl);  /* H2 */
+  --font-size-title-md:  var(--text-lg);  /* H3 */
+  --font-size-title-sm:  var(--text-md);  /* H4 */
+  
+  --font-size-body:      var(--text-xl);  /* Standard reading text */
+  --font-size-footer:    var(--text-lg);  
 
-  --font-weight-heavy: 700;
-  --font-weight-bold: 600;
-  --font-weight-semibold: 500;
-  --font-weight-regular: 400;
-  --font-weight-light: 300;
+  /* SEMANTIC NOTE: ui vs meta share a value but serve different roles.
+     - UI: Functional labels (buttons, nav). Often requires higher weight.
+     - Meta: Secondary data (timestamps, legal). Often lower opacity. */
+  --font-size-nav:       var(--text-lg);  
+  --font-size-movie:     var(--text-lg);  
+  --font-size-project:   var(--text-lg);  
+  --font-size-card:      var(--text-lg);  
+  --font-size-list:      var(--text-lg);  
+  --font-size-input:     var(--text-lg);  
+  --font-size-ui:        var(--text-md);  
+  --font-size-meta:      var(--text-sm);  
+  --font-size-caption:   var(--text-xs);  /* Tiny descriptors/overlays */
+  --font-size-id:        var(--text-xs);  
+
+  /* --- WEIGHTS --- */
+  --weight-light:   300;
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-bold:    700;
+  --weight-black:   900;
+
+  /* --- SPACING (Continuous 4pt Grid) --- */
+  /* Formula: --s-n = n * 0.25rem (n * 4px) */
+  --s-1:  0.25rem;   /* 4px   */
+  --s-2:  0.5rem;    /* 8px   */
+  --s-3:  0.75rem;   /* 12px  */
+  --s-4:  1rem;      /* 16px  */
+  --s-5:  1.25rem;   /* 20px  */
+  --s-6:  1.5rem;    /* 24px  */
+  --s-7:  1.75rem;   /* 28px  */
+  --s-8:  2rem;      /* 32px  */
+  --s-9:  2.25rem;   /* 36px  */
+  --s-10: 2.5rem;    /* 40px  */
+  --s-11: 2.75rem;   /* 44px  */
+  --s-12: 3rem;      /* 48px  */
+  --s-13: 3.25rem;   /* 52px  */
+  --s-14: 3.5rem;    /* 56px  */
+  --s-15: 3.75rem;   /* 60px  */
+  --s-16: 4rem;      /* 64px  */
 
   /* Dimensions */
   --width-full: 100%;
@@ -124,16 +161,6 @@
   /* Semantic widths */
   --width-content: var(--width-md); /* standard content column */
   --width-wide: var(--width-lg); /* wider sections and layouts */
-
-  /* Spacing */
-  --space-xs: 0.2rem;
-  --space-sm: 0.4rem;
-  --space-md: 0.8rem;
-  --space-lg: 1rem;
-  --space-xl: 1.5rem;
-  --space-xxl: 2rem;
-  --space-xxxl: 3rem;
-  --space-4xl: 4rem;
 
   /* Opacity */
   --op-10: 1;
@@ -163,16 +190,6 @@
   --br-subtle: var(--br-sm); /* minimal rounding: images, small elements */
   --br-default: var(--br-md); /* standard rounding: cards, inputs, tags */
   --br-pill: var(--br-round); /* full pill/circle */
-
-  /* Gaps  */
-  --gap-xxs: 0.1em;
-  --gap-xs: 0.2em;
-  --gap-sm: 0.4em;
-  --gap-md: 0.8em;
-  --gap-lg: 1.4em;
-  --gap-xl: 2em;
-  --gap-xxl: 3em;
-  --gap-xxxl: 4em;
 
   /* Transitions */
   --transition-speed-default: 140ms;

@@ -1,0 +1,51 @@
+.marker {
+  &.leaflet-zoom-animated.leaflet-interactive {
+    width: 32px !important;
+    height: 32px !important;
+    padding: var(--s-3);
+    font-size: 12px; // TODO: fix
+    font-weight: var(--weight-bold);
+    background: var(--black-pure);
+    background-size: 400% 400%;
+    box-shadow: 0 2px 4px var(--color-shadow);
+    border-radius: var(--br-pill);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid var(--white);
+  }
+
+  &.leaflet-zoom-animated.leaflet-interactive:focus {
+    background: var(--black-pure);
+    color: var(--white);
+    outline: none !important;
+    z-index: 100 !important;
+  }
+
+  &.leaflet-zoom-animated.leaflet-interactive.has-emoji {
+    border: none;
+    background: none;
+    padding: 0;
+    font-size: var(--font-size-body);
+    box-shadow: none;
+  }
+
+  &.leaflet-zoom-animated.leaflet-interactive.has-emoji:focus {
+    background: none;
+    color: var(--white);
+    outline: none !important;
+    z-index: 100 !important;
+  }
+
+  &--post.leaflet-zoom-animated.leaflet-interactive,
+  &--post.leaflet-zoom-animated.leaflet-interactive:focus {
+    width: 20px !important;
+    height: 20px !important;
+    padding: 0;
+    font-size: 0;
+    background: var(--black-pure);
+    border: 3px solid var(--white);
+    border-radius: var(--br-pill);
+    box-shadow: 0 2px 4px var(--color-shadow);
+  }
+}

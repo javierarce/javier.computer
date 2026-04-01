@@ -2,11 +2,6 @@
   .footer {
     margin-top: 4em;
   }
-
-  h3 {
-    padding: 0 0 var(--space-lg);
-    border-bottom: 1px solid var(--gray);
-  }
 }
 
 .movies {
@@ -17,9 +12,17 @@
   margin: 0 0 1em;
 }
 
+.movie__month {
+  padding: 0 0 var(--s-4);
+  border-bottom: 1px solid var(--gray);
+}
+
+
 .movie__list {
+  display: flex;
   list-style: none;
-  padding: 0;
+  flex-direction: column;
+  gap: var(--s-2);
   margin: 0 0 2em;
 
   .movie__list + h2 {
@@ -27,8 +30,14 @@
   }
 
   li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     list-style: none;
-    margin: 0 0 0.2em;
+    padding: 0;
+    gap: var(--s-2);
+    margin: 0;
+    font-size: var(--font-size-movie);
 
     &:last-child {
       margin: 0;
@@ -41,12 +50,6 @@
 
   span {
     opacity: var(--op-light);
-  }
-
-  &-date {
-    display: inline-block;
-    margin: 0 0.2em 0 0;
-    font-family: var(--font-text-mono);
   }
 }
 

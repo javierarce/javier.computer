@@ -17,7 +17,7 @@ category: posts
   <div class="archive">
 
   <div class="tags">
-    <h2 class="tags__title">Tags</h2>
+    <h3 class="tags__title">Tags</h3>
 
     <div class="tags__list">
       {% for tag in site.tags -%}
@@ -30,7 +30,7 @@ category: posts
   </div>
 
   <div class="tags">
-    <h2 class="tags__title">Ciudades</h2>
+    <h3 class="tags__title">Ciudades</h3>
 
     <div class="tags__list">
       {% for location in site.locations -%}
@@ -46,7 +46,7 @@ category: posts
   </div>
 
   <div class="tags">
-    <h2 class="tags__title">Mapas</h2>
+    <h3 class="tags__title">Mapas</h3>
 
     <div class="tags__list">
       {% for map in site.maps -%}
@@ -69,7 +69,7 @@ category: posts
     <div class="archive__month">
 
       {% if last_year != current_year -%}
-      <h2 class="archive__year">{{ current_year }}</h2>
+      <h3 class="archive__year">{{ current_year }}</h3>
       {% assign last_year = current_year -%}
       {% endif -%}
 
@@ -87,7 +87,7 @@ category: posts
     <div class="archive__month">
 
       {% if last_year != current_year -%}
-      <h2 class="archive__year">{{ current_year }}</h2>
+      <h3 class="archive__year">{{ current_year }}</h3>
       {% assign last_year = current_year -%}
       {% endif -%}
 
@@ -101,7 +101,7 @@ category: posts
     </div>
     </li>{% endif -%}
     <li>
-      <span class="archive__day">{{ post.date | date: '%d' }}</span>
+      <span class="day">{{ post.date | date: '%d' }}</span>
       <div class="archive__links">
         {% endif -%}
         <a href="{{ post.url }}" {% if post.category.size > 0 -%} class="is-icon-light is-{{ post.category }}"{% endif -%}>{{ post.title

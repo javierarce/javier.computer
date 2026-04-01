@@ -15,7 +15,7 @@ permalink: books
 
 <div class="books">
 {% if sorted_books_reading.size > 0 -%}
-  <div id="year-leyendo" class="stack__date">Leyendo</div>
+  <h3 class="stack__date">Leyendo</h3>
   <div class="book__stack">
     {% for book in sorted_books_reading -%}
       {% assign content = book.content | strip_newlines -%}
@@ -55,7 +55,7 @@ permalink: books
 {% endif -%}
 
 {% for group in grouped_books -%}
-  <div id="year-{{group.name}}" class="stack__date">{{ group.name }}</div>
+  <h3 id="year-{{group.name}}" class="stack__date">{{ group.name }}</h3>
 
   <div class="book__stack">
     {% for book in group.items -%}
