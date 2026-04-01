@@ -8,9 +8,8 @@ show_date: true
 show_title: true
 ---
 
-## Enfont Terrible
-
-### A terrible type foundry
+# Enfont Terrible
+## A terrible type foundry
 
 <div class="project__intro">
 This project combines many of the things I care about:
@@ -21,7 +20,7 @@ design, code, typography… and silly puns. <a href="https://enfont.javierarce.c
 <img class="figure__image is-bn lazy" data-src="https://javier.work/images/enfont/home.jpg">
 </figure>
 
-### How does it work?
+## How does it work?
 
 To use this website, users can drag and drop a font file in Open Type format. The website reads the file and then allows them to interact with a sample word using three controllers that affect the text in different ways. Once the users are (extremely) happy with the deformations applied, they can download the font and install it like a regular one.
 
@@ -35,7 +34,7 @@ a charset map I decided to show random words and allow users to change them.
 </div>
 </div>
 
-### Internals
+## Internals
 
 I used <a href="https://opentype.js.org" target="_blank" rel="nofollow">OpenType.js</a> to parse the font files and generate the typography, and <a href="https://p5js.org" target="_blank" rel="nofollow">P5.js</a> to animate the glyphs and render the font onto the screen.
 
@@ -48,7 +47,7 @@ The project runs on Node.js, and it's hosted on <a href="http://glitch.com/" tar
 </div>
 </figure>
 
-### Privacy
+## Privacy
 
 The font is generated in the browser. The original file that users drop in the website never touches the server, so they can rest assured that their original font files won't be shared.
 

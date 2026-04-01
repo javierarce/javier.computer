@@ -35,7 +35,7 @@
 .layout__grid .content .photo__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: var(--s-2);
+  grid-gap: var(--s-1);
   text-align: center;
 }
 
@@ -394,7 +394,7 @@
 }
 
 figcaption {
-  font-size: var(--font-size-body);
+  font-size: var(--font-size-caption);
   text-align: center;
   opacity: var(--op-light);
 }

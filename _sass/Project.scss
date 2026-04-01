@@ -1,11 +1,6 @@
 .layout__project {
   .content {
     width: var(--width-wide);
-
-    h2 {
-      margin: 0 auto 0;
-      text-align: center;
-    }
   }
 
   hr {
@@ -57,7 +52,6 @@
     h2 + h3 {
       margin: 0 0 2em;
       text-align: center;
-      font-size: var(--font-size-meta);
       font-weight: var(--weight-regular);
       opacity: var(--op-light);
     }
@@ -70,11 +64,6 @@
         margin: 0 auto;
       }
     }
-  }
-
-  h2 {
-    font-size: var(--font-size-display);
-    text-align: center;
   }
 
   .figure {
@@ -92,6 +81,7 @@
       display: block;
       width: var(--width-full);
       max-width: 900px;
+      font-size: var(--font-size-caption);
       text-align: center;
       margin: var(--s-4) auto 0 auto;
       color: var(--color-caption);

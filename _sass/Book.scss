@@ -57,14 +57,17 @@ a.book__spine:hover {
     transition: all 200ms ease-in-out;
   }
 
+  &__title,
+  &__author {
+    font-size: var(--font-size-book);
+  }
+
   &__title {
     font-weight: var(--weight-regular);
-    font-size: var(--font-size-ui);
   }
 
   &__author {
     opacity: var(--op-light);
-    font-size: var(--font-size-ui);
   }
 
   &__spine.is-2[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))) .book__title:after,

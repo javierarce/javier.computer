@@ -75,7 +75,7 @@ $transition-duration: 0.3s;
     bottom: 0.8em;
     left: 0.8em;
     color: var(--white);
-    font-size: var(--font-size-caption);
+    font-size: var(--font-size-tiny);
     opacity: var(--op-hidden);
     transition: opacity $transition-duration ease-in-out;
   }

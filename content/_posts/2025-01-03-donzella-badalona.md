@@ -38,6 +38,7 @@ tag: photo
 ---
 
 {% text %}
+
 <p> La semana pasada del año pasado que se nos fue, quedé para comer con unos amigos en Badalona y saqué las fotos que vas a ver a continuación si haces scroll, o que ya estás viendo, si es que tienes un monitor ridículamente alargado. </p>
 <p class="is-light"> Last week of last year I met some friends for lunch in Badalona and took the photos you're about to see if you scroll down, or that you're already seeing if you have a ridiculously elongated monitor. </p>
 {% endtext %}
@@ -48,32 +49,32 @@ tag: photo
 
 {% text %}
 <p>
-    Mi viaje comienza, cómo no, en la estación de rodalies de Mataró, donde pude
-    disfrutar de una pequeña videoinstalación de <em>glitch art</em>. Está
-    previsto que la obra continúe expuesta varias semanas, así que tienes tiempo de
-    sobra para venir a verla.
+Mi viaje comienza, cómo no, en la estación de rodalies de Mataró, donde pude
+disfrutar de una pequeña videoinstalación de <em>glitch art</em>. Está
+previsto que la obra continúe expuesta varias semanas, así que tienes tiempo de
+sobra para venir a verla.
 </p>
 
 <p class="is-light">
-    My journey begins, of course, at the Mataró Rodalies station, where I was
-    able to enjoy a small <em>glitch art</em> video installation. The work is
-    expected to be on display for several weeks, so you have plenty of time to
-    come and see it.
+My journey begins, of course, at the Mataró Rodalies station, where I was
+able to enjoy a small <em>glitch art</em> video installation. The work is
+expected to be on display for several weeks, so you have plenty of time to
+come and see it.
 </p>
 
 {% endtext %}
 
 {% stack %}
- {% row %}
-     {% photo mataro 2024-12-27-Mataro-R0010411 2/3 alt:"Foto de un panel de información averiado." %}
-     {% photo mataro 2024-12-27-Mataro-R0010410 2/3 alt:"Foto de un panel de información averiado." %}
- {% endrow %}
- <figcaption>Gracias al puntual retraso de los rodalies da tiempo de sobra para observar la pieza</figcaption>
+    {% row %}
+        {% photo mataro 2024-12-27-Mataro-R0010411 2/3 alt:"Foto de un panel de información averiado." %}
+        {% photo mataro 2024-12-27-Mataro-R0010410 2/3 alt:"Foto de un panel de información averiado." %}
+    {% endrow %}
+    <figcaption>Gracias al puntual retraso de los rodalies da tiempo de sobra para observar la pieza</figcaption>
 {% endstack %}
 
 {% text %}
-    <p>Como salí con mucha antelación, aproveché para dar una vuelta por la ciudad y retratar a la población local.</p>
-    <p class="is-light">As I left very early, I took advantage of the opportunity to walk around the city and take pictures of the local population.</p>
+<p>Como salí con mucha antelación, aproveché para dar una vuelta por la ciudad y retratar a la población local.</p>
+<p class="is-light">As I left very early, I took advantage of the opportunity to walk around the city and take pictures of the local population.</p>
 {% endtext %}
 
 {% stack %}
@@ -90,11 +91,11 @@ tag: photo
 <p class="is-light">Then near the beach, I captured this man walking with determination to meet his archenemy: the Mediterranean Sea.</p>
 {% endtext %}
 
-    {% photo badalona 2024-12-27-Badalona-R0010444 2/3 alt:"Foto de un hombre mayor de espaldas con un bastón que camina en dirección al mar, que está al fondo." %}
+{% photo badalona 2024-12-27-Badalona-R0010444 2/3 alt:"Foto de un hombre mayor de espaldas con un bastón que camina en dirección al mar, que está al fondo." %}
 
 {% text %}
-    <p>Y a este vigilante enmascarado consultando el valor de sus bitcoins.</p>
-    <p class="is-light">Then I caught this masked watchman checking the value of his bitcoins.</p>
+<p>Y a este vigilante enmascarado consultando el valor de sus bitcoins.</p>
+<p class="is-light">Then I caught this masked watchman checking the value of his bitcoins.</p>
 {% endtext %}
 
 {% stack %}
@@ -102,12 +103,12 @@ tag: photo
 {% endstack %}
 
 {% text %}
-    <p>
-        Unos minutos más tarde hice la que quizá es mi foto preferida de aquel día. Me gusta la expresión corporal ensimismada del bañista y cómo la pared blanca y el muro grafiteado enmarcan su cuerpo.
-    </p>
-    <p class="is-light">
-        A few minutes later, I took what is perhaps my favorite photo from that day. I like the self-absorbed body language of the swimmer and how the white wall and the graffitied wall frame his body.
-    </p>
+<p>
+Unos minutos más tarde hice la que quizá es mi foto preferida de aquel día. Me gusta la expresión corporal ensimismada del bañista y cómo la pared blanca y el muro grafiteado enmarcan su cuerpo.
+</p>
+<p class="is-light">
+A few minutes later, I took what is perhaps my favorite photo from that day. I like the self-absorbed body language of the swimmer and how the white wall and the graffitied wall frame his body.
+</p>
 {% endtext %}
 
 {% photo badalona 2024-12-27-Badalona-R0010451 3/2 alt:"Un hombre en traje de baño azul de pie junto a un edificio blanco cubierto de grafitis, mirando hacia el océano desde la playa, con un cielo despejado y arena dorada iluminada por el sol." caption:"Al poco de hacer la foto se sonó la nariz enérgicamente, arruinando la magia del momento" %}
@@ -121,11 +122,11 @@ tag: photo
 
 {% text %}
 <p>Y aunque la siguiente foto no es de aquel día, la otra pista para encontrar
-            el restaurante es su logotipo: una sirena comiendo lo que solo
-            puede ser una gyoza gigante.</p>
+el restaurante es su logotipo: una sirena comiendo lo que solo
+puede ser una gyoza gigante.</p>
 <p class="is-light">And although the next photo is not from that day, the other
-            clue to find the restaurant is its logo: a mermaid eating what can
-            only be a giant gyoza.</p>
+clue to find the restaurant is its logo: a mermaid eating what can
+only be a giant gyoza.</p>
 {% endtext %}
 
 {% stack %}
@@ -133,8 +134,8 @@ tag: photo
 {% endstack %}
 
 {% text %}
-    <p>Y aquí están <a href="https://www.drawlikeamonkey.com">Orlando</a> y <a href="https://www.laurameseguer.com">Laura</a>, siendo majísimos en nuestra mesa.</p>
-    <p class="is-light">And here are <a href="https://www.drawlikeamonkey.com">Orlando</a> and <a href="https://www.laurameseguer.com">Laura</a>, being lovely at our table.</p>
+<p>Y aquí están <a href="https://www.drawlikeamonkey.com">Orlando</a> y <a href="https://www.laurameseguer.com">Laura</a>, siendo majísimos en nuestra mesa.</p>
+<p class="is-light">And here are <a href="https://www.drawlikeamonkey.com">Orlando</a> and <a href="https://www.laurameseguer.com">Laura</a>, being lovely at our table.</p>
 {% endtext %}
 
 {% stack %}
@@ -172,5 +173,5 @@ Ni un solo teléfono a la vista, solo gente viviendo el momento.</p>
 
 {% text %}
 <p>Si te has quedado con más ganas de Badalona (ya, yo qué sé), puedes echarle un vistazo a las fotos que hice en <a href="/2023/10/29/badalona">mi primera visita</a> a la ciudad y durante el <a href="/2024/02/17/mendo-world-tour-ii">Luis Mendo World Tour 2024</a>.</p>
-        <p class="is-light">If you're hungry for more Badalona (I know, right?), check out the photos from <a href="/2023/10/29/badalona">my first visit</a> to the city and during the <a href="/2024/02/17/mendo-world-tour-ii">Luis Mendo World Tour 2024</a>.</p>
+<p class="is-light">If you're hungry for more Badalona (I know, right?), check out the photos from <a href="/2023/10/29/badalona">my first visit</a> to the city and during the <a href="/2024/02/17/mendo-world-tour-ii">Luis Mendo World Tour 2024</a>.</p>
 {% endtext %}

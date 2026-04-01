@@ -103,6 +103,7 @@
 
   /* --- SEMANTIC TYPOGRAPHY --- */
   --font-size-display:   var(--text-5xl); /* Large hero/marketing type */
+  --font-size-heading:   var(--text-3xl); /* Section headings, card titles */
   --font-size-title-xl:  var(--text-2xl); /* H1 */
   --font-size-title-lg:  var(--text-xl);  /* H2 */
   --font-size-title-md:  var(--text-lg);  /* H3 */
@@ -114,16 +115,18 @@
   /* SEMANTIC NOTE: ui vs meta share a value but serve different roles.
      - UI: Functional labels (buttons, nav). Often requires higher weight.
      - Meta: Secondary data (timestamps, legal). Often lower opacity. */
-  --font-size-nav:       var(--text-lg);  
-  --font-size-movie:     var(--text-lg);  
-  --font-size-project:   var(--text-lg);  
+  --font-size-caption:   var(--text-lg); 
   --font-size-card:      var(--text-lg);  
-  --font-size-list:      var(--text-lg);  
-  --font-size-input:     var(--text-lg);  
-  --font-size-ui:        var(--text-md);  
-  --font-size-meta:      var(--text-sm);  
-  --font-size-caption:   var(--text-xs);  /* Tiny descriptors/overlays */
   --font-size-id:        var(--text-xs);  
+  --font-size-input:     var(--text-lg);  
+  --font-size-list:      var(--text-lg);  
+  --font-size-book:      var(--text-md);  
+  --font-size-meta:      var(--text-sm);  
+  --font-size-movie:     var(--text-lg);  
+  --font-size-nav:       var(--text-lg);  
+  --font-size-project:   var(--text-lg);  
+  --font-size-tiny:      var(--text-xs);  /* Tiny descriptors/overlays */
+  --font-size-ui:        var(--text-md);  
 
   /* --- WEIGHTS --- */
   --weight-light:   300;
@@ -196,6 +199,31 @@
   --transition-speed-medium: 250ms;
   --transition-speed-slow: 300ms;
   --transition-speed-super-slow: 500ms;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --font-size-body: var(--text-lg); 
+    --font-size-nav:  var(--text-lg);  
+
+
+    --font-size-card:      var(--text-md);  
+    --font-size-id:        var(--text-xs);  
+    --font-size-input:     var(--text-md);  
+    --font-size-list:      var(--text-lg);  
+    --font-size-meta:      var(--text-xs);  
+    --font-size-movie:     var(--text-lg);  
+    --font-size-project:   var(--text-md);  
+    --font-size-tiny:      var(--text-xs); 
+    --font-size-caption:   var(--text-xs); 
+
+    --font-size-ui:        var(--text-sm);  
+    --font-size-display:   var(--text-2xl);
+    --font-size-title-xl:  var(--text-xl);
+    --font-size-title-lg:  var(--text-lg);
+    --font-size-title-md:  var(--text-lg);
+    --font-size-title-sm:  var(--text-md);
+  }
 }
 
 html[data-theme="light"] {

@@ -206,7 +206,8 @@ h4 {
 }
 
 h1 {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-heading);
+  font-weight: var(--weight-bold);
 }
 
 h2 {
@@ -352,7 +353,7 @@ a.is-icon-light.is-reportage::after {
 
 .is-highlighted {
   padding: 0.8em;
-  font-size: var(--font-size-meta);
+  font-size: var(--font-size-ui);
   border: 1px solid var(--purple);
   border-radius: var(--br-default);
   color: var(--purple);
