@@ -8,7 +8,7 @@
 
   &__title,
   &__description p {
-    font-size: var(--font-size-ui);
+    font-size: var(--font-size-body-xs);
   }
 
   &__title {
@@ -23,7 +23,7 @@
 
   &__address {
     opacity: var(--op-light);
-    font-size: var(--font-size-meta);
+    font-size: var(--font-size-body-xxs);
   }
 
   &__posts {
@@ -42,7 +42,8 @@
     padding: 0.4rem;
     background: var(--color-map-background);
     color: var(--black-pure);
-    font-size: var(--font-size-tiny);
+    font-size: var(--font-size-body-tiny);
+    font-weight: var(--weight-medium);
     border-radius: var(--br-pill);
     transition: background var(--transition-speed-default) ease-in-out;
   }
@@ -66,7 +67,6 @@
     border: none;
     background: var(--white);
     color: var(--black-pure);
-    font-size: var(--font-size-body);
     box-shadow: 0 2px 4px var(--color-shadow);
     border-radius: var(--br-md);
   }

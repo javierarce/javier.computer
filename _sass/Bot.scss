@@ -24,28 +24,7 @@
         margin: 0 auto 0 auto;
       }
     }
-
-    h3 {
-      margin-top: 1em;
-      width: 925px;
-    }
-
-    h2+h3 {
-      font-size: var(--font-size-ui);
-      font-weight: var(--weight-regular);
-      text-align: center;
-      margin-top: 0;
-      margin-bottom: 2em;
-      opacity: var(--op-light);
-    }
   }
-
-  h2 {
-    font-size: 2rem;
-    text-align: center;
-    margin: 0 0 0.2em;
-  }
-
 
   p,
   &__items {

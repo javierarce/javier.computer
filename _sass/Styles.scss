@@ -206,22 +206,22 @@ h4 {
 }
 
 h1 {
-  font-size: var(--font-size-heading);
-  font-weight: var(--weight-bold);
+  font-size: var(--font-size-heading-xl);
+  font-weight: var(--weight-medium);
 }
 
 h2 {
-  font-size: var(--font-size-title-lg);
+  font-size: var(--font-size-heading-lg);
 }
 
 h3 {
-  font-size: var(--font-size-title-md);
+  font-size: var(--font-size-heading-md);
   opacity: var(--op-light);
 }
 
 h4 {
-  font-size: var(--font-size-title-sm);
-  font-weight: var(--weight-regular);
+  font-size: var(--font-size-heading-sm);
+  font-weight: var(--weight-medium);
   opacity: var(--op-light);
 }
 

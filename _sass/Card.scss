@@ -22,19 +22,22 @@
       position: absolute;
       top: 1em;
       right: 1em;
-      font-size: var(--font-size-ui);
+      font-size: var(--font-size-body-xs);
       opacity: var(--op-light);
+    }
+
+    &-title,
+    &-description {
+      font-size: var(--font-size-body-sm);
     }
 
     &-title {
       text-decoration: none;
-      font-size: var(--font-size-card);
     }
 
     &-description {
       text-decoration: none;
       opacity: var(--op-light);
-      font-size: var(--font-size-card);
     }
   }
 }

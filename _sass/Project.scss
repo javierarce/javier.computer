@@ -27,7 +27,7 @@
   &__year {
     gap: var(--s-4);
 
-    h3 {
+    h4 {
       margin: 0;
       padding-bottom: var(--s-4);
       border-bottom: 1px solid var(--gray);
@@ -44,16 +44,8 @@
     align-items: center;
     width: var(--defaultWidth);
 
-    h3 {
-      margin-top: 1em;
-      width: var(--width-content);
-    }
-
-    h2 + h3 {
-      margin: 0 0 2em;
-      text-align: center;
-      font-weight: var(--weight-regular);
-      opacity: var(--op-light);
+    h1 {
+      margin: 0;
     }
 
     p {
@@ -117,7 +109,7 @@
       opacity: var(--op-light);
     }
     p, a {
-      font-size: var(--font-size-project);
+      font-size: var(--font-size-body-sm);
     }
   }
 }

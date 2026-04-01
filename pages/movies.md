@@ -17,11 +17,11 @@ description: Movies I've watched
 {% if last_year != current_year -%}
 
 <div class="movies">
-<h2 class="movies__year">{{ current_year }}</h2> 
+<h3 class="movies__year">{{ current_year }}</h3> 
 {% assign last_year = current_year -%} 
 {% endif -%}
 
-<h3 class="movies__month">{% include date.html date=group.name day="false" -%} ({{ group.items.size }})</h3>
+<h4 class="movies__month">{% include date.html date=group.name day="false" -%} ({{ group.items.size }})</h4>
 
 <ul class="movie__list">
 {% for movie in group.items -%}

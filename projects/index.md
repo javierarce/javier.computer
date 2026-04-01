@@ -8,7 +8,7 @@ description: List of personal projects
 ---
 
 <div class="projects">
-<h3>Documented projects</h3>
+<h4>Documented projects</h4>
 
 <div class="cards projects__cards">
     <a href="/projects/arena" class="card">
@@ -41,7 +41,7 @@ description: List of personal projects
 {% for year in site.data.projects %}
 
 <div class="projects__year">
-    <h3>{{ year[0] }}</h3>
+    <h4>{{ year[0] }}</h4>
     <ul class="project__list">
         {% for project in year[1] %}
         <li>

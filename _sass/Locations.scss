@@ -32,7 +32,7 @@
     border-radius: 50%;
     color: var(--black-pure);
     background: var(--link);
-    font-size: var(--font-size-id);
+    font-size: var(--font-size-body-tiny);
     margin: 0 0.1em 0 0;
   }
 
@@ -42,7 +42,6 @@
 
   &__title {
     color: var(--link);
-    margin: 0 0 0.2em;
     align-items: baseline;
     font-weight: var(--weight-bold);
     text-decoration: none;
@@ -55,7 +54,7 @@
   &__title,
   &__address,
   &__description p {
-    font-size: var(--font-size-ui);
+    font-size: var(--font-size-body-xs);
   }
 
   &__address {
@@ -78,7 +77,8 @@
     padding: 0.4rem; // TODO: add variable
     color: var(--white);
     background: var(--color-bg-muted);
-    font-size: var(--font-size-tiny);
+    font-size: var(--font-size-body-tiny);
+    font-weight: var(--weight-medium);
     border-radius: var(--br-pill);
 
     &:hover {
@@ -92,7 +92,8 @@
 .has-emoji .location__id {
   background: none;
   border-radius: var(--br-flat);
-  font-size: var(--font-size-body);
+  font-size: var(--font-size-body-sm);
+  vertical-align: middle;
   padding: 0;
   height: auto;
   width: auto;

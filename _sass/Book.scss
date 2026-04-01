@@ -59,7 +59,7 @@ a.book__spine:hover {
 
   &__title,
   &__author {
-    font-size: var(--font-size-book);
+    font-size: var(--font-size-body-xs);
   }
 
   &__title {
@@ -186,7 +186,6 @@ a.book__spine:hover {
       transform: initial;
       width: var(--width-full) !Important;
       margin: 0 0 1em;
-      font-size: var(--font-size-ui);
     }
 
     a.book__spine {

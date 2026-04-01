@@ -5,12 +5,8 @@
   flex-direction: column;
   gap: var(--s-8);
 
-  h2 {
-    margin: 0;
-  }
-
   &__links {
-    font-size: var(--font-size-list);
+    font-size: var(--font-size-body-sm);
   }
 
   &__list {
@@ -36,6 +32,7 @@
 
   &__year {
     margin: 0;
+    opacity: var(--op-visible);
   }
 
   &__month {

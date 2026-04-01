@@ -54,6 +54,7 @@
     align-items: center;
     justify-content: flex-start;
     gap: var(--s-1);
+    opacity: var(--op-visible);
   }
 
   &__rss {
@@ -128,7 +129,12 @@
 
     a {
       text-decoration: none;
-      font-size: var(--font-size-list);
+      font-size: var(--font-size-body-sm);
+      opacity: var(--op-light);
+
+      &:hover {
+        opacity: var(--op-visible);
+      }
     }
   }
 }

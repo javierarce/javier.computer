@@ -90,43 +90,28 @@
   --font-text-serif: "Newsreader", Georgia, Cambria, "Times New Roman", Times, serif;
   --font-text-mono: "SF Mono", SFMono-Regular, ui-monospace, "DejaVu Sans Mono", Menlo, Consolas, monospace;
 
-/* --- RAW TYPE SCALE (Geometric/Major Third) --- */
-  --text-xs:   0.75rem;     /* 12px */
-  --text-sm:   0.875rem;    /* 14px */
-  --text-md:   1rem;        /* 16px (Base) */
-  --text-lg:   1.25rem;     /* 20px (x1.25) */
-  --text-xl:   1.5rem;      /* 24px (x1.20) */
-  --text-2xl:  2rem;        /* 32px (x1.33) */
-  --text-3xl:  2.5rem;      /* 40px (x1.25) */
-  --text-4xl:  3rem;        /* 48px (x1.20) */
-  --text-5xl:  4rem;        /* 64px (x1.33) */
+  /* --- RAW TYPE SCALE (Geometric/Major Third) --- */
+  --text-xs:   0.75rem;   /* 12px */
+  --text-sm:   0.875rem;  /* 14px */  
+  --text-md:   1rem;      /* 16px */
+  --text-lg:   1.25rem;   /* 20px */
+  --text-xl:   1.563rem;  /* 25px */
+  --text-2xl:  1.953rem;  /* 31px */
+  --text-3xl:  2.441rem;  /* 39px */
+  --text-4xl:  3.052rem;  /* 49px */
+  --text-5xl:  3.815rem;  /* 61px */
 
-  /* --- SEMANTIC TYPOGRAPHY --- */
-  --font-size-display:   var(--text-5xl); /* Large hero/marketing type */
-  --font-size-heading:   var(--text-3xl); /* Section headings, card titles */
-  --font-size-title-xl:  var(--text-2xl); /* H1 */
-  --font-size-title-lg:  var(--text-xl);  /* H2 */
-  --font-size-title-md:  var(--text-lg);  /* H3 */
-  --font-size-title-sm:  var(--text-md);  /* H4 */
+  --font-size-body:     23px; // exception to the scale for better readability
+  --font-size-body-sm:  var(--text-lg); // 20px
+  --font-size-body-xs:  var(--text-md); // 16px
+  --font-size-body-xxs: var(--text-sm); // 14px
+  --font-size-body-xxxs: var(--text-xs); // 12px
+  --font-size-body-tiny: 11px; // exception to the scale for better readability
   
-  --font-size-body:      var(--text-xl);  /* Standard reading text */
-  --font-size-footer:    var(--text-lg);  
-
-  /* SEMANTIC NOTE: ui vs meta share a value but serve different roles.
-     - UI: Functional labels (buttons, nav). Often requires higher weight.
-     - Meta: Secondary data (timestamps, legal). Often lower opacity. */
-  --font-size-caption:   var(--text-lg); 
-  --font-size-card:      var(--text-lg);  
-  --font-size-id:        var(--text-xs);  
-  --font-size-input:     var(--text-lg);  
-  --font-size-list:      var(--text-lg);  
-  --font-size-book:      var(--text-md);  
-  --font-size-meta:      var(--text-sm);  
-  --font-size-movie:     var(--text-lg);  
-  --font-size-nav:       var(--text-lg);  
-  --font-size-project:   var(--text-lg);  
-  --font-size-tiny:      var(--text-xs);  /* Tiny descriptors/overlays */
-  --font-size-ui:        var(--text-md);  
+  --font-size-heading-xl:  var(--text-5xl);
+  --font-size-heading-lg:  var(--text-2xl);
+  --font-size-heading-md:  var(--text-xl); // perhaps 23px
+  --font-size-heading-sm:  var(--text-lg);
 
   /* --- WEIGHTS --- */
   --weight-light:   300;
@@ -203,26 +188,8 @@
 
 @media (max-width: 640px) {
   :root {
-    --font-size-body: var(--text-lg); 
-    --font-size-nav:  var(--text-lg);  
-
-
-    --font-size-card:      var(--text-md);  
-    --font-size-id:        var(--text-xs);  
-    --font-size-input:     var(--text-md);  
-    --font-size-list:      var(--text-lg);  
-    --font-size-meta:      var(--text-xs);  
-    --font-size-movie:     var(--text-lg);  
-    --font-size-project:   var(--text-md);  
-    --font-size-tiny:      var(--text-xs); 
-    --font-size-caption:   var(--text-xs); 
-
-    --font-size-ui:        var(--text-sm);  
-    --font-size-display:   var(--text-2xl);
-    --font-size-title-xl:  var(--text-xl);
-    --font-size-title-lg:  var(--text-lg);
-    --font-size-title-md:  var(--text-lg);
-    --font-size-title-sm:  var(--text-md);
+  --font-size-body:     var(--text-lg); // 20px 
+  --font-size-body-sm:  var(--text-lg); // 20px
   }
 }
 

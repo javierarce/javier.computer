@@ -9,6 +9,7 @@
 
   &__year {
     margin: 0 0 1em;
+    opacity: var(--op-visible);
   }
 
   &__month {
@@ -37,13 +38,13 @@
     padding: 0;
     gap: var(--s-2);
     margin: 0;
-    font-size: var(--font-size-movie);
 
     &:last-child {
       margin: 0;
     }
 
     &__title {
+      font-size: var(--font-size-body-sm);
       text-decoration: none;
     }
 

@@ -98,8 +98,8 @@
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0);
 
     transition:
-      outline var(--transition-speed-slow) ease-in-out,
-      box-shadow var(--transition-speed-slow) ease-in-out;
+    outline var(--transition-speed-slow) ease-in-out,
+    box-shadow var(--transition-speed-slow) ease-in-out;
 
     &:hover,
     &:focus {
@@ -109,7 +109,7 @@
   }
 
   footer {
-    font-size: var(--font-size-meta);
+    font-size: var(--font-size-body-xs);
     opacity: var(--op-light);
     a {
       color: var(--color-txt-site-inverted);
@@ -172,7 +172,7 @@
     background: var(--white);
     box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.06);
 
-    font-size: var(--font-size-ui);
+    font-size: var(--font-size-body-sm);
     font-family: var(--font-text-serif);
     transition: opacity var(--transition-speed-super-slow) ease-in-out;
 
@@ -207,7 +207,7 @@
       margin: 0;
       opacity: var(--op-light);
       font-family: var(--font-text-serif);
-      font-size: var(--font-size-ui);
+      font-size: var(--font-size-body-sm);
     }
 
     textarea {
@@ -217,7 +217,7 @@
       border-radius: var(--br-subtle);
       color: var(--black);
       font-family: var(--font-text-sans);
-      font-size: var(--font-size-ui);
+      font-size: var(--font-size-body-sm);
       resize: vertical;
       outline: none;
       transition: border-color var(--transition-speed-default) ease-in-out;
@@ -242,7 +242,7 @@
       color: var(--white);
       border: none;
       font-family: var(--font-text-sans);
-      font-size: var(--font-size-meta);
+      font-size: var(--font-size-body-sm);
       cursor: pointer;
       transition: opacity var(--transition-speed-default) ease-in-out;
 
@@ -299,7 +299,7 @@
     text-align: center;
 
     p {
-      font-size: var(--font-size-body);
+      font-size: var(--font-size-body-xs);
       opacity: var(--op-light);
       font-family: var(--font-text-serif);
     }
@@ -313,7 +313,7 @@
   }
   &__description {
     width: 536px;
-    font-size: var(--text-lg);
+    font-size: var(--font-size-body-sm);
     font-family: var(--font-text-serif);
     text-align: center;
     margin: 0;
@@ -328,7 +328,7 @@
   }
 
   &__highlight {
-    font-size: var(--font-size-ui);
+    font-size: var(--font-size-body-sm);
     font-family: var(--font-text-serif);
   }
 
@@ -396,7 +396,7 @@
 
     &__description {
       width: 100%;
-      font-size: var(--font-size-ui);
+      font-size: var(--font-size-body-sm);
       line-height: 1.4;
     }
 

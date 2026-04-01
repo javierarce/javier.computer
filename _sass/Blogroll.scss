@@ -1,5 +1,5 @@
 .layout__blogroll {
-  h3 {
+  h4 {
     padding: 0 0 var(--s-4);
     border-bottom: 1px solid var(--gray);
   }
@@ -17,6 +17,7 @@ ul.blogroll {
   li {
     list-style: none;
     break-inside: avoid;
+    font-size: var(--font-size-body-sm);
   }
 }
 

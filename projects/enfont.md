@@ -9,7 +9,7 @@ show_title: true
 ---
 
 # Enfont Terrible
-## A terrible type foundry
+#### A terrible type foundry
 
 <div class="project__intro">
 This project combines many of the things I care about:
