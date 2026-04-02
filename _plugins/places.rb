@@ -60,8 +60,12 @@ module Jekyll
         return git_date if git_date
       end
 
-      # Fallback for uncommitted files
-      DateTime.now
+      # Fallback for uncommitted files — use file mtime for deterministic output
+      if file && File.exist?(file)
+        File.mtime(file).to_datetime
+      else
+        DateTime.new(2023, 1, 1)
+      end
     end
 
     def generate_places(site)
