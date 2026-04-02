@@ -14,7 +14,7 @@
     display: flex;
     width: 800px;
     flex-direction: column;
-    gap: var(--gap-md);
+    gap: var(--s-4);
     text-align: center;
     transform: translateY(-50%);
     top: 50%;
@@ -98,8 +98,8 @@
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0);
 
     transition:
-      outline var(--transition-speed-slow) ease-in-out,
-      box-shadow var(--transition-speed-slow) ease-in-out;
+    outline var(--transition-speed-slow) ease-in-out,
+    box-shadow var(--transition-speed-slow) ease-in-out;
 
     &:hover,
     &:focus {
@@ -109,11 +109,11 @@
   }
 
   footer {
-    font-size: var(--font-size-meta);
+    font-size: var(--font-size-body-xs);
     opacity: var(--op-light);
     a {
       color: var(--color-txt-site-inverted);
-      font-weight: var(--font-weight-bold);
+      font-weight: var(--weight-bold);
       text-decoration: none;
 
       &:hover {
@@ -151,7 +151,7 @@
     width: var(--width-content);
 
     strong {
-      font-weight: var(--font-weight-semibold);
+      font-weight: var(--weight-medium);
     }
   }
 
@@ -168,11 +168,11 @@
     visibility: hidden;
     position: absolute;
     text-align: left;
-    padding: var(--space-md);
+    padding: var(--s-3);
     background: var(--white);
     box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.06);
 
-    font-size: var(--font-size-ui);
+    font-size: var(--font-size-body-sm);
     font-family: var(--font-text-serif);
     transition: opacity var(--transition-speed-super-slow) ease-in-out;
 
@@ -190,7 +190,7 @@
 
   &__reply {
     display: none;
-    margin-top: var(--space-md);
+    margin-top: var(--s-3);
     opacity: var(--op-hidden);
     transition: opacity var(--transition-speed-super-slow) ease-in-out;
 
@@ -207,17 +207,17 @@
       margin: 0;
       opacity: var(--op-light);
       font-family: var(--font-text-serif);
-      font-size: var(--font-size-ui);
+      font-size: var(--font-size-body-sm);
     }
 
     textarea {
       width: 100%;
-      padding: var(--space-sm);
+      padding: var(--s-2);
       border: 1px solid rgba(0, 0, 0, 0.15);
       border-radius: var(--br-subtle);
       color: var(--black);
       font-family: var(--font-text-sans);
-      font-size: var(--font-size-sm);
+      font-size: var(--font-size-body-sm);
       resize: vertical;
       outline: none;
       transition: border-color var(--transition-speed-default) ease-in-out;
@@ -236,13 +236,13 @@
     }
 
     button {
-      padding: var(--space-md) var(--space-lg);
+      padding: var(--s-3) var(--s-4);
       border-radius: var(--br-subtle);
       background: var(--black);
       color: var(--white);
       border: none;
       font-family: var(--font-text-sans);
-      font-size: var(--font-size-meta);
+      font-size: var(--font-size-body-sm);
       cursor: pointer;
       transition: opacity var(--transition-speed-default) ease-in-out;
 
@@ -262,7 +262,7 @@
     flex-direction: row;
     align-items: center;
 
-    gap: var(--gap-sm);
+    gap: var(--s-2);
 
     transition: opacity var(--transition-speed-super-slow) ease-in-out;
 
@@ -285,7 +285,7 @@
     text-align: center;
     display: flex;
     align-items: center;
-    gap: var(--gap-xl);
+    gap: var(--s-8);
     flex-direction: column;
     opacity: var(--op-hidden);
     animation: fadeIn 1s ease-in forwards;
@@ -295,11 +295,11 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: var(--gap-md);
+    gap: var(--s-4);
     text-align: center;
 
     p {
-      font-size: var(--font-size-base);
+      font-size: var(--font-size-body-xs);
       opacity: var(--op-light);
       font-family: var(--font-text-serif);
     }
@@ -313,7 +313,7 @@
   }
   &__description {
     width: 536px;
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-body-sm);
     font-family: var(--font-text-serif);
     text-align: center;
     margin: 0;
@@ -328,7 +328,7 @@
   }
 
   &__highlight {
-    font-size: var(--font-size-ui);
+    font-size: var(--font-size-body-sm);
     font-family: var(--font-text-serif);
   }
 
@@ -363,11 +363,11 @@
 
 @media all and (max-width: 640px) {
   .layout__zine {
-    padding: var(--space-lg);
+    padding: var(--s-4);
   }
 
   .layout__lol {
-    padding: var(--space-lg);
+    padding: var(--s-4);
   }
 
   .zine {
@@ -381,7 +381,7 @@
     }
 
     &__content {
-      gap: var(--gap-lg);
+      gap: var(--s-6);
     }
 
     &__code {
@@ -396,7 +396,7 @@
 
     &__description {
       width: 100%;
-      font-size: var(--font-size-ui);
+      font-size: var(--font-size-body-sm);
       line-height: 1.4;
     }
 

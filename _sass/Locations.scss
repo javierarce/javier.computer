@@ -1,0 +1,102 @@
+
+.locations {
+  width: var(--width-full);
+  gap: var(--s-4);
+  display: flex;
+  flex-direction: column;
+}
+
+.location {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+  break-inside: avoid;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--br-default);
+  padding: var(--s-4);
+  cursor: pointer;
+
+  &.is-active {
+    border-color: var(--link);
+    background: var(--color-bg-hover);
+  }
+
+  &__id {
+    position: relative;
+    top: -2px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    color: var(--black-pure);
+    background: var(--link);
+    font-size: var(--font-size-body-tiny);
+    margin: 0 0.1em 0 0;
+  }
+
+  &__name {
+    flex: 1;
+  }
+
+  &__title {
+    color: var(--link);
+    align-items: baseline;
+    font-weight: var(--weight-bold);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__title,
+  &__address,
+  &__description p {
+    font-size: var(--font-size-body-xs);
+  }
+
+  &__address {
+    text-decoration: none;
+    opacity: var(--op-light);
+  }
+
+  &__posts {
+    display: flex;
+    gap: var(--s-1);
+  }
+
+  &__post {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.2rem; // TODO: add variable
+    height: 1.2rem; // TODO: add variable
+    padding: 0.4rem; // TODO: add variable
+    color: var(--white);
+    background: var(--color-bg-muted);
+    font-size: var(--font-size-body-tiny);
+    font-weight: var(--weight-medium);
+    border-radius: var(--br-pill);
+
+    &:hover {
+      text-decoration: none;
+      background: var(--white);
+      color: var(--black-pure);
+    }
+  }
+}
+
+.has-emoji .location__id {
+  background: none;
+  border-radius: var(--br-flat);
+  font-size: var(--font-size-body-sm);
+  vertical-align: middle;
+  padding: 0;
+  height: auto;
+  width: auto;
+}
+
+

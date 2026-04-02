@@ -1,19 +1,22 @@
+@use "mixins" as *;
+
 .tags {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-md);
-  width: var(--width-content);
+  gap: var(--s-4);
+  @include content-width;
 
   &__title {
-    margin-bottom: var(--space-xs);
+    margin-bottom: var(--s-1);
   }
 
   &__listItem {
     display: inline-flex;
     flex-direction: row;
     align-items: baseline;
-    margin-right: var(--gap-sm);
-    gap: var(--gap-xs);
+    margin-right: var(--s-2);
+    gap: var(--s-1);
+    font-size: var(--font-size-body-sm);
 
     a {
       color: var(--color-txt-site);
@@ -23,12 +26,6 @@
         text-decoration: none;
       }
     }
-  }
-}
-
-@media all and (max-width: 1024px) {
-  .tags {
-    width: var(--width-full);
   }
 }
 

@@ -97,17 +97,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
   <div id="maps-overview" style="height: 480px; border-radius: var(--br-default);"></div>
 
-  <p>Esta página contiene un listado de {{ places_count }} de algunos de mis lugares favoritos en el mundo real. Suscríbete a <a href="/feeds/places.xml">este feed</a> para estar al tanto de los sitios que añado en general, o usa los feeds individuales si quieres saber qué añado en cada ciudad.</p>
-  <p>La última actualización fue el {% include date.html date=recent_location.updated_at %}</p>
 
   <div class="maps__content">
+
+    <p>Esta página contiene un listado de {{ places_count }} de algunos de mis lugares favoritos en el mundo real. Suscríbete a <a href="/feeds/places.xml">este feed</a> para estar al tanto de los sitios que añado en general, o usa los feeds individuales si quieres saber qué añado en cada ciudad.</p>
+    <p>La última actualización fue el {% include date.html date=recent_location.updated_at %}</p>
+
     <ul class="maps__list">
       {% for map in site.maps -%}
         {% assign locations = site.data.locations[map.location] %}
         {% assign location_count = locations | size %}
         {% if location_count > 0 %}
           <li>
-            <div class="maps__title"><a href="/{{ map.permalink }}">{{ map.title}}</a><a href="/feeds/{{ map.location }}.xml" class="maps__rss"><span class="icon icon-rss"></span></a></div>
+            <h4 class="maps__title"><a href="/{{ map.permalink }}">{{ map.title}}</a><a href="/feeds/{{ map.location }}.xml" class="maps__rss"><span class="icon icon-rss"></span></a></h4>
             <div class="maps__list-locations">
               {% for location in locations %}
                 <a href="/{{ map.permalink }}/{{ location.pid }}">{{ location.title }}</a>{% unless forloop.last %} &middot; {%

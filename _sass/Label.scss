@@ -1,9 +1,9 @@
 .label {
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--weight-medium);
 
   .is-optional,
   &__help {
-    font-size: var(--font-size-meta);
+    font-size: var(--font-size-body);
     opacity: var(--op-light);
   }
 }

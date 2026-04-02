@@ -1,7 +1,7 @@
 div.highlight {
   font-family: var(--font-text-mono);
   padding: 1em;
-  font-size: var(--font-size-meta);
+  font-size: var(--font-size-body-xs);
   margin: 0;
   border-radius: var(--br-default);
   border: 1px solid var(--color-bg-code-block-border);
@@ -61,7 +61,7 @@ div.highlight {
   .gh {
     color: #66d9ef;
     background-color: #272822;
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--weight-bold);
   }
 
   .k,
@@ -168,7 +168,7 @@ div.highlight {
 .language-plaintext.highlighter-rouge {
   background-color: var(--color-bg-code-inline);
   padding: 0.1em 0.2em;
-  font-size: 0.9em;
+  font-size: var(--font-size-body-sm);
   border-radius: var(--br-default);
   font-family: var(--font-text-mono);
 }

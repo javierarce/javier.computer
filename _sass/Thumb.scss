@@ -14,9 +14,10 @@
 
   &__title {
     position: absolute;
-    bottom: var(--space-xl);
-    right: var(--space-lg);
-    font-weight: var(--font-weight-semibold);
+    bottom: var(--s-6);
+    right: var(--s-4);
+    font-weight: var(--weight-medium);
+    font-size: var(--font-size-body-sm);
     text-transform: capitalize;
     pointer-events: none;
   }

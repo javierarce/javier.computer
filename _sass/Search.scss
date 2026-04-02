@@ -1,20 +1,20 @@
 .search {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-lg);
+  gap: var(--s-6);
   width: var(--width-full);
 }
 
 .search-form {
   display: flex;
-  gap: var(--gap-sm);
+  gap: var(--s-2);
   width: var(--width-full);
 }
 
 .search-results {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-lg);
+  gap: var(--s-6);
   padding: 0;
   margin: 0;
 
@@ -26,18 +26,14 @@
     }
   }
 
-  h3 {
-    margin: 0;
-    opacity: var(--op-visible);
-  }
-
   li {
     list-style: none;
     padding: 0;
+    font-size: var(--font-size-body);
   }
 
   .is-highlighted {
-    padding: var(--space-xs) var(--space-sm);
+    padding: var(--s-1) var(--s-2);
     font-size: inherit;
     border: none;
     border-radius: var(--br-default);

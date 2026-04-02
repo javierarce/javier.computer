@@ -5,53 +5,51 @@ className: trip
 <div class="content">
   {% include navigation.html -%}
 
-  <div class="trips">
-    <div class="trip">
-      <div class="trip__content">
-        <div class="big-map">
-          <div class="app js-map" data-lng="{{ page.lng }}" data-lat="{{ page.lat }}" data-zoom="{{ page.zoom }}">
-            <div id="map" class="map"></div>
+
+  <div class="big-map">
+    <div class="app js-map" data-lng="{{ page.lng }}" data-lat="{{ page.lat }}" data-zoom="{{ page.zoom }}">
+      <div id="map" class="map"></div>
+    </div>
+
+    <div class="big-map__sidebar">
+      {% assign posts = site.data.locations[page.location] -%}
+      {% assign i = posts.size | plus: 1 -%}
+      <div class="locations js-locations">
+        {% for location in posts -%}
+          {% assign i = i | minus: 1 -%}
+          <div class="location js-location" data-id="{{ i }}">
+            {% if location.emoji -%}
+              <div class="location__title has-emoji">
+                <span class="location__id">{{ location.emoji }}</span> {{ location.title }}
+              </div>
+            {% else -%}
+              <div class="location__title">
+                <span class="location__id">{{ i }}</span> {{ location.title }}
+              </div>
+            {% endif -%}
+
+            {% if location.description -%}
+              <div class="location__description">{{ location.description }}</div>
+            {% endif -%}
+
+            {% if location.post_references.size > 0 -%}
+              <div class="location__posts">
+                {% assign j = 0 -%}
+
+                {% for post_ref in location.post_references -%}
+                  {% assign j = j | plus: 1 -%}
+
+                  <a href="{{ post_ref.url }}" class="location__post">{{ j }}</a>
+                {% endfor -%}
+              </div>
+            {% endif -%}
+            <span class="location__address">{{ location.address }}</span>
           </div>
-
-          <div class="sidebar">
-            {% assign posts = site.data.locations[page.location] -%}
-            {% assign i = posts.size | plus: 1 -%}
-            <div class="locations js-locations">
-              {% for location in posts -%}
-                {% assign i = i | minus: 1 -%}
-                <div class="location js-location" data-id="{{ i }}">
-                  {% if location.emoji -%}
-                    <div class="location__title has-emoji">
-                      <span class="location__id">{{ location.emoji }}</span> {{ location.title }}
-                    </div>
-                  {% else -%}
-                    <div class="location__title">
-                      <span class="location__id">{{ i }}</span> {{ location.title }}
-                    </div>
-                  {% endif -%}
-
-                  {% if location.description -%}
-                    <div class="location__description">{{ location.description }}</div>
-                  {% endif -%}
-
-                  {% if location.post_references.size > 0 -%}
-                    <div class="location__posts">
-                      {% assign j = 0 -%}
-
-                      {% for post_ref in location.post_references -%}
-                        {% assign j = j | plus: 1 -%}
-
-                        <a href="{{ post_ref.url }}" class="location__post">{{ j }}</a>
-                      {% endfor -%}
-                    </div>
-                  {% endif -%}
-                  <span class="location__address">{{ location.address }}</span>
-                </div>
-              {% endfor -%}
-            </div>
-          </div>
-        </div>
+        {% endfor -%}
       </div>
     </div>
   </div>
+
+
+
 </div>

@@ -5,6 +5,7 @@ weather-snitch {
   max-height: 0;
   overflow: hidden;
   transition: max-height 900ms ease-in-out, opacity 900ms ease-in-out;
+  font-size: var(--font-size-body);
 }
 
 weather-snitch.is-visible {

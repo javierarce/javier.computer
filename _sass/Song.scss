@@ -1,6 +1,6 @@
 .song {
   width: var(--width-full);
-  font-size: 0.7em;
+  font-size: var(--font-size-body-xxs);
   opacity: var(--op-hidden);
   transition: opacity var(--transition-speed-medium) ease-in-out;
 

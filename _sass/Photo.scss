@@ -1,7 +1,9 @@
+@use "mixins" as *;
+
 .layout__grid .content,
 .layout__photo .content,
 .layout__photos .content {
-  width: var(--width-wide);
+  @include wide-width;
 }
 
 .layout__grid .content .photo__collections {
@@ -16,14 +18,14 @@
 .layout__grid .content .photo__collections {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-xxxl);
+  gap: var(--s-16);
 }
 
 .photo__collection.has-grid,
 .layout__grid .content .photo__collection {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-xl);
+  gap: var(--s-8);
   text-align: left;
 }
 
@@ -35,7 +37,7 @@
 .layout__grid .content .photo__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: var(--gap-sm);
+  grid-gap: var(--s-1);
   text-align: center;
 }
 
@@ -43,7 +45,7 @@
 .layout__grid .content .photo__collection .photo {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-md);
+  gap: var(--s-4);
   width: var(--width-full);
   height: auto;
   overflow: hidden;
@@ -81,7 +83,7 @@
   }
 
   h2 {
-    font-size: var(--font-size-display);
+    font-size: var(--font-size-heading-xl);
     text-align: center;
     margin: 0 auto;
   }
@@ -89,9 +91,9 @@
   .stack h3,
   .text h3 {
     width: var(--width-content);
-    margin: 0 auto var(--space-sm) auto;
-    font-size: var(--font-size-content);
-    font-weight: var(--font-weight-regular);
+    margin: 0 auto var(--s-2) auto;
+    font-size: var(--font-size-body);
+    font-weight: var(--weight-regular);
     text-align: left;
     opacity: var(--op-light);
   }
@@ -101,7 +103,7 @@
   }
 
   h2 + h3 {
-    font-weight: var(--font-weight-regular);
+    font-weight: var(--weight-regular);
     text-align: center;
     margin-top: 0;
     margin-bottom: 2em;
@@ -117,7 +119,7 @@
     ul li,
     ul:last-child li,
     p:last-child {
-      font-size: var(--font-size-content);
+      font-size: var(--font-size-body);
     }
 
     ul li {
@@ -153,7 +155,7 @@
 .photo__collection .post__content {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-md);
+  gap: var(--s-4);
 }
 
 /* photo */
@@ -171,7 +173,7 @@
 .photo__content {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-md);
+  gap: var(--s-4);
 
   img {
     display: block;
@@ -181,7 +183,7 @@
   }
 
   &.with-source {
-    gap: var(--gap-xs);
+    gap: var(--s-1);
   }
 }
 
@@ -189,7 +191,7 @@
   margin-bottom: 2em;
   display: flex;
   flex-direction: column;
-  gap: var(--gap-xxxl);
+  gap: var(--s-16);
   width: var(--width-wide);
 }
 
@@ -197,7 +199,7 @@
   display: grid;
   width: var(--width-full);
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: var(--gap-xs);
+  grid-gap: var(--s-1);
 
   .photo__content {
     gap: 0;
@@ -221,7 +223,7 @@
 .photo__collection {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-xl);
+  gap: var(--s-8);
 
   &:last-child {
     margin-bottom: 0;
@@ -233,7 +235,7 @@
   margin: 0 auto 2em auto;
   display: flex;
   flex-direction: column;
-  gap: var(--gap-xxxl);
+  gap: var(--s-16);
 }
 
 .photo__layout .photo > .photo__content img {
@@ -243,7 +245,7 @@
 }
 
 .project .stack {
-  margin: 0 0 var(--space-xl) 0;
+  margin: 0 0 var(--s-6) 0;
 }
 
 .stack {
@@ -263,7 +265,7 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: var(--gap-sm);
+  grid-gap: var(--s-2);
   text-align: center;
 
   &.is-vertical .photo img {
@@ -299,7 +301,7 @@
 .text {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-md);
+  gap: var(--s-4);
   width: var(--width-full);
 
   p {
@@ -310,7 +312,7 @@
 .stack {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-sm);
+  gap: var(--s-2);
   width: var(--width-full);
 }
 
@@ -319,14 +321,14 @@
 }
 
 .stack:has(.grid) {
-  gap: var(--gap-sm);
+  gap: var(--s-2);
 }
 
 .row {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--gap-sm);
+  gap: var(--s-2);
 }
 
 .row.has-one,
@@ -370,12 +372,12 @@
 }
 
 .photo__header h2 {
-  font-size: var(--font-size-display);
+  font-size: var(--font-size-heading-xl);
   line-height: 1.2;
 }
 
 .photo__selector {
-  font-size: var(--font-size-meta);
+  font-size: var(--font-size-body-xs);
   width: var(--width-full);
   text-align: right;
 }
@@ -394,7 +396,7 @@
 }
 
 figcaption {
-  font-size: 1em;
+  font-size: var(--font-size-body-xs);
   text-align: center;
   opacity: var(--op-light);
 }
@@ -406,22 +408,8 @@ figcaption {
   }
 }
 
-@media all and (max-width: 1024px) {
+@include tablet {
   .photo__feed {
-    width: var(--width-full);
-  }
-
-  .layout__photo .content,
-  .layout__photos .content {
-    width: var(--width-full);
-  }
-
-  .photo__layout {
-    width: var(--width-full);
-  }
-
-  .photo__layout p,
-  .photo__layout p:last-child {
     width: var(--width-full);
   }
 
@@ -442,7 +430,7 @@ figcaption {
   }
 }
 
-@media all and (max-width: 640px) {
+@include mobile {
   .layout__reportage {
     blockquote {
       width: auto;
@@ -470,7 +458,7 @@ figcaption {
   }
 
   .layout__grid .content .photo__collections {
-    gap: var(--gap-md);
+    gap: var(--s-4);
   }
 
   .layout__reportage .content,
@@ -491,7 +479,7 @@ figcaption {
   }
 
   .photos__archive {
-    gap: var(--gap-md);
+    gap: var(--s-4);
   }
 
   .photos__archive img {
@@ -501,7 +489,7 @@ figcaption {
   }
 
   .photo__collection {
-    gap: var(--gap-sm);
+    gap: var(--s-2);
   }
 
   .row {
@@ -523,6 +511,6 @@ figcaption {
   }
 
   figcaption {
-    font-size: 0.9em;
+    font-size: var(--font-size-body-sm);
   }
 }

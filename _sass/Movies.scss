@@ -1,63 +1,6 @@
-.layout__movies {
-  .footer {
-    margin-top: 4em;
-  }
-
-  h3 {
-    padding: 0 0 var(--space-lg);
-    border-bottom: 1px solid var(--gray);
-  }
-}
-
 .movies {
-  width: var(--width-content);
-}
-
-.movie__year {
-  margin: 0 0 1em;
-}
-
-.movie__list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 2em;
-
-  .movie__list + h2 {
-    margin-top: 2em;
-  }
-
-  li {
-    list-style: none;
-    margin: 0 0 0.2em;
-
-    &:last-child {
-      margin: 0;
-    }
-
-    a {
-      text-decoration: none;
-    }
-  }
-
-  span {
+  .movie__stars {
     opacity: var(--op-light);
-  }
-
-  &-date {
-    display: inline-block;
-    margin: 0 0.2em 0 0;
-    font-family: var(--font-text-mono);
-  }
-}
-
-@media all and (max-width: 1024px) {
-  .movies {
-    width: var(--width-full);
-  }
-}
-
-@media all and (max-width: 640px) {
-  .movies {
-    width: var(--width-full);
+    font-size: var(--font-size-body-xs);
   }
 }

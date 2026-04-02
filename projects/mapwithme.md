@@ -9,7 +9,7 @@ show_title: true
 ---
 
 ## Map with Me 
-### Make maps with your homies… or enemies
+#### Make maps with your homies… or enemies
 
 <div class="project__intro">
 <p>Working at <a href="https://carto.com">CARTO</a>, the Location Intelligence platform, taught me a lot about digital cartography and web mapping, something I’ve continued applying in several personal projects.<sup>1</sup></p>
