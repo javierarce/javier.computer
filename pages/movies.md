@@ -21,7 +21,7 @@ description: Movies I've watched
 {% assign last_year = current_year -%}
 {% endif -%}
 
-<h4 class="date-list__month-name">{% include date.html date=group.name day="false" -%} ({{ group.items.size }})</h4>
+<h4 class="date-list__month-name section-divider">{% include date.html date=group.name day="false" -%} ({{ group.items.size }})</h4>
 
 <ul class="date-list__items">
 {% assign last_day = "" -%}

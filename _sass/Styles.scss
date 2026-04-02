@@ -227,6 +227,12 @@ h4 {
   opacity: var(--op-light);
 }
 
+.section-divider {
+  margin: 0;
+  padding-bottom: var(--s-4);
+  border-bottom: 1px solid var(--gray);
+}
+
 img:not([src]):not([srcset]) {
   visibility: hidden;
 }
