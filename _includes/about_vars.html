@@ -1,0 +1,92 @@
+{% assign lang = include.lang | default: "es" -%}
+
+{% assign post_count = site.posts | size -%}
+{% assign subscribers_count = site.data.subscribers -%}
+{% assign map_count = site.maps | size -%}
+{% assign places_count = site.places | size -%}
+{% assign photo_count = 0 -%}
+
+{% for post in site.categories['photo'] -%}
+{% assign current_count = post.filenames | size -%}
+{% assign photo_count = photo_count | plus: current_count -%}
+{% endfor -%}
+
+{% assign projects = 0 -%}
+{% for year in site.data.projects -%}
+{% for project in year[1] -%}
+{% assign projects = projects | plus: 1 -%}
+{% endfor -%}
+{% endfor -%}
+
+{% assign drawings = 0 -%}
+{% for post in site.drawings -%}
+{% assign current_count = post.filenames | size -%}
+{% assign drawings = drawings | plus: current_count -%}
+{% endfor -%}
+
+{% if lang == "es" -%}
+{% assign random_phrases = site.data.reasons_es -%}
+{% else -%}
+{% assign random_phrases = site.data.reasons -%}
+{% endif -%}
+{% assign phrase_count = random_phrases.size -%}
+{% assign random_index = site.time | date: "%s" | modulo: phrase_count -%}
+{% assign selected_phrase = random_phrases[random_index] -%}
+
+{% assign books_with_status_read = site.books | where: "status", "read" %}
+{% assign sorted_books_read = books_with_status_read | sort: 'read' %}
+{% assign books_with_status_reading = site.books | where: "status", "reading" %}
+{% assign sorted_books_reading = books_with_status_reading | sort: 'read' %}
+
+{% assign book = sorted_books_read | last %}
+
+{% assign book_titles = "" -%}
+{% if lang == "es" -%}
+{% assign book_conjunction = ", y " -%}
+{% else -%}
+{% assign book_conjunction = ", and " -%}
+{% endif -%}
+{% for b in sorted_books_reading -%}
+{% if forloop.first -%}
+{% assign book_titles = "<em>" | append: b.title | append: "</em>" -%}
+{% elsif forloop.last -%}
+{% assign book_titles = book_titles | append: book_conjunction | append: "<em>" | append: b.title | append: "</em>" -%}
+{% else -%}
+{% assign book_titles = book_titles | append: ", <em>" | append: b.title | append: "</em>" -%}
+{% endif -%}
+{% endfor -%}
+
+{% assign movie = site.data.movies.movies | first %}
+{% assign movie_rating = movie.rating %}
+{% assign liked = movie.liked %}
+{% assign rating_phrase = "" %}
+
+{% if lang == "es" -%}
+{% case movie_rating %}
+{% when 0 %}{% if liked %}{% assign rating_phrase = "y me gustó." %}{% else %}{% assign rating_phrase = "y no me gustó nada." %}{% endif %}
+{% when 0.5 %}{% assign rating_phrase = "y me pareció bastante mala." %}
+{% when 1 %}{% assign rating_phrase = "y no me gustó mucho." %}
+{% when 1.5 %}{% assign rating_phrase = "y me pareció meh." %}
+{% when 2 %}{% assign rating_phrase = "y estuvo ok." %}
+{% when 2.5 %}{% assign rating_phrase = "y me pareció decente." %}
+{% when 3 %}{% assign rating_phrase = "y me pareció buena." %}
+{% when 3.5 %}{% assign rating_phrase = "y me pareció bastante buena." %}
+{% when 4 %}{% assign rating_phrase = "y me encantó." %}
+{% when 4.5 %}{% assign rating_phrase = "y me gustó mucho." %}
+{% when 5 %}{% assign rating_phrase = "¡y la recomiendo totalmente!" %}
+{% endcase -%}
+{% else -%}
+{% case movie_rating %}
+{% when 0 %}{% if liked %}{% assign rating_phrase = "and I liked." %}{% else %}{% assign rating_phrase = "and I didn't like it at all." %}{% endif %}
+{% when 0.5 %}{% assign rating_phrase = "and it was pretty bad." %}
+{% when 1 %}{% assign rating_phrase = "and it was not good." %}
+{% when 1.5 %}{% assign rating_phrase = "and it was meh." %}
+{% when 2 %}{% assign rating_phrase = "and it was okay." %}
+{% when 2.5 %}{% assign rating_phrase = "and it was decent." %}
+{% when 3 %}{% assign rating_phrase = "and it was good." %}
+{% when 3.5 %}{% assign rating_phrase = "and it was very good." %}
+{% when 4 %}{% assign rating_phrase = "and it was great." %}
+{% when 4.5 %}{% assign rating_phrase = "and I liked it a lot." %}
+{% when 5 %}{% assign rating_phrase = "and I totally recommend it!" %}
+{% endcase -%}
+{% endif -%}

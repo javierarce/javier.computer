@@ -1,6 +1,7 @@
 ---
 layout: about
 title:  About
+
 description: "Javier's computer"
 className: About
 weather: false

@@ -7,7 +7,10 @@ description: RSS feeds for javier.computer
 ---
 
 <div class="feeds">
-Here you'll find all the RSS feeds available on this site. Add them to your favorite feed reader and never miss an update.
+
+Aquí encontrarás todos los feeds RSS disponibles en esta web. Añádelos a tu lector de feeds favorito y no te pierdas nada.
+
+<p class="is-light">Here you'll find all the RSS feeds available on this site. Add them to your favorite feed reader and never miss an update.</p>
 <div class="feeds__section">
 <div class="cards">
     <a href="/feed.xml" class="card">
