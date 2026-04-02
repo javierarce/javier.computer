@@ -1,9 +1,8 @@
-
 .day {
   display: inline-block;
   padding: var(--s-2);
-  font-family: var(--font-text-mono);
   font-size: var(--font-size-body-xs);
+  font-variant-numeric: tabular-nums;
   border: 1px solid var(--color-border-muted);
   border-radius: var(--br-default);
   line-height: normal;
