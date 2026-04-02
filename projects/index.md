@@ -8,7 +8,7 @@ description: List of personal projects
 ---
 
 <div class="projects">
-<h4 class="section-divider">Documented projects</h4>
+<h4>Documented projects</h4>
 
 <div class="cards projects__cards">
     <a href="/projects/arena" class="card">
