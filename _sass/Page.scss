@@ -1,6 +1,8 @@
+@use "mixins" as *;
+
 .layout__page {
   .page__content {
-    width: var(--width-content);
+    @include content-width;
     font-size: var(--font-size-body);
     display: flex;
     flex-direction: column;
@@ -26,7 +28,7 @@
 }
 
 .page {
-  width: var(--width-content);
+  @include content-width;
 
   &__content {
 
@@ -45,29 +47,7 @@
   }
 }
 
-@media all and (max-width: 1024px) {
-
-  .page {
-    width: var(--width-full);
-  }
-
-  .layout__page .page__content,
-  .layout__page {
-    width: var(--width-full);
-  }
-}
-
-@media all and (max-width: 640px) {
-
-  .page {
-    width: var(--width-full);
-  }
-
-  .layout__page .page__content,
-  .layout__page {
-    width: var(--width-full);
-  }
-
+@include mobile {
   .layout__page {
     table {
       margin: 0;

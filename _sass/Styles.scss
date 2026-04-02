@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 * {
   box-sizing: border-box;
 }
@@ -164,7 +166,7 @@ blockquote p a {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: var(--width-content);
+  @include content-width;
   gap: 3em;
 }
 
@@ -387,25 +389,20 @@ a.is-icon-light.is-reportage::after {
   opacity: 0;
 }
 
-@media all and (max-width: 1024px) {
-  .content {
-    width: var(--width-content);
-  }
-
+@include tablet {
   .layout__office .content,
   .layout__office .content p {
     width: var(--width-full);
   }
 }
 
-@media all and (max-width: 640px) {
+@include mobile {
   body {
     font-size: var(--font-size-body);
     padding: 0;
   }
 
   .content {
-    width: var(--width-full);
     padding: var(--s-4);
   }
 

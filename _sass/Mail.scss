@@ -1,5 +1,7 @@
+@use "mixins" as *;
+
 .layout__contact .content__inner {
-  width: var(--width-content);
+  @include content-width;
   font-size: var(--font-size-body);
 }
 
@@ -8,25 +10,8 @@
   transition: opacity var(--transition-speed-default) ease-in-out;
 }
 
-@media all and (max-width: 1024px) {
-  .layout__contact .content__inner,
+@include tablet {
   .layout__contact {
-    width: var(--width-full);
-    margin: 0;
-  }
-
-  .layout__contact .form,
-  .layout__contact .input,
-  .layout__contact .textarea,
-  .layout__contact .button {
-    width: var(--width-full);
-  }
-}
-
-@media all and (max-width: 640px) {
-  .layout__contact .content__inner,
-  .layout__contact {
-    width: var(--width-full);
     margin: 0;
   }
 

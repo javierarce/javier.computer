@@ -1,6 +1,8 @@
+@use "mixins" as *;
+
 .navigation {
   position: relative;
-  width: var(--width-content);
+  @include content-width;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -64,20 +66,9 @@
 }
 
 
-@media all and (max-width: 1024px) {
-  .navigation {
-    width: var(--width-full);
-
-    &__secondary {
-      width: var(--width-full);
-    }
-  }
-}
-
-@media all and (max-width: 640px) {
+@include mobile {
   .navigation {
     align-items: flex-start;
-    width: var(--width-full);
 
     &__main {
       display: flex;

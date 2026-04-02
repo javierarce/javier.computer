@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 .pagination {
   display: flex;
   width: var(--width-full);
@@ -88,7 +90,7 @@
   }
 }
 
-@media all and (max-width: 640px) {
+@include mobile {
   .pagination {
     display: grid;
     justify-content: space-between;

@@ -1,9 +1,11 @@
+@use "mixins" as *;
+
 .footer {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
   margin-top: var(--s-12);
-  width: var(--width-content);
+  @include content-width;
 
   &__link {
     margin: 0 0.8em 0 0;
@@ -20,20 +22,9 @@
   }
 }
 
-@media all and (max-width: 1024px) {
+@include tablet {
   .footer {
     display: block;
-    width: var(--width-full);
-
-    &__link {
-      margin: 0 0.4em 0 0;
-    }
-  }
-}
-
-@media all and (max-width: 640px) {
-  .footer {
-    width: var(--width-full);
 
     &__link {
       margin: 0 0.4em 0 0;

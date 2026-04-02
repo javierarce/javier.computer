@@ -1,7 +1,9 @@
+@use "mixins" as *;
+
 .layout__grid .content,
 .layout__photo .content,
 .layout__photos .content {
-  width: var(--width-wide);
+  @include wide-width;
 }
 
 .layout__grid .content .photo__collections {
@@ -406,22 +408,8 @@ figcaption {
   }
 }
 
-@media all and (max-width: 1024px) {
+@include tablet {
   .photo__feed {
-    width: var(--width-full);
-  }
-
-  .layout__photo .content,
-  .layout__photos .content {
-    width: var(--width-full);
-  }
-
-  .photo__layout {
-    width: var(--width-full);
-  }
-
-  .photo__layout p,
-  .photo__layout p:last-child {
     width: var(--width-full);
   }
 
@@ -442,7 +430,7 @@ figcaption {
   }
 }
 
-@media all and (max-width: 640px) {
+@include mobile {
   .layout__reportage {
     blockquote {
       width: auto;

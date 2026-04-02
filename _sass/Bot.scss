@@ -1,5 +1,7 @@
+@use "mixins" as *;
+
 .layout__bots .content {
-  width: var(--width-wide);
+  @include wide-width;
 }
 
 .bots {
@@ -124,16 +126,8 @@
   }
 }
 
-@media all and (max-width: 1024px) {
-
-  .layout__bots .content,
+@include tablet {
   .bot__archive {
-    width: var(--width-full);
-  }
-}
-
-@media all and (max-width: 640px) {
-  .layout__bots .content {
     width: var(--width-full);
   }
 }

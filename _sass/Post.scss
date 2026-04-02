@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 .layout__post .post__content,
 .layout__home .post__content {
   display: flex;
@@ -16,7 +18,7 @@
 
 .post .video,
 .post .photo {
-  width: var(--width-wide);
+  @include wide-width;
 }
 
 .post {
@@ -43,7 +45,7 @@
   }
 
   &__text {
-    width: var(--width-content);
+    @include content-width;
   }
 
   &__title {
@@ -74,7 +76,7 @@
       margin-bottom: 0;
     }
 
-    p, 
+    p,
     ul li {
       font-size: var(--font-size-body);
     }
@@ -117,10 +119,11 @@
   }
 
   &__pagination {
-    width: var(--width-content);
+    @include content-width;
     margin: 1em auto 0 auto;
     display: flex;
     flex-direction: column;
+    font-size: var(--font-size-body-sm);
 
     & > * {
       margin: 0 var(--s-2) 0 0;
@@ -208,20 +211,17 @@
   }
 }
 
-@media all and (max-width: 1024px) {
-  .post .video,
-  .post .photo,
+@include tablet {
   .posts,
   .post,
   .post__content,
-  .post__content.post__text,
-  .post__pagination,
+  .post__content p,
   .post__footer {
     width: var(--width-full);
   }
 }
 
-@media all and (max-width: 640px) {
+@include mobile {
   .post {
     &__content a[href^="/maps"]:after {
       height: 18px;

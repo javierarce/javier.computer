@@ -1,6 +1,8 @@
+@use "mixins" as *;
+
 .layout__project {
   .content {
-    width: var(--width-wide);
+    @include wide-width;
   }
 
   hr {
@@ -126,18 +128,10 @@
 
 @media all and (max-width: 800px) {
   .layout__project .content {
-    width: var(--width-full);
-
     img {
       width: var(--width-full);
       height: auto;
       object-fit: cover;
     }
-  }
-}
-
-@media all and (max-width: 640px) {
-  .layout__project .content {
-    width: var(--width-full);
   }
 }

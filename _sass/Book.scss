@@ -1,5 +1,7 @@
+@use "mixins" as *;
+
 .books {
-  width: var(--width-content);
+  @include content-width;
 }
 
 a.book__spine:hover {
@@ -155,12 +157,6 @@ a.book__spine:hover {
       background: var(--color-book-light-pink);
       color: var(--color-book-white);
     }
-  }
-}
-
-@media all and (max-width: 1024px) {
-  .books {
-    width: var(--width-full);
   }
 }
 
