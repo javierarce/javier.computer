@@ -75,7 +75,7 @@ $transition-duration: 0.3s;
     bottom: 0.8em;
     left: 0.8em;
     color: var(--white);
-    font-size: var(--font-size-tiny);
+    font-size: var(--font-size-body-tiny);
     opacity: var(--op-hidden);
     transition: opacity $transition-duration ease-in-out;
   }
@@ -181,7 +181,7 @@ $transition-duration: 0.3s;
     .time-display {
       bottom: 0.4em;
       left: 0.4em;
-      font-size: var(--font-size-meta);
+      font-size: var(--font-size-body-xs);
     }
 
     .control-overlay,
@@ -209,6 +209,14 @@ $transition-duration: 0.3s;
 }
 
 @media all and (max-width: 640px) {
+  .layout__video .content {
+    width: var(--width-full);
+  }
+
+  .layout__video .post .post__footer {
+    width: var(--width-full);
+  }
+
   .video {
     .control-button {
       width: 40px;

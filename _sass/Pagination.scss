@@ -108,8 +108,7 @@
       }
 
       &.is-mobile-archive {
-        font-size: var(--font-size-ui); // TODO: change!
-        color:red!important;
+        font-size: var(--font-size-body-sm);
         border: 1px solid var(--color-border-muted);
         padding: 0.8em;
         display: flex;

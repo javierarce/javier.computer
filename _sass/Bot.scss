@@ -66,7 +66,7 @@
   &__archive-content {
     column-count: 2;
     column-gap: var(--s-8);
-    font-size: var(--font-size-meta);
+    font-size: var(--font-size-body-xs);
     font-family: Times New Roman;
   }
 
@@ -107,7 +107,7 @@
 
   .bot__archive-content {
     column-count: 1;
-    font-size: var(--font-size-ui);
+    font-size: var(--font-size-body-sm);
   }
 
   .bot__archive {

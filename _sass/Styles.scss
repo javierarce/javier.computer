@@ -61,7 +61,7 @@ p.is-light p a {
 .is-hidden-from-home {
   border: 1px solid var(--color-border-muted);
   padding: var(--s-3);
-  font-size: var(--font-size-meta);
+  font-size: var(--font-size-body-xs);
   opacity: var(--op-light);
 }
 
@@ -82,11 +82,11 @@ p.is-light p a {
 }
 
 .is-sm {
-  font-size: var(--font-size-meta);
+  font-size: var(--font-size-body-xs);
 }
 
 .is-xs {
-  font-size: var(--font-size-caption);
+  font-size: var(--font-size-body-xxs);
 }
 
 a {
@@ -361,7 +361,7 @@ a.is-icon-light.is-reportage::after {
 
 .is-highlighted {
   padding: 0.8em;
-  font-size: var(--font-size-ui);
+  font-size: var(--font-size-body-sm);
   border: 1px solid var(--purple);
   border-radius: var(--br-default);
   color: var(--purple);

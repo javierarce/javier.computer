@@ -83,7 +83,7 @@
   }
 
   h2 {
-    font-size: var(--font-size-display);
+    font-size: var(--font-size-heading-xl);
     text-align: center;
     margin: 0 auto;
   }
@@ -372,12 +372,12 @@
 }
 
 .photo__header h2 {
-  font-size: var(--font-size-display);
+  font-size: var(--font-size-heading-xl);
   line-height: 1.2;
 }
 
 .photo__selector {
-  font-size: var(--font-size-meta);
+  font-size: var(--font-size-body-xs);
   width: var(--width-full);
   text-align: right;
 }
@@ -396,7 +396,7 @@
 }
 
 figcaption {
-  font-size: var(--font-size-caption);
+  font-size: var(--font-size-body-xs);
   text-align: center;
   opacity: var(--op-light);
 }
