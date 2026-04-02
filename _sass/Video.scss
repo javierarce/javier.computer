@@ -15,44 +15,159 @@ $transition-duration: 0.3s;
 }
 
 .video {
+  $root: &;
   position: relative;
   max-width: var(--width-full);
+  height: 100%;
   overflow: hidden;
+  background-color: var(--black);
   margin: 0 0 1em;
 
+  cursor: pointer;
+
   video {
-    width: var(--width-full);
+    width: 100%;
+    height: 100%;
     display: block;
-    border-radius: var(--br-subtle);
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+
+    &:first-of-type {
+      position: relative;
+    }
+
+    &:not(:first-of-type) {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &.is-active {
+      opacity: 1;
+    }
+  }
+
+  #{$root}__videoButtons {
+    display: flex;
+    gap: 0.5em;
+  }
+
+  #{$root}__videoButton {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-body-xxxs);
+    transition:
+      background var(--transition-speed-default) ease-in-out,
+      color var(--transition-speed-default) ease-in-out;
+    padding: 0;
+
+    &:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    &.is-active {
+      background: var(--white);
+      color: var(--black);
+    }
+  }
+
+  #{$root}__timelineContainer {
+    position: absolute;
+    bottom: 3.4em;
+    left: 0;
+    width: 100%;
+    padding: 0 1.3em;
+    height: 20px;
+
+    &:hover #{$root}__timeline {
+      transform: scaleY(4);
+    }
+  }
+
+  #{$root}__timeline {
+    position: relative;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: transform $transition-duration ease-in-out;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.3);
+      width: var(--hover-position);
+    }
+  }
+
+  #{$root}__progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--white);
+    transform-origin: left;
+    transform: scaleX(0);
+    will-change: transform;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: -4px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--white);
+      opacity: 0;
+      transition: opacity $transition-duration ease-in-out;
+    }
+  }
+
+  #{$root}__title {
+    font-size: var(--font-size-body-xs);
+    color: var(--white);
+    margin-right: 8px;
   }
 
   &.is-loading {
-    .control-button {
-      display: none;
-    }
-
-    .time-display {
+    #{$root}__time {
       opacity: 1;
     }
   }
 
   &:not(.is-loading):not(.is-playing) {
-    .time-display {
+    #{$root}__time {
       opacity: 1;
     }
   }
 
   &.is-playing {
-    .control-overlay {
-      opacity: var(--op-hidden);
+    #{$root}__controlOverlay {
+      opacity: 0;
     }
 
-    .time-display {
-      opacity: var(--op-hidden);
+    #{$root}__time {
+      opacity: 0;
     }
   }
 
-  .control-overlay {
+  #{$root}__controlOverlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -61,92 +176,91 @@ $transition-duration: 0.3s;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--color-bg-overlay-video);
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0) 24%
+    );
     opacity: 1;
     transition: opacity $transition-duration ease-in-out;
+    z-index: 10;
 
-    &.playing {
-      opacity: var(--op-hidden);
+    &.is-playing {
+      opacity: 0;
     }
   }
 
-  .time-display {
-    position: absolute;
-    bottom: 0.8em;
-    left: 0.8em;
+  #{$root}__time {
+    display: flex;
+    gap: 0.2em;
+    width: 80px;
     color: var(--white);
-    font-size: var(--font-size-body-tiny);
-    opacity: var(--op-hidden);
+    font-size: var(--font-size-body-xs);
+    font-family: var(--font-text-mono);
+    opacity: 0;
     transition: opacity $transition-duration ease-in-out;
   }
 
   &:hover {
     &.is-playing {
-      .control-overlay,
-      .time-display,
-      .fullscreen-button {
+      #{$root}__controlOverlay,
+      #{$root}__time,
+      #{$root}__fullscreenButton {
         opacity: 1;
       }
     }
 
-    .control-overlay.playing,
-    .time-display,
-    .fullscreen-button {
+    #{$root}__controlOverlay.is-playing,
+    #{$root}__time,
+    #{$root}__progress,
+    #{$root}__fullscreenButton {
       opacity: 1;
     }
   }
 
-  .control-button {
-    border: none;
-    background: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80px;
-    height: 80px;
-
-    &::before {
-      content: "";
-      width: 0;
-      height: 0;
-      border-top: 40px solid transparent;
-      border-bottom: 40px solid transparent;
-      border-left: 60px solid var(--white);
-    }
-
-    &.pause {
-      gap: var(--s-4);
-
-      &::before,
-      &::after {
-        width: 24px;
-        height: 100%;
-        background-color: var(--white);
-      }
-
-      &::before {
-        border: none;
-      }
-
-      &::after {
-        content: "";
-      }
-    }
-  }
-
-  .fullscreen-button:after {
-    content: "\2197";
-    font-size: var(--font-size-body);
-    font-weight: var(--weight-bold);
-    color: var(--white);
-  }
-
-  .fullscreen-button {
+  #{$root}__controls {
     position: absolute;
-    top: 0.8em;
-    right: 0.8em;
-    opacity: var(--op-hidden);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    bottom: 0;
+    padding: 1em;
+
+    &Main,
+    &Secondary {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.8em;
+    }
+  }
+
+  #{$root}__controlButton {
+    border: none;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+
+    background: url(/assets/images/player/play.svg) no-repeat center;
+    background-size: contain;
+
+    &:hover::before {
+      opacity: 0.7;
+    }
+
+    &.is-paused {
+      background: url(/assets/images/player/pause.svg) no-repeat center;
+      background-size: contain;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  #{$root}__fullscreenButton {
     transition: opacity $transition-duration ease-in-out;
     cursor: pointer;
     border: none;
@@ -154,56 +268,65 @@ $transition-duration: 0.3s;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    width: 20px;
+    height: 20px;
+    background: url(/assets/images/player/fullscreen.svg) no-repeat center;
+    background-size: contain;
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 
   &:fullscreen {
-    background-color: var(--black-pure);
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    .fullscreen-button {
-      top: 1em;
-      right: 1em;
-
-      &:after {
-        content: "\2715";
-      }
+    #{$root}__fullscreenButton {
+      background: url(/assets/images/player/fullscreen_exit.svg) no-repeat
+        center;
+      background-size: contain;
     }
 
     video {
       width: auto;
       height: auto;
-      max-width: var(--width-full);
+      max-width: 100%;
       max-height: 100%;
     }
 
-    .time-display {
-      bottom: 0.4em;
-      left: 0.4em;
-      font-size: var(--font-size-body-xs);
-    }
-
-    .control-overlay,
-    .time-display,
-    .fullscreen-button {
-      opacity: var(--op-hidden);
+    #{$root}__controlOverlay,
+    #{$root}__time,
+    #{$root}__fullscreenButton {
+      opacity: 0;
     }
 
     &:hover {
-      .control-overlay,
-      .time-display,
-      .fullscreen-button {
-        opacity: var(--op-hidden);
+      #{$root}__controlOverlay,
+      #{$root}__time,
+      #{$root}__fullscreenButton {
+        opacity: 0;
       }
     }
 
     &.show-controls {
-      .control-overlay,
-      .time-display,
-      .fullscreen-button {
+      #{$root}__controlOverlay,
+      #{$root}__time,
+      #{$root}__fullscreenButton {
         opacity: 1 !important;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .video {
+    $root: &;
+
+    #{$root}__title {
+      display: none;
     }
   }
 }
@@ -218,22 +341,55 @@ $transition-duration: 0.3s;
   }
 
   .video {
-    .control-button {
-      width: 40px;
-      height: 40px;
+    $root: &;
 
-      &::before {
-        content: "";
-        width: 0;
-        height: 0;
-        border-top: 20px solid transparent;
-        border-bottom: 20px solid transparent;
-        border-left: 30px solid var(--white);
-      }
+    #{$root}__controlOverlay {
+      background: transparent;
+    }
 
-      &.pause {
-        gap: 0.6em;
-      }
+    #{$root}__time,
+    #{$root}__videoButtons,
+    #{$root}__controlButton,
+    #{$root}__timelineContainer,
+    #{$root}__fullscreenButton {
+      display: none;
+    }
+  }
+}
+
+.video__controlsMobile {
+  margin-top: 1em;
+
+  .video__videoButtons {
+    display: flex;
+    gap: 0.5em;
+  }
+
+  .video__videoButton {
+    width: 2em;
+    height: 2em;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-body-xxxs);
+    transition:
+      background var(--transition-speed-default) ease-in-out,
+      color var(--transition-speed-default) ease-in-out;
+    padding: 0;
+
+    &:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    &.is-active {
+      background: var(--white);
+      color: var(--black);
     }
   }
 }

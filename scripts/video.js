@@ -1,170 +1,214 @@
 class Video {
   constructor($videoContainer) {
     this.$container = $videoContainer;
-    this.$video = this.$container.querySelector("video");
-    this.$source = this.$video.querySelector("source");
-    this.$overlay = this.$container.querySelector(".control-overlay");
-    this.$control = this.$container.querySelector(".control-button");
-
-    this.$fullscreenButton =
-      this.$container.querySelector(".fullscreen-button");
-
-    this.$currentTimeDisplay = this.$container.querySelector(".current-time");
-    this.$totalTimeDisplay = this.$container.querySelector(".total-time");
-    this.$timeDisplay = this.$container.querySelector(".time-display");
-
-    this.spinner = new Spinner("video-spinner");
-    this.$overlay.appendChild(this.spinner.render());
-
-    this.controlsTimeout;
-    this.isFullscreen = false;
     this.isLoading = true;
     this.isInitialized = false;
+    this.currentVideoIndex = 0;
+    this.isSwitching = false;
+    this._isMobile = null;
 
-    this.videoSrc = this.$source.getAttribute("data-src");
-    this.$video.removeAttribute("preload");
+    this.render();
+  }
 
-    this.bindEvents();
-    this.initLazyLoading();
+  createVideoElement(src, index, poster) {
+    const videoElement = document.createElement("video");
+    const sourceElement = document.createElement("source");
+
+    sourceElement.src = src;
+    sourceElement.type = "video/mp4";
+
+    videoElement.playsInline = false;
+    videoElement.controls = this.isMobile();
+    videoElement.poster = poster;
+
+    videoElement.preload = index === 0 ? "metadata" : "none";
+
+    videoElement.appendChild(sourceElement);
+
+    if (index === 0) {
+      videoElement.classList.add("is-active");
+    }
+
+    return videoElement;
+  }
+
+  createVideoButton(index) {
+    const button = document.createElement("button");
+    button.className = "video__videoButton";
+    button.textContent = index + 1;
+
+    if (index === 0) {
+      button.classList.add("is-active");
+    }
+
+    button.addEventListener("click", () =>
+      this.switchVideo(index, { play: true }),
+    );
+    return button;
+  }
+
+  createVideoButtons() {
+    const videoButtons = document.createElement("div");
+    videoButtons.className = "video__videoButtons";
+
+    this.videoElements.forEach((_, index) => {
+      const button = this.createVideoButton(index);
+      videoButtons.appendChild(button);
+    });
+
+    let $el = this.$container.querySelector(".video__controlsMain");
+
+    if (this.isMobile()) {
+      $el = document.body.querySelector(".video__controlsMobile");
+    }
+
+    if ($el) {
+      $el.appendChild(videoButtons);
+    }
+  }
+
+  async switchVideo(index, options = {}) {
+    if (this.isSwitching) {
+      return;
+    }
+
+    if (index === this.currentVideoIndex) {
+      const video = this.videoElements[index];
+      if (video.paused && options?.play) {
+        video.play().catch(() => {});
+        this.control.updatePlayState(true);
+      }
+      return;
+    }
+
+    this.isSwitching = true;
+
+    const buttons = document.body.querySelectorAll(".video__videoButton");
+
+    buttons.forEach((button, i) => {
+      button.classList.toggle("is-active", i === index);
+    });
+
+    const currentVideo = this.videoElements[this.currentVideoIndex];
+    const newVideo = this.videoElements[index];
+    const shouldPlay = options?.play || !currentVideo.paused;
+
+    try {
+      if (newVideo.readyState < 2) {
+        this.showLoadingState();
+        if (newVideo.preload === "none") {
+          newVideo.load();
+        }
+        await new Promise((resolve) => {
+          newVideo.addEventListener("canplay", resolve, { once: true });
+        });
+        this.hideLoadingState();
+      }
+
+      newVideo.currentTime = 0;
+
+      if (newVideo.seeking) {
+        await new Promise((resolve) => {
+          newVideo.addEventListener("seeked", resolve, { once: true });
+        });
+      }
+
+      newVideo.classList.add("is-active");
+
+      this.updateVideoComponents(newVideo);
+
+      if (shouldPlay) {
+        this.isPlaying = true;
+        this.control.updatePlayState(true);
+
+        try {
+          await newVideo.play();
+        } catch (e) {
+          if (e.name !== "AbortError") {
+            console.error("Error playing the video:", e);
+          }
+          this.isPlaying = false;
+          this.control.updatePlayState(false);
+        }
+      }
+
+      const oldIndex = this.currentVideoIndex;
+      this.currentVideoIndex = index;
+
+      setTimeout(() => {
+        if (this.currentVideoIndex !== oldIndex) {
+          currentVideo.pause();
+          currentVideo.classList.remove("is-active");
+        }
+      }, 400);
+    } catch (error) {
+      console.error("Error switching video:", error);
+    } finally {
+      this.isSwitching = false;
+    }
   }
 
   bindEvents() {
-    document.addEventListener(
-      "fullscreenchange",
-      this.onFullScreenChange.bind(this),
-    );
-    this.$control.addEventListener("click", this.togglePlayPause.bind(this));
-    this.$video.addEventListener("click", this.togglePlayPause.bind(this));
-    this.$fullscreenButton.addEventListener(
-      "click",
-      this.toggleFullscreen.bind(this),
-    );
-    this.$video.addEventListener(
-      "loadedmetadata",
-      this.updateTimeDisplay.bind(this),
-    );
-    this.$video.addEventListener(
-      "timeupdate",
-      this.updateTimeDisplay.bind(this),
-    );
-    this.$video.addEventListener("ended", () => {
-      this.$overlay.classList.remove("playing");
-      this.$control.classList.remove("pause");
-      this.showControls();
+    this.videoElements.forEach((video, index) => {
+      video.addEventListener("loadstart", () => {
+        if (this.isInitialized) this.showLoadingState();
+      });
+      video.addEventListener("canplay", () => {
+        if (this.isInitialized) this.hideLoadingState();
+      });
+      video.addEventListener("waiting", () => {
+        if (this.isInitialized) this.showLoadingState();
+      });
+      video.addEventListener("canplaythrough", () => {
+        if (this.isInitialized) this.hideLoadingState();
+      });
+      video.addEventListener("ended", async () => {
+        if (index < this.videoElements.length - 1) {
+          this.isPlaying = true;
+          await this.switchVideo(index + 1, { play: true });
+        } else {
+          this.isPlaying = false;
+          this.control.updatePlayState(false);
+        }
+      });
     });
+  }
 
-    this.$container.addEventListener("mousemove", this.showControls.bind(this));
-    this.$container.addEventListener(
-      "touchstart",
-      this.showControls.bind(this),
-    );
-
-    this.$video.addEventListener("loadstart", () => {
-      if (this.isInitialized) this.showLoadingState();
-    });
-    this.$video.addEventListener("canplay", () => {
-      if (this.isInitialized) this.hideLoadingState();
-    });
-    this.$video.addEventListener("waiting", () => {
-      if (this.isInitialized) this.showLoadingState();
-    });
-    this.$video.addEventListener("canplaythrough", () => {
-      if (this.isInitialized) this.hideLoadingState();
-    });
+  isMobile() {
+    if (this._isMobile === null) {
+      this._isMobile =
+        "ontouchstart" in window ||
+        window.matchMedia("(pointer: coarse)").matches;
+    }
+    return this._isMobile;
   }
 
   showLoadingState() {
-    this.isLoading = true;
-    this.$container.classList.add("is-loading");
-    this.spinner.show();
-    this.updateTimeDisplay();
+    if (this._loadingDebounce) {
+      clearTimeout(this._loadingDebounce);
+    }
+    this._loadingDebounce = setTimeout(() => {
+      if (this.isLoading) return;
+      this.isLoading = true;
+      this.$container.classList.add("is-loading");
+      this.spinner.show();
+      this.timeline.setLoading(true);
+      this.control.setLoading(true);
+      this.time.setLoading(true);
+    }, 250);
   }
 
   hideLoadingState() {
+    if (this._loadingDebounce) {
+      clearTimeout(this._loadingDebounce);
+      this._loadingDebounce = null;
+    }
     this.isLoading = false;
     this.$container.classList.remove("is-loading");
     this.spinner.hide();
-    this.updateTimeDisplay();
-    if (!this.$video.paused) {
-      this.$container.classList.add("is-playing");
-    }
-  }
-
-  onMetadataLoaded() {
-    this.updateTimeDisplay();
-  }
-
-  onFullScreenChange() {
-    this.isFullscreen = !!document.fullscreenElement;
-    if (this.isFullscreen) {
-      this.startHideControlsTimer();
-    } else {
-      this.$container.classList.remove("hide-controls");
-    }
-  }
-
-  togglePlayPause() {
-    if (this.isLoading) return;
-
-    if (this.$video.paused) {
-      this.$video.play().catch((error) => {
-        console.error("Play was prevented:", error);
-      });
-      this.$overlay.classList.add("playing");
-      this.$control.classList.add("pause");
-      this.$container.classList.add("is-playing");
-    } else {
-      this.$video.pause();
-      this.$overlay.classList.remove("playing");
-      this.$control.classList.remove("pause");
-      this.$container.classList.remove("is-playing");
-    }
-  }
-
-  toggleFullscreen() {
-    if (!document.fullscreenElement) {
-      if (this.$container.requestFullscreen) {
-        this.$container.requestFullscreen();
-      } else if (this.$container.mozRequestFullScreen) {
-        this.$container.mozRequestFullScreen();
-      } else if (this.$container.webkitRequestFullscreen) {
-        this.$container.webkitRequestFullscreen();
-      } else if (this.$container.msRequestFullscreen) {
-        this.$container.msRequestFullscreen();
-      }
-    } else {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      } else if (document.mozCancelFullScreen) {
-        document.mozCancelFullScreen();
-      } else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen();
-      } else if (document.msExitFullscreen) {
-        document.msExitFullscreen();
-      }
-    }
-  }
-
-  formatTime(timeInSeconds) {
-    if (isNaN(timeInSeconds) || timeInSeconds === Infinity) {
-      return "0:00";
-    }
-    const minutes = Math.floor(timeInSeconds / 60);
-    const seconds = Math.floor(timeInSeconds % 60);
-    return `${minutes}:${seconds.toString().padStart(2, "0")}`;
-  }
-
-  updateTimeDisplay() {
-    const currentTime = this.isLoading ? 0 : this.$video.currentTime;
-    const duration = this.$video.duration;
-
-    this.$currentTimeDisplay.textContent = this.formatTime(currentTime);
-
-    if (isNaN(duration) || duration === Infinity) {
-      this.$totalTimeDisplay.textContent = "0:00";
-    } else {
-      this.$totalTimeDisplay.textContent = this.formatTime(duration);
-    }
+    this.timeline.setLoading(false);
+    this.control.setLoading(false);
+    this.time.setLoading(false);
   }
 
   initLazyLoading() {
@@ -191,36 +235,77 @@ class Video {
   }
 
   initializeVideo() {
-    if (this.isInitialized) return;
+    if (this.isInitialized) {
+      return;
+    }
 
     this.isInitialized = true;
-    this.$source.src = this.videoSrc;
-    this.$video.load();
+
+    this.videoElements[0].load();
+
     this.showLoadingState();
   }
 
-  showControls() {
-    this.$container.classList.add("show-controls");
+  updateVideoComponents(video) {
+    this.time.setVideo(video);
+    this.timeline.setVideo(video);
+    this.control.setVideo(video);
+  }
 
-    if (this.isFullscreen) {
-      this.startHideControlsTimer();
+  renderVideoComponents(video) {
+    this.time = new TimeDisplay(this.$container, video, {
+      isLoading: this.isLoading,
+    });
+
+    this.timeline = new Timeline(this.$container, video, this.time, {
+      isLoading: this.isLoading,
+    });
+
+    this.control = new Control(this.$container, video, {
+      isLoading: this.isLoading,
+    });
+  }
+
+  renderVideoElements(videoSources, poster) {
+    this.videoElements = videoSources.map((src, index) => {
+      return this.createVideoElement(src, index, poster);
+    });
+
+    this.videoElements.forEach((video) => {
+      this.$container.appendChild(video);
+    });
+
+    if (this.videoElements.length > 1) {
+      this.createVideoButtons();
     }
   }
 
-  hideControls() {
-    this.$container.classList.remove("show-controls");
-  }
+  render() {
+    const aspectRatio = this.$container.getAttribute("data-aspect-ratio");
+    if (aspectRatio) {
+      this.$container.style.aspectRatio = aspectRatio;
+    }
 
-  startHideControlsTimer() {
-    clearTimeout(this.controlsTimeout);
-    this.controlsTimeout = setTimeout(() => {
-      this.hideControls();
-    }, 1000);
+    const videoSources = this.$container
+      .getAttribute("data-videos")
+      .split("|");
+    const poster = this.$container.getAttribute("data-poster");
+
+    const $overlay = this.$container.querySelector(".video__controlOverlay");
+    this.spinner = new Spinner();
+    $overlay.appendChild(this.spinner.$element);
+
+    this.renderVideoElements(videoSources, poster);
+    this.renderVideoComponents(this.videoElements[0]);
+    this.bindEvents();
+
+    this.initLazyLoading();
   }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
   const $videoContainers = document.querySelectorAll(".video");
+
   $videoContainers.forEach(($videoContainer) => {
     new Video($videoContainer);
   });

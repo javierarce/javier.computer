@@ -1,20 +1,40 @@
-<div class="video">
-  <video>
-    <source data-src="{{ include.url }}" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <div class="control-overlay">
-    <button class="control-button" aria-label="Play/Pause"></button>
-    <div class="time-display">
-      <span class="current-time">0:00</span>
-      /
-      <span class="total-time">0:00</span>
+{% if include.videos %}
+  {% assign video_list = include.videos | join: '|' %}
+{% else %}
+  {% assign video_list = include.url %}
+{% endif %}
+<div
+  class="video"
+  data-aspect-ratio="{{ include.aspect_ratio | default: '1.7777' }}"
+  data-videos="{{ video_list }}"
+  {% if include.poster %}data-poster="/assets/images/frames/{{ include.poster }}.jpg"{% endif %}
+>
+  <div class="video__controlOverlay">
+    <div class="video__timelineContainer">
+      <div class="video__timeline">
+        <div class="video__progress"></div>
+      </div>
     </div>
-    <button class="fullscreen-button" aria-label="Fullscreen"></button>
+    <div class="video__controls">
+      <div class="video__controlsMain">
+        <button class="video__controlButton" aria-label="Play/Pause"></button>
+        <div class="video__time">
+          <span class="video__currentTime">0:00</span> /
+          <span class="video__totalTime">0:00</span>
+        </div>
+        {% if include.title %}
+        <div class="video__title">{{ include.title }}</div>
+        {% endif %}
+      </div>
+      <div class="video__controlsSecondary">
+        <button
+          class="video__fullscreenButton"
+          aria-label="Full screen"
+        ></button>
+      </div>
+    </div>
   </div>
-  {% if include.caption and include.caption != "" %}
-  {% unless include.hide_caption %}
-  <figcaption>{{ include.caption }}</figcaption>
-  {% endunless %}
-  {% endif %}
 </div>
+{% if include.videos and include.videos.size > 1 %}
+<div class="video__controlsMobile"></div>
+{% endif %}

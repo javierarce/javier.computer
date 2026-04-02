@@ -27,6 +27,9 @@
 <script src="{{ 'scripts/' | append: page.library | append: '.js' | relative_url }}?version={{site.version}}"></script>
 {% endif -%}
 
+<script src="{{ 'scripts/TimeDisplay.js' | relative_url }}?version={{site.version}}"></script>
+<script src="{{ 'scripts/Timeline.js' | relative_url }}?version={{site.version}}"></script>
+<script src="{{ 'scripts/Control.js' | relative_url }}?version={{site.version}}"></script>
 <script src="{{ 'scripts/video.js' | relative_url }}?version={{site.version}}"></script>
 
 {% if page.permalink == 'heart' -%}
