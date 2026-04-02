@@ -196,7 +196,7 @@ $transition-duration: 0.3s;
     width: 80px;
     color: var(--white);
     font-size: var(--font-size-body-xs);
-    font-family: var(--font-text-mono);
+    font-variant-numeric: tabular-nums;
     opacity: 0;
     transition: opacity $transition-duration ease-in-out;
   }

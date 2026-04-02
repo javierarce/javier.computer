@@ -7,7 +7,7 @@
 
   <a class="p-author h-card" href="https://javier.computer" style="display:none">{{ site.author }}</a>
   <div class="post__content{% if post.extraClassName %} {{ post.extraClassName }}{% endif %} e-content">
-    {% include video.html url=post.src -%}
+    {% include video.html url=post.src cover=post.cover cover_location=post.cover_location location=post.location -%}
 
     {% if post.intro -%}
     <p>{{ post.intro }}</p>
