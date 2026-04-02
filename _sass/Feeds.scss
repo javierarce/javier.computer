@@ -1,0 +1,18 @@
+.feeds {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-8);
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+  }
+
+  h3 {
+    margin-bottom: var(--s-4);
+  }
+  h4 {
+    margin-bottom: var(--s-4);
+  }
+}
