@@ -7,7 +7,8 @@ category: photo
 tag: photo
 location: marseille
 filenames:
-  - 2022_10_08_R0001882
+  - filename: 2022_10_08_R0001882
+    ratio: 3/2
 ---
 
 Marseille
