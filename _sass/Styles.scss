@@ -268,30 +268,15 @@ img {
   }
 }
 
-.about__content
-  a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
-.page__content
-  a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
-.drawing__content
-  a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
-.movie__list
-  li
-  a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
-.project__list
-  li
-  a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
-.photo__layout
-  p
-  a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
-.post__content
-  ul
-  li
-  a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
-.book__spine[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"])))
-  .book__title:after,
-.post__content
-  p
-  a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
+.about__content a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
+.page__content a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
+.drawing__content a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
+.movie__list li a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
+.project__list li a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
+.photo__layout p a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
+.post__content ul li a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
+.book__spine[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))) .book__title:after,
+.post__content p a[href]:not(:where([href^="#"], [href^="/"]:not([href^="//"]))):after,
 .is-external:after {
   content: "↗";
   display: inline-block;
@@ -390,7 +375,6 @@ a.is-icon-light.is-reportage::after {
       margin-right: auto;
     }
   }
-
 }
 
 #subscribers-count {
