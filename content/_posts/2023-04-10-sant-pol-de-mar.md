@@ -8,11 +8,16 @@ camera: Ricoh GR IIIx
 tag: photo
 hide: true
 filenames:
-  - R0002858
-  - R0002856
-  - R0002851
-  - R0002825
-  - R0002810
+  - filename: R0002858
+    ratio: 3/2
+  - filename: R0002856
+    ratio: 3/2
+  - filename: R0002851
+    ratio: 3/2
+  - filename: R0002825
+    ratio: 2/3
+  - filename: R0002810
+    ratio: 3/2
 ---
 
 Sant Pol de Mar

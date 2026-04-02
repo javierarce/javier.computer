@@ -7,7 +7,8 @@ location: marseille
 camera: Ricoh GR IIIx
 hide: true
 filenames:
-  - 2022_10_07_R0001373
+  - filename: 2022_10_07_R0001373
+    ratio: 3/2
 tag: photo
 ---
 

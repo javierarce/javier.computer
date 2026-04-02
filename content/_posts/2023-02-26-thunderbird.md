@@ -8,7 +8,8 @@ camera: Ricoh GR IIIx
 hide: true
 tag: photo
 filenames:
-  - R0002397
+  - filename: R0002397
+    ratio: 3/2
 ---
 
 Thunderbird

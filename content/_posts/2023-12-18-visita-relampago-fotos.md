@@ -6,18 +6,31 @@ category: photo
 tag: photo
 location: madrid
 filenames:
-  - R0005317
-  - R0005314
-  - R0005361
-  - R0005329
-  - R0005350
-  - R0005357
-  - R0005367
-  - R0005369
-  - R0005372
-  - R0005376
-  - R0005382
-  - R0005338
-  - R0005385
+  - filename: R0005317
+    ratio: 3/2
+  - filename: R0005314
+    ratio: 3/2
+  - filename: R0005361
+    ratio: 3/2
+  - filename: R0005329
+    ratio: 2/3
+  - filename: R0005350
+    ratio: 3/2
+  - filename: R0005357
+    ratio: 3/2
+  - filename: R0005367
+    ratio: 3/2
+  - filename: R0005369
+    ratio: 3/2
+  - filename: R0005372
+    ratio: 3/2
+  - filename: R0005376
+    ratio: 3/2
+  - filename: R0005382
+    ratio: 3/2
+  - filename: R0005338
+    ratio: 3/2
+  - filename: R0005385
+    ratio: 3/2
 camera: Ricoh GR IIIx
 ---
