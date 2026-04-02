@@ -34,7 +34,7 @@
   &__row {
     display: flex;
     flex-direction: row;
-    align-items: baseline;
+    align-items: first baseline;
     list-style: none;
     padding: 0;
     gap: var(--s-2);
@@ -44,12 +44,16 @@
   &__links {
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
+    align-items: first baseline;
     gap: var(--s-1);
     font-size: var(--font-size-body-sm);
 
     a {
       text-decoration: none;
+    }
+
+    .Post__footerSeparator {
+      opacity: var(--op-light);
     }
   }
 

@@ -39,7 +39,7 @@ description: Movies I've watched
         <span class="Post__footerSeparator">&middot;</span>
 {% endif -%}
         <a href="https://letterboxd.com/javier/film/{{ movie.permalink }}">{{ movie.title }} ({{ movie.year }})</a>
-        <span class="movie__stars">{{ movie.stars }}</span>
+        {% if movie.stars != "" -%}<span class="movie__stars">{{ movie.stars }}</span>{% endif -%}
 {% assign last_day = current_day -%}
 {% endfor -%}
     </div>
