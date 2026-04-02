@@ -8,8 +8,10 @@ camera: Ricoh GR IIIx
 hide: true
 tag: photo
 filenames:
-  - R0002602
-  - R0002577
+  - filename: R0002602
+    ratio: 3/2
+  - filename: R0002577
+    ratio: 3/2
 ---
 
 Men Working

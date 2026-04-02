@@ -6,7 +6,8 @@ category: photo
 camera: Ricoh GR IIIx
 location: barcelona
 filenames:
-  - 2022_09_20_R0001177
+  - filename: 2022_09_20_R0001177
+    ratio: 3/2
 hide: true
 tag: photo
 ---

@@ -6,9 +6,12 @@ category: photo
 tag: photo
 location: barcelona
 filenames:
-  - DSCF0439
-  - DSCF0407
-  - DSCF0434
+  - filename: DSCF0439
+    ratio: 3/2
+  - filename: DSCF0407
+    ratio: 3/2
+  - filename: DSCF0434
+    ratio: 3/2
 camera: Fujifilm X-T5
 hidden: true
 ---

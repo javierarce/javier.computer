@@ -6,18 +6,30 @@ category: photo
 tag: photo
 location: sitges
 filenames:
-  - DSCF0475
-  - DSCF0752
-  - DSCF0661
-  - DSCF0682
-  - DSCF0651
-  - DSCF0658
-  - DSCF0655
-  - DSCF0586
-  - DSCF0545
-  - DSCF0565
-  - DSCF0542
-  - DSCF0491
+  - filename: DSCF0475
+    ratio: 2/3
+  - filename: DSCF0752
+    ratio: 1/1
+  - filename: DSCF0661
+    ratio: 1/1
+  - filename: DSCF0682
+    ratio: 1/1
+  - filename: DSCF0651
+    ratio: 1/1
+  - filename: DSCF0658
+    ratio: 1/1
+  - filename: DSCF0655
+    ratio: 1/1
+  - filename: DSCF0586
+    ratio: 1/1
+  - filename: DSCF0545
+    ratio: 1/1
+  - filename: DSCF0565
+    ratio: 1/1
+  - filename: DSCF0542
+    ratio: 1/1
+  - filename: DSCF0491
+    ratio: 3/2
 camera: Fuji X-T5
 ---
 

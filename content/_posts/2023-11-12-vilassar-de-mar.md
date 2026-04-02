@@ -7,12 +7,19 @@ tag: photo
 hidden: false
 location: vilassardemar
 filenames:
-  - R0004802
-  - R0004770
-  - R0004771
-  - R0004797
-  - R0004778
-  - R0004813
-  - R0004764
+  - filename: R0004802
+    ratio: 2/3
+  - filename: R0004770
+    ratio: 3/2
+  - filename: R0004771
+    ratio: 3/2
+  - filename: R0004797
+    ratio: 3/2
+  - filename: R0004778
+    ratio: 3/2
+  - filename: R0004813
+    ratio: 3/2
+  - filename: R0004764
+    ratio: 3/2
 camera: Ricoh GR IIIx
 ---

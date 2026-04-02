@@ -6,11 +6,16 @@ category: photo
 tag: photo
 location: masnou
 filenames:
-  - DSCF1113
-  - DSCF1108
-  - DSCF1119
-  - DSCF1122
-  - DSCF1125
+  - filename: DSCF1113
+    ratio: 1/1
+  - filename: DSCF1108
+    ratio: 1/1
+  - filename: DSCF1119
+    ratio: 1/1
+  - filename: DSCF1122
+    ratio: 1/1
+  - filename: DSCF1125
+    ratio: 1/1
 camera: Fuji X-T5
 hidden: true
 ---

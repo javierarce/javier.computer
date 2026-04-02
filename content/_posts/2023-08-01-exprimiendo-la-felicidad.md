@@ -8,7 +8,10 @@ tag: photo
 location: berlin
 camera: Ricoh GR IIIx
 filenames:
-  - R0004286
-  - R0004300
-  - R0004305
+  - filename: R0004286
+    ratio: 2/3
+  - filename: R0004300
+    ratio: 2/3
+  - filename: R0004305
+    ratio: 3/2
 ---

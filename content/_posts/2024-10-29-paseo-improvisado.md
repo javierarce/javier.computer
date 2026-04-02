@@ -8,16 +8,27 @@ cover: 2024-10-29-Mataro-DSCF2770
 location: mataro
 filenames:
   - filename: 2024-10-29-Mataro-DSCF2729
+    ratio: 3/2
   - filename: 2024-10-29-Mataro-DSCF2730
+    ratio: 3/2
   - filename: 2024-10-29-Mataro-DSCF2745
+    ratio: 3/2
   - filename: 2024-10-29-Mataro-DSCF2734
+    ratio: 3/2
   - filename: 2024-10-29-Mataro-DSCF2741
+    ratio: 2/3
   - filename: 2024-10-29-Mataro-DSCF2738
+    ratio: 3/2
   - filename: 2024-10-29-Mataro-DSCF2770
+    ratio: 3/2
   - filename: 2024-10-29-Mataro-DSCF2775
+    ratio: 2/3
   - filename: 2024-10-29-Mataro-DSCF2755
+    ratio: 2/3
   - filename: 2024-10-29-Mataro-DSCF2754
+    ratio: 2/3
   - filename: 2024-10-29-Mataro-DSCF2791
+    ratio: 3/2
 camera: Fuji X-T5
 hide_title: true
 show_content: true

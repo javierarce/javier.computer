@@ -6,7 +6,8 @@ category: photo
 location: newyork
 camera: Ricoh GR IIIx
 hide: true
-filenames: 
-- R0002447
+filenames:
+- filename: R0002447
+  ratio: 3/2
 ---
 Books Is Power

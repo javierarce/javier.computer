@@ -7,12 +7,18 @@ location: madrid
 tag: photo
 camera: Ricoh GR IIIx
 filenames:
-  - R0002926
-  - R0002937
-  - R0002946
-  - R0002935
-  - R0002941
-  - R0002958
+  - filename: R0002926
+    ratio: 2/3
+  - filename: R0002937
+    ratio: 3/2
+  - filename: R0002946
+    ratio: 2/3
+  - filename: R0002935
+    ratio: 2/3
+  - filename: R0002941
+    ratio: 3/2
+  - filename: R0002958
+    ratio: 3/2
 ---
 
 Libros Mutantes

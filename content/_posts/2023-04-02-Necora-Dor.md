@@ -7,7 +7,8 @@ location: barcelona
 camera: Ricoh GR IIIx
 tag: photo
 hide: true
-filenames: 
-- R0002734
+filenames:
+- filename: R0002734
+  ratio: 3/2
 ---
 La Necora D'Or
