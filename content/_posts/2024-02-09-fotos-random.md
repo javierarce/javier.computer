@@ -6,9 +6,13 @@ category: photo
 tag: photo
 location: barcelona
 filenames:
-  - R0005592
-  - R0005272
-  - R0005569
-  - R0005572
+  - filename: R0005592
+    ratio: 3/2
+  - filename: R0005272
+    ratio: 3/2
+  - filename: R0005569
+    ratio: 3/2
+  - filename: R0005572
+    ratio: 3/2
 camera: Ricoh GR IIIx
 ---

@@ -6,9 +6,12 @@ category: photo
 tag: photo
 location: mataro
 filenames:
-  - DSCF1088
-  - DSCF1077
-  - DSCF1073
+  - filename: DSCF1088
+    ratio: 1/1
+  - filename: DSCF1077
+    ratio: 1/1
+  - filename: DSCF1073
+    ratio: 1/1
 camera: Fuji X-T5
 hidden: true
 ---

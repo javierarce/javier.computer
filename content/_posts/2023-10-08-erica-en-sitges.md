@@ -7,8 +7,10 @@ tag: photo
 location: sitges
 hidden: true
 filenames:
-  - DSCF0790
-  - DSCF0725
+  - filename: DSCF0790
+    ratio: 1/1
+  - filename: DSCF0725
+    ratio: 1/1
 camera: Fuji X-T5
 ---
 

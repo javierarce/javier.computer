@@ -7,12 +7,15 @@ location: barcelona
 tag: photo
 filenames:
   - filename: 2025-06-06-Barcelona-R0012539
+    ratio: 3/2
     caption: Luis Yang
     ratio: 3/2
   - filename: 2025-06-06-Barcelona-R0012534
+    ratio: 3/2
     caption: David y Alba, pre-photowalk
     ratio: 3/2
   - filename: 2025-06-06-Barcelona-R0012547
+    ratio: 3/2
     caption: Tres skaters
     ratio: 3/2
   - filename: 2025-06-06-Barcelona-R0012530

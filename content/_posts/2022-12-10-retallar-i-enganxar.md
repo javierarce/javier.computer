@@ -7,13 +7,20 @@ location: barcelona
 camera: Ricoh GR IIIx
 hide: false
 filenames:
-  - R0002177
-  - R0002189
-  - R0002185
-  - R0002195
-  - R0002200
-  - R0002207
-  - R0002214
+  - filename: R0002177
+    ratio: 3/2
+  - filename: R0002189
+    ratio: 3/2
+  - filename: R0002185
+    ratio: 3/2
+  - filename: R0002195
+    ratio: 3/2
+  - filename: R0002200
+    ratio: 3/2
+  - filename: R0002207
+    ratio: 3/2
+  - filename: R0002214
+    ratio: 3/2
 places:
   - santa-monica
 tag: photo

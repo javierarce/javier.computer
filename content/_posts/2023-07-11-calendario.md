@@ -7,9 +7,12 @@ tag: photo
 location: barcelona
 hidden: true
 filenames:
-  - R0003632
-  - R0003623
-  - R0003618
+  - filename: R0003632
+    ratio: 3/2
+  - filename: R0003623
+    ratio: 3/2
+  - filename: R0003618
+    ratio: 3/2
 ---
 
 Arte callejero + señor interesado en las palmeras en la presentación de Calendario.

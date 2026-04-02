@@ -6,6 +6,7 @@ category: photo
 location: berlin
 filenames:
   - filename: 2025-03-28-Berlin-DSCF3274
+    ratio: 3/2
     caption: La E marca el lugar
     ratio: 3/2
 camera: Fuji X-T5
