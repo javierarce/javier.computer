@@ -90,29 +90,54 @@
   --font-text-serif: "Newsreader", Georgia, Cambria, "Times New Roman", Times, serif;
   --font-text-mono: "SF Mono", SFMono-Regular, ui-monospace, "DejaVu Sans Mono", Menlo, Consolas, monospace;
 
-  /* Font sizes */
-  --font-size-base: 1rem;
-  --font-size-xs: 0.75em;
-  --font-size-sm: 0.875em;
-  --font-size-md: 1em;
-  --font-size-lg: 1.1em;
-  --font-size-xl: 1.2em;
-  --font-size-xxl: 1.3em;
-  --font-size-xxxl: 1.8em;
+  /* --- RAW TYPE SCALE (Geometric/Major Third) --- */
+  --text-xs:   0.75rem;   /* 12px */
+  --text-sm:   0.875rem;  /* 14px */  
+  --text-md:   1rem;      /* 16px */
+  --text-lg:   1.25rem;   /* 20px */
+  --text-xl:   1.563rem;  /* 25px */
+  --text-2xl:  1.953rem;  /* 31px */
+  --text-3xl:  2.441rem;  /* 39px */
+  --text-4xl:  3.052rem;  /* 49px */
+  --text-5xl:  3.815rem;  /* 61px */
 
-  /* Semantic font sizes */
-  --font-size-body: var(--font-size-xl); /* base body text */
-  --font-size-content: var(--font-size-xl); /* reading content: posts, tables, drawings */
-  --font-size-ui: var(--font-size-md); /* UI elements: inputs, h3/h4, paragraphs */
-  --font-size-meta: var(--font-size-sm); /* secondary text: labels, captions, buttons */
-  --font-size-caption: var(--font-size-xs); /* smallest text: figure titles, tiny labels */
-  --font-size-display: var(--font-size-xxxl); /* large display headers */
+  --font-size-body:     23px; // exception to the scale for better readability
+  --font-size-body-sm:  var(--text-lg); // 20px
+  --font-size-body-xs:  var(--text-md); // 16px
+  --font-size-body-xxs: var(--text-sm); // 14px
+  --font-size-body-xxxs: var(--text-xs); // 12px
+  --font-size-body-tiny: 11px; // exception to the scale for better readability
+  
+  --font-size-heading-xl:  var(--text-5xl);
+  --font-size-heading-lg:  var(--text-2xl);
+  --font-size-heading-md:  var(--text-xl); // perhaps 23px
+  --font-size-heading-sm:  var(--text-lg);
 
-  --font-weight-heavy: 700;
-  --font-weight-bold: 600;
-  --font-weight-semibold: 500;
-  --font-weight-regular: 400;
-  --font-weight-light: 300;
+  /* --- WEIGHTS --- */
+  --weight-light:   300;
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-bold:    700;
+  --weight-black:   900;
+
+  /* --- SPACING (Continuous 4pt Grid) --- */
+  /* Formula: --s-n = n * 0.25rem (n * 4px) */
+  --s-1:  0.25rem;   /* 4px   */
+  --s-2:  0.5rem;    /* 8px   */
+  --s-3:  0.75rem;   /* 12px  */
+  --s-4:  1rem;      /* 16px  */
+  --s-5:  1.25rem;   /* 20px  */
+  --s-6:  1.5rem;    /* 24px  */
+  --s-7:  1.75rem;   /* 28px  */
+  --s-8:  2rem;      /* 32px  */
+  --s-9:  2.25rem;   /* 36px  */
+  --s-10: 2.5rem;    /* 40px  */
+  --s-11: 2.75rem;   /* 44px  */
+  --s-12: 3rem;      /* 48px  */
+  --s-13: 3.25rem;   /* 52px  */
+  --s-14: 3.5rem;    /* 56px  */
+  --s-15: 3.75rem;   /* 60px  */
+  --s-16: 4rem;      /* 64px  */
 
   /* Dimensions */
   --width-full: 100%;
@@ -124,16 +149,6 @@
   /* Semantic widths */
   --width-content: var(--width-md); /* standard content column */
   --width-wide: var(--width-lg); /* wider sections and layouts */
-
-  /* Spacing */
-  --space-xs: 0.2rem;
-  --space-sm: 0.4rem;
-  --space-md: 0.8rem;
-  --space-lg: 1rem;
-  --space-xl: 1.5rem;
-  --space-xxl: 2rem;
-  --space-xxxl: 3rem;
-  --space-4xl: 4rem;
 
   /* Opacity */
   --op-10: 1;
@@ -164,21 +179,18 @@
   --br-default: var(--br-md); /* standard rounding: cards, inputs, tags */
   --br-pill: var(--br-round); /* full pill/circle */
 
-  /* Gaps  */
-  --gap-xxs: 0.1em;
-  --gap-xs: 0.2em;
-  --gap-sm: 0.4em;
-  --gap-md: 0.8em;
-  --gap-lg: 1.4em;
-  --gap-xl: 2em;
-  --gap-xxl: 3em;
-  --gap-xxxl: 4em;
-
   /* Transitions */
   --transition-speed-default: 140ms;
   --transition-speed-medium: 250ms;
   --transition-speed-slow: 300ms;
   --transition-speed-super-slow: 500ms;
+}
+
+@media (max-width: 640px) {
+  :root {
+  --font-size-body:     var(--text-lg); // 20px 
+  --font-size-body-sm:  var(--text-lg); // 20px
+  }
 }
 
 html[data-theme="light"] {

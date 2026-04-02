@@ -220,7 +220,7 @@ class Video {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const $videoContainers = document.querySelectorAll(".Video");
+  const $videoContainers = document.querySelectorAll(".video");
   $videoContainers.forEach(($videoContainer) => {
     new Video($videoContainer);
   });

@@ -1,4 +1,4 @@
-(function () {
+(function() {
   function showResults(results, store) {
     var searchResults = document.getElementById("search-results");
     if (results.length) {
@@ -11,7 +11,7 @@
         excerpt = highlight(excerpt, searchTerm);
         // Title is no longer highlighted
         appendString +=
-          '<li><a href="' + item.url + '"><h3>' + item.title + "</h3></a>";
+          '<li><a href="' + item.url + '">' + item.title + "</a>";
         appendString += "<p>" + excerpt + "</p></li>";
       }
       searchResults.innerHTML = appendString;
@@ -84,7 +84,7 @@
         window.plausible(eventName, { props: { query: query } });
       } else {
         // Wait for Plausible to load
-        setTimeout(function () {
+        setTimeout(function() {
           if (window.plausible) {
             window.plausible(eventName, { props: { query: query } });
           }
@@ -106,7 +106,7 @@
 
       // Initialize lunr.js with the fields to search.
       // The title field is given more weight with the "boost" parameter
-      var idx = lunr(function () {
+      var idx = lunr(function() {
         this.ref("id"); // 👈 IMPORTANT
         this.metadataWhitelist = ["position"];
 
@@ -130,9 +130,9 @@
         }
       });
 
-      var results = idx.query(function (q) {
+      var results = idx.query(function(q) {
         var terms = searchTerm.toLowerCase().split(/\s+/);
-        terms.forEach(function (term) {
+        terms.forEach(function(term) {
           q.term(term, {
             wildcard: lunr.Query.wildcard.TRAILING,
             presence: lunr.Query.presence.OPTIONAL,

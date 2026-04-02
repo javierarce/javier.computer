@@ -2,7 +2,7 @@
   width: auto;
   margin: 1em 0 0 0;
   color: var(--black);
-  font-size: 1em;
+  font-size: var(--font-size-body);
   text-decoration: none;
   padding: 0.6em;
   border: 1px solid var(--white);
@@ -20,19 +20,19 @@
   }
 
   &__title {
-    font-weight: var(--font-weight-regular);
+    font-weight: var(--weight-regular);
     text-decoration: none;
     display: block;
     background: none;
     border: none;
     color: var(--white);
-    font-size: 1em;
+    font-size: var(--font-size-body);
     cursor: pointer;
   }
 
   &__link {
     margin: 0 0 0 4px;
-    font-weight: var(--font-weight-regular);
+    font-weight: var(--weight-regular);
     text-decoration: none;
   }
 
@@ -75,7 +75,7 @@
 
   &__time {
     user-select: none;
-    font-size: var(--font-size-meta);
+    font-size: var(--font-size-body-xs);
     display: flex;
     flex-direction: row;
     align-items: center;

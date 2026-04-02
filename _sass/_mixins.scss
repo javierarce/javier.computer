@@ -1,0 +1,52 @@
+// Breakpoints
+$bp-tablet: 1024px;
+$bp-mobile: 640px;
+
+@mixin tablet {
+  @media all and (max-width: $bp-tablet) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media all and (max-width: $bp-mobile) {
+    @content;
+  }
+}
+
+// Responsive content width: var(--width-content) → var(--width-full)
+@mixin content-width {
+  width: var(--width-content);
+
+  @include tablet {
+    width: var(--width-full);
+  }
+}
+
+// Responsive wide width: var(--width-wide) → var(--width-full)
+@mixin wide-width {
+  width: var(--width-wide);
+
+  @include tablet {
+    width: var(--width-full);
+  }
+}
+
+// Visibility toggle
+@mixin toggleable($speed: var(--transition-speed-default)) {
+  opacity: var(--op-hidden);
+  visibility: hidden;
+  transition: opacity $speed ease-in-out;
+
+  &.is-visible {
+    opacity: var(--op-visible);
+    visibility: visible;
+  }
+}
+
+// List reset
+@mixin list-reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

@@ -16,23 +16,34 @@ description: Movies I've watched
 
 {% if last_year != current_year -%}
 
-<div class="movies">
-    <h2 class="movie__year">{{ current_year }}</h2> 
-    {% assign last_year = current_year -%} 
-    {% endif -%}
+<div class="movies date-list">
+<h3 class="date-list__year">{{ current_year }}</h3>
+{% assign last_year = current_year -%}
+{% endif -%}
 
-<h3>{% include date.html date=group.name day="false" -%} ({{ group.items.size }})</h3>
+<h4 class="date-list__month-name section-divider">{% include date.html date=group.name day="false" -%} ({{ group.items.size }})</h4>
 
-    <ul class="movie__list">
-    {% for movie in group.items -%}
-    <li>
-    <span class="movie__date">{{ movie.watched_on | date: "%d" }}</span>
-
-<a href="https://letterboxd.com/javier/film/{{ movie.permalink }}">{{ movie.title }} ({{ movie.year }})</a>
-<span>{{ movie.stars }}</span>
-
+<ul class="date-list__items">
+{% assign last_day = "" -%}
+{% for movie in group.items -%}
+{% assign current_day = movie.watched_on | date: "%d" -%}
+{% if current_day != last_day -%}
+{% if last_day != "" -%}
+</div>
 </li>
-    {% endfor -%}
-    </ul>
-    {% endfor -%}
+{% endif -%}
+<li class="date-list__row">
+    <span class="day">{{ current_day }}</span>
+    <div class="date-list__links">
+{% else -%}
+        <span class="Post__footerSeparator">&middot;</span>
+{% endif -%}
+        <a href="https://letterboxd.com/javier/film/{{ movie.permalink }}">{{ movie.title }} ({{ movie.year }})</a>
+        {% if movie.stars != "" -%}<span class="movie__stars">{{ movie.stars }}</span>{% endif -%}
+{% assign last_day = current_day -%}
+{% endfor -%}
+    </div>
+</li>
+</ul>
+{% endfor -%}
 </div>

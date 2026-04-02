@@ -5,12 +5,12 @@
 
   &__title {
     margin: 1.4em 0 2em 0;
-    font-weight: var(--font-weight-semibold);
+    font-weight: var(--weight-medium);
     text-transform: capitalize;
   }
 
   &__source {
-    font-size: var(--font-size-caption);
+    font-size: var(--font-size-body-xs);
     text-align: right;
     opacity: var(--op-light);
   }

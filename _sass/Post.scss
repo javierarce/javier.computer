@@ -1,29 +1,31 @@
+@use "mixins" as *;
+
 .layout__post .post__content,
 .layout__home .post__content {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: var(--width-full);
-  gap: var(--gap-lg);
+  gap: var(--s-6);
 }
 
 .posts {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-xxl);
+  gap: var(--s-12);
   max-width: var(--width-content);
 }
 
 .post .video,
 .post .photo {
-  width: var(--width-wide);
+  @include wide-width;
 }
 
 .post {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--gap-md);
+  gap: var(--s-4);
 
   img {
     display: block;
@@ -43,14 +45,14 @@
   }
 
   &__text {
-    width: var(--width-content);
+    @include content-width;
   }
 
   &__title {
     width: var(--width-full);
     display: block;
-    font-weight: var(--font-weight-bold);
-    margin: 0 0 var(--space-sm);
+    font-weight: var(--weight-bold);
+    margin: 0 0 var(--s-2);
   }
 
   &__content {
@@ -66,7 +68,7 @@
 
     ul {
       width: var(--width-full);
-      margin: 0 0 0 var(--space-4xl);
+      margin: 0 0 0 var(--s-16);
     }
 
     ul,
@@ -74,8 +76,9 @@
       margin-bottom: 0;
     }
 
+    p,
     ul li {
-      font-size: var(--font-size-content);
+      font-size: var(--font-size-body);
     }
 
     h2,
@@ -86,7 +89,6 @@
 
     p {
       width: var(--width-md);
-      font-size: var(--font-size-content);
       margin: 0;
     }
   }
@@ -96,8 +98,9 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 0.6em;
+    gap: var(--s-2);
     line-height: normal;
+    font-size: var(--font-size-body-sm);
 
     a,
     open-heart .off {
@@ -116,13 +119,14 @@
   }
 
   &__pagination {
-    width: var(--width-content);
+    @include content-width;
     margin: 1em auto 0 auto;
     display: flex;
     flex-direction: column;
+    font-size: var(--font-size-body-sm);
 
     & > * {
-      margin: 0 var(--space-sm) 0 0;
+      margin: 0 var(--s-2) 0 0;
     }
 
     a {
@@ -135,18 +139,22 @@
     opacity: var(--op-light);
   }
 
+  &__pagination-link {
+    font-size: var(--font-size-body-sm);
+  }
+
   &__pagination-link,
   &__pagination,
   &__footer {
     user-select: none;
-    font-weight: var(--font-weight-regular);
+    font-weight: var(--weight-regular);
   }
 
   &__pagination-link,
   &__location,
   &__date {
     text-decoration: none;
-    font-weight: var(--font-weight-regular);
+    font-weight: var(--weight-regular);
   }
 
   &__pagination-link:hover {
@@ -161,7 +169,7 @@
     position: relative;
     top: 2px;
     content: "";
-    margin-right: var(--gap-xs);
+    margin-right: var(--s-1);
     display: inline-block;
     width: 18px;
     height: 18px;
@@ -203,25 +211,18 @@
   }
 }
 
-@media all and (max-width: 1024px) {
-  .post .video,
-  .post .photo,
+@include tablet {
   .posts,
   .post,
   .post__content,
-  .post__content.post__text,
-  .post__pagination,
+  .post__content p,
   .post__footer {
     width: var(--width-full);
   }
 }
 
-@media all and (max-width: 640px) {
+@include mobile {
   .post {
-    &__footer {
-      font-size: var(--font-size-content);
-    }
-
     &__content a[href^="/maps"]:after {
       height: 18px;
     }

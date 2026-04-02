@@ -16,7 +16,7 @@
 
 .drawing {
   &__content {
-    font-size: var(--font-size-content);
+    font-size: var(--font-size-body);
     max-width: var(--width-wide);
     margin: 0 auto 2em;
     text-align: center;
@@ -26,7 +26,7 @@
     text-align: center;
     max-width: var(--width-wide);
     margin: 0 auto 2em auto;
-    font-size: var(--font-size-content);
+    font-size: var(--font-size-body);
   }
 
   &__header>* {
@@ -42,7 +42,7 @@
     width: var(--width-full);
     max-width: var(--width-wide);
     margin: 0 auto 2em auto;
-    font-size: var(--font-size-content);
+    font-size: var(--font-size-body);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,7 +72,7 @@
     text-align: center;
     max-width: var(--width-wide);
     margin: 0 auto 2em auto;
-    font-size: var(--font-size-content);
+    font-size: var(--font-size-body);
     opacity: var(--op-light);
   }
 }
@@ -82,7 +82,7 @@
   margin: 0 auto 2em auto;
   display: flex;
   flex-direction: column;
-  gap: var(--gap-md);
+  gap: var(--s-4);
 
   &.is-gap {
     gap: 4em;

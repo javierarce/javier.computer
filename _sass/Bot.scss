@@ -1,9 +1,11 @@
+@use "mixins" as *;
+
 .layout__bots .content {
-  width: var(--width-wide);
+  @include wide-width;
 }
 
 .bots {
-  font-size: var(--font-size-content);
+  font-size: var(--font-size-body);
 }
 
 .bot {
@@ -24,28 +26,7 @@
         margin: 0 auto 0 auto;
       }
     }
-
-    h3 {
-      margin-top: 1em;
-      width: 925px;
-    }
-
-    h2+h3 {
-      font-size: 0.9em;
-      font-weight: var(--font-weight-regular);
-      text-align: center;
-      margin-top: 0;
-      margin-bottom: 2em;
-      opacity: var(--op-light);
-    }
   }
-
-  h2 {
-    font-size: 2em;
-    text-align: center;
-    margin: 0 0 0.2em;
-  }
-
 
   p,
   &__items {
@@ -74,7 +55,7 @@
 
     h3 {
       width: var(--width-full);
-      font-weight: var(--font-weight-light);
+      font-weight: var(--weight-light);
       margin: 0 0 2em;
       padding-bottom: 0.4em;
       border-bottom: 1px solid var(--color-border-dark);
@@ -84,8 +65,8 @@
 
   &__archive-content {
     column-count: 2;
-    column-gap: var(--gap-xl);
-    font-size: var(--font-size-meta);
+    column-gap: var(--s-8);
+    font-size: var(--font-size-body-xs);
     font-family: Times New Roman;
   }
 
@@ -126,7 +107,7 @@
 
   .bot__archive-content {
     column-count: 1;
-    font-size: 0.9em;
+    font-size: var(--font-size-body-sm);
   }
 
   .bot__archive {
@@ -145,16 +126,8 @@
   }
 }
 
-@media all and (max-width: 1024px) {
-
-  .layout__bots .content,
+@include tablet {
   .bot__archive {
-    width: var(--width-full);
-  }
-}
-
-@media all and (max-width: 640px) {
-  .layout__bots .content {
     width: var(--width-full);
   }
 }

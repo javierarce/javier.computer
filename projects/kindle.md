@@ -8,9 +8,8 @@ show_date: true
 show_title: true
 ---
 
-## Kindle to Are.na
-
-### A little gift for the geeks
+# Kindle to Are.na
+#### A little gift for the geeks
 
 <div class="project__intro">
 <p>This project was a gift to one of my favorite communities
