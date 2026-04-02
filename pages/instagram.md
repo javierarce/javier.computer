@@ -13,7 +13,7 @@ Alright, let me share the full story of how my 14-year-old
 [Instagram](https://instagram.com) account, @javier, was stolen and ended up in
 the hands of a hip-hop producer—and why I believe it was an inside job.
 
-### Background
+<h3 class="section-divider">Background</h3>
 
 First off, here's some backstory: I've had the
 [@javier](https://instagram.com/javier) username since October 2010, the same
@@ -49,7 +49,7 @@ a username when they don't even share content!
 {% photo instagram 0_photos_02 class:is-wide %}
 {% endstack %}
 
-### The Theft
+<h3 class="section-divider">The Theft</h3>
 
 Alright, back to the story. On Wednesday, October 23rd, around 7 PM Spanish
 time, after I got killed for the thousandth time in Elden Ring, I opened
@@ -94,7 +94,7 @@ created a new account to request my content back. They never responded. I knew
 the chances were pretty low, and that they would probably try to extort me, but
 hey I had to ask.
 
-### The Investigation
+<h3 class="section-divider">The Investigation</h3>
 
 Ok, before I move on and tell you about the new owner of the account, let's do
 some conspirancy talk and let me explain how I think my account was stolen.
@@ -114,7 +114,7 @@ accounts](https://www.cshub.com/attacks/news/meta-fires-employees-for-allegedly-
 and there's a thriving black market for usernames on forums like
 [oguser.com](https://oguser.com)
 
-### The New Owner
+<h3 class="section-divider">The New Owner</h3>
 
 Back to the story. Let me tell you about the new account owner. His name is
 Javier "Jay" Sang. Looking at the tagged photos, he seems to be the founder and
@@ -128,7 +128,7 @@ have sought alternative means after I didn't respond to his request lol
 
 {% photo instagram jayrebelmusic class:is-wide %}
 
-### Current Status
+<h3 class="section-divider">Current Status</h3>
 
 As for the current situation: so far, I've regained control of the renamed
 account with all my content and messages, but I still haven't recovered my
@@ -158,7 +158,7 @@ appreciate it if you shared this thread. And if you know
 [@mosseri](https://x.com/mosseri), please let him know one of Instagram's
 earliest users is frustrated and thinking of leaving.
 
-### Good News
+<h3 class="section-divider">Good News</h3>
 
 Hey, guess what? I'm back on Instagram! Huge thanks to everyone who helped me
 recover my account, shared or liked this thread, or reached out to me over

@@ -4,7 +4,6 @@
 .layout__home .post__content {
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: var(--width-full);
   gap: var(--s-6);
 }
@@ -24,7 +23,6 @@
 .post {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: var(--s-4);
 
   img {
@@ -68,7 +66,7 @@
 
     ul {
       width: var(--width-full);
-      margin: 0 0 0 var(--s-16);
+      margin: 0 0 0 var(--s-8);
     }
 
     ul,
@@ -79,6 +77,11 @@
     p,
     ul li {
       font-size: var(--font-size-body);
+    }
+
+    h3,
+    h4 {
+      margin: 0;
     }
 
     h2,
