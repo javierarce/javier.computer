@@ -119,6 +119,29 @@
   &.caption-right figcaption {
     text-align: right;
   }
+
+  &.single {
+    display: flex;
+    justify-content: center;
+
+    .photo__content {
+      width: auto;
+
+      img {
+        max-height: 95vh;
+        width: auto;
+        max-width: var(--width-full);
+      }
+    }
+
+    &.left-align {
+      justify-content: flex-start;
+    }
+
+    &.right-align {
+      justify-content: flex-end;
+    }
+  }
 }
 
 .photo .post__content,
