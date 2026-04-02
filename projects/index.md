@@ -14,25 +14,25 @@ description: List of personal projects
     <a href="/projects/arena" class="card">
         <div class="card-title">Kindle to Are.na</div>
         <div class="card-description">Send your Kindle's highlights and notes to Are.na</div>
-        <div class="card-date">2020</div>
+        <div class="card-badge">2020</div>
     </a>
 
     <a href="/projects/enfont" class="card">
     <div class="card-title">Enfont Terrible</div>
     <div class="card-description">A terrible, terrible type foundry</div>
-    <div class="card-date">2019</div>
+    <div class="card-badge">2019</div>
     </a>
 
     <a href="/projects/mapwithme" class="card">
     <div class="card-title">Map with Me</div>
     <div class="card-description">Create collaborative maps with your friends (and enemies)</div>
-    <div class="card-date">2019</div>
+    <div class="card-badge">2019</div>
     </a>
 
     <a href="/bots/iremember" class="card">
     <div class="card-title">I remember bot</div>
     <div class="card-description">A tribute to Georges Perec and his book Je me souviens</div>
-    <div class="card-date">2015</div>
+    <div class="card-badge">2015</div>
     </a>
 
 </div>
