@@ -66,7 +66,18 @@ Boy](https://peepmedia.bigcartel.com/product/big-comic-for-boy) en la librería 
         {% photo barcelona 2026-03-06-Barcelona-R0018075 2/3 %}
         {% photo barcelona 2026-03-06-Barcelona-R0017957 2/3 %}
     {% endrow %}
+{% endstack %}
 
+{% single right %}
+<div>Fotos de la presentación del fanzine de Andrés Magán Big Comic for Boy en la librería Terranova.</div>
+{% photo barcelona 2026-03-06-Barcelona-R0018048 2/3 %}
+{% endsingle %}
+{% single left %}
+{% photo barcelona 2026-03-06-Barcelona-R0018048 2/3 %}
+<div>Fotos de la presentación del fanzine de Andrés Magán Big Comic for Boy en la librería Terranova.</div>
+{% endsingle %}
+
+{% stack %}
     {% photo barcelona 2026-03-06-Barcelona-R0018033 3/2 %}
     {% photo barcelona 2026-03-06-Barcelona-R0017987 3/2 %}
 
