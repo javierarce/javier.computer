@@ -14,12 +14,15 @@ class Video {
     const videoElement = document.createElement("video");
     const sourceElement = document.createElement("source");
 
-    sourceElement.src = src;
+    sourceElement.src = poster ? src : src + "#t=0.1";
     sourceElement.type = "video/mp4";
 
     videoElement.playsInline = false;
     videoElement.controls = this.isMobile();
-    videoElement.poster = poster;
+
+    if (poster) {
+      videoElement.poster = poster;
+    }
 
     videoElement.preload = index === 0 ? "metadata" : "none";
 

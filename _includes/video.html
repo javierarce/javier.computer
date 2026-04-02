@@ -7,7 +7,7 @@
   class="video"
   data-aspect-ratio="{{ include.aspect_ratio | default: '1.7777' }}"
   data-videos="{{ video_list }}"
-  {% if include.poster %}data-poster="/assets/images/frames/{{ include.poster }}.jpg"{% endif %}
+  {% if include.cover %}data-poster="https://img.javier.computer/{{ include.cover_location | default: include.location }}/{{ include.cover }}_1280.jpg"{% elsif include.poster %}data-poster="/assets/images/frames/{{ include.poster }}.jpg"{% endif %}
 >
   <div class="video__controlOverlay">
     <div class="video__timelineContainer">

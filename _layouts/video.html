@@ -9,7 +9,7 @@ category: videos
 
   <div class="post">
     <div class="post__content{% if page.extraClassName %} {{ page.extraClassName }}{% endif %} e-content">
-      {% include video.html url=page.src -%}
+      {% include video.html url=page.src cover=page.cover cover_location=page.cover_location location=page.location -%}
       {{ content }}
     </div>
     {% include post/footer.html -%}
