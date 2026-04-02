@@ -1,7 +1,117 @@
 {
-  "updated_at": "2026-03-21",
-  "count": 1014,
+  "updated_at": "2026-04-02",
+  "count": 1025,
   "movies": [
+    {
+      "watched_on": "2026-03-31",
+      "title": "The Watermelon Woman",
+      "year": 1996,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "the-watermelon-woman"
+    },
+    {
+      "watched_on": "2026-03-30",
+      "title": "She Don&#039;t Fade",
+      "year": 1992,
+      "rating": null,
+      "liked": false,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "she-dont-fade"
+    },
+    {
+      "watched_on": "2026-03-29",
+      "title": "Greetings from Africa",
+      "year": 1995,
+      "rating": null,
+      "liked": false,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "greetings-from-africa"
+    },
+    {
+      "watched_on": "2026-03-29",
+      "title": "Vanilla Sex",
+      "year": 1992,
+      "rating": null,
+      "liked": false,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "vanilla-sex"
+    },
+    {
+      "watched_on": "2026-03-29",
+      "title": "Janine",
+      "year": 1990,
+      "rating": null,
+      "liked": false,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "janine-1990"
+    },
+    {
+      "watched_on": "2026-03-29",
+      "title": "Alice in the Cities",
+      "year": 1974,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "alice-in-the-cities"
+    },
+    {
+      "watched_on": "2026-03-28",
+      "title": "How to Make a Killing",
+      "year": 2026,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "how-to-make-a-killing-2026"
+    },
+    {
+      "watched_on": "2026-03-25",
+      "title": "Barfly",
+      "year": 1987,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "barfly"
+    },
+    {
+      "watched_on": "2026-03-24",
+      "title": "Send Help",
+      "year": 2026,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "send-help"
+    },
+    {
+      "watched_on": "2026-03-22",
+      "title": "Moving",
+      "year": 1993,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "moving-1993"
+    },
+    {
+      "watched_on": "2026-03-21",
+      "title": "Dead Calm",
+      "year": 1989,
+      "rating": 1,
+      "liked": false,
+      "stars": "★",
+      "rewatched": false,
+      "permalink": "dead-calm"
+    },
     {
       "watched_on": "2026-03-19",
       "title": "Law and Order",

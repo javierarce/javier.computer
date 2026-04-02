@@ -5,64 +5,8 @@
 }
 
 .movies {
-  width: var(--width-content);
-
-  &__year {
-    margin: 0 0 1em;
-    opacity: var(--op-visible);
-  }
-
-  &__month {
-    padding: 0 0 var(--s-4);
-    border-bottom: 1px solid var(--gray);
-  }
-}
-
-
-.movie__list {
-  display: flex;
-  list-style: none;
-  flex-direction: column;
-  gap: var(--s-2);
-  margin: 0 0 2em;
-
-  .movie__list + h2 {
-    margin-top: 2em;
-  }
-
-  .movie {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    list-style: none;
-    padding: 0;
-    gap: var(--s-2);
-    margin: 0;
-
-    &:last-child {
-      margin: 0;
-    }
-
-    &__title {
-      font-size: var(--font-size-body-sm);
-      text-decoration: none;
-    }
-
-  }
-
-  span {
+  .movie__stars {
     opacity: var(--op-light);
-  }
-}
-
-@media all and (max-width: 1024px) {
-  .movies {
-    width: var(--width-full);
-  }
-}
-
-@media all and (max-width: 640px) {
-  .movies {
-    width: var(--width-full);
+    font-size: var(--font-size-body-xs);
   }
 }

@@ -1,0 +1,71 @@
+.date-list {
+  width: var(--width-content);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-8);
+
+  &__year {
+    margin: 0;
+    opacity: var(--op-visible);
+  }
+
+  &__month {
+    display: flex;
+    flex-direction: column;
+    break-inside: avoid;
+    margin: 0;
+    gap: var(--s-4);
+  }
+
+  &__month-name {
+    padding: 0 0 var(--s-4);
+    border-bottom: 1px solid var(--gray);
+    margin: 0;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+    margin: 0;
+    list-style: none;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    list-style: none;
+    padding: 0;
+    gap: var(--s-2);
+    margin: 0;
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--s-1);
+    font-size: var(--font-size-body-sm);
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  span.day {
+    flex-shrink: 0;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .date-list {
+    width: var(--width-full);
+  }
+}
+
+@media all and (max-width: 640px) {
+  .date-list {
+    width: var(--width-full);
+  }
+}
