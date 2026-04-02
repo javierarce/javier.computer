@@ -7,8 +7,10 @@ category: photo
 tag: photo
 location: marseille
 filenames:
-  - 2022_10_11_R0001511
-  - 2022_10_11_R0001518
+  - filename: 2022_10_11_R0001511
+    ratio: 3/2
+  - filename: 2022_10_11_R0001518
+    ratio: 3/2
 ---
 
 Marseille

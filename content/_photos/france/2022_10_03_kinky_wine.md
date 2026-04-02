@@ -7,7 +7,8 @@ category: photo
 tag: photo
 location: france
 filenames:
-  - 2022_10_11_DSCF1528
+  - filename: 2022_10_11_DSCF1528
+    ratio: 2/3
 ---
 
 Corbubombilla
