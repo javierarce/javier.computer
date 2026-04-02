@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-version: 7.1.10
+version: 7.1.11
 title: "Javier's computer"
 description: "My computer on the net"
 baseurl: ""
@@ -61,9 +61,6 @@ pagination:
   sort_reverse: true
 
 collections:
-  binoculars:
-    output: true
-    permalink: "/binoculars/:path/"
   maps:
     output: true
     permalink: "/map/:path/"
@@ -123,7 +120,8 @@ webmentions:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
+exclude:
+  - binocularshot/
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
