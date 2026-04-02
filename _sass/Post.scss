@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   width: var(--width-full);
+  align-items: center;
   gap: var(--s-6);
 }
 
@@ -38,10 +39,6 @@
     padding: 0.8em;
   }
 
-  p:last-child {
-    margin: 0;
-  }
-
   &__text {
     @include content-width;
   }
@@ -51,6 +48,14 @@
     display: block;
     font-weight: var(--weight-bold);
     margin: 0 0 var(--s-2);
+  }
+
+  p {
+    width: var(--width-md);
+  }
+
+  p:last-child {
+    margin: 0;
   }
 
   &__content {
