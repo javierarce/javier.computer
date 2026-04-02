@@ -82,11 +82,11 @@ p.is-light p a {
 }
 
 .is-sm {
-  font-size: var(--font-size-body-xs);
+  font-size: var(--font-size-body-sm)!important;
 }
 
 .is-xs {
-  font-size: var(--font-size-body-xxs);
+  font-size: var(--font-size-body-xs)!important;
 }
 
 a {
@@ -204,7 +204,7 @@ h2,
 h3,
 h4 {
   font-weight: var(--weight-medium);
-  margin: 0 0 1em;
+  margin: 0 0 var(--s-5) 0;
 }
 
 h1 {
