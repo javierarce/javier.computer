@@ -15,6 +15,8 @@ className: About
 
 [Consulta el archivo](/tags/newsletter).
 
+<p class="is-light">Join the <span>{{ subscribers_count }}</span> confused people subscribed to my very low-intensity mailing list, and get notified when I publish a new project or do something extremely funny. 
+
 <div class="Contact">
   <div class="js-newsletter-container"></div>
 </div>

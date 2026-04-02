@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ page.lang | default: 'es' }}">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,9 +33,6 @@
       {% include navigation.html -%}
 
       <div class="about__content">
-        {% if page.weather -%}
-          <weather-snitch></weather-snitch>
-        {% endif -%}
         {{ content }}
       </div>
       {% include footer.html -%}

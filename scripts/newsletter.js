@@ -180,8 +180,8 @@ class Newsletter {
     this.startTime = Date.now();
 
     this.$header = this.createElement({
-      elementType: "h2",
-      className: "newsletter__title",
+      elementType: "h3",
+      className: "newsletter__title section-divider",
       text: "Suscríbete a mi newsletter",
     });
     this.$el.appendChild(this.$header);

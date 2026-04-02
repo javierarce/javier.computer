@@ -17,7 +17,7 @@
 <script src="{{ 'scripts/Spinner.js' | relative_url }}?version={{site.version}}"></script>
 {% if page.permalink == 'blogroll' -%}
 <script src="{{ 'scripts/rss.reader.js' | relative_url }}?version={{site.version}}"></script>
-{% endif -%} {% if page.permalink == 'about' -%}
+{% endif -%} {% if page.layout == 'about' -%}
 <script src="{{ 'scripts/Weather.js' | relative_url }}?version={{site.version}}"></script>
 <script src="{{ 'scripts/music.snitch.js' | relative_url }}?version={{site.version}}"></script>
 {% endif -%}
@@ -36,7 +36,7 @@
 <script src="{{ 'scripts/like.js' | relative_url }}?version={{site.version}}"></script>
 {% endif -%} 
 
-{% if page.permalink == 'about' -%}
+{% if page.layout == 'about' -%}
   <script src="{{ 'scripts/about.js' | relative_url }}?version={{site.version}}"></script>
 {% elsif page.layout == 'zine' -%}
   <script src="{{ 'scripts/zine.js' | relative_url }}?version={{site.version}}"></script>

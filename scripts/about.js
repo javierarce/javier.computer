@@ -8,6 +8,8 @@ const onLoad = () => {
     const updateElement = document.querySelector("[data-update-timestamp]");
     if (!updateElement) return;
 
+    const lang = document.documentElement.lang || "es";
+
     const updateTimestamp =
       parseInt(updateElement.dataset.updateTimestamp) * 1000;
     const now = new Date();
@@ -21,21 +23,27 @@ const onLoad = () => {
       let timeText = "";
 
       if (diffDays === 0) {
-        timeText = "today";
+        timeText = lang === "es" ? "hoy" : "today";
       } else if (diffDays === 1) {
-        timeText = "yesterday";
+        timeText = lang === "es" ? "ayer" : "yesterday";
       } else if (diffDays < 7) {
-        timeText = `${diffDays} days ago`;
+        timeText =
+          lang === "es"
+            ? `hace ${diffDays} días`
+            : `${diffDays} days ago`;
       } else {
+        const locale = lang === "es" ? "es-ES" : "en-US";
         const currentYear = now.getFullYear();
         const updateYear = updateDate.getFullYear();
 
         if (currentYear === updateYear) {
           const options = { month: "long", day: "numeric" };
-          timeText = "on " + updateDate.toLocaleDateString("en-US", options);
+          const formatted = updateDate.toLocaleDateString(locale, options);
+          timeText = lang === "es" ? `el ${formatted}` : `on ${formatted}`;
         } else {
           const options = { year: "numeric", month: "long", day: "numeric" };
-          timeText = "on " + updateDate.toLocaleDateString("en-US", options);
+          const formatted = updateDate.toLocaleDateString(locale, options);
+          timeText = lang === "es" ? `el ${formatted}` : `on ${formatted}`;
         }
       }
 
