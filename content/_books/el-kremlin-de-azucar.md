@@ -3,9 +3,9 @@ title: El Kremlin de azúcar
 layout: book
 author: Vladímir Sorokin
 started: '2026-02-27'
-read: null
-status: reading
+read: '2026-04-03'
+status: read
 pages: 240
-progress: 80
+progress: 100
 link: https://www.acantilado.es/catalogo/el-kremlin-de-azucar
 ---
