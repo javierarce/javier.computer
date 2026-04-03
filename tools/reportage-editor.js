@@ -947,48 +947,6 @@ function renderContainerNode(node, wrapper) {
     showContextMenuAt(menu, e);
   });
 
-  // Ellipsis menu with class toggles
-  const classOpts = getClassOptions(node.type);
-  if (classOpts.length) {
-    const menuWrap = document.createElement('div');
-    menuWrap.className = 'node__menu-wrap';
-
-    const menuBtn = document.createElement('button');
-    menuBtn.className = 'node__menu-btn';
-    menuBtn.innerHTML = '···';
-    menuBtn.title = 'Options';
-
-    const menu = document.createElement('div');
-    menu.className = 'node__menu';
-
-    const classDiv = document.createElement('div');
-    classDiv.className = 'node__classes';
-    classOpts.forEach(cls => {
-      const btn = document.createElement('button');
-      btn.className = 'class-toggle' + (node.classes.includes(cls) ? ' is-active' : '');
-      btn.textContent = cls;
-      btn.onclick = (e) => {
-        e.stopPropagation();
-        toggleClass(node, cls);
-      };
-      classDiv.appendChild(btn);
-    });
-    menu.appendChild(classDiv);
-
-    menuBtn.onclick = (e) => {
-      e.stopPropagation();
-      // Close any other open menus
-      document.querySelectorAll('.node__menu.is-open').forEach(m => {
-        if (m !== menu) m.classList.remove('is-open');
-      });
-      menu.classList.toggle('is-open');
-    };
-
-    menuWrap.appendChild(menuBtn);
-    menuWrap.appendChild(menu);
-    controls.appendChild(menuWrap);
-  }
-
   // Move up button
   const upBtn = document.createElement('button');
   upBtn.className = 'node__btn is-move';
@@ -1038,6 +996,48 @@ function renderContainerNode(node, wrapper) {
     }
   };
   controls.appendChild(downBtn);
+
+  // Ellipsis menu with class toggles
+  const classOpts = getClassOptions(node.type);
+  if (classOpts.length) {
+    const menuWrap = document.createElement('div');
+    menuWrap.className = 'node__menu-wrap';
+
+    const menuBtn = document.createElement('button');
+    menuBtn.className = 'node__menu-btn';
+    menuBtn.innerHTML = '···';
+    menuBtn.title = 'Options';
+
+    const menu = document.createElement('div');
+    menu.className = 'node__menu';
+
+    const classDiv = document.createElement('div');
+    classDiv.className = 'node__classes';
+    classOpts.forEach(cls => {
+      const btn = document.createElement('button');
+      btn.className = 'class-toggle' + (node.classes.includes(cls) ? ' is-active' : '');
+      btn.textContent = cls;
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        toggleClass(node, cls);
+      };
+      classDiv.appendChild(btn);
+    });
+    menu.appendChild(classDiv);
+
+    menuBtn.onclick = (e) => {
+      e.stopPropagation();
+      // Close any other open menus
+      document.querySelectorAll('.node__menu.is-open').forEach(m => {
+        if (m !== menu) m.classList.remove('is-open');
+      });
+      menu.classList.toggle('is-open');
+    };
+
+    menuWrap.appendChild(menuBtn);
+    menuWrap.appendChild(menu);
+    controls.appendChild(menuWrap);
+  }
 
   // Delete button
   const delBtn = document.createElement('button');
