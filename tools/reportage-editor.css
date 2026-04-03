@@ -671,11 +671,12 @@ textarea {
   z-index: 20;
 }
 
-/* Show only the trigger dot on hover */
+/* Show trigger on hover or when it has focus-within */
 .stack-container .node:hover > .node__trigger,
 .row-container .node:hover > .node__trigger,
 .grid-container .node:hover > .node__trigger,
-.single-container .node:hover > .node__trigger {
+.single-container .node:hover > .node__trigger,
+.node__trigger:hover {
   opacity: 1;
 }
 
@@ -694,27 +695,53 @@ textarea {
   pointer-events: none;
 }
 
-/* Trigger dot: hidden at top level, visible inside containers */
+/* Trigger bar: hidden at top level, visible inside containers */
 .node__trigger {
   position: absolute;
   top: 4px;
   left: 4px;
   z-index: 15;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
   background: var(--editor-surface);
   border: 1px solid var(--editor-border);
+  border-radius: 4px;
   display: none;
   align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  gap: 0;
   opacity: 0;
   transition: opacity 150ms;
-  font-size: 11px;
+  padding: 0;
+}
+
+.node__trigger-handle,
+.node__trigger-expand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: none;
+  background: none;
   color: var(--editor-fg-muted);
+  font-size: 11px;
   padding: 0;
   line-height: 1;
+}
+
+.node__trigger-handle {
+  cursor: grab;
+}
+
+.node__trigger-handle:active {
+  cursor: grabbing;
+}
+
+.node__trigger-expand {
+  cursor: pointer;
+  font-size: 9px;
+}
+
+.node__trigger-expand:hover {
+  color: var(--editor-fg);
 }
 
 .stack-container .node__trigger,

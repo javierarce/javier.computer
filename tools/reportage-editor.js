@@ -1078,15 +1078,41 @@ function renderContainerNode(node, wrapper) {
 
   wrapper.appendChild(controls);
 
-  // Trigger dot for nested nodes (CSS hides it at top level)
-  const trigger = document.createElement('button');
+  // Trigger bar for nested nodes (CSS hides it at top level)
+  const trigger = document.createElement('div');
   trigger.className = 'node__trigger';
-  trigger.innerHTML = '⠿';
-  trigger.onclick = (e) => {
+
+  const triggerHandle = document.createElement('span');
+  triggerHandle.className = 'node__trigger-handle';
+  triggerHandle.innerHTML = '⠿';
+  triggerHandle.title = 'Drag to reorder';
+  triggerHandle.draggable = true;
+  triggerHandle.addEventListener('dragstart', e => {
+    e.stopPropagation();
+    canvasDragNodeId = node.id;
+    wrapper.classList.add('is-dragging');
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/plain', JSON.stringify({
+      source: 'canvas', nodeId: node.id
+    }));
+  });
+  triggerHandle.addEventListener('dragend', () => {
+    canvasDragNodeId = null;
+    wrapper.classList.remove('is-dragging');
+  });
+  trigger.appendChild(triggerHandle);
+
+  const triggerExpand = document.createElement('button');
+  triggerExpand.className = 'node__trigger-expand';
+  triggerExpand.innerHTML = '&#9662;';
+  triggerExpand.title = 'Show controls';
+  triggerExpand.onclick = (e) => {
     e.stopPropagation();
     closeAllNodeControls();
     wrapper.classList.add('has-controls-open');
   };
+  trigger.appendChild(triggerExpand);
+
   wrapper.appendChild(trigger);
 
   // Container
