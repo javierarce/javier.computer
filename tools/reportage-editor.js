@@ -2215,12 +2215,16 @@ function toggleToolbarMenu(e) {
   });
 })();
 
-// ─── Close menus on outside click ───────────────────────
+// ─── Close menus on outside click or scroll ─────────────
 document.addEventListener('click', () => {
   document.querySelectorAll('.node__menu.is-open').forEach(m => m.classList.remove('is-open'));
   document.getElementById('toolbarMenu').classList.remove('is-open');
   closeAllNodeControls();
 });
+
+document.addEventListener('scroll', () => {
+  closeContextMenu();
+}, true);
 
 // ─── Reportage loader ────────────────────────────────────
 let reportageIndex = [];
