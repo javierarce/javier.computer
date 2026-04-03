@@ -1715,6 +1715,7 @@ function showContextMenuAt(menu, e) {
   menu.style.left = rect.left + 'px';
   // Temporarily show off-screen to measure height
   menu.style.top = '-9999px';
+  menu.scrollTop = 0;
   menu.classList.add('is-open');
   const menuHeight = menu.offsetHeight;
   const spaceBelow = window.innerHeight - rect.bottom - 4;
