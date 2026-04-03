@@ -79,6 +79,16 @@ function findParent(id, nodes, parent) {
   return null;
 }
 
+function isDescendantOf(nodeId, ancestorId) {
+  const ancestor = findNode(ancestorId);
+  if (!ancestor || !ancestor.children) return false;
+  for (const child of ancestor.children) {
+    if (child.id === nodeId) return true;
+    if (child.children && isDescendantOf(nodeId, child.id)) return true;
+  }
+  return false;
+}
+
 function animateOut(el, callback) {
   let called = false;
   const done = () => { if (!called) { called = true; callback(); } };
@@ -769,7 +779,7 @@ function showInsertMenu(e, index) {
   sep.className = 'context-menu__sep';
   menu.appendChild(sep);
 
-  ['stack', 'row', 'grid', 'text'].forEach(type => {
+  ['stack', 'row', 'grid', 'single', 'text'].forEach(type => {
     const btn = document.createElement('button');
     btn.className = 'context-menu__item';
     btn.textContent = type.charAt(0).toUpperCase() + type.slice(1);
@@ -917,22 +927,97 @@ function renderContainerNode(node, wrapper) {
   // Controls
   const controls = document.createElement('div');
   controls.className = 'node__controls';
-  controls.innerHTML = `
-    <span class="node__handle" title="Drag to reorder">⠿</span>
-    <span class="node__label" title="Click to change type" style="cursor:pointer">${node.type}</span>
-  `;
+  const moveGroup = document.createElement('div');
+  moveGroup.className = 'node__move-group';
+  moveGroup.innerHTML = `<span class="node__handle" title="Drag to reorder">⠿</span>`;
+  controls.appendChild(moveGroup);
 
-  // Click label to cycle container type
-  controls.querySelector('.node__label').addEventListener('click', (e) => {
+  // Label (appended after arrows below)
+  const label = document.createElement('span');
+  label.className = 'node__label';
+  label.title = 'Click to change type';
+  label.style.cursor = 'pointer';
+  label.textContent = node.type;
+
+  // Click label to open type picker menu
+  label.addEventListener('click', (e) => {
     e.stopPropagation();
+    const photoCount = (node.children || []).filter(c => c.type === 'photo').length;
     const types = ['stack', 'row', 'grid'];
-    const idx = types.indexOf(node.type);
-    node.type = types[(idx + 1) % types.length];
-    // Keep only classes valid for the new type
-    const validClasses = getClassOptions(node.type);
-    node.classes = node.classes.filter(c => validClasses.includes(c));
-    renderCanvas();
+    if (photoCount <= 1 || node.type === 'single') types.push('single');
+    const menu = document.getElementById('contextMenu');
+    menu.innerHTML = '';
+    types.forEach(type => {
+      const btn = document.createElement('button');
+      btn.className = 'context-menu__item' + (type === node.type ? ' is-active' : '');
+      btn.textContent = type;
+      btn.onclick = () => {
+        if (type !== node.type) {
+          node.type = type;
+          const validClasses = getClassOptions(type);
+          node.classes = node.classes.filter(c => validClasses.includes(c));
+          renderCanvas();
+        }
+        closeContextMenu();
+      };
+      menu.appendChild(btn);
+    });
+    wrapper.classList.add('has-menu-open');
+    showContextMenuAt(menu, e);
   });
+
+  // Move up button
+  const upBtn = document.createElement('button');
+  upBtn.className = 'node__btn is-move';
+  upBtn.innerHTML = '↑';
+  upBtn.title = 'Move up';
+  upBtn.onclick = (e) => {
+    e.stopPropagation();
+    const info = findParent(node.id);
+    if (!info) return;
+    const idx = info.list.findIndex(n => n.id === node.id);
+    if (idx > 0) {
+      const oldRect = wrapper.getBoundingClientRect();
+      const offsetFromBottom = window.innerHeight - oldRect.top;
+      [info.list[idx - 1], info.list[idx]] = [info.list[idx], info.list[idx - 1]];
+      renderCanvas();
+      const el = document.querySelector(`.node[data-id="${node.id}"]`);
+      if (el) {
+        const newRect = el.getBoundingClientRect();
+        const drift = newRect.top - (window.innerHeight - offsetFromBottom);
+        window.scrollBy({ top: drift, behavior: 'smooth' });
+      }
+    }
+  };
+  moveGroup.appendChild(upBtn);
+
+  // Move down button
+  const downBtn = document.createElement('button');
+  downBtn.className = 'node__btn is-move';
+  downBtn.innerHTML = '↓';
+  downBtn.title = 'Move down';
+  downBtn.onclick = (e) => {
+    e.stopPropagation();
+    const info = findParent(node.id);
+    if (!info) return;
+    const idx = info.list.findIndex(n => n.id === node.id);
+    if (idx < info.list.length - 1) {
+      const oldRect = wrapper.getBoundingClientRect();
+      const offsetFromBottom = window.innerHeight - oldRect.top;
+      [info.list[idx], info.list[idx + 1]] = [info.list[idx + 1], info.list[idx]];
+      renderCanvas();
+      const el = document.querySelector(`.node[data-id="${node.id}"]`);
+      if (el) {
+        const newRect = el.getBoundingClientRect();
+        const drift = newRect.top - (window.innerHeight - offsetFromBottom);
+        window.scrollBy({ top: drift, behavior: 'smooth' });
+      }
+    }
+  };
+  moveGroup.appendChild(downBtn);
+
+  // Label (after move group)
+  controls.appendChild(label);
 
   // Ellipsis menu with class toggles
   const classOpts = getClassOptions(node.type);
@@ -976,55 +1061,13 @@ function renderContainerNode(node, wrapper) {
     controls.appendChild(menuWrap);
   }
 
-  // Move up button
-  const upBtn = document.createElement('button');
-  upBtn.className = 'node__btn is-move';
-  upBtn.innerHTML = '↑';
-  upBtn.title = 'Move up';
-  upBtn.onclick = (e) => {
-    e.stopPropagation();
-    const info = findParent(node.id);
-    if (!info) return;
-    const idx = info.list.findIndex(n => n.id === node.id);
-    if (idx > 0) {
-      const oldRect = wrapper.getBoundingClientRect();
-      const offsetFromBottom = window.innerHeight - oldRect.top;
-      [info.list[idx - 1], info.list[idx]] = [info.list[idx], info.list[idx - 1]];
-      renderCanvas();
-      const el = document.querySelector(`.node[data-id="${node.id}"]`);
-      if (el) {
-        const newRect = el.getBoundingClientRect();
-        const drift = newRect.top - (window.innerHeight - offsetFromBottom);
-        window.scrollBy({ top: drift, behavior: 'smooth' });
-      }
-    }
-  };
-  controls.appendChild(upBtn);
-
-  // Move down button
-  const downBtn = document.createElement('button');
-  downBtn.className = 'node__btn is-move';
-  downBtn.innerHTML = '↓';
-  downBtn.title = 'Move down';
-  downBtn.onclick = (e) => {
-    e.stopPropagation();
-    const info = findParent(node.id);
-    if (!info) return;
-    const idx = info.list.findIndex(n => n.id === node.id);
-    if (idx < info.list.length - 1) {
-      const oldRect = wrapper.getBoundingClientRect();
-      const offsetFromBottom = window.innerHeight - oldRect.top;
-      [info.list[idx], info.list[idx + 1]] = [info.list[idx + 1], info.list[idx]];
-      renderCanvas();
-      const el = document.querySelector(`.node[data-id="${node.id}"]`);
-      if (el) {
-        const newRect = el.getBoundingClientRect();
-        const drift = newRect.top - (window.innerHeight - offsetFromBottom);
-        window.scrollBy({ top: drift, behavior: 'smooth' });
-      }
-    }
-  };
-  controls.appendChild(downBtn);
+  // Add child button
+  const addBtn = document.createElement('button');
+  addBtn.className = 'node__btn is-add';
+  addBtn.innerHTML = '+';
+  addBtn.title = 'Add item';
+  addBtn.onclick = (e) => { e.stopPropagation(); showAddChildMenu(e, node); };
+  controls.appendChild(addBtn);
 
   // Delete button
   const delBtn = document.createElement('button');
@@ -1053,6 +1096,43 @@ function renderContainerNode(node, wrapper) {
 
   wrapper.appendChild(controls);
 
+  // Trigger bar for nested nodes (CSS hides it at top level)
+  const trigger = document.createElement('div');
+  trigger.className = 'node__trigger';
+
+  const triggerHandle = document.createElement('span');
+  triggerHandle.className = 'node__trigger-handle';
+  triggerHandle.innerHTML = '⠿';
+  triggerHandle.title = 'Drag to reorder';
+  triggerHandle.draggable = true;
+  triggerHandle.addEventListener('dragstart', e => {
+    e.stopPropagation();
+    canvasDragNodeId = node.id;
+    wrapper.classList.add('is-dragging');
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/plain', JSON.stringify({
+      source: 'canvas', nodeId: node.id
+    }));
+  });
+  triggerHandle.addEventListener('dragend', () => {
+    canvasDragNodeId = null;
+    wrapper.classList.remove('is-dragging');
+  });
+  trigger.appendChild(triggerHandle);
+
+  const triggerExpand = document.createElement('button');
+  triggerExpand.className = 'node__trigger-expand';
+  triggerExpand.innerHTML = '›';
+  triggerExpand.title = 'Show controls';
+  triggerExpand.onclick = (e) => {
+    e.stopPropagation();
+    closeAllNodeControls();
+    wrapper.classList.add('has-controls-open');
+  };
+  trigger.appendChild(triggerExpand);
+
+  wrapper.appendChild(trigger);
+
   // Container
   const containerClass = `${node.type}-container ${node.classes.join(' ')}`.trim();
   const container = document.createElement('div');
@@ -1073,6 +1153,14 @@ function renderContainerNode(node, wrapper) {
   container.style.position = 'relative';
 
   container.addEventListener('dragover', e => {
+    // If dragging a container node, only stacks can accept it — let others bubble
+    if (canvasDragNodeId && node.type !== 'stack') {
+      const draggedNode = findNode(canvasDragNodeId);
+      if (draggedNode && draggedNode.children) return; // it's a container, skip
+    }
+    // Prevent dropping a node into itself or its own descendants
+    if (canvasDragNodeId && isDescendantOf(node.id, canvasDragNodeId)) return;
+
     e.preventDefault();
     e.stopPropagation();
     e.dataTransfer.dropEffect = canvasDragNodeId ? 'move' : 'copy';
@@ -1091,6 +1179,13 @@ function renderContainerNode(node, wrapper) {
   });
 
   container.addEventListener('drop', e => {
+    // Same guard as dragover
+    if (canvasDragNodeId && node.type !== 'stack') {
+      const draggedNode = findNode(canvasDragNodeId);
+      if (draggedNode && draggedNode.children) return;
+    }
+    if (canvasDragNodeId && isDescendantOf(node.id, canvasDragNodeId)) return;
+
     e.preventDefault();
     e.stopPropagation();
     container.classList.remove('is-dragover');
@@ -1140,14 +1235,6 @@ function renderContainerNode(node, wrapper) {
   }
 
   wrapper.appendChild(container);
-
-  // Add child button — floating on the right, outside the container
-  const addBtn = document.createElement('button');
-  addBtn.className = 'add-child-btn';
-  addBtn.textContent = '+';
-  addBtn.title = node.type === 'stack' ? 'Add photo, row, grid, or text' : 'Add photo';
-  addBtn.onclick = (e) => { e.stopPropagation(); showAddChildMenu(e, node); };
-  wrapper.appendChild(addBtn);
 
   return wrapper;
 }
@@ -1204,10 +1291,50 @@ function renderPhotoNode(node, wrapper) {
 function renderTextNode(node, wrapper) {
   const controls = document.createElement('div');
   controls.className = 'node__controls';
-  controls.innerHTML = `
-    <span class="node__handle" title="Drag to reorder">⠿</span>
-    <span class="node__label">text</span>
-  `;
+  const moveGroup = document.createElement('div');
+  moveGroup.className = 'node__move-group';
+  moveGroup.innerHTML = `<span class="node__handle" title="Drag to reorder">⠿</span>`;
+  controls.appendChild(moveGroup);
+
+  // Move up
+  const upBtn = document.createElement('button');
+  upBtn.className = 'node__btn is-move';
+  upBtn.innerHTML = '↑';
+  upBtn.title = 'Move up';
+  upBtn.onclick = (e) => {
+    e.stopPropagation();
+    const info = findParent(node.id);
+    if (!info) return;
+    const idx = info.list.findIndex(n => n.id === node.id);
+    if (idx > 0) {
+      [info.list[idx - 1], info.list[idx]] = [info.list[idx], info.list[idx - 1]];
+      renderCanvas();
+    }
+  };
+  moveGroup.appendChild(upBtn);
+
+  // Move down
+  const downBtn = document.createElement('button');
+  downBtn.className = 'node__btn is-move';
+  downBtn.innerHTML = '↓';
+  downBtn.title = 'Move down';
+  downBtn.onclick = (e) => {
+    e.stopPropagation();
+    const info = findParent(node.id);
+    if (!info) return;
+    const idx = info.list.findIndex(n => n.id === node.id);
+    if (idx < info.list.length - 1) {
+      [info.list[idx], info.list[idx + 1]] = [info.list[idx + 1], info.list[idx]];
+      renderCanvas();
+    }
+  };
+  moveGroup.appendChild(downBtn);
+
+  const label = document.createElement('span');
+  label.className = 'node__label';
+  label.textContent = 'text';
+  controls.appendChild(label);
+
   const translationBtn = document.createElement('button');
   translationBtn.className = 'node__btn is-translation' + (node.translation != null ? ' is-active' : '');
   translationBtn.innerHTML = '译';
@@ -1248,6 +1375,17 @@ function renderTextNode(node, wrapper) {
   });
 
   wrapper.appendChild(controls);
+
+  // Trigger dot for nested nodes
+  const trigger = document.createElement('button');
+  trigger.className = 'node__trigger';
+  trigger.innerHTML = '⠿';
+  trigger.onclick = (e) => {
+    e.stopPropagation();
+    closeAllNodeControls();
+    wrapper.classList.add('has-controls-open');
+  };
+  wrapper.appendChild(trigger);
 
   const container = document.createElement('div');
   container.className = 'text-container';
@@ -1425,14 +1563,23 @@ function getClassOptions(type) {
     case 'stack': return ['has-margin-top', 'has-margin-bottom', 'with-caption'];
     case 'row': return ['has-one', 'has-two', 'has-margin-bottom'];
     case 'grid': return ['is-square', 'is-vertical', 'is-half', 'has-margin-bottom'];
+    case 'single': return ['left', 'center', 'right'];
     default: return [];
   }
 }
 
+const EXCLUSIVE_CLASSES = ['left', 'center', 'right'];
+
 function toggleClass(node, cls) {
   const idx = node.classes.indexOf(cls);
-  if (idx >= 0) node.classes.splice(idx, 1);
-  else node.classes.push(cls);
+  if (idx >= 0) {
+    node.classes.splice(idx, 1);
+  } else {
+    if (EXCLUSIVE_CLASSES.includes(cls)) {
+      node.classes = node.classes.filter(c => !EXCLUSIVE_CLASSES.includes(c));
+    }
+    node.classes.push(cls);
+  }
   renderCanvas();
 }
 
@@ -1494,7 +1641,27 @@ function showAddChildMenu(e, parentNode) {
   const menu = document.getElementById('contextMenu');
   menu.innerHTML = '';
 
-  // Add photo directly into this container
+  // Containers and text first
+  ['row', 'grid', 'stack', 'text'].forEach(type => {
+    const btn = document.createElement('button');
+    btn.className = 'context-menu__item';
+    btn.textContent = type.charAt(0).toUpperCase() + type.slice(1);
+    btn.onclick = () => {
+      const node = type === 'text'
+        ? { id: uid(), type: 'text', classes: [], html: '<p></p>' }
+        : { id: uid(), type, classes: [], children: [] };
+      parentNode.children.push(node);
+      closeContextMenu();
+      renderCanvas();
+    };
+    menu.appendChild(btn);
+  });
+
+  const sep1 = document.createElement('div');
+  sep1.className = 'context-menu__sep';
+  menu.appendChild(sep1);
+
+  // Add photo from file
   const addBtn = document.createElement('button');
   addBtn.className = 'context-menu__item';
   addBtn.textContent = 'Add photo…';
@@ -1511,9 +1678,9 @@ function showAddChildMenu(e, parentNode) {
 
   // Photos from shelf
   if (state.shelf.length) {
-    const sep = document.createElement('div');
-    sep.className = 'context-menu__sep';
-    menu.appendChild(sep);
+    const sep2 = document.createElement('div');
+    sep2.className = 'context-menu__sep';
+    menu.appendChild(sep2);
 
     const header = document.createElement('div');
     header.style.cssText = 'padding:4px 12px; font-size:0.65rem; opacity:0.4; text-transform:uppercase;';
@@ -1538,28 +1705,6 @@ function showAddChildMenu(e, parentNode) {
     });
   }
 
-  // Nested containers (only in stacks)
-  if (parentNode.type === 'stack') {
-    const sep = document.createElement('div');
-    sep.className = 'context-menu__sep';
-    menu.appendChild(sep);
-
-    ['row', 'grid', 'stack', 'text'].forEach(type => {
-      const btn = document.createElement('button');
-      btn.className = 'context-menu__item';
-      btn.textContent = '+ ' + type;
-      btn.onclick = () => {
-        const node = type === 'text'
-          ? { id: uid(), type: 'text', classes: [], html: '<p></p>' }
-          : { id: uid(), type, classes: [], children: [] };
-        parentNode.children.push(node);
-        closeContextMenu();
-        renderCanvas();
-      };
-      menu.appendChild(btn);
-    });
-  }
-
   showContextMenuAt(menu, e);
 }
 
@@ -1568,6 +1713,7 @@ function showContextMenuAt(menu, e) {
   menu.style.left = rect.left + 'px';
   // Temporarily show off-screen to measure height
   menu.style.top = '-9999px';
+  menu.scrollTop = 0;
   menu.classList.add('is-open');
   const menuHeight = menu.offsetHeight;
   const spaceBelow = window.innerHeight - rect.bottom - 4;
@@ -1584,8 +1730,14 @@ function showContextMenuAt(menu, e) {
   }, 0);
 }
 
+function closeAllNodeControls() {
+  document.querySelectorAll('.node.has-controls-open').forEach(n => n.classList.remove('has-controls-open'));
+}
+
 function closeContextMenu() {
   document.getElementById('contextMenu').classList.remove('is-open');
+  const active = document.querySelector('.node.has-menu-open');
+  if (active) active.classList.remove('has-menu-open');
 }
 
 function addTopLevelNode(type) {
@@ -1744,8 +1896,11 @@ function renderNodeToLiquid(node, depth) {
     return out;
   }
 
-  // Container
-  const classes = node.classes.length ? ' ' + node.classes.join(' ') : '';
+  // Container — strip "center" from single since it's the default (no class needed)
+  const exportClasses = node.type === 'single'
+    ? node.classes.filter(c => c !== 'center')
+    : node.classes;
+  const classes = exportClasses.length ? ' ' + exportClasses.join(' ') : '';
   let out = `${indent}{% ${node.type}${classes} %}\n`;
   (node.children || []).forEach(child => {
     out += renderNodeToLiquid(child, depth + 1);
@@ -1874,7 +2029,7 @@ function parseBody(body) {
 
 function tokenize(body) {
   const tokens = [];
-  const re = /\{%[-\s]*(end)?(stack|row|grid|text|photo)\s*([\s\S]*?)[-\s]*%\}/g;
+  const re = /\{%[-\s]*(end)?(stack|row|grid|single|text|photo)\s*([\s\S]*?)[-\s]*%\}/g;
   let match;
   let lastIdx = 0;
 
@@ -2059,11 +2214,51 @@ function toggleToolbarMenu(e) {
   });
 })();
 
-// ─── Close menus on outside click ───────────────────────
+// ─── Close menus on outside click or scroll ─────────────
 document.addEventListener('click', () => {
   document.querySelectorAll('.node__menu.is-open').forEach(m => m.classList.remove('is-open'));
   document.getElementById('toolbarMenu').classList.remove('is-open');
+  closeAllNodeControls();
 });
+
+document.addEventListener('scroll', (e) => {
+  const menu = document.getElementById('contextMenu');
+  if (!menu.classList.contains('is-open')) return;
+  if (e.target === menu || (e.target.closest && e.target.closest('.context-menu'))) return;
+  closeContextMenu();
+}, true);
+
+// ─── Reportage loader ────────────────────────────────────
+let reportageIndex = [];
+
+async function fetchReportageIndex() {
+  try {
+    const res = await fetch('/tools/reportages.json');
+    if (!res.ok) return;
+    reportageIndex = await res.json();
+    const select = document.getElementById('reportageSelect');
+    reportageIndex.forEach((item, i) => {
+      const opt = document.createElement('option');
+      opt.value = i;
+      opt.textContent = `${item.date} — ${item.title}`;
+      select.appendChild(opt);
+    });
+  } catch (e) {
+    console.warn('Could not load reportage index:', e);
+  }
+}
+
+function loadReportage(index) {
+  if (index === '') return;
+  const item = reportageIndex[index];
+  if (!item) return;
+  if (state.nodes.length && !confirm('Load this reportage? Current work will be replaced.')) {
+    document.getElementById('reportageSelect').value = '';
+    return;
+  }
+  doImportText(item.raw);
+  document.getElementById('reportageSelect').value = '';
+}
 
 // ─── Init ───────────────────────────────────────────────
 const loaded = loadState();
@@ -2073,3 +2268,4 @@ if (loaded) {
   restoreImages();
 }
 renderCanvas();
+fetchReportageIndex();

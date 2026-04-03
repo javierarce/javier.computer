@@ -161,6 +161,16 @@ textarea {
   margin-right: auto;
 }
 
+#reportageSelect {
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  border: 1px solid var(--editor-border);
+  border-radius: 4px;
+  background: var(--editor-surface);
+  color: var(--editor-fg);
+  max-width: 260px;
+}
+
 .toolbar__icon-btn {
   display: inline-flex;
   align-items: center;
@@ -609,6 +619,7 @@ textarea {
   position: absolute;
   bottom: calc(100% + 4px);
   left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -622,27 +633,131 @@ textarea {
   user-select: none;
 }
 
+.node__move-group {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.node__btn.is-add {
+  margin-left: auto;
+}
+
+.node__btn.is-delete {
+  margin-left: auto;
+}
+
+.node__btn.is-add ~ .node__btn.is-delete {
+  margin-left: 0;
+}
+
 .node:hover>.node__controls,
-.node__controls:hover {
+.node__controls:hover,
+.node.has-menu-open>.node__controls {
   opacity: 1;
 }
 
-/* Nested nodes: inline controls instead of floating above */
-.stack-container .node__controls,
-.row-container .node__controls,
-.grid-container .node__controls {
-  position: static;
+/* Nested nodes: collapsed trigger dot */
+.stack-container .node,
+.row-container .node,
+.grid-container .node,
+.single-container .node {
+  position: relative;
+}
+
+.stack-container .node > .node__controls,
+.row-container .node > .node__controls,
+.grid-container .node > .node__controls,
+.single-container .node > .node__controls {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: auto;
   opacity: 0;
-  margin-bottom: 2px;
+  pointer-events: none;
+  z-index: 20;
 }
 
-.stack-container .node:hover>.node__controls,
-.row-container .node:hover>.node__controls,
-.grid-container .node:hover>.node__controls,
-.stack-container .node__controls:hover,
-.row-container .node__controls:hover,
-.grid-container .node__controls:hover {
+/* Show trigger on hover or when it has focus-within */
+.stack-container .node:hover > .node__trigger,
+.row-container .node:hover > .node__trigger,
+.grid-container .node:hover > .node__trigger,
+.single-container .node:hover > .node__trigger,
+.node__trigger:hover {
   opacity: 1;
+}
+
+/* When expanded, show full controls */
+.stack-container .node.has-controls-open > .node__controls,
+.row-container .node.has-controls-open > .node__controls,
+.grid-container .node.has-controls-open > .node__controls,
+.single-container .node.has-controls-open > .node__controls {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Hide trigger when controls are open */
+.node.has-controls-open > .node__trigger {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Trigger bar: hidden at top level, visible inside containers */
+.node__trigger {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  z-index: 15;
+  background: var(--editor-surface);
+  border: 1px solid var(--editor-border);
+  border-radius: 4px;
+  display: none;
+  align-items: center;
+  gap: 0;
+  opacity: 0;
+  transition: opacity 150ms;
+  padding: 0;
+}
+
+.node__trigger-handle,
+.node__trigger-expand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: none;
+  background: none;
+  color: var(--editor-fg-muted);
+  font-size: 14px;
+  padding: 0;
+  line-height: 1;
+}
+
+.node__trigger-handle {
+  cursor: grab;
+}
+
+.node__trigger-handle:active {
+  cursor: grabbing;
+}
+
+.node__trigger-expand {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.node__trigger-expand:hover {
+  color: var(--editor-fg);
+}
+
+.stack-container .node__trigger,
+.row-container .node__trigger,
+.grid-container .node__trigger,
+.single-container .node__trigger {
+  display: flex;
 }
 
 .node__label {
@@ -667,6 +782,11 @@ textarea {
 .node[data-type="grid"] .node__label {
   background: var(--orange);
   color: white;
+}
+
+.node[data-type="single"] .node__label {
+  background: var(--yellow);
+  color: #1a1a1a;
 }
 
 .node[data-type="text"] .node__label {
@@ -771,7 +891,8 @@ textarea {
 
 .stack-container.is-empty,
 .row-container.is-empty,
-.grid-container.is-empty {
+.grid-container.is-empty,
+.single-container.is-empty {
   background: var(--editor-hover-bg);
   border-radius: 4px;
   border: 1px dashed var(--editor-border);
@@ -779,7 +900,8 @@ textarea {
 
 .stack-container.is-empty.is-dragover,
 .row-container.is-empty.is-dragover,
-.grid-container.is-empty.is-dragover {
+.grid-container.is-empty.is-dragover,
+.single-container.is-empty.is-dragover {
   border-color: var(--yellow);
   background: rgba(255, 193, 7, 0.08);
 }
@@ -821,6 +943,48 @@ textarea {
 
 .grid-container.is-half {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.single-container {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--gap-xl);
+  width: 100%;
+  min-height: 30px;
+  justify-content: center;
+}
+
+/* Photo child: tall vertical image, not full-width */
+.single-container > .node[data-type="photo"] {
+  flex: 0 0 auto;
+  max-width: 40%;
+}
+
+.single-container > .node[data-type="photo"] .photo-item {
+  width: fit-content;
+}
+
+.single-container > .node[data-type="photo"] .photo-item img {
+  width: auto;
+  max-height: 60vh;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+/* Text child: constrained width, aligned to bottom */
+.single-container > .node[data-type="text"] {
+  flex: 0 1 320px;
+  max-width: 320px;
+}
+
+/* Left: photo left, push everything to the left */
+.single-container.left {
+  justify-content: flex-start;
+}
+
+/* Right: push everything to the right */
+.single-container.right {
+  justify-content: flex-end;
 }
 
 .text-container {
@@ -1050,39 +1214,18 @@ textarea {
   right: 0;
 }
 
-/* Horizontal containers (row, grid): vertical line */
+/* Horizontal containers (row, grid, single): vertical line */
 .row-container>.drop-indicator,
-.grid-container>.drop-indicator {
+.grid-container>.drop-indicator,
+.single-container>.drop-indicator {
   width: 2px;
   top: 0;
   bottom: 0;
 }
 
 /* ── Add button inside containers ─────────────────────── */
-.add-child-btn {
-  position: absolute;
-  right: -32px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  color: var(--editor-fg-faint);
-  font-size: 16px;
-  cursor: pointer;
-  padding: 4px;
-  line-height: 1;
-  opacity: 0;
-  transition: opacity 150ms, color 150ms;
-  white-space: nowrap;
-}
-
-.node:hover>.add-child-btn {
-  opacity: 1;
-}
-
-.add-child-btn:hover {
-  color: var(--editor-fg);
-  background: none;
+.node__btn.is-add {
+  margin-left: auto;
 }
 
 /* ── Context menu ─────────────────────────────────────── */
@@ -1094,6 +1237,8 @@ textarea {
   border-radius: 6px;
   padding: 4px;
   min-width: 160px;
+  max-height: 320px;
+  overflow-y: auto;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   display: none;
 }
@@ -1117,6 +1262,10 @@ textarea {
 
 .context-menu__item:hover {
   background: var(--editor-hover-bg);
+}
+
+.context-menu__item.is-active {
+  font-weight: 600;
 }
 
 .context-menu__sep {
