@@ -1641,7 +1641,27 @@ function showAddChildMenu(e, parentNode) {
   const menu = document.getElementById('contextMenu');
   menu.innerHTML = '';
 
-  // Add photo directly into this container
+  // Containers and text first
+  ['row', 'grid', 'stack', 'text'].forEach(type => {
+    const btn = document.createElement('button');
+    btn.className = 'context-menu__item';
+    btn.textContent = type.charAt(0).toUpperCase() + type.slice(1);
+    btn.onclick = () => {
+      const node = type === 'text'
+        ? { id: uid(), type: 'text', classes: [], html: '<p></p>' }
+        : { id: uid(), type, classes: [], children: [] };
+      parentNode.children.push(node);
+      closeContextMenu();
+      renderCanvas();
+    };
+    menu.appendChild(btn);
+  });
+
+  const sep1 = document.createElement('div');
+  sep1.className = 'context-menu__sep';
+  menu.appendChild(sep1);
+
+  // Add photo from file
   const addBtn = document.createElement('button');
   addBtn.className = 'context-menu__item';
   addBtn.textContent = 'Add photo…';
@@ -1658,9 +1678,9 @@ function showAddChildMenu(e, parentNode) {
 
   // Photos from shelf
   if (state.shelf.length) {
-    const sep = document.createElement('div');
-    sep.className = 'context-menu__sep';
-    menu.appendChild(sep);
+    const sep2 = document.createElement('div');
+    sep2.className = 'context-menu__sep';
+    menu.appendChild(sep2);
 
     const header = document.createElement('div');
     header.style.cssText = 'padding:4px 12px; font-size:0.65rem; opacity:0.4; text-transform:uppercase;';
@@ -1678,28 +1698,6 @@ function showAddChildMenu(e, parentNode) {
           location: photo.location, filename: photo.filename,
           ratio: photo.ratio || '3/2', caption: '', alt: '', classes: []
         });
-        closeContextMenu();
-        renderCanvas();
-      };
-      menu.appendChild(btn);
-    });
-  }
-
-  // Nested containers
-  {
-    const sep = document.createElement('div');
-    sep.className = 'context-menu__sep';
-    menu.appendChild(sep);
-
-    ['row', 'grid', 'stack', 'text'].forEach(type => {
-      const btn = document.createElement('button');
-      btn.className = 'context-menu__item';
-      btn.textContent = '+ ' + type;
-      btn.onclick = () => {
-        const node = type === 'text'
-          ? { id: uid(), type: 'text', classes: [], html: '<p></p>' }
-          : { id: uid(), type, classes: [], children: [] };
-        parentNode.children.push(node);
         closeContextMenu();
         renderCanvas();
       };
