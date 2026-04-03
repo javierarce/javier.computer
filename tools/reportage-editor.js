@@ -943,6 +943,7 @@ function renderContainerNode(node, wrapper) {
       };
       menu.appendChild(btn);
     });
+    wrapper.classList.add('has-menu-open');
     showContextMenuAt(menu, e);
   });
 
@@ -1607,6 +1608,8 @@ function showContextMenuAt(menu, e) {
 
 function closeContextMenu() {
   document.getElementById('contextMenu').classList.remove('is-open');
+  const active = document.querySelector('.node.has-menu-open');
+  if (active) active.classList.remove('has-menu-open');
 }
 
 function addTopLevelNode(type) {

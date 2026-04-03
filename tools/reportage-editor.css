@@ -623,7 +623,8 @@ textarea {
 }
 
 .node:hover>.node__controls,
-.node__controls:hover {
+.node__controls:hover,
+.node.has-menu-open>.node__controls {
   opacity: 1;
 }
 
@@ -644,7 +645,11 @@ textarea {
 .stack-container .node__controls:hover,
 .row-container .node__controls:hover,
 .grid-container .node__controls:hover,
-.single-container .node__controls:hover {
+.single-container .node__controls:hover,
+.stack-container .node.has-menu-open>.node__controls,
+.row-container .node.has-menu-open>.node__controls,
+.grid-container .node.has-menu-open>.node__controls,
+.single-container .node.has-menu-open>.node__controls {
   opacity: 1;
 }
 
