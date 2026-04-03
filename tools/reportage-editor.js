@@ -1230,8 +1230,47 @@ function renderTextNode(node, wrapper) {
   controls.className = 'node__controls';
   controls.innerHTML = `
     <span class="node__handle" title="Drag to reorder">⠿</span>
-    <span class="node__label">text</span>
   `;
+
+  // Move up
+  const upBtn = document.createElement('button');
+  upBtn.className = 'node__btn is-move';
+  upBtn.innerHTML = '↑';
+  upBtn.title = 'Move up';
+  upBtn.onclick = (e) => {
+    e.stopPropagation();
+    const info = findParent(node.id);
+    if (!info) return;
+    const idx = info.list.findIndex(n => n.id === node.id);
+    if (idx > 0) {
+      [info.list[idx - 1], info.list[idx]] = [info.list[idx], info.list[idx - 1]];
+      renderCanvas();
+    }
+  };
+  controls.appendChild(upBtn);
+
+  // Move down
+  const downBtn = document.createElement('button');
+  downBtn.className = 'node__btn is-move';
+  downBtn.innerHTML = '↓';
+  downBtn.title = 'Move down';
+  downBtn.onclick = (e) => {
+    e.stopPropagation();
+    const info = findParent(node.id);
+    if (!info) return;
+    const idx = info.list.findIndex(n => n.id === node.id);
+    if (idx < info.list.length - 1) {
+      [info.list[idx], info.list[idx + 1]] = [info.list[idx + 1], info.list[idx]];
+      renderCanvas();
+    }
+  };
+  controls.appendChild(downBtn);
+
+  const label = document.createElement('span');
+  label.className = 'node__label';
+  label.textContent = 'text';
+  controls.appendChild(label);
+
   const translationBtn = document.createElement('button');
   translationBtn.className = 'node__btn is-translation' + (node.translation != null ? ' is-active' : '');
   translationBtn.innerHTML = '译';
