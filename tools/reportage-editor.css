@@ -623,12 +623,10 @@ textarea {
   user-select: none;
 }
 
-.node__handle + .node__btn.is-move {
-  margin-left: -6px;
-}
-
-.node__btn.is-move + .node__btn.is-move {
-  margin-left: -6px;
+.node__move-group {
+  display: flex;
+  align-items: center;
+  gap: 0;
 }
 
 .node__btn.is-delete {

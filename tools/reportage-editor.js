@@ -917,9 +917,10 @@ function renderContainerNode(node, wrapper) {
   // Controls
   const controls = document.createElement('div');
   controls.className = 'node__controls';
-  controls.innerHTML = `
-    <span class="node__handle" title="Drag to reorder">⠿</span>
-  `;
+  const moveGroup = document.createElement('div');
+  moveGroup.className = 'node__move-group';
+  moveGroup.innerHTML = `<span class="node__handle" title="Drag to reorder">⠿</span>`;
+  controls.appendChild(moveGroup);
 
   // Label (appended after arrows below)
   const label = document.createElement('span');
@@ -978,7 +979,7 @@ function renderContainerNode(node, wrapper) {
       }
     }
   };
-  controls.appendChild(upBtn);
+  moveGroup.appendChild(upBtn);
 
   // Move down button
   const downBtn = document.createElement('button');
@@ -1003,9 +1004,9 @@ function renderContainerNode(node, wrapper) {
       }
     }
   };
-  controls.appendChild(downBtn);
+  moveGroup.appendChild(downBtn);
 
-  // Label (after arrows)
+  // Label (after move group)
   controls.appendChild(label);
 
   // Ellipsis menu with class toggles
@@ -1228,9 +1229,10 @@ function renderPhotoNode(node, wrapper) {
 function renderTextNode(node, wrapper) {
   const controls = document.createElement('div');
   controls.className = 'node__controls';
-  controls.innerHTML = `
-    <span class="node__handle" title="Drag to reorder">⠿</span>
-  `;
+  const moveGroup = document.createElement('div');
+  moveGroup.className = 'node__move-group';
+  moveGroup.innerHTML = `<span class="node__handle" title="Drag to reorder">⠿</span>`;
+  controls.appendChild(moveGroup);
 
   // Move up
   const upBtn = document.createElement('button');
@@ -1247,7 +1249,7 @@ function renderTextNode(node, wrapper) {
       renderCanvas();
     }
   };
-  controls.appendChild(upBtn);
+  moveGroup.appendChild(upBtn);
 
   // Move down
   const downBtn = document.createElement('button');
@@ -1264,7 +1266,7 @@ function renderTextNode(node, wrapper) {
       renderCanvas();
     }
   };
-  controls.appendChild(downBtn);
+  moveGroup.appendChild(downBtn);
 
   const label = document.createElement('span');
   label.className = 'node__label';
