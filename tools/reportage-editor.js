@@ -922,16 +922,28 @@ function renderContainerNode(node, wrapper) {
     <span class="node__label" title="Click to change type" style="cursor:pointer">${node.type}</span>
   `;
 
-  // Click label to cycle container type
+  // Click label to open type picker menu
   controls.querySelector('.node__label').addEventListener('click', (e) => {
     e.stopPropagation();
     const types = ['stack', 'row', 'grid', 'single'];
-    const idx = types.indexOf(node.type);
-    node.type = types[(idx + 1) % types.length];
-    // Keep only classes valid for the new type
-    const validClasses = getClassOptions(node.type);
-    node.classes = node.classes.filter(c => validClasses.includes(c));
-    renderCanvas();
+    const menu = document.getElementById('contextMenu');
+    menu.innerHTML = '';
+    types.forEach(type => {
+      const btn = document.createElement('button');
+      btn.className = 'context-menu__item' + (type === node.type ? ' is-active' : '');
+      btn.textContent = type;
+      btn.onclick = () => {
+        if (type !== node.type) {
+          node.type = type;
+          const validClasses = getClassOptions(type);
+          node.classes = node.classes.filter(c => validClasses.includes(c));
+          renderCanvas();
+        }
+        closeContextMenu();
+      };
+      menu.appendChild(btn);
+    });
+    showContextMenuAt(menu, e);
   });
 
   // Ellipsis menu with class toggles

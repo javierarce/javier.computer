@@ -1172,6 +1172,10 @@ textarea {
   background: var(--editor-hover-bg);
 }
 
+.context-menu__item.is-active {
+  font-weight: 600;
+}
+
 .context-menu__sep {
   height: 1px;
   background: var(--editor-border);
