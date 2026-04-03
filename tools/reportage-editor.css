@@ -649,18 +649,18 @@ textarea {
   opacity: 1;
 }
 
-/* Nested nodes: collapsed trigger dot (exclude container-type nodes like single) */
-.stack-container .node:not([data-type="single"]),
-.row-container .node:not([data-type="single"]),
-.grid-container .node:not([data-type="single"]),
-.single-container .node:not([data-type="single"]) {
+/* Nested nodes: collapsed trigger dot */
+.stack-container .node,
+.row-container .node,
+.grid-container .node,
+.single-container .node {
   position: relative;
 }
 
-.stack-container .node:not([data-type="single"]) > .node__controls,
-.row-container .node:not([data-type="single"]) > .node__controls,
-.grid-container .node:not([data-type="single"]) > .node__controls,
-.single-container .node:not([data-type="single"]) > .node__controls {
+.stack-container .node > .node__controls,
+.row-container .node > .node__controls,
+.grid-container .node > .node__controls,
+.single-container .node > .node__controls {
   position: absolute;
   top: 4px;
   left: 4px;
@@ -672,19 +672,19 @@ textarea {
 }
 
 /* Show trigger on hover or when it has focus-within */
-.stack-container .node:not([data-type="single"]):hover > .node__trigger,
-.row-container .node:not([data-type="single"]):hover > .node__trigger,
-.grid-container .node:not([data-type="single"]):hover > .node__trigger,
-.single-container .node:not([data-type="single"]):hover > .node__trigger,
+.stack-container .node:hover > .node__trigger,
+.row-container .node:hover > .node__trigger,
+.grid-container .node:hover > .node__trigger,
+.single-container .node:hover > .node__trigger,
 .node__trigger:hover {
   opacity: 1;
 }
 
 /* When expanded, show full controls */
-.stack-container .node:not([data-type="single"]).has-controls-open > .node__controls,
-.row-container .node:not([data-type="single"]).has-controls-open > .node__controls,
-.grid-container .node:not([data-type="single"]).has-controls-open > .node__controls,
-.single-container .node:not([data-type="single"]).has-controls-open > .node__controls {
+.stack-container .node.has-controls-open > .node__controls,
+.row-container .node.has-controls-open > .node__controls,
+.grid-container .node.has-controls-open > .node__controls,
+.single-container .node.has-controls-open > .node__controls {
   opacity: 1;
   pointer-events: auto;
 }
@@ -745,10 +745,10 @@ textarea {
   color: var(--editor-fg);
 }
 
-.stack-container .node:not([data-type="single"]) .node__trigger,
-.row-container .node:not([data-type="single"]) .node__trigger,
-.grid-container .node:not([data-type="single"]) .node__trigger,
-.single-container .node:not([data-type="single"]) .node__trigger {
+.stack-container .node__trigger,
+.row-container .node__trigger,
+.grid-container .node__trigger,
+.single-container .node__trigger {
   display: flex;
 }
 
