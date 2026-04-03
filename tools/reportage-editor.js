@@ -919,11 +919,17 @@ function renderContainerNode(node, wrapper) {
   controls.className = 'node__controls';
   controls.innerHTML = `
     <span class="node__handle" title="Drag to reorder">⠿</span>
-    <span class="node__label" title="Click to change type" style="cursor:pointer">${node.type}</span>
   `;
 
+  // Label (appended after arrows below)
+  const label = document.createElement('span');
+  label.className = 'node__label';
+  label.title = 'Click to change type';
+  label.style.cursor = 'pointer';
+  label.textContent = node.type;
+
   // Click label to open type picker menu
-  controls.querySelector('.node__label').addEventListener('click', (e) => {
+  label.addEventListener('click', (e) => {
     e.stopPropagation();
     const photoCount = (node.children || []).filter(c => c.type === 'photo').length;
     const types = ['stack', 'row', 'grid'];
@@ -998,6 +1004,9 @@ function renderContainerNode(node, wrapper) {
     }
   };
   controls.appendChild(downBtn);
+
+  // Label (after arrows)
+  controls.appendChild(label);
 
   // Ellipsis menu with class toggles
   const classOpts = getClassOptions(node.type);
