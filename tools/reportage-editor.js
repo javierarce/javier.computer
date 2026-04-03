@@ -2222,7 +2222,9 @@ document.addEventListener('click', () => {
 });
 
 document.addEventListener('scroll', (e) => {
-  if (e.target.closest && e.target.closest('.context-menu')) return;
+  const menu = document.getElementById('contextMenu');
+  if (!menu.classList.contains('is-open')) return;
+  if (e.target === menu || (e.target.closest && e.target.closest('.context-menu'))) return;
   closeContextMenu();
 }, true);
 
