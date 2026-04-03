@@ -722,7 +722,7 @@ textarea {
   border: none;
   background: none;
   color: var(--editor-fg-muted);
-  font-size: 11px;
+  font-size: 14px;
   padding: 0;
   line-height: 1;
 }
