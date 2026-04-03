@@ -31,7 +31,8 @@
 
 .layout__reportage {
   .content {
-    width: var(--width-wide);
+    width: var(--width-full);
+    max-width: clamp(var(--width-wide), 75vw, var(--width-xl));
   }
 
   .post__footer {
@@ -247,7 +248,8 @@
 }
 
 .photo__layout {
-  width: var(--width-wide);
+  width: var(--width-full);
+  max-width: clamp(var(--width-wide), 75vw, var(--width-xl));
   margin: 0 auto 2em auto;
   display: flex;
   flex-direction: column;
@@ -447,26 +449,10 @@ figcaption {
 }
 
 // =============================================================================
-// 5. Responsive: wide screens
-// =============================================================================
-
-@media all and (min-width: 1900px) {
-  .layout__reportage .content,
-  .photo__layout {
-    width: var(--width-xl);
-  }
-}
-
-// =============================================================================
-// 6. Responsive: tablet
+// 5. Responsive: tablet
 // =============================================================================
 
 @include tablet {
-  .layout__reportage .content,
-  .photo__layout {
-    width: var(--width-full);
-  }
-
   .photo__feed {
     width: var(--width-full);
   }
