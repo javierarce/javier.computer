@@ -1104,7 +1104,7 @@ function renderContainerNode(node, wrapper) {
 
   const triggerExpand = document.createElement('button');
   triggerExpand.className = 'node__trigger-expand';
-  triggerExpand.innerHTML = '&#9662;';
+  triggerExpand.innerHTML = '›';
   triggerExpand.title = 'Show controls';
   triggerExpand.onclick = (e) => {
     e.stopPropagation();

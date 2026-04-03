@@ -737,7 +737,8 @@ textarea {
 
 .node__trigger-expand {
   cursor: pointer;
-  font-size: 9px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .node__trigger-expand:hover {
