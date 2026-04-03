@@ -925,7 +925,9 @@ function renderContainerNode(node, wrapper) {
   // Click label to open type picker menu
   controls.querySelector('.node__label').addEventListener('click', (e) => {
     e.stopPropagation();
-    const types = ['stack', 'row', 'grid', 'single'];
+    const photoCount = (node.children || []).filter(c => c.type === 'photo').length;
+    const types = ['stack', 'row', 'grid'];
+    if (photoCount <= 1 || node.type === 'single') types.push('single');
     const menu = document.getElementById('contextMenu');
     menu.innerHTML = '';
     types.forEach(type => {
@@ -1566,7 +1568,7 @@ function showAddChildMenu(e, parentNode) {
     sep.className = 'context-menu__sep';
     menu.appendChild(sep);
 
-    ['row', 'grid', 'stack', 'single', 'text'].forEach(type => {
+    ['row', 'grid', 'stack', 'text'].forEach(type => {
       const btn = document.createElement('button');
       btn.className = 'context-menu__item';
       btn.textContent = '+ ' + type;
