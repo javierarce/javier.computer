@@ -80,6 +80,34 @@ Auto-fit photo grid. Accepts optional layout variants: `is-vertical`, `is-square
 {% endgrid %}
 ```
 
+### `{% single %}` / `{% endsingle %}`
+
+Wraps a vertical photo with arbitrary HTML content beside it. The photo is capped at `95vh`. Accepts `left` or `right` for alignment (centered by default).
+
+```liquid
+{% single left %}
+{% photo barcelona R0018048 2/3 %}
+<div>Text displayed to the right of the photo.</div>
+{% endsingle %}
+
+{% single right %}
+<div>Text displayed to the left of the photo.</div>
+{% photo barcelona R0018048 2/3 %}
+{% endsingle %}
+```
+
+On mobile, content stacks vertically: text above the photo for `left`, text below for `right`.
+
+### Gap classes
+
+All layout tags (`stack`, `row`, `grid`, `single`) accept `gap-N` classes to override the default spacing, where N maps to the `--s-N` CSS variables (1–16).
+
+```liquid
+{% stack gap-8 %}
+{% row gap-4 %}
+{% single left gap-6 %}
+```
+
 ### Full example
 
 ```liquid
