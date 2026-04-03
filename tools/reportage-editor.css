@@ -639,8 +639,16 @@ textarea {
   gap: 0;
 }
 
+.node__btn.is-add {
+  margin-left: auto;
+}
+
 .node__btn.is-delete {
   margin-left: auto;
+}
+
+.node__btn.is-add ~ .node__btn.is-delete {
+  margin-left: 0;
 }
 
 .node:hover>.node__controls,
@@ -1216,30 +1224,8 @@ textarea {
 }
 
 /* ── Add button inside containers ─────────────────────── */
-.add-child-btn {
-  position: absolute;
-  right: -32px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  color: var(--editor-fg-faint);
-  font-size: 16px;
-  cursor: pointer;
-  padding: 4px;
-  line-height: 1;
-  opacity: 0;
-  transition: opacity 150ms, color 150ms;
-  white-space: nowrap;
-}
-
-.node:hover>.add-child-btn {
-  opacity: 1;
-}
-
-.add-child-btn:hover {
-  color: var(--editor-fg);
-  background: none;
+.node__btn.is-add {
+  margin-left: auto;
 }
 
 /* ── Context menu ─────────────────────────────────────── */

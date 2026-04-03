@@ -1061,6 +1061,14 @@ function renderContainerNode(node, wrapper) {
     controls.appendChild(menuWrap);
   }
 
+  // Add child button
+  const addBtn = document.createElement('button');
+  addBtn.className = 'node__btn is-add';
+  addBtn.innerHTML = '+';
+  addBtn.title = 'Add item';
+  addBtn.onclick = (e) => { e.stopPropagation(); showAddChildMenu(e, node); };
+  controls.appendChild(addBtn);
+
   // Delete button
   const delBtn = document.createElement('button');
   delBtn.className = 'node__btn is-delete';
@@ -1227,14 +1235,6 @@ function renderContainerNode(node, wrapper) {
   }
 
   wrapper.appendChild(container);
-
-  // Add child button — floating on the right, outside the container
-  const addBtn = document.createElement('button');
-  addBtn.className = 'add-child-btn';
-  addBtn.textContent = '+';
-  addBtn.title = (node.type === 'stack' || node.type === 'single') ? 'Add photo, row, grid, or text' : 'Add photo';
-  addBtn.onclick = (e) => { e.stopPropagation(); showAddChildMenu(e, node); };
-  wrapper.appendChild(addBtn);
 
   return wrapper;
 }
