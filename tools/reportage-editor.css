@@ -649,29 +649,79 @@ textarea {
   opacity: 1;
 }
 
-/* Nested nodes: inline controls instead of floating above */
-.stack-container .node__controls,
-.row-container .node__controls,
-.grid-container .node__controls,
-.single-container .node__controls {
-  position: static;
-  opacity: 0;
-  margin-bottom: 2px;
+/* Nested nodes: collapsed trigger dot */
+.stack-container .node,
+.row-container .node,
+.grid-container .node,
+.single-container .node {
+  position: relative;
 }
 
-.stack-container .node:hover>.node__controls,
-.row-container .node:hover>.node__controls,
-.grid-container .node:hover>.node__controls,
-.single-container .node:hover>.node__controls,
-.stack-container .node__controls:hover,
-.row-container .node__controls:hover,
-.grid-container .node__controls:hover,
-.single-container .node__controls:hover,
-.stack-container .node.has-menu-open>.node__controls,
-.row-container .node.has-menu-open>.node__controls,
-.grid-container .node.has-menu-open>.node__controls,
-.single-container .node.has-menu-open>.node__controls {
+.stack-container .node > .node__controls,
+.row-container .node > .node__controls,
+.grid-container .node > .node__controls,
+.single-container .node > .node__controls {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: auto;
+  bottom: auto;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* Show only the trigger dot on hover */
+.stack-container .node:hover > .node__trigger,
+.row-container .node:hover > .node__trigger,
+.grid-container .node:hover > .node__trigger,
+.single-container .node:hover > .node__trigger {
   opacity: 1;
+}
+
+/* When expanded, show full controls */
+.stack-container .node.has-controls-open > .node__controls,
+.row-container .node.has-controls-open > .node__controls,
+.grid-container .node.has-controls-open > .node__controls,
+.single-container .node.has-controls-open > .node__controls {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Hide trigger when controls are open */
+.node.has-controls-open > .node__trigger {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Trigger dot: hidden at top level, visible inside containers */
+.node__trigger {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  z-index: 15;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--editor-surface);
+  border: 1px solid var(--editor-border);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 150ms;
+  font-size: 11px;
+  color: var(--editor-fg-muted);
+  padding: 0;
+  line-height: 1;
+}
+
+.stack-container .node__trigger,
+.row-container .node__trigger,
+.grid-container .node__trigger,
+.single-container .node__trigger {
+  display: flex;
 }
 
 .node__label {

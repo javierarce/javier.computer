@@ -1078,6 +1078,17 @@ function renderContainerNode(node, wrapper) {
 
   wrapper.appendChild(controls);
 
+  // Trigger dot for nested nodes (CSS hides it at top level)
+  const trigger = document.createElement('button');
+  trigger.className = 'node__trigger';
+  trigger.innerHTML = '⠿';
+  trigger.onclick = (e) => {
+    e.stopPropagation();
+    closeAllNodeControls();
+    wrapper.classList.add('has-controls-open');
+  };
+  wrapper.appendChild(trigger);
+
   // Container
   const containerClass = `${node.type}-container ${node.classes.join(' ')}`.trim();
   const container = document.createElement('div');
@@ -1313,6 +1324,17 @@ function renderTextNode(node, wrapper) {
   });
 
   wrapper.appendChild(controls);
+
+  // Trigger dot for nested nodes
+  const trigger = document.createElement('button');
+  trigger.className = 'node__trigger';
+  trigger.innerHTML = '⠿';
+  trigger.onclick = (e) => {
+    e.stopPropagation();
+    closeAllNodeControls();
+    wrapper.classList.add('has-controls-open');
+  };
+  wrapper.appendChild(trigger);
 
   const container = document.createElement('div');
   container.className = 'text-container';
@@ -1656,6 +1678,10 @@ function showContextMenuAt(menu, e) {
   setTimeout(() => {
     document.addEventListener('click', closeContextMenu, { once: true });
   }, 0);
+}
+
+function closeAllNodeControls() {
+  document.querySelectorAll('.node.has-controls-open').forEach(n => n.classList.remove('has-controls-open'));
 }
 
 function closeContextMenu() {
@@ -2142,6 +2168,7 @@ function toggleToolbarMenu(e) {
 document.addEventListener('click', () => {
   document.querySelectorAll('.node__menu.is-open').forEach(m => m.classList.remove('is-open'));
   document.getElementById('toolbarMenu').classList.remove('is-open');
+  closeAllNodeControls();
 });
 
 // ─── Reportage loader ────────────────────────────────────
