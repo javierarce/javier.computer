@@ -36,11 +36,13 @@
 
   .post__footer {
     width: var(--width-content);
+    max-width: var(--width-full);
     margin: 0 auto;
   }
 
   blockquote {
     width: var(--width-content);
+    max-width: var(--width-full);
     margin: 0 auto;
   }
 
@@ -65,6 +67,7 @@
   .stack h3,
   .text h3 {
     width: var(--width-content);
+    max-width: var(--width-full);
     margin: 0 auto var(--s-2) auto;
     font-size: var(--font-size-body);
     font-weight: var(--weight-regular);
@@ -99,6 +102,7 @@
     ul,
     ul:last-child {
       width: var(--width-content);
+      max-width: var(--width-full);
       margin: 0 auto;
     }
   }
@@ -258,6 +262,7 @@
   p,
   p:last-child {
     width: var(--width-content);
+    max-width: var(--width-full);
     margin: 0 auto;
   }
 
@@ -457,6 +462,11 @@ figcaption {
 // =============================================================================
 
 @include tablet {
+  .layout__reportage .content,
+  .photo__layout {
+    width: var(--width-full);
+  }
+
   .photo__feed {
     width: var(--width-full);
   }
