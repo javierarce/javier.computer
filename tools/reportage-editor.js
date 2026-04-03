@@ -2222,7 +2222,8 @@ document.addEventListener('click', () => {
   closeAllNodeControls();
 });
 
-document.addEventListener('scroll', () => {
+document.addEventListener('scroll', (e) => {
+  if (e.target.closest && e.target.closest('.context-menu')) return;
   closeContextMenu();
 }, true);
 
