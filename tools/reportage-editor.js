@@ -1685,8 +1685,8 @@ function showAddChildMenu(e, parentNode) {
     });
   }
 
-  // Nested containers (only in stacks)
-  if (parentNode.type === 'stack' || parentNode.type === 'single') {
+  // Nested containers
+  {
     const sep = document.createElement('div');
     sep.className = 'context-menu__sep';
     menu.appendChild(sep);
