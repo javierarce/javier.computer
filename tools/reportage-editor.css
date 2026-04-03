@@ -623,6 +623,10 @@ textarea {
   user-select: none;
 }
 
+.node__btn.is-move + .node__btn.is-move {
+  margin-left: -6px;
+}
+
 .node__btn.is-delete {
   margin-left: auto;
 }
