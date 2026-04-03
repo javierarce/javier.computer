@@ -79,6 +79,16 @@ function findParent(id, nodes, parent) {
   return null;
 }
 
+function isDescendantOf(nodeId, ancestorId) {
+  const ancestor = findNode(ancestorId);
+  if (!ancestor || !ancestor.children) return false;
+  for (const child of ancestor.children) {
+    if (child.id === nodeId) return true;
+    if (child.children && isDescendantOf(nodeId, child.id)) return true;
+  }
+  return false;
+}
+
 function animateOut(el, callback) {
   let called = false;
   const done = () => { if (!called) { called = true; callback(); } };
@@ -1135,6 +1145,14 @@ function renderContainerNode(node, wrapper) {
   container.style.position = 'relative';
 
   container.addEventListener('dragover', e => {
+    // If dragging a container node, only stacks can accept it — let others bubble
+    if (canvasDragNodeId && node.type !== 'stack') {
+      const draggedNode = findNode(canvasDragNodeId);
+      if (draggedNode && draggedNode.children) return; // it's a container, skip
+    }
+    // Prevent dropping a node into itself or its own descendants
+    if (canvasDragNodeId && isDescendantOf(node.id, canvasDragNodeId)) return;
+
     e.preventDefault();
     e.stopPropagation();
     e.dataTransfer.dropEffect = canvasDragNodeId ? 'move' : 'copy';
@@ -1153,6 +1171,13 @@ function renderContainerNode(node, wrapper) {
   });
 
   container.addEventListener('drop', e => {
+    // Same guard as dragover
+    if (canvasDragNodeId && node.type !== 'stack') {
+      const draggedNode = findNode(canvasDragNodeId);
+      if (draggedNode && draggedNode.children) return;
+    }
+    if (canvasDragNodeId && isDescendantOf(node.id, canvasDragNodeId)) return;
+
     e.preventDefault();
     e.stopPropagation();
     container.classList.remove('is-dragover');
