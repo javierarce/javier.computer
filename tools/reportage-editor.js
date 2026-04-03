@@ -769,7 +769,7 @@ function showInsertMenu(e, index) {
   sep.className = 'context-menu__sep';
   menu.appendChild(sep);
 
-  ['stack', 'row', 'grid', 'text'].forEach(type => {
+  ['stack', 'row', 'grid', 'single', 'text'].forEach(type => {
     const btn = document.createElement('button');
     btn.className = 'context-menu__item';
     btn.textContent = type.charAt(0).toUpperCase() + type.slice(1);
@@ -925,7 +925,7 @@ function renderContainerNode(node, wrapper) {
   // Click label to cycle container type
   controls.querySelector('.node__label').addEventListener('click', (e) => {
     e.stopPropagation();
-    const types = ['stack', 'row', 'grid'];
+    const types = ['stack', 'row', 'grid', 'single'];
     const idx = types.indexOf(node.type);
     node.type = types[(idx + 1) % types.length];
     // Keep only classes valid for the new type
@@ -1145,7 +1145,7 @@ function renderContainerNode(node, wrapper) {
   const addBtn = document.createElement('button');
   addBtn.className = 'add-child-btn';
   addBtn.textContent = '+';
-  addBtn.title = node.type === 'stack' ? 'Add photo, row, grid, or text' : 'Add photo';
+  addBtn.title = (node.type === 'stack' || node.type === 'single') ? 'Add photo, row, grid, or text' : 'Add photo';
   addBtn.onclick = (e) => { e.stopPropagation(); showAddChildMenu(e, node); };
   wrapper.appendChild(addBtn);
 
@@ -1425,14 +1425,23 @@ function getClassOptions(type) {
     case 'stack': return ['has-margin-top', 'has-margin-bottom', 'with-caption'];
     case 'row': return ['has-one', 'has-two', 'has-margin-bottom'];
     case 'grid': return ['is-square', 'is-vertical', 'is-half', 'has-margin-bottom'];
+    case 'single': return ['left', 'center', 'right'];
     default: return [];
   }
 }
 
+const EXCLUSIVE_CLASSES = ['left', 'center', 'right'];
+
 function toggleClass(node, cls) {
   const idx = node.classes.indexOf(cls);
-  if (idx >= 0) node.classes.splice(idx, 1);
-  else node.classes.push(cls);
+  if (idx >= 0) {
+    node.classes.splice(idx, 1);
+  } else {
+    if (EXCLUSIVE_CLASSES.includes(cls)) {
+      node.classes = node.classes.filter(c => !EXCLUSIVE_CLASSES.includes(c));
+    }
+    node.classes.push(cls);
+  }
   renderCanvas();
 }
 
@@ -1539,12 +1548,12 @@ function showAddChildMenu(e, parentNode) {
   }
 
   // Nested containers (only in stacks)
-  if (parentNode.type === 'stack') {
+  if (parentNode.type === 'stack' || parentNode.type === 'single') {
     const sep = document.createElement('div');
     sep.className = 'context-menu__sep';
     menu.appendChild(sep);
 
-    ['row', 'grid', 'stack', 'text'].forEach(type => {
+    ['row', 'grid', 'stack', 'single', 'text'].forEach(type => {
       const btn = document.createElement('button');
       btn.className = 'context-menu__item';
       btn.textContent = '+ ' + type;
@@ -1744,8 +1753,11 @@ function renderNodeToLiquid(node, depth) {
     return out;
   }
 
-  // Container
-  const classes = node.classes.length ? ' ' + node.classes.join(' ') : '';
+  // Container — strip "center" from single since it's the default (no class needed)
+  const exportClasses = node.type === 'single'
+    ? node.classes.filter(c => c !== 'center')
+    : node.classes;
+  const classes = exportClasses.length ? ' ' + exportClasses.join(' ') : '';
   let out = `${indent}{% ${node.type}${classes} %}\n`;
   (node.children || []).forEach(child => {
     out += renderNodeToLiquid(child, depth + 1);
@@ -1874,7 +1886,7 @@ function parseBody(body) {
 
 function tokenize(body) {
   const tokens = [];
-  const re = /\{%[-\s]*(end)?(stack|row|grid|text|photo)\s*([\s\S]*?)[-\s]*%\}/g;
+  const re = /\{%[-\s]*(end)?(stack|row|grid|single|text|photo)\s*([\s\S]*?)[-\s]*%\}/g;
   let match;
   let lastIdx = 0;
 

@@ -630,7 +630,8 @@ textarea {
 /* Nested nodes: inline controls instead of floating above */
 .stack-container .node__controls,
 .row-container .node__controls,
-.grid-container .node__controls {
+.grid-container .node__controls,
+.single-container .node__controls {
   position: static;
   opacity: 0;
   margin-bottom: 2px;
@@ -639,9 +640,11 @@ textarea {
 .stack-container .node:hover>.node__controls,
 .row-container .node:hover>.node__controls,
 .grid-container .node:hover>.node__controls,
+.single-container .node:hover>.node__controls,
 .stack-container .node__controls:hover,
 .row-container .node__controls:hover,
-.grid-container .node__controls:hover {
+.grid-container .node__controls:hover,
+.single-container .node__controls:hover {
   opacity: 1;
 }
 
@@ -667,6 +670,11 @@ textarea {
 .node[data-type="grid"] .node__label {
   background: var(--orange);
   color: white;
+}
+
+.node[data-type="single"] .node__label {
+  background: var(--yellow);
+  color: #1a1a1a;
 }
 
 .node[data-type="text"] .node__label {
@@ -771,7 +779,8 @@ textarea {
 
 .stack-container.is-empty,
 .row-container.is-empty,
-.grid-container.is-empty {
+.grid-container.is-empty,
+.single-container.is-empty {
   background: var(--editor-hover-bg);
   border-radius: 4px;
   border: 1px dashed var(--editor-border);
@@ -779,7 +788,8 @@ textarea {
 
 .stack-container.is-empty.is-dragover,
 .row-container.is-empty.is-dragover,
-.grid-container.is-empty.is-dragover {
+.grid-container.is-empty.is-dragover,
+.single-container.is-empty.is-dragover {
   border-color: var(--yellow);
   background: rgba(255, 193, 7, 0.08);
 }
@@ -821,6 +831,48 @@ textarea {
 
 .grid-container.is-half {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.single-container {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--gap-xl);
+  width: 100%;
+  min-height: 30px;
+  justify-content: center;
+}
+
+/* Photo child: tall vertical image, not full-width */
+.single-container > .node[data-type="photo"] {
+  flex: 0 0 auto;
+  max-width: 40%;
+}
+
+.single-container > .node[data-type="photo"] .photo-item {
+  width: fit-content;
+}
+
+.single-container > .node[data-type="photo"] .photo-item img {
+  width: auto;
+  max-height: 60vh;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+/* Text child: constrained width, aligned to bottom */
+.single-container > .node[data-type="text"] {
+  flex: 0 1 320px;
+  max-width: 320px;
+}
+
+/* Left: photo left, push everything to the left */
+.single-container.left {
+  justify-content: flex-start;
+}
+
+/* Right: push everything to the right */
+.single-container.right {
+  justify-content: flex-end;
 }
 
 .text-container {
@@ -1050,9 +1102,10 @@ textarea {
   right: 0;
 }
 
-/* Horizontal containers (row, grid): vertical line */
+/* Horizontal containers (row, grid, single): vertical line */
 .row-container>.drop-indicator,
-.grid-container>.drop-indicator {
+.grid-container>.drop-indicator,
+.single-container>.drop-indicator {
   width: 2px;
   top: 0;
   bottom: 0;
