@@ -664,7 +664,7 @@ textarea {
   position: absolute;
   top: 4px;
   left: 4px;
-  right: auto;
+  right: 4px;
   bottom: auto;
   opacity: 0;
   pointer-events: none;
