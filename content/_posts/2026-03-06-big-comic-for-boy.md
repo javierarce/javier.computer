@@ -66,7 +66,9 @@ Boy](https://peepmedia.bigcartel.com/product/big-comic-for-boy) en la librería 
         {% photo barcelona 2026-03-06-Barcelona-R0018075 2/3 %}
         {% photo barcelona 2026-03-06-Barcelona-R0017957 2/3 %}
     {% endrow %}
+{% endstack %}
 
+{% stack %}
     {% photo barcelona 2026-03-06-Barcelona-R0018033 3/2 %}
     {% photo barcelona 2026-03-06-Barcelona-R0017987 3/2 %}
 

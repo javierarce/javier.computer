@@ -119,6 +119,48 @@
   &.caption-right figcaption {
     text-align: right;
   }
+
+}
+
+.single {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--s-2);
+  width: fit-content;
+
+  .photo {
+    width: auto;
+  }
+
+  .photo__content {
+    width: auto;
+
+    img {
+      max-height: 95vh;
+      width: auto;
+    }
+  }
+
+  > *:not(.photo) {
+    width: 400px;
+    font-size: var(--font-size-body);
+  }
+
+  &.left {
+    margin: 0 auto 0 0;
+
+    > *:not(.photo) {
+      text-align: left;
+    }
+  }
+
+  &.right {
+    margin: 0 0 0 auto;
+
+    > *:not(.photo) {
+      text-align: right;
+    }
+  }
 }
 
 .photo .post__content,
@@ -382,6 +424,13 @@
   }
 }
 
+// Gap utility classes for layout primitives
+@for $i from 1 through 60 {
+  .gap-#{$i} {
+    gap: var(--s-#{$i});
+  }
+}
+
 // =============================================================================
 // 4. Shared elements
 // =============================================================================
@@ -504,6 +553,22 @@ figcaption {
       > div {
         width: var(--width-full);
       }
+    }
+  }
+
+  .single {
+    width: var(--width-full);
+    flex-direction: column-reverse;
+
+    .photo__content img {
+      max-height: none;
+      width: var(--width-full);
+    }
+
+    &.right > *:not(.photo),
+    > *:not(.photo) {
+      width: var(--width-full);
+      text-align: left;
     }
   }
 
