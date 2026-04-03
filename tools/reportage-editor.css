@@ -161,6 +161,16 @@ textarea {
   margin-right: auto;
 }
 
+#reportageSelect {
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  border: 1px solid var(--editor-border);
+  border-radius: 4px;
+  background: var(--editor-surface);
+  color: var(--editor-fg);
+  max-width: 260px;
+}
+
 .toolbar__icon-btn {
   display: inline-flex;
   align-items: center;

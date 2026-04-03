@@ -2144,6 +2144,38 @@ document.addEventListener('click', () => {
   document.getElementById('toolbarMenu').classList.remove('is-open');
 });
 
+// ─── Reportage loader ────────────────────────────────────
+let reportageIndex = [];
+
+async function fetchReportageIndex() {
+  try {
+    const res = await fetch('/tools/reportages.json');
+    if (!res.ok) return;
+    reportageIndex = await res.json();
+    const select = document.getElementById('reportageSelect');
+    reportageIndex.forEach((item, i) => {
+      const opt = document.createElement('option');
+      opt.value = i;
+      opt.textContent = `${item.date} — ${item.title}`;
+      select.appendChild(opt);
+    });
+  } catch (e) {
+    console.warn('Could not load reportage index:', e);
+  }
+}
+
+function loadReportage(index) {
+  if (index === '') return;
+  const item = reportageIndex[index];
+  if (!item) return;
+  if (state.nodes.length && !confirm('Load this reportage? Current work will be replaced.')) {
+    document.getElementById('reportageSelect').value = '';
+    return;
+  }
+  doImportText(item.raw);
+  document.getElementById('reportageSelect').value = '';
+}
+
 // ─── Init ───────────────────────────────────────────────
 const loaded = loadState();
 if (loaded) {
@@ -2152,3 +2184,4 @@ if (loaded) {
   restoreImages();
 }
 renderCanvas();
+fetchReportageIndex();
