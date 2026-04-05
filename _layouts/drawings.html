@@ -3,7 +3,7 @@ layout: base
 className: drawings
 ---
 <div class="content">
-  {% include navigation.html -%}
+  {% include navigation/index.html -%}
   <div class="drawings__thumbs">
     <div class="drawings__content">
       {% for drawing in site.drawings -%}
@@ -17,5 +17,5 @@ className: drawings
       {% endfor -%}
     </div>
   </div>
-  {% include footer.html -%}
+  {% include navigation/footer.html -%}
 </div>

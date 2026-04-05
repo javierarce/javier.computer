@@ -7,7 +7,7 @@ grid: true
 {% assign target_location = page.location | downcase -%}
 
 <div class="content">
-  {% include navigation.html -%}
+  {% include navigation/index.html -%}
   <div class="photo__header">
     <div class="photo__selector">
       <a href="/photos/{{ page.location }}" class="icon icon-list is-light"></a>
@@ -69,5 +69,5 @@ grid: true
       {% endif -%}
     {% endfor -%}
   </div>
-  {% include footer.html -%}
+  {% include navigation/footer.html -%}
 </div>

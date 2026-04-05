@@ -3,7 +3,7 @@ layout: base
 className: Movies
 ---
 <div class="content">
-  {% include navigation.html -%}
+  {% include navigation/index.html -%}
 
 {% assign current_year = page.movie_year -%}
 {% assign sorted_movies = site.movies | sort: 'watched_on' | reverse -%}
@@ -58,5 +58,5 @@ className: Movies
       </div>
     </div>
   {% endif -%}
-  {% include footer.html -%}
+  {% include navigation/footer.html -%}
 </div>

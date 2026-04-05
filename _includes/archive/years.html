@@ -1,0 +1,15 @@
+{% if include.all_years.size > 1 %}
+  <div class="pagination has-content pagination--years">
+    <div class="pagination__content">
+      {% for year in include.all_years %}
+        {% if year == include.current_year %}
+          <div class="pagination__item is-selected">{{ year }}</div>
+        {% elsif year == include.all_years.first %}
+          <a class="pagination__item" href="/posts">{{ year }}</a>
+        {% else %}
+          <a class="pagination__item" href="/posts/{{ year }}">{{ year }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

@@ -15,9 +15,9 @@
   </head>
   <body class="layout__{{ page.className | default: page.category | downcase  }}">
     <div class="content">
-      {% include navigation.html -%}
+      {% include navigation/index.html -%}
       <div class="content__inner">{{ content }}</div>
-      {% include footer.html -%}
+      {% include navigation/footer.html -%}
     </div>
     <script src="{{ 'scripts/mailer.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
     <script src="{{ 'scripts/lazyload.min.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>

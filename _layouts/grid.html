@@ -3,7 +3,7 @@ layout: base
 className: page
 ---
 <div class="grid">
-  {% include navigation.html -%}
+  {% include navigation/index.html -%}
   <div class="page__content">
     {% if page.show_title -%}
       <h3 class="page__title">{{ page.title }}</h3>
@@ -11,5 +11,5 @@ className: page
     <p class="is-light">{{ page.description }}</p>
     {{ content }}
   </div>
-  {% include footer.html -%}
+  {% include navigation/footer.html -%}
 </div>

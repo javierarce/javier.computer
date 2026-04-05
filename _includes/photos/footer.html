@@ -47,6 +47,6 @@ include.photo.location | first -%}
     {% endif -%} {% endif -%}
   </div>
 
-  {% if include.pagination -%} {% include pagination.html post=include.photo -%}
+  {% if include.pagination -%} {% include pagination/post.html post=include.photo -%}
   {% endif -%}
 </div>

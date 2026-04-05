@@ -1,0 +1,12 @@
+<div class="tags">
+  <h4 class="tags__title">Tags</h4>
+
+  <div class="tags__list">
+    {% for tag in site.tags %}
+      <div class="tags__listItem">
+        <a href="/tags/{{ tag[0] }}">{{ tag[0] | capitalize }}</a>
+        <span class="is-light is-sm">({{ tag[1] | size }})</span>
+      </div>
+    {% endfor %}
+  </div>
+</div>

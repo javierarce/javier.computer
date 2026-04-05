@@ -1,0 +1,15 @@
+<div class="tags">
+  <h4 class="tags__title">Ciudades</h4>
+
+  <div class="tags__list">
+    {% for location in site.locations %}
+      {% assign post_count = site.posts | where: "location", location.location | size %}
+      {% if post_count > 0 %}
+        <div class="tags__listItem">
+          <a href="/in/{{ location.location }}">{{ location.title }}</a>
+          <span class="is-light is-sm">({{ post_count }})</span>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

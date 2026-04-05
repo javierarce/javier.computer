@@ -7,10 +7,10 @@ category: posts
 ---
 
 <div class="content">
-    {% include navigation.html -%}
+    {% include navigation/index.html -%}
 
     <div class="search">
-        {% include search-form.html %}
+        {% include search/form.html %}
         <ul id="search-results" class="search-results"></ul>
     </div>
 
@@ -31,6 +31,6 @@ category: posts
   };
 </script>
 
-{% include footer.html -%}
+{% include navigation/footer.html -%}
 
 </div>

@@ -8,7 +8,7 @@ permalink: en/about
 lang: en
 ---
 
-{% include about_vars.html lang="en" %}
+{% include about/vars.html lang="en" %}
 
 <div class="section">
 <p>My name is Javier Arce, <em>comme tout le monde</em>. I'm a creative

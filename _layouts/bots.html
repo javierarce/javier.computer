@@ -26,7 +26,7 @@
     class="layout__{{ page.className | default: page.category | downcase  }}"
   >
     <div class="content">
-      {% include navigation.html -%}
+      {% include navigation/index.html -%}
       <div class="bots">
         <div class="bot">
           <div class="bot__content">
@@ -36,7 +36,7 @@
         </div>
       </div>
 
-      {% include footer.html -%}
+      {% include navigation/footer.html -%}
     </div>
 
     <script src="{{ 'scripts/lazyload.min.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>

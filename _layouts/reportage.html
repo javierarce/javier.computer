@@ -4,7 +4,7 @@ className: reportage
 ---
 <!-- - photos/reportage -->
 <div class="content has-lightbox h-entry">
-  {% include navigation.html -%}
+  {% include navigation/index.html -%}
   <a class="p-author h-card" href="https://javier.computer" style="display:none">{{ site.author }}</a>
 
   {% if page.hide_title != true -%}
@@ -26,6 +26,6 @@ className: reportage
   <div class="photo__layout e-content">
     {{ content }}
     {% include photos/footer.html photo=page pagination=true -%}
-    {% include footer.html -%}
+    {% include navigation/footer.html -%}
   </div>
 </div>

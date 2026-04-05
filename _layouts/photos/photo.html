@@ -6,7 +6,7 @@ className: photo
 
 <!-- - photos/photo -->
 <div class="content">
-  {% include navigation.html -%}
+  {% include navigation/index.html -%}
   <div class="photo__collection has-lightbox">
     {% if page.hide_title != true -%}
       <div class="photo__header">
@@ -38,5 +38,5 @@ className: photo
     {% endif %}
     {% include photos/footer.html photo=page pagination=true -%}
   </div>
-  {% include footer.html -%}
+  {% include navigation/footer.html -%}
 </div>

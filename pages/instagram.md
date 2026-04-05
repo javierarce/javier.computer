@@ -37,7 +37,7 @@ A few years ago, I even created a quick iMovie compilation of some of the
 messages I received in 2018. Since then, the volume of messages has only
 increased.
 
-{% include video.html url='https://img.javier.computer/instagram/username.mp4'-%}
+{% include media/video.html url='https://img.javier.computer/instagram/username.mp4'-%}
 
 I've keep taking screenshots of everyone who's asked about acquiring my
 account. One interesting pattern: the majority of these requests come from
@@ -70,7 +70,7 @@ displayed all my content, but I knew this wouldn't last long. I tried
 Instagram's hacked account reporting page, but it was ineffective: when I
 entered my username the page simply reloaded without any confirmation.
 
-{% include video.html url='https://img.javier.computer/instagram/login.mp4'-%}
+{% include media/video.html url='https://img.javier.computer/instagram/login.mp4'-%}
 
 After exhausting all recovery methods, I refreshed my now-inaccessible account
 to find all my content replaced by 4 posts. Here's my account before and after
