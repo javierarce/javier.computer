@@ -8,6 +8,8 @@ book: El Secreto de las Fiestas
 Editorial: Anagrama
 ISBN: 978-84-339-9858-3
 year: 2018
+tags:
+  - libros
 ---
 
 Primero: Descubre el indicio en lo evidente.  

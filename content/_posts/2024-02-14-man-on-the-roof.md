@@ -2,6 +2,8 @@
 layout: post
 title: "Man on the Roof"
 date: "2024-02-14 22:24:46 +0100"
+tags:
+  - libros
 ---
 
 Volví a [Are.na](https://www.are.na/javier/channels), volví al diogenismo digital · Al final dejé de leer «No leer» y lo cambié por «Contra la lectura», que he terminado hace un rato y que recomiendo leer (o no leer) · Disfruté mucho con
