@@ -1,0 +1,106 @@
+{% assign cal_year = include.year %}
+{% assign now_year = "now" | date: "%Y" %}
+{% assign now_month = "now" | date: "%-m" | plus: 0 %}
+
+{% if cal_year == now_year %}
+  {% assign initial_month = now_month %}
+{% else %}
+  {% assign initial_month = 12 %}
+{% endif %}
+
+{% comment %}Build a JSON map of date → url for all posts{% endcomment %}
+<script type="application/json" id="calendar-posts">
+{
+  {% assign first = true %}
+  {% for post in site.posts %}
+    {% assign pd = post.date | date: "%Y-%m-%d" %}
+    {% if first %}{% assign first = false %}{% else %},{% endif %}
+    "{{ pd }}": "{{ post.url }}"
+  {% endfor %}
+}
+</script>
+
+<div class="calendar-single" data-initial-year="{{ cal_year }}" data-initial-month="{{ initial_month }}" data-today="{{ "now" | date: "%Y-%m-%d" }}">
+  <div class="calendar-single__nav">
+    <a href="#" class="calendar-single__arrow" data-dir="prev">&larr;</a>
+    <span class="calendar-single__title"></span>
+    <a href="#" class="calendar-single__arrow" data-dir="next">&rarr;</a>
+  </div>
+  <div class="calendar-single__body"></div>
+</div>
+
+<script>
+(function() {
+  var cal = document.querySelector('.calendar-single');
+  if (!cal) return;
+
+  var posts = JSON.parse(document.getElementById('calendar-posts').textContent);
+  // Deduplicate: keep only the first URL per date (already in reverse chronological order)
+  var postMap = {};
+  for (var key in posts) {
+    if (!postMap[key]) postMap[key] = posts[key];
+  }
+
+  var title = cal.querySelector('.calendar-single__title');
+  var body = cal.querySelector('.calendar-single__body');
+  var prevBtn = cal.querySelector('[data-dir="prev"]');
+  var nextBtn = cal.querySelector('[data-dir="next"]');
+  var today = cal.dataset.today;
+
+  var monthNames = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  var dayNames = ['L','M','M','J','V','S','D'];
+
+  var year = parseInt(cal.dataset.initialYear, 10);
+  var month = parseInt(cal.dataset.initialMonth, 10);
+
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+  function render() {
+    title.textContent = monthNames[month - 1] + ' ' + year;
+
+    var firstDay = new Date(year, month - 1, 1);
+    var dow = firstDay.getDay();
+    var blanks = dow === 0 ? 6 : dow - 1; // Monday-based
+    var daysInMonth = new Date(year, month, 0).getDate();
+
+    var html = '<div class="calendar-single__grid">';
+    for (var i = 0; i < dayNames.length; i++) {
+      html += '<span class="calendar-single__header">' + dayNames[i] + '</span>';
+    }
+    for (var b = 0; b < blanks; b++) {
+      html += '<span class="calendar-single__day"></span>';
+    }
+    for (var d = 1; d <= daysInMonth; d++) {
+      var dateStr = year + '-' + pad(month) + '-' + pad(d);
+      var url = postMap[dateStr];
+      var classes = 'calendar-single__day';
+      if (url) classes += ' has-posts';
+      if (dateStr === today) classes += ' is-today';
+
+      if (url) {
+        html += '<a href="' + url + '" class="' + classes + '">' + d + '</a>';
+      } else {
+        html += '<span class="' + classes + '">' + d + '</span>';
+      }
+    }
+    html += '</div>';
+    body.innerHTML = html;
+  }
+
+  prevBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    month--;
+    if (month < 1) { month = 12; year--; }
+    render();
+  });
+
+  nextBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    month++;
+    if (month > 12) { month = 1; year++; }
+    render();
+  });
+
+  render();
+})();
+</script>
