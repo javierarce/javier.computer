@@ -22,7 +22,9 @@ category: posts
         "author": "{{ post.author | xml_escape }}",
         "category": "{{ post.category | xml_escape }}",
         "content": {{ post.content | strip_html | normalize_whitespace | jsonify }},
-        "url": "{{ post.url | xml_escape }}"
+        "url": "{{ post.url | xml_escape }}",
+        "date": "{{ post.date | date: '%Y-%m-%dT%H:%M:%S' }}",
+        "tags": {{ post.tags | where_exp: "tag", "tag != 'photo'" | jsonify }}
       }
       {% unless forloop.last %},{% endunless %}
     {% endfor %}
