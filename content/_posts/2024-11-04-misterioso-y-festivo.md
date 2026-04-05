@@ -3,6 +3,8 @@ layout: post
 title: "Misterioso y festivo"
 date: "2024-11-04"
 location: leon
+tags:
+  - cine
 ---
 
 Emitiendo desde León (cuna del parlamentarismo) por misteriosas y festivas razones ·

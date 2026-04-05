@@ -2,6 +2,8 @@
 layout: post
 title: "President of Memory"
 date: "2023-09-20 17:59:50 +0200"
+tags:
+  - cine
 ---
 Snitches get stitches in Sitges · "[WRONG SIDE OF THE
 LENS](https://www.youtube.com/@WSOTL) is a documentary series exploring the

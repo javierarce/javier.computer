@@ -6,6 +6,8 @@ location: barcelona
 places:
   - fismuler
   - right-side-coffee-bar
+tags:
+  - cine
 ---
 
 Vuelta al teletipo &middot; Escape from Mataró &middot; Fin de semana en una
