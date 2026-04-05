@@ -1,0 +1,57 @@
+{% assign cal_year = include.year %}
+{% assign day_names = "L,M,M,J,V,S,D" | split: "," %}
+{% assign month_names = "Enero,Febrero,Marzo,Abril,Mayo,Junio,Julio,Agosto,Septiembre,Octubre,Noviembre,Diciembre" | split: "," %}
+{% assign today_str = "now" | date: "%Y-%m-%d" %}
+
+{% assign post_dates = "" %}
+{% for post in site.posts %}
+  {% assign post_year = post.date | date: "%Y" %}
+  {% if post_year == cal_year %}
+    {% assign pd = post.date | date: "%Y-%m-%d" %}
+    {% assign post_dates = post_dates | append: pd | append: "," %}
+  {% endif %}
+{% endfor %}
+
+<div class="calendar-year">
+{% for m in (1..12) %}
+  {% if m < 10 %}{% assign month_pad = m | prepend: "0" | slice: -2, 2 %}{% else %}{% assign month_pad = m %}{% endif %}
+  {% assign first_day_str = cal_year | append: "-" | append: month_pad | append: "-01" %}
+  {% assign first_day_ts = first_day_str | date: "%s" %}
+  {% assign dow_first = first_day_str | date: "%u" | plus: 0 %}
+
+  <div class="calendar-month">
+    <h5 class="calendar-month__name">{{ month_names[forloop.index0] }}</h5>
+    <div class="calendar-month__grid">
+      {% for dn in day_names %}
+        <span class="calendar-month__header">{{ dn }}</span>
+      {% endfor %}
+
+      {% assign blanks = dow_first | minus: 1 %}
+      {% for b in (1..7) %}
+        {% if b <= blanks %}<span class="calendar-month__day"></span>{% endif %}
+      {% endfor %}
+
+      {% for d in (0..30) %}
+        {% assign day_ts = d | times: 86400 | plus: first_day_ts %}
+        {% assign day_month = day_ts | date: "%m" | plus: 0 %}
+        {% if day_month != m %}{% break %}{% endif %}
+
+        {% assign day_str = day_ts | date: "%Y-%m-%d" %}
+        {% assign day_num = day_ts | date: "%-d" %}
+
+        {% assign has_post = false %}
+        {% if post_dates contains day_str %}
+          {% assign has_post = true %}
+        {% endif %}
+
+        {% assign is_today = false %}
+        {% if day_str == today_str %}
+          {% assign is_today = true %}
+        {% endif %}
+
+        <span class="calendar-month__day{% if has_post %} has-posts{% endif %}{% if is_today %} is-today{% endif %}">{{ day_num }}</span>
+      {% endfor %}
+    </div>
+  </div>
+{% endfor %}
+</div>

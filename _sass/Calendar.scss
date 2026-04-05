@@ -1,84 +1,106 @@
-.calendar {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  margin: 0 0 2em;
-  gap: 1px;
+@use "mixins" as *;
 
-  &__day {
-    position: relative;
-    text-decoration: none;
-    aspect-ratio: 1;
-    outline: 1px solid var(--white);
+.calendar-single {
+  width: var(--width-full);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-4);
+  font-variant-numeric: tabular-nums;
+
+  &__nav {
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 1.2vw;
+    gap: var(--s-6);
+  }
 
-    &.is-title {
-      outline: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: var(--op-light);
-    }
+  &__title {
+    font-size: var(--font-size-body-sm);
+    min-width: 8em;
+    text-align: center;
+  }
+
+  &__arrow {
+    text-decoration: none;
+    color: inherit;
+    font-size: var(--font-size-body-sm);
+    opacity: var(--op-light);
+    user-select: none;
+    padding: var(--s-1) var(--s-2);
 
     &:hover {
+      opacity: var(--op-visible);
       text-decoration: none;
     }
 
-    &.is-today {
-      text-decoration: underline;
+    &.is-disabled {
+      opacity: var(--op-2);
+      pointer-events: none;
     }
   }
 
-  &__day.has-posts {
+  &__month {
+    width: 100%;
+  }
+
+  &__body {
+    width: 100%;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border-top: 1px solid var(--color-border-muted);
+    border-left: 1px solid var(--color-border-muted);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-body);
+    color: var(--color-border-muted);
+    padding: var(--s-2) 0;
+    border-right: 1px solid var(--color-border-muted);
+    border-bottom: 1px solid var(--color-border-muted);
+  }
+
+  &__day {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-body);
+    aspect-ratio: 1;
+    color: var(--color-border-muted);
+    text-decoration: none;
+    border-right: 1px solid var(--color-border-muted);
+    border-bottom: 1px solid var(--color-border-muted);
 
-    &:after {
-      content: '';
-      position: absolute;
-      width: 0.3vw;
-      height: 0.3vw;
-      left: 50%;
-      bottom: 0.6vw;
-      margin-left: -.15vw;
-      background-color: var(--link);
-      border-radius: var(--br-pill);
+    &.is-today {
+      color: var(--color-txt-site);
+      font-weight: var(--weight-bold);
     }
-  }
-}
-
-
-@media all and (max-width: 1024px) {
-  .calendar__day {
-    font-size: 2vw;
 
     &.has-posts {
-      position: relative;
+      color: var(--color-txt-site);
+      cursor: pointer;
 
-      &:after {
-        width: .2em;
-        height: .2em;
-        bottom: 0.5em;
-        margin-left: -.1em;
+      &:hover {
+        text-decoration: none;
+        color: var(--link);
       }
-    }
-  }
-
-}
-
-@media all and (max-width: 640px) {
-  .calendar__day {
-    font-size: var(--font-size-body-sm);
-
-    &.has-posts {
-      position: relative;
 
       &:after {
-        width: .2em;
-        height: .2em;
-        bottom: 0.5em;
-        margin-left: -.1em;
+        content: '';
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        left: 50%;
+        bottom: var(--s-2);
+        margin-left: -2.5px;
+        background-color: var(--link);
+        border-radius: var(--br-pill);
       }
     }
   }
