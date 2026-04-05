@@ -1,7 +1,37 @@
 {
-  "updated_at": "2026-04-02",
-  "count": 1025,
+  "updated_at": "2026-04-05",
+  "count": 1028,
   "movies": [
+    {
+      "watched_on": "2026-04-04",
+      "title": "Wall Street",
+      "year": 1987,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": true,
+      "permalink": "wall-street"
+    },
+    {
+      "watched_on": "2026-04-04",
+      "title": "Under the Silver Lake",
+      "year": 2018,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "under-the-silver-lake"
+    },
+    {
+      "watched_on": "2026-04-01",
+      "title": "The Potluck and the Passion",
+      "year": 1993,
+      "rating": null,
+      "liked": false,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "the-potluck-and-the-passion"
+    },
     {
       "watched_on": "2026-03-31",
       "title": "The Watermelon Woman",
