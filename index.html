@@ -8,14 +8,14 @@ pagination:
     enabled: true
 ---
 <div class="content">
-  {% include navigation.html -%}
+  {% include navigation/index.html -%}
   <div class="posts h-feed">
     {% if paginator.page == 1 -%}
-    {% include home_posts.html -%}
+    {% include post/home.html -%}
     {% else -%}
-    {% include posts.html -%}
+    {% include post/list.html -%}
     {% endif -%}  
   </div>
-  {% include pagination_index.html paginator=paginator -%}
-  {% include footer.html -%}
+  {% include pagination/index.html paginator=paginator -%}
+  {% include navigation/footer.html -%}
 </div>

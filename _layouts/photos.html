@@ -3,7 +3,7 @@ layout: base
 className: photos
 ---
 <div class="content">
-  {% include navigation.html %}
+  {% include navigation/index.html %}
 
   <div class="photo__feed">
     {% for post in paginator.posts %}
@@ -41,5 +41,5 @@ className: photos
       </div>
     </div>
   {% endif %}
-  {% include footer.html %}
+  {% include navigation/footer.html %}
 </div>
