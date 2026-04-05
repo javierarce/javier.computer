@@ -41,7 +41,7 @@
     height: 1.2rem;
     padding: 0.4rem;
     background: var(--color-map-background);
-    color: var(--black-pure);
+    color: var(--black);
     font-size: var(--font-size-body-tiny);
     font-weight: var(--weight-medium);
     border-radius: var(--br-pill);
@@ -66,7 +66,7 @@
     padding: 1rem; // TODO: add variable
     border: none;
     background: var(--white);
-    color: var(--black-pure);
+    color: var(--black);
     box-shadow: 0 2px 4px var(--color-shadow);
     border-radius: var(--br-md);
   }

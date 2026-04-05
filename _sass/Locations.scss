@@ -30,7 +30,7 @@
     width: 1.2rem;
     height: 1.2rem;
     border-radius: 50%;
-    color: var(--black-pure);
+    color: var(--black);
     background: var(--link);
     font-size: var(--font-size-body-tiny);
     margin: 0 0.1em 0 0;
@@ -84,7 +84,7 @@
     &:hover {
       text-decoration: none;
       background: var(--white);
-      color: var(--black-pure);
+      color: var(--black);
     }
   }
 }
