@@ -2,6 +2,8 @@
 layout: post
 title: "Cómo escribir una novela autobiográfica"
 date: "2026-03-06 10:56:55 +0100"
+tags:
+  - libros
 places:
   - terranova
 ---
