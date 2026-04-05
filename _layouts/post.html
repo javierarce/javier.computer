@@ -4,7 +4,7 @@ className: post
 category: posts
 ---
 <div class="content">
-  {% include navigation.html -%}
+  {% include navigation/index.html -%}
 
   <div class="post h-entry">
     <a class="p-author h-card" href="https://javier.computer" style="display:none">{{ site.author }}</a>
@@ -15,5 +15,5 @@ category: posts
 
     {% include post/footer.html -%}
   </div>
-  {% include footer.html -%}
+  {% include navigation/footer.html -%}
 </div>

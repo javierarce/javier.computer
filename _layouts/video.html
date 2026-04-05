@@ -5,14 +5,14 @@ category: videos
 ---
 <!-- - video -->
 <div class="content">
-  {% include navigation.html -%}
+  {% include navigation/index.html -%}
 
   <div class="post">
     <div class="post__content{% if page.extraClassName %} {{ page.extraClassName }}{% endif %} e-content">
-      {% include video.html url=page.src cover=page.cover cover_location=page.cover_location location=page.location -%}
+      {% include media/video.html url=page.src cover=page.cover cover_location=page.cover_location location=page.location -%}
       {{ content }}
     </div>
     {% include post/footer.html -%}
   </div>
-  {% include footer.html -%}
+  {% include navigation/footer.html -%}
 </div>

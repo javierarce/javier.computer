@@ -3,7 +3,7 @@ layout: base
 className: page
 ---
 <div class="content">
-  {% include navigation.html -%}
+  {% include navigation/index.html -%}
   <div class="page">
     <div class="page__content">
       {% if page.show_title -%}
@@ -19,5 +19,5 @@ className: page
       {% endif -%}
     </div>
   </div>
-  {% include footer.html -%}
+  {% include navigation/footer.html -%}
 </div>

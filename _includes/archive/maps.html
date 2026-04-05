@@ -1,0 +1,15 @@
+<div class="tags">
+  <h4 class="tags__title">Mapas</h4>
+
+  <div class="tags__list">
+    {% for map in site.maps %}
+      {% assign place_count = site.data.locations[map.location] | size %}
+      {% if place_count > 0 %}
+        <div class="tags__listItem">
+          <a href="/{{ map.permalink }}">{{ map.title }}</a>
+          <span class="is-light is-sm">({{ place_count }})</span>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

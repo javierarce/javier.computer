@@ -7,7 +7,7 @@ weather: true
 permalink: about
 ---
 
-{% include about_vars.html lang="es" %}
+{% include about/vars.html lang="es" %}
 
 <div class="section">
 <p>Mi nombre es Javier Arce, <em>comme tout le monde</em>. Soy desarrollador
