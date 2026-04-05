@@ -2,6 +2,8 @@
 layout: post
 title: "Crisis de interés"
 date: "2025-02-26 20:00:00 +0100"
+tags:
+  - cine
 ---
 
 Nuevas aventuras en el Institut Català de Retina · Este proyecto secreto en el

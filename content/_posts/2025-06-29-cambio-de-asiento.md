@@ -2,6 +2,8 @@
 layout: post
 title: "Cambio de asiento"
 date: "2025-06-29 22:50:34 +0200"
+tags:
+  - cine
 ---
 
 [Aparajito](https://letterboxd.com/javier/film/aparajito) ★★★½ &middot;

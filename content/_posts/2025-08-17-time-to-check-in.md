@@ -6,6 +6,7 @@ location: berlin
 places:
   - onette
 tags:
+  - cine
   - libros
 syndication:
   - https://mastodon.social/@javierarce/115046205966961274
