@@ -20,6 +20,18 @@
     opacity: var(--op-light);
   }
 
+  &--years &__content {
+    flex-wrap: wrap;
+    gap: 0.4em;
+  }
+
+  &--years &__item {
+    width: auto;
+    height: auto;
+    padding: 0.6em 1em;
+    margin: 0;
+  }
+
   &__item {
     display: flex;
     align-items: center;
@@ -35,6 +47,7 @@
     cursor: pointer;
     user-select: none;
     font-size: var(--font-size-body-xs);
+    font-variant-numeric: tabular-nums;
 
     &:hover {
       background: var(--color-bg-pagination-hover);
@@ -96,6 +109,11 @@
     justify-content: space-between;
     grid-template-columns: repeat(8, 1fr);
     grid-row-gap: 0.4em;
+
+    &--years {
+      display: flex;
+      grid-template-columns: none;
+    }
 
     &__content {
       display: flex;
