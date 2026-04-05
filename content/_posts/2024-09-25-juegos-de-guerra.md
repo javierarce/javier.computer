@@ -2,6 +2,8 @@
 layout: post
 title: Juegos de guerra
 date: "2024-09-25 20:10:00 +0200"
+tags:
+  - cine
 ---
 
 Juegos de guerra en el trabajo en los que me niego a participar · Aunque tiene

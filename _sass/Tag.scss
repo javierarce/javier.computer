@@ -27,5 +27,32 @@
       }
     }
   }
-}
 
+  &__item {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: var(--s-2);
+    padding: var(--s-3) 0;
+    border-bottom: 1px solid var(--color-border-muted);
+    font-size: var(--font-size-body);
+
+    &:first-child {
+      border-top: 1px solid var(--color-border-muted);
+    }
+  }
+
+  &__link {
+    color: var(--color-txt-site);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__count {
+    opacity: var(--op-light);
+    font-size: var(--font-size-body-sm);
+  }
+}

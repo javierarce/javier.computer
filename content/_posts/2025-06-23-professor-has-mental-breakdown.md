@@ -2,6 +2,8 @@
 layout: post
 title: "Professor has mental breakdown"
 date: "2025-06-23 22:00:00 +0200"
+tags:
+  - cine
 ---
 
 [Drylongso](https://letterboxd.com/javier/film/drylongso) ★★★½ &middot; [Professor has mental

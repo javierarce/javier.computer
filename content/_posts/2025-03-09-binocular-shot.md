@@ -2,6 +2,8 @@
 layout: post
 title: "Binocular Shot"
 date: "2025-03-09 20:00:00 +0100"
+tags:
+  - cine
 ---
 
 Muy feliz con la acogida de mi proyecto <a

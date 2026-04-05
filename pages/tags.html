@@ -1,16 +1,25 @@
 ---
+layout: base
 title: Tags
-layout: page
 permalink: /tags/
+className: archive
 category: tags
 ---
-<div class="tags">
-  <ul class="tags__list">
-    {% for tag in site.tags -%}
-    <li>
-      <a href="/tags/{{ tag[0] }}">{{ tag[0] | capitalize }}</a>
-      <span class="is-light is-sm">({{ tag[1] | size }})</span>
-    </li>
-    {% endfor -%}
-  </ul>
+
+<div class="content">
+  {% include navigation.html -%}
+
+  <div class="tags">
+    <ul class="tags__list">
+      {% for tag in site.tags -%}
+      {% if tag[0] == "photo" -%}{% continue -%}{% endif -%}
+      <li class="tags__item">
+        <a href="/tags/{{ tag[0] }}" class="tags__link">{{ tag[0] | capitalize }}</a>
+        <span class="tags__count">{{ tag[1] | size }}</span>
+      </li>
+      {% endfor -%}
+    </ul>
+  </div>
+
+  {% include footer.html -%}
 </div>

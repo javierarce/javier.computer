@@ -2,6 +2,8 @@
 layout: post
 title: "Look at all the peaches"
 date: "2022-05-11 22:01:17 +0200"
+tags:
+  - cine
 ---
 
 Llevo varios días sin regar esta página, así que escribo antes de que se ponga

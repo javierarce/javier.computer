@@ -2,6 +2,8 @@
 layout: post
 title: "Si me esperas cenamos juntos"
 date: "2025-06-22 18:22:58 +0200"
+tags:
+  - cine
 ---
 
 Si me esperas cenamos juntos · [World Between Us](https://letterboxd.com/film/world-between-us/) · [Holy

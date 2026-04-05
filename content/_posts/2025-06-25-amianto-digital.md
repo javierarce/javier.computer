@@ -2,6 +2,8 @@
 layout: post
 title: "Amianto digital"
 date: "2025-06-26 21:00:00 +0200"
+tags:
+  - cine
 ---
 
 Atascadísimo con los dibujos, las fotos, los emails, los fanzines. Bueno, con todo. Nada me sale y nada sale &middot; [La IA como amianto

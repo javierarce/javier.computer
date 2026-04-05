@@ -2,6 +2,8 @@
 layout: post
 title: "Several Tips for Expanding Your Taste in Films Delivered at a High Speed"
 date: "2024-12-02"
+tags:
+  - cine
 ---
 
 Subí [aquí](/several-tips) el texto e imágenes de una _lightning talk_ que di
