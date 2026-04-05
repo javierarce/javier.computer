@@ -1,4 +1,37 @@
 (function() {
+  function formatDate(dateString) {
+    var months = [
+      "enero", "febrero", "marzo", "abril", "mayo", "junio",
+      "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
+    ];
+    var date = new Date(dateString);
+    var currentYear = new Date().getFullYear();
+    var day = date.getDate();
+    var month = months[date.getMonth()];
+    var year = date.getFullYear();
+    var result = day + " de " + month;
+    if (year !== currentYear) {
+      result += " de " + year;
+    }
+    return result;
+  }
+
+  function buildFooter(item) {
+    var html = '<div class="post__footer">';
+    html += '<a href="' + item.url + '" class="post__date">' + formatDate(item.date) + '</a>';
+    if (item.tags && item.tags.length) {
+      html += '<div class="post__tags">';
+      for (var i = 0; i < item.tags.length; i++) {
+        var tag = item.tags[i];
+        html += '<a href="/tags/' + tag.toLowerCase().replace(/\s+/g, "-") + '" class="post__tag-link">' + tag + '</a>';
+        if (i < item.tags.length - 1) html += " ";
+      }
+      html += '</div>';
+    }
+    html += '</div>';
+    return html;
+  }
+
   function showResults(results, store) {
     var searchResults = document.getElementById("search-results");
     if (results.length) {
@@ -12,7 +45,9 @@
         // Title is no longer highlighted
         appendString +=
           '<li><a href="' + item.url + '">' + item.title + "</a>";
-        appendString += "<p>" + excerpt + "</p></li>";
+        appendString += "<p>" + excerpt + "</p>";
+        appendString += buildFooter(item);
+        appendString += "</li>";
       }
       searchResults.innerHTML = appendString;
     } else {
@@ -91,6 +126,8 @@
         }, 500);
       }
     }
+
+    document.title = searchTerm + " — Búsqueda";
 
     // Main search initialization function
     function initSearch() {
