@@ -2,6 +2,8 @@
 layout: post
 title: "Pensar clasificar"
 date: "2024-02-20 00:13:56 +0100"
+tags:
+  - libros
 ---
 Desde hace 72 horas recibo misteriosas llamadas
 telefónicas. Primero fue una en Los Banos, California. Al poco llegan otras

@@ -5,6 +5,8 @@ date: "2025-08-17 20:39:47 +0200"
 location: berlin
 places:
   - onette
+tags:
+  - libros
 syndication:
   - https://mastodon.social/@javierarce/115046205966961274
 ---
