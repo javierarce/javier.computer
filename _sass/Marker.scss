@@ -5,7 +5,7 @@
     padding: var(--s-3);
     font-size: var(--font-size-body-xxxs);
     font-weight: var(--weight-bold);
-    background: var(--black-pure);
+    background: var(--black);
     background-size: 400% 400%;
     box-shadow: 0 2px 4px var(--color-shadow);
     border-radius: var(--br-pill);
@@ -16,7 +16,7 @@
   }
 
   &.leaflet-zoom-animated.leaflet-interactive:focus {
-    background: var(--black-pure);
+    background: var(--black);
     color: var(--white);
     outline: none !important;
     z-index: 100 !important;
@@ -43,7 +43,7 @@
     height: 20px !important;
     padding: 0;
     font-size: 0;
-    background: var(--black-pure);
+    background: var(--black);
     border: 3px solid var(--white);
     border-radius: var(--br-pill);
     box-shadow: 0 2px 4px var(--color-shadow);
