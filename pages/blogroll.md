@@ -15,7 +15,7 @@ className: Blogroll
 en formato OPML, impórtala en tu lector de RSS y sé tan listo como yo (o incluso más) leyendo
 mis blogs y newsletters favoritas.
 
-<h4 class="section-divider">Blogs</h4>
+<h4 class="section-divider has-margin">Blogs</h4>
 
 <ul class="blogroll">
 {% assign sorted_blogs = site.data.blogroll | where: "type", "blog" | sort: "author" %}
@@ -34,7 +34,7 @@ mis blogs y newsletters favoritas.
 
 </ul>
 
-<h4 class="section-divider">Newsletters</h4>
+<h4 class="section-divider has-margin">Newsletters</h4>
 
 <ul class="blogroll">
 {% assign sorted_newsletters = site.data.blogroll | where: "type", "newsletter" | sort: "title" %}

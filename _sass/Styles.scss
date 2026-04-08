@@ -238,6 +238,10 @@ h4 {
   padding-bottom: var(--s-4);
   border-bottom: 1px solid var(--gray);
   width: var(--width-full);
+
+  &.has-margin {
+    margin-bottom: var(--s-5);
+  }
 }
 
 img:not([src]):not([srcset]) {

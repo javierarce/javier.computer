@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 .cards {
   display: grid;
   grid-template-columns: repeat(2, 2fr);
@@ -42,7 +44,7 @@
   }
 }
 
-@media all and (max-width: 640px) {
+@include mobile {
   .cards {
     display: flex;
     flex-direction: column;

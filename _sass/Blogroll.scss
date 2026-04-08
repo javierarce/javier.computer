@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 ul.blogroll {
   column-count: 2;
   margin: 0 0 var(--s-6) 0;
@@ -14,7 +16,7 @@ ul.blogroll {
   }
 }
 
-@media all and (max-width: 640px) {
+@include mobile {
   .blogroll {
     column-count: 1;
   }

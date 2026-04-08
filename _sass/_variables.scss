@@ -1,3 +1,4 @@
+@use "mixins" as *;
 @import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap");
 
 :root {
@@ -198,10 +199,20 @@
   --transition-speed-super-slow: 500ms;
 }
 
-@media (max-width: 640px) {
+@include mobile {
   :root {
-    --font-size-body: var(--text-lg); // 20px
-    --font-size-body-sm: var(--text-lg); // 20px
+    --font-size-body: var(--text-lg);
+    --font-size-body-sm: var(--text-lg);
+
+    --font-size-body-xs: var(--text-md);
+    --font-size-body-xxs: var(--text-sm);
+    --font-size-body-xxxs: var(--text-xs);
+    --font-size-body-tiny: 11px;
+
+    --font-size-heading-xl: var(--text-4xl);
+    --font-size-heading-lg: var(--text-1xl);
+    --font-size-heading-md: var(--text-lg);
+    --font-size-heading-sm: var(--text-lg);
   }
 }
 

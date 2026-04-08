@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 .player {
   width: auto;
   margin: 1em 0 0 0;
@@ -92,8 +94,7 @@
   }
 }
 
-@media all and (max-width: 640px) {
-
+@include mobile {
   .player,
   .player__info {
     flex-direction: column;
