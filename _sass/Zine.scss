@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 .html-lol,
 .html-lol body,
 .layout__lol {
@@ -41,7 +43,7 @@
     }
   }
 
-  @media all and (max-width: 640px) {
+  @include mobile {
     .thanks {
       width: 90%;
     }
@@ -98,8 +100,8 @@
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0);
 
     transition:
-    outline var(--transition-speed-slow) ease-in-out,
-    box-shadow var(--transition-speed-slow) ease-in-out;
+      outline var(--transition-speed-slow) ease-in-out,
+      box-shadow var(--transition-speed-slow) ease-in-out;
 
     &:hover,
     &:focus {
@@ -361,7 +363,7 @@
   }
 }
 
-@media all and (max-width: 640px) {
+@include mobile {
   .layout__zine {
     padding: var(--s-4);
   }

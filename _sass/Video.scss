@@ -1,4 +1,5 @@
-// Variables
+@use "mixins" as *;
+
 $transition-duration: 0.3s;
 
 .layout__video .content {
@@ -176,11 +177,7 @@ $transition-duration: 0.3s;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.6) 0%,
-      rgba(0, 0, 0, 0) 24%
-    );
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 24%);
     opacity: 1;
     transition: opacity $transition-duration ease-in-out;
     z-index: 10;
@@ -285,8 +282,7 @@ $transition-duration: 0.3s;
     align-items: center;
 
     #{$root}__fullscreenButton {
-      background: url(/assets/images/player/fullscreen_exit.svg) no-repeat
-        center;
+      background: url(/assets/images/player/fullscreen_exit.svg) no-repeat center;
       background-size: contain;
     }
 
@@ -321,7 +317,7 @@ $transition-duration: 0.3s;
   }
 }
 
-@media screen and (max-width: 1024px) {
+@include tablet {
   .video {
     $root: &;
 
@@ -331,7 +327,7 @@ $transition-duration: 0.3s;
   }
 }
 
-@media all and (max-width: 640px) {
+@include mobile {
   .layout__video .content {
     width: var(--width-full);
   }

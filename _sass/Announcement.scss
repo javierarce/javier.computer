@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 .announcement {
   margin: 0 0 3em;
   display: flex;
@@ -13,7 +15,7 @@
   }
 }
 
-@media all and (max-width: 640px) {
+@include mobile {
   .announcement__icon {
     margin-top: 4px;
   }

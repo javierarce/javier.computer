@@ -160,27 +160,26 @@ a.book__spine:hover {
   }
 }
 
-@media all and (max-width: 640px) {
-
+@include mobile {
   .book {
     &__stack {
       display: block;
       border-bottom: none;
-      width: var(--width-full) !Important;
+      width: var(--width-full) !important;
       margin: 0 0 1em;
       height: auto;
     }
 
     &__spine {
-      color: var(--white) !Important;
-      background: transparent !Important;
+      color: var(--white) !important;
+      background: transparent !important;
       min-width: inherit;
       min-height: inherit;
-      height: auto !Important;
+      height: auto !important;
       padding: 0;
       writing-mode: horizontal-tb;
       transform: initial;
-      width: var(--width-full) !Important;
+      width: var(--width-full) !important;
       margin: 0 0 1em;
     }
 

@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 div.highlight {
   font-family: var(--font-text-mono);
   padding: 1em;
@@ -173,8 +175,8 @@ div.highlight {
   font-family: var(--font-text-mono);
 }
 
-@media all and (max-width: 640px) {
+@include mobile {
   div.highlight {
-    overflow-x: scroll
+    overflow-x: scroll;
   }
 }
