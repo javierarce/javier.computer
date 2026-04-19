@@ -43,7 +43,7 @@ suscriptores cuando menos se lo esperan, una lista de nombres de perros, una lis
 de perros, referencias a <a href="/projects">{{ projects}} de mis proyectos
 personales</a>, una lista bastante precisa de todas las <a href="/movies">películas que
 he visto</a> desde 2020, una lista bastante imprecisa de todos los
-<a href="/books">libros que he leído</a>, referencias a mis primeros recuerdos, <a href="/maps">{{
+<a href="/books">libros que he leído</a> desde 2012, referencias a mis primeros recuerdos, <a href="/maps">{{
 map_count}} mapas</a> con {{ places_count }} de mis lugares favoritos del
 mundo, varias fotos de mí comiendo un helado, un espejo, una moneda, un pájaro
 amarillo, una foto de tu tortuga, una tortuga.</p>

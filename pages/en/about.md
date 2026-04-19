@@ -44,7 +44,7 @@ newsletter</a> that reaches {{ subscribers_count}} subscribers, a list of dog
 names, a list of names that aren't dog names, references to <a href="/projects">{{ projects}} of
 my personal projects</a>, a pretty accurate list of all the <a href="/movies">movies
 I've watched</a> since 2020, a pretty inaccurate list of all the <a href="/books">books
-I've read</a>, references to my early memories, <a href="/maps">{{ map_count}}
+I've read</a> since 2012, references to my early memories, <a href="/maps">{{ map_count}}
 maps</a> listing {{ places_count }} of my favorite places in the world, several photos
 of myself eating ice cream, a mirror, a coin, a yellow bird, a photo of your
 turtle, a turtle.</p>
