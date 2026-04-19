@@ -3,8 +3,8 @@ title: La muerte de Iván Illich
 layout: book
 author: León Tolstói
 started: '2026-04-18'
-read: null
-status: reading
+read: '2026-04-19'
+status: read
 pages: 160
-progress: 62
+progress: 100
 ---
