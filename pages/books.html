@@ -17,14 +17,16 @@ permalink: books
 {% if sorted_books_reading.size > 0 -%}
   <h4 class="stack__date">Leyendo</h4>
   <div class="book__stack">
+    {% assign prev_color = nil -%}
     {% for book in sorted_books_reading -%}
       {% assign content = book.content | strip_newlines -%}
 
       {% if book.color -%}
         {% assign color = book.color -%}
       {% else -%}
-        {% assign color = 15 | random_number -%}
+        {% assign color = 16 | random_number_excluding: prev_color -%}
       {% endif -%}
+      {% assign prev_color = color -%}
 
       {% assign classIndex = 15 | random_number -%}
       {% assign pages = book.pages | default: 250 -%}
@@ -59,14 +61,16 @@ permalink: books
   <h4 id="year-{{group.name}}" class="stack__date">{{ group.name }}</h4>
 
   <div class="book__stack">
+    {% assign prev_color = nil -%}
     {% for book in group.items -%}
       {% assign content = book.content | strip_newlines -%}
 
       {% if book.color -%}
         {% assign color = book.color -%}
       {% else -%}
-        {% assign color = 15 | random_number -%}
+        {% assign color = 16 | random_number_excluding: prev_color -%}
       {% endif -%}
+      {% assign prev_color = color -%}
 
       {% assign classIndex = 15 | random_number -%}
       {% assign pages = book.pages | default: 250 -%}
