@@ -24,9 +24,8 @@ lang: en
 <h3>Now</h3>
 
 <p>Right now I'm in {{ site.data.location[0].city }}, {{
-    site.data.location[0].country }}. {% if book_titles != "" %}I'm <a
-        href="/books">currently reading</a>: {{ book_titles }}. {% endif %}The
-    last book I read was <em>{{ book.title }}</em> by {{ book.author }}. The last movie
+    site.data.location[0].country }}. {% if book_titles != "" %}I'm currently reading: {{ book_titles }}. {% endif %}The
+    last book I read was <a href="/books#{{ book.slug }}" class="book-title">{{ book.title }}</a> by {{ book.author }}. The last movie
     I watched was <a href="https://letterboxd.com/javier/film/{{
         movie.permalink }}">{{ movie.title }}</a> {{ rating_phrase }}
     <music-snitch data-username='javierarce' data-key

@@ -47,12 +47,13 @@
 {% assign book_conjunction = ", and " -%}
 {% endif -%}
 {% for b in sorted_books_reading -%}
+{% assign book_link = '<a href="/books#' | append: b.slug | append: '" class="book-title">' | append: b.title | append: '</a>' -%}
 {% if forloop.first -%}
-{% assign book_titles = "<em>" | append: b.title | append: "</em>" -%}
+{% assign book_titles = book_link -%}
 {% elsif forloop.last -%}
-{% assign book_titles = book_titles | append: book_conjunction | append: "<em>" | append: b.title | append: "</em>" -%}
+{% assign book_titles = book_titles | append: book_conjunction | append: book_link -%}
 {% else -%}
-{% assign book_titles = book_titles | append: ", <em>" | append: b.title | append: "</em>" -%}
+{% assign book_titles = book_titles | append: ", " | append: book_link -%}
 {% endif -%}
 {% endfor -%}
 
