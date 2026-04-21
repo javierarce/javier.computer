@@ -5,6 +5,7 @@ className: Books
 description: Books I'm reading, I've read, I want to read
 category: page
 permalink: books
+library: books
 ---
 {% assign all_books_with_read = site.books | where: 'status', 'read' -%}
 {% assign sorted_books = all_books_with_read | sort: 'read' | reverse -%}
@@ -33,7 +34,7 @@ permalink: books
       {% assign height = pages | map_range: 50, 750, 80, 300 -%}
 
       {% if book.link -%}
-        <a href="{{ book.link }}" class="book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
+        <a id="{{ book.slug }}" href="{{ book.link }}" class="book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
           <div class="book__content">
             <div class="book__title">{{ book.title }}</div>
             <div class="book__author">{{ book.author }}</div>
@@ -43,7 +44,7 @@ permalink: books
           {% endif -%}
         </a>
       {% else -%}
-        <div class="book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
+        <div id="{{ book.slug }}" tabindex="-1" class="book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
           <div class="book__content">
             <div class="book__title">{{ book.title }}</div>
             <div class="book__author">{{ book.author }}</div>
@@ -77,14 +78,14 @@ permalink: books
       {% assign height = pages | map_range: 50, 750, 80, 300 -%}
 
       {% if book.link -%}
-        <a href="{{ book.link }}" class="book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
+        <a id="{{ book.slug }}" href="{{ book.link }}" class="book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
           <div class="book__content">
             <div class="book__title">{{ book.title }}</div>
             <div class="book__author">{{ book.author }}</div>
           </div>
         </a>
       {% else -%}
-        <div class="book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
+        <div id="{{ book.slug }}" tabindex="-1" class="book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
           <div class="book__content">
             <div class="book__title">{{ book.title }}</div>
             <div class="book__author">{{ book.author }}</div>

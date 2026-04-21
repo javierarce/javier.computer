@@ -20,9 +20,8 @@ fotógrafo compulsivo, y un humano un poco tonto, si me preguntas.</p>
 <div class="section">
 <h3>Ahora</h3>
 
-<p>Ahora mismo estoy en {{ site.data.location[0].city }}{% if book_titles != "" %}, <a
-href="/books">leyendo</a>: {{ book_titles }}. {% else %}. {% endif %}El
-último libro que leí fue <em>{{ book.title }}</em> de {{ book.author }}. La última película
+<p>Ahora mismo estoy en {{ site.data.location[0].city }}{% if book_titles != "" %}, leyendo: {{ book_titles }}. {% else %}. {% endif %}El
+último libro que leí fue <a href="/books#{{ book.slug }}" class="book-title">{{ book.title }}</a> de {{ book.author }}. La última película
 que vi fue <a href="https://letterboxd.com/javier/film/{{
 movie.permalink }}">{{ movie.title }}</a> {{ rating_phrase }}
 <music-snitch data-username='javierarce' data-key
