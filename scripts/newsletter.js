@@ -1,7 +1,7 @@
 class Newsletter {
   constructor() {
     this.$el = document.querySelector(".js-newsletter-container");
-    this.$countDisplay = document.getElementById("subscribers-count");
+    this.$countDisplays = document.querySelectorAll(".subscribers-count");
 
     if (!this.$el) return;
 
@@ -82,21 +82,23 @@ class Newsletter {
   }
 
   async fetchSubscribers() {
-    if (!this.$countDisplay) return;
+    if (!this.$countDisplays || this.$countDisplays.length === 0) return;
 
     try {
       const response = await fetch(
         "https://api.javier.computer/subscribers",
       );
       const count = await response.json();
+      if (!count) return;
 
-      if (count && count.toString() !== this.$countDisplay.innerText) {
-        this.$countDisplay.classList.add("is-fading");
+      this.$countDisplays.forEach(($el) => {
+        if (count.toString() === $el.innerText) return;
+        $el.classList.add("is-fading");
         setTimeout(() => {
-          this.$countDisplay.innerText = count;
-          this.$countDisplay.classList.remove("is-fading");
+          $el.innerText = count;
+          $el.classList.remove("is-fading");
         }, 140);
-      }
+      });
     } catch (err) {
       console.error("Subscriber fetch failed:", err);
     }
