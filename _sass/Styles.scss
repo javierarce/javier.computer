@@ -368,12 +368,12 @@ a.is-icon-light.is-reportage::after {
   }
 }
 
-#subscribers-count {
+.subscribers-count {
   transition: opacity var(--transition-speed-default) ease-in-out;
   display: inline-block;
 }
 
-#subscribers-count.is-fading {
+.subscribers-count.is-fading {
   opacity: 0;
 }
 
