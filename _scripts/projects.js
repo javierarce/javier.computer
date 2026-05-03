@@ -82,7 +82,7 @@ const projects = [
   },
   {
     title: "Kindle to Are.na",
-    url: "https://arena.javierarce.com/",
+    url: "https://arena.javier.computer",
     description: "Send your Kindle's highlights and notes to Are.na.",
   },
   {
