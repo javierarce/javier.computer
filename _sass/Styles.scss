@@ -59,10 +59,17 @@ p.is-light p a {
 }
 
 .is-hidden-from-home {
-  border: 1px solid var(--color-border-muted);
-  padding: var(--s-3);
-  font-size: var(--font-size-body-xs);
-  opacity: var(--op-light);
+  width: var(--width-md);
+  padding: 0.8em;
+  font-size: var(--font-size-body-sm);
+  border: 1px solid var(--purple);
+  border-radius: var(--br-default);
+  color: var(--purple);
+
+  & > a,
+  & > a:hover {
+    color: var(--purple) !important;
+  }
 }
 
 .is-hidden-from-home a {
@@ -375,6 +382,13 @@ a.is-icon-light.is-reportage::after {
 
 .subscribers-count.is-fading {
   opacity: 0;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid var(--color-border-muted);
+  margin: 1.4em 0;
+  width: var(--width-md);
 }
 
 @include mobile {
