@@ -11,17 +11,14 @@ lang: en
 {% include about/vars.html lang="en" %}
 
 <div class="section">
+
+<p class="is-light">Esta página está disponible en castellano <a href="/about">aquí</a>.</p>
+
 <p>My name is Javier Arce, <em>comme tout le monde</em>. I'm a creative
     developer, ethical designer, attentive reader, casual illustrator,
     frustrated zine-maker, compulsive photographer, and all-around silly
     human.</p>
 
-
-</div>
-<p class="is-light">Esta página está disponible en castellano <a href="/about">aquí</a>.</p>
-
-<div class="section">
-<h3>Now</h3>
 
 {% assign current_location = site.data.location.cities | where: "slug", site.data.location.current | first %}
 {% assign current_city_map = site.maps | where: "location", current_location.slug | first %}
