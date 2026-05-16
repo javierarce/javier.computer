@@ -20,7 +20,9 @@ fotógrafo compulsivo, y un humano un poco tonto, si me preguntas.</p>
 <div class="section">
 <h3>Ahora</h3>
 
-<p>Ahora mismo estoy en {{ site.data.location[0].city }}{% if book_titles != "" %}, leyendo: {{ book_titles }}. {% else %}. {% endif %}El
+{% assign current_location = site.data.location.cities | where: "slug", site.data.location.current | first %}
+{% assign current_city_map = site.maps | where: "location", current_location.slug | first %}
+<p>Ahora mismo estoy en {% if current_city_map %}<a href="{{ current_city_map.url | relative_url }}">{{ current_location.city }}</a>{% else %}{{ current_location.city }}{% endif %}{% if book_titles != "" %}, leyendo: {{ book_titles }}. {% else %}. {% endif %}El
 último libro que leí fue <a href="/books#{{ book.slug }}" class="book-title">{{ book.title }}</a> de {{ book.author }}. La última película
 que vi fue <a href="https://letterboxd.com/javier/film/{{
 movie.permalink }}">{{ movie.title }}</a> {{ rating_phrase }}

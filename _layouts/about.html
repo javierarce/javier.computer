@@ -22,8 +22,9 @@
       {% assign className = page.className -%}
     {% endif -%}
 
+    {% assign current_location = site.data.location.cities | where: "slug", site.data.location.current | first %}
     <script>
-      const USER_LOCATION = {{ site.data.location[0] | jsonify }};
+      const USER_LOCATION = {{ current_location | jsonify }};
     </script>
 
     <script defer data-api="/api/event" data-domain="javier.computer" src="/js/stats.js"></script>

@@ -1,28 +1,40 @@
-[
-  {
-    "city": "Barcelona",
-    "country": "Spain",
-    "country_es": "España",
-    "coordinates": "41.3851,2.1734"
-  },
-  {
-    "city": "Madrid",
-    "country": "Spain",
-    "coordinates": "40.416775,-3.703790"
-  },
-  {
-    "city": "Berlin",
-    "country": "Germany",
-    "coordinates": "52.5198,13.4055"
-  },
-  {
-    "city": "Zaragoza",
-    "country": "Spain",
-    "coordinates": "41.6488,0.8891"
-  },
-  {
-    "city": "León",
-    "country": "Spain",
-    "coordinates": "42.598726,-5.567096"
-  }
-]
+{
+  "current": "barcelona",
+  "cities": [
+    {
+      "slug": "barcelona",
+      "city": "Barcelona",
+      "country": "Spain",
+      "country_es": "España",
+      "coordinates": "41.3851,2.1734"
+    },
+    {
+      "slug": "madrid",
+      "city": "Madrid",
+      "country": "Spain",
+      "country_es": "España",
+      "coordinates": "40.416775,-3.703790"
+    },
+    {
+      "slug": "berlin",
+      "city": "Berlin",
+      "country": "Germany",
+      "country_es": "Alemania",
+      "coordinates": "52.5198,13.4055"
+    },
+    {
+      "slug": "zaragoza",
+      "city": "Zaragoza",
+      "country": "Spain",
+      "country_es": "España",
+      "coordinates": "41.6488,0.8891"
+    },
+    {
+      "slug": "leon",
+      "city": "León",
+      "country": "Spain",
+      "country_es": "España",
+      "coordinates": "42.598726,-5.567096"
+    }
+  ]
+}
