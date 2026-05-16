@@ -11,6 +11,33 @@
     opacity: var(--op-visible);
   }
 
+  &__years {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--s-3);
+    margin: 0;
+    font-variant-numeric: tabular-nums;
+    scroll-margin-top: var(--s-4);
+  }
+
+  &__years-item {
+    font-size: var(--font-size-heading-md);
+    font-weight: var(--weight-medium);
+    opacity: var(--op-light);
+    text-decoration: none;
+
+    &:hover {
+      opacity: var(--op-visible);
+      text-decoration: none;
+    }
+
+    &.is-selected {
+      opacity: var(--op-visible);
+      cursor: default;
+    }
+  }
+
   &__month {
     display: flex;
     flex-direction: column;
