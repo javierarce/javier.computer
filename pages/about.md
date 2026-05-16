@@ -10,15 +10,11 @@ permalink: about
 {% include about/vars.html lang="es" %}
 
 <div class="section">
+<p class="is-light">This page is available in English <a href="/en/about">here</a>.</p>
+
 <p>Mi nombre es Javier Arce, <em>comme tout le monde</em>. Soy desarrollador
 creativo, diseñador ético, lector atento, ilustrador casual, fanzinero frustrado,
 fotógrafo compulsivo, y un humano un poco tonto, si me preguntas.</p>
-</div>
-
-<p class="is-light">This page is available in English <a href="/en/about">here</a>.</p>
-
-<div class="section">
-<h3>Ahora</h3>
 
 {% assign current_location = site.data.location.cities | where: "slug", site.data.location.current | first %}
 {% assign current_city_map = site.maps | where: "location", current_location.slug | first %}
