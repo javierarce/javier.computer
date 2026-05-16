@@ -1,7 +1,21 @@
 {% assign current_year = include.year %}
 {% assign thedate = nil %}
 
-<h3 class="date-list__year">{{ current_year }}</h3>
+{% if include.all_years.size > 1 %}
+  <nav id="years" class="date-list__years">
+    {% for year in include.all_years %}
+      {% if year == current_year %}
+        <span class="date-list__years-item is-selected">{{ year }}</span>
+      {% elsif year == include.all_years.first %}
+        <a class="date-list__years-item" href="/posts#years">{{ year }}</a>
+      {% else %}
+        <a class="date-list__years-item" href="/posts/{{ year }}#years">{{ year }}</a>
+      {% endif %}
+    {% endfor %}
+  </nav>
+{% else %}
+  <h3 class="date-list__year">{{ current_year }}</h3>
+{% endif %}
 
 {% for post in site.posts %}
   {% assign post_year = post.date | date: "%Y" %}
