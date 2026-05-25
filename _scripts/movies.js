@@ -110,7 +110,7 @@ watched_on: ${watched_on}
           title: entry["letterboxd:filmTitle"],
           year: parseInt(entry["letterboxd:filmYear"]),
           rating,
-          liked: entry["letterboxd:memberRating"] >= 4.0, // Consider 4+ stars as "liked"
+          liked: entry["letterboxd:memberLike"] === "Yes",
           stars: rating ? this.getRatingStars(rating) : "",
           rewatched: entry["letterboxd:rewatch"] === "Yes",
           permalink,

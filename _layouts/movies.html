@@ -35,6 +35,7 @@ className: Movies
 {% endif -%}
         <a href="https://letterboxd.com/javier/film/{{ movie.permalink }}">{{ movie.title }} ({{ movie.year }})</a>
         {% if movie.stars != "" -%}<span class="movie__stars">{{ movie.stars }}</span>{% endif -%}
+        {% if movie.liked -%}<span class="movie__liked" title="Liked">♥</span>{% endif -%}
 {% assign last_day = current_day -%}
 {% endfor -%}
     </div>
