@@ -3,4 +3,10 @@
     opacity: var(--op-light);
     font-size: var(--font-size-body-xs);
   }
+
+  .movie__liked {
+    opacity: var(--op-light);
+    font-size: var(--font-size-body-xs);
+    margin-left: 0.15em;
+  }
 }

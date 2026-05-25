@@ -3,7 +3,7 @@ title: "The Shop Around the Corner"
 year: 1940
 rating: 4
 stars: "★★★★"
-liked: true
+liked: false
 rewatched: true
 permalink: "the-shop-around-the-corner"
 watched_on: 2025-12-22
