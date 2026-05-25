@@ -14,7 +14,7 @@
 
 
   <a
-    class="navigation__link {% if permalink == 'movies' %}is-selected{% endif %}"
+    class="navigation__link {% if permalink == 'movies' or page.url contains '/movies/' %}is-selected{% endif %}"
     href="/movies"
     >Películas</a
   >
