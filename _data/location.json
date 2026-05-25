@@ -1,6 +1,13 @@
 {
-  "current": "madrid",
+  "current": "mataró",
   "cities": [
+    {
+      "slug": "mataro",
+      "city": "Mataró",
+      "country": "Spain",
+      "country_es": "España",
+      "coordinates": "41.5381,2.4449"
+    },
     {
       "slug": "barcelona",
       "city": "Barcelona",
