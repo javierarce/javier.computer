@@ -1,7 +1,6 @@
 {
   "type": "module",
   "dependencies": {
-    "are.na": "^0.1.5",
     "dotenv": "^16.0.0",
     "fast-glob": "^3.3.3",
     "fast-xml-parser": "^4.5.6",
