@@ -10,7 +10,10 @@
     "ora": "^8.0.1"
   },
   "devDependencies": {
-    "eslint": "^9.17.0",
-    "globals": "^15.14.0"
+    "eslint": "^10.4.1",
+    "globals": "^17.6.0"
+  },
+  "overrides": {
+    "flatted": "^3.3.3"
   }
 }
