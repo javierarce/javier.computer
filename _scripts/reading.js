@@ -2,9 +2,16 @@
 
 import fs from "fs";
 import fg from "fast-glob";
-import matter from "gray-matter";
 import yaml from "js-yaml";
 import path from "path";
+
+// Minimal front-matter reader (replaces gray-matter, which pulled in a
+// vulnerable js-yaml 3.x). Returns { data, content } like gray-matter does.
+function matter(raw) {
+  const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
+  if (!m) return { data: {}, content: raw };
+  return { data: yaml.load(m[1]) || {}, content: m[2] };
+}
 
 /* ============================================
    Colors
