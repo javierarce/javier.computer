@@ -59,7 +59,7 @@ library: books
 {% endif -%}
 
 {% for group in grouped_books -%}
-  <h4 id="year-{{group.name}}" class="stack__date">{{ group.name }}</h4>
+  <h4 id="year-{{group.name}}" class="stack__date">{{ group.name }} ({{ group.items.size }})</h4>
 
   <div class="book__stack">
     {% assign prev_color = nil -%}
