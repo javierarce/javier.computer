@@ -4,5 +4,10 @@
     "url": "https://javier.computer",
     "name": "Javier's computer"
   },
-  "documents": {}
+  "documents": {
+    "/2026/06/03/fagofobia/": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/2026-06-03-fagofobia",
+      "hash": "9fcdd599afdfcff39037298a54168325c7924d74e9a30980102d76588d2b59da"
+    }
+  }
 }
