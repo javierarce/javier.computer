@@ -201,13 +201,15 @@ export class Standard {
     };
   }
 
-  // content/_posts/2025-12-23-techno-tuesday.md → /2025/12/23/techno-tuesday/
+  // content/_posts/2025-12-23-techno-tuesday.md → /2025/12/23/techno-tuesday
+  // No trailing slash: the site's permalink (/:year/:month/:day/:title) and
+  // thus page.url have none, so this must match for the <link> tag to render.
   filenameToUrl(filename) {
     const m = filename.match(/^(\d{4})-(\d{2})-(\d{2})-(.+)\.md$/);
     if (!m) return null;
     const [, year, month, day, slug] = m;
     if (Number(month) > 12 || Number(day) > 31) return null;
-    return `/${year}/${month}/${day}/${slug}/`;
+    return `/${year}/${month}/${day}/${slug}`;
   }
 
   toIsoDate(dateStr) {
