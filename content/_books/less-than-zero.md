@@ -2,9 +2,9 @@
 title: Less Than Zero
 layout: book
 author: Bret Easton Ellis
-started: '2026-05-25'
+started: null
 read: null
-status: reading
+status: unread
 pages: 174
-progress: 32
+progress: 0
 ---

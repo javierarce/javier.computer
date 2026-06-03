@@ -2,10 +2,10 @@
 title: The Score
 layout: book
 author: C. Thi Nguyen
-started: '2026-03-28'
+started: null
 read: null
-status: reading
+status: unread
 pages: 368
-progress: 20
+progress: 0
 link: https://en.wikipedia.org/wiki/The_Score_(book)
 ---
