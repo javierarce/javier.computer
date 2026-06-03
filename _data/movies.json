@@ -1,7 +1,27 @@
 {
-  "updated_at": "2026-05-31",
-  "count": 1049,
+  "updated_at": "2026-06-03",
+  "count": 1051,
   "movies": [
+    {
+      "watched_on": "2026-06-02",
+      "title": "Hokum",
+      "year": 2026,
+      "rating": 3.5,
+      "liked": true,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "hokum"
+    },
+    {
+      "watched_on": "2026-05-31",
+      "title": "Kes",
+      "year": 1969,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "kes"
+    },
     {
       "watched_on": "2026-05-30",
       "title": "Unstoppable",
@@ -10494,4 +10514,3 @@
     }
   ]
 }
-
