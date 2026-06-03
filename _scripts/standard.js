@@ -36,6 +36,17 @@ const DOCUMENT_LAYOUTS = ["post", "reportage", "photos/photo"];
 // document.site references and the .well-known file without a network round-trip.
 const PUBLICATION_URI = `at://${DID}/${PUBLICATION_COLLECTION}/${PUBLICATION_RKEY}`;
 
+// How the publication renders in standard.site readers. Mirrors the site's
+// default theme: black background, white text, yellow accent (--link / #ffc107).
+const rgb = (r, g, b) => ({ $type: "site.standard.theme.color#rgb", r, g, b });
+const PUBLICATION_THEME = {
+  $type: "site.standard.theme.basic",
+  background: rgb(0, 0, 0), // --color-bg-site (#000000)
+  foreground: rgb(255, 255, 255), // --color-txt-site (#ffffff)
+  accent: rgb(255, 193, 7), // --link / --yellow (#ffc107)
+  accentForeground: rgb(0, 0, 0), // text on the yellow accent button
+};
+
 export class Standard {
   constructor() {
     this.pds = null;
@@ -238,6 +249,7 @@ export class Standard {
       url: SITE_URL,
       name: SITE_NAME,
       description: SITE_DESCRIPTION,
+      basicTheme: PUBLICATION_THEME,
       preferences: { showInDiscover: true },
     };
 
