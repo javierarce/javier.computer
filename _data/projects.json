@@ -1,4 +1,11 @@
 {
+  "2026": [
+    {
+      "title": "AnkiTron",
+      "url": "https://github.com/javierarce/ankitron/",
+      "description": "A desktop mac app for managing and studying Anki decks."
+    }
+  ],
   "2025": [
     {
       "title": "Glossary",
