@@ -479,19 +479,49 @@ export class Standard {
     return removed;
   }
 
-  // Delete every record this site has published: all tracked documents plus the
-  // publication record. The full reverse of a normal run.
+  // Delete every record this site has published: all documents belonging to this
+  // publication plus the publication record. The full reverse of a normal run.
+  // On a real run this sweeps the PDS directly (by `site`), so it removes every
+  // document this publication owns even when _data/standard.json is stale or
+  // incomplete (e.g. a run was interrupted). Documents of other publications
+  // sharing the repo are never touched. On a dry run it reports from the data file.
   async unpublishAll(data) {
     let removed = 0;
-    for (const url of Object.keys(data.documents)) {
-      const rkey = data.documents[url].uri.split("/").pop();
-      await this.deleteRecord(DOCUMENT_COLLECTION, rkey);
-      if (!this.dryRun) delete data.documents[url];
-      removed++;
-      this.log(`  ${this.dryRun ? "would delete" : "deleted"}: ${url}`);
+
+    if (this.dryRun) {
+      for (const url of Object.keys(data.documents)) {
+        removed++;
+        this.log(`  would delete: ${url}`);
+      }
+      this.log(`  would delete: publication`);
+      return removed;
     }
+
+    let cursor;
+    do {
+      const params = new URLSearchParams({
+        repo: DID,
+        collection: DOCUMENT_COLLECTION,
+        limit: "100",
+      });
+      if (cursor) params.set("cursor", cursor);
+      const res = await fetch(`${this.pds}/xrpc/com.atproto.repo.listRecords?${params}`);
+      if (!res.ok) throw new Error(`listRecords failed: ${res.status} ${await res.text()}`);
+      const page = await res.json();
+
+      for (const rec of page.records || []) {
+        if (rec.value?.site !== PUBLICATION_URI) continue; // another publication
+        const rkey = rec.uri.split("/").pop();
+        await this.deleteRecord(DOCUMENT_COLLECTION, rkey);
+        removed++;
+        this.log(`  deleted: ${rkey}`);
+      }
+      cursor = page.records && page.records.length ? page.cursor : null;
+    } while (cursor);
+
+    data.documents = {};
     await this.deleteRecord(PUBLICATION_COLLECTION, PUBLICATION_RKEY);
-    this.log(`  ${this.dryRun ? "would delete" : "deleted"}: publication`);
+    this.log(`  deleted: publication`);
     return removed;
   }
 
