@@ -1,17 +1,17 @@
 {
   "publication": {
-    "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.publication/self",
+    "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.publication/javiercompute",
     "url": "https://javier.computer",
     "name": "Javier's computer"
   },
   "documents": {
     "/2026/06/03/fagofobia": {
       "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mnfp43rms2bt",
-      "hash": "d2a6820065a0756d898f5b2b4b0a041a476c5d1b4d7314f7b537a24d2c9f4bf5"
+      "hash": "e113d3b791c5163c948fea1c4622bb1154f38423582ac2398d0360c8388722ab"
     },
     "/2026/07/01/prueba-de-vida": {
       "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mplarcb3y2u5",
-      "hash": "c2e4e1e9f867a661107a1aebdb7105276f2ce9e763b6f85f892d1dd45a12e2ad"
+      "hash": "5268d82441e735e02d53c4ac4efbf08ca7e1a2d57be63a7849e1370a04ffb14f"
     }
   }
 }
