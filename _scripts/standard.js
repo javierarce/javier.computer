@@ -2,7 +2,15 @@ import fs from "fs";
 import path from "path";
 import crypto from "crypto";
 import { pathToFileURL } from "url";
-import "dotenv/config";
+
+// Publishes javier.computer to the AT Protocol as standard.site records
+// (https://standard.site): one `site.standard.publication` for the site and one
+// `site.standard.document` per long-form post, then writes the resulting at://
+// URIs into _data/standard.json so the Jekyll build can emit the matching
+// <link rel="site.standard.document"> tags.
+//
+// Run: BLUESKY_APP_PASSWORD=xxxx node _scripts/standard.js
+// Flags: --dry-run, --all, --since=YYYY-MM-DD, --unpublish.
 
 // --- Configuration ---
 
@@ -47,6 +55,45 @@ const PUBLICATION_THEME = {
   accentForeground: rgb(0, 0, 0), // text on the yellow accent button
 };
 
+// --- TID record keys ---
+//
+// The site.standard.document lexicon requires record keys to be TIDs: 13-char,
+// base32-sortable, timestamp-derived identifiers. We derive each post's TID
+// deterministically from its publishedAt (so keys sort by publish date and stay
+// stable across re-runs) plus a url-derived "clock id", so two posts sharing a
+// timestamp (dates here are day-granular) still get distinct keys.
+const S32 = "234567abcdefghijklmnopqrstuvwxyz";
+
+function encodeTid(value) {
+  let n = value;
+  let s = "";
+  for (let i = 0; i < 13; i++) {
+    s = S32[Number(n & 31n)] + s;
+    n >>= 5n;
+  }
+  return s;
+}
+
+function tidFor(publishedAtIso, url) {
+  const micros = BigInt(Date.parse(publishedAtIso)) * 1000n;
+  const h = crypto.createHash("sha256").update(url).digest();
+  const clockId = BigInt(((h[0] << 8) | h[1]) & 0x3ff); // 10-bit disambiguator
+  return encodeTid((micros << 10n) | clockId);
+}
+
+// --- Tiny .env loader (avoids a dotenv dependency) ---
+
+function loadEnv() {
+  if (!fs.existsSync(".env")) return;
+  for (const line of fs.readFileSync(".env", "utf-8").split("\n")) {
+    const m = line.match(/^\s*([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*)\s*$/);
+    if (!m) continue;
+    const key = m[1];
+    const value = m[2].replace(/^["'](.*)["']$/, "$1");
+    if (!(key in process.env)) process.env[key] = value;
+  }
+}
+
 export class Standard {
   constructor() {
     this.pds = null;
@@ -58,6 +105,9 @@ export class Standard {
   parseArgs() {
     const args = process.argv.slice(2);
     this.dryRun = args.includes("--dry-run");
+    // Delete every record this site has published (all documents + the
+    // publication). The reverse of a normal run.
+    this.unpublish = args.includes("--unpublish");
 
     let sinceStr = PUBLISH_SINCE;
     const sinceArg = args.find((a) => a.startsWith("--since="));
@@ -70,9 +120,8 @@ export class Standard {
     }
   }
 
-  async loadSpinner() {
-    const ora = (await import("ora")).default;
-    this.spinner = ora({ text: "Loading…", spinner: "dots" });
+  log(msg) {
+    process.stdout.write(`${msg}\n`);
   }
 
   // --- Auth ---
@@ -278,6 +327,7 @@ export class Standard {
     // prune records whose post was deleted, unpublished, or renamed. Built
     // independently of the --since cutoff so old-but-live posts are never pruned.
     const liveUrls = new Set();
+    const liveRkeys = new Set();
 
     for (const file of files) {
       const url = this.filenameToUrl(file);
@@ -294,6 +344,11 @@ export class Standard {
       if (!publishedAt) continue;
 
       liveUrls.add(url);
+
+      // Deterministic TID record key (required by the lexicon), stable per post.
+      const rkey = tidFor(publishedAt, url);
+      const uri = `at://${DID}/${DOCUMENT_COLLECTION}/${rkey}`;
+      liveRkeys.add(rkey);
 
       // Skip anything older than the cutoff so we only publish new posts.
       if (this.since && new Date(publishedAt) < this.since) {
@@ -320,68 +375,126 @@ export class Standard {
       // edit changes the hash but a stamp-only field never causes spurious churn.
       const hash = crypto.createHash("sha256").update(JSON.stringify(record)).digest("hex");
       const existing = data.documents[url];
-      if (existing && existing.hash === hash) continue;
+      // Republish when content changed OR the stored record key isn't this TID
+      // (e.g. migrating off an earlier, non-TID key scheme).
+      const contentChanged = !existing || existing.hash !== hash;
+      const keyChanged = existing && existing.uri !== uri;
+      if (!contentChanged && !keyChanged) continue;
 
-      // A changed post with no explicit `updated:` gets stamped with edit time.
-      if (existing && !declaredUpdate) record.updatedAt = new Date().toISOString();
+      // A changed post with no explicit `updated:` gets stamped with edit time
+      // (but a key-only migration leaves the content, and updatedAt, untouched).
+      if (existing && contentChanged && !declaredUpdate) {
+        record.updatedAt = new Date().toISOString();
+      }
 
-      const rkey = file.replace(/\.md$/, "");
+      // Write the new record; the old key (if any) is swept by the end-of-run
+      // prune, which lists the PDS directly.
       await this.putRecord(DOCUMENT_COLLECTION, rkey, record);
 
-      if (!this.dryRun) {
-        const uri = `at://${DID}/${DOCUMENT_COLLECTION}/${rkey}`;
-        data.documents[url] = { uri, hash };
-      }
+      if (!this.dryRun) data.documents[url] = { uri, hash };
       if (existing) updated++;
       else created++;
 
-      this.spinner.text = `${this.dryRun ? "Would publish" : "Published"}: ${url}`;
+      this.log(`  ${this.dryRun ? "would publish" : "published"}: ${url}`);
     }
 
-    const removed = await this.pruneDocuments(data, liveUrls);
+    const removed = await this.pruneDocuments(data, liveUrls, liveRkeys);
 
     return { created, updated, skippedOld, removed };
   }
 
-  // Delete document records whose post no longer exists as a published page.
-  async pruneDocuments(data, liveUrls) {
+  // Delete document records that belong to THIS publication but no longer match a
+  // live post: deleted/unpublished/renamed posts and leftovers from older key
+  // schemes. On a real run this sweeps the PDS directly (so orphans are caught
+  // even when _data/standard.json is stale, and the pre-TID keys get cleaned up);
+  // on a dry run it can only report from the data file. Records pointing at other
+  // publications are never touched.
+  async pruneDocuments(data, liveUrls, liveRkeys) {
     let removed = 0;
 
-    for (const url of Object.keys(data.documents)) {
-      if (liveUrls.has(url)) continue;
-
-      const rkey = data.documents[url].uri.split("/").pop();
-      await this.deleteRecord(DOCUMENT_COLLECTION, rkey);
-
-      if (!this.dryRun) delete data.documents[url];
-      removed++;
-
-      this.spinner.text = `${this.dryRun ? "Would remove" : "Removed"}: ${url}`;
+    if (this.dryRun) {
+      for (const url of Object.keys(data.documents)) {
+        if (liveUrls.has(url)) continue;
+        removed++;
+        this.log(`  would remove: ${url}`);
+      }
+      return removed;
     }
 
+    let cursor;
+    do {
+      const params = new URLSearchParams({
+        repo: DID,
+        collection: DOCUMENT_COLLECTION,
+        limit: "100",
+      });
+      if (cursor) params.set("cursor", cursor);
+      const res = await fetch(`${this.pds}/xrpc/com.atproto.repo.listRecords?${params}`);
+      if (!res.ok) throw new Error(`listRecords failed: ${res.status} ${await res.text()}`);
+      const page = await res.json();
+
+      for (const rec of page.records || []) {
+        if (rec.value?.site !== PUBLICATION_URI) continue; // another publication
+        const rkey = rec.uri.split("/").pop();
+        if (liveRkeys.has(rkey)) continue; // still live
+        await this.deleteRecord(DOCUMENT_COLLECTION, rkey);
+        removed++;
+        this.log(`  removed: ${rkey}`);
+      }
+      cursor = page.records && page.records.length ? page.cursor : null;
+    } while (cursor);
+
+    // Drop any data-file entries whose record we just pruned.
+    for (const url of Object.keys(data.documents)) {
+      if (!liveUrls.has(url)) delete data.documents[url];
+    }
+    return removed;
+  }
+
+  // Delete every record this site has published: all tracked documents plus the
+  // publication record. The full reverse of a normal run.
+  async unpublishAll(data) {
+    let removed = 0;
+    for (const url of Object.keys(data.documents)) {
+      const rkey = data.documents[url].uri.split("/").pop();
+      await this.deleteRecord(DOCUMENT_COLLECTION, rkey);
+      if (!this.dryRun) delete data.documents[url];
+      removed++;
+      this.log(`  ${this.dryRun ? "would delete" : "deleted"}: ${url}`);
+    }
+    await this.deleteRecord(PUBLICATION_COLLECTION, PUBLICATION_RKEY);
+    this.log(`  ${this.dryRun ? "would delete" : "deleted"}: publication`);
     return removed;
   }
 
   run = async () => {
-    await this.loadSpinner();
+    loadEnv();
     this.parseArgs();
 
     try {
       const data = this.loadData();
 
       if (this.dryRun) {
-        this.spinner.start("Dry run — building records (nothing will be written)");
+        this.log("Dry run — building records (nothing will be written)");
       } else {
-        this.spinner.start("Resolving PDS");
+        this.log("Resolving PDS…");
         await this.resolvePds();
-        this.spinner.text = "Authenticating";
+        this.log("Authenticating…");
         await this.createSession();
-        this.spinner.text = "Upserting publication record";
       }
 
+      if (this.unpublish) {
+        this.log(this.dryRun ? "Would unpublish all records:" : "Unpublishing all records…");
+        const removed = await this.unpublishAll(data);
+        if (!this.dryRun) this.saveData(data);
+        const verb = this.dryRun ? "[dry run] would delete" : "Deleted";
+        this.log(`${verb} ${removed} document(s) + the publication`);
+        return;
+      }
+
+      if (!this.dryRun) this.log("Upserting publication record…");
       const publicationUri = await this.upsertPublication(data);
 
-      if (!this.dryRun) this.spinner.text = "Publishing document records";
       const { created, updated, skippedOld, removed } = await this.upsertDocuments(
         data,
         publicationUri,
@@ -396,9 +509,9 @@ export class Standard {
       const removedNote = removed
         ? `, ${removed} ${this.dryRun ? "to remove" : "removed"}`
         : "";
-      this.spinner.succeed(`${prefix} ${created} new, ${updated} updated${removedNote}${sinceNote}`);
+      this.log(`${prefix} ${created} new, ${updated} updated${removedNote}${sinceNote}`);
     } catch (error) {
-      this.spinner.fail(`Standard.site error: ${error.message}`);
+      this.log(`Standard.site error: ${error.message}`);
       process.exitCode = 1;
     }
   };

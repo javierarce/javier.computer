@@ -5,7 +5,8 @@
     "update": "./_scripts/update.js"
   },
   "scripts": {
-    "reading": "node _scripts/reading.js"
+    "reading": "node _scripts/reading.js",
+    "standard": "node _scripts/standard.js"
   },
   "dependencies": {
     "fast-glob": "^3.3.3",
