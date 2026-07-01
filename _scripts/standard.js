@@ -21,9 +21,18 @@ const SITE_DESCRIPTION = "My computer on the net";
 const BLUESKY_HANDLE = "javier.bsky.social";
 const DID = "did:plc:mpvjloymxomrv3kk2eavmxkx";
 
-// Fixed record key for the single publication record, so its at:// URI is
-// stable and can be referenced verbatim from .well-known/site.standard.publication.
-const PUBLICATION_RKEY = "self";
+// Fixed record key for the single publication record, so its at:// URI is stable
+// and can be referenced verbatim from .well-known/site.standard.publication. The
+// site.standard.publication lexicon requires a valid TID: 13 chars from the
+// base32-sortable alphabet, first char in [234567a-j]. "javiercompute" satisfies
+// that; the value is arbitrary but must stay stable once the record is published.
+const PUBLICATION_RKEY = "javiercompute";
+
+// Publication rkey(s) this site used before the valid-TID rkey above. Deleted on
+// a real run so no stray, non-conformant publication record lingers. Kept as an
+// explicit list so we only ever remove OUR own old keys, never another
+// publication that shares this repo (e.g. binocularshot's).
+const LEGACY_PUBLICATION_RKEYS = ["self"];
 
 const POSTS_DIR = path.join("content", "_posts");
 const DATA_FILE = path.join("_data", "standard.json");
@@ -180,6 +189,14 @@ export class Standard {
     return res.json();
   }
 
+  // Public read; no auth needed. Used to tell whether a legacy record is still
+  // around before trying to delete it, so migrations stay quiet and idempotent.
+  async recordExists(collection, rkey) {
+    const params = new URLSearchParams({ repo: DID, collection, rkey });
+    const res = await fetch(`${this.pds}/xrpc/com.atproto.repo.getRecord?${params}`);
+    return res.ok;
+  }
+
   async deleteRecord(collection, rkey) {
     if (this.dryRun) return { dryRun: true };
     const res = await fetch(`${this.pds}/xrpc/com.atproto.repo.deleteRecord`, {
@@ -309,6 +326,17 @@ export class Standard {
     if (!this.dryRun) {
       data.publication = { uri: PUBLICATION_URI, url: SITE_URL, name: SITE_NAME };
       fs.writeFileSync(WELL_KNOWN_FILE, PUBLICATION_URI + "\n");
+
+      // One-time migration: drop any pre-TID publication record now that the
+      // publication lives under a valid-TID rkey. Documents are repointed at the
+      // new URI in the same run (their `site` field changes → they republish),
+      // so run this with --all the first time to migrate every document too.
+      for (const legacy of LEGACY_PUBLICATION_RKEYS) {
+        if (legacy === PUBLICATION_RKEY) continue;
+        if (!(await this.recordExists(PUBLICATION_COLLECTION, legacy))) continue;
+        await this.deleteRecord(PUBLICATION_COLLECTION, legacy);
+        this.log(`  removed legacy publication: ${legacy}`);
+      }
     }
     return PUBLICATION_URI;
   }
