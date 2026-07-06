@@ -1,10 +1,10 @@
 ---
-title: "The Hunt"
-year: 2020
+title: "Lured"
+year: 1947
 rating: 4
 stars: "★★★★"
 liked: true
-rewatched: true
-permalink: "the-hunt-2020/1"
+rewatched: false
+permalink: "lured"
 watched_on: 2026-06-28
 ---
