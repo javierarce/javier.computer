@@ -1,7 +1,217 @@
 {
-  "updated_at": "2026-06-03",
-  "count": 1051,
+  "updated_at": "2026-07-06",
+  "count": 1072,
   "movies": [
+    {
+      "watched_on": "2026-07-05",
+      "title": "Violent Saturday",
+      "year": 1955,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "violent-saturday"
+    },
+    {
+      "watched_on": "2026-07-04",
+      "title": "Come Live with Me",
+      "year": 1941,
+      "rating": 1.5,
+      "liked": false,
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "come-live-with-me"
+    },
+    {
+      "watched_on": "2026-06-30",
+      "title": "Obsession",
+      "year": 2025,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "obsession-2025"
+    },
+    {
+      "watched_on": "2026-06-28",
+      "title": "The Hunt",
+      "year": 2020,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": true,
+      "permalink": "the-hunt-2020/1"
+    },
+    {
+      "watched_on": "2026-06-28",
+      "title": "Lured",
+      "year": 1947,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "lured"
+    },
+    {
+      "watched_on": "2026-06-28",
+      "title": "Good News",
+      "year": 2025,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "good-news-2025"
+    },
+    {
+      "watched_on": "2026-06-27",
+      "title": "Tuner",
+      "year": 2025,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "tuner"
+    },
+    {
+      "watched_on": "2026-06-27",
+      "title": "Obsession",
+      "year": 1949,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "obsession-1949"
+    },
+    {
+      "watched_on": "2026-06-24",
+      "title": "Twinless",
+      "year": 2025,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "twinless"
+    },
+    {
+      "watched_on": "2026-06-23",
+      "title": "I Love Boosters",
+      "year": 2026,
+      "rating": 3.5,
+      "liked": true,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "i-love-boosters"
+    },
+    {
+      "watched_on": "2026-06-22",
+      "title": "Face/Off",
+      "year": 1997,
+      "rating": 4,
+      "liked": false,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "face-off"
+    },
+    {
+      "watched_on": "2026-06-21",
+      "title": "Paris, Texas",
+      "year": 1984,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "paris-texas/1"
+    },
+    {
+      "watched_on": "2026-06-07",
+      "title": "The Drama",
+      "year": 2026,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "the-drama"
+    },
+    {
+      "watched_on": "2026-06-19",
+      "title": "Close Encounters of the Third Kind",
+      "year": 1977,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": true,
+      "permalink": "close-encounters-of-the-third-kind"
+    },
+    {
+      "watched_on": "2026-06-14",
+      "title": "Muriel&#039;s Wedding",
+      "year": 1994,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "muriels-wedding"
+    },
+    {
+      "watched_on": "2026-06-13",
+      "title": "Paradox of Praxis 1 (Sometimes Making Something Leads to Nothing)",
+      "year": 1997,
+      "rating": null,
+      "liked": true,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "paradox-of-praxis-1-sometimes-making-something"
+    },
+    {
+      "watched_on": "2026-06-13",
+      "title": "Paradox of Praxis 5",
+      "year": 2013,
+      "rating": null,
+      "liked": true,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "paradox-of-praxis-5"
+    },
+    {
+      "watched_on": "2026-06-13",
+      "title": "Backrooms",
+      "year": 2026,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "backrooms-2026"
+    },
+    {
+      "watched_on": "2026-06-06",
+      "title": "Master Gardener",
+      "year": 2022,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "master-gardener"
+    },
+    {
+      "watched_on": "2026-06-05",
+      "title": "Fréwaka",
+      "year": 2024,
+      "rating": 2,
+      "liked": false,
+      "stars": "★★",
+      "rewatched": false,
+      "permalink": "frewaka"
+    },
+    {
+      "watched_on": "2026-06-04",
+      "title": "Bridge of Spies",
+      "year": 2015,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": true,
+      "permalink": "bridge-of-spies"
+    },
     {
       "watched_on": "2026-06-02",
       "title": "Hokum",
