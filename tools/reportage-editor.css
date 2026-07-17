@@ -516,14 +516,6 @@ textarea {
   min-height: 400px;
 }
 
-.canvas__empty {
-  text-align: center;
-  padding: 60px 20px;
-  color: var(--editor-fg-faint);
-  font-size: 0.95rem;
-}
-
-
 /* ── Canvas inserter ──────────────────────────────────── */
 .canvas__inserter {
   position: relative;
@@ -954,10 +946,12 @@ textarea {
   justify-content: center;
 }
 
-/* Photo child: tall vertical image, not full-width */
+/* Photo child: sized by height at its natural ratio, like the site's
+   .single in Photo.scss (max-height: 95vh), minus the editor header */
 .single-container > .node[data-type="photo"] {
-  flex: 0 0 auto;
-  max-width: 40%;
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .single-container > .node[data-type="photo"] .photo-item {
@@ -966,7 +960,8 @@ textarea {
 
 .single-container > .node[data-type="photo"] .photo-item img {
   width: auto;
-  max-height: 60vh;
+  max-width: 100%;
+  max-height: calc(95vh - var(--header-height, 50px));
   aspect-ratio: auto;
   object-fit: contain;
 }
@@ -1360,4 +1355,27 @@ textarea {
 .grid-container.is-vertical .photo-item img {
   aspect-ratio: 9/16;
   object-fit: cover;
+}
+
+/* ── Toast ──────────────────────────────────────────────────── */
+.toast {
+  position: fixed;
+  bottom: 1.5em;
+  left: 50%;
+  transform: translate(-50%, 8px);
+  background: var(--editor-fg);
+  color: var(--editor-bg);
+  padding: 0.6em 1em;
+  border-radius: var(--br-subtle);
+  font-size: 0.8rem;
+  max-width: 80vw;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease-out, transform 180ms ease-out;
+  z-index: 9999;
+}
+
+.toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
 }
