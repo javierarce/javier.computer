@@ -176,14 +176,24 @@ async function loadImage(filename) {
   });
 }
 
-async function deleteImage(filename) {
-  const db = await openDB();
-  return new Promise((resolve, reject) => {
+// Blobs are never deleted while editing so undo can always restore a
+// removed photo. Orphans are pruned here on startup instead — the undo
+// history doesn't survive a reload, so nothing can still reference them.
+async function pruneStoredImages() {
+  try {
+    const db = await openDB();
+    const keep = new Set(state.shelf.map(s => s.filename));
     const tx = db.transaction('images', 'readwrite');
-    tx.objectStore('images').delete(filename);
-    tx.oncomplete = resolve;
-    tx.onerror = () => reject(tx.error);
-  });
+    const store = tx.objectStore('images');
+    const req = store.getAllKeys();
+    req.onsuccess = () => {
+      req.result.forEach(key => {
+        if (!keep.has(key)) store.delete(key);
+      });
+    };
+  } catch (err) {
+    console.warn('Could not prune stored images:', err);
+  }
 }
 
 // ─── Undo history ───────────────────────────────────────
@@ -639,7 +649,8 @@ function removeFromShelf(filename, skipCanvas) {
       if (state.shelf[idx].objectUrl) URL.revokeObjectURL(state.shelf[idx].objectUrl);
       state.shelf.splice(idx, 1);
     }
-    deleteImage(filename);
+    // The IndexedDB blob is intentionally kept so undo can restore the
+    // photo; pruneStoredImages() cleans up orphans on next startup
     if (!skipCanvas) {
       removePhotoNodes(filename, state.nodes);
       renderCanvas();
@@ -2362,4 +2373,5 @@ if (loaded) {
   restoreImages();
 }
 renderCanvas();
+pruneStoredImages();
 fetchReportageIndex();
