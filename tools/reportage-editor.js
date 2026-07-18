@@ -243,6 +243,11 @@ function restoreFromJson(json) {
   state.meta = data.meta || {};
   state.nodes = data.nodes || [];
   state.shelf = (data.shelf || []).map(s => ({ ...s, objectUrl: urls.get(s.filename) || null }));
+  // Revoke URLs of entries that don't exist in the restored snapshot
+  const kept = new Set(state.shelf.map(s => s.objectUrl).filter(Boolean));
+  urls.forEach(url => {
+    if (url && !kept.has(url)) URL.revokeObjectURL(url);
+  });
   syncMetaUI();
   renderShelf();
   renderCanvas();
@@ -2086,14 +2091,22 @@ function parseFrontmatter(yaml) {
     if (!kv) continue;
     const key = kv[1];
 
-    const raw = kv[2].trim();
+    let raw = kv[2].trim();
+    // Multi-line quoted scalar: fold indented continuation lines so the
+    // closing quote is found (YAML folds these newlines into spaces)
+    if (/^["']/.test(raw) && !/^(["']).*\1$/.test(raw)) {
+      const cont = block.slice(1).map(l => l.trim()).filter(Boolean);
+      if (cont.length) raw = [raw, ...cont].join(' ');
+    }
     let val;
     if (/^".*"$/.test(raw)) {
       val = raw.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, '\\');
     } else if (/^'.*'$/.test(raw)) {
       val = raw.slice(1, -1).replace(/''/g, "'");
     } else {
-      val = raw;
+      // Unterminated quote (continuation not recoverable): strip stray
+      // leading/trailing quotes like the old parser did
+      val = raw.replace(/^["']|["']$/g, '');
     }
 
     if (REGENERATED.includes(key)) continue;
