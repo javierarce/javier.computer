@@ -1,6 +1,11 @@
 require "json"
 
+# Feeds the reportage editor's "Open…" dropdown with raw post sources.
+# Development only: the raw files include full frontmatter, which shouldn't
+# be published on the production site.
 Jekyll::Hooks.register :site, :post_write do |site|
+  next unless Jekyll.env == "development"
+
   reportages = (site.posts.docs + site.collections["photos"].docs)
     .select { |d| d.data["layout"] == "reportage" }
     .sort_by { |d| d.data["date"] || Time.now }

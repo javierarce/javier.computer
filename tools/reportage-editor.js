@@ -3,13 +3,28 @@ const state = {
   meta: {
     title: '', date: '', location: '', camera: '',
     cover: '', ratio: '3/2', intro: '', translation: '',
-    permalink: '', hideTitle: true
+    permalink: '', hideTitle: true, extra: []
   },
   nodes: [],
   shelf: [] // { filename, location, ratio, objectUrl, camera }
 };
 
 function uid() { return crypto.randomUUID(); }
+
+let toastTimer = null;
+function showToast(message) {
+  let el = document.getElementById('toast');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'toast';
+    el.className = 'toast';
+    document.body.appendChild(el);
+  }
+  el.textContent = message;
+  el.classList.add('is-visible');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('is-visible'), 4000);
+}
 
 // ─── Keyboard shortcuts ─────────────────────────────────
 document.addEventListener('keydown', e => {
@@ -20,6 +35,13 @@ document.addEventListener('keydown', e => {
 
   const tag = e.target.tagName;
   if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || e.target.isContentEditable) return;
+
+  if ((e.metaKey || e.ctrlKey) && !e.altKey && e.key.toLowerCase() === 'z') {
+    e.preventDefault();
+    if (e.shiftKey) redo(); else undo();
+    return;
+  }
+
   if (e.metaKey || e.ctrlKey || e.altKey) return;
 
   switch (e.key.toLowerCase()) {
@@ -37,7 +59,7 @@ function newReportage() {
   state.meta = {
     title: '', date: '', location: '', camera: '',
     cover: '', ratio: '3/2', intro: '', translation: '',
-    permalink: '', hideTitle: true
+    permalink: '', hideTitle: true, extra: []
   };
   state.nodes = [];
   state.shelf = [];
@@ -154,20 +176,84 @@ async function loadImage(filename) {
   });
 }
 
-async function deleteImage(filename) {
-  const db = await openDB();
-  return new Promise((resolve, reject) => {
+// Blobs are never deleted while editing so undo can always restore a
+// removed photo. Orphans are pruned here on startup instead — the undo
+// history doesn't survive a reload, so nothing can still reference them.
+async function pruneStoredImages() {
+  try {
+    const db = await openDB();
+    const keep = new Set(state.shelf.map(s => s.filename));
     const tx = db.transaction('images', 'readwrite');
-    tx.objectStore('images').delete(filename);
-    tx.oncomplete = resolve;
-    tx.onerror = () => reject(tx.error);
-  });
+    const store = tx.objectStore('images');
+    const req = store.getAllKeys();
+    req.onsuccess = () => {
+      req.result.forEach(key => {
+        if (!keep.has(key)) store.delete(key);
+      });
+    };
+  } catch (err) {
+    console.warn('Could not prune stored images:', err);
+  }
 }
 
-function saveState() {
+// ─── Undo history ───────────────────────────────────────
+const UNDO_LIMIT = 50;
+let undoStack = [];
+let redoStack = [];
+let lastSavedJson = null;
+let lastPushTime = 0;
+let isRestoring = false;
+
+// Pass coalesce=true for per-keystroke saves so a typing burst
+// becomes a single undo step; discrete actions always get their own.
+function saveState(coalesce = false) {
   const data = JSON.parse(JSON.stringify(state));
   data.shelf.forEach(s => delete s.objectUrl);
-  localStorage.setItem('reportage-editor-state', JSON.stringify(data));
+  const json = JSON.stringify(data);
+  if (json === lastSavedJson) return;
+  if (!isRestoring && lastSavedJson != null) {
+    const now = Date.now();
+    if (!coalesce || now - lastPushTime > 800) {
+      undoStack.push(lastSavedJson);
+      if (undoStack.length > UNDO_LIMIT) undoStack.shift();
+    }
+    lastPushTime = coalesce ? now : 0;
+    redoStack = [];
+  }
+  lastSavedJson = json;
+  localStorage.setItem('reportage-editor-state', json);
+}
+
+function undo() {
+  if (!undoStack.length) return;
+  redoStack.push(lastSavedJson);
+  restoreFromJson(undoStack.pop());
+}
+
+function redo() {
+  if (!redoStack.length) return;
+  undoStack.push(lastSavedJson);
+  restoreFromJson(redoStack.pop());
+}
+
+function restoreFromJson(json) {
+  const urls = new Map(state.shelf.map(s => [s.filename, s.objectUrl]));
+  const data = JSON.parse(json);
+  isRestoring = true;
+  state.meta = data.meta || {};
+  state.nodes = data.nodes || [];
+  state.shelf = (data.shelf || []).map(s => ({ ...s, objectUrl: urls.get(s.filename) || null }));
+  // Revoke URLs of entries that don't exist in the restored snapshot
+  const kept = new Set(state.shelf.map(s => s.objectUrl).filter(Boolean));
+  urls.forEach(url => {
+    if (url && !kept.has(url)) URL.revokeObjectURL(url);
+  });
+  syncMetaUI();
+  renderShelf();
+  renderCanvas();
+  isRestoring = false;
+  lastPushTime = 0;
+  if (state.shelf.some(s => !s.objectUrl)) restoreImages();
 }
 
 function loadState() {
@@ -178,12 +264,14 @@ function loadState() {
     Object.assign(state.meta, data.meta || {});
     state.nodes = data.nodes || [];
     state.shelf = (data.shelf || []).map(s => ({ ...s, objectUrl: null }));
+    lastSavedJson = raw;
     return true;
   } catch { return false; }
 }
 
 async function restoreImages() {
   for (const entry of state.shelf) {
+    if (entry.objectUrl) continue;
     const blob = await loadImage(entry.filename);
     if (blob) {
       entry.objectUrl = URL.createObjectURL(blob);
@@ -204,7 +292,7 @@ function updateMeta(key, value) {
       document.getElementById('meta-ratio').value = photo.ratio;
     }
   }
-  saveState();
+  saveState(true);
   if (key === 'cover') return;
   updateCoverDropdown();
 }
@@ -224,12 +312,18 @@ function updateCoverDropdown() {
   const sel = document.getElementById('meta-cover');
   const photos = getAllPhotos();
   const current = state.meta.cover;
-  sel.innerHTML = '<option value="">— Select —</option>' +
-    photos.map(p => `<option value="${p.filename}"${p.filename === current ? ' selected' : ''}>${p.filename}</option>`).join('');
-}
-
-function toggleMeta() {
-  toggleSidebar();
+  sel.innerHTML = '';
+  const blank = document.createElement('option');
+  blank.value = '';
+  blank.textContent = '— Select —';
+  sel.appendChild(blank);
+  photos.forEach(p => {
+    const opt = document.createElement('option');
+    opt.value = p.filename;
+    opt.textContent = p.filename;
+    if (p.filename === current) opt.selected = true;
+    sel.appendChild(opt);
+  });
 }
 
 function toggleSidebar() {
@@ -326,33 +420,57 @@ function scheduleRatioRender() {
   }, 300);
 }
 
+// Add a file to the shelf (persisting the blob and detecting its ratio),
+// or return the existing entry with the same basename.
+function ensureShelfEntry(file) {
+  const name = file.name.replace(/\.[^.]+$/, '');
+  const existing = state.shelf.find(s => s.filename === name);
+  if (existing) return existing;
+
+  const objectUrl = URL.createObjectURL(file);
+  const entry = {
+    filename: name, location: inferLocation(name),
+    ratio: '3/2', objectUrl, camera: inferCamera(name)
+  };
+  state.shelf.push(entry);
+
+  saveImage(name, file).catch(err => {
+    console.error(`Could not persist ${name}:`, err);
+    showToast(`Could not save “${name}” in the browser — it may not survive a reload`);
+  });
+
+  // Detect ratio from image dimensions (debounced render)
+  const img = new Image();
+  img.onload = () => {
+    const ratio = img.width >= img.height ? '3/2' : '2/3';
+    entry.ratio = ratio;
+    for (const p of getAllPhotos()) {
+      if (p.filename === name) p.ratio = ratio;
+    }
+    scheduleRatioRender();
+  };
+  img.src = objectUrl;
+  return entry;
+}
+
+function autoDetectCamera() {
+  const cameras = [...new Set(state.shelf.map(s => s.camera).filter(Boolean))];
+  if (cameras.length && !state.meta.camera) {
+    state.meta.camera = cameras.join(', ');
+    document.getElementById('meta-camera').value = state.meta.camera;
+  }
+}
+
 async function handleFiles(files) {
   const fileArray = Array.from(files).filter(f => f.type.startsWith('image/'));
+  let skipped = 0;
 
   for (let i = 0; i < fileArray.length; i++) {
     const file = fileArray[i];
     const name = file.name.replace(/\.[^.]+$/, '');
-    if (state.shelf.find(s => s.filename === name)) continue;
+    if (state.shelf.find(s => s.filename === name)) { skipped++; continue; }
 
-    const objectUrl = URL.createObjectURL(file);
-    const loc = inferLocation(name);
-    const cam = inferCamera(name);
-
-    state.shelf.push({ filename: name, location: loc, ratio: '3/2', objectUrl, camera: cam });
-    saveImage(name, file);
-
-    // Detect ratio from image dimensions (debounced render)
-    const img = new Image();
-    img.onload = () => {
-      const ratio = img.width >= img.height ? '3/2' : '2/3';
-      const entry = state.shelf.find(s => s.filename === name);
-      if (entry) entry.ratio = ratio;
-      for (const p of getAllPhotos()) {
-        if (p.filename === name) p.ratio = ratio;
-      }
-      scheduleRatioRender();
-    };
-    img.src = objectUrl;
+    ensureShelfEntry(file);
 
     // Render shelf in batches of 10 for smooth loading
     if ((i + 1) % 10 === 0 || i === fileArray.length - 1) {
@@ -363,11 +481,9 @@ async function handleFiles(files) {
     }
   }
 
-  // Auto-detect camera for meta
-  const cameras = [...new Set(state.shelf.map(s => s.camera).filter(Boolean))];
-  if (cameras.length && !state.meta.camera) {
-    state.meta.camera = cameras.join(', ');
-    document.getElementById('meta-camera').value = state.meta.camera;
+  autoDetectCamera();
+  if (skipped) {
+    showToast(`${skipped} photo${skipped === 1 ? '' : 's'} skipped — same name already on the shelf`);
   }
 }
 
@@ -391,46 +507,17 @@ function addFilesToNewStack(files, stack) {
 function addFilesToContainer(files, containerNode) {
   for (const file of files) {
     if (!file.type.startsWith('image/')) continue;
-    const name = file.name.replace(/\.[^.]+$/, '');
-    const loc = inferLocation(name);
-    const cam = inferCamera(name);
-
-    // Add to shelf if not already there
-    if (!state.shelf.find(s => s.filename === name)) {
-      const objectUrl = URL.createObjectURL(file);
-      state.shelf.push({ filename: name, location: loc, ratio: '3/2', objectUrl, camera: cam });
-      saveImage(name, file);
-
-      // Detect ratio (debounced render)
-      const img = new Image();
-      img.onload = () => {
-        const ratio = img.width >= img.height ? '3/2' : '2/3';
-        const entry = state.shelf.find(s => s.filename === name);
-        if (entry) entry.ratio = ratio;
-        for (const p of getAllPhotos()) {
-          if (p.filename === name) p.ratio = ratio;
-        }
-        scheduleRatioRender();
-      };
-      img.src = objectUrl;
-    }
-
-    const shelfEntry = state.shelf.find(s => s.filename === name);
+    const entry = ensureShelfEntry(file);
     containerNode.children.push({
       id: uid(), type: 'photo',
-      location: loc, filename: name,
-      ratio: shelfEntry?.ratio || '3/2',
+      location: entry.location, filename: entry.filename,
+      ratio: entry.ratio || '3/2',
       caption: '', alt: '', classes: []
     });
   }
 
-  // Auto-detect camera for meta
-  const cameras = [...new Set(state.shelf.map(s => s.camera).filter(Boolean))];
-  if (cameras.length && !state.meta.camera) {
-    state.meta.camera = cameras.join(', ');
-    document.getElementById('meta-camera').value = state.meta.camera;
-  }
-
+  convertSingleIfCrowded(containerNode);
+  autoDetectCamera();
   renderShelf();
   renderCanvas();
   saveState();
@@ -543,10 +630,18 @@ function renderShelf() {
       } catch {}
     });
     div.title = photo.filename;
-    div.innerHTML = `
-      <img src="${imgSrc}" alt="${photo.filename}" onerror="this.style.background='var(--editor-photo-fallback)'">
-      <div class="shelf__remove" onclick="event.stopPropagation(); removeFromShelf('${photo.filename}')">✕</div>
-    `;
+    const img = document.createElement('img');
+    img.src = imgSrc;
+    img.alt = photo.filename;
+    img.addEventListener('error', () => { img.style.background = 'var(--editor-photo-fallback)'; });
+    const removeBtn = document.createElement('div');
+    removeBtn.className = 'shelf__remove';
+    removeBtn.textContent = '✕';
+    removeBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      removeFromShelf(photo.filename);
+    });
+    div.append(img, removeBtn);
     // Insert before the hint
     shelf.insertBefore(div, hint);
   });
@@ -559,7 +654,8 @@ function removeFromShelf(filename, skipCanvas) {
       if (state.shelf[idx].objectUrl) URL.revokeObjectURL(state.shelf[idx].objectUrl);
       state.shelf.splice(idx, 1);
     }
-    deleteImage(filename);
+    // The IndexedDB blob is intentionally kept so undo can restore the
+    // photo; pruneStoredImages() cleans up orphans on next startup
     if (!skipCanvas) {
       removePhotoNodes(filename, state.nodes);
       renderCanvas();
@@ -568,7 +664,7 @@ function removeFromShelf(filename, skipCanvas) {
     saveState();
   };
 
-  const el = document.querySelector(`.shelf__photo[data-filename="${filename}"]`);
+  const el = document.querySelector(`.shelf__photo[data-filename="${CSS.escape(filename)}"]`);
   if (el && !skipCanvas) {
     animateOut(el, doRemove);
   } else {
@@ -685,45 +781,19 @@ function addFilesToContainerAt(files, containerNode, insertIdx) {
   const newNodes = [];
   for (const file of files) {
     if (!file.type.startsWith('image/')) continue;
-    const name = file.name.replace(/\.[^.]+$/, '');
-    const loc = inferLocation(name);
-    const cam = inferCamera(name);
-
-    if (!state.shelf.find(s => s.filename === name)) {
-      const objectUrl = URL.createObjectURL(file);
-      state.shelf.push({ filename: name, location: loc, ratio: '3/2', objectUrl, camera: cam });
-      saveImage(name, file);
-
-      const img = new Image();
-      img.onload = () => {
-        const ratio = img.width >= img.height ? '3/2' : '2/3';
-        const entry = state.shelf.find(s => s.filename === name);
-        if (entry) entry.ratio = ratio;
-        for (const p of getAllPhotos()) {
-          if (p.filename === name) p.ratio = ratio;
-        }
-        scheduleRatioRender();
-      };
-      img.src = objectUrl;
-    }
-
-    const shelfEntry = state.shelf.find(s => s.filename === name);
+    const entry = ensureShelfEntry(file);
     newNodes.push({
       id: uid(), type: 'photo',
-      location: loc, filename: name,
-      ratio: shelfEntry?.ratio || '3/2',
+      location: entry.location, filename: entry.filename,
+      ratio: entry.ratio || '3/2',
       caption: '', alt: '', classes: []
     });
   }
 
   containerNode.children.splice(insertIdx, 0, ...newNodes);
 
-  const cameras = [...new Set(state.shelf.map(s => s.camera).filter(Boolean))];
-  if (cameras.length && !state.meta.camera) {
-    state.meta.camera = cameras.join(', ');
-    document.getElementById('meta-camera').value = state.meta.camera;
-  }
-
+  convertSingleIfCrowded(containerNode);
+  autoDetectCamera();
   renderShelf();
   renderCanvas();
   saveState();
@@ -841,7 +911,7 @@ let canvasDragNodeId = null;
   canvas.addEventListener('dragover', e => {
     canvas.classList.add('is-dragging');
     // Only handle on the canvas itself, not inside containers
-    if (e.target !== canvas && !e.target.classList.contains('canvas__empty') && !e.target.closest('.canvas__inserter')) {
+    if (e.target !== canvas && !e.target.closest('.canvas__inserter')) {
       if (e.target.closest('[data-parent-id]') || e.target.closest('.node')) { removeDropIndicator(); return; }
     }
     e.preventDefault();
@@ -862,7 +932,7 @@ let canvasDragNodeId = null;
 
   canvas.addEventListener('drop', e => {
     // Only handle if dropped on the canvas itself, not inside a container node
-    if (e.target !== canvas && !e.target.classList.contains('canvas__empty') && !e.target.closest('.canvas__inserter')) {
+    if (e.target !== canvas && !e.target.closest('.canvas__inserter')) {
       if (e.target.closest('[data-parent-id]') || e.target.closest('.node')) { removeDropIndicator(); return; }
     }
     e.preventDefault();
@@ -1213,6 +1283,7 @@ function renderContainerNode(node, wrapper) {
         // getDropIndex already skips the dragged item, so insertIdx
         // is relative to the array without it — no adjustment needed
         node.children.splice(insertIdx, 0, moved);
+        convertSingleIfCrowded(node);
         renderCanvas();
         return;
       }
@@ -1225,14 +1296,11 @@ function renderContainerNode(node, wrapper) {
           ratio: data.ratio || '3/2', caption: '', alt: '', classes: []
         };
         node.children.splice(insertIdx, 0, photoNode);
+        convertSingleIfCrowded(node);
         renderCanvas();
       }
     } catch {}
   });
-
-  function removeIndicator() {
-    if (indicator) { indicator.remove(); indicator = null; }
-  }
 
   wrapper.appendChild(container);
 
@@ -1247,26 +1315,44 @@ function renderPhotoNode(node, wrapper) {
   const shelf = getShelfPhoto(node.filename);
   const imgSrc = shelf?.objectUrl || `https://img.javier.computer/${node.location}/${node.filename}_2880.jpg`;
 
-  const ratioStyle = node.ratio ? `aspect-ratio: ${node.ratio}; object-fit: cover;` : '';
+  const img = document.createElement('img');
+  img.src = imgSrc;
+  img.alt = node.alt || node.filename;
+  // In a single container the photo shows at its natural ratio (the
+  // stylesheet handles sizing); elsewhere the ratio crop is enforced inline
+  const inSingle = findParent(node.id)?.parent?.type === 'single';
+  if (node.ratio && !inSingle) {
+    img.style.aspectRatio = node.ratio;
+    img.style.objectFit = 'cover';
+  }
+  img.addEventListener('error', () => { img.dataset.failed = 'true'; img.alt = node.filename; });
+  img.draggable = false; // prevent native image drag
 
-  div.innerHTML = `
-    <img src="${imgSrc}" alt="${node.alt || node.filename}" style="${ratioStyle}"
-         onerror="this.dataset.failed='true'; this.alt='${node.filename}'">
-    <button class="photo-remove" onclick="removeNode('${node.id}')">✕</button>
-    <div class="photo-overlay">
-      <div class="photo-overlay__info">
-        <div class="photo-overlay__filename">${node.location}/${node.filename}</div>
-        <div class="photo-overlay__fields">
-          <input placeholder="Caption" value="${escAttr(node.caption)}"
-                 onchange="updatePhotoField('${node.id}', 'caption', this.value)">
-        </div>
-      </div>
-    </div>
-  `;
+  const removeBtn = document.createElement('button');
+  removeBtn.className = 'photo-remove';
+  removeBtn.textContent = '✕';
+  removeBtn.addEventListener('click', () => removeNode(node.id));
+
+  const overlay = document.createElement('div');
+  overlay.className = 'photo-overlay';
+  const info = document.createElement('div');
+  info.className = 'photo-overlay__info';
+  const filenameLabel = document.createElement('div');
+  filenameLabel.className = 'photo-overlay__filename';
+  filenameLabel.textContent = `${node.location}/${node.filename}`;
+  const fields = document.createElement('div');
+  fields.className = 'photo-overlay__fields';
+  const captionInput = document.createElement('input');
+  captionInput.placeholder = 'Caption';
+  captionInput.value = node.caption || '';
+  captionInput.addEventListener('change', () => updatePhotoField(node.id, 'caption', captionInput.value));
+  fields.appendChild(captionInput);
+  info.append(filenameLabel, fields);
+  overlay.appendChild(info);
+  div.append(img, removeBtn, overlay);
 
   // Make photos natively draggable
   wrapper.draggable = true;
-  div.querySelector('img').draggable = false; // prevent native image drag
   wrapper.addEventListener('dragstart', e => {
     e.stopPropagation();
     canvasDragNodeId = node.id;
@@ -1554,10 +1640,6 @@ function cleanUpContentEditable(el) {
   });
 }
 
-function escAttr(str) {
-  return (str || '').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
-}
-
 function getClassOptions(type) {
   switch (type) {
     case 'stack': return ['has-margin-top', 'has-margin-bottom', 'with-caption'];
@@ -1566,6 +1648,18 @@ function getClassOptions(type) {
     case 'single': return ['left', 'center', 'right'];
     default: return [];
   }
+}
+
+// A single holds one photo — when a second one lands in it, convert it
+// to a row (singles are horizontal flex, so that's what the gesture reads as)
+function convertSingleIfCrowded(node) {
+  if (node.type !== 'single') return;
+  const photoCount = (node.children || []).filter(c => c.type === 'photo').length;
+  if (photoCount <= 1) return;
+  node.type = 'row';
+  const validClasses = getClassOptions('row');
+  node.classes = node.classes.filter(c => validClasses.includes(c));
+  showToast('Single became a row');
 }
 
 const EXCLUSIVE_CLASSES = ['left', 'center', 'right'];
@@ -1590,12 +1684,6 @@ function updatePhotoField(id, field, value) {
     saveState();
   }
 }
-
-
-
-// Remove empty containers without cascading — only removes containers
-// that are already empty, then stops. A parent that becomes empty because
-
 
 // ─── Add containers ─────────────────────────────────────
 function showAddMenu(e) {
@@ -1698,6 +1786,7 @@ function showAddChildMenu(e, parentNode) {
           location: photo.location, filename: photo.filename,
           ratio: photo.ratio || '3/2', caption: '', alt: '', classes: []
         });
+        convertSingleIfCrowded(parentNode);
         closeContextMenu();
         renderCanvas();
       };
@@ -1786,15 +1875,39 @@ function doImportFromModal() {
   doImportText(input);
 }
 
+// Double-quoted YAML scalar with escaped backslashes and quotes
+function yamlQuote(str) {
+  return '"' + String(str || '').replace(/\\/g, '\\\\').replace(/"/g, '\\"') + '"';
+}
+
+// Double-quoted Liquid tag param. The tag parser can't handle escaped
+// quotes, so encode them as &quot; (rendered back to " in the HTML output).
+function liquidQuote(str) {
+  return '"' + String(str || '').replace(/"/g, '&quot;') + '"';
+}
+
+// UTC offset for Europe/Madrid at midnight of the given date (+0100 / +0200)
+function tzOffsetFor(dateStr) {
+  try {
+    const parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'Europe/Madrid', timeZoneName: 'longOffset'
+    }).formatToParts(new Date(dateStr + 'T00:00:00Z'));
+    const name = parts.find(p => p.type === 'timeZoneName').value;
+    const m = name.match(/GMT([+-])(\d{2}):(\d{2})/);
+    if (m) return m[1] + m[2] + m[3];
+  } catch {}
+  return '+0100';
+}
+
 function generateMarkdown() {
   const m = state.meta;
   const photos = getAllPhotos();
 
   let yaml = '---\n';
   yaml += `layout: reportage\n`;
-  yaml += `title: "${m.title}"\n`;
+  yaml += `title: ${yamlQuote(m.title)}\n`;
   if (m.hideTitle) yaml += `hide_title: true\n`;
-  yaml += `date: "${m.date ? m.date + ' 00:00:00 +0200' : ''}"\n`;
+  yaml += `date: "${m.date ? m.date + ' 00:00:00 ' + tzOffsetFor(m.date) : ''}"\n`;
   yaml += `category: reportage\n`;
   yaml += `tag: photo\n`;
   yaml += `location: ${m.location}\n`;
@@ -1822,6 +1935,9 @@ function generateMarkdown() {
   }
   if (m.permalink) yaml += `permalink: ${m.permalink}\n`;
 
+  // Frontmatter keys the editor doesn't know about, preserved verbatim from import
+  (m.extra || []).forEach(block => { yaml += block + '\n'; });
+
   // Filenames
   yaml += `filenames:\n`;
   photos.forEach(p => {
@@ -1830,7 +1946,7 @@ function generateMarkdown() {
       yaml += `    location: ${p.location}\n`;
     }
     if (p.ratio) yaml += `    ratio: ${p.ratio}\n`;
-    if (p.caption) yaml += `    caption: ${p.caption}\n`;
+    if (p.caption) yaml += `    caption: ${yamlQuote(p.caption)}\n`;
   });
 
   yaml += '---\n';
@@ -1851,8 +1967,9 @@ function renderNodeToLiquid(node, depth) {
   if (node.type === 'photo') {
     let tag = `${indent}{% photo ${node.location} ${node.filename}`;
     if (node.ratio) tag += ` ${node.ratio}`;
-    if (node.caption) tag += ` caption:"${node.caption}"`;
-    if (node.alt) tag += ` alt:"${node.alt}"`;
+    if (node.classes && node.classes.length) tag += ` class:"${node.classes.join(' ')}"`;
+    if (node.caption) tag += ` caption:${liquidQuote(node.caption)}`;
+    if (node.alt) tag += ` alt:${liquidQuote(node.alt)}`;
     tag += ` %}\n`;
     return tag;
   }
@@ -1916,9 +2033,11 @@ function doImportText(input) {
     Object.assign(state.meta, parsed.meta);
     state.nodes = parsed.nodes;
 
-    // Build shelf from filenames in the document
-    const photos = getAllPhotos();
-    photos.forEach(p => {
+    // Rebuild the shelf from the document's filenames; drop stale entries
+    // from previous work (their blobs stay in IndexedDB untouched)
+    state.shelf.forEach(s => { if (s.objectUrl) URL.revokeObjectURL(s.objectUrl); });
+    state.shelf = [];
+    getAllPhotos().forEach(p => {
       if (!state.shelf.find(s => s.filename === p.filename)) {
         state.shelf.push({
           filename: p.filename,
@@ -1933,6 +2052,7 @@ function doImportText(input) {
     syncMetaUI();
     renderShelf();
     renderCanvas();
+    restoreImages(); // reattach any locally stored blobs for these filenames
   } catch (err) {
     alert('Parse error: ' + err.message);
     console.error(err);
@@ -1953,70 +2073,65 @@ function parseFrontmatter(yaml) {
   const meta = {
     title: '', date: '', location: '', camera: '',
     cover: '', ratio: '3/2', intro: '', translation: '',
-    permalink: '', hideTitle: false
+    permalink: '', hideTitle: false, extra: []
   };
 
-  let currentKey = null;
-  let multilineValue = '';
-  let inArray = false;
-  let arrayValues = [];
+  // Keys the exporter always regenerates itself
+  const REGENERATED = ['layout', 'category', 'tag', 'filenames'];
 
-  const lines = yaml.split('\n');
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
+  // Group lines into top-level blocks: a key line plus its indented continuation
+  const blocks = [];
+  for (const line of yaml.split('\n')) {
+    if (/^\S/.test(line) || !blocks.length) blocks.push([line]);
+    else blocks[blocks.length - 1].push(line);
+  }
 
-    // Multiline scalar (>) continuation
-    if (currentKey && (currentKey === 'intro' || currentKey === 'translation') && /^ {2}\S/.test(line)) {
-      multilineValue += (multilineValue ? '\n' : '') + line.substring(2);
-      continue;
-    } else if (currentKey && multilineValue) {
-      meta[currentKey] = multilineValue;
-      multilineValue = '';
-      currentKey = null;
-    }
-
-    // Array item
-    if (inArray && /^ {2}-/.test(line)) {
-      const val = line.replace(/^ {2}- ?/, '').trim();
-      arrayValues.push(val);
-      continue;
-    } else if (inArray) {
-      meta.camera = arrayValues.join(', ');
-      inArray = false;
-      arrayValues = [];
-    }
-
-    // Key: value
-    const kv = line.match(/^(\w[\w_]*)\s*:\s*(.*)$/);
+  for (const block of blocks) {
+    const kv = block[0].match(/^(\w[\w_]*)\s*:\s*(.*)$/);
     if (!kv) continue;
-
     const key = kv[1];
-    let val = kv[2].trim().replace(/^["']|["']$/g, '');
+
+    let raw = kv[2].trim();
+    // Multi-line quoted scalar: fold indented continuation lines so the
+    // closing quote is found (YAML folds these newlines into spaces)
+    if (/^["']/.test(raw) && !/^(["']).*\1$/.test(raw)) {
+      const cont = block.slice(1).map(l => l.trim()).filter(Boolean);
+      if (cont.length) raw = [raw, ...cont].join(' ');
+    }
+    let val;
+    if (/^".*"$/.test(raw)) {
+      val = raw.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, '\\');
+    } else if (/^'.*'$/.test(raw)) {
+      val = raw.slice(1, -1).replace(/''/g, "'");
+    } else {
+      // Unterminated quote (continuation not recoverable): strip stray
+      // leading/trailing quotes like the old parser did
+      val = raw.replace(/^["']|["']$/g, '');
+    }
+
+    if (REGENERATED.includes(key)) continue;
 
     if (key === 'hide_title') {
       meta.hideTitle = val === 'true';
     } else if (key === 'date') {
       meta.date = val.substring(0, 10); // Just the date part
-    } else if (key === 'camera' && !val) {
-      inArray = true;
-      arrayValues = [];
     } else if (key === 'camera') {
-      meta.camera = val;
-    } else if ((key === 'intro' || key === 'translation') && val === '>') {
-      currentKey = key;
-      multilineValue = '';
-    } else if (key === 'filenames') {
-      // Skip — we'll rebuild from body
+      meta.camera = val || block.slice(1)
+        .filter(l => /^\s*-\s*\S/.test(l))
+        .map(l => l.replace(/^\s*-\s*/, '').trim())
+        .join(', ');
+    } else if (key === 'intro' || key === 'translation') {
+      if (val === '>' || val === '|' || val === '') {
+        meta[key] = block.slice(1).map(l => l.replace(/^ {2}/, '')).join('\n').replace(/\s+$/, '');
+      } else {
+        meta[key] = val;
+      }
     } else if (key in meta) {
       meta[key] = val;
+    } else {
+      // Unknown key — keep the raw block so exporting doesn't lose it
+      meta.extra.push(block.join('\n').replace(/\s+$/, ''));
     }
-  }
-
-  if (currentKey && multilineValue) {
-    meta[currentKey] = multilineValue;
-  }
-  if (inArray) {
-    meta.camera = arrayValues.join(', ');
   }
 
   return meta;
@@ -2115,9 +2230,7 @@ function parseTokens(tokens, closeTag) {
       }
     } else if (tok.type === 'html') {
       // Standalone HTML outside containers — wrap in text
-      if (tok.content.length > 10) {
-        nodes.push({ id: uid(), type: 'text', classes: [], html: tok.content });
-      }
+      nodes.push({ id: uid(), type: 'text', classes: [], html: tok.content });
     }
   }
 
@@ -2127,30 +2240,35 @@ function parseTokens(tokens, closeTag) {
 function parsePhotoTag(params) {
   let location = '', filename = '', ratio = '', caption = '', alt = '', cls = '';
 
-  // Extract named params first
-  let remaining = params;
-  remaining = remaining.replace(/(\w+):"([^"]*)"/g, (_, k, v) => {
+  const assign = (k, v) => {
     if (k === 'caption') caption = v;
     else if (k === 'alt') alt = v;
     else if (k === 'class') cls = v;
     else if (k === 'ratio') ratio = v;
-    return '';
-  });
-  remaining = remaining.replace(/(\w+):'([^']*)'/g, (_, k, v) => {
-    if (k === 'caption') caption = v;
-    else if (k === 'alt') alt = v;
-    return '';
-  });
+    else if (k === 'filename') filename = v;
+    else if (k === 'location') location = v;
+  };
 
+  // Named params: key:"value", key:'value', key:bare_value (same as _plugins/photo.rb)
+  let remaining = params;
+  remaining = remaining.replace(/(\w+):"([^"]*)"/g, (_, k, v) => { assign(k, v); return ''; });
+  remaining = remaining.replace(/(\w+):'([^']*)'/g, (_, k, v) => { assign(k, v); return ''; });
+  remaining = remaining.replace(/(\w+):(\S+)/g, (_, k, v) => { assign(k, v); return ''; });
+
+  // Undo the exporter's quote encoding
+  caption = caption.replace(/&quot;/g, '"');
+  alt = alt.replace(/&quot;/g, '"');
+
+  // Remaining tokens are positional: location filename [ratio]
   const parts = remaining.trim().split(/\s+/).filter(Boolean);
-  location = parts[0] || '';
-  filename = parts[1] || '';
-  if (parts[2] && /^\d+\/\d+$/.test(parts[2])) ratio = parts[2];
+  if (!location) location = parts[0] || '';
+  if (!filename) filename = parts[1] || '';
+  if (!ratio && parts[2] && /^\d+\/\d+$/.test(parts[2])) ratio = parts[2];
 
   return {
     id: uid(), type: 'photo',
     location, filename, ratio: ratio || '3/2',
-    caption, alt, classes: cls ? [cls] : []
+    caption, alt, classes: cls ? cls.split(/\s+/).filter(Boolean) : []
   };
 }
 
@@ -2252,7 +2370,7 @@ function loadReportage(index) {
   if (index === '') return;
   const item = reportageIndex[index];
   if (!item) return;
-  if (state.nodes.length && !confirm('Load this reportage? Current work will be replaced.')) {
+  if ((state.nodes.length || state.shelf.length) && !confirm('Load this reportage? Current work will be replaced.')) {
     document.getElementById('reportageSelect').value = '';
     return;
   }
@@ -2268,4 +2386,5 @@ if (loaded) {
   restoreImages();
 }
 renderCanvas();
+pruneStoredImages();
 fetchReportageIndex();
