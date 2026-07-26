@@ -41,4 +41,5 @@ tag: photo
 ---
 
 Fotos de una vuelta por los mercadillos de Mauerpark y Arkonaplatz. El muñeco
-de la primera foto se me aparecerá en sueños próximamente.
+de la primera foto se me aparecerá en sueños próximamente (si me pasa algo en
+los próximos días, ya sabéis de quién es la culpa).
