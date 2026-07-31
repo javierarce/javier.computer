@@ -245,10 +245,8 @@ class Mail {
       .then((result) => {
         this.spinner.hide();
 
-        if (result && result.error) {
-          this.$message.innerText = result.message;
-          this.$form.classList.add("is-error");
-          setTimeout(() => this.$form.classList.remove("is-error"), 2000);
+        if (!result || !result.success) {
+          this.error(result);
           return;
         }
 
@@ -256,7 +254,18 @@ class Mail {
         this.$content.value = "";
         this.disableSend();
         this.success();
+      })
+      .catch((e) => {
+        this.spinner.hide();
+        this.error(e);
       });
+  }
+
+  error(detail) {
+    console.error("Mailer:", detail);
+    this.$message.innerText = "No se pudo enviar. Inténtalo de nuevo.";
+    this.$form.classList.add("is-error");
+    setTimeout(() => this.$form.classList.remove("is-error"), 2000);
   }
 
   render() {
