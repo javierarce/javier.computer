@@ -1,6 +1,69 @@
 [
   {
     "layout": "place",
+    "pid": "uncle-philips-toy-workshop",
+    "title": "Onkel Philipp's Spielzeugwerkstatt",
+    "description": "<p>Una tienda enorme abarrotada de juguetes antiguos y que también cuenta con un fantástico museo de juguetes de la DDR en el sótano.</p>\n",
+    "address": "Choriner Str. 35",
+    "latlng": [
+      52.536679866895305,
+      13.410543239776883
+    ],
+    "location": "berlin",
+    "last_updated": "2026-08-01T23:03:24+02:00",
+    "post_references": [
+      {
+        "url": "/2026/08/01/fiume-o-morte",
+        "title": "Fiume o Morte",
+        "date": "2026-08-01 22:41:00 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "bildband",
+    "title": "Bildband",
+    "emoji": "📷",
+    "description": "<p>Buena tienda de libros de fotografía. También hacen presentaciones de libros.</p>\n",
+    "address": "Immanuelkirchstraße 33",
+    "latlng": [
+      52.53329482022483,
+      13.42272312628249
+    ],
+    "location": "berlin",
+    "last_updated": "2026-08-01T23:00:27+02:00",
+    "post_references": [
+      {
+        "url": "/2026/08/01/fiume-o-morte",
+        "title": "Fiume o Morte",
+        "date": "2026-08-01 22:41:00 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "town-mouse-coffee",
+    "title": "Town Mouse Coffee",
+    "emoji": "☕️",
+    "description": "<p>Cafetería de cabecera en el barrio.</p>\n",
+    "address": "Marienburger Str. 5",
+    "latlng": [
+      52.535379464403334,
+      13.423648746035223
+    ],
+    "location": "berlin",
+    "updated_at": "2026-08-01",
+    "last_updated": "2026-08-01T22:41:00+02:00",
+    "post_references": [
+      {
+        "url": "/2026/08/01/fiume-o-morte",
+        "title": "Fiume o Morte",
+        "date": "2026-08-01 22:41:00 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
     "pid": "film-speed-lab",
     "title": "Film Speed Lab",
     "description": "<p>Laboratorio de de fotografía analógica. Son bastante rápidos, pero algo más caros que Safelight.</p>\n",
@@ -614,22 +677,6 @@
     "location": "berlin",
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "town-mouse-coffee",
-    "title": "Town Mouse Coffee",
-    "emoji": "☕️",
-    "address": "Marienburger Str. 5",
-    "latlng": [
-      52.535379464403334,
-      13.423648746035223
-    ],
-    "location": "berlin",
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
-    "description": "",
     "post_references": []
   },
   {
