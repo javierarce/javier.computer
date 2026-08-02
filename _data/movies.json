@@ -1,7 +1,137 @@
 {
-  "updated_at": "2026-07-06",
-  "count": 1072,
+  "updated_at": "2026-08-02",
+  "count": 1085,
   "movies": [
+    {
+      "watched_on": "2026-08-02",
+      "title": "Pauline at the Beach",
+      "year": 1983,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "pauline-at-the-beach"
+    },
+    {
+      "watched_on": "2026-08-02",
+      "title": "The Quiller Memorandum",
+      "year": 1966,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "the-quiller-memorandum"
+    },
+    {
+      "watched_on": "2026-08-01",
+      "title": "Fiume o Morte!",
+      "year": 2025,
+      "rating": null,
+      "liked": true,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "fiume-o-morte"
+    },
+    {
+      "watched_on": "2026-07-30",
+      "title": "The Invite",
+      "year": 2026,
+      "rating": 4,
+      "liked": false,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "the-invite-2026"
+    },
+    {
+      "watched_on": "2026-07-29",
+      "title": "Cat Listening to Music",
+      "year": 1988,
+      "rating": null,
+      "liked": true,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "cat-listening-to-music"
+    },
+    {
+      "watched_on": "2026-07-28",
+      "title": "Blue Heron",
+      "year": 2025,
+      "rating": 4,
+      "liked": false,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "blue-heron"
+    },
+    {
+      "watched_on": "2026-07-27",
+      "title": "The Children&#039;s Hour",
+      "year": 1961,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "the-childrens-hour"
+    },
+    {
+      "watched_on": "2026-07-26",
+      "title": "Bad Lieutenant: Port of Call – New Orleans",
+      "year": 2009,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "bad-lieutenant-port-of-call-new-orleans"
+    },
+    {
+      "watched_on": "2026-07-21",
+      "title": "Disclosure Day",
+      "year": 2026,
+      "rating": 1.5,
+      "liked": false,
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "disclosure-day"
+    },
+    {
+      "watched_on": "2026-07-17",
+      "title": "The Furious",
+      "year": 2025,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "the-furious"
+    },
+    {
+      "watched_on": "2026-07-15",
+      "title": "Hereditary",
+      "year": 2018,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "hereditary"
+    },
+    {
+      "watched_on": "2026-07-08",
+      "title": "Love Meetings",
+      "year": 1964,
+      "rating": null,
+      "liked": true,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "love-meetings"
+    },
+    {
+      "watched_on": "2026-07-06",
+      "title": "Love Exists",
+      "year": 1960,
+      "rating": null,
+      "liked": false,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "love-exists"
+    },
     {
       "watched_on": "2026-07-05",
       "title": "Violent Saturday",

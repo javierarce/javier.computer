@@ -1,26 +1,6 @@
 [
   {
     "layout": "place",
-    "pid": "uncle-philips-toy-workshop",
-    "title": "Onkel Philipp's Spielzeugwerkstatt",
-    "description": "<p>Una tienda enorme abarrotada de juguetes antiguos y que también cuenta con un fantástico museo de juguetes de la DDR en el sótano.</p>\n",
-    "address": "Choriner Str. 35",
-    "latlng": [
-      52.536679866895305,
-      13.410543239776883
-    ],
-    "location": "berlin",
-    "last_updated": "2026-08-01T23:03:24+02:00",
-    "post_references": [
-      {
-        "url": "/2026/08/01/fiume-o-morte",
-        "title": "Fiume o Morte",
-        "date": "2026-08-01 22:41:00 +0200"
-      }
-    ]
-  },
-  {
-    "layout": "place",
     "pid": "bildband",
     "title": "Bildband",
     "emoji": "📷",
@@ -31,7 +11,27 @@
       13.42272312628249
     ],
     "location": "berlin",
-    "last_updated": "2026-08-01T23:00:27+02:00",
+    "last_updated": "2026-08-01T23:08:07+02:00",
+    "post_references": [
+      {
+        "url": "/2026/08/01/fiume-o-morte",
+        "title": "Fiume o Morte",
+        "date": "2026-08-01 22:41:00 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "uncle-philips-toy-workshop",
+    "title": "Onkel Philipp's Spielzeugwerkstatt",
+    "description": "<p>Una tienda enorme abarrotada de juguetes antiguos y que también cuenta con un fantástico museo de juguetes de la DDR en el sótano.</p>\n",
+    "address": "Choriner Str. 35",
+    "latlng": [
+      52.536679866895305,
+      13.410543239776883
+    ],
+    "location": "berlin",
+    "last_updated": "2026-08-01T23:08:07+02:00",
     "post_references": [
       {
         "url": "/2026/08/01/fiume-o-morte",
