@@ -10,7 +10,7 @@ places:
 Lo que ayer eran avispas, hoy son gotas de agua. A pesar de la lluvia, por la
 mañana vamos a nuestra cafetería preferida del barrio, [Town Mouse
 Coffee](/maps/berlin/town-mouse-coffee) y luego, después de leer y dibujar un
-rato, vamos a mirar libros de fotos a [Bildband](/maps/berlin/bildband),
+rato, a mirar libros de fotos a [Bildband](/maps/berlin/bildband),
  a mirar juguetes antiguos a [Onkel Philipp's Spielzeugwerkstatt](/maps/berlin/uncle-philips-toy-workshop) y a hacer la compra al mercado. <span
 class="sp">✦</span> Comemos viendo [Fiume o
 Morte!](https://letterboxd.com/film/fiume-o-morte) ♥, que es un documental tan
