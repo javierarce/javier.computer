@@ -1,6 +1,46 @@
 [
   {
     "layout": "place",
+    "pid": "proqm",
+    "title": "Pro qm",
+    "description": "<p>Libros de urbanismo, política, arquitectura, cultura pop, jdiseño, arte y economía. Perdón, pero mejor que Do you read me!?</p>\n",
+    "address": "Almstadtstraße 48",
+    "latlng": [
+      52.52717579028865,
+      13.41076611429642
+    ],
+    "location": "berlin",
+    "last_updated": "2026-08-04T22:52:04+02:00",
+    "post_references": [
+      {
+        "url": "/2026/08/04/tqm-pro-qm",
+        "title": "tqm Pro qm",
+        "date": "2026-08-04 22:45:11 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "luiban",
+    "title": "LUIBAN",
+    "description": "<p>Peligrosa papelería con una selección de material exquisita.</p>\n",
+    "address": "Rosa-Luxemburg-Straße 28",
+    "latlng": [
+      52.52578711158864,
+      13.411130984133036
+    ],
+    "location": "berlin",
+    "last_updated": "2026-08-04T22:48:31+02:00",
+    "post_references": [
+      {
+        "url": "/2026/08/04/tqm-pro-qm",
+        "title": "tqm Pro qm",
+        "date": "2026-08-04 22:45:11 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
     "pid": "bildband",
     "title": "Bildband",
     "emoji": "📷",
