@@ -51,8 +51,8 @@ filenames:
 ---
 
 {% text %}
-    <p>Mira, qué bien, un parque. Mucho mejor que escribir un correo, mejor que mirar al abismo que es la pantalla del ordenador, aguantar a un PM galo, entrar en Linkedin a compartir un caso de éxito, que se te caiga el pelo, una maldición egipcia.</p>
-    <p class="is-light">Look at that, a park. Much better than writing an email, better than staring into the abyss that is your computer screen, putting up with a French PM, logging into LinkedIn to share a success story, losing your hair, an Egyptian curse.</p>
+    <p>Mira, qué bien, un parque. Mucho mejor que escribir un correo, mejor que mirar al abismo que es la pantalla del ordenador, aguantar a un PM galo, entrar en Linkedin a compartir un caso de éxito, que se te caiga el pelo, una maldición egipcia, todo lo anterior.</p>
+    <p class="is-light">Look at that, a park. Much better than writing an email, better than staring into the abyss that is your computer screen, putting up with a French PM, logging into LinkedIn to share a success story, losing your hair, an Egyptian curse, all of the above.</p>
 {% endtext %}
 
 {% stack %}
