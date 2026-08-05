@@ -11,6 +11,94 @@ const state = {
 
 function uid() { return crypto.randomUUID(); }
 
+// ─── Icons ──────────────────────────────────────────────
+const SVG_ATTRS = 'width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
+const ICONS = {
+  grip: '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="5" r="1.6"/><circle cx="15" cy="5" r="1.6"/><circle cx="9" cy="12" r="1.6"/><circle cx="15" cy="12" r="1.6"/><circle cx="9" cy="19" r="1.6"/><circle cx="15" cy="19" r="1.6"/></svg>',
+  up: `<svg ${SVG_ATTRS}><polyline points="18 15 12 9 6 15"/></svg>`,
+  down: `<svg ${SVG_ATTRS}><polyline points="6 9 12 15 18 9"/></svg>`,
+  plus: `<svg ${SVG_ATTRS}><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>`,
+  x: `<svg ${SVG_ATTRS}><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`,
+  dots: '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>',
+  chevron: `<svg ${SVG_ATTRS}><polyline points="9 18 15 12 9 6"/></svg>`,
+  info: `<svg ${SVG_ATTRS}><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>`,
+  caption: `<svg ${SVG_ATTRS}><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`
+};
+
+// ─── Selection ──────────────────────────────────────────
+let selectedNodeId = null;
+
+// Node/shelf ids that have already been rendered once — used to play the
+// entrance animation only for genuinely new elements, not on every re-render
+const renderedNodeIds = new Set();
+const renderedShelfNames = new Set();
+
+function selectNode(id, opts = {}) {
+  selectedNodeId = id;
+  document.querySelectorAll('.node.is-selected').forEach(el => el.classList.remove('is-selected'));
+  document.querySelectorAll('.outline__row.is-selected').forEach(el => el.classList.remove('is-selected'));
+  if (!id) return;
+  const el = document.querySelector(`.node[data-id="${id}"]`);
+  if (el) {
+    el.classList.add('is-selected');
+    if (opts.scroll) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+  const row = document.querySelector(`.outline__row[data-id="${id}"]`);
+  if (row) row.classList.add('is-selected');
+}
+
+function flattenNodeIds(nodes = state.nodes, out = []) {
+  for (const n of nodes) {
+    out.push(n.id);
+    if (n.children) flattenNodeIds(n.children, out);
+  }
+  return out;
+}
+
+function navigateSelection(dir) {
+  const ids = flattenNodeIds();
+  if (!ids.length) return;
+  let idx = ids.indexOf(selectedNodeId);
+  if (idx === -1) idx = dir > 0 ? -1 : ids.length;
+  idx = Math.min(ids.length - 1, Math.max(0, idx + dir));
+  selectNode(ids[idx], { scroll: true });
+}
+
+function nudgeSelected(dir) {
+  if (!selectedNodeId) return;
+  const info = findParent(selectedNodeId);
+  if (!info) return;
+  const idx = info.list.findIndex(n => n.id === selectedNodeId);
+  const to = idx + dir;
+  if (idx < 0 || to < 0 || to >= info.list.length) return;
+  [info.list[idx], info.list[to]] = [info.list[to], info.list[idx]];
+  renderCanvas();
+  const el = document.querySelector(`.node[data-id="${selectedNodeId}"]`);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function moveNodeToEdge(id, edge) {
+  const info = findParent(id);
+  if (!info) return;
+  const idx = info.list.findIndex(n => n.id === id);
+  if (idx < 0) return;
+  const [node] = info.list.splice(idx, 1);
+  if (edge === 'top') info.list.unshift(node); else info.list.push(node);
+  renderCanvas();
+  const el = document.querySelector(`.node[data-id="${id}"]`);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// Brief yellow flash to point at a node after navigating to it
+function flashNode(id) {
+  const el = document.querySelector(`.node[data-id="${id}"]`);
+  if (!el) return;
+  el.classList.remove('is-flashed');
+  void el.offsetWidth;
+  el.classList.add('is-flashed');
+  setTimeout(() => el.classList.remove('is-flashed'), 1100);
+}
+
 let toastTimer = null;
 function showToast(message) {
   let el = document.getElementById('toast');
@@ -29,7 +117,10 @@ function showToast(message) {
 // ─── Keyboard shortcuts ─────────────────────────────────
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
-    closeMarkdownModal();
+    // Staged: menus first, then modals, then selection
+    if (closeMenus()) return;
+    if (closeModals()) return;
+    if (selectedNodeId) selectNode(null);
     return;
   }
 
@@ -42,18 +133,84 @@ document.addEventListener('keydown', e => {
     return;
   }
 
-  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  if (e.metaKey || e.ctrlKey) return;
+  if (document.querySelector('.modal-overlay.is-open')) return;
+
+  if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+    e.preventDefault();
+    const dir = e.key === 'ArrowUp' ? -1 : 1;
+    if (e.altKey) nudgeSelected(dir); else navigateSelection(dir);
+    return;
+  }
+
+  if (e.altKey) return;
+
+  if ((e.key === 'Backspace' || e.key === 'Delete') && selectedNodeId) {
+    e.preventDefault();
+    removeNode(selectedNodeId);
+    return;
+  }
 
   switch (e.key.toLowerCase()) {
     case 't': e.preventDefault(); toggleShelf(); break;
-    case 'm': e.preventDefault(); toggleSidebar(); break;
+    case 'm': e.preventDefault(); toggleMetaPopover(); break;
+    case 'o': e.preventDefault(); toggleOutline(); break;
     case 'e': e.preventDefault(); openMarkdownModal(); break;
     case 'n': e.preventDefault(); newReportage(); break;
   }
 });
 
+function closeMenus() {
+  let closed = false;
+  const ctx = document.getElementById('contextMenu');
+  if (ctx.classList.contains('is-open')) { closeContextMenu(); closed = true; }
+  const tm = document.getElementById('toolbarMenu');
+  if (tm.classList.contains('is-open')) { tm.classList.remove('is-open'); closed = true; }
+  const mp = document.getElementById('metaPopover');
+  if (mp.classList.contains('is-open')) {
+    mp.classList.remove('is-open');
+    document.getElementById('titleBtn').classList.remove('is-active');
+    closed = true;
+  }
+  document.querySelectorAll('.node__menu.is-open').forEach(m => { m.classList.remove('is-open'); closed = true; });
+  if (document.querySelector('.node.has-controls-open')) { closeAllNodeControls(); closed = true; }
+  return closed;
+}
+
+// Close only the topmost modal so Escape dismisses one layer at a
+// time — the confirm dialog can stack on top of the markdown modal,
+// and closing both at once would discard pasted import text
+function closeModals() {
+  const cm = document.getElementById('confirmModal');
+  if (cm.classList.contains('is-open')) { cm.classList.remove('is-open'); return true; }
+  const cap = document.getElementById('captionModal');
+  if (cap.classList.contains('is-open')) { closeCaptionDialog(); return true; }
+  const om = document.getElementById('openModal');
+  if (om.classList.contains('is-open')) { om.classList.remove('is-open'); return true; }
+  const mm = document.getElementById('markdownModal');
+  if (mm.classList.contains('is-open')) { closeMarkdownModal(); return true; }
+  return false;
+}
+
+function confirmDialog(message, onConfirm, opts = {}) {
+  const modal = document.getElementById('confirmModal');
+  document.getElementById('confirmMessage').textContent = message;
+  const ok = document.getElementById('confirmOkBtn');
+  ok.textContent = opts.confirmLabel || 'Confirm';
+  ok.onclick = () => {
+    modal.classList.remove('is-open');
+    onConfirm();
+  };
+  modal.classList.add('is-open');
+  ok.focus();
+}
+
 function newReportage() {
-  if (!confirm('Start a new reportage? This will clear everything.')) return;
+  if (!state.nodes.length && !state.shelf.length) { doNewReportage(); return; }
+  confirmDialog('Start a new reportage? This will clear everything.', doNewReportage, { confirmLabel: 'Clear' });
+}
+
+function doNewReportage() {
   // Revoke object URLs
   state.shelf.forEach(s => { if (s.objectUrl) URL.revokeObjectURL(s.objectUrl); });
   state.meta = {
@@ -63,6 +220,7 @@ function newReportage() {
   };
   state.nodes = [];
   state.shelf = [];
+  selectNode(null);
   localStorage.removeItem('reportage-editor-state');
   localStorage.removeItem('reportage-editor-images');
   syncMetaUI();
@@ -137,6 +295,7 @@ function removeNode(id) {
         if (pIdx >= 0) grandparent.list.splice(pIdx, 1);
       }
     }
+    if (selectedNodeId && !findNode(selectedNodeId)) selectedNodeId = null;
     renderCanvas();
   };
   if (el) {
@@ -222,18 +381,38 @@ function saveState(coalesce = false) {
   }
   lastSavedJson = json;
   localStorage.setItem('reportage-editor-state', json);
+  updateUndoUI();
+}
+
+// Persist without creating an undo step — for background mutations
+// (like async ratio detection) that shouldn't pollute the history
+function saveStateQuiet() {
+  const data = JSON.parse(JSON.stringify(state));
+  data.shelf.forEach(s => delete s.objectUrl);
+  lastSavedJson = JSON.stringify(data);
+  localStorage.setItem('reportage-editor-state', lastSavedJson);
+}
+
+function updateUndoUI() {
+  const u = document.getElementById('undoBtn');
+  const r = document.getElementById('redoBtn');
+  if (!u || !r) return;
+  u.disabled = !undoStack.length;
+  r.disabled = !redoStack.length;
 }
 
 function undo() {
   if (!undoStack.length) return;
   redoStack.push(lastSavedJson);
   restoreFromJson(undoStack.pop());
+  updateUndoUI();
 }
 
 function redo() {
   if (!redoStack.length) return;
   undoStack.push(lastSavedJson);
   restoreFromJson(redoStack.pop());
+  updateUndoUI();
 }
 
 function restoreFromJson(json) {
@@ -248,6 +427,7 @@ function restoreFromJson(json) {
   urls.forEach(url => {
     if (url && !kept.has(url)) URL.revokeObjectURL(url);
   });
+  if (selectedNodeId && !findNode(selectedNodeId)) selectedNodeId = null;
   syncMetaUI();
   renderShelf();
   renderCanvas();
@@ -284,6 +464,11 @@ async function restoreImages() {
 // ─── Meta ───────────────────────────────────────────────
 function updateMeta(key, value) {
   state.meta[key] = value;
+  if (key === 'title') {
+    const el = document.getElementById('meta-title');
+    if (el && document.activeElement !== el) el.value = value;
+    updateTitleButton();
+  }
   if (key === 'cover' && value) {
     // Auto-set ratio from the cover photo's ratio
     const photo = getShelfPhoto(value) || getAllPhotos().find(p => p.filename === value);
@@ -294,10 +479,17 @@ function updateMeta(key, value) {
   }
   saveState(true);
   if (key === 'cover') return;
-  updateCoverDropdown();
+  updateCoverPicker();
+}
+
+function updateTitleButton() {
+  const el = document.getElementById('toolbar-title-text');
+  el.textContent = state.meta.title || 'Untitled';
+  el.classList.toggle('is-placeholder', !state.meta.title);
 }
 
 function syncMetaUI() {
+  updateTitleButton();
   document.getElementById('meta-title').value = state.meta.title;
   document.getElementById('meta-date').value = state.meta.date;
   document.getElementById('meta-location').value = state.meta.location;
@@ -305,34 +497,100 @@ function syncMetaUI() {
   document.getElementById('meta-ratio').value = state.meta.ratio;
   document.getElementById('meta-intro').value = state.meta.intro;
   document.getElementById('meta-translation').value = state.meta.translation;
-  updateCoverDropdown();
+  updateCoverPicker();
 }
 
-function updateCoverDropdown() {
-  const sel = document.getElementById('meta-cover');
-  const photos = getAllPhotos();
-  const current = state.meta.cover;
-  sel.innerHTML = '';
-  const blank = document.createElement('option');
-  blank.value = '';
-  blank.textContent = '— Select —';
-  sel.appendChild(blank);
+function photoThumbSrc(p) {
+  return getShelfPhoto(p.filename)?.objectUrl || `https://img.javier.computer/${p.location}/${p.filename}_2880.jpg`;
+}
+
+function updateCoverPicker() {
+  const btn = document.getElementById('coverPickerBtn');
+  const grid = document.getElementById('coverGrid');
+  if (!btn || !grid) return;
+
+  const photos = [];
+  const seen = new Set();
+  getAllPhotos().forEach(p => {
+    if (!seen.has(p.filename)) { seen.add(p.filename); photos.push(p); }
+  });
+
+  const cover = state.meta.cover;
+  const coverPhoto = photos.find(p => p.filename === cover);
+
+  btn.innerHTML = '';
+  if (coverPhoto) {
+    const img = document.createElement('img');
+    img.src = photoThumbSrc(coverPhoto);
+    img.alt = '';
+    btn.appendChild(img);
+    const label = document.createElement('span');
+    label.className = 'cover-picker__label';
+    label.textContent = coverPhoto.filename;
+    btn.appendChild(label);
+  } else {
+    const empty = document.createElement('span');
+    empty.className = 'cover-picker__empty';
+    empty.textContent = photos.length ? 'Choose a cover…' : 'Add photos to the canvas first';
+    btn.appendChild(empty);
+  }
+  btn.disabled = !photos.length;
+
+  grid.innerHTML = '';
   photos.forEach(p => {
-    const opt = document.createElement('option');
-    opt.value = p.filename;
-    opt.textContent = p.filename;
-    if (p.filename === current) opt.selected = true;
-    sel.appendChild(opt);
+    const cell = document.createElement('button');
+    cell.type = 'button';
+    cell.className = 'cover-grid__cell' + (p.filename === cover ? ' is-selected' : '');
+    cell.title = p.filename;
+    const img = document.createElement('img');
+    img.src = photoThumbSrc(p);
+    img.alt = p.filename;
+    img.loading = 'lazy';
+    cell.appendChild(img);
+    cell.onclick = () => {
+      updateMeta('cover', p.filename);
+      updateCoverPicker();
+      grid.classList.remove('is-open');
+    };
+    grid.appendChild(cell);
   });
 }
 
-function toggleSidebar() {
-  const sidebar = document.getElementById('sidebar');
-  const btn = document.getElementById('sidebarToggleBtn');
-  sidebar.classList.toggle('is-open');
-  btn.classList.toggle('is-active', sidebar.classList.contains('is-open'));
-  localStorage.setItem('reportage-editor-sidebar', sidebar.classList.contains('is-open') ? 'open' : 'collapsed');
+function toggleCoverGrid(e) {
+  e.stopPropagation();
+  document.getElementById('coverGrid').classList.toggle('is-open');
 }
+
+function toggleMetaPopover(e) {
+  if (e) e.stopPropagation();
+  const pop = document.getElementById('metaPopover');
+  const willOpen = !pop.classList.contains('is-open');
+  closeMenus();
+  if (willOpen) {
+    pop.classList.add('is-open');
+    document.getElementById('titleBtn').classList.add('is-active');
+    const title = document.getElementById('meta-title');
+    title.focus();
+    title.select();
+  }
+}
+
+function toggleOutline() {
+  const panel = document.getElementById('outlinePanel');
+  const btn = document.getElementById('outlineToggleBtn');
+  const willOpen = !panel.classList.contains('is-open');
+  panel.classList.toggle('is-open', willOpen);
+  btn.classList.toggle('is-active', willOpen);
+  localStorage.setItem('reportage-editor-outline', willOpen ? 'open' : 'collapsed');
+  if (willOpen) renderOutline();
+}
+
+(function initOutline() {
+  if (localStorage.getItem('reportage-editor-outline') === 'open') {
+    document.getElementById('outlinePanel').classList.add('is-open');
+    document.getElementById('outlineToggleBtn').classList.add('is-active');
+  }
+})();
 
 function toggleShelf() {
   const panel = document.getElementById('shelfPanel');
@@ -350,12 +608,6 @@ function toggleShelf() {
   }
 })();
 
-(function initSidebar() {
-  if (localStorage.getItem('reportage-editor-sidebar') === 'open') {
-    document.getElementById('sidebar').classList.add('is-open');
-    document.getElementById('sidebarToggleBtn').classList.add('is-active');
-  }
-})();
 
 // Shelf resize (horizontal)
 (function() {
@@ -414,9 +666,11 @@ function scheduleRatioRender() {
   if (_ratioRenderTimer) clearTimeout(_ratioRenderTimer);
   _ratioRenderTimer = setTimeout(() => {
     _ratioRenderTimer = null;
+    // Quiet save first so renderCanvas's saveState sees no change and the
+    // async ratio detection doesn't become a phantom undo step
+    saveStateQuiet();
     renderShelf();
     renderCanvas();
-    saveState();
   }, 300);
 }
 
@@ -542,6 +796,11 @@ function renderShelf() {
     const div = document.createElement('div');
     const orient = photo.ratio === '2/3' ? 'is-portrait' : 'is-landscape';
     div.className = `shelf__photo ${orient}`;
+    if (!renderedShelfNames.has(photo.filename)) {
+      renderedShelfNames.add(photo.filename);
+      div.classList.add('is-entering');
+      div.addEventListener('animationend', () => div.classList.remove('is-entering'), { once: true });
+    }
     div.draggable = true;
     div.dataset.filename = photo.filename;
     const imgSrc = photo.objectUrl || `https://img.javier.computer/${photo.location}/${photo.filename}_2880.jpg`;
@@ -609,6 +868,12 @@ function renderShelf() {
       e.preventDefault();
       e.stopPropagation();
       shelf.querySelectorAll('.shelf__reorder-indicator').forEach(el => el.remove());
+      document.getElementById('shelf').classList.remove('is-dragover');
+      // OS files dropped on top of an existing thumbnail still get added
+      if (e.dataTransfer.files && e.dataTransfer.files.length) {
+        handleFiles(e.dataTransfer.files);
+        return;
+      }
       // Handle shelf reorder
       try {
         const data = JSON.parse(e.dataTransfer.getData('text/plain'));
@@ -836,9 +1101,12 @@ function showInsertMenu(e, index) {
     closeContextMenu();
     const input = document.getElementById('fileInput');
     input.onchange = function() {
-      const stackNode = { id: uid(), type: 'stack', classes: [], children: [] };
-      state.nodes.splice(index, 0, stackNode);
-      addFilesToContainer(this.files, stackNode);
+      const files = Array.from(this.files).filter(f => f.type.startsWith('image/'));
+      if (files.length) {
+        const stackNode = { id: uid(), type: 'stack', classes: [], children: [] };
+        state.nodes.splice(index, 0, stackNode);
+        addFilesToContainer(files, stackNode);
+      }
       this.onchange = originalFileInputHandler;
     };
     input.click();
@@ -888,8 +1156,9 @@ function renderCanvas() {
     canvas.appendChild(createInserter(state.nodes.length));
   }
 
-  updateCoverDropdown();
+  updateCoverPicker();
   updateShelfUsedState();
+  renderOutline();
   saveState();
 }
 
@@ -907,6 +1176,10 @@ let canvasDragNodeId = null;
 (function() {
   const canvas = document.getElementById('canvas');
   canvas.style.position = 'relative';
+
+  canvas.addEventListener('click', e => {
+    if (e.target === canvas) selectNode(null);
+  });
 
   canvas.addEventListener('dragover', e => {
     canvas.classList.add('is-dragging');
@@ -988,6 +1261,21 @@ function renderNode(node) {
   wrapper.dataset.type = node.type;
   wrapper.dataset.id = node.id;
 
+  if (node.id === selectedNodeId) wrapper.classList.add('is-selected');
+  if (!renderedNodeIds.has(node.id)) {
+    renderedNodeIds.add(node.id);
+    wrapper.classList.add('is-entering');
+    wrapper.addEventListener('animationend', () => wrapper.classList.remove('is-entering'), { once: true });
+  }
+
+  wrapper.addEventListener('click', e => {
+    if (e.target.closest('button, input, textarea, select, .text-editable, .node__menu, .node__controls, .node__trigger')) return;
+    e.stopPropagation();
+    // stopPropagation skips the document-level menu closer — do it here
+    closeMenus();
+    selectNode(node.id);
+  });
+
   if (node.type === 'photo') return renderPhotoNode(node, wrapper);
   if (node.type === 'text') return renderTextNode(node, wrapper);
   return renderContainerNode(node, wrapper);
@@ -999,13 +1287,13 @@ function renderContainerNode(node, wrapper) {
   controls.className = 'node__controls';
   const moveGroup = document.createElement('div');
   moveGroup.className = 'node__move-group';
-  moveGroup.innerHTML = `<span class="node__handle" title="Drag to reorder">⠿</span>`;
+  moveGroup.innerHTML = `<span class="node__handle" data-tip="Drag to reorder">${ICONS.grip}</span>`;
   controls.appendChild(moveGroup);
 
   // Label (appended after arrows below)
   const label = document.createElement('span');
   label.className = 'node__label';
-  label.title = 'Click to change type';
+  label.dataset.tip = 'Change type';
   label.style.cursor = 'pointer';
   label.textContent = node.type;
 
@@ -1039,8 +1327,8 @@ function renderContainerNode(node, wrapper) {
   // Move up button
   const upBtn = document.createElement('button');
   upBtn.className = 'node__btn is-move';
-  upBtn.innerHTML = '↑';
-  upBtn.title = 'Move up';
+  upBtn.innerHTML = ICONS.up;
+  upBtn.dataset.tip = 'Move up';
   upBtn.onclick = (e) => {
     e.stopPropagation();
     const info = findParent(node.id);
@@ -1064,8 +1352,8 @@ function renderContainerNode(node, wrapper) {
   // Move down button
   const downBtn = document.createElement('button');
   downBtn.className = 'node__btn is-move';
-  downBtn.innerHTML = '↓';
-  downBtn.title = 'Move down';
+  downBtn.innerHTML = ICONS.down;
+  downBtn.dataset.tip = 'Move down';
   downBtn.onclick = (e) => {
     e.stopPropagation();
     const info = findParent(node.id);
@@ -1097,8 +1385,8 @@ function renderContainerNode(node, wrapper) {
 
     const menuBtn = document.createElement('button');
     menuBtn.className = 'node__menu-btn';
-    menuBtn.innerHTML = '···';
-    menuBtn.title = 'Options';
+    menuBtn.innerHTML = ICONS.dots;
+    menuBtn.dataset.tip = 'Options';
 
     const menu = document.createElement('div');
     menu.className = 'node__menu';
@@ -1117,6 +1405,22 @@ function renderContainerNode(node, wrapper) {
     });
     menu.appendChild(classDiv);
 
+    const moveSep = document.createElement('div');
+    moveSep.className = 'node__menu-sep';
+    menu.appendChild(moveSep);
+
+    [['Move to top', 'top'], ['Move to bottom', 'bottom']].forEach(([text, edge]) => {
+      const b = document.createElement('button');
+      b.className = 'node__menu-action';
+      b.textContent = text;
+      b.onclick = (e) => {
+        e.stopPropagation();
+        menu.classList.remove('is-open');
+        moveNodeToEdge(node.id, edge);
+      };
+      menu.appendChild(b);
+    });
+
     menuBtn.onclick = (e) => {
       e.stopPropagation();
       // Close any other open menus
@@ -1134,16 +1438,16 @@ function renderContainerNode(node, wrapper) {
   // Add child button
   const addBtn = document.createElement('button');
   addBtn.className = 'node__btn is-add';
-  addBtn.innerHTML = '+';
-  addBtn.title = 'Add item';
+  addBtn.innerHTML = ICONS.plus;
+  addBtn.dataset.tip = 'Add item';
   addBtn.onclick = (e) => { e.stopPropagation(); showAddChildMenu(e, node); };
   controls.appendChild(addBtn);
 
   // Delete button
   const delBtn = document.createElement('button');
   delBtn.className = 'node__btn is-delete';
-  delBtn.innerHTML = '✕';
-  delBtn.title = 'Delete';
+  delBtn.innerHTML = ICONS.x;
+  delBtn.dataset.tip = 'Delete';
   delBtn.onclick = (e) => { e.stopPropagation(); removeNode(node.id); };
   controls.appendChild(delBtn);
 
@@ -1172,8 +1476,8 @@ function renderContainerNode(node, wrapper) {
 
   const triggerHandle = document.createElement('span');
   triggerHandle.className = 'node__trigger-handle';
-  triggerHandle.innerHTML = '⠿';
-  triggerHandle.title = 'Drag to reorder';
+  triggerHandle.innerHTML = ICONS.grip;
+  triggerHandle.dataset.tip = 'Drag to reorder';
   triggerHandle.draggable = true;
   triggerHandle.addEventListener('dragstart', e => {
     e.stopPropagation();
@@ -1190,10 +1494,17 @@ function renderContainerNode(node, wrapper) {
   });
   trigger.appendChild(triggerHandle);
 
+  // Type badge so it's clear the trigger belongs to this whole group,
+  // not to the child it happens to visually sit on
+  const triggerLabel = document.createElement('span');
+  triggerLabel.className = 'node__trigger-label';
+  triggerLabel.textContent = node.type;
+  trigger.appendChild(triggerLabel);
+
   const triggerExpand = document.createElement('button');
   triggerExpand.className = 'node__trigger-expand';
-  triggerExpand.innerHTML = '›';
-  triggerExpand.title = 'Show controls';
+  triggerExpand.innerHTML = ICONS.chevron;
+  triggerExpand.dataset.tip = 'Show controls';
   triggerExpand.onclick = (e) => {
     e.stopPropagation();
     closeAllNodeControls();
@@ -1333,23 +1644,26 @@ function renderPhotoNode(node, wrapper) {
   removeBtn.textContent = '✕';
   removeBtn.addEventListener('click', () => removeNode(node.id));
 
-  const overlay = document.createElement('div');
-  overlay.className = 'photo-overlay';
-  const info = document.createElement('div');
-  info.className = 'photo-overlay__info';
-  const filenameLabel = document.createElement('div');
-  filenameLabel.className = 'photo-overlay__filename';
-  filenameLabel.textContent = `${node.location}/${node.filename}`;
-  const fields = document.createElement('div');
-  fields.className = 'photo-overlay__fields';
-  const captionInput = document.createElement('input');
-  captionInput.placeholder = 'Caption';
-  captionInput.value = node.caption || '';
-  captionInput.addEventListener('change', () => updatePhotoField(node.id, 'caption', captionInput.value));
-  fields.appendChild(captionInput);
-  info.append(filenameLabel, fields);
-  overlay.appendChild(info);
-  div.append(img, removeBtn, overlay);
+  const actions = document.createElement('div');
+  actions.className = 'photo-actions';
+
+  const captionBtn = document.createElement('button');
+  captionBtn.className = 'photo-action' + (node.caption ? ' has-caption' : '');
+  captionBtn.innerHTML = ICONS.caption;
+  captionBtn.dataset.tip = node.caption ? `“${node.caption}”` : 'Add caption';
+  captionBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    openCaptionDialog(node.id);
+  });
+  actions.appendChild(captionBtn);
+
+  const infoBtn = document.createElement('button');
+  infoBtn.className = 'photo-action';
+  infoBtn.innerHTML = ICONS.info;
+  infoBtn.dataset.tip = `${node.location}/${node.filename}`;
+  actions.appendChild(infoBtn);
+
+  div.append(img, removeBtn, actions);
 
   // Make photos natively draggable
   wrapper.draggable = true;
@@ -1379,14 +1693,14 @@ function renderTextNode(node, wrapper) {
   controls.className = 'node__controls';
   const moveGroup = document.createElement('div');
   moveGroup.className = 'node__move-group';
-  moveGroup.innerHTML = `<span class="node__handle" title="Drag to reorder">⠿</span>`;
+  moveGroup.innerHTML = `<span class="node__handle" data-tip="Drag to reorder">${ICONS.grip}</span>`;
   controls.appendChild(moveGroup);
 
   // Move up
   const upBtn = document.createElement('button');
   upBtn.className = 'node__btn is-move';
-  upBtn.innerHTML = '↑';
-  upBtn.title = 'Move up';
+  upBtn.innerHTML = ICONS.up;
+  upBtn.dataset.tip = 'Move up';
   upBtn.onclick = (e) => {
     e.stopPropagation();
     const info = findParent(node.id);
@@ -1402,8 +1716,8 @@ function renderTextNode(node, wrapper) {
   // Move down
   const downBtn = document.createElement('button');
   downBtn.className = 'node__btn is-move';
-  downBtn.innerHTML = '↓';
-  downBtn.title = 'Move down';
+  downBtn.innerHTML = ICONS.down;
+  downBtn.dataset.tip = 'Move down';
   downBtn.onclick = (e) => {
     e.stopPropagation();
     const info = findParent(node.id);
@@ -1424,12 +1738,16 @@ function renderTextNode(node, wrapper) {
   const translationBtn = document.createElement('button');
   translationBtn.className = 'node__btn is-translation' + (node.translation != null ? ' is-active' : '');
   translationBtn.innerHTML = '译';
-  translationBtn.title = 'Toggle translation';
+  translationBtn.dataset.tip = 'Toggle translation';
   translationBtn.onclick = () => {
     if (node.translation != null) {
+      // Stash the text so toggling off (or off+on by accident) isn't
+      // destructive — the draft is ignored by the exporter
+      if (node.translation) node.translationDraft = node.translation;
       delete node.translation;
     } else {
-      node.translation = '';
+      node.translation = node.translationDraft || '';
+      delete node.translationDraft;
     }
     renderCanvas();
     saveState();
@@ -1438,7 +1756,8 @@ function renderTextNode(node, wrapper) {
 
   const delBtn = document.createElement('button');
   delBtn.className = 'node__btn is-delete';
-  delBtn.innerHTML = '✕';
+  delBtn.innerHTML = ICONS.x;
+  delBtn.dataset.tip = 'Delete';
   delBtn.onclick = () => { removeNode(node.id); };
   controls.appendChild(delBtn);
 
@@ -1465,7 +1784,7 @@ function renderTextNode(node, wrapper) {
   // Trigger dot for nested nodes
   const trigger = document.createElement('button');
   trigger.className = 'node__trigger';
-  trigger.innerHTML = '⠿';
+  trigger.innerHTML = ICONS.grip + '<span class="node__trigger-label">text</span>';
   trigger.onclick = (e) => {
     e.stopPropagation();
     closeAllNodeControls();
@@ -1674,7 +1993,23 @@ function toggleClass(node, cls) {
     }
     node.classes.push(cls);
   }
-  renderCanvas();
+  // Update the DOM in place instead of re-rendering, so the options
+  // menu stays open and several classes can be toggled in a row
+  const wrapper = document.querySelector(`.node[data-id="${node.id}"]`);
+  if (wrapper) {
+    const container = wrapper.querySelector(':scope > [data-parent-id]');
+    if (container) {
+      let className = `${node.type}-container ${node.classes.join(' ')}`.trim();
+      if (!node.children || node.children.length === 0) className += ' is-empty';
+      container.className = className;
+    }
+    wrapper.querySelectorAll(':scope > .node__controls .class-toggle').forEach(btn => {
+      btn.classList.toggle('is-active', node.classes.includes(btn.textContent));
+    });
+    saveState();
+  } else {
+    renderCanvas();
+  }
 }
 
 function updatePhotoField(id, field, value) {
@@ -1683,6 +2018,38 @@ function updatePhotoField(id, field, value) {
     node[field] = value;
     saveState();
   }
+}
+
+// ─── Caption dialog ─────────────────────────────────────
+let captionNodeId = null;
+
+function openCaptionDialog(id) {
+  const node = findNode(id);
+  if (!node) return;
+  captionNodeId = id;
+  document.getElementById('captionFilename').textContent = `${node.location}/${node.filename}`;
+  const input = document.getElementById('captionInput');
+  input.value = node.caption || '';
+  document.getElementById('altInput').value = node.alt || '';
+  document.getElementById('captionModal').classList.add('is-open');
+  input.focus();
+  input.select();
+}
+
+function closeCaptionDialog() {
+  document.getElementById('captionModal').classList.remove('is-open');
+  captionNodeId = null;
+}
+
+function saveCaptionDialog() {
+  const node = findNode(captionNodeId);
+  if (node) {
+    node.caption = document.getElementById('captionInput').value.trim();
+    node.alt = document.getElementById('altInput').value.trim();
+    saveState();
+    renderCanvas(); // refresh the caption indicator
+  }
+  closeCaptionDialog();
 }
 
 // ─── Add containers ─────────────────────────────────────
@@ -1698,9 +2065,12 @@ function showAddMenu(e) {
     closeContextMenu();
     const input = document.getElementById('fileInput');
     input.onchange = function() {
-      const stackNode = { id: uid(), type: 'stack', classes: [], children: [] };
-      state.nodes.push(stackNode);
-      addFilesToContainer(this.files, stackNode);
+      const files = Array.from(this.files).filter(f => f.type.startsWith('image/'));
+      if (files.length) {
+        const stackNode = { id: uid(), type: 'stack', classes: [], children: [] };
+        state.nodes.push(stackNode);
+        addFilesToContainer(files, stackNode);
+      }
       this.onchange = originalFileInputHandler;
     };
     input.click();
@@ -1809,8 +2179,10 @@ function showContextMenuAt(menu, e) {
 
   if (spaceBelow < menuHeight) {
     // Open upward
+    menu.dataset.flip = 'up';
     menu.style.top = (rect.top - menuHeight - 4) + 'px';
   } else {
+    menu.dataset.flip = 'down';
     menu.style.top = (rect.bottom + 4) + 'px';
   }
 
@@ -1870,9 +2242,17 @@ function copyMarkdown() {
 function doImportFromModal() {
   const input = document.getElementById('markdownOutput').value.trim();
   if (!input) return;
-  if (!confirm('Import this markdown? This will replace the current reportage.')) return;
-  closeMarkdownModal();
-  doImportText(input);
+  confirmDialog('Import this markdown? This will replace the current reportage.', () => {
+    closeMarkdownModal();
+    doImportText(input);
+  }, { confirmLabel: 'Import' });
+}
+
+function copyMarkdownToClipboard() {
+  navigator.clipboard.writeText(generateMarkdown()).then(
+    () => showToast('Markdown copied to clipboard'),
+    () => showToast('Could not copy — use the markdown modal instead')
+  );
 }
 
 // Double-quoted YAML scalar with escaped backslashes and quotes
@@ -2049,12 +2429,13 @@ function doImportText(input) {
       }
     });
 
+    selectNode(null);
     syncMetaUI();
     renderShelf();
     renderCanvas();
     restoreImages(); // reattach any locally stored blobs for these filenames
   } catch (err) {
-    alert('Parse error: ' + err.message);
+    showToast('Parse error: ' + err.message);
     console.error(err);
   }
 }
@@ -2321,11 +2702,14 @@ function setTheme(mode) {
 
 function toggleToolbarMenu(e) {
   e.stopPropagation();
-  document.getElementById('toolbarMenu').classList.toggle('is-open');
+  const menu = document.getElementById('toolbarMenu');
+  const willOpen = !menu.classList.contains('is-open');
+  closeMenus();
+  if (willOpen) menu.classList.add('is-open');
 }
 
 (function initTheme() {
-  const saved = localStorage.getItem('reportage-editor-theme') || 'light';
+  const saved = localStorage.getItem('reportage-editor-theme') || 'system';
   applyTheme(saved);
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
     if (localStorage.getItem('reportage-editor-theme') === 'system') applyTheme('system');
@@ -2334,9 +2718,7 @@ function toggleToolbarMenu(e) {
 
 // ─── Close menus on outside click or scroll ─────────────
 document.addEventListener('click', () => {
-  document.querySelectorAll('.node__menu.is-open').forEach(m => m.classList.remove('is-open'));
-  document.getElementById('toolbarMenu').classList.remove('is-open');
-  closeAllNodeControls();
+  closeMenus();
 });
 
 document.addEventListener('scroll', (e) => {
@@ -2354,29 +2736,506 @@ async function fetchReportageIndex() {
     const res = await fetch('/tools/reportages.json');
     if (!res.ok) return;
     reportageIndex = await res.json();
-    const select = document.getElementById('reportageSelect');
-    reportageIndex.forEach((item, i) => {
-      const opt = document.createElement('option');
-      opt.value = i;
-      opt.textContent = `${item.date} — ${item.title}`;
-      select.appendChild(opt);
-    });
   } catch (e) {
     console.warn('Could not load reportage index:', e);
   }
 }
 
-function loadReportage(index) {
-  if (index === '') return;
-  const item = reportageIndex[index];
-  if (!item) return;
-  if ((state.nodes.length || state.shelf.length) && !confirm('Load this reportage? Current work will be replaced.')) {
-    document.getElementById('reportageSelect').value = '';
+function openReportageModal() {
+  closeMenus();
+  document.getElementById('openModal').classList.add('is-open');
+  const filter = document.getElementById('openFilter');
+  filter.value = '';
+  renderOpenList('');
+  filter.focus();
+}
+
+function closeOpenModal() {
+  document.getElementById('openModal').classList.remove('is-open');
+}
+
+function renderOpenList(filter) {
+  const list = document.getElementById('openList');
+  list.innerHTML = '';
+  const q = (filter || '').trim().toLowerCase();
+  const items = reportageIndex
+    .map((item, i) => ({ item, i }))
+    .filter(({ item }) => !q || `${item.title} ${item.date}`.toLowerCase().includes(q));
+
+  if (!items.length) {
+    const empty = document.createElement('div');
+    empty.className = 'open-modal__empty';
+    empty.textContent = reportageIndex.length ? 'No matches' : 'No reportages found';
+    list.appendChild(empty);
     return;
   }
-  doImportText(item.raw);
-  document.getElementById('reportageSelect').value = '';
+
+  items.forEach(({ item, i }) => {
+    const btn = document.createElement('button');
+    btn.className = 'open-modal__item';
+    const title = document.createElement('span');
+    title.className = 'open-modal__item-title';
+    title.textContent = item.title || 'Untitled';
+    const date = document.createElement('span');
+    date.className = 'open-modal__item-date';
+    date.textContent = item.date || '';
+    btn.append(title, date);
+    btn.onclick = () => {
+      closeOpenModal();
+      loadReportage(i);
+    };
+    list.appendChild(btn);
+  });
 }
+
+function loadReportage(index) {
+  const item = reportageIndex[index];
+  if (!item) return;
+  const doLoad = () => {
+    doImportText(item.raw);
+    showToast(`Loaded “${item.title || 'Untitled'}”`);
+  };
+  if (state.nodes.length || state.shelf.length) {
+    confirmDialog('Load this reportage? Current work will be replaced.', doLoad, { confirmLabel: 'Load' });
+  } else {
+    doLoad();
+  }
+}
+
+// ─── Outline ────────────────────────────────────────────
+const outlineCollapsed = new Set();
+let outlineDrag = null; // { node, row, ghost, target }
+let outlineDragEndedAt = 0;
+
+function renderOutline() {
+  const list = document.getElementById('outlineList');
+  if (!list || !document.getElementById('outlinePanel').classList.contains('is-open')) return;
+  list.innerHTML = '';
+
+  if (!state.nodes.length) {
+    const empty = document.createElement('div');
+    empty.className = 'outline__empty';
+    empty.textContent = 'Nothing on the canvas yet';
+    list.appendChild(empty);
+    return;
+  }
+
+  const walk = (nodes, depth) => {
+    nodes.forEach(node => {
+      list.appendChild(createOutlineRow(node, depth));
+      if (node.children && node.children.length && !outlineCollapsed.has(node.id)) {
+        walk(node.children, depth + 1);
+      }
+    });
+  };
+  walk(state.nodes, 0);
+
+  // Rows were rebuilt — recompute the "you are here" marker
+  currentOutlineId = null;
+  updateOutlineCurrent();
+}
+
+function createOutlineRow(node, depth) {
+  const row = document.createElement('div');
+  row.className = 'outline__row';
+  row.dataset.id = node.id;
+  row.dataset.depth = depth;
+  row.style.paddingLeft = (6 + depth * 16) + 'px';
+  row.style.setProperty('--indent', (6 + depth * 16) + 'px');
+  if (node.id === selectedNodeId) row.classList.add('is-selected');
+
+  if (node.children) {
+    const toggle = document.createElement('button');
+    toggle.className = 'outline__toggle' + (outlineCollapsed.has(node.id) ? ' is-collapsed' : '');
+    toggle.innerHTML = ICONS.chevron;
+    if (!node.children.length) toggle.style.visibility = 'hidden';
+    toggle.onclick = e => {
+      e.stopPropagation();
+      if (outlineCollapsed.has(node.id)) outlineCollapsed.delete(node.id);
+      else outlineCollapsed.add(node.id);
+      renderOutline();
+    };
+    row.appendChild(toggle);
+
+    const badge = document.createElement('span');
+    badge.className = 'outline__badge';
+    badge.dataset.type = node.type;
+    badge.textContent = node.type;
+    row.appendChild(badge);
+
+    const count = document.createElement('span');
+    count.className = 'outline__count';
+    count.textContent = node.children.length;
+    row.appendChild(count);
+
+    const filler = document.createElement('span');
+    filler.className = 'outline__label';
+    row.appendChild(filler);
+  } else if (node.type === 'photo') {
+    const pad = document.createElement('span');
+    pad.className = 'outline__toggle';
+    pad.style.visibility = 'hidden';
+    row.appendChild(pad);
+
+    const img = document.createElement('img');
+    img.className = 'outline__thumb';
+    const shelf = getShelfPhoto(node.filename);
+    // Same URL as the canvas so the browser cache is reused
+    img.src = shelf?.objectUrl || `https://img.javier.computer/${node.location}/${node.filename}_2880.jpg`;
+    img.alt = '';
+    img.draggable = false;
+    img.loading = 'lazy';
+    row.appendChild(img);
+
+    const label = document.createElement('span');
+    label.className = 'outline__label';
+    label.textContent = node.filename.substring(node.filename.lastIndexOf('-') + 1) || node.filename;
+    label.title = node.filename;
+    row.appendChild(label);
+  } else {
+    const pad = document.createElement('span');
+    pad.className = 'outline__toggle';
+    pad.style.visibility = 'hidden';
+    row.appendChild(pad);
+
+    const badge = document.createElement('span');
+    badge.className = 'outline__badge';
+    badge.dataset.type = 'text';
+    badge.textContent = '¶';
+    row.appendChild(badge);
+
+    const tmp = document.createElement('div');
+    tmp.innerHTML = node.html || '';
+    const label = document.createElement('span');
+    label.className = 'outline__label';
+    label.textContent = tmp.textContent.trim().slice(0, 60) || 'Empty text';
+    row.appendChild(label);
+  }
+
+  row.addEventListener('click', () => {
+    if (Date.now() - outlineDragEndedAt < 200) return;
+    selectNode(node.id);
+    const el = document.querySelector(`.node[data-id="${node.id}"]`);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      flashNode(node.id);
+    }
+  });
+
+  row.addEventListener('pointerdown', e => outlinePointerDown(e, node, row));
+  return row;
+}
+
+// Can `dragNode` live inside `container`? Same rules as canvas drag &
+// drop: containers only nest inside stacks, leaves can go anywhere.
+function canNest(dragNode, container) {
+  if (dragNode.id === container.id) return false;
+  if (dragNode.children) return container.type === 'stack';
+  return true;
+}
+
+function canPlaceIn(dragNode, parentNode) {
+  if (!parentNode) return true; // top level
+  return canNest(dragNode, parentNode);
+}
+
+function outlinePointerDown(e, node, row) {
+  if (e.button !== 0) return;
+  if (e.target.closest('.outline__toggle')) return;
+  const startX = e.clientX, startY = e.clientY;
+  const list = document.getElementById('outlineList');
+  let started = false;
+
+  const onMove = ev => {
+    if (!started) {
+      if (Math.hypot(ev.clientX - startX, ev.clientY - startY) < 5) return;
+      started = true;
+      outlineDrag = { node, row, ghost: null, target: null };
+      row.classList.add('is-dragging');
+      const ghost = document.createElement('div');
+      ghost.className = 'outline__ghost';
+      ghost.innerHTML = row.innerHTML;
+      ghost.querySelector('.outline__toggle')?.remove();
+      document.body.appendChild(ghost);
+      outlineDrag.ghost = ghost;
+      document.body.classList.add('is-outline-dragging');
+    }
+    outlineDrag.ghost.style.transform = `translate(${ev.clientX + 12}px, ${ev.clientY + 8}px)`;
+
+    // Autoscroll the panel near its edges — the point of the outline is
+    // that long-distance moves don't require fighting the scroll
+    const rect = list.getBoundingClientRect();
+    if (ev.clientY < rect.top + 48) list.scrollTop -= 10;
+    else if (ev.clientY > rect.bottom - 48) list.scrollTop += 10;
+
+    updateOutlineDropTarget(ev);
+  };
+
+  const onUp = () => {
+    row.removeEventListener('pointermove', onMove);
+    row.removeEventListener('pointerup', onUp);
+    row.removeEventListener('pointercancel', onUp);
+    if (started) finishOutlineDrag();
+  };
+
+  row.setPointerCapture(e.pointerId);
+  row.addEventListener('pointermove', onMove);
+  row.addEventListener('pointerup', onUp);
+  row.addEventListener('pointercancel', onUp);
+}
+
+function clearOutlineDropUI(list) {
+  list.querySelectorAll('.outline__indicator').forEach(el => el.remove());
+  list.querySelectorAll('.outline__row.is-drop-into').forEach(el => el.classList.remove('is-drop-into'));
+}
+
+function showOutlineGapIndicator(list, row, before) {
+  const ind = document.createElement('div');
+  ind.className = 'outline__indicator';
+  ind.style.left = (parseInt(row.style.paddingLeft, 10) || 6) + 'px';
+  ind.style.top = (before ? row.offsetTop - 2 : row.offsetTop + row.offsetHeight) + 'px';
+  list.appendChild(ind);
+}
+
+function updateOutlineDropTarget(ev) {
+  const list = document.getElementById('outlineList');
+  const dragNode = outlineDrag.node;
+  const rows = Array.from(list.querySelectorAll('.outline__row')).filter(r => {
+    const id = r.dataset.id;
+    if (id === dragNode.id) return false;
+    if (dragNode.children && isDescendantOf(id, dragNode.id)) return false;
+    return true;
+  });
+
+  clearOutlineDropUI(list);
+  let target = null;
+
+  // Hovering the middle band of a container row drops *into* it
+  for (const r of rows) {
+    const rect = r.getBoundingClientRect();
+    if (ev.clientY >= rect.top && ev.clientY <= rect.bottom) {
+      const inBand = ev.clientY >= rect.top + rect.height * 0.3 && ev.clientY <= rect.bottom - rect.height * 0.3;
+      if (inBand) {
+        const n = findNode(r.dataset.id);
+        if (n && n.children && canNest(dragNode, n)) {
+          target = { type: 'into', id: n.id };
+          r.classList.add('is-drop-into');
+        }
+      }
+      break;
+    }
+  }
+
+  if (!target) {
+    // Otherwise: the gap before the first row whose midpoint is below the pointer
+    let beforeRow = null;
+    for (const r of rows) {
+      const rect = r.getBoundingClientRect();
+      if (ev.clientY < rect.top + rect.height / 2) { beforeRow = r; break; }
+    }
+    if (beforeRow) {
+      const beforeNode = findNode(beforeRow.dataset.id);
+      const info = beforeNode && findParent(beforeNode.id);
+      if (info && canPlaceIn(dragNode, info.parent)) {
+        target = { type: 'before', id: beforeNode.id };
+        showOutlineGapIndicator(list, beforeRow, true);
+      }
+    } else {
+      target = { type: 'end' };
+      const last = rows[rows.length - 1];
+      if (last) showOutlineGapIndicator(list, last, false);
+    }
+  }
+
+  outlineDrag.target = target;
+}
+
+function finishOutlineDrag() {
+  const { node, row, ghost, target } = outlineDrag;
+  const list = document.getElementById('outlineList');
+  clearOutlineDropUI(list);
+  if (ghost) ghost.remove();
+  row.classList.remove('is-dragging');
+  document.body.classList.remove('is-outline-dragging');
+  outlineDragEndedAt = Date.now();
+  outlineDrag = null;
+  if (!target) return;
+
+  const info = findParent(node.id);
+  if (!info) return;
+  const fromIdx = info.list.findIndex(n => n.id === node.id);
+  if (fromIdx < 0) return;
+  info.list.splice(fromIdx, 1);
+
+  const wrapIfLoosePhoto = n => n.type === 'photo'
+    ? { id: uid(), type: 'stack', classes: [], children: [n] }
+    : n;
+
+  if (target.type === 'into') {
+    const container = findNode(target.id);
+    if (container) {
+      container.children.push(node);
+      outlineCollapsed.delete(target.id);
+      convertSingleIfCrowded(container);
+    } else {
+      info.list.splice(fromIdx, 0, node); // container vanished — put it back
+    }
+  } else if (target.type === 'before') {
+    const beforeInfo = findParent(target.id);
+    if (beforeInfo) {
+      const idx = beforeInfo.list.findIndex(n => n.id === target.id);
+      const toInsert = beforeInfo.parent ? node : wrapIfLoosePhoto(node);
+      beforeInfo.list.splice(idx, 0, toInsert);
+    } else {
+      info.list.splice(fromIdx, 0, node);
+    }
+  } else { // end of document, top level
+    state.nodes.push(wrapIfLoosePhoto(node));
+  }
+
+  renderCanvas();
+}
+
+// ─── Outline scroll-spy ─────────────────────────────────
+// Marks the outline row for the node currently in view, so you always
+// know where you are in the document
+let currentOutlineId = null;
+let spyTicking = false;
+
+function updateOutlineCurrent() {
+  const panel = document.getElementById('outlinePanel');
+  if (!panel.classList.contains('is-open')) return;
+  const refY = window.innerHeight * 0.35;
+  const nodes = document.querySelectorAll('#canvas .node');
+  let best = null;
+  // Last match in document order = the innermost node under the line
+  for (const el of nodes) {
+    const r = el.getBoundingClientRect();
+    if (r.top <= refY && r.bottom >= refY) best = el;
+  }
+  if (!best) {
+    let minDist = Infinity;
+    for (const el of nodes) {
+      const r = el.getBoundingClientRect();
+      const d = Math.min(Math.abs(r.top - refY), Math.abs(r.bottom - refY));
+      if (d < minDist) { minDist = d; best = el; }
+    }
+  }
+  const id = best ? best.dataset.id : null;
+  if (id === currentOutlineId) return;
+  currentOutlineId = id;
+
+  const list = document.getElementById('outlineList');
+  list.querySelectorAll('.outline__row.is-current').forEach(r => r.classList.remove('is-current'));
+  if (!id) return;
+
+  // If the node's row is hidden inside a collapsed container, mark the
+  // nearest visible ancestor instead
+  let lookupId = id;
+  let row = null;
+  while (lookupId) {
+    row = list.querySelector(`.outline__row[data-id="${lookupId}"]`);
+    if (row) break;
+    const info = findParent(lookupId);
+    lookupId = info && info.parent ? info.parent.id : null;
+  }
+  if (row) row.classList.add('is-current');
+}
+
+document.addEventListener('scroll', () => {
+  if (spyTicking) return;
+  spyTicking = true;
+  requestAnimationFrame(() => {
+    spyTicking = false;
+    updateOutlineCurrent();
+  });
+}, { passive: true });
+
+// ─── Canvas → shelf hover sync ──────────────────────────
+// Hovering a photo on the canvas highlights its thumbnail on the shelf
+(function initCanvasHoverSync() {
+  const canvas = document.getElementById('canvas');
+  let hoveredFilename = null;
+
+  const clear = () => {
+    hoveredFilename = null;
+    document.querySelectorAll('.shelf__photo.is-hovered').forEach(p => p.classList.remove('is-hovered'));
+  };
+
+  canvas.addEventListener('mouseover', e => {
+    const el = e.target.closest('.node[data-type="photo"]');
+    const node = el ? findNode(el.dataset.id) : null;
+    const filename = node ? node.filename : null;
+    if (filename === hoveredFilename) return;
+    clear();
+    if (!filename) return;
+    hoveredFilename = filename;
+    const thumb = document.querySelector(`.shelf__photo[data-filename="${CSS.escape(filename)}"]`);
+    if (thumb) thumb.classList.add('is-hovered');
+  });
+
+  canvas.addEventListener('mouseleave', clear);
+})();
+
+// ─── Tooltips ───────────────────────────────────────────
+// Custom tooltips for [data-tip] elements: delayed on first hover,
+// instant when moving between adjacent controls
+(function initTooltips() {
+  const tip = document.createElement('div');
+  tip.className = 'tooltip';
+  document.body.appendChild(tip);
+  let showTimer = null;
+  let lastHide = 0;
+  let current = null;
+
+  function show(el) {
+    tip.innerHTML = '';
+    tip.append(document.createTextNode(el.dataset.tip));
+    if (el.dataset.tipKbd) {
+      const k = document.createElement('span');
+      k.className = 'tooltip__kbd';
+      k.textContent = el.dataset.tipKbd;
+      tip.appendChild(k);
+    }
+    tip.classList.add('is-visible');
+    const r = el.getBoundingClientRect();
+    const tw = tip.offsetWidth, th = tip.offsetHeight;
+    let x = r.left + r.width / 2 - tw / 2;
+    x = Math.max(6, Math.min(x, window.innerWidth - tw - 6));
+    let y = r.bottom + 6;
+    if (y + th > window.innerHeight - 6) y = r.top - th - 6;
+    tip.style.left = x + 'px';
+    tip.style.top = y + 'px';
+  }
+
+  function hide() {
+    clearTimeout(showTimer);
+    showTimer = null;
+    current = null;
+    if (tip.classList.contains('is-visible')) {
+      lastHide = Date.now();
+      tip.classList.remove('is-visible');
+    }
+  }
+
+  document.addEventListener('mouseover', e => {
+    const el = e.target.closest('[data-tip]');
+    if (!el) return;
+    if (el === current) return;
+    const wasVisible = tip.classList.contains('is-visible');
+    hide();
+    current = el;
+    const delay = (wasVisible || Date.now() - lastHide < 400) ? 0 : 500;
+    showTimer = setTimeout(() => show(el), delay);
+  });
+
+  document.addEventListener('mouseout', e => {
+    const el = e.target.closest('[data-tip]');
+    if (el && el === current && (!e.relatedTarget || !el.contains(e.relatedTarget))) hide();
+  });
+
+  document.addEventListener('mousedown', hide, true);
+})();
 
 // ─── Init ───────────────────────────────────────────────
 const loaded = loadState();
@@ -2386,5 +3245,6 @@ if (loaded) {
   restoreImages();
 }
 renderCanvas();
+updateUndoUI();
 pruneStoredImages();
 fetchReportageIndex();
