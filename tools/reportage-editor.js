@@ -177,17 +177,19 @@ function closeMenus() {
   return closed;
 }
 
+// Close only the topmost modal so Escape dismisses one layer at a
+// time — the confirm dialog can stack on top of the markdown modal,
+// and closing both at once would discard pasted import text
 function closeModals() {
-  let closed = false;
   const cm = document.getElementById('confirmModal');
-  if (cm.classList.contains('is-open')) { cm.classList.remove('is-open'); closed = true; }
-  const om = document.getElementById('openModal');
-  if (om.classList.contains('is-open')) { om.classList.remove('is-open'); closed = true; }
+  if (cm.classList.contains('is-open')) { cm.classList.remove('is-open'); return true; }
   const cap = document.getElementById('captionModal');
-  if (cap.classList.contains('is-open')) { closeCaptionDialog(); closed = true; }
+  if (cap.classList.contains('is-open')) { closeCaptionDialog(); return true; }
+  const om = document.getElementById('openModal');
+  if (om.classList.contains('is-open')) { om.classList.remove('is-open'); return true; }
   const mm = document.getElementById('markdownModal');
-  if (mm.classList.contains('is-open')) { closeMarkdownModal(); closed = true; }
-  return closed;
+  if (mm.classList.contains('is-open')) { closeMarkdownModal(); return true; }
+  return false;
 }
 
 function confirmDialog(message, onConfirm, opts = {}) {
@@ -1269,6 +1271,8 @@ function renderNode(node) {
   wrapper.addEventListener('click', e => {
     if (e.target.closest('button, input, textarea, select, .text-editable, .node__menu, .node__controls, .node__trigger')) return;
     e.stopPropagation();
+    // stopPropagation skips the document-level menu closer — do it here
+    closeMenus();
     selectNode(node.id);
   });
 
