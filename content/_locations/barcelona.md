@@ -2,5 +2,5 @@
 layout: location
 title: Barcelona
 location: barcelona
-permalink: in/Barcelona
+permalink: in/barcelona
 ---
