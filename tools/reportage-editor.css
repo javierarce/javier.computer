@@ -18,6 +18,9 @@
   --gap-md: 0.8em;
   --gap-xl: 2em;
   --br-subtle: 2px;
+  --accent: #3858e9;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: "SF Mono", SFMono-Regular, ui-monospace, monospace;
 
@@ -70,18 +73,22 @@ button {
   background: var(--editor-surface);
   color: var(--editor-fg);
   padding: 6px 12px;
-  border-radius: 4px;
-  transition: background 140ms;
+  border-radius: 5px;
+  transition: background 140ms var(--ease-out), transform 140ms var(--ease-out);
 }
 
 button:hover {
   background: var(--editor-hover-bg);
 }
 
+button:active {
+  transform: scale(0.97);
+}
+
 button.is-primary {
-  background: #3858e9;
+  background: var(--accent);
   color: #ffffff;
-  border-color: #3858e9;
+  border-color: var(--accent);
   font-weight: 600;
 }
 
@@ -122,7 +129,7 @@ select {
 input:focus,
 textarea:focus,
 select:focus {
-  border-color: #3858e9;
+  border-color: var(--accent);
 }
 
 textarea {
@@ -130,24 +137,27 @@ textarea {
   min-height: 60px;
 }
 
-/* ── Header (toolbar + shelf) ─────────────────────────── */
+/* ── Header (toolbar) ─────────────────────────────────── */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  background: var(--editor-surface);
 }
 
 /* ── Toolbar ──────────────────────────────────────────── */
 .toolbar {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  padding: 8px 16px;
-  background: var(--editor-surface);
+  height: 48px;
+  padding: 0 12px;
+  background: color-mix(in srgb, var(--editor-surface) 82%, transparent);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--editor-border);
 }
 
@@ -161,26 +171,182 @@ textarea {
   margin-right: auto;
 }
 
-#reportageSelect {
-  font-size: 0.8rem;
-  padding: 4px 8px;
-  border: 1px solid var(--editor-border);
-  border-radius: 4px;
-  background: var(--editor-surface);
+.toolbar__center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+}
+
+.toolbar__title-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: min(420px, 40vw);
+  border: none;
+  background: none;
   color: var(--editor-fg);
-  max-width: 260px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 5px 12px;
+  border-radius: 6px;
+}
+
+.toolbar__title-btn svg {
+  color: var(--editor-fg-faint);
+  flex-shrink: 0;
+  transition: transform 140ms var(--ease-out);
+}
+
+.toolbar__title-btn:hover,
+.toolbar__title-btn.is-active {
+  background: var(--editor-hover-bg);
+}
+
+.toolbar__title-btn.is-active svg {
+  transform: rotate(180deg);
+}
+
+.toolbar__title-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.toolbar__title-text.is-placeholder {
+  color: var(--editor-fg-faint);
+  font-weight: 500;
+}
+
+/* ── Post settings popover (under the title) ─────────── */
+.meta-popover {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  width: 340px;
+  padding: 14px;
+  background: var(--editor-surface);
+  border: 1px solid var(--editor-border);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 200;
+  max-height: calc(100vh - 70px);
+  overflow-y: auto;
+  text-align: left;
+  opacity: 0;
+  transform: translateX(-50%) scale(0.96);
+  transform-origin: top center;
+  transition: opacity 140ms var(--ease-out), transform 140ms var(--ease-out), display 140ms allow-discrete;
+}
+
+.meta-popover.is-open {
+  display: block;
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+@starting-style {
+  .meta-popover.is-open {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.96);
+  }
+}
+
+/* ── Cover picker ─────────────────────────────────────── */
+.cover-picker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 4px;
+  background: var(--editor-surface);
+  border: 1px solid var(--editor-border);
+  border-radius: 6px;
+  text-align: left;
+}
+
+.cover-picker:disabled {
+  opacity: 1;
+  color: var(--editor-fg-faint);
+}
+
+.cover-picker img {
+  width: 56px;
+  height: 38px;
+  object-fit: cover;
+  border-radius: 4px;
+  background: var(--editor-photo-fallback);
+  flex-shrink: 0;
+}
+
+.cover-picker__label {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--editor-fg-muted);
+}
+
+.cover-picker__empty {
+  padding: 6px 8px;
+  font-size: 0.8rem;
+  color: var(--editor-fg-faint);
+}
+
+.cover-grid {
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.cover-grid.is-open {
+  display: grid;
+}
+
+.cover-grid__cell {
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  background: none;
+  overflow: hidden;
+}
+
+.cover-grid__cell img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+  border-radius: 4px;
+  background: var(--editor-photo-fallback);
+}
+
+.cover-grid__cell:hover {
+  border-color: var(--editor-border-hover);
+}
+
+.cover-grid__cell.is-selected {
+  border-color: var(--accent);
 }
 
 .toolbar__icon-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 6px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
   border: none;
   background: none;
   color: var(--editor-fg-muted);
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 6px;
+  transition: background 140ms var(--ease-out), color 140ms var(--ease-out), transform 140ms var(--ease-out);
 }
 
 .toolbar__icon-btn:hover {
@@ -193,7 +359,17 @@ textarea {
   background: var(--editor-hover-bg);
 }
 
-/* ── Toolbar ellipsis menu ───────────────────────────── */
+.toolbar__icon-btn:disabled {
+  opacity: 0.3;
+}
+
+.toolbar .is-primary {
+  font-size: 0.8rem;
+  padding: 5px 12px;
+  margin: 0 2px;
+}
+
+/* ── Toolbar menus & dropdowns ───────────────────────── */
 .toolbar__menu-wrap {
   position: relative;
 }
@@ -205,15 +381,28 @@ textarea {
   right: 0;
   background: var(--editor-surface);
   border: 1px solid var(--editor-border);
-  border-radius: 6px;
+  border-radius: 8px;
   padding: 4px;
-  min-width: 160px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  min-width: 200px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
   z-index: 200;
+  opacity: 0;
+  transform: scale(0.96);
+  transform-origin: top right;
+  transition: opacity 140ms var(--ease-out), transform 140ms var(--ease-out), display 140ms allow-discrete;
 }
 
 .toolbar__menu.is-open {
   display: block;
+  opacity: 1;
+  transform: scale(1);
+}
+
+@starting-style {
+  .toolbar__menu.is-open {
+    opacity: 0;
+    transform: scale(0.96);
+  }
 }
 
 .toolbar__menu-section {
@@ -241,11 +430,24 @@ textarea {
   color: var(--editor-fg);
   font-size: 0.8rem;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
 .toolbar__menu-item:hover {
   background: var(--editor-hover-bg);
+}
+
+.toolbar__menu-kbd {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--editor-fg-faint);
+}
+
+.toolbar__menu-sep {
+  height: 1px;
+  background: var(--editor-border);
+  margin: 4px 0;
 }
 
 .toolbar__menu-check {
@@ -257,6 +459,7 @@ textarea {
 .toolbar__menu-item.is-active .toolbar__menu-check::before {
   content: '✓';
 }
+
 
 /* ── Editor Layout ────────────────────────────────────── */
 .editor-layout {
@@ -270,38 +473,7 @@ textarea {
   min-width: 0;
 }
 
-/* ── Sidebar (right, metadata) ───────────────────────── */
-.sidebar {
-  position: fixed;
-  top: var(--header-height, 0px);
-  right: 0;
-  width: 340px;
-  background: var(--editor-surface);
-  border-left: 1px solid var(--editor-border);
-  display: none;
-  overflow-y: auto;
-  height: calc(100vh - var(--header-height, 0px));
-  z-index: 99;
-}
-
-.sidebar.is-open {
-  display: block;
-}
-
-.sidebar__header {
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--editor-border);
-}
-
-.sidebar__title {
-  font-weight: 600;
-  font-size: 0.85rem;
-}
-
-.sidebar__body {
-  padding: 16px;
-}
-
+/* ── Metadata form fields (used inside the meta popover) ── */
 .sidebar__section {
   display: flex;
   flex-direction: column;
@@ -353,17 +525,20 @@ textarea {
   object-fit: cover;
 }
 
-/* ── Photo Shelf (left panel) ─────────────────────────── */
+/* ── Photo Shelf (left floating panel) ────────────────── */
 .shelf-panel {
   position: fixed;
-  top: var(--header-height, 0px);
-  left: 0;
+  top: calc(var(--header-height, 0px) + 12px);
+  left: 12px;
+  bottom: 12px;
   width: 200px;
-  height: calc(100vh - var(--header-height, 0px));
   background: var(--editor-surface);
-  border-right: 1px solid var(--editor-border);
+  border: 1px solid var(--editor-border);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10), 0 2px 8px rgba(0, 0, 0, 0.06);
   display: none;
   flex-direction: column;
+  overflow: hidden;
   z-index: 99;
 }
 
@@ -389,21 +564,18 @@ textarea {
 }
 
 .shelf__resize {
-  width: 100%;
-  height: 1px;
   cursor: ew-resize;
-  background: var(--editor-border);
-  transition: height 150ms, background 150ms;
+  background: transparent;
+  transition: background 150ms;
   position: absolute;
   top: 0;
-  right: -1px;
-  width: 1px;
+  right: 0;
+  width: 4px;
   height: 100%;
 }
 
 .shelf__resize:hover,
 .shelf__resize.is-active {
-  width: 4px;
   background: var(--editor-fg-faint);
 }
 
@@ -422,7 +594,10 @@ textarea {
   position: relative;
   cursor: grab;
   width: 100%;
-  animation: shelfFadeIn 200ms ease both;
+}
+
+.shelf__photo.is-entering {
+  animation: shelfFadeIn 200ms var(--ease-out) both;
 }
 
 .shelf__photo:active {
@@ -447,6 +622,29 @@ textarea {
   opacity: 0.25;
   border-radius: 4px;
   pointer-events: none;
+}
+
+/* Mirror of the photo being hovered on the canvas — restore full color
+   (used thumbs are dimmed + grayscaled, which would drown any ring)
+   and draw a strong accent border */
+.shelf__photo.is-hovered,
+.shelf__photo.is-used.is-hovered {
+  opacity: 1;
+  filter: none;
+}
+
+.shelf__photo.is-used.is-hovered::after {
+  opacity: 0;
+}
+
+.shelf__photo.is-hovered::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 3px solid var(--accent);
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .shelf__reorder-indicator {
@@ -593,9 +791,9 @@ textarea {
   }
 }
 
-.node,
-.shelf__photo {
-  animation: fadeIn 200ms ease-out both;
+/* Only genuinely new nodes animate in — re-renders don't replay it */
+.node.is-entering {
+  animation: fadeIn 200ms var(--ease-out) both;
 }
 
 /* ── Node (container wrapper) ─────────────────────────── */
@@ -607,22 +805,49 @@ textarea {
   z-index: 10;
 }
 
+.node.is-selected {
+  z-index: 10;
+}
+
+.node.is-selected::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border: 2px solid var(--accent);
+  border-radius: 6px;
+  pointer-events: none;
+  z-index: 12;
+}
+
+.node.is-flashed::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--yellow);
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 30;
+  animation: highlightOverlay 1s ease-out forwards;
+}
+
 .node__controls {
   position: absolute;
-  bottom: calc(100% + 4px);
+  bottom: calc(100% + 6px);
   left: 0;
-  right: 0;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 4px 8px 4px;
+  gap: 2px;
+  padding: 3px;
   opacity: 0;
-  transition: opacity 150ms;
+  transform: translateY(2px);
+  transition: opacity 140ms var(--ease-out), transform 140ms var(--ease-out);
   z-index: 10;
   background: var(--editor-surface);
   border: 1px solid var(--editor-border);
-  border-radius: 4px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10), 0 1px 3px rgba(0, 0, 0, 0.06);
   user-select: none;
+  white-space: nowrap;
 }
 
 .node__move-group {
@@ -631,22 +856,18 @@ textarea {
   gap: 0;
 }
 
-.node__btn.is-add {
-  margin-left: auto;
+@media (hover: hover) and (pointer: fine) {
+  .node:hover>.node__controls,
+  .node__controls:hover {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.node__btn.is-delete {
-  margin-left: auto;
-}
-
-.node__btn.is-add ~ .node__btn.is-delete {
-  margin-left: 0;
-}
-
-.node:hover>.node__controls,
-.node__controls:hover,
-.node.has-menu-open>.node__controls {
+.node.has-menu-open>.node__controls,
+#canvas>.node.is-selected>.node__controls {
   opacity: 1;
+  transform: translateY(0);
 }
 
 /* Nested nodes: collapsed trigger dot */
@@ -664,19 +885,28 @@ textarea {
   position: absolute;
   top: 4px;
   left: 4px;
-  right: 4px;
+  right: auto;
   bottom: auto;
   opacity: 0;
   pointer-events: none;
   z-index: 20;
 }
 
-/* Show trigger on hover or when it has focus-within */
-.stack-container .node:hover > .node__trigger,
-.row-container .node:hover > .node__trigger,
-.grid-container .node:hover > .node__trigger,
-.single-container .node:hover > .node__trigger,
-.node__trigger:hover {
+/* Show trigger on hover, or when the node is selected */
+@media (hover: hover) and (pointer: fine) {
+  .stack-container .node:hover > .node__trigger,
+  .row-container .node:hover > .node__trigger,
+  .grid-container .node:hover > .node__trigger,
+  .single-container .node:hover > .node__trigger,
+  .node__trigger:hover {
+    opacity: 1;
+  }
+}
+
+.stack-container .node.is-selected > .node__trigger,
+.row-container .node.is-selected > .node__trigger,
+.grid-container .node.is-selected > .node__trigger,
+.single-container .node.is-selected > .node__trigger {
   opacity: 1;
 }
 
@@ -752,6 +982,33 @@ textarea {
   display: flex;
 }
 
+.node__trigger-label {
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  padding: 2px 5px;
+  border-radius: 3px;
+  margin: 0 2px;
+  pointer-events: none;
+}
+
+.node[data-type="stack"] > .node__trigger .node__trigger-label { background: var(--blue); color: #fff; }
+.node[data-type="row"] > .node__trigger .node__trigger-label { background: var(--green); color: #fff; }
+.node[data-type="grid"] > .node__trigger .node__trigger-label { background: var(--orange); color: #fff; }
+.node[data-type="single"] > .node__trigger .node__trigger-label { background: var(--yellow); color: #1a1a1a; }
+.node[data-type="text"] > .node__trigger .node__trigger-label { background: var(--purple); color: #fff; }
+
+/* While hovering a trigger (or with its controls open), outline the whole
+   group it belongs to — otherwise it reads as a control for the child
+   underneath it */
+.node:has(> .node__trigger:hover),
+.node.has-controls-open {
+  outline: 1.5px dashed var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 .node__label {
   font-size: 0.7rem;
   text-transform: uppercase;
@@ -787,24 +1044,44 @@ textarea {
 }
 
 .node__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
   background: none;
   border: none;
   color: var(--editor-fg-muted);
   font-size: 14px;
   cursor: pointer;
-  padding: 2px 4px;
+  padding: 0;
   line-height: 1;
+  border-radius: 5px;
 }
 
 .node__btn:hover {
   color: var(--editor-fg);
-  background: none;
+  background: var(--editor-hover-bg);
+}
+
+.node__btn.is-delete:hover {
+  color: var(--red);
+  background: rgba(198, 40, 40, 0.12);
 }
 
 .node__handle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
   cursor: grab;
   color: var(--editor-fg-faint);
-  font-size: 14px;
+  border-radius: 5px;
+}
+
+.node__handle:active {
+  cursor: grabbing;
 }
 
 .node__handle:hover {
@@ -817,17 +1094,24 @@ textarea {
 }
 
 .node__menu-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
   background: none;
   border: none;
   color: var(--editor-fg-muted);
   font-size: 14px;
   cursor: pointer;
-  padding: 2px 4px;
+  padding: 0;
   line-height: 1;
+  border-radius: 5px;
 }
 
 .node__menu-btn:hover {
   color: var(--editor-fg);
+  background: var(--editor-hover-bg);
 }
 
 .node__menu {
@@ -837,16 +1121,53 @@ textarea {
   left: 0;
   background: var(--editor-surface);
   border: 1px solid var(--editor-border);
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 6px;
   z-index: 20;
-  min-width: 120px;
+  min-width: 150px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transform: scale(0.96);
+  transform-origin: top left;
+  transition: opacity 140ms var(--ease-out), transform 140ms var(--ease-out), display 140ms allow-discrete;
 }
 
 .node__menu.is-open {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  opacity: 1;
+  transform: scale(1);
+}
+
+@starting-style {
+  .node__menu.is-open {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+
+.node__menu-sep {
+  height: 1px;
+  background: var(--editor-border);
+  margin: 2px 0;
+}
+
+.node__menu-action {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 5px 8px;
+  border: none;
+  background: none;
+  color: var(--editor-fg);
+  font-size: 0.75rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.node__menu-action:hover {
+  background: var(--editor-hover-bg);
 }
 
 /* ── Class toggles ────────────────────────────────────── */
@@ -1089,7 +1410,13 @@ textarea {
   z-index: 5;
 }
 
-.photo-item:hover .photo-remove {
+@media (hover: hover) and (pointer: fine) {
+  .photo-item:hover .photo-remove {
+    opacity: 1;
+  }
+}
+
+.node.is-selected > .photo-item .photo-remove {
   opacity: 1;
 }
 
@@ -1097,20 +1424,53 @@ textarea {
   background: rgba(0, 0, 0, 0.7);
 }
 
-.photo-item .photo-overlay {
+/* ── Photo action chips (info + caption) ──────────────── */
+.photo-actions {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.7) 100%);
-  display: none;
-  align-items: flex-end;
-  padding: 24px 10px 10px;
-  border-radius: 0 0 var(--br-subtle) var(--br-subtle);
+  left: 6px;
+  bottom: 6px;
+  display: flex;
+  gap: 4px;
+  z-index: 5;
 }
 
-.photo-item:hover .photo-overlay {
-  display: flex;
+.photo-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 150ms var(--ease-out), background 150ms var(--ease-out);
+}
+
+.photo-action:hover {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .photo-item:hover .photo-action {
+    opacity: 1;
+  }
+}
+
+.node.is-selected > .photo-item .photo-action {
+  opacity: 1;
+}
+
+/* A captioned photo shows its indicator at all times */
+.photo-action.has-caption {
+  opacity: 1;
+  background: var(--accent);
+}
+
+.photo-action.has-caption:hover {
+  background: color-mix(in srgb, var(--accent) 85%, #000);
 }
 
 .photo-item.is-highlighted::after {
@@ -1133,47 +1493,18 @@ textarea {
   }
 }
 
-.photo-overlay__info {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  width: 100%;
-}
-
-.photo-overlay__info {
-  color: #fff;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-}
-
-.photo-overlay__info input,
-.photo-overlay__info select {
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.photo-overlay__filename {
-  font-size: 0.65rem;
-  opacity: 0.7;
+.caption-modal__filename {
   font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--editor-fg-faint);
+  margin-bottom: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.photo-overlay__fields {
-  display: flex;
-  gap: 4px;
-  align-items: center;
-}
-
-.photo-overlay__fields input {
-  font-size: 0.7rem;
-  padding: 3px 6px;
-  flex: 1;
-  min-width: 0;
-}
-
-.photo-overlay__fields select {
-  font-size: 0.7rem;
-  padding: 3px 4px;
+.modal__body.modal__body--caption {
+  padding: 16px 20px 8px;
 }
 
 /* ── Drop placeholder ─────────────────────────────────── */
@@ -1218,28 +1549,40 @@ textarea {
   bottom: 0;
 }
 
-/* ── Add button inside containers ─────────────────────── */
-.node__btn.is-add {
-  margin-left: auto;
-}
-
 /* ── Context menu ─────────────────────────────────────── */
 .context-menu {
   position: fixed;
   z-index: 200;
   background: var(--editor-surface);
   border: 1px solid var(--editor-border);
-  border-radius: 6px;
+  border-radius: 8px;
   padding: 4px;
   min-width: 160px;
   max-height: 320px;
   overflow-y: auto;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
   display: none;
+  opacity: 0;
+  transform: scale(0.96);
+  transform-origin: top left;
+  transition: opacity 140ms var(--ease-out), transform 140ms var(--ease-out), display 140ms allow-discrete;
+}
+
+.context-menu[data-flip="up"] {
+  transform-origin: bottom left;
 }
 
 .context-menu.is-open {
   display: block;
+  opacity: 1;
+  transform: scale(1);
+}
+
+@starting-style {
+  .context-menu.is-open {
+    opacity: 0;
+    transform: scale(0.96);
+  }
 }
 
 .context-menu__item {
@@ -1278,21 +1621,112 @@ textarea {
   display: none;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  transition: opacity 180ms var(--ease-out), display 180ms allow-discrete;
 }
 
 .modal-overlay.is-open {
   display: flex;
+  opacity: 1;
+}
+
+@starting-style {
+  .modal-overlay.is-open {
+    opacity: 0;
+  }
 }
 
 .modal {
   background: var(--editor-surface);
   border: 1px solid var(--editor-border);
-  border-radius: 8px;
+  border-radius: 10px;
   max-width: 800px;
   width: 90vw;
   max-height: 85vh;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  transform: scale(0.97);
+  transition: transform 180ms var(--ease-out);
+}
+
+.modal-overlay.is-open .modal {
+  transform: scale(1);
+}
+
+@starting-style {
+  .modal-overlay.is-open .modal {
+    transform: scale(0.97);
+  }
+}
+
+.modal--confirm {
+  max-width: 400px;
+}
+
+.modal--open {
+  max-width: 480px;
+  height: min(560px, 80vh);
+}
+
+.open-modal__filter-wrap {
+  padding: 0 16px 10px;
+}
+
+.open-modal__filter {
+  width: 100%;
+}
+
+.open-modal__list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 10px 10px;
+}
+
+.open-modal__item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  border: none;
+  background: none;
+  color: var(--editor-fg);
+  font-size: 0.85rem;
+  border-radius: 6px;
+}
+
+.open-modal__item:hover {
+  background: var(--editor-hover-bg);
+}
+
+.open-modal__item-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.open-modal__item-date {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--editor-fg-faint);
+  flex-shrink: 0;
+}
+
+.open-modal__empty {
+  padding: 24px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--editor-fg-faint);
+}
+
+/* Compound selector so the later `.modal__body` padding rule can't win */
+.modal__body.modal__body--confirm {
+  padding: 20px 20px 8px;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .modal__header {
@@ -1378,4 +1812,248 @@ textarea {
 .toast.is-visible {
   opacity: 1;
   transform: translate(-50%, 0);
+}
+
+/* ── Outline (right floating panel) ───────────────────── */
+.outline-panel {
+  position: fixed;
+  top: calc(var(--header-height, 0px) + 12px);
+  right: 12px;
+  width: 280px;
+  max-height: calc(100vh - var(--header-height, 0px) - 24px);
+  background: var(--editor-surface);
+  border: 1px solid var(--editor-border);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10), 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 99;
+}
+
+.outline-panel.is-open {
+  display: flex;
+}
+
+.outline__header {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--editor-border);
+}
+
+.outline__title {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.outline__list {
+  position: relative;
+  flex: 0 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 6px;
+}
+
+.outline__empty {
+  padding: 24px 12px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--editor-fg-faint);
+}
+
+.outline__row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 34px;
+  padding: 3px 6px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+.outline__row:hover {
+  background: var(--editor-hover-bg);
+}
+
+.outline__row.is-selected {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+/* Where the canvas viewport currently is — a quiet dot in the toggle
+   slot; container rows show it by tinting their chevron instead */
+.outline__row.is-current::after {
+  content: '';
+  position: absolute;
+  left: calc(var(--indent, 6px) + 5.5px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.outline__row.is-current:has(> button.outline__toggle)::after {
+  display: none;
+}
+
+.outline__row.is-current > button.outline__toggle {
+  color: var(--accent);
+}
+
+.outline__row.is-dragging {
+  opacity: 0.35;
+}
+
+.outline__row.is-drop-into {
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+
+.outline__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--editor-fg-faint);
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.outline__toggle svg {
+  transform: rotate(90deg);
+  transition: transform 140ms var(--ease-out);
+}
+
+.outline__toggle.is-collapsed svg {
+  transform: rotate(0deg);
+}
+
+.outline__toggle:hover {
+  color: var(--editor-fg);
+  background: none;
+}
+
+.outline__badge {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.outline__badge[data-type="stack"] { background: var(--blue); color: #fff; }
+.outline__badge[data-type="row"] { background: var(--green); color: #fff; }
+.outline__badge[data-type="grid"] { background: var(--orange); color: #fff; }
+.outline__badge[data-type="single"] { background: var(--yellow); color: #1a1a1a; }
+.outline__badge[data-type="text"] { background: var(--purple); color: #fff; }
+
+.outline__count {
+  font-size: 0.65rem;
+  color: var(--editor-fg-faint);
+  flex-shrink: 0;
+}
+
+.outline__thumb {
+  width: 36px;
+  height: 26px;
+  object-fit: cover;
+  border-radius: 3px;
+  flex-shrink: 0;
+  background: var(--editor-photo-fallback);
+}
+
+.outline__label {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--editor-fg-muted);
+}
+
+.outline__indicator {
+  position: absolute;
+  right: 6px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 1px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.outline__ghost {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 600;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  max-width: 240px;
+  padding: 4px 10px;
+  background: var(--editor-surface);
+  border: 1px solid var(--editor-border);
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  font-size: 0.75rem;
+  pointer-events: none;
+}
+
+.outline__ghost .outline__label {
+  flex: initial;
+}
+
+body.is-outline-dragging {
+  cursor: grabbing;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* ── Tooltip ──────────────────────────────────────────── */
+.tooltip {
+  position: fixed;
+  z-index: 500;
+  background: var(--editor-fg);
+  color: var(--editor-bg);
+  font-size: 0.7rem;
+  padding: 4px 8px;
+  border-radius: 5px;
+  pointer-events: none;
+  max-width: 300px;
+  opacity: 0;
+  transform: translateY(-2px);
+  transition: opacity 120ms var(--ease-out), transform 120ms var(--ease-out);
+}
+
+.tooltip.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tooltip__kbd {
+  margin-left: 7px;
+  opacity: 0.6;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+}
+
+/* ── Reduced motion ───────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

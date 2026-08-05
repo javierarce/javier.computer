@@ -8,29 +8,79 @@
 </head>
 <body>
 
-<!-- Header (toolbar + shelf) -->
+<!-- Header (toolbar) -->
 <div class="header" id="header">
 <!-- Toolbar -->
 <div class="toolbar" id="toolbar">
   <div class="toolbar__group toolbar__group--left">
-    <button onclick="toggleShelf()" id="shelfToggleBtn" class="toolbar__icon-btn" title="Toggle photo shelf">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+    <button onclick="toggleShelf()" id="shelfToggleBtn" class="toolbar__icon-btn" data-tip="Photo shelf" data-tip-kbd="T">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
     </button>
-    <select id="reportageSelect" onchange="loadReportage(this.value)" title="Open existing reportage">
-      <option value="">Open…</option>
-    </select>
   </div>
-  <div class="toolbar__group">
-    <button class="is-primary" onclick="newReportage()">New</button>
-    <button onclick="openMarkdownModal()">Markdown</button>
-    <button onclick="toggleSidebar()" id="sidebarToggleBtn" class="toolbar__icon-btn" title="Toggle settings sidebar">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+
+  <div class="toolbar__center">
+    <div class="toolbar__menu-wrap">
+      <button id="titleBtn" class="toolbar__title-btn" onclick="toggleMetaPopover(event)" data-tip="Post settings" data-tip-kbd="M">
+        <span id="toolbar-title-text" class="toolbar__title-text is-placeholder">Untitled</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="meta-popover" id="metaPopover" onclick="event.stopPropagation()">
+        <div class="sidebar__section">
+          <div class="sidebar__field">
+            <label>Title</label>
+            <input id="meta-title" oninput="updateMeta('title', this.value)" placeholder="Untitled" spellcheck="false" autocomplete="off">
+          </div>
+          <div class="sidebar__field">
+            <label>Date</label>
+            <input type="date" id="meta-date" oninput="updateMeta('date', this.value)">
+          </div>
+          <div class="sidebar__field">
+            <label>Default location</label>
+            <input id="meta-location" placeholder="e.g. madrid" oninput="updateMeta('location', this.value)">
+          </div>
+          <div class="sidebar__field">
+            <label>Camera</label>
+            <input id="meta-camera" placeholder="e.g. Ricoh GR IIIx, Fuji X-T5" oninput="updateMeta('camera', this.value)">
+          </div>
+          <div class="sidebar__field">
+            <label>Cover</label>
+            <button type="button" class="cover-picker" id="coverPickerBtn" onclick="toggleCoverGrid(event)"></button>
+            <div class="cover-grid" id="coverGrid"></div>
+          </div>
+          <input type="hidden" id="meta-ratio" value="3/2">
+          <div class="sidebar__field">
+            <label>Intro</label>
+            <textarea id="meta-intro" rows="3" oninput="updateMeta('intro', this.value)"></textarea>
+          </div>
+          <div class="sidebar__field">
+            <label>Translation</label>
+            <textarea id="meta-translation" rows="3" oninput="updateMeta('translation', this.value)"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toolbar__group toolbar__group--right">
+    <button onclick="undo()" id="undoBtn" class="toolbar__icon-btn" data-tip="Undo" data-tip-kbd="⌘Z" disabled>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></svg>
+    </button>
+    <button onclick="redo()" id="redoBtn" class="toolbar__icon-btn" data-tip="Redo" data-tip-kbd="⇧⌘Z" disabled>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 14 5-5-5-5"/><path d="M20 9H9.5a5.5 5.5 0 0 0 0 11H13"/></svg>
+    </button>
+    <button class="is-primary" onclick="copyMarkdownToClipboard()" data-tip="Copy the generated markdown">Copy Markdown</button>
+    <button onclick="toggleOutline()" id="outlineToggleBtn" class="toolbar__icon-btn" data-tip="Outline" data-tip-kbd="O">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="17.5" y1="7" x2="18.5" y2="7"/><line x1="17.5" y1="11" x2="18.5" y2="11"/><line x1="17.5" y1="15" x2="18.5" y2="15"/></svg>
     </button>
     <div class="toolbar__menu-wrap">
-      <button onclick="toggleToolbarMenu(event)" class="toolbar__icon-btn" title="More options">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+      <button onclick="toggleToolbarMenu(event)" class="toolbar__icon-btn" data-tip="More">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
       </button>
       <div class="toolbar__menu" id="toolbarMenu">
+        <button class="toolbar__menu-item" onclick="openReportageModal()">Open reportage…</button>
+        <button class="toolbar__menu-item" onclick="newReportage()">New reportage<span class="toolbar__menu-kbd">N</span></button>
+        <button class="toolbar__menu-item" onclick="openMarkdownModal()">Import / export…<span class="toolbar__menu-kbd">E</span></button>
+        <div class="toolbar__menu-sep"></div>
         <div class="toolbar__menu-section">
           <span class="toolbar__menu-label">Appearance</span>
           <button class="toolbar__menu-item" data-theme="light" onclick="setTheme('light')"><span class="toolbar__menu-check"></span>Light</button>
@@ -61,46 +111,12 @@
 <!-- Canvas -->
 <div class="canvas" id="canvas"></div>
 
-<!-- Sidebar -->
-<div class="sidebar" id="sidebar">
-  <div class="sidebar__header">
-    <span class="sidebar__title">Post</span>
+<!-- Outline (right panel) -->
+<div class="outline-panel" id="outlinePanel">
+  <div class="outline__header">
+    <span class="outline__title">Outline</span>
   </div>
-  <div class="sidebar__body">
-    <div class="sidebar__section">
-      <div class="sidebar__field">
-        <label>Title</label>
-        <input id="meta-title" oninput="updateMeta('title', this.value)">
-      </div>
-      <div class="sidebar__field">
-        <label>Date</label>
-        <input type="date" id="meta-date" oninput="updateMeta('date', this.value)">
-      </div>
-      <div class="sidebar__field">
-        <label>Default location</label>
-        <input id="meta-location" placeholder="e.g. madrid" oninput="updateMeta('location', this.value)">
-      </div>
-      <div class="sidebar__field">
-        <label>Camera</label>
-        <input id="meta-camera" placeholder="e.g. Ricoh GR IIIx, Fuji X-T5" oninput="updateMeta('camera', this.value)">
-      </div>
-      <div class="sidebar__field">
-        <label>Cover</label>
-        <select id="meta-cover" onchange="updateMeta('cover', this.value)">
-          <option value="">— Select —</option>
-        </select>
-      </div>
-      <input type="hidden" id="meta-ratio" value="3/2">
-      <div class="sidebar__field">
-        <label>Intro</label>
-        <textarea id="meta-intro" rows="3" oninput="updateMeta('intro', this.value)"></textarea>
-      </div>
-      <div class="sidebar__field">
-        <label>Translation</label>
-        <textarea id="meta-translation" rows="3" oninput="updateMeta('translation', this.value)"></textarea>
-      </div>
-    </div>
-  </div>
+  <div class="outline__list" id="outlineList"></div>
 </div>
 
 </div><!-- /editor-layout -->
@@ -121,6 +137,62 @@
     <div class="modal__footer">
       <button id="importBtn" onclick="doImportFromModal()" disabled>Import</button>
       <button class="is-primary" onclick="copyMarkdown()">Copy to clipboard</button>
+    </div>
+  </div>
+</div>
+
+<!-- Open Reportage Modal -->
+<div class="modal-overlay" id="openModal" onmousedown="if(event.target===this)this.classList.remove('is-open')">
+  <div class="modal modal--open">
+    <div class="modal__header">
+      <h3>Open reportage</h3>
+      <button onclick="closeOpenModal()">✕</button>
+    </div>
+    <div class="open-modal__filter-wrap">
+      <input id="openFilter" class="open-modal__filter" placeholder="Filter reportages…" oninput="renderOpenList(this.value)" spellcheck="false" autocomplete="off">
+    </div>
+    <div class="open-modal__list" id="openList"></div>
+  </div>
+</div>
+
+<!-- Caption Modal -->
+<div class="modal-overlay" id="captionModal" onmousedown="if(event.target===this)closeCaptionDialog()">
+  <div class="modal modal--confirm">
+    <div class="modal__header">
+      <h3>Photo</h3>
+      <button onclick="closeCaptionDialog()">✕</button>
+    </div>
+    <div class="modal__body modal__body--caption">
+      <div class="caption-modal__filename" id="captionFilename"></div>
+      <div class="sidebar__section">
+        <div class="sidebar__field">
+          <label>Caption</label>
+          <input id="captionInput" placeholder="Caption for this photo" spellcheck="true" autocomplete="off"
+                 onkeydown="if(event.key==='Enter')saveCaptionDialog()">
+        </div>
+        <div class="sidebar__field">
+          <label>Alt text</label>
+          <input id="altInput" placeholder="Description for screen readers" spellcheck="true" autocomplete="off"
+                 onkeydown="if(event.key==='Enter')saveCaptionDialog()">
+        </div>
+      </div>
+    </div>
+    <div class="modal__footer">
+      <button onclick="closeCaptionDialog()">Cancel</button>
+      <button class="is-primary" onclick="saveCaptionDialog()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- Confirm Modal -->
+<div class="modal-overlay" id="confirmModal" onmousedown="if(event.target===this)this.classList.remove('is-open')">
+  <div class="modal modal--confirm">
+    <div class="modal__body modal__body--confirm">
+      <p id="confirmMessage"></p>
+    </div>
+    <div class="modal__footer">
+      <button id="confirmCancelBtn" onclick="document.getElementById('confirmModal').classList.remove('is-open')">Cancel</button>
+      <button class="is-primary" id="confirmOkBtn">Confirm</button>
     </div>
   </div>
 </div>
