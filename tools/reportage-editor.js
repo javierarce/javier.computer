@@ -2290,7 +2290,10 @@ function generateMarkdown() {
   yaml += `date: "${m.date ? m.date + ' 00:00:00 ' + tzOffsetFor(m.date) : ''}"\n`;
   yaml += `category: reportage\n`;
   yaml += `tag: photo\n`;
-  yaml += `location: ${m.location}\n`;
+  // Locations are canonically lowercase — a capitalised one silently drops the
+  // post from its /in/<city> page.
+  const location = m.location.trim().toLowerCase();
+  yaml += `location: ${location}\n`;
 
   if (m.camera) {
     const cams = m.camera.split(',').map(c => c.trim()).filter(Boolean);
@@ -2322,8 +2325,9 @@ function generateMarkdown() {
   yaml += `filenames:\n`;
   photos.forEach(p => {
     yaml += `  - filename: ${p.filename}\n`;
-    if (p.location && p.location !== m.location) {
-      yaml += `    location: ${p.location}\n`;
+    const photoLocation = (p.location || '').trim().toLowerCase();
+    if (photoLocation && photoLocation !== location) {
+      yaml += `    location: ${photoLocation}\n`;
     }
     if (p.ratio) yaml += `    ratio: ${p.ratio}\n`;
     if (p.caption) yaml += `    caption: ${yamlQuote(p.caption)}\n`;

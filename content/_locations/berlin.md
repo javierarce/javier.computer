@@ -1,6 +1,6 @@
 ---
 layout: location
-title: Berlin
-location: Berlin
-permalink: in/Berlin
+title: Berlín
+location: berlin
+permalink: in/berlin
 ---
