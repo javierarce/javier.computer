@@ -4,6 +4,7 @@ require 'yaml'
 require 'csv'
 require 'fileutils'
 require 'kramdown'
+require 'open3'
 
 module Jekyll
   class LocationFileGenerator < Generator
@@ -43,8 +44,8 @@ module Jekyll
     end
 
     def get_file_first_commit_date(file)
-      date_str = `git log --diff-filter=A --format=%aI -- #{file}`.strip
-      parse_date(date_str)
+      date_str, = Open3.capture2('git', 'log', '--diff-filter=A', '--format=%aI', '--', file)
+      parse_date(date_str.strip)
     end
 
     def get_place_last_updated(location_data, file = nil)
