@@ -48,6 +48,9 @@ filenames:
   - filename: 2026-07-16-Berlin-R0021101
     ratio: 3/2
     caption: "Instalación del artista Sergej Alexander Dott sobre la Ärztehaus Treptow."
+syndication:
+  - https://bsky.app/profile/javier.bsky.social/post/3msfjedpigk2d
+  - https://mastodon.social/@javierarce/117047384448447150
 ---
 
 {% text %}

@@ -1,4 +1,14 @@
 name,description,address,latitude,longitude,updated_at
+LUIBAN,"Peligrosa papelería con una selección de material exquisita.
+",Rosa-Luxemburg-Straße 28,52.52578711158864,13.411130984133036,
+Pro qm,"Libros de urbanismo, política, arquitectura, cultura pop, jdiseño, arte y economía. Perdón, pero mejor que Do you read me!?
+",Almstadtstraße 48,52.52717579028865,13.41076611429642,
+Bildband,"Buena tienda de libros de fotografía. También hacen presentaciones de libros.
+",Immanuelkirchstraße 33,52.53329482022483,13.42272312628249,
+Onkel Philipp's Spielzeugwerkstatt,"Una tienda enorme abarrotada de juguetes antiguos y que también cuenta con un fantástico museo de juguetes de la DDR en el sótano.
+",Choriner Str. 35,52.536679866895305,13.410543239776883,
+Town Mouse Coffee,"Cafetería de cabecera en el barrio.
+",Marienburger Str. 5,52.535379464403334,13.423648746035223,2026-08-01
 Film Speed Lab,"Laboratorio de de fotografía analógica. Son bastante rápidos, pero algo más caros que Safelight.
 ","Dietrich-Bonhoeffer-Straße, 32",52.53526,13.43277,2025-08-24
 Safelight,"Tienda de cámaras analógicas y laboratorio fotográfico.
@@ -72,7 +82,6 @@ tenzan lab.,"Kakigōris y taiyakis
 ","Wörther Straße, 22",52.5357069,13.4210922,2024-10-07
 3 Schwestern,"Un restaurante que ofrece comida típica alemana situado en el interior de  un antiguo hospital construido en 1846.
 ",Mariannenpl. 2,52.505166826173365,13.423695851822046,2024-10-07
-Town Mouse Coffee,"",Marienburger Str. 5,52.535379464403334,13.423648746035223,2024-10-07
 Trauma Bar und Kino,"Club, bar, cine, sala de conciertos y arte. Aquí se celebró el quinto aniversario de New Models. Está cerca de Berlin Hauptbahnhof. No hay mucho más alrededor.
 ","Heidestraße, 50",52.5306327,13.3667562,2024-10-07
 do you read me?!,"",Auguststraße 28,52.52726714641086,13.397690437523185,2023-03-31
