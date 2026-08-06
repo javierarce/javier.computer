@@ -12,6 +12,66 @@
     "/2026/07/01/prueba-de-vida": {
       "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mplarcb3y2u5",
       "hash": "5268d82441e735e02d53c4ac4efbf08ca7e1a2d57be63a7849e1370a04ffb14f"
+    },
+    "/2026/07/22/fugas-de-luz": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mravpvpky2xp",
+      "hash": "d4ac8fc51f48ea60e97e71644064284f056ff632b4ab6c6a2999e06c9b65ad81"
+    },
+    "/2026/07/23/cambio-de-localizacion": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mrdkx3ims2kv",
+      "hash": "b3e7d45a5dece9c21c5360c2556781c52f6696ea291c525051766c89030efa33"
+    },
+    "/2026/07/24/schlusseldienst": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mrfyzjtbg2v6",
+      "hash": "2ba769a48a304967ce7f5eed8e880d58f14a011fe87fbeb3e3b679745dad2256"
+    },
+    "/2026/07/25/cal": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mrip5fyqw22z",
+      "hash": "42def15a081c7ff353dbe508116bf09929235be850ba17719be5bf484ba168d8"
+    },
+    "/2026/07/26/hombre-no-te-enfades": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mrl5qwrxu27e",
+      "hash": "2ae5db07b09ee70df14b800ac9eae257d9ec96d043945726e961690a797ccf2c"
+    },
+    "/2026/07/27/games-people-play": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mrnqyp5mo25z",
+      "hash": "507dd2aba15e46ab3a1c0ef730ae357cbf904b8ceffbae6a570de61ca6501340"
+    },
+    "/2026/07/28/blue-heron": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mrqcdpwh42ib",
+      "hash": "b9d70b042760b80da73883a484671e642988ee457edcf27e57d0530958b8559b"
+    },
+    "/2026/07/29/chat-ecoutant-la-musique": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mrstt6sfe2jz",
+      "hash": "db93362d38c45a2c26ae543817e81bdc2dedc2fcc055cde17b9eed4f16c029e4"
+    },
+    "/2026/07/30/eggscelente": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mrv7v3hxm2kp",
+      "hash": "4d0fe3ef3f7663763b2c09d52c2e841c3a2a7d75245c43ffeafbb5f7c0599f99"
+    },
+    "/2026/07/31/vespula-germanica": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mrxs3ofke2ie",
+      "hash": "d113e75898be8363ef920fac6489487f3c581ccb3057032c3cb4822886b19039"
+    },
+    "/2026/08/01/fiume-o-morte": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3ms2ddeefs2cn",
+      "hash": "546b0d88102450847e47b452bd33b97b0813f65f204744c6a5cefb9668ab15dd"
+    },
+    "/2026/08/02/he-who-talks-too-much-undoes-himself": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3ms4unfo5o2cv",
+      "hash": "96db12c428c59278e00009291432c45e69b1456db274c5595675e6d1e0e4966f"
+    },
+    "/2026/08/03/glomar-response": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3ms7ekw6n6236",
+      "hash": "3b62501d90fcebcfc775cead725300a349928d8e793b3ca6e82d9450a65d39bb"
+    },
+    "/2026/08/04/tqm-pro-qm": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3msbuxm4ky2tf",
+      "hash": "4d357c5c0af2ebc55cc37a8d062817b0cf9e4ac6e4c033140af3682a404cb494"
+    },
+    "/2026/08/05/treptower-park": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3msbz5f5y22ry",
+      "hash": "9cf631d5d7afd67d76b7b9de1f38c33fa32f0dab660008f39025812d2033b91e"
     }
   }
 }
