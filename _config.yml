@@ -40,8 +40,6 @@ show_home_likes: true
 show_home_comments: false
 
 include: [".well-known"]
-exclude: ["_data/locations/*"]
-
 sass:
   load_paths:
     - _sass
@@ -122,6 +120,14 @@ webmentions:
 #
 exclude:
   - binocularshot/
+  - _data/locations/*
+  - CLAUDE.md
+  - README.md
+  - jsconfig.json
+  - package.json
+  - package-lock.json
+  - "*.rb"
+  - "*.sh"
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
