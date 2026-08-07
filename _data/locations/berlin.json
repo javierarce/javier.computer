@@ -320,6 +320,7 @@
       13.422646
     ],
     "location": "berlin",
+    "closed": true,
     "updated_at": "2025-08-10",
     "last_updated": "2025-08-10T00:00:00+00:00",
     "post_references": []
@@ -335,6 +336,7 @@
       13.332574
     ],
     "location": "berlin",
+    "closed": true,
     "updated_at": "2025-08-10",
     "last_updated": "2025-08-10T00:00:00+00:00",
     "post_references": []
@@ -491,6 +493,7 @@
       13.383605195376553
     ],
     "location": "berlin",
+    "closed": true,
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -506,6 +509,7 @@
       13.433880192070449
     ],
     "location": "berlin",
+    "closed": true,
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
