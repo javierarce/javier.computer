@@ -380,11 +380,7 @@ class Map extends Base {
     this.selectedLocationId = location.id;
     this.emit("marker:select", location.id);
 
-    // Leaflet splits event names on whitespace, so the old "zoomend, moveend"
-    // registered a "zoomend," listener that could never fire — only moveend
-    // was ever live. Listening to both would run this twice, since `once`
-    // registers each event separately.
-    this.map.once("moveend", () => {
+    this.map.once("zoomend, moveend", () => {
       if (marker && marker.getElement()) {
         marker.openPopup();
 
