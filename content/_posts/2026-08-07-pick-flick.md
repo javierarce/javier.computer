@@ -2,6 +2,8 @@
 layout: post
 title: "Pick Flick"
 date: "2026-08-07 22:55:46 +0200"
+places:
+- safelight
 ---
 [Don't Take the Black Pill](https://www.youtube.com/watch?v=zLZwpH5lCD4) (vía
 [Mu-An](https://muan.co)) <span class="sp">✦</span>

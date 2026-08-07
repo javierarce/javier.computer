@@ -1,6 +1,33 @@
 [
   {
     "layout": "place",
+    "pid": "safelight",
+    "title": "Safelight",
+    "description": "<p>Tienda de cámaras analógicas y laboratorio fotográfico.</p>\n",
+    "address": "Schivelbeiner Straße, 9",
+    "emoji": "📷",
+    "latlng": [
+      52.55102,
+      13.411127
+    ],
+    "location": "berlin",
+    "updated_at": "2025-08-24",
+    "last_updated": "2026-08-07T22:55:46+02:00",
+    "post_references": [
+      {
+        "url": "/2025/08/25/maldiciones-analogicas",
+        "title": "Maldiciones analógicas",
+        "date": "2025-08-25 21:00:00 +0200"
+      },
+      {
+        "url": "/2026/08/07/pick-flick",
+        "title": "Pick Flick",
+        "date": "2026-08-07 22:55:46 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
     "pid": "luiban",
     "title": "LUIBAN",
     "description": "<p>Peligrosa papelería con una selección de material exquisita.</p>\n",
@@ -139,28 +166,6 @@
     "latlng": [
       52.53526,
       13.43277
-    ],
-    "location": "berlin",
-    "updated_at": "2025-08-24",
-    "last_updated": "2025-08-25T21:00:00+02:00",
-    "post_references": [
-      {
-        "url": "/2025/08/25/maldiciones-analogicas",
-        "title": "Maldiciones analógicas",
-        "date": "2025-08-25 21:00:00 +0200"
-      }
-    ]
-  },
-  {
-    "layout": "place",
-    "pid": "safelight",
-    "title": "Safelight",
-    "description": "<p>Tienda de cámaras analógicas y laboratorio fotográfico.</p>\n",
-    "address": "Schivelbeiner Straße, 9",
-    "emoji": "📷",
-    "latlng": [
-      52.55102,
-      13.411127
     ],
     "location": "berlin",
     "updated_at": "2025-08-24",
