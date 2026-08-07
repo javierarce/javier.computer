@@ -6,6 +6,7 @@ location: barcelona
 places:
   - fismuler
   - right-side-coffee-bar
+  - masa-vins
 tags:
   - cine
 ---

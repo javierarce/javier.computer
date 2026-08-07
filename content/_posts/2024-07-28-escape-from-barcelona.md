@@ -3,6 +3,8 @@ layout: post
 title: Escape from Barcelona
 date: "2024-07-28 21:20:00 +0200"
 location: barcelona
+places:
+- funky-bakers
 tags:
   - cine
 ---

@@ -3,6 +3,8 @@ layout: post
 title: "El truco de cerrar los ojos"
 date: "2025-07-06 21:11:06 +0200"
 location: "berlin"
+places:
+- zola
 ---
 
 El truco de cerrar los ojos sigue funcionando &middot; [XKCD 137](https://xkcd.com/137) &middot; Berliner Antikflohmarkt auf der

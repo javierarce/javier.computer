@@ -4,6 +4,8 @@ title: "El monte análogo"
 date: 2025-03-16 11:00:00 +0200
 category: reportage
 location: analog
+places:
+- dubblelab
 cover: 2025-02-13-Madrid-CanonAE1-000002
 ratio: 3/2
 filenames:
