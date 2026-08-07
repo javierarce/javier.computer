@@ -130,6 +130,8 @@ class Popup extends Base {
 
     this.el = L.popup({
       className,
+      // Breathing room between a panned-into-view popup and the map edge
+      autoPanPadding: L.point(24, 24),
     });
 
     this.el.setContent(this.$el);
@@ -380,13 +382,12 @@ class Map extends Base {
     this.selectedLocationId = location.id;
     this.emit("marker:select", location.id);
 
+    // Opening the popup lets Leaflet pan just enough to fit it, which pushes
+    // the marker down the viewport when the popup is tall. Re-centring the
+    // marker afterwards would undo that and clip the popup off the top.
     this.map.once("zoomend, moveend", () => {
       if (marker && marker.getElement()) {
         marker.openPopup();
-
-        setTimeout(() => {
-          this.map.setView(location.latlng, zoomLevel);
-        }, 100);
       }
     });
 
@@ -664,6 +665,23 @@ class App {
   bindKeyEvents() {
     document.addEventListener("keydown", (event) => {
       const isSearching = event.target === this.$search;
+
+      // Cmd/Ctrl+F focuses the sidebar search, which unlike find-in-page also
+      // matches descriptions and scopes the arrow keys to the results. Pressing
+      // it again with the field already focused falls through to the browser,
+      // so its find bar stays one keystroke away rather than being taken over.
+      if (
+        (event.metaKey || event.ctrlKey) &&
+        event.key === "f" &&
+        !event.altKey &&
+        this.$search &&
+        !isSearching
+      ) {
+        event.preventDefault();
+        this.$search.focus();
+        this.$search.select();
+        return;
+      }
 
       if (event.key === "Escape") {
         event.preventDefault();
