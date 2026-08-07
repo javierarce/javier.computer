@@ -71,7 +71,15 @@
     },
     "/2026/08/05/treptower-park": {
       "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3msbz5f5y22ry",
-      "hash": "9cf631d5d7afd67d76b7b9de1f38c33fa32f0dab660008f39025812d2033b91e"
+      "hash": "36c9697226d6c93d5f17eaa3430b9aa7855b0daf903be8ac1d02c0780da40157"
+    },
+    "/2026/08/06/mistakes-were-made-but-not-by-me": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3msgvqllpc2yv",
+      "hash": "5ddce45c5f1cbbe73ee23df62b92f5e15e179d50d2d3278b7991b2bb7dd3f2c6"
+    },
+    "/2026/08/07/pick-flick": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3msjgxc3i62cs",
+      "hash": "0b37a4432566203e4b7668e931a26b2923143ed52581deb9d672be5a18c9f464"
     }
   }
 }
