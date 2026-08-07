@@ -14,6 +14,27 @@ className: trip
     <div class="big-map__sidebar">
       {% assign posts = site.data.locations[page.location] -%}
       {% assign i = posts.size | plus: 1 -%}
+
+      <div class="big-map__search">
+        <div class="big-map__search-field">
+          <input
+            type="search"
+            class="input js-map-search"
+            placeholder="Buscar un lugar"
+            aria-label="Buscar un lugar"
+            autocomplete="off"
+          >
+          <button
+            type="button"
+            class="big-map__search-clear js-map-search-clear"
+            aria-label="Limpiar la búsqueda"
+            hidden
+          ></button>
+        </div>
+      </div>
+
+      <div class="locations__empty js-locations-empty" hidden>No hay resultados</div>
+
       <div class="locations js-locations">
         {% for location in posts -%}
           {% assign i = i | minus: 1 -%}
@@ -28,21 +49,6 @@ className: trip
               </div>
             {% endif -%}
 
-            {% if location.description -%}
-              <div class="location__description">{{ location.description }}</div>
-            {% endif -%}
-
-            {% if location.post_references.size > 0 -%}
-              <div class="location__posts">
-                {% assign j = 0 -%}
-
-                {% for post_ref in location.post_references -%}
-                  {% assign j = j | plus: 1 -%}
-
-                  <a href="{{ post_ref.url }}" class="location__post">{{ j }}</a>
-                {% endfor -%}
-              </div>
-            {% endif -%}
             <span class="location__address">{{ location.address }}</span>
           </div>
         {% endfor -%}

@@ -8,5 +8,6 @@ latlng:
 - 52.530706060553854
 - 13.383605195376553
 location: berlin
+closed: true
 updated_at: '2024-10-07'
 ---

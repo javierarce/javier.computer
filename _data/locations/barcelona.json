@@ -43,7 +43,18 @@
     ],
     "location": "barcelona",
     "last_updated": "2026-03-31T11:19:51+02:00",
-    "post_references": []
+    "post_references": [
+      {
+        "url": "/2025/03/16/el-monte-analogo",
+        "title": "El monte análogo",
+        "date": "2025-03-16 10:00:00 +0100"
+      },
+      {
+        "url": "/2025/06/07/despedida-analogica",
+        "title": "Mi despedida de la fotografía analógica (irónico)",
+        "date": "2025-06-07 10:00:00 +0200"
+      }
+    ]
   },
   {
     "layout": "place",
@@ -235,7 +246,13 @@
     "location": "barcelona",
     "updated_at": "2024-11-26",
     "last_updated": "2024-11-26T00:00:00+00:00",
-    "post_references": []
+    "post_references": [
+      {
+        "url": "/2024/07/27/vuelta-al-teletipo",
+        "title": "Vuelta al teletipo",
+        "date": "2024-07-27 13:20:00 +0200"
+      }
+    ]
   },
   {
     "layout": "place",
@@ -399,6 +416,11 @@
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": [
       {
+        "url": "/2023/01/22/S23W03",
+        "title": "S23W03",
+        "date": "2023-01-22 16:10:16 +0100"
+      },
+      {
         "url": "/2024/07/27/vuelta-al-teletipo",
         "title": "Vuelta al teletipo",
         "date": "2024-07-27 13:20:00 +0200"
@@ -439,6 +461,11 @@
         "url": "/2022/09/17/funky-bakers",
         "title": "Funky Bakers",
         "date": "2022-09-17 09:16:14 +0200"
+      },
+      {
+        "url": "/2024/07/28/escape-from-barcelona",
+        "title": "Escape from Barcelona",
+        "date": "2024-07-28 21:20:00 +0200"
       }
     ]
   },

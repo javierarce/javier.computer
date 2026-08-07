@@ -21,12 +21,66 @@
   gap: var(--s-4);
 
   &__sidebar {
-    width: 400px;
+    width: var(--width-sm);
     display: flex;
     flex-direction: column;
     height: 100%;
     overflow: hidden;
     overflow-y: scroll;
+  }
+
+  &.is-expanded &__sidebar {
+    display: none;
+  }
+
+  &__search {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 0 0 var(--s-4);
+    background: var(--color-bg-site);
+
+    .input {
+      padding: var(--s-3) var(--s-10) var(--s-3) var(--s-4);
+      font-size: var(--font-size-body-xs);
+    }
+
+    // Replaced by .big-map__search-clear, which we can actually style
+    .input::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+  }
+
+  &__search-field {
+    position: relative;
+    display: flex;
+    width: var(--width-full);
+  }
+
+  &__search-clear {
+    position: absolute;
+    top: 50%;
+    right: var(--s-3);
+    transform: translateY(-50%);
+    width: var(--s-5);
+    height: var(--s-5);
+    padding: 0;
+    border: none;
+    background: url("/img/icons/close.svg") no-repeat center;
+    background-size: var(--s-4) var(--s-4);
+    filter: var(--icon-filter);
+    opacity: var(--op-4);
+    cursor: pointer;
+    transition: opacity var(--transition-speed-default) ease-in-out;
+
+    &:hover {
+      opacity: var(--op-visible);
+    }
+
+    &[hidden] {
+      display: none;
+    }
   }
 }
 
@@ -140,50 +194,142 @@
 }
 
 /* Leaflet Controls */
-.zoom-control.leaflet-control-zoom.leaflet-bar.leaflet-control {
+.zoom-control.leaflet-control-zoom.leaflet-bar.leaflet-control,
+.expand-control.leaflet-bar.leaflet-control,
+.fit-control.leaflet-bar.leaflet-control {
   box-shadow: 0 2px 4px var(--color-shadow);
   border: none;
   background: var(--white);
   width: auto;
   height: auto;
-  border-radius: var(--br-subtle);
+  overflow: hidden;
+  border-radius: var(--br-md);
   cursor: pointer;
+
+  // Leaflet sizes `.leaflet-bar a` at 26px, or 30px once it adds its
+  // `leaflet-touch` class, so every button is pinned here to keep the zoom
+  // stack and the custom controls the same width
+  a {
+    width: var(--s-8);
+    height: var(--s-8);
+    line-height: var(--s-8);
+    border: none;
+    border-radius: 0;
+    color: var(--black);
+  }
+
 }
 
-.zoom-control.leaflet-control-zoom.leaflet-bar.leaflet-control a:hover {
-  color: var(--black);
+// A mask clips everything the element paints, including its own border, so a
+// border on the masked "−" button is invisible. The divider is drawn on the
+// unmasked container instead, at the boundary between the two buttons.
+.zoom-control.leaflet-control-zoom.leaflet-bar.leaflet-control {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: var(--s-8);
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(0, 0, 0, var(--op-2));
+    pointer-events: none;
+  }
+}
+
+// Every control button draws its icon the same way: the SVG's alpha channel
+// masks a solid fill, so the icon colour is set here rather than baked into
+// each file. Zoom's "+" and "−" are text glyphs in Leaflet, so they get
+// blanked out and masked like the rest.
+.zoom-control .leaflet-control-zoom-in,
+.zoom-control .leaflet-control-zoom-out,
+.expand-control .expand-control__button,
+.fit-control .fit-control__button {
+  display: block;
+  font-size: 0;
+  text-indent: 0;
+  background-color: var(--black);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: var(--s-4) var(--s-4);
+  mask-size: var(--s-4) var(--s-4);
+  opacity: var(--op-7);
+
+  // Leaflet tints `.leaflet-bar a` on hover and focus, but here background
+  // is the icon's own fill, so those rules would repaint the glyph light
+  // gray — and focus would keep it that way after a click
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: var(--black);
+  }
+
+  &.leaflet-disabled {
+    background-color: var(--black);
+    opacity: var(--op-2);
+  }
+}
+
+.zoom-control .leaflet-control-zoom-in {
+  -webkit-mask-image: url("/img/icons/plus.svg");
+  mask-image: url("/img/icons/plus.svg");
+}
+
+.zoom-control .leaflet-control-zoom-out {
+  -webkit-mask-image: url("/img/icons/minus.svg");
+  mask-image: url("/img/icons/minus.svg");
+}
+
+// Named for the action, as Material does: the arrow points at what the
+// click will do to the sidebar
+.expand-control .expand-control__button {
+  -webkit-mask-image: url("/img/icons/right-panel-close.svg");
+  mask-image: url("/img/icons/right-panel-close.svg");
+
+  &.is-expanded {
+    -webkit-mask-image: url("/img/icons/right-panel-open.svg");
+    mask-image: url("/img/icons/right-panel-open.svg");
+  }
+}
+
+.fit-control .fit-control__button {
+  -webkit-mask-image: url("/img/icons/fit-bounds.svg");
+  mask-image: url("/img/icons/fit-bounds.svg");
 }
 
 /* Leaflet Animations */
 .leaflet-cluster-anim .leaflet-marker-icon,
 .leaflet-cluster-anim .leaflet-marker-shadow {
   -webkit-transition:
-    -webkit-transform 0.3s ease-out,
-    opacity 0.3s ease-in;
+    -webkit-transform var(--transition-speed-slow) ease-out,
+    opacity var(--transition-speed-slow) ease-in;
   -moz-transition:
-    -moz-transform 0.3s ease-out,
-    opacity 0.3s ease-in;
+    -moz-transform var(--transition-speed-slow) ease-out,
+    opacity var(--transition-speed-slow) ease-in;
   -o-transition:
-    -o-transform 0.3s ease-out,
-    opacity 0.3s ease-in;
+    -o-transform var(--transition-speed-slow) ease-out,
+    opacity var(--transition-speed-slow) ease-in;
   transition:
-    transform 0.3s ease-out,
-    opacity 0.3s ease-in;
+    transform var(--transition-speed-slow) ease-out,
+    opacity var(--transition-speed-slow) ease-in;
 }
 
 .leaflet-cluster-spider-leg {
   -webkit-transition:
-    -webkit-stroke-dashoffset 0.3s ease-out,
-    -webkit-stroke-opacity 0.3s ease-in;
+    -webkit-stroke-dashoffset var(--transition-speed-slow) ease-out,
+    -webkit-stroke-opacity var(--transition-speed-slow) ease-in;
   -moz-transition:
-    -moz-stroke-dashoffset 0.3s ease-out,
-    -moz-stroke-opacity 0.3s ease-in;
+    -moz-stroke-dashoffset var(--transition-speed-slow) ease-out,
+    -moz-stroke-opacity var(--transition-speed-slow) ease-in;
   -o-transition:
-    -o-stroke-dashoffset 0.3s ease-out,
-    -o-stroke-opacity 0.3s ease-in;
+    -o-stroke-dashoffset var(--transition-speed-slow) ease-out,
+    -o-stroke-opacity var(--transition-speed-slow) ease-in;
   transition:
-    stroke-dashoffset 0.3s ease-out,
-    stroke-opacity 0.3s ease-in;
+    stroke-dashoffset var(--transition-speed-slow) ease-out,
+    stroke-opacity var(--transition-speed-slow) ease-in;
 }
 
 @media all and (max-width: 800px) {

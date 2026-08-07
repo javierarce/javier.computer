@@ -54,6 +54,11 @@
     "last_updated": "2026-08-01T23:08:07+02:00",
     "post_references": [
       {
+        "url": "/2025/07/03/correo-ordinario",
+        "title": "Correo Ordinario",
+        "date": "2025-07-03 09:30:00 +0200"
+      },
+      {
         "url": "/2026/08/01/fiume-o-morte",
         "title": "Fiume o Morte",
         "date": "2026-08-01 22:41:00 +0200"
@@ -99,6 +104,28 @@
         "url": "/2026/08/01/fiume-o-morte",
         "title": "Fiume o Morte",
         "date": "2026-08-01 22:41:00 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "watapas",
+    "title": "Watapas",
+    "description": "<p>Una más que buena izakaya tapas bar.</p>\n",
+    "address": "Bötzowstraße 33",
+    "category": "restaurant",
+    "latlng": [
+      52.5320983,
+      13.434446
+    ],
+    "location": "berlin",
+    "updated_at": "2025-08-10",
+    "last_updated": "2026-07-30T21:56:01+02:00",
+    "post_references": [
+      {
+        "url": "/2026/07/30/eggscelente",
+        "title": "Eggscelente",
+        "date": "2026-07-30 21:56:01 +0200"
       }
     ]
   },
@@ -320,6 +347,7 @@
       13.422646
     ],
     "location": "berlin",
+    "closed": true,
     "updated_at": "2025-08-10",
     "last_updated": "2025-08-10T00:00:00+00:00",
     "post_references": []
@@ -335,6 +363,7 @@
       13.332574
     ],
     "location": "berlin",
+    "closed": true,
     "updated_at": "2025-08-10",
     "last_updated": "2025-08-10T00:00:00+00:00",
     "post_references": []
@@ -373,22 +402,6 @@
   },
   {
     "layout": "place",
-    "pid": "watapas",
-    "title": "Watapas",
-    "description": "<p>Una más que buena izakaya tapas bar.</p>\n",
-    "address": "Bötzowstraße 33",
-    "category": "restaurant",
-    "latlng": [
-      52.5320983,
-      13.434446
-    ],
-    "location": "berlin",
-    "updated_at": "2025-08-10",
-    "last_updated": "2025-08-10T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
     "pid": "zola",
     "title": "Zola",
     "description": "<p>La «Zola Neapolitan mit Fior di Latte, Birne, Walnüssen und Gorgonzola» estaba muy rica.</p>\n",
@@ -400,7 +413,13 @@
     "location": "berlin",
     "updated_at": "2025-08-10",
     "last_updated": "2025-08-10T00:00:00+00:00",
-    "post_references": []
+    "post_references": [
+      {
+        "url": "/2025/07/06/el-truco-de-cerrar-los-ojos",
+        "title": "El truco de cerrar los ojos",
+        "date": "2025-07-06 21:11:06 +0200"
+      }
+    ]
   },
   {
     "layout": "place",
@@ -491,6 +510,7 @@
       13.383605195376553
     ],
     "location": "berlin",
+    "closed": true,
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -506,6 +526,7 @@
       13.433880192070449
     ],
     "location": "berlin",
+    "closed": true,
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -579,6 +600,11 @@
         "url": "/2023/07/29/isla-coffee-quema-las-tostadas",
         "title": "Isla coffee quema las tostadas",
         "date": "2023-07-29 17:03:10 +0200"
+      },
+      {
+        "url": "/2023/07/29/collapsology",
+        "title": "Collapsology",
+        "date": "2023-07-29 17:05:32 +0200"
       },
       {
         "url": "/2024/08/02/berlin-mon-amour",
@@ -732,7 +758,13 @@
     "location": "berlin",
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
-    "post_references": []
+    "post_references": [
+      {
+        "url": "/2023/07/29/collapsology",
+        "title": "Collapsology",
+        "date": "2023-07-29 17:05:32 +0200"
+      }
+    ]
   },
   {
     "layout": "place",

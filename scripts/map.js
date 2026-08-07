@@ -101,6 +101,7 @@ class Popup extends Base {
     options.address = options.address || "";
     options.description = options.description || "";
     options.post_references = options.post_references || [];
+    options.closed = options.closed || false;
 
     this.templateData = options;
   }
@@ -108,7 +109,9 @@ class Popup extends Base {
   template() {
     return `
       <div class="popup__content">
-        <% if (title) { %><div class="popup__title"><%= title %></div> <% } %>
+        <% if (title) { %><div class="popup__title"><span><%= title %></span>
+          <% if (closed) { %><span class="popup__badge">Cerrado permanentemente</span><% } %>
+        </div> <% } %>
         <% if (description) { %><div class="popup__description"><%- description %></div> <% } %>
         <% if (post_references && post_references.length > 0) { %><div class="popup__posts">
         <% for (let i = 0; i < post_references.length; i++) { %>
@@ -127,6 +130,8 @@ class Popup extends Base {
 
     this.el = L.popup({
       className,
+      // Breathing room between a panned-into-view popup and the map edge
+      autoPanPadding: L.point(24, 24),
     });
 
     this.el.setContent(this.$el);
@@ -139,7 +144,9 @@ class Popup extends Base {
 class Map extends Base {
   constructor(coordinates) {
     super();
-    this.selectedMarkerOrderId = -1;
+    this.selectedLocationId = null;
+    // Ids the sidebar is currently showing; null means "no filter applied"
+    this.visibleLocationIds = null;
 
     this.coordinates = coordinates;
 
@@ -172,6 +179,11 @@ class Map extends Base {
         latlngs.push(marker.getLatLng());
       });
     }
+
+    if (!latlngs.length) {
+      return;
+    }
+
     this.map.fitBounds(L.latLngBounds(latlngs));
   }
 
@@ -179,8 +191,8 @@ class Map extends Base {
     const marker = this.getMarkers().find(
       (marker) => marker.options.location.pid === permalink,
     );
+
     if (marker) {
-      this.selectedMarkerOrderId = marker.options.location.id - 1;
       this.selectMarker(marker, 18);
     }
   }
@@ -189,51 +201,86 @@ class Map extends Base {
     const marker = this.getMarkers().find(
       (marker) => marker.options.location.id === id,
     );
-    this.selectedMarkerOrderId = marker.options.location.id - 1;
+
+    if (!marker) {
+      return;
+    }
+
     this.selectMarker(marker, 18);
   }
 
+  // Markers are returned in the same order the sidebar renders them: the
+  // sidebar lists locations newest first, i.e. by descending id. Keeping both
+  // in sync is what makes the arrow keys step to the adjacent card.
   getMarkers() {
     return this.markers
       .getLayers()
-      .sort((a, b) => b._leaflet_id - a._leaflet_id);
+      .slice()
+      .sort((a, b) => b.options.location.id - a.options.location.id);
   }
 
-  getSelectedMarker() {
-    return this.getMarkers()[this.selectedMarkerOrderId];
+  // The markers the arrow keys can reach — the sidebar's current search
+  // results, or every marker when there's no search in progress.
+  getNavigableMarkers() {
+    const markers = this.getMarkers();
+
+    if (!this.visibleLocationIds) {
+      return markers;
+    }
+
+    return markers.filter((marker) =>
+      this.visibleLocationIds.has(marker.options.location.id),
+    );
+  }
+
+  setVisibleLocationIds(ids) {
+    this.visibleLocationIds = ids;
   }
 
   goToMarker(direction) {
-    const markers = this.getMarkers();
-    this.selectedMarkerOrderId =
-      direction === "next"
-        ? this.getNextMarker(markers, this.selectedMarkerOrderId)
-        : this.getPrevMarker(markers, this.selectedMarkerOrderId);
+    const markers = this.getNavigableMarkers();
 
-    const marker = markers[this.selectedMarkerOrderId % markers.length];
+    if (!markers.length) {
+      return;
+    }
+
+    const current = markers.findIndex(
+      (marker) => marker.options.location.id === this.selectedLocationId,
+    );
+
+    let index;
+
+    if (current < 0) {
+      // Nothing selected (or the selection is filtered out): enter from an end
+      index = direction === "next" ? 0 : markers.length - 1;
+    } else {
+      index =
+        direction === "next"
+          ? (current + 1) % markers.length
+          : (current - 1 + markers.length) % markers.length;
+    }
+
+    this.goToMarkerAt(markers[index]);
+  }
+
+  goToFirstMarker() {
+    this.goToMarkerAt(this.getNavigableMarkers()[0]);
+  }
+
+  goToMarkerAt(marker) {
+    if (!marker) {
+      return;
+    }
+
     this.selectMarker(marker, 18);
+
     const location = marker.options.location;
-    const permalink = location.pid;
 
     window.history.replaceState(
       {},
       "",
-      "/maps/" + location.location + "/" + permalink,
+      "/maps/" + location.location + "/" + location.pid,
     );
-  }
-
-  getPrevMarker(markers, id) {
-    id = (id - 1) % markers.length;
-
-    if (id < 0) {
-      id = markers.length - 1;
-    }
-
-    return id;
-  }
-
-  getNextMarker(markers, id) {
-    return (id = (id + 1) % markers.length);
   }
 
   renderLocations(locations) {
@@ -319,7 +366,7 @@ class Map extends Base {
   }
 
   onMarkerClick(location) {
-    this.selectedMarkerOrderId = location.id - 1;
+    this.selectedLocationId = location.id;
     this.emit("marker:click", location.id);
   }
 
@@ -332,15 +379,15 @@ class Map extends Base {
 
     const zoomLevel = this.map.getZoom() < zoom ? zoom : this.map.getZoom();
 
+    this.selectedLocationId = location.id;
     this.emit("marker:select", location.id);
 
+    // Opening the popup lets Leaflet pan just enough to fit it, which pushes
+    // the marker down the viewport when the popup is tall. Re-centring the
+    // marker afterwards would undo that and clip the popup off the top.
     this.map.once("zoomend, moveend", () => {
       if (marker && marker.getElement()) {
         marker.openPopup();
-
-        setTimeout(() => {
-          this.map.setView(location.latlng, zoomLevel);
-        }, 100);
       }
     });
 
@@ -397,13 +444,102 @@ class Map extends Base {
 
     this.map.on("click", this.onMapClick.bind(this));
 
+    // Leaflet prepends into bottom corners, so controls added later stack
+    // higher: the zoom control moves down first, then the fit control lands
+    // above the "+". setPosition rebuilds the control's container, so the
+    // class has to go on afterwards or it's discarded.
     this.map.zoomControl.setPosition("bottomright");
     this.map.zoomControl.getContainer().classList.add("zoom-control");
+
+    this.addFitControl();
+
+    this.addExpandControl();
     this.addAttribution();
+  }
+
+  createControl({ className, position, label, onClick }) {
+    const Control = L.Control.extend({
+      options: { position },
+
+      onAdd() {
+        const $container = L.DomUtil.create(
+          "div",
+          `${className} leaflet-bar leaflet-control`,
+        );
+
+        const $button = L.DomUtil.create(
+          "a",
+          `${className}__button`,
+          $container,
+        );
+
+        $button.href = "#";
+        $button.setAttribute("role", "button");
+        $button.title = label;
+        $button.setAttribute("aria-label", label);
+
+        L.DomEvent.on($button, "click", (event) => {
+          L.DomEvent.stop(event);
+          onClick();
+        });
+
+        L.DomEvent.disableClickPropagation($container);
+
+        return $container;
+      },
+    });
+
+    const control = new Control();
+    this.map.addControl(control);
+
+    return control.getContainer().querySelector(`.${className}__button`);
+  }
+
+  addExpandControl() {
+    this.$expandButton = this.createControl({
+      className: "expand-control",
+      position: "topright",
+      label: "Expandir el mapa",
+      onClick: () => this.emit("sidebar:toggle"),
+    });
+
+    this.updateExpandControl(false);
+  }
+
+  addFitControl() {
+    this.createControl({
+      className: "fit-control",
+      position: "bottomright",
+      label: "Ver toda la ciudad",
+      onClick: () => this.fitBoundsToMarkers(),
+    });
+  }
+
+  updateExpandControl(isExpanded) {
+    if (!this.$expandButton) {
+      return;
+    }
+
+    const label = isExpanded ? "Mostrar la lista" : "Expandir el mapa";
+
+    this.$expandButton.classList.toggle("is-expanded", isExpanded);
+    this.$expandButton.title = label;
+    this.$expandButton.setAttribute("aria-label", label);
+    this.$expandButton.setAttribute("aria-pressed", String(isExpanded));
+  }
+
+  // The sidebar sits outside the map, so the container needs to re-measure
+  // itself once the new layout has been applied
+  refresh() {
+    requestAnimationFrame(() => {
+      this.map.invalidateSize();
+    });
   }
 
   addAttribution() {
     const attribution = this.attribution;
+
+    this.map.attributionControl.setPosition("bottomleft");
 
     L.tileLayer(this.tileLayer + (L.Browser.retina ? "@2x.png" : ".png"), {
       attribution,
@@ -417,9 +553,10 @@ class Map extends Base {
 class App {
   constructor() {
     this.$el = document.querySelector(".js-map");
+    this.$bigMap = document.querySelector(".big-map");
 
     this.flexDirection = window
-      .getComputedStyle(document.querySelector(".big-map"))
+      .getComputedStyle(this.$bigMap)
       .getPropertyValue("flex-direction");
 
     const lng = this.$el.attributes["data-lng"].value;
@@ -433,9 +570,13 @@ class App {
 
     this.locations.forEach((location, index) => {
       location.id = index + 1;
+      location.searchText = this.buildSearchText(location);
     });
 
     this.$locations = document.querySelector(".js-locations");
+    this.$search = document.querySelector(".js-map-search");
+    this.$searchClear = document.querySelector(".js-map-search-clear");
+    this.$empty = document.querySelector(".js-locations-empty");
 
     this.render();
     this.bindEvents();
@@ -448,20 +589,137 @@ class App {
     }
   }
 
+  // Title, description and address, accent-folded so "cafe" finds "café"
+  buildSearchText(location) {
+    return this.normalize(
+      [location.title, location.description, location.address]
+        .filter(Boolean)
+        .join(" ")
+        .replace(/<[^>]*>/g, " "),
+    );
+  }
+
+  normalize(text) {
+    return text
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+  }
+
+  search(query) {
+    const term = this.normalize(query).trim();
+    const matchedIds = new Set();
+
+    this.$locations.querySelectorAll(".js-location").forEach(($element) => {
+      const id = +$element.dataset.id;
+      const location = this.locations[id - 1];
+      const matches = !term || (location && location.searchText.includes(term));
+
+      $element.classList.toggle("is-hidden", !matches);
+
+      if (matches) {
+        matchedIds.add(id);
+      }
+    });
+
+    if (this.$empty) {
+      this.$empty.hidden = matchedIds.size > 0;
+    }
+
+    if (this.$searchClear) {
+      this.$searchClear.hidden = !this.$search.value;
+    }
+
+    this.map.setVisibleLocationIds(term ? matchedIds : null);
+  }
+
+  bindSearchEvents() {
+    if (!this.$search) {
+      return;
+    }
+
+    this.$search.addEventListener("input", () => {
+      this.search(this.$search.value);
+    });
+
+    if (this.$searchClear) {
+      this.$searchClear.addEventListener("click", () => {
+        this.clearSearch();
+      });
+    }
+  }
+
+  clearSearch() {
+    this.$search.value = "";
+    this.search("");
+    this.$search.focus();
+  }
+
+  toggleSidebar() {
+    const isExpanded = this.$bigMap.classList.toggle("is-expanded");
+
+    this.map.updateExpandControl(isExpanded);
+    this.map.refresh();
+  }
+
   bindKeyEvents() {
     document.addEventListener("keydown", (event) => {
+      const isSearching = event.target === this.$search;
+
+      // Cmd/Ctrl+F focuses the sidebar search, which unlike find-in-page also
+      // matches descriptions and scopes the arrow keys to the results. Pressing
+      // it again with the field already focused falls through to the browser,
+      // so its find bar stays one keystroke away rather than being taken over.
+      if (
+        (event.metaKey || event.ctrlKey) &&
+        event.key === "f" &&
+        !event.altKey &&
+        this.$search &&
+        !isSearching
+      ) {
+        event.preventDefault();
+        this.$search.focus();
+        this.$search.select();
+        return;
+      }
+
       if (event.key === "Escape") {
         event.preventDefault();
+
+        // While typing, Escape clears the search before it clears the selection
+        if (isSearching && this.$search.value) {
+          this.clearSearch();
+          return;
+        }
+
         this.unselectLocation();
-      } else if (event.key === "ArrowDown" || event.key === "ArrowRight") {
+      } else if (
+        event.key === "ArrowDown" ||
+        (event.key === "ArrowRight" && !isSearching)
+      ) {
         event.preventDefault();
         event.stopPropagation();
         this.map.goToMarker("next");
-      } else if (event.key === "ArrowUp" || event.key === "ArrowLeft") {
+      } else if (
+        event.key === "ArrowUp" ||
+        (event.key === "ArrowLeft" && !isSearching)
+      ) {
         event.stopPropagation();
         event.preventDefault();
         this.map.goToMarker("prev");
       } else if (event.key === "Tab") {
+        // Tab out of the search field jumps to the first result, keeping focus
+        // in the input so you can keep typing or arrow through from there
+        if (isSearching) {
+          if (event.shiftKey) {
+            return;
+          }
+
+          event.preventDefault();
+          this.map.goToFirstMarker();
+          return;
+        }
+
         event.preventDefault();
 
         if (event.shiftKey) {
@@ -474,9 +732,14 @@ class App {
   }
 
   unselectLocation() {
-    this.$locations
-      .querySelector(`[data-id="${this.previousLocationID}"]`)
-      .classList.remove("is-active");
+    const $previous = this.previousLocationID
+      ? this.$locations.querySelector(`[data-id="${this.previousLocationID}"]`)
+      : null;
+
+    if ($previous) {
+      $previous.classList.remove("is-active");
+    }
+
     this.previousLocationID = null;
     this.map.closePopup();
     this.map.show();
@@ -498,15 +761,24 @@ class App {
 
   pinMarker(id) {
     const $element = this.$locations.querySelector(`[data-id="${id}"]`);
+
+    if (!$element) {
+      return;
+    }
+
     $element.classList.add("is-active");
     setTimeout(() => {
       this.scrollIntoView($element);
     }, 300);
 
     if (this.previousLocationID) {
-      this.$locations
-        .querySelector(`[data-id="${this.previousLocationID}"]`)
-        .classList.remove("is-active");
+      const $previous = this.$locations.querySelector(
+        `[data-id="${this.previousLocationID}"]`,
+      );
+
+      if ($previous) {
+        $previous.classList.remove("is-active");
+      }
     }
 
     this.previousLocationID = id;
@@ -515,9 +787,13 @@ class App {
   bindEvents() {
     window.addEventListener("resize", () => {
       this.flexDirection = window
-        .getComputedStyle(document.querySelector(".big-map"))
+        .getComputedStyle(this.$bigMap)
         .getPropertyValue("flex-direction");
     });
+
+    this.bindSearchEvents();
+
+    this.map.on("sidebar:toggle", this.toggleSidebar.bind(this));
 
     this.map.on("marker:select", this.pinMarker.bind(this));
 

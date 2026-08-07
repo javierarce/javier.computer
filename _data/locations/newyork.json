@@ -193,7 +193,13 @@
     "location": "newyork",
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
-    "post_references": []
+    "post_references": [
+      {
+        "url": "/2023/03/23/henson",
+        "title": "Henson",
+        "date": "2023-03-23 00:00:00 +0100"
+      }
+    ]
   },
   {
     "layout": "place",

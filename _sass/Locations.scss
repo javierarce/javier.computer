@@ -6,6 +6,11 @@
   flex-direction: column;
 }
 
+.locations__empty {
+  font-size: var(--font-size-body-xs);
+  opacity: var(--op-light);
+}
+
 .location {
   display: flex;
   flex-direction: column;
@@ -21,6 +26,10 @@
     background: var(--color-bg-hover);
   }
 
+  &.is-hidden {
+    display: none;
+  }
+
   &__id {
     position: relative;
     top: -2px;
@@ -29,7 +38,7 @@
     justify-content: center;
     width: 1.2rem;
     height: 1.2rem;
-    border-radius: 50%;
+    border-radius: var(--br-pill);
     color: var(--black);
     background: var(--link);
     font-size: var(--font-size-body-tiny);

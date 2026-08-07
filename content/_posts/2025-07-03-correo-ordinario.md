@@ -3,8 +3,10 @@ layout: post
 title: "Correo Ordinario"
 date: "2025-07-03 09:30:00 +0200"
 location: berlin
+places:
+- bildband
 tags:
   - cine
 ---
 
-Compra compulsiva &middot; [Ana ha comenzado una newsletter](https://correoordinario.substack.com/p/primera-carta), automáticamente haciendo Internet un poco mejor &middot; Un mes más &middot; Bis bald, Bildband &middot; [Criss Cross](https://letterboxd.com/javier/film/criss-cross) ★★★½.
+Compra compulsiva &middot; [Ana ha comenzado una newsletter](https://correoordinario.substack.com/p/primera-carta), automáticamente haciendo Internet un poco mejor &middot; Un mes más &middot; Bis bald, [Bildband](/maps/berlin/bildband) &middot; [Criss Cross](https://letterboxd.com/javier/film/criss-cross) ★★★½.
