@@ -6,6 +6,7 @@ places:
   - town-mouse-coffee
   - bildband
   - uncle-philips-toy-workshop
+location: berlin
 ---
 Lo que ayer eran avispas, hoy son gotas de agua. A pesar de la lluvia, por la
 mañana vamos a nuestra cafetería preferida del barrio, [Town Mouse

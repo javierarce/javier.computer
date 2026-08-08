@@ -2,6 +2,7 @@
 layout: post
 title: "Games People Play"
 date: "2026-07-27 22:40:58 +0200"
+location: berlin
 ---
 [Games people play](https://www.are.na/javier/games-people-play) <span
 class="sp">✦</span> [The Children's Hour](https://letterboxd.com/film/the-childrens-hour) ★★★½ <span

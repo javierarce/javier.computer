@@ -2,6 +2,7 @@
 layout: post
 title: "Mistakes Were Made, But Not By Me"
 date: "2026-08-06 22:42:28 +0200"
+location: berlin
 ---
 [What happened on Johnny
 Depp's bed?](https://www.youtube.com/watch?v=vGt7-WnWdhE) <span

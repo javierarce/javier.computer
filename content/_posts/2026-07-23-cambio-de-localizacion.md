@@ -2,6 +2,7 @@
 layout: post
 title: "Cambio de localización"
 date: "2026-07-23 21:26:04 +0200"
+location: berlin
 ---
 
 Cambio de localización: Gesundbrunnen por Winsviertel <span class="sp">✦</span> [Este

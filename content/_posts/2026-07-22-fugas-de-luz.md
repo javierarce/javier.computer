@@ -2,6 +2,7 @@
 layout: post
 title: "Fugas de luz"
 date: "2026-07-22 20:00:55 +0200"
+location: berlin
 ---
 [Privilege is bad grammar](https://tadaima.bearblog.dev/privilege-is-bad-grammar) <span
 class="sp">✦</span>  Recibo el primer carrete que disparé con la Olympus Mju-I que me regaló [Erica](https://www.ericafustero.com). Quedo muy contento con la experiencia de uso

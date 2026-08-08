@@ -2,6 +2,7 @@
 layout: post
 title: "Glomar response"
 date: "2026-08-03 22:46:26 +0200"
+location: berlin
 ---
 
 Día de migrar proyectos entre servidores, de enviar pruebas de ilustraciones a

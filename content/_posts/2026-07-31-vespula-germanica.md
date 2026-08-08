@@ -2,6 +2,7 @@
 layout: post
 title: "Vespula germanica"
 date: "2026-07-31 22:27:09 +0200"
+location: berlin
 ---
 
 [Dictionary of the

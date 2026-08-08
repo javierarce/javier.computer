@@ -2,6 +2,7 @@
 layout: post
 title: "Chat écoutant de la musique"
 date: "2026-07-29 23:14:53 +0200"
+location: berlin
 ---
 
 [Chat écoutant de la musique](https://www.youtube.com/watch?v=_BKuXESDJS0)

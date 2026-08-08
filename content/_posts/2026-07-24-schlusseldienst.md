@@ -2,6 +2,7 @@
 layout: post
 title: "Schlüsseldienst"
 date: "2026-07-24 20:43:18 +0200"
+location: berlin
 ---
 [OK OK – Twin
 Postcards](https://www.sourcetype.com/editorial/1938/ok-ok-twin-postcards) <span class="sp">✦</span> 
