@@ -80,6 +80,10 @@
     "/2026/08/07/pick-flick": {
       "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3msjgxc3i62cs",
       "hash": "0b37a4432566203e4b7668e931a26b2923143ed52581deb9d672be5a18c9f464"
+    },
+    "/2026/08/08/botfluencer": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mslyff3mk2lm",
+      "hash": "56461acbb24c6c6d54740ebe703511913980f208ba0683e712f65472b323b8de"
     }
   }
 }
