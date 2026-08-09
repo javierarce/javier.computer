@@ -11,6 +11,68 @@ is my attempt to spend more time thinking, documenting, and making.
 
 ---
 
+## The `computer` command
+
+One menu for everything this site needs: creating content, refreshing the data
+files, and running Jekyll.
+
+```sh
+./computer              # open the menu
+./computer post         # jump straight to one action
+./computer --help       # list the action ids
+```
+
+In the menu: `↑↓` (or `j`/`k`) to move, `/` to filter, `⏎` to run, `esc` to quit.
+In a form: `⏎` for the next field, `⇧⇥` to go back, `esc` to cancel. Fields come
+pre-filled with a sensible guess (the location of the last post, the camera
+detected from the photo filenames, the date read off the first photo) — press
+`⏎` to accept it or type over it.
+
+| Action | What it does |
+| --- | --- |
+| `post`, `draft` | A post in `content/_posts`, or a draft in `_drafts` |
+| `photo` | A `photos/photo` entry with a `filenames:` block |
+| `reportage` | Front matter plus a body of `{% stack %}` / `{% row %}` blocks |
+| `quote`, `video` | The smaller post layouts |
+| `edit` | Open an existing post or draft in `$EDITOR` |
+| `publish` | Review the changes, commit them and push |
+| `reading` | The reading-list TUI (`_scripts/reading.js`) |
+| `update` | Movies, subscribers and syndication in one go |
+| `movies`, `books`, `places`, `subscribers`, `syndication` | One data source at a time |
+| `standard`, `standard-dry` | Publish to standard.site over the AT Protocol |
+| `filenames` | Rebuild a post's `filenames:` block from its `{% photo %}` tags |
+| `serve`, `serve-drafts`, `build` | Jekyll |
+| `format`, `lint` | Prettier and ESLint |
+
+Dates accept `now`, `yesterday`, `3 days ago`, `last friday`, `in 2 weeks`,
+`21:30`, `2026-08-01` or `2026-08-01 21:30`, and the resolved date is shown as
+you type. A bare day means midnight.
+
+When adding photos, paste or type one filename per line — paths and extensions
+are stripped, so dragging files in works. Put a ratio after a filename to
+override the `3/2` default:
+
+```
+2026-07-16-Berlin-R0021086 2/3
+```
+
+Reportage bodies are laid out from those ratios: consecutive portraits pair up
+into a `{% row %}`, everything else becomes a `{% stack %}`.
+
+`./computer publish` closes the loop: it lists every change with its git status,
+shows the branch and where it will push, then asks for a commit message
+(pre-filled with the title of the post you just added, when the change is a
+single new post). Nothing is staged until you confirm, and pushing `main` is
+what triggers the GitHub Actions deploy.
+
+Every new file is offered to your editor the moment it is written, and
+`./computer edit` reopens anything you wrote earlier — drafts first, then the
+newest posts, filterable by title with `/`. The editor is `$VISUAL`, then
+`$EDITOR`, then the first of `nvim`, `vim`, `code -w`, `nano` or `open -t`
+found on your `PATH`.
+
+---
+
 ## Writing a reportage
 
 Reportage posts mix text blocks, photos, and photo layouts using four custom Liquid tags.

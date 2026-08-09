@@ -1,0 +1,7 @@
+#!/bin/sh
+# javier.computer — one menu for every script in this repo.
+#
+#   ./computer            open the menu
+#   ./computer post       jump straight to an action
+#   ./computer --help     list the actions
+exec node "$(dirname "$0")/_scripts/cli.js" "$@"

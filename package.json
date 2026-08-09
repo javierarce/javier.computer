@@ -1,10 +1,12 @@
 {
   "name": "commands",
   "bin": {
+    "computer": "./_scripts/cli.js",
     "reading": "./_scripts/reading.js",
     "update": "./_scripts/update.js"
   },
   "scripts": {
+    "computer": "node _scripts/cli.js",
     "reading": "node _scripts/reading.js",
     "standard": "node _scripts/standard.js"
   },
