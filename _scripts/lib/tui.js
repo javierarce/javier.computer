@@ -1,0 +1,806 @@
+// Small terminal UI toolkit shared by the site CLI (_scripts/cli.js).
+//
+// Everything here is promise-based so screens compose as plain `await` calls:
+//
+//   const action = await select({ title: "Menu", items });
+//   const values = await form(fields, { title: "New post" });
+//
+// No dependencies: raw ANSI plus process.stdin in raw mode.
+
+import { spawn } from "node:child_process";
+
+/* ============================================
+   Colors
+============================================ */
+
+export const color = {
+  reset: "\x1b[0m",
+  dim: "\x1b[2m",
+  bold: "\x1b[1m",
+  gray: "\x1b[38;5;245m",
+  green: "\x1b[38;5;114m",
+  blue: "\x1b[38;5;75m",
+  yellow: "\x1b[38;5;221m",
+  red: "\x1b[38;5;203m",
+  invert: "\x1b[7m",
+};
+
+const ANSI_RE = /\x1b\[[0-9;]*m/g;
+
+export const visibleWidth = (string) => string.replace(ANSI_RE, "").length;
+
+export function truncate(string, max) {
+  if (max <= 0) return "";
+  if (visibleWidth(string) <= max) return string;
+
+  let out = "";
+  let shown = 0;
+  let i = 0;
+
+  while (i < string.length && shown < max - 1) {
+    const escape = string.slice(i).match(/^\x1b\[[0-9;]*m/);
+    if (escape) {
+      out += escape[0];
+      i += escape[0].length;
+      continue;
+    }
+    out += string[i];
+    i += 1;
+    shown += 1;
+  }
+
+  return `${out}…${color.reset}`;
+}
+
+/* ============================================
+   Terminal
+============================================ */
+
+export const Terminal = {
+  // Some terminals report a nonsense size until the first resize event; a
+  // height of 0 or 1 would collapse every frame to an empty screen.
+  width: () => Math.max(20, process.stdout.columns || 80),
+  height: () => Math.max(10, process.stdout.rows || 24),
+
+  hideCursor() {
+    process.stdout.write("\x1b[?25l");
+  },
+
+  showCursor() {
+    process.stdout.write("\x1b[?25h");
+  },
+
+  clear() {
+    process.stdout.write("\x1b[2J\x1b[3J\x1b[H");
+  },
+
+  // Raw mode lets us read single keypresses instead of whole lines.
+  raw(enabled) {
+    if (process.stdin.isTTY) process.stdin.setRawMode(enabled);
+    if (enabled) {
+      process.stdin.resume();
+      process.stdin.setEncoding("utf8");
+    } else {
+      process.stdin.pause();
+    }
+  },
+
+  enter() {
+    Terminal.raw(true);
+    Terminal.hideCursor();
+    Terminal.clear();
+  },
+
+  leave() {
+    Terminal.showCursor();
+    Terminal.raw(false);
+  },
+};
+
+// Repaints the whole frame in one write, starting from the home position and
+// clearing each line as we go, so there is no flicker between renders.
+export function paint(lines, cursor) {
+  const width = Terminal.width();
+  const height = Terminal.height();
+  const visible = lines.slice(0, height);
+
+  let frame =
+    "\x1b[H" +
+    visible.map((line) => `${truncate(line, width)}\x1b[K`).join("\n") +
+    "\x1b[J";
+
+  if (cursor) {
+    frame += `\x1b[${cursor.row};${cursor.col}H\x1b[?25h`;
+  } else {
+    frame += "\x1b[?25l";
+  }
+
+  process.stdout.write(frame);
+}
+
+/* ============================================
+   Keyboard
+============================================ */
+
+export const KEY = {
+  up: "\u001b[A",
+  down: "\u001b[B",
+  right: "\u001b[C",
+  left: "\u001b[D",
+  enter: "\r",
+  escape: "\u001b",
+  backspace: "\u007f",
+  tab: "\t",
+  shiftTab: "\u001b[Z",
+  ctrlC: "\u0003",
+  ctrlD: "\u0004",
+  ctrlU: "\u0015",
+  ctrlW: "\u0017",
+};
+
+// A single read can carry a whole paste, so split the chunk into individual
+// keys (keeping escape sequences such as arrows intact).
+export function parseKeys(chunk) {
+  const keys = [];
+  let i = 0;
+
+  while (i < chunk.length) {
+    if (chunk[i] === KEY.escape) {
+      const rest = chunk.slice(i);
+      const sequence =
+        rest.match(/^\u001b\[[0-9;]*[A-Za-z~]/) ||
+        rest.match(/^\u001bO[A-Za-z]/);
+
+      if (sequence) {
+        keys.push(sequence[0]);
+        i += sequence[0].length;
+        continue;
+      }
+    }
+
+    // Terminals disagree about Enter, and a pasted block arrives with "\n"
+    // line breaks; treat both as the same key.
+    keys.push(chunk[i] === "\n" ? KEY.enter : chunk[i]);
+    i += 1;
+  }
+
+  return keys;
+}
+
+// Runs `handler` for every keypress until it calls `done()`.
+function readKeys(handler) {
+  return new Promise((resolve) => {
+    let finished = false;
+
+    const done = (value) => {
+      if (finished) return;
+      finished = true;
+      process.stdin.off("data", onData);
+      process.stdin.off("end", onEnd);
+      process.stdout.off("resize", onResize);
+      resolve(value);
+    };
+
+    const onData = (chunk) => {
+      for (const key of parseKeys(chunk)) {
+        if (finished) return;
+        if (key === KEY.ctrlC) {
+          Terminal.leave();
+          Terminal.clear();
+          process.exit(130);
+        }
+        handler(key, done);
+      }
+    };
+
+    const onResize = () => handler(null, done);
+    const onEnd = () => done(null); // input closed: unwind instead of hanging
+
+    process.stdin.on("data", onData);
+    process.stdin.on("end", onEnd);
+    process.stdout.on("resize", onResize);
+  });
+}
+
+/* ============================================
+   Shared chrome
+============================================ */
+
+function heading(title, note) {
+  const lines = [
+    `${color.bold}${color.blue}${title}${color.reset}` +
+      (note ? ` ${color.dim}${note}${color.reset}` : ""),
+    "",
+  ];
+  return lines;
+}
+
+// Builds a full-height frame: header, body, then hints pinned to the last row.
+function frame(header, body, hints) {
+  const height = Terminal.height();
+  const width = Terminal.width();
+  const lines = [...header, ...body];
+
+  while (lines.length < height - 1) lines.push("");
+
+  const [left = "", right = ""] = hints;
+  const gap = Math.max(1, width - visibleWidth(left) - visibleWidth(right));
+  lines.length = height - 1;
+  lines.push(`${color.dim}${left}${" ".repeat(gap)}${right}${color.reset}`);
+
+  return lines;
+}
+
+// Case-insensitive subsequence match, so "npo" finds "New post".
+function fuzzy(needle, haystack) {
+  if (!needle) return true;
+
+  const target = haystack.toLowerCase();
+  let i = 0;
+
+  for (const char of needle.toLowerCase()) {
+    i = target.indexOf(char, i);
+    if (i === -1) return false;
+    i += 1;
+  }
+
+  return true;
+}
+
+/* ============================================
+   select()
+============================================ */
+
+// items: { label, hint, value, keywords } | { header: "Section" }
+// Resolves with the chosen item's `value`, or null when cancelled.
+export function select({ title, note, items, hints = "" }) {
+  let filter = "";
+  let filtering = false;
+  let index = 0;
+  let offset = 0;
+
+  const matches = () =>
+    items.filter(
+      (item) =>
+        !item.header &&
+        fuzzy(
+          filter,
+          `${item.label} ${item.hint || ""} ${item.keywords || ""}`,
+        ),
+    );
+
+  // Section headers only show up when at least one of their items survives.
+  const rows = (visible) => {
+    const out = [];
+
+    for (const item of items) {
+      if (item.header) {
+        out.push({ header: item.header });
+        continue;
+      }
+      if (!visible.includes(item)) continue;
+      out.push({ item, index: visible.indexOf(item) });
+    }
+
+    return out.filter((row, i) => {
+      if (!row.header) return true;
+      const section = out.slice(i + 1);
+      const end = section.findIndex((next) => next.header);
+      return (end === -1 ? section : section.slice(0, end)).length > 0;
+    });
+  };
+
+  const render = () => {
+    const visible = matches();
+    index = Math.max(0, Math.min(index, visible.length - 1));
+
+    const header = heading(title, note);
+    const all = rows(visible);
+    const footer = filtering || filter ? 2 : 0;
+    const viewport = Math.max(
+      1,
+      Terminal.height() - header.length - 1 - footer,
+    );
+
+    // Keep the selected row inside the viewport.
+    const cursorRow = all.findIndex((row) => row.index === index);
+    if (cursorRow >= 0) {
+      if (cursorRow < offset) offset = cursorRow;
+      if (cursorRow >= offset + viewport) offset = cursorRow - viewport + 1;
+    }
+    offset = Math.max(0, Math.min(offset, Math.max(0, all.length - viewport)));
+
+    const body = [];
+
+    if (!visible.length) {
+      body.push(`  ${color.gray}No matches${color.reset}`);
+    }
+
+    // Line the hints up in their own column so the menu reads as a table.
+    const column = Math.min(
+      40,
+      Math.max(
+        0,
+        ...visible.filter((item) => item.hint).map((item) => item.label.length),
+      ),
+    );
+
+    for (const row of all.slice(offset, offset + viewport)) {
+      if (row.header) {
+        body.push(`${color.dim}${row.header}${color.reset}`);
+        continue;
+      }
+
+      const selected = row.index === index;
+      const marker = selected ? `${color.yellow}❯${color.reset}` : " ";
+      const text = row.item.label;
+      const label = selected ? `${color.bold}${text}${color.reset}` : text;
+      const hint = row.item.hint
+        ? `${" ".repeat(Math.max(1, column - text.length + 2))}${color.dim}${row.item.hint}${color.reset}`
+        : "";
+
+      body.push(`${marker} ${label}${hint}`);
+    }
+
+    if (footer) {
+      body.push("");
+      body.push(
+        `${color.yellow}/${color.reset}${filter}${filtering ? "▏" : ""}`,
+      );
+    }
+
+    const counter = visible.length ? `${index + 1}/${visible.length}` : "0/0";
+    paint(
+      frame(header, body, [
+        counter,
+        hints || "↑↓ move · / filter · ⏎ select · esc quit",
+      ]),
+    );
+  };
+
+  render();
+
+  return readKeys((key, done) => {
+    const visible = matches();
+    const page = Math.max(1, Math.floor(Terminal.height() / 2));
+
+    if (key === null) return render();
+
+    if (filtering) {
+      if (key === KEY.enter) {
+        filtering = false;
+      } else if (key === KEY.escape) {
+        filtering = false;
+        filter = "";
+        index = 0;
+      } else if (key === KEY.backspace) {
+        filter = filter.slice(0, -1);
+        index = 0;
+      } else if (key === KEY.ctrlU) {
+        filter = "";
+        index = 0;
+      } else if (key === KEY.up) {
+        index = Math.max(0, index - 1);
+      } else if (key === KEY.down) {
+        index = Math.min(visible.length - 1, index + 1);
+      } else if (key.length === 1 && key >= " ") {
+        filter += key;
+        index = 0;
+      }
+      return render();
+    }
+
+    switch (key) {
+      case "k":
+      case KEY.up:
+        index = Math.max(0, index - 1);
+        break;
+      case "j":
+      case KEY.down:
+        index = Math.min(visible.length - 1, index + 1);
+        break;
+      case KEY.ctrlU:
+        index = Math.max(0, index - page);
+        break;
+      case KEY.ctrlD:
+        index = Math.min(visible.length - 1, index + page);
+        break;
+      case "g":
+        index = 0;
+        break;
+      case "G":
+        index = visible.length - 1;
+        break;
+      case "/":
+        filtering = true;
+        break;
+      case KEY.enter:
+        if (visible[index]) return done(visible[index].value);
+        break;
+      case KEY.escape:
+      case "q":
+        if (filter) {
+          filter = "";
+          index = 0;
+          break;
+        }
+        return done(null);
+    }
+
+    render();
+  });
+}
+
+/* ============================================
+   form()
+============================================ */
+
+// Field shapes:
+//   { name, label, type: "text",    default, optional, hint, validate, preview }
+//   { name, label, type: "combo",   choices, ... }   text input with suggestions
+//   { name, label, type: "choice",  choices, ... }   pick one, no typing
+//   { name, label, type: "list",    parse, format }  collect many entries
+//   { name, label, type: "confirm", default: true }
+// `when(values)` skips a field, `default` may be a function of the values.
+//
+// Resolves with a values object, or null when cancelled.
+export function form(fields, { title, note } = {}) {
+  const values = {};
+  // What was actually typed, kept separately from `values` so a transformed
+  // answer (a Date, a photo list) can still be edited when going back a step.
+  const typed = {};
+  const active = fields.filter((field) => !field.when || field.when(values));
+
+  let step = 0;
+  let input = "";
+  let entries = [];
+  let choice = 0;
+  let error = "";
+
+  const field = () => active[step];
+
+  const defaultFor = (spec) =>
+    typeof spec.default === "function" ? spec.default(values) : spec.default;
+
+  const suggestions = () => {
+    const spec = field();
+    if (!spec.choices) return [];
+    const all =
+      typeof spec.choices === "function" ? spec.choices(values) : spec.choices;
+    if (spec.type === "choice") return all;
+    return all.filter((option) => fuzzy(input, option)).slice(0, 6);
+  };
+
+  const enterStep = () => {
+    const spec = field();
+    error = "";
+    choice = 0;
+    entries = [];
+    input = "";
+
+    if (spec.type === "list") {
+      entries = Array.isArray(values[spec.name]) ? [...values[spec.name]] : [];
+      return;
+    }
+    if (spec.type === "confirm" || spec.type === "choice") return;
+
+    const preset = typed[spec.name] ?? defaultFor(spec);
+    input = preset === undefined || preset === null ? "" : String(preset);
+  };
+
+  // Recomputes the visible fields, since `when` can depend on earlier answers.
+  const refresh = () => {
+    active.length = 0;
+    for (const spec of fields) {
+      if (!spec.when || spec.when(values)) active.push(spec);
+    }
+  };
+
+  const render = () => {
+    const spec = field();
+    const header = heading(title, note || `step ${step + 1}/${active.length}`);
+    const body = [];
+
+    if (error) {
+      body.push(`${color.red}✗ ${error}${color.reset}`, "");
+    }
+
+    active.forEach((other, i) => {
+      if (i < step) {
+        const answer = values[other.name];
+        const shown = other.display
+          ? other.display(answer, typed[other.name])
+          : Array.isArray(answer)
+            ? answer.length
+              ? answer
+                  .map((entry) => (other.format ? other.format(entry) : entry))
+                  .join(", ")
+              : "—"
+            : answer === "" || answer === undefined
+              ? "—"
+              : String(answer);
+        body.push(
+          `${color.green}✓${color.reset} ${color.dim}${other.label}:${color.reset} ${shown}`,
+        );
+      } else if (i > step) {
+        body.push(`${color.dim}  ${other.label}${color.reset}`);
+      }
+    });
+
+    body.splice(step + (error ? 2 : 0), 0, ...renderField(spec));
+
+    paint(
+      frame(header, body, ["", fieldHints(spec)]),
+      cursorFor(spec, header.length + step + (error ? 2 : 0)),
+    );
+  };
+
+  const renderField = (spec) => {
+    const lines = [];
+    const label = `${color.yellow}❯${color.reset} ${color.bold}${spec.label}:${color.reset}`;
+
+    if (spec.type === "confirm") {
+      const yes = values[spec.name] ?? defaultFor(spec) ?? true;
+      lines.push(
+        `${label} ${yes ? `${color.green}yes${color.reset} / no` : `yes / ${color.green}no${color.reset}`}`,
+      );
+    } else if (spec.type === "choice") {
+      lines.push(label);
+      suggestions().forEach((option, i) => {
+        const on = i === choice;
+        lines.push(
+          on
+            ? `    ${color.invert} ${option} ${color.reset}`
+            : `      ${color.gray}${option}${color.reset}`,
+        );
+      });
+    } else if (spec.type === "list") {
+      lines.push(`${label} ${input}`);
+      entries.forEach((entry, i) => {
+        const shown = spec.format ? spec.format(entry) : entry;
+        lines.push(
+          `    ${color.dim}${String(i + 1).padStart(2)}.${color.reset} ${shown}`,
+        );
+      });
+    } else {
+      const preview = spec.preview ? spec.preview(input, values) : "";
+      lines.push(
+        `${label} ${input}${preview ? ` ${color.dim}→ ${preview}${color.reset}` : ""}`,
+      );
+
+      if (spec.type === "combo") {
+        suggestions().forEach((option, i) => {
+          const on = i === choice;
+          lines.push(
+            on
+              ? `    ${color.invert} ${option} ${color.reset}`
+              : `      ${color.gray}${option}${color.reset}`,
+          );
+        });
+      }
+    }
+
+    if (spec.hint) lines.push(`    ${color.dim}${spec.hint}${color.reset}`);
+
+    return lines;
+  };
+
+  const cursorFor = (spec, row) => {
+    if (spec.type === "confirm" || spec.type === "choice") return null;
+    const prefix = visibleWidth(`❯ ${spec.label}: `);
+    return { row: row + 1, col: prefix + input.length + 1 };
+  };
+
+  const fieldHints = (spec) => {
+    if (spec.type === "list")
+      return "⏎ add · ⌫ remove last · ⏎ (empty) done · esc cancel";
+    if (spec.type === "confirm") return "←→ toggle · ⏎ confirm · esc cancel";
+    if (spec.type === "choice") return "↑↓ pick · ⏎ confirm · esc cancel";
+    if (spec.type === "combo")
+      return "↑↓ suggestions · ⇥ complete · ⏎ next · esc cancel";
+    return "⏎ next · ⇧⇥ back · esc cancel";
+  };
+
+  const commit = (value, done) => {
+    const spec = field();
+
+    if (spec.validate) {
+      const message = spec.validate(value, values);
+      if (message) {
+        error = message;
+        return render();
+      }
+    }
+
+    typed[spec.name] = value;
+    values[spec.name] = spec.transform ? spec.transform(value, values) : value;
+    refresh();
+
+    if (step + 1 >= active.length) return done(values);
+
+    step += 1;
+    enterStep();
+    render();
+  };
+
+  enterStep();
+  render();
+
+  return readKeys((key, done) => {
+    if (key === null) return render();
+
+    const spec = field();
+    const options = suggestions();
+
+    if (key === KEY.escape) return done(null);
+
+    if (key === KEY.shiftTab && step > 0) {
+      step -= 1;
+      enterStep();
+      return render();
+    }
+
+    if (spec.type === "confirm") {
+      const current = values[spec.name] ?? defaultFor(spec) ?? true;
+      if (key === KEY.enter) return commit(current, done);
+      if (key === "y") return commit(true, done);
+      if (key === "n") return commit(false, done);
+      if (key === KEY.left || key === KEY.right || key === " ") {
+        values[spec.name] = !current;
+      }
+      return render();
+    }
+
+    if (spec.type === "choice") {
+      if (key === KEY.enter) return commit(options[choice], done);
+      if (key === KEY.up) choice = Math.max(0, choice - 1);
+      if (key === KEY.down) choice = Math.min(options.length - 1, choice + 1);
+      return render();
+    }
+
+    if (spec.type === "list") {
+      if (key === KEY.enter) {
+        if (!input.trim()) {
+          values[spec.name] = entries;
+          return commit(entries, done);
+        }
+        const parsed = spec.parse
+          ? spec.parse(input, entries, values)
+          : [input.trim()];
+        entries.push(...parsed);
+        input = "";
+        return render();
+      }
+      if (key === KEY.backspace) {
+        if (input) input = input.slice(0, -1);
+        else entries.pop();
+        return render();
+      }
+      if (key === KEY.ctrlU) {
+        input = "";
+        return render();
+      }
+      if (key.length === 1 && key >= " ") input += key;
+      return render();
+    }
+
+    // text / date / combo
+    if (key === KEY.enter) return commit(input.trim(), done);
+
+    if (key === KEY.tab && spec.type === "combo" && options.length) {
+      input = options[choice] || options[0];
+      choice = 0;
+      return render();
+    }
+
+    if (spec.type === "combo" && (key === KEY.up || key === KEY.down)) {
+      if (key === KEY.up) choice = Math.max(0, choice - 1);
+      if (key === KEY.down) choice = Math.min(options.length - 1, choice + 1);
+      if (options[choice]) input = options[choice];
+      return render();
+    }
+
+    if (key === KEY.backspace) {
+      input = input.slice(0, -1);
+    } else if (key === KEY.ctrlU) {
+      input = "";
+    } else if (key === KEY.ctrlW) {
+      input = input.replace(/\s*\S+\s*$/, "");
+    } else if (key.length === 1 && key >= " ") {
+      input += key;
+      choice = 0;
+    }
+
+    render();
+  });
+}
+
+/* ============================================
+   Small helpers
+============================================ */
+
+// `details` is shown between the question and the prompt — use it to put the
+// exact thing being confirmed (a file list, a diff summary) on screen.
+export function confirm(message, { danger = false, details = [] } = {}) {
+  const render = () => {
+    const body = [
+      `${danger ? color.red : color.yellow}${message}${color.reset}`,
+      "",
+      ...details,
+      ...(details.length ? [""] : []),
+      `${color.dim}y / n${color.reset}`,
+    ];
+    paint(frame([], body, ["", "y confirm · n cancel"]));
+  };
+
+  render();
+
+  return readKeys((key, done) => {
+    if (key === null) return render();
+    if (key === "y" || key === "Y") return done(true);
+    if (key === "n" || key === "N" || key === KEY.escape || key === KEY.enter) {
+      return done(false);
+    }
+  });
+}
+
+// Used after a command has printed to the real terminal; waits outside the
+// frame so the output stays on screen.
+export function pause(message = "Press any key to go back") {
+  process.stdout.write(`\n${color.dim}${message}${color.reset}`);
+  Terminal.raw(true);
+  return readKeys((key, done) => {
+    if (key !== null) done();
+  });
+}
+
+// Hands the terminal over to a child process (jekyll, node scripts, the
+// reading TUI) and takes it back when the child exits.
+// `clear: false` keeps the previous command's output on screen, so a sequence
+// of commands reads as one transcript.
+export function runCommand(command, args, { cwd, env, clear = true } = {}) {
+  Terminal.leave();
+  if (clear) Terminal.clear();
+  process.stdout.write(
+    `${color.dim}$ ${command} ${args.join(" ")}${color.reset}\n\n`,
+  );
+
+  return new Promise((resolve) => {
+    const child = spawn(command, args, {
+      stdio: "inherit",
+      cwd,
+      env: { ...process.env, ...env },
+    });
+
+    // While the child owns the terminal, Ctrl-C belongs to it, not to us.
+    const ignore = () => {};
+    process.on("SIGINT", ignore);
+
+    const finish = (code) => {
+      process.off("SIGINT", ignore);
+      resolve(code);
+    };
+
+    child.on("exit", (code) => finish(code ?? 0));
+    child.on("error", (error) => {
+      process.stdout.write(`${color.red}${error.message}${color.reset}\n`);
+      finish(1);
+    });
+  });
+}
+
+// Same idea as runCommand but for code that runs in this process and prints
+// with ora spinners (the _scripts/*.js data classes).
+export async function runInline(label, task) {
+  Terminal.leave();
+  Terminal.clear();
+  process.stdout.write(`${color.dim}${label}${color.reset}\n\n`);
+
+  try {
+    await task();
+  } catch (error) {
+    process.stdout.write(`\n${color.red}${error.message}${color.reset}\n`);
+    if (process.env.DEBUG)
+      process.stdout.write(`${color.dim}${error.stack}${color.reset}\n`);
+  }
+}
