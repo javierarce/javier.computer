@@ -2,6 +2,7 @@
 layout: post
 title: "The problem of forgetting"
 date: "2026-08-09 21:26:24 +0200"
+location: berlin
 ---
 [The "Disability Dongle": Why Silicon Valley Hates Me and
 you.](https://sightlessscribbles.com/disability-dongle/) <span class="sp">✦</span> Por la mañana
