@@ -171,12 +171,12 @@ export function frontMatter(pairs) {
       lines.push(`${key}:`);
       for (const entry of value) {
         if (typeof entry === "string") {
-          lines.push(`  - ${entry}`);
+          lines.push(`  - ${scalar(entry)}`);
           continue;
         }
         const [first, ...rest] = Object.entries(entry);
-        lines.push(`  - ${first[0]}: ${first[1]}`);
-        for (const [k, v] of rest) lines.push(`    ${k}: ${v}`);
+        lines.push(`  - ${first[0]}: ${scalar(first[1])}`);
+        for (const [k, v] of rest) lines.push(`    ${k}: ${scalar(v)}`);
       }
       continue;
     }
@@ -188,7 +188,27 @@ export function frontMatter(pairs) {
   return lines.join("\n") + "\n";
 }
 
-export const quoted = (value) => `"${String(value).replace(/"/g, '\\"')}"`;
+// Always-quoted, for keys the site writes quoted by convention (title, date).
+// Backslashes matter too: inside a double-quoted YAML scalar they escape.
+export const quoted = (value) =>
+  `"${String(value)
+    .replace(/\\/g, "\\\\")
+    .replace(/"/g, '\\"')
+    .replace(/\s*\n\s*/g, " ")}"`;
+
+// Plain YAML scalars that would be a syntax error, or — worse — parse to
+// something other than the text typed: "1984: A Novel" fails outright, while
+// "#anon" silently becomes null and "a # b" silently becomes "a".
+const UNSAFE_PLAIN = /^[-?:,[\]{}#&*!|>'"%@`]|^\s|\s$|:\s|:$|\s#|\n/;
+
+// Quotes a value only when it needs it, so the usual `location: berlin` and
+// `camera: Ricoh GR IIIx` keep the unquoted look the rest of the site has.
+export const scalar = (value) => {
+  if (value === undefined || value === null || value === "") return value;
+
+  const text = String(value);
+  return UNSAFE_PLAIN.test(text) ? quoted(text) : text;
+};
 
 export function readFrontMatter(file) {
   const raw = fs.readFileSync(file, "utf8");
@@ -221,8 +241,16 @@ export function writeContent(file, content, { force = false } = {}) {
 
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, content);
+  invalidate();
 
   return path.relative(ROOT, file);
+}
+
+// The menu is long-lived: without this, a post created in one action is
+// invisible to the next one (missing from "Edit a post", ignored by the
+// location and camera suggestions) until the process restarts.
+export function invalidate() {
+  index = null;
 }
 
 /* ============================================
