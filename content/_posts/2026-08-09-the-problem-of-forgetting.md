@@ -8,7 +8,7 @@ you.](https://sightlessscribbles.com/disability-dongle/) <span class="sp">✦</s
 trabajo en [Ankitron](https://ankitron.com), específicamente en la detección de sanguijuelas (no me
 mires así, *leeches* es el término que usa Anki para referirse a las tarjetas
 que se resisten a ser memorizadas) y leo las [20 reglas para formular
-conocimiento](https://supermemo.guru/wiki/20_rules_of_knowledge_formulation)
+conocimiento](https://super-memory.com/articles/20rules.htm)
 del Dr. Piotr A. Woźniak, creador de SuperMemo (el primer software de *spaced
 repetition*) y una persona extremadamente humilde ("This is the story of how I solved the
 problem of forgetting."). Luego, cuando cae el sol, hacemos las maletas y nos
