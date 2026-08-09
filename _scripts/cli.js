@@ -88,7 +88,7 @@ const cameraValue = (input) => {
     .filter(Boolean);
 
   if (!names.length) return null;
-  return names.length === 1 ? names[0] : names;
+  return names.length === 1 ? site.scalar(names[0]) : names;
 };
 
 /* ============================================
@@ -197,7 +197,7 @@ async function newPost({ drafts = false } = {}) {
       ["layout", "post"],
       ["title", site.quoted(values.title)],
       ["date", site.quoted(site.formatDate(values.date))],
-      ["location", values.location],
+      ["location", site.scalar(values.location)],
       ["tags", tags],
     ]) + "\n";
 
@@ -236,7 +236,7 @@ async function newPhotoPost() {
       ["date", site.quoted(site.formatDate(values.date))],
       ["category", "photo"],
       ["tag", "photo"],
-      ["location", values.location],
+      ["location", site.scalar(values.location)],
       ["camera", cameraValue(values.camera)],
       ["hide_title", true],
       ["hide", values.hide],
@@ -295,9 +295,9 @@ async function newReportage() {
       ["date", site.quoted(site.formatDate(values.date))],
       ["category", "reportage"],
       ["tag", "photo"],
-      ["location", values.location],
+      ["location", site.scalar(values.location)],
       ["camera", cameraValue(values.camera)],
-      ["cover", values.cover],
+      ["cover", site.scalar(values.cover)],
       ["ratio", site.DEFAULT_RATIO],
       [
         "filenames",
@@ -344,10 +344,10 @@ async function newQuote() {
       ["title", site.quoted(values.title)],
       ["date", site.quoted(site.formatDate(values.date))],
       ["category", "quote"],
-      ["author", values.author],
-      ["book", values.book],
-      ["editorial", values.editorial],
-      ["year", values.year],
+      ["author", site.scalar(values.author)],
+      ["book", site.scalar(values.book)],
+      ["editorial", site.scalar(values.editorial)],
+      ["year", site.scalar(values.year)],
       ["tags", tags],
     ]) + "\n";
 
@@ -384,8 +384,8 @@ async function newVideo() {
       ["title", site.quoted(values.title)],
       ["date", site.quoted(site.formatDate(values.date))],
       ["category", "video"],
-      ["location", values.location],
-      ["src", values.src],
+      ["location", site.scalar(values.location)],
+      ["src", site.scalar(values.src)],
     ]) + "\n";
 
   await create({
@@ -607,6 +607,7 @@ async function syncFilenames() {
     : `${matter}\n${block}`;
 
   fs.writeFileSync(file, open + updated.replace(/\n+$/, "") + close + body);
+  site.invalidate();
 
   await report([
     `${site.randomEmoji()} ${photos.length} photo${photos.length === 1 ? "" : "s"} written to ` +
