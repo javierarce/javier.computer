@@ -61,6 +61,12 @@
       color: var(--textHover);
       opacity: 1;
     }
+
+    &--icon {
+      display: inline-flex;
+      align-items: center;
+      vertical-align: middle; // keeps it aligned when the links wrap inline on mobile
+    }
   }
 
 }
