@@ -1,4 +1,12 @@
 <div class="navigation__links">
+  <a
+    class="navigation__link navigation__link--icon {% if category == 'posts' %}is-selected{% endif %}"
+    href="/posts"
+    aria-label="Buscar"
+    title="Buscar"
+    ><span class="icon icon-search"></span
+  ></a>
+
   <a class="navigation__link {% if page.home %}is-selected{% endif %}" href="/">Blog</a>
   <a
     class="navigation__link {% if permalink == 'photos' or permalink == 'photos/archive' or category == 'photo' or category == 'reportage' or category == 'photos' %}is-selected{% endif %}"
