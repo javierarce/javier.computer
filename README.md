@@ -34,6 +34,7 @@ detected from the photo filenames, the date read off the first photo) — press
 | `photo` | A `photos/photo` entry with a `filenames:` block |
 | `reportage` | Front matter plus a body of `{% stack %}` / `{% row %}` blocks |
 | `quote`, `video` | The smaller post layouts |
+| `place` | A pin in `content/_places`, on the map of its city |
 | `edit` | Open an existing post or draft in `$EDITOR` |
 | `publish` | Review the changes, commit them and push |
 | `reading` | The reading-list TUI (`_scripts/reading.js`) |
@@ -58,6 +59,13 @@ override the `3/2` default:
 
 Reportage bodies are laid out from those ratios: consecutive portraits pair up
 into a `{% row %}`, everything else becomes a `{% stack %}`.
+
+`./computer place` writes a place with the `pid` posts link to (defaulted from
+the title, and refused if it is already taken) and asks for its coordinates,
+which can be typed as `41.3924, 2.1648` or pasted as a Google or Apple Maps
+link — the pin in the URL wins over the map centre. The location suggestions
+are the cities that have a map in `content/_maps`, since a place with no map
+has nowhere to show up.
 
 `./computer publish` closes the loop: it lists every change with its git status,
 shows the branch and where it will push, then asks for a commit message

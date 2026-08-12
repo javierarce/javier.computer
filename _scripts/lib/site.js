@@ -13,6 +13,7 @@ export const POSTS_DIR = path.join(ROOT, "content", "_posts");
 export const DRAFTS_DIR = path.join(ROOT, "_drafts");
 export const MAPS_DIR = path.join(ROOT, "content", "_maps");
 export const LOCATIONS_DIR = path.join(ROOT, "content", "_locations");
+export const PLACES_DIR = path.join(ROOT, "content", "_places");
 
 export const DEFAULT_RATIO = "3/2";
 
@@ -170,6 +171,13 @@ export function frontMatter(pairs) {
       if (!value.length) continue;
       lines.push(`${key}:`);
       for (const entry of value) {
+        // Numbers are written as numbers: a coordinate is the one sequence
+        // here that must not come out quoted, and scalar() would quote every
+        // negative one on account of the leading dash.
+        if (typeof entry === "number") {
+          lines.push(`  - ${entry}`);
+          continue;
+        }
         if (typeof entry === "string") {
           lines.push(`  - ${scalar(entry)}`);
           continue;
@@ -234,6 +242,9 @@ export function postPath(date, slug, { drafts = false } = {}) {
   return path.join(dir, `${formatDay(date)}-${slug}.md`);
 }
 
+// Places are named after their pid, which is how posts refer to them.
+export const placePath = (pid) => path.join(PLACES_DIR, `${pid}.md`);
+
 export function writeContent(file, content, { force = false } = {}) {
   if (!force && fs.existsSync(file)) {
     throw new Error(`File already exists: ${path.relative(ROOT, file)}`);
@@ -251,6 +262,7 @@ export function writeContent(file, content, { force = false } = {}) {
 // location and camera suggestions) until the process restarts.
 export function invalidate() {
   index = null;
+  placeIndex = null;
 }
 
 /* ============================================
@@ -361,6 +373,92 @@ export function detectCamera(filenames) {
   ).map(({ name }) => name);
 
   return found;
+}
+
+/* ============================================
+   Places
+============================================ */
+
+// Front matter of every place, read once per run — the same reason the post
+// index is cached: the forms ask for suggestions on every keystroke.
+let placeIndex = null;
+
+function placeEntries() {
+  if (!placeIndex) {
+    placeIndex = fs.existsSync(PLACES_DIR)
+      ? fs
+          .readdirSync(PLACES_DIR)
+          .filter((file) => file.endsWith(".md"))
+          .map((file) => readFrontMatter(path.join(PLACES_DIR, file)).data)
+      : [];
+  }
+  return placeIndex;
+}
+
+// Values already in use for a key of the place front matter, in file order.
+export function placeValues(key) {
+  const seen = new Set();
+
+  for (const data of placeEntries()) {
+    // Emoji are stored as YAML escapes in some files ("\U0001F37A"), which
+    // would be offered back as literal backslashes; those are not suggestions.
+    if (data[key] && !String(data[key]).startsWith("\\")) seen.add(data[key]);
+  }
+
+  return [...seen];
+}
+
+// Taken pids, so a new place can't quietly shadow an existing one: posts
+// reference places by pid, and the map generator keys on it too.
+export const placePids = () => new Set(placeValues("pid"));
+
+// A place only shows up on a map, so the cities with one come first.
+export const placeLocations = () => [
+  ...new Set([...listMarkdown(MAPS_DIR), ...placeValues("location")]),
+];
+
+// Where you most likely are: the city of the last post, when that city has
+// places at all, and otherwise the city of the place updated most recently.
+export function lastPlaceLocation() {
+  const known = placeLocations();
+  const posted = lastLocation();
+  if (known.includes(posted)) return posted;
+
+  const recent = placeEntries()
+    .filter((data) => data.location && data.updated_at)
+    .sort((a, b) =>
+      String(b.updated_at).localeCompare(String(a.updated_at)),
+    )[0];
+
+  return recent ? recent.location : "";
+}
+
+const COORDINATE = /-?\d+(?:\.\d+)?/.source;
+
+// Accepts what you actually have in hand: a pasted pair of coordinates, or a
+// Google/Apple Maps URL.
+export function parseLatLng(input) {
+  const text = String(input || "").trim();
+  if (!text) return null;
+
+  // A Google Maps URL carries the viewport centre after @ and the pin itself
+  // in the !3d…!4d pair, so the pin wins whenever both are there.
+  const pin = text.match(new RegExp(`!3d(${COORDINATE})!4d(${COORDINATE})`));
+  const pair = text.match(
+    new RegExp(`^(${COORDINATE})[,\\s]+(${COORDINATE})$`),
+  );
+  const viewport = text.match(
+    new RegExp(`[@=](${COORDINATE}),(${COORDINATE})`),
+  );
+
+  const found = pin || pair || viewport;
+  if (!found) return null;
+
+  const lat = Number(found[1]);
+  const lng = Number(found[2]);
+  if (Math.abs(lat) > 90 || Math.abs(lng) > 180) return null;
+
+  return { lat, lng };
 }
 
 /* ============================================

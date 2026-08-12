@@ -396,6 +396,91 @@ async function newVideo() {
   });
 }
 
+async function newPlace() {
+  const values = await form(
+    [
+      titleField,
+      locationField({
+        choices: () => site.placeLocations(),
+        default: () => site.lastPlaceLocation(),
+        hint: "a city with a map in content/_maps",
+        validate: required("A location"),
+      }),
+      { name: "address", label: "Address", hint: "street and number" },
+      {
+        name: "latlng",
+        label: "Coordinates",
+        hint: "41.3924, 2.1648 — or paste a Google Maps link",
+        preview: (value) => {
+          const point = site.parseLatLng(value);
+          return point ? `${point.lat}, ${point.lng}` : "";
+        },
+        validate: (value) =>
+          site.parseLatLng(value) ? null : "I can't read those coordinates.",
+        transform: (value) => site.parseLatLng(value),
+        display: (point) => (point ? `${point.lat}, ${point.lng}` : "—"),
+      },
+      { name: "description", label: "Description", hint: "optional" },
+      {
+        name: "emoji",
+        label: "Emoji",
+        type: "combo",
+        choices: () => site.placeValues("emoji"),
+        hint: "optional, shown as the map marker",
+      },
+      {
+        name: "category",
+        label: "Category",
+        type: "combo",
+        choices: () => site.placeValues("category"),
+        hint: "optional",
+      },
+      {
+        name: "closed",
+        label: "Closed permanently",
+        type: "confirm",
+        default: false,
+      },
+      {
+        name: "pid",
+        label: "Id",
+        default: (v) => site.slugify(v.title),
+        hint: "posts link to a place by this id",
+        validate: (value) => {
+          if (!value) return "An id is required.";
+          if (!/^[a-z0-9-]+$/.test(value))
+            return "Use lowercase letters, numbers and dashes.";
+          return site.placePids().has(value)
+            ? `The id "${value}" is already taken.`
+            : null;
+        },
+      },
+    ],
+    { title: "New place" },
+  );
+
+  if (!values) return;
+
+  const content =
+    site.frontMatter([
+      ["layout", "place"],
+      ["pid", site.scalar(values.pid)],
+      ["title", site.quoted(values.title)],
+      ["description", site.scalar(values.description)],
+      ["address", site.scalar(values.address)],
+      ["latlng", [values.latlng.lat, values.latlng.lng]],
+      ["location", site.scalar(values.location)],
+      ["emoji", values.emoji ? site.quoted(values.emoji) : null],
+      ["category", site.scalar(values.category)],
+      ["closed", values.closed || null],
+      // The map feed sorts on this; leaving it out would fall back to the git
+      // commit date, which is only right until the file is touched again.
+      ["updated_at", site.quoted(site.formatDay(new Date()))],
+    ]) + "\n";
+
+  await create({ file: site.placePath(values.pid), content });
+}
+
 const first = (photos) => (photos && photos[0] ? photos[0].filename : "");
 const names = (photos) => (photos || []).map((photo) => photo.filename);
 
@@ -863,6 +948,12 @@ const ACTIONS = [
   },
   { id: "quote", label: "New quote", run: newQuote },
   { id: "video", label: "New video", run: newVideo },
+  {
+    id: "place",
+    label: "New place",
+    hint: "a pin on a city map",
+    run: newPlace,
+  },
   {
     id: "edit",
     label: "Edit a post",
