@@ -62,6 +62,16 @@ className: trip
 
             <span class="location__address">{{ location.address }}</span>
 
+            {% comment -%}
+              The description is stored as rendered HTML, so it's flattened back
+              to a single line of text here: the card clamps it to two lines and
+              a paragraph of its own would fight that.
+            {%- endcomment -%}
+            {% assign description = location.description | strip_html | normalize_whitespace | strip -%}
+            {% if description != "" -%}
+              <span class="location__description">{{ description }}</span>
+            {% endif -%}
+
             {% if location.tags -%}
               <div class="location__tags">
                 {% for tag in location.tags -%}
