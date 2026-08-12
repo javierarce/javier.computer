@@ -8,5 +8,7 @@ latlng:
 - 41.4032943
 - 2.1589741
 location: barcelona
+tags:
+  - restaurante
 updated_at: '2024-10-07'
 ---

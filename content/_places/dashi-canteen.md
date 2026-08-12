@@ -10,5 +10,8 @@ latlng:
 - 13.332574
 location: berlin
 closed: true
+tags:
+  - restaurante
+  - japonés
 updated_at: '2025-08-10'
 ---

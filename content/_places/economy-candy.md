@@ -8,5 +8,7 @@ latlng:
 - 40.73138443306871
 - -74.00165074493151
 location: newyork
+tags:
+  - tienda
 updated_at: '2024-10-07'
 ---

@@ -8,5 +8,8 @@ latlng:
 - 41.391171858311
 - 2.1556111101123
 location: barcelona
+tags:
+  - tienda
+  - japonés
 updated_at: '2024-10-07'
 ---

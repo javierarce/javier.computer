@@ -9,4 +9,6 @@ latlng:
 - 42.598507
 - -5.567531
 location: leon
+tags:
+  - librería
 ---

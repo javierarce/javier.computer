@@ -397,6 +397,8 @@ async function newVideo() {
 }
 
 async function newPlace() {
+  const knownTags = site.placeTags();
+
   const values = await form(
     [
       titleField,
@@ -436,6 +438,19 @@ async function newPlace() {
         hint: "optional",
       },
       {
+        name: "tags",
+        label: "Tags",
+        // A combo can only complete one value, so the vocabulary already in
+        // use is offered as a hint instead — the point is to reuse a tag
+        // rather than coin a synonym for it.
+        hint: knownTags.length
+          ? `comma separated — in use: ${knownTags.slice(0, 8).join(", ")}`
+          : "comma separated, optional",
+        preview: (value) => site.parseTags(value).join(" · "),
+        transform: (value) => site.parseTags(value),
+        display: (tags) => (tags && tags.length ? tags.join(", ") : "—"),
+      },
+      {
         name: "closed",
         label: "Closed permanently",
         type: "confirm",
@@ -472,6 +487,7 @@ async function newPlace() {
       ["location", site.scalar(values.location)],
       ["emoji", values.emoji ? site.quoted(values.emoji) : null],
       ["category", site.scalar(values.category)],
+      ["tags", values.tags],
       ["closed", values.closed || null],
       // The map feed sorts on this; leaving it out would fall back to the git
       // commit date, which is only right until the file is touched again.

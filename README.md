@@ -65,7 +65,9 @@ the title, and refused if it is already taken) and asks for its coordinates,
 which can be typed as `41.3924, 2.1648` or pasted as a Google or Apple Maps
 link — the pin in the URL wins over the map centre. The location suggestions
 are the cities that have a map in `content/_maps`, since a place with no map
-has nowhere to show up.
+has nowhere to show up. `Tags` takes a comma-separated list and suggests the
+vocabulary already in use, so a second "café" doesn't arrive as "cafés"; the
+tags show up on the map cards and filter the sidebar when clicked.
 
 `./computer publish` closes the loop: it lists every change with its git status,
 shows the branch and where it will push, then asks for a commit message

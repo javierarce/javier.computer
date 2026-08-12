@@ -9,5 +9,7 @@ latlng:
 - 40.67329930729744
 - -73.96314417387886
 location: newyork
+tags:
+  - restaurante
 updated_at: '2024-10-07'
 ---

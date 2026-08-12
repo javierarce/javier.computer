@@ -10,4 +10,7 @@ latlng:
 - 41.403824
 - 2.156979
 location: barcelona
+tags:
+  - fotografía
+  - tienda
 ---

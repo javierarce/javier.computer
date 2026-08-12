@@ -10,4 +10,6 @@ latlng:
 - 41.3961663306281
 - 2.1892947239946126
 location: barcelona
+tags:
+  - fotografía
 ---

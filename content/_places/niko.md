@@ -8,4 +8,7 @@ latlng:
 - 52.542060623729405
 - 13.393622699606237
 location: berlin
+tags:
+  - restaurante
+  - japonés
 ---

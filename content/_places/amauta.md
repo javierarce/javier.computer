@@ -8,4 +8,6 @@ latlng:
 - 41.450064749267256
 - 2.2508383018008424
 location: badalona
+tags:
+  - café
 ---

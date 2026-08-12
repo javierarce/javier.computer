@@ -9,4 +9,6 @@ latlng:
 - 41.38897
 - 2.164941
 location: barcelona
+tags:
+  - librería
 ---

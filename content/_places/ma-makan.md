@@ -8,5 +8,7 @@ latlng:
 - 52.501010546828965
 - 13.431502823278532
 location: berlin
+tags:
+  - restaurante
 updated_at: '2024-10-07'
 ---

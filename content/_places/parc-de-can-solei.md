@@ -8,4 +8,6 @@ latlng:
 - 41.456689232292014
 - 2.2527243644814563
 location: badalona
+tags:
+  - parque
 ---

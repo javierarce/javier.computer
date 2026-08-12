@@ -8,5 +8,7 @@ latlng:
 - 41.379582775455034
 - 2.159436667846462
 location: barcelona
+tags:
+  - librería
 updated_at: '2026-03-29'
 ---

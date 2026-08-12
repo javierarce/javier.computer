@@ -8,5 +8,7 @@ latlng:
 - 52.493500792859805
 - 13.435139298296505
 location: berlin
+tags:
+  - librería
 updated_at: '2024-10-07'
 ---

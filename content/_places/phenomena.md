@@ -10,5 +10,7 @@ latlng:
 - 41.40923361160873
 - 2.1718218260341406
 location: barcelona
+tags:
+  - cine
 updated_at: '2024-10-07'
 ---

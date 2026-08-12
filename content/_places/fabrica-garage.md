@@ -8,5 +8,8 @@ latlng:
 - 41.436009095441975
 - 2.1967577024795357
 location: barcelona
+tags:
+  - bar
+  - cerveza
 updated_at: '2024-10-07'
 ---

@@ -12,5 +12,7 @@ latlng:
 - 52.482044
 - 13.349654
 location: berlin
+tags:
+  - cine
 updated_at: '2025-08-10'
 ---

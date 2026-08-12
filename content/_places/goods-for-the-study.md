@@ -9,5 +9,7 @@ latlng:
 - 40.72273113413452
 - -73.99588703974875
 location: newyork
+tags:
+  - papelería
 updated_at: '2024-10-07'
 ---

@@ -9,4 +9,6 @@ latlng:
 - 41.504375
 - 2.3917017
 location: badalona
+tags:
+  - panadería
 ---

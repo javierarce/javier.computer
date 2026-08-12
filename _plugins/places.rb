@@ -25,6 +25,22 @@ module Jekyll
       Kramdown::Document.new(text).to_html
     end
 
+    # Tags are authored as a list, but a single tag written inline ("tags: café")
+    # or as a comma-separated string reads the same to a human, so both are
+    # accepted. Trimmed and lowercased so the map can compare them literally.
+    def normalize_tags(value)
+      list = case value
+             when Array then value
+             when String then value.split(',')
+             when nil then []
+             else [value]
+             end
+
+      list.map { |tag| tag.to_s.strip.gsub(/\s+/, ' ').downcase }
+          .reject(&:empty?)
+          .uniq
+    end
+
     def parse_date(date_string)
       return nil if date_string.nil?
       
@@ -94,6 +110,15 @@ module Jekyll
         # Use the new date parsing method
         location_data['last_updated'] = get_place_last_updated(location_data, file)
         location_data['description'] = render_markdown(location_data['description'])
+        # Left out entirely when empty, so the checked-in JSON for the places
+        # that carry no tags stays exactly as it was
+        tags = normalize_tags(location_data['tags'])
+        if tags.empty?
+          location_data.delete('tags')
+        else
+          location_data['tags'] = tags
+        end
+
         location_data['post_references'] ||= []
         
         # Keep original frontmatter_date for backward compatibility
@@ -255,17 +280,18 @@ module Jekyll
       locations_hash.each do |location, places|
         csv_file_path = "assets/maps/#{location}.csv"
         new_content = CSV.generate do |csv|
-          csv << ["name", "description", "address", "latitude", "longitude", "updated_at"]
+          csv << ["name", "description", "address", "tags", "latitude", "longitude", "updated_at"]
 
           places.each do |place|
             name = place["title"]
             description = strip_html_tags(place["description"] || "")
             address = place["address"]
+            tags = (place["tags"] || []).join(", ")
             lat = place["latlng"]&.first
             lng = place["latlng"]&.last
             updated_at = place["updated_at"] || place["date"]
 
-            csv << [name, description, address, lat, lng, updated_at]
+            csv << [name, description, address, tags, lat, lng, updated_at]
           end
         end
 

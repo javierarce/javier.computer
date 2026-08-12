@@ -9,5 +9,7 @@ latlng:
 - 40.67691397746196
 - -73.97148321854978
 location: newyork
+tags:
+  - café
 updated_at: '2024-10-07'
 ---

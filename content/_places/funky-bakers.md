@@ -8,5 +8,7 @@ latlng:
 - 41.38458415660393
 - 2.182553957368447
 location: barcelona
+tags:
+  - panadería
 updated_at: '2024-10-07'
 ---

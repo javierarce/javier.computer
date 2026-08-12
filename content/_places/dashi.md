@@ -9,5 +9,7 @@ latlng:
 - 13.383605195376553
 location: berlin
 closed: true
+tags:
+  - restaurante
 updated_at: '2024-10-07'
 ---

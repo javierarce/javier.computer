@@ -9,5 +9,7 @@ latlng:
   - 52.5451364
   - 13.422882
 location: berlin
+tags:
+  - heladería
 updated_at: "2025-08-24"
 ---

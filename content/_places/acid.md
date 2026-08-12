@@ -10,5 +10,7 @@ latlng:
 - 52.532215
 - 13.410291
 location: berlin
+tags:
+  - café
 updated_at: '2025-08-11'
 ---

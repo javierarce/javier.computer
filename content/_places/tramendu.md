@@ -12,5 +12,7 @@ latlng:
 - 41.370565789006044
 - 2.1336241407692733
 location: barcelona
+tags:
+  - bar
 updated_at: '2024-10-07'
 ---

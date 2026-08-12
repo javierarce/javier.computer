@@ -8,4 +8,7 @@ latlng:
 - 52.505624512054084
 - 13.336668135514783
 location: berlin
+tags:
+  - tienda
+  - japonés
 ---
