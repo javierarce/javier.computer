@@ -710,7 +710,25 @@ class App {
       this.$searchClear.hidden = !this.$search.value;
     }
 
+    this.isFiltering = isFiltering;
     this.map.setVisibleLocationIds(isFiltering ? matchedIds : null);
+  }
+
+  // "Show me these": the map reframes itself around the results instead of
+  // leaving them scattered outside the viewport. A single match is opened
+  // rather than framed — a lone pin at street level says less than its popup
+  // does — and the zoom cap keeps a tight cluster from landing closer than its
+  // surroundings. With no matches the map is left where it was (fitBounds
+  // ignores an empty set), so a search that finds nothing costs nothing.
+  fitToResults() {
+    const markers = this.map.getVisibleMarkers();
+
+    if (this.isFiltering && markers.length === 1) {
+      this.map.goToMarkerAt(markers[0]);
+      return;
+    }
+
+    this.map.fitBoundsToMarkers({ padding: [40, 40], maxZoom: 16 });
   }
 
   // Clicking a tag narrows the search exactly as typing "#tag" would: the
@@ -738,11 +756,9 @@ class App {
     this.$search.value = query;
     this.search(query);
 
-    // Tapping a tag means "show me these", so the map reframes itself around
-    // the results instead of leaving them scattered outside the viewport. The
-    // zoom cap keeps a single match from landing on a street-level view with
-    // no context around it, and dropping the last tag frames the city again.
-    this.map.fitBoundsToMarkers({ padding: [40, 40], maxZoom: 16 });
+    // A tag is a whole query in one tap, so there's nothing to wait for:
+    // dropping the last one frames the city again.
+    this.fitToResults();
   }
 
   bindSearchEvents() {
@@ -752,6 +768,18 @@ class App {
 
     this.$search.addEventListener("input", () => {
       this.search(this.$search.value);
+    });
+
+    // The list narrows letter by letter, but the map only moves on Enter:
+    // reframing while the query is still half-typed would make it lurch around
+    // on its way to what the user meant.
+    this.$search.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter") {
+        return;
+      }
+
+      event.preventDefault();
+      this.fitToResults();
     });
 
     if (this.$searchClear) {
