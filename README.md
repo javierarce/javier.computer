@@ -41,7 +41,7 @@ detected from the photo filenames, the date read off the first photo) — press
 | `movies`, `books`, `places`, `subscribers`, `syndication` | One data source at a time |
 | `standard`, `standard-dry` | Publish to standard.site over the AT Protocol |
 | `filenames` | Rebuild a post's `filenames:` block from its `{% photo %}` tags |
-| `serve`, `serve-drafts`, `build` | Jekyll |
+| `serve`, `serve-drafts`, `stop`, `build` | Jekyll |
 | `format`, `lint` | Prettier and ESLint |
 
 Dates accept `now`, `yesterday`, `3 days ago`, `last friday`, `in 2 weeks`,
@@ -66,10 +66,21 @@ single new post). Nothing is staged until you confirm, and pushing `main` is
 what triggers the GitHub Actions deploy.
 
 Every new file is offered to your editor the moment it is written, and
-`./computer edit` reopens anything you wrote earlier — drafts first, then the
-newest posts, filterable by title with `/`. The editor is `$VISUAL`, then
-`$EDITOR`, then the first of `nvim`, `vim`, `code -w`, `nano` or `open -t`
-found on your `PATH`.
+`./computer edit` reopens anything you wrote earlier — drafts first (greyed out
+and marked `draft`), then the newest posts, listed as date and title and
+filterable with `/`. The editor is `$VISUAL`, then `$EDITOR`, then the first of
+`nvim`, `vim`, `code -w`, `nano` or `open -t` found on your `PATH`.
+
+`./computer serve` starts Jekyll in the background and gives the menu back, so
+you can keep writing while it builds. A spinner waits for the site to answer on
+`localhost:4001` — press any key to stop watching and get on with it. The server
+outlives the CLI: `serve` then opens a small screen with the uptime, the log
+(`.computer/serve.log`), restart and stop, and `./computer stop` stops it from
+anywhere. Set `PORT` to run a second copy of the site somewhere else:
+
+```sh
+PORT=4002 ./computer serve
+```
 
 ---
 

@@ -312,6 +312,16 @@ export function recentEntries() {
   ];
 }
 
+// The day an entry belongs to, for the post list: the front matter date when
+// there is one, otherwise the date prefix the filenames carry.
+export function entryDay(entry) {
+  const written = String(entry.data?.date || "").match(/^(\d{4}-\d{2}-\d{2})/);
+  if (written) return written[1];
+
+  const named = path.basename(entry.file).match(/^(\d{4}-\d{2}-\d{2})/);
+  return named ? named[1] : "";
+}
+
 // Values already in use for a front matter key, most recently used first.
 export function usedValues(key) {
   const seen = new Set();

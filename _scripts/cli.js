@@ -9,7 +9,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { execFileSync } from "node:child_process";
+import { execFileSync, spawn } from "node:child_process";
 
 import {
   Terminal,
@@ -20,9 +20,11 @@ import {
   runCommand,
   runInline,
   select,
+  waitFor,
 } from "./lib/tui.js";
 
 import * as site from "./lib/site.js";
+import * as server from "./lib/server.js";
 
 /* ============================================
    Shared form fields
@@ -410,15 +412,17 @@ async function editPost() {
     return report([`${color.yellow}Nothing to edit yet.${color.reset}`]);
   }
 
+  // The date says what the filename said, in ten characters instead of sixty,
+  // so the titles start at the same column and the list can be read down.
   const file = await select({
     title: "Edit",
     note: "drafts first, then the newest posts",
     items: entries.map((entry) => ({
-      label: path.basename(entry.file, ".md"),
-      hint: [entry.draft ? "draft" : null, entry.data.title]
-        .filter(Boolean)
-        .join(" · "),
-      keywords: entry.data.title || "",
+      prefix: site.entryDay(entry),
+      label: entry.data.title || path.basename(entry.file, ".md"),
+      hint: entry.draft ? "draft" : "",
+      dim: entry.draft,
+      keywords: path.basename(entry.file, ".md"),
       value: entry.file,
     })),
   });
@@ -654,6 +658,170 @@ const syndication = async () =>
   new (await import("./syndication.js")).Syndication();
 
 /* ============================================
+   Dev server
+============================================ */
+
+// Jekyll takes long enough to build this site that watching it happen is dead
+// time, so the server runs detached and the menu stays usable while it builds.
+async function startServer({ drafts = false } = {}) {
+  const current = server.status();
+
+  if (current.running) {
+    if (Boolean(current.drafts) === drafts) return serverScreen();
+
+    // Only "start it with drafts" gets this far — picking the running server
+    // out of the menu shows it, it never offers to restart it as something
+    // else behind your back.
+    const now = current.drafts ? "with drafts" : "without drafts";
+    const wanted = drafts ? "with drafts" : "without drafts";
+
+    if (
+      !(await confirm(
+        `The dev server is running ${now}. Restart it ${wanted}?`,
+      ))
+    ) {
+      return serverScreen();
+    }
+
+    await server.stop();
+  } else if (await server.ready()) {
+    // Somebody else owns the port — another workspace, or a `jekyll serve`
+    // started by hand. Starting now would only fill the log with EADDRINUSE.
+    return report([
+      `${color.yellow}Something is already listening on ${server.url()}.${color.reset}`,
+      `${color.dim}Another workspace, maybe — PORT=4002 ./computer serve picks a different one.${color.reset}`,
+    ]);
+  }
+
+  server.start({ drafts });
+
+  const outcome = await waitFor(
+    async () => {
+      if (!server.status().running) return "failed";
+      return (await server.ready()) ? "ready" : false;
+    },
+    {
+      title: drafts ? "Dev server (drafts)" : "Dev server",
+      note: server.url(),
+      message: "Building the site…",
+    },
+  );
+
+  if (outcome === "failed") {
+    return report([
+      `${color.red}The dev server stopped while starting.${color.reset}`,
+      "",
+      ...server.log(Terminal.height() - 8),
+    ]);
+  }
+
+  if (outcome === "ready") {
+    return report([
+      `${site.randomEmoji()} Dev server running at ${color.bold}${server.url()}${color.reset}` +
+        (drafts ? ` ${color.dim}(with drafts)${color.reset}` : ""),
+      `${color.dim}It keeps running in the background — "stop" when you are done.${color.reset}`,
+    ]);
+  }
+
+  await report([
+    `${color.dim}Still building in the background; it will answer at ${color.reset}${server.url()}${color.dim} when it is ready.${color.reset}`,
+  ]);
+}
+
+// The screen behind a running server: what it is serving, what it printed
+// while nobody was watching, and how to restart or stop it.
+async function serverScreen() {
+  while (true) {
+    const state = server.status();
+
+    if (!state.running) {
+      return report([
+        `${color.yellow}The dev server is not running.${color.reset}`,
+      ]);
+    }
+
+    const here = server.url(state.port);
+    const note = [
+      here,
+      state.drafts ? "drafts" : null,
+      `up ${server.uptime(state.startedAt)}`,
+      `pid ${state.pid}`,
+    ]
+      .filter(Boolean)
+      .join(" · ");
+
+    const choice = await select({
+      title: "Dev server",
+      note,
+      items: [
+        { label: "Open in the browser", hint: here, value: "open" },
+        { label: "Show the log", hint: ".computer/serve.log", value: "log" },
+        { label: "Restart", value: "restart" },
+        // The only way back to the other mode: the menu hides "with drafts"
+        // while a drafts server is up, and the entry for a running server
+        // just brings you here.
+        {
+          label: state.drafts
+            ? "Restart without drafts"
+            : "Restart with drafts",
+          value: "swap",
+        },
+        { label: "Stop", value: "stop" },
+      ],
+      hints: "↑↓ move · ⏎ select · esc back",
+    });
+
+    if (!choice) return;
+
+    if (choice === "open") {
+      openBrowser(here);
+      continue;
+    }
+
+    if (choice === "log") {
+      const lines = server.log(Terminal.height() - 6);
+      await report(
+        lines.length
+          ? [`${color.dim}${server.LOG_FILE}${color.reset}`, "", ...lines]
+          : [`${color.dim}The log is empty.${color.reset}`],
+      );
+      continue;
+    }
+
+    if (choice === "restart" || choice === "swap") {
+      const drafts = Boolean(state.drafts);
+      await server.stop();
+      return startServer({ drafts: choice === "swap" ? !drafts : drafts });
+    }
+
+    if (choice === "stop") return stopServer();
+  }
+}
+
+async function stopServer() {
+  if (!server.status().running) {
+    return report([
+      `${color.yellow}The dev server is not running.${color.reset}`,
+    ]);
+  }
+
+  await server.stop();
+  await report([`${color.green}Dev server stopped.${color.reset}`]);
+}
+
+function openBrowser(url) {
+  const command = process.platform === "darwin" ? "open" : "xdg-open";
+  const child = spawn(command, [url], { stdio: "ignore", detached: true });
+
+  // No xdg-open on this machine is not worth a word, let alone the uncaught
+  // exception an unhandled "error" event would be: the URL is on screen.
+  child.on("error", () => {});
+  child.unref();
+}
+
+const serving = () => server.status().running;
+
+/* ============================================
    Commands
 ============================================ */
 
@@ -771,27 +939,28 @@ const ACTIONS = [
   },
   {
     id: "serve",
-    label: "Start the dev server",
-    hint: "localhost:4001",
-    run: shell(
-      "bundle",
-      ["exec", "jekyll", "serve", "--trace", "--port", "4001"],
-      {
-        JEKYLL_ENV: "development",
-      },
-    ),
+    label: () => (serving() ? "Dev server" : "Start the dev server"),
+    hint: () => {
+      const state = server.status();
+      return state.running
+        ? `${color.green}●${color.reset} running at localhost:${state.port}` +
+            (state.drafts ? ", with drafts" : "")
+        : `localhost:${server.PORT}, in the background`;
+    },
+    run: () => (serving() ? serverScreen() : startServer()),
   },
   {
     id: "serve-drafts",
     label: "Start the dev server with drafts",
-    hint: "localhost:4001",
-    run: shell(
-      "bundle",
-      ["exec", "jekyll", "serve", "--drafts", "--trace", "--port", "4001"],
-      {
-        JEKYLL_ENV: "development",
-      },
-    ),
+    hint: `localhost:${server.PORT}, in the background`,
+    hidden: () => server.status().drafts === true,
+    run: () => startServer({ drafts: true }),
+  },
+  {
+    id: "stop",
+    label: "Stop the dev server",
+    hidden: () => !serving(),
+    run: stopServer,
   },
   {
     id: "build",
@@ -816,6 +985,10 @@ const ACTIONS = [
    App
 ============================================ */
 
+// A label or a hint can be a function, so that the menu can say whether the
+// dev server is up at the moment it is drawn rather than when it was written.
+const value = (thing) => (typeof thing === "function" ? thing() : thing);
+
 function usage() {
   const lines = ["javier.computer — usage: computer [action]", ""];
 
@@ -824,7 +997,7 @@ function usage() {
       lines.push(`  ${action.header}`);
       continue;
     }
-    lines.push(`    ${action.id.padEnd(16)} ${action.label}`);
+    lines.push(`    ${action.id.padEnd(16)} ${value(action.label)}`);
   }
 
   lines.push("", "  Run without arguments to pick from a menu.");
@@ -881,10 +1054,16 @@ async function main() {
         pending ||
         (await select({
           title: "javier.computer",
-          items: ACTIONS.map((entry) =>
+          items: ACTIONS.filter(
+            (entry) => !entry.hidden || !entry.hidden(),
+          ).map((entry) =>
             entry.header
               ? entry
-              : { label: entry.label, hint: entry.hint, value: entry },
+              : {
+                  label: value(entry.label),
+                  hint: value(entry.hint),
+                  value: entry,
+                },
           ),
         }));
 
@@ -898,6 +1077,16 @@ async function main() {
   } finally {
     Terminal.leave();
     Terminal.clear();
+
+    // Quitting the menu leaves the server running, which is the point — but
+    // it should not be a surprise a week later.
+    const state = server.status();
+    if (state.running) {
+      process.stdout.write(
+        `${color.dim}Dev server still running at${color.reset} ${server.url(state.port)}` +
+          `${color.dim} — ./computer stop${color.reset}\n`,
+      );
+    }
   }
 }
 
