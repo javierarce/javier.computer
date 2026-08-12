@@ -628,6 +628,7 @@
       13.358785015341178
     ],
     "location": "berlin",
+    "emoji": "☕️",
     "tags": [
       "café"
     ],
@@ -645,25 +646,6 @@
     "latlng": [
       52.4886291,
       13.4011481
-    ],
-    "location": "berlin",
-    "tags": [
-      "café"
-    ],
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "carpenter",
-    "title": "Father Carpenter Coffee Brewers",
-    "emoji": "☕️",
-    "description": "<p>Mucha cola durante el fin de semana, mejor ir muy pronto o evitar directamente.</p>\n",
-    "address": "Münzstraße, 21, Scheunenviertel",
-    "latlng": [
-      52.5244438,
-      13.4065961
     ],
     "location": "berlin",
     "tags": [
@@ -782,6 +764,7 @@
       13.424879566538284
     ],
     "location": "berlin",
+    "emoji": "☕️",
     "tags": [
       "café"
     ],
@@ -816,6 +799,7 @@
       13.432445053043422
     ],
     "location": "berlin",
+    "emoji": "☕️",
     "tags": [
       "café"
     ],
