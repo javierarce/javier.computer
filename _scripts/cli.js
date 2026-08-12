@@ -20,6 +20,7 @@ import {
   runCommand,
   runInline,
   select,
+  value,
   waitFor,
 } from "./lib/tui.js";
 
@@ -726,37 +727,91 @@ async function syncFilenames() {
 
 // The data classes in _scripts/ export a class and nothing else, so they are
 // imported and run in-process rather than spawned.
-const dataTask = (label, load) => async () => {
-  await runInline(label, async () => {
-    let task;
-
-    try {
-      task = await load();
-    } catch (error) {
-      if (error.code === "ERR_MODULE_NOT_FOUND") {
-        throw new Error(
-          `${error.message}\nRun "npm install" in _scripts/ before updating data.`,
-        );
-      }
-      throw error;
+const load = async (loader) => {
+  try {
+    return await loader();
+  } catch (error) {
+    if (error.code === "ERR_MODULE_NOT_FOUND") {
+      throw new Error(
+        `${error.message}\nRun "npm install" in _scripts/ before updating data.`,
+      );
     }
+    throw error;
+  }
+};
 
-    await task.run();
+// `checked` is what "update everything" has always meant (_scripts/update.js);
+// books and places read from services that come and go, so they are opt in.
+const SOURCES = [
+  {
+    id: "movies",
+    label: "Movies",
+    hint: "Letterboxd RSS",
+    checked: true,
+    load: async () =>
+      new (await import("./movies.js")).MovieRSSParser("javier"),
+  },
+  {
+    id: "subscribers",
+    label: "Subscribers",
+    checked: true,
+    load: async () => new (await import("./subscribers.js")).Subscribers(),
+  },
+  {
+    id: "syndication",
+    label: "Syndication links",
+    hint: "Mastodon and Bluesky backfeed",
+    checked: true,
+    load: async () => new (await import("./syndication.js")).Syndication(),
+  },
+  {
+    id: "books",
+    label: "Books",
+    hint: "books.javier.computer",
+    load: async () => new (await import("./books.js")).Books(),
+  },
+  {
+    id: "places",
+    label: "Places",
+    hint: "poi.javier.computer",
+    load: async () => new (await import("./places.js")).Places(),
+  },
+];
+
+const refresh = (source, options) =>
+  runInline(source.label, async () => (await load(source.load)).run(), options);
+
+// One entry where there used to be six: tick the sources, run them one after
+// another into the same transcript.
+async function updateData() {
+  const chosen = await select({
+    title: "Update data",
+    note: "what should I refresh?",
+    multiple: true,
+    items: SOURCES.map((source) => ({
+      label: source.label,
+      hint: source.hint,
+      value: source.id,
+      checked: source.checked,
+    })),
   });
+
+  if (!chosen || !chosen.length) return;
+
+  const picked = SOURCES.filter((source) => chosen.includes(source.id));
+
+  for (const [i, source] of picked.entries()) {
+    await refresh(source, { clear: i === 0 });
+  }
+
+  await pause();
+}
+
+// Still reachable one at a time as `./computer movies` and friends.
+const dataTask = (source) => async () => {
+  await refresh(source);
   await pause();
 };
-
-const movies = async () => {
-  const { MovieRSSParser } = await import("./movies.js");
-  return new MovieRSSParser("javier");
-};
-
-const books = async () => new (await import("./books.js")).Books();
-const places = async () => new (await import("./places.js")).Places();
-const subscribers = async () =>
-  new (await import("./subscribers.js")).Subscribers();
-const syndication = async () =>
-  new (await import("./syndication.js")).Syndication();
 
 /* ============================================
    Dev server
@@ -936,178 +991,184 @@ const shell = (command, args, env) => async () => {
   await pause();
 };
 
-const ACTIONS = [
-  { header: "Write" },
-  {
-    id: "post",
-    label: "New post",
-    hint: "content/_posts",
-    run: () => newPost(),
+// The dev server is a page of its own everywhere: `s` opens it from any list,
+// and the top right of the menu says whether it is up. It stays in Tools too,
+// so it turns up when you go looking for it.
+const serverAction = {
+  id: "serve",
+  label: () => (serving() ? "Dev server" : "Start the dev server"),
+  hint: () => {
+    const state = server.status();
+    return state.running
+      ? `running at localhost:${state.port}` +
+          (state.drafts ? ", with drafts" : "")
+      : `localhost:${server.PORT}, in the background`;
   },
-  {
-    id: "draft",
-    label: "New draft",
-    hint: "_drafts",
-    run: () => newPost({ drafts: true }),
-  },
-  {
-    id: "photo",
-    label: "New photo post",
-    hint: "one or more photos",
-    run: newPhotoPost,
-  },
-  {
-    id: "reportage",
-    label: "New reportage",
-    hint: "photo essay with stacks and rows",
-    run: newReportage,
-  },
-  { id: "quote", label: "New quote", run: newQuote },
-  { id: "video", label: "New video", run: newVideo },
-  {
-    id: "place",
-    label: "New place",
-    hint: "a pin on a city map",
-    run: newPlace,
-  },
-  {
-    id: "edit",
-    label: "Edit a post",
-    hint: "open an existing post or draft",
-    run: editPost,
-  },
-  {
-    id: "publish",
-    label: "Commit and push",
-    hint: "pushing main deploys the site",
-    run: publish,
-  },
-  {
-    id: "reading",
-    label: "Reading list",
-    hint: "add books, track progress",
-    run: node(["_scripts/reading.js"]),
-  },
+  run: () => (serving() ? serverScreen() : startServer()),
+};
 
-  { header: "Update data" },
+const serverStatus = () => {
+  const state = server.status();
+
+  return state.running
+    ? `${color.green}●${color.reset} ${color.dim}localhost:${state.port}` +
+        `${state.drafts ? " · drafts" : ""}${color.reset}`
+    : `${color.dim}○ dev server off${color.reset}`;
+};
+
+// `menu: false` keeps an action out of the list without taking the id away:
+// the single data sources and the two other ways into the dev server are
+// still `./computer movies` and `./computer stop`.
+const PAGES = [
+  {
+    id: "write",
+    title: "Write",
+    actions: [
+      {
+        id: "post",
+        label: "New post",
+        hint: "content/_posts",
+        run: () => newPost(),
+      },
+      {
+        id: "draft",
+        label: "New draft",
+        hint: "_drafts",
+        run: () => newPost({ drafts: true }),
+      },
+      {
+        id: "photo",
+        label: "New photo post",
+        hint: "one or more photos",
+        run: newPhotoPost,
+      },
+      {
+        id: "reportage",
+        label: "New reportage",
+        hint: "photo essay with stacks and rows",
+        run: newReportage,
+      },
+      { id: "quote", label: "New quote", run: newQuote },
+      { id: "video", label: "New video", run: newVideo },
+      {
+        id: "place",
+        label: "New place",
+        hint: "a pin on a city map",
+        run: newPlace,
+      },
+      {
+        id: "edit",
+        label: "Edit a post",
+        hint: "open an existing post or draft",
+        run: editPost,
+      },
+      {
+        id: "reading",
+        label: "Reading list",
+        hint: "add books, track progress",
+        run: node(["_scripts/reading.js"]),
+      },
+      {
+        id: "publish",
+        label: "Commit and push",
+        hint: "pushing main deploys the site",
+        run: publish,
+      },
+    ],
+  },
   {
     id: "update",
-    label: "Update everything",
-    hint: "movies, subscribers, syndication",
-    run: node(["_scripts/update.js"]),
+    title: "Update",
+    actions: [
+      {
+        id: "update",
+        label: "Update data",
+        hint: "movies, subscribers, syndication…",
+        run: updateData,
+      },
+      {
+        id: "standard",
+        label: "Publish to standard.site",
+        hint: "AT Protocol records",
+        run: node(["_scripts/standard.js"]),
+      },
+      {
+        id: "standard-dry",
+        label: "Publish to standard.site (dry run)",
+        run: node(["_scripts/standard.js", "--dry-run"]),
+      },
+      ...SOURCES.map((source) => ({
+        id: source.id,
+        label: `Update ${source.label.toLowerCase()}`,
+        hint: source.hint,
+        menu: false,
+        run: dataTask(source),
+      })),
+    ],
   },
   {
-    id: "movies",
-    label: "Update movies",
-    hint: "Letterboxd RSS",
-    run: dataTask("Movies", movies),
-  },
-  {
-    id: "books",
-    label: "Update books",
-    hint: "books.javier.computer",
-    run: dataTask("Books", books),
-  },
-  {
-    id: "places",
-    label: "Update places",
-    hint: "poi.javier.computer",
-    run: dataTask("Places", places),
-  },
-  {
-    id: "subscribers",
-    label: "Update subscribers",
-    run: dataTask("Subscribers", subscribers),
-  },
-  {
-    id: "syndication",
-    label: "Update syndication links",
-    hint: "Mastodon and Bluesky backfeed",
-    run: dataTask("Syndication", syndication),
-  },
-  {
-    id: "standard",
-    label: "Publish to standard.site",
-    hint: "AT Protocol records",
-    run: node(["_scripts/standard.js"]),
-  },
-  {
-    id: "standard-dry",
-    label: "Publish to standard.site (dry run)",
-    run: node(["_scripts/standard.js", "--dry-run"]),
-  },
-
-  { header: "Tools" },
-  {
-    id: "filenames",
-    label: "Sync photo filenames",
-    hint: "rebuild filenames: from the body",
-    run: syncFilenames,
-  },
-  {
-    id: "serve",
-    label: () => (serving() ? "Dev server" : "Start the dev server"),
-    hint: () => {
-      const state = server.status();
-      return state.running
-        ? `${color.green}●${color.reset} running at localhost:${state.port}` +
-            (state.drafts ? ", with drafts" : "")
-        : `localhost:${server.PORT}, in the background`;
-    },
-    run: () => (serving() ? serverScreen() : startServer()),
-  },
-  {
-    id: "serve-drafts",
-    label: "Start the dev server with drafts",
-    hint: `localhost:${server.PORT}, in the background`,
-    hidden: () => server.status().drafts === true,
-    run: () => startServer({ drafts: true }),
-  },
-  {
-    id: "stop",
-    label: "Stop the dev server",
-    hidden: () => !serving(),
-    run: stopServer,
-  },
-  {
-    id: "build",
-    label: "Build the site",
-    run: shell("bundle", ["exec", "jekyll", "build"]),
-  },
-  {
-    id: "format",
-    label: "Format",
-    hint: "prettier",
-    run: shell("npx", ["prettier", "--write", "."]),
-  },
-  {
-    id: "lint",
-    label: "Lint",
-    hint: "eslint _scripts",
-    run: shell("npx", ["eslint", "_scripts/"]),
+    id: "tools",
+    title: "Tools",
+    actions: [
+      serverAction,
+      {
+        id: "filenames",
+        label: "Sync photo filenames",
+        hint: "rebuild filenames: from the body",
+        run: syncFilenames,
+      },
+      {
+        id: "build",
+        label: "Build the site",
+        hint: "jekyll build",
+        run: shell("bundle", ["exec", "jekyll", "build"]),
+      },
+      {
+        id: "format",
+        label: "Format",
+        hint: "prettier",
+        run: shell("npx", ["prettier", "--write", "."]),
+      },
+      {
+        id: "lint",
+        label: "Lint",
+        hint: "eslint _scripts",
+        run: shell("npx", ["eslint", "_scripts/"]),
+      },
+      {
+        id: "serve-drafts",
+        label: "Start the dev server with drafts",
+        menu: false,
+        run: () => startServer({ drafts: true }),
+      },
+      {
+        id: "stop",
+        label: "Stop the dev server",
+        menu: false,
+        run: stopServer,
+      },
+    ],
   },
 ];
+
+const ACTIONS = PAGES.flatMap((page) => page.actions);
 
 /* ============================================
    App
 ============================================ */
 
-// A label or a hint can be a function, so that the menu can say whether the
-// dev server is up at the moment it is drawn rather than when it was written.
-const value = (thing) => (typeof thing === "function" ? thing() : thing);
-
 function usage() {
   const lines = ["javier.computer — usage: computer [action]", ""];
 
-  for (const action of ACTIONS) {
-    if (action.header) {
-      lines.push(`  ${action.header}`);
-      continue;
+  for (const page of PAGES) {
+    lines.push(`  ${page.title}`);
+    for (const action of page.actions) {
+      lines.push(`    ${action.id.padEnd(16)} ${value(action.label)}`);
     }
-    lines.push(`    ${action.id.padEnd(16)} ${value(action.label)}`);
+    lines.push("");
   }
 
-  lines.push("", "  Run without arguments to pick from a menu.");
+  lines.push("  Run without arguments to pick from a menu.");
   process.stdout.write(`${lines.join("\n")}\n`);
 }
 
@@ -1153,6 +1214,10 @@ async function main() {
     return usage();
   }
 
+  // Where the reader was when they picked something, so running an action and
+  // coming back does not throw them back to the first page.
+  let page = 0;
+
   try {
     while (true) {
       Terminal.enter();
@@ -1161,17 +1226,20 @@ async function main() {
         pending ||
         (await select({
           title: "javier.computer",
-          items: ACTIONS.filter(
-            (entry) => !entry.hidden || !entry.hidden(),
-          ).map((entry) =>
-            entry.header
-              ? entry
-              : {
-                  label: value(entry.label),
-                  hint: value(entry.hint),
-                  value: entry,
-                },
-          ),
+          status: serverStatus,
+          globals: [{ key: "s", hint: "s dev server", value: serverAction }],
+          page,
+          onPage: (index) => (page = index),
+          pages: PAGES.map((entry) => ({
+            title: entry.title,
+            items: entry.actions
+              .filter((item) => item.menu !== false)
+              .map((item) => ({
+                label: value(item.label),
+                hint: value(item.hint),
+                value: item,
+              })),
+          })),
         }));
 
       if (!action) break;

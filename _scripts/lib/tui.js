@@ -216,13 +216,18 @@ function readKeys(handler) {
    Shared chrome
 ============================================ */
 
-function heading(title, note) {
-  const lines = [
+// `status` is pinned to the right of the title — somewhere for a screen to say
+// something that is true all the time (the dev server) rather than in a row.
+function heading(title, note, status) {
+  const left =
     `${color.bold}${color.blue}${title}${color.reset}` +
-      (note ? ` ${color.dim}${note}${color.reset}` : ""),
-    "",
-  ];
-  return lines;
+    (note ? ` ${color.dim}${note}${color.reset}` : "");
+
+  if (!status) return [left, ""];
+
+  const gap = Terminal.width() - visibleWidth(left) - visibleWidth(status);
+
+  return [gap < 2 ? left : `${left}${" ".repeat(gap)}${status}`, ""];
 }
 
 // Builds a full-height frame: header, body, then hints pinned to the last row.
@@ -240,6 +245,10 @@ function frame(header, body, hints) {
 
   return lines;
 }
+
+// A label, a hint or a status can be a function, so a screen can say what is
+// true when it is drawn rather than when it was written.
+export const value = (thing) => (typeof thing === "function" ? thing() : thing);
 
 // Case-insensitive subsequence match, so "npo" finds "New post".
 function fuzzy(needle, haystack) {
@@ -265,14 +274,59 @@ function fuzzy(needle, haystack) {
 // `prefix` is a dim, aligned column before the label (the dates in the post
 // list); `dim` greys the label down (drafts). Resolves with the chosen item's
 // `value`, or null when cancelled.
-export function select({ title, note, items, hints = "" }) {
+//
+// Three options change the shape of the screen:
+//
+//   pages     [{ title, items }] instead of one list — a tab bar on top,
+//             ←→ / ⇥ to move between them, `/` searching across all of them.
+//             `onPage(index)` reports where the reader left off.
+//   multiple  checkboxes: space picks, ⏎ resolves with an array of values
+//             (the highlighted one when nothing is picked). `checked` presets.
+//   globals   [{ key, hint, value }] — a key that resolves from anywhere in
+//             the list, for the one or two things you always want at hand.
+//
+// `status` (a string or a function) is drawn at the top right on every render.
+export function select({
+  title,
+  note,
+  items,
+  pages,
+  hints = "",
+  multiple = false,
+  status,
+  globals = [],
+  page = 0,
+  onPage,
+}) {
+  const tabs = pages && pages.length ? pages : [{ items: items || [] }];
+  const tabbed = Boolean(pages && pages.length > 1);
+
+  let current = Math.max(0, Math.min(page, tabs.length - 1));
   let filter = "";
   let filtering = false;
   let index = 0;
   let offset = 0;
 
+  const chosen = new Set(
+    multiple
+      ? tabs
+          .flatMap((tab) => tab.items)
+          .filter((item) => !item.header && item.checked)
+          .map((item) => item.value)
+      : [],
+  );
+
+  // While filtering a tabbed list the search leaves its page: every item is a
+  // candidate, and the page titles come along as the section headers.
+  const searching = () => tabbed && Boolean(filter);
+
+  const source = () =>
+    searching()
+      ? tabs.flatMap((tab) => [{ header: tab.title }, ...tab.items])
+      : tabs[current].items;
+
   const matches = () =>
-    items.filter(
+    source().filter(
       (item) =>
         !item.header &&
         fuzzy(
@@ -285,7 +339,7 @@ export function select({ title, note, items, hints = "" }) {
   const rows = (visible) => {
     const out = [];
 
-    for (const item of items) {
+    for (const item of source()) {
       if (item.header) {
         out.push({ header: item.header });
         continue;
@@ -302,11 +356,43 @@ export function select({ title, note, items, hints = "" }) {
     });
   };
 
+  // The tabs, with the current one underlined — dimmed altogether while a
+  // search is running, since the list is no longer showing one page.
+  const tabBar = () => {
+    const spans = [];
+    let width = 0;
+
+    for (const [i, tab] of tabs.entries()) {
+      const gap = i === 0 ? 2 : 3;
+      const label = tab.title || `Page ${i + 1}`;
+      spans.push({ label, start: width + gap, gap });
+      width += gap + label.length;
+    }
+
+    const labels = spans
+      .map(({ label, gap }, i) => {
+        const tint =
+          i === current && !searching()
+            ? `${color.bold}${label}${color.reset}`
+            : `${color.gray}${label}${color.reset}`;
+        return `${" ".repeat(gap)}${tint}`;
+      })
+      .join("");
+
+    const active = spans[current];
+    const rule = searching()
+      ? ""
+      : `${" ".repeat(active.start)}${color.yellow}${"─".repeat(active.label.length)}${color.reset}`;
+
+    return [labels, rule, ""];
+  };
+
   const render = () => {
     const visible = matches();
     index = Math.max(0, Math.min(index, visible.length - 1));
 
-    const header = heading(title, note);
+    const [line] = heading(title, note, value(status));
+    const header = tabbed ? [line, "", ...tabBar()] : [line, ""];
     const all = rows(visible);
     const footer = filtering || filter ? 2 : 0;
     const viewport = Math.max(
@@ -356,6 +442,12 @@ export function select({ title, note, items, hints = "" }) {
       const text = row.item.label;
       const width = visibleWidth(text);
 
+      const box = multiple
+        ? chosen.has(row.item.value)
+          ? `${color.green}●${color.reset} `
+          : `${color.gray}○${color.reset} `
+        : "";
+
       const own = row.item.prefix || "";
       const prefix = gutter
         ? `${color.dim}${own}${" ".repeat(gutter - visibleWidth(own))}${color.reset}  `
@@ -368,7 +460,7 @@ export function select({ title, note, items, hints = "" }) {
         ? `${" ".repeat(Math.max(1, column - width + 2))}${color.dim}${row.item.hint}${color.reset}`
         : "";
 
-      body.push(`${marker} ${prefix}${label}${hint}`);
+      body.push(`${marker} ${box}${prefix}${label}${hint}`);
     }
 
     if (footer) {
@@ -379,19 +471,53 @@ export function select({ title, note, items, hints = "" }) {
     }
 
     const counter = visible.length ? `${index + 1}/${visible.length}` : "0/0";
-    paint(
-      frame(header, body, [
-        counter,
-        hints || "↑↓ move · / filter · ⏎ select · esc quit",
-      ]),
-    );
+    const left = [
+      counter,
+      multiple && chosen.size ? `${chosen.size} picked` : null,
+      ...globals.map((entry) => entry.hint).filter(Boolean),
+    ]
+      .filter(Boolean)
+      .join(" · ");
+
+    paint(frame(header, body, [left, hints || defaultHints()]));
   };
+
+  const defaultHints = () =>
+    multiple
+      ? "↑↓ move · space pick · a all · ⏎ run · esc back"
+      : [
+          "↑↓ move",
+          tabbed ? "←→ pages" : null,
+          "/ filter",
+          "⏎ select",
+          "esc quit",
+        ]
+          .filter(Boolean)
+          .join(" · ");
 
   render();
 
+  // Moving between pages drops the filter: a search spans every page, so
+  // switching underneath one would change nothing you can see.
+  const turn = (to) => {
+    current = (to + tabs.length) % tabs.length;
+    filter = "";
+    index = 0;
+    offset = 0;
+    if (onPage) onPage(current);
+  };
+
+  const every = () => tabs.flatMap((tab) => tab.items).filter((i) => !i.header);
+
+  // In the order they are listed, not the order they were ticked.
+  const picked = () =>
+    every()
+      .map((item) => item.value)
+      .filter((entry) => chosen.has(entry));
+
   return readKeys((key, done) => {
     const visible = matches();
-    const page = Math.max(1, Math.floor(Terminal.height() / 2));
+    const jump = Math.max(1, Math.floor(Terminal.height() / 2));
 
     if (key === null) return render();
 
@@ -419,6 +545,10 @@ export function select({ title, note, items, hints = "" }) {
       return render();
     }
 
+    // A global answers from anywhere in the list, whichever page is open.
+    const global = globals.find((entry) => entry.key === key);
+    if (global) return done(global.value);
+
     switch (key) {
       case "k":
       case KEY.up:
@@ -429,10 +559,10 @@ export function select({ title, note, items, hints = "" }) {
         index = Math.min(visible.length - 1, index + 1);
         break;
       case KEY.ctrlU:
-        index = Math.max(0, index - page);
+        index = Math.max(0, index - jump);
         break;
       case KEY.ctrlD:
-        index = Math.min(visible.length - 1, index + page);
+        index = Math.min(visible.length - 1, index + jump);
         break;
       case "g":
         index = 0;
@@ -440,10 +570,44 @@ export function select({ title, note, items, hints = "" }) {
       case "G":
         index = visible.length - 1;
         break;
+      case "h":
+      case KEY.left:
+        if (tabbed) turn(Math.max(0, current - 1));
+        break;
+      case "l":
+      case KEY.right:
+        if (tabbed) turn(Math.min(tabs.length - 1, current + 1));
+        break;
+      case KEY.tab:
+        if (tabbed) turn(current + 1);
+        break;
+      case KEY.shiftTab:
+        if (tabbed) turn(current - 1);
+        break;
+      case " ":
+        if (multiple && visible[index]) {
+          const entry = visible[index].value;
+          if (chosen.has(entry)) chosen.delete(entry);
+          else chosen.add(entry);
+          index = Math.min(visible.length - 1, index + 1);
+        }
+        break;
+      case "a":
+        if (multiple) {
+          const all = every();
+          if (chosen.size === all.length) chosen.clear();
+          else for (const item of all) chosen.add(item.value);
+        }
+        break;
       case "/":
         filtering = true;
         break;
       case KEY.enter:
+        // Nothing ticked reads as "this one" rather than as "nothing".
+        if (multiple) {
+          if (chosen.size) return done(picked());
+          return visible[index] ? done([visible[index].value]) : undefined;
+        }
         if (visible[index]) return done(visible[index].value);
         break;
       case KEY.escape:
@@ -875,10 +1039,12 @@ export function runCommand(command, args, { cwd, env, clear = true } = {}) {
 }
 
 // Same idea as runCommand but for code that runs in this process and prints
-// with ora spinners (the _scripts/*.js data classes).
-export async function runInline(label, task) {
+// with ora spinners (the _scripts/*.js data classes). `clear: false` keeps what
+// the previous task printed, so a run of several reads as one transcript.
+export async function runInline(label, task, { clear = true } = {}) {
   Terminal.leave();
-  Terminal.clear();
+  if (clear) Terminal.clear();
+  else process.stdout.write("\n");
   process.stdout.write(`${color.dim}${label}${color.reset}\n\n`);
 
   try {
