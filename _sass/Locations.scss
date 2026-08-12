@@ -62,13 +62,24 @@
 
   &__title,
   &__address,
-  &__description p {
+  &__description {
     font-size: var(--font-size-body-xs);
   }
 
   &__address {
     text-decoration: none;
     opacity: var(--op-light);
+  }
+
+  // A couple of lines is enough to tell one place from another; letting the
+  // whole text through would push the tags out of reach and give every card a
+  // different height
+  &__description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
   }
 
   &__posts {
