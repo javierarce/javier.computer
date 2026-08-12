@@ -167,9 +167,13 @@ export function parseKeys(chunk) {
   return keys;
 }
 
-// Runs `handler` for every keypress until it calls `done()`.
+// Runs `handler` for every keypress until it calls `done()`. The returned
+// promise carries a `cancel()` so something other than the keyboard (a timer,
+// a background process finishing) can end the screen and detach the listeners.
 function readKeys(handler) {
-  return new Promise((resolve) => {
+  let cancel = () => {};
+
+  const promise = new Promise((resolve) => {
     let finished = false;
 
     const done = (value) => {
@@ -196,10 +200,16 @@ function readKeys(handler) {
     const onResize = () => handler(null, done);
     const onEnd = () => done(null); // input closed: unwind instead of hanging
 
+    cancel = done;
+
     process.stdin.on("data", onData);
     process.stdin.on("end", onEnd);
     process.stdout.on("resize", onResize);
   });
+
+  promise.cancel = (value) => cancel(value);
+
+  return promise;
 }
 
 /* ============================================
@@ -251,8 +261,10 @@ function fuzzy(needle, haystack) {
    select()
 ============================================ */
 
-// items: { label, hint, value, keywords } | { header: "Section" }
-// Resolves with the chosen item's `value`, or null when cancelled.
+// items: { label, prefix, hint, value, keywords, dim } | { header: "Section" }
+// `prefix` is a dim, aligned column before the label (the dates in the post
+// list); `dim` greys the label down (drafts). Resolves with the chosen item's
+// `value`, or null when cancelled.
 export function select({ title, note, items, hints = "" }) {
   let filter = "";
   let filtering = false;
@@ -265,7 +277,7 @@ export function select({ title, note, items, hints = "" }) {
         !item.header &&
         fuzzy(
           filter,
-          `${item.label} ${item.hint || ""} ${item.keywords || ""}`,
+          `${item.label} ${item.prefix || ""} ${item.hint || ""} ${item.keywords || ""}`,
         ),
     );
 
@@ -316,12 +328,20 @@ export function select({ title, note, items, hints = "" }) {
       body.push(`  ${color.gray}No matches${color.reset}`);
     }
 
-    // Line the hints up in their own column so the menu reads as a table.
+    // Line the prefixes and the hints up in their own columns so the menu
+    // reads as a table.
+    const gutter = Math.max(
+      0,
+      ...visible.map((item) => visibleWidth(item.prefix || "")),
+    );
+
     const column = Math.min(
       40,
       Math.max(
         0,
-        ...visible.filter((item) => item.hint).map((item) => item.label.length),
+        ...visible
+          .filter((item) => item.hint)
+          .map((item) => visibleWidth(item.label)),
       ),
     );
 
@@ -334,12 +354,21 @@ export function select({ title, note, items, hints = "" }) {
       const selected = row.index === index;
       const marker = selected ? `${color.yellow}❯${color.reset}` : " ";
       const text = row.item.label;
-      const label = selected ? `${color.bold}${text}${color.reset}` : text;
-      const hint = row.item.hint
-        ? `${" ".repeat(Math.max(1, column - text.length + 2))}${color.dim}${row.item.hint}${color.reset}`
+      const width = visibleWidth(text);
+
+      const own = row.item.prefix || "";
+      const prefix = gutter
+        ? `${color.dim}${own}${" ".repeat(gutter - visibleWidth(own))}${color.reset}  `
         : "";
 
-      body.push(`${marker} ${label}${hint}`);
+      const shown = row.item.dim ? `${color.gray}${text}${color.reset}` : text;
+      const label = selected ? `${color.bold}${shown}${color.reset}` : shown;
+
+      const hint = row.item.hint
+        ? `${" ".repeat(Math.max(1, column - width + 2))}${color.dim}${row.item.hint}${color.reset}`
+        : "";
+
+      body.push(`${marker} ${prefix}${label}${hint}`);
     }
 
     if (footer) {
@@ -742,6 +771,62 @@ export function confirm(message, { danger = false, details = [] } = {}) {
       return done(false);
     }
   });
+}
+
+const SPINNER = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"];
+
+// A spinner for work happening outside this process (the background Jekyll
+// build). Resolves with whatever `check()` returns as soon as it is truthy,
+// with "detached" if a key is pressed first, or with "timeout" if neither
+// happens in time. Nothing is cancelled in any of those cases: this only
+// stops watching.
+export function waitFor(
+  check,
+  { title, note, message = "Working…", interval = 400, timeout = 180000 } = {},
+) {
+  let tick = 0;
+  let settled = false;
+
+  const render = () =>
+    paint(
+      frame(
+        heading(title, note),
+        [
+          `  ${color.yellow}${SPINNER[tick % SPINNER.length]}${color.reset} ${message}`,
+        ],
+        ["", "press any key to leave it running"],
+      ),
+    );
+
+  render();
+
+  const keys = readKeys((key, done) => {
+    if (key === null) return render();
+    done("detached");
+  });
+
+  keys.then(() => {
+    settled = true;
+  });
+
+  (async () => {
+    const deadline = Date.now() + timeout;
+
+    while (!settled) {
+      const result = await check();
+      if (settled) return;
+      if (result) return keys.cancel(result);
+      if (Date.now() >= deadline) return keys.cancel("timeout");
+
+      await new Promise((resolve) => setTimeout(resolve, interval));
+      if (settled) return;
+
+      tick += 1;
+      render();
+    }
+  })();
+
+  return keys;
 }
 
 // Used after a command has printed to the real terminal; waits outside the
