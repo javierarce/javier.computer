@@ -9,6 +9,7 @@ latlng:
 - 52.48058617178727
 - 13.424879566538284
 location: berlin
+emoji: "☕️"
 tags:
   - café
 updated_at: '2024-10-07'
