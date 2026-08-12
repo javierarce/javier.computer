@@ -9,5 +9,8 @@ latlng:
 - 41.394977701949294
 - 2.168945380457328
 location: barcelona
+tags:
+  - restaurante
+  - japonés
 updated_at: '2024-10-07'
 ---

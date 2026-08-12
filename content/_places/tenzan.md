@@ -8,5 +8,7 @@ latlng:
 - 52.5357069
 - 13.4210922
 location: berlin
+tags:
+  - japonés
 updated_at: '2024-10-07'
 ---

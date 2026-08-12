@@ -9,5 +9,8 @@ latlng:
   - 52.49783
   - 13.341739
 location: berlin
+tags:
+  - pastelería
+  - japonés
 updated_at: "2025-08-22"
 ---

@@ -10,5 +10,8 @@ latlng:
 - 41.392483495253394
 - 2.1543505254535993
 location: barcelona
+tags:
+  - restaurante
+  - vinos
 updated_at: '2024-10-07'
 ---

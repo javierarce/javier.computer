@@ -10,5 +10,8 @@ latlng:
 - 52.49624
 - 13.341607
 location: berlin
+tags:
+  - fotografía
+  - tienda
 updated_at: '2025-08-11'
 ---

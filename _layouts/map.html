@@ -15,13 +15,24 @@ className: trip
       {% assign posts = site.data.locations[page.location] -%}
       {% assign i = posts.size | plus: 1 -%}
 
+      {% comment -%}
+        The "#etiqueta" hint only shows where there are tags to find, so a city
+        without any doesn't advertise a syntax that would match nothing.
+      {%- endcomment -%}
+      {% assign tagged = posts | where_exp: "place", "place.tags" -%}
+      {% if tagged.size > 0 -%}
+        {% assign search_label = "Buscar un lugar o #etiqueta" -%}
+      {% else -%}
+        {% assign search_label = "Buscar un lugar" -%}
+      {% endif -%}
+
       <div class="big-map__search">
         <div class="big-map__search-field">
           <input
             type="search"
             class="input js-map-search"
-            placeholder="Buscar un lugar"
-            aria-label="Buscar un lugar"
+            placeholder="{{ search_label }}"
+            aria-label="{{ search_label }}"
             autocomplete="off"
           >
           <button
@@ -50,6 +61,19 @@ className: trip
             {% endif -%}
 
             <span class="location__address">{{ location.address }}</span>
+
+            {% if location.tags -%}
+              <div class="location__tags">
+                {% for tag in location.tags -%}
+                  <button
+                    type="button"
+                    class="location__tag js-location-tag"
+                    data-tag="{{ tag | escape }}"
+                    title="Filtrar por {{ tag | escape }}"
+                  >{{ tag }}</button>
+                {% endfor -%}
+              </div>
+            {% endif -%}
           </div>
         {% endfor -%}
       </div>

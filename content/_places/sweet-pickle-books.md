@@ -9,5 +9,7 @@ latlng:
 - 40.71666757262507
 - -73.99126414493215
 location: newyork
+tags:
+  - librería
 updated_at: '2024-10-07'
 ---

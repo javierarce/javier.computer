@@ -10,5 +10,8 @@ latlng:
 - 40.7262745160936
 - -73.99343164307919
 location: newyork
+tags:
+  - librería
+  - fotografía
 updated_at: '2024-10-07'
 ---

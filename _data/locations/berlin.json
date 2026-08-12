@@ -10,6 +10,10 @@
       13.393622699606237
     ],
     "location": "berlin",
+    "tags": [
+      "restaurante",
+      "japonés"
+    ],
     "last_updated": "2026-08-11T22:58:29+02:00",
     "post_references": []
   },
@@ -24,6 +28,10 @@
       13.336668135514783
     ],
     "location": "berlin",
+    "tags": [
+      "tienda",
+      "japonés"
+    ],
     "last_updated": "2026-08-08T23:17:25+02:00",
     "post_references": [
       {
@@ -44,6 +52,9 @@
       13.420818741476577
     ],
     "location": "berlin",
+    "tags": [
+      "panadería"
+    ],
     "last_updated": "2026-08-07T23:32:35+02:00",
     "post_references": []
   },
@@ -59,6 +70,10 @@
       13.411127
     ],
     "location": "berlin",
+    "tags": [
+      "fotografía",
+      "tienda"
+    ],
     "updated_at": "2025-08-24",
     "last_updated": "2026-08-07T22:55:46+02:00",
     "post_references": [
@@ -85,6 +100,9 @@
       13.411130984133036
     ],
     "location": "berlin",
+    "tags": [
+      "papelería"
+    ],
     "last_updated": "2026-08-04T22:57:53+02:00",
     "post_references": [
       {
@@ -105,6 +123,9 @@
       13.41076611429642
     ],
     "location": "berlin",
+    "tags": [
+      "librería"
+    ],
     "last_updated": "2026-08-04T22:57:53+02:00",
     "post_references": [
       {
@@ -126,6 +147,10 @@
       13.42272312628249
     ],
     "location": "berlin",
+    "tags": [
+      "librería",
+      "fotografía"
+    ],
     "last_updated": "2026-08-01T23:08:07+02:00",
     "post_references": [
       {
@@ -151,6 +176,10 @@
       13.410543239776883
     ],
     "location": "berlin",
+    "tags": [
+      "tienda",
+      "museo"
+    ],
     "last_updated": "2026-08-01T23:08:07+02:00",
     "post_references": [
       {
@@ -172,6 +201,9 @@
       13.423648746035223
     ],
     "location": "berlin",
+    "tags": [
+      "café"
+    ],
     "updated_at": "2026-08-01",
     "last_updated": "2026-08-01T22:41:00+02:00",
     "post_references": [
@@ -194,6 +226,10 @@
       13.434446
     ],
     "location": "berlin",
+    "tags": [
+      "restaurante",
+      "japonés"
+    ],
     "updated_at": "2025-08-10",
     "last_updated": "2026-07-30T21:56:01+02:00",
     "post_references": [
@@ -216,6 +252,9 @@
       13.43277
     ],
     "location": "berlin",
+    "tags": [
+      "fotografía"
+    ],
     "updated_at": "2025-08-24",
     "last_updated": "2025-08-25T21:00:00+02:00",
     "post_references": [
@@ -238,6 +277,9 @@
       13.422882
     ],
     "location": "berlin",
+    "tags": [
+      "heladería"
+    ],
     "updated_at": "2025-08-24",
     "last_updated": "2025-08-24T00:00:00+00:00",
     "post_references": []
@@ -254,6 +296,10 @@
       13.341739
     ],
     "location": "berlin",
+    "tags": [
+      "pastelería",
+      "japonés"
+    ],
     "updated_at": "2025-08-22",
     "last_updated": "2025-08-22T00:00:00+00:00",
     "post_references": []
@@ -270,6 +316,9 @@
       13.355147
     ],
     "location": "berlin",
+    "tags": [
+      "restaurante"
+    ],
     "updated_at": "2025-08-17",
     "last_updated": "2025-08-17T20:39:47+02:00",
     "post_references": [
@@ -292,6 +341,9 @@
       13.410291
     ],
     "location": "berlin",
+    "tags": [
+      "café"
+    ],
     "updated_at": "2025-08-11",
     "last_updated": "2025-08-11T00:00:00+00:00",
     "post_references": []
@@ -307,6 +359,9 @@
       13.410474
     ],
     "location": "berlin",
+    "tags": [
+      "café"
+    ],
     "updated_at": "2025-08-11",
     "last_updated": "2025-08-11T00:00:00+00:00",
     "post_references": []
@@ -323,6 +378,10 @@
       13.341607
     ],
     "location": "berlin",
+    "tags": [
+      "fotografía",
+      "tienda"
+    ],
     "updated_at": "2025-08-11",
     "last_updated": "2025-08-11T00:00:00+00:00",
     "post_references": []
@@ -339,6 +398,9 @@
       13.342103
     ],
     "location": "berlin",
+    "tags": [
+      "café"
+    ],
     "updated_at": "2025-08-11",
     "last_updated": "2025-08-11T00:00:00+00:00",
     "post_references": []
@@ -355,6 +417,9 @@
       13.404072
     ],
     "location": "berlin",
+    "tags": [
+      "café"
+    ],
     "updated_at": "2025-08-11",
     "last_updated": "2025-08-11T00:00:00+00:00",
     "post_references": []
@@ -370,6 +435,10 @@
       13.4100566
     ],
     "location": "berlin",
+    "tags": [
+      "papelería",
+      "tienda"
+    ],
     "updated_at": "2025-08-11",
     "last_updated": "2025-08-11T00:00:00+00:00",
     "post_references": []
@@ -385,6 +454,9 @@
       13.407453
     ],
     "location": "berlin",
+    "tags": [
+      "restaurante"
+    ],
     "updated_at": "2025-08-10",
     "last_updated": "2025-08-10T00:00:00+00:00",
     "post_references": []
@@ -401,6 +473,9 @@
     ],
     "location": "berlin",
     "closed": true,
+    "tags": [
+      "pastelería"
+    ],
     "updated_at": "2025-08-10",
     "last_updated": "2025-08-10T00:00:00+00:00",
     "post_references": []
@@ -417,6 +492,10 @@
     ],
     "location": "berlin",
     "closed": true,
+    "tags": [
+      "restaurante",
+      "japonés"
+    ],
     "updated_at": "2025-08-10",
     "last_updated": "2025-08-10T00:00:00+00:00",
     "post_references": []
@@ -433,6 +512,9 @@
       13.349654
     ],
     "location": "berlin",
+    "tags": [
+      "cine"
+    ],
     "updated_at": "2025-08-10",
     "last_updated": "2025-08-10T00:00:00+00:00",
     "post_references": []
@@ -449,6 +531,9 @@
       13.336748
     ],
     "location": "berlin",
+    "tags": [
+      "bar"
+    ],
     "updated_at": "2025-08-10",
     "last_updated": "2025-08-10T00:00:00+00:00",
     "post_references": []
@@ -464,6 +549,9 @@
       13.42246464603288
     ],
     "location": "berlin",
+    "tags": [
+      "restaurante"
+    ],
     "updated_at": "2025-08-10",
     "last_updated": "2025-08-10T00:00:00+00:00",
     "post_references": [
@@ -485,6 +573,9 @@
       13.435139298296505
     ],
     "location": "berlin",
+    "tags": [
+      "librería"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -500,6 +591,9 @@
       13.420258
     ],
     "location": "berlin",
+    "tags": [
+      "café"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "description": "",
@@ -516,6 +610,9 @@
       13.358785015341178
     ],
     "location": "berlin",
+    "tags": [
+      "café"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -532,6 +629,9 @@
       13.4011481
     ],
     "location": "berlin",
+    "tags": [
+      "café"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -548,6 +648,9 @@
       13.4065961
     ],
     "location": "berlin",
+    "tags": [
+      "café"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -564,6 +667,9 @@
     ],
     "location": "berlin",
     "closed": true,
+    "tags": [
+      "restaurante"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -580,6 +686,9 @@
     ],
     "location": "berlin",
     "closed": true,
+    "tags": [
+      "bar"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -595,6 +704,9 @@
       13.402544452482864
     ],
     "location": "berlin",
+    "tags": [
+      "mercado"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -610,6 +722,9 @@
       13.425898299068328
     ],
     "location": "berlin",
+    "tags": [
+      "restaurante"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": [
@@ -631,6 +746,9 @@
       13.42016685489108
     ],
     "location": "berlin",
+    "tags": [
+      "restaurante"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -646,6 +764,9 @@
       13.424879566538284
     ],
     "location": "berlin",
+    "tags": [
+      "café"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": [
@@ -677,6 +798,9 @@
       13.432445053043422
     ],
     "location": "berlin",
+    "tags": [
+      "café"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": [
@@ -698,6 +822,9 @@
       13.431502823278532
     ],
     "location": "berlin",
+    "tags": [
+      "restaurante"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -713,6 +840,9 @@
       13.413073501974143
     ],
     "location": "berlin",
+    "tags": [
+      "restaurante"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -728,6 +858,9 @@
       13.439883
     ],
     "location": "berlin",
+    "tags": [
+      "librería"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -743,6 +876,9 @@
       13.422736997220522
     ],
     "location": "berlin",
+    "tags": [
+      "mercado"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": [
@@ -764,6 +900,10 @@
       13.389288376705881
     ],
     "location": "berlin",
+    "tags": [
+      "restaurante",
+      "japonés"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -779,6 +919,9 @@
       13.4210922
     ],
     "location": "berlin",
+    "tags": [
+      "japonés"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -794,6 +937,9 @@
       13.423695851822046
     ],
     "location": "berlin",
+    "tags": [
+      "restaurante"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -809,6 +955,10 @@
       13.3667562
     ],
     "location": "berlin",
+    "tags": [
+      "bar",
+      "cine"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": [
@@ -831,6 +981,9 @@
       13.397690437523185
     ],
     "location": "berlin",
+    "tags": [
+      "librería"
+    ],
     "updated_at": "2023-03-31",
     "last_updated": "2023-03-31T00:00:00+00:00",
     "post_references": [],

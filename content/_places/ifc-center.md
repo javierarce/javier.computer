@@ -9,5 +9,7 @@ latlng:
 - 40.73139256313356
 - -74.00171511794787
 location: newyork
+tags:
+  - cine
 updated_at: '2024-10-07'
 ---

@@ -8,4 +8,6 @@ latlng:
   - 52.536592418972
   - 13.420818741476577
 location: berlin
+tags:
+  - panadería
 ---

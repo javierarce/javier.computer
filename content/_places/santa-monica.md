@@ -8,5 +8,7 @@ latlng:
 - 41.377393737045395
 - 2.1756821241850046
 location: barcelona
+tags:
+  - cultura
 updated_at: '2024-10-07'
 ---

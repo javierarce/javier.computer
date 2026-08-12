@@ -223,11 +223,31 @@ export function readFrontMatter(file) {
   const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
   if (!match) return { data: {}, body: raw, raw };
 
+  const unquote = (text) => text.trim().replace(/^["'](.*)["']$/, "$1");
+
   const data = {};
-  for (const line of match[1].split("\n")) {
-    const pair = line.match(/^([A-Za-z_][\w-]*):\s*(.*)$/);
+  const lines = match[1].split("\n");
+
+  for (let i = 0; i < lines.length; i++) {
+    const pair = lines[i].match(/^([A-Za-z_][\w-]*):\s*(.*)$/);
     if (!pair) continue;
-    data[pair[1]] = pair[2].trim().replace(/^["'](.*)["']$/, "$1");
+
+    // A key with nothing after the colon may open a block sequence — how the
+    // site writes lists (`tags:` then `  - librería`) — so collect the items
+    // rather than reading the key as an empty string.
+    if (pair[2].trim() === "") {
+      const entries = [];
+      // Both indentations are in use across the site: `  - item` and `- item`
+      while (/^\s*-\s+/.test(lines[i + 1] ?? "")) {
+        entries.push(unquote(lines[++i].replace(/^\s*-\s+/, "")));
+      }
+      if (entries.length) {
+        data[pair[1]] = entries;
+        continue;
+      }
+    }
+
+    data[pair[1]] = unquote(pair[2]);
   }
 
   return { data, body: match[2], raw };
@@ -406,6 +426,37 @@ export function placeValues(key) {
   }
 
   return [...seen];
+}
+
+// Tags are written as they read on the map card — accents and all, since the
+// map search folds accents when matching. Only the shape is enforced here:
+// trimmed, lowercase, no duplicates.
+export function parseTags(value) {
+  const entries = Array.isArray(value) ? value : String(value ?? "").split(",");
+  const seen = new Set();
+
+  for (const entry of entries) {
+    const tag = String(entry).trim().replace(/\s+/g, " ").toLowerCase();
+    if (tag) seen.add(tag);
+  }
+
+  return [...seen];
+}
+
+// The tag vocabulary already in use, most common first: the new-place form
+// suggests these so a second "café" doesn't arrive as "cafés".
+export function placeTags() {
+  const counts = new Map();
+
+  for (const data of placeEntries()) {
+    for (const tag of parseTags(data.tags)) {
+      counts.set(tag, (counts.get(tag) || 0) + 1);
+    }
+  }
+
+  return [...counts.entries()]
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .map(([tag]) => tag);
 }
 
 // Taken pids, so a new place can't quietly shadow an existing one: posts

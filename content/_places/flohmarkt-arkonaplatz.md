@@ -9,5 +9,7 @@ latlng:
 - 52.53740688711875
 - 13.402544452482864
 location: berlin
+tags:
+  - mercado
 updated_at: '2024-10-07'
 ---

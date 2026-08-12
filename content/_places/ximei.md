@@ -9,4 +9,6 @@ latlng:
   - 41.37164601705916
   - 2.1608460273475036
 location: barcelona
+tags:
+  - restaurante
 ---

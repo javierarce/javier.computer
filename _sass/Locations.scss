@@ -76,6 +76,36 @@
     gap: var(--s-1);
   }
 
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-1);
+    margin-top: var(--s-1);
+  }
+
+  &__tag {
+    padding: 0.1em 0.5em;
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--br-default);
+    background: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: var(--font-size-body-xxs);
+    line-height: 1.6;
+    opacity: var(--op-light);
+    cursor: pointer;
+    transition:
+      opacity var(--transition-speed-default) ease-in-out,
+      border-color var(--transition-speed-default) ease-in-out;
+
+    // No selected state: the search field is where the active filter shows,
+    // so a tag only ever reacts to the pointer
+    &:hover {
+      opacity: var(--op-visible);
+      border-color: var(--link);
+    }
+  }
+
   &__post {
     text-decoration: none;
     display: inline-flex;

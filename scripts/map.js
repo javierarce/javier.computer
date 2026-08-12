@@ -172,9 +172,12 @@ class Map extends Base {
     this.map.getContainer().remove();
   }
 
+  // Fits what is on the map right now, so while a search is narrowing things
+  // down "Ver toda la ciudad" frames the results rather than the whole city.
   fitBoundsToMarkers() {
-    const latlngs = this.getMarkers().map((marker) => marker.getLatLng());
-    if (this.postMarkers) {
+    const latlngs = this.getVisibleMarkers().map((marker) => marker.getLatLng());
+
+    if (this.postMarkers && !this.visibleLocationIds) {
       this.postMarkers.getLayers().forEach((marker) => {
         latlngs.push(marker.getLatLng());
       });
@@ -209,19 +212,19 @@ class Map extends Base {
     this.selectMarker(marker, 18);
   }
 
-  // Markers are returned in the same order the sidebar renders them: the
-  // sidebar lists locations newest first, i.e. by descending id. Keeping both
-  // in sync is what makes the arrow keys step to the adjacent card.
+  // Every marker, filtered out or not, in the order the sidebar renders them:
+  // the sidebar lists locations newest first, i.e. by descending id. Keeping
+  // both in sync is what makes the arrow keys step to the adjacent card.
   getMarkers() {
-    return this.markers
-      .getLayers()
+    return this.allMarkers
       .slice()
       .sort((a, b) => b.options.location.id - a.options.location.id);
   }
 
-  // The markers the arrow keys can reach — the sidebar's current search
-  // results, or every marker when there's no search in progress.
-  getNavigableMarkers() {
+  // The markers currently on the map — the sidebar's search results, or every
+  // marker when there's no search in progress. These are also the ones the
+  // arrow keys can reach.
+  getVisibleMarkers() {
     const markers = this.getMarkers();
 
     if (!this.visibleLocationIds) {
@@ -235,10 +238,49 @@ class Map extends Base {
 
   setVisibleLocationIds(ids) {
     this.visibleLocationIds = ids;
+    this.updateVisibleMarkers();
+  }
+
+  // A place the search has filtered out leaves the map too, so the pins and
+  // the list always show the same set. The markers themselves are kept around
+  // and added back to the layer group, since they hold the popup and the
+  // location the rest of the class looks up by id.
+  updateVisibleMarkers() {
+    const visible = new Set(this.getVisibleMarkers());
+
+    this.allMarkers.forEach((marker) => {
+      const shouldShow = visible.has(marker);
+      const isShown = this.markers.hasLayer(marker);
+
+      if (shouldShow && !isShown) {
+        this.markers.addLayer(marker);
+      } else if (!shouldShow && isShown) {
+        this.markers.removeLayer(marker);
+      }
+    });
+
+    // The posts aren't part of the results, so they'd read as leftovers next
+    // to a filtered set of places
+    if (this.postMarkers) {
+      if (this.visibleLocationIds) {
+        this.map.removeLayer(this.postMarkers);
+      } else if (!this.map.hasLayer(this.postMarkers)) {
+        this.postMarkers.addTo(this.map);
+      }
+    }
+
+    // Nothing to keep selected once the selection is off the map
+    if (
+      this.selectedLocationId &&
+      this.visibleLocationIds &&
+      !this.visibleLocationIds.has(this.selectedLocationId)
+    ) {
+      this.closePopup();
+    }
   }
 
   goToMarker(direction) {
-    const markers = this.getNavigableMarkers();
+    const markers = this.getVisibleMarkers();
 
     if (!markers.length) {
       return;
@@ -264,7 +306,7 @@ class Map extends Base {
   }
 
   goToFirstMarker() {
-    this.goToMarkerAt(this.getNavigableMarkers()[0]);
+    this.goToMarkerAt(this.getVisibleMarkers()[0]);
   }
 
   goToMarkerAt(marker) {
@@ -291,7 +333,10 @@ class Map extends Base {
       markers.push(marker);
     });
 
-    this.markers = L.layerGroup(markers);
+    // The layer group only ever holds the markers currently shown, so the
+    // full list is kept here: filtering takes them out and puts them back.
+    this.allMarkers = markers;
+    this.markers = L.layerGroup(markers.slice());
     this.markers.addTo(this.map);
   }
 
@@ -411,11 +456,13 @@ class Map extends Base {
     });
   }
 
+  // Clicking near a pin counts as clicking it, so only the pins actually on
+  // the map can be hit — otherwise a filtered-out place would still answer.
   onMapClick(e) {
     const latlng = this.map.layerPointToLatLng(e.layerPoint);
     let clickedMarker = null;
 
-    const markers = this.getMarkers();
+    const markers = this.getVisibleMarkers();
 
     for (let i = 0; i < markers.length; i++) {
       const layerPoint = this.map.latLngToLayerPoint(markers[i].getLatLng());
@@ -570,6 +617,9 @@ class App {
 
     this.locations.forEach((location, index) => {
       location.id = index + 1;
+      location.tagList = (location.tags || []).map((tag) =>
+        this.normalize(tag),
+      );
       location.searchText = this.buildSearchText(location);
     });
 
@@ -589,10 +639,11 @@ class App {
     }
   }
 
-  // Title, description and address, accent-folded so "cafe" finds "café"
+  // Title, description, address and tags, accent-folded so "cafe" finds "café"
   buildSearchText(location) {
     return this.normalize(
       [location.title, location.description, location.address]
+        .concat(location.tags || [])
         .filter(Boolean)
         .join(" ")
         .replace(/<[^>]*>/g, " "),
@@ -600,20 +651,49 @@ class App {
   }
 
   normalize(text) {
-    return text
+    return String(text)
       .toLowerCase()
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "");
   }
 
+  // "libros #barcelona #barrio" — everything before the first # is free text,
+  // and each # opens a tag term. A tag can contain spaces, so a term runs to
+  // the next # rather than to the next space. Terms are kept in both forms:
+  // folded for matching, as typed for writing the field back.
+  parseQuery(query) {
+    const [text = "", ...tags] = String(query).split("#");
+    const raw = tags.map((tag) => tag.trim()).filter(Boolean);
+
+    return {
+      text: this.normalize(text).trim(),
+      raw,
+      tags: raw.map((tag) => this.normalize(tag)),
+    };
+  }
+
+  matches(location, { text, tags }) {
+    if (text && !location.searchText.includes(text)) {
+      return false;
+    }
+
+    // Every tag narrows further, so a place has to carry all of them. Prefix
+    // rather than exact matching, so a half-typed "#caf" already filters.
+    return tags.every((term) =>
+      location.tagList.some((tag) => tag.startsWith(term)),
+    );
+  }
+
   search(query) {
-    const term = this.normalize(query).trim();
+    const parsed = this.parseQuery(query);
+    const isFiltering = Boolean(parsed.text || parsed.tags.length);
     const matchedIds = new Set();
 
     this.$locations.querySelectorAll(".js-location").forEach(($element) => {
       const id = +$element.dataset.id;
       const location = this.locations[id - 1];
-      const matches = !term || (location && location.searchText.includes(term));
+      const matches =
+        !isFiltering || (location && this.matches(location, parsed));
 
       $element.classList.toggle("is-hidden", !matches);
 
@@ -630,7 +710,33 @@ class App {
       this.$searchClear.hidden = !this.$search.value;
     }
 
-    this.map.setVisibleLocationIds(term ? matchedIds : null);
+    this.map.setVisibleLocationIds(isFiltering ? matchedIds : null);
+  }
+
+  // Clicking a tag narrows the search exactly as typing "#tag" would: the
+  // field keeps showing the whole filter, so Escape and the clear button undo
+  // it, and clicking an active tag again drops it.
+  toggleTag(tag) {
+    if (!this.$search) {
+      return;
+    }
+
+    const parsed = this.parseQuery(this.$search.value);
+    const term = this.normalize(tag);
+    const kept = parsed.raw.filter(
+      (active) => !term.startsWith(this.normalize(active)),
+    );
+
+    const isActive = kept.length < parsed.raw.length;
+    const text = this.$search.value.split("#")[0].trim();
+    const tags = isActive ? kept : [...parsed.raw, tag];
+
+    const query = [text, ...tags.map((entry) => `#${entry}`)]
+      .filter(Boolean)
+      .join(" ");
+
+    this.$search.value = query;
+    this.search(query);
   }
 
   bindSearchEvents() {
@@ -816,6 +922,15 @@ class App {
             "/maps/" + location.location + "/" + permalink,
           );
         }
+      });
+    });
+
+    this.$locations.querySelectorAll(".js-location-tag").forEach(($tag) => {
+      $tag.addEventListener("click", (event) => {
+        // The card underneath means "go to this place"; the tag on it means
+        // "show me the others like it", so the click stops here.
+        event.stopPropagation();
+        this.toggleTag($tag.dataset.tag);
       });
     });
 

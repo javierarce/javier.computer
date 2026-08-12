@@ -11,5 +11,7 @@ latlng:
   - 41.403088
   - 2.1667554
 location: barcelona
+tags:
+  - café
 updated_at: "2025-08-22"
 ---

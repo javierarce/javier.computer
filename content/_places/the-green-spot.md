@@ -9,5 +9,8 @@ latlng:
 - 41.381787821227704
 - 2.1839794830047263
 location: barcelona
+tags:
+  - restaurante
+  - vegetariano
 updated_at: '2024-10-07'
 ---

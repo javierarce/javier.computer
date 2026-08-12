@@ -10,5 +10,8 @@ latlng:
 - 41.401696340168684
 - 2.149860615288348
 location: barcelona
+tags:
+  - café
+  - japonés
 updated_at: '2024-10-07'
 ---

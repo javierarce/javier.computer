@@ -8,4 +8,6 @@ latlng:
 - 52.52578711158864
 - 13.411130984133036
 location: berlin
+tags:
+  - papelería
 ---

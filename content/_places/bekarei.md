@@ -10,5 +10,7 @@ latlng:
 - 13.422646
 location: berlin
 closed: true
+tags:
+  - pastelería
 updated_at: '2025-08-10'
 ---

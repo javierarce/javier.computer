@@ -9,5 +9,7 @@ latlng:
 - 13.433880192070449
 location: berlin
 closed: true
+tags:
+  - bar
 updated_at: '2024-10-07'
 ---

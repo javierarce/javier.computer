@@ -8,4 +8,7 @@ latlng:
 - 52.536679866895305
 - 13.410543239776883
 location: berlin
+tags:
+  - tienda
+  - museo
 ---

@@ -10,6 +10,9 @@
       -73.96314417387886
     ],
     "location": "newyork",
+    "tags": [
+      "restaurante"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -26,6 +29,9 @@
       -73.97825295003133
     ],
     "location": "newyork",
+    "tags": [
+      "café"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -41,6 +47,10 @@
       -73.99343164307919
     ],
     "location": "newyork",
+    "tags": [
+      "librería",
+      "fotografía"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -56,6 +66,9 @@
       -73.95083660504864
     ],
     "location": "newyork",
+    "tags": [
+      "librería"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -71,6 +84,9 @@
       -74.00165074493151
     ],
     "location": "newyork",
+    "tags": [
+      "tienda"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -86,6 +102,9 @@
       -73.99588703974875
     ],
     "location": "newyork",
+    "tags": [
+      "papelería"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -101,6 +120,9 @@
       -73.97148321854978
     ],
     "location": "newyork",
+    "tags": [
+      "café"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -116,6 +138,9 @@
       -74.00171511794787
     ],
     "location": "newyork",
+    "tags": [
+      "cine"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -131,6 +156,9 @@
       -74.00280521609535
     ],
     "location": "newyork",
+    "tags": [
+      "librería"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -146,6 +174,9 @@
       -73.98442797315501
     ],
     "location": "newyork",
+    "tags": [
+      "librería"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -161,6 +192,9 @@
       -73.99098578508807
     ],
     "location": "newyork",
+    "tags": [
+      "cine"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -176,6 +210,9 @@
       -73.96322140362759
     ],
     "location": "newyork",
+    "tags": [
+      "café"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -191,6 +228,10 @@
       -73.92402470445512
     ],
     "location": "newyork",
+    "tags": [
+      "museo",
+      "cine"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": [
@@ -212,6 +253,10 @@
       -73.96369051873681
     ],
     "location": "newyork",
+    "tags": [
+      "café",
+      "vegetariano"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -227,6 +272,9 @@
       -74.00595908911104
     ],
     "location": "newyork",
+    "tags": [
+      "librería"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -242,6 +290,9 @@
       -73.96930685789933
     ],
     "location": "newyork",
+    "tags": [
+      "parque"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -257,6 +308,9 @@
       -73.95093182857953
     ],
     "location": "newyork",
+    "tags": [
+      "librería"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -272,6 +326,9 @@
       -73.9638492637935
     ],
     "location": "newyork",
+    "tags": [
+      "café"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -287,6 +344,9 @@
       -73.99126414493215
     ],
     "location": "newyork",
+    "tags": [
+      "librería"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
@@ -302,6 +362,9 @@
       -73.96841803514663
     ],
     "location": "newyork",
+    "tags": [
+      "librería"
+    ],
     "updated_at": "2024-10-07",
     "last_updated": "2024-10-07T00:00:00+00:00",
     "post_references": []
