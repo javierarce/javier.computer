@@ -1,6 +1,24 @@
 [
   {
-    "layout": "page",
+    "layout": "place",
+    "pid": "siebert-bakery",
+    "title": "Siebert Bakery",
+    "description": "<p>Panadería/pastelería fundada en 1906 y proveedor oficinal de pan de esta humilde web.</p>\n",
+    "address": "Schönfließer Str. 12",
+    "latlng": [
+      52.55293,
+      13.40817
+    ],
+    "location": "berlin",
+    "tags": [
+      "panadería"
+    ],
+    "updated_at": "2026-08-12",
+    "last_updated": "2026-08-12T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
     "pid": "niko",
     "title": "Niko Izakaya",
     "description": "<p>Izakaya fina con muy buen ambiente y una carta pequeña pero siempre acertada.</p>\n",
@@ -754,7 +772,7 @@
     "post_references": []
   },
   {
-    "layout": "page",
+    "layout": "place",
     "pid": "isla-coffee",
     "title": "Isla coffee",
     "description": "<p>Vivió mejores momentos cafeterilmente hablando hace unos años, ahora es un sitio correcto donde tomar un cruasán o un kimcheese.</p>\n",
@@ -848,7 +866,7 @@
     "post_references": []
   },
   {
-    "layout": "page",
+    "layout": "place",
     "pid": "motto",
     "title": "Motto Berlin",
     "description": "<p>Librería a la que ya no voy desde que descubrí que no paga a sus proveedores.</p>\n",
