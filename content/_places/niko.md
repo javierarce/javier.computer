@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: place
 pid: niko
 title: Niko Izakaya
 description: Izakaya fina con muy buen ambiente y una carta pequeña pero siempre acertada.

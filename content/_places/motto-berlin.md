@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: place
 pid: motto
 title: Motto Berlin
 description: Librería a la que ya no voy desde que descubrí que no paga a sus proveedores.

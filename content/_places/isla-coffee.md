@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: place
 pid: isla-coffee
 title: Isla coffee
 description: Vivió mejores momentos cafeterilmente hablando hace unos años, ahora
