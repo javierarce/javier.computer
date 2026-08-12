@@ -174,7 +174,7 @@ class Map extends Base {
 
   // Fits what is on the map right now, so while a search is narrowing things
   // down "Ver toda la ciudad" frames the results rather than the whole city.
-  fitBoundsToMarkers() {
+  fitBoundsToMarkers(options = {}) {
     const latlngs = this.getVisibleMarkers().map((marker) => marker.getLatLng());
 
     if (this.postMarkers && !this.visibleLocationIds) {
@@ -187,7 +187,7 @@ class Map extends Base {
       return;
     }
 
-    this.map.fitBounds(L.latLngBounds(latlngs));
+    this.map.fitBounds(L.latLngBounds(latlngs), options);
   }
 
   selectMarkerByPermalink(permalink) {
@@ -737,6 +737,12 @@ class App {
 
     this.$search.value = query;
     this.search(query);
+
+    // Tapping a tag means "show me these", so the map reframes itself around
+    // the results instead of leaving them scattered outside the viewport. The
+    // zoom cap keeps a single match from landing on a street-level view with
+    // no context around it, and dropping the last tag frames the city again.
+    this.map.fitBoundsToMarkers({ padding: [40, 40], maxZoom: 16 });
   }
 
   bindSearchEvents() {
