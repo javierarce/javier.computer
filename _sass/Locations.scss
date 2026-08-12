@@ -79,14 +79,15 @@
   &__tags {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--s-1);
+    gap: var(--s-2);
     margin-top: var(--s-1);
   }
 
+  // Same treatment as the tags under a post: no chrome of its own, just the
+  // word behind a hash, dimmed until the pointer is on it
   &__tag {
-    padding: 0.1em 0.5em;
-    border: 1px solid var(--color-border-subtle);
-    border-radius: var(--br-default);
+    padding: 0;
+    border: 0;
     background: none;
     color: inherit;
     font-family: inherit;
@@ -94,15 +95,18 @@
     line-height: 1.6;
     opacity: var(--op-light);
     cursor: pointer;
-    transition:
-      opacity var(--transition-speed-default) ease-in-out,
-      border-color var(--transition-speed-default) ease-in-out;
+    transition: opacity var(--transition-speed-default) ease-in-out;
+
+    // The hash is drawn rather than written into the label, so the tag stays
+    // the plain word the search field and the data attribute carry
+    &:before {
+      content: "#";
+    }
 
     // No selected state: the search field is where the active filter shows,
     // so a tag only ever reacts to the pointer
     &:hover {
       opacity: var(--op-visible);
-      border-color: var(--link);
     }
   }
 
