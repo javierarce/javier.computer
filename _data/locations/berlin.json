@@ -1,5 +1,19 @@
 [
   {
+    "layout": "page",
+    "pid": "niko",
+    "title": "Niko Izakaya",
+    "description": "<p>Izakaya fina con muy buen ambiente y una carta pequeña pero siempre acertada.</p>\n",
+    "address": "Brunnenstraße 73",
+    "latlng": [
+      52.542060623729405,
+      13.393622699606237
+    ],
+    "location": "berlin",
+    "last_updated": "2026-08-11T22:58:29+02:00",
+    "post_references": []
+  },
+  {
     "layout": "place",
     "pid": "maido-okini",
     "title": "Maido Okini",
