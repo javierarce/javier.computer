@@ -22,7 +22,14 @@ files, and running Jekyll.
 ./computer --help       # list the action ids
 ```
 
-In the menu: `↑↓` (or `j`/`k`) to move, `/` to filter, `⏎` to run, `esc` to quit.
+The menu is three pages — **Write**, **Update** and **Tools**. `←→` (or `⇥`, or
+`h`/`l`) moves between them, `↑↓` (or `j`/`k`) moves down a page, `⏎` runs,
+`esc` quits. `/` filters, and while filtering the search leaves its page: every
+match from every page shows up, under the name of the page it came from.
+
+The dev server is not on any page in particular — `s` opens it from anywhere in
+the menu, and the top right corner says whether it is up and on which port.
+
 In a form: `⏎` for the next field, `⇧⇥` to go back, `esc` to cancel. Fields come
 pre-filled with a sensible guess (the location of the last post, the camera
 detected from the photo filenames, the date read off the first photo) — press
@@ -38,8 +45,8 @@ detected from the photo filenames, the date read off the first photo) — press
 | `edit` | Open an existing post or draft in `$EDITOR` |
 | `publish` | Review the changes, commit them and push |
 | `reading` | The reading-list TUI (`_scripts/reading.js`) |
-| `update` | Movies, subscribers and syndication in one go |
-| `movies`, `books`, `places`, `subscribers`, `syndication` | One data source at a time |
+| `update` | Tick the data sources to refresh and run them in one go |
+| `movies`, `books`, `places`, `subscribers`, `syndication` | One data source at a time, without the picker |
 | `standard`, `standard-dry` | Publish to standard.site over the AT Protocol |
 | `filenames` | Rebuild a post's `filenames:` block from its `{% photo %}` tags |
 | `serve`, `serve-drafts`, `stop`, `build` | Jekyll |
@@ -67,6 +74,12 @@ link — the pin in the URL wins over the map centre. The location suggestions
 are the cities that have a map in `content/_maps`, since a place with no map
 has nowhere to show up.
 
+`./computer update` asks what to refresh instead of assuming: movies,
+subscribers and syndication come ticked (what "update everything" always meant),
+books and places are one `space` away, `a` ticks the lot, and `⏎` runs them one
+after another into the same transcript. With nothing ticked, `⏎` runs whatever
+the cursor is on.
+
 `./computer publish` closes the loop: it lists every change with its git status,
 shows the branch and where it will push, then asks for a commit message
 (pre-filled with the title of the post you just added, when the change is a
@@ -79,12 +92,13 @@ and marked `draft`), then the newest posts, listed as date and title and
 filterable with `/`. The editor is `$VISUAL`, then `$EDITOR`, then the first of
 `nvim`, `vim`, `code -w`, `nano` or `open -t` found on your `PATH`.
 
-`./computer serve` starts Jekyll in the background and gives the menu back, so
-you can keep writing while it builds. A spinner waits for the site to answer on
-`localhost:4001` — press any key to stop watching and get on with it. The server
-outlives the CLI: `serve` then opens a small screen with the uptime, the log
-(`.computer/serve.log`), restart and stop, and `./computer stop` stops it from
-anywhere. Set `PORT` to run a second copy of the site somewhere else:
+`./computer serve` — or `s`, from anywhere in the menu — starts Jekyll in the
+background and gives the menu back, so you can keep writing while it builds. A
+spinner waits for the site to answer on `localhost:4001` — press any key to stop
+watching and get on with it. The server outlives the CLI: `s` then opens a small
+screen with the uptime, the log (`.computer/serve.log`), restart and stop, and
+`./computer stop` stops it from anywhere. Set `PORT` to run a second copy of the
+site somewhere else:
 
 ```sh
 PORT=4002 ./computer serve
