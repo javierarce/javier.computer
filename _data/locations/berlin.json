@@ -1,6 +1,25 @@
 [
   {
     "layout": "place",
+    "pid": "tenzan",
+    "title": "tenzan lab.",
+    "description": "<p>Kakigōris y taiyakis.</p>\n",
+    "address": "Wörther Straße, 22",
+    "latlng": [
+      52.5357069,
+      13.4210922
+    ],
+    "location": "berlin",
+    "tags": [
+      "japonés"
+    ],
+    "updated_at": "2026-08-13",
+    "closed": true,
+    "last_updated": "2026-08-13T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
     "pid": "siebert-bakery",
     "title": "Siebert Bakery",
     "description": "<p>Panadería/pastelería fundada en 1906 y proveedor oficinal de pan de esta humilde web.</p>\n",
@@ -904,24 +923,6 @@
     "location": "berlin",
     "tags": [
       "restaurante",
-      "japonés"
-    ],
-    "updated_at": "2024-10-07",
-    "last_updated": "2024-10-07T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "tenzan",
-    "title": "tenzan lab.",
-    "description": "<p>Kakigōris y taiyakis</p>\n",
-    "address": "Wörther Straße, 22",
-    "latlng": [
-      52.5357069,
-      13.4210922
-    ],
-    "location": "berlin",
-    "tags": [
       "japonés"
     ],
     "updated_at": "2024-10-07",

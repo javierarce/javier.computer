@@ -2,7 +2,7 @@
 layout: place
 pid: tenzan
 title: tenzan lab.
-description: Kakigōris y taiyakis
+description: Kakigōris y taiyakis.
 address: Wörther Straße, 22
 latlng:
 - 52.5357069
@@ -10,5 +10,6 @@ latlng:
 location: berlin
 tags:
   - japonés
-updated_at: '2024-10-07'
+updated_at: '2026-08-13'
+closed: true
 ---
