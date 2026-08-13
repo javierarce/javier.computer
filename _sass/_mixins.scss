@@ -44,6 +44,33 @@ $bp-mobile: 640px;
   }
 }
 
+// The "x" that empties a search field, overlaid on its right edge. Shared by
+// the map sidebar and the blog search form so both clear the same way.
+@mixin clear-button {
+  position: absolute;
+  top: 50%;
+  right: var(--s-3);
+  transform: translateY(-50%);
+  width: var(--s-5);
+  height: var(--s-5);
+  padding: 0;
+  border: none;
+  background: url("/img/icons/close.svg") no-repeat center;
+  background-size: var(--s-4) var(--s-4);
+  filter: var(--icon-filter);
+  opacity: var(--op-4);
+  cursor: pointer;
+  transition: opacity var(--transition-speed-default) ease-in-out;
+
+  &:hover {
+    opacity: var(--op-visible);
+  }
+
+  &[hidden] {
+    display: none;
+  }
+}
+
 // List reset
 @mixin list-reset {
   list-style: none;
