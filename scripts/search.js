@@ -65,6 +65,8 @@
       item.author = decodeEntities(item.author);
       item.category = decodeEntities(item.category);
       item.content = decodeEntities(item.content);
+      item.city = decodeEntities(item.city);
+      item.address = decodeEntities(item.address);
       (item.links || []).forEach(function(link) {
         if (!link) return;
         link.url = decodeEntities(link.url);
@@ -129,7 +131,38 @@
     return result;
   }
 
+  function isPlace(item) {
+    return item.type === "place";
+  }
+
+  // A place has no date — it is located rather than published — so its footer
+  // carries the address instead, read the way an address is read: street
+  // first, then the city. The street links to the place, the city to the map
+  // it sits on.
+  function buildPlaceFooter(item) {
+    var html = "";
+    var parts = [];
+    if (item.address) {
+      parts.push('<a href="' + escapeHtml(item.url) + '">' + escapeHtml(item.address) + "</a>");
+    }
+    if (item.city) {
+      var url = item.cityUrl || item.url;
+      parts.push('<a href="' + escapeHtml(url) + '">' + escapeHtml(item.city) + "</a>");
+    }
+    // Joined with nothing: the comma between street and city is drawn in CSS,
+    // as part of the city, so a place with only one of the two never shows a
+    // separator with nothing on the other side of it.
+    if (parts.length) {
+      html += '<span class="search-results__location">' + parts.join("") + "</span>";
+    }
+    return html;
+  }
+
   function buildFooter(item) {
+    if (isPlace(item)) {
+      return '<div class="post__footer">' + buildPlaceFooter(item) + "</div>";
+    }
+
     var html = '<div class="post__footer">';
     html += '<a href="' + escapeHtml(item.url) + '" class="post__date">' + formatDate(item.date) + '</a>';
     if (item.tags && item.tags.length) {
@@ -432,8 +465,18 @@
       var item = store[results[i].ref];
       if (!item) continue;
       var snippet = buildExcerpt(item, results[i].matchData, parsed);
+      // A place that has closed says so before anything else: it is the first
+      // thing worth knowing about it, and it reads as part of the description.
+      var closed = isPlace(item) && item.closed ? "Cerrado permanentemente." : "";
       html += '<li><a href="' + escapeHtml(item.url) + '">' + escapeHtml(item.title) + "</a>";
-      html += "<p>" + renderExcerpt(snippet.text, parsed, snippet.links) + "</p>";
+      // A place with no description of its own has nothing to excerpt, and an
+      // empty paragraph would leave a gap between the title and the footer.
+      if (closed || snippet.text) {
+        html += "<p>";
+        if (closed) html += escapeHtml(closed) + (snippet.text ? " " : "");
+        html += renderExcerpt(snippet.text, parsed, snippet.links);
+        html += "</p>";
+      }
       html += buildFooter(item);
       html += "</li>";
     }
@@ -444,7 +487,9 @@
   // post. lunr has no phrase queries, so this runs as a filter over its results.
   function matchesPhrases(item, phrases) {
     if (!phrases.length) return true;
-    var haystack = fold([item.title, item.content, linkIndexText(item)].join(" "));
+    var haystack = fold(
+      [item.title, item.content, item.address, linkIndexText(item)].join(" ")
+    );
     return phrases.every(function(phrase) {
       return haystack.indexOf(fold(phrase)) !== -1;
     });
@@ -499,7 +544,12 @@
 
     function initSearch() {
       var searchBox = document.getElementById("search-box");
-      if (searchBox) searchBox.value = searchTerm;
+      if (searchBox) {
+        searchBox.value = searchTerm;
+        // search-form.js owns the clear button and only watches for typing, so
+        // a query that arrives from the URL has to announce itself.
+        searchBox.dispatchEvent(new Event("input", { bubbles: true }));
+      }
 
       var store = decodeStore(window.store || {});
       var parsed = parseQuery(searchTerm);
@@ -535,6 +585,9 @@
         this.field("title", { boost: 10 });
         this.field("author");
         this.field("category");
+        // Only places have one, and it is shown in the footer rather than in
+        // the excerpt — but a street is a fair thing to search a city by.
+        this.field("address");
         this.field("links", { boost: 5 });
         this.field("content");
         for (var key in store) {
@@ -544,6 +597,7 @@
             title: store[key].title,
             author: store[key].author,
             category: store[key].category,
+            address: store[key].address,
             links: linkIndexText(store[key]),
             content: store[key].content
           });

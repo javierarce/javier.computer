@@ -1,14 +1,23 @@
-<form class="search-form" action="/search" method="get">
+<form class="search-form js-search-form" action="/search" method="get">
   <div class="input__field">
-    <input
-      type="text"
-      class="input"
-      id="search-box"
-      name="q"
-      placeholder="Buscar en el blog..."
-      aria-label="Buscar en el blog"
-      required
-    >
+    <div class="search-form__field">
+      <input
+        type="text"
+        class="input js-search-input"
+        id="search-box"
+        name="q"
+        placeholder="Buscar en el blog..."
+        aria-label="Buscar en el blog"
+        required
+      >
+      <button
+        type="button"
+        class="search-form__clear js-search-clear"
+        aria-label="Limpiar la búsqueda"
+        hidden
+      ></button>
+    </div>
   </div>
   <input type="submit" class="button" value="Buscar">
 </form>
+<script src="{{ 'scripts/search-form.js' | relative_url }}?version={{site.version}}" defer></script>

@@ -1,4 +1,9 @@
+{%- comment -%}
+  Selected on the archive itself (/posts and /posts/{year}), not on everything
+  in the "posts" category: /search shares that category to get this same
+  secondary nav, and it is not the archive.
+{%- endcomment -%}
 <div class="navigation__links">
-  <a class="navigation__link{% if category == 'posts' %} is-selected{% endif %}" href="/posts">Archivo</a>
+  <a class="navigation__link{% if page.url == '/posts' or page.url contains '/posts/' %} is-selected{% endif %}" href="/posts">Archivo</a>
   <a class="navigation__link" href="/rss">RSS</a>
 </div>

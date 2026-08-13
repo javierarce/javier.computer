@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 .search {
   display: flex;
   flex-direction: column;
@@ -9,6 +11,21 @@
   display: flex;
   gap: var(--s-2);
   width: var(--width-full);
+
+  &__field {
+    position: relative;
+    display: flex;
+    width: var(--width-full);
+
+    // Room for the clear button, so a long query doesn't run underneath it
+    .input {
+      padding-right: var(--s-10);
+    }
+  }
+
+  &__clear {
+    @include clear-button;
+  }
 }
 
 .search-results {
@@ -30,6 +47,47 @@
     list-style: none;
     padding: 0;
     font-size: var(--font-size-body);
+  }
+
+  // A place result has an address where a post has a date: the street links to
+  // the place, the city to its map. Both sit inside one element so the comma
+  // between them isn't laid out as a flex item of the footer.
+  //
+  // The dimming is per element rather than on the line as a whole: opacity on
+  // the wrapper would cap what a link inside can reach, and these have to be
+  // able to come back to full strength on hover the way a post's date does.
+  &__location {
+    &:before {
+      content: "";
+      position: relative;
+      top: 2px;
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      margin-right: var(--s-1);
+      background: url("/img/icons/pin.svg") no-repeat bottom;
+      background-size: contain;
+      filter: var(--icon-filter);
+      opacity: var(--op-light);
+    }
+
+    a {
+      color: inherit;
+      opacity: var(--op-light);
+
+      // The footer only restores its own children; these sit a level deeper,
+      // so they say it themselves — same hover a date gets.
+      &:hover {
+        opacity: var(--op-visible);
+        text-decoration: none;
+      }
+    }
+
+    // The comma belongs to the city it introduces, so it dims and lights up
+    // with it instead of hanging at full strength between the two.
+    a + a:before {
+      content: ", ";
+    }
   }
 
   .is-highlighted {
