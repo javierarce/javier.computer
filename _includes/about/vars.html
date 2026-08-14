@@ -7,8 +7,8 @@
 {% assign photo_count = 0 -%}
 
 {% for post in site.categories['photo'] -%}
-{% assign current_count = post.filenames | size -%}
-{% assign photo_count = photo_count | plus: current_count -%}
+{% include photos/count.html photo=post -%}
+{% assign photo_count = photo_count | plus: photos_in_post -%}
 {% endfor -%}
 
 {% assign projects = 0 -%}

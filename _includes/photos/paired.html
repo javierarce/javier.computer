@@ -1,0 +1,13 @@
+{% comment -%}
+  The photos an entry shares its row with, as a list, from its `pair:` — one
+  filename, several separated by spaces, or a YAML list. Leaves them in
+  `paired`, empty when the entry is on its own.
+{% endcomment -%}
+{% assign paired = include.file.pair | default: '' -%}
+{% if paired == true -%}
+  {% comment -%} A bare `pair: true` names nothing, so there is no row. {% endcomment -%}
+  {% assign paired = '' -%}
+{% endif -%}
+{% unless paired.first -%}
+  {% assign paired = paired | split: ' ' -%}
+{% endunless -%}

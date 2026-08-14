@@ -1,0 +1,6 @@
+{% comment -%}
+  How many photos a post actually shows, counting the ones that only appear as
+  the `pair:` of another entry. Leaves the number in `photos_in_post`.
+{% endcomment -%}
+{% assign paired_count = include.photo.filenames | map: 'pair' | compact | join: ' ' | split: ' ' | size -%}
+{% assign photos_in_post = include.photo.filenames | size | plus: paired_count -%}

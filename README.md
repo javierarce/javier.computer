@@ -64,8 +64,39 @@ override the `3/2` default:
 2026-07-16-Berlin-R0021086 2/3
 ```
 
+In a photo post, a `+` between two filenames puts them side by side in one row,
+which is how two vertical photos go together. A line that starts with `+` pairs
+with the photo entered just before it, so both of these say the same thing:
+
+```
+2026-07-16-Berlin-R0021086 + 2026-07-16-Berlin-R0021087 2/3
+```
+
+```
+2026-07-16-Berlin-R0021086 2/3
++ 2026-07-16-Berlin-R0021087
+```
+
+They come out of the form as one entry that names the other photo, and a photo
+post lays that out as a row of its own:
+
+```yaml
+filenames:
+  - filename: 2026-07-16-Berlin-R0021086
+    pair: 2026-07-16-Berlin-R0021087
+    ratio: 2/3
+```
+
+The row splits the width evenly and both photos take the ratio of the entry, so
+a pair is one ratio, one caption and one entry — the photo count and the album
+and grid pages know about the second one. Three abreast is a `pair:` of two
+names, separated by a space or written as a list. On mobile they stack.
+
 Reportage bodies are laid out from those ratios: consecutive portraits pair up
-into a `{% row %}`, everything else becomes a `{% stack %}`.
+into a `{% row %}`, everything else becomes a `{% stack %}`. A reportage has no
+`pair:` — its rows are markup in the body, and its `filenames:` block is the
+flat list that `./computer filenames` rebuilds from those tags, so a `+` typed
+in that form just adds the two photos to the list.
 
 `./computer place` writes a place with the `pid` posts link to (defaulted from
 the title, and refused if it is already taken) and asks for its coordinates,
