@@ -43,3 +43,5 @@ filenames:
   - filename: 2026-08-12-Berlin-R0021786
     ratio: 3/2
 ---
+
+Fotos tomadas el 12 de agosto de 2026 alrededor del Behmstraßenbrücke.
