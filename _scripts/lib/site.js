@@ -355,11 +355,15 @@ export function entryDay(entry) {
 }
 
 // Values already in use for a front matter key, most recently used first.
+// A key can hold a YAML list (`camera:` often does), and every entry counts on
+// its own, so what comes back is always a flat list of strings.
 export function usedValues(key) {
   const seen = new Set();
 
   for (const { data } of postIndex()) {
-    if (data[key]) seen.add(data[key]);
+    for (const entry of [data[key]].flat()) {
+      if (entry) seen.add(String(entry));
+    }
   }
 
   return [...seen];
