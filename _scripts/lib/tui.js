@@ -254,7 +254,7 @@ export const value = (thing) => (typeof thing === "function" ? thing() : thing);
 function fuzzy(needle, haystack) {
   if (!needle) return true;
 
-  const target = haystack.toLowerCase();
+  const target = String(haystack).toLowerCase();
   let i = 0;
 
   for (const char of needle.toLowerCase()) {
@@ -646,6 +646,10 @@ export function form(fields, { title, note } = {}) {
 
   let step = 0;
   let input = "";
+  // The text the suggestions are filtered on: the last thing typed, rather
+  // than whatever the arrows have since written into the input. Picking a
+  // suggestion used to narrow the list down to itself, cutting the walk short.
+  let query = "";
   let entries = [];
   let choice = 0;
   let error = "";
@@ -661,7 +665,7 @@ export function form(fields, { title, note } = {}) {
     const all =
       typeof spec.choices === "function" ? spec.choices(values) : spec.choices;
     if (spec.type === "choice") return all;
-    return all.filter((option) => fuzzy(input, option)).slice(0, 6);
+    return all.filter((option) => fuzzy(query, option)).slice(0, 6);
   };
 
   const enterStep = () => {
@@ -670,15 +674,59 @@ export function form(fields, { title, note } = {}) {
     choice = 0;
     entries = [];
     input = "";
+    query = "";
 
     if (spec.type === "list") {
       entries = Array.isArray(values[spec.name]) ? [...values[spec.name]] : [];
       return;
     }
-    if (spec.type === "confirm" || spec.type === "choice") return;
+    if (spec.type === "confirm") return;
+
+    if (spec.type === "choice") {
+      // Come back to the answer that is already there, not to the first option.
+      choice = Math.max(0, suggestions().indexOf(values[spec.name]));
+      return;
+    }
 
     const preset = typed[spec.name] ?? defaultFor(spec);
     input = preset === undefined || preset === null ? "" : String(preset);
+    query = input;
+  };
+
+  // What the field would answer right now: what ⏎ commits, and what ↓ commits
+  // on its way to the next step.
+  const answer = (spec) => {
+    if (spec.type === "confirm") {
+      return values[spec.name] ?? defaultFor(spec) ?? true;
+    }
+    if (spec.type === "choice") return suggestions()[choice];
+    if (spec.type === "list") return entries;
+    return input.trim();
+  };
+
+  // Adds what is typed in a list field, so neither ⏎ nor ↓ ever drops it.
+  const flush = (spec) => {
+    if (!input.trim()) return;
+
+    entries.push(
+      ...(spec.parse ? spec.parse(input, entries, values) : [input.trim()]),
+    );
+    input = "";
+  };
+
+  // Going back keeps what is on screen, so a step away is not a retype: an
+  // uncommitted input is stashed with the typed answers, and so are the entries
+  // a list has collected. Confirm and choice already read from `values`.
+  const back = () => {
+    const spec = field();
+    if (spec.type === "list") values[spec.name] = entries;
+    else if (spec.type !== "confirm" && spec.type !== "choice") {
+      typed[spec.name] = input;
+    }
+
+    step -= 1;
+    enterStep();
+    render();
   };
 
   // Recomputes the visible fields, since `when` can depend on earlier answers.
@@ -784,14 +832,19 @@ export function form(fields, { title, note } = {}) {
     return { row: row + 1, col: prefix + input.length + 1 };
   };
 
+  // ↑↓ only says "move" where the arrows do nothing else: combo and choice
+  // spend them on their suggestion list first, so there ⇧⇥ is the shortcut
+  // worth naming.
   const fieldHints = (spec) => {
     if (spec.type === "list")
-      return "⏎ add · ⌫ remove last · ⏎ (empty) done · esc cancel";
-    if (spec.type === "confirm") return "←→ toggle · ⏎ confirm · esc cancel";
-    if (spec.type === "choice") return "↑↓ pick · ⏎ confirm · esc cancel";
+      return "⏎ add · ⌫ remove last · ⏎ (empty) done · ↑↓ move · ⇧⇥ back · esc cancel";
+    if (spec.type === "confirm")
+      return "←→ toggle · ⏎ confirm · ↑↓ move · ⇧⇥ back · esc cancel";
+    if (spec.type === "choice")
+      return "↑↓ pick · ⏎ confirm · ⇧⇥ back · esc cancel";
     if (spec.type === "combo")
-      return "↑↓ suggestions · ⇥ complete · ⏎ next · esc cancel";
-    return "⏎ next · ⇧⇥ back · esc cancel";
+      return "↑↓ suggestions · ⇥ complete · ⏎ next · ⇧⇥ back · esc cancel";
+    return "⏎ next · ↑↓ move · ⇧⇥ back · esc cancel";
   };
 
   const commit = (value, done) => {
@@ -827,14 +880,35 @@ export function form(fields, { title, note } = {}) {
 
     if (key === KEY.escape) return done(null);
 
-    if (key === KEY.shiftTab && step > 0) {
-      step -= 1;
-      enterStep();
-      return render();
+    if (key === KEY.shiftTab && step > 0) return back();
+
+    // ↑↓ walk the form itself. Combo and choice spend them on their suggestion
+    // list first and hand them back at its edges, where they had nowhere left
+    // to go, so the arrows always lead somewhere. ↓ answers the field on the
+    // way out, exactly as ⏎ would; on the last field it does nothing, since
+    // submitting the form is what ⏎ is for.
+    const picking =
+      (spec.type === "combo" || spec.type === "choice") && options.length > 0;
+
+    // The suggestion drawn as selected. A combo has one from the moment it
+    // filters, while the input still holds the half word that filtered it, so
+    // ↓ has something left to do — take it — before it can hand the key back.
+    const under = options[choice];
+    const taken = spec.type !== "combo" || input === under;
+
+    if (key === KEY.up && (!picking || choice === 0) && step > 0) return back();
+
+    if (
+      key === KEY.down &&
+      (!picking || (taken && choice === options.length - 1)) &&
+      step + 1 < active.length
+    ) {
+      if (spec.type === "list") flush(spec);
+      return commit(answer(spec), done);
     }
 
     if (spec.type === "confirm") {
-      const current = values[spec.name] ?? defaultFor(spec) ?? true;
+      const current = answer(spec);
       if (key === KEY.enter) return commit(current, done);
       if (key === "y") return commit(true, done);
       if (key === "n") return commit(false, done);
@@ -853,16 +927,12 @@ export function form(fields, { title, note } = {}) {
 
     if (spec.type === "list") {
       if (key === KEY.enter) {
-        if (!input.trim()) {
-          values[spec.name] = entries;
-          return commit(entries, done);
+        if (input.trim()) {
+          flush(spec);
+          return render();
         }
-        const parsed = spec.parse
-          ? spec.parse(input, entries, values)
-          : [input.trim()];
-        entries.push(...parsed);
-        input = "";
-        return render();
+        values[spec.name] = entries;
+        return commit(entries, done);
       }
       if (key === KEY.backspace) {
         if (input) input = input.slice(0, -1);
@@ -887,6 +957,14 @@ export function form(fields, { title, note } = {}) {
     }
 
     if (spec.type === "combo" && (key === KEY.up || key === KEY.down)) {
+      // Take the selected suggestion before moving off it, so the first ↓ can
+      // never skip the one on screen. Only ↓ arrives here untaken: ↑ has gone
+      // back by now, and past the first suggestion the input holds them all.
+      if (!taken && under) {
+        input = under;
+        return render();
+      }
+
       if (key === KEY.up) choice = Math.max(0, choice - 1);
       if (key === KEY.down) choice = Math.min(options.length - 1, choice + 1);
       if (options[choice]) input = options[choice];
@@ -902,8 +980,12 @@ export function form(fields, { title, note } = {}) {
     } else if (key.length === 1 && key >= " ") {
       input += key;
       choice = 0;
+    } else {
+      return render(); // a key this field has no use for: nothing changed
     }
 
+    // Editing is a new search, so the suggestions follow the input again.
+    query = input;
     render();
   });
 }
