@@ -44,4 +44,4 @@ filenames:
     ratio: 3/2
 ---
 
-Fotos tomadas el 12 de agosto de 2026 alrededor del Behmstraßenbrücke.
+Fotos tomadas el [12 de agosto de 2026](/2026/08/12/848-eclipse-of-the-heart) alrededor del Behmstraßenbrücke.
