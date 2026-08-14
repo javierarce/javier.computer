@@ -890,11 +890,17 @@ export function form(fields, { title, note } = {}) {
     const picking =
       (spec.type === "combo" || spec.type === "choice") && options.length > 0;
 
+    // The suggestion drawn as selected. A combo has one from the moment it
+    // filters, while the input still holds the half word that filtered it, so
+    // ↓ has something left to do — take it — before it can hand the key back.
+    const under = options[choice];
+    const taken = spec.type !== "combo" || input === under;
+
     if (key === KEY.up && (!picking || choice === 0) && step > 0) return back();
 
     if (
       key === KEY.down &&
-      (!picking || choice === options.length - 1) &&
+      (!picking || (taken && choice === options.length - 1)) &&
       step + 1 < active.length
     ) {
       if (spec.type === "list") flush(spec);
@@ -951,6 +957,14 @@ export function form(fields, { title, note } = {}) {
     }
 
     if (spec.type === "combo" && (key === KEY.up || key === KEY.down)) {
+      // Take the selected suggestion before moving off it, so the first ↓ can
+      // never skip the one on screen. Only ↓ arrives here untaken: ↑ has gone
+      // back by now, and past the first suggestion the input holds them all.
+      if (!taken && under) {
+        input = under;
+        return render();
+      }
+
       if (key === KEY.up) choice = Math.max(0, choice - 1);
       if (key === KEY.down) choice = Math.min(options.length - 1, choice + 1);
       if (options[choice]) input = options[choice];
