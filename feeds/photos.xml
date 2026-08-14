@@ -85,6 +85,10 @@ layout: none
           {% assign location = post.location -%}
           {% endif -%}
           <p><img src="https://img.javier.computer/{{ location }}/{{ filename }}_1280.jpg" alt="{{ caption }}" />{% if file.caption -%}<br />{{ file.caption }}{% endif -%}</p>
+          {% include photos/paired.html file=file -%}
+          {% for name in paired -%}
+          <p><img src="https://img.javier.computer/{{ location }}/{{ name }}_1280.jpg" alt="{{ caption }}" /></p>
+          {% endfor -%}
           {% endfor -%}
           {% else -%}
             <img src="https://img.javier.computer/{{ post.location }}/{{ post.filename }}_1280.jpg" style="max-width: 1204px" alt="{{ post.title }}" />

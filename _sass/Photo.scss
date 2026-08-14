@@ -281,6 +281,25 @@
   }
 }
 
+// Photos sharing a row, from a `pair:` in a `filenames:` block: two verticals
+// side by side. They split the width evenly and share the ratio of the entry,
+// so the row comes out level.
+.photo__row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s-2);
+  width: var(--width-full);
+
+  .photo {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .photo__content img {
+    max-width: var(--width-full);
+  }
+}
+
 .photo__header {
   display: flex;
   align-items: center;
@@ -538,6 +557,17 @@ figcaption {
 
   .photo__collection {
     gap: var(--s-2);
+  }
+
+  // Stacked, each photo goes back to its own height: splitting the width is
+  // only a thing while they are sharing a row.
+  .photo__row {
+    flex-direction: column;
+    align-items: stretch;
+
+    .photo {
+      flex: 0 1 auto;
+    }
   }
 
   .row {

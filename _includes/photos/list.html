@@ -1,0 +1,22 @@
+{% comment -%}
+  A post's whole `filenames:` block. An entry with a `pair:` shares its row with
+  the photo it names, which is how two vertical photos go side by side; the row
+  splits the width evenly and takes the ratio of the entry. Every other entry
+  gets a row of its own.
+{% endcomment -%}
+{% assign list_post = include.photo -%}
+
+{% for file in list_post.filenames -%}
+  {% include photos/paired.html file=file -%}
+
+  {% if paired.size > 0 -%}
+    <div class="photo__row">
+      {% include photos/entry.html photo=list_post file=file -%}
+      {% for name in paired -%}
+        {% include photos/single.html photo=list_post filename=name ratio=file.ratio -%}
+      {% endfor -%}
+    </div>
+  {% else -%}
+    {% include photos/entry.html photo=list_post file=file -%}
+  {% endif -%}
+{% endfor -%}

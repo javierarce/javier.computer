@@ -38,9 +38,10 @@ include.photo.location | first -%}
     {% endif -%} 
 
     {% if include.readmore == "true" -%}
-    {% if include.photo.filenames.size > 1 -%}
-    <a href="{{ include.photo.url }}#more" class="post__more-photos">{{ include.photo.filenames.size }} foto{% if
-      include.photo.filenames.size > 1 %}s{% endif -%}</a
+    {% include photos/count.html photo=include.photo -%}
+    {% if photos_in_post > 1 -%}
+    <a href="{{ include.photo.url }}#more" class="post__more-photos">{{ photos_in_post }} foto{% if
+      photos_in_post > 1 %}s{% endif -%}</a
     >
     {% else -%}
     <a class="post__more" href="{{ include.photo.url }}">Leer más</a>

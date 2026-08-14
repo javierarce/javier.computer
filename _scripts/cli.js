@@ -77,12 +77,34 @@ const photosField = (options = {}) => ({
   name: "photos",
   label: "Photos",
   type: "list",
-  hint: `paste or type filenames; add a ratio after one to override ${site.DEFAULT_RATIO}`,
-  parse: (line) => site.parsePhotoLine(line, site.DEFAULT_RATIO),
+  hint: `paste or type filenames; a ratio after one overrides ${site.DEFAULT_RATIO}, a + between two puts them in the same row`,
+  parse: (line, entries) =>
+    site.parsePhotoLine(line, site.DEFAULT_RATIO, entries),
   format: site.formatPhoto,
   validate: (photos) => (photos.length ? null : "Add at least one photo."),
   ...options,
 });
+
+// The `filenames:` block of a photo post, where it is also the layout: `pair`
+// only shows up on a photo that shares its row with another, so a post without
+// pairs keeps the front matter it always had.
+const filenamesValue = (photos) =>
+  photos.map((photo) => ({
+    filename: photo.filename,
+    pair: site.pairedWith(photo).join(" ") || undefined,
+    ratio: photo.ratio,
+  }));
+
+// A reportage has no pairs: its rows are {% row %} blocks in the body, so a `+`
+// typed in the form is flattened back into two photos here (two portraits pair
+// up into a row down there anyway).
+const flatPhotos = (photos) =>
+  photos.flatMap((photo) => [
+    { filename: photo.filename, ratio: photo.ratio },
+    ...site
+      .pairedWith(photo)
+      .map((filename) => ({ filename, ratio: photo.ratio })),
+  ]);
 
 const cameraValue = (input) => {
   const names = String(input || "")
@@ -243,13 +265,7 @@ async function newPhotoPost() {
       ["camera", cameraValue(values.camera)],
       ["hide_title", true],
       ["hide", values.hide],
-      [
-        "filenames",
-        values.photos.map((photo) => ({
-          filename: photo.filename,
-          ratio: photo.ratio,
-        })),
-      ],
+      ["filenames", filenamesValue(values.photos)],
     ]) + "\n";
 
   await create({
@@ -290,6 +306,8 @@ async function newReportage() {
 
   if (!values) return;
 
+  const photos = flatPhotos(values.photos);
+
   const content =
     site.frontMatter([
       ["layout", "reportage"],
@@ -302,16 +320,10 @@ async function newReportage() {
       ["camera", cameraValue(values.camera)],
       ["cover", site.scalar(values.cover)],
       ["ratio", site.DEFAULT_RATIO],
-      [
-        "filenames",
-        values.photos.map((photo) => ({
-          filename: photo.filename,
-          ratio: photo.ratio,
-        })),
-      ],
+      ["filenames", filenamesValue(photos)],
     ]) +
     "\n" +
-    site.renderPhotoBody(values.location, values.photos) +
+    site.renderPhotoBody(values.location, photos) +
     "\n";
 
   await create({

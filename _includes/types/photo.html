@@ -71,9 +71,10 @@
       >
     {% endif %}
 
-    {% if post.filenames.size > 1 -%}
-    <a href="{{ post.url }}#more" class="post__more-photos">{{ post.filenames.size }} foto
-      {%- if post.filenames.size > 1 -%}
+    {% include photos/count.html photo=post -%}
+    {% if photos_in_post > 1 -%}
+    <a href="{{ post.url }}#more" class="post__more-photos">{{ photos_in_post }} foto
+      {%- if photos_in_post > 1 -%}
         s
       {%- endif -%}
     </a>

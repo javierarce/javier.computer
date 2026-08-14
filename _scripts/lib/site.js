@@ -182,7 +182,12 @@ export function frontMatter(pairs) {
           lines.push(`  - ${scalar(entry)}`);
           continue;
         }
-        const [first, ...rest] = Object.entries(entry);
+        // An absent key (a photo with no `pair`) is left out rather than
+        // written as an empty value.
+        const [first, ...rest] = Object.entries(entry).filter(
+          ([, value]) => value !== undefined && value !== null && value !== "",
+        );
+        if (!first) continue;
         lines.push(`  - ${first[0]}: ${scalar(first[1])}`);
         for (const [k, v] of rest) lines.push(`    ${k}: ${scalar(v)}`);
       }
@@ -518,26 +523,65 @@ export function parseLatLng(input) {
 
 const IMAGE_EXTENSION = /\.(jpe?g|png|webp|tiff?|heic|heif|dng|raf|arw)$/i;
 
+// The photos an entry shares its row with: `pair` is one filename, several
+// separated by spaces, or a list.
+export const pairedWith = (photo) => {
+  const value = photo.pair;
+  if (!value) return [];
+  return Array.isArray(value)
+    ? value
+    : String(value).trim().split(/\s+/).filter(Boolean);
+};
+
 // Accepts anything you can paste: bare names, full paths, names with an
-// extension, and an optional `3/2`-style ratio after a filename.
-export function parsePhotoLine(line, fallbackRatio = DEFAULT_RATIO) {
+// extension, and an optional `3/2`-style ratio after a filename. A `+` hands
+// the next filename to the photo before it, as its `pair`, so the two share a
+// row — across lines too, which is why `entered` comes in. A ratio belongs to
+// the whole row, since the two photos are laid out from it.
+export function parsePhotoLine(
+  line,
+  fallbackRatio = DEFAULT_RATIO,
+  entered = [],
+) {
   const photos = [];
+  let pairing = false;
+
+  const previous = () =>
+    photos[photos.length - 1] || entered[entered.length - 1];
 
   for (const token of line.trim().split(/\s+/).filter(Boolean)) {
+    if (token === "+") {
+      pairing = true;
+      continue;
+    }
+
     if (/^\d+\/\d+$/.test(token)) {
-      if (photos.length) photos[photos.length - 1].ratio = token;
+      const photo = previous();
+      if (photo) photo.ratio = token;
       continue;
     }
 
     const filename = path.basename(token).replace(IMAGE_EXTENSION, "");
-    if (filename) photos.push({ filename, ratio: fallbackRatio });
+    if (!filename) continue;
+
+    const photo = pairing ? previous() : null;
+    pairing = false;
+
+    if (photo) {
+      photo.pair = [...pairedWith(photo), filename].join(" ");
+      continue;
+    }
+
+    photos.push({ filename, ratio: fallbackRatio });
   }
 
   return photos;
 }
 
-export const formatPhoto = (photo) =>
-  `${photo.filename} ${photo.ratio === DEFAULT_RATIO ? "" : photo.ratio}`.trim();
+export const formatPhoto = (photo) => {
+  const names = [photo.filename, ...pairedWith(photo)].join(" + ");
+  return photo.ratio === DEFAULT_RATIO ? names : `${names} ${photo.ratio}`;
+};
 
 // Photo filenames in this repo look like 2026-07-16-Berlin-R0021086, so both
 // the date and the city can usually be recovered from the first one.

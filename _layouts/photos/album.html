@@ -59,6 +59,11 @@ className: photos
           {% endif -%}
 
           {% include photos/single.html photo=photo caption=caption filename = filename -%}
+
+          {% include photos/paired.html file=file -%}
+          {% for name in paired -%}
+          {% include photos/single.html photo=photo filename = name -%}
+          {% endfor -%}
           {% endfor -%}
           {% elsif photo.filename -%}
           {% include photos/single.html photo=photo filename = photo.filename -%}

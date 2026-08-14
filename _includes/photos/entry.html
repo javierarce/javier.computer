@@ -1,0 +1,14 @@
+{% comment -%}
+  One entry of a `filenames:` block, which is either a hash with a filename,
+  a ratio and a caption, or a bare filename that falls back to the post ratio.
+{% endcomment -%}
+{% assign entry = include.file -%}
+
+{% if entry.filename -%}
+  {%
+    include photos/single.html
+    photo=include.photo filename=entry.filename caption=entry.caption ratio=entry.ratio
+  -%}
+{% else -%}
+  {% include photos/single.html photo=include.photo filename=entry ratio=include.photo.ratio -%}
+{% endif -%}
