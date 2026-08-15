@@ -108,6 +108,10 @@
     "/2026/08/14/die-eklipse": {
       "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mt2wh5qmc25l",
       "hash": "c43af3de0446e5010a140912ec8231fd55eae7ad65c64fce2a353892c34c70dc"
+    },
+    "/2026/08/15/there-will-come-soft-rains": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mt5ix6ybe2x3",
+      "hash": "5b4b96bf8b7067133946009f694d9120459a29e868cac60b76952924cb36248e"
     }
   }
 }
