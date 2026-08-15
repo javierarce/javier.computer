@@ -1,7 +1,7 @@
 ---
 layout: place
 pid: amato
-title: amató
+title: amatō
 description: "Heladería japonesa. Su yuzu cake es muy recomendable."
 address: Dunckerstraße, 69, 10437
 emoji: "🍦"
@@ -11,5 +11,5 @@ latlng:
 location: berlin
 tags:
   - heladería
-updated_at: "2025-08-24"
+updated_at: "2026-08-15"
 ---
