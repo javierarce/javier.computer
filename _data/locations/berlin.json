@@ -4,6 +4,7 @@
     "pid": "alain-snack",
     "title": "Alain Snack",
     "address": "Prenzlauer Berg",
+    "description": "<p>Además de <em>currywursts</em> y <em>bratwurst</em> en versiones de carne o veganas, este puesto de comida rápida también vende el clásico perrito caliente de Berlín Oriental: la ketwurst</p>\n",
     "latlng": [
       52.5495709,
       13.4133658
@@ -14,7 +15,25 @@
       "vegano"
     ],
     "last_updated": "2026-08-15T00:00:00+00:00",
-    "description": "",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "amato",
+    "title": "amatō",
+    "description": "<p>Heladería japonesa. Su yuzu cake es muy recomendable.</p>\n",
+    "address": "Dunckerstraße, 69, 10437",
+    "emoji": "🍦",
+    "latlng": [
+      52.5451364,
+      13.422882
+    ],
+    "location": "berlin",
+    "tags": [
+      "heladería"
+    ],
+    "updated_at": "2026-08-15",
+    "last_updated": "2026-08-15T00:00:00+00:00",
     "post_references": []
   },
   {
@@ -319,25 +338,6 @@
         "date": "2025-08-25 21:00:00 +0200"
       }
     ]
-  },
-  {
-    "layout": "place",
-    "pid": "amato",
-    "title": "amatō",
-    "description": "<p>Heladería japonesa. Su yuzu cake es muy recomendable.</p>\n",
-    "address": "Dunckerstraße, 69, 10437",
-    "emoji": "🍦",
-    "latlng": [
-      52.5451364,
-      13.422882
-    ],
-    "location": "berlin",
-    "tags": [
-      "heladería"
-    ],
-    "updated_at": "2025-08-24",
-    "last_updated": "2025-08-24T00:00:00+00:00",
-    "post_references": []
   },
   {
     "layout": "place",
