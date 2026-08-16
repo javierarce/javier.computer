@@ -1,30 +1,6 @@
 [
   {
     "layout": "place",
-    "pid": "right-side-coffee-bar",
-    "title": "Right Side Coffee Bar",
-    "description": "\n",
-    "address": "Carrer de l'Arc de Sant Ramon del Call, 11, 08002 Barcelona",
-    "category": "cafe",
-    "latlng": [
-      41.382645,
-      2.1752355
-    ],
-    "location": "barcelona",
-    "tags": [
-      "café"
-    ],
-    "last_updated": "2026-08-12T15:36:23+02:00",
-    "post_references": [
-      {
-        "url": "/2024/07/27/vuelta-al-teletipo",
-        "title": "Vuelta al teletipo",
-        "date": "2024-07-27 13:20:00 +0200"
-      }
-    ]
-  },
-  {
-    "layout": "place",
     "pid": "finestres",
     "title": "Llibreria Finestres",
     "description": "<p>Librería de referencia en Barcelona con libros en múltiples idiomas.</p>\n",
@@ -976,6 +952,30 @@
         "url": "/2023/04/07/all-the-beauty-and-the-bloodshed",
         "title": "All The Beauty And The Bloodshed",
         "date": "2023-04-07 00:35:31 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "right-side-coffee-bar",
+    "title": "Right Side Coffee Bar",
+    "description": "\n",
+    "address": "Carrer de l'Arc de Sant Ramon del Call, 11, 08002 Barcelona",
+    "category": "cafe",
+    "latlng": [
+      41.382645,
+      2.1752355
+    ],
+    "location": "barcelona",
+    "tags": [
+      "café"
+    ],
+    "last_updated": "2024-07-27T13:20:00+02:00",
+    "post_references": [
+      {
+        "url": "/2024/07/27/vuelta-al-teletipo",
+        "title": "Vuelta al teletipo",
+        "date": "2024-07-27 13:20:00 +0200"
       }
     ]
   }
