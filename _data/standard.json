@@ -112,6 +112,14 @@
     "/2026/08/15/there-will-come-soft-rains": {
       "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mt5ix6ybe2x3",
       "hash": "5b4b96bf8b7067133946009f694d9120459a29e868cac60b76952924cb36248e"
+    },
+    "/2026/08/16/aniversario": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mta4ga27g2vw",
+      "hash": "07cfce41562ce070be1065d77dfabc781bce3ea1b4299cb92312fb89726818cf"
+    },
+    "/2026/08/17/why-arent-people-buying-your-books-and-zines-at-the-fair": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mtcloocra2v4",
+      "hash": "c0fdd2b6f219e448aad098a3865e464d64308fd2335036bfab12a0cca042ad67"
     }
   }
 }
