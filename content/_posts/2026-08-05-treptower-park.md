@@ -8,6 +8,7 @@ tag: photo
 location: berlin
 camera: Ricoh GR IIIx
 cover: 2026-07-16-Berlin-R0021086
+permalink: treptower
 ratio: 3/2
 filenames:
   - filename: 2026-07-16-Berlin-R0020980
