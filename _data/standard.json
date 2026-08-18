@@ -120,6 +120,10 @@
     "/2026/08/17/why-arent-people-buying-your-books-and-zines-at-the-fair": {
       "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mtcloocra2v4",
       "hash": "c0fdd2b6f219e448aad098a3865e464d64308fd2335036bfab12a0cca042ad67"
+    },
+    "/2026/08/18/speed": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mtf3xqu2y2wt",
+      "hash": "751d4eec3950e76b72c78e27cca0cd09db25a914e88434e4641e777e5a573f86"
     }
   }
 }
