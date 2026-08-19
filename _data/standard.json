@@ -124,6 +124,10 @@
     "/2026/08/18/speed": {
       "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mtf3xqu2y2wt",
       "hash": "751d4eec3950e76b72c78e27cca0cd09db25a914e88434e4641e777e5a573f86"
+    },
+    "/2026/08/19/zeiss-grossplanetarium": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mthkajegu2th",
+      "hash": "4be321823f10bf46401620a4fde5a6c3dc3405143badfe646d6b1eddae9fcc18"
     }
   }
 }
