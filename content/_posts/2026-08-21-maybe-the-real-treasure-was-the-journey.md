@@ -11,4 +11,4 @@ Boletines Botánicos. Uno de ellos, intercambiado por otro fanzine. ¿Cuánto
 gasté en tiempo, materiales y sentirme regular durante el proceso? Mejor no
 hacer los cálculos. Pero no pasa nada: lo mejor de los festivales no es el
 dinero que haces, son las conversaciones y los contactos que estableces con
-otra gente que vendió igual de poco que tú.
+otra gente que vende igual de poco que tú.
