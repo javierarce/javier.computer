@@ -128,6 +128,18 @@
     "/2026/08/19/zeiss-grossplanetarium": {
       "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mthkajegu2th",
       "hash": "4be321823f10bf46401620a4fde5a6c3dc3405143badfe646d6b1eddae9fcc18"
+    },
+    "/2026/08/20/amargado": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mtk44yykw2dj",
+      "hash": "0436cedc0018b3f31defa8f58b3b5a21a4aa3ef642bbefe548902b4f8f5aa7e6"
+    },
+    "/2026/08/21/maybe-the-real-treasure-was-the-journey": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mtmom6l7o2wf",
+      "hash": "b743d6deae1f5d94e878ac06f7c7fdfc44d5780d25764218a456eda713b13bf1"
+    },
+    "/2026/08/22/flyleaf": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mtp7dhzfq2fk",
+      "hash": "32689d29e5f84db60c17371ee30b1ffc3ad60b67e048fbd2e40fba05d4759622"
     }
   }
 }
