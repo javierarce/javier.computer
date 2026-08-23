@@ -139,7 +139,11 @@
     },
     "/2026/08/22/flyleaf": {
       "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mtp7dhzfq2fk",
-      "hash": "32689d29e5f84db60c17371ee30b1ffc3ad60b67e048fbd2e40fba05d4759622"
+      "hash": "d6bd18a3d86471cda04237834e991316f2e5841000c62ef6979465145eff1fba"
+    },
+    "/2026/08/23/flores": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mtro36d3g2mi",
+      "hash": "2500cc86f2fa86c97cffed315c80fb802351aa350230a84a2f847de44e7d21a7"
     }
   }
 }
