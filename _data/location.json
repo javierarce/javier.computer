@@ -1,6 +1,13 @@
 {
-  "current": "berlin",
+  "current": "amsterdam",
   "cities": [
+    {
+      "slug": "amsterdam",
+      "city": "Amsterdam",
+      "country": "Netherlands",
+      "country_es": "Amsterdam",
+      "coordinates": "52.3702,4.8952"
+    },
     {
       "slug": "mataro",
       "city": "Mataró",
