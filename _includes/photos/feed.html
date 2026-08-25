@@ -1,56 +1,58 @@
 <!-- Photo feed -->
 
-{% assign readmore = 'false' %}
-<div
-  class="photo__collection {% if post.category != 'reportage' -%}has-lightbox{% endif -%}"
->
-  {% if post.category == 'reportage' %}
+{% comment -%}
+  Every entry shows one photo that links to the post: the `cover:` when the post
+  names one, otherwise the first of its `filenames:`. Reportages always offer a
+  way in; photo posts only do when they hold more than the photo shown here.
+{% endcomment -%}
+
+{% if post.category == 'reportage' -%}
+  {% assign readmore = 'true' -%}
+{% else -%}
+  {% include photos/count.html photo=post -%}
+  {% if photos_in_post > 1 -%}
+    {% assign readmore = 'true' -%}
+  {% else -%}
+    {% assign readmore = 'false' -%}
+  {% endif -%}
+{% endif -%}
+
+<div class="photo__collection">
+  {% if post.cover -%}
+    {% assign location = post.cover_location | default: post.location -%}
+    <a href="{{ post.url }}" title="{{ post.title }}">
+      {% include photos/single.html photo=post filename=post.cover location=location caption=post.caption ratio=post.ratio -%}
+    </a>
+  {% elsif post.filenames -%}
+    {% if post.filenames.first.filename -%}
+      {% assign filename = post.filenames.first.filename -%}
+      {% assign caption = post.filenames.first.caption -%}
+      {% assign ratio = post.filenames.first.ratio -%}
+    {% else -%}
+      {% assign filename = post.filenames.first -%}
+      {% assign ratio = post.ratio -%}
+      {% assign caption = nil -%}
+    {% endif -%}
 
     <a href="{{ post.url }}" title="{{ post.title }}">
-      {% if post.cover -%}
-      {% assign location = post.location -%}
-      {% if post.cover_location -%}
-      {% assign location = post.cover_location -%}
-      {% endif -%}
-        {% include photos/single.html photo=post filename=post.cover location=location caption=post.caption ratio=post.ratio -%}
-      {% elsif post.filenames -%}
-        {% if post.filenames.first.filename -%}
-          {% assign filename = post.filenames.first.filename -%}
-          {% assign caption = post.filenames.first.caption -%}
-          {% assign ratio = post.filenames.first.ratio -%}
-        {% else -%}
-          {% assign filename = post.filenames.first -%}
-          {% assign ratio = post.ratio -%}
-          {% assign caption = nil -%}
-        {% endif -%}
-
-        {% include photos/single.html photo=post filename=filename caption=caption ratio=ratio -%}
-      {% elsif post.filename %}
-        {% include photos/single.html photo=post filename=post.filename ratio=post.ratio -%}
-      {% endif %}
+      {% include photos/single.html photo=post filename=filename caption=caption ratio=ratio -%}
     </a>
-    {% assign readmore = 'true' %}
-    
-    {% if post.intro -%}
+  {% elsif post.filename -%}
+    <a href="{{ post.url }}" title="{{ post.title }}">
+      {% include photos/single.html photo=post filename=post.filename ratio=post.ratio -%}
+    </a>
+  {% endif -%}
+
+  {% if post.intro -%}
     <div class="post__content">
       <p>{{ post.intro }}</p>
     </div>
+  {% elsif post.category != 'reportage' -%}
+    {% assign content = post.content | strip -%}
+    {% if content.size > 0 -%}
+      <div class="post__content">{{ content }}</div>
     {% endif -%}
+  {% endif -%}
 
-  {% elsif post.filenames -%}
-    {% include photos/list.html photo=post -%}
-    {% assign content = post.content | strip %}
-    {% if content.size > 0 %}
-      <div class="post__content">{{ content }}</div>
-    {% endif %}
-  {% elsif post.filename %}
-    {% include photos/single.html photo=post filename=post.filename -%}
-    {% assign content = post.content | strip %}
-    {% if content.size > 0 %}
-      <div class="post__content">{{ content }}</div>
-    {% endif %}
-  {% else %}
-    {{ post.content }}
-  {% endif %}
   {% include photos/footer.html photo=post pagination=false readmore=readmore -%}
 </div>
