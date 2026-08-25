@@ -144,6 +144,14 @@
     "/2026/08/23/flores": {
       "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mtro36d3g2mi",
       "hash": "2500cc86f2fa86c97cffed315c80fb802351aa350230a84a2f847de44e7d21a7"
+    },
+    "/2026/08/24/xxx": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mtu27m2ni2z3",
+      "hash": "2ae985c874de4616f46d7650e1f08ebe56aa8d0800f9c0c678f5b6beb2e0f33c"
+    },
+    "/2026/08/25/amsterdam-01": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mtwphhrma22p",
+      "hash": "cd75109e8b321fc4cccec3b2e1d45a3d4854d2432965994f630b048baa06c0f8"
     }
   }
 }
