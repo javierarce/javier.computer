@@ -1,0 +1,124 @@
+[
+  {
+    "layout": "place",
+    "pid": "bookie-wookie",
+    "title": "Bookie Wookie",
+    "description": "<p>Maravillosa librería con libros de artista y fanzines.</p>\n",
+    "address": "Geldersekade 39",
+    "latlng": [
+      52.3753392,
+      4.9023232
+    ],
+    "location": "amsterdam",
+    "tags": [
+      "libros"
+    ],
+    "updated_at": "2026-08-25",
+    "last_updated": "2026-08-25T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "kyo",
+    "title": "Kyo",
+    "description": "<p>Acogedor resturante japonés estilo izakaya.</p>\n",
+    "address": "Koningsstraat 29",
+    "latlng": [
+      52.3723466,
+      4.9019966
+    ],
+    "location": "amsterdam",
+    "category": "restaurant",
+    "tags": [
+      "restaurante",
+      "japonés",
+      "tapas",
+      "izakaya"
+    ],
+    "updated_at": "2026-08-25",
+    "last_updated": "2026-08-25T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "profotica",
+    "title": "Profotica",
+    "address": "Nieuwendijk 113",
+    "latlng": [
+      52.3829109,
+      4.8855175
+    ],
+    "location": "amsterdam",
+    "emoji": "📷",
+    "category": "photographic_laboratory",
+    "tags": [
+      "fotografía"
+    ],
+    "updated_at": "2026-08-25",
+    "last_updated": "2026-08-25T00:00:00+00:00",
+    "description": "",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "scandinavian-embassy",
+    "title": "Scandinavian Embassy",
+    "address": "Sarphatipark 34",
+    "descripción": "Buen café y buena repostería.",
+    "latlng": [
+      52.3534561,
+      4.8942191
+    ],
+    "location": "amsterdam",
+    "emoji": "☕️",
+    "category": "cafe",
+    "tags": [
+      "café",
+      "repostería"
+    ],
+    "updated_at": "2026-08-25",
+    "last_updated": "2026-08-25T00:00:00+00:00",
+    "description": "",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "the-lebanese-sajeria",
+    "title": "The Lebanese Sajeria",
+    "description": "<p>Comida libanesa modernizada. Muy ricos el “Zaatar &amp; Halloumi” y el “Falafel &amp; Tarator”.</p>\n",
+    "address": "Haarlemmerstraat 54",
+    "latlng": [
+      52.3802321,
+      4.89259
+    ],
+    "location": "amsterdam",
+    "category": "restaurant",
+    "tags": [
+      "restaurante",
+      "vegan"
+    ],
+    "updated_at": "2026-08-25",
+    "last_updated": "2026-08-25T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "toki",
+    "title": "Toki",
+    "address": "Binnen Dommersstraat 15",
+    "latlng": [
+      52.3829109,
+      4.8855175
+    ],
+    "location": "amsterdam",
+    "emoji": "☕️",
+    "category": "cafe",
+    "tags": [
+      "café"
+    ],
+    "updated_at": "2026-08-25",
+    "last_updated": "2026-08-25T00:00:00+00:00",
+    "description": "",
+    "post_references": []
+  }
+]

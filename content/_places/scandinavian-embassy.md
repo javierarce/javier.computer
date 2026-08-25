@@ -3,6 +3,7 @@ layout: place
 pid: scandinavian-embassy
 title: "Scandinavian Embassy"
 address: Sarphatipark 34
+descripción: Buen café y buena repostería.
 latlng:
   - 52.3534561
   - 4.8942191
