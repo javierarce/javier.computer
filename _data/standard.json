@@ -151,7 +151,11 @@
     },
     "/2026/08/25/amsterdam-01": {
       "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mtwphhrma22p",
-      "hash": "cd75109e8b321fc4cccec3b2e1d45a3d4854d2432965994f630b048baa06c0f8"
+      "hash": "a661c380b019e94c30a046305bdd379c3fd782b2c3f78f10af1d2e07cbe76e54"
+    },
+    "/2026/08/26/amsterdam-02": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mtz5oixxi2qg",
+      "hash": "4524db9ace366c6e1c1a6c5bb05ddfdcbe59b363c38cc314b5bd90e6f9754954"
     }
   }
 }
