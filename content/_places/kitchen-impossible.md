@@ -2,7 +2,7 @@
 layout: place
 pid: kitchen-impossible
 title: "Kitchen Impossible"
-description: Ramen vegano.
+description: Rico ramen vegano.
 address: Van der Helstplein 2
 latlng:
   - 52.3517699

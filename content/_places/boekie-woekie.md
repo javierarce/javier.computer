@@ -4,6 +4,7 @@ pid: boekie-woekie
 title: "Boekie Woekie"
 description: Maravillosa librería con libros de artista y fanzines.
 address: Geldersekade 39
+emoji: "📖"
 latlng:
   - 52.3753392
   - 4.9023232

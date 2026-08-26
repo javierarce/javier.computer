@@ -2,7 +2,7 @@
 layout: place
 pid: foto-den-boer
 title: "Foto den Boer"
-description: "Tienda de fotografía analógica con muchas cámaras, a buenos precios y en buen estado. Trato amable."
+description: "Tienda de fotografía analógica con muchas cámaras, a buenos precios y en buen estado. Trato muy amable."
 address: "Tweede Hugo de Grootstraat 10"
 latlng:
   - 52.3743796
