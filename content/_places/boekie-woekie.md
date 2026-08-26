@@ -1,7 +1,7 @@
 ---
 layout: place
-pid: bookie-wookie
-title: "Bookie Wookie"
+pid: boekie-woekie
+title: "Boekie Woekie"
 description: Maravillosa librería con libros de artista y fanzines.
 address: Geldersekade 39
 latlng:
