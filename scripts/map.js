@@ -152,6 +152,8 @@ class Map extends Base {
 
     this.tileLayer =
       "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}";
+    // CARTO raster basemaps require an API key (watermarked without it)
+    this.tileKey = "?key=cb1_28tx_1_8b66a8fc52164f30736bde98";
     this.attribution =
       '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>';
 
@@ -588,12 +590,15 @@ class Map extends Base {
 
     this.map.attributionControl.setPosition("bottomleft");
 
-    L.tileLayer(this.tileLayer + (L.Browser.retina ? "@2x.png" : ".png"), {
-      attribution,
-      subdomains: "abcd",
-      maxZoom: 22,
-      minZoom: 0,
-    }).addTo(this.map);
+    L.tileLayer(
+      this.tileLayer + (L.Browser.retina ? "@2x.png" : ".png") + this.tileKey,
+      {
+        attribution,
+        subdomains: "abcd",
+        maxZoom: 22,
+        minZoom: 0,
+      },
+    ).addTo(this.map);
   }
 }
 
