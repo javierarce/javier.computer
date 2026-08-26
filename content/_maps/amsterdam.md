@@ -1,7 +1,7 @@
 ---
 layout: map
-title: Amsterdam
-description: Guía de bolsillo de Amsterdam
+title: Ámsterdam
+description: Guía de bolsillo de Ámsterdam
 className: map
 permalink: maps/amsterdam
 category: maps

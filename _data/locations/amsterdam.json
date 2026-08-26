@@ -1,26 +1,6 @@
 [
   {
     "layout": "place",
-    "pid": "4850",
-    "title": "4850",
-    "description": "<p>Cafetería de especialidad que se transforma en restaurante al caer la noche (o lo contrario)</p>\n",
-    "address": "Camperstraat 48-50",
-    "latlng": [
-      52.3577937,
-      4.913378
-    ],
-    "location": "amsterdam",
-    "emoji": "☕️",
-    "category": "cafe",
-    "tags": [
-      "café"
-    ],
-    "updated_at": "2026-08-26",
-    "last_updated": "2026-08-26T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
     "pid": "foto-den-boer",
     "title": "Foto den Boer",
     "description": "<p>Tienda de fotografía analógica con muchas cámaras, a buenos precios y en buen estado. Trato muy amable.</p>\n",
@@ -36,8 +16,14 @@
       "fotografía"
     ],
     "updated_at": "2026-08-26",
-    "last_updated": "2026-08-26T00:00:00+00:00",
-    "post_references": []
+    "last_updated": "2026-08-26T22:17:35+02:00",
+    "post_references": [
+      {
+        "url": "/2026/08/26/amsterdam-02",
+        "title": "Amsterdam 02",
+        "date": "2026-08-26 22:17:35 +0200"
+      }
+    ]
   },
   {
     "layout": "place",
@@ -55,8 +41,14 @@
       "jardín botánico"
     ],
     "updated_at": "2026-08-26",
-    "last_updated": "2026-08-26T00:00:00+00:00",
-    "post_references": []
+    "last_updated": "2026-08-26T22:17:35+02:00",
+    "post_references": [
+      {
+        "url": "/2026/08/26/amsterdam-02",
+        "title": "Amsterdam 02",
+        "date": "2026-08-26 22:17:35 +0200"
+      }
+    ]
   },
   {
     "layout": "place",
@@ -76,8 +68,14 @@
       "vegano"
     ],
     "updated_at": "2026-08-26",
-    "last_updated": "2026-08-26T00:00:00+00:00",
-    "post_references": []
+    "last_updated": "2026-08-26T22:17:35+02:00",
+    "post_references": [
+      {
+        "url": "/2026/08/26/amsterdam-02",
+        "title": "Amsterdam 02",
+        "date": "2026-08-26 22:17:35 +0200"
+      }
+    ]
   },
   {
     "layout": "place",
@@ -88,6 +86,32 @@
     "latlng": [
       52.3598821,
       4.9110865
+    ],
+    "location": "amsterdam",
+    "emoji": "☕️",
+    "category": "cafe",
+    "tags": [
+      "café"
+    ],
+    "updated_at": "2026-08-26",
+    "last_updated": "2026-08-26T22:17:35+02:00",
+    "post_references": [
+      {
+        "url": "/2026/08/26/amsterdam-02",
+        "title": "Amsterdam 02",
+        "date": "2026-08-26 22:17:35 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "4850",
+    "title": "4850",
+    "description": "<p>Cafetería de especialidad que se transforma en restaurante al caer la noche (o lo contrario)</p>\n",
+    "address": "Camperstraat 48-50",
+    "latlng": [
+      52.3577937,
+      4.913378
     ],
     "location": "amsterdam",
     "emoji": "☕️",
@@ -115,8 +139,14 @@
       "libros"
     ],
     "updated_at": "2026-08-25",
-    "last_updated": "2026-08-25T00:00:00+00:00",
-    "post_references": []
+    "last_updated": "2026-08-25T22:57:47+02:00",
+    "post_references": [
+      {
+        "url": "/2026/08/25/amsterdam-01",
+        "title": "Amsterdam 01",
+        "date": "2026-08-25 22:57:47 +0200"
+      }
+    ]
   },
   {
     "layout": "place",
@@ -137,28 +167,14 @@
       "izakaya"
     ],
     "updated_at": "2026-08-25",
-    "last_updated": "2026-08-25T00:00:00+00:00",
-    "post_references": []
-  },
-  {
-    "layout": "place",
-    "pid": "profotica",
-    "title": "Profotica",
-    "address": "Nieuwendijk 113",
-    "latlng": [
-      52.3829109,
-      4.8855175
-    ],
-    "location": "amsterdam",
-    "emoji": "📷",
-    "category": "photographic_laboratory",
-    "tags": [
-      "fotografía"
-    ],
-    "updated_at": "2026-08-25",
-    "last_updated": "2026-08-25T00:00:00+00:00",
-    "description": "",
-    "post_references": []
+    "last_updated": "2026-08-25T22:57:47+02:00",
+    "post_references": [
+      {
+        "url": "/2026/08/25/amsterdam-01",
+        "title": "Amsterdam 01",
+        "date": "2026-08-25 22:57:47 +0200"
+      }
+    ]
   },
   {
     "layout": "place",
@@ -178,9 +194,15 @@
       "repostería"
     ],
     "updated_at": "2026-08-25",
-    "last_updated": "2026-08-25T00:00:00+00:00",
+    "last_updated": "2026-08-25T22:57:47+02:00",
     "description": "",
-    "post_references": []
+    "post_references": [
+      {
+        "url": "/2026/08/25/amsterdam-01",
+        "title": "Amsterdam 01",
+        "date": "2026-08-25 22:57:47 +0200"
+      }
+    ]
   },
   {
     "layout": "place",
@@ -199,7 +221,33 @@
       "vegan"
     ],
     "updated_at": "2026-08-25",
+    "last_updated": "2026-08-25T22:57:47+02:00",
+    "post_references": [
+      {
+        "url": "/2026/08/25/amsterdam-01",
+        "title": "Amsterdam 01",
+        "date": "2026-08-25 22:57:47 +0200"
+      }
+    ]
+  },
+  {
+    "layout": "place",
+    "pid": "profotica",
+    "title": "Profotica",
+    "address": "Nieuwendijk 113",
+    "latlng": [
+      52.3829109,
+      4.8855175
+    ],
+    "location": "amsterdam",
+    "emoji": "📷",
+    "category": "photographic_laboratory",
+    "tags": [
+      "fotografía"
+    ],
+    "updated_at": "2026-08-25",
     "last_updated": "2026-08-25T00:00:00+00:00",
+    "description": "",
     "post_references": []
   },
   {
