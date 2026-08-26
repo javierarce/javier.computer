@@ -492,7 +492,9 @@ async function newPlace() {
   const content =
     site.frontMatter([
       ["layout", "place"],
-      ["pid", site.scalar(values.pid)],
+      // Quoted when it would otherwise parse as a number ("4850"): templates
+      // slugify the pid, and slugify blows up on an Integer.
+      ["pid", site.identifier(values.pid)],
       ["title", site.quoted(values.title)],
       ["description", site.scalar(values.description)],
       ["address", site.scalar(values.address)],

@@ -223,6 +223,15 @@ export const scalar = (value) => {
   return UNSAFE_PLAIN.test(text) ? quoted(text) : text;
 };
 
+// Identifiers that must stay strings: an unquoted `pid: 4850` parses as an
+// Integer, and templates that slugify it fail the build.
+export const identifier = (value) => {
+  const text = String(value ?? "");
+  return /^[-+.\d]/.test(text) && !Number.isNaN(Number(text))
+    ? quoted(text)
+    : scalar(value);
+};
+
 export function readFrontMatter(file) {
   const raw = fs.readFileSync(file, "utf8");
   const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
