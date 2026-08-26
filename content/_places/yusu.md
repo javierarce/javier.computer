@@ -2,7 +2,7 @@
 layout: place
 pid: yusu
 title: "Yusu"
-description: Cafetería de especialidad. La clientela es especialmente joven y en un alto porcentaje estudiantes del Amsterdam Fashion Institute.
+description: "Cafetería de especialidad. La clientela es especialmente joven y en un alto porcentaje estudiantes del Amsterdam Fashion Institute."
 address: Andreas Bonnstraat 2
 latlng:
   - 52.3598821

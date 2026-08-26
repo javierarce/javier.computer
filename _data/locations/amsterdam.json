@@ -1,8 +1,108 @@
 [
   {
     "layout": "place",
-    "pid": "bookie-wookie",
-    "title": "Bookie Wookie",
+    "pid": 4850,
+    "title": "4850",
+    "description": "<p>Por la mañana es una cafetería, por la noche un restaurante.</p>\n",
+    "address": "Camperstraat 48-50",
+    "latlng": [
+      52.3577937,
+      4.913378
+    ],
+    "location": "amsterdam",
+    "emoji": "☕️",
+    "category": "cafe",
+    "tags": [
+      "café"
+    ],
+    "updated_at": "2026-08-26",
+    "last_updated": "2026-08-26T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "foto-den-boer",
+    "title": "Foto den Boer",
+    "description": "<p>Tienda de fotografía analógica con muchas cámaras, a buenos precios y en buen estado. Trato amable.</p>\n",
+    "address": "Tweede Hugo de Grootstraat 10",
+    "latlng": [
+      52.3743796,
+      4.8744623
+    ],
+    "location": "amsterdam",
+    "emoji": "📷",
+    "category": "photography",
+    "tags": [
+      "fotografía"
+    ],
+    "updated_at": "2026-08-26",
+    "last_updated": "2026-08-26T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "hortus-botanicus",
+    "title": "Hortus Botanicus",
+    "description": "<p>Uno de los jardines botánicos más antiguos del mundo.</p>\n",
+    "address": "Plantage Middenlaan 2a",
+    "latlng": [
+      52.3669189,
+      4.907623
+    ],
+    "location": "amsterdam",
+    "category": "garden",
+    "tags": [
+      "jardín botánico"
+    ],
+    "updated_at": "2026-08-26",
+    "last_updated": "2026-08-26T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "kitchen-impossible",
+    "title": "Kitchen Impossible",
+    "description": "<p>Ramen vegano.</p>\n",
+    "address": "Van der Helstplein 2",
+    "latlng": [
+      52.3517699,
+      4.8944265
+    ],
+    "location": "amsterdam",
+    "category": "bakery",
+    "tags": [
+      "restaurante",
+      "japonés",
+      "vegano"
+    ],
+    "updated_at": "2026-08-26",
+    "last_updated": "2026-08-26T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "yusu",
+    "title": "Yusu",
+    "description": "<p>Cafetería de especialidad. La clientela es especialmente joven y en un alto porcentaje estudiantes del Amsterdam Fashion Institute.</p>\n",
+    "address": "Andreas Bonnstraat 2",
+    "latlng": [
+      52.3598821,
+      4.9110865
+    ],
+    "location": "amsterdam",
+    "emoji": "☕️",
+    "category": "cafe",
+    "tags": [
+      "café"
+    ],
+    "updated_at": "2026-08-26",
+    "last_updated": "2026-08-26T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
+    "pid": "boekie-woekie",
+    "title": "Boekie Woekie",
     "description": "<p>Maravillosa librería con libros de artista y fanzines.</p>\n",
     "address": "Geldersekade 39",
     "latlng": [

@@ -2,7 +2,7 @@
 layout: place
 pid: hortus-botanicus
 title: "Hortus Botanicus"
-description: Uno de los jardines botánicos más antiguos del mundo.
+description: "Uno de los jardines botánicos más antiguos del mundo."
 address: Plantage Middenlaan 2a
 latlng:
   - 52.3669189
