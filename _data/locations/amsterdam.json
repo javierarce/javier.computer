@@ -1,6 +1,29 @@
 [
   {
     "layout": "place",
+    "pid": "terry-bleu",
+    "title": "Terry Bleu",
+    "description": "<p>Un estudio de risografía, serigrafía, sello editorial y tienda de fanzines todo en uno, con una excelente selección de publicaciones independientes de todo el mundo</p>\n",
+    "address": "Van Ostadestraat 233",
+    "latlng": [
+      52.353306,
+      4.8987279
+    ],
+    "location": "amsterdam",
+    "category": "books",
+    "tags": [
+      "fanzines",
+      "librería",
+      "risografía",
+      "serigrafía",
+      "impresión"
+    ],
+    "updated_at": "2026-08-27",
+    "last_updated": "2026-08-27T00:00:00+00:00",
+    "post_references": []
+  },
+  {
+    "layout": "place",
     "pid": "foto-den-boer",
     "title": "Foto den Boer",
     "description": "<p>Tienda de fotografía analógica con muchas cámaras, a buenos precios y en buen estado. Trato muy amable.</p>\n",
