@@ -24,12 +24,13 @@ filenames:
     ratio: 3/2
   - filename: 2026-08-27-Amsterdam-R0022852
     ratio: 3/2
+places:
+ - terry-blue
 ---
-
-El día antes del día en el que volvemos a casa <span class="sp">✦</span> Otro lugar especial que descubrí en esta visita: [Terry
+Otro lugar especial que descubrí en esta visita relámpago a Ámsterdam: [Terry
 Blue](/maps/amsterdam/terry-blue), un estudio de risografía, serigrafía,
 sello editorial y tienda de fanzines, con una excelente selección
 de publicaciones independientes de todo el mundo. Por desgracia el [catálogo de
 su web](https://www.terrybleu.com/collections/catalogue) no incluye todo lo que
-tienen a la venta en la tienda. <span class="sp">✦</span> [Stencil.wiki](https://stencil.wiki).
+tienen a la venta en la tienda. 
 

@@ -2,7 +2,7 @@
 layout: place
 pid: terry-bleu
 title: "Terry Bleu"
-description: Un estudio de risografía, serigrafía, sello editorial y tienda de fanzines todo en uno, con una excelente selección de publicaciones independientes de todo el mundo
+description: Un estudio de risografía, serigrafía, sello editorial y tienda de fanzines, con una excelente selección de publicaciones independientes de todo el mundo.
 address: Van Ostadestraat 233
 latlng:
   - 52.353306
