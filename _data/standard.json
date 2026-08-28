@@ -156,6 +156,14 @@
     "/2026/08/26/amsterdam-02": {
       "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mtz5oixxi2qg",
       "hash": "4524db9ace366c6e1c1a6c5bb05ddfdcbe59b363c38cc314b5bd90e6f9754954"
+    },
+    "/2026/08/27/terry-blue": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mu3s4gymu277",
+      "hash": "49585d1304099b5ac6075128d19a15497645a02c9889dacd8654df854efd1bdf"
+    },
+    "/2026/08/28/49": {
+      "uri": "at://did:plc:mpvjloymxomrv3kk2eavmxkx/site.standard.document/3mu6axntew247",
+      "hash": "1cab1cdc56bc733572e04e0039d81bf86bd088c5abcccc8127ae29563a8c97af"
     }
   }
 }
