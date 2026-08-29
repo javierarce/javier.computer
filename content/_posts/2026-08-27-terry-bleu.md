@@ -1,6 +1,6 @@
 ---
 layout: photos/photo
-title: "Terry Blue"
+title: "Terry Bleu"
 date: "2026-08-27 23:28:37 +0200"
 category: photo
 tag: photo
@@ -25,10 +25,10 @@ filenames:
   - filename: 2026-08-27-Amsterdam-R0022852
     ratio: 3/2
 places:
- - terry-blue
+ - terry-bleu
 ---
 Otro lugar especial que descubrí en esta visita relámpago a Ámsterdam: [Terry
-Blue](/maps/amsterdam/terry-blue), un estudio de risografía, serigrafía,
+Bleu](/maps/amsterdam/terry-bleu), un estudio de risografía, serigrafía,
 sello editorial y tienda de fanzines, con una excelente selección
 de publicaciones independientes de todo el mundo. Por desgracia el [catálogo de
 su web](https://www.terrybleu.com/collections/catalogue) no incluye todo lo que

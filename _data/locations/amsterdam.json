@@ -19,8 +19,14 @@
       "impresión"
     ],
     "updated_at": "2026-08-27",
-    "last_updated": "2026-08-27T00:00:00+00:00",
-    "post_references": []
+    "last_updated": "2026-08-27T23:28:37+02:00",
+    "post_references": [
+      {
+        "url": "/2026/08/27/terry-bleu",
+        "title": "Terry Bleu",
+        "date": "2026-08-27 23:28:37 +0200"
+      }
+    ]
   },
   {
     "layout": "place",
