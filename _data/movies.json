@@ -1,7 +1,147 @@
 {
-  "updated_at": "2026-08-02",
-  "count": 1085,
+  "updated_at": "2026-09-12",
+  "count": 1099,
   "movies": [
+    {
+      "watched_on": "2026-09-12",
+      "title": "Manhunter",
+      "year": 1986,
+      "rating": 5,
+      "liked": true,
+      "stars": "★★★★★",
+      "rewatched": true,
+      "permalink": "manhunter/1"
+    },
+    {
+      "watched_on": "2026-09-12",
+      "title": "The Trial",
+      "year": 1962,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": true,
+      "permalink": "the-trial"
+    },
+    {
+      "watched_on": "2026-09-06",
+      "title": "The Beloved",
+      "year": 2026,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "the-beloved-2026"
+    },
+    {
+      "watched_on": "2026-09-05",
+      "title": "Punch-Drunk Love",
+      "year": 2002,
+      "rating": 4.5,
+      "liked": true,
+      "stars": "★★★★½",
+      "rewatched": true,
+      "permalink": "punch-drunk-love"
+    },
+    {
+      "watched_on": "2026-08-30",
+      "title": "It Ends",
+      "year": 2025,
+      "rating": 2,
+      "liked": false,
+      "stars": "★★",
+      "rewatched": false,
+      "permalink": "it-ends"
+    },
+    {
+      "watched_on": "2026-08-29",
+      "title": "Le Sabotier du Val de Loire",
+      "year": 1956,
+      "rating": null,
+      "liked": false,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "le-sabotier-du-val-de-loire"
+    },
+    {
+      "watched_on": "2026-08-29",
+      "title": "The Woman in the Window",
+      "year": 1944,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "the-woman-in-the-window"
+    },
+    {
+      "watched_on": "2026-08-24",
+      "title": "Hell in the Pacific",
+      "year": 1968,
+      "rating": 4,
+      "liked": false,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "hell-in-the-pacific"
+    },
+    {
+      "watched_on": "2026-08-18",
+      "title": "La Jetée",
+      "year": 1962,
+      "rating": null,
+      "liked": true,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "la-jetee"
+    },
+    {
+      "watched_on": "2026-08-16",
+      "title": "BlackBerry",
+      "year": 2023,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "blackberry-2023"
+    },
+    {
+      "watched_on": "2026-08-15",
+      "title": "There Will Come Soft Rains",
+      "year": 1984,
+      "rating": null,
+      "liked": true,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "there-will-come-soft-rains"
+    },
+    {
+      "watched_on": "2026-08-09",
+      "title": "Light Years",
+      "year": 1991,
+      "rating": null,
+      "liked": false,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "light-years-1991"
+    },
+    {
+      "watched_on": "2026-08-08",
+      "title": "Plus One",
+      "year": 2019,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "plus-one-2019"
+    },
+    {
+      "watched_on": "2026-08-07",
+      "title": "Election",
+      "year": 1999,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": true,
+      "permalink": "election"
+    },
     {
       "watched_on": "2026-08-02",
       "title": "Pauline at the Beach",

@@ -1,9 +1,10 @@
 ---
 title: "Manhunter"
 year: 1986
-rating: 4.5
-stars: "★★★★½"
-rewatched: false
-permalink: "manhunter"
-watched_on: 2022-06-28
+rating: 5
+stars: "★★★★★"
+liked: true
+rewatched: true
+permalink: "manhunter/1"
+watched_on: 2026-09-12
 ---
