@@ -1,7 +1,77 @@
 {
-  "updated_at": "2026-09-12",
-  "count": 1099,
+  "updated_at": "2026-09-25",
+  "count": 1106,
   "movies": [
+    {
+      "watched_on": "2026-09-24",
+      "title": "Fury",
+      "year": 1936,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "fury"
+    },
+    {
+      "watched_on": "2026-09-24",
+      "title": "The Graduate",
+      "year": 1967,
+      "rating": 4,
+      "liked": false,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "the-graduate"
+    },
+    {
+      "watched_on": "2026-09-24",
+      "title": "Stagecoach",
+      "year": 1939,
+      "rating": 4,
+      "liked": false,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "stagecoach"
+    },
+    {
+      "watched_on": "2026-09-20",
+      "title": "Sullivan&#039;s Travels",
+      "year": 1941,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "sullivans-travels"
+    },
+    {
+      "watched_on": "2026-09-18",
+      "title": "The End of Oak Street",
+      "year": 2026,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "the-end-of-oak-street"
+    },
+    {
+      "watched_on": "2026-09-16",
+      "title": "Tony",
+      "year": 2026,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "tony-2026"
+    },
+    {
+      "watched_on": "2026-09-13",
+      "title": "Nine to Five",
+      "year": 1980,
+      "rating": 3.5,
+      "liked": true,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "nine-to-five"
+    },
     {
       "watched_on": "2026-09-12",
       "title": "Manhunter",
