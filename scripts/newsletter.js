@@ -46,7 +46,7 @@ class Newsletter {
     try {
       const response = await fetch("https://api.javier.computer/captcha");
       const data = await response.json();
-      return data; // { a, b, signature }
+      return data; // { a, b, id, expires, signature }
     } catch (err) {
       // Fallback in case the endpoint is unreachable
       const a = Math.floor(Math.random() * 10) + 1;
@@ -104,6 +104,15 @@ class Newsletter {
     }
   }
 
+  // A challenge is good for one subscription, and runs out after an hour, so a
+  // failed attempt needs a new one before the next.
+  async refreshCaptcha() {
+    this.captcha = await this.generateCaptcha();
+    this.$captchaInput.value = "";
+    this.$captchaInput.placeholder = `¿Cuánto es ${this.captcha.a} + ${this.captcha.b}?`;
+    this.onWriting();
+  }
+
   async subscribe() {
     const timeTaken = (Date.now() - this.startTime) / 1000;
 
@@ -128,6 +137,8 @@ class Newsletter {
         a: this.captcha.a,
         b: this.captcha.b,
         answer: parseInt(this.$captchaInput.value, 10),
+        id: this.captcha.id,
+        expires: this.captcha.expires,
         signature: this.captcha.signature,
       },
     };
@@ -161,12 +172,12 @@ class Newsletter {
         this.disabled = true;
         this.$sendButton.classList.add("is-disabled");
 
-        this.captcha = await this.generateCaptcha();
-        this.$captchaInput.placeholder = `¿Cuánto es ${this.captcha.a} + ${this.captcha.b}?`;
+        await this.refreshCaptcha();
       } else {
         this.$message.innerText =
           "¡Ya estabas en la lista! Busca un email de confirmación en tu bandeja de entrada (o spam). Si no lo encuentras, envíame un mensaje para que pueda ayudarte.";
         this.$form.classList.add("is-error");
+        await this.refreshCaptcha();
       }
     } catch (err) {
       console.error("Subscription error:", err);
@@ -175,6 +186,7 @@ class Newsletter {
       this.$message.innerText =
         "¡Ups! Algo salió mal. Por favor, inténtalo de nuevo más tarde o envíame un mensaje para que pueda ayudarte.";
       this.$form.classList.add("is-error");
+      await this.refreshCaptcha();
     }
   }
 
