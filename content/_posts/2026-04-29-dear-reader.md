@@ -4,6 +4,7 @@ title: "Dear Reader"
 date: "2026-04-29 18:42:40 +0200"
 tags: [newsletter]
 syndication:
+  - https://mastodon.social/@javierarce/117410225393352637
   - https://bsky.app/profile/javier.bsky.social/post/3mlangupgs22u
   - https://mastodon.social/@javierarce/116528705407374054
 ---

@@ -1,7 +1,67 @@
 {
-  "updated_at": "2026-09-25",
-  "count": 1106,
+  "updated_at": "2026-10-11",
+  "count": 1112,
   "movies": [
+    {
+      "watched_on": "2026-10-11",
+      "title": "Taste of Fear",
+      "year": 1961,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "taste-of-fear"
+    },
+    {
+      "watched_on": "2026-10-11",
+      "title": "Mad Love",
+      "year": 1935,
+      "rating": 3.5,
+      "liked": true,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "mad-love"
+    },
+    {
+      "watched_on": "2026-10-10",
+      "title": "Spider-Man: Brand New Day",
+      "year": 2026,
+      "rating": 3,
+      "liked": false,
+      "stars": "★★★",
+      "rewatched": false,
+      "permalink": "spider-man-brand-new-day"
+    },
+    {
+      "watched_on": "2026-10-04",
+      "title": "Cure",
+      "year": 1997,
+      "rating": 4,
+      "liked": false,
+      "stars": "★★★★",
+      "rewatched": false,
+      "permalink": "cure"
+    },
+    {
+      "watched_on": "2026-10-02",
+      "title": "Licorice Pizza",
+      "year": 2021,
+      "rating": 4.5,
+      "liked": false,
+      "stars": "★★★★½",
+      "rewatched": true,
+      "permalink": "licorice-pizza/1"
+    },
+    {
+      "watched_on": "2026-09-26",
+      "title": "Déjà Vu",
+      "year": 2006,
+      "rating": 1.5,
+      "liked": false,
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "deja-vu"
+    },
     {
       "watched_on": "2026-09-24",
       "title": "Fury",
