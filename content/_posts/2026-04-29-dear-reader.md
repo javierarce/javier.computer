@@ -16,6 +16,7 @@ Sé que llevo un tiempo desaparecido, pero me apetecía sacudirme la apatía dig
 
 La primera es que llevo unos meses trabajando en una nueva versión de [Dear Reader](https://dearreader.xyz), un lector de blogs y newsletters para Kindle que lancé hace unos años (y que luego abandoné por motivos que no vienen al caso). 
 
+<!-- more -->
 
 Desde que comencé a usar esta nueva versión, la forma que tengo de leer contenido online ha mejorado sustancialmente. Hasta entonces, muchas veces los posts de mis blogs favoritos se quedaban cogiendo polvo en el fondo del lector de feeds, que vaciaba cada uno o dos meses con una sensación de derrota y resignación bastante desagradable. Ahora, en cambio, siento la misma derrota y resignación de antes (vete a saber, quizá el problema no eran mis hábitos de lectura), pero cuando abro mi e-book a la hora del desayuno, me está esperando un libro nuevo con las publicaciones del día anterior. Gracias a que las pantallas de tinta electrónica son tan amables con la vista, y a las pocas posibilidades de distracción que permiten estos dispositivos, mantener la atención y avanzar con las lecturas es muy sencillo. Y con esto, por fin mi lista de artículos pendientes está en mínimos históricos.
 
