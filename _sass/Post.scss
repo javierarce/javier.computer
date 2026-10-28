@@ -69,18 +69,25 @@
       color: var(--link);
     }
 
-    ul {
-      width: var(--width-full);
-      margin: 0 0 0 var(--s-8);
+    ul,
+    ol {
+      margin: 0;
+      padding-left: var(--s-8);
     }
 
-    ul,
-    ul li:last-child {
+    ol li {
+      margin: 0 0 0.4em 0;
+      list-style: decimal;
+    }
+
+    ul li:last-child,
+    ol li:last-child {
       margin-bottom: 0;
     }
 
     p,
-    ul li {
+    ul li,
+    ol li {
       font-size: var(--font-size-body);
     }
 
@@ -89,18 +96,25 @@
       margin: 0;
     }
 
+    // Text-flow blocks share the paragraph column, so they stay aligned
+    // when a wide photo stretches the content container.
     h1,
     h2,
     h3,
     h4,
     h5,
-    h6 {
+    h6,
+    ul,
+    ol,
+    dl,
+    blockquote,
+    pre,
+    .highlighter-rouge,
+    table,
+    hr,
+    details {
       @include content-width;
       max-width: var(--width-full);
-    }
-
-    blockquote {
-      width: var(--width-full);
     }
 
     p {
