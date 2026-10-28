@@ -26,7 +26,7 @@
       {%- assign has_posts = '' %}
       {%- assign is_today = '' %}
       {%- assign url = '' %}
-      {%- for post in site.posts %}
+      {%- for post in collections.posts %}
       {%- assign d = post.date | date: "%Y-%m-%d" %}
       {%- assign dtoday = day | date: '%e' %}
 

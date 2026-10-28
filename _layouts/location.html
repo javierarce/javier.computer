@@ -2,7 +2,7 @@
 layout: base
 className: archive
 ---
-{% assign posts = site.posts | where: "location", page.location -%}
+{% assign posts = collections.posts | where: "location", page.location -%}
 {% assign prev_year = nil -%}
 {% assign prev_month = nil -%}
 {% assign prev_date = nil -%}

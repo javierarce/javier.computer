@@ -2,12 +2,12 @@
 layout: base
 className: photo
 ---
-{% assign matching_location = site.locations | where: 'location', page.location | first %}
+{% assign matching_location = collections.locations | where: 'location', page.location | first %}
 
 <!-- - photos/photo -->
 <div class="content">
   {% include navigation/index.html -%}
-  <div class="photo__collection has-lightbox">
+  <div class="photo__collection has-lightbox" id="more">
     {% if page.hide_title != true -%}
       <div class="photo__header">
         <h3>{{ page.title }}</h3>
@@ -18,7 +18,7 @@ className: photo
     {% else -%}
       {% include photos/single.html photo=page filename=page.filename ratio=page.ratio -%}
     {% endif -%}
-    {% assign content = page.content | strip %}
+    {% assign content = content | strip %}
     {% if content.size > 0 %}
       <div class="post__content">{{ content }}</div>
     {% endif %}

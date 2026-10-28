@@ -23,7 +23,7 @@ className: reportage
     <h3>{{ page.description }}</h3>
   {% endif -%}
 
-  <div class="photo__layout e-content">
+  <div class="photo__layout e-content" id="more">
     {{ content }}
     {% include photos/footer.html photo=page pagination=true -%}
     {% include navigation/footer.html -%}

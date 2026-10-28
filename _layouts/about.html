@@ -17,7 +17,7 @@
     {% include meta.html -%}
     {% include scripts.html -%}
     {% feed_meta -%}
-    {% assign className = layout.className -%}
+    {% assign className = layoutMeta.className -%}
     {% if page.className != null -%}
       {% assign className = page.className -%}
     {% endif -%}
@@ -27,7 +27,9 @@
       const USER_LOCATION = {{ current_location | jsonify }};
     </script>
 
+    {% unless site.development %}
     <script defer data-api="/api/event" data-domain="javier.computer" src="/js/stats.js"></script>
+    {% endunless %}
   </head>
   <body class="layout__{{ className | default: page.category | downcase  }}">
     <div class="content">

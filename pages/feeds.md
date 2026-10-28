@@ -50,7 +50,7 @@ description: RSS feeds for javier.computer
 <h4>Feeds por ciudad</h4>
 
 <div class="cards">
-{% for map in site.maps -%}
+{% for map in collections.maps -%}
 <a href="/feeds/{{ map.location }}.xml" class="card">
 <div class="card-title">{{ map.title }}</div>
 <div class="card-description">Sitios en {{ map.title }}</div>

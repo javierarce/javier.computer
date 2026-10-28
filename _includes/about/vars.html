@@ -1,12 +1,12 @@
 {% assign lang = include.lang | default: "es" -%}
 
-{% assign post_count = site.posts | size -%}
+{% assign post_count = collections.posts | size -%}
 {% assign subscribers_count = site.data.subscribers -%}
-{% assign map_count = site.maps | size -%}
-{% assign places_count = site.places | size -%}
+{% assign map_count = collections.maps | size -%}
+{% assign places_count = collections.places | size -%}
 {% assign photo_count = 0 -%}
 
-{% for post in site.categories['photo'] -%}
+{% for post in collections.postCategories['photo'] -%}
 {% include photos/count.html photo=post -%}
 {% assign photo_count = photo_count | plus: photos_in_post -%}
 {% endfor -%}
@@ -19,7 +19,7 @@
 {% endfor -%}
 
 {% assign drawings = 0 -%}
-{% for post in site.drawings -%}
+{% for post in collections.drawings -%}
 {% assign current_count = post.filenames | size -%}
 {% assign drawings = drawings | plus: current_count -%}
 {% endfor -%}
@@ -33,9 +33,9 @@
 {% assign random_index = site.time | date: "%s" | modulo: phrase_count -%}
 {% assign selected_phrase = random_phrases[random_index] -%}
 
-{% assign books_with_status_read = site.books | where: "status", "read" %}
+{% assign books_with_status_read = collections.books | where: "status", "read" %}
 {% assign sorted_books_read = books_with_status_read | sort: 'read' %}
-{% assign books_with_status_reading = site.books | where: "status", "reading" %}
+{% assign books_with_status_reading = collections.books | where: "status", "reading" %}
 {% assign sorted_books_reading = books_with_status_reading | sort: 'read' %}
 
 {% assign book = sorted_books_read | last %}

@@ -38,7 +38,7 @@ if [ "$RUN_UPDATE" = 1 ]; then
 fi
 
 echo "==> Building (production)"
-JEKYLL_ENV=production bundle exec jekyll build
+npm run build
 
 SSH_CMD="ssh -p $DEPLOY_PORT"
 [ -n "${DEPLOY_SSH_KEY:-}" ] && SSH_CMD="$SSH_CMD -i ${DEPLOY_SSH_KEY/#\~/$HOME}"

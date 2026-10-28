@@ -4,7 +4,7 @@ on:
     types: [created, labeled]
 jobs:
   build:
-    name: A job to create a jekyll post from github issue
+    name: Create a post from a GitHub issue
     runs-on: ubuntu-latest
     if: github.event.comment.body == 'publish' 
       && contains(github.event.issue.labels.*.name, 'post') 
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout main branch
         uses: actions/checkout@master
 
-      - name: Create jekyll post file
+      - name: Create post file
         if: success() 
         run: |
           DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
@@ -40,17 +40,17 @@ jobs:
         env:
           GIT_USER_NAME: 'Javier Arce'
           GIT_USER_EMAIL: 'javierarce@gmail.com'
-          DEFAULT_COMMIT_MESSAGE: 'New jekyll post create from github issue'
+          DEFAULT_COMMIT_MESSAGE: 'Create post from GitHub issue'
       - name: Push changes
         if: success()
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }} 
           branch: main                
-      - name: Deploy site
-        uses: helaili/jekyll-action@v2
-        with:
-          token: ${{ secrets.GH_TOKEN }}  
+  deploy:
+    needs: build
+    uses: ./.github/workflows/deploy.yml
+    secrets: inherit
   label:
     needs: [build]
     runs-on: ubuntu-latest

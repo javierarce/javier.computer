@@ -6,7 +6,7 @@ className: Movies
   {% include navigation/index.html -%}
 
 {% assign current_year = page.movie_year -%}
-{% assign sorted_movies = site.movies | sort: 'watched_on' | reverse -%}
+{% assign sorted_movies = collections.movies | sort: 'watched_on' | reverse -%}
 {% assign grouped_movies = sorted_movies | group_by_exp: "movie", "movie.watched_on | date: '%B %Y'" -%}
 
 <div class="movies date-list">

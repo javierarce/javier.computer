@@ -17,7 +17,7 @@ creativo, diseñador ético, lector atento, ilustrador casual, fanzinero frustra
 fotógrafo compulsivo, y un humano un poco tonto, si me preguntas.</p>
 
 {% assign current_location = site.data.location.cities | where: "slug", site.data.location.current | first %}
-{% assign current_city_map = site.maps | where: "location", current_location.slug | first %}
+{% assign current_city_map = collections.maps | where: "location", current_location.slug | first %}
 <p>Ahora mismo estoy en {% if current_city_map %}<a href="{{ current_city_map.url | relative_url }}">{{ current_location.city }}</a>{% else %}{{ current_location.city }}{% endif %}{% if book_titles != "" %}, leyendo: {{ book_titles }}. {% else %}. {% endif %}El
 último libro que leí fue <a href="/books#{{ book.slug }}" class="book-title">{{ book.title }}</a> de {{ book.author }}. La última película
 que vi fue <a href="https://letterboxd.com/javier/film/{{

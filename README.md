@@ -11,10 +11,57 @@ is my attempt to spend more time thinking, documenting, and making.
 
 ---
 
+## Development
+
+The site runs on **Eleventy 3** and **Node.js 22.18+** (Node 24 is used in CI).
+There is one npm install for the site and its authoring tools; Ruby and Bundler
+are no longer needed.
+
+```sh
+npm ci
+npm run dev             # http://localhost:4001, rebuilds on changes
+npm run dev:drafts      # also includes _drafts
+npm run build           # production site in _site
+npm test                # migration and build regression tests; no external APIs
+npm run lint
+```
+
+`./computer serve`, `serve-drafts`, `stop`, and `build` use the same Eleventy
+build. `PORT=4002 ./computer serve` runs a second workspace on another port.
+Data updates remain explicit: use `./computer update` or the individual data
+actions. A normal build uses the local content and data without fetching APIs.
+Eleventy 3 watches additions and edits; after deleting a content file, restart
+the dev server or run a build to refresh the output and collections.
+
+Content stays in `content/_posts`, `content/_books`, and the other existing
+collection directories. Layouts and includes still use Liquid; the photo and
+reportage tags documented below work unchanged. Existing URLs are preserved,
+including extensionless links backed by `.html` files on the production server.
+
+`eleventy.config.mjs` defines the collections, pagination, generated archives,
+and build steps. `_config.yml` holds site metadata, display preferences, and
+the asset version. Bump `version` when changing browser JavaScript or styles.
+The small modules in `_build/` handle front matter and URLs, Liquid tags and
+filters, Markdown rendering, and places/feeds. Sass compiles the existing
+styles; Prism highlights code blocks with the existing CSS classes.
+
+Builds generate map data in memory and write feeds, CSV exports, redirects,
+and new tag/location pages directly into `_site`. They do not create or modify
+content files. Existing handwritten location pages retain their titles.
+The reportage editor's `tools/reportages.json` is generated only by the dev
+server, never by a production build. Production builds clear the output first.
+
+GitHub Actions installs Node dependencies, runs tests, updates data, builds,
+and uploads `_site` using the existing rsync deployment. `deploy.sh` and
+`release` also build with Eleventy. The issue-publishing workflow calls that
+same deployment workflow after creating a post.
+
+---
+
 ## The `computer` command
 
 One menu for everything this site needs: creating content, refreshing the data
-files, and running Jekyll.
+files, and running Eleventy.
 
 ```sh
 ./computer              # open the menu
@@ -49,7 +96,7 @@ detected from the photo filenames, the date read off the first photo) — press
 | `movies`, `books`, `places`, `subscribers`, `syndication` | One data source at a time, without the picker |
 | `standard`, `standard-dry` | Publish to standard.site over the AT Protocol |
 | `filenames` | Rebuild a post's `filenames:` block from its `{% photo %}` tags |
-| `serve`, `serve-drafts`, `stop`, `build` | Jekyll |
+| `serve`, `serve-drafts`, `stop`, `build` | Eleventy |
 | `format`, `lint` | Prettier and ESLint |
 
 Dates accept `now`, `yesterday`, `3 days ago`, `last friday`, `in 2 weeks`,
@@ -125,7 +172,7 @@ and marked `draft`), then the newest posts, listed as date and title and
 filterable with `/`. The editor is `$VISUAL`, then `$EDITOR`, then the first of
 `nvim`, `vim`, `code -w`, `nano` or `open -t` found on your `PATH`.
 
-`./computer serve` — or `s`, from anywhere in the menu — starts Jekyll in the
+`./computer serve` — or `s`, from anywhere in the menu — starts Eleventy in the
 background and gives the menu back, so you can keep writing while it builds. A
 spinner waits for the site to answer on `localhost:4001` — press any key to stop
 watching and get on with it. The server outlives the CLI: `s` then opens a small

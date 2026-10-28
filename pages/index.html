@@ -10,7 +10,7 @@ permalink: pages
   <div class="content__inner">
     <h3>Pages</h3>
     <table>
-      {% for page in site.pages -%}
+      {% for page in collections.pages -%}
         {% if page.layout == 'page' and page.permalink -%}
           <tr>
             <td>

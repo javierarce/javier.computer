@@ -11,7 +11,7 @@ category: tags
 
   <div class="tags">
     <ul class="tags__list">
-      {% for tag in site.tags -%}
+      {% for tag in collections.postTags -%}
       {% if tag[0] == "photo" -%}{% continue -%}{% endif -%}
       <li class="tags__item">
         <a href="/tags/{{ tag[0] }}" class="tags__link">{{ tag[0] | capitalize }}</a>

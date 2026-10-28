@@ -5,7 +5,7 @@ category: tags
 ---
 {% assign posts = '' | split: ',' -%}
 
-{% for post in site.posts -%}
+{% for post in collections.posts -%}
   {% for tag in post.tags -%}
     {% if tag == page.tag -%}
       {% assign posts = posts | push: post -%}

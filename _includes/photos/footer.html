@@ -1,4 +1,4 @@
-{% assign matching_location = site.locations | where: "location",
+{% assign matching_location = collections.locations | where: "location",
 include.photo.location | first -%}
 <div class="photo__footer">
   <div class="post__footer">

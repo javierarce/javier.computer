@@ -1021,7 +1021,7 @@ export function confirm(message, { danger = false, details = [] } = {}) {
 
 const SPINNER = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"];
 
-// A spinner for work happening outside this process (the background Jekyll
+// A spinner for work happening outside this process (the background Eleventy
 // build). Resolves with whatever `check()` returns as soon as it is truthy,
 // with "detached" if a key is pressed first, or with "timeout" if neither
 // happens in time. Nothing is cancelled in any of those cases: this only
@@ -1085,7 +1085,7 @@ export function pause(message = "Press any key to go back") {
   });
 }
 
-// Hands the terminal over to a child process (jekyll, node scripts, the
+// Hands the terminal over to a child process (eleventy, node scripts, the
 // reading TUI) and takes it back when the child exits.
 // `clear: false` keeps the previous command's output on screen, so a sequence
 // of commands reads as one transcript.

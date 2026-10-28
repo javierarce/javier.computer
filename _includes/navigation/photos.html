@@ -1,5 +1,5 @@
-{% assign matching_location = site.locations | where: 'location', page.location | first -%}
-{% if layout.grid == true -%}
+{% assign matching_location = collections.locations | where: 'location', page.location | first -%}
+{% if layoutMeta.grid == true -%}
   {% assign grid = '/grid' -%}
 {% else -%}
   {% assign grid = '' -%}
@@ -7,7 +7,7 @@
 
 <div class="navigation__links">
   {% unless page.hide_location -%}
-  {% if page.location != nil %}
+  {% if matching_location %}
     <a
       class="navigation__link {% if page.category == 'photos' %}is-selected{% endif %}"
       href="/photos/{{ page.location }}{{ grid }}"

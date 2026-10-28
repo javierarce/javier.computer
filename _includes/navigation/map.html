@@ -1,4 +1,4 @@
-{% assign matching_location = site.locations | where: "location", page.location | first %}
+{% assign matching_location = collections.locations | where: "location", page.location | first %}
 
 <div class="navigation__links">
   <a class="navigation__link" href="/maps">Mapas</a>

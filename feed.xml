@@ -11,11 +11,11 @@ layout: none
     <atom:link href="{{ page.url | absolute_url }}" rel="self" type="application/atom+xml" />
     <link>{{ site.url }}</link>
     <atom:link href="{{ site.url }}/{{ page.path }}" rel="self" type="application/rss+xml" />
-    <lastBuildDate>{% for post in site.posts limit:1 %}{{ post.date | date_to_rfc822 }}{% endfor %}</lastBuildDate>
+    <lastBuildDate>{% for post in collections.posts limit:1 %}{{ post.date | date_to_rfc822 }}{% endfor %}</lastBuildDate>
     {% assign feed_items = site.feed_items | default: 10 %}
-    {% for post in site.posts limit:feed_items %}
+    {% for post in collections.posts limit:feed_items %}
 
-    {% assign matching_location = site.locations | where: "location", post.location | first %}
+    {% assign matching_location = collections.locations | where: "location", post.location | first %}
 
     <item>
       <title>{{ post.title | xml_escape }}</title>

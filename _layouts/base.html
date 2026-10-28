@@ -1,4 +1,4 @@
-{% assign className = layout.className -%}
+{% assign className = layoutMeta.className -%}
 {% if page.className != null -%}
   {% assign className = page.className -%}
 {% endif -%}
@@ -30,7 +30,9 @@
       title="Javier's computer &middot; Photos"
     >
 
+    {% unless site.development %}
     <script defer data-api="/api/event" data-domain="javier.computer" src="/js/stats.js"></script>
+    {% endunless %}
     {% if page.url contains '/search' or page.name == 'search.md' %}
       <script src="https://unpkg.com/lunr/lunr.js"></script>
       <script src="{{ 'scripts/search.js' | relative_url }}?version={{site.version}}"></script>

@@ -7,11 +7,11 @@ category: page
 permalink: books
 library: books
 ---
-{% assign all_books_with_read = site.books | where: 'status', 'read' -%}
+{% assign all_books_with_read = collections.books | where: 'status', 'read' -%}
 {% assign sorted_books = all_books_with_read | sort: 'read' | reverse -%}
 {% assign grouped_books = sorted_books | group_by_exp: 'book', "book.read | date: '%Y'" -%}
 
-{% assign books_with_status_reading = site.books | where: 'status', 'reading' -%}
+{% assign books_with_status_reading = collections.books | where: 'status', 'reading' -%}
 {% assign sorted_books_reading = books_with_status_reading | sort: 'started' | reverse -%}
 
 <div class="books">
