@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 import fs from "fs";
-import fg from "fast-glob";
 import yaml from "js-yaml";
 import path from "path";
 
@@ -93,7 +92,7 @@ class BookLibrary {
     if (!fs.existsSync(this.directory)) {
       fs.mkdirSync(this.directory, { recursive: true });
     }
-    const files = await fg(this.pattern);
+    const files = await Array.fromAsync(fs.promises.glob(this.pattern));
     this.allBooks = [];
 
     for (const file of files) {

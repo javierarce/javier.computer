@@ -14,7 +14,7 @@ className: page
       {% endif -%}
       {{ content }}
 
-      {% if page.show_date != false and page.date -%}
+      {% if page.show_date != false and page.hasDate -%}
         <div class="page__date">{{ page.date | date: '%B %d, %Y' }}</div>
       {% endif -%}
     </div>

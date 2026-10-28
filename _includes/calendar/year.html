@@ -4,7 +4,7 @@
 {% assign today_str = "now" | date: "%Y-%m-%d" %}
 
 {% assign post_dates = "" %}
-{% for post in site.posts %}
+{% for post in collections.posts %}
   {% assign post_year = post.date | date: "%Y" %}
   {% if post_year == cal_year %}
     {% assign pd = post.date | date: "%Y-%m-%d" %}

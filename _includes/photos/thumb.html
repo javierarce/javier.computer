@@ -1,6 +1,6 @@
 {% assign file = photo.filenames | first %}
 {% assign id = photo.ids | first %}
-{% assign matching_location = site.locations | where: "location", photo.location | first %}
+{% assign matching_location = collections.locations | where: "location", photo.location | first %}
 
 {% if file %}
 

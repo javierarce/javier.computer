@@ -2,8 +2,8 @@
   <h4 class="tags__title">Ciudades</h4>
 
   <div class="tags__list">
-    {% for location in site.locations %}
-      {% assign post_count = site.posts | where: "location", location.location | size %}
+    {% for location in collections.locations %}
+      {% assign post_count = collections.posts | where: "location", location.location | size %}
       {% if post_count > 0 %}
         <div class="tags__listItem">
           <a href="/in/{{ location.location }}">{{ location.title }}</a>

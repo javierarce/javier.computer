@@ -2,7 +2,7 @@
   <h4 class="tags__title">Mapas</h4>
 
   <div class="tags__list">
-    {% for map in site.maps %}
+    {% for map in collections.maps %}
       {% assign place_count = site.data.locations[map.location] | size %}
       {% if place_count > 0 %}
         <div class="tags__listItem">

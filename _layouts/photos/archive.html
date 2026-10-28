@@ -3,7 +3,7 @@ layout: base
 className: photos
 category: photos
 ---
-{% assign content = site.posts | concat: site.photos -%}
+{% assign content = collections.posts | concat: collections.photos -%}
 {% assign locations = content | map: 'location' | join: ',' | split: ',' | uniq | compact | sort -%}
 <!--- photos/archive -->
 <div class="content">

@@ -6,7 +6,7 @@ className: drawings
   {% include navigation/index.html -%}
   <div class="drawings__thumbs">
     <div class="drawings__content">
-      {% for drawing in site.drawings -%}
+      {% for drawing in collections.drawings -%}
         {% assign thumb = drawing.thumb -%}
         <div class="drawing">
           <a href="{{ drawing.url }}" class="drawing__link"

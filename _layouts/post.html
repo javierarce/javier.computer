@@ -10,7 +10,7 @@ category: posts
     <a class="p-author h-card" href="https://javier.computer" style="display:none">{{ site.author }}</a>
     <a href="{{ page.url }}" class="p-name" style="display:none">{{ page.title }}</a>
     <div class="post__content{% if page.extraClassName %} {{ page.extraClassName }}{% endif %} e-content">
-      {{ content }}
+      {{ content | replace: '<!-- more -->', '<span id="more"></span>' }}
     </div>
 
     {% include post/footer.html -%}

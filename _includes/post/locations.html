@@ -9,7 +9,7 @@
 {% assign unique_locations = "" | split: "" -%}
 
 {% if page_location -%}
-{% assign map_exists = site.maps | where: "location", page_location | first -%}
+{% assign map_exists = collections.maps | where: "location", page_location | first -%}
 {% if map_exists -%}
 {% assign unique_locations = unique_locations | push: page_location -%}
 {% endif -%}
@@ -17,9 +17,9 @@
 
 {% if page.places -%}
 {% for place_pid in page.places -%}
-{% assign place = site.places | where: "pid", place_pid | first -%}
+{% assign place = collections.places | where: "pid", place_pid | first -%}
 {% if place -%}
-{% assign map_exists = site.maps | where: "location", place.location | first -%}
+{% assign map_exists = collections.maps | where: "location", place.location | first -%}
 {% unless unique_locations contains place.location -%}
 {% if map_exists -%}
 {% assign unique_locations = unique_locations | push: place.location -%}
@@ -32,7 +32,7 @@
 {% if unique_locations.size > 0 -%}
 {% for location in unique_locations -%}
 
-{% assign matching_location = site.locations | where: "location", location | first -%}
+{% assign matching_location = collections.locations | where: "location", location | first -%}
 <a href="/in/{{ location }}" class="post__location">{{ matching_location.title }}</a>{% unless forloop.last -%}
 {% endunless -%}
 {% endfor -%}

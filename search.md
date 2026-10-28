@@ -16,7 +16,7 @@ category: posts
 
 <script>
   window.store = {
-    {% for post in site.posts %}
+    {% for post in collections.posts %}
       {%- comment -%}
         strip_html drops href attributes, so collect each link as {url, text}.
         The anchor text is what survives into "content", so search.js uses it to
@@ -75,7 +75,7 @@ category: posts
     {%- endcomment -%}
     {% for city in site.data.locations %}
       {%- assign city_key = city[0] -%}
-      {%- assign city_map = site.maps | where: "location", city_key | first -%}
+      {%- assign city_map = collections.maps | where: "location", city_key | first -%}
       {%- comment -%}
         Only cities with a map of their own: site.data.locations also holds
         older entries ("unknown", "nyc") that nothing renders, and a result

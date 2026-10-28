@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  workflow_call:
 
 jobs:
   deploy:
@@ -12,29 +13,24 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: main
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
           cache: npm
 
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: "3.3"
-          bundler-cache: true
-
       - name: Install Node dependencies
-        run: |
-          npm ci
-          cd _scripts && npm ci
+        run: npm ci
+
+      - name: Test
+        run: npm test
 
       - name: Update data
         run: node _scripts/update.js
 
       - name: Build
-        run: bundle exec jekyll build
-        env:
-          JEKYLL_ENV: production
+        run: npm run build
 
       - name: Deploy
         run: |

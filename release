@@ -23,7 +23,7 @@ fi
 git stash push --include-untracked -m "release: temp stash"
 
 # Build into a separate directory to avoid conflicts with the dev server
-JEKYLL_ENV=production bundle exec jekyll build -d _site_release
+npm run build -- --output=_site_release
 
 # Sync to server
 rsync -avz --exclude='node_modules' -e "ssh -p $DEPLOY_PORT" _site_release/ "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH"

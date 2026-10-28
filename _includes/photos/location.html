@@ -1,4 +1,4 @@
-{% assign matching_location = site.locations | where: 'location', include.page.location | first -%}
+{% assign matching_location = collections.locations | where: 'location', include.page.location | first -%}
 
 {% if matching_location -%}
   <a href="/in/{{ include.page.location -}}" class="post__location">{{ matching_location.title }}</a>

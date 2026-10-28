@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 // One entry point for everything this site needs day to day: creating posts,
-// reportages and photo entries, refreshing the data files, and running Jekyll.
+// reportages and photo entries, refreshing the data files, and running Eleventy.
 //
 //   ./computer            open the menu
 //   ./computer post       jump straight to an action
@@ -747,7 +747,7 @@ const load = async (loader) => {
   } catch (error) {
     if (error.code === "ERR_MODULE_NOT_FOUND") {
       throw new Error(
-        `${error.message}\nRun "npm install" in _scripts/ before updating data.`,
+        `${error.message}\nRun "npm ci" in the repository root before updating data.`,
       );
     }
     throw error;
@@ -831,7 +831,7 @@ const dataTask = (source) => async () => {
    Dev server
 ============================================ */
 
-// Jekyll takes long enough to build this site that watching it happen is dead
+// Eleventy takes long enough to build this site that watching it happen is dead
 // time, so the server runs detached and the menu stays usable while it builds.
 async function startServer({ drafts = false } = {}) {
   const current = server.status();
@@ -855,7 +855,7 @@ async function startServer({ drafts = false } = {}) {
 
     await server.stop();
   } else if (await server.ready()) {
-    // Somebody else owns the port — another workspace, or a `jekyll serve`
+    // Somebody else owns the port — another workspace, or a `npm run dev`
     // started by hand. Starting now would only fill the log with EADDRINUSE.
     return report([
       `${color.yellow}Something is already listening on ${server.url()}.${color.reset}`,
@@ -1134,8 +1134,8 @@ const PAGES = [
       {
         id: "build",
         label: "Build the site",
-        hint: "jekyll build",
-        run: shell("bundle", ["exec", "jekyll", "build"]),
+        hint: "eleventy",
+        run: shell("npm", ["run", "build"]),
       },
       {
         id: "format",
@@ -1146,8 +1146,8 @@ const PAGES = [
       {
         id: "lint",
         label: "Lint",
-        hint: "eslint _scripts",
-        run: shell("npx", ["eslint", "_scripts/"]),
+        hint: "eslint",
+        run: shell("npm", ["run", "lint"]),
       },
       {
         id: "serve-drafts",

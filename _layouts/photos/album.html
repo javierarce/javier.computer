@@ -4,7 +4,7 @@ className: photos
 ---
 
 {% assign location = page.location | downcase -%}
-{% assign photos = site.photos | concat: site.posts | where: "location", location | sort: 'date' | reverse -%}
+{% assign photos = collections.photos | concat: collections.posts | where: "location", location | sort: 'date' | reverse -%}
 
 <!--- photos/album -->
 <div class="content">

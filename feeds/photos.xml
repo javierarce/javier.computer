@@ -19,10 +19,10 @@ layout: none
   <sy:updateFrequency>{{ site.feed_update_frequency | default: 1 | xml_escape }}</sy:updateFrequency>
   <link>{{ site.url }}</link>
   <atom:link href="{{ site.url }}/feeds/photos.xml" rel="self" type="application/rss+xml" />
-  <lastBuildDate>{{ site.posts | where: "category", "photo" | map: "date" | sort | last | date_to_rfc822 }}</lastBuildDate>
+  <lastBuildDate>{{ collections.posts | where: "category", "photo" | map: "date" | sort | last | date_to_rfc822 }}</lastBuildDate>
   
-  {% for post in site.posts %}
-    {% assign matching_location = site.locations | where: "location", post.location | first %}
+  {% for post in collections.posts %}
+    {% assign matching_location = collections.locations | where: "location", post.location | first %}
     {% if post.category == 'reportage' %}
       <item>
         <title>{{ post.title | xml_escape }}</title>

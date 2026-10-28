@@ -1,6 +1,6 @@
-// The Jekyll dev server, running in the background so the menu stays usable.
+// The Eleventy dev server, running in the background so the menu stays usable.
 //
-// Jekyll is spawned detached (its own process group, so stopping it takes the
+// Eleventy is spawned detached (its own process group, so stopping it takes the
 // whole tree down) with its output redirected to .computer/serve.log. The pid
 // and how it was started live in .computer/serve.json, so a later `./computer`
 // finds a server it did not start itself.
@@ -70,17 +70,20 @@ export function start({ drafts = false } = {}) {
   fs.writeFileSync(LOG_FILE, "");
   const out = fs.openSync(LOG_FILE, "a");
 
-  const args = ["exec", "jekyll", "serve", "--trace", "--port", String(PORT)];
-  if (drafts) args.splice(3, 0, "--drafts");
+  const args = [
+    path.join(ROOT, "node_modules/@11ty/eleventy/cmd.cjs"),
+    "--serve",
+    `--port=${PORT}`,
+  ];
 
-  const child = spawn("bundle", args, {
+  const child = spawn(process.execPath, args, {
     cwd: ROOT,
-    env: { ...process.env, JEKYLL_ENV: "development" },
+    env: { ...process.env, ELEVENTY_DRAFTS: String(drafts) },
     detached: true,
     stdio: ["ignore", out, out],
   });
 
-  // A child that never starts (no bundle on the PATH) emits "error", and an
+  // A child that never starts emits "error", and an
   // unhandled one would take the menu down with it. There is no terminal to
   // print it to any more, so it goes to the log with everything else.
   child.on("error", (error) => {
@@ -101,8 +104,7 @@ export function start({ drafts = false } = {}) {
   return state;
 }
 
-// Negative pid: the whole process group, since `bundle exec` sits between us
-// and the ruby process actually holding the port.
+// Negative pid: stop the whole process group, including any child processes.
 const signal = (pid, name) => {
   try {
     process.kill(-pid, name);
@@ -136,7 +138,7 @@ export async function stop() {
 }
 
 // Whether something answers on the port — the only honest way to know the
-// build finished, since Jekyll spends a while alive but not yet listening.
+// build finished, since Eleventy spends a while alive but not yet listening.
 export const ready = (port = PORT) =>
   new Promise((resolve) => {
     const socket = net.connect({ port, host: "127.0.0.1" });

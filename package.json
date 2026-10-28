@@ -1,5 +1,5 @@
 {
-  "name": "commands",
+  "name": "javier-computer",
   "bin": {
     "computer": "./_scripts/cli.js",
     "reading": "./_scripts/reading.js",
@@ -8,19 +8,31 @@
   "scripts": {
     "computer": "node _scripts/cli.js",
     "reading": "node _scripts/reading.js",
-    "standard": "node _scripts/standard.js"
+    "standard": "node _scripts/standard.js",
+    "build": "eleventy",
+    "dev": "eleventy --serve --port=4001",
+    "dev:drafts": "ELEVENTY_DRAFTS=true eleventy --serve --port=4001",
+    "test": "node --test _build/*.test.mjs",
+    "lint": "eslint --config _scripts/eslint.config.js _scripts _build eleventy.config.mjs"
   },
   "dependencies": {
-    "fast-glob": "^3.3.3",
-    "fast-xml-parser": "^5.0.8",
-    "gray-matter": "^4.0.3",
-    "js-yaml": "^4.1.1",
-    "node-fetch": "^3.3.2",
-    "node-html-parser": "^6.1.13",
+    "fast-xml-parser": "^5.8.0",
+    "js-yaml": "^4.3.2",
     "ora": "^9.4.1"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^3.1.7",
     "@shopify/prettier-plugin-liquid": "^1.8.3",
-    "prettier": "^3.0.0"
+    "eslint": "^10.4.1",
+    "globals": "^17.6.0",
+    "liquidjs": "^10.21.0",
+    "markdown-it": "^14.1.0",
+    "prettier": "^3.0.0",
+    "prismjs": "^1.30.0",
+    "sass": "^1.96.0"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=22.18.0"
   }
 }

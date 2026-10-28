@@ -12,7 +12,7 @@
 <script type="application/json" id="calendar-posts">
 {
   {% assign first = true %}
-  {% for post in site.posts %}
+  {% for post in collections.posts %}
     {% assign pd = post.date | date: "%Y-%m-%d" %}
     {% if first %}{% assign first = false %}{% else %},{% endif %}
     "{{ pd }}": "{{ post.url }}"

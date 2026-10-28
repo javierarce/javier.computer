@@ -6,7 +6,7 @@ import { pathToFileURL } from "url";
 // Publishes javier.computer to the AT Protocol as standard.site records
 // (https://standard.site): one `site.standard.publication` for the site and one
 // `site.standard.document` per long-form post, then writes the resulting at://
-// URIs into _data/standard.json so the Jekyll build can emit the matching
+// URIs into _data/standard.json so the Eleventy build can emit the matching
 // <link rel="site.standard.document"> tags.
 //
 // Run: BLUESKY_APP_PASSWORD=xxxx node _scripts/standard.js

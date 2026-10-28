@@ -38,7 +38,8 @@ description: List of personal projects
 </div>
 
 <div class="projects__lists">
-{% for year in site.data.projects %}
+{% assign project_years = site.data.projects | sort | reverse %}
+{% for year in project_years %}
 
 <div class="projects__year">
     <h4 class="section-divider">{{ year[0] }}</h4>

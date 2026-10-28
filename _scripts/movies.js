@@ -1,5 +1,4 @@
 import fs from "fs";
-import fetch from "node-fetch";
 import { XMLParser } from "fast-xml-parser";
 
 export class MovieRSSParser {
