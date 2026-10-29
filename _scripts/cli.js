@@ -1031,8 +1031,8 @@ const serverStatus = () => {
 };
 
 // `menu: false` keeps an action out of the list without taking the id away:
-// the single data sources and the two other ways into the dev server are
-// still `./computer movies` and `./computer stop`.
+// the single data sources and starting with drafts remain available as
+// `./computer movies` and `./computer serve-drafts`.
 const PAGES = [
   {
     id: "write",
@@ -1126,6 +1126,12 @@ const PAGES = [
     actions: [
       serverAction,
       {
+        id: "stop",
+        label: "Stop the dev server",
+        hint: "stop this checkout's background server",
+        run: stopServer,
+      },
+      {
         id: "filenames",
         label: "Sync photo filenames",
         hint: "rebuild filenames: from the body",
@@ -1154,12 +1160,6 @@ const PAGES = [
         label: "Start the dev server with drafts",
         menu: false,
         run: () => startServer({ drafts: true }),
-      },
-      {
-        id: "stop",
-        label: "Stop the dev server",
-        menu: false,
-        run: stopServer,
       },
     ],
   },
