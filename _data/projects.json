@@ -1,6 +1,11 @@
 {
   "2026": [
     {
+      "title": "Superlinea",
+      "url": "https://superlinea.app",
+      "description": "A vector graphics editor for macOS and for you."
+    },
+    {
       "title": "AnkiTron",
       "url": "https://ankitron.com",
       "description": "A desktop mac app for managing and studying Anki decks."
