@@ -176,9 +176,10 @@ filterable with `/`. The editor is `$VISUAL`, then `$EDITOR`, then the first of
 background and gives the menu back, so you can keep writing while it builds. A
 spinner waits for the site to answer on `localhost:4001` — press any key to stop
 watching and get on with it. The server outlives the CLI: `s` then opens a small
-screen with the uptime, the log (`.computer/serve.log`), restart and stop, and
-`./computer stop` stops it from anywhere. Set `PORT` to run a second copy of the
-site somewhere else:
+screen with the uptime, the log (`.computer/serve.log`), restart and stop.
+You can also choose **Tools → Stop the dev server**, or run `./computer stop`
+from the same checkout. Each checkout tracks its own background server.
+Set `PORT` to run a second copy of the site somewhere else:
 
 ```sh
 PORT=4002 ./computer serve
