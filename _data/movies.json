@@ -1,7 +1,107 @@
 {
-  "updated_at": "2026-10-11",
-  "count": 1112,
+  "updated_at": "2026-11-05",
+  "count": 1122,
   "movies": [
+    {
+      "watched_on": "2026-11-05",
+      "title": "Primetime",
+      "year": 2026,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "primetime-2026"
+    },
+    {
+      "watched_on": "2026-11-04",
+      "title": "Bad Apples",
+      "year": 2025,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "bad-apples-2025"
+    },
+    {
+      "watched_on": "2026-11-03",
+      "title": "The Dog Stars",
+      "year": 2026,
+      "rating": 1.5,
+      "liked": false,
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "the-dog-stars"
+    },
+    {
+      "watched_on": "2026-11-01",
+      "title": "Hellraiser",
+      "year": 1987,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "hellraiser"
+    },
+    {
+      "watched_on": "2026-11-01",
+      "title": "Shaun the Sheep: The Beast of Mossy Bottom",
+      "year": 2026,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "shaun-the-sheep-the-beast-of-mossy-bottom"
+    },
+    {
+      "watched_on": "2026-10-25",
+      "title": "Ace in the Hole",
+      "year": 1951,
+      "rating": 4,
+      "liked": false,
+      "stars": "★★★★",
+      "rewatched": true,
+      "permalink": "ace-in-the-hole"
+    },
+    {
+      "watched_on": "2026-10-24",
+      "title": "Pet Sematary",
+      "year": 1989,
+      "rating": 2.5,
+      "liked": false,
+      "stars": "★★½",
+      "rewatched": false,
+      "permalink": "pet-sematary"
+    },
+    {
+      "watched_on": "2026-10-18",
+      "title": "Hope",
+      "year": 2026,
+      "rating": 2,
+      "liked": false,
+      "stars": "★★",
+      "rewatched": false,
+      "permalink": "hope-2026"
+    },
+    {
+      "watched_on": "2026-10-16",
+      "title": "Digger",
+      "year": 2026,
+      "rating": 1.5,
+      "liked": false,
+      "stars": "★½",
+      "rewatched": false,
+      "permalink": "digger-2026"
+    },
+    {
+      "watched_on": "2026-10-12",
+      "title": "The Incomer",
+      "year": 2026,
+      "rating": 3.5,
+      "liked": false,
+      "stars": "★★★½",
+      "rewatched": false,
+      "permalink": "the-incomer"
+    },
     {
       "watched_on": "2026-10-11",
       "title": "Taste of Fear",
