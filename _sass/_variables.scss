@@ -101,6 +101,9 @@
   --font-size-heading-md: var(--text-xl); // perhaps 23px
   --font-size-heading-sm: var(--text-lg);
 
+  /* Optical scale for lining figures set next to lowercase text */
+  --font-scale-numeric: 0.875;
+
   /* --- WEIGHTS --- */
   --weight-light: 300;
   --weight-regular: 400;
