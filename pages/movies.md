@@ -1,5 +1,5 @@
 ---
-title: Movies
+title: Películas
 layout: movies
 className: Movies
 permalink: movies

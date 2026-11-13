@@ -1,5 +1,5 @@
 ---
-title: Projects
+title: Proyectos
 permalink: projects
 layout: simple
 category: projects

@@ -17,6 +17,8 @@ import { buildPlaces, writePlaceFiles } from "./_build/places.mjs";
 import { createMarkdown } from "./_build/markdown.mjs";
 import { mapPlaceResponse } from "./_build/server.mjs";
 
+const capitalize = (text) => text.charAt(0).toUpperCase() + text.slice(1);
+
 process.env.TZ = "Europe/Madrid";
 
 export default function (config) {
@@ -84,7 +86,7 @@ export default function (config) {
         .filter((location) => location && !existingLocations.has(location))
         .map((location) => ({
           location,
-          title: location.charAt(0).toUpperCase() + location.slice(1),
+          title: capitalize(location),
         })),
     };
   });
@@ -221,6 +223,8 @@ export default function (config) {
           .replace(/^\d{4}-\d{2}-\d{2}-/, "")
           .replace(/\.[^.]+$/, "")
           .replaceAll("-", " ");
+      if (!data.title && authored.layout === "tag" && authored.tag)
+        data.page.title = capitalize(String(authored.tag));
       data.page.tags = Array.isArray(authored.tags)
         ? authored.tags
         : authored.tags
@@ -245,6 +249,7 @@ export default function (config) {
         data.eleventyComputed = {
           ...data.eleventyComputed,
           "page.tag": (values) => values.tag,
+          "page.title": (values) => capitalize(values.tag),
         };
       if (data.pagination?.alias === "newLocation")
         data.eleventyComputed = {
@@ -258,7 +263,7 @@ export default function (config) {
           "page.title": (values) =>
             authored.title +
             (values.pagination.pageNumber
-              ? ` - page ${values.pagination.pageNumber + 1}`
+              ? ` - página ${values.pagination.pageNumber + 1}`
               : ""),
         };
     },
@@ -410,7 +415,7 @@ export default function (config) {
   ]) {
     config.addTemplate(`generated/${kind}.liquid`, "", {
       layout: kind,
-      title: kind === "archive" ? "Archivo" : "Movies",
+      title: kind === "archive" ? "Archivo" : "Películas",
       ...(kind === "archive" ? { category: "posts" } : {}),
       pagination: {
         data: `collections.${collection}`,

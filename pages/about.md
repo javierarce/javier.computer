@@ -1,6 +1,6 @@
 ---
 layout: about
-title: Acerca
+title: Sobre mí
 description: "El ordenador de Javier"
 className: About
 category: about
