@@ -75,7 +75,7 @@ test("photo list respects per-image locations in reportage thumbnails", async ()
     '{% include photos/entries.html posts=posts %}',
     { posts: [{ ...data, url: "/2025/08/25/maldiciones-analogicas" }] },
   );
-  assert.equal((html.match(/data-src="https:\/\/img\.javier\.computer\/analog\//g) || []).length, 3);
+  assert.equal((html.match(/data-src="https:\/\/img\.javier\.computer\/analog\//g) || []).length, 4);
   assert.doesNotMatch(html, /img\.javier\.computer\/berlin\//);
   assert.doesNotMatch(html, /photo-strip__more/);
 });
