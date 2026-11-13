@@ -1,0 +1,60 @@
+@use "mixins" as *;
+
+.date-list--photos {
+  gap: var(--s-16);
+}
+
+.photo-entries {
+  gap: var(--s-6);
+}
+
+.date-list__row.is-entry.is-photos {
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--s-4);
+}
+
+.photo-entry__header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+  font-size: var(--font-size-body-sm);
+}
+
+.photo-entry__title {
+  font-size: inherit;
+}
+
+.photo-strip {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: var(--s-1);
+  width: 100%;
+  text-decoration: none;
+
+  &__thumb {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    max-height: 12rem;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: var(--br-subtle);
+
+    &.error {
+      min-height: 0;
+    }
+  }
+}
+
+@include mobile {
+  .photo-strip__thumb {
+    max-height: var(--s-32);
+
+    &.is-extra {
+      display: none;
+    }
+  }
+}

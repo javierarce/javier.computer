@@ -66,6 +66,20 @@ test("Liquid photo blocks keep nesting, captions, and following Markdown links",
   );
 });
 
+test("photo list respects per-image locations in reportage thumbnails", async () => {
+  const liquid = createLiquid(markdown, () => ({}));
+  const { data } = frontMatter(
+    fs.readFileSync("content/_posts/2025-08-25-maldiciones-analogicas.md", "utf8"),
+  );
+  const html = await liquid.parseAndRender(
+    '{% include photos/entries.html posts=posts %}',
+    { posts: [{ ...data, url: "/2025/08/25/maldiciones-analogicas" }] },
+  );
+  assert.equal((html.match(/data-src="https:\/\/img\.javier\.computer\/analog\//g) || []).length, 4);
+  assert.doesNotMatch(html, /img\.javier\.computer\/berlin\//);
+  assert.doesNotMatch(html, /photo-strip__more/);
+});
+
 test("raw HTML, code blocks, and dates retain their meaning", () => {
   const raw =
     '<div class="outer">\n\n<a\n href="/books"\n>Books</a\n>\n\n</div>\n';
@@ -274,7 +288,10 @@ test(
       );
       assert.match(read("tags/migration.html"), /New post/);
       assert.match(read("in/newcity.html"), /New post/);
-      assert.match(read("photos/index.html"), /2 fotos/);
+      assert.match(
+        read("photos/index.html"),
+        /<a href="\/2023\/01\/01\/photo" class="photo-strip"[^>]*>\s*<img class="photo-strip__thumb lazy" data-src="https:\/\/img\.javier\.computer\/newcity\/portrait_640\.webp" style="--aspect-ratio: 2\/3;" alt="">\s*<img class="photo-strip__thumb lazy" data-src="https:\/\/img\.javier\.computer\/newcity\/partner_640\.webp"/,
+      );
       assert.match(read("2023/01/01/photo.html"), /class="photo__row"/);
       assert.match(read("2023/01/01/photo.html"), /partner_1280.jpg/);
       assert.match(read("2023/01/01/photo.html"), /href="\/in\/newcity"/);

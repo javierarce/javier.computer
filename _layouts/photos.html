@@ -5,10 +5,8 @@ className: photos
 <div class="content">
   {% include navigation/index.html %}
 
-  <div class="photo__feed">
-    {% for post in paginator.posts %}
-      {% include photos/feed.html photo=post %}
-    {% endfor %}
+  <div class="date-list date-list--entries date-list--photos">
+    {% include photos/entries.html posts=paginator.posts %}
   </div>
 
   {% if paginator.total_pages > 1 %}
@@ -35,7 +33,6 @@ className: photos
           {% assign need_ellipsis = true %}
         {% endif %}
       {% endfor %}
-      <a class="pagination__item is-archive" href="/photos/archive">Archivo</a>
     </div>
   {% endif %}
   {% include navigation/footer.html %}
