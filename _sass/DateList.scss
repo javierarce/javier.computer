@@ -16,19 +16,15 @@
     opacity: var(--op-visible);
   }
 
+  // Year filter of the archive: a titled section like tags, cities and maps
   &__years {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: var(--s-3);
-    margin: 0;
     font-variant-numeric: tabular-nums;
     scroll-margin-top: var(--s-4);
   }
 
   &__years-item {
-    font-size: var(--font-size-heading-md);
-    font-weight: var(--weight-medium);
+    margin-right: var(--s-2);
+    font-size: var(--font-size-body-sm);
     opacity: var(--op-light);
     text-decoration: none;
 

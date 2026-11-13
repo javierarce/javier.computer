@@ -3,6 +3,7 @@ layout: about
 title: Acerca
 description: "El ordenador de Javier"
 className: About
+category: about
 weather: true
 permalink: about
 ---
@@ -10,8 +11,6 @@ permalink: about
 {% include about/vars.html lang="es" %}
 
 <div class="section">
-<p class="is-light">This page is available in English <a href="/en/about">here</a>.</p>
-
 <p>Mi nombre es Javier Arce, <em>comme tout le monde</em>. Soy desarrollador
 creativo, diseñador ético, lector atento, ilustrador casual, fanzinero frustrado,
 fotógrafo compulsivo, y un humano un poco tonto, si me preguntas.</p>
@@ -47,27 +46,25 @@ amarillo, una foto de tu tortuga, una tortuga.</p>
 </div>
 
 
+<p class="is-light is-sm" data-update-timestamp="{{ site.time | date: '%s' }}">Este ordenador fue actualizado <span id="time-phrase">el {% include date.html date=site.time %}</span> {{ selected_phrase }}.</p>
+
 <div class="section">
-<h3>Espera, ¡que hay más!</h3>
-
-<div class="cards">
-    <a href="/contact" class="card">
-        <div class="card-title">Contacto</div>
-        <div class="card-description">¿Quieres contarme algo increíble que te ha pasado? ¡Cuéntamelo, quiero saberlo!</div>
+<div class="link-list">
+    <a href="/contact" class="link-list__item">
+        <span class="link-list__title">Contacto</span>
+        <span class="link-list__description">¿Quieres contarme algo increíble que te ha pasado? ¡Cuéntamelo, quiero saberlo!</span>
     </a>
-    <a href="/newsletter" class="card">
-        <div class="card-title">Newsletter</div>
-        <div class="card-description">Suscríbete a mi newsletter para recibir un email cada vez que haga algo extremadamente gracioso.</div>
+    <a href="/newsletter" class="link-list__item">
+        <span class="link-list__title">Newsletter</span>
+        <span class="link-list__description">Suscríbete a mi newsletter para recibir un email cada vez que haga algo extremadamente gracioso.</span>
     </a>
-    <a href="/office-hours" class="card">
-        <div class="card-title">¡Hablemos!</div>
-        <div class="card-description">Agenda una reunión conmigo y hablemos online o en persona.</div>
+    <a href="/office-hours" class="link-list__item">
+        <span class="link-list__title">¡Hablemos!</span>
+        <span class="link-list__description">Agenda una reunión conmigo y hablemos online o en persona.</span>
     </a>
-    <a href="/feeds" class="card">
-        <div class="card-title">RSS</div>
-        <div class="card-description">¡No te pierdas nada! Suscríbete a cualquiera de los feeds disponibles en esta web.</div>
+    <a href="/feeds" class="link-list__item">
+        <span class="link-list__title">RSS</span>
+        <span class="link-list__description">¡No te pierdas nada! Suscríbete a cualquiera de los feeds disponibles en esta web.</span>
     </a>
 </div>
 </div>
-
-<p class="is-light is-sm" data-update-timestamp="{{ site.time | date: '%s' }}">Este ordenador fue actualizado <span id="time-phrase">el {{ site.time | date: "%d de %B de %Y" }}</span> {{ selected_phrase }}.</p>

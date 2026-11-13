@@ -345,10 +345,7 @@ export default function (config) {
       .map(exposeFrontMatter)
       .sort(byNewest);
   config.addCollection("homePosts", (api) =>
-    posts(api).filter(
-      (post) =>
-        !post.hidden && post.hide !== true && !post.tags.includes("newsletter"),
-    ),
+    posts(api).filter((post) => !post.hidden && post.hide !== true),
   );
   config.addCollection("photoPosts", (api) =>
     posts(api).filter((post) => !post.hidden && post.tags.includes("photo")),

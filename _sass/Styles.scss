@@ -335,7 +335,8 @@ span.sp {
 }
 
 a.is-reportage::after,
-a.is-photo::after {
+a.is-photo::after,
+a.is-newsletter::after {
   content: "";
   display: inline-block;
   width: 24px;
@@ -349,8 +350,13 @@ a.is-photo::after {
   filter: var(--icon-filter);
 }
 
+a.is-newsletter::after {
+  background-image: url(/img/icons/mail.svg);
+}
+
 a.is-icon-light.is-photo::after,
-a.is-icon-light.is-reportage::after {
+a.is-icon-light.is-reportage::after,
+a.is-icon-light.is-newsletter::after {
   opacity: var(--op-light);
 }
 

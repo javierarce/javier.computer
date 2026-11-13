@@ -17,8 +17,12 @@
     {% assign current_month = month -%}
   {% endif -%}
 
+  {% assign icon = post.category -%}
+  {% if post.tags contains "newsletter" -%}
+    {% assign icon = "newsletter" -%}
+  {% endif -%}
   <li class="date-list__row is-entry h-entry">
-    <a href="{{ post.url }}" class="date-list__entry-title u-url p-name{% if post.category.size > 0 %} is-icon-light is-{{ post.category }}{% endif %}">{{ post.title }}</a>
+    <a href="{{ post.url }}" class="date-list__entry-title u-url p-name{% if icon.size > 0 %} is-icon-light is-{{ icon }}{% endif %}">{{ post.title }}</a>
     <span class="date-list__entry-leader"></span>
     <time class="date-list__entry-date dt-published" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d" }}</time>
   </li>

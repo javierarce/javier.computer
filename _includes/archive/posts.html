@@ -1,16 +1,20 @@
 {% assign current_year = include.year %}
 
 {% if include.all_years.size > 1 %}
-  <nav id="years" class="date-list__years">
-    {% for year in include.all_years %}
-      {% if year == current_year %}
-        <span class="date-list__years-item is-selected">{{ year }}</span>
-      {% elsif year == include.all_years.first %}
-        <a class="date-list__years-item" href="/posts#years">{{ year }}</a>
-      {% else %}
-        <a class="date-list__years-item" href="/posts/{{ year }}#years">{{ year }}</a>
-      {% endif %}
-    {% endfor %}
+  <nav id="years" class="tags date-list__years">
+    <h4 class="tags__title">Posts</h4>
+
+    <div class="tags__list">
+      {% for year in include.all_years %}
+        {% if year == current_year %}
+          <span class="date-list__years-item is-selected">{{ year }}</span>
+        {% elsif year == include.all_years.first %}
+          <a class="date-list__years-item" href="/posts#years">{{ year }}</a>
+        {% else %}
+          <a class="date-list__years-item" href="/posts/{{ year }}#years">{{ year }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
   </nav>
 {% else %}
   <h3 class="date-list__year">{{ current_year }}</h3>
