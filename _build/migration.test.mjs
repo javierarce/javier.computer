@@ -75,7 +75,7 @@ test("photo list respects per-image locations in reportage thumbnails", async ()
     '{% include photos/entries.html posts=posts %}',
     { posts: [{ ...data, url: "/2025/08/25/maldiciones-analogicas" }] },
   );
-  assert.equal((html.match(/data-src="https:\/\/img\.javier\.computer\/analog\//g) || []).length, 4);
+  assert.equal((html.match(/data-src="https:\/\/img\.javier\.computer\/analog\//g) || []).length, 3);
   assert.doesNotMatch(html, /img\.javier\.computer\/berlin\//);
   assert.doesNotMatch(html, /photo-strip__more/);
 });
@@ -290,7 +290,7 @@ test(
       assert.match(read("in/newcity.html"), /New post/);
       assert.match(
         read("photos/index.html"),
-        /<a href="\/2023\/01\/01\/photo" class="photo-strip"[^>]*>\s*<img class="photo-strip__thumb lazy" data-src="https:\/\/img\.javier\.computer\/newcity\/portrait_640\.webp" style="--aspect-ratio: 2\/3;" alt="">\s*<img class="photo-strip__thumb lazy" data-src="https:\/\/img\.javier\.computer\/newcity\/partner_640\.webp"/,
+        /<a href="\/2023\/01\/01\/photo" class="photo-strip"[^>]*>\s*<img class="photo-strip__thumb lazy" data-src="https:\/\/img\.javier\.computer\/newcity\/portrait_640\.webp" style="--aspect-ratio: 2\/3;"[^>]* alt="">\s*<img class="photo-strip__thumb lazy" data-src="https:\/\/img\.javier\.computer\/newcity\/partner_640\.webp"/,
       );
       assert.match(read("2023/01/01/photo.html"), /class="photo__row"/);
       assert.match(read("2023/01/01/photo.html"), /partner_1280.jpg/);

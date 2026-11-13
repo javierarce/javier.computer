@@ -38,7 +38,7 @@
     width: 100%;
     min-width: 0;
     height: auto;
-    max-height: 12rem;
+    max-height: 24rem;
     aspect-ratio: 3 / 2;
     object-fit: cover;
     border-radius: var(--br-subtle);
@@ -49,9 +49,15 @@
   }
 }
 
+// Multi-photo posts use one row of large square crops; single photos stay wide.
+.photo-strip:has(> img:nth-child(2)) .photo-strip__thumb {
+  aspect-ratio: 1;
+  max-height: none;
+}
+
 @include mobile {
   .photo-strip__thumb {
-    max-height: var(--s-32);
+    max-height: 16rem;
 
     &.is-extra {
       display: none;

@@ -1,7 +1,7 @@
 {% comment -%}
   Photo posts grouped by month, with a date/title header and a full-width photo row.
 {% endcomment -%}
-{% assign max = 4 -%}
+{% assign max = 3 -%}
 {% assign max_mobile = 2 -%}
 {% assign current_month = nil -%}
 {% for post in include.posts -%}
@@ -64,7 +64,7 @@
       {% for file in files limit: max -%}
         {% assign ratio = ratios[forloop.index0] -%}
         {% assign location = locations[forloop.index0] -%}
-        <img class="photo-strip__thumb lazy{% if forloop.index > max_mobile %} is-extra{% endif %}" data-src="https://img.javier.computer/{{ location }}/{{ file }}_640.webp"{% if ratio != "" %} style="--aspect-ratio: {{ ratio }};"{% endif %}{% if files.size == 1 %} data-srcset="https://img.javier.computer/{{ location }}/{{ file }}_640.webp 640w, https://img.javier.computer/{{ location }}/{{ file }}_1280.webp 1280w, https://img.javier.computer/{{ location }}/{{ file }}_2880.webp 2880w" sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc(100vw - 64px), 800px"{% endif %} alt="">
+        <img class="photo-strip__thumb lazy{% if forloop.index > max_mobile %} is-extra{% endif %}" data-src="https://img.javier.computer/{{ location }}/{{ file }}_640.webp"{% if ratio != "" %} style="--aspect-ratio: {{ ratio }};"{% endif %} data-srcset="https://img.javier.computer/{{ location }}/{{ file }}_640.webp 640w, https://img.javier.computer/{{ location }}/{{ file }}_1280.webp 1280w, https://img.javier.computer/{{ location }}/{{ file }}_2880.webp 2880w" sizes="{% if files.size == 1 %}(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc(100vw - 64px), 800px{% elsif files.size == 2 %}(max-width: 640px) calc(50vw - 18px), (max-width: 1024px) calc(50vw - 34px), 398px{% else %}(max-width: 640px) calc(50vw - 18px), (max-width: 1024px) calc(33.333vw - 24px), 264px{% endif %}" alt="">
       {% endfor -%}
     </a>
   </li>
