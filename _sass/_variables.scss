@@ -89,8 +89,7 @@
   --text-4xl: 3.052rem; /* 49px */
   --text-5xl: 3.815rem; /* 61px */
 
-  --font-size-body: 23px; // exception to the scale for better readability
-  --font-size-body-sm: var(--text-lg); // 20px
+  --font-size-body: var(--text-lg); // 20px
   --font-size-body-xs: var(--text-md); // 16px
   --font-size-body-xxs: var(--text-sm); // 14px
   --font-size-body-xxxs: var(--text-xs); // 12px
@@ -98,11 +97,14 @@
 
   --font-size-heading-xl: var(--text-5xl);
   --font-size-heading-lg: var(--text-2xl);
-  --font-size-heading-md: var(--text-xl); // perhaps 23px
+  --font-size-heading-md: var(--text-lg);
   --font-size-heading-sm: var(--text-lg);
 
   /* Optical scale for lining figures set next to lowercase text */
   --font-scale-numeric: 0.875;
+
+  /* Secondary text beside the body: post footers, captions, site footer (17.5px) */
+  --font-size-meta: calc(var(--font-size-body) * var(--font-scale-numeric));
 
   /* --- WEIGHTS --- */
   --weight-light: 300;
@@ -192,18 +194,9 @@
 
 @include mobile {
   :root {
-    --font-size-body: var(--text-lg);
-    --font-size-body-sm: var(--text-lg);
-
-    --font-size-body-xs: var(--text-md);
-    --font-size-body-xxs: var(--text-sm);
-    --font-size-body-xxxs: var(--text-xs);
-    --font-size-body-tiny: 11px;
-
+    // Large headings step down one size; everything else matches the root
     --font-size-heading-xl: var(--text-4xl);
-    --font-size-heading-lg: var(--text-1xl);
-    --font-size-heading-md: var(--text-lg);
-    --font-size-heading-sm: var(--text-lg);
+    --font-size-heading-lg: var(--text-xl);
   }
 }
 

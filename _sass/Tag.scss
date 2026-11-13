@@ -16,7 +16,7 @@
     align-items: baseline;
     margin-right: var(--s-2);
     gap: var(--s-1);
-    font-size: var(--font-size-body-sm);
+    font-size: var(--font-size-body);
 
     a {
       color: var(--color-txt-site);
@@ -53,6 +53,6 @@
 
   &__count {
     opacity: var(--op-light);
-    font-size: var(--font-size-body-sm);
+    font-size: var(--font-size-body);
   }
 }
