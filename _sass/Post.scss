@@ -51,7 +51,7 @@
   }
 
   p {
-    width: var(--width-md);
+    width: var(--width-content);
   }
 
   p:last-child {
@@ -118,20 +118,20 @@
     }
 
     p {
-      width: var(--width-md);
+      width: var(--width-content);
       margin: 0;
     }
   }
 
   &__footer {
-    width: var(--width-md);
+    width: var(--width-content);
     margin: 0 auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: var(--s-3);
     line-height: normal;
-    font-size: var(--font-size-body-sm);
+    font-size: var(--font-size-meta);
 
     a,
     open-heart .off {
@@ -185,8 +185,8 @@
     content: "";
     margin-right: var(--s-1);
     display: inline-block;
-    width: 18px;
-    height: 18px;
+    width: 0.9em;
+    height: 0.9em;
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: contain;

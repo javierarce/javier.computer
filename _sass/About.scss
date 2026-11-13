@@ -15,3 +15,18 @@
     gap: var(--s-6);
   }
 }
+
+// Booking calendar: wider than the text column, so the Cal.com embed has room
+// for its three-column layout (details, month, times) instead of stacking them.
+// Kept under 1024px on purpose: above that the embed switches to wider columns
+// and sometimes sizes its card for the narrower ones, clipping the times.
+.booking {
+  width: 960px;
+  align-self: center;
+}
+
+@include tablet {
+  .booking {
+    width: var(--width-full);
+  }
+}

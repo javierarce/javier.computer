@@ -24,7 +24,7 @@
 
   &__years-item {
     margin-right: var(--s-2);
-    font-size: var(--font-size-body-sm);
+    font-size: var(--font-size-body);
     opacity: var(--op-light);
     text-decoration: none;
 
@@ -74,7 +74,7 @@
     flex-wrap: wrap;
     align-items: first baseline;
     gap: var(--s-1);
-    font-size: var(--font-size-body-sm);
+    font-size: var(--font-size-body);
 
     a {
       text-decoration: none;
@@ -92,7 +92,7 @@
   // Home entries: title, leader and day of the month
   &__row.is-entry {
     gap: var(--s-3);
-    font-size: var(--font-size-body-sm);
+    font-size: var(--font-size-body);
   }
 
   &__entry-title {
@@ -105,8 +105,11 @@
     border-bottom: 1px dotted var(--gray);
   }
 
+  // Lining figures sit at cap height, so at the title's size they read larger
+  // than its mostly lowercase text; scale them down to match optically.
   &__entry-date {
     flex-shrink: 0;
+    font-size: calc(1em * var(--font-scale-numeric));
     font-variant-numeric: tabular-nums;
     opacity: var(--op-light);
   }

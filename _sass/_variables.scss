@@ -85,12 +85,10 @@
   --text-lg: 1.25rem; /* 20px */
   --text-xl: 1.563rem; /* 25px */
   --text-2xl: 1.953rem; /* 31px */
-  --text-3xl: 2.441rem; /* 39px */
   --text-4xl: 3.052rem; /* 49px */
   --text-5xl: 3.815rem; /* 61px */
 
-  --font-size-body: 23px; // exception to the scale for better readability
-  --font-size-body-sm: var(--text-lg); // 20px
+  --font-size-body: var(--text-lg); // 20px
   --font-size-body-xs: var(--text-md); // 16px
   --font-size-body-xxs: var(--text-sm); // 14px
   --font-size-body-xxxs: var(--text-xs); // 12px
@@ -98,15 +96,26 @@
 
   --font-size-heading-xl: var(--text-5xl);
   --font-size-heading-lg: var(--text-2xl);
-  --font-size-heading-md: var(--text-xl); // perhaps 23px
   --font-size-heading-sm: var(--text-lg);
+
+  /* Leading for body text; lines run to about 80 characters */
+  --line-height-body: 1.5;
+
+  /* Optical scale for lining figures set next to lowercase text */
+  --font-scale-numeric: 0.875;
+
+  /* The serif has a smaller x-height than the sans; quotes are scaled to match it */
+  --font-scale-serif: 1.125;
+  --font-size-quote: calc(var(--font-size-body) * var(--font-scale-serif)); /* 22.5px */
+
+  /* Secondary text beside the body: post footers, captions, site footer (17.5px) */
+  --font-size-meta: calc(var(--font-size-body) * var(--font-scale-numeric));
 
   /* --- WEIGHTS --- */
   --weight-light: 300;
   --weight-regular: 400;
   --weight-medium: 500;
   --weight-bold: 700;
-  --weight-black: 900;
 
   /* --- SPACING (Continuous 4pt Grid) --- */
   /* Formula: --s-n = n * 0.25rem (n * 4px) */
@@ -143,12 +152,11 @@
   /* Dimensions */
   --width-full: 100%;
   --width-sm: 400px;
-  --width-md: 800px;
   --width-lg: 1024px;
   --width-xl: 1440px;
 
   /* Semantic widths */
-  --width-content: var(--width-md); /* standard content column */
+  --width-content: 720px; /* standard content column: about 80 characters per line at the body size */
   --width-wide: var(--width-lg); /* wider sections and layouts */
 
   /* Opacity */
@@ -156,10 +164,8 @@
   --op-9: 0.9;
   --op-8: 0.8;
   --op-7: 0.7;
-  --op-6: 0.6;
   --op-5: 0.5;
   --op-4: 0.4;
-  --op-3: 0.3;
   --op-2: 0.2;
   --op-1: 0.1;
   --op-0: 0;
@@ -189,18 +195,9 @@
 
 @include mobile {
   :root {
-    --font-size-body: var(--text-lg);
-    --font-size-body-sm: var(--text-lg);
-
-    --font-size-body-xs: var(--text-md);
-    --font-size-body-xxs: var(--text-sm);
-    --font-size-body-xxxs: var(--text-xs);
-    --font-size-body-tiny: 11px;
-
+    // Large headings step down one size; everything else matches the root
     --font-size-heading-xl: var(--text-4xl);
-    --font-size-heading-lg: var(--text-1xl);
-    --font-size-heading-md: var(--text-lg);
-    --font-size-heading-sm: var(--text-lg);
+    --font-size-heading-lg: var(--text-xl);
   }
 }
 

@@ -124,14 +124,14 @@
   &__container {
     p {
       margin: 1.4em auto;
-      width: var(--width-md);
+      width: var(--width-content);
       font-size: var(--font-size-body);
     }
   }
 
   &__content {
     margin: 1.4em auto;
-    width: var(--width-md);
+    width: var(--width-content);
   }
 
   &__list {
@@ -160,11 +160,10 @@
 
   &__list-locations {
     margin: 0 0 1em;
-    line-height: 135%;
 
     a {
       text-decoration: none;
-      font-size: var(--font-size-body-sm);
+      font-size: var(--font-size-body);
       opacity: var(--op-light);
 
       &:hover {

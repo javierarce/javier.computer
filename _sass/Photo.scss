@@ -462,7 +462,7 @@
 // =============================================================================
 
 figcaption {
-  font-size: var(--font-size-body-sm);
+  font-size: var(--font-size-meta);
   text-align: center;
   opacity: var(--op-light);
 }
@@ -599,9 +599,5 @@ figcaption {
 
   .stack.with-caption {
     gap: 0.8em;
-  }
-
-  figcaption {
-    font-size: var(--font-size-body-sm);
   }
 }

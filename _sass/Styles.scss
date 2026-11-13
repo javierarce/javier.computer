@@ -17,7 +17,7 @@ body {
   color: var(--color-txt-site);
   background: var(--color-bg-site);
 
-  line-height: 1.45;
+  line-height: var(--line-height-body);
   font-size: var(--font-size-body);
   font-weight: var(--weight-regular);
   font-family: var(--font-text-sans);
@@ -45,7 +45,7 @@ a.is-underlined {
 .is-light a:hover,
 p.is-light a:hover,
 p.is-light p a:hover {
-  color: var(--whiteHover);
+  color: var(--textHover);
 }
 
 .is-light a,
@@ -59,9 +59,10 @@ p.is-light p a {
 }
 
 .is-hidden-from-home {
-  width: var(--width-md);
+  width: var(--width-content);
+  max-width: var(--width-full);
   padding: 0.8em;
-  font-size: var(--font-size-body-sm);
+  font-size: var(--font-size-body);
   border: 1px solid var(--purple);
   border-radius: var(--br-default);
   color: var(--purple);
@@ -88,8 +89,9 @@ p.is-light p a {
   text-align: center;
 }
 
+// One step below the body size
 .is-sm {
-  font-size: var(--font-size-body-sm) !important;
+  font-size: var(--font-size-meta) !important;
 }
 
 .is-xs {
@@ -103,7 +105,7 @@ a {
 
 a:hover {
   cursor: pointer;
-  color: var(--whiteHover);
+  color: var(--textHover);
   text-decoration: underline;
 }
 
@@ -131,7 +133,7 @@ strong {
 
 p {
   font-size: var(--font-size-body);
-  line-height: 1.45;
+  line-height: var(--line-height-body);
   margin: 0 0 1em 0;
 
   &:last-child {
@@ -151,6 +153,8 @@ blockquote {
   border-left: 1px solid var(--color-brd-quote);
   padding: 0 0 0 var(--s-4);
   font-family: var(--font-text-serif);
+  // Paragraphs inside take their size from the body token, so set it here
+  --font-size-body: var(--font-size-quote);
   font-size: var(--font-size-body);
   color: var(--color-txt-quote);
 
@@ -224,7 +228,7 @@ h2 {
 }
 
 h3 {
-  font-size: var(--font-size-heading-md);
+  font-size: var(--font-size-heading-sm);
   opacity: var(--op-light);
 }
 
@@ -304,8 +308,9 @@ img {
   &:after {
     content: "";
     display: inline-block;
-    width: 24px;
-    height: 24px;
+    // Sized to the text rather than a fixed 24px
+    width: 1.05em;
+    height: 1.05em;
     vertical-align: sub;
     background-image: url(/img/icons/pin.svg);
     background-repeat: no-repeat;
@@ -370,7 +375,7 @@ a.is-icon-light.is-newsletter::after {
 
 .is-highlighted {
   padding: 0.8em;
-  font-size: var(--font-size-body-sm);
+  font-size: var(--font-size-body);
   border: 1px solid var(--purple);
   border-radius: var(--br-default);
   color: var(--purple);
@@ -394,7 +399,7 @@ hr {
   border: none;
   border-bottom: 1px solid var(--color-border-muted);
   margin: 1.4em 0;
-  width: var(--width-md);
+  width: var(--width-content);
 }
 
 @include mobile {

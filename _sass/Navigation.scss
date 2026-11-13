@@ -50,7 +50,7 @@
     text-decoration: none;
     color: var(--color-txt-site);
     opacity: var(--op-light);
-    font-size: var(--font-size-body-sm);
+    font-size: var(--font-size-body);
 
     &.is-selected {
       opacity: 1;
@@ -88,8 +88,8 @@
     }
 
     // Slightly smaller text and a tighter gap keep the main menu on one line
-    // on a 390px phone. 18px sits between two steps of the type scale: at
-    // body-sm (20px) the menu needs two lines, and body-xs (16px) is too small.
+    // on a 390px phone: at the body size (20px) the menu needs two lines, and
+    // body-xs (16px) is too small.
     &__links {
       flex-wrap: wrap;
       justify-content: flex-start;
@@ -97,7 +97,7 @@
     }
 
     &__link {
-      font-size: 1.125rem;
+      font-size: var(--font-size-meta);
     }
   }
 

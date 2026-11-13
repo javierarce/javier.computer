@@ -37,10 +37,7 @@ redirect_from:
   </p>
 </div>
 
-<div
-  style="width: var(--width-full); height: 100%; overflow: scroll"
-  id="my-cal-inline"
-></div>
+<div class="booking" id="my-cal-inline"></div>
 <script type="text/javascript">
   (function (C, A, L) {
     let p = function (a, ar) {
@@ -86,7 +83,7 @@ redirect_from:
     theme: 'dark',
     cssVarsPerTheme: {
       light: { 'cal-brand': '#000' },
-      dark: { 'cal-brand': '#ffc107' },
+      dark: { 'cal-brand': '#ffc107', 'cal-bg': '#000', 'cal-bg-muted': '#000' },
     },
     hideEventTypeDetails: false,
     layout: 'month_view',

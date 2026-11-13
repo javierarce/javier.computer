@@ -15,7 +15,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: var(--defaultWidth);
 
     margin: 0 0 0.4em 0;
 
@@ -107,7 +106,7 @@
 
   .bot__archive-content {
     column-count: 1;
-    font-size: var(--font-size-body-sm);
+    font-size: var(--font-size-body);
   }
 
   .bot__archive {
