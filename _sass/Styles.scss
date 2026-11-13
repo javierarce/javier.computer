@@ -45,7 +45,7 @@ a.is-underlined {
 .is-light a:hover,
 p.is-light a:hover,
 p.is-light p a:hover {
-  color: var(--whiteHover);
+  color: var(--textHover);
 }
 
 .is-light a,
@@ -60,6 +60,7 @@ p.is-light p a {
 
 .is-hidden-from-home {
   width: var(--width-content);
+  max-width: var(--width-full);
   padding: 0.8em;
   font-size: var(--font-size-body);
   border: 1px solid var(--purple);
@@ -104,7 +105,7 @@ a {
 
 a:hover {
   cursor: pointer;
-  color: var(--whiteHover);
+  color: var(--textHover);
   text-decoration: underline;
 }
 
@@ -152,6 +153,8 @@ blockquote {
   border-left: 1px solid var(--color-brd-quote);
   padding: 0 0 0 var(--s-4);
   font-family: var(--font-text-serif);
+  // Paragraphs inside take their size from the body token, so set it here
+  --font-size-body: var(--font-size-quote);
   font-size: var(--font-size-body);
   color: var(--color-txt-quote);
 
@@ -225,7 +228,7 @@ h2 {
 }
 
 h3 {
-  font-size: var(--font-size-heading-md);
+  font-size: var(--font-size-heading-sm);
   opacity: var(--op-light);
 }
 

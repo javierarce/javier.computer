@@ -38,7 +38,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: var(--defaultWidth);
 
     h1 {
       margin: 0;
@@ -69,7 +68,7 @@
       display: block;
       width: var(--width-full);
       max-width: 900px;
-      font-size: var(--font-size-body-xxs);
+      font-size: var(--font-size-meta);
       text-align: center;
       margin: var(--s-4) auto 0 auto;
       color: var(--color-caption);
