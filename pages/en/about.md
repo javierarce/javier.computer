@@ -3,6 +3,7 @@ layout: about
 title: About
 description: "Javier's computer"
 className: About
+category: about
 weather: true
 permalink: en/about
 lang: en
@@ -11,8 +12,6 @@ lang: en
 {% include about/vars.html lang="en" %}
 
 <div class="section">
-
-<p class="is-light">Esta página está disponible en castellano <a href="/about">aquí</a>.</p>
 
 <p>My name is Javier Arce, <em>comme tout le monde</em>. I'm a creative
     developer, ethical designer, attentive reader, casual illustrator,
@@ -25,8 +24,7 @@ lang: en
 <p>Right now I'm in {% if current_city_map %}<a href="{{ current_city_map.url | relative_url }}">{{ current_location.city }}</a>{% else %}{{ current_location.city }}{% endif %}, {{
     current_location.country }}. {% if book_titles != "" %}I'm currently reading: {{ book_titles }}. {% endif %}The
     last book I read was <a href="/books#{{ book.slug }}" class="book-title">{{ book.title }}</a> by {{ book.author }}. The last movie
-    I watched was <a href="https://letterboxd.com/javier/film/{{
-        movie.permalink }}">{{ movie.title }}</a> {{ rating_phrase }}
+    I watched was <a href="/movies#{{ movie.permalink }}">{{ movie.title }}</a> {{ rating_phrase }}
     <music-snitch data-username='javierarce' data-key
         ='78b4ae34c84de1d5fc6510338300bd78'></music-snitch></p>
 </div>
@@ -49,27 +47,25 @@ turtle, a turtle.</p>
 </div>
 
 
-<div class="section">
-<h3>Wait, there's more!</h3>
-
-<div class="cards">
-    <a href="/contact" class="card">
-        <div class="card-title">Contact</div>
-        <div class="card-description">Do you need to tell me something incredible that happened to you? I want to know! Send me a message.</div>
-    </a>
-    <a href="/newsletter" class="card">
-        <div class="card-title">Newsletter</div>
-        <div class="card-description">Subscribe to my newsletter to get an email every time I do something extremely funny.</div>
-    </a>
-    <a href="/office-hours" class="card">
-        <div class="card-title">Let's chat!</div>
-        <div class="card-description">Schedule a meeting with me and let's talk online or in person.</div>
-    </a>
-    <a href="/feeds" class="card">
-        <div class="card-title">RSS</div>
-        <div class="card-description">Don't miss a post! Subscribe to any of the feeds available on this site.</div>
-    </a>
-</div>
-</div>
-
 <p class="is-light is-sm" data-update-timestamp="{{ site.time | date: '%s' }}">This computer was updated <span id="time-phrase">on {{ site.time | date: "%B %d, %Y" }}</span> {{ selected_phrase }}.</p>
+
+<div class="section">
+<div class="link-list">
+    <a href="/contact" class="link-list__item">
+        <span class="link-list__title">Contact</span>
+        <span class="link-list__description">Do you need to tell me something incredible that happened to you? I want to know! Send me a message.</span>
+    </a>
+    <a href="/newsletter" class="link-list__item">
+        <span class="link-list__title">Newsletter</span>
+        <span class="link-list__description">Subscribe to my newsletter to get an email every time I do something extremely funny.</span>
+    </a>
+    <a href="/office-hours" class="link-list__item">
+        <span class="link-list__title">Let's chat!</span>
+        <span class="link-list__description">Schedule a meeting with me and let's talk online or in person.</span>
+    </a>
+    <a href="/feeds" class="link-list__item">
+        <span class="link-list__title">RSS</span>
+        <span class="link-list__description">Don't miss a post! Subscribe to any of the feeds available on this site.</span>
+    </a>
+</div>
+</div>

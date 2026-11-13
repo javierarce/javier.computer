@@ -6,24 +6,25 @@
   flex-direction: column;
   gap: var(--s-8);
 
+  // Home list: more air between months
+  &--entries {
+    gap: var(--s-12);
+  }
+
   &__year {
     margin: 0;
     opacity: var(--op-visible);
   }
 
+  // Year filter of the archive: a titled section like tags, cities and maps
   &__years {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: var(--s-3);
-    margin: 0;
     font-variant-numeric: tabular-nums;
     scroll-margin-top: var(--s-4);
   }
 
   &__years-item {
-    font-size: var(--font-size-heading-md);
-    font-weight: var(--weight-medium);
+    margin-right: var(--s-2);
+    font-size: var(--font-size-body-sm);
     opacity: var(--op-light);
     text-decoration: none;
 
@@ -86,5 +87,27 @@
 
   span.day {
     flex-shrink: 0;
+  }
+
+  // Home entries: title, leader and day of the month
+  &__row.is-entry {
+    gap: var(--s-3);
+    font-size: var(--font-size-body-sm);
+  }
+
+  &__entry-title {
+    text-decoration: none;
+  }
+
+  &__entry-leader {
+    flex: 1;
+    min-width: var(--s-6);
+    border-bottom: 1px dotted var(--gray);
+  }
+
+  &__entry-date {
+    flex-shrink: 0;
+    font-variant-numeric: tabular-nums;
+    opacity: var(--op-light);
   }
 }

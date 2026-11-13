@@ -1,0 +1,40 @@
+@use "mixins" as *;
+
+// Links as rows between hairlines: title on the left, description on the right
+.link-list {
+  display: flex;
+  flex-direction: column;
+  width: var(--width-full);
+  margin-top: var(--s-6);
+  border-top: 1px solid var(--gray);
+
+  &__item {
+    display: grid;
+    grid-template-columns: 9em 1fr;
+    gap: var(--s-4);
+    padding: var(--s-3) 0;
+    border-bottom: 1px solid var(--gray);
+    font-size: var(--font-size-body-sm);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__description {
+    opacity: var(--op-light);
+    transition: opacity var(--transition-speed-default) ease-in-out;
+  }
+
+  &__item:hover &__description {
+    opacity: var(--op-visible);
+  }
+}
+
+@include mobile {
+  .link-list__item {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

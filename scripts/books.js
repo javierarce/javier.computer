@@ -11,7 +11,6 @@
     if (!target) return;
 
     target.scrollIntoView({ behavior: "smooth", block: "start" });
-    target.focus({ preventScroll: true });
   };
 
   const onReady = () => {

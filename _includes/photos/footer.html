@@ -46,8 +46,8 @@ include.photo.location | first -%}
     {% else -%}
     <a class="post__more" href="{{ include.photo.url }}">Leer más</a>
     {% endif -%} {% endif -%}
-  </div>
 
-  {% if include.pagination -%} {% include pagination/post.html post=include.photo -%}
-  {% endif -%}
+    {% if include.pagination -%} {% include pagination/post.html post=include.photo -%}
+    {% endif -%}
+  </div>
 </div>

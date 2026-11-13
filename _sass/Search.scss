@@ -7,9 +7,10 @@
   width: var(--width-full);
 }
 
+// An underlined field next to the regular boxed button
 .search-form {
   display: flex;
-  gap: var(--s-2);
+  gap: var(--s-3);
   width: var(--width-full);
 
   &__field {
@@ -17,14 +18,23 @@
     display: flex;
     width: var(--width-full);
 
-    // Room for the clear button, so a long query doesn't run underneath it
+    // Same height as the button, so the underline meets its bottom edge.
+    // The right padding leaves room for the clear button.
     .input {
-      padding-right: var(--s-10);
+      padding: var(--s-3) var(--s-8) var(--s-3) 0;
+      border: none;
+      border-bottom: 1px solid var(--color-border-muted);
+      border-radius: 0;
+
+      &:focus {
+        border-bottom-color: var(--color-txt-site);
+      }
     }
   }
 
   &__clear {
     @include clear-button;
+    right: 0;
   }
 }
 

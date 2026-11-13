@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "El truco para encontrar fans de M. Night Shyamalan que Hollywood no quiere que sepas"
+title: "El truco para encontrar fans de M. Night Shyamalan"
 date: "2026-08-31 23:28:19 +0200"
 ---
  Avanzo a buen ritmo en el proyecto ultrasecreto del que espero dar más información en una

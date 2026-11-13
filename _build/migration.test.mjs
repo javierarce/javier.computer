@@ -66,6 +66,20 @@ test("Liquid photo blocks keep nesting, captions, and following Markdown links",
   );
 });
 
+test("photo list respects per-image locations in reportage thumbnails", async () => {
+  const liquid = createLiquid(markdown, () => ({}));
+  const { data } = frontMatter(
+    fs.readFileSync("content/_posts/2025-08-25-maldiciones-analogicas.md", "utf8"),
+  );
+  const html = await liquid.parseAndRender(
+    '{% include photos/entries.html posts=posts %}',
+    { posts: [{ ...data, url: "/2025/08/25/maldiciones-analogicas" }] },
+  );
+  assert.equal((html.match(/data-src="https:\/\/img\.javier\.computer\/analog\//g) || []).length, 4);
+  assert.doesNotMatch(html, /img\.javier\.computer\/berlin\//);
+  assert.doesNotMatch(html, /photo-strip__more/);
+});
+
 test("raw HTML, code blocks, and dates retain their meaning", () => {
   const raw =
     '<div class="outer">\n\n<a\n href="/books"\n>Books</a\n>\n\n</div>\n';
@@ -242,6 +256,18 @@ test(
         fs.readFileSync(path.join(fixture, "_site", file), "utf8");
       assert.match(read("index.html"), /New post/);
       assert.doesNotMatch(read("index.html"), /Continued article text/);
+      assert.match(
+        read("index.html"),
+        /<h4 class="date-list__month-name section-divider"><time[^>]*>\s*Enero\s+de 2023\s*<\/time>\s*<\/h4>/,
+      );
+      assert.match(
+        read("index.html"),
+        /<a href="\/2023\/01\/01\/photo" class="date-list__entry-title u-url p-name is-icon-light is-photo">Old photo<\/a>\s*<span class="date-list__entry-leader"><\/span>\s*<time class="date-list__entry-date dt-published" datetime="2023-01-01">1<\/time>/,
+      );
+      assert.doesNotMatch(
+        read("index.html"),
+        /date-list__entry-title[^>]*>New post|Enero\s+de 2024/,
+      );
       assert.match(read("index.html"), /href="\/2024\/01\/02\/new#more"/);
       assert.match(
         read("2024/01/02/new.html"),
@@ -262,7 +288,10 @@ test(
       );
       assert.match(read("tags/migration.html"), /New post/);
       assert.match(read("in/newcity.html"), /New post/);
-      assert.match(read("photos/index.html"), /2 fotos/);
+      assert.match(
+        read("photos/index.html"),
+        /<a href="\/2023\/01\/01\/photo" class="photo-strip"[^>]*>\s*<img class="photo-strip__thumb lazy" data-src="https:\/\/img\.javier\.computer\/newcity\/portrait_640\.webp" style="--aspect-ratio: 2\/3;"[^>]* alt="">\s*<img class="photo-strip__thumb lazy" data-src="https:\/\/img\.javier\.computer\/newcity\/partner_640\.webp"/,
+      );
       assert.match(read("2023/01/01/photo.html"), /class="photo__row"/);
       assert.match(read("2023/01/01/photo.html"), /partner_1280.jpg/);
       assert.match(read("2023/01/01/photo.html"), /href="\/in\/newcity"/);
@@ -280,7 +309,11 @@ test(
         read("old-post.html"),
         /https:\/\/javier.computer\/2024\/01\/02\/new/,
       );
-      assert.match(read("posts/2023/index.html"), /Old photo/);
+      assert.match(
+        read("posts/2023/index.html"),
+        /class="date-list__entry-title u-url p-name is-icon-light is-photo">Old photo<\/a>/,
+      );
+      assert.doesNotMatch(read("posts/2023/index.html"), /New post/);
       assert.equal(XMLValidator.validate(read("feed.xml")), true);
       assert.equal(XMLValidator.validate(read("feeds/photos.xml")), true);
       const context = { window: {} };

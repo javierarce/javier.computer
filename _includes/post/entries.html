@@ -1,0 +1,34 @@
+{% assign current_month = nil -%}
+{% assign offset = include.offset | default: 0 -%}
+{% for post in include.posts offset: offset -%}
+  {% if include.year -%}
+    {% assign post_year = post.date | date: "%Y" -%}
+    {% unless post_year == include.year %}{% continue %}{% endunless -%}
+  {% endif -%}
+  {% assign month = post.date | date: "%Y-%m" -%}
+  {% if month != current_month -%}
+    {% if current_month -%}
+      </ul>
+    </div>
+    {% endif -%}
+    <div class="date-list__month">
+      <h4 class="date-list__month-name section-divider">{% include date.html date=post.date day="false" %}</h4>
+      <ul class="date-list__items">
+    {% assign current_month = month -%}
+  {% endif -%}
+
+  {% assign icon = post.category -%}
+  {% if post.tags contains "newsletter" -%}
+    {% assign icon = "newsletter" -%}
+  {% endif -%}
+  <li class="date-list__row is-entry h-entry">
+    <a href="{{ post.url }}" class="date-list__entry-title u-url p-name{% if icon.size > 0 %} is-icon-light is-{{ icon }}{% endif %}">{{ post.title }}</a>
+    <span class="date-list__entry-leader"></span>
+    <time class="date-list__entry-date dt-published" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d" }}</time>
+  </li>
+{% endfor -%}
+
+{% if current_month -%}
+    </ul>
+  </div>
+{% endif -%}

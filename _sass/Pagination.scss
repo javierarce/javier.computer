@@ -1,144 +1,42 @@
-@use "mixins" as *;
-
+// Centered text links, in the style of the navigation
 .pagination {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
   width: var(--width-full);
-
-  &.has-content {
-    justify-content: center;
-  }
-
-  &__content {
-    display: flex;
-    width: var(--width-content);
-  }
-
-  &.is-centered {
-    gap: 0.8em;
-    width: var(--width-content);
-    margin: 2em auto 0 auto;
-    opacity: var(--op-light);
-  }
-
-  &--years &__content {
-    flex-wrap: wrap;
-    gap: 0.4em;
-  }
-
-  &--years &__item {
-    width: auto;
-    height: auto;
-    padding: 0.6em 1em;
-    margin: 0;
-  }
+  font-variant-numeric: tabular-nums;
 
   &__item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.8em;
-    width: 40px;
-    height: 40px;
-    margin: 0 0.4em 0 0;
-    background: var(--color-bg-pagination);
-    color: var(--color-txt-pagination);
-    border: 1px solid var(--color-border-pagination);
+    padding: var(--s-2);
+    color: var(--color-txt-site);
+    font-size: var(--font-size-body-sm);
     text-decoration: none;
-    cursor: pointer;
+    opacity: var(--op-light);
     user-select: none;
-    font-size: var(--font-size-body-xs);
-    font-variant-numeric: tabular-nums;
 
-    &:hover {
-      background: var(--color-bg-pagination-hover);
-      color: var(--color-txt-pagination-hover);
-      border: 1px solid var(--color-border-pagination-hover);
-      opacity: 1;
+    &:hover,
+    &.is-selected {
+      color: var(--color-txt-site);
       text-decoration: none;
+      opacity: var(--op-visible);
+    }
+
+    &.is-selected,
+    &.is-ellipsis {
+      cursor: default;
     }
 
     &.is-ellipsis {
-      cursor: default;
-      border: none;
-      width: auto;
-      padding: 0;
+      padding: var(--s-2) 0;
 
       &:hover {
         opacity: var(--op-light);
       }
     }
 
-    &.is-selected {
-      cursor: default;
-      background: var(--color-bg-pagination-selected);
-      color: var(--color-txt-pagination-selected);
-      border: 1px solid var(--color-border-pagination-selected);
-      opacity: 1;
-
-      &:hover {
-        background: var(--color-bg-pagination-selected);
-        color: var(--color-txt-pagination-selected);
-        border: 1px solid var(--color-border-pagination-selected);
-        opacity: 1;
-      }
-    }
-
     &.is-archive {
-      border: none;
-      width: auto;
-      height: auto;
-      padding: 0;
-      margin: 0 0 0 0.4em;
-      font-size: var(--font-size-body-sm);
-
-      &:hover {
-        background: none;
-        color: var(--textHover);
-      }
-    }
-
-    &.is-mobile-archive {
-      display: none;
-    }
-  }
-}
-
-@include mobile {
-  .pagination {
-    display: grid;
-    justify-content: space-between;
-    grid-template-columns: repeat(8, 1fr);
-    grid-row-gap: 0.4em;
-
-    &--years {
-      display: flex;
-      grid-template-columns: none;
-    }
-
-    &__content {
-      display: flex;
-      width: 100%;
-    }
-
-    &__item {
-      &.is-archive {
-        display: none;
-      }
-
-      &.is-mobile-archive {
-        font-size: var(--font-size-body-sm);
-        border: 1px solid var(--color-border-muted);
-        padding: 0.8em;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        text-decoration: none;
-        cursor: pointer;
-        user-select: none;
-        border-radius: var(--br-pill);
-      }
+      margin-left: var(--s-4);
     }
   }
 }

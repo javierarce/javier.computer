@@ -1,0 +1,7 @@
+{% assign post = paginator.posts.first -%}
+{% if post.category -%}
+{% assign type = post.category -%}
+{% else -%}
+{% assign type = "post" -%}
+{% endif -%}
+{% include types/{{ type }}.html -%}

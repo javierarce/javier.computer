@@ -1,0 +1,76 @@
+{% comment -%}
+  Photo posts grouped by month, with a date/title header and a full-width photo row.
+{% endcomment -%}
+{% assign max = 4 -%}
+{% assign max_mobile = 2 -%}
+{% assign current_month = nil -%}
+{% for post in include.posts -%}
+  {% assign month = post.date | date: "%Y-%m" -%}
+  {% if month != current_month -%}
+    {% if current_month -%}
+      </ul>
+    </div>
+    {% endif -%}
+    <div class="date-list__month">
+      <h4 class="date-list__month-name">{% include date.html date=post.date day="false" %}</h4>
+      <ul class="date-list__items photo-entries">
+    {% assign current_month = month -%}
+  {% endif -%}
+
+  {% assign location = post.location -%}
+  {% assign files = "" | split: "," -%}
+  {% assign ratios = "" | split: "," -%}
+  {% assign locations = "" | split: "," -%}
+  {% if post.filenames -%}
+    {% for file in post.filenames -%}
+      {% if file.filename -%}
+        {% assign ratio = file.ratio | default: post.ratio | default: "" -%}
+        {% assign file_location = file.location | default: post.location -%}
+        {% assign locations = locations | push: file_location -%}
+        {% assign files = files | push: file.filename -%}
+        {% assign ratios = ratios | push: ratio -%}
+        {% if file.pair -%}
+          {% assign locations = locations | push: file_location -%}
+          {% assign files = files | push: file.pair -%}
+          {% assign ratios = ratios | push: ratio -%}
+        {% endif -%}
+      {% else -%}
+        {% assign ratio = post.ratio | default: "" -%}
+        {% assign locations = locations | push: post.location -%}
+        {% assign files = files | push: file -%}
+        {% assign ratios = ratios | push: ratio -%}
+      {% endif -%}
+    {% endfor -%}
+  {% elsif post.filename -%}
+    {% assign ratio = post.ratio | default: "" -%}
+    {% assign locations = locations | push: post.location -%}
+    {% assign files = files | push: post.filename -%}
+    {% assign ratios = ratios | push: ratio -%}
+  {% elsif post.cover -%}
+    {% assign location = post.cover_location | default: post.location -%}
+    {% assign ratio = post.ratio | default: "" -%}
+    {% assign locations = locations | push: location -%}
+    {% assign files = files | push: post.cover -%}
+    {% assign ratios = ratios | push: ratio -%}
+  {% endif -%}
+
+  <li class="date-list__row is-entry is-photos">
+    <div class="photo-entry__header">
+      <a href="{{ post.url }}" class="date-list__entry-title photo-entry__title">{{ post.title | escape }}</a>
+      <span class="date-list__entry-leader"></span>
+      <time class="date-list__entry-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d/%m" }}</time>
+    </div>
+    <a href="{{ post.url }}" class="photo-strip" title="{{ post.title | escape }}" aria-label="{{ post.title | escape }}">
+      {% for file in files limit: max -%}
+        {% assign ratio = ratios[forloop.index0] -%}
+        {% assign location = locations[forloop.index0] -%}
+        <img class="photo-strip__thumb lazy{% if forloop.index > max_mobile %} is-extra{% endif %}" data-src="https://img.javier.computer/{{ location }}/{{ file }}_640.webp"{% if ratio != "" %} style="--aspect-ratio: {{ ratio }};"{% endif %} data-srcset="https://img.javier.computer/{{ location }}/{{ file }}_640.webp 640w, https://img.javier.computer/{{ location }}/{{ file }}_1280.webp 1280w, https://img.javier.computer/{{ location }}/{{ file }}_2880.webp 2880w" sizes="{% if files.size == 1 %}(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc(100vw - 64px), 800px{% elsif files.size == 2 %}(max-width: 640px) calc(50vw - 18px), (max-width: 1024px) calc(50vw - 34px), 398px{% elsif files.size == 3 %}(max-width: 640px) calc(50vw - 18px), (max-width: 1024px) calc(33.333vw - 24px), 264px{% else %}(max-width: 640px) calc(50vw - 18px), (max-width: 1024px) calc(25vw - 19px), 197px{% endif %}" alt="">
+      {% endfor -%}
+    </a>
+  </li>
+{% endfor -%}
+
+{% if current_month -%}
+    </ul>
+  </div>
+{% endif -%}
