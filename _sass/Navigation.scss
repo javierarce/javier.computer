@@ -87,16 +87,23 @@
       width: auto;
     }
 
+    // Slightly smaller text and a tighter gap keep the main menu on one line
+    // on a 390px phone. 18px sits between two steps of the type scale: at
+    // body-sm (20px) the menu needs two lines, and body-xs (16px) is too small.
     &__links {
-      display: inline-block;
-      flex-direction: column;
+      flex-wrap: wrap;
       justify-content: flex-start;
-      align-items: flex-start;
-      gap: var(--s-1);
+      gap: var(--s-1) var(--s-2);
     }
 
     &__link {
-      margin-right: var(--s-2);
+      font-size: 1.125rem;
     }
+  }
+
+  // A post keeps the same header as the home: Blog is already highlighted,
+  // so the Archivo/RSS line only adds noise on a small screen.
+  .layout__post .navigation__secondary {
+    display: none;
   }
 }

@@ -9,4 +9,12 @@
     font-size: var(--font-size-body-xs);
     margin-left: 0.15em;
   }
+
+  // Scroll target for a film reached through its anchor (e.g. from the about
+  // page). It is a separate, empty element so the film's link doesn't take
+  // focus, and it is out of the flow so it adds no gap to the row.
+  .movie__anchor {
+    position: absolute;
+    scroll-margin-top: var(--s-24);
+  }
 }

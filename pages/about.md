@@ -19,8 +19,7 @@ fotógrafo compulsivo, y un humano un poco tonto, si me preguntas.</p>
 {% assign current_city_map = collections.maps | where: "location", current_location.slug | first %}
 <p>Ahora mismo estoy en {% if current_city_map %}<a href="{{ current_city_map.url | relative_url }}">{{ current_location.city }}</a>{% else %}{{ current_location.city }}{% endif %}{% if book_titles != "" %}, leyendo: {{ book_titles }}. {% else %}. {% endif %}El
 último libro que leí fue <a href="/books#{{ book.slug }}" class="book-title">{{ book.title }}</a> de {{ book.author }}. La última película
-que vi fue <a href="https://letterboxd.com/javier/film/{{
-movie.permalink }}">{{ movie.title }}</a> {{ rating_phrase }}
+que vi fue <a href="/movies#{{ movie.permalink }}">{{ movie.title }}</a> {{ rating_phrase }}
 <music-snitch data-username='javierarce' data-key
 ='78b4ae34c84de1d5fc6510338300bd78'></music-snitch></p>
 </div>

@@ -33,6 +33,7 @@ className: Movies
 {% else -%}
         <span class="Post__footerSeparator">&middot;</span>
 {% endif -%}
+        <span id="{{ movie.permalink }}" class="movie__anchor"></span>
         <a href="https://letterboxd.com/javier/film/{{ movie.permalink }}">{{ movie.title }} ({{ movie.year }})</a>
         {% if movie.stars != "" -%}<span class="movie__stars">{{ movie.stars }}</span>{% endif -%}
         {% if movie.liked -%}<span class="movie__liked" title="Liked">♥</span>{% endif -%}

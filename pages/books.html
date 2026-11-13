@@ -44,7 +44,7 @@ library: books
           {% endif -%}
         </a>
       {% else -%}
-        <div id="{{ book.slug }}" tabindex="-1" class="book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
+        <div id="{{ book.slug }}" class="book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
           <div class="book__content">
             <div class="book__title">{{ book.title }}</div>
             <div class="book__author">{{ book.author }}</div>
@@ -85,7 +85,7 @@ library: books
           </div>
         </a>
       {% else -%}
-        <div id="{{ book.slug }}" tabindex="-1" class="book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
+        <div id="{{ book.slug }}" class="book__spine is-{{ color }} h{{ classIndex }}" style="height: {{height}}px">
           <div class="book__content">
             <div class="book__title">{{ book.title }}</div>
             <div class="book__author">{{ book.author }}</div>

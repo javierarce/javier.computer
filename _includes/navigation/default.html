@@ -7,7 +7,7 @@
     ><span class="icon icon-search"></span
   ></a>
 
-  <a class="navigation__link {% if page.home %}is-selected{% endif %}" href="/">Blog</a>
+  <a class="navigation__link {% if page.home or layoutCategory == 'posts' %}is-selected{% endif %}" href="/">Blog</a>
   <a
     class="navigation__link {% if permalink == 'photos' or permalink == 'photos/archive' or category == 'photo' or category == 'reportage' or category == 'photos' %}is-selected{% endif %}"
     href="/photos"
@@ -15,16 +15,9 @@
   >
 
   <a
-    class="navigation__link {% if permalink == 'books' %}is-selected{% endif %}"
-    href="/books"
-    >Libros</a
-  >
-
-
-  <a
-    class="navigation__link {% if permalink == 'movies' or page.url contains '/movies/' %}is-selected{% endif %}"
-    href="/movies"
-    >Películas</a
+    class="navigation__link {% if permalink == 'maps' or category == 'maps' %}is-selected{% endif %}"
+    href="/maps"
+    >Mapas</a
   >
 
   <a
