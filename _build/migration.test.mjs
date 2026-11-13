@@ -242,6 +242,18 @@ test(
         fs.readFileSync(path.join(fixture, "_site", file), "utf8");
       assert.match(read("index.html"), /New post/);
       assert.doesNotMatch(read("index.html"), /Continued article text/);
+      assert.match(
+        read("index.html"),
+        /<h4 class="date-list__month-name section-divider"><time[^>]*>\s*Enero\s+de 2023\s*<\/time>\s*<\/h4>/,
+      );
+      assert.match(
+        read("index.html"),
+        /<a href="\/2023\/01\/01\/photo" class="date-list__entry-title u-url p-name is-icon-light is-photo">Old photo<\/a>\s*<span class="date-list__entry-leader"><\/span>\s*<time class="date-list__entry-date dt-published" datetime="2023-01-01">1<\/time>/,
+      );
+      assert.doesNotMatch(
+        read("index.html"),
+        /date-list__entry-title[^>]*>New post|Enero\s+de 2024/,
+      );
       assert.match(read("index.html"), /href="\/2024\/01\/02\/new#more"/);
       assert.match(
         read("2024/01/02/new.html"),
@@ -280,7 +292,11 @@ test(
         read("old-post.html"),
         /https:\/\/javier.computer\/2024\/01\/02\/new/,
       );
-      assert.match(read("posts/2023/index.html"), /Old photo/);
+      assert.match(
+        read("posts/2023/index.html"),
+        /class="date-list__entry-title u-url p-name is-icon-light is-photo">Old photo<\/a>/,
+      );
+      assert.doesNotMatch(read("posts/2023/index.html"), /New post/);
       assert.equal(XMLValidator.validate(read("feed.xml")), true);
       assert.equal(XMLValidator.validate(read("feeds/photos.xml")), true);
       const context = { window: {} };

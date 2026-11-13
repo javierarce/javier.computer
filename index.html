@@ -6,17 +6,22 @@ className: Home
 home: true
 pagination:
   data: collections.homePosts
-  size: 7
+  size: 50
 ---
 <div class="content">
   {% include navigation/index.html -%}
-  <div class="posts h-feed">
-    {% if paginator.page == 1 -%}
-    {% include post/home.html -%}
-    {% else -%}
-    {% include post/list.html -%}
-    {% endif -%}  
+  {% if paginator.page == 1 -%}
+  <div class="posts">
+    {% include post/latest.html -%}
   </div>
+  <div class="date-list date-list--entries h-feed">
+    {% include post/entries.html posts=paginator.posts offset=1 -%}
+  </div>
+  {% else -%}
+  <div class="date-list date-list--entries h-feed">
+    {% include post/entries.html posts=paginator.posts -%}
+  </div>
+  {% endif -%}
   {% include pagination/index.html paginator=paginator -%}
   {% include navigation/footer.html -%}
 </div>

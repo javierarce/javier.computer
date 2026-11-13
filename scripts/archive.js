@@ -5,6 +5,9 @@
   const dateList = nav.parentElement;
   if (!dateList) return;
 
+  // The months sit in their own list below the year navigation.
+  const monthList = dateList.querySelector(".date-list--entries") || dateList;
+
   const cache = new Map();
   const firstYearItem = nav.querySelector(".date-list__years-item");
   const firstYear = firstYearItem ? firstYearItem.textContent.trim() : "";
@@ -28,7 +31,7 @@
       newMonths.forEach((el) =>
         fragment.appendChild(document.importNode(el, true)),
       );
-      dateList.appendChild(fragment);
+      monthList.appendChild(fragment);
 
       const targetYear = (doc.querySelector(
         ".date-list__years-item.is-selected",

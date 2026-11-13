@@ -12,33 +12,30 @@ className: photos
   </div>
 
   {% if paginator.total_pages > 1 %}
-    <div class="pagination has-content">
-      <div class="pagination__content">
-        {% assign window = 2 %}
-        {% assign need_ellipsis = false %}
-        {% for page in (1..paginator.total_pages) %}
-          {% assign diff = page | minus: paginator.page %}
-          {% if diff < 0 %}{% assign diff = diff | times: -1 %}{% endif %}
+    <div class="pagination">
+      {% assign window = 2 %}
+      {% assign need_ellipsis = false %}
+      {% for page in (1..paginator.total_pages) %}
+        {% assign diff = page | minus: paginator.page %}
+        {% if diff < 0 %}{% assign diff = diff | times: -1 %}{% endif %}
 
-          {% if page == 1 or page == paginator.total_pages or diff <= window %}
-            {% if need_ellipsis %}
-              <div class="pagination__item is-ellipsis">…</div>
-              {% assign need_ellipsis = false %}
-            {% endif %}
-            {% if page == paginator.page %}
-              <div class="pagination__item is-selected">{{ page }}</div>
-            {% elsif page == 1 %}
-              <a class="pagination__item" href="/photos">{{ page }}</a>
-            {% else %}
-              <a class="pagination__item" href="/photos/page/{{ page }}">{{ page }}</a>
-            {% endif %}
-          {% else %}
-            {% assign need_ellipsis = true %}
+        {% if page == 1 or page == paginator.total_pages or diff <= window %}
+          {% if need_ellipsis %}
+            <div class="pagination__item is-ellipsis">…</div>
+            {% assign need_ellipsis = false %}
           {% endif %}
-        {% endfor %}
-        <a class="pagination__item is-archive" href="/photos/archive">Archive</a>
-        <a class="pagination__item is-mobile-archive" href="/photos/archive">A</a>
-      </div>
+          {% if page == paginator.page %}
+            <div class="pagination__item is-selected">{{ page }}</div>
+          {% elsif page == 1 %}
+            <a class="pagination__item" href="/photos">{{ page }}</a>
+          {% else %}
+            <a class="pagination__item" href="/photos/page/{{ page }}">{{ page }}</a>
+          {% endif %}
+        {% else %}
+          {% assign need_ellipsis = true %}
+        {% endif %}
+      {% endfor %}
+      <a class="pagination__item is-archive" href="/photos/archive">Archive</a>
     </div>
   {% endif %}
   {% include navigation/footer.html %}

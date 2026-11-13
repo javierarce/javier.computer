@@ -3,12 +3,13 @@
 .footer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  column-gap: var(--s-4);
   margin: 0 auto;
   margin-top: var(--s-12);
   @include content-width;
 
   &__link {
-    margin: 0 0.8em 0 0;
     text-decoration: none;
     color: var(--color-txt-site);
     opacity: var(--op-light);
@@ -24,10 +25,6 @@
 
 @include tablet {
   .footer {
-    display: block;
-
-    &__link {
-      margin: 0 0.4em 0 0;
-    }
+    column-gap: var(--s-2);
   }
 }

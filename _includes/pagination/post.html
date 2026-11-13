@@ -1,8 +1,16 @@
+{% assign previous = include.post.previous -%}
+{% assign next = include.post.next -%}
+{% if previous.url or next.url -%}
 <div class="post__pagination">
-  {% if include.post.previous.url -%}
-  <div class="post__pagination-prev"><span class="post__pagination-arrow">←</span> <a class="post__pagination-link is-{{ include.post.previous.category}}" href="{{include.post.previous.url}}">{{ include.post.previous.title }}</a></div>
+  {% if previous.url -%}
+  <a class="post__pagination-prev" href="{{ previous.url }}" title="{{ previous.title | escape }}" aria-label="Anterior: {{ previous.title | escape }}">←</a>
+  {% else -%}
+  <span class="post__pagination-arrow is-disabled" aria-hidden="true">←</span>
   {% endif -%}
-  {% if include.post.next.url -%}
-  <div class="post__pagination-next"><span class="post__pagination-arrow">→</span> <a class="post__pagination-link is-{{ include.post.next.category}}" href="{{include.post.next.url}}">{{ include.post.next.title }}</a></div>
+  {% if next.url -%}
+  <a class="post__pagination-next" href="{{ next.url }}" title="{{ next.title | escape }}" aria-label="Siguiente: {{ next.title | escape }}">→</a>
+  {% else -%}
+  <span class="post__pagination-arrow is-disabled" aria-hidden="true">→</span>
   {% endif -%}
 </div>
+{% endif -%}

@@ -45,18 +45,16 @@ className: Movies
 </div>
 
   {% if page.all_years.size > 1 -%}
-    <div class="pagination has-content pagination--years">
-      <div class="pagination__content">
-        {% for year in page.all_years -%}
-          {% if year == page.movie_year -%}
-            <div class="pagination__item is-selected">{{ year }}</div>
-          {% elsif year == page.all_years.first -%}
-            <a class="pagination__item" href="/movies">{{ year }}</a>
-          {% else -%}
-            <a class="pagination__item" href="/movies/{{ year }}">{{ year }}</a>
-          {% endif -%}
-        {% endfor -%}
-      </div>
+    <div class="pagination">
+      {% for year in page.all_years -%}
+        {% if year == page.movie_year -%}
+          <div class="pagination__item is-selected">{{ year }}</div>
+        {% elsif year == page.all_years.first -%}
+          <a class="pagination__item" href="/movies">{{ year }}</a>
+        {% else -%}
+          <a class="pagination__item" href="/movies/{{ year }}">{{ year }}</a>
+        {% endif -%}
+      {% endfor -%}
     </div>
   {% endif -%}
   {% include navigation/footer.html -%}

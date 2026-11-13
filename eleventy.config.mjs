@@ -42,6 +42,9 @@ export default function (config) {
       firstBuild = false;
     }
     routes.clear();
+    // Includes are cached per build; without this the dev server keeps
+    // rendering the version it first read.
+    liquid.options.cache?.clear();
     const settings = parseYaml(fs.readFileSync("_config.yml", "utf8"));
     documents = readDocuments({ drafts });
     const data = loadData("_data");
@@ -107,10 +110,8 @@ export default function (config) {
   config.addExtension("xml", { key: "html" });
   config.addExtension("opml", { key: "html" });
   config.setLibrary("md", markdown);
-  config.setLibrary(
-    "liquid",
-    createLiquid(markdown, () => site),
-  );
+  const liquid = createLiquid(markdown, () => site);
+  config.setLibrary("liquid", liquid);
   config.addLiquidFilter("slugify", slugify);
   config.setUseGitIgnore(false);
   for (const ignored of [
@@ -344,7 +345,10 @@ export default function (config) {
       .map(exposeFrontMatter)
       .sort(byNewest);
   config.addCollection("homePosts", (api) =>
-    posts(api).filter((post) => !post.hidden),
+    posts(api).filter(
+      (post) =>
+        !post.hidden && post.hide !== true && !post.tags.includes("newsletter"),
+    ),
   );
   config.addCollection("photoPosts", (api) =>
     posts(api).filter((post) => !post.hidden && post.tags.includes("photo")),
