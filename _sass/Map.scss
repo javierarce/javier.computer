@@ -124,14 +124,14 @@
   &__container {
     p {
       margin: 1.4em auto;
-      width: var(--width-md);
+      width: var(--width-content);
       font-size: var(--font-size-body);
     }
   }
 
   &__content {
     margin: 1.4em auto;
-    width: var(--width-md);
+    width: var(--width-content);
   }
 
   &__list {

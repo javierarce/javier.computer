@@ -51,7 +51,7 @@
   }
 
   p {
-    width: var(--width-md);
+    width: var(--width-content);
   }
 
   p:last-child {
@@ -118,13 +118,13 @@
     }
 
     p {
-      width: var(--width-md);
+      width: var(--width-content);
       margin: 0;
     }
   }
 
   &__footer {
-    width: var(--width-md);
+    width: var(--width-content);
     margin: 0 auto;
     display: flex;
     flex-direction: row;

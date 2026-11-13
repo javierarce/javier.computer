@@ -100,6 +100,9 @@
   --font-size-heading-md: var(--text-lg);
   --font-size-heading-sm: var(--text-lg);
 
+  /* Leading for body text; lines run to about 80 characters */
+  --line-height-body: 1.5;
+
   /* Optical scale for lining figures set next to lowercase text */
   --font-scale-numeric: 0.875;
 
@@ -153,7 +156,7 @@
   --width-xl: 1440px;
 
   /* Semantic widths */
-  --width-content: var(--width-md); /* standard content column */
+  --width-content: 720px; /* standard content column: about 80 characters per line at the body size */
   --width-wide: var(--width-lg); /* wider sections and layouts */
 
   /* Opacity */
