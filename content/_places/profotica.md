@@ -4,8 +4,8 @@ pid: profotica
 title: "Profotica"
 address: Nieuwendijk 113
 latlng:
-  - 52.3829109
-  - 4.8855175
+  - 52.376513562080575
+  - 4.89612146677595
 location: amsterdam
 emoji: "📷"
 category: photographic_laboratory
