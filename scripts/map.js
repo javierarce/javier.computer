@@ -461,6 +461,7 @@ class Map extends Base {
   // Clicking near a pin counts as clicking it, so only the pins actually on
   // the map can be hit — otherwise a filtered-out place would still answer.
   onMapClick(e) {
+    this.emit("map:click");
     const latlng = this.map.layerPointToLatLng(e.layerPoint);
     let clickedMarker = null;
 
@@ -503,6 +504,7 @@ class Map extends Base {
     this.addFitControl();
 
     this.addExpandControl();
+    this.addSearchControl();
     this.addAttribution();
   }
 
@@ -564,6 +566,21 @@ class Map extends Base {
     });
   }
 
+  addSearchControl() {
+    this.$searchButton = this.createControl({
+      className: "search-control",
+      position: "topright",
+      label: "Buscar un lugar",
+      onClick: () => this.emit("search:toggle"),
+    });
+    this.$searchButton.setAttribute("aria-controls", "map-search");
+    this.updateSearchControl(false);
+  }
+
+  updateSearchControl(isOpen) {
+    this.$searchButton.setAttribute("aria-expanded", String(isOpen));
+  }
+
   updateExpandControl(isExpanded) {
     if (!this.$expandButton) {
       return;
@@ -606,6 +623,7 @@ class App {
   constructor() {
     this.$el = document.querySelector(".js-map");
     this.$bigMap = document.querySelector(".big-map");
+    this.mobileLayout = window.matchMedia("(max-width: 800px)");
 
     this.flexDirection = window
       .getComputedStyle(this.$bigMap)
@@ -632,9 +650,13 @@ class App {
     this.$search = document.querySelector(".js-map-search");
     this.$searchClear = document.querySelector(".js-map-search-clear");
     this.$empty = document.querySelector(".js-locations-empty");
+    this.$suggestions = document.querySelector(".js-map-suggestions");
+    this.suggestions = [];
+    this.activeSuggestion = -1;
 
     this.render();
     this.bindEvents();
+    this.renderSuggestions([]);
 
     const queryString = window.location.href;
     const permalink = queryString.split("/").pop();
@@ -717,6 +739,85 @@ class App {
 
     this.isFiltering = isFiltering;
     this.map.setVisibleLocationIds(isFiltering ? matchedIds : null);
+    this.renderSuggestions(
+      isFiltering
+        ? this.locations.filter((location) => matchedIds.has(location.id))
+        : [],
+    );
+  }
+
+  renderSuggestions(locations) {
+    const isMobile = this.mobileLayout.matches;
+    this.suggestions = isMobile ? locations : [];
+    this.activeSuggestion = -1;
+    this.$suggestions.replaceChildren();
+    this.$suggestions.hidden = !this.suggestions.length;
+    this.$search.removeAttribute("aria-activedescendant");
+
+    if (isMobile) {
+      this.$search.setAttribute("role", "combobox");
+      this.$search.setAttribute("aria-autocomplete", "list");
+      this.$search.setAttribute("aria-controls", "map-suggestions");
+      this.$search.setAttribute(
+        "aria-expanded", String(!this.$suggestions.hidden),
+      );
+    } else {
+      for (const attribute of [
+        "role", "aria-autocomplete", "aria-controls", "aria-expanded",
+      ]) {
+        this.$search.removeAttribute(attribute);
+      }
+    }
+
+    for (const location of this.suggestions) {
+      const $option = document.createElement("li");
+      $option.className = "big-map__suggestion";
+      $option.id = `map-suggestion-${location.id}`;
+      $option.setAttribute("role", "option");
+      $option.setAttribute("aria-selected", "false");
+
+      const $title = document.createElement("span");
+      $title.textContent = location.title;
+      $option.append($title);
+
+      if (location.address) {
+        const $address = document.createElement("span");
+        $address.className = "big-map__suggestion-address";
+        $address.textContent = location.address;
+        $option.append($address);
+      }
+
+      $option.addEventListener("click", () => this.selectSuggestion(location));
+      this.$suggestions.append($option);
+    }
+  }
+
+  selectSuggestion(location) {
+    this.setMobileSearch(false);
+    const marker = this.map.getMarkers().find(
+      (marker) => marker.options.location.id === location.id,
+    );
+    this.map.goToMarkerAt(marker);
+  }
+
+  moveSuggestion(direction) {
+    if (!this.suggestions.length) {
+      return;
+    }
+
+    const count = this.suggestions.length;
+    this.activeSuggestion = this.activeSuggestion < 0
+      ? (direction > 0 ? 0 : count - 1)
+      : (this.activeSuggestion + direction + count) % count;
+
+    Array.from(this.$suggestions.children).forEach(($option, index) => {
+      const isActive = index === this.activeSuggestion;
+      $option.setAttribute("aria-selected", String(isActive));
+      if (isActive) {
+        this.$search.setAttribute("aria-activedescendant", $option.id);
+        $option.scrollIntoView({ block: "nearest" });
+      }
+    });
   }
 
   // "Show me these": the map reframes itself around the results instead of
@@ -779,11 +880,29 @@ class App {
     // reframing while the query is still half-typed would make it lurch around
     // on its way to what the user meant.
     this.$search.addEventListener("keydown", (event) => {
+      if (this.mobileLayout.matches) {
+        if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+          event.preventDefault();
+          event.stopPropagation();
+          this.moveSuggestion(event.key === "ArrowDown" ? 1 : -1);
+          return;
+        }
+
+        if (event.key === "Enter" && this.suggestions.length) {
+          event.preventDefault();
+          this.selectSuggestion(this.suggestions[Math.max(0, this.activeSuggestion)]);
+          return;
+        }
+      }
+
       if (event.key !== "Enter") {
         return;
       }
 
       event.preventDefault();
+      if (this.mobileLayout.matches) {
+        this.$search.blur();
+      }
       this.fitToResults();
     });
 
@@ -807,6 +926,20 @@ class App {
     this.map.refresh();
   }
 
+  setMobileSearch(isOpen) {
+    this.$bigMap.classList.toggle("is-search-open", isOpen);
+    this.map.updateSearchControl(isOpen);
+
+    if (isOpen) {
+      this.map.closePopup();
+      this.$search.focus();
+    } else {
+      this.$search.value = "";
+      this.search("");
+      this.map.$searchButton.focus();
+    }
+  }
+
   bindKeyEvents() {
     document.addEventListener("keydown", (event) => {
       const isSearching = event.target === this.$search;
@@ -823,6 +956,9 @@ class App {
         !isSearching
       ) {
         event.preventDefault();
+        if (this.mobileLayout.matches) {
+          this.setMobileSearch(true);
+        }
         this.$search.focus();
         this.$search.select();
         return;
@@ -834,6 +970,11 @@ class App {
         // While typing, Escape clears the search before it clears the selection
         if (isSearching && this.$search.value) {
           this.clearSearch();
+          return;
+        }
+
+        if (this.mobileLayout.matches && this.$bigMap.classList.contains("is-search-open")) {
+          this.setMobileSearch(false);
           return;
         }
 
@@ -853,6 +994,10 @@ class App {
         event.preventDefault();
         this.map.goToMarker("prev");
       } else if (event.key === "Tab") {
+        // Let keyboard users reach and leave the mobile search controls.
+        if (this.mobileLayout.matches) {
+          return;
+        }
         // Tab out of the search field jumps to the first result, keeping focus
         // in the input so you can keep typing or arrow through from there
         if (isSearching) {
@@ -939,6 +1084,24 @@ class App {
     this.bindSearchEvents();
 
     this.map.on("sidebar:toggle", this.toggleSidebar.bind(this));
+    this.map.on("search:toggle", () => {
+      this.setMobileSearch(!this.$bigMap.classList.contains("is-search-open"));
+    });
+
+    this.map.on("map:click", () => {
+      if (this.mobileLayout.matches && this.$bigMap.classList.contains("is-search-open")) {
+        this.setMobileSearch(false);
+      }
+    });
+
+    this.mobileLayout.addEventListener("change", () => {
+      // Keep an existing desktop query visible when switching to mobile.
+      const isOpen = this.mobileLayout.matches && Boolean(this.$search.value);
+      this.$bigMap.classList.toggle("is-search-open", isOpen);
+      this.map.updateSearchControl(isOpen);
+      this.search(this.$search.value);
+      this.map.refresh();
+    });
 
     this.map.on("marker:select", this.pinMarker.bind(this));
 

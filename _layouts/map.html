@@ -2,7 +2,7 @@
 layout: maps
 className: trip
 ---
-<div class="content">
+<div class="content content--map">
   {% include navigation/index.html -%}
 
 
@@ -26,7 +26,7 @@ className: trip
         {% assign search_label = "Buscar un lugar" -%}
       {% endif -%}
 
-      <div class="big-map__search">
+      <div class="big-map__search" id="map-search">
         <div class="big-map__search-field">
           <input
             type="search"
@@ -34,6 +34,7 @@ className: trip
             placeholder="{{ search_label }}"
             aria-label="{{ search_label }}"
             autocomplete="off"
+            enterkeyhint="search"
           >
           <button
             type="button"
@@ -44,7 +45,9 @@ className: trip
         </div>
       </div>
 
-      <div class="locations__empty js-locations-empty" hidden>No hay resultados</div>
+      <ul class="big-map__suggestions js-map-suggestions" id="map-suggestions" role="listbox" aria-label="Lugares" hidden></ul>
+
+      <div class="locations__empty js-locations-empty" role="status" hidden>No hay resultados</div>
 
       <div class="locations js-locations">
         {% for location in posts -%}
