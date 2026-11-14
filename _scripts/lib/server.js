@@ -8,7 +8,7 @@
 import fs from "node:fs";
 import net from "node:net";
 import path from "node:path";
-import { spawn } from "node:child_process";
+import { execFileSync, spawn } from "node:child_process";
 
 import { ROOT } from "./site.js";
 
@@ -153,6 +153,70 @@ export const ready = (port = PORT) =>
     socket.once("timeout", () => finish(false));
     socket.once("error", () => finish(false));
   });
+
+const capture = (command, args) => {
+  try {
+    return execFileSync(command, args, {
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    });
+  } catch {
+    // lsof exits 1 when it finds nothing, and may not be installed at all
+    return "";
+  }
+};
+
+// lsof -F prints one field per line, each prefixed with the letter asked for.
+const field = (output, letter) =>
+  output
+    .split("\n")
+    .filter((line) => line.startsWith(letter))
+    .map((line) => line.slice(1));
+
+// The pids holding the port when it is not our own server. Empty when lsof
+// is missing or the listener belongs to another user.
+export function listeners(port = PORT) {
+  const output = capture("lsof", [
+    "-nP",
+    `-iTCP:${port}`,
+    "-sTCP:LISTEN",
+    "-Fp",
+  ]);
+
+  return [...new Set(field(output, "p").map(Number))].filter(Boolean);
+}
+
+// Stops whatever is listening on the port. Only the listening processes are
+// signalled, not their groups: they were not started here, so there is no
+// telling what else lives in them. True once the port is free.
+export async function free(port = PORT) {
+  const pids = listeners(port);
+  const pending = () => pids.filter(alive);
+
+  const send = (name) => {
+    for (const pid of pending()) {
+      try {
+        process.kill(pid, name);
+      } catch {
+        // gone already, or not ours to stop
+      }
+    }
+  };
+
+  send("SIGTERM");
+
+  for (let waited = 0; waited < 5000 && pending().length; waited += 100) {
+    await sleep(100);
+  }
+
+  send("SIGKILL");
+
+  for (let waited = 0; waited < 2000 && (await ready(port)); waited += 100) {
+    await sleep(100);
+  }
+
+  return !(await ready(port));
+}
 
 export function log(lines = 40) {
   let raw;
