@@ -179,6 +179,8 @@ watching and get on with it. The server outlives the CLI: `s` then opens a small
 screen with the uptime, the log (`.computer/serve.log`), restart and stop.
 You can also choose **Tools → Stop the dev server**, or run `./computer stop`
 from the same checkout. Each checkout tracks its own background server.
+If something else already holds the port — another checkout, an `npm run dev`
+left running — `serve` offers to stop it and start here instead.
 Set `PORT` to run a second copy of the site somewhere else:
 
 ```sh

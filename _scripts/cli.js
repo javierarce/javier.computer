@@ -854,13 +854,8 @@ async function startServer({ drafts = false } = {}) {
     }
 
     await server.stop();
-  } else if (await server.ready()) {
-    // Somebody else owns the port — another workspace, or a `npm run dev`
-    // started by hand. Starting now would only fill the log with EADDRINUSE.
-    return report([
-      `${color.yellow}Something is already listening on ${server.url()}.${color.reset}`,
-      `${color.dim}Another workspace, maybe — PORT=4002 ./computer serve picks a different one.${color.reset}`,
-    ]);
+  } else if ((await server.ready()) && !(await freePort())) {
+    return;
   }
 
   server.start({ drafts });
@@ -896,6 +891,41 @@ async function startServer({ drafts = false } = {}) {
   await report([
     `${color.dim}Still building in the background; it will answer at ${color.reset}${server.url()}${color.dim} when it is ready.${color.reset}`,
   ]);
+}
+
+// Somebody else owns the port — another workspace, or a `npm run dev` started
+// by hand. Starting anyway would only fill the log with EADDRINUSE, so this
+// offers to stop it. True when the port is free to use.
+async function freePort() {
+  const elsewhere = `PORT=${server.PORT + 1} ./computer serve picks another port`;
+
+  if (!server.listeners().length) {
+    await report([
+      `${color.yellow}Something is already listening on ${server.url()}, and I can't tell what.${color.reset}`,
+      `${color.dim}${elsewhere}.${color.reset}`,
+    ]);
+    return false;
+  }
+
+  const choice = await select({
+    title: "Dev server",
+    note: `localhost:${server.PORT} is already in use`,
+    items: [
+      { label: "Stop it and start here", value: "stop" },
+      { label: "Cancel", value: "cancel" },
+    ],
+    hints: "↑↓ move · ⏎ select · esc back",
+  });
+
+  if (choice !== "stop") return false;
+
+  if (await server.free()) return true;
+
+  await report([
+    `${color.red}Could not free port ${server.PORT}.${color.reset}`,
+    `${color.dim}${elsewhere}.${color.reset}`,
+  ]);
+  return false;
 }
 
 // The screen behind a running server: what it is serving, what it printed
