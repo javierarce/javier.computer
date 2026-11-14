@@ -322,9 +322,17 @@
     height: 400px;
   }
 
-  .sidebar {
+  .big-map__sidebar {
     width: var(--width-full);
     font-size: var(--font-size-body);
+  }
+
+  .big-map.is-expanded .big-map__sidebar {
+    display: flex;
+  }
+
+  .expand-control.leaflet-control {
+    display: none;
   }
 
   .maps__container p,
