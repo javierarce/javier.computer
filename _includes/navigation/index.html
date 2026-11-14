@@ -1,14 +1,18 @@
 {% assign permalink = page.permalink | strip_newlines -%}
 {% assign category = page.category | strip_newlines -%}
 {% assign layoutCategory = layoutMeta.category | strip_newlines -%}
+{% capture secondary -%}
+  {% include navigation/secondary.html -%}
+{% endcapture -%}
+{% assign secondary = secondary | strip -%}
 
 <div class="navigation navigation--right">
   <div class="navigation__main">
     {% include navigation/default.html -%}
   </div>
-  {% if category.size > 0 or layoutCategory.size > 0 -%}
+  {% if secondary.size > 0 -%}
     <div class="navigation__secondary">
-      {% include navigation/secondary.html -%}
+      {{ secondary }}
     </div>
   {% endif -%}
 </div>

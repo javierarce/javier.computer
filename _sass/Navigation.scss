@@ -8,6 +8,7 @@
   justify-content: space-between;
   flex-direction: column;
   gap: var(--s-2);
+  --navigation-icon-size: 20px;
 
   &--fullwidth,
   &--fullwidth &__main {
@@ -66,6 +67,11 @@
       display: inline-flex;
       align-items: center;
       vertical-align: middle; // keeps it aligned when the links wrap inline on mobile
+
+      .icon {
+        width: var(--navigation-icon-size);
+        height: var(--navigation-icon-size);
+      }
     }
   }
 
@@ -83,8 +89,11 @@
       gap: var(--s-1);
     }
 
+    // The second row starts under the first text link (Blog), not under the
+    // magnifier: skip the icon and the gap that follows it.
     &__secondary {
       width: auto;
+      padding-left: calc(var(--navigation-icon-size) + var(--s-2));
     }
 
     // Slightly smaller text and a tighter gap keep the main menu on one line
@@ -99,11 +108,5 @@
     &__link {
       font-size: var(--font-size-meta);
     }
-  }
-
-  // A post keeps the same header as the home: Blog is already highlighted,
-  // so the Archivo/RSS line only adds noise on a small screen.
-  .layout__post .navigation__secondary {
-    display: none;
   }
 }

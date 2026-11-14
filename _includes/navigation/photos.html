@@ -1,3 +1,7 @@
+{%- comment -%}
+  Only a city page (/photos/{city} and its grid) names its city here. A photo
+  or reportage already links to its city from the footer.
+{%- endcomment -%}
 {% assign matching_location = collections.locations | where: 'location', page.location | first -%}
 {% if layoutMeta.grid == true -%}
   {% assign grid = '/grid' -%}
@@ -5,27 +9,12 @@
   {% assign grid = '' -%}
 {% endif -%}
 
-<div class="navigation__links">
-  {% unless page.hide_location -%}
-  {% if matching_location %}
-    <a
-      class="navigation__link {% if page.category == 'photos' %}is-selected{% endif %}"
-      href="/photos/{{ page.location }}{{ grid }}"
-    >
-      {{- matching_location.title -}}
-    </a>
-      {% endif -%}
-  {% endunless %}
-
-  <a
-    class="navigation__link {% if permalink == 'photos/index.html' %}is-selected{% endif %}"
-    href="/photos"
-    >Feed</a
-  >
-  <a
-    class="navigation__link {% if permalink == 'photos/archive' %}is-selected{% endif %}"
-    href="/photos/archive"
-    >Ciudades</a
-  >
-  <a class="navigation__link" href="/feeds/photos.xml">RSS</a>
-</div>
+{% unless page.hide_location -%}
+  {% if matching_location -%}
+    <div class="navigation__links">
+      <a class="navigation__link is-selected" href="/photos/{{ page.location }}{{ grid }}">
+        {{- matching_location.title -}}
+      </a>
+    </div>
+  {% endif -%}
+{% endunless -%}
