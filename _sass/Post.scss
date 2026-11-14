@@ -237,6 +237,34 @@
 
 @include mobile {
   .post {
+    &__footer {
+      display: grid;
+      grid-template-columns: minmax(0, max-content) auto auto 1fr;
+      align-items: baseline;
+
+      > * {
+        grid-column: 1 / -1;
+      }
+
+      > .post__date {
+        grid-area: 1 / 1;
+      }
+
+      > open-heart {
+        grid-area: 1 / 2;
+        white-space: nowrap;
+      }
+
+      > .post__comment {
+        grid-area: 1 / 3;
+        white-space: nowrap;
+      }
+
+      > .post__pagination {
+        grid-area: 1 / 4;
+      }
+    }
+
     &__content a[href^="/maps"]:after {
       height: 18px;
     }
