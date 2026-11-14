@@ -203,10 +203,13 @@
   width: var(--width-wide);
 }
 
+// Takes the full width up front: left to shrink-wrap, it sits at the width of
+// the text column until the first photo loads and stretches it.
 .photo__collection {
   display: flex;
   flex-direction: column;
   gap: var(--s-8);
+  width: var(--width-full);
 
   &:last-child {
     margin-bottom: 0;
@@ -238,6 +241,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--s-16);
+  width: var(--width-full);
 }
 
 .photo__grid {
