@@ -41,6 +41,9 @@ including extensionless links backed by `.html` files on the production server.
 `eleventy.config.mjs` defines the collections, pagination, generated archives,
 and build steps. `_config.yml` holds site metadata, display preferences, and
 the asset version. Bump `version` when changing browser JavaScript or styles.
+When changing an SVG icon, also update the `?version=` query on every Sass
+reference to that icon (adding it if absent). Versioning the stylesheet alone
+does not invalidate cached images referenced inside it.
 The small modules in `_build/` handle front matter and URLs, Liquid tags and
 filters, Markdown rendering, and places/feeds. Sass compiles the existing
 styles; Prism highlights code blocks with the existing CSS classes.

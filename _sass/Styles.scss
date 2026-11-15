@@ -349,7 +349,7 @@ a.is-newsletter::after {
   height: 24px;
   vertical-align: sub;
   margin-left: var(--s-1);
-  background-image: url(/img/icons/camera.svg);
+  background-image: url(/img/icons/camera.svg?version=7.2.20);
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: contain;
@@ -357,7 +357,7 @@ a.is-newsletter::after {
 }
 
 a.is-newsletter::after {
-  background-image: url(/img/icons/mail.svg);
+  background-image: url(/img/icons/mail.svg?version=7.2.20);
 }
 
 a.is-icon-light.is-photo::after,
