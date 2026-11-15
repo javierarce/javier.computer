@@ -565,6 +565,17 @@ figcaption {
   .photo__layout {
     width: var(--width-full);
 
+    .photo.is-framed > .photo__content {
+      padding: 0;
+      background: none;
+      border-radius: 0;
+
+      img {
+        width: var(--width-full);
+        max-height: none;
+      }
+    }
+
     p,
     p:last-child,
     .stack ul,
