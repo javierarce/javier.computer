@@ -53,19 +53,19 @@ turtle, a turtle.</p>
 <div class="link-list">
     <a href="/contact" class="link-list__item">
         <span class="link-list__title">Contact</span>
-        <span class="link-list__description">Do you need to tell me something incredible that happened to you? I want to know! Send me a message.</span>
+        <span class="link-list__description">Tell me something incredible that happened to you.</span>
+    </a>
+    <a href="/office-hours" class="link-list__item">
+        <span class="link-list__title">Let's talk</span>
+        <span class="link-list__description">If you want to talk to me online or in person.</span>
     </a>
     <a href="/newsletter" class="link-list__item">
         <span class="link-list__title">Newsletter</span>
-        <span class="link-list__description">Subscribe to my newsletter to get an email every time I do something extremely funny.</span>
-    </a>
-    <a href="/office-hours" class="link-list__item">
-        <span class="link-list__title">Let's chat!</span>
-        <span class="link-list__description">Schedule a meeting with me and let's talk online or in person.</span>
+        <span class="link-list__description">I'll let you know when I do something extremely funny.</span>
     </a>
     <a href="/feeds" class="link-list__item">
         <span class="link-list__title">RSS</span>
-        <span class="link-list__description">Don't miss a post! Subscribe to any of the feeds available on this site.</span>
+        <span class="link-list__description">Subscribe to one of the feeds available on this site.</span>
     </a>
 </div>
 </div>
