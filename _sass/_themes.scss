@@ -4,7 +4,7 @@
   /* Semantic colors */
   --color-accent: var(--purple);
   --link: var(--yellow);
-  --color-link-underline: #333333;
+  --color-link-underline: #555555;
   --color-txt-on-link: var(--black);
   --error: var(--yellow);
   --text: var(--white);
@@ -89,4 +89,32 @@ html[data-theme="light"] {
   --color-code-regex: #14675d;
   --color-code-escape: #994522;
   --color-code-muted: #666666;
+}
+
+// Crossfade snapshots only for an explicit pointer-triggered theme change.
+// Capture fully updated colors/icons, rather than a second transition inside
+// each snapshot. Component transitions resume when the crossfade finishes.
+html.is-changing-theme *,
+html.is-changing-theme *::before,
+html.is-changing-theme *::after {
+  transition: none !important;
+}
+
+html.is-changing-theme::view-transition-group(root) {
+  animation-duration: 220ms;
+  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+html.is-changing-theme::view-transition-old(root),
+html.is-changing-theme::view-transition-new(root) {
+  animation-duration: 220ms;
+  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.is-changing-theme::view-transition-group(root),
+  html.is-changing-theme::view-transition-old(root),
+  html.is-changing-theme::view-transition-new(root) {
+    animation: none;
+  }
 }

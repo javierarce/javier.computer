@@ -77,6 +77,9 @@ restores the choice from localStorage before the stylesheet loads, updates the
 browser theme color, and synchronizes changes between tabs. If storage is
 unavailable, the switch still works until navigation or reload. Without
 JavaScript the switch stays hidden and the site uses dark mode.
+Pointer-triggered changes crossfade over 220ms using View Transitions when
+supported. Initial rendering, keyboard changes, and reduced-motion settings
+apply the theme immediately.
 
 ---
 
