@@ -51,19 +51,19 @@ amarillo, una foto de tu tortuga, una tortuga.</p>
 <div class="link-list">
     <a href="/contact" class="link-list__item">
         <span class="link-list__title">Contacto</span>
-        <span class="link-list__description">¿Quieres contarme algo increíble que te ha pasado? ¡Cuéntamelo, quiero saberlo!</span>
+        <span class="link-list__description">Si quieres contarme algo increíble que te ha pasado.</span>
+    </a>
+    <a href="/office-hours" class="link-list__item">
+        <span class="link-list__title">Hablemos</span>
+        <span class="link-list__description">Si quieres hablar conmigo online o en persona.</span>
     </a>
     <a href="/newsletter" class="link-list__item">
         <span class="link-list__title">Newsletter</span>
-        <span class="link-list__description">Suscríbete a mi newsletter para recibir un email cada vez que haga algo extremadamente gracioso.</span>
-    </a>
-    <a href="/office-hours" class="link-list__item">
-        <span class="link-list__title">¡Hablemos!</span>
-        <span class="link-list__description">Agenda una reunión conmigo y hablemos online o en persona.</span>
+        <span class="link-list__description">Te aviso cuando haga algo extremadamente gracioso.</span>
     </a>
     <a href="/feeds" class="link-list__item">
         <span class="link-list__title">RSS</span>
-        <span class="link-list__description">¡No te pierdas nada! Suscríbete a cualquiera de los feeds disponibles en esta web.</span>
+        <span class="link-list__description">Suscríbete a alguno de los feeds disponibles en la web.</span>
     </a>
 </div>
 </div>
