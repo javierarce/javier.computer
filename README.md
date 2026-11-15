@@ -58,6 +58,28 @@ same deployment workflow after creating a post.
 
 ---
 
+## Styles and themes
+
+`css/style.scss` loads the shared foundations, component files, then global
+styles. Keep layout and component rules in their existing `_sass` files:
+
+- `_variables.scss`: typography, spacing, dimensions, opacity, and motion.
+- `_palette.scss`: fixed colors for artwork, books, maps, and the pink zine.
+- `_themes.scss`: page colors and syntax highlighting for dark and light themes.
+
+Use semantic theme tokens in components; reserve fixed colors for surfaces
+that intentionally keep the same appearance, such as video controls and maps.
+The photo lightbox stays dark in either theme.
+
+The sun/moon switch in the main navigation changes between dark and light.
+Dark is the default, regardless of the OS preference. `scripts/theme.js`
+restores the choice from localStorage before the stylesheet loads, updates the
+browser theme color, and synchronizes changes between tabs. If storage is
+unavailable, the switch still works until navigation or reload. Without
+JavaScript the switch stays hidden and the site uses dark mode.
+
+---
+
 ## The `computer` command
 
 One menu for everything this site needs: creating content, refreshing the data

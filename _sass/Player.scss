@@ -3,11 +3,11 @@
 .player {
   width: auto;
   margin: 1em 0 0 0;
-  color: var(--black);
+  color: var(--color-txt-site);
   font-size: var(--font-size-body);
   text-decoration: none;
   padding: 0.6em;
-  border: 1px solid var(--white);
+  border: 1px solid var(--color-txt-site);
   position: relative;
   display: flex;
   flex-direction: row;
@@ -27,7 +27,7 @@
     display: block;
     background: none;
     border: none;
-    color: var(--white);
+    color: var(--color-txt-site);
     font-size: var(--font-size-body);
     cursor: pointer;
   }
@@ -64,7 +64,7 @@
 
   &__progress {
     height: 2px;
-    background: var(--white);
+    background: var(--color-txt-site);
     position: absolute;
     bottom: 0;
     left: 0;

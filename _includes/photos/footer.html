@@ -16,7 +16,7 @@ include.photo.location | first -%}
       >{{ matching_location.title }}</a
     >
     {% endif -%} {% endunless %} {% if site.show_likes %}
-    <open-heart
+    <open-heart count="0"
       class="text-open-heart"
       href="https://api.javier.computer/heart?id={{include.photo.url}}"
       title="{{ include.photo.title }}"
@@ -25,6 +25,7 @@ include.photo.location | first -%}
     >
       <span class="on"></span>
       <span class="off"></span>
+      <span class="count">0</span>
     </open-heart>
     {% endif %} 
 

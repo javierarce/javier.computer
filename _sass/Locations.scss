@@ -39,7 +39,7 @@
     width: 1.2rem;
     height: 1.2rem;
     border-radius: var(--br-pill);
-    color: var(--black);
+    color: var(--color-txt-on-link);
     background: var(--link);
     font-size: var(--font-size-body-tiny);
     margin: 0 0.1em 0 0;
@@ -129,7 +129,7 @@
     width: 1.2rem; // TODO: add variable
     height: 1.2rem; // TODO: add variable
     padding: 0.4rem; // TODO: add variable
-    color: var(--white);
+    color: var(--color-txt-site);
     background: var(--color-bg-muted);
     font-size: var(--font-size-body-tiny);
     font-weight: var(--weight-medium);
@@ -137,8 +137,8 @@
 
     &:hover {
       text-decoration: none;
-      background: var(--white);
-      color: var(--black);
+      background: var(--color-txt-site);
+      color: var(--color-bg-site);
     }
   }
 }

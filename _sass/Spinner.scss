@@ -1,7 +1,7 @@
 .spinner {
   display: none;
-  border: 3px solid var(--white);
-  border-left-color: var(--black);
+  border: 3px solid var(--color-txt-site);
+  border-left-color: var(--color-bg-site);
   animation: rotating 0.8s infinite linear;
 
   width: 30px;
@@ -22,6 +22,8 @@
   }
 
   &.is-lightbox {
+    border-color: var(--white);
+    border-left-color: var(--black);
     position: absolute;
     top: 1em;
     right: 2.6em;

@@ -51,7 +51,7 @@
     {% include post/locations.html page=post -%}
 
     {% if site.show_home_likes %}
-      <open-heart
+      <open-heart count="0"
         class="text-open-heart"
         href="https://api.javier.computer/heart?id={{ page.url }}"
         emoji="❤️"
@@ -59,6 +59,7 @@
       >
         <span class="on"></span>
         <span class="off"></span>
+      <span class="count">0</span>
       </open-heart>
     {% endif %}
 

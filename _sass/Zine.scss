@@ -8,7 +8,7 @@
 
 .layout__thanks {
   background: var(--color-bg-zine);
-  color: var(--color-txt-site-inverted);
+  color: var(--color-txt-zine);
   margin: auto;
 
   .thanks {
@@ -25,17 +25,17 @@
 
     hr {
       border: none;
-      border-bottom: 1px solid var(--color-txt-site-inverted);
+      border-bottom: 1px solid var(--color-txt-zine);
       margin: 0 auto;
       width: 100px;
       opacity: var(--op-2);
     }
 
     a {
-      color: var(--color-txt-site-inverted);
+      color: var(--color-txt-zine);
 
       &:hover {
-        color: var(--color-txt-site-inverted);
+        color: var(--color-txt-zine);
       }
     }
     p {
@@ -53,7 +53,7 @@
 .layout__lol,
 .layout__zine {
   background: var(--color-bg-zine);
-  color: var(--color-txt-site-inverted);
+  color: var(--color-txt-zine);
   margin: auto;
 
   .content {
@@ -62,7 +62,7 @@
 
   .navigation__link {
     mix-blend-mode: luminosity;
-    color: var(--color-txt-site-inverted);
+    color: var(--color-txt-zine);
     opacity: var(--op-light);
     &:hover {
       opacity: var(--op-visible);
@@ -70,7 +70,7 @@
   }
 
   .navigation__link.is-selected {
-    color: var(--color-txt-site-inverted);
+    color: var(--color-txt-zine);
     opacity: var(--op-9);
     &:hover {
       opacity: var(--op-visible);
@@ -92,7 +92,7 @@
 
   .input--zine input {
     text-align: center;
-    color: var(--color-txt-site-inverted);
+    color: var(--color-txt-zine);
     mix-blend-mode: luminosity;
     opacity: var(--op-7);
 
@@ -114,12 +114,12 @@
     font-size: var(--font-size-body-xs);
     opacity: var(--op-light);
     a {
-      color: var(--color-txt-site-inverted);
+      color: var(--color-txt-zine);
       font-weight: var(--weight-bold);
       text-decoration: none;
 
       &:hover {
-        color: var(--color-txt-site-inverted);
+        color: var(--color-txt-zine);
       }
     }
   }
@@ -321,10 +321,10 @@
     margin: 0;
 
     a {
-      color: var(--color-txt-site-inverted) !important;
+      color: var(--color-txt-zine) !important;
 
       &:hover {
-        color: var(--color-txt-site-inverted) !important;
+        color: var(--color-txt-zine) !important;
       }
     }
   }

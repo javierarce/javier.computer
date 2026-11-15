@@ -32,10 +32,10 @@ body {
 }
 
 a.is-underlined {
-  text-decoration: underline;
-  text-decoration-color: var(--color-txt-site);
+  text-decoration: underline var(--color-link-underline, currentColor);
+  text-decoration-color: var(--color-link-underline, var(--color-txt-site));
   text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+  text-underline-offset: var(--link-underline-offset, 3px);
 }
 
 .is-light {
@@ -63,13 +63,13 @@ p.is-light p a {
   max-width: var(--width-full);
   padding: 0.8em;
   font-size: var(--font-size-body);
-  border: 1px solid var(--purple);
+  border: 1px solid var(--color-accent);
   border-radius: var(--br-default);
-  color: var(--purple);
+  color: var(--color-accent);
 
   & > a,
   & > a:hover {
-    color: var(--purple) !important;
+    color: var(--color-accent) !important;
   }
 }
 
@@ -99,14 +99,15 @@ p.is-light p a {
 }
 
 a {
+  text-decoration-color: var(--color-link-underline, currentColor);
   color: var(--color-txt-site);
-  text-underline-offset: 3px;
+  text-underline-offset: var(--link-underline-offset, 3px);
 }
 
 a:hover {
   cursor: pointer;
   color: var(--textHover);
-  text-decoration: underline;
+  text-decoration: underline var(--color-link-underline, currentColor);
 }
 
 em {
@@ -265,7 +266,7 @@ img {
   &.lazy {
     transition: all 520ms ease-in-out;
     opacity: var(--op-1);
-    background: var(--white);
+    background: var(--color-txt-site);
 
     &.loaded {
       background: transparent;
@@ -376,13 +377,13 @@ a.is-icon-light.is-newsletter::after {
 .is-highlighted {
   padding: 0.8em;
   font-size: var(--font-size-body);
-  border: 1px solid var(--purple);
+  border: 1px solid var(--color-accent);
   border-radius: var(--br-default);
-  color: var(--purple);
+  color: var(--color-accent);
 
   a,
   a:hover {
-    color: var(--purple);
+    color: var(--color-accent);
   }
 }
 
