@@ -85,15 +85,14 @@
 
 .maps {
   &__title {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: var(--s-1);
     opacity: var(--op-visible);
   }
 
-  &__rss {
+  &__actions {
     display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-4);
+    font-size: var(--font-size-body);
   }
 
   &__recent-item {
@@ -132,6 +131,27 @@
   &__content {
     margin: 1.4em auto;
     width: var(--width-content);
+
+    a {
+      text-decoration: none;
+      opacity: var(--op-light);
+
+      &:hover,
+      &:focus-visible {
+        opacity: var(--op-visible);
+        text-decoration: underline var(--color-link-underline, currentColor);
+      }
+    }
+
+    a.maps__feed {
+      color: var(--link);
+      opacity: var(--op-visible);
+      text-decoration: underline var(--color-link-underline, currentColor);
+    }
+
+    .maps__updated {
+      margin-top: var(--s-8);
+    }
   }
 
   &__list {
@@ -144,32 +164,16 @@
     li {
       list-style: none;
 
-      a {
-        text-decoration: none;
+      + li {
+        border-top: 1px solid var(--color-border-subtle);
+        padding-top: var(--s-4);
       }
-    }
-
-    p {
-      opacity: var(--op-light);
-    }
-
-    p a {
-      text-decoration: underline var(--color-link-underline, currentColor);
     }
   }
 
   &__list-locations {
-    margin: 0 0 1em;
-
-    a {
-      text-decoration: none;
-      font-size: var(--font-size-body);
-      opacity: var(--op-light);
-
-      &:hover {
-        opacity: var(--op-visible);
-      }
-    }
+    margin: 0 0 var(--s-2);
+    font-size: var(--font-size-body);
   }
 }
 

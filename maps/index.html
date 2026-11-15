@@ -100,8 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   <div class="maps__content">
 
-    <p>Esta página contiene un listado de {{ places_count }} de algunos de mis lugares favoritos en el mundo real. Suscríbete a <a href="/feeds/places.xml">este feed</a> para estar al tanto de los sitios que añado en general, o usa los feeds individuales si quieres saber qué añado en cada ciudad.</p>
-    <p>La última actualización fue el {% include date.html date=recent_location.updated_at %}</p>
+    <p>Esta página contiene un listado de {{ places_count }} de algunos de mis lugares favoritos en el mundo real. Suscríbete a <a class="maps__feed" href="/feeds/places.xml">este feed</a> para estar al tanto de los sitios que añado en general, o usa los feeds individuales si quieres saber qué añado en cada ciudad.</p>
 
     <ul class="maps__list">
       {% for map in collections.maps -%}
@@ -109,21 +108,25 @@ document.addEventListener("DOMContentLoaded", function() {
         {% assign location_count = locations | size %}
         {% if location_count > 0 %}
           <li>
-            <h4 class="maps__title"><a href="/{{ map.permalink }}">{{ map.title}}</a><a href="/feeds/{{ map.location }}.xml" class="maps__rss"><span class="icon icon-rss"></span></a></h4>
+            <h4 class="maps__title">{{ map.title }}</h4>
             <div class="maps__list-locations">
               {% for location in locations %}
                 <a href="/{{ map.permalink }}/{{ location.pid }}">{{ location.title }}</a>{% unless forloop.last %} &middot; {%
                   endunless -%}{% endfor -%}.
-          </div>
-          {% assign city_posts = collections.posts | where: "location", map.location %}
-          {% if city_posts.size > 0 %}
-            <div class="maps__list-locations">
-              <a href="/in/{{ map.location }}">Todos los posts sobre {{ map.title }}.</a>
             </div>
-          {% endif %}
+            {% assign city_posts = collections.posts | where: "location", map.location %}
+            <nav class="maps__actions" aria-label="Enlaces de {{ map.title | escape }}">
+              <a href="/{{ map.permalink }}">Ver mapa</a>
+              {% if city_posts.size > 0 %}
+                <a href="/in/{{ map.location }}">Posts</a>
+              {% endif %}
+              <a href="/feeds/{{ map.location }}.xml" aria-label="RSS de {{ map.title | escape }}">RSS</a>
+            </nav>
           </li>
         {% endif -%}
       {% endfor -%}
     </ul>
+
+    <p class="maps__updated">La última actualización fue el {% include date.html date=recent_location.updated_at %}</p>
   </div>
 </div>
