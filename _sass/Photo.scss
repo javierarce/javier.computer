@@ -265,6 +265,31 @@
     max-width: none;
   }
 
+  .photo.is-framed {
+    > .photo__content {
+      padding: clamp(16px, 3vw, 40px);
+      background: var(--color-bg-photo-frame);
+      border-radius: 12px;
+    }
+
+    picture {
+      display: flex;
+      justify-content: center;
+    }
+
+    > .photo__content img {
+      width: auto;
+      max-width: 100%;
+      max-height: 80vh;
+      max-height: 80svh;
+      object-fit: contain;
+    }
+
+    figcaption {
+      text-align: center;
+    }
+  }
+
   p,
   p:last-child {
     width: var(--width-content);
