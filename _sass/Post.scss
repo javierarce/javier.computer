@@ -237,6 +237,10 @@
 }
 
 @include mobile {
+  .layout__home .post__footer {
+    display: flex;
+  }
+
   .post {
     &__footer {
       display: grid;
