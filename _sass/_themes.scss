@@ -25,6 +25,7 @@
   --color-bg-active: rgba(255, 255, 255, var(--op-2));
 
   --color-caption: rgba(255, 255, 255, 0.5);
+  --color-bg-photo-frame: #1f1f1f;
   --color-map-background: #eeeeee;
 
   --color-bg-selection: rgba(142, 142, 142, 0.2);
@@ -73,6 +74,7 @@ html[data-theme="light"] {
   --color-bg-hover: rgba(0, 0, 0, var(--op-1));
   --color-bg-active: rgba(0, 0, 0, var(--op-2));
   --color-caption: #666666;
+  --color-bg-photo-frame: #f5f5f5;
   --color-bg-search-highlight: #eeeeee;
   --color-bg-code-inline: #eeeeee;
   --color-bg-code-block-border: #cccccc;
