@@ -11,6 +11,11 @@
     gap: var(--s-12);
   }
 
+  h2.date-list__title {
+    font-size: var(--font-size-heading-sm);
+    margin: 0;
+  }
+
   &__year {
     margin: 0;
     opacity: var(--op-visible);
