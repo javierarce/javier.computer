@@ -47,6 +47,48 @@
     gap: var(--s-4);
   }
 
+  &__theme {
+    display: inline-flex;
+    // Reserve the slot even without JavaScript; the head script reveals it.
+    visibility: hidden;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: none;
+    border-radius: var(--br-default);
+    background: transparent;
+    color: var(--color-txt-site);
+    cursor: pointer;
+    opacity: var(--op-light);
+
+    &:hover,
+    &:focus-visible {
+      opacity: var(--op-visible);
+    }
+
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 3px;
+    }
+
+    html[data-theme] & {
+      visibility: visible;
+    }
+
+    &-moon {
+      display: none;
+    }
+
+    html[data-theme="light"] & {
+      .navigation__theme-sun { display: none; }
+      .navigation__theme-moon { display: block; }
+    }
+  }
+
   &__link {
     text-decoration: none;
     color: var(--color-txt-site);

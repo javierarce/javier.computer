@@ -47,7 +47,7 @@
     text-decoration: none;
 
     &:hover {
-      text-decoration: underline;
+      text-decoration: underline var(--color-link-underline, currentColor);
     }
   }
 

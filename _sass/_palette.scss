@@ -1,0 +1,40 @@
+// Fixed colors: artwork, book covers, maps, and media do not change theme.
+:root {
+  /* Colors */
+  --white: #ffffff;
+  --black: #000000;
+
+  --purple: #ae81ff;
+
+  --orange-yellow: #f9a825;
+  --yellow: #ffc107;
+  --pink: #ad1457;
+  --orange: #d84315;
+  --red: #c62828;
+  --blue: #1976d2;
+  --green: #2e7d32;
+  --teal: #009688;
+  --brown: #8d6e63;
+  --light-pink: #ffe0e6;
+
+  --color-book-purple: #6a1b9a;
+  --color-book-yellow: var(--orange-yellow);
+  --color-book-teal: var(--teal);
+  --color-book-white: var(--white);
+  --color-book-black: var(--black);
+  --color-book-red: var(--red);
+  --color-book-green: var(--green);
+  --color-book-blue: var(--blue);
+  --color-book-brown: var(--brown);
+  --color-book-pink: var(--pink);
+  --color-book-dark-teal: #00695c;
+  --color-book-orange: var(--orange);
+  --color-book-dark-green: #558b2f;
+  --color-book-dark-blue: #283593;
+  --color-book-dark-gray: #222;
+  --color-book-light-blue: #1565c0;
+  --color-book-light-pink: #ec407a;
+
+  --color-bg-zine: var(--light-pink);
+  --color-txt-zine: var(--black);
+}

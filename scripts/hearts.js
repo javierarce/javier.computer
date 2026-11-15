@@ -5,7 +5,44 @@ class OpenHeartElement extends HTMLElement {
     this._send = this.send.bind(this);
   }
 
+  static get observedAttributes() {
+    return ["count"];
+  }
+
+  attributeChangedCallback() {
+    this.updateCountText();
+  }
+
+  updateCountText() {
+    const count = this.querySelector(".count");
+    if (!count) return;
+    const next = this.getAttribute("count") || "0";
+    const previous = count.querySelector(".count-value")?.textContent || count.textContent;
+    if (previous === next) return;
+
+    this._countAnimations?.forEach((animation) => animation.cancel());
+    count.textContent = next;
+    if (this._skipCountAnimation || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    // The new value owns the layout; the old one fades away without adding width.
+    const outgoing = document.createElement("span");
+    outgoing.className = "count-previous";
+    outgoing.setAttribute("aria-hidden", "true");
+    outgoing.textContent = previous;
+    const incoming = document.createElement("span");
+    incoming.className = "count-value";
+    incoming.textContent = next;
+    count.replaceChildren(incoming, outgoing);
+
+    const timing = { duration: 160, easing: "cubic-bezier(0.23, 1, 0.32, 1)" };
+    const fadeOut = outgoing.animate([{ opacity: 1 }, { opacity: 0 }], timing);
+    const fadeIn = incoming.animate([{ opacity: 0 }, { opacity: 1 }], timing);
+    this._countAnimations = [fadeOut, fadeIn];
+    fadeOut.onfinish = () => outgoing.remove();
+  }
+
   connectedCallback() {
+    this.updateCountText();
     this.tabIndex = 0;
     this.setAttribute("role", "button");
     this.setAttribute("aria-busy", "false");
@@ -91,7 +128,7 @@ class OpenHeartElement extends HTMLElement {
     localStorage.setItem(this.KEY, hearts.join(","));
   }
 
-  async getCount() {
+  async getCount(animate = true) {
     const response = await fetch(this.href, {
       headers: { Accept: "application/json" },
     });
@@ -102,7 +139,9 @@ class OpenHeartElement extends HTMLElement {
     } catch {
       /* do nothing */
     }
+    this._skipCountAnimation = !animate;
     this.setAttribute("count", Number(json[this.emoji] || 0).toString());
+    this._skipCountAnimation = false;
   }
 
   async send(event) {
@@ -125,7 +164,7 @@ class OpenHeartElement extends HTMLElement {
     this.setAttribute("aria-busy", "false");
     this.saveReaction();
     this.setReacted();
-    this.getCount();
+    this.getCount(!(event instanceof KeyboardEvent));
     this.dispatchEvent(new CustomEvent("open-heart", { bubbles: true }));
   }
 }

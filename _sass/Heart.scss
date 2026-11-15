@@ -3,17 +3,19 @@ open-heart.text-open-heart {
   cursor: pointer;
 
   &:not([disabled]):hover {
-    span {
+    .on,
+    .off {
       opacity: 1;
       cursor: pointer;
     }
 
-    &::after {
+    .count {
       opacity: 1;
     }
   }
 
-  span {
+  .on,
+  .off {
     position: relative;
     top: 2px;
     display: inline-block;
@@ -21,6 +23,7 @@ open-heart.text-open-heart {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    filter: var(--icon-filter);
     width: 0.9em;
     height: 0.9em;
   }
@@ -45,9 +48,17 @@ open-heart.text-open-heart {
     }
   }
 
-  &[count]::after {
-    content: attr(count);
+  .count {
+    display: inline-block;
+    position: relative;
+    font-variant-numeric: tabular-nums;
     opacity: var(--op-light);
     margin-left: -0.1em;
+  }
+
+  .count-previous {
+    position: absolute;
+    inset: 0 auto auto 0;
+    pointer-events: none;
   }
 }

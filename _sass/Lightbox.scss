@@ -6,6 +6,8 @@
 }
 
 .lightbox {
+  // This overlay remains dark in both page themes.
+  color: var(--white);
   display: flex;
   position: fixed;
   z-index: 999;
