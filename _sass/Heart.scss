@@ -39,7 +39,7 @@ open-heart.text-open-heart {
 
   &[aria-pressed="true"] {
     .on {
-      opacity: 1;
+      opacity: var(--op-light);
       display: inline-block;
     }
 
