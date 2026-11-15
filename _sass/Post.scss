@@ -59,7 +59,12 @@
   }
 
   &__content {
+    h1 {
+      font-size: var(--text-xl);
+    }
+
     h2 {
+      font-size: var(--font-size-heading-sm);
       margin: 0;
       opacity: var(--op-light);
     }
