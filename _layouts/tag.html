@@ -1,7 +1,6 @@
 ---
 layout: base
 className: archive
-category: tags
 ---
 {% assign posts = '' | split: ',' -%}
 
@@ -18,7 +17,7 @@ category: tags
 
   <div class="archive date-list">
 
-    <h2>{{ page.tag | capitalize }}</h2>
+    <h2 class="date-list__title">Posts etiquetados con {{ page.tag }}</h2>
 
     <div class="date-list date-list--entries">
       {% include post/entries.html posts=posts -%}

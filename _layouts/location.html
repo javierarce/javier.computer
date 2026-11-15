@@ -9,7 +9,7 @@ className: archive
 
 
   <div class="archive date-list">
-    <h2>Posts en {{ page.title }}</h2>
+    <h2 class="date-list__title">Posts en {{ page.title }}</h2>
     <div class="date-list date-list--entries">
       {% include post/entries.html posts=posts -%}
     </div>
