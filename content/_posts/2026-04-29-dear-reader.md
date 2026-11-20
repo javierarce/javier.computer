@@ -8,7 +8,6 @@ syndication:
   - https://bsky.app/profile/javier.bsky.social/post/3mlangupgs22u
   - https://mastodon.social/@javierarce/116528705407374054
 ---
-<div class="is-hidden-from-home">Publicado en la <a href="https://javier.computer/newsletter">newsletter</a> el 29 de abril de 2026</div>
 
 ¡Hola! ¿Qué tal estás?
 
@@ -46,3 +45,5 @@ Y ya estaría. Como prometí, me marcho por donde vine. Espero que estés muy bi
 
 Un abrazo,  
 Javier Arce
+
+<div class="is-hidden-from-home">Publicado en la <a href="https://javier.computer/newsletter">newsletter</a> el 29 de abril de 2026</div>
