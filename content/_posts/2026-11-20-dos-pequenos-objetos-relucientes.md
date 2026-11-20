@@ -37,7 +37,7 @@ newsletter (a la que puedes suscribirte desde la web) y me voy volando, porque
 al girar la cabeza acabo de ver algo brillante junto a ese árbol de allí y
 quiero investigar. Creo que podría ser una moneda.
 
-{% photo newsletter Supercomputer.png 950/707 caption:"El ordenador en el que uso Superlinea" %}
+{% photo newsletter Supercomputer.png 43/29 caption:"El ordenador en el que uso Superlinea" %}
 
 Hola, ¡bienvenido/a a la newsletter de Superlinea! Este es el primer mensaje
 que envío y lo recibes porque te picó la curiosidad y te suscribiste para
@@ -59,8 +59,10 @@ experiencia de uso en general no es buena. Tampoco me gusta nada su modelo de
 precios. Me encantaría pagar una sola vez por una app que me guste y que sea
 mía, como hacíamos en los viejos tiempos.
 
-La herramienta de corte en acción Una de las tres formas de cortar en
-Superlinea ¿Y qué pasa con las otras herramientas vectoriales? Hay muchas y he
+{% photo newsletter cut-straight.gif 1/1 width:600 caption:"La herramienta de corte en acción Una de las tres formas de cortar en Superlinea" %}
+
+
+¿Y qué pasa con las otras herramientas vectoriales? Hay muchas y he
 probado la mayoría, si no todas, pero ninguna me funciona bien. Affinity, que
 probablemente sea la alternativa más completa que existe, tiene la ventaja de
 ser gratuita (al menos mientras escribo estas líneas), y de hecho he editado
