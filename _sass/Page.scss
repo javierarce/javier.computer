@@ -38,6 +38,11 @@
     }
   }
 
+  // The page's own title stays quieter than the headings of its text.
+  &__title {
+    opacity: var(--op-light);
+  }
+
   &__date,
   &__date:hover {
     user-select: none;

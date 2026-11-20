@@ -206,31 +206,44 @@ hr {
   opacity: var(--op-light);
 }
 
+// Heading scale, shared by every layout. Levels step down in size first
+// (h1, h2) and then in emphasis (h3 to h6), so each one reads differently.
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
   font-weight: var(--weight-medium);
   margin: 0 0 var(--s-5) 0;
 }
 
 h1 {
-  font-size: var(--font-size-heading-xl);
-  font-weight: var(--weight-medium);
+  font-size: var(--font-size-heading-lg);
+  line-height: var(--line-height-heading);
 }
 
 h2 {
-  font-size: var(--font-size-heading-lg);
+  font-size: var(--font-size-heading-md);
+  line-height: var(--line-height-heading);
 }
 
-h3 {
-  font-size: var(--font-size-heading-sm);
-  opacity: var(--op-light);
-}
-
+h3,
 h4 {
   font-size: var(--font-size-heading-sm);
-  font-weight: var(--weight-medium);
+}
+
+h5 {
+  font-size: var(--font-size-meta);
+}
+
+h6 {
+  font-size: var(--font-size-body-xs);
+}
+
+h4,
+h5,
+h6 {
   opacity: var(--op-light);
 }
 
@@ -242,6 +255,7 @@ h4 {
 
 .section-divider {
   margin: 0;
+  opacity: var(--op-light);
   padding-bottom: var(--s-4);
   border-bottom: 1px solid var(--gray);
   width: var(--width-full);

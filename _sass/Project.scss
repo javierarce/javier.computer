@@ -39,7 +39,10 @@
     flex-direction: column;
     align-items: center;
 
+    // Display title, above the heading scale.
     h1 {
+      font-size: var(--font-size-heading-xl);
+      line-height: var(--line-height-body);
       margin: 0;
     }
 
