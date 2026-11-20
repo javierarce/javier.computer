@@ -20,7 +20,7 @@ estado trabajando en las últimas semanas: [Book Saboteur](https://booksaboteur.
 
 <!-- more -->
 
-## ¿Qué?
+### ¿Qué?
 
 [Book Saboteur](https://booksaboteur.com) no es una sopa instantánea, no es una meme coin, no es la canción
 del verano. Quizá podría ser todas estas cosas si se esforzase, pero ahora
@@ -48,7 +48,7 @@ Tres de los métodos (TYPO-grapher, Monochrome, y Spoiler), funcionarán mejor e
 textos en inglés; el resto puedes usarlos para modificar libros escritos en
 cualquier idioma.
 
-## Algunas cosas sobre este proyecto
+### Algunas cosas sobre este proyecto
 
 Lo más importante es que todas las alteraciones ocurren en tu navegador. Esto
 quiere decir que los libros que subas no se enviarán a ningún sitio (bastantes
@@ -64,7 +64,7 @@ tengo más ideas que me gustaría explorar.
 Si te animas a probar este proyecto y encuentras fallos o te apetece comentarme
 cualquier cosa me encantará que me envíes un email.
 
-## Hable con él
+### Hable con él
 
 Y relacionado con esto último: hace unos días anuncié [en el blog](https://javier.computer/2025/01/20/oficina) que, inspirado
 por las open office hours de Zach Lieberman, los cafés virtuales de Carly

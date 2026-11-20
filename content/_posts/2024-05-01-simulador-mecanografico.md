@@ -5,7 +5,6 @@ date: "2024-05-01 22:39:48 +0200"
 tags: [newsletter]
 ---
 
-<div class="is-hidden-from-home">Publicado en mi <a href="https://javier.computer/newsletter">newsletter</a> el 1 de mayo de 2024</div>
 
 ¡Hola! Como quizá recuerdes, te apuntaste a esta humilde newslettercita para que te
 avisara cuando (y cito textualmente) "publique un nuevo proyecto o haga algo
@@ -17,7 +16,7 @@ Así es, hace unas horas la revista [Taper](https://taper.badquar.to/) publicó
 mi pieza [Type Simulator](https://taper.badquar.to/12/type_simulator.html) en
 su edición primaveral.
 
-## ¿De qué va Type Simulator?  
+### ¿De qué va Type Simulator?
 
 [Mi proyecto](https://taper.badquar.to/12/type_simulator.html) es una
 herramienta que ayuda a mejorar las habilidades mecanográficas, exponiendo al
@@ -29,7 +28,7 @@ un entorno de gravedad cero.
 Si lo pruebas, espero que aprecies la maravillosa coincidencia de que el
 proyecto haya sido publicado en el «Día Internacional de los Trabajadores».
 
-## ¿Y qué es Taper?
+### ¿Y qué es Taper?
 
 Taper es una revista digital que publica obras de literatura computacional dos
 veces al año. Cada número recoge piezas en torno a un tema diferente y la
@@ -82,4 +81,4 @@ semanas y está más bonito que nunca).
 Un abrazo,  
 Javier Arce
 
-
+<div class="is-hidden-from-home">Publicado en mi <a href="https://javier.computer/newsletter">newsletter</a> el 1 de mayo de 2024</div>

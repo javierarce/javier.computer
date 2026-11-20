@@ -5,7 +5,6 @@ date: "2026-11-18 20:03:54 +0100"
 tags: [newsletter]
 ---
 
-
 ¡Hola! Hoy llego a tu buzón como un zorrito del desierto (Vulpes zerda) o quizá
 mejor como un cuervo común (Corvus corax) para traerte dos pequeños objetos
 relucientes encontrados en alguno de mis vuelos recreativos por tu barrio, en
@@ -20,9 +19,7 @@ Me siento muy honrado de haber escrito el prólogo, en el que explico la
 historia de cómo nos conocimos y lo que aprendí de él observándole de cerca
 durante varios años, y de ser así una pequeña parte de su libro.
 
-
 {% photo newsletter mundo-mendo 950/707 caption:"Portada de Mundo Mendo. Book Two." %}
-
 
 El libro [lo puedes conseguir aquí](https://www.mundomendo.com/books). Y si no tienes el volumen anterior, aún hay
 algunos ejemplares disponibles.
@@ -37,7 +34,7 @@ newsletter (a la que puedes suscribirte desde la web) y me voy volando, porque
 al girar la cabeza acabo de ver algo brillante junto a ese árbol de allí y
 quiero investigar. Creo que podría ser una moneda.
 
-{% photo newsletter Supercomputer.png 43/29 caption:"El ordenador en el que uso Superlinea" %}
+{% photo newsletter Supercomputer.png 43/29 width:600 caption:"El ordenador en el que uso Superlinea" %}
 
 Hola, ¡bienvenido/a a la newsletter de Superlinea! Este es el primer mensaje
 que envío y lo recibes porque te picó la curiosidad y te suscribiste para
@@ -99,8 +96,10 @@ funciones muy reducido y no era muy rápido, pero funcionaba. Como suele pasar,
 este pequeño éxito me animó y decidí continuar construyendo la app, hacerla más
 rápida y ampliar sus funciones.
 
-La herramienta Ghost path en acción La herramienta de Ghost path en acción Y
-llegamos hasta hoy: mi objetivo actual es construir una herramienta fácil de
+
+{% photo newsletter ghost-path.gif 1/1 width:600 caption:"La herramienta Ghost path en acción" %}
+
+Y llegamos hasta hoy: mi objetivo actual es construir una herramienta fácil de
 usar, que sirva para distintos estilos (no solo para el tipo de ilustraciones
 que hago yo) y que no solo te permita dibujar en el ordenador, sino también
 llevar tus dibujos hasta la imprenta. Sé que el camino para construir una
@@ -150,4 +149,7 @@ general.
 Bueno, eso es todo por ahora. Muchas gracias por seguir el proyecto, ¡y hasta
 pronto!
 
-Un saludo, Javier Arce
+Un saludo, 
+Javier Arce
+
+<div class="is-hidden-from-home">Publicado en mi <a href="https://javier.computer/newsletter">newsletter</a> el 25 de octubre de 2026</div>
