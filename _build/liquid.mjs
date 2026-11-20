@@ -67,7 +67,12 @@ export function photo(markup) {
     ? `<source data-srcset="${base}">`
     : `<source data-srcset="${base}_2880.webp 2880w" type="image/webp">
   <source data-srcset="${base}_2880.jpg 2880w">`;
-  return `<div class="${escapeXml(["photo", named.class].filter(Boolean).join(" "))}">
+  // width:600 caps the photo (and its caption) and centers it; a bare number
+  // is pixels.
+  const width = /^\d+(\.\d+)?(px|em|rem|ch|vw|%)?$/.test(named.width || "")
+    ? named.width.replace(/^[\d.]+$/, "$&px")
+    : "";
+  return `<div class="${escapeXml(["photo", named.class].filter(Boolean).join(" "))}"${width ? ` style="max-width: ${width}; margin-inline: auto;"` : ""}>
   <div class="photo__content"><figure class="figure"><picture>
   ${sources}
   <img class="lazy" data-src="${src}"${ratio ? ` style="--aspect-ratio: ${escapeXml(ratio)};"` : ""}${alt ? ` alt="${escapeXml(alt)}"` : ""}${caption ? ` data-caption="${escapeXml(caption)}"` : ""}>

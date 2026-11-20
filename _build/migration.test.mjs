@@ -68,6 +68,21 @@ test("Liquid photo blocks keep nesting, captions, and following Markdown links",
   assert.match(png, /data-src="[^"]+\/newsletter\/Supercomputer\.png"/);
   assert.match(png, /--aspect-ratio: 950\/707/);
   assert.doesNotMatch(png, /_2880|image\/webp/);
+  assert.doesNotMatch(png, /max-width/);
+  assert.match(
+    await liquid.parseAndRender(
+      '{% photo newsletter cut-straight.gif 1/1 width:600 caption:"Cortar" %}',
+    ),
+    /<div class="photo" style="max-width: 600px; margin-inline: auto;">/,
+  );
+  assert.match(
+    await liquid.parseAndRender("{% photo berlin DSCF1234 width:50% %}"),
+    /style="max-width: 50%; margin-inline: auto;"/,
+  );
+  assert.doesNotMatch(
+    await liquid.parseAndRender('{% photo berlin DSCF1234 width:"1px;x" %}'),
+    /max-width/,
+  );
   assert.equal(
     await liquid.parseAndRender(
       '{{ tags | where_exp: "tag", "tag != \'photo\'" | jsonify }}',
