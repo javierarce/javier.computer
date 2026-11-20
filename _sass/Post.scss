@@ -69,7 +69,6 @@
       margin: 0;
     }
 
-    // Inside a post only h1 keeps full emphasis; the rest stay quiet.
     h2,
     h3,
     h4,
@@ -78,10 +77,9 @@
       opacity: var(--op-light);
     }
 
-    // Extra room above the two section levels; the flex gap handles the rest.
-    h1:not(:first-child),
-    h2:not(:first-child) {
-      margin-top: var(--s-4);
+    // These levels share a size and opacity, so weight distinguishes them.
+    h3 {
+      font-weight: var(--weight-bold);
     }
 
     a,
