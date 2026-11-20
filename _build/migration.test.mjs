@@ -57,6 +57,17 @@ test("Liquid photo blocks keep nesting, captions, and following Markdown links",
   assert.match(html, /--aspect-ratio: 2\/3/);
   assert.match(html, /<figcaption>At home<\/figcaption>/);
   assert.match(html, /<a href="https:\/\/example.com">working link<\/a>/);
+  assert.match(html, /data-src="[^"]+\/berlin\/DSCF5678_2880\.jpg"/);
+  const png = await liquid.parseAndRender(
+    '{% photo newsletter Supercomputer.png 950/707 caption:"El ordenador" %}',
+  );
+  assert.match(
+    png,
+    /<source data-srcset="https:\/\/img\.javier\.computer\/newsletter\/Supercomputer\.png">/,
+  );
+  assert.match(png, /data-src="[^"]+\/newsletter\/Supercomputer\.png"/);
+  assert.match(png, /--aspect-ratio: 950\/707/);
+  assert.doesNotMatch(png, /_2880|image\/webp/);
   assert.equal(
     await liquid.parseAndRender(
       '{{ tags | where_exp: "tag", "tag != \'photo\'" | jsonify }}',

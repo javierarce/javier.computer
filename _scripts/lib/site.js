@@ -678,6 +678,9 @@ export function photosInBody(body) {
     const positional = markup.trim().split(/\s+/).filter(Boolean);
     const filename = named.filename || positional[1];
     if (!filename) continue;
+    // A filename with an extension is a file used as uploaded: it has no
+    // resized versions, so it cannot be a thumbnail or a cover.
+    if (/\.(png|jpe?g|gif|webp|avif|svg)$/i.test(filename)) continue;
 
     const ratio =
       named.ratio ||

@@ -231,6 +231,7 @@ Embeds a single photo.
 {% photo location filename ratio alt:"Alt text" %}
 {% photo location filename ratio caption:"Caption shown below photo" %}
 {% photo location filename ratio alt:"Alt text" caption:"Caption" class:is-wide %}
+{% photo location filename.png ratio %}
 ```
 
 | Argument        | Type       | Description                                      |
@@ -241,6 +242,10 @@ Embeds a single photo.
 | `alt:"..."`     | named      | Alt text for the image                           |
 | `caption:"..."` | named      | Caption displayed below the photo                |
 | `class:name`    | named      | Extra CSS class (`is-wide`, `is-ok`)             |
+
+A filename with an extension (`Supercomputer.png`) is used exactly as uploaded,
+instead of the resized `_2880` JPEG and WebP versions. It has no thumbnails, so
+"Sync photo filenames" leaves it out of the `filenames:` block.
 
 ### `{% stack %}` / `{% endstack %}`
 
