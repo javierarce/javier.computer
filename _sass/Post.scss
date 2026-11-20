@@ -59,14 +59,29 @@
   }
 
   &__content {
-    h1 {
-      font-size: var(--text-xl);
+    // The flex gap spaces the blocks, so headings drop their own margin.
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
     }
 
-    h2 {
-      font-size: var(--font-size-heading-sm);
-      margin: 0;
+    // Inside a post only h1 keeps full emphasis; the rest stay quiet.
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       opacity: var(--op-light);
+    }
+
+    // Extra room above the two section levels; the flex gap handles the rest.
+    h1:not(:first-child),
+    h2:not(:first-child) {
+      margin-top: var(--s-4);
     }
 
     a,
@@ -94,11 +109,6 @@
     ul li,
     ol li {
       font-size: var(--font-size-body);
-    }
-
-    h3,
-    h4 {
-      margin: 0;
     }
 
     // Text-flow blocks share the paragraph column, so they stay aligned

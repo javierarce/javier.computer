@@ -18,6 +18,12 @@
 
     margin: 0 0 0.4em 0;
 
+    // Display title, above the heading scale.
+    h1 {
+      font-size: var(--font-size-heading-xl);
+      line-height: var(--line-height-body);
+    }
+
     p {
       margin: 0 0 1em;
 

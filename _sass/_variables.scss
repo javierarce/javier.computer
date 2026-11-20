@@ -25,12 +25,16 @@
   --font-size-body-xxxs: var(--text-xs); // 12px
   --font-size-body-tiny: 11px; // exception to the scale for better readability
 
-  --font-size-heading-xl: var(--text-5xl);
-  --font-size-heading-lg: var(--text-2xl);
-  --font-size-heading-sm: var(--text-lg);
+  --font-size-heading-xl: var(--text-5xl); // display titles (reportages, projects)
+  --font-size-heading-lg: var(--text-2xl); // h1
+  --font-size-heading-md: var(--text-xl); // h2
+  --font-size-heading-sm: var(--text-lg); // h3 and h4, same size as the body
 
   /* Leading for body text; lines run to about 80 characters */
   --line-height-body: 1.5;
+
+  /* Tighter leading for headings larger than the body */
+  --line-height-heading: 1.25;
 
   /* Optical scale for lining figures set next to lowercase text */
   --font-scale-numeric: 0.875;
@@ -126,8 +130,7 @@
 
 @include mobile {
   :root {
-    // Large headings step down one size; everything else matches the root
+    // Display titles step down one size; everything else matches the root
     --font-size-heading-xl: var(--text-4xl);
-    --font-size-heading-lg: var(--text-xl);
   }
 }

@@ -342,6 +342,10 @@
     font-size: var(--font-size-heading-xl);
     line-height: 1.2;
   }
+
+  h3 {
+    opacity: var(--op-light);
+  }
 }
 
 .photo__selector {
