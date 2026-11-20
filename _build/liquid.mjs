@@ -59,12 +59,18 @@ export function photo(markup) {
     named.ratio || (/^\d+\/\d+$/.test(positional[2]) ? positional[2] : "");
   const caption = named.caption;
   const alt = named.alt || caption || "";
-  const base = `https://img.javier.computer/${location}/${filename}`;
+  const base = escapeXml(`https://img.javier.computer/${location}/${filename}`);
+  // A filename with an extension is served as uploaded: no sizes, no WebP.
+  const original = /\.(png|jpe?g|gif|webp|avif|svg)$/i.test(filename);
+  const src = original ? base : `${base}_2880.jpg`;
+  const sources = original
+    ? `<source data-srcset="${base}">`
+    : `<source data-srcset="${base}_2880.webp 2880w" type="image/webp">
+  <source data-srcset="${base}_2880.jpg 2880w">`;
   return `<div class="${escapeXml(["photo", named.class].filter(Boolean).join(" "))}">
   <div class="photo__content"><figure class="figure"><picture>
-  <source data-srcset="${escapeXml(base)}_2880.webp 2880w" type="image/webp">
-  <source data-srcset="${escapeXml(base)}_2880.jpg 2880w">
-  <img class="lazy" data-src="${escapeXml(base)}_2880.jpg"${ratio ? ` style="--aspect-ratio: ${escapeXml(ratio)};"` : ""}${alt ? ` alt="${escapeXml(alt)}"` : ""}${caption ? ` data-caption="${escapeXml(caption)}"` : ""}>
+  ${sources}
+  <img class="lazy" data-src="${src}"${ratio ? ` style="--aspect-ratio: ${escapeXml(ratio)};"` : ""}${alt ? ` alt="${escapeXml(alt)}"` : ""}${caption ? ` data-caption="${escapeXml(caption)}"` : ""}>
   </picture></figure>${caption ? `<figcaption>${escapeXml(caption)}</figcaption>` : ""}</div></div>\n\n`;
 }
 
