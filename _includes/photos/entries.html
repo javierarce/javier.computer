@@ -56,7 +56,7 @@
 
   <li class="date-list__row is-entry is-photos">
     <div class="photo-entry__header">
-      <a href="{{ post.url }}" class="date-list__entry-title photo-entry__title">{{ post.title | escape }}</a>
+      <a href="{{ post.url }}" class="date-list__entry-title photo-entry__title"><span class="date-list__entry-text">{{ post.title | escape }}</span></a>
       <span class="date-list__entry-leader"></span>
       <time class="date-list__entry-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d/%m" }}</time>
     </div>
