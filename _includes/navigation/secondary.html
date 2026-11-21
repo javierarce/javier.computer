@@ -1,15 +1,8 @@
 {% case category -%}
-{% when 'tags' -%}
-{% include navigation/tags.html -%}
 {% when 'photos' -%}
 {% include navigation/photos.html -%}
 {% when 'about' -%}
 {% include navigation/about.html -%}
 {% when 'maps' -%}
 {% include navigation/map.html -%}
-{% endcase -%}
-
-{% case layoutCategory -%}
-{% when 'tags' -%}
-{% include navigation/tags.html -%}
 {% endcase -%}

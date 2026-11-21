@@ -174,7 +174,9 @@ blockquote p a {
   align-items: center;
   flex-direction: column;
   @include content-width;
-  gap: 3em;
+  // Distance between the blocks of a page; the navigation reads it on mobile.
+  --content-gap: 3em;
+  gap: var(--content-gap);
 }
 
 .layout__error {
