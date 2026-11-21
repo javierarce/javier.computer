@@ -288,7 +288,7 @@ test(
       );
       assert.match(
         read("index.html"),
-        /<a href="\/2023\/01\/01\/photo" class="date-list__entry-title u-url p-name is-icon-light is-photo">Old photo<\/a>\s*<span class="date-list__entry-leader"><\/span>\s*<time class="date-list__entry-date dt-published" datetime="2023-01-01">1<\/time>/,
+        /<a href="\/2023\/01\/01\/photo" class="date-list__entry-title u-url p-name is-icon-light is-photo"><span class="date-list__entry-text">Old photo<\/span><\/a>\s*<span class="date-list__entry-leader"><\/span>\s*<time class="date-list__entry-date dt-published" datetime="2023-01-01">1<\/time>/,
       );
       assert.doesNotMatch(
         read("index.html"),
@@ -337,7 +337,7 @@ test(
       );
       assert.match(
         read("posts/2023/index.html"),
-        /class="date-list__entry-title u-url p-name is-icon-light is-photo">Old photo<\/a>/,
+        /class="date-list__entry-title u-url p-name is-icon-light is-photo"><span class="date-list__entry-text">Old photo<\/span><\/a>/,
       );
       assert.doesNotMatch(read("posts/2023/index.html"), /New post/);
       assert.equal(XMLValidator.validate(read("feed.xml")), true);

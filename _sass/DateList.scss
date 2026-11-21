@@ -101,8 +101,23 @@
     font-size: var(--font-size-body);
   }
 
+  // The title never wraps: its text truncates with an ellipsis, and the icon
+  // (a pseudo-element of the link) stays visible after it.
   &__entry-title {
+    display: flex;
+    align-items: center;
+    min-width: 0;
     text-decoration: none;
+
+    &::after {
+      flex-shrink: 0;
+    }
+  }
+
+  &__entry-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   &__entry-leader {

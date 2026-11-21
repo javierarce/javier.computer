@@ -22,7 +22,7 @@
     {% assign icon = "newsletter" -%}
   {% endif -%}
   <li class="date-list__row is-entry h-entry">
-    <a href="{{ post.url }}" class="date-list__entry-title u-url p-name{% if icon.size > 0 %} is-icon-light is-{{ icon }}{% endif %}">{{ post.title }}</a>
+    <a href="{{ post.url }}" class="date-list__entry-title u-url p-name{% if icon.size > 0 %} is-icon-light is-{{ icon }}{% endif %}"><span class="date-list__entry-text">{{ post.title }}</span></a>
     <span class="date-list__entry-leader"></span>
     <time class="date-list__entry-date dt-published" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d" }}</time>
   </li>
