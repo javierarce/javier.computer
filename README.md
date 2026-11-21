@@ -126,6 +126,7 @@ detected from the photo filenames, the date read off the first photo) — press
 | `filenames` | Rebuild a post's `filenames:` block from its `{% photo %}` tags |
 | `serve`, `serve-drafts`, `stop`, `build` | Eleventy |
 | `format`, `lint` | Prettier and ESLint |
+| `proxy-off`, `proxy-on`, `proxy` | Take the site out from behind Cloudflare, put it back, or show which is which |
 
 Dates accept `now`, `yesterday`, `3 days ago`, `last friday`, `in 2 weeks`,
 `21:30`, `2026-08-01` or `2026-08-01 21:30`, and the resolved date is shown as
@@ -214,6 +215,16 @@ Set `PORT` to run a second copy of the site somewhere else:
 ```sh
 PORT=4002 ./computer serve
 ```
+
+`./computer proxy-off` is for the evenings when a Spanish ISP blocks Cloudflare's
+shared addresses and the site stops loading from Spain: it switches the proxied
+DNS records to DNS only, so they point straight at the servers. A record is only
+switched when its server presents a valid certificate for that name — the rest
+are listed with the reason and left proxied. `./computer proxy-on` puts back
+exactly the records `proxy-off` switched (it marks them in their Cloudflare
+comment), and `./computer proxy` shows where each one stands. All three need
+`CF_API_TOKEN`: a Cloudflare API token with Zone → DNS → Edit and Zone → Zone →
+Read on the zone.
 
 ---
 
