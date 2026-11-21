@@ -31,6 +31,11 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+
+    // Secondary options sit closer together than the main ones.
+    .navigation__links {
+      column-gap: var(--s-2);
+    }
   }
 
   &__links {
@@ -123,6 +128,10 @@
 @include mobile {
   .navigation {
     align-items: flex-start;
+    // The page spaces its blocks with --content-gap. The menu sits closer to
+    // what follows it (2em) without changing the distance to the footer; it
+    // never pushes away where the page gap is already smaller (the map).
+    margin-bottom: min(0px, calc(2em - var(--content-gap, 2em)));
 
     &__main {
       display: flex;
@@ -131,24 +140,87 @@
       gap: var(--s-1);
     }
 
-    // The second row starts under the first text link (Blog), not under the
-    // magnifier: skip the icon and the gap that follows it.
     &__secondary {
       width: auto;
-      padding-left: calc(var(--navigation-icon-size) + var(--s-2));
     }
 
-    // Slightly smaller text and a tighter gap keep the main menu on one line
-    // on a 390px phone: at the body size (20px) the menu needs two lines, and
-    // body-xs (16px) is too small.
     &__links {
       flex-wrap: wrap;
       justify-content: flex-start;
-      gap: var(--s-1) var(--s-2);
+      gap: var(--s-1) var(--s-4);
+    }
+  }
+
+  // The site menu (navigation/index.html) is a vertical list at the body size.
+  // Its wrappers dissolve so everything shares one grid: the links run down
+  // the first column, the search and the theme switch share the first row on
+  // the right, and the secondary links sit beside the selected link.
+  .navigation--right {
+    $link: ".navigation__links--main > .navigation__link";
+    $selected: "#{$link}:not(.navigation__link--icon).is-selected";
+
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    // Top-aligned, so the row stays in line when the secondary links wrap.
+    align-items: start;
+    --navigation-row-height: calc(var(--font-size-body) * var(--line-height-body));
+    justify-items: start;
+    gap: var(--s-1) var(--s-2);
+
+    .navigation__main,
+    .navigation__links--main {
+      display: contents;
     }
 
-    &__link {
-      font-size: var(--font-size-meta);
+    // Links span the flexible column so only the selected one sizes the first
+    // column, which leaves the secondary links right next to it.
+    #{$link} {
+      grid-column: 1 / span 2;
+
+      &.is-selected {
+        grid-column: 1;
+      }
+    }
+
+    // Same box as the theme switch, so both icons are spaced evenly.
+    #{$link}.navigation__link--icon {
+      grid-area: 1 / 3;
+      justify-content: center;
+      width: 28px;
+      height: var(--navigation-row-height);
+    }
+
+    // The icon is narrower than its button: pull it to the content edge.
+    .navigation__theme {
+      grid-area: 1 / 4;
+      height: var(--navigation-row-height);
+      margin-right: calc((var(--navigation-icon-size) - 28px) / 2);
+    }
+
+    // Under the list where :has() is missing.
+    .navigation__secondary {
+      grid-column: 1 / -1;
+    }
+
+    // Rows follow the order in navigation/default.html, after the search icon.
+    @for $row from 1 through 5 {
+      #{$link}:nth-child(#{$row + 1}) {
+        grid-row: $row;
+      }
+
+      &:has(#{$link}:nth-child(#{$row + 1}).is-selected) .navigation__secondary {
+        grid-row: $row;
+      }
+    }
+
+    &:has(#{$selected}) .navigation__secondary {
+      grid-column: 2 / -1;
+      padding-left: var(--s-2);
+    }
+
+    // The first row shares its right side with the icons.
+    &:has(#{$link}:nth-child(2).is-selected) .navigation__secondary {
+      grid-column: 2;
     }
   }
 }

@@ -341,7 +341,7 @@
     height: 100dvh;
     width: var(--width-full);
     padding: var(--s-4);
-    gap: var(--s-4);
+    --content-gap: var(--s-4);
 
     > .navigation {
       flex-shrink: 0;
