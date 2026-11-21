@@ -1186,6 +1186,24 @@ const PAGES = [
         run: shell("npm", ["run", "lint"]),
       },
       {
+        id: "proxy-off",
+        label: "Bypass Cloudflare",
+        hint: "DNS only, for when an ISP blocks it",
+        run: node(["_scripts/proxy.js", "off"]),
+      },
+      {
+        id: "proxy-on",
+        label: "Go back behind Cloudflare",
+        hint: "proxy what was bypassed",
+        run: node(["_scripts/proxy.js", "on"]),
+      },
+      {
+        id: "proxy",
+        label: "Show what Cloudflare proxies",
+        menu: false,
+        run: node(["_scripts/proxy.js"]),
+      },
+      {
         id: "serve-drafts",
         label: "Start the dev server with drafts",
         menu: false,
