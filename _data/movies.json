@@ -1,7 +1,27 @@
 {
-  "updated_at": "2026-11-15",
-  "count": 1129,
+  "updated_at": "2026-11-21",
+  "count": 1131,
   "movies": [
+    {
+      "watched_on": "2026-11-21",
+      "title": "Avedon",
+      "year": 2026,
+      "rating": null,
+      "liked": true,
+      "stars": "",
+      "rewatched": false,
+      "permalink": "avedon"
+    },
+    {
+      "watched_on": "2026-11-20",
+      "title": "Sexy Beast",
+      "year": 2000,
+      "rating": 4,
+      "liked": true,
+      "stars": "★★★★",
+      "rewatched": true,
+      "permalink": "sexy-beast"
+    },
     {
       "watched_on": "2026-11-14",
       "title": "Extra Geography",
