@@ -58,7 +58,11 @@
   // Delegate immediately so the switch works as soon as its HTML is parsed,
   // even while deferred scripts are still holding up DOMContentLoaded.
   document.addEventListener("click", (event) => {
-    if (!(event.target instanceof Element) || !event.target.closest("[data-theme-toggle]")) return;
+    if (!(event.target instanceof Element)) return;
+    const button = event.target.closest("[data-theme-toggle]");
+    if (!button) return;
+    // Release pointer focus so Space scrolls; keyboard activation keeps focus.
+    if (event.detail > 0) button.blur();
     const theme = currentTheme === "light" ? "dark" : "light";
     change(theme, event.detail > 0);
     try {
