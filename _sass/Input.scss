@@ -19,6 +19,7 @@ input {
 
     &-short {
       width: var(--width-sm);
+      max-width: var(--width-full);
     }
   }
 }
@@ -35,6 +36,11 @@ input {
 
   &:focus {
     border: 1px solid var(--color-txt-site);
+  }
+
+  // Set when a submission finds the field missing or wrong.
+  &[aria-invalid="true"] {
+    border-color: var(--error);
   }
 }
 
@@ -71,6 +77,11 @@ input {
     border-color: var(--color-txt-site);
   }
 
+  // The shell draws the border, so it also carries the field's error.
+  &:has([aria-invalid="true"]) {
+    border-color: var(--error);
+  }
+
   .button {
     width: auto;
     border-radius: var(--br-input-action);
@@ -87,21 +98,4 @@ input {
     padding: var(--s-2);
     line-height: var(--line-height-body);
   }
-}
-
-// A multiline field keeps its action in a footer within the same border.
-.input-action--multiline {
-  display: block;
-  padding: 0;
-
-  .textarea {
-    display: block;
-    border: 0;
-    border-radius: var(--br-default);
-  }
-}
-
-.input-action__actions {
-  justify-content: flex-end;
-  padding: var(--s-1);
 }

@@ -6,7 +6,7 @@
   --link: var(--yellow);
   --color-link-underline: #555555;
   --color-txt-on-link: var(--black);
-  --error: var(--yellow);
+  --error: #ef5350; // a red light enough to read on black
   --text: var(--white);
   --textHover: var(--white);
 
@@ -64,7 +64,7 @@ html[data-theme="light"] {
   --color-link-underline: #cccccc;
   --link-underline-offset: 0.125rem;
   --color-txt-on-link: var(--white);
-  --error: #c62828;
+  --error: var(--red);
   --color-accent: #7040a0;
   --gray: rgba(0, 0, 0, 0.3);
   --color-txt-quote: #b43b16;

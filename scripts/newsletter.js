@@ -22,7 +22,6 @@ class Newsletter {
     }
     this.step = this.twoStep ? "email" : "captcha";
     this.spinner = new Spinner("is-inside-button");
-    this.disabled = true;
 
     this.init();
   }
@@ -71,45 +70,105 @@ class Newsletter {
     }
   }
   bind() {
-    this.$name?.addEventListener("input", this.onWriting.bind(this));
-    this.$email.addEventListener("input", this.onWriting.bind(this));
-    this.$captchaInput.addEventListener("input", this.onWriting.bind(this));
+    this.fields = [this.$name, this.$email, this.$captchaInput].filter(Boolean);
+    this.fields.forEach(($field) =>
+      $field.addEventListener("input", () => this.clearError($field)),
+    );
 
     this.$form.addEventListener("submit", (e) => {
       e.preventDefault();
       if (this.transitioning || this.submitting) return;
       if (this.twoStep && this.step === "email") {
-        if (this.$email.reportValidity()) this.changeStep("captcha");
+        if (this.validate()) this.changeStep("captcha");
       } else {
         this.subscribe();
       }
     });
   }
 
-  onWriting() {
-    if (this.twoStep) {
-      // Validation happens on submission, never while guessing the captcha.
-      this.disabled = Boolean(this.submitting);
-      this.$sendButton.disabled = this.disabled;
-      this.$sendButton.classList.toggle("is-disabled", this.disabled);
-      return;
+  // The button is only disabled while a subscription is being sent.
+  setSubmitting(submitting) {
+    this.submitting = submitting;
+    this.$sendButton.disabled = submitting;
+    this.$sendButton.classList.toggle("is-disabled", submitting);
+  }
+
+  // Only the fields of the current step can stop a submission.
+  problems() {
+    const checksEmail = !this.twoStep || this.step === "email";
+    const checksCaptcha = !this.twoStep || this.step === "captcha";
+    const email = this.$email.value.trim();
+    const answer = this.$captchaInput.value.trim();
+    const problems = [];
+
+    if (this.$name && !this.$name.value.trim()) {
+      problems.push({ $field: this.$name, missing: "tu nombre" });
     }
-    const isEmailValid = this.validateEmail(this.$email.value);
-    const isNameValid = this.twoStep || this.$name.value.trim().length > 0;
-    const isCaptchaValid =
-      parseInt(this.$captchaInput.value, 10) ===
-      this.captcha.a + this.captcha.b;
+    if (checksEmail) {
+      if (!email) problems.push({ $field: this.$email, missing: "tu email" });
+      else if (!this.validateEmail(email)) {
+        problems.push({ $field: this.$email, invalid: "El email no es válido." });
+      }
+    }
+    if (checksCaptcha) {
+      if (!answer) problems.push({ $field: this.$captchaInput, missing: "la respuesta a la suma" });
+      else if (!/^\d+$/.test(answer) || Number(answer) !== this.captcha.a + this.captcha.b) {
+        problems.push({ $field: this.$captchaInput, invalid: "La respuesta no es correcta." });
+      }
+    }
+    return problems;
+  }
 
-    this.disabled = this.submitting || (
-      this.step === "email" ? false : !(isEmailValid && isNameValid && isCaptchaValid)
-    );
-    this.$sendButton.classList.toggle("is-disabled", this.disabled);
-    if (this.twoStep) this.$sendButton.disabled = this.disabled;
+  // Missing fields are named together in one sentence; the other sentences
+  // say what is wrong with a value.
+  describe(problems) {
+    const missing = problems.filter((problem) => problem.missing).map((problem) => problem.missing);
+    const sentences = problems.filter((problem) => problem.invalid).map((problem) => problem.invalid);
+    if (missing.length) {
+      const list = new Intl.ListFormat("es", { type: "conjunction" }).format(missing);
+      sentences.unshift(`Escribe ${list}.`);
+    }
+    return sentences.join(" ");
+  }
 
-    this.$email.classList.toggle(
-      "invalid-email",
-      this.$email.value && !isEmailValid,
-    );
+  // Validation happens on submission: the button is always enabled. Every
+  // failing field is marked and the first one takes the focus.
+  validate() {
+    const problems = this.problems();
+    const failing = problems.map((problem) => problem.$field);
+    this.fields.forEach(($field) => {
+      if (failing.includes($field)) $field.setAttribute("aria-invalid", "true");
+      else $field.removeAttribute("aria-invalid");
+    });
+
+    if (!problems.length) {
+      this.hideProblems();
+      return true;
+    }
+
+    this.reportingProblems = true;
+    this.$message.innerText = this.describe(problems);
+    this.$form.classList.remove("was-sent");
+    this.$form.classList.add("is-error");
+    failing[0].focus({ preventScroll: true });
+    return false;
+  }
+
+  // Editing a field withdraws its problem; the message keeps the others.
+  // Server errors are not tied to a field, so they stay visible.
+  clearError($field) {
+    $field.removeAttribute("aria-invalid");
+    if (!this.reportingProblems) return;
+    const remaining = this.problems().filter((problem) => problem.$field.hasAttribute("aria-invalid"));
+    if (remaining.length) this.$message.innerText = this.describe(remaining);
+    else this.hideProblems();
+  }
+
+  hideProblems() {
+    if (!this.reportingProblems) return;
+    this.reportingProblems = false;
+    this.$message.innerText = "";
+    this.$form.classList.remove("is-error");
   }
 
   async fade(from, to) {
@@ -169,7 +228,6 @@ class Newsletter {
     await this.fade(1, 0);
     this.step = step;
     this.showStep(step);
-    this.onWriting();
     await this.fade(0, 1);
     this.$body.getAnimations().forEach((animation) => animation.cancel());
     this.$form.inert = false;
@@ -206,12 +264,14 @@ class Newsletter {
     this.captcha = await this.generateCaptcha();
     this.$captchaInput.value = "";
     const question = `¿Cuánto es ${this.captcha.a} + ${this.captcha.b}?`;
-    if (this.twoStep) this.$captchaLabel.innerText = question;
-    else this.$captchaInput.placeholder = question;
-    this.onWriting();
+    this.$captchaLabel.innerText = question;
   }
 
   async subscribe() {
+    if (this.submitting || !this.validate()) {
+      return;
+    }
+
     const timeTaken = (Date.now() - this.startTime) / 1000;
 
     if (!this.twoStep && timeTaken < 3) {
@@ -219,24 +279,7 @@ class Newsletter {
       return;
     }
 
-    if (this.disabled || this.submitting) {
-      return;
-    }
-
-    if (this.twoStep) {
-      const answer = this.$captchaInput.value.trim();
-      if (!/^\d+$/.test(answer) || Number(answer) !== this.captcha.a + this.captcha.b) {
-        this.$message.innerText = "La respuesta no es correcta. Inténtalo de nuevo.";
-        this.$form.classList.add("is-error");
-        this.$captchaInput.setAttribute("aria-invalid", "true");
-        this.$captchaInput.focus({ preventScroll: true });
-        return;
-      }
-      this.$captchaInput.removeAttribute("aria-invalid");
-    }
-
-    this.submitting = true;
-    this.onWriting();
+    this.setSubmitting(true);
     this.spinner.show();
     this.$sendButton.classList.add("is-loading");
     this.$form.classList.remove("is-error", "was-sent");
@@ -281,8 +324,6 @@ class Newsletter {
         this.$email.value = "";
         if (this.$name) this.$name.value = "";
         this.$captchaInput.value = "";
-        this.disabled = true;
-        this.$sendButton.classList.add("is-disabled");
 
         if (!this.twoStep) await this.refreshCaptcha();
       } else {
@@ -300,8 +341,7 @@ class Newsletter {
       this.$form.classList.add("is-error");
       await this.refreshCaptcha();
     } finally {
-      this.submitting = false;
-      this.onWriting();
+      this.setSubmitting(false);
       if (this.twoStep && this.$form.classList.contains("was-sent")) {
         await this.changeStep("success");
       }
@@ -311,70 +351,82 @@ class Newsletter {
   render() {
     this.startTime = Date.now();
 
-    this.$form = this.createElement({ elementType: "form", className: "form" });
+    // Our own messages replace the browser's validation bubbles.
+    this.$form = this.createElement({ elementType: "form", className: "form", noValidate: true });
+
+    // The standalone form labels its fields like the contact form; the
+    // two-step box keeps its compact inputs with placeholders.
+    const formId = ++Newsletter.nextId;
+    const inputClass = this.twoStep ? "input input--sm input--rounded" : "input input--rounded";
+    const question = `¿Cuánto es ${this.captcha.a} + ${this.captcha.b}?`;
+    const createLabel = ($input, text, options) =>
+      this.createElement({ elementType: "label", className: "label", for: $input.id, text, ...options });
 
     // Name Field
     const $nameGroup = this.createElement({ className: "input__field" });
-    if (!this.twoStep) this.$name = this.createElement({
-      elementType: "input",
-      className: "input input--sm input--rounded",
-      type: "text",
-      placeholder: "Nombre",
-      name: "name",
-      required: true,
-    });
-    if (this.$name) $nameGroup.appendChild(this.$name);
+    if (!this.twoStep) {
+      this.$name = this.createElement({
+        elementType: "input",
+        className: inputClass,
+        type: "text",
+        id: `newsletter-name-${formId}`,
+        name: "name",
+        autocomplete: "name",
+        required: true,
+      });
+      $nameGroup.append(createLabel(this.$name, "Nombre"), this.$name);
+    }
 
     // Email Field
     this.$emailGroup = this.createElement({ className: "input__field" });
     this.$email = this.createElement({
       elementType: "input",
-      className: "input input--sm input--rounded",
+      className: inputClass,
       type: "email",
-      placeholder: "Email",
+      id: `newsletter-email-${formId}`,
       name: "email",
       autocomplete: "email",
-      ariaLabel: "Email",
       required: true,
+      ...(this.twoStep && { placeholder: "Email", ariaLabel: "Email" }),
     });
+    if (!this.twoStep) this.$emailGroup.appendChild(createLabel(this.$email, "Email"));
     this.$emailGroup.appendChild(this.$email);
 
+    // Captcha Field: its label is the question, in both forms.
     this.$captchaGroup = this.createElement({
       className: "input__field input__field-short",
       hidden: this.twoStep,
     });
     this.$captchaInput = this.createElement({
       elementType: "input",
-      className: "input input--sm input--rounded",
+      className: inputClass,
       type: "text",
-      placeholder: this.twoStep ? "Respuesta" : `¿Cuánto es ${this.captcha.a} + ${this.captcha.b}?`,
+      id: `newsletter-captcha-${formId}`,
       name: "captcha",
-      ariaLabel: "Resuelve la suma para confirmar tu suscripción",
       inputMode: "numeric",
       disabled: this.twoStep,
       required: !this.twoStep,
+      ...(this.twoStep && { placeholder: "Respuesta" }),
     });
-    this.$captchaGroup.appendChild(this.$captchaInput);
     if (this.twoStep) {
-      this.$captchaInput.id = `newsletter-captcha-${++Newsletter.nextId}`;
-      this.$captchaInput.removeAttribute("aria-label");
-      this.$captchaLabel = this.createElement({
-        elementType: "label",
+      this.$captchaLabel = createLabel(this.$captchaInput, question, {
         className: "newsletter__question",
-        for: this.$captchaInput.id,
-        text: `¿Cuánto es ${this.captcha.a} + ${this.captcha.b}?`,
         hidden: true,
       });
       this.$form.appendChild(this.$captchaLabel);
+    } else {
+      this.$captchaLabel = createLabel(this.$captchaInput, question);
+      this.$captchaGroup.appendChild(this.$captchaLabel);
     }
+    this.$captchaGroup.appendChild(this.$captchaInput);
 
     const $actions = this.createElement({
-      className: "form__actions two-lines",
+      className: "form__actions",
     });
 
     this.$sendButton = this.createElement({
       elementType: "button",
-      className: "button button--solid button--sm is-disabled",
+      className: "button button--solid button--sm",
       type: "submit",
     });
 
@@ -382,7 +434,7 @@ class Newsletter {
 
     this.$buttonLabel = this.createElement({
       elementType: "span",
-      text: this.twoStep ? "Continuar" : "Suscríbeme",
+      text: this.twoStep ? "Continuar" : "Suscribirme",
     });
     this.$sendButton.appendChild(this.$buttonLabel);
     this.$sendButton.appendChild(this.spinner.$element);
@@ -402,7 +454,6 @@ class Newsletter {
       this.$form.appendChild($actions);
     }
     this.$el.appendChild(this.$form);
-    this.onWriting();
 
     if (this.twoStep) {
       this.measureBox();
