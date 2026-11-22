@@ -10,6 +10,8 @@ permalink: about
 
 {% include about/vars.html lang="es" %}
 
+{% include about/languages.html %}
+
 <div class="section">
 <p>Mi nombre es Javier Arce, <em>comme tout le monde</em>. Soy desarrollador
 creativo, diseñador ético, lector atento, ilustrador casual, fanzinero frustrado,
@@ -26,7 +28,7 @@ que vi fue <a href="/movies#{{ movie.permalink }}">{{ movie.title }}</a> {{ rati
 
 
 <div class="section">
-<h3>Acerca de este ordenador</h3>
+<h4>Acerca de este ordenador</h4>
 
 <p>Este ordenador contiene un amuleto, una esfinge, <a href="/posts">{{ post_count }}
 artículos</a>, una colección de canciones tontas, <a href="/photos">{{ photo_count }}

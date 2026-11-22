@@ -1,0 +1,4 @@
+<nav class="segmented" aria-label="{% if page.lang == 'en' %}Language{% else %}Idioma{% endif %}">
+  <a class="segmented__item{% unless page.lang == 'en' %} is-selected{% endunless %}" href="/about" lang="es" hreflang="es"{% unless page.lang == 'en' %} aria-current="page"{% endunless %}>Español</a>
+  <a class="segmented__item{% if page.lang == 'en' %} is-selected{% endif %}" href="/en/about" lang="en" hreflang="en"{% if page.lang == 'en' %} aria-current="page"{% endif %}>English</a>
+</nav>
