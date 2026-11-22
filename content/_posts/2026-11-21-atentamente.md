@@ -8,6 +8,4 @@ places:
   - barbarbar
   - ca-la-ceci
 ---
-
-Misión relámpago en Mataró ✦ [Atentamente](https://www.librosdelko.com/products/atentamente) ✦ Una truita en TRES TRUITES ✦ [Ca la Ceci](/maps/mataro/ca-la-ceci)✦ [Amauta](/maps/badalona/amauta) ✦ [Álvaro](https://www.instagram.com/alvaro_ortiz_) y la pequeña Genia en [Les Pomes](/maps/badalona/les-pomes) ✦ [BARBÀRBAR](/maps/barbarbar)✦ [Avedon](https://letterboxd.com/film/avedon).
-
+Misión relámpago en Mataró <span class="sp">✦</span> [Atentamente](https://www.librosdelko.com/products/atentamente) <span class="sp">✦</span> Una truita en TRES TRUITES <span class="sp">✦</span> [Ca la Ceci](/maps/mataro/ca-la-ceci) <span class="sp">✦</span> [Amauta](/maps/badalona/amauta) <span class="sp">✦</span> [Álvaro](https://www.instagram.com/alvaro_ortiz_) y la pequeña Genia en [Les Pomes](/maps/badalona/les-pomes) <span class="sp">✦</span> [BARBÀRBAR](/maps/barbarbar) <span class="sp">✦</span> [Avedon](https://letterboxd.com/film/avedon).

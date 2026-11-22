@@ -180,6 +180,15 @@ export function createLiquid(markdown, settings) {
         Number(toMin),
     ),
   );
+  // Jekyll matches a nil target against entries missing the property. LiquidJS
+  // treats it as "property is truthy", which paired every post without a
+  // location with the first location in the collection.
+  const { where, reject } = liquid.filters;
+  liquid.registerFilter("where", function (items, property, ...target) {
+    if (target.length && target[0] == null)
+      return reject.call(this, items, property);
+    return where.call(this, items, property, ...target);
+  });
   liquid.registerFilter("where_exp", function (items, name, expression) {
     return (items || []).filter((item) => {
       this.context.push({ [name]: item });

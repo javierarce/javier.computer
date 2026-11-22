@@ -90,6 +90,13 @@ test("Liquid photo blocks keep nesting, captions, and following Markdown links",
     ),
     '["música"]',
   );
+  const locations = [{ title: "Amsterdam", location: "amsterdam" }, { title: "Vienna" }];
+  const match = '{{ locations | where: "location", post.location | map: "title" | join: "," }}';
+  assert.equal(await liquid.parseAndRender(match, { locations, post: {} }), "Vienna");
+  assert.equal(
+    await liquid.parseAndRender(match, { locations, post: { location: "amsterdam" } }),
+    "Amsterdam",
+  );
 });
 
 test("photo list respects per-image locations in reportage thumbnails", async () => {
