@@ -1,5 +1,5 @@
 # Site metadata and display preferences. Build configuration: eleventy.config.mjs
-version: 7.2.33
+version: 7.2.42
 title: "Javier's computer"
 description: "My computer on the net"
 baseurl: ""
