@@ -59,14 +59,9 @@
     min-height: calc(2 * var(--font-size-body-xs) * var(--line-height-body));
   }
 
-  &[data-step="email"] .message:empty {
-    display: none;
-  }
-
+  // Keep the visible controls centered; feedback uses the space below them.
+  &[data-step="email"],
   &[data-step="captcha"] {
-    // Keep the visible controls centered; feedback uses the space below them.
-    padding-block: max(var(--s-10), calc(2 * var(--font-size-body-xs) * var(--line-height-body) + var(--s-3)));
-
     .newsletter__body {
       position: relative;
     }
@@ -78,6 +73,12 @@
       width: min(var(--width-full), var(--width-sm));
       margin-inline: auto;
     }
+  }
+
+  // The email step only reports one-line problems, which fit the default
+  // padding; the captcha step can also show longer server messages.
+  &[data-step="captcha"] {
+    padding-block: max(var(--s-10), calc(2 * var(--font-size-body-xs) * var(--line-height-body) + var(--s-3)));
   }
 
   .newsletter__title {

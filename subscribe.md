@@ -20,6 +20,6 @@ className: About
 
 <div class="Contact">
     <div class="js-newsletter-container">
-        <h3 class="newsletter__title section-divider">Suscríbete a mi newsletter</h3>
+        <h4>Suscríbete a mi newsletter</h4>
     </div>
 </div>

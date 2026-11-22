@@ -24,15 +24,20 @@
     color: var(--error);
   }
 
+  // The message sits to the right of the button, wrapping in the space left.
   &__actions {
     display: flex;
+    align-self: stretch;
     align-items: center;
-    justify-content: center;
     gap: var(--s-4);
 
-    &.two-lines {
-      align-items: flex-start;
-      flex-direction: column;
+    .button {
+      flex-shrink: 0;
+    }
+
+    .message {
+      flex: 1;
+      min-width: 0;
     }
   }
 }

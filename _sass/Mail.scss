@@ -6,6 +6,8 @@
 }
 
 .message {
+  font-size: var(--font-size-body-xs);
+  line-height: var(--line-height-body);
   opacity: var(--op-hidden);
   transition: opacity var(--transition-speed-default) ease-in-out;
 }
@@ -17,17 +19,7 @@
 
   .layout__contact .form,
   .layout__contact .input,
-  .layout__contact .textarea,
-  .layout__contact .form > .form__actions .button {
+  .layout__contact .textarea {
     width: var(--width-full);
-  }
-}
-
-.comment-composer {
-  .spinner.is-inside-button {
-    position: static;
-    margin-left: var(--s-2);
-    border-color: var(--color-bg-site);
-    border-left-color: transparent;
   }
 }
