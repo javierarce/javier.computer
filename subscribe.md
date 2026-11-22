@@ -19,5 +19,7 @@ className: About
 <p class="is-light">Join the <span class="subscribers-count">{{ subscribers_count }}</span> confused people subscribed to my very low-intensity mailing list, and get notified when I publish a new project or do something extremely funny. 
 
 <div class="Contact">
-    <div class="js-newsletter-container"></div>
+    <div class="js-newsletter-container">
+        <h3 class="newsletter__title section-divider">Suscríbete a mi newsletter</h3>
+    </div>
 </div>

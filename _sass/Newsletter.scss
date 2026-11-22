@@ -1,0 +1,101 @@
+@use "mixins" as *;
+
+.newsletter {
+  @include content-width;
+  max-width: var(--width-full);
+  margin-inline: auto;
+  padding: var(--s-10) var(--s-6);
+  border: var(--border-width-default) solid var(--color-border-subtle);
+  border-radius: var(--br-panel);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--s-4);
+  text-align: center;
+  font-family: var(--font-text-sans);
+  font-size: var(--font-size-body-xs);
+  line-height: var(--line-height-body);
+
+  .newsletter__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-4);
+    width: var(--width-full);
+  }
+
+  [hidden] {
+    display: none;
+  }
+
+  .newsletter__container {
+    width: var(--width-full);
+  }
+
+  .form {
+    display: flex;
+    align-items: stretch;
+    gap: var(--s-3);
+    width: min(var(--width-full), var(--width-sm));
+    margin-inline: auto;
+  }
+
+  .button.is-loading > span {
+    visibility: hidden;
+  }
+
+  .spinner.is-inside-button {
+    inset: 0;
+    margin: auto;
+    width: var(--s-5);
+    height: var(--s-5);
+    border-width: var(--border-width-strong);
+    border-color: var(--color-bg-site);
+    border-left-color: transparent;
+    border-radius: var(--br-pill);
+    animation-duration: var(--transition-speed-super-slow);
+  }
+
+  .message {
+    min-height: calc(2 * var(--font-size-body-xs) * var(--line-height-body));
+  }
+
+  &[data-step="email"] .message:empty {
+    display: none;
+  }
+
+  &[data-step="captcha"] {
+    // Keep the visible controls centered; feedback uses the space below them.
+    padding-block: max(var(--s-10), calc(2 * var(--font-size-body-xs) * var(--line-height-body) + var(--s-3)));
+
+    .newsletter__body {
+      position: relative;
+    }
+
+    .message {
+      position: absolute;
+      inset-inline: 0;
+      top: calc(100% + var(--s-3));
+      width: min(var(--width-full), var(--width-sm));
+      margin-inline: auto;
+    }
+  }
+
+  .newsletter__title {
+    width: var(--width-full);
+    margin: 0;
+    font-weight: var(--weight-bold);
+    opacity: var(--op-visible);
+  }
+
+  .newsletter__description {
+    width: var(--width-full);
+    margin: 0;
+    font-size: var(--font-size-body-xs);
+  }
+
+  &[data-step="success"] .newsletter__title {
+    font-size: var(--font-size-body-xs);
+    font-weight: var(--weight-regular);
+    line-height: var(--line-height-body);
+  }
+}

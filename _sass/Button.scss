@@ -35,3 +35,35 @@
     }
   }
 }
+
+.button--sm {
+  font-size: var(--font-size-body-xs);
+  line-height: var(--line-height-body);
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--br-default);
+}
+
+// Solid action button, independent of size and placement.
+.button--solid {
+  border: 0;
+  border-radius: var(--br-default);
+  background: var(--color-txt-site);
+  color: var(--color-bg-site);
+  font-family: var(--font-text-sans);
+  line-height: var(--line-height-body);
+
+  &:hover:not(:disabled):not(.is-disabled) {
+    background: var(--color-txt-site);
+    color: var(--color-bg-site);
+    opacity: var(--op-8);
+  }
+
+  &:focus-visible {
+    outline: var(--border-width-strong) solid var(--color-txt-site);
+    outline-offset: var(--border-width-strong);
+  }
+
+  &.is-disabled:hover {
+    background: var(--color-txt-site);
+  }
+}

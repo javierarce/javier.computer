@@ -1,4 +1,5 @@
-import { Liquid } from "liquidjs";
+import { Hash, Liquid } from "liquidjs";
+import fs from "node:fs";
 
 export const escapeXml = (value) =>
   String(value ?? "").replace(
@@ -17,6 +18,33 @@ export const slugify = (value) =>
     .toLowerCase()
     .replace(/[^\p{L}\p{N}]+/gu, "-")
     .replace(/^-|-$/g, "");
+
+export function newsletterForFeed(content, siteUrl) {
+  // Match only markup emitted by our newsletter tag, including its script.
+  return String(content || "").replace(
+    /<div class="newsletter"><div class="newsletter__body">([\s\S]*?)<div class="newsletter__container js-newsletter-container" data-two-step><\/div>\s*<\/div><\/div>\s*<script type="module" src="[^"]*newsletter\.js[^"]*"><\/script>/g,
+    (_, body) => {
+      // RSS readers cannot access the site's CSS. Resolve the design tokens
+      // to literal inline values, while inheriting the reader's own colors.
+      const tokens = Object.fromEntries(
+        [...fs.readFileSync("_sass/_variables.scss", "utf8").matchAll(/(--[\w-]+):\s*([^;]+);/g)]
+          .map(([, name, value]) => [name, value.trim()]),
+      );
+      const token = (name) => {
+        if (!tokens[name]) throw new Error(`Unknown RSS design token: ${name}`);
+        return tokens[name].replace(/var\((--[\w-]+)\)/g, (_, reference) => token(reference));
+      };
+      const title = body.match(/<h3 class="newsletter__title">([\s\S]*?)<\/h3>/)?.[1];
+      const description = body.match(/<p class="newsletter__description">([\s\S]*?)<\/p>/)?.[1];
+      const boxStyle = `border:${token("--border-width-default")} solid currentColor;border-radius:${token("--br-panel")};padding:${token("--s-10")} ${token("--s-6")};margin:${token("--s-6")} 0;text-align:center;font-family:${token("--font-text-sans")};font-size:${token("--font-size-body-xs")};line-height:${token("--line-height-body")}`;
+      return `<div style="${escapeXml(boxStyle)}">
+${title ? `<h3 style="margin:0 0 ${token("--s-4")};font-size:${token("--font-size-heading-sm")};font-weight:${token("--weight-bold")}">${title}</h3>` : ""}
+${description ? `<p style="margin:0 0 ${token("--s-4")};font-size:${token("--font-size-body-xs")}">${description}</p>` : ""}
+<p style="margin:0"><a href="${escapeXml(new URL("/newsletter", siteUrl).href)}">Suscribirme a la newsletter</a></p>
+</div>`;
+    },
+  );
+}
 
 export function sortItems(items, property, nils = "first") {
   const value = (item) => {
@@ -97,6 +125,20 @@ export function createLiquid(markdown, settings) {
       return photo(this.markup);
     },
   });
+  liquid.registerTag("newsletter", {
+    parse(token) {
+      this.args = new Hash(token.args);
+    },
+    *render(context) {
+      const { title, description } = yield this.args.render(context);
+      return `<div class="newsletter"><div class="newsletter__body">
+${title ? `<h3 class="newsletter__title">${escapeXml(title)}</h3>` : ""}
+${description ? `<p class="newsletter__description">${escapeXml(description)}</p>` : ""}
+<div class="newsletter__container js-newsletter-container" data-two-step></div>
+</div></div>
+<script type="module" src="/scripts/newsletter.js?version=${escapeXml(settings().version)}"></script>\n\n`;
+    },
+  });
   liquid.registerTag("player", {
     parse(token) {
       [this.id, this.title] = token.args.trim().split("|");
@@ -140,6 +182,7 @@ export function createLiquid(markdown, settings) {
     (value) => new URL(String(value || ""), settings().url).href,
   );
   liquid.registerFilter("xml_escape", escapeXml);
+  liquid.registerFilter("newsletter_for_feed", (content) => newsletterForFeed(content, settings().url));
   liquid.registerFilter("jsonify", (value) => JSON.stringify(value ?? null));
   liquid.registerFilter("normalize_whitespace", (value) =>
     String(value || "").replace(/\s+/g, " "),

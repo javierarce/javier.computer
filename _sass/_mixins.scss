@@ -49,20 +49,28 @@ $bp-mobile: 640px;
 @mixin clear-button {
   position: absolute;
   top: 50%;
-  right: var(--s-3);
+  right: 0;
   transform: translateY(-50%);
-  width: var(--s-5);
-  height: var(--s-5);
+  width: var(--s-10);
+  height: var(--s-10);
   padding: 0;
   border: none;
   background: url("/img/icons/close.svg") no-repeat center;
-  background-size: var(--s-4) var(--s-4);
+  background-size: var(--s-5) var(--s-5);
   filter: var(--icon-filter);
-  opacity: var(--op-4);
+  opacity: var(--op-8);
+  border-radius: var(--br-default);
   cursor: pointer;
   transition: opacity var(--transition-speed-default) ease-in-out;
 
   &:hover {
+    opacity: var(--op-visible);
+  }
+
+  // The filter inverts both the white icon and its focus ring in light themes.
+  &:focus-visible {
+    outline: var(--border-width-strong) solid var(--white);
+    outline-offset: calc(-1 * var(--border-width-strong));
     opacity: var(--op-visible);
   }
 

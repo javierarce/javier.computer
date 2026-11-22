@@ -22,6 +22,9 @@ Imagino que os estaréis preguntando acerca de los planes para esta nueva novís
 
 En cualquier caso, la idea de esta newsletter será la misma que la anterior: enviaros mensajes "cuando publique un nuevo proyecto o haga algo extremadamente gracioso". También es posible que lo utilice para mandaros posts largos de mi blog de vez en cuando, pero eso está por ver. Por cierto, los emails que os envié en su día están [aquí](/tags/newsletter), como preservados en el ámbar.
 
+
+{% newsletter title:"Recibe mis novedades" description:"Únete a las 154 personas que están confundidas y suscritas a mi lista de correo de bajísima intensidad, y recibe avisos cuando publique un nuevo proyecto o haga algo extremadamente gracioso." %}
+
 ### Corta el rollo
 
 Bien, llegados a este punto, toca daros algunos enlaces:

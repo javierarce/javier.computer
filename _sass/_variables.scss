@@ -112,6 +112,7 @@
   /* Border radius */
   --br-sm: 2px;
   --br-md: 4px;
+  --br-lg: 8px;
   --br-xxxl: 64px;
   --br-round: 100%;
   --br-flat: 0;
@@ -119,9 +120,16 @@
   /* Semantic border radii */
   --br-subtle: var(--br-sm); /* minimal rounding: images, small elements */
   --br-default: var(--br-md); /* standard rounding: cards, inputs, tags */
+  --br-panel: var(--br-lg); /* larger containers and inset controls */
+  --br-input-action: var(--br-sm); /* smaller rounding for inset buttons */
   --br-pill: var(--br-round); /* full pill/circle */
 
+  /* Border widths */
+  --border-width-default: 1px;
+  --border-width-strong: 2px;
+
   /* Transitions */
+  --transition-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --transition-speed-default: 140ms;
   --transition-speed-medium: 250ms;
   --transition-speed-slow: 300ms;

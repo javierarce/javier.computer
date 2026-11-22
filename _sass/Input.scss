@@ -42,3 +42,66 @@ input {
   width: var(--width-full);
   height: 240px;
 }
+
+.input--sm {
+  font-size: var(--font-size-body-xs);
+  padding: var(--s-3);
+  line-height: var(--line-height-body);
+}
+
+// Opt in so other fields keep their own treatment.
+.input--rounded,
+.textarea--rounded {
+  border-radius: var(--br-default);
+}
+
+// Shared shell for a single field with a trailing submit action.
+.input-action {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--s-1);
+  width: var(--width-full);
+  padding: var(--s-1);
+  border: var(--border-width-default) solid var(--color-border-muted);
+  border-radius: var(--br-default);
+  transition: border-color var(--transition-speed-default) var(--transition-ease-out);
+
+  &:focus-within {
+    border-color: var(--color-txt-site);
+  }
+
+  .button {
+    width: auto;
+    border-radius: var(--br-input-action);
+  }
+
+  .input__field {
+    min-width: 0;
+  }
+
+  .input {
+    min-width: 0;
+    border: 0;
+    border-radius: var(--br-default);
+    padding: var(--s-2);
+    line-height: var(--line-height-body);
+  }
+}
+
+// A multiline field keeps its action in a footer within the same border.
+.input-action--multiline {
+  display: block;
+  padding: 0;
+
+  .textarea {
+    display: block;
+    border: 0;
+    border-radius: var(--br-default);
+  }
+}
+
+.input-action__actions {
+  justify-content: flex-end;
+  padding: var(--s-1);
+}

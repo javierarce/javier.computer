@@ -167,7 +167,7 @@ class Mail {
       id: inputId,
       type: "email",
       elementType: "input",
-      className: "input",
+      className: "input input--rounded",
       required: true,
     });
 
@@ -190,37 +190,49 @@ class Mail {
     this.$content = this.createElement({
       id: textareaId,
       elementType: "textarea",
-      className: "textarea",
+      className: "textarea textarea--rounded",
     });
 
     $input.appendChild($label);
-    $input.appendChild(this.$content);
+    if (this.inlineSubmit) {
+      this.$composer = this.createElement({ className: "comment-composer input-action input-action--multiline" });
+      this.$composer.appendChild(this.$content);
+      $input.appendChild(this.$composer);
+    } else {
+      $input.appendChild(this.$content);
+    }
     this.$form.appendChild($input);
   }
 
   renderSendButton() {
     const $actions = this.createElement({
       elementType: "div",
-      className: "form__actions",
+      className: this.inlineSubmit ? "form__actions input-action__actions" : "form__actions",
     });
 
     this.$message = this.createElement({
       elementType: "div",
       className: "message",
+      role: "status",
     });
 
     this.$sendButton = this.createElement({
       elementType: "button",
-      className: "button is-disabled",
-      text: `Enviar ${this.what.toLowerCase()}`,
+      className: "button button--solid button--sm is-disabled",
+      text: this.inlineSubmit ? "Enviar" : `Enviar ${this.what.toLowerCase()}`,
       onclick: () => this.sendText(),
     });
 
     this.$sendButton.appendChild(this.spinner.$element);
 
-    this.$form.appendChild($actions);
     $actions.appendChild(this.$sendButton);
-    $actions.appendChild(this.$message);
+    if (this.inlineSubmit) {
+      this.$composer.appendChild($actions);
+      this.$form.appendChild(this.$message);
+    } else {
+      this.$form.appendChild($actions);
+      $actions.appendChild(this.$message);
+    }
   }
 
   async sendText() {
@@ -271,11 +283,13 @@ class Mail {
   render() {
     this.$el = document.querySelector(".js-form");
     this.what = this.$el.getAttribute("data-what");
+    this.inlineSubmit = this.$el.hasAttribute("data-inline-submit");
     this.$form = this.createElement({ className: "form" });
 
     this.renderTitle();
+    if (this.inlineSubmit) this.renderEmail();
     this.renderComment();
-    this.renderEmail();
+    if (!this.inlineSubmit) this.renderEmail();
     this.renderSendButton();
 
     this.$el.appendChild(this.$form);
