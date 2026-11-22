@@ -71,7 +71,7 @@ layout: none
         {% if post.author.name %}<dc:creator>{{ post.author.name | xml_escape }}</dc:creator>{% endif %}
       <description><![CDATA[
 
-          {{ post.content }}
+          {{ post.content | newsletter_for_feed }}
 
         {% if post.filenames -%}
           {% for file in post.filenames %}

@@ -228,7 +228,7 @@ test(
       );
       write(
         "content/_posts/2024-01-02-new.md",
-        '---\nlayout: post\ntitle: New post\ndate: "2024-01-02 12:00:00 +0100"\ntag: migration\nlocation: newcity\nredirect_from: /old-post\n---\nHello [world](https://example.com).<!-- more --> Continued article text.',
+        '---\nlayout: post\ntitle: New post\ndate: "2024-01-02 12:00:00 +0100"\ntag: migration\nlocation: newcity\nredirect_from: /old-post\n---\nHello [world](https://example.com).<!-- more --> Continued article text.\n\n{% newsletter title:"Newsletter & news" description:"Updates by email" %}',
       );
       write(
         "content/_posts/2023-01-01-photo.md",
@@ -341,6 +341,15 @@ test(
       );
       assert.doesNotMatch(read("posts/2023/index.html"), /New post/);
       assert.equal(XMLValidator.validate(read("feed.xml")), true);
+      const rss = new XMLParser().parse(read("feed.xml"));
+      const items = [rss.rss.channel.item].flat();
+      const newsletterPost = items.find((item) => item.title === "New post");
+      assert.match(newsletterPost.description, /Newsletter &amp; news/);
+      assert.match(newsletterPost.description, /Updates by email/);
+      assert.match(newsletterPost.description, /href="https:\/\/javier.computer\/newsletter"/);
+      assert.match(newsletterPost.description, /border-radius:8px/);
+      assert.doesNotMatch(newsletterPost.description, /newsletter\.js|js-newsletter-container/);
+      assert.match(read("2024/01/02/new.html"), /js-newsletter-container/);
       assert.equal(XMLValidator.validate(read("feeds/photos.xml")), true);
       const context = { window: {} };
       const search = read("search.html").match(

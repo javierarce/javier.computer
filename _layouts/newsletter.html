@@ -42,7 +42,7 @@
       </div>
       {% include navigation/footer.html -%}
     </div>
-    <script src="{{ 'scripts/newsletter.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
+    <script type="module" src="{{ 'scripts/newsletter.js' | relative_url }}?version={{site.version}}"></script>
     <script src="{{ 'scripts/lazyload.min.js' | relative_url }}?version={{site.version}}" charset="utf-8"></script>
   </body>
 </html>

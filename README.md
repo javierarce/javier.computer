@@ -228,6 +228,26 @@ Read on the zone.
 
 ---
 
+## Newsletter form
+
+Place the newsletter form anywhere in a page or post with:
+
+```liquid
+{% newsletter title:"Recibe mis novedades" description:"Proyectos y noticias de vez en cuando, directamente en tu correo." %}
+```
+
+Both arguments are optional, accept Liquid variables (for example,
+`title:page.title`), and render as plain text. There is no default heading.
+The form sits inside a bordered box. It asks for an email first, then fades
+to a captcha step before subscribing; it does not ask for a name. The
+standalone newsletter page keeps its original single-step form.
+In RSS, the tag becomes a box with the same title and description and a
+"Suscribirme a la newsletter" link. Inline styles resolve the design tokens
+to literal values and inherit the reader's colors; readers that remove styles
+still show the text and link.
+Multiple forms on the same page work independently. The `newsletter` post tag
+does not insert a form automatically.
+
 ## Writing a reportage
 
 Reportage posts mix text blocks, photos, and photo layouts using four custom Liquid tags.
