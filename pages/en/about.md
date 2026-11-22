@@ -11,6 +11,8 @@ lang: en
 
 {% include about/vars.html lang="en" %}
 
+{% include about/languages.html %}
+
 <div class="section">
 
 <p>My name is Javier Arce, <em>comme tout le monde</em>. I'm a creative
@@ -30,7 +32,7 @@ lang: en
 </div>
 
 <div class="section">
-<h3>About this computer</h3>
+<h4>About this computer</h4>
 
 <p>This computer contains an amulet, a sphinx, <a href="/posts">{{ post_count }} blog
 posts</a>, a collection of silly songs, <a href="/photos">{{ photo_count }}

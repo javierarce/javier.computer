@@ -1,0 +1,45 @@
+// A choice between a few sibling views, each one a link: the selected segment
+// is filled, the rest stay quiet until hovered.
+.segmented {
+  display: inline-flex;
+  align-self: flex-end;
+  border: var(--border-width-default) solid var(--color-border-subtle);
+  border-radius: var(--br-default);
+  --segmented-radius: calc(var(--br-default) - var(--border-width-default));
+
+  &__item {
+    padding: var(--s-1) var(--s-3);
+    color: var(--color-txt-site);
+    font-size: var(--font-size-body-xs);
+    line-height: var(--line-height-body);
+    text-decoration: none;
+    opacity: var(--op-light);
+    transition:
+      background var(--transition-speed-default) ease-in-out,
+      opacity var(--transition-speed-default) ease-in-out;
+
+    // Flush with the border, so the outer corners follow its inner curve.
+    &:first-child {
+      border-radius: var(--segmented-radius) 0 0 var(--segmented-radius);
+    }
+
+    &:last-child {
+      border-radius: 0 var(--segmented-radius) var(--segmented-radius) 0;
+    }
+
+    &:hover {
+      text-decoration: none;
+      opacity: var(--op-visible);
+    }
+
+    &:focus-visible {
+      outline: var(--border-width-strong) solid var(--color-txt-site);
+      outline-offset: var(--border-width-strong);
+    }
+
+    &.is-selected {
+      background: var(--color-bg-active);
+      opacity: var(--op-visible);
+    }
+  }
+}
