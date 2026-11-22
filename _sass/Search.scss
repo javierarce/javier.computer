@@ -7,34 +7,20 @@
   width: var(--width-full);
 }
 
-// An underlined field next to the regular boxed button
+// Leave room for the clear action independently of the submit button.
 .search-form {
-  display: flex;
-  gap: var(--s-3);
-  width: var(--width-full);
-
   &__field {
     position: relative;
     display: flex;
-    width: var(--width-full);
+    min-width: 0;
 
-    // Same height as the button, so the underline meets its bottom edge.
-    // The right padding leaves room for the clear button.
     .input {
-      padding: var(--s-3) var(--s-8) var(--s-3) 0;
-      border: none;
-      border-bottom: 1px solid var(--color-border-muted);
-      border-radius: 0;
-
-      &:focus {
-        border-bottom-color: var(--color-txt-site);
-      }
+      padding-right: var(--s-10);
     }
   }
 
   &__clear {
     @include clear-button;
-    right: 0;
   }
 }
 

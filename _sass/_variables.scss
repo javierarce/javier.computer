@@ -121,6 +121,7 @@
   --br-subtle: var(--br-sm); /* minimal rounding: images, small elements */
   --br-default: var(--br-md); /* standard rounding: cards, inputs, tags */
   --br-panel: var(--br-lg); /* larger containers and inset controls */
+  --br-input-action: var(--br-sm); /* smaller rounding for inset buttons */
   --br-pill: var(--br-round); /* full pill/circle */
 
   /* Border widths */

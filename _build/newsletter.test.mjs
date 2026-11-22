@@ -14,7 +14,7 @@ test("newsletter tag accepts custom copy and escapes it inside Markdown", async 
   ));
   assert.match(html, /<h3 class="newsletter__title">News &amp; projects<\/h3>/);
   assert.match(html, /&lt;script&gt;alert\(&quot;hello&quot;\)&lt;\/script&gt;/);
-  assert.match(html, /<div class="js-newsletter-container" data-two-step><\/div>/);
+  assert.match(html, /<div class="newsletter__container js-newsletter-container" data-two-step><\/div>/);
   assert.match(html, /<script type="module" src="\/scripts\/newsletter.js\?version=test"><\/script>/);
   assert.doesNotMatch(html, /<p><div|<script>alert/);
 });

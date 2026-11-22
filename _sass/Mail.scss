@@ -18,7 +18,16 @@
   .layout__contact .form,
   .layout__contact .input,
   .layout__contact .textarea,
-  .layout__contact .button {
+  .layout__contact .form > .form__actions .button {
     width: var(--width-full);
+  }
+}
+
+.comment-composer {
+  .spinner.is-inside-button {
+    position: static;
+    margin-left: var(--s-2);
+    border-color: var(--color-bg-site);
+    border-left-color: transparent;
   }
 }

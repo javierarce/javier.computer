@@ -6,4 +6,4 @@ permalink: comment
 show_title: true
 ---
 
-<div class="js-form" data-what="Comentario"></div>
+<div class="js-form" data-what="Comentario" data-inline-submit></div>

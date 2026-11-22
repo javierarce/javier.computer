@@ -22,7 +22,7 @@ export const slugify = (value) =>
 export function newsletterForFeed(content, siteUrl) {
   // Match only markup emitted by our newsletter tag, including its script.
   return String(content || "").replace(
-    /<div class="newsletter"><div class="newsletter__body">([\s\S]*?)<div class="js-newsletter-container" data-two-step><\/div>\s*<\/div><\/div>\s*<script type="module" src="[^"]*newsletter\.js[^"]*"><\/script>/g,
+    /<div class="newsletter"><div class="newsletter__body">([\s\S]*?)<div class="newsletter__container js-newsletter-container" data-two-step><\/div>\s*<\/div><\/div>\s*<script type="module" src="[^"]*newsletter\.js[^"]*"><\/script>/g,
     (_, body) => {
       // RSS readers cannot access the site's CSS. Resolve the design tokens
       // to literal inline values, while inheriting the reader's own colors.
@@ -134,7 +134,7 @@ export function createLiquid(markdown, settings) {
       return `<div class="newsletter"><div class="newsletter__body">
 ${title ? `<h3 class="newsletter__title">${escapeXml(title)}</h3>` : ""}
 ${description ? `<p class="newsletter__description">${escapeXml(description)}</p>` : ""}
-<div class="js-newsletter-container" data-two-step></div>
+<div class="newsletter__container js-newsletter-container" data-two-step></div>
 </div></div>
 <script type="module" src="/scripts/newsletter.js?version=${escapeXml(settings().version)}"></script>\n\n`;
     },

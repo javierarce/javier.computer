@@ -317,7 +317,7 @@ class Newsletter {
     const $nameGroup = this.createElement({ className: "input__field" });
     if (!this.twoStep) this.$name = this.createElement({
       elementType: "input",
-      className: "input",
+      className: "input input--sm input--rounded",
       type: "text",
       placeholder: "Nombre",
       name: "name",
@@ -329,7 +329,7 @@ class Newsletter {
     this.$emailGroup = this.createElement({ className: "input__field" });
     this.$email = this.createElement({
       elementType: "input",
-      className: "input",
+      className: "input input--sm input--rounded",
       type: "email",
       placeholder: "Email",
       name: "email",
@@ -345,7 +345,7 @@ class Newsletter {
     });
     this.$captchaInput = this.createElement({
       elementType: "input",
-      className: "input",
+      className: "input input--sm input--rounded",
       type: "text",
       placeholder: this.twoStep ? "Respuesta" : `¿Cuánto es ${this.captcha.a} + ${this.captcha.b}?`,
       name: "captcha",
@@ -374,7 +374,7 @@ class Newsletter {
 
     this.$sendButton = this.createElement({
       elementType: "button",
-      className: "button is-disabled",
+      className: "button button--solid button--sm is-disabled",
       type: "submit",
     });
 
@@ -388,7 +388,7 @@ class Newsletter {
     this.$sendButton.appendChild(this.spinner.$element);
     if (!this.twoStep) this.$form.appendChild($nameGroup);
     if (this.twoStep) {
-      const $field = this.createElement({ className: "newsletter__field" });
+      const $field = this.createElement({ className: "input-action" });
       $field.appendChild(this.$emailGroup);
       $field.appendChild(this.$captchaGroup);
       $field.appendChild(this.$sendButton);
